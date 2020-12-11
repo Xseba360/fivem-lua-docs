@@ -17,7 +17,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '12.x'
-    - ./run.sh
+    - name: Build documentation
+      run: run.sh
       env:
         CI: true
     - name: Create Release
@@ -30,7 +31,9 @@ jobs:
         release_name: Release ${{ github.ref }}
         body: |
           Changes in this Release
-          - First Change
-          - Second Change
+          - build date  ${{ github.ref }}
+          - based on 
+          - * https://runtime.fivem.net/doc/natives_cfx.json
+          - * https://runtime.fivem.net/doc/natives.json
         draft: false
         prerelease: false 
