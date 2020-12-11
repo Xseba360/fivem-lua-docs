@@ -1,15 +1,15 @@
 name: Node.js CI
 
 on:
-  push:
-    tags:
-      - '*'
+  workflow_dispatch:
+    inputs:
+      tags:
+        description: 'tag name for release'
 
 jobs:
   build:
     name: 'Build latest docs and release'
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
@@ -21,12 +21,13 @@ jobs:
       run: ./run.sh
       env:
         CI: true
-    - name: Push Changes
+    - name: Commit docs
       run: |
            git config --global user.name "github-actions[bot]"
            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+           git checkout master
            git add docs
-           git commit -m "prepare for release  ${{ github.ref }}"
+           git commit -m "prepare for release  ${{ github.event.inputs.tags }}"
            git push
     - name: Create Release
       id: create_release
@@ -34,11 +35,11 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        tag_name:  ${{ github.event.inputs.tags }}
+        release_name: Release ${{ github.event.inputs.tags }}
         body: |
           Changes in this Release
-          - build date  ${{ github.ref }}
+          - build date  ${{ github.event.inputs.tags }}
           - based on 
           - * https://runtime.fivem.net/doc/natives_cfx.json
           - * https://runtime.fivem.net/doc/natives.json
