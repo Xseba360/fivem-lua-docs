@@ -50,6 +50,10 @@ function parseType(type) {
             break;
         case 'void':
         case 'Any':
+        case 'Vector2':
+        case 'Vector3':
+        case 'Vector4':
+        case 'Quat':
             ltype = type;
             break;
         case 'char*':
@@ -59,8 +63,6 @@ function parseType(type) {
         case 'BOOL':
             ltype = 'boolean';
             break;
-        case 'Vector3':
-            ltype = '{x:number, y:number, z:number}'
         default:
             ltype = 'table';
     }
@@ -73,9 +75,9 @@ function parseParams(params) {
     params.forEach(element => {
         let name = element.name;
         let type = parseType(element.type);
-        result += `-- @params ${name} ${type}\n`;
+        result += `--- @params ${name} ${type}\n`;
     })
-    return result.length > 0 ? result.substring(0, result.length -1) : '--';
+    return result.length > 0 ? result.substring(0, result.length -1) : '---';
 }
 
 function parseParamsMethod(params) {
@@ -93,14 +95,14 @@ function parseExamples(examples) {
     let result = '';
     examples.forEach(example => {
         if(example.lang === 'lua') {
-            result +=  '-- @usage ' + example.code.replace(/\n/g, '\n-- ');
+            result +=  '--- @usage ' + example.code.replace(/\n/g, '\n--- ');
         }
     });
-    return result.length > 0 ? result.substring(0, result.length -1) : '--';
+    return result.length > 0 ? result.substring(0, result.length -1) : '---';
 }
 
 function parseDescription(name, desc) {
-    return '--- ' + (desc.length > 0 ? desc.replace(/\n/g, '\n-- ') : name);
+    return '--- ' + (desc.length > 0 ? desc.replace(/\n/g, '\n--- ') : name);
 }
 
 function parseMethod(methodObj) {
@@ -116,14 +118,12 @@ function parseMethod(methodObj) {
     return  `
 ${description}
 ${examples}
--- @hash ${hash}
--- @api ${apiset}
--- @namespace ${namespace}
+--- @hash ${hash}
+--- @api ${apiset}
+--- @namespace ${namespace}
 ${params}
--- @return ${results}
-function ${name}(${paramsMethod})
-    -- notimplemented
-end
+--- @return ${results}
+function ${name}(${paramsMethod}) end
 
     `;
 }
