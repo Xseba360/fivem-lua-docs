@@ -27,7 +27,7 @@ jobs:
            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
            git checkout master
            git add docs
-           git commit -m "prepare for release  ${{ github.event.inputs.tags }}"
+           git diff-index --quiet HEAD || git commit -m "prepare for release  ${{ github.event.inputs.tags }}"
            git push
     - name: Create Release
       id: create_release
