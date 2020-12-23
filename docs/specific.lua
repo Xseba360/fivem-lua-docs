@@ -1,5 +1,23 @@
 --- Classes
 
+--- @class Cam
+local Cam = {};
+
+--- @class Player
+local Player = {};
+
+--- @class Entity
+local Entity = {};
+
+--- @class Vehicle
+local Vehicle = {};
+
+--- @class Ped
+local Ped = {};
+
+--- @class Hash
+local Hash = {};
+
 --- @class Vector2
 --- @field public x number
 --- @field public y number

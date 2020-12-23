@@ -4,8 +4,8 @@
 --- ```
 ---
 --- @hash 0x149916F50C34A40D
---- @param cam table (Cam)
---- @param ped table (Ped)
+--- @param cam Cam
+--- @param ped Ped
 --- @param boneIndex number (int)
 --- @param p3 number (float)
 --- @param p4 number (float)
@@ -21,8 +21,8 @@ function AttachCamToPedBone_2(cam, ped, boneIndex, p3, p4, p5, p6, p7, p8, p9) e
 --- AddCamSplineNodeUsingCameraFrame
 ---
 --- @hash 0x0A9F2A468B328E74
---- @param cam table (Cam)
---- @param cam2 table (Cam)
+--- @param cam Cam
+--- @param cam2 Cam
 --- @param p2 number (int)
 --- @param p3 number (int)
 --- @return void
@@ -55,7 +55,7 @@ function ClampGameplayCamYaw(minimum, maximum) end
 --- ```
 ---
 --- @hash 0x8609C75EC438FB3B
---- @param camera table (Cam)
+--- @param camera Cam
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -83,8 +83,8 @@ function DoScreenFadeOut(duration) end
 --- AddCamSplineNodeUsingCamera
 ---
 --- @hash 0x0FB82563989CF4FB
---- @param cam table (Cam)
---- @param cam2 table (Cam)
+--- @param cam Cam
+--- @param cam2 Cam
 --- @param p2 number (int)
 --- @param p3 number (int)
 --- @return void
@@ -94,7 +94,7 @@ function AddCamSplineNodeUsingCamera(cam, cam2, p2, p3) end
 --- GetCamNearClip
 ---
 --- @hash 0xC520A34DAFBF24B1
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return number (float)
 function GetCamNearClip(cam) end
 
@@ -103,8 +103,8 @@ function GetCamNearClip(cam) end
 --- Bone indexes are usually given by this native [GET_ENTITY_BONE_INDEX_BY_NAME](#\_0xFB71170B7E76ACBA).
 ---
 --- @hash 0x8DB3F12A02CAEF72
---- @param cam table (Cam)
---- @param vehicle number (Vehicle)
+--- @param cam Cam
+--- @param vehicle Vehicle
 --- @param boneIndex number (int)
 --- @param relativeRotation boolean
 --- @param rotX number (float)
@@ -124,7 +124,7 @@ function AttachCamToVehicleBone(cam, vehicle, boneIndex, relativeRotation, rotX,
 --- ```
 ---
 --- @hash 0xB22B17DF858716A6
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return number (int)
 function GetCamSplineNodeIndex(cam) end
 
@@ -163,7 +163,7 @@ function EnableCrosshairThisFrame() end
 --- AddCamSplineNodeUsingGameplayFrame
 ---
 --- @hash 0x609278246A29CA34
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param p1 number (int)
 --- @param p2 number (int)
 --- @return void
@@ -181,8 +181,8 @@ function DisableVehicleFirstPersonCamThisFrame() end
 --- AttachCamToPedBone
 ---
 --- @hash 0x61A3DBA14AB7F411
---- @param cam table (Cam)
---- @param ped table (Ped)
+--- @param cam Cam
+--- @param ped Ped
 --- @param boneIndex number (int)
 --- @param x number (float)
 --- @param y number (float)
@@ -197,7 +197,7 @@ function AttachCamToPedBone(cam, ped, boneIndex, x, y, z, heading) end
 --- ```
 ---
 --- @hash 0x865908C81A2C22E9
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param thisScriptCheck boolean
 --- @return void
 function DestroyCam(cam, thisScriptCheck) end
@@ -214,7 +214,7 @@ function GetFinalRenderedCamRot(rotationOrder) end
 --- GetCamFarClip
 ---
 --- @hash 0xB60A9CFEB21CA6AA
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return number (float)
 function GetCamFarClip(cam) end
 
@@ -222,9 +222,9 @@ function GetCamFarClip(cam) end
 --- CreateCamera
 ---
 --- @hash 0x5E3CF89C6BCCA67D
---- @param camHash table (Hash)
+--- @param camHash Hash
 --- @param p1 boolean
---- @return table (Cam)
+--- @return Cam
 function CreateCamera(camHash, p1) end
 
     
@@ -257,7 +257,7 @@ function AnimateGameplayCamZoom(p0, distance) end
 --- ```
 ---
 --- @hash 0x6ABFA3E16460F22D
---- @param camHash table (Hash)
+--- @param camHash Hash
 --- @param posX number (float)
 --- @param posY number (float)
 --- @param posZ number (float)
@@ -267,7 +267,7 @@ function AnimateGameplayCamZoom(p0, distance) end
 --- @param fov number (float)
 --- @param p8 boolean
 --- @param p9 any
---- @return table (Cam)
+--- @return Cam
 function CreateCameraWithParams(camHash, posX, posY, posZ, rotX, rotY, rotZ, fov, p8, p9) end
 
     
@@ -310,7 +310,7 @@ function IsFollowVehicleCamActive() end
 --- @param fov number (float)
 --- @param p8 boolean
 --- @param p9 number (int)
---- @return table (Cam)
+--- @return Cam
 function CreateCamWithParams(camName, posX, posY, posZ, rotX, rotY, rotZ, fov, p8, p9) end
 
     
@@ -336,7 +336,7 @@ function GetGameplayCamRot(rotationOrder) end
 --- GetCamFarDof
 ---
 --- @hash 0x255F8DAFD540D397
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return number (float)
 function GetCamFarDof(cam) end
 
@@ -378,7 +378,7 @@ function GetFinalRenderedCamMotionBlurStrength() end
 --- GetFinalRenderedInWhenFriendlyRot
 ---
 --- @hash 0x26903D9CD1175F2C
---- @param player number (Player)
+--- @param player Player
 --- @param rotationOrder number (int)
 --- @return Vector3
 function GetFinalRenderedInWhenFriendlyRot(player, rotationOrder) end
@@ -387,7 +387,7 @@ function GetFinalRenderedInWhenFriendlyRot(player, rotationOrder) end
 --- GetFinalRenderedInWhenFriendlyFov
 ---
 --- @hash 0x5F35F6732C3FBBA0
---- @param player number (Player)
+--- @param player Player
 --- @return number (float)
 function GetFinalRenderedInWhenFriendlyFov(player) end
 
@@ -398,7 +398,7 @@ function GetFinalRenderedInWhenFriendlyFov(player) end
 --- ```
 ---
 --- @hash 0xA2746EEAE3E577CD
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param p1 string (char*)
 --- @param p2 string (char*)
 --- @param p3 string (char*)
@@ -434,7 +434,7 @@ function GetFinalRenderedCamFov() end
 --- ```
 ---
 --- @hash 0xDFB2B516207D3534
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return boolean
 function IsCamActive(cam) end
 
@@ -442,7 +442,7 @@ function IsCamActive(cam) end
 --- GetCamCoord
 ---
 --- @hash 0xBAC038F7459AE5AE
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return Vector3
 function GetCamCoord(cam) end
 
@@ -450,7 +450,7 @@ function GetCamCoord(cam) end
 --- DetachCam
 ---
 --- @hash 0xA2FABBE87F4BAD82
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return void
 function DetachCam(cam) end
 
@@ -500,7 +500,7 @@ function CustomMenuCoordinates(p0) end
 --- @hash 0xC3981DCE61D9E13F
 --- @param camName string (char*)
 --- @param p1 boolean
---- @return table (Cam)
+--- @return Cam
 function CreateCam(camName, p1) end
 
     
@@ -523,7 +523,7 @@ function IsGameplayCamRendering() end
 --- ```
 ---
 --- @hash 0x2AED6301F67007D5
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function N_0x2aed6301f67007d5(entity) end
 
@@ -534,7 +534,7 @@ function N_0x2aed6301f67007d5(entity) end
 --- @param p0 any
 --- @param p1 number (int)
 --- @param p2 any
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function CreateCinematicShot(p0, p1, p2, entity) end
 
@@ -544,7 +544,7 @@ function CreateCinematicShot(p0, p1, p2, entity) end
 --- ```
 ---
 --- @hash 0x7D304C1C955E3E12
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param rotationOrder number (int)
 --- @return Vector3
 function GetCamRot(cam, rotationOrder) end
@@ -580,7 +580,7 @@ function IsScreenFadedOut() end
 --- ```
 ---
 --- @hash 0xB5349E36C546509A
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return number (float)
 function GetCamSplinePhase(cam) end
 
@@ -606,8 +606,8 @@ function IsFollowPedCamActive() end
 --- ```
 ---
 --- @hash 0xFEDB7D269E8C60E3
---- @param cam table (Cam)
---- @param entity table (Entity)
+--- @param cam Cam
+--- @param entity Entity
 --- @param xOffset number (float)
 --- @param yOffset number (float)
 --- @param zOffset number (float)
@@ -650,7 +650,7 @@ function DoScreenFadeIn(duration) end
 --- ```
 ---
 --- @hash 0xA7A932170592B50E
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return boolean
 function DoesCamExist(cam) end
 
@@ -658,7 +658,7 @@ function DoesCamExist(cam) end
 --- IsCamInterpolating
 ---
 --- @hash 0x036F97C908C2B52C
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return boolean
 function IsCamInterpolating(cam) end
 
@@ -802,7 +802,7 @@ function N_0xdc9da9e8789f5246() end
 --- ```
 ---
 --- @hash 0xD9D0E694C8282C96
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return number (float)
 function GetCamSplineNodePhase(cam) end
 
@@ -831,7 +831,7 @@ function N_0x17fca7199a530203() end
 --- GetCamAnimCurrentPhase
 ---
 --- @hash 0xA10B2DB49E92A6B0
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return number (float)
 function GetCamAnimCurrentPhase(cam) end
 
@@ -868,7 +868,7 @@ function N_0x19cafa3c87f7c2ff() end
 --- IsCamShaking
 ---
 --- @hash 0x6B24BFE83A2BE47B
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return boolean
 function IsCamShaking(cam) end
 
@@ -929,7 +929,7 @@ function N_0x8bbacbf51da047a8(p0) end
 --- ```
 ---
 --- @hash 0x5C48A1D6E3B33179
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return boolean
 function N_0x5c48a1d6e3b33179(cam) end
 
@@ -938,7 +938,7 @@ function N_0x5c48a1d6e3b33179(cam) end
 ---
 --- @hash 0x5234F9F10919EABA
 ---
---- @return table (Cam)
+--- @return Cam
 function GetRenderingCam() end
 
     
@@ -962,7 +962,7 @@ function IsFirstPersonAimCamActive() end
 --- @param p6 number (float)
 --- @param p7 number (int)
 --- @param p8 number (int)
---- @return table (Ped)
+--- @return Ped
 function GetFocusPedOnScreen(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
     
@@ -1017,7 +1017,7 @@ function IsScreenFadingOut() end
 --- ```
 ---
 --- @hash 0x661B5C8654ADD825
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param p1 boolean
 --- @return void
 function N_0x661b5c8654add825(cam, p1) end
@@ -1026,7 +1026,7 @@ function N_0x661b5c8654add825(cam, p1) end
 --- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
 --- @hash 0xC90621D8A0CEECF2
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param animName string (char*)
 --- @param animDictionary string (char*)
 --- @return boolean
@@ -1036,7 +1036,7 @@ function IsCamPlayingAnim(cam, animName, animDictionary) end
 --- GetCamFov
 ---
 --- @hash 0xC3330A45CCCDB26A
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return number (float)
 function GetCamFov(cam) end
 
@@ -1123,7 +1123,7 @@ function N_0x3044240d2e0fa842() end
 --- ```
 ---
 --- @hash 0xC3654A441402562D
---- @param camera table (Cam)
+--- @param camera Cam
 --- @param p1 number (float)
 --- @return void
 function SetCamDofMaxNearInFocusDistance(camera, p1) end
@@ -1197,7 +1197,7 @@ function N_0xd7360051c885628b() end
 --- N_0xfd3151cd37ea2245
 ---
 --- @hash 0xFD3151CD37EA2245
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function N_0xfd3151cd37ea2245(entity) end
 
@@ -1237,7 +1237,7 @@ function N_0x62374889a4d59f72() end
 --- ```
 ---
 --- @hash 0x1381539FEE034CDA
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param timeDuration number (int)
 --- @return void
 function SetCamSplineDuration(cam, timeDuration) end
@@ -1248,7 +1248,7 @@ function SetCamSplineDuration(cam, timeDuration) end
 --- ```
 ---
 --- @hash 0x8C1DC7770C51DC8D
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param toggle boolean
 --- @return void
 function SetCamAffectsAiming(cam, toggle) end
@@ -1257,7 +1257,7 @@ function SetCamAffectsAiming(cam, toggle) end
 --- PointCamAtCoord
 ---
 --- @hash 0xF75497BB865F0803
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -1268,7 +1268,7 @@ function PointCamAtCoord(cam, x, y, z) end
 --- N_0x49482f9fcd825aaa
 ---
 --- @hash 0x49482F9FCD825AAA
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function N_0x49482f9fcd825aaa(entity) end
 
@@ -1290,7 +1290,7 @@ function N_0x9e4cfff989258472() end
 --- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
 --- @hash 0x9A2D0FB2E7852392
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param animName string (char*)
 --- @param animDictionary string (char*)
 --- @param x number (float)
@@ -1308,7 +1308,7 @@ function PlayCamAnim(cam, animName, animDictionary, x, y, z, xRot, yRot, zRot, p
 --- OverrideCamSplineVelocity
 ---
 --- @hash 0x40B62FA033EB0346
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param p1 number (int)
 --- @param p2 number (float)
 --- @param p3 number (float)
@@ -1321,8 +1321,8 @@ function OverrideCamSplineVelocity(cam, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0x5640BFF86B16E8DC
---- @param cam table (Cam)
---- @param entity table (Entity)
+--- @param cam Cam
+--- @param entity Entity
 --- @param p2 number (float)
 --- @param p3 number (float)
 --- @param p4 number (float)
@@ -1386,7 +1386,7 @@ function RenderFirstPersonCam(render, p1, p2) end
 --- IsCamRendering
 ---
 --- @hash 0x02EC0AF5C5A49B7A
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return boolean
 function IsCamRendering(cam) end
 
@@ -1394,7 +1394,7 @@ function IsCamRendering(cam) end
 --- SetCamAnimCurrentPhase
 ---
 --- @hash 0x4145A4C44FF3B5A6
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param phase number (float)
 --- @return void
 function SetCamAnimCurrentPhase(cam, phase) end
@@ -1413,7 +1413,7 @@ function N_0x469f2ecdec046337(p0) end
 --- ```
 ---
 --- @hash 0x2C654B4943BDDF7C
---- @param camera table (Cam)
+--- @param camera Cam
 --- @param p1 number (float)
 --- @return void
 function SetCamDofMaxNearInFocusDistanceBlendLevel(camera, p1) end
@@ -1466,8 +1466,8 @@ function SetFollowPedCamThisUpdate(camName, p1) end
 --- ```
 ---
 --- @hash 0x68B2B5F33BA63C41
---- @param cam table (Cam)
---- @param ped table (Ped)
+--- @param cam Cam
+--- @param ped Ped
 --- @param boneIndex number (int)
 --- @param x number (float)
 --- @param y number (float)
@@ -1480,7 +1480,7 @@ function PointCamAtPedBone(cam, ped, boneIndex, x, y, z, p6) end
 --- N_0xe9ea16d6e54cdca4
 ---
 --- @hash 0xE9EA16D6E54CDCA4
---- @param p0 number (Vehicle)
+--- @param p0 Vehicle
 --- @param p1 number (int)
 --- @return void
 function N_0xe9ea16d6e54cdca4(p0, p1) end
@@ -1489,7 +1489,7 @@ function N_0xe9ea16d6e54cdca4(p0, p1) end
 --- N_0xc8b5c4a79cc18b94
 ---
 --- @hash 0xC8B5C4A79CC18B94
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return void
 function N_0xc8b5c4a79cc18b94(cam) end
 
@@ -1532,7 +1532,7 @@ function ReplayFreeCamGetMaxRange() end
 --- SetCamSplineNodeVelocityScale
 ---
 --- @hash 0xA6385DEB180F319F
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param p1 number (int)
 --- @param scale number (float)
 --- @return void
@@ -1566,7 +1566,7 @@ function N_0xc8391c309684595a() end
 --- SetCamSplineSmoothingStyle
 ---
 --- @hash 0xD1B0F412F109EA5D
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param smoothingStyle number (int)
 --- @return void
 function SetCamSplineSmoothingStyle(cam, smoothingStyle) end
@@ -1609,7 +1609,7 @@ function SetThirdPersonAimCamNearClip(distance) end
 --- SetCamMotionBlurStrength
 ---
 --- @hash 0x6F0F77FBA9A8F2E6
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param strength number (float)
 --- @return void
 function SetCamMotionBlurStrength(cam, strength) end
@@ -1620,7 +1620,7 @@ function SetCamMotionBlurStrength(cam, strength) end
 --- ```
 ---
 --- @hash 0x026FB97D0A425F84
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param active boolean
 --- @return void
 function SetCamActive(cam, active) end
@@ -1631,7 +1631,7 @@ function SetCamActive(cam, active) end
 --- ```
 ---
 --- @hash 0x7DCF7C708D292D55
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param p1 number (int)
 --- @param p2 number (float)
 --- @param p3 number (float)
@@ -1642,7 +1642,7 @@ function OverrideCamSplineMotionBlur(cam, p1, p2, p3) end
 --- SetCamDofStrength
 ---
 --- @hash 0x5EE29B4D7D5DF897
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param dofStrength number (float)
 --- @return void
 function SetCamDofStrength(cam, dofStrength) end
@@ -1651,7 +1651,7 @@ function SetCamDofStrength(cam, dofStrength) end
 --- SetCamFarDof
 ---
 --- @hash 0xEDD91296CD01AEE0
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param farDOF number (float)
 --- @return void
 function SetCamFarDof(cam, farDOF) end
@@ -1662,7 +1662,7 @@ function SetCamFarDof(cam, farDOF) end
 --- ```
 ---
 --- @hash 0xC669EEA5D031B7DE
---- @param camera table (Cam)
+--- @param camera Cam
 --- @param p1 number (float)
 --- @return void
 function SetCamDofFocusDistanceBias(camera, p1) end
@@ -1731,7 +1731,7 @@ function N_0x271017b9ba825366(p0, p1) end
 --- SetFlyCamMaxHeight
 ---
 --- @hash 0xF9D02130ECDD1D77
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param height number (float)
 --- @return void
 function SetFlyCamMaxHeight(cam, height) end
@@ -1740,7 +1740,7 @@ function SetFlyCamMaxHeight(cam, height) end
 --- SetCamSplineNodeExtraFlags
 ---
 --- @hash 0x7BF1A54AE67AC070
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param p1 number (int)
 --- @param flags number (int)
 --- @return void
@@ -1750,7 +1750,7 @@ function SetCamSplineNodeExtraFlags(cam, p1, flags) end
 --- SetFlyCamCoordAndConstrain
 ---
 --- @hash 0xC91C6C55199308CA
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -1784,7 +1784,7 @@ function SetGameplayCamVehicleCameraName(vehicleModel) end
 --- ```
 ---
 --- @hash 0x85973643155D0B07
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param rotX number (float)
 --- @param rotY number (float)
 --- @param rotZ number (float)
@@ -1798,7 +1798,7 @@ function SetCamRot(cam, rotX, rotY, rotZ, rotationOrder) end
 --- ```
 ---
 --- @hash 0x7DD234D6F3914C5B
---- @param camera table (Cam)
+--- @param camera Cam
 --- @param p1 number (float)
 --- @return void
 function SetCamDofFnumberOfLens(camera, p1) end
@@ -1818,8 +1818,8 @@ function N_0xa2767257a320fc82(p0, p1) end
 --- ```
 ---
 --- @hash 0x9FBDA379383A52A4
---- @param camTo table (Cam)
---- @param camFrom table (Cam)
+--- @param camTo Cam
+--- @param camFrom Cam
 --- @param duration number (int)
 --- @param easeLocation number (int)
 --- @param easeRotation number (int)
@@ -1832,7 +1832,7 @@ function SetCamActiveWithInterp(camTo, camFrom, duration, easeLocation, easeRota
 --- ```
 ---
 --- @hash 0x189E955A8313E298
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param xOffset number (float)
 --- @param yOffset number (float)
 --- @param zOffset number (float)
@@ -1857,7 +1857,7 @@ function N_0xf55e4046f6f831dc(p0, p1) end
 --- SetCamDofPlanes
 ---
 --- @hash 0x3CF48F6F96E749DC
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param p1 number (float)
 --- @param p2 number (float)
 --- @param p3 number (float)
@@ -1877,7 +1877,7 @@ function SetFollowVehicleCamZoomLevel(zoomLevel) end
 --- SetCamUseShallowDofMode
 ---
 --- @hash 0x16A96863A17552BB
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param toggle boolean
 --- @return void
 function SetCamUseShallowDofMode(cam, toggle) end
@@ -1886,7 +1886,7 @@ function SetCamUseShallowDofMode(cam, toggle) end
 --- SetCamSplinePhase
 ---
 --- @hash 0x242B5874F0A4E052
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param p1 number (float)
 --- @return void
 function SetCamSplinePhase(cam, p1) end
@@ -1905,7 +1905,7 @@ function SetUseHiDof() end
 --- ```
 ---
 --- @hash 0x47B595D60664CFFA
---- @param camera table (Cam)
+--- @param camera Cam
 --- @param p1 number (float)
 --- @return void
 function SetCamDofFocalLengthMultiplier(camera, p1) end
@@ -1919,7 +1919,7 @@ function SetCamDofFocalLengthMultiplier(camera, p1) end
 --- ```
 ---
 --- @hash 0xB13C14F66A00D047
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param fieldOfView number (float)
 --- @return void
 function SetCamFov(cam, fieldOfView) end
@@ -1940,7 +1940,7 @@ function SetFirstPersonCamNearClip(distance) end
 --- ```
 ---
 --- @hash 0x4D41783FB745E42E
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param posX number (float)
 --- @param posY number (float)
 --- @param posZ number (float)
@@ -1951,7 +1951,7 @@ function SetCamCoord(cam, posX, posY, posZ) end
 --- SetCamNearClip
 ---
 --- @hash 0xC7848EFCCC545182
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param nearClip number (float)
 --- @return void
 function SetCamNearClip(cam, nearClip) end
@@ -1968,7 +1968,7 @@ function StopGameplayHint(p0) end
 --- SetCamNearDof
 ---
 --- @hash 0x3FA4BF0A7AB7DE2C
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param nearDOF number (float)
 --- @return void
 function SetCamNearDof(cam, nearDOF) end
@@ -1990,7 +1990,7 @@ function SetGameplayCamVehicleCamera(vehicleName) end
 --- StopCamShaking
 ---
 --- @hash 0xBDECF64367884AC3
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param p1 boolean
 --- @return void
 function StopCamShaking(cam, p1) end
@@ -2013,7 +2013,7 @@ function SetFollowVehicleCamViewMode(viewMode) end
 --- SetCamSplineNodeEase
 ---
 --- @hash 0x83B8201ED82A9A2D
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param p1 number (int)
 --- @param p2 number (int)
 --- @param p3 number (float)
@@ -2051,7 +2051,7 @@ function SetFollowPedCamViewMode(viewMode) end
 --- SetCamFarClip
 ---
 --- @hash 0xAE306F2A904BF86E
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param farClip number (float)
 --- @return void
 function SetCamFarClip(cam, farClip) end
@@ -2114,7 +2114,7 @@ function SetGameplayCamRelativeRotation(roll, pitch, yaw) end
 --- Focuses the camera on the specified vehicle.
 ---
 --- @hash 0xA2297E18F3E71C2E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param offsetX number (float)
 --- @param offsetY number (float)
 --- @param offsetZ number (float)
@@ -2129,7 +2129,7 @@ function SetGameplayVehicleHint(vehicle, offsetX, offsetY, offsetZ, p4, time, ea
 --- SetFlyCamHorizontalResponse
 ---
 --- @hash 0x503F5920162365B2
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param p1 number (float)
 --- @param p2 number (float)
 --- @param p3 number (float)
@@ -2161,7 +2161,7 @@ function SetGameplayHintAngle(roll) end
 --- ```
 ---
 --- @hash 0x45F1DE9C34B93AE6
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param p1 boolean
 --- @return void
 function SetCamInheritRollVehicle(cam, p1) end
@@ -2184,7 +2184,7 @@ function SetGameplayCamRawYaw(yaw) end
 --- StopCamPointing
 ---
 --- @hash 0xF33AB75780BA57DE
---- @param cam table (Cam)
+--- @param cam Cam
 --- @return void
 function StopCamPointing(cam) end
 
@@ -2192,7 +2192,7 @@ function StopCamPointing(cam) end
 --- SetFlyCamVerticalSpeedMultiplier
 ---
 --- @hash 0xE827B9382CFB41BA
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param p1 number (float)
 --- @param p2 number (float)
 --- @param p3 number (float)
@@ -2291,7 +2291,7 @@ function SetGameplayCoordHint(x, y, z, duration, blendOutDuration, blendInDurati
 --- SetCamShakeAmplitude
 ---
 --- @hash 0xD93DB43B82BC0D00
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param amplitude number (float)
 --- @return void
 function SetCamShakeAmplitude(cam, amplitude) end
@@ -2300,7 +2300,7 @@ function SetCamShakeAmplitude(cam, amplitude) end
 --- SetCamParams
 ---
 --- @hash 0xBFD8727AEA3CCEBA
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param posX number (float)
 --- @param posY number (float)
 --- @param posZ number (float)
@@ -2362,7 +2362,7 @@ function SetFirstPersonCamPitchRange(minAngle, maxAngle) end
 --- ```
 ---
 --- @hash 0x1B93E0107865DD40
---- @param camera table (Cam)
+--- @param camera Cam
 --- @param name string (char*)
 --- @return void
 function SetCamDebugName(camera, name) end
@@ -2391,7 +2391,7 @@ function SetCamEffect(p0) end
 --- SetGameplayPedHint
 ---
 --- @hash 0x2B486269ACD548D3
---- @param p0 table (Ped)
+--- @param p0 Ped
 --- @param x1 number (float)
 --- @param y1 number (float)
 --- @param z1 number (float)
@@ -2419,7 +2419,7 @@ function SetGameplayPedHint(p0, x1, y1, z1, p4, p5, p6, p7) end
 --- ```
 ---
 --- @hash 0x6A25241C340D3822
---- @param cam table (Cam)
+--- @param cam Cam
 --- @param type string (char*)
 --- @param amplitude number (float)
 --- @return void

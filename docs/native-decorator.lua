@@ -4,7 +4,7 @@
 --- ```
 ---
 --- @hash 0x05661B80A8C9165F
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param propertyName string (char*)
 --- @return boolean
 function DecorExistOn(entity, propertyName) end
@@ -15,7 +15,7 @@ function DecorExistOn(entity, propertyName) end
 --- ```
 ---
 --- @hash 0x6524A2F114706F43
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param propertyName string (char*)
 --- @return number (float)
 function DecorGetFloat(entity, propertyName) end
@@ -26,7 +26,7 @@ function DecorGetFloat(entity, propertyName) end
 --- ```
 ---
 --- @hash 0x6B1E8E2ED1335B71
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param propertyName string (char*)
 --- @param value boolean
 --- @return boolean
@@ -55,7 +55,7 @@ function DecorIsRegisteredAsType(propertyName, type) end
 --- DecorRemove
 ---
 --- @hash 0x00EE9F297C738720
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param propertyName string (char*)
 --- @return boolean
 function DecorRemove(entity, propertyName) end
@@ -66,7 +66,7 @@ function DecorRemove(entity, propertyName) end
 --- ```
 ---
 --- @hash 0x0CE3AA5E1CA19E10
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param propertyName string (char*)
 --- @param value number (int)
 --- @return boolean
@@ -86,7 +86,7 @@ function DecorRegisterLock() end
 --- DecorGetBool
 ---
 --- @hash 0xDACE671663F2F5DB
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param propertyName string (char*)
 --- @return boolean
 function DecorGetBool(entity, propertyName) end
@@ -156,7 +156,7 @@ function DecorRegister(propertyName, type) end
 --- DecorGetInt
 ---
 --- @hash 0xA06C969B02A97298
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param propertyName string (char*)
 --- @return number (int)
 function DecorGetInt(entity, propertyName) end
@@ -165,7 +165,7 @@ function DecorGetInt(entity, propertyName) end
 --- DecorSetTime
 ---
 --- @hash 0x95AED7B8E39ECAA4
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param propertyName string (char*)
 --- @param timestamp number (int)
 --- @return boolean
@@ -177,7 +177,7 @@ function DecorSetTime(entity, propertyName, timestamp) end
 --- ```
 ---
 --- @hash 0x211AB1DD8D0F363A
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param propertyName string (char*)
 --- @param value number (float)
 --- @return boolean

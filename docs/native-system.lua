@@ -28,7 +28,7 @@ function ToFloat(value) end
 --- StartNewScriptWithNameHashAndArgs
 ---
 --- @hash 0xC4BB298BD441BE78
---- @param scriptHash table (Hash)
+--- @param scriptHash Hash
 --- @param args table (Any*)
 --- @param argCount number (int)
 --- @param stackSize number (int)
@@ -147,7 +147,7 @@ function StartNewScriptWithArgs(scriptName, args, argCount, stackSize) end
 --- StartNewScriptWithNameHash
 ---
 --- @hash 0xEB1C67C3A5333A92
---- @param scriptHash table (Hash)
+--- @param scriptHash Hash
 --- @param stackSize number (int)
 --- @return number (int)
 function StartNewScriptWithNameHash(scriptHash, stackSize) end

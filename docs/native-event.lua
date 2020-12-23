@@ -14,7 +14,7 @@ function RemoveShockingEvent(event) end
 ---
 --- @hash 0x7FD8F3BE76F89422
 --- @param type number (int)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param duration number (float)
 --- @return table (ScrHandle)
 function AddShockingEventForEntity(type, entity, duration) end
@@ -23,7 +23,7 @@ function AddShockingEventForEntity(type, entity, duration) end
 --- ClearDecisionMakerEventResponse
 ---
 --- @hash 0x4FC9381A7AEE8968
---- @param name table (Hash)
+--- @param name Hash
 --- @param type number (int)
 --- @return void
 function ClearDecisionMakerEventResponse(name, type) end
@@ -32,8 +32,8 @@ function ClearDecisionMakerEventResponse(name, type) end
 --- SetDecisionMaker
 ---
 --- @hash 0xB604A2942ADED0EE
---- @param ped table (Ped)
---- @param name table (Hash)
+--- @param ped Ped
+--- @param name Hash
 --- @return void
 function SetDecisionMaker(ped, name) end
 
@@ -57,7 +57,7 @@ function SuppressAgitationEventsNextFrame() end
 --- UnblockDecisionMakerEvent
 ---
 --- @hash 0xD7CD9CF34F2C99E8
---- @param name table (Hash)
+--- @param name Hash
 --- @param type number (int)
 --- @return void
 function UnblockDecisionMakerEvent(name, type) end
@@ -66,7 +66,7 @@ function UnblockDecisionMakerEvent(name, type) end
 --- BlockDecisionMakerEvent
 ---
 --- @hash 0xE42FCDFD0E4196F7
---- @param name table (Hash)
+--- @param name Hash
 --- @param type number (int)
 --- @return void
 function BlockDecisionMakerEvent(name, type) end

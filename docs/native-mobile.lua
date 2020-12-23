@@ -57,7 +57,7 @@ function GetMobilePhoneRenderId(renderId) end
 --- CellCamIsCharVisibleNoFaceCheck
 ---
 --- @hash 0x439E9BC95B7E7FBE
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return boolean
 function CellCamIsCharVisibleNoFaceCheck(entity) end
 
@@ -81,7 +81,7 @@ function SetMobilePhoneUnk(toggle) end
 --- GetMobilePhonePosition
 ---
 --- @hash 0x584FDFDA48805B86
---- @param position table (Vector3*)
+--- @param position Vector3 (Vector3*)
 --- @return void
 function GetMobilePhonePosition(position) end
 
@@ -142,8 +142,8 @@ function CellCamDisableThisFrame(toggle) end
 --- GetMobilePhoneRotation
 ---
 --- @hash 0x1CEFB61F193070AE
---- @param rotation table (Vector3*)
---- @param p1 number (Vehicle)
+--- @param rotation Vector3 (Vector3*)
+--- @param p1 Vehicle
 --- @return void
 function GetMobilePhoneRotation(rotation, p1) end
 

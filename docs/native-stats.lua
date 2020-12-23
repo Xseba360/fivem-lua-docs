@@ -78,7 +78,7 @@ function N_0x38baaa5dd4c9d19f(value) end
 --- @param spStat boolean
 --- @param charStat boolean
 --- @param character number (int)
---- @return table (Hash)
+--- @return Hash
 function GetPackedTitleUpdateIntStatKey(index, spStat, charStat, character) end
 
     
@@ -116,7 +116,7 @@ function N_0x2d7a9b577e72385e(p0) end
 --- @param spStat boolean
 --- @param charStat boolean
 --- @param character number (int)
---- @return table (Hash)
+--- @return Hash
 function GetPackedBoolStatKey(index, spStat, charStat, character) end
 
     
@@ -201,7 +201,7 @@ function LeaderboardsCacheDataRow(p0) end
 --- @param spStat boolean
 --- @param charStat boolean
 --- @param character number (int)
---- @return table (Hash)
+--- @return Hash
 function GetPackedTitleUpdateBoolStatKey(index, spStat, charStat, character) end
 
     
@@ -268,7 +268,7 @@ function Leaderboards2ReadByScoreFloat(p0, p1, p2) end
 --- @param charStat boolean
 --- @param character number (int)
 --- @param section string (char*)
---- @return table (Hash)
+--- @return Hash
 function GetNgstatBoolHash(index, spStat, charStat, character, section) end
 
     
@@ -377,7 +377,7 @@ function LeaderboardsWriteAddColumnLong(p0, p1, p2) end
 --- @param spStat boolean
 --- @param charStat boolean
 --- @param character number (int)
---- @return table (Hash)
+--- @return Hash
 function GetPackedIntStatKey(index, spStat, charStat, character) end
 
     
@@ -572,7 +572,7 @@ function N_0x34770b9ce0e03b91(p0, p1) end
 --- @param charStat boolean
 --- @param character number (int)
 --- @param section string (char*)
---- @return table (Hash)
+--- @return Hash
 function GetNgstatIntHash(index, spStat, charStat, character, section) end
 
     
@@ -737,7 +737,7 @@ function N_0x14e0b2d1ad1044e0(p0, p1, p2, p3) end
 --- LeaderboardsDeaths
 ---
 --- @hash 0x428EAF89E24F6C36
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param value number (float)
 --- @return void
 function LeaderboardsDeaths(statName, value) end
@@ -1539,7 +1539,7 @@ function PlaystatsRankUp(rank) end
 --- StatGetDate
 ---
 --- @hash 0x8B0FACEFC36C824B
---- @param statHash table (Hash)
+--- @param statHash Hash
 --- @param p1 table (Any*)
 --- @param p2 any
 --- @param p3 any
@@ -1565,7 +1565,7 @@ function StatClearSlotForReload(statSlot) end
 --- StatGetNumberOfSeconds
 ---
 --- @hash 0x2CE056FF3723F00B
---- @param statName table (Hash)
+--- @param statName Hash
 --- @return number (int)
 function StatGetNumberOfSeconds(statName) end
 
@@ -1730,7 +1730,7 @@ function PlaystatsRecoverContraband(data) end
 --- StatGetNumberOfHours
 ---
 --- @hash 0xF2D4B2FE415AAFC3
---- @param statName table (Hash)
+--- @param statName Hash
 --- @return number (int)
 function StatGetNumberOfHours(statName) end
 
@@ -1779,7 +1779,7 @@ function N_0xc5be134ec7ba96a0(p0, p1, p2, p3, p4) end
 --- N_0xbed9f5693f34ed17
 ---
 --- @hash 0xBED9F5693F34ED17
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param p1 number (int)
 --- @param outValue table (float*)
 --- @return boolean
@@ -1855,7 +1855,7 @@ function N_0xa6f54bb2ffca35ea(p0) end
 --- ```
 ---
 --- @hash 0x767FBC2AC802EF3D
---- @param statHash table (Hash)
+--- @param statHash Hash
 --- @param outValue table (int*)
 --- @param p2 number (int)
 --- @return boolean
@@ -1867,7 +1867,7 @@ function StatGetInt(statHash, outValue, p2) end
 --- @hash 0x121FB4DDDC2D5291
 --- @param amount number (int)
 --- @param act number (int)
---- @param player number (Player)
+--- @param player Player
 --- @param cm number (float)
 --- @return void
 function PlaystatsRosBet(amount, act, player, cm) end
@@ -1903,7 +1903,7 @@ function N_0xc6e0e2616a7576bb() end
 --- StatSetBool
 ---
 --- @hash 0x4B33C4243DE0C432
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param value boolean
 --- @param save boolean
 --- @return boolean
@@ -1913,7 +1913,7 @@ function StatSetBool(statName, value, save) end
 --- StatIncrement
 ---
 --- @hash 0x9B5A68C6489E9909
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param value number (float)
 --- @return void
 function StatIncrement(statName, value) end
@@ -1932,7 +1932,7 @@ function N_0xf9f2922717b819ec() end
 --- ```
 ---
 --- @hash 0x9572BD4DD6B72122
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return void
 function PlaystatsPegasaircraft(modelHash) end
 
@@ -1954,7 +1954,7 @@ function PlaystatsArenaWarSpectator(p0, p1, p2, p3, p4) end
 --- StatGetFloat
 ---
 --- @hash 0xD7AE6C9C9C6AC54C
---- @param statHash table (Hash)
+--- @param statHash Hash
 --- @param outValue table (float*)
 --- @param p2 any
 --- @return boolean
@@ -1981,7 +1981,7 @@ function PlaystatsRaceToPoint(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 --- PlaystatsWebsiteVisited
 ---
 --- @hash 0xDDF24D535060F811
---- @param scaleformHash table (Hash)
+--- @param scaleformHash Hash
 --- @param p1 number (int)
 --- @return void
 function PlaystatsWebsiteVisited(scaleformHash, p1) end
@@ -2048,7 +2048,7 @@ function PlaystatsAcquiredHiddenPackage(p0) end
 --- ```
 ---
 --- @hash 0xE50384ACC2C3DB74
---- @param statHash table (Hash)
+--- @param statHash Hash
 --- @param p1 number (int)
 --- @return string (char*)
 function StatGetString(statHash, p1) end
@@ -2087,7 +2087,7 @@ function PlaystatsCrateDrop(p0, p1, p2, p3, p4, p5) end
 --- StatSetFloat
 ---
 --- @hash 0x4851997F37FE9B3C
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param value number (float)
 --- @param save boolean
 --- @return boolean
@@ -2136,7 +2136,7 @@ function PlaystatsDarMissionEnd(data) end
 --- StatSetUserId
 ---
 --- @hash 0x8CDDF1E452BABE11
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param value string (char*)
 --- @param save boolean
 --- @return boolean
@@ -2164,7 +2164,7 @@ function PlaystatsPiMenuHideSettings(data) end
 --- ```
 ---
 --- @hash 0x10FE3F1B79F9B071
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param mask number (int)
 --- @param p2 number (int)
 --- @return boolean
@@ -2182,7 +2182,7 @@ function PlaystatsGunrunMissionEnded(data) end
 --- StatSetPos
 ---
 --- @hash 0xDB283FDE680FE72E
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -2202,7 +2202,7 @@ function StatSaveMigrationStatusStart() end
 --- StatSetBoolMasked
 ---
 --- @hash 0x5BC62EC1937B9E5B
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param value boolean
 --- @param mask number (int)
 --- @param save boolean
@@ -2213,7 +2213,7 @@ function StatSetBoolMasked(statName, value, mask, save) end
 --- StatGetNumberOfMinutes
 ---
 --- @hash 0x7583B4BE4C5A41B5
---- @param statName table (Hash)
+--- @param statName Hash
 --- @return number (int)
 function StatGetNumberOfMinutes(statName) end
 
@@ -2324,7 +2324,7 @@ function PlaystatsSpectatorWheelSpin(p0, p1, p2, p3) end
 --- StatSetString
 ---
 --- @hash 0xA87B2335D12531D7
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param value string (char*)
 --- @param save boolean
 --- @return boolean
@@ -2342,7 +2342,7 @@ function PlaystatsSellContraband(data) end
 --- StatGetBool
 ---
 --- @hash 0x11B5E6D2AE73F48E
---- @param statHash table (Hash)
+--- @param statHash Hash
 --- @param outValue table (BOOL*)
 --- @param p2 any
 --- @return boolean
@@ -2352,7 +2352,7 @@ function StatGetBool(statHash, outValue, p2) end
 --- StatSetLicensePlate
 ---
 --- @hash 0x69FF13266D7296DA
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param str string (char*)
 --- @return boolean
 function StatSetLicensePlate(statName, str) end
@@ -2436,7 +2436,7 @@ function StatSetProfileSettingValue(profileSetting, value) end
 --- ```
 ---
 --- @hash 0xC2F84B7F9C4D0C61
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param p1 boolean
 --- @return boolean
 function StatSetCurrentPosixTime(statName, p1) end
@@ -2518,7 +2518,7 @@ function StatSlotIsLoaded(p0) end
 --- ```
 ---
 --- @hash 0x17695002FD8B2AE0
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param value string (char*)
 --- @param save boolean
 --- @return boolean
@@ -2540,7 +2540,7 @@ function StatSetGxtLabel(statName, value, save) end
 --- ```
 ---
 --- @hash 0xB3271D7AB655B441
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param value number (int)
 --- @param save boolean
 --- @return boolean
@@ -2578,7 +2578,7 @@ function PlaystatsStartOfflineMode() end
 --- StatGetLicensePlate
 ---
 --- @hash 0x5473D4195058B2E4
---- @param statName table (Hash)
+--- @param statName Hash
 --- @return string (char*)
 function StatGetLicensePlate(statName) end
 
@@ -2597,7 +2597,7 @@ function StatGetLicensePlate(statName) end
 --- ```
 ---
 --- @hash 0x2C29BFB64F4FCBE4
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param value table (Any*)
 --- @param numFields number (int)
 --- @param save boolean
@@ -2620,7 +2620,7 @@ function PlaystatsShopItem(p0, p1, p2, p3, p4) end
 --- StatSetMaskedInt
 ---
 --- @hash 0x7BBB1B54583ED410
---- @param statName table (Hash)
+--- @param statName Hash
 --- @param p1 any
 --- @param p2 any
 --- @param p3 number (int)
@@ -2632,7 +2632,7 @@ function StatSetMaskedInt(statName, p1, p2, p3, save) end
 --- StatGetNumberOfDays
 ---
 --- @hash 0xE0E854F5280FB769
---- @param statName table (Hash)
+--- @param statName Hash
 --- @return number (int)
 function StatGetNumberOfDays(statName) end
 

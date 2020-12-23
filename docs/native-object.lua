@@ -23,7 +23,7 @@ function CreateObject(modelHash, x, y, z, isNetwork, netMissionEntity, dynamic) 
 --- @usage DoorControl(`prop_gate_prison_01`, 1845.0, 2605.0, 45.0, 0, 0.0, 50.0, 0) -- door unlocked
 --- DoorControl(`prop_gate_prison_01`, 1845.0, 2605.0, 45.0, 1, 0.0, 50.0, 0) -- door locke
 --- @hash 0x9B12F9A24FABEDB0
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -50,7 +50,7 @@ function DoorSystemFindExistingDoor(x, y, z, modelHash, doorOutPointer) end
 --- DetachPortablePickupFromPed
 ---
 --- @hash 0xCF463D1E9A0AECB1
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function DetachPortablePickupFromPed(ped) end
 
@@ -60,7 +60,7 @@ function DetachPortablePickupFromPed(ped) end
 --- ```
 ---
 --- @hash 0x43C677F1E1158005
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param p1 any
 --- @return any
 function GetIsArenaPropPhysicsDisabled(entity, p1) end
@@ -127,7 +127,7 @@ function DeleteObject(object) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @param hash table (Hash)
+--- @param hash Hash
 --- @param p5 boolean
 --- @return boolean
 function DoesObjectOfTypeExistAtCoords(x, y, z, radius, hash, p5) end
@@ -136,7 +136,7 @@ function DoesObjectOfTypeExistAtCoords(x, y, z, radius, hash, p5) end
 --- EnableSavingInGarage
 ---
 --- @hash 0xF2E1A7133DD356A6
---- @param garageHash table (Hash)
+--- @param garageHash Hash
 --- @param toggle boolean
 --- @return void
 function EnableSavingInGarage(garageHash, toggle) end
@@ -155,14 +155,14 @@ function GetPickupGenerationRangeMultiplier() end
 --- ```
 ---
 --- @hash 0xFBA08C503DD5FA58
---- @param pickupHash table (Hash)
+--- @param pickupHash Hash
 --- @param posX number (float)
 --- @param posY number (float)
 --- @param posZ number (float)
 --- @param p4 number (int)
 --- @param value number (int)
 --- @param p6 boolean
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return table (Pickup)
 function CreatePickup(pickupHash, posX, posY, posZ, p4, value, p6, modelHash) end
 
@@ -170,7 +170,7 @@ function CreatePickup(pickupHash, posX, posY, posZ, p4, value, p6, modelHash) en
 --- DoorSystemSetAutomaticDistance
 ---
 --- @hash 0x9BA001CB45CBF627
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @param distance number (float)
 --- @param requestDoor boolean
 --- @param forceUpdate boolean
@@ -188,7 +188,7 @@ function DoorSystemSetAutomaticDistance(doorHash, distance, requestDoor, forceUp
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param isMission boolean
 --- @param p6 boolean
 --- @param p7 boolean
@@ -214,7 +214,7 @@ function GetSafePickupCoords(x, y, z, p3, p4) end
 --- DoorSystemGetOpenRatio
 ---
 --- @hash 0x65499865FCA6E5EC
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @return number (float)
 function DoorSystemGetOpenRatio(doorHash) end
 
@@ -227,7 +227,7 @@ function DoorSystemGetOpenRatio(doorHash) end
 --- ```
 ---
 --- @hash 0x891804727E0A98B7
---- @param pickupHash table (Hash)
+--- @param pickupHash Hash
 --- @param posX number (float)
 --- @param posY number (float)
 --- @param posZ number (float)
@@ -238,7 +238,7 @@ function DoorSystemGetOpenRatio(doorHash) end
 --- @param amount number (int)
 --- @param p9 any
 --- @param p10 boolean
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return table (Pickup)
 function CreatePickupRotate(pickupHash, posX, posY, posZ, rotX, rotY, rotZ, flag, amount, p9, p10, modelHash) end
 
@@ -264,7 +264,7 @@ function IsObjectAPickup(object) end
 --- **6**: DOORSTATE_FORCE_CLOSED_THIS_FRAME
 ---
 --- @hash 0x6BAB9442830C7F53
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @param state number (int)
 --- @param requestDoor boolean
 --- @param forceUpdate boolean
@@ -278,13 +278,13 @@ function DoorSystemSetDoorState(doorHash, state, requestDoor, forceUpdate) end
 --- ```
 ---
 --- @hash 0x673966A0C0FD7171
---- @param pickupHash table (Hash)
+--- @param pickupHash Hash
 --- @param posX number (float)
 --- @param posY number (float)
 --- @param posZ number (float)
 --- @param flags number (int)
 --- @param value number (int)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param returnHandle boolean
 --- @param p8 boolean
 --- @return table (Pickup)
@@ -296,8 +296,8 @@ function CreateAmbientPickup(pickupHash, posX, posY, posZ, flags, value, modelHa
 --- ```
 ---
 --- @hash 0xD6429A016084F1A5
---- @param weapon table (Hash)
---- @return table (Hash)
+--- @param weapon Hash
+--- @return Hash
 function GetPickupHashFromWeapon(weapon) end
 
     
@@ -311,7 +311,7 @@ function GetPickupHashFromWeapon(weapon) end
 ---
 --- @hash 0x5EAAD83F8CFB4575
 --- @param pickupHash table (Pickup)
---- @return table (Hash)
+--- @return Hash
 function GetPickupHash(pickupHash) end
 
     
@@ -357,8 +357,8 @@ function HasObjectBeenBroken(object) end
 --- A simple "localized" door-system (with hundreds/thousands of doors) can be created by setting p5, p6, and p7 to false and using EventHandlers to synchronize the states to: [DOOR_SYSTEM_SET_DOOR_STATE](#\_0x6BAB9442830C7F53), [DOOR_SYSTEM_SET_OPEN_RATIO](#\_0xB6E6FBA95C7324AC), [DOOR_SYSTEM_SET_HOLD_OPEN](#\_0xD9B71952F78A2640), etc.
 ---
 --- @hash 0x6F8838D03D1DC226
---- @param doorHash table (Hash)
---- @param modelHash table (Hash)
+--- @param doorHash Hash
+--- @param modelHash Hash
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -384,7 +384,7 @@ function DoesPickupObjectExist(pickupObject) end
 --- @param p1 number (float)
 --- @param p2 number (float)
 --- @param p3 number (float)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param p5 any
 --- @return boolean
 function HasClosestObjectOfTypeBeenBroken(p0, p1, p2, p3, modelHash, p5) end
@@ -399,7 +399,7 @@ function HasClosestObjectOfTypeBeenBroken(p0, p1, p2, p3, modelHash, p5) end
 --- ```
 ---
 --- @hash 0xC153C43EA202C8C1
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @return boolean
 function IsDoorRegisteredWithSystem(doorHash) end
 
@@ -407,7 +407,7 @@ function IsDoorRegisteredWithSystem(doorHash) end
 --- Includes networking check: ownership vs. or the door itself **isn't** networked.
 ---
 --- @hash 0xC485E07E4F0B7958
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @param removed boolean
 --- @param requestDoor boolean
 --- @param forceUpdate boolean
@@ -432,12 +432,12 @@ function N_0x3b2fd68db5f8331c(object, toggle, R, G, B) end
 --- ```
 ---
 --- @hash 0x2EAF1FDB2FB55698
---- @param pickupHash table (Hash)
+--- @param pickupHash Hash
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param placeOnGround boolean
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return table (Pickup)
 function CreatePortablePickup(pickupHash, x, y, z, placeOnGround, modelHash) end
 
@@ -481,7 +481,7 @@ function HighlightPlacementCoords(x, y, z, colorIndex) end
 --- ```
 ---
 --- @hash 0xF9C36251F6E48E33
---- @param pickupHash table (Hash)
+--- @param pickupHash Hash
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -493,7 +493,7 @@ function DoesPickupOfTypeExistInArea(pickupHash, x, y, z, radius) end
 --- AttachPortablePickupToPed
 ---
 --- @hash 0x8DC39368BDD57755
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 any
 --- @return void
 function AttachPortablePickupToPed(ped, p1) end
@@ -525,7 +525,7 @@ function DoesRayfireMapObjectExist(object) end
 ---
 --- @hash 0x1761DC5D8471CBAA
 --- @param garageHash any
---- @param player number (Player)
+--- @param player Player
 --- @param p2 number (int)
 --- @return boolean
 function IsPlayerPartiallyInsideGarage(garageHash, player, p2) end
@@ -551,7 +551,7 @@ function GetPickupCoords(pickup) end
 --- IsObjectNearPoint
 ---
 --- @hash 0x8C90FE4B381BA60A
---- @param objectHash table (Hash)
+--- @param objectHash Hash
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -581,7 +581,7 @@ function IsObjectNearPoint(objectHash, x, y, z, range) end
 --- @param z number (float)
 --- @param value number (int)
 --- @param amount number (int)
---- @param model table (Hash)
+--- @param model Hash
 --- @return void
 function CreateMoneyPickups(x, y, z, value, amount, model) end
 
@@ -621,12 +621,12 @@ function IsPickupWeaponObjectValid(object) end
 --- ```
 ---
 --- @hash 0x125494B98A21AAF7
---- @param pickupHash table (Hash)
+--- @param pickupHash Hash
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param placeOnGround boolean
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return table (Pickup)
 function CreatePortablePickup_2(pickupHash, x, y, z, placeOnGround, modelHash) end
 
@@ -637,7 +637,7 @@ function CreatePortablePickup_2(pickupHash, x, y, z, placeOnGround, modelHash) e
 ---
 --- @hash 0xF0EED5A6BC7B237A
 --- @param garageHash any
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param p2 number (int)
 --- @return boolean
 function IsObjectPartiallyInsideGarage(garageHash, entity, p2) end
@@ -663,7 +663,7 @@ function GetObjectFragmentDamageHealth(p0, p1) end
 --- Includes networking check: ownership vs. or the door itself **isn't** networked.
 ---
 --- @hash 0x03C27E13B42A0E82
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @param rate number (float)
 --- @param requestDoor boolean
 --- @param forceUpdate boolean
@@ -699,7 +699,7 @@ function N_0xa2c1f5e92afe49ed() end
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param p5 boolean
 --- @return boolean
 function HasClosestObjectOfTypeBeenCompletelyDestroyed(x, y, z, radius, modelHash, p5) end
@@ -708,7 +708,7 @@ function HasClosestObjectOfTypeBeenCompletelyDestroyed(x, y, z, radius, modelHas
 --- DoorSystemGetDoorState
 ---
 --- @hash 0x160AA1B32F6139B8
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @return number (int)
 function DoorSystemGetDoorState(doorHash) end
 
@@ -716,7 +716,7 @@ function DoorSystemGetDoorState(doorHash) end
 --- IsDoorClosed
 ---
 --- @hash 0xC531EE8A1145A149
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @return boolean
 function IsDoorClosed(doorHash) end
 
@@ -788,9 +788,9 @@ function IsPointInAngledArea(xPos, yPos, zPos, x1, y1, z1, x2, y2, z2, width, p1
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @param modelHash table (Hash)
---- @param outPosition table (Vector3*)
---- @param outRotation table (Vector3*)
+--- @param modelHash Hash
+--- @param outPosition Vector3 (Vector3*)
+--- @param outRotation Vector3 (Vector3*)
 --- @param rotationOrder number (int)
 --- @return any
 function GetCoordsAndRotationOfClosestObjectOfType(x, y, z, radius, modelHash, outPosition, outRotation, rotationOrder) end
@@ -802,7 +802,7 @@ function GetCoordsAndRotationOfClosestObjectOfType(x, y, z, radius, modelHash, o
 ---
 --- @hash 0x372EF6699146A1E4
 --- @param garageHash any
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param p2 number (float)
 --- @param p3 number (int)
 --- @return boolean
@@ -916,7 +916,7 @@ function HasPickupBeenCollected(pickup) end
 --- ```
 ---
 --- @hash 0xB6E6FBA95C7324AC
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @param ajar number (float)
 --- @param requestDoor boolean
 --- @param forceUpdate boolean
@@ -947,7 +947,7 @@ function N_0xb7c6d80fb371659a() end
 --- ```
 ---
 --- @hash 0x911024442F4898F0
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param p1 boolean
 --- @param p2 number (int)
 --- @return void
@@ -968,7 +968,7 @@ function SetPickupGenerationRangeMultiplier(multiplier) end
 ---
 --- @hash 0x024A60DEB0EA69F0
 --- @param garageHash any
---- @param player number (Player)
+--- @param player Player
 --- @param p2 number (float)
 --- @param p3 number (int)
 --- @return boolean
@@ -998,7 +998,7 @@ function N_0x8caab2bd3ea58bd4(p0) end
 --- DoorSystemGetDoorPendingState
 ---
 --- @hash 0x4BC2854478F3A749
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @return number (int)
 function DoorSystemGetDoorPendingState(doorHash) end
 
@@ -1025,7 +1025,7 @@ function N_0x62454a641b41f3c5(p0) end
 --- Includes networking check: ownership vs. or the door itself **isn't** networked.
 ---
 --- @hash 0xD9B71952F78A2640
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @param p1 boolean
 --- @return void
 function DoorSystemSetHoldOpen(doorHash, p1) end
@@ -1043,8 +1043,8 @@ function DoorSystemSetHoldOpen(doorHash, p1) end
 --- ```
 ---
 --- @hash 0x616093EC6B139DD9
---- @param player number (Player)
---- @param pickupHash table (Hash)
+--- @param player Player
+--- @param pickupHash Hash
 --- @param toggle boolean
 --- @return void
 function N_0x616093ec6b139dd9(player, pickupHash, toggle) end
@@ -1108,7 +1108,7 @@ function N_0x858ec9fd25de04aa(p0, p1) end
 --- Only its NetObj removed and flag `*(v2 + 192) |= 8u` (1604 retail) toggled.
 ---
 --- @hash 0x464D8E1427156FE4
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @return void
 function RemoveDoorFromSystem(doorHash) end
 
@@ -1116,7 +1116,7 @@ function RemoveDoorFromSystem(doorHash) end
 --- N_0x0bf3b3bd47d79c08
 ---
 --- @hash 0x0BF3B3BD47D79C08
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param p1 number (int)
 --- @return void
 function N_0x0bf3b3bd47d79c08(modelHash, p1) end
@@ -1155,7 +1155,7 @@ function SetObjectSomething(object, p1) end
 --- CreateObjectNoOffset
 ---
 --- @hash 0x9A294B2138ABB884
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -1225,7 +1225,7 @@ function SetPickupUncollectable(p0, p1) end
 ---
 --- @hash 0x08F96CA6C551AD51
 --- @param pickupHash table (Pickup)
---- @return table (Hash)
+--- @return Hash
 function GetWeaponTypeFromPickupType(pickupHash) end
 
     
@@ -1234,10 +1234,10 @@ function GetWeaponTypeFromPickupType(pickupHash) end
 --- ```
 ---
 --- @hash 0xB20834A7DD3D8896
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param p1 boolean
 --- @param p2 number (int)
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function SetEnableArenaPropPhysicsOnPed(entity, p1, p2, ped) end
 
@@ -1292,7 +1292,7 @@ function SlideObject(object, toX, toY, toZ, speedX, speedY, speedZ, collision) e
 --- Some property related to gates. Native name between `DOOR_SYSTEM_SET_AUTOMATIC_RATE` and `DOOR_SYSTEM_SET_DOOR_STATE`.
 ---
 --- @hash 0xA85A21582451E951
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @param p1 boolean
 --- @return void
 function N_0xa85a21582451e951(doorHash, p1) end
@@ -1343,7 +1343,7 @@ function N_0xe05f6aeefeb0bb02(p0, p1, p2) end
 --- ```
 ---
 --- @hash 0x88EAEC617CD26926
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param toggle boolean
 --- @return void
 function SetLocalPlayerCanUsePickupsWithThisModel(modelHash, toggle) end
@@ -1396,7 +1396,7 @@ function N_0xaa059c615de9dd03(p0, p1) end
 --- ```
 ---
 --- @hash 0xEDC1A5B84AEF33FF
---- @param type table (Hash)
+--- @param type Hash
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -1576,7 +1576,7 @@ function SetObjectStuntPropDuration(object, duration) end
 --- ```
 ---
 --- @hash 0x27F9D613092159CF
---- @param pickupHash table (Hash)
+--- @param pickupHash Hash
 --- @return void
 function RemoveAllPickupsOfType(pickupHash) end
 
@@ -1690,7 +1690,7 @@ function GetRayfireMapObject(x, y, z, radius, name) end
 --- ```
 ---
 --- @hash 0xF82D8F1926A02C3D
---- @param type table (Hash)
+--- @param type Hash
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)

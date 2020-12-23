@@ -2,7 +2,7 @@
 --- ClearRoomForEntity
 ---
 --- @hash 0xB365FC0C4E27FFA7
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function ClearRoomForEntity(entity) end
 
@@ -12,7 +12,7 @@ function ClearRoomForEntity(entity) end
 --- ```
 ---
 --- @hash 0xA97F257D0151A6AB
---- @param mapObjectHash table (Hash)
+--- @param mapObjectHash Hash
 --- @return void
 function EnableExteriorCullModelThisFrame(mapObjectHash) end
 
@@ -58,7 +58,7 @@ function ActivateInteriorEntitySet(interior, entitySetName) end
 --- ```
 ---
 --- @hash 0x405DC2AEF6AF95B9
---- @param roomHashKey table (Hash)
+--- @param roomHashKey Hash
 --- @return void
 function N_0x405dc2aef6af95b9(roomHashKey) end
 
@@ -133,7 +133,7 @@ function GetInteriorGroupId(interior) end
 --- ```
 ---
 --- @hash 0x7241CCB7D020DB69
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param toggle boolean
 --- @return void
 function N_0x7241ccb7d020db69(entity, toggle) end
@@ -143,7 +143,7 @@ function N_0x7241ccb7d020db69(entity, toggle) end
 ---
 --- @hash 0x920D853F3E17F1DA
 --- @param interiorID number (int)
---- @param roomHashKey table (Hash)
+--- @param roomHashKey Hash
 --- @return void
 function ForceRoomForGameViewport(interiorID, roomHashKey) end
 
@@ -161,8 +161,8 @@ function IsInteriorDisabled(interior) end
 --- ```
 ---
 --- @hash 0x399685DB942336BC
---- @param entity table (Entity)
---- @return table (Hash)
+--- @param entity Entity
+--- @return Hash
 function GetKeyForEntityInRoom(entity) end
 
     
@@ -238,7 +238,7 @@ function N_0x9e6542f0ce8e70a3(toggle) end
 --- ```
 ---
 --- @hash 0x2107BA504071A6BB
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return number (int)
 function GetInteriorFromEntity(entity) end
 
@@ -248,8 +248,8 @@ function GetInteriorFromEntity(entity) end
 --- ```
 ---
 --- @hash 0x47C2A06D4F5F424B
---- @param entity table (Entity)
---- @return table (Hash)
+--- @param entity Entity
+--- @return Hash
 function GetRoomKeyFromEntity(entity) end
 
     
@@ -328,8 +328,8 @@ function GetInteriorAtCoordsWithType(x, y, z, interiorType) end
 ---
 --- @hash 0x252BDC06B73FA6EA
 --- @param interior number (int)
---- @param position table (Vector3*)
---- @param nameHash table (Hash*)
+--- @param position Vector3 (Vector3*)
+--- @param nameHash Hash (Hash*)
 --- @return void
 function GetInteriorInfo(interior, position, nameHash) end
 
@@ -339,9 +339,9 @@ function GetInteriorInfo(interior, position, nameHash) end
 --- ```
 ---
 --- @hash 0x52923C4710DD9907
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param interior number (int)
---- @param roomHashKey table (Hash)
+--- @param roomHashKey Hash
 --- @return void
 function ForceRoomForEntity(entity, interior, roomHashKey) end
 
@@ -372,14 +372,14 @@ function SetInteriorEntitySetColor(interior, entitySetName, color) end
 ---
 --- @hash 0xA6575914D2A0B450
 ---
---- @return table (Hash)
+--- @return Hash
 function GetRoomKeyForGameViewport() end
 
     
 --- N_0x82ebb79e258fa2b7
 ---
 --- @hash 0x82EBB79E258FA2B7
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param interiorID number (int)
 --- @return void
 function N_0x82ebb79e258fa2b7(entity, interiorID) end

@@ -81,7 +81,7 @@ function CreateNewScriptedConversation() end
 ---
 --- @hash 0x95D9F4BC443956E7
 --- @param index number (int)
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p2 string (char*)
 --- @return void
 function AddPedToConversation(index, ped, p2) end
@@ -113,7 +113,7 @@ function IsMusicOneshotPlaying() end
 --- ```
 ---
 --- @hash 0x4F0C413926060B38
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param audioName string (char*)
 --- @return void
 function ForceVehicleEngineAudio(vehicle, audioName) end
@@ -174,7 +174,7 @@ function IsMissionCompletePlaying() end
 --- DisablePedPainAudio
 ---
 --- @hash 0xA9A41C1E940FB0E8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function DisablePedPainAudio(ped, toggle) end
@@ -231,7 +231,7 @@ function InterruptConversation(p0, p1, p2) end
 --- EnableStallWarningSounds
 ---
 --- @hash 0xC15907D667F7CFB2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function EnableStallWarningSounds(vehicle, toggle) end
@@ -278,15 +278,15 @@ function N_0x0150b6ff25a9e2e5() end
 --- GetVehicleDefaultHornIgnoreMods
 ---
 --- @hash 0xACB5DCCA1EC76840
---- @param vehicle number (Vehicle)
---- @return table (Hash)
+--- @param vehicle Vehicle
+--- @return Hash
 function GetVehicleDefaultHornIgnoreMods(vehicle) end
 
     
 --- EnableVehicleExhaustPops
 ---
 --- @hash 0x2BE4BC731D039D5A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function EnableVehicleExhaustPops(vehicle, toggle) end
@@ -330,7 +330,7 @@ function N_0x58bb377bec7cd5f4(p0, p1) end
 --- IsAnySpeechPlaying
 ---
 --- @hash 0x729072355FA39EC9
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsAnySpeechPlaying(ped) end
 
@@ -341,7 +341,7 @@ function IsAnySpeechPlaying(ped) end
 --- ```
 ---
 --- @hash 0x1B9025BDA76822B6
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function BlipSiren(vehicle) end
 
@@ -351,7 +351,7 @@ function BlipSiren(vehicle) end
 --- ```
 ---
 --- @hash 0x1C073274E065C6D2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function N_0x1c073274e065c6d2(vehicle, toggle) end
@@ -365,7 +365,7 @@ function N_0x1c073274e065c6d2(vehicle, toggle) end
 ---
 --- @hash 0x34D66BC058019CE0
 --- @param radioStationName string (char*)
---- @return table (Hash)
+--- @return Hash
 function N_0x34d66bc058019ce0(radioStationName) end
 
     
@@ -374,7 +374,7 @@ function N_0x34d66bc058019ce0(radioStationName) end
 --- ```
 ---
 --- @hash 0x49B99BF3FDA89A7A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param speechName string (char*)
 --- @param unk boolean
 --- @return boolean
@@ -400,7 +400,7 @@ function LoadStreamWithStartOffset(streamName, startOffset, soundSet) end
 --- ```
 ---
 --- @hash 0x01BB4D577D38BD9E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (float)
 --- @return void
 function N_0x01bb4d577d38bd9e(vehicle, p1) end
@@ -412,7 +412,7 @@ function N_0x01bb4d577d38bd9e(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x8A694D7A68F8DC38
---- @param p0 table (Ped)
+--- @param p0 Ped
 --- @param p1 string (char*)
 --- @param p2 string (char*)
 --- @return void
@@ -528,7 +528,7 @@ function N_0x19af7ed9b9d23058() end
 --- IsPedInCurrentConversation
 ---
 --- @hash 0x049E937F18F4020C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInCurrentConversation(ped) end
 
@@ -546,7 +546,7 @@ function IsAmbientZoneEnabled(ambientZone) end
 --- ```
 ---
 --- @hash 0x29DA3CA8D8B2692D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function N_0x29da3ca8d8b2692d(ped, toggle) end
@@ -573,7 +573,7 @@ function FindRadioStationIndex(station) end
 --- ```
 ---
 --- @hash 0xC1805D05E6D4FE10
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function N_0xc1805d05e6d4fe10(vehicle) end
 
@@ -626,7 +626,7 @@ function N_0x7ec3c679d0e7e46b(p0, p1, p2, p3) end
 --- IsAmbientSpeechPlaying
 ---
 --- @hash 0x9072C8B49907BFAD
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsAmbientSpeechPlaying(ped) end
 
@@ -634,7 +634,7 @@ function IsAmbientSpeechPlaying(ped) end
 --- N_0x5db8010ee71fdef2
 ---
 --- @hash 0x5DB8010EE71FDEF2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function N_0x5db8010ee71fdef2(vehicle) end
 
@@ -686,8 +686,8 @@ function N_0x9ac92eed5e4793ab() end
 --- ```
 ---
 --- @hash 0x02165D55000219AC
---- @param vehicle number (Vehicle)
---- @return table (Hash)
+--- @param vehicle Vehicle
+--- @return Hash
 function GetVehicleDefaultHorn(vehicle) end
 
     
@@ -753,7 +753,7 @@ function N_0xbef34b1d9624d5dd(p0) end
 --- ```
 ---
 --- @hash 0x5E203DA2BA15D436
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return any
 function GetAmbientVoiceNameHash(ped) end
 
@@ -809,7 +809,7 @@ function GetStreamPlayTime() end
 ---
 --- @hash 0x892B6AB8F33606F5
 --- @param p0 number (int)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function N_0x892b6ab8f33606f5(p0, entity) end
 
@@ -833,7 +833,7 @@ function CancelMusicEvent(eventName) end
 --- ```
 ---
 --- @hash 0x3523634255FC3318
---- @param p0 table (Ped)
+--- @param p0 Ped
 --- @param speechName string (char*)
 --- @param voiceName string (char*)
 --- @param speechParam string (char*)
@@ -847,7 +847,7 @@ function PlayAmbientSpeechWithVoice(p0, speechName, voiceName, speechParam, p4) 
 --- ```
 ---
 --- @hash 0x0BE4BE946463F917
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function N_0x0be4be946463f917(vehicle) end
 
@@ -873,7 +873,7 @@ function N_0x40763ea7b9b783e7(p0, p1, p2) end
 --- IsAnimalVocalizationPlaying
 ---
 --- @hash 0xC265DF9FB44A9FBD
---- @param pedHandle table (Ped)
+--- @param pedHandle Ped
 --- @return boolean
 function IsAnimalVocalizationPlaying(pedHandle) end
 
@@ -881,7 +881,7 @@ function IsAnimalVocalizationPlaying(pedHandle) end
 --- PlayAnimalVocalization
 ---
 --- @hash 0xEE066C7006C49C0A
---- @param pedHandle table (Ped)
+--- @param pedHandle Ped
 --- @param p1 number (int)
 --- @param p2 string (char*)
 --- @return void
@@ -962,7 +962,7 @@ function PlayDeferredSoundFrontend(soundName, soundsetName) end
 --- @hash 0xE65F427EB70AB1ED
 --- @param soundId number (int)
 --- @param audioName string (char*)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param audioRef string (char*)
 --- @param p4 boolean
 --- @param p5 any
@@ -975,7 +975,7 @@ function PlaySoundFromEntity(soundId, audioName, entity, audioRef, p4, p5) end
 --- ```
 ---
 --- @hash 0x9D6BFC12B05C6121
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsHornActive(vehicle) end
 
@@ -991,7 +991,7 @@ function IsHornActive(vehicle) end
 --- ```
 ---
 --- @hash 0xC6941B4A3A8FBBB9
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param speechName string (char*)
 --- @param speechParam string (char*)
 --- @return void
@@ -1069,7 +1069,7 @@ function PrepareAlarm(alarmName) end
 --- ```
 ---
 --- @hash 0x932C2D096A2C3FFF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsAmbientSpeechDisabled(ped) end
 
@@ -1102,7 +1102,7 @@ function N_0x2dd39bf3e2f9c47f() end
 --- ```
 ---
 --- @hash 0x153973AB99FE8980
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param groupName string (char*)
 --- @param p2 number (float)
 --- @return void
@@ -1117,7 +1117,7 @@ function AddEntityToAudioMixGroup(entity, groupName, p2) end
 --- ```
 ---
 --- @hash 0x6C8065A3B780185B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param name string (char*)
 --- @return void
 function SetAmbientVoiceName(ped, name) end
@@ -1145,7 +1145,7 @@ function N_0xb542de8c3d1cb210(p0) end
 --- PlayStreamFromPed
 ---
 --- @hash 0x89049DD63C08B5D1
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function PlayStreamFromPed(ped) end
 
@@ -1171,7 +1171,7 @@ function IsScriptedConversationOngoing() end
 --- ```
 ---
 --- @hash 0xD53F3A29BCE2580E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleDefaultHornVariation(vehicle) end
 
@@ -1318,7 +1318,7 @@ function PlaySound(soundId, audioName, audioRef, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0xF3365489E0DD50F9
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function N_0xf3365489e0dd50f9(vehicle, toggle) end
@@ -1338,7 +1338,7 @@ function N_0xc8ede9bdbccba6d4(p0, p1, p2, p3) end
 --- N_0x1b7abe26cbcbf8c7
 ---
 --- @hash 0x1B7ABE26CBCBF8C7
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 any
 --- @param p2 any
 --- @return void
@@ -1350,7 +1350,7 @@ function N_0x1b7abe26cbcbf8c7(ped, p1, p2) end
 --- ```
 ---
 --- @hash 0x9A53DED9921DE990
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param hash any
 --- @return void
 function SetAmbientVoiceNameHash(ped, hash) end
@@ -1398,7 +1398,7 @@ function RestartScriptedConversation() end
 --- ```
 ---
 --- @hash 0x0653B735BFBDFE87
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function N_0x0653b735bfbdfe87(ped, toggle) end
@@ -1472,7 +1472,7 @@ function SetMicrophonePosition(p0, x1, y1, z1, x2, y2, z2, x3, y3, z3) end
 ---
 --- @hash 0xF9E56683CA8E11A5
 --- @param ringtoneName string (char*)
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p2 boolean
 --- @return void
 function PlayPedRingtone(ringtoneName, ped, p2) end
@@ -1501,7 +1501,7 @@ function SetMobileRadioEnabledDuringGameplay(toggle) end
 --- IsVehicleRadioLoud
 ---
 --- @hash 0x032A116663A4D5AC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleRadioLoud(vehicle) end
 
@@ -1511,7 +1511,7 @@ function IsVehicleRadioLoud(vehicle) end
 --- ```
 ---
 --- @hash 0x62A456AA4769EF34
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param doorIndex number (int)
 --- @return void
 function PlayVehicleDoorCloseSound(vehicle, doorIndex) end
@@ -1550,7 +1550,7 @@ function PreloadScriptPhoneConversation(p0, p1) end
 --- ```
 ---
 --- @hash 0x40CF0D12D142A9E8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function SetPedScream(ped) end
 
@@ -1558,7 +1558,7 @@ function SetPedScream(ped) end
 --- PlayStreamFromVehicle
 ---
 --- @hash 0xB70374A758007DFA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function PlayStreamFromVehicle(vehicle) end
 
@@ -1576,7 +1576,7 @@ function N_0xaa19f5572c38b564(p0) end
 --- ```
 ---
 --- @hash 0x1B9C0099CB942AC6
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param radioStation string (char*)
 --- @return void
 function SetVehRadioStation(vehicle, radioStation) end
@@ -1585,7 +1585,7 @@ function SetVehRadioStation(vehicle, radioStation) end
 --- ResetPedAudioFlags
 ---
 --- @hash 0xF54BB7B61036F335
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ResetPedAudioFlags(ped) end
 
@@ -1605,7 +1605,7 @@ function SetRadioTrack(radioStation, radioTrack) end
 --- N_0x43fa0dfc5df87815
 ---
 --- @hash 0x43FA0DFC5DF87815
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0x43fa0dfc5df87815(vehicle, p1) end
@@ -1618,7 +1618,7 @@ function N_0x43fa0dfc5df87815(vehicle, p1) end
 --- ```
 ---
 --- @hash 0xF1F8157B8C3F171C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 string (char*)
 --- @param p2 string (char*)
 --- @return void
@@ -1631,7 +1631,7 @@ function N_0xf1f8157b8c3f171c(vehicle, p1, p2) end
 ---
 --- @hash 0x651D3228960D08AF
 --- @param emitterName string (char*)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function LinkStaticEmitterToEntity(emitterName, entity) end
 
@@ -1639,7 +1639,7 @@ function LinkStaticEmitterToEntity(emitterName, entity) end
 --- N_0xa5342d390cda41d6
 ---
 --- @hash 0xA5342D390CDA41D6
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return void
 function N_0xa5342d390cda41d6(ped, p1) end
@@ -1670,7 +1670,7 @@ function SkipRadioForward() end
 --- ```
 ---
 --- @hash 0xBC9AE166038A5CEC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param painID number (int)
 --- @param p1 number (int)
 --- @return void
@@ -1707,7 +1707,7 @@ function SetStaticEmitterEnabled(emitterName, toggle) end
 --- ```
 ---
 --- @hash 0x4A04DE7CAB2739A1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleBoostActive(vehicle, toggle) end
@@ -1764,7 +1764,7 @@ function SetVehicleBoostActive(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x8E04FEDD28D42462
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param speechName string (char*)
 --- @param speechParam string (char*)
 --- @return void
@@ -1815,7 +1815,7 @@ function N_0x5b9853296731e88d(p0, p1, p2, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0xBF4DC1784BE94DFA
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @param hash any
 --- @return void
@@ -1840,7 +1840,7 @@ function PlayPoliceReport(name, p1) end
 --- ```
 ---
 --- @hash 0xCC97B29285B1DC3B
---- @param animal table (Ped)
+--- @param animal Ped
 --- @param mood number (int)
 --- @return void
 function SetAnimalMood(animal, mood) end
@@ -1851,7 +1851,7 @@ function SetAnimalMood(animal, mood) end
 --- ```
 ---
 --- @hash 0x9C11908013EA4715
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function SoundVehicleHornThisFrame(vehicle) end
 
@@ -1948,7 +1948,7 @@ function StopAudioScenes() end
 --- StopPedRingtone
 ---
 --- @hash 0x6C5AE23EFA885092
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function StopPedRingtone(ped) end
 
@@ -1999,7 +1999,7 @@ function ReleaseAmbientAudioBank() end
 --- UseSirenAsHorn
 ---
 --- @hash 0xFA932DE350266EF8
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function UseSirenAsHorn(vehicle, toggle) end
@@ -2044,7 +2044,7 @@ function PreloadScriptConversation(p0, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0x1FEF0683B96EBCF2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle table (ScrHandle*)
 --- @return void
 function SetSirenWithNoDriver(vehicle, toggle) end
@@ -2066,7 +2066,7 @@ function SetSirenWithNoDriver(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x95D2D383D5396B8A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedIsDrunk(ped, toggle) end
@@ -2098,7 +2098,7 @@ function StartAudioScene(scene) end
 --- ```
 ---
 --- @hash 0x6FDDAD856E36988A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function N_0x6fddad856e36988a(vehicle, toggle) end
@@ -2139,7 +2139,7 @@ function SetVariableOnSound(soundId, variableName, value) end
 ---
 --- @hash 0x950A154B8DAB6185
 --- @param p0 string (char*)
---- @param p1 table (Entity)
+--- @param p1 Entity
 --- @return void
 function SetSynchronizedAudioEventPositionThisFrame(p0, p1) end
 
@@ -2172,7 +2172,7 @@ function N_0xff266d1d0eb1195d() end
 --- SetPlayerAngry
 ---
 --- @hash 0xEA241BB04110F091
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPlayerAngry(ped, toggle) end
@@ -2183,7 +2183,7 @@ function SetPlayerAngry(ped, toggle) end
 --- ```
 ---
 --- @hash 0xB8BEC0CA6F0EDB0F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function StopCurrentPlayingAmbientSpeech(ped) end
 
@@ -2207,7 +2207,7 @@ function SetInitialPlayerStation(radioStation) end
 --- IsPedRingtonePlaying
 ---
 --- @hash 0x1E8E5E20937E3137
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedRingtonePlaying(ped) end
 
@@ -2396,7 +2396,7 @@ function PauseScriptedConversation(p0) end
 --- ```
 ---
 --- @hash 0xCA4CEA6AE0000A7E
---- @param model table (Hash)
+--- @param model Hash
 --- @return void
 function PreloadVehicleAudio(model) end
 
@@ -2406,7 +2406,7 @@ function PreloadVehicleAudio(model) end
 --- ```
 ---
 --- @hash 0x9D3AF56E94C9AE98
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (float)
 --- @return void
 function N_0x9d3af56e94c9ae98(vehicle, p1) end
@@ -2415,7 +2415,7 @@ function N_0x9d3af56e94c9ae98(vehicle, p1) end
 --- SetVehicleRadioLoud
 ---
 --- @hash 0xBB6F1CAEC68B0BCE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleRadioLoud(vehicle, toggle) end
@@ -2487,7 +2487,7 @@ function SetVariableOnCutsceneAudio(variableName, value) end
 --- 
 --- OverrideVehHorn(vehicle, true, randomHornHash
 --- @hash 0x3CDC1E622CCE0356
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param override boolean
 --- @param hornHash number (int)
 --- @return void
@@ -2503,8 +2503,8 @@ function OverrideVehHorn(vehicle, override, hornHash) end
 --- ```
 ---
 --- @hash 0x7CDC8C3B89F661B3
---- @param ped table (Ped)
---- @param voiceGroupHash table (Hash)
+--- @param ped Ped
+--- @param voiceGroupHash Hash
 --- @return void
 function SetPedVoiceGroup(ped, voiceGroupHash) end
 
@@ -2582,7 +2582,7 @@ function StopAlarm(alarmName, toggle) end
 --- ```
 ---
 --- @hash 0x66C3FB05206041BA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function TriggerSiren(vehicle) end
 
@@ -2628,7 +2628,7 @@ function RecordBrokenGlass(x, y, z, radius) end
 --- SetAudioVehiclePriority
 ---
 --- @hash 0xE5564483E407F914
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 any
 --- @return void
 function SetAudioVehiclePriority(vehicle, p1) end
@@ -2679,7 +2679,7 @@ function SetEmitterRadioStation(emitterName, radioStation) end
 --- RemoveEntityFromAudioMixGroup
 ---
 --- @hash 0x18EB48CFC41F2EA0
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param p1 number (float)
 --- @return void
 function RemoveEntityFromAudioMixGroup(entity, p1) end
@@ -2736,7 +2736,7 @@ function SetVariableOnUnderWaterStream(variableName, value) end
 --- SetHornEnabled
 ---
 --- @hash 0x76D683C108594D0E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetHornEnabled(vehicle, toggle) end
@@ -2757,7 +2757,7 @@ function N_0xe4e6dd5566d28c82() end
 --- ```
 ---
 --- @hash 0x4ADA3F19BE4A6047
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function SetPedTalk(ped) end
 
@@ -2767,7 +2767,7 @@ function SetPedTalk(ped) end
 --- ```
 ---
 --- @hash 0x0350E7E17BA767D0
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param value number (int)
 --- @return void
 function SetVehicleHornVariation(vehicle, value) end
@@ -2778,7 +2778,7 @@ function SetVehicleHornVariation(vehicle, value) end
 --- ```
 ---
 --- @hash 0x7A73D05A607734C7
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function StopCurrentPlayingSpeech(ped) end
 
@@ -2786,7 +2786,7 @@ function StopCurrentPlayingSpeech(ped) end
 --- StopPedSpeaking
 ---
 --- @hash 0x9D64D7405520E3D3
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param shaking boolean
 --- @return void
 function StopPedSpeaking(ped, shaking) end
@@ -2797,7 +2797,7 @@ function StopPedSpeaking(ped, shaking) end
 --- ```
 ---
 --- @hash 0x3B988190C0AA6C0B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleRadioEnabled(vehicle, toggle) end
@@ -2806,7 +2806,7 @@ function SetVehicleRadioEnabled(vehicle, toggle) end
 --- SetVehicleAudioEngineDamageFactor
 ---
 --- @hash 0x59E7B488451F4D3A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param damageFactor number (float)
 --- @return void
 function SetVehicleAudioEngineDamageFactor(vehicle, damageFactor) end
@@ -2817,7 +2817,7 @@ function SetVehicleAudioEngineDamageFactor(vehicle, damageFactor) end
 --- ```
 ---
 --- @hash 0x3A539D52857EA82D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param doorIndex number (int)
 --- @return void
 function PlayVehicleDoorOpenSound(vehicle, doorIndex) end

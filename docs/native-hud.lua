@@ -345,7 +345,7 @@ function DoesBlipHaveGpsRoute(blip) end
 --- ```
 ---
 --- @hash 0x15B8ECF844EE67ED
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function DoesPedHaveAiBlip(ped) end
 
@@ -707,7 +707,7 @@ function AllowPauseMenuWhenDeadThisFrame() end
 --- ```
 ---
 --- @hash 0x17299B63C7683A2B
---- @param gxtEntryHash table (Hash)
+--- @param gxtEntryHash Hash
 --- @return void
 function AddTextComponentSubstringTextLabelHashKey(gxtEntryHash) end
 
@@ -802,7 +802,7 @@ function DisplayHud(toggle) end
 --- ```
 ---
 --- @hash 0x5CDE92C702A8FCE7
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return table (Blip)
 function AddBlipForEntity(entity) end
 
@@ -976,7 +976,7 @@ function ClearGpsMultiRoute() end
 --- *   FE_MENU_VERSION_LANDING_KEYMAPPING_MENU
 ---
 --- @hash 0xEF01D36B9C9D0C7B
---- @param menuhash table (Hash)
+--- @param menuhash Hash
 --- @param togglePause boolean
 --- @param component number (int)
 --- @return void
@@ -1067,7 +1067,7 @@ function GetBlipColour(blip) end
 --- ```
 ---
 --- @hash 0xBFEFE3321A3F5015
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param username string (char*)
 --- @param pointedClanTag boolean
 --- @param isRockstarClan boolean
@@ -1145,7 +1145,7 @@ function AddPointToGpsCustomRoute(x, y, z) end
 --- ```
 ---
 --- @hash 0x7CD934010E115C2C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function GetAiBlip_2(ped) end
 
@@ -1301,7 +1301,7 @@ function DisableFrontendThisFrame() end
 ---
 --- @hash 0x81DF9ABA6C83DFF9
 ---
---- @return table (Hash)
+--- @return Hash
 function GetWarningMessageTitleHash() end
 
     
@@ -1327,7 +1327,7 @@ function ClearAdditionalText(p0, p1) end
 --- CreateMpGamerTagWithCrewColor
 ---
 --- @hash 0x6DD05E9D83EFA4C9
---- @param player number (Player)
+--- @param player Player
 --- @param username string (char*)
 --- @param pointedClanTag boolean
 --- @param isRockstarClan boolean
@@ -1665,7 +1665,7 @@ function DontTiltMinimapThisFrame() end
 ---
 --- @hash 0x4BA4E2553AFEDC2C
 --- @param blip table (Blip)
---- @return table (Entity)
+--- @return Entity
 function GetBlipInfoIdEntityIndex(blip) end
 
     
@@ -1683,7 +1683,7 @@ function ClearGpsCustomRoute() end
 --- ```
 ---
 --- @hash 0xD0EF8A959B8A4CB9
---- @param hash table (Hash)
+--- @param hash Hash
 --- @return string (char*)
 function GetStreetNameFromHashKey(hash) end
 
@@ -1967,7 +1967,7 @@ function FlashMinimapDisplay() end
 --- IsNamedRendertargetLinked
 ---
 --- @hash 0x113750538FA31298
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return boolean
 function IsNamedRendertargetLinked(modelHash) end
 
@@ -2009,7 +2009,7 @@ function IsScriptedHudComponentHiddenThisFrame(id) end
 --- ```
 ---
 --- @hash 0x72C1056D678BB7D8
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @return void
 function HudWeaponWheelSetSlotHash(weaponHash) end
 
@@ -2031,7 +2031,7 @@ function EndTextCommandThefeedPostUnlock(chTitle, iconType, chSubtitle) end
 ---
 --- @hash 0x2309595AD6145265
 ---
---- @return table (Hash)
+--- @return Hash
 function GetCurrentFrontendMenuVersion() end
 
     
@@ -2168,7 +2168,7 @@ function IsMinimapRendering() end
 --- This native is used to "give"/duplicate a player ped to a frontend menu as configured via the `ACTIVATE_FRONTEND_MENU` native, you first must utilize the `CLONE_PED` ( https://runtime.fivem.net/doc/natives/#\_0xEF29A16337FACADB ) to clone said ped.
 ---
 --- @hash 0xAC0BFBDC3BE00E14
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (int)
 --- @return void
 function GivePedToPauseMenu(ped, p1) end
@@ -2179,7 +2179,7 @@ function GivePedToPauseMenu(ped, p1) end
 --- ```
 ---
 --- @hash 0xBC8DBDCA2436F7E8
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return table (Blip)
 function GetBlipFromEntity(entity) end
 
@@ -2438,7 +2438,7 @@ function HasDirectorModeBeenTriggered() end
 --- ```
 ---
 --- @hash 0x56176892826A4FE8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return table (Blip)
 function GetAiBlip(ped) end
 
@@ -2595,7 +2595,7 @@ function HudWeaponWheelIgnoreControlInput(toggle) end
 --- LinkNamedRendertarget
 ---
 --- @hash 0xF6C09E276AEB3F2D
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return void
 function LinkNamedRendertarget(modelHash) end
 
@@ -2901,7 +2901,7 @@ function EndTextCommandThefeedPostTickerForced(isImportant, bHasTokens) end
 --- ```
 ---
 --- @hash 0x052991E59076E4E4
---- @param p0 table (Hash)
+--- @param p0 Hash
 --- @param p1 table (Any*)
 --- @return boolean
 function N_0x052991e59076e4e4(p0, p1) end
@@ -2923,7 +2923,7 @@ function HudForceWeaponWheel(show) end
 ---
 --- @hash 0xA48931185F0536FE
 ---
---- @return table (Hash)
+--- @return Hash
 function HudWeaponWheelGetSelectedHash() end
 
     
@@ -3129,7 +3129,7 @@ function N_0x8410c5e0cd847b9d() end
 --- N_0xc594b315edf2d4af
 ---
 --- @hash 0xC594B315EDF2D4AF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function N_0xc594b315edf2d4af(ped) end
 
@@ -3409,7 +3409,7 @@ function N_0x4e3cd0ef8a489541() end
 --- PauseMenuIsContextActive
 ---
 --- @hash 0x84698AB38D0C6636
---- @param contextHash table (Hash)
+--- @param contextHash Hash
 --- @return boolean
 function PauseMenuIsContextActive(contextHash) end
 
@@ -3758,7 +3758,7 @@ function N_0xdaf87174be7454ff(p0) end
 --- > Scripts do not make this native's purpose clear. However, this native most likely has something to do with decals since in nearly every instance, "OBJECT_DECAL_TOGGLE" is called prior.
 ---
 --- @hash 0xDD564BDD0472C936
---- @param hash table (Hash)
+--- @param hash Hash
 --- @return void
 function PauseMenuActivateContext(hash) end
 
@@ -4043,7 +4043,7 @@ function N_0xf83d0febe75e62c9(p0, p1, p2, p3, p4, p5, p6, p7) end
 --- ```
 ---
 --- @hash 0xD30C50DF888D58B5
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param hasCone boolean
 --- @return void
 function SetPedHasAiBlip(ped, hasCone) end
@@ -4053,7 +4053,7 @@ function SetPedHasAiBlip(ped, hasCone) end
 ---
 --- @hash 0x127DE7B20C60A6A3
 --- @param blip table (Blip)
---- @param player number (Player)
+--- @param player Player
 --- @return void
 function SetBlipNameToPlayerName(blip, player) end
 
@@ -4212,7 +4212,7 @@ function SetBlipPriority(blip, priority) end
 --- ```
 ---
 --- @hash 0x10706DC6AD2D49C0
---- @param menuHash table (Hash)
+--- @param menuHash Hash
 --- @param p1 number (int)
 --- @return void
 function RestartFrontendMenu(menuHash, p1) end
@@ -4327,7 +4327,7 @@ function SetFloatingHelpTextWorldPosition(hudIndex, x, y, z) end
 --- PauseMenuDeactivateContext
 ---
 --- @hash 0x444D8CF241EC25C5
---- @param contextHash table (Hash)
+--- @param contextHash Hash
 --- @return void
 function PauseMenuDeactivateContext(contextHash) end
 
@@ -4438,7 +4438,7 @@ function SetMpGamerTagVisibility(gamerTagId, component, toggle) end
 --- ```
 ---
 --- @hash 0x3EED80DFF7325CAA
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedAiBlipHasCone(ped, toggle) end
@@ -4514,7 +4514,7 @@ function SetMpGamerTag(headDisplayId, p1) end
 ---
 --- @hash 0x1A5CD7752DD28CD3
 --- @param toggle boolean
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function SetMinimapInSpectatorMode(toggle, ped) end
 
@@ -4526,7 +4526,7 @@ function SetMinimapInSpectatorMode(toggle, ped) end
 --- ```
 ---
 --- @hash 0xE52B8E7F85D39A08
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param gangId number (int)
 --- @return void
 function SetPedAiBlipGangId(ped, gangId) end
@@ -4586,7 +4586,7 @@ function SetGpsMultiRouteRender(toggle) end
 --- ```
 ---
 --- @hash 0xB13DCB4C6FAAD238
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param hasCone boolean
 --- @param color number (int)
 --- @return void
@@ -4611,7 +4611,7 @@ function SetPauseMenuPedLighting(state) end
 ---
 --- @hash 0xB094BC1DB4018240
 --- @param hudIndex number (int)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param p2 number (float)
 --- @param p3 number (float)
 --- @return void
@@ -4624,7 +4624,7 @@ function SetFloatingHelpTextToEntity(hudIndex, entity, p2, p3) end
 --- ```
 ---
 --- @hash 0x0C4BBF625CA98C4E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedAiBlipForcedOn(ped, toggle) end
@@ -4787,7 +4787,7 @@ function SetBlipShrink(blip, toggle) end
 --- SetPedAiBlipSprite
 ---
 --- @hash 0xFCFACD0DB9D7A57D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param spriteId number (int)
 --- @return void
 function SetPedAiBlipSprite(ped, spriteId) end
@@ -4954,7 +4954,7 @@ function SetPauseMenuPedSleepState(state) end
 --- ```
 ---
 --- @hash 0x97C65887D4B37FA9
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param range number (float)
 --- @return void
 function SetPedAiBlipNoticeRange(ped, range) end
@@ -5545,7 +5545,7 @@ function SuppressFrontendRenderingThisFrame() end
 --- ```
 ---
 --- @hash 0x59E727A1C9D3E31A
---- @param interior table (Hash)
+--- @param interior Hash
 --- @param x number (float)
 --- @param y number (float)
 --- @param heading number (int)

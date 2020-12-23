@@ -3,7 +3,7 @@
 ---
 --- @hash 0xBCF3026912A8647D
 --- @param ropeId number (int)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function DetachRopeFromEntity(ropeId, entity) end
 
@@ -14,7 +14,7 @@ function DetachRopeFromEntity(ropeId, entity) end
 ---
 --- @hash 0x4B490A6832559A65
 --- @param ropeId number (int)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -54,7 +54,7 @@ function GetRopeLastVertexCoord(ropeId) end
 --- ```
 ---
 --- @hash 0x710311ADF0E20730
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function ActivatePhysics(entity) end
 
@@ -119,7 +119,7 @@ function N_0xb1b6216ca2e7b55e(p0, p1, p2) end
 --- SetCgoffset
 ---
 --- @hash 0xD8FA3908D7B86904
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -133,8 +133,8 @@ function SetCgoffset(entity, x, y, z) end
 ---
 --- @hash 0x3D95EC8B6D940AC3
 --- @param ropeId number (int)
---- @param ent1 table (Entity)
---- @param ent2 table (Entity)
+--- @param ent1 Entity
+--- @param ent2 Entity
 --- @param ent1_x number (float)
 --- @param ent1_y number (float)
 --- @param ent1_z number (float)
@@ -255,7 +255,7 @@ function GetRopeVertexCoord(ropeId, vertex) end
 --- SetCgAtBoundcenter
 ---
 --- @hash 0xBE520D9761FF811F
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function SetCgAtBoundcenter(entity) end
 
@@ -283,7 +283,7 @@ function SetLaunchControlEnabled(p0) end
 --- SetDamping
 ---
 --- @hash 0xEEA3B200A6FEB65B
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param vertex number (int)
 --- @param value number (float)
 --- @return void
@@ -345,7 +345,7 @@ function RopeLoadTextures() end
 --- BreakEntityGlass
 ---
 --- @hash 0x2E648D16F6E308F3
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param p1 number (float)
 --- @param p2 number (float)
 --- @param p3 number (float)
@@ -382,7 +382,7 @@ function DoesRopeBelongToThisScript(ropeId) end
 --- SetEntityProofUnk
 ---
 --- @hash 0x15F944730C832252
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param toggle boolean
 --- @return void
 function SetEntityProofUnk(entity, toggle) end
@@ -494,7 +494,7 @@ function RopeUnloadTextures() end
 --- GetCgoffset
 ---
 --- @hash 0x8214A4B5A7A33612
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return Vector3
 function GetCgoffset(entity) end
 

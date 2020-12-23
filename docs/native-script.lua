@@ -26,7 +26,7 @@ function GetThisScriptName() end
 --- ```
 ---
 --- @hash 0x107E5CC7CA942BC1
---- @param contextHash table (Hash)
+--- @param contextHash Hash
 --- @return void
 function BgEndContextHash(contextHash) end
 
@@ -40,7 +40,7 @@ function BgEndContextHash(contextHash) end
 --- ```
 ---
 --- @hash 0x2C83A9DA6BFFC4F9
---- @param scriptHash table (Hash)
+--- @param scriptHash Hash
 --- @return number (int)
 function GetNumberOfInstancesOfScriptWithNameHash(scriptHash) end
 
@@ -87,7 +87,7 @@ function GetNameOfThread(threadId) end
 --- ```
 ---
 --- @hash 0x75B18E49607874C7
---- @param contextHash table (Hash)
+--- @param contextHash Hash
 --- @return void
 function BgStartContextHash(contextHash) end
 
@@ -107,7 +107,7 @@ function DoesScriptExist(scriptName) end
 --- ```
 ---
 --- @hash 0xD62A67D26D9653E6
---- @param scriptHash table (Hash)
+--- @param scriptHash Hash
 --- @return void
 function RequestScriptWithNameHash(scriptHash) end
 
@@ -139,7 +139,7 @@ function GetEventData(eventGroup, eventIndex, argStruct, argStructSize) end
 --- ```
 ---
 --- @hash 0xF86AA3C56BA31381
---- @param scriptHash table (Hash)
+--- @param scriptHash Hash
 --- @return boolean
 function DoesScriptWithNameHashExist(scriptHash) end
 
@@ -159,7 +159,7 @@ function GetEventAtIndex(eventGroup, eventIndex) end
 ---
 --- @hash 0x8A1C8B1738FFE87E
 ---
---- @return table (Hash)
+--- @return Hash
 function GetHashOfThisScriptName() end
 
     
@@ -179,7 +179,7 @@ function N_0x0f6f1ebbc4e1d5e6(scriptIndex, p1) end
 --- HasScriptWithNameHashLoaded
 ---
 --- @hash 0x5F0F0C783EB16C04
---- @param scriptHash table (Hash)
+--- @param scriptHash Hash
 --- @return boolean
 function HasScriptWithNameHashLoaded(scriptHash) end
 
@@ -348,7 +348,7 @@ function ShutdownLoadingScreen() end
 --- SetScriptWithNameHashAsNoLongerNeeded
 ---
 --- @hash 0xC5BC038960E9DB27
---- @param scriptHash table (Hash)
+--- @param scriptHash Hash
 --- @return void
 function SetScriptWithNameHashAsNoLongerNeeded(scriptHash) end
 
@@ -360,7 +360,7 @@ function SetScriptWithNameHashAsNoLongerNeeded(scriptHash) end
 --- ```
 ---
 --- @hash 0x829CD22E043A2577
---- @param p0 table (Hash)
+--- @param p0 Hash
 --- @return number (int)
 function N_0x829cd22e043a2577(p0) end
 

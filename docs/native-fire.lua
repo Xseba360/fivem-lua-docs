@@ -4,7 +4,7 @@
 --- ```
 ---
 --- @hash 0x352A9F6BCF90081F
---- @param outPosition table (Vector3*)
+--- @param outPosition Vector3 (Vector3*)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -50,7 +50,7 @@ function StartScriptFire(X, Y, Z, maxChildren, isGasFire) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param explosionType number (int)
---- @param explosionFx table (Hash)
+--- @param explosionFx Hash
 --- @param damageScale number (float)
 --- @param isAudible boolean
 --- @param isInvisible boolean
@@ -62,7 +62,7 @@ function AddExplosionWithUserVfx(x, y, z, explosionType, explosionFx, damageScal
 --- StartEntityFire
 ---
 --- @hash 0xF6A9D9708F6F23DF
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return table (FireId)
 function StartEntityFire(entity) end
 
@@ -172,7 +172,7 @@ function StopFireInRange(x, y, z, radius) end
 --- StopEntityFire
 ---
 --- @hash 0x7F0DD2EBBB651AFF
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function StopEntityFire(entity) end
 
@@ -222,7 +222,7 @@ function StopEntityFire(entity) end
 --- ```
 ---
 --- @hash 0x172AA1B624FA1013
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -253,7 +253,7 @@ function RemoveScriptFire(fireHandle) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @return table (Entity)
+--- @return Entity
 function GetEntityInsideExplosionSphere(explosionType, x, y, z, radius) end
 
     
@@ -271,7 +271,7 @@ function GetNumberOfFiresInRange(x, y, z, radius) end
 --- IsEntityOnFire
 ---
 --- @hash 0x28D3FED7190D3A0B
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return boolean
 function IsEntityOnFire(entity) end
 
@@ -304,7 +304,7 @@ function IsExplosionInAngledArea(explosionType, x1, y1, z1, x2, y2, z2, width) e
 --- @param y2 number (float)
 --- @param z2 number (float)
 --- @param radius number (float)
---- @return table (Entity)
+--- @return Entity
 function GetEntityInsideExplosionArea(explosionType, x1, y1, z1, x2, y2, z2, radius) end
 
     

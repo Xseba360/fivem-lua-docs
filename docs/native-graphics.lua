@@ -9,8 +9,8 @@
 --- ```
 ---
 --- @hash 0x428BDCB9DA58DA53
---- @param vehicle number (Vehicle)
---- @param ped table (Ped)
+--- @param vehicle Vehicle
+--- @param ped Ped
 --- @param boneIndex number (int)
 --- @param x1 number (float)
 --- @param x2 number (float)
@@ -47,7 +47,7 @@ function AnimpostfxIsRunning(effectName) end
 --- ```
 ---
 --- @hash 0x9CD43EEE12BF4DD0
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param icon string (char*)
 --- @return any
 function AddEntityIcon(entity, icon) end
@@ -58,7 +58,7 @@ function AddEntityIcon(entity, icon) end
 --- ```
 ---
 --- @hash 0x845BAD77CC770633
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function AttachTvAudioToEntity(entity) end
 
@@ -1602,7 +1602,7 @@ function GetUsingnightvision() end
 ---
 --- @hash 0x98C4FE6EC34154CA
 --- @param p0 string (char*)
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p2 number (int)
 --- @param posX number (float)
 --- @param posY number (float)
@@ -1961,7 +1961,7 @@ function GolfTrailSetTessellation(p0, p1) end
 --- ```
 ---
 --- @hash 0x060D935D3981A275
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (int)
 --- @return boolean
 function DoesVehicleHaveCrewEmblem(vehicle, p1) end
@@ -2036,7 +2036,7 @@ function LoadMovieMeshSet(movieMeshSetName) end
 --- ```
 ---
 --- @hash 0x0AD973CA1E077B60
---- @param videoCliphash table (Hash)
+--- @param videoCliphash Hash
 --- @return boolean
 function IsTvPlaylistItemPlaying(videoCliphash) end
 
@@ -2208,7 +2208,7 @@ function N_0x32f34ff7f617643b(p0, p1) end
 --- GetVehicleCrewEmblemRequestState
 ---
 --- @hash 0xFE26117A5841B2FF
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (int)
 --- @return number (int)
 function GetVehicleCrewEmblemRequestState(vehicle, p1) end
@@ -2238,7 +2238,7 @@ function N_0x46d1a61a21f566fc(p0) end
 ---
 --- @hash 0x30432A0118736E00
 ---
---- @return table (Hash)
+--- @return Hash
 function N_0x30432a0118736e00() end
 
     
@@ -3084,7 +3084,7 @@ function RemoveParticleFx(ptfxHandle, p1) end
 --- RemoveDecalsFromVehicle
 ---
 --- @hash 0xE91F1B65F2B48D57
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function RemoveDecalsFromVehicle(vehicle) end
 
@@ -3177,7 +3177,7 @@ function ScaleformMovieMethodAddParamBool(value) end
 --- RemoveVehicleCrewEmblem
 ---
 --- @hash 0xD2300034310557E4
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (int)
 --- @return void
 function RemoveVehicleCrewEmblem(vehicle, p1) end
@@ -3430,7 +3430,7 @@ function SeethroughSetHiLightIntensity(intensity) end
 --- RemoveParticleFxFromEntity
 ---
 --- @hash 0xB8FEAEEBCC127425
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function RemoveParticleFxFromEntity(entity) end
 
@@ -3746,7 +3746,7 @@ function ScaleformMovieMethodAddParamPlayerNameString(string) end
 --- SetEntityIconVisibility
 ---
 --- @hash 0xE0E8BEECCA96BA31
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param toggle boolean
 --- @return void
 function SetEntityIconVisibility(entity, toggle) end
@@ -4257,7 +4257,7 @@ function UseParticleFxAsset(name) end
 --- SetEntityIconColor
 ---
 --- @hash 0x1D5F595CCAE2E238
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param red number (int)
 --- @param green number (int)
 --- @param blue number (int)
@@ -4278,7 +4278,7 @@ function SetParticleFxLoopedAlpha(ptfxHandle, alpha) end
 --- SetParticleFxCamInsideNonplayerVehicle
 ---
 --- @hash 0xACEE6F360FC1F6B6
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function SetParticleFxCamInsideNonplayerVehicle(vehicle, p1) end
@@ -4388,7 +4388,7 @@ function SetParticleFxLoopedOffsets(ptfxHandle, x, y, z, rotX, rotY, rotZ) end
 ---
 --- @hash 0x6F60E89A7B64EE1D
 --- @param effectName string (char*)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param xOffset number (float)
 --- @param yOffset number (float)
 --- @param zOffset number (float)
@@ -4407,7 +4407,7 @@ function StartNetworkedParticleFxLoopedOnEntity(effectName, entity, xOffset, yOf
 ---
 --- @hash 0xF28DA9F38CD1787C
 --- @param effectName string (char*)
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param xOffset number (float)
 --- @param yOffset number (float)
 --- @param zOffset number (float)
@@ -4435,7 +4435,7 @@ function SetNoiseoveride(toggle) end
 ---
 --- @hash 0xC6EB449E33977F0B
 --- @param effectName string (char*)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param xOffset number (float)
 --- @param yOffset number (float)
 --- @param zOffset number (float)
@@ -4464,7 +4464,7 @@ function StartParticleFxLoopedOnEntityBone(effectName, entity, xOffset, yOffset,
 ---
 --- @hash 0xDDE23F30CC5A0F03
 --- @param effectName string (char*)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param xOffset number (float)
 --- @param yOffset number (float)
 --- @param zOffset number (float)
@@ -4608,7 +4608,7 @@ function SetHidofOverride(p0, p1, nearplaneOut, nearplaneIn, farplaneOut, farpla
 --- UpdateLightsOnEntity
 ---
 --- @hash 0xDEADC0DEDEADC0DE
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function UpdateLightsOnEntity(entity) end
 
@@ -4644,7 +4644,7 @@ function SetScaleformMovieAsNoLongerNeeded(scaleformHandle) end
 ---
 --- @hash 0x0D53A3B8DA0809D2
 --- @param effectName string (char*)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param offsetX number (float)
 --- @param offsetY number (float)
 --- @param offsetZ number (float)
@@ -4665,7 +4665,7 @@ function StartParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, 
 ---
 --- @hash 0x1AE42C1660FD6517
 --- @param effectName string (char*)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param xOffset number (float)
 --- @param yOffset number (float)
 --- @param zOffset number (float)
@@ -4683,7 +4683,7 @@ function StartParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOf
 --- WashDecalsFromVehicle
 ---
 --- @hash 0x5B712761429DBC14
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (float)
 --- @return void
 function WashDecalsFromVehicle(vehicle, p1) end
@@ -4715,7 +4715,7 @@ function StopParticleFxLooped(ptfxHandle, p1) end
 ---
 --- @hash 0xA41B6A43642AC2CF
 --- @param effectName string (char*)
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param offsetX number (float)
 --- @param offsetY number (float)
 --- @param offsetZ number (float)
@@ -4739,7 +4739,7 @@ function StartNetworkedParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, of
 ---
 --- @hash 0x0E7E72961BA18619
 --- @param effectName string (char*)
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param offsetX number (float)
 --- @param offsetY number (float)
 --- @param offsetZ number (float)
@@ -4761,7 +4761,7 @@ function StartParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, offsetY, of
 ---
 --- @hash 0xC95EB1DB6E92113D
 --- @param effectName string (char*)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param offsetX number (float)
 --- @param offsetY number (float)
 --- @param offsetZ number (float)

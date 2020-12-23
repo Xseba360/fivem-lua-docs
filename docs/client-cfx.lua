@@ -2,7 +2,7 @@
 --- AddTextEntryByHash
 ---
 --- @hash 0x289DA860
---- @param entryKey table (Hash)
+--- @param entryKey Hash
 --- @param entryText string (char*)
 --- @return void
 function AddTextEntryByHash(entryKey, entryText) end
@@ -142,7 +142,7 @@ function EndFindPed(findHandle) end
 --- This native is not implemented.
 ---
 --- @hash 0x9D65CAD2
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return string (char*)
 function ExperimentalSaveCloneCreate(entity) end
 
@@ -180,7 +180,7 @@ function EndFindVehicle(findHandle) end
 --- This native is not implemented.
 ---
 --- @hash 0x38D19210
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return string (char*)
 function ExperimentalSaveCloneSync(entity) end
 
@@ -188,7 +188,7 @@ function ExperimentalSaveCloneSync(entity) end
 --- FindFirstPed
 ---
 --- @hash 0xFB012961
---- @param outEntity table (Entity*)
+--- @param outEntity Entity (Entity*)
 --- @return number (int)
 function FindFirstPed(outEntity) end
 
@@ -196,7 +196,7 @@ function FindFirstPed(outEntity) end
 --- FindFirstVehicle
 ---
 --- @hash 0x15E55694
---- @param outEntity table (Entity*)
+--- @param outEntity Entity (Entity*)
 --- @return number (int)
 function FindFirstVehicle(outEntity) end
 
@@ -204,7 +204,7 @@ function FindFirstVehicle(outEntity) end
 --- FindFirstObject
 ---
 --- @hash 0xFAA6CB5D
---- @param outEntity table (Entity*)
+--- @param outEntity Entity (Entity*)
 --- @return number (int)
 function FindFirstObject(outEntity) end
 
@@ -212,7 +212,7 @@ function FindFirstObject(outEntity) end
 --- This native is not implemented.
 ---
 --- @hash 0x6BC189AC
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param data string (char*)
 --- @return void
 function ExperimentalLoadCloneSync(entity, data) end
@@ -221,7 +221,7 @@ function ExperimentalLoadCloneSync(entity, data) end
 --- FindFirstPickup
 ---
 --- @hash 0x3FF9D340
---- @param outEntity table (Entity*)
+--- @param outEntity Entity (Entity*)
 --- @return number (int)
 function FindFirstPickup(outEntity) end
 
@@ -230,7 +230,7 @@ function FindFirstPickup(outEntity) end
 ---
 --- @hash 0x4E129DBF
 --- @param findHandle number (int)
---- @param outEntity table (Entity*)
+--- @param outEntity Entity (Entity*)
 --- @return boolean
 function FindNextObject(findHandle, outEntity) end
 
@@ -268,7 +268,7 @@ function GetActivePlayers() end
 ---
 --- @hash 0x4107EF0F
 --- @param findHandle number (int)
---- @param outEntity table (Entity*)
+--- @param outEntity Entity (Entity*)
 --- @return boolean
 function FindNextPickup(findHandle, outEntity) end
 
@@ -279,7 +279,7 @@ function FindNextPickup(findHandle, outEntity) end
 --- @param data string (char*)
 --- @param objectId number (int)
 --- @param tree string (char*)
---- @return table (Entity)
+--- @return Entity
 function ExperimentalLoadCloneCreate(data, objectId, tree) end
 
     
@@ -295,7 +295,7 @@ function GetAmbientVehicleRangeMultiplier() end
 ---
 --- @hash 0xAB09B548
 --- @param findHandle number (int)
---- @param outEntity table (Entity*)
+--- @param outEntity Entity (Entity*)
 --- @return boolean
 function FindNextPed(findHandle, outEntity) end
 
@@ -311,11 +311,11 @@ function GetCurrentServerEndpoint() end
 --- Returns the world matrix of the specified camera. To turn this into a view matrix, calculate the inverse.
 ---
 --- @hash 0x8F57A89D
---- @param camera table (Cam)
---- @param rightVector table (Vector3*)
---- @param forwardVector table (Vector3*)
---- @param upVector table (Vector3*)
---- @param position table (Vector3*)
+--- @param camera Cam
+--- @param rightVector Vector3 (Vector3*)
+--- @param forwardVector Vector3 (Vector3*)
+--- @param upVector Vector3 (Vector3*)
+--- @param position Vector3 (Vector3*)
 --- @return void
 function GetCamMatrix(camera, rightVector, forwardVector, upVector, position) end
 
@@ -332,7 +332,7 @@ function GetDuiHandle(duiObject) end
 ---
 --- @hash 0x8839120D
 --- @param findHandle number (int)
---- @param outEntity table (Entity*)
+--- @param outEntity Entity (Entity*)
 --- @return boolean
 function FindNextVehicle(findHandle, outEntity) end
 
@@ -628,7 +628,7 @@ function GetInteriorPortalCount(interiorId) end
 ---   print("You have big nose!")
 --- en
 --- @hash 0xBA352ADD
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param index number (int)
 --- @return number (float)
 function GetPedFaceFeature(ped, index) end
@@ -650,7 +650,7 @@ function GetPedDensityMultiplier() end
 ---   SetPedHeadOverlay(PlayerPedId(), 1, overlayValue + 1, overlayOpacity)
 --- en
 --- @hash 0xC46EE605
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param index number (int)
 --- @param overlayValue table (int*)
 --- @param colourType table (int*)
@@ -675,7 +675,7 @@ function GetParkedVehicleDensityMultiplier() end
 ---   print("Gray eyes!")
 --- en
 --- @hash 0xA47B860F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedEyeColor(ped) end
 
@@ -686,7 +686,7 @@ function GetPedEyeColor(ped) end
 ---   print("You have red hair!")
 --- en
 --- @hash 0xA3EA2893
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedHairColor(ped) end
 
@@ -697,7 +697,7 @@ function GetPedHairColor(ped) end
 ---   print("You have pink hair highlight colour!")
 --- en
 --- @hash 0x4B087305
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedHairHighlightColor(ped) end
 
@@ -705,7 +705,7 @@ function GetPedHairHighlightColor(ped) end
 --- A getter for [SET_PLAYER_MELEE_WEAPON_DEFENSE_MODIFIER](#\_0xAE540335B4ABC4E2).
 ---
 --- @hash 0x27E94EF8
---- @param playerId number (Player)
+--- @param playerId Player
 --- @return number (float)
 function GetPlayerMeleeWeaponDefenseModifier(playerId) end
 
@@ -713,7 +713,7 @@ function GetPlayerMeleeWeaponDefenseModifier(playerId) end
 --- Unlike [GET_PLAYER_INVINCIBLE](#\_0xB721981B2B939E07) this native gets both [SET_PLAYER_INVINCIBLE_KEEP_RAGDOLL_ENABLED](#\_0x6BC97F4F4BB3C04B) and [SET_PLAYER_INVINCIBLE](#\_0x239528EACDC3E7DE) invincibility state.
 ---
 --- @hash 0xF2E3912B
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function GetPlayerInvincible_2(player) end
 
@@ -721,7 +721,7 @@ function GetPlayerInvincible_2(player) end
 --- A getter for [SET_PLAYER_VEHICLE_DAMAGE_MODIFIER](#\_0xA50E117CDDF82F0C).
 ---
 --- @hash 0x78F27B1F
---- @param playerId number (Player)
+--- @param playerId Player
 --- @return number (float)
 function GetPlayerVehicleDamageModifier(playerId) end
 
@@ -738,7 +738,7 @@ function GetRandomVehicleDensityMultiplier() end
 --- GetPlayerServerId
 ---
 --- @hash 0x4D97BCC7
---- @param player number (Player)
+--- @param player Player
 --- @return number (int)
 function GetPlayerServerId(player) end
 
@@ -746,7 +746,7 @@ function GetPlayerServerId(player) end
 --- A getter for [SET_PLAYER_VEHICLE_DEFENSE_MODIFIER](#\_0x4C60E6EFDAFF2462).
 ---
 --- @hash 0x8326E7CD
---- @param playerId number (Player)
+--- @param playerId Player
 --- @return number (float)
 function GetPlayerVehicleDefenseModifier(playerId) end
 
@@ -755,7 +755,7 @@ function GetPlayerVehicleDefenseModifier(playerId) end
 ---
 --- @hash 0x344EA166
 --- @param serverId number (int)
---- @return number (Player)
+--- @return Player
 function GetPlayerFromServerId(serverId) end
 
     
@@ -778,7 +778,7 @@ function GetRuntimeTexturePitch(tex) end
 --- A getter for [SET_VEHICLE_CHEAT_POWER_INCREASE](#\_0xB59E4BD37AE292DB).
 ---
 --- @hash 0xC3C93F28
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleCheatPowerIncrease(vehicle) end
 
@@ -786,7 +786,7 @@ function GetVehicleCheatPowerIncrease(vehicle) end
 --- GetVehicleCurrentGear
 ---
 --- @hash 0xB4F4E566
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleCurrentGear(vehicle) end
 
@@ -802,7 +802,7 @@ function GetRuntimeTextureHeight(tex) end
 --- GetVehicleClutch
 ---
 --- @hash 0x1DAD4583
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleClutch(vehicle) end
 
@@ -818,7 +818,7 @@ function GetRuntimeTextureWidth(tex) end
 --- GetVehicleAlarmTimeLeft
 ---
 --- @hash 0xC62AAC98
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleAlarmTimeLeft(vehicle) end
 
@@ -826,7 +826,7 @@ function GetVehicleAlarmTimeLeft(vehicle) end
 --- GetTrainCurrentTrackNode
 ---
 --- @hash 0xE015E854
---- @param train number (Vehicle)
+--- @param train Vehicle
 --- @return number (int)
 function GetTrainCurrentTrackNode(train) end
 
@@ -834,7 +834,7 @@ function GetTrainCurrentTrackNode(train) end
 --- Gets a vehicle's multiplier used with a wheel's GET_VEHICLE_WHEEL_STEERING_ANGLE to determine the angle the wheel is rendered.
 ---
 --- @hash 0x21C1DA8E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleDrawnWheelAngleMult(vehicle) end
 
@@ -850,7 +850,7 @@ function GetVehicleDensityMultiplier() end
 --- GetVehicleDashboardSpeed
 ---
 --- @hash 0x9AAD420E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleDashboardSpeed(vehicle) end
 
@@ -858,7 +858,7 @@ function GetVehicleDashboardSpeed(vehicle) end
 --- GetVehicleFuelLevel
 ---
 --- @hash 0x5F739BB8
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleFuelLevel(vehicle) end
 
@@ -866,7 +866,7 @@ function GetVehicleFuelLevel(vehicle) end
 --- GetVehicleHighGear
 ---
 --- @hash 0xF1D1D689
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleHighGear(vehicle) end
 
@@ -874,7 +874,7 @@ function GetVehicleHighGear(vehicle) end
 --- GetVehicleCurrentRpm
 ---
 --- @hash 0xE7B12B54
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleCurrentRpm(vehicle) end
 
@@ -882,7 +882,7 @@ function GetVehicleCurrentRpm(vehicle) end
 --- GetVehicleEngineTemperature
 ---
 --- @hash 0xF4F495CB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleEngineTemperature(vehicle) end
 
@@ -891,7 +891,7 @@ function GetVehicleEngineTemperature(vehicle) end
 --- Example: `local modelFlags = GetVehicleHandlingInt(vehicle, 'CHandlingData', 'strModelFlags')`
 ---
 --- @hash 0x27396C75
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param class_ string (char*)
 --- @param fieldName string (char*)
 --- @return number (int)
@@ -902,7 +902,7 @@ function GetVehicleHandlingInt(vehicle, class_, fieldName) end
 --- Example: `local fSteeringLock = GetVehicleHandlingFloat(vehicle, 'CHandlingData', 'fSteeringLock')`
 ---
 --- @hash 0x642FC12F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param class_ string (char*)
 --- @param fieldName string (char*)
 --- @return number (float)
@@ -912,7 +912,7 @@ function GetVehicleHandlingFloat(vehicle, class_, fieldName) end
 --- GetVehicleGravityAmount
 ---
 --- @hash 0xB48A1292
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleGravityAmount(vehicle) end
 
@@ -920,7 +920,7 @@ function GetVehicleGravityAmount(vehicle) end
 --- GetVehicleOilLevel
 ---
 --- @hash 0xFC7F8EF4
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleOilLevel(vehicle) end
 
@@ -928,7 +928,7 @@ function GetVehicleOilLevel(vehicle) end
 --- GetVehicleNextGear
 ---
 --- @hash 0xDDB298AE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleNextGear(vehicle) end
 
@@ -936,7 +936,7 @@ function GetVehicleNextGear(vehicle) end
 --- Gets the vehicle indicator light state. 0 = off, 1 = left, 2 = right, 3 = both
 ---
 --- @hash 0x83070354
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleIndicatorLights(vehicle) end
 
@@ -944,7 +944,7 @@ function GetVehicleIndicatorLights(vehicle) end
 --- GetVehicleSteeringScale
 ---
 --- @hash 0x954465DE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleSteeringScale(vehicle) end
 
@@ -953,7 +953,7 @@ function GetVehicleSteeringScale(vehicle) end
 --- Example: `local inertiaMultiplier = GetVehicleHandlingVector(vehicle, 'CHandlingData', 'vecInertiaMultiplier')`
 ---
 --- @hash 0xFB341304
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param class_ string (char*)
 --- @param fieldName string (char*)
 --- @return Vector3
@@ -963,7 +963,7 @@ function GetVehicleHandlingVector(vehicle, class_, fieldName) end
 --- GetVehicleThrottleOffset
 ---
 --- @hash 0xD1D07351
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleThrottleOffset(vehicle) end
 
@@ -972,7 +972,7 @@ function GetVehicleThrottleOffset(vehicle) end
 --- Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.
 ---
 --- @hash 0x70FE2EFF
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @return number (float)
 function GetVehicleWheelBrakePressure(vehicle, wheelIndex) end
@@ -981,7 +981,7 @@ function GetVehicleWheelBrakePressure(vehicle, wheelIndex) end
 --- GetVehicleSteeringAngle
 ---
 --- @hash 0x1382FCEA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleSteeringAngle(vehicle) end
 
@@ -1011,7 +1011,7 @@ function GetVehicleSteeringAngle(vehicle) end
 ---   end
 --- end
 --- @hash 0x137260D1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleWheelieState(vehicle) end
 
@@ -1020,7 +1020,7 @@ function GetVehicleWheelieState(vehicle) end
 --- Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.
 ---
 --- @hash 0x149C9DA0
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @return number (float)
 function GetVehicleWheelSpeed(vehicle, wheelIndex) end
@@ -1029,7 +1029,7 @@ function GetVehicleWheelSpeed(vehicle, wheelIndex) end
 --- GetVehicleNumberOfWheels
 ---
 --- @hash 0xEDF4B0FC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleNumberOfWheels(vehicle) end
 
@@ -1037,7 +1037,7 @@ function GetVehicleNumberOfWheels(vehicle) end
 --- GetVehicleWheelHealth
 ---
 --- @hash 0x54A677F5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @return number (float)
 function GetVehicleWheelHealth(vehicle, wheelIndex) end
@@ -1046,7 +1046,7 @@ function GetVehicleWheelHealth(vehicle, wheelIndex) end
 --- A getter for [MODIFY_VEHICLE_TOP_SPEED](#\_0x93A3996368C94158). Returns -1.0 if a modifier is not set.
 ---
 --- @hash 0x998B7FEE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleTopSpeedModifier(vehicle) end
 
@@ -1055,7 +1055,7 @@ function GetVehicleTopSpeedModifier(vehicle) end
 --- Only works on non-default wheels (returns 0 in case of default wheels).
 ---
 --- @hash 0x9C7B59F9
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleWheelWidth(vehicle) end
 
@@ -1063,7 +1063,7 @@ function GetVehicleWheelWidth(vehicle) end
 --- GetVehicleWheelSurfaceMaterial
 ---
 --- @hash 0xA7F04022
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @return number (int)
 function GetVehicleWheelSurfaceMaterial(vehicle, wheelIndex) end
@@ -1073,7 +1073,7 @@ function GetVehicleWheelSurfaceMaterial(vehicle, wheelIndex) end
 --- Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.
 ---
 --- @hash 0xA0867448
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @return number (float)
 function GetVehicleWheelSteeringAngle(vehicle, wheelIndex) end
@@ -1082,7 +1082,7 @@ function GetVehicleWheelSteeringAngle(vehicle, wheelIndex) end
 --- GetVehicleWheelRimColliderSize
 ---
 --- @hash 0xCEE21AB2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @return number (float)
 function GetVehicleWheelRimColliderSize(vehicle, wheelIndex) end
@@ -1092,7 +1092,7 @@ function GetVehicleWheelRimColliderSize(vehicle, wheelIndex) end
 --- Only works on non-default wheels (returns 0 in case of default wheels).
 ---
 --- @hash 0x4046B66
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleWheelSize(vehicle) end
 
@@ -1100,7 +1100,7 @@ function GetVehicleWheelSize(vehicle) end
 --- GetVehicleWheelYRotation
 ---
 --- @hash 0x2EA4AFFE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @return number (float)
 function GetVehicleWheelYRotation(vehicle, wheelIndex) end
@@ -1109,7 +1109,7 @@ function GetVehicleWheelYRotation(vehicle, wheelIndex) end
 --- A getter for [\_SET_WEAPON_DAMAGE_MODIFIER](#\_0x4757F00BC6323CFE).
 ---
 --- @hash 0xD979143
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @return number (float)
 function GetWeaponDamageModifier(weaponHash) end
 
@@ -1125,7 +1125,7 @@ function IsDuiAvailable(duiObject) end
 --- GetVehicleTurboPressure
 ---
 --- @hash 0xE02B51D7
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleTurboPressure(vehicle) end
 
@@ -1133,7 +1133,7 @@ function GetVehicleTurboPressure(vehicle) end
 --- GetVehicleWheelTireColliderSize
 ---
 --- @hash 0xE0BA9FE6
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @return number (float)
 function GetVehicleWheelTireColliderSize(vehicle, wheelIndex) end
@@ -1176,7 +1176,7 @@ function IsBigmapActive() end
 --- GetVehicleWheelTireColliderWidth
 ---
 --- @hash 0xEF65929C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @return number (float)
 function GetVehicleWheelTireColliderWidth(vehicle, wheelIndex) end
@@ -1185,7 +1185,7 @@ function GetVehicleWheelTireColliderWidth(vehicle, wheelIndex) end
 --- Returns the offset of the specified wheel relative to the wheel's axle center.
 ---
 --- @hash 0xCC90CBCA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @return number (float)
 function GetVehicleWheelXOffset(vehicle, wheelIndex) end
@@ -1204,7 +1204,7 @@ function IsStreamingFileReady(registerAs) end
 --- IsVehicleAlarmSet
 ---
 --- @hash 0xDC921211
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleAlarmSet(vehicle) end
 
@@ -1212,7 +1212,7 @@ function IsVehicleAlarmSet(vehicle) end
 --- IsVehicleWanted
 ---
 --- @hash 0xA7DAF7C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleWanted(vehicle) end
 
@@ -1220,7 +1220,7 @@ function IsVehicleWanted(vehicle) end
 --- IsVehicleNeedsToBeHotwired
 ---
 --- @hash 0xF9933BF4
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleNeedsToBeHotwired(vehicle) end
 
@@ -1244,7 +1244,7 @@ function MumbleRemoveVoiceChannelListen(channel) end
 --- IsVehiclePreviouslyOwnedByPlayer
 ---
 --- @hash 0xF849ED67
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehiclePreviouslyOwnedByPlayer(vehicle) end
 
@@ -1287,7 +1287,7 @@ function MumbleAddVoiceTargetChannel(targetId, channel) end
 ---
 --- @hash 0x32C5355A
 --- @param targetId number (int)
---- @param player number (Player)
+--- @param player Player
 --- @return void
 function MumbleAddVoiceTargetPlayer(targetId, player) end
 
@@ -1312,7 +1312,7 @@ function MumbleAddVoiceTargetPlayerByServerId(targetId, serverId) end
 --- IsVehicleInteriorLightOn
 ---
 --- @hash 0xA411F72C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleInteriorLightOn(vehicle) end
 
@@ -1355,7 +1355,7 @@ function MumbleSetAudioOutputDistance(distance) end
 --- Set to -1.0 to reset the Volume override.
 ---
 --- @hash 0x61C309E3
---- @param player number (Player)
+--- @param player Player
 --- @param volume number (float)
 --- @return void
 function MumbleSetVolumeOverride(player, volume) end
@@ -1916,7 +1916,7 @@ function SetNuiFocus(hasFocus, hasCursor) end
 --- SetModelHeadlightConfiguration
 ---
 --- @hash 0x7F6B8D75
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param ratePerSecond number (float)
 --- @param headlightRotation number (float)
 --- @param invertRotation boolean
@@ -1928,7 +1928,7 @@ function SetModelHeadlightConfiguration(modelHash, ratePerSecond, headlightRotat
 --- This function doesn't need to be called every frame, it works like a switcher.
 ---
 --- @hash 0xFC02CAF6
---- @param player number (Player)
+--- @param player Player
 --- @param state boolean
 --- @return void
 function SetPlayerTalkingOverride(player, state) end
@@ -1971,7 +1971,7 @@ function SetTextChatEnabled(enabled) end
 --- SetVehicleCurrentRpm
 ---
 --- @hash 0x2A01A8FC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param rpm number (float)
 --- @return void
 function SetVehicleCurrentRpm(vehicle, rpm) end
@@ -1980,7 +1980,7 @@ function SetVehicleCurrentRpm(vehicle, rpm) end
 --- SetVehicleGravityAmount
 ---
 --- @hash 0x1A963E58
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param gravity number (float)
 --- @return void
 function SetVehicleGravityAmount(vehicle, gravity) end
@@ -1989,7 +1989,7 @@ function SetVehicleGravityAmount(vehicle, gravity) end
 --- SetVehicleEngineTemperature
 ---
 --- @hash 0x6C93C4A9
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param temperature number (float)
 --- @return void
 function SetVehicleEngineTemperature(vehicle, temperature) end
@@ -1998,7 +1998,7 @@ function SetVehicleEngineTemperature(vehicle, temperature) end
 --- SetVehicleClutch
 ---
 --- @hash 0x2F70ACED
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param clutch number (float)
 --- @return void
 function SetVehicleClutch(vehicle, clutch) end
@@ -2007,7 +2007,7 @@ function SetVehicleClutch(vehicle, clutch) end
 --- SetVehicleAlarmTimeLeft
 ---
 --- @hash 0xC108EE6F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param time number (int)
 --- @return void
 function SetVehicleAlarmTimeLeft(vehicle, time) end
@@ -2040,7 +2040,7 @@ function SetRuntimeTexturePixel(tex, x, y, r, g, b, a) end
 --- SetVehicleFuelLevel
 ---
 --- @hash 0xBA970511
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param level number (float)
 --- @return void
 function SetVehicleFuelLevel(vehicle, level) end
@@ -2049,7 +2049,7 @@ function SetVehicleFuelLevel(vehicle, level) end
 --- SetVehicleSteeringScale
 ---
 --- @hash 0xEB46596F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param scale number (float)
 --- @return void
 function SetVehicleSteeringScale(vehicle, scale) end
@@ -2058,7 +2058,7 @@ function SetVehicleSteeringScale(vehicle, scale) end
 --- SetVehicleSteeringAngle
 ---
 --- @hash 0xFFCCC2EA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param angle number (float)
 --- @return void
 function SetVehicleSteeringAngle(vehicle, angle) end
@@ -2067,7 +2067,7 @@ function SetVehicleSteeringAngle(vehicle, angle) end
 --- Sets a handling override for a specific vehicle. Certain handling flags can only be set globally using `SET_HANDLING_VECTOR`, this might require some experimentation.
 ---
 --- @hash 0x12497890
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param class_ string (char*)
 --- @param fieldName string (char*)
 --- @param value Vector3
@@ -2078,7 +2078,7 @@ function SetVehicleHandlingVector(vehicle, class_, fieldName, value) end
 --- Disables the vehicle from being repaired when a vehicle extra is enabled.
 ---
 --- @hash 0x5F3A3574
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param value boolean
 --- @return void
 function SetVehicleAutoRepairDisabled(vehicle, value) end
@@ -2087,7 +2087,7 @@ function SetVehicleAutoRepairDisabled(vehicle, value) end
 --- SetVehicleWheelHealth
 ---
 --- @hash 0xB22ECEFD
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @param health number (float)
 --- @return void
@@ -2123,7 +2123,7 @@ function SetVehicleWheelHealth(vehicle, wheelIndex, health) end
 ---   end
 --- end
 --- @hash 0xEAB8DB65
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param state number (int)
 --- @return void
 function SetVehicleWheelieState(vehicle, state) end
@@ -2133,7 +2133,7 @@ function SetVehicleWheelieState(vehicle, state) end
 --- Example: `SetVehicleHandlingField(vehicle, 'CHandlingData', 'fSteeringLock', 360.0)`
 ---
 --- @hash 0x2BA40795
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param class_ string (char*)
 --- @param fieldName string (char*)
 --- @param value any
@@ -2144,7 +2144,7 @@ function SetVehicleHandlingField(vehicle, class_, fieldName, value) end
 --- SetVehicleTurboPressure
 ---
 --- @hash 0x6485615E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param pressure number (float)
 --- @return void
 function SetVehicleTurboPressure(vehicle, pressure) end
@@ -2153,7 +2153,7 @@ function SetVehicleTurboPressure(vehicle, pressure) end
 --- SetVehicleHighGear
 ---
 --- @hash 0x20B1B3E6
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param gear number (int)
 --- @return void
 function SetVehicleHighGear(vehicle, gear) end
@@ -2163,7 +2163,7 @@ function SetVehicleHighGear(vehicle, gear) end
 --- Example: `SetVehicleHandlingFloat(vehicle, 'CHandlingData', 'fSteeringLock', 360.0)`
 ---
 --- @hash 0x488C86D2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param class_ string (char*)
 --- @param fieldName string (char*)
 --- @param value number (float)
@@ -2174,7 +2174,7 @@ function SetVehicleHandlingFloat(vehicle, class_, fieldName, value) end
 --- Sets a handling override for a specific vehicle. Certain handling flags can only be set globally using `SET_HANDLING_INT`, this might require some experimentation.
 ---
 --- @hash 0xC37F4CF9
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param class_ string (char*)
 --- @param fieldName string (char*)
 --- @param value number (int)
@@ -2194,7 +2194,7 @@ function SetVisualSettingFloat(name, value) end
 --- SetVehicleOilLevel
 ---
 --- @hash 0x90D1CAD1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param level number (float)
 --- @return void
 function SetVehicleOilLevel(vehicle, level) end
@@ -2203,7 +2203,7 @@ function SetVehicleOilLevel(vehicle, level) end
 --- Use along with SetVehicleWheelWidth to resize the wheels (this native sets the collider width affecting physics while SetVehicleWheelWidth will change visual width).
 ---
 --- @hash 0x47BD0270
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @param value number (float)
 --- @return void
@@ -2213,7 +2213,7 @@ function SetVehicleWheelTireColliderWidth(vehicle, wheelIndex, value) end
 --- Use along with SetVehicleWheelSize to resize the wheels (this native sets the collider size affecting physics while SetVehicleWheelSize will change visual size).
 ---
 --- @hash 0xB962D05C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @param value number (float)
 --- @return void
@@ -2225,7 +2225,7 @@ function SetVehicleWheelTireColliderSize(vehicle, wheelIndex, value) end
 --- Returns whether change was successful (can be false if trying to set size for non-default wheels).
 ---
 --- @hash 0x53AB5C35
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param size number (float)
 --- @return boolean
 function SetVehicleWheelSize(vehicle, size) end
@@ -2236,7 +2236,7 @@ function SetVehicleWheelSize(vehicle, size) end
 --- Returns whether change was successful (can be false if trying to set width for non-default wheels).
 ---
 --- @hash 0x64C3F1C0
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param width number (float)
 --- @return boolean
 function SetVehicleWheelWidth(vehicle, width) end
@@ -2254,7 +2254,7 @@ function SetVehicleWheelWidth(vehicle, width) end
 --- ```
 ---
 --- @hash 0xBD6357D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @param offset number (float)
 --- @return void
@@ -2272,7 +2272,7 @@ function ShutdownLoadingScreenNui() end
 --- SetVehicleWheelYRotation
 ---
 --- @hash 0xC6C2171F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @param value number (float)
 --- @return void
@@ -2282,7 +2282,7 @@ function SetVehicleWheelYRotation(vehicle, wheelIndex, value) end
 --- Not sure what this changes, probably determines physical rim size in case the tire is blown.
 ---
 --- @hash 0xF380E184
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelIndex number (int)
 --- @param value number (float)
 --- @return void

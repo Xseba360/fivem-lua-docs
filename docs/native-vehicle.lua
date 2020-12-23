@@ -2,7 +2,7 @@
 --- AddVehiclePhoneExplosiveDevice
 ---
 --- @hash 0x99AD4CCCB128CBC9
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function AddVehiclePhoneExplosiveDevice(vehicle) end
 
@@ -10,7 +10,7 @@ function AddVehiclePhoneExplosiveDevice(vehicle) end
 --- CanVehicleParachuteBeActivated
 ---
 --- @hash 0xA916396DF4154EE3
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function CanVehicleParachuteBeActivated(vehicle) end
 
@@ -26,7 +26,7 @@ function CanVehicleParachuteBeActivated(vehicle) end
 --- ```
 ---
 --- @hash 0x755D6D5267CBBD7E
---- @param plane number (Vehicle)
+--- @param plane Vehicle
 --- @return boolean
 function ArePlanePropellersIntact(plane) end
 
@@ -36,7 +36,7 @@ function ArePlanePropellersIntact(plane) end
 --- ```
 ---
 --- @hash 0x11D862A3E977A9EF
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function AreAllVehicleWindowsIntact(vehicle) end
 
@@ -59,8 +59,8 @@ function AreAllVehicleWindowsIntact(vehicle) end
 --- -- Do the following to detach the vehicle from the trailer
 --- DetachEntity(veh, true, false
 --- @hash 0x16B5E274BDE402F8
---- @param vehicle number (Vehicle)
---- @param trailer number (Vehicle)
+--- @param vehicle Vehicle
+--- @param trailer Vehicle
 --- @param offsetX number (float)
 --- @param offsetY number (float)
 --- @param offsetZ number (float)
@@ -86,7 +86,7 @@ function DeleteScriptVehicleGenerator(vehicleGenerator) end
 --- DoesVehicleHaveDoor
 ---
 --- @hash 0x645F4B6E8499F632
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param doorIndex number (int)
 --- @return boolean
 function DoesVehicleHaveDoor(vehicle, doorIndex) end
@@ -135,7 +135,7 @@ function DetonateVehiclePhoneExplosiveDevice() end
 --- ```
 ---
 --- @hash 0x2D34FC3BC4ADB780
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function AreAnyVehicleSeatsFree(vehicle) end
 
@@ -147,7 +147,7 @@ function AreAnyVehicleSeatsFree(vehicle) end
 --- ```
 ---
 --- @hash 0x24F4121D07579880
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function CanBoatBeAnchored_2(vehicle) end
 
@@ -155,8 +155,8 @@ function CanBoatBeAnchored_2(vehicle) end
 --- DetachEntityFromCargobob
 ---
 --- @hash 0xAF03011701811146
---- @param vehicle number (Vehicle)
---- @param entity table (Entity)
+--- @param vehicle Vehicle
+--- @param entity Entity
 --- @return any
 function DetachEntityFromCargobob(vehicle, entity) end
 
@@ -164,7 +164,7 @@ function DetachEntityFromCargobob(vehicle, entity) end
 --- AddVehicleUpsidedownCheck
 ---
 --- @hash 0xB72E26D81006005B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function AddVehicleUpsidedownCheck(vehicle) end
 
@@ -174,7 +174,7 @@ function AddVehicleUpsidedownCheck(vehicle) end
 --- ```
 ---
 --- @hash 0x5FFBDEEC3E8E2009
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return any
 function ClearVehicleCustomSecondaryColour(vehicle) end
 
@@ -186,7 +186,7 @@ function ClearVehicleCustomSecondaryColour(vehicle) end
 --- ```
 ---
 --- @hash 0xAEF12960FA943792
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function AreHeliStubWingsDeployed(vehicle) end
 
@@ -194,7 +194,7 @@ function AreHeliStubWingsDeployed(vehicle) end
 --- ClearVehicleRouteHistory
 ---
 --- @hash 0x6D6AF961B72728AE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function ClearVehicleRouteHistory(vehicle) end
 
@@ -202,7 +202,7 @@ function ClearVehicleRouteHistory(vehicle) end
 --- DetachVehicleFromAnyCargobob
 ---
 --- @hash 0xADF7BE450512C12F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function DetachVehicleFromAnyCargobob(vehicle) end
 
@@ -217,7 +217,7 @@ function DetachVehicleFromAnyCargobob(vehicle) end
 --- ```
 ---
 --- @hash 0xCFC8BE9A5E1FE575
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param state number (int)
 --- @return void
 function ControlLandingGear(vehicle, state) end
@@ -232,7 +232,7 @@ function ControlLandingGear(vehicle, state) end
 --- ```
 ---
 --- @hash 0xBA71116ADF5B514C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param isAudible boolean
 --- @param isInvisible boolean
 --- @return void
@@ -244,7 +244,7 @@ function ExplodeVehicle(vehicle, isAudible, isInvisible) end
 --- ```
 ---
 --- @hash 0x55E1D2758F34E437
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return any
 function ClearVehicleCustomPrimaryColour(vehicle) end
 
@@ -259,7 +259,7 @@ function ClearVehicleCustomPrimaryColour(vehicle) end
 --- end
 ---
 --- @hash 0xD0917A423314BBA8
---- @param aircraft number (Vehicle)
+--- @param aircraft Vehicle
 --- @return boolean
 function AreBombBayDoorsOpen(aircraft) end
 
@@ -267,8 +267,8 @@ function AreBombBayDoorsOpen(aircraft) end
 --- Copy the damage like broken bumpers and broken lights from a vehicle and paste them on another vehicle.
 ---
 --- @hash 0xE44A982368A4AF23
---- @param sourceVehicle number (Vehicle)
---- @param targetVehicle number (Vehicle)
+--- @param sourceVehicle Vehicle
+--- @param targetVehicle Vehicle
 --- @return void
 function CopyVehicleDamages(sourceVehicle, targetVehicle) end
 
@@ -278,7 +278,7 @@ function CopyVehicleDamages(sourceVehicle, targetVehicle) end
 --- ```
 ---
 --- @hash 0x5991A01434CE9677
---- @param plane number (Vehicle)
+--- @param plane Vehicle
 --- @return boolean
 function ArePlaneWingsIntact(plane) end
 
@@ -296,21 +296,21 @@ function DoesScriptVehicleGeneratorExist(vehicleGenerator) end
 --- ```
 ---
 --- @hash 0xAF35D0D2583051B0
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param heading number (float)
 --- @param isNetwork boolean
 --- @param netMissionEntity boolean
---- @return number (Vehicle)
+--- @return Vehicle
 function CreateVehicle(modelHash, x, y, z, heading, isNetwork, netMissionEntity) end
 
     
 --- DetachVehicleFromAnyTowTruck
 ---
 --- @hash 0xD0E9CE05A1E68CD8
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function DetachVehicleFromAnyTowTruck(vehicle) end
 
@@ -320,7 +320,7 @@ function DetachVehicleFromAnyTowTruck(vehicle) end
 --- ```
 ---
 --- @hash 0x6E08BF5B3722BAC9
---- @param cargobob number (Vehicle)
+--- @param cargobob Vehicle
 --- @return boolean
 function DoesCargobobHavePickupMagnet(cargobob) end
 
@@ -328,7 +328,7 @@ function DoesCargobobHavePickupMagnet(cargobob) end
 --- GetEntryPositionOfDoor
 ---
 --- @hash 0xC0572928C0ABFDA3
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param doorIndex number (int)
 --- @return Vector3
 function GetEntryPositionOfDoor(vehicle, doorIndex) end
@@ -337,7 +337,7 @@ function GetEntryPositionOfDoor(vehicle, doorIndex) end
 --- ExplodeVehicleInCutscene
 ---
 --- @hash 0x786A4EB67B01BF0B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function ExplodeVehicleInCutscene(vehicle, p1) end
@@ -349,8 +349,8 @@ function ExplodeVehicleInCutscene(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x29A16F8D621C4508
---- @param towTruck number (Vehicle)
---- @param vehicle number (Vehicle)
+--- @param towTruck Vehicle
+--- @param vehicle Vehicle
 --- @param rear boolean
 --- @param hookOffsetX number (float)
 --- @param hookOffsetY number (float)
@@ -378,7 +378,7 @@ function GetPositionOfVehicleRecordingAtTime(p0, p1, p2) end
 --- ```
 ---
 --- @hash 0x90532EDF0D2BDD86
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function DetachVehicleFromTrailer(vehicle) end
 
@@ -388,7 +388,7 @@ function DetachVehicleFromTrailer(vehicle) end
 --- ```
 ---
 --- @hash 0x71AFB258CCED3A27
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function GetDoesVehicleHaveTombstone(vehicle) end
 
@@ -396,8 +396,8 @@ function GetDoesVehicleHaveTombstone(vehicle) end
 --- AttachEntityToCargobob
 ---
 --- @hash 0xA1DD82F3CCF9A01E
---- @param vehicle number (Vehicle)
---- @param entity table (Entity)
+--- @param vehicle Vehicle
+--- @param entity Entity
 --- @param p2 number (int)
 --- @param x number (float)
 --- @param y number (float)
@@ -446,7 +446,7 @@ function AddVehicleCombatAngledAvoidanceArea(p0, p1, p2, p3, p4, p5, p6) end
 --- @param heading number (float)
 --- @param p4 number (float)
 --- @param p5 number (float)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param p7 number (int)
 --- @param p8 number (int)
 --- @param p9 number (int)
@@ -471,7 +471,7 @@ function CreateScriptVehicleGenerator(x, y, z, heading, p4, p5, modelHash, p7, p
 --- ```
 ---
 --- @hash 0xEA386986E786A54F
---- @param vehicle table (Vehicle*)
+--- @param vehicle Vehicle (Vehicle*)
 --- @return void
 function DeleteVehicle(vehicle) end
 
@@ -479,15 +479,15 @@ function DeleteVehicle(vehicle) end
 --- GetEntityAttachedToTowTruck
 ---
 --- @hash 0xEFEA18DCF10F8F75
---- @param towTruck number (Vehicle)
---- @return table (Entity)
+--- @param towTruck Vehicle
+--- @return Entity
 function GetEntityAttachedToTowTruck(towTruck) end
 
     
 --- DeleteMissionTrain
 ---
 --- @hash 0x5B76B14AE875C795
---- @param train table (Vehicle*)
+--- @param train Vehicle (Vehicle*)
 --- @return void
 function DeleteMissionTrain(train) end
 
@@ -495,7 +495,7 @@ function DeleteMissionTrain(train) end
 --- CanShuffleSeat
 ---
 --- @hash 0x30785D90C956BF35
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 any
 --- @return boolean
 function CanShuffleSeat(vehicle, p1) end
@@ -504,7 +504,7 @@ function CanShuffleSeat(vehicle, p1) end
 --- GetIsVehiclePrimaryColourCustom
 ---
 --- @hash 0xF095C0405307B21B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function GetIsVehiclePrimaryColourCustom(vehicle) end
 
@@ -515,7 +515,7 @@ function GetIsVehiclePrimaryColourCustom(vehicle) end
 --- ```
 ---
 --- @hash 0xE4CB7541F413D2C5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetHeliMainRotorHealth(vehicle) end
 
@@ -523,8 +523,8 @@ function GetHeliMainRotorHealth(vehicle) end
 --- AttachVehicleToTrailer
 ---
 --- @hash 0x3C7D42D58F770B54
---- @param vehicle number (Vehicle)
---- @param trailer number (Vehicle)
+--- @param vehicle Vehicle
+--- @param trailer Vehicle
 --- @param radius number (float)
 --- @return void
 function AttachVehicleToTrailer(vehicle, trailer, radius) end
@@ -535,7 +535,7 @@ function AttachVehicleToTrailer(vehicle, trailer, radius) end
 --- ```
 ---
 --- @hash 0xCBDB9B923CACC92D
---- @param cargobob number (Vehicle)
+--- @param cargobob Vehicle
 --- @return Vector3
 function GetCargobobHookPosition(cargobob) end
 
@@ -549,7 +549,7 @@ function GetCargobobHookPosition(cargobob) end
 --- ```
 ---
 --- @hash 0x8DC9675797123522
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return Vector3
 function FindRandomPointInSpace(ped) end
 
@@ -559,7 +559,7 @@ function FindRandomPointInSpace(ped) end
 --- ```
 ---
 --- @hash 0x57E4C39DE5EE8470
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function DoesVehicleHaveStuckVehicleCheck(vehicle) end
 
@@ -567,7 +567,7 @@ function DoesVehicleHaveStuckVehicleCheck(vehicle) end
 --- DoesVehicleHaveRocketBoost
 ---
 --- @hash 0x36D782F68B309BDA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function DoesVehicleHaveRocketBoost(vehicle) end
 
@@ -583,7 +583,7 @@ function DoesVehicleHaveRocketBoost(vehicle) end
 --- ```
 ---
 --- @hash 0x7BEB0C7A235F6F3B
---- @param cargobob number (Vehicle)
+--- @param cargobob Vehicle
 --- @param state number (int)
 --- @return void
 function CreatePickUpRopeForCargobob(cargobob, state) end
@@ -611,7 +611,7 @@ function CreatePickUpRopeForCargobob(cargobob, state) end
 --- Also, this function is coded to not work on vehicles of type: `CBike`, `Bmx`, `CBoat`, `CTrain`, and `CSubmarine`.
 ---
 --- @hash 0x772282EBEB95E682
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param index number (int)
 --- @return any
 function FixVehicleWindow(vehicle, index) end
@@ -628,7 +628,7 @@ function GetVehicleClassEstimatedMaxSpeed(vehicleClass) end
 --- DoesVehicleHaveRetractableWheels
 ---
 --- @hash 0xDCA174A42133F08C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function DoesVehicleHaveRetractableWheels(vehicle) end
 
@@ -636,7 +636,7 @@ function DoesVehicleHaveRetractableWheels(vehicle) end
 --- ForceSubmarineSurfaceMode
 ---
 --- @hash 0x33506883545AC0DF
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function ForceSubmarineSurfaceMode(vehicle, toggle) end
@@ -653,7 +653,7 @@ function ForceSubmarineSurfaceMode(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0xB215AAC32D25D019
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return string (char*)
 function GetDisplayNameFromVehicleModel(modelHash) end
 
@@ -661,7 +661,7 @@ function GetDisplayNameFromVehicleModel(modelHash) end
 --- CanAnchorBoatHere
 ---
 --- @hash 0x26C10ECBDA5D043B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function CanAnchorBoatHere(vehicle) end
 
@@ -669,9 +669,9 @@ function CanAnchorBoatHere(vehicle) end
 --- GetLastPedInVehicleSeat
 ---
 --- @hash 0x83F969AA1EE2A664
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param seatIndex number (int)
---- @return table (Ped)
+--- @return Ped
 function GetLastPedInVehicleSeat(vehicle, seatIndex) end
 
     
@@ -680,7 +680,7 @@ function GetLastPedInVehicleSeat(vehicle, seatIndex) end
 --- ```
 ---
 --- @hash 0x3B963160CD65D41E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetNumberOfVehicleColours(vehicle) end
 
@@ -692,7 +692,7 @@ function GetNumberOfVehicleColours(vehicle) end
 --- ```
 ---
 --- @hash 0x260BE8F09E326A20
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param distance number (float)
 --- @param duration number (int)
 --- @param unknown boolean
@@ -705,7 +705,7 @@ function BringVehicleToHalt(vehicle, distance, duration, unknown) end
 --- ```
 ---
 --- @hash 0x5EF77C9ADD3B11A3
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function GetIsLeftVehicleHeadlightDamaged(vehicle) end
 
@@ -713,8 +713,8 @@ function GetIsLeftVehicleHeadlightDamaged(vehicle) end
 --- DetachVehicleFromCargobob
 ---
 --- @hash 0x0E21D3DF1051399D
---- @param vehicle number (Vehicle)
---- @param cargobob number (Vehicle)
+--- @param vehicle Vehicle
+--- @param cargobob Vehicle
 --- @return void
 function DetachVehicleFromCargobob(vehicle, cargobob) end
 
@@ -738,7 +738,7 @@ function DeleteAllTrains() end
 --- DoesVehicleHaveWeapons
 ---
 --- @hash 0x25ECB9F8017D98E0
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function DoesVehicleHaveWeapons(vehicle) end
 
@@ -749,7 +749,7 @@ function DoesVehicleHaveWeapons(vehicle) end
 --- ```
 ---
 --- @hash 0x6D645D59FB5F5AD3
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function DetachVehicleWindscreen(vehicle) end
 
@@ -764,15 +764,15 @@ function DetachVehicleWindscreen(vehicle) end
 --- @param p4 number (int)
 --- @param p5 number (int)
 --- @param p6 number (int)
---- @return number (Vehicle)
+--- @return Vehicle
 function GetRandomVehicleBackBumperInSphere(p0, p1, p2, p3, p4, p5, p6) end
 
     
 --- AttachVehicleToCargobob
 ---
 --- @hash 0x4127F1D84E347769
---- @param vehicle number (Vehicle)
---- @param cargobob number (Vehicle)
+--- @param vehicle Vehicle
+--- @param cargobob Vehicle
 --- @param p2 number (int)
 --- @param x number (float)
 --- @param y number (float)
@@ -784,7 +784,7 @@ function AttachVehicleToCargobob(vehicle, cargobob, p2, x, y, z) end
 --- EjectJb700Roof
 ---
 --- @hash 0xE38CB9D7D39FDBCC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -797,7 +797,7 @@ function EjectJb700Roof(vehicle, x, y, z) end
 --- ```
 ---
 --- @hash 0x500873A45724C863
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param propeller number (int)
 --- @return void
 function DisablePlanePropeller(vehicle, propeller) end
@@ -810,8 +810,8 @@ function DisablePlanePropeller(vehicle, propeller) end
 --- ```
 ---
 --- @hash 0x04F2FA6E234162F7
---- @param vehicle number (Vehicle)
---- @return number (Vehicle)
+--- @param vehicle Vehicle
+--- @return Vehicle
 function GetLastRammedVehicle(vehicle) end
 
     
@@ -830,9 +830,9 @@ function GetLastRammedVehicle(vehicle) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param flags number (int)
---- @return number (Vehicle)
+--- @return Vehicle
 function GetRandomVehicleInSphere(x, y, z, radius, modelHash, flags) end
 
     
@@ -851,7 +851,7 @@ function GetAllVehicles(vehArray) end
 --- ```
 ---
 --- @hash 0x1821D91AD4B56108
---- @param cargobob number (Vehicle)
+--- @param cargobob Vehicle
 --- @return boolean
 function DoesCargobobHavePickUpRope(cargobob) end
 
@@ -867,7 +867,7 @@ function ClearLastDrivenVehicle() end
 --- DoesVehicleHaveParachute
 ---
 --- @hash 0xBC9CFF381338CB4F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function DoesVehicleHaveParachute(vehicle) end
 
@@ -875,7 +875,7 @@ function DoesVehicleHaveParachute(vehicle) end
 --- CloseBombBayDoors
 ---
 --- @hash 0x3556041742A0DC74
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function CloseBombBayDoors(vehicle) end
 
@@ -892,7 +892,7 @@ function CloseBombBayDoors(vehicle) end
 --- end
 ---
 --- @hash 0xDA62027C8BDB326E
---- @param aircraft number (Vehicle)
+--- @param aircraft Vehicle
 --- @return number (float)
 function GetPlaneVtolDirection(aircraft) end
 
@@ -900,8 +900,8 @@ function GetPlaneVtolDirection(aircraft) end
 --- GetEntityAttachedToCargobob
 ---
 --- @hash 0x99093F60746708CA
---- @param vehicle number (Vehicle)
---- @return table (Entity)
+--- @param vehicle Vehicle
+--- @return Entity
 function GetEntityAttachedToCargobob(vehicle) end
 
     
@@ -924,14 +924,14 @@ function GetNumModColors(p0, p1) end
 --- @param p4 number (int)
 --- @param p5 number (int)
 --- @param p6 number (int)
---- @return number (Vehicle)
+--- @return Vehicle
 function GetRandomVehicleFrontBumperInSphere(p0, p1, p2, p3, p4, p5, p6) end
 
     
 --- DetachContainerFromHandlerFrame
 ---
 --- @hash 0x7C0043FDFF6436BC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function DetachContainerFromHandlerFrame(vehicle) end
 
@@ -942,7 +942,7 @@ function DetachContainerFromHandlerFrame(vehicle) end
 --- ```
 ---
 --- @hash 0xAE8CE82A4219AC8C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetHeliTailRotorHealth(vehicle) end
 
@@ -952,7 +952,7 @@ function GetHeliTailRotorHealth(vehicle) end
 --- ```
 ---
 --- @hash 0x23428FC53C60919C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @param p2 boolean
 --- @return void
@@ -970,7 +970,7 @@ function DisablePlaneAileron(vehicle, p1, p2) end
 --- Landing gear state 2 is never used.
 ---
 --- @hash 0x9B0F3DCA3DB0F4CD
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetLandingGearState(vehicle) end
 
@@ -982,7 +982,7 @@ function GetLandingGearState(vehicle) end
 --- ```
 ---
 --- @hash 0x0506ED94363AD905
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function GetIsVehicleEmpDisabled(vehicle) end
 
@@ -998,7 +998,7 @@ function GetIsVehicleEmpDisabled(vehicle) end
 ---
 --- @hash 0xB2D06FAEDE65B577
 ---
---- @return number (Vehicle)
+--- @return Vehicle
 function GetLastDrivenVehicle() end
 
     
@@ -1007,7 +1007,7 @@ function GetLastDrivenVehicle() end
 --- ```
 ---
 --- @hash 0xA7ECB73355EB2F20
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function GetIsRightVehicleHeadlightDamaged(vehicle) end
 
@@ -1019,7 +1019,7 @@ function GetIsRightVehicleHeadlightDamaged(vehicle) end
 --- ```
 ---
 --- @hash 0xF271147EB7B40F12
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleBodyHealth(vehicle) end
 
@@ -1027,7 +1027,7 @@ function GetVehicleBodyHealth(vehicle) end
 --- GetBoatBoomPositionRatio
 ---
 --- @hash 0x6636C535F6CC2725
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetBoatBoomPositionRatio(vehicle) end
 
@@ -1051,9 +1051,9 @@ function GetBoatBoomPositionRatio(vehicle) end
 --- **NativeDB Added Parameter 3**: BOOL p2 (uses a different GetOccupant function)
 ---
 --- @hash 0xBB40DD2270B65366
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param index number (int)
---- @return table (Ped)
+--- @return Ped
 function GetPedInVehicleSeat(vehicle, index) end
 
     
@@ -1086,7 +1086,7 @@ function GetPedInVehicleSeat(vehicle, index) end
 --- ```
 ---
 --- @hash 0xB8EF61207C2393A9
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleBodyHealth_2(vehicle) end
 
@@ -1094,7 +1094,7 @@ function GetVehicleBodyHealth_2(vehicle) end
 --- GetVehicleMaxNumberOfPassengers
 ---
 --- @hash 0xA7C4F2C6E744A550
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleMaxNumberOfPassengers(vehicle) end
 
@@ -1115,9 +1115,9 @@ function GetNumberOfVehicleNumberPlates() end
 ---
 --- @hash 0xF4FC6A6F67D8D856
 --- @param disabled boolean
---- @param weaponHash table (Hash)
---- @param vehicle number (Vehicle)
---- @param owner table (Ped)
+--- @param weaponHash Hash
+--- @param vehicle Vehicle
+--- @param owner Ped
 --- @return void
 function DisableVehicleWeapon(disabled, weaponHash, vehicle, owner) end
 
@@ -1125,7 +1125,7 @@ function DisableVehicleWeapon(disabled, weaponHash, vehicle, owner) end
 --- DoesVehicleHaveRoof
 ---
 --- @hash 0x8AC862B0B32C5B80
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function DoesVehicleHaveRoof(vehicle) end
 
@@ -1133,7 +1133,7 @@ function DoesVehicleHaveRoof(vehicle) end
 --- GetVehicleCustomPrimaryColour
 ---
 --- @hash 0xB64CF2CCA9D95F52
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param r table (int*)
 --- @param g table (int*)
 --- @param b table (int*)
@@ -1146,7 +1146,7 @@ function GetVehicleCustomPrimaryColour(vehicle, r, g, b) end
 --- ```
 ---
 --- @hash 0x1262D55792428154
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param extraId number (int)
 --- @return boolean
 function DoesExtraExist(vehicle, extraId) end
@@ -1157,7 +1157,7 @@ function DoesExtraExist(vehicle, extraId) end
 --- ```
 ---
 --- @hash 0xA77DC70BD689A1E5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function GetIsSubmarineVehicleTransformed(vehicle) end
 
@@ -1165,7 +1165,7 @@ function GetIsSubmarineVehicleTransformed(vehicle) end
 --- GetVehicleHasKers
 ---
 --- @hash 0x50634E348C8D44EF
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function GetVehicleHasKers(vehicle) end
 
@@ -1175,15 +1175,15 @@ function GetVehicleHasKers(vehicle) end
 --- ```
 ---
 --- @hash 0x375E7FC44F21C8AB
---- @param entity table (Entity)
---- @return number (Vehicle)
+--- @param entity Entity
+--- @return Vehicle
 function GetVehicleAttachedToEntity(entity) end
 
     
 --- DisableVehicleNeonLights
 ---
 --- @hash 0x83F813570FF519DE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function DisableVehicleNeonLights(vehicle, toggle) end
@@ -1214,9 +1214,9 @@ function DisableVehicleNeonLights(vehicle, toggle) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param flags number (int)
---- @return number (Vehicle)
+--- @return Vehicle
 function GetClosestVehicle(x, y, z, radius, modelHash, flags) end
 
     
@@ -1226,7 +1226,7 @@ function GetClosestVehicle(x, y, z, radius, modelHash, flags) end
 --- ```
 ---
 --- @hash 0x8935624F8C5592CC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param modType number (int)
 --- @param modValue number (int)
 --- @return string (char*)
@@ -1238,7 +1238,7 @@ function GetModTextLabel(vehicle, modType, modValue) end
 --- ```
 ---
 --- @hash 0xF3CC740D36221548
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param r table (int*)
 --- @param g table (int*)
 --- @param b table (int*)
@@ -1257,7 +1257,7 @@ function GetPositionInRecording(p0) end
 --- DisableVehicleTurretMovementThisFrame
 ---
 --- @hash 0x32CAEDF24A583345
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function DisableVehicleTurretMovementThisFrame(vehicle) end
 
@@ -1276,7 +1276,7 @@ function GetVehicleClassMaxBraking(vehicleClass) end
 --- ```
 ---
 --- @hash 0xAC51915D27E4A5F7
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetHeliTailBoomHealth(vehicle) end
 
@@ -1298,7 +1298,7 @@ function AddVehicleStuckCheckWithWarp(p0, p1, p2, p3, p4, p5, p6) end
 --- GetCurrentPlaybackForVehicle
 ---
 --- @hash 0x42BC05C27A946054
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetCurrentPlaybackForVehicle(vehicle) end
 
@@ -1320,7 +1320,7 @@ function GetCurrentPlaybackForVehicle(vehicle) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param direction boolean
---- @return number (Vehicle)
+--- @return Vehicle
 function CreateMissionTrain(variation, x, y, z, direction) end
 
     
@@ -1328,7 +1328,7 @@ function CreateMissionTrain(variation, x, y, z, direction) end
 --- A getter for [\_SET_VEHICLE_ROOF_LIVERY](#\_0xA6D3A8750DC73270).
 ---
 --- @hash 0x60190048C0764A26
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleRoofLivery(vehicle) end
 
@@ -1338,7 +1338,7 @@ function GetVehicleRoofLivery(vehicle) end
 --- ```
 ---
 --- @hash 0xE38E9162A2500646
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param modType number (int)
 --- @return number (int)
 function GetNumVehicleMods(vehicle, modType) end
@@ -1356,7 +1356,7 @@ function GetRotationOfVehicleRecordingIdAtTime(id, time) end
 --- GetVehicleColours
 ---
 --- @hash 0xA19435F193E081AC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param colorPrimary table (int*)
 --- @param colorSecondary table (int*)
 --- @return void
@@ -1368,8 +1368,8 @@ function GetVehicleColours(vehicle, colorPrimary, colorSecondary) end
 --- ```
 ---
 --- @hash 0x873B82D42AC2B9E5
---- @param cargobob number (Vehicle)
---- @return number (Vehicle)
+--- @param cargobob Vehicle
+--- @return Vehicle
 function GetVehicleAttachedToCargobob(cargobob) end
 
     
@@ -1378,7 +1378,7 @@ function GetVehicleAttachedToCargobob(cargobob) end
 --- ```
 ---
 --- @hash 0x36492C2F0D134C56
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleCurrentSlipstreamDraft(vehicle) end
 
@@ -1394,7 +1394,7 @@ function GetVehicleCurrentSlipstreamDraft(vehicle) end
 --- ```
 ---
 --- @hash 0xC45D23BAF168AAB8
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleEngineHealth(vehicle) end
 
@@ -1406,7 +1406,7 @@ function GetVehicleEngineHealth(vehicle) end
 --- ```
 ---
 --- @hash 0x51F0FEB9F6AE98C0
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param modType number (int)
 --- @return string (char*)
 function GetModSlotName(vehicle, modType) end
@@ -1430,8 +1430,8 @@ function GetTotalDurationOfVehicleRecordingId(p0) end
 --- ```
 ---
 --- @hash 0xE495D1EF4C91FD20
---- @param vehicle number (Vehicle)
---- @return table (Hash)
+--- @param vehicle Vehicle
+--- @return Hash
 function GetVehicleCauseOfDestruction(vehicle) end
 
     
@@ -1440,7 +1440,7 @@ function GetVehicleCauseOfDestruction(vehicle) end
 --- ```
 ---
 --- @hash 0x9078C0C5EF8C19E9
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function DoesVehicleHaveJumpingAbility(vehicle) end
 
@@ -1448,7 +1448,7 @@ function DoesVehicleHaveJumpingAbility(vehicle) end
 --- GetVehicleLightsState
 ---
 --- @hash 0xB91B4C20085BD12F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param lightsOn table (BOOL*)
 --- @param highbeamsOn table (BOOL*)
 --- @return boolean
@@ -1478,7 +1478,7 @@ function GetNumVehicleWindowTints() end
 --- ```
 ---
 --- @hash 0xF8C397922FC03F41
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetConvertibleRoofState(vehicle) end
 
@@ -1486,7 +1486,7 @@ function GetConvertibleRoofState(vehicle) end
 --- GetNumModKits
 ---
 --- @hash 0x33F2E3FE70EAAE1D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetNumModKits(vehicle) end
 
@@ -1494,7 +1494,7 @@ function GetNumModKits(vehicle) end
 --- GetVehicleInteriorColour
 ---
 --- @hash 0x7D1464D472D32136
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param color table (int*)
 --- @return void
 function GetVehicleInteriorColour(vehicle, color) end
@@ -1508,7 +1508,7 @@ function GetVehicleInteriorColour(vehicle, color) end
 --- ```
 ---
 --- @hash 0xA82819CAC9C4C403
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleEnveffScale(vehicle) end
 
@@ -1519,7 +1519,7 @@ function GetVehicleEnveffScale(vehicle) end
 --- ```
 ---
 --- @hash 0xDC53FD41B4ED944C
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return number (float)
 function GetVehicleModelMaxBraking(modelHash) end
 
@@ -1537,7 +1537,7 @@ function GetTimePositionInRecording(p0) end
 --- ```
 ---
 --- @hash 0xA2459F72C14E2E8D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function GetIsVehicleShuntBoostActive(vehicle) end
 
@@ -1550,7 +1550,7 @@ function GetIsVehicleShuntBoostActive(vehicle) end
 --- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 --- print("This plane has " .. GetAircraftBombCount(vehicle) .. " bombs left."
 --- @hash 0xEA12BD130D7569A1
---- @param aircraft number (Vehicle)
+--- @param aircraft Vehicle
 --- @return number (int)
 function GetVehicleBombCount(aircraft) end
 
@@ -1560,8 +1560,8 @@ function GetVehicleBombCount(aircraft) end
 --- ```
 ---
 --- @hash 0xC2DB6B6708350ED8
---- @param towTruck number (Vehicle)
---- @param vehicle number (Vehicle)
+--- @param towTruck Vehicle
+--- @param vehicle Vehicle
 --- @return void
 function DetachVehicleFromTowTruck(towTruck, vehicle) end
 
@@ -1569,7 +1569,7 @@ function DetachVehicleFromTowTruck(towTruck, vehicle) end
 --- GetVehicleEstimatedMaxSpeed
 ---
 --- @hash 0x53AF99BAA671CA47
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleEstimatedMaxSpeed(vehicle) end
 
@@ -1577,8 +1577,8 @@ function GetVehicleEstimatedMaxSpeed(vehicle) end
 --- GetVehicleLayoutHash
 ---
 --- @hash 0x28D37D4F71AC5C58
---- @param vehicle number (Vehicle)
---- @return table (Hash)
+--- @param vehicle Vehicle
+--- @return Hash
 function GetVehicleLayoutHash(vehicle) end
 
     
@@ -1591,7 +1591,7 @@ function GetVehicleLayoutHash(vehicle) end
 ---
 --- @hash 0x055BF0AC0C34F4FD
 --- @param p0 boolean
---- @param modelHash table (Hash*)
+--- @param modelHash Hash (Hash*)
 --- @param p2 table (int*)
 --- @return void
 function GetRandomVehicleModelInMemory(p0, modelHash, p2) end
@@ -1605,7 +1605,7 @@ function GetRandomVehicleModelInMemory(p0, modelHash, p2) end
 --- ```
 ---
 --- @hash 0xDEDF1C8BD47C2200
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return number (int)
 function GetVehicleClassFromName(modelHash) end
 
@@ -1613,7 +1613,7 @@ function GetVehicleClassFromName(modelHash) end
 --- GetVehicleMaxBraking
 ---
 --- @hash 0xAD7E85FC227197C4
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleMaxBraking(vehicle) end
 
@@ -1625,7 +1625,7 @@ function GetVehicleMaxBraking(vehicle) end
 --- ```
 ---
 --- @hash 0x53409B5163D5B846
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return number (float)
 function GetVehicleModelDownForce(modelHash) end
 
@@ -1635,7 +1635,7 @@ function GetVehicleModelDownForce(modelHash) end
 --- ```
 ---
 --- @hash 0xF417C2502FFFED43
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return number (float)
 function GetVehicleModelEstimatedMaxSpeed(modelHash) end
 
@@ -1645,7 +1645,7 @@ function GetVehicleModelEstimatedMaxSpeed(modelHash) end
 --- ```
 ---
 --- @hash 0xAE31E7DF9B5B132E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function GetIsVehicleEngineRunning(vehicle) end
 
@@ -1653,7 +1653,7 @@ function GetIsVehicleEngineRunning(vehicle) end
 --- GetVehicleModModifierValue
 ---
 --- @hash 0x90A38E9838E0A8C1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param modType number (int)
 --- @param modIndex number (int)
 --- @return number (float)
@@ -1665,7 +1665,7 @@ function GetVehicleModModifierValue(vehicle, modType, modIndex) end
 --- ```
 ---
 --- @hash 0x5DD35C8D074E57AE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleAcceleration(vehicle) end
 
@@ -1673,7 +1673,7 @@ function GetVehicleAcceleration(vehicle) end
 --- GetVehicleColourCombination
 ---
 --- @hash 0x6A842D197F845D56
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleColourCombination(vehicle) end
 
@@ -1683,7 +1683,7 @@ function GetVehicleColourCombination(vehicle) end
 --- ```
 ---
 --- @hash 0x4E417C547182C84D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function DoesVehicleAllowRappel(vehicle) end
 
@@ -1691,7 +1691,7 @@ function DoesVehicleAllowRappel(vehicle) end
 --- GetIsWheelsLoweredStateActive
 ---
 --- @hash 0x1DA0DA9CB3F0C8BF
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function GetIsWheelsLoweredStateActive(vehicle) end
 
@@ -1718,7 +1718,7 @@ function GetIsWheelsLoweredStateActive(vehicle) end
 --- ```
 ---
 --- @hash 0xB4C7A93837C91A1F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param liveryIndex number (int)
 --- @return string (char*)
 function GetLiveryName(vehicle, liveryIndex) end
@@ -1731,7 +1731,7 @@ function GetLiveryName(vehicle, liveryIndex) end
 --- ```
 ---
 --- @hash 0xC6AD107DDC9054CC
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return number (float)
 function GetVehicleModelMaxKnots(modelHash) end
 
@@ -1739,7 +1739,7 @@ function GetVehicleModelMaxKnots(modelHash) end
 --- GetVehicleModKitType
 ---
 --- @hash 0xFC058F5121E54C32
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleModKitType(vehicle) end
 
@@ -1751,7 +1751,7 @@ function GetVehicleModKitType(vehicle) end
 --- ```
 ---
 --- @hash 0xBFBA3BA79CFF7EBF
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return number (float)
 function GetVehicleModelMaxBrakingMaxMods(modelHash) end
 
@@ -1761,7 +1761,7 @@ function GetVehicleModelMaxBrakingMaxMods(modelHash) end
 --- ```
 ---
 --- @hash 0xE43701C36CAFF1A4
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return any
 function GetVehicleHasLandingGear(vehicle) end
 
@@ -1771,7 +1771,7 @@ function GetVehicleHasLandingGear(vehicle) end
 --- ```
 ---
 --- @hash 0x8F17BC8BA08DA62B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleDirtLevel(vehicle) end
 
@@ -1782,7 +1782,7 @@ function GetVehicleDirtLevel(vehicle) end
 --- ```
 ---
 --- @hash 0x27B926779DEB502D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param frontBumper boolean
 --- @return boolean
 function IsVehicleBumperBouncing(vehicle, frontBumper) end
@@ -1819,7 +1819,7 @@ function IsVehicleBumperBouncing(vehicle, frontBumper) end
 --- ```
 ---
 --- @hash 0x29439776AAA00A62
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleClass(vehicle) end
 
@@ -1827,7 +1827,7 @@ function GetVehicleClass(vehicle) end
 --- GetVehicleTyresCanBurst
 ---
 --- @hash 0x678B9BB8C3F58FEB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function GetVehicleTyresCanBurst(vehicle) end
 
@@ -1835,7 +1835,7 @@ function GetVehicleTyresCanBurst(vehicle) end
 --- GetNumberOfVehicleDoors
 ---
 --- @hash 0x92922A607497B14D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetNumberOfVehicleDoors(vehicle) end
 
@@ -1851,9 +1851,9 @@ function GetVehicleClassMaxTraction(vehicleClass) end
 --- GetPedUsingVehicleDoor
 ---
 --- @hash 0x218297BF0CFD853B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param doorIndex number (int)
---- @return table (Ped)
+--- @return Ped
 function GetPedUsingVehicleDoor(vehicle, doorIndex) end
 
     
@@ -1883,8 +1883,8 @@ function GetTotalDurationOfVehicleRecording(p0, p1) end
 --- ```
 ---
 --- @hash 0x8F5EBAB1F260CFCE
---- @param vehicle number (Vehicle)
---- @param entity table (Entity*)
+--- @param vehicle Vehicle
+--- @param entity Entity (Entity*)
 --- @return boolean
 function GetVehicleLockOnTarget(vehicle, entity) end
 
@@ -1896,9 +1896,9 @@ function GetVehicleLockOnTarget(vehicle, entity) end
 --- ```
 ---
 --- @hash 0xDF7E3EEB29642C38
---- @param vehicle number (Vehicle)
---- @param out1 table (Vector3*)
---- @param out2 table (Vector3*)
+--- @param vehicle Vehicle
+--- @param out1 Vector3 (Vector3*)
+--- @param out2 Vector3 (Vector3*)
 --- @return void
 function GetVehicleSuspensionBounds(vehicle, out1, out2) end
 
@@ -1908,9 +1908,9 @@ function GetVehicleSuspensionBounds(vehicle, out1, out2) end
 --- ```
 ---
 --- @hash 0x08AAFD0814722BC3
---- @param train number (Vehicle)
+--- @param train Vehicle
 --- @param trailerNumber number (int)
---- @return table (Entity)
+--- @return Entity
 function GetTrainCarriage(train, trailerNumber) end
 
     
@@ -1931,7 +1931,7 @@ function GetPositionOfVehicleRecordingIdAtTime(id, time) end
 --- ```
 ---
 --- @hash 0x9A83F5F9963775EF
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleModLoadDone(vehicle) end
 
@@ -1939,7 +1939,7 @@ function IsVehicleModLoadDone(vehicle) end
 --- GetVehicleWeaponCapacity
 ---
 --- @hash 0x8181CE2F25CB9BB7
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param weaponIndex number (int)
 --- @return number (int)
 function GetVehicleWeaponCapacity(vehicle, weaponIndex) end
@@ -1948,7 +1948,7 @@ function GetVehicleWeaponCapacity(vehicle, weaponIndex) end
 --- GetVehicleModKit
 ---
 --- @hash 0x6325D1A044AE510D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleModKit(vehicle) end
 
@@ -1960,7 +1960,7 @@ function GetVehicleModKit(vehicle) end
 --- ```
 ---
 --- @hash 0x5AA3F878A178C4FC
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return number (float)
 function GetVehicleModelMoveResistance(modelHash) end
 
@@ -1970,7 +1970,7 @@ function GetVehicleModelMoveResistance(modelHash) end
 --- ```
 ---
 --- @hash 0xB3924ECD70E095DC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param modType number (int)
 --- @return boolean
 function GetVehicleModVariation(vehicle, modType) end
@@ -1982,7 +1982,7 @@ function GetVehicleModVariation(vehicle, modType) end
 --- ```
 ---
 --- @hash 0xB45085B721EFD38C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return string (char*)
 function GetVehicleModColor_1Name(vehicle, p1) end
@@ -1994,7 +1994,7 @@ function GetVehicleModColor_1Name(vehicle, p1) end
 --- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 --- print("This plane has " .. GetAircraftCountermeasureCount(vehicle) .. " countermeasures left."
 --- @hash 0xF846AA63DF56B804
---- @param aircraft number (Vehicle)
+--- @param aircraft Vehicle
 --- @return number (int)
 function GetVehicleCountermeasureCount(aircraft) end
 
@@ -2002,7 +2002,7 @@ function GetVehicleCountermeasureCount(aircraft) end
 --- GetVehicleCustomSecondaryColour
 ---
 --- @hash 0x8389CD56CA8072DC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param r table (int*)
 --- @param g table (int*)
 --- @param b table (int*)
@@ -2013,7 +2013,7 @@ function GetVehicleCustomSecondaryColour(vehicle, r, g, b) end
 --- Returns a number of available rooftop liveries, or -1 if vehicle has no rooftop liveries available.
 ---
 --- @hash 0x5ECB40269053C0D4
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleRoofLiveryCount(vehicle) end
 
@@ -2021,8 +2021,8 @@ function GetVehicleRoofLiveryCount(vehicle) end
 --- GetVehicleDoorsLockedForPlayer
 ---
 --- @hash 0xF6AF6CB341349015
---- @param vehicle number (Vehicle)
---- @param player number (Player)
+--- @param vehicle Vehicle
+--- @param player Player
 --- @return boolean
 function GetVehicleDoorsLockedForPlayer(vehicle, player) end
 
@@ -2032,7 +2032,7 @@ function GetVehicleDoorsLockedForPlayer(vehicle, player) end
 --- ```
 ---
 --- @hash 0xB0AD1238A709B1A2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsBoatAnchoredAndFrozen(vehicle) end
 
@@ -2042,7 +2042,7 @@ function IsBoatAnchoredAndFrozen(vehicle) end
 --- ```
 ---
 --- @hash 0xAE71FB656C600587
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function HideVehicleTombstone(vehicle, toggle) end
@@ -2062,7 +2062,7 @@ function HideVehicleTombstone(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x25BC98A59C2EA962
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleDoorLockStatus(vehicle) end
 
@@ -2073,7 +2073,7 @@ function GetVehicleDoorLockStatus(vehicle) end
 --- ```
 ---
 --- @hash 0x42A4BEB35D372407
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleNumberOfBrokenOffBones(vehicle) end
 
@@ -2084,7 +2084,7 @@ function GetVehicleNumberOfBrokenOffBones(vehicle) end
 --- ```
 ---
 --- @hash 0x772960298DA26FDB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param modType number (int)
 --- @return number (int)
 function GetVehicleMod(vehicle, modType) end
@@ -2095,7 +2095,7 @@ function GetVehicleMod(vehicle, modType) end
 --- ```
 ---
 --- @hash 0x910A32E7AAD2656C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function GetIsVehicleSecondaryColourCustom(vehicle) end
 
@@ -2109,7 +2109,7 @@ function GetIsVehicleSecondaryColourCustom(vehicle) end
 --- ```
 ---
 --- @hash 0x4EC6CFBC7B2E9536
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param offsetX number (float)
 --- @param offsetY number (float)
 --- @param offsetZ number (float)
@@ -2120,7 +2120,7 @@ function GetVehicleDeformationAtPos(vehicle, offsetX, offsetY, offsetZ) end
 --- GetVehicleModColor_2
 ---
 --- @hash 0x81592BE4E3878728
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param paintType table (int*)
 --- @param color table (int*)
 --- @return void
@@ -2132,7 +2132,7 @@ function GetVehicleModColor_2(vehicle, paintType, color) end
 --- ```
 ---
 --- @hash 0x7CE1CCB9B293020E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return string (char*)
 function GetVehicleNumberPlateText(vehicle) end
 
@@ -2155,7 +2155,7 @@ function GetRotationOfVehicleRecordingAtTime(p0, p1, p2) end
 --- ```
 ---
 --- @hash 0x8C044C5C84505B6A
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return number (float)
 function GetVehicleModelAcceleration(modelHash) end
 
@@ -2163,7 +2163,7 @@ function GetVehicleModelAcceleration(modelHash) end
 --- GetVehicleExtraColours
 ---
 --- @hash 0x3BC4245933A166F7
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param pearlescentColor table (int*)
 --- @param wheelColor table (int*)
 --- @return void
@@ -2183,7 +2183,7 @@ function GetVehicleClassMaxAgility(vehicleClass) end
 --- ```
 ---
 --- @hash 0x87B63E25A529D526
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleLiveryCount(vehicle) end
 
@@ -2194,7 +2194,7 @@ function GetVehicleLiveryCount(vehicle) end
 --- ```
 ---
 --- @hash 0x2AD93716F184EDA4
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return number (int)
 function GetVehicleModelNumberOfSeats(modelHash) end
 
@@ -2204,7 +2204,7 @@ function GetVehicleModelNumberOfSeats(modelHash) end
 --- ```
 ---
 --- @hash 0x2BB9230590DA5E8A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleLivery(vehicle) end
 
@@ -2215,7 +2215,7 @@ function GetVehicleLivery(vehicle) end
 --- ```
 ---
 --- @hash 0x7619EEE8C886757F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param r table (int*)
 --- @param g table (int*)
 --- @param b table (int*)
@@ -2226,7 +2226,7 @@ function GetVehicleNeonLightsColour(vehicle, r, g, b) end
 --- IsVehicleSlipstreamLeader
 ---
 --- @hash 0x48C633E94A8142A7
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleSlipstreamLeader(vehicle) end
 
@@ -2234,7 +2234,7 @@ function IsVehicleSlipstreamLeader(vehicle) end
 --- IsThisModelAHeli
 ---
 --- @hash 0xDCE4334788AF94EA
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function IsThisModelAHeli(model) end
 
@@ -2242,7 +2242,7 @@ function IsThisModelAHeli(model) end
 --- IsHeliPartBroken
 ---
 --- @hash 0xBC74B4BE25EB6C8A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @param p2 boolean
 --- @param p3 boolean
@@ -2274,7 +2274,7 @@ function IsCopVehicleInArea_3d(x1, x2, y1, y2, z1, z2) end
 --- ```
 ---
 --- @hash 0x4967A516ED23A5A1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return string (char*)
 function GetVehicleModColor_2Name(vehicle) end
 
@@ -2290,7 +2290,7 @@ function HasPreloadModsFinished(p0) end
 --- IsPlaybackGoingOnForVehicle
 ---
 --- @hash 0x1C8A4C2C19E68EEC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsPlaybackGoingOnForVehicle(vehicle) end
 
@@ -2298,7 +2298,7 @@ function IsPlaybackGoingOnForVehicle(vehicle) end
 --- IsHeliLandingAreaBlocked
 ---
 --- @hash 0x634148744F385576
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsHeliLandingAreaBlocked(vehicle) end
 
@@ -2306,7 +2306,7 @@ function IsHeliLandingAreaBlocked(vehicle) end
 --- GetVehicleDoorAngleRatio
 ---
 --- @hash 0xFE3F9C29F7B32BD5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param door number (int)
 --- @return number (float)
 function GetVehicleDoorAngleRatio(vehicle, door) end
@@ -2318,7 +2318,7 @@ function GetVehicleDoorAngleRatio(vehicle, door) end
 --- ```
 ---
 --- @hash 0xE8D65CA700C9A693
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param paintType table (int*)
 --- @param color table (int*)
 --- @param pearlescentColor table (int*)
@@ -2329,7 +2329,7 @@ function GetVehicleModColor_1(vehicle, paintType, color, pearlescentColor) end
 --- IsVehicleAlarmActivated
 ---
 --- @hash 0x4319E335B71FFF34
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleAlarmActivated(vehicle) end
 
@@ -2337,7 +2337,7 @@ function IsVehicleAlarmActivated(vehicle) end
 --- IsVehicleExtraTurnedOn
 ---
 --- @hash 0xD2E6822DBFD6C8BD
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param extraId number (int)
 --- @return boolean
 function IsVehicleExtraTurnedOn(vehicle, extraId) end
@@ -2346,7 +2346,7 @@ function IsVehicleExtraTurnedOn(vehicle, extraId) end
 --- GetVehicleWindowTint
 ---
 --- @hash 0x0EE21293DAD47C95
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleWindowTint(vehicle) end
 
@@ -2354,7 +2354,7 @@ function GetVehicleWindowTint(vehicle) end
 --- IsTaxiLightOn
 ---
 --- @hash 0x7504C0F113AB50FC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsTaxiLightOn(vehicle) end
 
@@ -2362,7 +2362,7 @@ function IsTaxiLightOn(vehicle) end
 --- GetVehicleTyreSmokeColor
 ---
 --- @hash 0xB635392A4938B3C3
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param r table (int*)
 --- @param g table (int*)
 --- @param b table (int*)
@@ -2375,7 +2375,7 @@ function GetVehicleTyreSmokeColor(vehicle, r, g, b) end
 --- ```
 ---
 --- @hash 0x24CB2137731FFE89
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleNumberOfPassengers(vehicle) end
 
@@ -2383,8 +2383,8 @@ function GetVehicleNumberOfPassengers(vehicle) end
 --- IsHandlerFrameAboveContainer
 ---
 --- @hash 0x89D630CF5EA96D23
---- @param handler number (Vehicle)
---- @param container table (Entity)
+--- @param handler Vehicle
+--- @param container Entity
 --- @return boolean
 function IsHandlerFrameAboveContainer(handler, container) end
 
@@ -2404,7 +2404,7 @@ function IsHandlerFrameAboveContainer(handler, container) end
 --- ```
 ---
 --- @hash 0xB3ED1BFB4BE636DC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleWheelType(vehicle) end
 
@@ -2423,7 +2423,7 @@ function GetVehicleRecordingId(p0, p1) end
 --- ```
 ---
 --- @hash 0xB50C0B0CEDC6CE84
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function IsThisModelABike(model) end
 
@@ -2431,7 +2431,7 @@ function IsThisModelABike(model) end
 --- IsToggleModOn
 ---
 --- @hash 0x84B233A8C8FC8AE7
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param modType number (int)
 --- @return boolean
 function IsToggleModOn(vehicle, modType) end
@@ -2442,8 +2442,8 @@ function IsToggleModOn(vehicle, modType) end
 --- ```
 ---
 --- @hash 0x1CDD6BADC297830D
---- @param vehicle number (Vehicle)
---- @param trailer table (Vehicle*)
+--- @param vehicle Vehicle
+--- @param trailer Vehicle (Vehicle*)
 --- @return boolean
 function GetVehicleTrailerVehicle(vehicle, trailer) end
 
@@ -2451,8 +2451,8 @@ function GetVehicleTrailerVehicle(vehicle, trailer) end
 --- IsEntityAttachedToHandlerFrame
 ---
 --- @hash 0x57715966069157AD
---- @param vehicle number (Vehicle)
---- @param entity table (Entity)
+--- @param vehicle Vehicle
+--- @param entity Entity
 --- @return boolean
 function IsEntityAttachedToHandlerFrame(vehicle, entity) end
 
@@ -2460,7 +2460,7 @@ function IsEntityAttachedToHandlerFrame(vehicle, entity) end
 --- GetVehiclePlateType
 ---
 --- @hash 0x9CCC9525BF2408E0
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehiclePlateType(vehicle) end
 
@@ -2468,7 +2468,7 @@ function GetVehiclePlateType(vehicle) end
 --- GetVehicleMaxTraction
 ---
 --- @hash 0xA132FB5370554DB0
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleMaxTraction(vehicle) end
 
@@ -2481,7 +2481,7 @@ function GetVehicleMaxTraction(vehicle) end
 --- ```
 ---
 --- @hash 0x53952FD2BAA19F17
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehicleSuspensionHeight(vehicle) end
 
@@ -2492,7 +2492,7 @@ function GetVehicleSuspensionHeight(vehicle) end
 --- ```
 ---
 --- @hash 0x52F357A30698BCCE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return boolean
 function IsVehicleAConvertible(vehicle, p1) end
@@ -2503,7 +2503,7 @@ function IsVehicleAConvertible(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x4198AB0022B15F87
---- @param plane number (Vehicle)
+--- @param plane Vehicle
 --- @return boolean
 function IsPlaneLandingGearIntact(plane) end
 
@@ -2511,7 +2511,7 @@ function IsPlaneLandingGearIntact(plane) end
 --- IsThisModelABicycle
 ---
 --- @hash 0xBF94DD42F63BDED2
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function IsThisModelABicycle(model) end
 
@@ -2522,7 +2522,7 @@ function IsThisModelABicycle(model) end
 --- ```
 ---
 --- @hash 0x539DE94D44FDFD0D
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return number (float)
 function GetVehicleModelMaxTraction(modelHash) end
 
@@ -2530,7 +2530,7 @@ function GetVehicleModelMaxTraction(modelHash) end
 --- IsVehicleStopped
 ---
 --- @hash 0x5721B434AD84D57A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleStopped(vehicle) end
 
@@ -2542,7 +2542,7 @@ function IsVehicleStopped(vehicle) end
 --- ```
 ---
 --- @hash 0xE7CF3C4F9F489F0C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleAttachedToTrailer(vehicle) end
 
@@ -2553,7 +2553,7 @@ function IsVehicleAttachedToTrailer(vehicle) end
 --- ```
 ---
 --- @hash 0x4C241E39B23DF959
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param isOnFireCheck boolean
 --- @return boolean
 function IsVehicleDriveable(vehicle, isOnFireCheck) end
@@ -2562,7 +2562,7 @@ function IsVehicleDriveable(vehicle, isOnFireCheck) end
 --- IsThisModelAPlane
 ---
 --- @hash 0xA0948AB42D7BA0DE
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function IsThisModelAPlane(model) end
 
@@ -2572,7 +2572,7 @@ function IsThisModelAPlane(model) end
 --- ```
 ---
 --- @hash 0xB8E181E559464527
---- @param veh number (Vehicle)
+--- @param veh Vehicle
 --- @param doorID number (int)
 --- @return boolean
 function IsVehicleDoorDamaged(veh, doorID) end
@@ -2581,7 +2581,7 @@ function IsVehicleDoorDamaged(veh, doorID) end
 --- IsThisModelAQuadbike
 ---
 --- @hash 0x39DAC362EE65FA28
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function IsThisModelAQuadbike(model) end
 
@@ -2589,7 +2589,7 @@ function IsThisModelAQuadbike(model) end
 --- Probably GET_VEHICLE_SOMETHING
 ---
 --- @hash 0x22FECB546C276A30
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function N_0x22fecb546c276a30(vehicle) end
 
@@ -2599,8 +2599,8 @@ function N_0x22fecb546c276a30(vehicle) end
 --- ```
 ---
 --- @hash 0x146DF9EC4C4B9FD4
---- @param towTruck number (Vehicle)
---- @param vehicle number (Vehicle)
+--- @param towTruck Vehicle
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleAttachedToTowTruck(towTruck, vehicle) end
 
@@ -2608,7 +2608,7 @@ function IsVehicleAttachedToTowTruck(towTruck, vehicle) end
 --- IsVehicleSirenAudioOn
 ---
 --- @hash 0xB5CC40FBCB586380
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleSirenAudioOn(vehicle) end
 
@@ -2628,7 +2628,7 @@ function IsThisModelAnAmphibiousQuadbike(model) end
 --- ```
 ---
 --- @hash 0x2C8CBFE1EA5FC631
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleNumberOfBrokenBones(vehicle) end
 
@@ -2636,7 +2636,7 @@ function GetVehicleNumberOfBrokenBones(vehicle) end
 --- IsVehicleHighDetail
 ---
 --- @hash 0x1F25887F3C104278
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleHighDetail(vehicle) end
 
@@ -2652,7 +2652,7 @@ function IsVehicleHighDetail(vehicle) end
 --- ```
 ---
 --- @hash 0xF11BC2DD9A3E7195
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleNumberPlateTextIndex(vehicle) end
 
@@ -2693,7 +2693,7 @@ function GetVehicleNumberPlateTextIndex(vehicle) end
 ---     print("Vehicle is now on fire!")
 --- end
 --- @hash 0xEC69ADF931AAE0C3
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleEngineOnFire(vehicle) end
 
@@ -2703,7 +2703,7 @@ function IsVehicleEngineOnFire(vehicle) end
 --- ```
 ---
 --- @hash 0xC0F97FCE55094987
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleSearchlightOn(vehicle) end
 
@@ -2711,7 +2711,7 @@ function IsVehicleSearchlightOn(vehicle) end
 --- IsBigVehicle
 ---
 --- @hash 0x9F243D3919F442FE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsBigVehicle(vehicle) end
 
@@ -2721,7 +2721,7 @@ function IsBigVehicle(vehicle) end
 --- ```
 ---
 --- @hash 0x8D474C8FAEFF6CDE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleSprayable(vehicle) end
 
@@ -2732,7 +2732,7 @@ function IsVehicleSprayable(vehicle) end
 --- ```
 ---
 --- @hash 0xAA0A52D24FB98293
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleVisible(vehicle) end
 
@@ -2757,7 +2757,7 @@ function HasVehicleAssetLoaded(vehicleAsset) end
 --- IsThisModelABoat
 ---
 --- @hash 0x45A9187928F4B9E3
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function IsThisModelABoat(model) end
 
@@ -2767,7 +2767,7 @@ function IsThisModelABoat(model) end
 --- ```
 ---
 --- @hash 0x26E13D440E7F6064
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param value number (float)
 --- @return void
 function N_0x26e13d440e7f6064(vehicle, value) end
@@ -2782,7 +2782,7 @@ function N_0x26e13d440e7f6064(vehicle, value) end
 --- ```
 ---
 --- @hash 0x1297A88E081430EB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleInBurnout(vehicle) end
 
@@ -2792,7 +2792,7 @@ function IsVehicleInBurnout(vehicle) end
 --- ```
 ---
 --- @hash 0xBCDC5017D3CE1E9E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleDamaged(vehicle) end
 
@@ -2802,7 +2802,7 @@ function IsVehicleDamaged(vehicle) end
 --- ```
 ---
 --- @hash 0x2959F696AE390A99
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleStoppedAtTrafficLights(vehicle) end
 
@@ -2813,7 +2813,7 @@ function IsVehicleStoppedAtTrafficLights(vehicle) end
 --- ```
 ---
 --- @hash 0x7D5DABE888D2D074
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (float)
 function GetVehiclePetrolTankHealth(vehicle) end
 
@@ -2821,7 +2821,7 @@ function GetVehiclePetrolTankHealth(vehicle) end
 --- IsAnyPassengerRappelingFromVehicle
 ---
 --- @hash 0x291E373D483E7EE7
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsAnyPassengerRappelingFromVehicle(vehicle) end
 
@@ -2829,7 +2829,7 @@ function IsAnyPassengerRappelingFromVehicle(vehicle) end
 --- N_0x182f266c2d9e2beb
 ---
 --- @hash 0x182F266C2D9E2BEB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (float)
 --- @return void
 function N_0x182f266c2d9e2beb(vehicle, p1) end
@@ -2857,7 +2857,7 @@ function N_0x3b458ddb57038f08(p0, p1, p2) end
 --- ```
 ---
 --- @hash 0x22AC59A870E6A669
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param seatIndex number (int)
 --- @return boolean
 function IsVehicleSeatFree(vehicle, seatIndex) end
@@ -2866,7 +2866,7 @@ function IsVehicleSeatFree(vehicle, seatIndex) end
 --- IsVehicleStuckOnRoof
 ---
 --- @hash 0xB497F06B288DCFDF
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleStuckOnRoof(vehicle) end
 
@@ -2885,7 +2885,7 @@ function IsAnyVehicleNearPoint(x, y, z, radius) end
 --- IsThisModelATrain
 ---
 --- @hash 0xAB935175B22E822B
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function IsThisModelATrain(model) end
 
@@ -2906,7 +2906,7 @@ function N_0x0ad9e8f87ff7c16f(p0, p1) end
 --- ```
 ---
 --- @hash 0xB104CD1BABF302E2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleOnAllWheels(vehicle) end
 
@@ -2914,7 +2914,7 @@ function IsVehicleOnAllWheels(vehicle) end
 --- IsVehicleRocketBoostActive
 ---
 --- @hash 0x3D34E80EED4AE3BE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleRocketBoostActive(vehicle) end
 
@@ -2922,7 +2922,7 @@ function IsVehicleRocketBoostActive(vehicle) end
 --- IsTurretSeat
 ---
 --- @hash 0xE33FFA906CE74880
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param seatIndex number (int)
 --- @return boolean
 function IsTurretSeat(vehicle, seatIndex) end
@@ -2940,8 +2940,8 @@ function N_0x065d03a9d6b2c6b5(p0, p1) end
 --- IsVehicleModel
 ---
 --- @hash 0x423E8DE37D934D89
---- @param vehicle number (Vehicle)
---- @param model table (Hash)
+--- @param vehicle Vehicle
+--- @param model Hash
 --- @return boolean
 function IsVehicleModel(vehicle, model) end
 
@@ -2972,7 +2972,7 @@ function IsVehicleModel(vehicle, model) end
 --- ```
 ---
 --- @hash 0x3DFF319A831E0CDB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function GetVehicleXenonLightsColour(vehicle) end
 
@@ -2980,7 +2980,7 @@ function GetVehicleXenonLightsColour(vehicle) end
 --- N_0x2311dd7159f00582
 ---
 --- @hash 0x2311DD7159F00582
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0x2311dd7159f00582(vehicle, p1) end
@@ -2989,7 +2989,7 @@ function N_0x2311dd7159f00582(vehicle, p1) end
 --- IsPlaybackUsingAiGoingOnForVehicle
 ---
 --- @hash 0xAEA8FD591FAD4106
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsPlaybackUsingAiGoingOnForVehicle(vehicle) end
 
@@ -2999,7 +2999,7 @@ function IsPlaybackUsingAiGoingOnForVehicle(vehicle) end
 --- ```
 ---
 --- @hash 0xF7F203E31F96F6A1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param seatIndex boolean
 --- @return boolean
 function IsSeatWarpOnly(vehicle, seatIndex) end
@@ -3008,7 +3008,7 @@ function IsSeatWarpOnly(vehicle, seatIndex) end
 --- IsVehicleBumperBrokenOff
 ---
 --- @hash 0x468056A6BB6F3846
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param front boolean
 --- @return boolean
 function IsVehicleBumperBrokenOff(vehicle, front) end
@@ -3021,7 +3021,7 @@ function IsVehicleBumperBrokenOff(vehicle, front) end
 --- ```
 ---
 --- @hash 0x1B212B26DD3C04DF
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function N_0x1b212b26dd3c04df(vehicle, toggle) end
@@ -3037,7 +3037,7 @@ function N_0x1b212b26dd3c04df(vehicle, toggle) end
 --- 6 = Trunk2
 ---
 --- @hash 0x3E933CFF7B111C22
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param doorIndex number (int)
 --- @return boolean
 function IsVehicleDoorFullyOpen(vehicle, doorIndex) end
@@ -3048,7 +3048,7 @@ function IsVehicleDoorFullyOpen(vehicle, doorIndex) end
 --- ```
 ---
 --- @hash 0x5EE5632F47AE9695
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param health number (float)
 --- @return void
 function N_0x5ee5632f47ae9695(vehicle, health) end
@@ -3057,7 +3057,7 @@ function N_0x5ee5632f47ae9695(vehicle, health) end
 --- GetVehicleDashboardColour
 ---
 --- @hash 0xB7635E80A5C31BFF
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param color table (int*)
 --- @return void
 function GetVehicleDashboardColour(vehicle, color) end
@@ -3077,7 +3077,7 @@ function N_0x0205f5365292d2eb(p0, p1) end
 --- LowerConvertibleRoof
 ---
 --- @hash 0xDED51F703D0FA83D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param instantlyLower boolean
 --- @return void
 function LowerConvertibleRoof(vehicle, instantlyLower) end
@@ -3088,7 +3088,7 @@ function LowerConvertibleRoof(vehicle, instantlyLower) end
 --- ```
 ---
 --- @hash 0x7F6DB52EEFC96DF8
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function IsThisModelACar(model) end
 
@@ -3115,7 +3115,7 @@ function N_0x3a9128352eac9e85(p0) end
 --- N_0x1093408b4b9d1146
 ---
 --- @hash 0x1093408B4B9D1146
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (float)
 --- @return void
 function N_0x1093408b4b9d1146(vehicle, p1) end
@@ -3169,8 +3169,8 @@ function N_0x107a473d7a6647a9(p0) end
 ---
 --- @hash 0x563B65A643ED072E
 --- @param weaponHash any
---- @param vehicle number (Vehicle)
---- @param owner table (Ped)
+--- @param vehicle Vehicle
+--- @param owner Ped
 --- @return boolean
 function IsVehicleWeaponDisabled(weaponHash, vehicle, owner) end
 
@@ -3178,8 +3178,8 @@ function IsVehicleWeaponDisabled(weaponHash, vehicle, owner) end
 --- IsVehicleAttachedToCargobob
 ---
 --- @hash 0xD40148F22E81A1D9
---- @param cargobob number (Vehicle)
---- @param vehicleAttached number (Vehicle)
+--- @param cargobob Vehicle
+--- @param vehicleAttached Vehicle
 --- @return boolean
 function IsVehicleAttachedToCargobob(cargobob, vehicleAttached) end
 
@@ -3207,7 +3207,7 @@ function N_0x1f34b0626c594380(p0, p1) end
 --- The extend paremeter is a toggle, so there is no need to loop this native.
 ---
 --- @hash 0x544996C0081ABDEB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param extend boolean
 --- @return void
 function N_0x544996c0081abdeb(vehicle, extend) end
@@ -3236,7 +3236,7 @@ function N_0x2c1d8b3b19e517cc(p0, p1) end
 --- ```
 ---
 --- @hash 0xBA291848A0815CA9
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelID number (int)
 --- @param completely boolean
 --- @return boolean
@@ -3254,7 +3254,7 @@ function IsVehicleTyreBurst(vehicle, wheelID, completely) end
 --- Those numbers go on for vehicles that have more than 4 doors with windows.
 ---
 --- @hash 0x46E571A0E20D01F1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param windowIndex number (int)
 --- @return boolean
 function IsVehicleWindowIntact(vehicle, windowIndex) end
@@ -3305,7 +3305,7 @@ function N_0x7c06330bfdda182e(p0) end
 --- ```
 ---
 --- @hash 0x7D6F9A3EF26136A0
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @param p2 boolean
 --- @return void
@@ -3317,7 +3317,7 @@ function N_0x7d6f9a3ef26136a0(vehicle, toggle, p2) end
 --- ```
 ---
 --- @hash 0x679BE1DAF71DA874
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (int)
 --- @param p2 number (int)
 --- @return boolean
@@ -3329,7 +3329,7 @@ function IsVehicleStuckTimerUp(vehicle, p1, p2) end
 --- ```
 ---
 --- @hash 0x2C4A1590ABF43E8B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0x2c4a1590abf43e8b(vehicle, p1) end
@@ -3361,7 +3361,7 @@ function N_0x0581730ab9380412(p0, p1, p2, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0x4419966C9936071A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function N_0x4419966c9936071a(vehicle) end
 
@@ -3381,7 +3381,7 @@ function N_0x26d99d5a82fd18e8(p0) end
 ---
 --- @hash 0xCEE4490CD57BB3C2
 --- @param garageName string (char*)
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleInGarageArea(garageName, vehicle) end
 
@@ -3414,7 +3414,7 @@ function N_0x0a3f820a9a9a9ac5(p0, p1, p2, p3) end
 --- IsVehicleStolen
 ---
 --- @hash 0x4AF9BD80EEBEB453
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleStolen(vehicle) end
 
@@ -3428,7 +3428,7 @@ function IsVehicleStolen(vehicle) end
 --- ```
 ---
 --- @hash 0x8C4B92553E4766A5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param index number (int)
 --- @return boolean
 function IsVehicleNeonLightEnabled(vehicle, index) end
@@ -3446,7 +3446,7 @@ function N_0x063ae2b2cc273588(p0, p1) end
 --- N_0x1f2e4e06dea8992b
 ---
 --- @hash 0x1F2E4E06DEA8992B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0x1f2e4e06dea8992b(vehicle, p1) end
@@ -3455,7 +3455,7 @@ function N_0x1f2e4e06dea8992b(vehicle, p1) end
 --- N_0x1f9fb66f3a3842d2
 ---
 --- @hash 0x1F9FB66F3A3842D2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0x1f9fb66f3a3842d2(vehicle, p1) end
@@ -3493,7 +3493,7 @@ function N_0x7bbe7ff626a591fe(p0) end
 --- ```
 ---
 --- @hash 0x571FEB383F629926
---- @param cargobob number (Vehicle)
+--- @param cargobob Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0x571feb383f629926(cargobob, p1) end
@@ -3502,7 +3502,7 @@ function N_0x571feb383f629926(cargobob, p1) end
 --- LowerRetractableWheels
 ---
 --- @hash 0x5335BE58C083E74E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function LowerRetractableWheels(vehicle) end
 
@@ -3537,7 +3537,7 @@ function N_0x430a7631a84c9be7(p0) end
 --- ```
 ---
 --- @hash 0x4593CF82AA179706
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param modType number (int)
 --- @param modIndex number (int)
 --- @return any
@@ -3563,7 +3563,7 @@ function N_0x51db102f4a3ba5e0(toggle) end
 --- IsThisModelAnAmphibiousCar
 ---
 --- @hash 0x633F6F44A537EBB6
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function IsThisModelAnAmphibiousCar(model) end
 
@@ -3591,7 +3591,7 @@ function N_0x2fa2494b47fdd009(p0, p1) end
 --- N_0x56eb5e94318d3fb6
 ---
 --- @hash 0x56EB5E94318D3FB6
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0x56eb5e94318d3fb6(vehicle, p1) end
@@ -3610,7 +3610,7 @@ function N_0x0a436b8643716d14() end
 --- N_0x5845066d8a1ea7f7
 ---
 --- @hash 0x5845066D8A1EA7F7
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -3622,7 +3622,7 @@ function N_0x5845066d8a1ea7f7(vehicle, x, y, z, p4) end
 --- N_0x3441cad2f2231923
 ---
 --- @hash 0x3441CAD2F2231923
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0x3441cad2f2231923(vehicle, p1) end
@@ -3669,7 +3669,7 @@ function N_0x4d9d109f63fee1d4(p0, p1) end
 --- ```
 ---
 --- @hash 0x93A3996368C94158
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param value number (float)
 --- @return void
 function ModifyVehicleTopSpeed(vehicle, value) end
@@ -3687,7 +3687,7 @@ function N_0x72beccf4b829522e(p0, p1) end
 --- N_0x4e74e62e0a97e901
 ---
 --- @hash 0x4E74E62E0A97E901
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0x4e74e62e0a97e901(vehicle, p1) end
@@ -3696,7 +3696,7 @@ function N_0x4e74e62e0a97e901(vehicle, p1) end
 --- N_0xab04325045427aae
 ---
 --- @hash 0xAB04325045427AAE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0xab04325045427aae(vehicle, p1) end
@@ -3736,7 +3736,7 @@ function N_0x5ba68a0840d546ac(p0, p1) end
 --- ```
 ---
 --- @hash 0x428AD3E26C8D9EB0
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -3783,7 +3783,7 @@ function N_0x65b080555ea48149(p0) end
 --- N_0x6ebfb22d646ffc18
 ---
 --- @hash 0x6EBFB22D646FFC18
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0x6ebfb22d646ffc18(vehicle, p1) end
@@ -3875,8 +3875,8 @@ function N_0xb68cfaf83a02768d(p0, p1) end
 --- N_0x6a98c2ecf57fa5d4
 ---
 --- @hash 0x6A98C2ECF57FA5D4
---- @param vehicle number (Vehicle)
---- @param entity table (Entity)
+--- @param vehicle Vehicle
+--- @param entity Entity
 --- @return void
 function N_0x6a98c2ecf57fa5d4(vehicle, entity) end
 
@@ -3886,7 +3886,7 @@ function N_0x6a98c2ecf57fa5d4(vehicle, entity) end
 --- ```
 ---
 --- @hash 0xCFD778E7904C255E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function N_0xcfd778e7904c255e(vehicle) end
 
@@ -3912,7 +3912,7 @@ function N_0xcfd778e7904c255e(vehicle) end
 --- ```
 ---
 --- @hash 0x51F30DB60626A20E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -3942,7 +3942,7 @@ function N_0xe2f53f172b45ede1() end
 --- ```
 ---
 --- @hash 0xB2E0C0D6922D31F2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function N_0xb2e0c0d6922d31f2(vehicle, toggle) end
@@ -4008,7 +4008,7 @@ function N_0x9a75585fb2e54fad(x, y, z, radius) end
 --- N_0x8aa9180de2fedd45
 ---
 --- @hash 0x8AA9180DE2FEDD45
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0x8aa9180de2fedd45(vehicle, p1) end
@@ -4017,7 +4017,7 @@ function N_0x8aa9180de2fedd45(vehicle, p1) end
 --- N_0xe16142b94664defd
 ---
 --- @hash 0xE16142B94664DEFD
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0xe16142b94664defd(vehicle, p1) end
@@ -4035,7 +4035,7 @@ function N_0xbb2333bb87ddd87f(p0, p1) end
 --- N_0x62ca17b74c435651
 ---
 --- @hash 0x62CA17B74C435651
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function N_0x62ca17b74c435651(vehicle) end
 
@@ -4100,7 +4100,7 @@ function N_0x2467a2d807d37ca3(p0) end
 --- RaiseRetractableWheels
 ---
 --- @hash 0xF660602546D27BA8
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function RaiseRetractableWheels(vehicle) end
 
@@ -4114,7 +4114,7 @@ function RaiseRetractableWheels(vehicle) end
 --- ```
 ---
 --- @hash 0x81A15811460FAB3A
---- @param vehicleHash table (Hash)
+--- @param vehicleHash Hash
 --- @param vehicleAsset number (int)
 --- @return void
 function RequestVehicleAsset(vehicleHash, vehicleAsset) end
@@ -4219,7 +4219,7 @@ function N_0x73561d4425a021a2(p0, p1) end
 --- NativeDB Introduced: v1180
 ---
 --- @hash 0x75627043C6AA90AD
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function N_0x75627043c6aa90ad(vehicle) end
 
@@ -4229,7 +4229,7 @@ function N_0x75627043c6aa90ad(vehicle) end
 --- ```
 ---
 --- @hash 0x76D26A22750E849E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function N_0x76d26a22750e849e(vehicle) end
 
@@ -4237,7 +4237,7 @@ function N_0x76d26a22750e849e(vehicle) end
 --- N_0x737e398138550fff
 ---
 --- @hash 0x737E398138550FFF
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function N_0x737e398138550fff(vehicle, toggle) end
@@ -4246,7 +4246,7 @@ function N_0x737e398138550fff(vehicle, toggle) end
 --- N_0x9f3f689b814f2599
 ---
 --- @hash 0x9F3F689B814F2599
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0x9f3f689b814f2599(vehicle, p1) end
@@ -4259,7 +4259,7 @@ function N_0x9f3f689b814f2599(vehicle, p1) end
 --- ```
 ---
 --- @hash 0xE8718FAF591FD224
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function N_0xe8718faf591fd224(vehicle) end
 
@@ -4285,7 +4285,7 @@ function N_0xb09d25e77c33eb3f(p0, p1, p2) end
 --- N_0xa7dcdf4ded40a8f4
 ---
 --- @hash 0xA7DCDF4DED40A8F4
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0xa7dcdf4ded40a8f4(vehicle, p1) end
@@ -4294,9 +4294,9 @@ function N_0xa7dcdf4ded40a8f4(vehicle, p1) end
 --- N_0xa4822f1cf23f4810
 ---
 --- @hash 0xA4822F1CF23F4810
---- @param outVec table (Vector3*)
+--- @param outVec Vector3 (Vector3*)
 --- @param p1 any
---- @param outVec1 table (Vector3*)
+--- @param outVec1 Vector3 (Vector3*)
 --- @param p3 any
 --- @param p4 any
 --- @param p5 any
@@ -4340,7 +4340,7 @@ function N_0x35bb21de06784373(p0, p1) end
 --- N_0xb088e9a47ae6edd5
 ---
 --- @hash 0xB088E9A47AE6EDD5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0xb088e9a47ae6edd5(vehicle, p1) end
@@ -4351,7 +4351,7 @@ function N_0xb088e9a47ae6edd5(vehicle, p1) end
 --- ```
 ---
 --- @hash 0xCAC66558B944DA67
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function N_0xcac66558b944da67(vehicle, toggle) end
@@ -4368,7 +4368,7 @@ function RemoveVehicleCombatAvoidanceArea(p0) end
 --- N_0x88bc673ca9e0ae99
 ---
 --- @hash 0x88BC673CA9E0AE99
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0x88bc673ca9e0ae99(vehicle, p1) end
@@ -4377,8 +4377,8 @@ function N_0x88bc673ca9e0ae99(vehicle, p1) end
 --- N_0x639431e895b9aa57
 ---
 --- @hash 0x639431E895B9AA57
---- @param ped table (Ped)
---- @param vehicle number (Vehicle)
+--- @param ped Ped
+--- @param vehicle Vehicle
 --- @param p2 boolean
 --- @param p3 boolean
 --- @param p4 boolean
@@ -4389,7 +4389,7 @@ function N_0x639431e895b9aa57(ped, vehicle, p2, p3, p4) end
 --- N_0x9becd4b9fef3f8a6
 ---
 --- @hash 0x9BECD4B9FEF3F8A6
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0x9becd4b9fef3f8a6(vehicle, p1) end
@@ -4406,7 +4406,7 @@ function N_0xf25e02cb9c5818f8() end
 --- N_0xc361aa040d6637a8
 ---
 --- @hash 0xC361AA040D6637A8
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0xc361aa040d6637a8(vehicle, p1) end
@@ -4421,7 +4421,7 @@ function N_0xc361aa040d6637a8(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x9CFA4896C3A53CBB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param x number (float)
 --- @param y number (float)
 --- @return void
@@ -4442,7 +4442,7 @@ function N_0xd4196117af7bb974(p0, p1) end
 --- ```
 ---
 --- @hash 0xF0E4BA16D1DB546C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (int)
 --- @param p2 number (int)
 --- @return void
@@ -4452,7 +4452,7 @@ function N_0xf0e4ba16d1db546c(vehicle, p1, p2) end
 --- RequestVehicleHighDetailModel
 ---
 --- @hash 0xA6E9FDCB2C76785E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function RequestVehicleHighDetailModel(vehicle) end
 
@@ -4460,7 +4460,7 @@ function RequestVehicleHighDetailModel(vehicle) end
 --- Remove the weird shadow applied by [0xF0E4BA16D1DB546C](#\_0xF0E4BA16D1DB546C).
 ---
 --- @hash 0xF87D9F2301F7D206
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function N_0xf87d9f2301f7d206(vehicle) end
 
@@ -4468,7 +4468,7 @@ function N_0xf87d9f2301f7d206(vehicle) end
 --- N_0xba91d045575699ad
 ---
 --- @hash 0xBA91D045575699AD
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function N_0xba91d045575699ad(vehicle) end
 
@@ -4484,7 +4484,7 @@ function HasVehiclePhoneExplosiveDevice() end
 --- RemoveVehicleStuckCheck
 ---
 --- @hash 0x8386BFB614D06749
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function RemoveVehicleStuckCheck(vehicle) end
 
@@ -4500,7 +4500,7 @@ function N_0x9d30687c57baa0bb(p0) end
 --- N_0xbe5c1255a1830ff5
 ---
 --- @hash 0xBE5C1255A1830FF5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function N_0xbe5c1255a1830ff5(vehicle, toggle) end
@@ -4509,7 +4509,7 @@ function N_0xbe5c1255a1830ff5(vehicle, toggle) end
 --- N_0x80e3357fdef45c21
 ---
 --- @hash 0x80E3357FDEF45C21
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function N_0x80e3357fdef45c21(vehicle, toggle) end
@@ -4518,7 +4518,7 @@ function N_0x80e3357fdef45c21(vehicle, toggle) end
 --- N_0x99cad8e7afdb60fa
 ---
 --- @hash 0x99CAD8E7AFDB60FA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (float)
 --- @param p2 number (float)
 --- @return void
@@ -4528,7 +4528,7 @@ function N_0x99cad8e7afdb60fa(vehicle, p1, p2) end
 --- RemoveVehicleUpsidedownCheck
 ---
 --- @hash 0xC53EB42A499A7E90
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function RemoveVehicleUpsidedownCheck(vehicle) end
 
@@ -4554,7 +4554,7 @@ function N_0xaf60e6a2936f982a(p0, p1) end
 --- Probably SET_VEHICLE_SOMETHING
 ---
 --- @hash 0xCDA42C4BB9BDE779
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0xcda42c4bb9bde779(vehicle, p1) end
@@ -4566,7 +4566,7 @@ function N_0xcda42c4bb9bde779(vehicle, p1) end
 --- ```
 ---
 --- @hash 0xB264C4D2F2B0A78B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function N_0xb264c4d2f2b0a78b(vehicle) end
 
@@ -4574,7 +4574,7 @@ function N_0xb264c4d2f2b0a78b(vehicle) end
 --- RemoveVehicleMod
 ---
 --- @hash 0x92D619E420858204
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param modType number (int)
 --- @return void
 function RemoveVehicleMod(vehicle, modType) end
@@ -4587,7 +4587,7 @@ function RemoveVehicleMod(vehicle, modType) end
 --- ```
 ---
 --- @hash 0xD4C4642CB7F50B5D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function N_0xd4c4642cb7f50b5d(vehicle) end
 
@@ -4605,7 +4605,7 @@ function PreloadVehicleMod(p0, modType, p2) end
 --- N_0x5e569ec46ec21cae
 ---
 --- @hash 0x5E569EC46EC21CAE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function N_0x5e569ec46ec21cae(vehicle, toggle) end
@@ -4640,7 +4640,7 @@ function N_0xdce97bdf8a0eabc8() end
 --- ```
 ---
 --- @hash 0xDBC631F109350B8C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0xdbc631f109350b8c(vehicle, p1) end
@@ -4681,7 +4681,7 @@ function RequestVehicleRecording(i, name) end
 --- N_0xe5810ac70602f2f5
 ---
 --- @hash 0xE5810AC70602F2F5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (float)
 --- @return void
 function N_0xe5810ac70602f2f5(vehicle, p1) end
@@ -4722,7 +4722,7 @@ function N_0xedbc8405b3895cc9(p0, p1) end
 --- SetCargobobPickupMagnetEffectRadius
 ---
 --- @hash 0xA17BAD153B51547E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (float)
 --- @return void
 function SetCargobobPickupMagnetEffectRadius(vehicle, p1) end
@@ -4733,7 +4733,7 @@ function SetCargobobPickupMagnetEffectRadius(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x1201E8A3290A3B98
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetCamberedWheelsDisabled(vehicle, toggle) end
@@ -4742,7 +4742,7 @@ function SetCamberedWheelsDisabled(vehicle, toggle) end
 --- N_0xa01bc64dd4bfbbac
 ---
 --- @hash 0xA01BC64DD4BFBBAC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (int)
 --- @return any
 function N_0xa01bc64dd4bfbbac(vehicle, p1) end
@@ -4753,7 +4753,7 @@ function N_0xa01bc64dd4bfbbac(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x9A665550F8DA349B
---- @param cargobob number (Vehicle)
+--- @param cargobob Vehicle
 --- @param isActive boolean
 --- @return void
 function SetCargobobPickupMagnetActive(cargobob, isActive) end
@@ -4762,7 +4762,7 @@ function SetCargobobPickupMagnetActive(cargobob, isActive) end
 --- PausePlaybackRecordedVehicle
 ---
 --- @hash 0x632A689BF42301B1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function PausePlaybackRecordedVehicle(vehicle) end
 
@@ -4770,7 +4770,7 @@ function PausePlaybackRecordedVehicle(vehicle) end
 --- SetBoatSinking
 ---
 --- @hash 0xBD32E46AA95C1DD2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function SetBoatSinking(vehicle) end
 
@@ -4796,7 +4796,7 @@ function SetAllVehicleGeneratorsActiveInArea(x1, y1, z1, x2, y2, z2, p6, p7) end
 --- ```
 ---
 --- @hash 0x9537097412CF75FE
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function IsThisModelAJetski(model) end
 
@@ -4804,7 +4804,7 @@ function IsThisModelAJetski(model) end
 --- SetCargobobPickupMagnetReducedFalloff
 ---
 --- @hash 0x66979ACF5102FD2F
---- @param cargobob number (Vehicle)
+--- @param cargobob Vehicle
 --- @param p1 number (float)
 --- @return void
 function SetCargobobPickupMagnetReducedFalloff(cargobob, p1) end
@@ -4815,7 +4815,7 @@ function SetCargobobPickupMagnetReducedFalloff(cargobob, p1) end
 --- ```
 ---
 --- @hash 0xE6B0E8CFC3633BF0
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function N_0xe6b0e8cfc3633bf0(vehicle) end
 
@@ -4823,7 +4823,7 @@ function N_0xe6b0e8cfc3633bf0(vehicle) end
 --- ResetVehicleWheels
 ---
 --- @hash 0x21D2E5662C1F6FED
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function ResetVehicleWheels(vehicle, toggle) end
@@ -4834,7 +4834,7 @@ function ResetVehicleWheels(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0xDBA3C090E3D74690
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function RequestVehicleDashboardScaleformMovie(vehicle) end
 
@@ -4842,7 +4842,7 @@ function RequestVehicleDashboardScaleformMovie(vehicle) end
 --- SetConvertibleRoofLatchState
 ---
 --- @hash 0x1A78AD3D8240536F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param state boolean
 --- @return void
 function SetConvertibleRoofLatchState(vehicle, state) end
@@ -4851,7 +4851,7 @@ function SetConvertibleRoofLatchState(vehicle, state) end
 --- RaiseConvertibleRoof
 ---
 --- @hash 0x8F5FB35D7E88FC70
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param instantlyRaise boolean
 --- @return void
 function RaiseConvertibleRoof(vehicle, instantlyRaise) end
@@ -4869,7 +4869,7 @@ function N_0xd565f438137f0e10(p0, p1) end
 --- SetCargobobPickupMagnetPullStrength
 ---
 --- @hash 0xED8286F71A819BAA
---- @param cargobob number (Vehicle)
+--- @param cargobob Vehicle
 --- @param p1 number (float)
 --- @return void
 function SetCargobobPickupMagnetPullStrength(cargobob, p1) end
@@ -4893,7 +4893,7 @@ function RemoveSpeedZone(speedzone) end
 --- Opens the trunk of the vehicle. Initially used in Max Payne 3, that's why we know the name.
 ---
 --- @hash 0xFC40CBF7B90CA77C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function SetCarBootOpen(vehicle) end
 
@@ -4911,7 +4911,7 @@ function SetDisableVehicleUnk_2(toggle) end
 --- N_0xae3fee8709b39dcb
 ---
 --- @hash 0xAE3FEE8709B39DCB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function N_0xae3fee8709b39dcb(vehicle) end
 
@@ -4921,7 +4921,7 @@ function N_0xae3fee8709b39dcb(vehicle) end
 --- ```
 ---
 --- @hash 0x85796B0549DDE156
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function RollDownWindows(vehicle) end
 
@@ -4937,7 +4937,7 @@ function RemoveVehicleAsset(vehicleAsset) end
 --- N_0x9bddc73cc6a115d4
 ---
 --- @hash 0x9BDDC73CC6A115D4
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @param p2 boolean
 --- @return void
@@ -4947,7 +4947,7 @@ function N_0x9bddc73cc6a115d4(vehicle, p1, p2) end
 --- N_0xe851e480b814d4ba
 ---
 --- @hash 0xE851E480B814D4BA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0xe851e480b814d4ba(vehicle, p1) end
@@ -4958,8 +4958,8 @@ function N_0xe851e480b814d4ba(vehicle, p1) end
 --- ```
 ---
 --- @hash 0xCF1182F682F65307
---- @param cargobob number (Vehicle)
---- @param p1 number (Player)
+--- @param cargobob Vehicle
+--- @param p1 Player
 --- @return void
 function SetCargobobPickupRopeDampingMultiplier(cargobob, p1) end
 
@@ -4969,7 +4969,7 @@ function SetCargobobPickupRopeDampingMultiplier(cargobob, p1) end
 --- ```
 ---
 --- @hash 0xC50CE861B55EAB8B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function N_0xc50ce861b55eab8b(vehicle, p1) end
@@ -4980,7 +4980,7 @@ function N_0xc50ce861b55eab8b(vehicle, p1) end
 --- ```
 ---
 --- @hash 0xEEBFC7A7EFDC35B4
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function N_0xeebfc7a7efdc35b4(vehicle) end
 
@@ -4988,7 +4988,7 @@ function N_0xeebfc7a7efdc35b4(vehicle) end
 --- SetCargobobPickupMagnetFalloff
 ---
 --- @hash 0x685D5561680D088B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (float)
 --- @return void
 function SetCargobobPickupMagnetFalloff(vehicle, p1) end
@@ -4999,7 +4999,7 @@ function SetCargobobPickupMagnetFalloff(vehicle, p1) end
 --- ```
 ---
 --- @hash 0xE842A9398079BD82
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param value number (float)
 --- @return void
 function SetBoatAnchorBuoyancyCoefficient(vehicle, value) end
@@ -5008,7 +5008,7 @@ function SetBoatAnchorBuoyancyCoefficient(vehicle, value) end
 --- SetBoatFrozenWhenAnchored
 ---
 --- @hash 0xE3EBAAE484798530
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetBoatFrozenWhenAnchored(vehicle, toggle) end
@@ -5017,7 +5017,7 @@ function SetBoatFrozenWhenAnchored(vehicle, toggle) end
 --- IsVehicleSirenOn
 ---
 --- @hash 0x4C9BF537BE2634B2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleSirenOn(vehicle) end
 
@@ -5041,7 +5041,7 @@ function SetCarHighSpeedBumpSeverityMultiplier(multiplier) end
 --- ```
 ---
 --- @hash 0xBCDF8BAF56C87B6A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return any
 function SetPlayersLastVehicle(vehicle) end
 
@@ -5049,7 +5049,7 @@ function SetPlayersLastVehicle(vehicle) end
 --- N_0xf78f94d60248c737
 ---
 --- @hash 0xF78F94D60248C737
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return boolean
 function N_0xf78f94d60248c737(vehicle, p1) end
@@ -5066,7 +5066,7 @@ function SetEnableVehicleSlipstreaming(p0) end
 --- SetBoatDisableAvoidance
 ---
 --- @hash 0x0A6A279F3AA4FD70
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function SetBoatDisableAvoidance(vehicle, p1) end
@@ -5078,7 +5078,7 @@ function SetBoatDisableAvoidance(vehicle, p1) end
 --- ```
 ---
 --- @hash 0xB28B1FE5BFADD7F5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetForcedBoatLocationWhenAnchored(vehicle, toggle) end
@@ -5097,7 +5097,7 @@ function SetForcedBoatLocationWhenAnchored(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x7AD9E6CE657D69E3
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param windowIndex number (int)
 --- @return any
 function RollDownWindow(vehicle, windowIndex) end
@@ -5106,7 +5106,7 @@ function RollDownWindow(vehicle, windowIndex) end
 --- SetCargobobPickupMagnetStrength
 ---
 --- @hash 0xBCBFCD9D1DAC19E2
---- @param cargobob number (Vehicle)
+--- @param cargobob Vehicle
 --- @param strength number (float)
 --- @return void
 function SetCargobobPickupMagnetStrength(cargobob, strength) end
@@ -5115,7 +5115,7 @@ function SetCargobobPickupMagnetStrength(cargobob, strength) end
 --- SetCargobobPickupRopeType
 ---
 --- @hash 0x0D5F65A8F4EBDAB5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param state number (int)
 --- @return void
 function SetCargobobPickupRopeType(vehicle, state) end
@@ -5132,7 +5132,7 @@ function SetAllVehicleGeneratorsActive() end
 --- SetHydraulicWheelStateTransition
 ---
 --- @hash 0xC24075310A8B9CD1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelID number (int)
 --- @param p2 any
 --- @param p3 number (float)
@@ -5150,7 +5150,7 @@ function SetHydraulicWheelStateTransition(vehicle, wheelID, p2, p3, p4) end
 --- ```
 ---
 --- @hash 0xA711568EEDB43069
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param windowIndex number (int)
 --- @return void
 function RemoveVehicleWindow(vehicle, windowIndex) end
@@ -5163,7 +5163,7 @@ function RemoveVehicleWindow(vehicle, windowIndex) end
 --- ```
 ---
 --- @hash 0xFD280B4D7F3ABC4D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param speed number (float)
 --- @return void
 function SetHeliBladesSpeed(vehicle, speed) end
@@ -5172,7 +5172,7 @@ function SetHeliBladesSpeed(vehicle, speed) end
 --- SetForceHdVehicle
 ---
 --- @hash 0x97CE68CB032583F0
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetForceHdVehicle(vehicle, toggle) end
@@ -5181,7 +5181,7 @@ function SetForceHdVehicle(vehicle, toggle) end
 --- RemoveVehicleHighDetailModel
 ---
 --- @hash 0x00689CDE5F7C6787
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function RemoveVehicleHighDetailModel(vehicle) end
 
@@ -5189,7 +5189,7 @@ function RemoveVehicleHighDetailModel(vehicle) end
 --- ReleasePreloadMods
 ---
 --- @hash 0x445D79F995508307
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function ReleasePreloadMods(vehicle) end
 
@@ -5207,7 +5207,7 @@ function SetDistantCarsEnabled(toggle) end
 --- OpenBombBayDoors
 ---
 --- @hash 0x87E7F24270732CB1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function OpenBombBayDoors(vehicle) end
 
@@ -5222,7 +5222,7 @@ function OpenBombBayDoors(vehicle) end
 --- ```
 ---
 --- @hash 0x3EC8BF18AA453FE9
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return boolean
 function SetHeliTailExplodeThrowDashboard(vehicle, p1) end
@@ -5231,7 +5231,7 @@ function SetHeliTailExplodeThrowDashboard(vehicle, p1) end
 --- SetPlaybackToUseAi
 ---
 --- @hash 0xA549C3B37EA28131
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param flag number (int)
 --- @return void
 function SetPlaybackToUseAi(vehicle, flag) end
@@ -5251,7 +5251,7 @@ function N_0xed5ede9e676643c9(p0, p1) end
 --- ```
 ---
 --- @hash 0x28B18377EB6E25F6
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetHydraulicRaised(vehicle, toggle) end
@@ -5283,7 +5283,7 @@ function SetHydraulicRaised(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0xD7591B0065AFAA7A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param nullAttributes number (int)
 --- @return void
 function ResetVehicleStuckTimer(vehicle, nullAttributes) end
@@ -5294,7 +5294,7 @@ function ResetVehicleStuckTimer(vehicle, nullAttributes) end
 --- ```
 ---
 --- @hash 0x52BBA29D5EC69356
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param state boolean
 --- @return void
 function SetCanResprayVehicle(vehicle, state) end
@@ -5313,7 +5313,7 @@ function SetGarbageTrucks(toggle) end
 --- SetDisablePretendOccupants
 ---
 --- @hash 0x25367DE49D64CF16
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function SetDisablePretendOccupants(vehicle, p1) end
@@ -5332,8 +5332,8 @@ function SetNumberOfParkedVehicles(value) end
 --- SetCargobobPickupMagnetReducedStrength
 ---
 --- @hash 0xE301BD63E9E13CF0
---- @param cargobob number (Vehicle)
---- @param vehicle number (Vehicle)
+--- @param cargobob Vehicle
+--- @param vehicle Vehicle
 --- @return void
 function SetCargobobPickupMagnetReducedStrength(cargobob, vehicle) end
 
@@ -5341,7 +5341,7 @@ function SetCargobobPickupMagnetReducedStrength(cargobob, vehicle) end
 --- SetDisableVehiclePetrolTankDamage
 ---
 --- @hash 0x37C8252A7C92D017
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetDisableVehiclePetrolTankDamage(vehicle, toggle) end
@@ -5350,7 +5350,7 @@ function SetDisableVehiclePetrolTankDamage(vehicle, toggle) end
 --- SetCargobobPickupMagnetPullRopeLength
 ---
 --- @hash 0x6D8EAC07506291FB
---- @param cargobob number (Vehicle)
+--- @param cargobob Vehicle
 --- @param p1 number (float)
 --- @return void
 function SetCargobobPickupMagnetPullRopeLength(cargobob, p1) end
@@ -5362,7 +5362,7 @@ function SetCargobobPickupMagnetPullRopeLength(cargobob, p1) end
 --- ```
 ---
 --- @hash 0x37EBBF3117BD6A25
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param height number (float)
 --- @return void
 function SetForkliftForkHeight(vehicle, height) end
@@ -5375,7 +5375,7 @@ function SetForkliftForkHeight(vehicle, height) end
 --- ```
 ---
 --- @hash 0xE615BB7A7752C76A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param turretIdx number (int)
 --- @return void
 function SetDisableTurretMovement(vehicle, turretIdx) end
@@ -5384,7 +5384,7 @@ function SetDisableTurretMovement(vehicle, turretIdx) end
 --- SetHydraulicState
 ---
 --- @hash 0x84EA99C62CB3EF0C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param wheelID number (int)
 --- @param height number (float)
 --- @return void
@@ -5401,7 +5401,7 @@ function SetHydraulicState(vehicle, wheelID, height) end
 --- ```
 ---
 --- @hash 0xB59E4BD37AE292DB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param value number (float)
 --- @return void
 function SetVehicleCheatPowerIncrease(vehicle, value) end
@@ -5412,7 +5412,7 @@ function SetVehicleCheatPowerIncrease(vehicle, value) end
 --- ```
 ---
 --- @hash 0x6E0859B530A365CC
---- @param helicopter number (Vehicle)
+--- @param helicopter Vehicle
 --- @param multiplier number (float)
 --- @return void
 function SetHelicopterRollPitchYawMult(helicopter, multiplier) end
@@ -5450,7 +5450,7 @@ function SetDisableRandomTrainsThisFrame(toggle) end
 ---     end
 --- en
 --- @hash 0x1087BC8EC540DAEB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function SetDisableVehicleWindowCollisions(vehicle, p1) end
@@ -5471,7 +5471,7 @@ function SetRandomTrains(toggle) end
 --- ```
 ---
 --- @hash 0xB251E0B33E58B424
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @param p2 boolean
 --- @return void
@@ -5492,7 +5492,7 @@ function SetRandomVehicleDensityMultiplierThisFrame(multiplier) end
 --- ```
 ---
 --- @hash 0x9768CF648F54C804
---- @param cargobob number (Vehicle)
+--- @param cargobob Vehicle
 --- @return void
 function RemovePickUpRopeForCargobob(cargobob) end
 
@@ -5529,7 +5529,7 @@ function SetRandomBoats(toggle) end
 --- Sets the arm position of a bulldozer. Position must be a value between 0.0 and 1.0. Ignored when `p2` is set to false, instead incrementing arm position by 0.1 (or 10%).
 ---
 --- @hash 0xF8EBCCC96ADB9FB7
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param position number (float)
 --- @param p2 boolean
 --- @return void
@@ -5541,7 +5541,7 @@ function SetVehicleBulldozerArmPosition(vehicle, position, p2) end
 --- ```
 ---
 --- @hash 0x498218259FB7C72D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param value number (float)
 --- @return void
 function SetUnkFloatN_0x104ForSubmarineVehicleTask(vehicle, value) end
@@ -5550,7 +5550,7 @@ function SetUnkFloatN_0x104ForSubmarineVehicleTask(vehicle, value) end
 --- SetTrailerInverseMassScale
 ---
 --- @hash 0x2A8F319B392E7B3F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (float)
 --- @return void
 function SetTrailerInverseMassScale(vehicle, p1) end
@@ -5567,7 +5567,7 @@ function SetTrailerInverseMassScale(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x598803E85E8448D9
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param state boolean
 --- @return void
 function SetTaxiLights(vehicle, state) end
@@ -5605,7 +5605,7 @@ function SetScriptVehicleGenerator(vehicleGenerator, enabled) end
 --- SetHeliTurbulenceScalar
 ---
 --- @hash 0xE6F13851780394DA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (float)
 --- @return void
 function SetHeliTurbulenceScalar(vehicle, p1) end
@@ -5616,7 +5616,7 @@ function SetHeliTurbulenceScalar(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x75DBEC174AEEAD10
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetBoatAnchor(vehicle, toggle) end
@@ -5625,7 +5625,7 @@ function SetBoatAnchor(vehicle, toggle) end
 --- SetVehicleCanBreak
 ---
 --- @hash 0x59BF8C3D52C92F66
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleCanBreak(vehicle, toggle) end
@@ -5643,7 +5643,7 @@ function SetVehicleCanBreak(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0xD4D4F6A4AB575A33
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param doorIndex number (int)
 --- @param deleteDoor boolean
 --- @return void
@@ -5663,7 +5663,7 @@ function SetParkedVehicleDensityMultiplierThisFrame(multiplier) end
 --- ```
 ---
 --- @hash 0x3750146A28097A82
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param state boolean
 --- @return void
 function SetVehicleCanBeTargetted(vehicle, state) end
@@ -5674,7 +5674,7 @@ function SetVehicleCanBeTargetted(vehicle, state) end
 --- ```
 ---
 --- @hash 0xAA0BC91BE0B796E3
---- @param train number (Vehicle)
+--- @param train Vehicle
 --- @param speed number (float)
 --- @return any
 function SetTrainSpeed(train, speed) end
@@ -5683,7 +5683,7 @@ function SetTrainSpeed(train, speed) end
 --- SetLastDrivenVehicle
 ---
 --- @hash 0xACFB2463CC22BED2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function SetLastDrivenVehicle(vehicle) end
 
@@ -5707,7 +5707,7 @@ function SetTrailerLegsLowered() end
 --- ```
 ---
 --- @hash 0x4E20D2A627011E8E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (float)
 --- @return any
 function SetVehicleDamageModifier(vehicle, p1) end
@@ -5718,7 +5718,7 @@ function SetVehicleDamageModifier(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x95CF53B3D687F9FA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function SetTrailerLegsRaised(vehicle) end
 
@@ -5731,7 +5731,7 @@ function SetTrailerLegsRaised(vehicle) end
 --- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 --- SetAircraftBombCount(vehicle, 10
 --- @hash 0xF4B2ED59DEB5D774
---- @param aircraft number (Vehicle)
+--- @param aircraft Vehicle
 --- @param bombCount number (int)
 --- @return void
 function SetVehicleBombCount(aircraft, bombCount) end
@@ -5740,7 +5740,7 @@ function SetVehicleBombCount(aircraft, bombCount) end
 --- SetTaskVehicleGotoPlaneMinHeightAboveTerrain
 ---
 --- @hash 0xB893215D8D4C015B
---- @param plane number (Vehicle)
+--- @param plane Vehicle
 --- @param height number (int)
 --- @return void
 function SetTaskVehicleGotoPlaneMinHeightAboveTerrain(plane, height) end
@@ -5752,7 +5752,7 @@ function SetTaskVehicleGotoPlaneMinHeightAboveTerrain(plane, height) end
 --- ```
 ---
 --- @hash 0xA46413066687A328
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param height number (float)
 --- @return void
 function SetVehicleCeilingHeight(vehicle, height) end
@@ -5761,7 +5761,7 @@ function SetVehicleCeilingHeight(vehicle, height) end
 --- SetMissionTrainCoords
 ---
 --- @hash 0x591CA673AA6AB736
---- @param train number (Vehicle)
+--- @param train Vehicle
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -5772,7 +5772,7 @@ function SetMissionTrainCoords(train, x, y, z) end
 --- Allows vehicles with the FLAG_JUMPING_CAR flag to jump higher (i.e. Ruiner 2000).
 ---
 --- @hash 0xF06A16CA55D138D8
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetUseHigherVehicleJumpForce(vehicle, toggle) end
@@ -5781,7 +5781,7 @@ function SetUseHigherVehicleJumpForce(vehicle, toggle) end
 --- SetHeliTailRotorHealth
 ---
 --- @hash 0xFE205F38AAA58E5B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param health number (float)
 --- @return void
 function SetHeliTailRotorHealth(vehicle, health) end
@@ -5801,7 +5801,7 @@ function N_0xf051d9bfb6ba39c0(p0) end
 --- ```
 ---
 --- @hash 0xA178472EBB8AE60D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function SetHeliBladesFullSpeed(vehicle) end
 
@@ -5812,7 +5812,7 @@ function SetHeliBladesFullSpeed(vehicle) end
 --- ```
 ---
 --- @hash 0x877C1EAEAC531023
---- @param cargobob number (Vehicle)
+--- @param cargobob Vehicle
 --- @param xOffset number (float)
 --- @param yOffset number (float)
 --- @param state number (int)
@@ -5834,7 +5834,7 @@ function SetCargobobHookPosition(cargobob, xOffset, yOffset, state) end
 --- ```
 ---
 --- @hash 0x428BACCDF5E26EAD
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleCanSaveInGarage(vehicle, toggle) end
@@ -5856,8 +5856,8 @@ function SetPlaybackToUseAiTryToRevertBackLater(p0, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0x8F719973E1445BA2
---- @param vehicle number (Vehicle)
---- @param toggle number (Vehicle)
+--- @param vehicle Vehicle
+--- @param toggle Vehicle
 --- @return void
 function SetBoatSinksWhenWrecked(vehicle, toggle) end
 
@@ -5867,7 +5867,7 @@ function SetBoatSinksWhenWrecked(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x8BA6F76BC53A1493
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @param p2 any
 --- @return any
@@ -5879,7 +5879,7 @@ function SetVehicleAutomaticallyAttaches(vehicle, p1, p2) end
 --- ```
 ---
 --- @hash 0x317B11A312DF5534
---- @param train number (Vehicle)
+--- @param train Vehicle
 --- @param toggle boolean
 --- @return void
 function SetRenderTrainAsDerailed(train, toggle) end
@@ -5890,7 +5890,7 @@ function SetRenderTrainAsDerailed(train, toggle) end
 --- ```
 ---
 --- @hash 0x16469284DB8C62B5
---- @param train number (Vehicle)
+--- @param train Vehicle
 --- @param speed number (float)
 --- @return any
 function SetTrainCruiseSpeed(train, speed) end
@@ -5901,7 +5901,7 @@ function SetTrainCruiseSpeed(train, speed) end
 --- ```
 ---
 --- @hash 0xBE70724027F85BCD
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param doorIndex number (int)
 --- @param destroyType number (int)
 --- @return void
@@ -5911,7 +5911,7 @@ function SetVehicleDoorDestroyType(vehicle, doorIndex, destroyType) end
 --- SetVehicleControlsInverted
 ---
 --- @hash 0x5B91B229243351A8
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param state boolean
 --- @return void
 function SetVehicleControlsInverted(vehicle, state) end
@@ -5924,7 +5924,7 @@ function SetVehicleControlsInverted(vehicle, state) end
 --- local index = math.random(0, 16)
 --- SetVehicleColourCombination(vehicle, index
 --- @hash 0x33E8CD3322E2FE31
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param colorCombination number (int)
 --- @return void
 function SetVehicleColourCombination(vehicle, colorCombination) end
@@ -5933,7 +5933,7 @@ function SetVehicleColourCombination(vehicle, colorCombination) end
 --- SetVehicleHandbrake
 ---
 --- @hash 0x684785568EF26A22
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleHandbrake(vehicle, toggle) end
@@ -5944,7 +5944,7 @@ function SetVehicleHandbrake(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x206BC5DC9D1AC70A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleCanEngineOperateOnFire(vehicle, toggle) end
@@ -5953,7 +5953,7 @@ function SetVehicleCanEngineOperateOnFire(vehicle, toggle) end
 --- SetDisableVehicleEngineFires
 ---
 --- @hash 0x91A0BD635321F145
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function SetDisableVehicleEngineFires(vehicle, p1) end
@@ -5962,7 +5962,7 @@ function SetDisableVehicleEngineFires(vehicle, p1) end
 --- SetVehicleCanLeakPetrol
 ---
 --- @hash 0x192547247864DFDD
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function SetVehicleCanLeakPetrol(vehicle, p1) end
@@ -5990,7 +5990,7 @@ function SetAllLowPriorityVehicleGeneratorsActive(active) end
 --- ```
 ---
 --- @hash 0xB664292EAECF7FA6
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param doorLockStatus number (int)
 --- @return void
 function SetVehicleDoorsLocked(vehicle, doorLockStatus) end
@@ -6001,7 +6001,7 @@ function SetVehicleDoorsLocked(vehicle, doorLockStatus) end
 --- ```
 ---
 --- @hash 0x5D14D4154BFE7B2C
---- @param veh number (Vehicle)
+--- @param veh Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleAllowNoPassengersLockon(veh, toggle) end
@@ -6010,7 +6010,7 @@ function SetVehicleAllowNoPassengersLockon(veh, toggle) end
 --- SetVehicleBrake
 ---
 --- @hash 0xE4E2FD323574965C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleBrake(vehicle, toggle) end
@@ -6019,8 +6019,8 @@ function SetVehicleBrake(vehicle, toggle) end
 --- SetVehicleDoorsLockedForPlayer
 ---
 --- @hash 0x517AAF684BB50CD1
---- @param vehicle number (Vehicle)
---- @param player number (Player)
+--- @param vehicle Vehicle
+--- @param player Player
 --- @param toggle boolean
 --- @return void
 function SetVehicleDoorsLockedForPlayer(vehicle, player, toggle) end
@@ -6029,7 +6029,7 @@ function SetVehicleDoorsLockedForPlayer(vehicle, player, toggle) end
 --- SetVehicleAlarm
 ---
 --- @hash 0xCDE5E70C1DDB954C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param state boolean
 --- @return void
 function SetVehicleAlarm(vehicle, state) end
@@ -6044,7 +6044,7 @@ function SetVehicleAlarm(vehicle, state) end
 --- ```
 ---
 --- @hash 0x4F1D4BE3A7F24601
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param colorPrimary number (int)
 --- @param colorSecondary number (int)
 --- @return void
@@ -6054,7 +6054,7 @@ function SetVehicleColours(vehicle, colorPrimary, colorSecondary) end
 --- SetVehicleActiveDuringPlayback
 ---
 --- @hash 0xDFFCEF48E511DB48
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleActiveDuringPlayback(vehicle, toggle) end
@@ -6077,7 +6077,7 @@ function N_0x8235f1bead557629(p0, p1) end
 --- ```
 ---
 --- @hash 0x21115BCD6E44656A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function SetVehicleCloseDoorDeferedAction(vehicle, p1) end
@@ -6088,7 +6088,7 @@ function SetVehicleCloseDoorDeferedAction(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x36CED73BFED89754
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param r number (int)
 --- @param g number (int)
 --- @param b number (int)
@@ -6099,7 +6099,7 @@ function SetVehicleCustomSecondaryColour(vehicle, r, g, b) end
 --- SetVehicleFlightNozzlePosition
 ---
 --- @hash 0x30D779DE7C4F6DD3
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param direction number (float)
 --- @return void
 function SetVehicleFlightNozzlePosition(vehicle, direction) end
@@ -6110,7 +6110,7 @@ function SetVehicleFlightNozzlePosition(vehicle, direction) end
 --- ```
 ---
 --- @hash 0xA5A9653A8D2CAF48
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param doorIndex number (int)
 --- @param forceClose boolean
 --- @param lock boolean
@@ -6122,7 +6122,7 @@ function SetVehicleDoorLatched(vehicle, doorIndex, forceClose, lock, p4) end
 --- SetVehicleCanLeakOil
 ---
 --- @hash 0x51BB2D88D31A914B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function SetVehicleCanLeakOil(vehicle, p1) end
@@ -6139,8 +6139,8 @@ function SetVehicleCanLeakOil(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x41062318F23ED854
---- @param vehicle number (Vehicle)
---- @param toggle table (Ped)
+--- @param vehicle Vehicle
+--- @param toggle Ped
 --- @return void
 function SetVehicleExclusiveDriver(vehicle, toggle) end
 
@@ -6148,7 +6148,7 @@ function SetVehicleExclusiveDriver(vehicle, toggle) end
 --- SetVehicleKersAllowed
 ---
 --- @hash 0x99C82F8A139F3E4E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleKersAllowed(vehicle, toggle) end
@@ -6159,7 +6159,7 @@ function SetVehicleKersAllowed(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x41B9FB92EDED32A6
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param value boolean
 --- @return void
 function SetUnkBoolN_0x102ForSubmarineVehicleTask(vehicle, value) end
@@ -6176,7 +6176,7 @@ function SetUnkBoolN_0x102ForSubmarineVehicleTask(vehicle, value) end
 ---     SetPlaneTurbulenceMultiplier(plane, 0.0)
 --- en
 --- @hash 0xAD2D28A1AFDFF131
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param multiplier number (float)
 --- @return void
 function SetPlaneTurbulenceMultiplier(vehicle, multiplier) end
@@ -6185,7 +6185,7 @@ function SetPlaneTurbulenceMultiplier(vehicle, multiplier) end
 --- SetConvertibleRoof
 ---
 --- @hash 0xF39C4F538B5124C2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function SetConvertibleRoof(vehicle, p1) end
@@ -6194,7 +6194,7 @@ function SetConvertibleRoof(vehicle, p1) end
 --- SetVehicleBrakeLights
 ---
 --- @hash 0x92B35082E0B42F66
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleBrakeLights(vehicle, toggle) end
@@ -6203,7 +6203,7 @@ function SetVehicleBrakeLights(vehicle, toggle) end
 --- SetPlaybackSpeed
 ---
 --- @hash 0x6683AB880E427778
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param speed number (float)
 --- @return void
 function SetPlaybackSpeed(vehicle, speed) end
@@ -6212,8 +6212,8 @@ function SetPlaybackSpeed(vehicle, speed) end
 --- SetVehicleExclusiveDriver_2
 ---
 --- @hash 0xB5C51B5502E85E83
---- @param vehicle number (Vehicle)
---- @param ped table (Ped)
+--- @param vehicle Vehicle
+--- @param ped Ped
 --- @param index number (int)
 --- @return void
 function SetVehicleExclusiveDriver_2(vehicle, ped, index) end
@@ -6224,7 +6224,7 @@ function SetVehicleExclusiveDriver_2(vehicle, ped, index) end
 --- ```
 ---
 --- @hash 0x781B3D62BB013EF5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param closeInstantly boolean
 --- @return void
 function SetVehicleDoorsShut(vehicle, closeInstantly) end
@@ -6235,7 +6235,7 @@ function SetVehicleDoorsShut(vehicle, closeInstantly) end
 --- ```
 ---
 --- @hash 0x953DA1E1B12C0491
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function SetVehicleDeformationFixed(vehicle) end
 
@@ -6243,7 +6243,7 @@ function SetVehicleDeformationFixed(vehicle) end
 --- SetVehicleHasBeenOwnedByPlayer
 ---
 --- @hash 0x2B5F9D2AF1F1722D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param owned boolean
 --- @return void
 function SetVehicleHasBeenOwnedByPlayer(vehicle, owned) end
@@ -6254,7 +6254,7 @@ function SetVehicleHasBeenOwnedByPlayer(vehicle, owned) end
 --- ```
 ---
 --- @hash 0xBBE7648349B49BE8
---- @param train table (Vehicle*)
+--- @param train Vehicle (Vehicle*)
 --- @param p1 boolean
 --- @return void
 function SetMissionTrainAsNoLongerNeeded(train, p1) end
@@ -6265,7 +6265,7 @@ function SetMissionTrainAsNoLongerNeeded(train, p1) end
 --- ```
 ---
 --- @hash 0x70A252F60A3E036B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param ratio number (float)
 --- @return void
 function SetSpecialflightWingRatio(vehicle, ratio) end
@@ -6276,7 +6276,7 @@ function SetSpecialflightWingRatio(vehicle, ratio) end
 --- ```
 ---
 --- @hash 0x115722B1B9C14C1C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function SetVehicleFixed(vehicle) end
 
@@ -6293,7 +6293,7 @@ function SetVehicleFixed(vehicle) end
 --- ```
 ---
 --- @hash 0x93D9BD300D7789E5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param doorIndex number (int)
 --- @param closeInstantly boolean
 --- @return void
@@ -6314,7 +6314,7 @@ function SetVehicleDoorShut(vehicle, doorIndex, closeInstantly) end
 --- ```
 ---
 --- @hash 0x45F6D8EEF34ABEF1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param health number (float)
 --- @return void
 function SetVehicleEngineHealth(vehicle, health) end
@@ -6325,7 +6325,7 @@ function SetVehicleEngineHealth(vehicle, health) end
 --- ```
 ---
 --- @hash 0x203B527D1B77904C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleDoorsLockedForUnk(vehicle, toggle) end
@@ -6336,7 +6336,7 @@ function SetVehicleDoorsLockedForUnk(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x92F0CF722BC4202F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleHasStrongAxles(vehicle, toggle) end
@@ -6355,7 +6355,7 @@ function SetVehicleHasStrongAxles(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x7C65DAC73C35C862
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param doorIndex number (int)
 --- @param loose boolean
 --- @param openInstantly boolean
@@ -6372,7 +6372,7 @@ function SetVehicleDoorOpen(vehicle, doorIndex, loose, openInstantly) end
 --- ```
 ---
 --- @hash 0xA2F80B8D040727CC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleDoorsLockedForAllPlayers(vehicle, toggle) end
@@ -6389,7 +6389,7 @@ function SetVehicleDoorsLockedForAllPlayers(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x068F64F2470F9656
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleDropsMoneyWhenBlownUp(vehicle, toggle) end
@@ -6400,7 +6400,7 @@ function SetVehicleDropsMoneyWhenBlownUp(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0xF7EC25A3EBEEC726
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param state boolean
 --- @return void
 function SetVehicleIsWanted(vehicle, state) end
@@ -6411,7 +6411,7 @@ function SetVehicleIsWanted(vehicle, state) end
 --- ```
 ---
 --- @hash 0x7141766F91D15BEA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param r number (int)
 --- @param g number (int)
 --- @param b number (int)
@@ -6424,7 +6424,7 @@ function SetVehicleCustomPrimaryColour(vehicle, r, g, b) end
 --- ```
 ---
 --- @hash 0x71B0892EC081D60A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleExplodesOnHighExplosionDamage(vehicle, toggle) end
@@ -6433,7 +6433,7 @@ function SetVehicleExplodesOnHighExplosionDamage(vehicle, toggle) end
 --- SetVehicleHasBeenDrivenFlag
 ---
 --- @hash 0x02398B627547189C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleHasBeenDrivenFlag(vehicle, toggle) end
@@ -6447,7 +6447,7 @@ function SetVehicleHasBeenDrivenFlag(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0xAB54A438726D25D5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param speed number (float)
 --- @return void
 function SetVehicleForwardSpeed(vehicle, speed) end
@@ -6469,7 +6469,7 @@ function N_0xfaf2a78061fd9ef4(p0, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0xD138FA15C9776837
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param ratio number (float)
 --- @return void
 function SetVehicleHoverTransformRatio(vehicle, ratio) end
@@ -6478,7 +6478,7 @@ function SetVehicleHoverTransformRatio(vehicle, ratio) end
 --- SetVehicleDisableTowing
 ---
 --- @hash 0x2B6747FAA9DB9D6B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleDisableTowing(vehicle, toggle) end
@@ -6487,7 +6487,7 @@ function SetVehicleDisableTowing(vehicle, toggle) end
 --- SetVehicleLodMultiplier
 ---
 --- @hash 0x93AE6A61BE015BF1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param multiplier number (float)
 --- @return void
 function SetVehicleLodMultiplier(vehicle, multiplier) end
@@ -6498,7 +6498,7 @@ function SetVehicleLodMultiplier(vehicle, multiplier) end
 --- ```
 ---
 --- @hash 0xFB8794444A7D60FB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleBurnout(vehicle, toggle) end
@@ -6509,7 +6509,7 @@ function SetVehicleBurnout(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x8B7FD87F0DDB421E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleFullbeam(vehicle, toggle) end
@@ -6520,7 +6520,7 @@ function SetVehicleFullbeam(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x2036F561ADD12E33
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param pearlescentColor number (int)
 --- @param wheelColor number (int)
 --- @return void
@@ -6535,7 +6535,7 @@ function SetVehicleExtraColours(vehicle, pearlescentColor, wheelColor) end
 --- NativeDB Return Type: void
 ---
 --- @hash 0x602E548F46E24D59
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param windowIndex number (int)
 --- @return any
 function RollUpWindow(vehicle, windowIndex) end
@@ -6546,7 +6546,7 @@ function RollUpWindow(vehicle, windowIndex) end
 --- ```
 ---
 --- @hash 0x1DDA078D12879EEE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param canBeLockedOn boolean
 --- @param unk boolean
 --- @return void
@@ -6556,7 +6556,7 @@ function SetVehicleCanBeLockedOn(vehicle, canBeLockedOn, unk) end
 --- SetVehicleParachuteActive
 ---
 --- @hash 0x0BFFB028B3DD0A97
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param active boolean
 --- @return void
 function SetVehicleParachuteActive(vehicle, active) end
@@ -6565,7 +6565,7 @@ function SetVehicleParachuteActive(vehicle, active) end
 --- SetVehicleHasMutedSirens
 ---
 --- @hash 0xD8050E0EB60CF274
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleHasMutedSirens(vehicle, toggle) end
@@ -6584,7 +6584,7 @@ function SetVehicleHasMutedSirens(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x7EE3A3C5E4A40CC9
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param extraId number (int)
 --- @param disable boolean
 --- @return void
@@ -6604,7 +6604,7 @@ function SetVehicleExtra(vehicle, extraId, disable) end
 --- ```
 ---
 --- @hash 0x816562BADFDEC83E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param paintType number (int)
 --- @param color number (int)
 --- @return void
@@ -6614,7 +6614,7 @@ function SetVehicleModColor_2(vehicle, paintType, color) end
 --- SetDisableVehiclePetrolTankFires
 ---
 --- @hash 0x465BF26AB9684352
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetDisableVehiclePetrolTankFires(vehicle, toggle) end
@@ -6623,7 +6623,7 @@ function SetDisableVehiclePetrolTankFires(vehicle, toggle) end
 --- SetVehicleEngineCanDegrade
 ---
 --- @hash 0x983765856F2564F9
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleEngineCanDegrade(vehicle, toggle) end
@@ -6638,7 +6638,7 @@ function SetVehicleEngineCanDegrade(vehicle, toggle) end
 --- -- will hit the first hitbox on your Z index line
 --- SetVehicleDamage(vehicle, 0.0, 0.0, 0.33, 200.0, 100.0, true
 --- @hash 0xA1DD317EA8FD4F29
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param xOffset number (float)
 --- @param yOffset number (float)
 --- @param zOffset number (float)
@@ -6652,7 +6652,7 @@ function SetVehicleDamage(vehicle, xOffset, yOffset, zOffset, damage, radius, fo
 --- SetVehicleDoorsLockedForTeam
 ---
 --- @hash 0xB81F6D4A8F5EEBA8
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param team number (int)
 --- @param toggle boolean
 --- @return void
@@ -6662,7 +6662,7 @@ function SetVehicleDoorsLockedForTeam(vehicle, team, toggle) end
 --- SetHydraulicWheelState
 ---
 --- @hash 0x8EA86DF356801C7D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param state number (int)
 --- @return void
 function SetHydraulicWheelState(vehicle, state) end
@@ -6672,7 +6672,7 @@ function SetHydraulicWheelState(vehicle, state) end
 --- From what I've tested when I do this to a helicopter the propellers turn off after the engine has started.
 ---
 --- @hash 0x2497C4717C8B881E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param value boolean
 --- @param instantly boolean
 --- @param disableAutoStart boolean
@@ -6685,8 +6685,8 @@ function SetVehicleEngineOn(vehicle, value, instantly, disableAutoStart) end
 --- ```
 ---
 --- @hash 0x2E0A74E1002380B1
---- @param vehicle number (Vehicle)
---- @param ped table (Ped)
+--- @param vehicle Vehicle
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetVehicleTimedExplosion(vehicle, ped, toggle) end
@@ -6695,7 +6695,7 @@ function SetVehicleTimedExplosion(vehicle, ped, toggle) end
 --- SetVehicleDashboardColour
 ---
 --- @hash 0x6089CDF6A57F326C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param color number (int)
 --- @return void
 function SetVehicleDashboardColour(vehicle, color) end
@@ -6704,7 +6704,7 @@ function SetVehicleDashboardColour(vehicle, color) end
 --- SetVehicleFlightNozzlePositionImmediate
 ---
 --- @hash 0x9AA47FFF660CB932
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param direction number (float)
 --- @return void
 function SetVehicleFlightNozzlePositionImmediate(vehicle, direction) end
@@ -6713,7 +6713,7 @@ function SetVehicleFlightNozzlePositionImmediate(vehicle, direction) end
 --- SetVehicleGravity
 ---
 --- @hash 0x89F149B6131E57DA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleGravity(vehicle, toggle) end
@@ -6725,7 +6725,7 @@ function SetVehicleGravity(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x1837AF7C627009BA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param friction number (float)
 --- @return void
 function SetVehicleFrictionOverride(vehicle, friction) end
@@ -6736,7 +6736,7 @@ function SetVehicleFrictionOverride(vehicle, friction) end
 --- To reset the max speed, set the `speed` value to `0.0` or lower.
 ---
 --- @hash 0xBAA045B4E42F3C06
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param speed number (float)
 --- @return void
 function SetVehicleMaxSpeed(vehicle, speed) end
@@ -6751,7 +6751,7 @@ function SetVehicleMaxSpeed(vehicle, speed) end
 --- ```
 ---
 --- @hash 0xF1211889DF15A763
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleHoverTransformEnabled(vehicle, toggle) end
@@ -6760,7 +6760,7 @@ function SetVehicleHoverTransformEnabled(vehicle, toggle) end
 --- SetVehicleReceivesRampDamage
 ---
 --- @hash 0x28D034A93FE31BF5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleReceivesRampDamage(vehicle, toggle) end
@@ -6772,7 +6772,7 @@ function SetVehicleReceivesRampDamage(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x0FC2D89AC25A5814
---- @param model table (Hash)
+--- @param model Hash
 --- @param suppressed boolean
 --- @return void
 function SetVehicleModelIsSuppressed(model, suppressed) end
@@ -6783,7 +6783,7 @@ function SetVehicleModelIsSuppressed(model, suppressed) end
 --- ```
 ---
 --- @hash 0x31B927BBC44156CD
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleIsConsideredByPlayer(vehicle, toggle) end
@@ -6798,7 +6798,7 @@ function SetVehicleIsConsideredByPlayer(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x1FD09E7390A74D54
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (int)
 --- @return void
 function SetVehicleLightsMode(vehicle, p1) end
@@ -6811,7 +6811,7 @@ function SetVehicleLightsMode(vehicle, p1) end
 --- To get the current boom position ratio, use [GET_BOAT_BOOM_POSITION_RATIO](#\_0x6636C535F6CC2725).
 ---
 --- @hash 0xF488C566413B4232
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param ratio number (float)
 --- @return void
 function SetBoatBoomPositionRatio(vehicle, ratio) end
@@ -6820,7 +6820,7 @@ function SetBoatBoomPositionRatio(vehicle, ratio) end
 --- SetVehicleCanBeVisiblyDamaged
 ---
 --- @hash 0x4C7028F78FFD3681
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param state boolean
 --- @return void
 function SetVehicleCanBeVisiblyDamaged(vehicle, state) end
@@ -6831,7 +6831,7 @@ function SetVehicleCanBeVisiblyDamaged(vehicle, state) end
 --- ```
 ---
 --- @hash 0xF19D095E42D430CC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param killDriver boolean
 --- @param explodeOnImpact boolean
 --- @return void
@@ -6850,7 +6850,7 @@ function SetVehicleOutOfControl(vehicle, killDriver, explodeOnImpact) end
 --- ```
 ---
 --- @hash 0x487EB21CC7295BA1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param WheelType number (int)
 --- @return void
 function SetVehicleWheelType(vehicle, WheelType) end
@@ -6869,7 +6869,7 @@ function SetDisableVehicleUnk(toggle) end
 --- SetVehicleProvidesCover
 ---
 --- @hash 0x5AFEEDD9BB2899D7
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleProvidesCover(vehicle, toggle) end
@@ -6884,7 +6884,7 @@ function SetVehicleProvidesCover(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0xC8E9B6B71B8E660D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleNitroEnabled(vehicle, toggle) end
@@ -6893,7 +6893,7 @@ function SetVehicleNitroEnabled(vehicle, toggle) end
 --- SetVehicleInteriorlight
 ---
 --- @hash 0xBC2042F090AF6AD3
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleInteriorlight(vehicle, toggle) end
@@ -6902,7 +6902,7 @@ function SetVehicleInteriorlight(vehicle, toggle) end
 --- SetVehicleForceAfterburner
 ---
 --- @hash 0xB055A34527CB8FD7
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function SetVehicleForceAfterburner(vehicle, p1) end
@@ -6913,7 +6913,7 @@ function SetVehicleForceAfterburner(vehicle, p1) end
 --- ```
 ---
 --- @hash 0xB77D05AC8C78AADB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param value number (float)
 --- @return void
 function SetVehicleBodyHealth(vehicle, value) end
@@ -6925,7 +6925,7 @@ function SetVehicleBodyHealth(vehicle, value) end
 --- ```
 ---
 --- @hash 0xC59872A5134879C7
---- @param submarine number (Vehicle)
+--- @param submarine Vehicle
 --- @param toggle boolean
 --- @param crushWarningDepth1 number (float)
 --- @param crushWarningDepth2 number (float)
@@ -6937,7 +6937,7 @@ function SetSubmarineCrushDepths(submarine, toggle, crushWarningDepth1, crushWar
 --- SetVehicleCanDeformWheels
 ---
 --- @hash 0x0CDDA42F9E360CA6
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleCanDeformWheels(vehicle, toggle) end
@@ -6958,7 +6958,7 @@ function SetVehicleCanDeformWheels(vehicle, toggle) end
 --- Once this native is used then players will just be able to hit the vehicle transform key to toggle the transformation cycle; it won't block users from using the key.
 ---
 --- @hash 0x438B3D7CA026FE91
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param state number (float)
 --- @return void
 function SetVehicleHoverTransformPercentage(vehicle, state) end
@@ -6969,8 +6969,8 @@ function SetVehicleHoverTransformPercentage(vehicle, state) end
 --- ```
 ---
 --- @hash 0x4D610C6B56031351
---- @param vehicle number (Vehicle)
---- @param modelHash table (Hash)
+--- @param vehicle Vehicle
+--- @param modelHash Hash
 --- @return void
 function SetVehicleParachuteModel(vehicle, modelHash) end
 
@@ -6978,7 +6978,7 @@ function SetVehicleParachuteModel(vehicle, modelHash) end
 --- SetVehicleRampUpwardsLaunchMotion
 ---
 --- @hash 0x756AE6E962168A04
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleRampUpwardsLaunchMotion(vehicle, toggle) end
@@ -6989,7 +6989,7 @@ function SetVehicleRampUpwardsLaunchMotion(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x279D50DE5652D935
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleGeneratesEngineShockingEvents(vehicle, toggle) end
@@ -7008,7 +7008,7 @@ function SetFarDrawVehicles(toggle) end
 --- ```
 ---
 --- @hash 0x67B2C79AA7FF5738
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param isStolen boolean
 --- @return any
 function SetVehicleIsStolen(vehicle, isStolen) end
@@ -7026,7 +7026,7 @@ function SkipTimeInPlaybackRecordedVehicle(p0, p1) end
 --- SetVehicleInactiveDuringPlayback
 ---
 --- @hash 0x06582AFF74894C75
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleInactiveDuringPlayback(vehicle, toggle) end
@@ -7053,7 +7053,7 @@ function SetVehicleInactiveDuringPlayback(vehicle, toggle) end
 --- | Blacklight    | 15  | 3   | 255 |
 ---
 --- @hash 0x8E0A582209A62695
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param r number (int)
 --- @param g number (int)
 --- @param b number (int)
@@ -7075,7 +7075,7 @@ function SetVehicleNeonLightsColour(vehicle, r, g, b) end
 --- ```
 ---
 --- @hash 0x57C51E6BAD752696
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param tint number (int)
 --- @return void
 function SetVehicleWindowTint(vehicle, tint) end
@@ -7089,7 +7089,7 @@ function SetVehicleWindowTint(vehicle, tint) end
 --- ```
 ---
 --- @hash 0xB385454F8791F57C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param multiplier number (float)
 --- @return void
 function SetVehicleLightMultiplier(vehicle, multiplier) end
@@ -7101,7 +7101,7 @@ function SetVehicleLightMultiplier(vehicle, multiplier) end
 --- ```
 ---
 --- @hash 0xB5D45264751B7DF0
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param turnSignal number (int)
 --- @param toggle boolean
 --- @return void
@@ -7126,7 +7126,7 @@ function SetVehicleDensityMultiplierThisFrame(multiplier) end
 --- SetVehicleRampSidewaysLaunchMotion
 ---
 --- @hash 0x1BBAC99C0BC53656
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleRampSidewaysLaunchMotion(vehicle, toggle) end
@@ -7147,7 +7147,7 @@ function SetVehicleRampSidewaysLaunchMotion(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0xEC6A202EE4960385
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param index number (int)
 --- @param onRim boolean
 --- @param p3 number (float)
@@ -7162,7 +7162,7 @@ function SetVehicleTyreBurst(vehicle, index, onRim, p3) end
 --- ```
 ---
 --- @hash 0x79D3B596FE44EE8B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param dirtLevel number (float)
 --- @return void
 function SetVehicleDirtLevel(vehicle, dirtLevel) end
@@ -7171,7 +7171,7 @@ function SetVehicleDirtLevel(vehicle, dirtLevel) end
 --- Transforms the `stormberg` to it's "water vehicle" variant. If the vehicle is already in that state then the vehicle transformation audio will still play, but the vehicle won't change at all.
 ---
 --- @hash 0xBE4C854FFDB6EEBE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param instantly boolean
 --- @return void
 function TransformVehicleToSubmarine(vehicle, instantly) end
@@ -7182,7 +7182,7 @@ function TransformVehicleToSubmarine(vehicle, instantly) end
 --- ```
 ---
 --- @hash 0x10655FAB9915623D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param hash any
 --- @return void
 function SetVehicleHandlingHashForAi(vehicle, hash) end
@@ -7191,7 +7191,7 @@ function SetVehicleHandlingHashForAi(vehicle, hash) end
 --- SetVehicleUnkDamageMultiplier
 ---
 --- @hash 0x45A561A9421AB6AD
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param multiplier number (float)
 --- @return void
 function SetVehicleUnkDamageMultiplier(vehicle, multiplier) end
@@ -7202,7 +7202,7 @@ function SetVehicleUnkDamageMultiplier(vehicle, multiplier) end
 --- ```
 ---
 --- @hash 0xFE54B92A344583CA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param position number (float)
 --- @return void
 function SetVehicleTowTruckArmPosition(vehicle, position) end
@@ -7213,7 +7213,7 @@ function SetVehicleTowTruckArmPosition(vehicle, position) end
 --- ```
 ---
 --- @hash 0x9D44FCCE98450843
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleSilent(vehicle, toggle) end
@@ -7229,7 +7229,7 @@ function SetVehicleSilent(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x2AA720E4287BF269
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param index number (int)
 --- @param toggle boolean
 --- @return void
@@ -7239,7 +7239,7 @@ function SetVehicleNeonLightEnabled(vehicle, index, toggle) end
 --- SetVehicleCanBeUsedByFleeingPeds
 ---
 --- @hash 0x300504B23BD3B711
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleCanBeUsedByFleeingPeds(vehicle, toggle) end
@@ -7250,7 +7250,7 @@ function SetVehicleCanBeUsedByFleeingPeds(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x2D55FE374D5FDB91
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleHoverTransformActive(vehicle, toggle) end
@@ -7261,7 +7261,7 @@ function SetVehicleHoverTransformActive(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0xBFDF984E2C22B94F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param name string (char*)
 --- @return void
 function SetVehicleNameDebug(vehicle, name) end
@@ -7273,7 +7273,7 @@ function SetVehicleNameDebug(vehicle, name) end
 --- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 --- SetAircraftCountermeasureCount(vehicle, 10
 --- @hash 0x9BDA23BF666F0855
---- @param aircraft number (Vehicle)
+--- @param aircraft Vehicle
 --- @param count number (int)
 --- @return void
 function SetVehicleCountermeasureCount(aircraft, count) end
@@ -7282,7 +7282,7 @@ function SetVehicleCountermeasureCount(aircraft, count) end
 --- SetVehicleNeedsToBeHotwired
 ---
 --- @hash 0xFBA550EA44404EE6
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleNeedsToBeHotwired(vehicle, toggle) end
@@ -7300,7 +7300,7 @@ function SetVehicleNeedsToBeHotwired(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0xF2BFA0430F0A0FCB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param doorIndex number (int)
 --- @param speed number (int)
 --- @param angle number (float)
@@ -7319,7 +7319,7 @@ function SetVehicleDoorControl(vehicle, doorIndex, speed, angle) end
 --- ```
 ---
 --- @hash 0x2A1F4F37F95BAD08
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param modType number (int)
 --- @param toggle boolean
 --- @return void
@@ -7331,7 +7331,7 @@ function ToggleVehicleMod(vehicle, modType, toggle) end
 --- ```
 ---
 --- @hash 0xCE2B43770B655F8F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param direction number (float)
 --- @return void
 function SetPlaneVtolAnimationDisabled(vehicle, direction) end
@@ -7342,7 +7342,7 @@ function SetPlaneVtolAnimationDisabled(vehicle, direction) end
 --- ```
 ---
 --- @hash 0x07116E24E9D1929D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleIsRacing(vehicle, toggle) end
@@ -7358,7 +7358,7 @@ function SetVehicleIsRacing(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x95A88F0B409CDA47
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param plateText string (char*)
 --- @return void
 function SetVehicleNumberPlateText(vehicle, plateText) end
@@ -7369,7 +7369,7 @@ function SetVehicleNumberPlateText(vehicle, plateText) end
 --- ```
 ---
 --- @hash 0xB93B2867F7B479D1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param color number (int)
 --- @return void
 function SetVehicleNeonLightsColor_2(vehicle, color) end
@@ -7386,7 +7386,7 @@ function SetVehicleNeonLightsColor_2(vehicle, color) end
 --- ```
 ---
 --- @hash 0x9088EB5A43FFB0A1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param plateIndex number (int)
 --- @return void
 function SetVehicleNumberPlateTextIndex(vehicle, plateIndex) end
@@ -7397,7 +7397,7 @@ function SetVehicleNumberPlateTextIndex(vehicle, plateIndex) end
 --- ```
 ---
 --- @hash 0x222FF6A823D122E2
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleReduceGrip(vehicle, toggle) end
@@ -7409,7 +7409,7 @@ function SetVehicleReduceGrip(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x14E85C5EE7A4D542
---- @param heli number (Vehicle)
+--- @param heli Vehicle
 --- @param toggle boolean
 --- @param canBeUsedByAI boolean
 --- @return void
@@ -7421,7 +7421,7 @@ function SetVehicleSearchlight(heli, toggle, canBeUsedByAI) end
 --- ```
 ---
 --- @hash 0xA74AD2439468C883
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param textureVariation number (int)
 --- @return void
 function SetVehicleParachuteTextureVariatiion(vehicle, textureVariation) end
@@ -7440,7 +7440,7 @@ function SetVehicleParachuteTextureVariatiion(vehicle, textureVariation) end
 --- ```
 ---
 --- @hash 0x43FEB945EE7F85B8
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param paintType number (int)
 --- @param color number (int)
 --- @param p3 number (int)
@@ -7454,7 +7454,7 @@ function SetVehicleModColor_1(vehicle, paintType, color, p3) end
 --- ```
 ---
 --- @hash 0x70DB57649FA8D0D8
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param health number (float)
 --- @return void
 function SetVehiclePetrolTankHealth(vehicle, health) end
@@ -7463,7 +7463,7 @@ function SetVehiclePetrolTankHealth(vehicle, health) end
 --- SetVehicleWeaponCapacity
 ---
 --- @hash 0x44CD1F493DB2A0A6
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param weaponIndex number (int)
 --- @param capacity number (int)
 --- @return void
@@ -7473,7 +7473,7 @@ function SetVehicleWeaponCapacity(vehicle, weaponIndex, capacity) end
 --- SetVehicleDoorsLockedForNonScriptPlayers
 ---
 --- @hash 0x9737A37136F07E75
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleDoorsLockedForNonScriptPlayers(vehicle, toggle) end
@@ -7482,8 +7482,8 @@ function SetVehicleDoorsLockedForNonScriptPlayers(vehicle, toggle) end
 --- StabiliseEntityAttachedToHeli
 ---
 --- @hash 0x374706271354CB18
---- @param vehicle number (Vehicle)
---- @param entity table (Entity)
+--- @param vehicle Vehicle
+--- @param entity Entity
 --- @param p2 number (float)
 --- @return void
 function StabiliseEntityAttachedToHeli(vehicle, entity, p2) end
@@ -7492,7 +7492,7 @@ function StabiliseEntityAttachedToHeli(vehicle, entity, p2) end
 --- SetVehicleInteriorColour
 ---
 --- @hash 0xF40DD601A65F7F19
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param color number (int)
 --- @return void
 function SetVehicleInteriorColour(vehicle, color) end
@@ -7503,7 +7503,7 @@ function SetVehicleInteriorColour(vehicle, color) end
 --- ```
 ---
 --- @hash 0x3E8C8727991A8A0B
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleStrong(vehicle, toggle) end
@@ -7512,7 +7512,7 @@ function SetVehicleStrong(vehicle, toggle) end
 --- SetVehicleRampLaunchModifier
 ---
 --- @hash 0xEFC13B1CE30D755D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (float)
 --- @return void
 function SetVehicleRampLaunchModifier(vehicle, p1) end
@@ -7524,8 +7524,8 @@ function SetVehicleRampLaunchModifier(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x74CD9A9327A282EA
---- @param driver table (Ped)
---- @param entity table (Entity)
+--- @param driver Ped
+--- @param entity Entity
 --- @param xTarget number (float)
 --- @param yTarget number (float)
 --- @param zTarget number (float)
@@ -7536,7 +7536,7 @@ function SetVehicleShootAtTarget(driver, entity, xTarget, yTarget, zTarget) end
 --- SetVehicleWeaponsDisabled
 ---
 --- @hash 0x86B4B6212CB8B627
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param weaponSlot number (int)
 --- @return void
 function SetVehicleWeaponsDisabled(vehicle, weaponSlot) end
@@ -7555,7 +7555,7 @@ function SetVehicleWeaponsDisabled(vehicle, weaponSlot) end
 --- ```
 ---
 --- @hash 0x6E13FC662B882D1D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param tyreIndex number (int)
 --- @return void
 function SetVehicleTyreFixed(vehicle, tyreIndex) end
@@ -7564,7 +7564,7 @@ function SetVehicleTyreFixed(vehicle, tyreIndex) end
 --- SetVehicleLivery
 ---
 --- @hash 0x60BF608F1B8CD1B6
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param livery number (int)
 --- @return void
 function SetVehicleLivery(vehicle, livery) end
@@ -7573,7 +7573,7 @@ function SetVehicleLivery(vehicle, livery) end
 --- StopPlaybackRecordedVehicle
 ---
 --- @hash 0x54833611C17ABDEA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function StopPlaybackRecordedVehicle(vehicle) end
 
@@ -7581,7 +7581,7 @@ function StopPlaybackRecordedVehicle(vehicle) end
 --- SetVehicleRocketBoostRefillTime
 ---
 --- @hash 0xE00F2AB100B76E89
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param time number (float)
 --- @return void
 function SetVehicleRocketBoostRefillTime(vehicle, time) end
@@ -7590,7 +7590,7 @@ function SetVehicleRocketBoostRefillTime(vehicle, time) end
 --- SetVehicleTankTurretPosition
 ---
 --- @hash 0x56B94C6D7127DFBA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param position number (float)
 --- @param p2 boolean
 --- @return void
@@ -7608,7 +7608,7 @@ function SetVehicleTankTurretPosition(vehicle, position, p2) end
 --- The actual value isn't stored as a float but as an unsigned char (BYTE).
 ---
 --- @hash 0x3AFDC536C3D01674
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param fade number (float)
 --- @return void
 function SetVehicleEnveffScale(vehicle, fade) end
@@ -7617,7 +7617,7 @@ function SetVehicleEnveffScale(vehicle, fade) end
 --- SetVehicleJetEngineOn
 ---
 --- @hash 0xB8FBC8B1330CA9B4
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleJetEngineOn(vehicle, toggle) end
@@ -7626,7 +7626,7 @@ function SetVehicleJetEngineOn(vehicle, toggle) end
 --- SetVehicleRocketBoostActive
 ---
 --- @hash 0x81E1552E35DC3839
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param active boolean
 --- @return void
 function SetVehicleRocketBoostActive(vehicle, active) end
@@ -7635,7 +7635,7 @@ function SetVehicleRocketBoostActive(vehicle, active) end
 --- SetVehicleExtendedRemovalRange
 ---
 --- @hash 0x79DF7E806202CE01
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param range number (int)
 --- @return void
 function SetVehicleExtendedRemovalRange(vehicle, range) end
@@ -7648,7 +7648,7 @@ function SetVehicleExtendedRemovalRange(vehicle, range) end
 --- ```
 ---
 --- @hash 0x6DEE944E1EE90CFB
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleReduceTraction(vehicle, toggle) end
@@ -7665,7 +7665,7 @@ function SetVehicleReduceTraction(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0xB5BA80F839791C0F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param r number (int)
 --- @param g number (int)
 --- @param b number (int)
@@ -7676,7 +7676,7 @@ function SetVehicleTyreSmokeColor(vehicle, r, g, b) end
 --- SetVehicleRudderBroken
 ---
 --- @hash 0x09606148B6C71DEF
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleRudderBroken(vehicle, toggle) end
@@ -7687,7 +7687,7 @@ function SetVehicleRudderBroken(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0xB8FF7AB45305C345
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return any
 function StartVehicleAlarm(vehicle) end
 
@@ -7697,7 +7697,7 @@ function StartVehicleAlarm(vehicle) end
 --- ```
 ---
 --- @hash 0x2FA133A4A9D37ED8
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param doorIndex number (int)
 --- @param isBreakable boolean
 --- @return void
@@ -7722,7 +7722,7 @@ function SetVehicleDoorCanBreak(vehicle, doorIndex, isBreakable) end
 --- 13 = unsure
 ---
 --- @hash 0x9E5B5E4D2CCD2259
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param index number (int)
 --- @return any
 function SmashVehicleWindow(vehicle, index) end
@@ -7737,7 +7737,7 @@ function SmashVehicleWindow(vehicle, index) end
 --- ```
 ---
 --- @hash 0x49733E92263139D1
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function SetVehicleOnGroundProperly(vehicle) end
 
@@ -7745,7 +7745,7 @@ function SetVehicleOnGroundProperly(vehicle) end
 --- StartPlaybackRecordedVehicle
 ---
 --- @hash 0x3F878F92B3A7A071
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 number (int)
 --- @param playback string (char*)
 --- @param p3 boolean
@@ -7756,7 +7756,7 @@ function StartPlaybackRecordedVehicle(vehicle, p1, playback, p3) end
 --- SkipToEndAndStopPlaybackRecordedVehicle
 ---
 --- @hash 0xAB8E2EDA0C0A5883
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function SkipToEndAndStopPlaybackRecordedVehicle(vehicle) end
 
@@ -7764,7 +7764,7 @@ function SkipToEndAndStopPlaybackRecordedVehicle(vehicle) end
 --- Transforms the `stormberg` to it's "road vehicle" variant. If the vehicle is already in that state then the vehicle transformation audio will still play, but the vehicle won't change at all.
 ---
 --- @hash 0x2A69FFD1B42BFF9E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param instantly boolean
 --- @return void
 function TransformSubmarineToVehicle(vehicle, instantly) end
@@ -7779,7 +7779,7 @@ function TransformSubmarineToVehicle(vehicle, instantly) end
 --- ```
 ---
 --- @hash 0x2970EAA18FD5E42F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleWheelsDealDamage(vehicle, toggle) end
@@ -7788,7 +7788,7 @@ function SetVehicleWheelsDealDamage(vehicle, toggle) end
 --- SetVehicleUseCutsceneWheelCompression
 ---
 --- @hash 0xE023E8AC4EF7C117
---- @param p0 number (Vehicle)
+--- @param p0 Vehicle
 --- @param p1 boolean
 --- @param p2 boolean
 --- @param p3 boolean
@@ -7801,7 +7801,7 @@ function SetVehicleUseCutsceneWheelCompression(p0, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0xF4924635A19EB37D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleSiren(vehicle, toggle) end
@@ -7812,7 +7812,7 @@ function SetVehicleSiren(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x1D97D1E3A70A649F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function SetVehicleUseAlternateHandling(vehicle, p1) end
@@ -7825,7 +7825,7 @@ function SetVehicleUseAlternateHandling(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x1F2AA07F00B3217A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param modKit number (int)
 --- @return void
 function SetVehicleModKit(vehicle, modKit) end
@@ -7869,7 +7869,7 @@ function SetVehicleModKit(vehicle, modKit) end
 --- ```
 ---
 --- @hash 0x6AF0636DDEDCB6DD
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param modType number (int)
 --- @param modIndex number (int)
 --- @param customTires boolean
@@ -7887,7 +7887,7 @@ function SetVehicleMod(vehicle, modType, modIndex, customTires) end
 --- ```
 ---
 --- @hash 0x42A8EC77D5150CBE
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param value number (float)
 --- @return void
 function SetVehicleSteerBias(vehicle, value) end
@@ -7908,7 +7908,7 @@ function SetVehicleSteerBias(vehicle, value) end
 --- ```
 ---
 --- @hash 0x1CF38D529D7441D9
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleSt(vehicle, toggle) end
@@ -7919,7 +7919,7 @@ function SetVehicleSt(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0xEB9DC3C7D8596C46
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleTyresCanBurst(vehicle, toggle) end
@@ -7928,7 +7928,7 @@ function SetVehicleTyresCanBurst(vehicle, toggle) end
 --- SetVehicleUsePlayerLightSettings
 ---
 --- @hash 0xC45C27EF50F36ADC
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function SetVehicleUsePlayerLightSettings(vehicle, p1) end
@@ -7943,7 +7943,7 @@ function SetVehicleUsePlayerLightSettings(vehicle, p1) end
 --- ToggleVehicleMod(veh, 22, true) -- toggle xenon
 --- SetVehicleHeadlightsColour(veh, 2
 --- @hash 0xE41033B25D003A07
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param color number (int)
 --- @return void
 function SetVehicleXenonLightsColour(vehicle, color) end
@@ -7954,7 +7954,7 @@ function SetVehicleXenonLightsColour(vehicle, color) end
 --- ```
 ---
 --- @hash 0x1AA8A837D2169D94
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 function SetVehicleLightsCanBeVisiblyDamaged(vehicle, p1) end
@@ -7967,7 +7967,7 @@ function SetVehicleLightsCanBeVisiblyDamaged(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x64473AEFDCF47DCA
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function TrackVehicleVisibility(vehicle) end
 
@@ -7983,7 +7983,7 @@ function StopAllGarageActivity() end
 --- SetVehicleSteeringBiasScalar
 ---
 --- @hash 0x9007A2F21DC108D4
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param scalar number (float)
 --- @return void
 function SetVehicleSteeringBiasScalar(vehicle, scalar) end
@@ -8002,7 +8002,7 @@ function SetVehicleSteeringBiasScalar(vehicle, scalar) end
 --- ```
 ---
 --- @hash 0x34E710FF01247C5A
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param state number (int)
 --- @return void
 function SetVehicleLights(vehicle, state) end
@@ -8013,7 +8013,7 @@ function SetVehicleLights(vehicle, state) end
 --- ```
 ---
 --- @hash 0x8ABA6AF54B942B95
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleUndriveable(vehicle, toggle) end
@@ -8022,7 +8022,7 @@ function SetVehicleUndriveable(vehicle, toggle) end
 --- StartPlaybackRecordedVehicleWithFlags
 ---
 --- @hash 0x7D80FD645D4DA346
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param p1 any
 --- @param playback string (char*)
 --- @param p3 any
@@ -8035,7 +8035,7 @@ function StartPlaybackRecordedVehicleWithFlags(vehicle, p1, playback, p3, p4, p5
 --- SetVehicleRocketBoostPercentage
 ---
 --- @hash 0xFEB2DDED3509562E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param percentage number (float)
 --- @return void
 function SetVehicleRocketBoostPercentage(vehicle, percentage) end
@@ -8048,7 +8048,7 @@ function SetVehicleRocketBoostPercentage(vehicle, percentage) end
 --- Might work on other custom vehicles but im not sure what those might be, only confirmed it working with the tornado custom.
 ---
 --- @hash 0xA6D3A8750DC73270
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param livery number (int)
 --- @return void
 function SetVehicleRoofLivery(vehicle, livery) end
@@ -8057,7 +8057,7 @@ function SetVehicleRoofLivery(vehicle, livery) end
 --- SetVehicleWheelsCanBreakOffWhenBlowUp
 ---
 --- @hash 0xA37B9A517B133349
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetVehicleWheelsCanBreakOffWhenBlowUp(vehicle, toggle) end
@@ -8068,7 +8068,7 @@ function SetVehicleWheelsCanBreakOffWhenBlowUp(vehicle, toggle) end
 --- ```
 ---
 --- @hash 0x29B18B4FD460CA8F
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param enabled boolean
 --- @return any
 function SetVehicleWheelsCanBreak(vehicle, enabled) end
@@ -8095,9 +8095,9 @@ function StartPlaybackRecordedVehicleUsingAi(p0, p1, p2, p3, p4) end
 --- ```
 ---
 --- @hash 0x9C8C6504B5B63D2C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param duration number (int)
---- @param mode table (Hash)
+--- @param mode Hash
 --- @param forever boolean
 --- @return void
 function StartVehicleHorn(vehicle, duration, mode, forever) end
@@ -8106,7 +8106,7 @@ function StartVehicleHorn(vehicle, duration, mode, forever) end
 --- UnpausePlaybackRecordedVehicle
 ---
 --- @hash 0x8879EE09268305D5
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return void
 function UnpausePlaybackRecordedVehicle(vehicle) end
 

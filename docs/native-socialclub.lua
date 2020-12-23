@@ -250,7 +250,7 @@ function N_0x07dbd622d9533857(p0) end
 ---
 --- @hash 0x198D161F458ECC7F
 ---
---- @return table (Entity)
+--- @return Entity
 function ScGetNickname() end
 
     
@@ -392,7 +392,7 @@ function N_0x699e4a5c8c893a18(p0, p1, p2) end
 ---
 --- @hash 0xBB8EA16ECBC976C4
 --- @param p0 number (int)
---- @return table (Hash)
+--- @return Hash
 function ScInboxMessageInit(p0) end
 
     
@@ -478,7 +478,7 @@ function N_0x450819d8cf90c416() end
 --- ScPresenceAttrSetInt
 ---
 --- @hash 0x1F1E9682483697C7
---- @param attrHash table (Hash)
+--- @param attrHash Hash
 --- @param value number (int)
 --- @return boolean
 function ScPresenceAttrSetInt(attrHash, value) end
@@ -744,7 +744,7 @@ function N_0x4ed9c8d6da297639() end
 --- ScPresenceAttrSetString
 ---
 --- @hash 0x287F1F75D2803595
---- @param attrHash table (Hash)
+--- @param attrHash Hash
 --- @param value string (char*)
 --- @return boolean
 function ScPresenceAttrSetString(attrHash, value) end

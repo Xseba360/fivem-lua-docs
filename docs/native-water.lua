@@ -128,7 +128,7 @@ function N_0x547237aa71ab44de(p0) end
 --- @param x2 number (float)
 --- @param y2 number (float)
 --- @param z2 number (float)
---- @param result table (Vector3*)
+--- @param result Vector3 (Vector3*)
 --- @return boolean
 function TestProbeAgainstWater(x1, y1, z1, x2, y2, z2, result) end
 

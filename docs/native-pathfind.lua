@@ -100,7 +100,7 @@ function IsNavmeshLoadedInArea(x1, y1, z1, x2, y2, z2) end
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param outPosition table (Vector3*)
+--- @param outPosition Vector3 (Vector3*)
 --- @param nodeType number (int)
 --- @param p5 number (float)
 --- @param p6 number (float)
@@ -124,7 +124,7 @@ function SetIgnoreNoGpsFlag(toggle) end
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param outPosition table (Vector3*)
+--- @param outPosition Vector3 (Vector3*)
 --- @param unknown1 number (float)
 --- @param unknown2 number (int)
 --- @return boolean
@@ -182,8 +182,8 @@ function LoadAllPathNodes(keepInMemory) end
 --- @param z number (float)
 --- @param p3 number (float)
 --- @param p4 number (int)
---- @param p5 table (Vector3*)
---- @param p6 table (Vector3*)
+--- @param p5 Vector3 (Vector3*)
+--- @param p6 Vector3 (Vector3*)
 --- @param p7 table (Any*)
 --- @param p8 table (Any*)
 --- @param p9 table (float*)
@@ -263,7 +263,7 @@ function N_0x01708e8dd3ff8c65(p0, p1, p2, p3, p4, p5) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param onGround boolean
---- @param outPosition table (Vector3*)
+--- @param outPosition Vector3 (Vector3*)
 --- @param flags number (int)
 --- @return boolean
 function GetSafeCoordForPed(x, y, z, onGround, outPosition, flags) end
@@ -281,8 +281,8 @@ function GetSafeCoordForPed(x, y, z, onGround, outPosition, flags) end
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param streetName table (Hash*)
---- @param crossingRoad table (Hash*)
+--- @param streetName Hash (Hash*)
+--- @param crossingRoad Hash (Hash*)
 --- @return void
 function GetStreetNameAtCoord(x, y, z, streetName, crossingRoad) end
 
@@ -294,7 +294,7 @@ function GetStreetNameAtCoord(x, y, z, streetName, crossingRoad) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param p3 number (int)
---- @param outPosition table (Vector3*)
+--- @param outPosition Vector3 (Vector3*)
 --- @return boolean
 function GetPointOnRoadSide(x, y, z, p3, outPosition) end
 
@@ -314,7 +314,7 @@ function DoesNavmeshBlockingObjectExist(p0) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param heading number (float)
---- @param outPosition table (Vector3*)
+--- @param outPosition Vector3 (Vector3*)
 --- @return boolean
 function GetRoadSidePointWithHeading(x, y, z, heading, outPosition) end
 
@@ -380,7 +380,7 @@ function ClearGpsDisabledZoneAtIndex(index) end
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param outPosition table (Vector3*)
+--- @param outPosition Vector3 (Vector3*)
 --- @param outHeading table (float*)
 --- @param nodeType number (int)
 --- @param p6 number (float)
@@ -427,7 +427,7 @@ function GetHeightmapTopZForPosition(x, y) end
 ---
 --- @hash 0x703123E5E7D429C2
 --- @param nodeId number (int)
---- @param outPosition table (Vector3*)
+--- @param outPosition Vector3 (Vector3*)
 --- @return void
 function GetVehicleNodePosition(nodeId, outPosition) end
 
@@ -456,7 +456,7 @@ function IsVehicleNodeIdValid(vehicleNodeId) end
 --- @param desiredY number (float)
 --- @param desiredZ number (float)
 --- @param nthClosest number (int)
---- @param outPosition table (Vector3*)
+--- @param outPosition Vector3 (Vector3*)
 --- @param outHeading table (float*)
 --- @param nodetype number (int)
 --- @param p10 any
@@ -475,7 +475,7 @@ function GetNthClosestVehicleNodeFavourDirection(x, y, z, desiredX, desiredY, de
 --- @param p4 boolean
 --- @param p5 boolean
 --- @param p6 boolean
---- @param outPosition table (Vector3*)
+--- @param outPosition Vector3 (Vector3*)
 --- @param nodeId table (int*)
 --- @return boolean
 function GetRandomVehicleNode(x, y, z, radius, p4, p5, p6, outPosition, nodeId) end
@@ -514,7 +514,7 @@ function GetGpsBlipRouteFound() end
 --- @param y number (float)
 --- @param z number (float)
 --- @param nthClosest number (int)
---- @param outPosition table (Vector3*)
+--- @param outPosition Vector3 (Vector3*)
 --- @param heading table (float*)
 --- @param unknown1 table (Any*)
 --- @param unknown2 number (int)
@@ -531,7 +531,7 @@ function GetNthClosestVehicleNodeWithHeading(x, y, z, nthClosest, outPosition, h
 --- @param y number (float)
 --- @param z number (float)
 --- @param nthClosest number (int)
---- @param outPosition table (Vector3*)
+--- @param outPosition Vector3 (Vector3*)
 --- @param unknown1 any
 --- @param unknown2 any
 --- @param unknown3 any
@@ -651,7 +651,7 @@ function SetRoadsBackToOriginal(p0, p1, p2, p3, p4, p5) end
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsPointOnRoad(x, y, z, vehicle) end
 
@@ -805,7 +805,7 @@ function SetRoadsInArea(x1, y1, z1, x2, y2, z2, nodeEnabled, unknown2) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param nthClosest number (int)
---- @param outPosition table (Vector3*)
+--- @param outPosition Vector3 (Vector3*)
 --- @param outHeading number (float)
 --- @param p6 any
 --- @param p7 number (float)

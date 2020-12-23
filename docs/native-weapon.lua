@@ -20,7 +20,7 @@ function FireAirDefenseWeapon(zoneId, x, y, z) end
 --- ```
 ---
 --- @hash 0x9541D3CF0D398F36
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @param ammoCount number (int)
 --- @param x number (float)
 --- @param y number (float)
@@ -39,8 +39,8 @@ function CreateWeaponObject(weaponHash, ammoCount, x, y, z, showWorldModel, scal
 --- ```
 ---
 --- @hash 0x6C4D0409BA1A2BC2
---- @param ped table (Ped)
---- @param coords table (Vector3*)
+--- @param ped Ped
+--- @param coords Vector3 (Vector3*)
 --- @return boolean
 function GetPedLastWeaponImpactCoord(ped, coords) end
 
@@ -59,16 +59,16 @@ function EnableLaserSightRendering(toggle) end
 --- GetPedWeapontypeInSlot
 ---
 --- @hash 0xEFFED78E9011134D
---- @param ped table (Ped)
---- @param weaponSlot table (Hash)
---- @return table (Hash)
+--- @param ped Ped
+--- @param weaponSlot Hash
+--- @return Hash
 function GetPedWeapontypeInSlot(ped, weaponSlot) end
 
     
 --- GetMaxRangeOfCurrentPedWeapon
 ---
 --- @hash 0x814C9D19DFD69679
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (float)
 function GetMaxRangeOfCurrentPedWeapon(ped) end
 
@@ -78,8 +78,8 @@ function GetMaxRangeOfCurrentPedWeapon(ped) end
 --- ```
 ---
 --- @hash 0xFC4BD125DE7611E4
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param p2 boolean
 --- @return void
 function ExplodeProjectiles(ped, weaponHash, p2) end
@@ -89,7 +89,7 @@ function ExplodeProjectiles(ped, weaponHash, p2) end
 --- Use ClearEntityLastWeaponDamage and HasEntityBeenDamagedByWeapon instead.
 ---
 --- @hash 0x0E98F88A24C5F4B8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearPedLastWeaponDamage(ped) end
 
@@ -97,8 +97,8 @@ function ClearPedLastWeaponDamage(ped) end
 --- GetCurrentPedVehicleWeapon
 ---
 --- @hash 0x1017582BCD3832DC
---- @param ped table (Ped)
---- @param weaponHash table (Hash*)
+--- @param ped Ped
+--- @param weaponHash Hash (Hash*)
 --- @return boolean
 function GetCurrentPedVehicleWeapon(ped, weaponHash) end
 
@@ -106,8 +106,8 @@ function GetCurrentPedVehicleWeapon(ped, weaponHash) end
 --- GetWeaponComponentTypeModel
 ---
 --- @hash 0x0DB57B41EC1DB083
---- @param componentHash table (Hash)
---- @return table (Hash)
+--- @param componentHash Hash
+--- @return Hash
 function GetWeaponComponentTypeModel(componentHash) end
 
     
@@ -118,7 +118,7 @@ function GetWeaponComponentTypeModel(componentHash) end
 --- ```
 ---
 --- @hash 0x3133B907D8B32053
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @param componentHash any
 --- @return number (float)
 function GetWeaponDamage(weaponHash, componentHash) end
@@ -129,7 +129,7 @@ function GetWeaponDamage(weaponHash, componentHash) end
 --- ```
 ---
 --- @hash 0x585847C5E4E11709
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param ammoType any
 --- @param ammo table (int*)
 --- @return boolean
@@ -151,7 +151,7 @@ function GetWeaponComponentVariantExtraComponentModel(componentHash, extraCompon
 --- GetLockonDistanceOfCurrentPedWeapon
 ---
 --- @hash 0x840F03E9041E2C9C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (float)
 function GetLockonDistanceOfCurrentPedWeapon(ped) end
 
@@ -161,7 +161,7 @@ function GetLockonDistanceOfCurrentPedWeapon(ped) end
 --- ```
 ---
 --- @hash 0xBC7BE5ABC0879F74
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @return boolean
 function CanUseWeaponOnParachute(weaponHash) end
 
@@ -169,7 +169,7 @@ function CanUseWeaponOnParachute(weaponHash) end
 --- ClearEntityLastWeaponDamage
 ---
 --- @hash 0xAC678E40BE7C74D2
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function ClearEntityLastWeaponDamage(entity) end
 
@@ -181,9 +181,9 @@ function ClearEntityLastWeaponDamage(entity) end
 --- ```
 ---
 --- @hash 0xF489B44DD5AF4BD9
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
---- @return table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
+--- @return Hash
 function GetPedAmmoTypeFromWeapon_2(ped, weaponHash) end
 
     
@@ -206,7 +206,7 @@ function GetPedAmmoTypeFromWeapon_2(ped, weaponHash) end
 --- ```
 ---
 --- @hash 0xD92C739EE34C9EBA
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @param outData table (Any*)
 --- @return boolean
 function GetWeaponHudStats(weaponHash, outData) end
@@ -215,8 +215,8 @@ function GetWeaponHudStats(weaponHash, outData) end
 --- GetWeapontypeSlot
 ---
 --- @hash 0x4215460B9B8B7FA0
---- @param weaponHash table (Hash)
---- @return table (Hash)
+--- @param weaponHash Hash
+--- @return Hash
 function GetWeapontypeSlot(weaponHash) end
 
     
@@ -231,7 +231,7 @@ function DoesAirDefenseZoneExist(zoneId) end
 --- NativeDB Introduced: v1290
 ---
 --- @hash 0x065D2AACAD8CF7A4
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @return any
 function GetWeaponTimeBetweenShots(weaponHash) end
 
@@ -261,8 +261,8 @@ function CreateAirDefenseArea(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, weaponHash
 --- ```
 ---
 --- @hash 0xF731332072F5156C
---- @param ped table (Ped)
---- @param gadgetHash table (Hash)
+--- @param ped Ped
+--- @param gadgetHash Hash
 --- @return boolean
 function GetIsPedGadgetEquipped(ped, gadgetHash) end
 
@@ -284,7 +284,7 @@ function GetWeaponObjectLiveryColor(weaponObject, camoComponentHash) end
 --- ```
 ---
 --- @hash 0xF0A60040BE558F2D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param weaponHash any
 --- @param camoComponentHash any
 --- @return number (int)
@@ -299,8 +299,8 @@ function GetPedWeaponLiveryColor(ped, weaponHash, camoComponentHash) end
 --- ```
 ---
 --- @hash 0x131D401334815E94
---- @param entity table (Entity)
---- @param weaponHash table (Hash)
+--- @param entity Entity
+--- @param weaponHash Hash
 --- @param weaponType number (int)
 --- @return boolean
 function HasEntityBeenDamagedByWeapon(entity, weaponHash, weaponType) end
@@ -309,8 +309,8 @@ function HasEntityBeenDamagedByWeapon(entity, weaponHash, weaponType) end
 --- AddAmmoToPed
 ---
 --- @hash 0x78F0424C34306220
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param ammo number (int)
 --- @return void
 function AddAmmoToPed(ped, weaponHash, ammo) end
@@ -319,9 +319,9 @@ function AddAmmoToPed(ped, weaponHash, ammo) end
 --- SetPedInfiniteAmmo
 ---
 --- @hash 0x3EDCB0505123623B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @return void
 function SetPedInfiniteAmmo(ped, toggle, weaponHash) end
 
@@ -329,8 +329,8 @@ function SetPedInfiniteAmmo(ped, toggle, weaponHash) end
 --- DoesWeaponTakeWeaponComponent
 ---
 --- @hash 0x5CEE3DF569CECAB0
---- @param weaponHash table (Hash)
---- @param componentHash table (Hash)
+--- @param weaponHash Hash
+--- @param componentHash Hash
 --- @return boolean
 function DoesWeaponTakeWeaponComponent(weaponHash, componentHash) end
 
@@ -338,9 +338,9 @@ function DoesWeaponTakeWeaponComponent(weaponHash, componentHash) end
 --- GiveWeaponComponentToPed
 ---
 --- @hash 0xD966D51AA5B28BB9
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
---- @param componentHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
+--- @param componentHash Hash
 --- @return void
 function GiveWeaponComponentToPed(ped, weaponHash, componentHash) end
 
@@ -348,7 +348,7 @@ function GiveWeaponComponentToPed(ped, weaponHash, componentHash) end
 --- HasWeaponAssetLoaded
 ---
 --- @hash 0x36E353271F0E90EE
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @return boolean
 function HasWeaponAssetLoaded(weaponHash) end
 
@@ -359,8 +359,8 @@ function HasWeaponAssetLoaded(weaponHash) end
 --- ```
 ---
 --- @hash 0x3A87E44BB9A01D54
---- @param ped table (Ped)
---- @param weaponHash table (Hash*)
+--- @param ped Ped
+--- @param weaponHash Hash (Hash*)
 --- @param p2 boolean
 --- @return boolean
 function GetCurrentPedWeapon(ped, weaponHash, p2) end
@@ -377,7 +377,7 @@ function GetCurrentPedWeapon(ped, weaponHash, p2) end
 --- Not specifying any bit will lead to the native *always* returning 'false', and for example specifying '4 | 2' will check for any weapon except fists and melee weapons.
 ---
 --- @hash 0x475768A975D5AD17
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param typeFlags number (int)
 --- @return boolean
 function IsPedArmed(ped, typeFlags) end
@@ -386,8 +386,8 @@ function IsPedArmed(ped, typeFlags) end
 --- GetWeapontypeGroup
 ---
 --- @hash 0xC3287EE3050FB74C
---- @param weaponHash table (Hash)
---- @return table (Hash)
+--- @param weaponHash Hash
+--- @return Hash
 function GetWeapontypeGroup(weaponHash) end
 
     
@@ -396,8 +396,8 @@ function GetWeapontypeGroup(weaponHash) end
 --- ```
 ---
 --- @hash 0xA38DCFFCEA8962FA
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param p2 boolean
 --- @return number (int)
 function GetMaxAmmoInClip(ped, weaponHash, p2) end
@@ -407,7 +407,7 @@ function GetMaxAmmoInClip(ped, weaponHash, p2) end
 ---
 --- @hash 0xB1FA61371AF7C4B7
 --- @param weaponObject table (Object)
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function GiveWeaponObjectToPed(weaponObject, ped) end
 
@@ -415,8 +415,8 @@ function GiveWeaponObjectToPed(weaponObject, ped) end
 --- GetAmmoInClip
 ---
 --- @hash 0x2E1202248937775C
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param ammo table (int*)
 --- @return boolean
 function GetAmmoInClip(ped, weaponHash, ammo) end
@@ -439,7 +439,7 @@ function GetAmmoInClip(ped, weaponHash, ammo) end
 --- ```
 ---
 --- @hash 0x3BE0BB12D25FB305
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @return number (int)
 function GetWeaponDamageType(weaponHash) end
 
@@ -453,8 +453,8 @@ function GetWeaponDamageType(weaponHash) end
 --- ```
 ---
 --- @hash 0x015A522136D7F951
---- @param ped table (Ped)
---- @param weaponhash table (Hash)
+--- @param ped Ped
+--- @param weaponhash Hash
 --- @return number (int)
 function GetAmmoInPedWeapon(ped, weaponhash) end
 
@@ -462,7 +462,7 @@ function GetAmmoInPedWeapon(ped, weaponhash) end
 --- IsWeaponValid
 ---
 --- @hash 0x937C71165CF334B3
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @return boolean
 function IsWeaponValid(weaponHash) end
 
@@ -473,8 +473,8 @@ function IsWeaponValid(weaponHash) end
 --- ```
 ---
 --- @hash 0xD0D7B1E680ED4A1A
---- @param ped table (Ped)
---- @param gadgetHash table (Hash)
+--- @param ped Ped
+--- @param gadgetHash Hash
 --- @param p2 boolean
 --- @return void
 function SetPedGadget(ped, gadgetHash, p2) end
@@ -484,7 +484,7 @@ function SetPedGadget(ped, gadgetHash, p2) end
 ---
 --- @hash 0x76A18844E743BF91
 --- @param weapon table (Object)
---- @param addonHash table (Hash)
+--- @param addonHash Hash
 --- @return boolean
 function HasWeaponGotWeaponComponent(weapon, addonHash) end
 
@@ -495,7 +495,7 @@ function HasWeaponGotWeaponComponent(weapon, addonHash) end
 --- ```
 ---
 --- @hash 0xCAE1DC9A0E22A16D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return table (Object)
 function GetWeaponObjectFromPed(ped, p1) end
@@ -517,7 +517,7 @@ function GetWeaponObjectFromPed(ped, p1) end
 --- @param p4 number (float)
 --- @param p5 number (float)
 --- @param p6 number (float)
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @return number (int)
 function CreateAirDefenseSphere(p0, p1, p2, radius, p4, p5, p6, weaponHash) end
 
@@ -531,17 +531,17 @@ function CreateAirDefenseSphere(p0, p1, p2, radius, p4, p5, p6, weaponHash) end
 --- ```
 ---
 --- @hash 0x7FEAD38B326B9F74
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
---- @return table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
+--- @return Hash
 function GetPedAmmoTypeFromWeapon(ped, weaponHash) end
 
     
 --- GetCurrentPedWeaponEntityIndex
 ---
 --- @hash 0x3B390A939AF0B5FC
---- @param ped table (Ped)
---- @return table (Entity)
+--- @param ped Ped
+--- @return Entity
 function GetCurrentPedWeaponEntityIndex(ped) end
 
     
@@ -558,7 +558,7 @@ function RemoveAllAirDefenseZones() end
 --- ```
 ---
 --- @hash 0xF25DF915FA38C5F3
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return void
 function RemoveAllPedWeapons(ped, p1) end
@@ -570,7 +570,7 @@ function RemoveAllPedWeapons(ped, p1) end
 --- ```
 ---
 --- @hash 0x65F0C5AE05943EC7
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedCurrentWeaponSilenced(ped) end
 
@@ -580,7 +580,7 @@ function IsPedCurrentWeaponSilenced(ped) end
 --- ```
 ---
 --- @hash 0x39D22031557946C1
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param ammoType any
 --- @return number (int)
 function GetPedAmmoByType(ped, ammoType) end
@@ -589,7 +589,7 @@ function GetPedAmmoByType(ped, ammoType) end
 --- RefillAmmoInstantly
 ---
 --- @hash 0x8C0D57EA686FAD87
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function RefillAmmoInstantly(ped) end
 
@@ -607,7 +607,7 @@ function GetWeaponComponentVariantExtraComponentCount(componentHash) end
 --- Changes the weapon damage output by the given multiplier value. Must be run every frame.
 ---
 --- @hash 0x4757F00BC6323CFE
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @param damageMultiplier number (float)
 --- @return void
 function SetWeaponDamageModifier(weaponHash, damageMultiplier) end
@@ -616,7 +616,7 @@ function SetWeaponDamageModifier(weaponHash, damageMultiplier) end
 --- If `explode` true, then removal is done through exploding the projectile. Basically the same as EXPLODE_PROJECTILES but without defining the owner ped.
 ---
 --- @hash 0xFC52E0F37E446528
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @param explode boolean
 --- @return void
 function RemoveAllProjectilesOfType(weaponHash, explode) end
@@ -635,8 +635,8 @@ function RemoveAllProjectilesOfType(weaponHash, explode) end
 --- ```
 ---
 --- @hash 0x0A6DB4965674D243
---- @param ped table (Ped)
---- @return table (Hash)
+--- @param ped Ped
+--- @return Hash
 function GetSelectedPedWeapon(ped) end
 
     
@@ -651,7 +651,7 @@ function GetWeaponObjectTintIndex(weapon) end
 --- Forces a ped to reload **only** if they are able to; if they have a full magazine, they will not reload.
 ---
 --- @hash 0x20AE33F3AC9C0033
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function MakePedReload(ped) end
 
@@ -682,8 +682,8 @@ function MakePedReload(ped) end
 --- ```
 ---
 --- @hash 0xBF0FD6E56C964FCB
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param ammoCount number (int)
 --- @param isHidden boolean
 --- @param equipNow boolean
@@ -694,7 +694,7 @@ function GiveWeaponToPed(ped, weaponHash, ammoCount, isHidden, equipNow) end
 --- GetWeaponComponentHudStats
 ---
 --- @hash 0xB3CAF387AE12E9F8
---- @param componentHash table (Hash)
+--- @param componentHash Hash
 --- @param outData table (int*)
 --- @return boolean
 function GetWeaponComponentHudStats(componentHash, outData) end
@@ -703,7 +703,7 @@ function GetWeaponComponentHudStats(componentHash, outData) end
 --- SetPedAmmoToDrop
 ---
 --- @hash 0xA4EFEF9440A5B0EF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param ammo number (int)
 --- @return void
 function SetPedAmmoToDrop(ped, ammo) end
@@ -712,8 +712,8 @@ function SetPedAmmoToDrop(ped, ammo) end
 --- GetPedWeaponTintIndex
 ---
 --- @hash 0x2B9EEDC07BD06B9F
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @return number (int)
 function GetPedWeaponTintIndex(ped, weaponHash) end
 
@@ -727,8 +727,8 @@ function GetPedWeaponTintIndex(ped, weaponHash) end
 --- ```
 ---
 --- @hash 0xB282DC6EBD803C75
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param ammoCount number (int)
 --- @param equipNow boolean
 --- @return void
@@ -742,9 +742,9 @@ function GiveDelayedWeaponToPed(ped, weaponHash, ammoCount, equipNow) end
 --- ```
 ---
 --- @hash 0x717C8481234E3B88
---- @param driver table (Ped)
---- @param vehicle number (Vehicle)
---- @param weaponHash table (Hash)
+--- @param driver Ped
+--- @param vehicle Vehicle
+--- @param weaponHash Hash
 --- @param p3 any
 --- @return boolean
 function HasVehicleGotProjectileAttached(driver, vehicle, weaponHash, p3) end
@@ -753,7 +753,7 @@ function HasVehicleGotProjectileAttached(driver, vehicle, weaponHash, p3) end
 --- SetPedChanceOfFiringBlanks
 ---
 --- @hash 0x8378627201D5497D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param xBias number (float)
 --- @param yBias number (float)
 --- @return void
@@ -767,7 +767,7 @@ function SetPedChanceOfFiringBlanks(ped, xBias, yBias) end
 --- ```
 ---
 --- @hash 0xB4C8D77C80C0421E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (float)
 --- @return table (Object)
 function SetPedShootOrdnanceWeapon(ped, p1) end
@@ -785,8 +785,8 @@ function SetPedShootOrdnanceWeapon(ped, p1) end
 --- ```
 ---
 --- @hash 0x4899CB088EDF59B8
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @return void
 function RemoveWeaponFromPed(ped, weaponHash) end
 
@@ -794,8 +794,8 @@ function RemoveWeaponFromPed(ped, weaponHash) end
 --- For the player ped this will also gray out the weapon in the weapon wheel.
 ---
 --- @hash 0xB4771B9AAF4E68E4
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param toggle boolean
 --- @return void
 function SetCanPedSelectWeapon(ped, weaponHash, toggle) end
@@ -809,8 +809,8 @@ function SetCanPedSelectWeapon(ped, weaponHash, toggle) end
 --- ```
 ---
 --- @hash 0x2D343D2219CD027A
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param weaponType number (int)
 --- @return boolean
 function HasPedBeenDamagedByWeapon(ped, weaponHash, weaponType) end
@@ -819,7 +819,7 @@ function HasPedBeenDamagedByWeapon(ped, weaponHash, weaponType) end
 --- SetPedInfiniteAmmoClip
 ---
 --- @hash 0x183DADC6AA953186
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedInfiniteAmmoClip(ped, toggle) end
@@ -830,7 +830,7 @@ function SetPedInfiniteAmmoClip(ped, toggle) end
 --- ```
 ---
 --- @hash 0x2472622CE1F2D45F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param ammoType any
 --- @param ammo number (int)
 --- @return void
@@ -851,8 +851,8 @@ function N_0x977ca98939e82e4b(weaponObject, p1) end
 --- SetCurrentPedVehicleWeapon
 ---
 --- @hash 0x75C55983C2C39DAA
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @return boolean
 function SetCurrentPedVehicleWeapon(ped, weaponHash) end
 
@@ -862,7 +862,7 @@ function SetCurrentPedVehicleWeapon(ped, weaponHash) end
 --- ```
 ---
 --- @hash 0x6F6981D2253C208F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function HidePedWeaponForScriptedCutscene(ped, toggle) end
@@ -873,7 +873,7 @@ function HidePedWeaponForScriptedCutscene(ped, toggle) end
 --- ```
 ---
 --- @hash 0x68F8BE6AF5CDF8A6
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param loadoutHash any
 --- @return void
 function GiveLoadoutToPed(ped, loadoutHash) end
@@ -882,7 +882,7 @@ function GiveLoadoutToPed(ped, loadoutHash) end
 --- SetPedDropsWeapon
 ---
 --- @hash 0x6B7513D9966FBEC0
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function SetPedDropsWeapon(ped) end
 
@@ -898,9 +898,9 @@ function N_0xe620fd3512a04f18(p0) end
 --- HasPedGotWeaponComponent
 ---
 --- @hash 0xC593212475FAE340
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
---- @param componentHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
+--- @param componentHash Hash
 --- @return boolean
 function HasPedGotWeaponComponent(ped, weaponHash, componentHash) end
 
@@ -908,7 +908,7 @@ function HasPedGotWeaponComponent(ped, weaponHash, componentHash) end
 --- RemoveWeaponAsset
 ---
 --- @hash 0xAA08EF13F341C8FC
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @return void
 function RemoveWeaponAsset(weaponHash) end
 
@@ -918,7 +918,7 @@ function RemoveWeaponAsset(weaponHash) end
 --- ```
 ---
 --- @hash 0xB80CA294F2F26749
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedWeaponReadyToShoot(ped) end
 
@@ -929,8 +929,8 @@ function IsPedWeaponReadyToShoot(ped) end
 --- ```
 ---
 --- @hash 0x8DECB02F88F428BC
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param p2 boolean
 --- @return boolean
 function HasPedGotWeapon(ped, weaponHash, p2) end
@@ -947,7 +947,7 @@ function SetFlashLightFadeDistance(distance) end
 --- N_0xe4dcec7fd5b739a5
 ---
 --- @hash 0xE4DCEC7FD5B739A5
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function N_0xe4dcec7fd5b739a5(ped) end
 
@@ -969,7 +969,7 @@ function N_0xe4dcec7fd5b739a5(ped) end
 --- ```
 ---
 --- @hash 0x583BE370B1EC6EB4
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @return number (int)
 function GetWeaponClipSize(weaponHash) end
 
@@ -981,8 +981,8 @@ function GetWeaponClipSize(weaponHash) end
 --- ```
 ---
 --- @hash 0xF46CDC33180FDA94
---- @param weaponHash table (Hash)
---- @return table (Hash)
+--- @param weaponHash Hash
+--- @return Hash
 function GetWeapontypeModel(weaponHash) end
 
     
@@ -991,9 +991,9 @@ function GetWeapontypeModel(weaponHash) end
 --- ```
 ---
 --- @hash 0x8483E98E8B888AE2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
---- @return table (Hash)
+--- @return Hash
 function GetBestPedWeapon(ped, p1) end
 
     
@@ -1034,8 +1034,8 @@ function GetBestPedWeapon(ped, p1) end
 --- ```
 ---
 --- @hash 0x1055AC3A667F09D9
---- @param ped table (Ped)
---- @param animStyle table (Hash)
+--- @param ped Ped
+--- @param animStyle Hash
 --- @return void
 function SetWeaponAnimationOverride(ped, animStyle) end
 
@@ -1045,7 +1045,7 @@ function SetWeaponAnimationOverride(ped, animStyle) end
 --- ```
 ---
 --- @hash 0xA2C9AC24B4061285
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param weaponHash any
 --- @return number (int)
 function N_0xa2c9ac24b4061285(ped, weaponHash) end
@@ -1056,7 +1056,7 @@ function N_0xa2c9ac24b4061285(ped, weaponHash) end
 --- ```
 ---
 --- @hash 0x0725A4CCFDED9A70
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param visible boolean
 --- @param deselectWeapon boolean
 --- @param p3 boolean
@@ -1068,8 +1068,8 @@ function SetPedCurrentWeaponVisible(ped, visible, deselectWeapon, p3, p4) end
 --- GetMaxAmmo
 ---
 --- @hash 0xDC16122C7A20C933
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param ammo table (int*)
 --- @return boolean
 function GetMaxAmmo(ped, weaponHash, ammo) end
@@ -1081,7 +1081,7 @@ function GetMaxAmmo(ped, weaponHash, ammo) end
 --- ```
 ---
 --- @hash 0x5443438F033E29C3
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @param p1 number (int)
 --- @param p2 number (int)
 --- @return void
@@ -1100,7 +1100,7 @@ function RemoveWeaponComponentFromWeaponObject(p0, p1) end
 --- SetPedDropsWeaponsWhenDead
 ---
 --- @hash 0x476AE72C1D19D1A8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedDropsWeaponsWhenDead(ped, toggle) end
@@ -1109,8 +1109,8 @@ function SetPedDropsWeaponsWhenDead(ped, toggle) end
 --- SetAmmoInClip
 ---
 --- @hash 0xDCD2A934D65CB497
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param ammo number (int)
 --- @return boolean
 function SetAmmoInClip(ped, weaponHash, ammo) end
@@ -1119,7 +1119,7 @@ function SetAmmoInClip(ped, weaponHash, ammo) end
 --- Does the same as [`_SET_CAN_PED_SELECT_WEAPON`](https://runtime.fivem.net/doc/natives/#\_0xB4771B9AAF4E68E4) except for all weapons.
 ---
 --- @hash 0xEFF296097FF1E509
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetCanPedEquipAllWeapons(ped, toggle) end
@@ -1130,7 +1130,7 @@ function SetCanPedEquipAllWeapons(ped, toggle) end
 --- ```
 ---
 --- @hash 0x5FD1E1F011E76D7E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param ammoType any
 --- @param ammo number (int)
 --- @return void
@@ -1140,7 +1140,7 @@ function SetPedAmmoByType(ped, ammoType, ammo) end
 --- IsFlashLightOn
 ---
 --- @hash 0x4B7620C47217126C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsFlashLightOn(ped) end
 
@@ -1158,8 +1158,8 @@ function RemoveAirDefenseZone(zoneId) end
 --- ```
 ---
 --- @hash 0x14E56BC5B5DB6A19
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param ammo number (int)
 --- @return void
 function SetPedAmmo(ped, weaponHash, ammo) end
@@ -1175,7 +1175,7 @@ function SetPedAmmo(ped, weaponHash, ammo) end
 ---
 --- @hash 0x33E179436C0B31DB
 --- @param weaponObject table (Object)
---- @param addonHash table (Hash)
+--- @param addonHash Hash
 --- @return void
 function GiveWeaponComponentToWeaponObject(weaponObject, addonHash) end
 
@@ -1183,9 +1183,9 @@ function GiveWeaponComponentToWeaponObject(weaponObject, addonHash) end
 --- IsPedWeaponComponentActive
 ---
 --- @hash 0x0D78DE0572D3969E
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
---- @param componentHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
+--- @param componentHash Hash
 --- @return boolean
 function IsPedWeaponComponentActive(ped, weaponHash, componentHash) end
 
@@ -1193,7 +1193,7 @@ function IsPedWeaponComponentActive(ped, weaponHash, componentHash) end
 --- GetWeaponTintCount
 ---
 --- @hash 0x5DCF6C5CAB2E9BF7
---- @param weaponHash table (Hash)
+--- @param weaponHash Hash
 --- @return number (int)
 function GetWeaponTintCount(weaponHash) end
 
@@ -1216,7 +1216,7 @@ function IsAirDefenseZoneInsideSphere(x, y, z, radius, zoneId) end
 --- ```
 ---
 --- @hash 0x9FE5633880ECD8ED
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param weaponHash any
 --- @param camoComponentHash any
 --- @param colorIndex number (int)
@@ -1227,7 +1227,7 @@ function SetPedWeaponLiveryColor(ped, weaponHash, camoComponentHash, colorIndex)
 --- SetPlayerAirDefenseZoneFlag
 ---
 --- @hash 0xECDC202B25E5CF48
---- @param player number (Player)
+--- @param player Player
 --- @param zoneId number (int)
 --- @param enable boolean
 --- @return void
@@ -1258,8 +1258,8 @@ function SetPlayerAirDefenseZoneFlag(player, zoneId, enable) end
 --- ```
 ---
 --- @hash 0x208A1888007FC0E6
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param xOffset number (float)
 --- @param yOffset number (float)
 --- @param zOffset number (float)
@@ -1280,8 +1280,8 @@ function SetPedDropsInventoryWeapon(ped, weaponHash, xOffset, yOffset, zOffset, 
 --- ```
 ---
 --- @hash 0x50969B9B89ED5738
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param tintIndex number (int)
 --- @return void
 function SetPedWeaponTintIndex(ped, weaponHash, tintIndex) end
@@ -1290,7 +1290,7 @@ function SetPedWeaponTintIndex(ped, weaponHash, tintIndex) end
 --- RequestWeaponHighDetailModel
 ---
 --- @hash 0x48164DBB970AC3F0
---- @param weaponObject table (Entity)
+--- @param weaponObject Entity
 --- @return void
 function RequestWeaponHighDetailModel(weaponObject) end
 
@@ -1298,8 +1298,8 @@ function RequestWeaponHighDetailModel(weaponObject) end
 --- SetCurrentPedWeapon
 ---
 --- @hash 0xADF692B254977C0C
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param equipNow boolean
 --- @return void
 function SetCurrentPedWeapon(ped, weaponHash, equipNow) end
@@ -1308,9 +1308,9 @@ function SetCurrentPedWeapon(ped, weaponHash, equipNow) end
 --- RemoveWeaponComponentFromPed
 ---
 --- @hash 0x1E8BE90C74FB4C09
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
---- @param componentHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
+--- @param componentHash Hash
 --- @return void
 function RemoveWeaponComponentFromPed(ped, weaponHash, componentHash) end
 

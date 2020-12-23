@@ -47,16 +47,30 @@ function parseType(type) {
         case 'int':
         case 'float':
         case 'long':
-        case 'Player':
-        case 'Vehicle':
             ltype = 'number';
             break;
         case 'void':
+        case 'Player':
+        case 'Player*':
+        case 'Vehicle':
+        case 'Vehicle*':
+        case 'Entity':
+        case 'Entity*':
+        case 'Cam':
+        case 'Cam*':
+        case 'Ped':
+        case 'Ped*':
+        case 'Hash':
+        case 'Hash*':
         case 'Vector2':
+        case 'Vector2*':
         case 'Vector3':
+        case 'Vector3*':
         case 'Vector4':
+        case 'Vector4*':
         case 'Quat':
-            ltype = type;
+        case 'Quat*':
+            ltype = type.replace('*', '');
             break;
         case 'char*':
         case 'char':

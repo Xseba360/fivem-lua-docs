@@ -23,7 +23,7 @@ function GetZoneScumminess(zoneId) end
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @return table (Hash)
+--- @return Hash
 function GetHashOfMapAreaAtCoords(x, y, z) end
 
     
@@ -39,7 +39,7 @@ function GetHashOfMapAreaAtCoords(x, y, z) end
 ---
 --- @hash 0x5F7D596BAC2E7777
 --- @param scheduleId number (int)
---- @param vehicleHash table (Hash)
+--- @param vehicleHash Hash
 --- @return void
 function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
 

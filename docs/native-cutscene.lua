@@ -5,7 +5,7 @@
 ---
 --- @hash 0x645D0B458D8E17B5
 --- @param cutsceneEntName string (char*)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return boolean
 function CanSetEnterStateForRegisteredEntity(cutsceneEntName, modelHash) end
 
@@ -118,7 +118,7 @@ function StartCutscene(flags) end
 --- ```
 ---
 --- @hash 0x7F96F23FA9B73327
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return void
 function N_0x7f96f23fa9b73327(modelHash) end
 
@@ -127,8 +127,8 @@ function N_0x7f96f23fa9b73327(modelHash) end
 ---
 --- @hash 0xC0741A26499654CD
 --- @param cutsceneEntName string (char*)
---- @param modelHash table (Hash)
---- @return table (Entity)
+--- @param modelHash Hash
+--- @return Entity
 function GetEntityIndexOfRegisteredEntity(cutsceneEntName, modelHash) end
 
     
@@ -198,7 +198,7 @@ function RequestCutFile(cutsceneName) end
 --- @param p1 number (int)
 --- @param p2 number (int)
 --- @param p3 number (int)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return void
 function SetCutscenePedComponentVariation(cutsceneEntName, p1, p2, p3, modelHash) end
 
@@ -225,7 +225,7 @@ function IsCutscenePlaying() end
 ---
 --- @hash 0x499EF20C5DB25C59
 --- @param cutsceneEntName string (char*)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return boolean
 function DoesCutsceneEntityExist(cutsceneEntName, modelHash) end
 
@@ -242,8 +242,8 @@ function N_0x41faa8fb2ece8720(p0) end
 ---
 --- @hash 0x0A2E9FDB9A8C62F6
 --- @param cutsceneEntName string (char*)
---- @param modelHash table (Hash)
---- @return table (Entity)
+--- @param modelHash Hash
+--- @return Entity
 function GetEntityIndexOfCutsceneEntity(cutsceneEntName, modelHash) end
 
     
@@ -292,10 +292,10 @@ function N_0xc61b86c9f61eb404(toggle) end
 --- RegisterEntityForCutscene
 ---
 --- @hash 0xE40C1C56DF95C2E8
---- @param cutscenePed table (Ped)
+--- @param cutscenePed Ped
 --- @param cutsceneEntName string (char*)
 --- @param p2 number (int)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param p4 number (int)
 --- @return void
 function RegisterEntityForCutscene(cutscenePed, cutsceneEntName, p2, modelHash, p4) end
@@ -338,7 +338,7 @@ function RemoveCutscene() end
 --- @param p1 number (int)
 --- @param p2 number (int)
 --- @param p3 number (int)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return void
 function SetCutscenePedPropVariation(cutsceneEntName, p1, p2, p3, modelHash) end
 
@@ -396,8 +396,8 @@ function N_0xe36a98d8ab3d3c66(p0) end
 ---
 --- @hash 0x2A56C06EBEF2B0D9
 --- @param cutsceneEntName string (char*)
---- @param ped table (Ped)
---- @param modelHash table (Hash)
+--- @param ped Ped
+--- @param modelHash Hash
 --- @return void
 function SetCutscenePedComponentVariationFromPed(cutsceneEntName, ped, modelHash) end
 
@@ -461,7 +461,7 @@ function SetCutsceneTriggerArea(p0, p1, p2, p3, p4, p5) end
 ---
 --- @hash 0x4C6A6451C79E4662
 --- @param cutsceneEntName string (char*)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return boolean
 function CanSetExitStateForRegisteredEntity(cutsceneEntName, modelHash) end
 

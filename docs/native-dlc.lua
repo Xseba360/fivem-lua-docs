@@ -90,7 +90,7 @@ function HasCloudRequestsFinished(variable, unused) end
 --- ```
 ---
 --- @hash 0x812595A0644CE1DE
---- @param dlcHash table (Hash)
+--- @param dlcHash Hash
 --- @return boolean
 function IsDlcPresent(dlcHash) end
 

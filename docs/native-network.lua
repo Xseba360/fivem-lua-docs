@@ -117,7 +117,7 @@ function FilloutPmPlayerListWithNames(p0, p1, p2, p3) end
 --- ActivateDamageTrackerOnPlayer
 ---
 --- @hash 0xBEC0816FF5ACBCDA
---- @param player number (Player)
+--- @param player Player
 --- @param toggle boolean
 --- @return void
 function ActivateDamageTrackerOnPlayer(player, toggle) end
@@ -428,7 +428,7 @@ function GetCommerceProductPrice(index) end
 --- ```
 ---
 --- @hash 0x0E3A041ED6AC2B45
---- @param player number (Player)
+--- @param player Player
 --- @return number (float)
 function N_0x0e3a041ed6ac2b45(player) end
 
@@ -436,7 +436,7 @@ function N_0x0e3a041ed6ac2b45(player) end
 --- IsDamageTrackerActiveOnPlayer
 ---
 --- @hash 0xB2092A1EAA7FD45F
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function IsDamageTrackerActiveOnPlayer(player) end
 
@@ -448,7 +448,7 @@ function IsDamageTrackerActiveOnPlayer(player) end
 --- ```
 ---
 --- @hash 0x16D3D49902F697BB
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function N_0x16d3d49902f697bb(player) end
 
@@ -892,7 +892,7 @@ function FilloutPmPlayerList(networkHandle, p1, p2) end
 --- IsPlayerInCutscene
 ---
 --- @hash 0xE73092F4157CD126
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function IsPlayerInCutscene(player) end
 
@@ -900,8 +900,8 @@ function IsPlayerInCutscene(player) end
 --- N_0x0ede326d47cd0f3e
 ---
 --- @hash 0x0EDE326D47CD0F3E
---- @param ped table (Ped)
---- @param player number (Player)
+--- @param ped Ped
+--- @param player Player
 --- @return boolean
 function N_0x0ede326d47cd0f3e(ped, player) end
 
@@ -937,7 +937,7 @@ function N_0x1d610eb0fea716d9(p0) end
 --- ```
 ---
 --- @hash 0x33DE49EDF4DDE77A
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return Vector3
 function N_0x33de49edf4dde77a(entity) end
 
@@ -1007,7 +1007,7 @@ function N_0x3c5c1e2c2ff814b1(toggle) end
 --- ```
 ---
 --- @hash 0x21D04D7BC538C146
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return boolean
 function N_0x21d04d7bc538c146(entity) end
 
@@ -1027,7 +1027,7 @@ function N_0x600f8cb31c7aab6e(p0) end
 --- ```
 ---
 --- @hash 0x350C23949E43686C
---- @param player number (Player)
+--- @param player Player
 --- @return number (float)
 function N_0x350c23949e43686c(player) end
 
@@ -1046,8 +1046,8 @@ function N_0x2a5e0621dd815a9a(p0, p1, p2, p3) end
 --- N_0x45f35c0edc33b03b
 ---
 --- @hash 0x45F35C0EDC33B03B
---- @param entity table (Entity)
---- @param model table (Hash)
+--- @param entity Entity
+--- @param model Hash
 --- @param netScene number (int)
 --- @param animDict string (char*)
 --- @param animName string (char*)
@@ -1132,7 +1132,7 @@ function N_0x45a83257ed02d9bc() end
 --- ```
 ---
 --- @hash 0x3765C3A3E8192E10
---- @param player number (Player)
+--- @param player Player
 --- @return number (int)
 function N_0x3765c3a3e8192e10(player) end
 
@@ -1662,7 +1662,7 @@ function N_0xb37e4e6a2388ca7b() end
 --- ```
 ---
 --- @hash 0x7EF7649B64D7FF10
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return boolean
 function N_0x7ef7649b64d7ff10(entity) end
 
@@ -1781,7 +1781,7 @@ function N_0xa2a707979fe754dc(p0, p1) end
 --- ```
 ---
 --- @hash 0x64D779659BC37B19
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return Vector3
 function N_0x64d779659bc37b19(entity) end
 
@@ -1999,7 +1999,7 @@ function N_0xb606e6cc59664972(p0) end
 --- ```
 ---
 --- @hash 0xB07D3185E11657A5
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return boolean
 function N_0xb07d3185e11657a5(entity) end
 
@@ -2155,7 +2155,7 @@ function NetworkAddFriend(networkHandle, message) end
 --- ```
 ---
 --- @hash 0xBF22E0F32968E967
---- @param player number (Player)
+--- @param player Player
 --- @param p1 boolean
 --- @return void
 function N_0xbf22e0f32968e967(player, p1) end
@@ -2293,7 +2293,7 @@ function N_0xc505036a35afd01b(toggle) end
 ---
 --- @hash 0x367B936610BA360C
 --- @param netHandle number (int)
---- @return number (Vehicle)
+--- @return Vehicle
 function NetToVeh(netHandle) end
 
     
@@ -2311,7 +2311,7 @@ function N_0xc32ea7a2f6ca7557() end
 --- ```
 ---
 --- @hash 0xADB57E5B663CCA8B
---- @param p0 number (Player)
+--- @param p0 Player
 --- @param p1 table (float*)
 --- @param p2 table (float*)
 --- @return void
@@ -2329,8 +2329,8 @@ function N_0xe16aa70ce9beedc3(p0) end
 --- NetworkAccessTunableFloatHash
 ---
 --- @hash 0x972BC203BBC4C4D5
---- @param tunableContext table (Hash)
---- @param tunableName table (Hash)
+--- @param tunableContext Hash
+--- @param tunableName Hash
 --- @param value table (float*)
 --- @return boolean
 function NetworkAccessTunableFloatHash(tunableContext, tunableName, value) end
@@ -2424,7 +2424,7 @@ function N_0xbd545d44cce70597() end
 --- NetworkApplyPedScarData
 ---
 --- @hash 0xE66C690248F11150
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (int)
 --- @return void
 function NetworkApplyPedScarData(ped, p1) end
@@ -2435,7 +2435,7 @@ function NetworkApplyPedScarData(ped, p1) end
 --- ```
 ---
 --- @hash 0xD414BE129BB81B32
---- @param player number (Player)
+--- @param player Player
 --- @return number (float)
 function N_0xd414be129bb81b32(player) end
 
@@ -2480,7 +2480,7 @@ function NetworkApplyTransitionParameter(p0, p1) end
 --- N_0xcd71a4ecab22709e
 ---
 --- @hash 0xCD71A4ECAB22709E
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function N_0xcd71a4ecab22709e(entity) end
 
@@ -2543,7 +2543,7 @@ function N_0xf98dde0a8ed09323(p0) end
 ---
 --- @hash 0xBFFEAB45A9A9094A
 --- @param netHandle number (int)
---- @return table (Entity)
+--- @return Entity
 function NetToEnt(netHandle) end
 
     
@@ -2663,8 +2663,8 @@ function N_0xa5eafe473e45c442(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 --- NetworkAccessTunableBoolHash
 ---
 --- @hash 0xEA16B69D93D71A45
---- @param tunableContext table (Hash)
---- @param tunableName table (Hash)
+--- @param tunableContext Hash
+--- @param tunableName Hash
 --- @return boolean
 function NetworkAccessTunableBoolHash(tunableContext, tunableName) end
 
@@ -2691,7 +2691,7 @@ function N_0xfb680d403909dc70(p0, p1) end
 ---
 --- @hash 0x478DCBD2A98B705A
 --- @param netScene number (int)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param bone number (int)
 --- @return void
 function NetworkAttachSynchronisedSceneToEntity(netScene, entity, bone) end
@@ -2703,7 +2703,7 @@ function NetworkAttachSynchronisedSceneToEntity(netScene, entity, bone) end
 ---
 --- @hash 0xBDCD95FC216A8B3E
 --- @param netHandle number (int)
---- @return table (Ped)
+--- @return Ped
 function NetToPed(netHandle) end
 
     
@@ -2822,7 +2822,7 @@ function NetworkClanRequestEmblem(p0) end
 --- ```
 ---
 --- @hash 0x1F4ED342ACEFE62D
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param state boolean
 --- @return void
 function NetworkFadeInEntity(entity, state) end
@@ -2831,7 +2831,7 @@ function NetworkFadeInEntity(entity, state) end
 --- NetworkAddPedToSynchronisedScene
 ---
 --- @hash 0x742A637471BCECD9
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param netScene number (int)
 --- @param animDict string (char*)
 --- @param animnName string (char*)
@@ -2888,7 +2888,7 @@ function NetworkAmIMutedByGamer(networkHandle) end
 --- NetworkAddEntityToSynchronisedScene
 ---
 --- @hash 0xF2404D68CBC855FA
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param netScene number (int)
 --- @param animDict string (char*)
 --- @param animName string (char*)
@@ -2910,8 +2910,8 @@ function NetworkClanRemoteMembershipsAreInCache(p0) end
 --- NetworkAccessTunableIntHash
 ---
 --- @hash 0x40FCE03E50E8DBE8
---- @param tunableContext table (Hash)
---- @param tunableName table (Hash)
+--- @param tunableContext Hash
+--- @param tunableName Hash
 --- @param value table (int*)
 --- @return boolean
 function NetworkAccessTunableIntHash(tunableContext, tunableName, value) end
@@ -2987,7 +2987,7 @@ function NetworkDoTransitionToGame(p0, maxPlayers) end
 --- NetworkAmIMutedByPlayer
 ---
 --- @hash 0x9D6981DFC91A8604
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkAmIMutedByPlayer(player) end
 
@@ -3074,7 +3074,7 @@ function NetworkCanBail() end
 --- ```
 ---
 --- @hash 0x301A42153C9AD707
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param isAudible boolean
 --- @param isInvisible boolean
 --- @param p3 boolean
@@ -3118,8 +3118,8 @@ function NetworkAmIBlockedByGamer(networkHandle) end
 --- ```
 ---
 --- @hash 0x99B72C7ABDE5C910
---- @param ped table (Ped)
---- @param player number (Player)
+--- @param ped Ped
+--- @param player Player
 --- @return boolean
 function NetworkApplyCachedPlayerHeadBlendData(ped, player) end
 
@@ -3148,7 +3148,7 @@ function NetworkCancelRespawnSearch() end
 --- ```
 ---
 --- @hash 0x187382F8A3E0A6C3
---- @param contentHash table (Hash)
+--- @param contentHash Hash
 --- @return number (int)
 function NetworkGetContentModifierListId(contentHash) end
 
@@ -3183,7 +3183,7 @@ function NetworkBlockKickedPlayers(p0) end
 --- @param scriptName string (char*)
 --- @param p1 number (int)
 --- @param p2 number (int)
---- @return number (Player)
+--- @return Player
 function NetworkGetHostOfScript(scriptName, p1, p2) end
 
     
@@ -3254,8 +3254,8 @@ function NetworkClanAnimation(animDict, animName) end
 --- NetworkDoesTunableExistHash
 ---
 --- @hash 0xE4E53E1419D81127
---- @param tunableContext table (Hash)
---- @param tunableName table (Hash)
+--- @param tunableContext Hash
+--- @param tunableName Hash
 --- @return boolean
 function NetworkDoesTunableExistHash(tunableContext, tunableName) end
 
@@ -3274,7 +3274,7 @@ function NetworkClanIsRockstarClan(clanDesc, bufferSize) end
 --- NetworkGetPlayerOwnsWaypoint
 ---
 --- @hash 0x82377B65E943F72D
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkGetPlayerOwnsWaypoint(player) end
 
@@ -3477,7 +3477,7 @@ function NetworkChangeTransitionSlots(p0, p1) end
 --- NetworkAmIBlockedByPlayer
 ---
 --- @hash 0x87F395D957D4353D
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkAmIBlockedByPlayer(player) end
 
@@ -3487,7 +3487,7 @@ function NetworkAmIBlockedByPlayer(player) end
 --- ```
 ---
 --- @hash 0x5835D9CD92E83184
---- @param netHandle table (Player*)
+--- @param netHandle Player (Player*)
 --- @param txdName table (Any*)
 --- @return boolean
 function NetworkClanGetEmblemTxdName(netHandle, txdName) end
@@ -3504,7 +3504,7 @@ function NetworkEntityAreaIsOccupied(areaHandle) end
 --- This is what R\* uses to hide players in MP interiors.
 ---
 --- @hash 0xBBDF066252829606
---- @param player number (Player)
+--- @param player Player
 --- @param toggle boolean
 --- @param p2 boolean
 --- @return void
@@ -3642,7 +3642,7 @@ function NetworkGetLocalHandle(networkHandle, bufferSize) end
 --- NetworkGetEntityIsLocal
 ---
 --- @hash 0x0991549DE4D64762
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return boolean
 function NetworkGetEntityIsLocal(entity) end
 
@@ -3650,7 +3650,7 @@ function NetworkGetEntityIsLocal(entity) end
 --- NetworkConcealEntity
 ---
 --- @hash 0x1632BE0AC1E62876
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param toggle boolean
 --- @return void
 function NetworkConcealEntity(entity, toggle) end
@@ -3735,7 +3735,7 @@ function NetworkDoTransitionToNewGame(p0, maxPlayers, p2) end
 --- @hash 0x4CACA84440FA26F6
 --- @param p0 any
 --- @param p1 any
---- @param weaponHash table (Hash*)
+--- @param weaponHash Hash (Hash*)
 --- @return boolean
 function NetworkGetDestroyerOfEntity(p0, p1, weaponHash) end
 
@@ -3775,7 +3775,7 @@ function NetworkDoTransitionToNewFreemode(p0, p1, players, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0x9DD368BF06983221
---- @param player number (Player)
+--- @param player Player
 --- @param toggle boolean
 --- @return void
 function NetworkDisableInvincibleFlashing(player, toggle) end
@@ -3784,7 +3784,7 @@ function NetworkDisableInvincibleFlashing(player, toggle) end
 --- NetworkGetEntityIsNetworked
 ---
 --- @hash 0xC7827959479DCC78
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return boolean
 function NetworkGetEntityIsNetworked(entity) end
 
@@ -3796,7 +3796,7 @@ function NetworkGetEntityIsNetworked(entity) end
 --- ```
 ---
 --- @hash 0x52C1EADAF7B10302
---- @param player number (Player)
+--- @param player Player
 --- @return number (int)
 function NetworkGetOldestResendCountForPlayer(player) end
 
@@ -3814,9 +3814,9 @@ function NetworkConvertSynchronisedSceneToSynchronizedScene(netScene) end
 --- NetworkGetEntityKillerOfPlayer
 ---
 --- @hash 0x42B2DAA6B596F5F8
---- @param player number (Player)
---- @param weaponHash table (Hash*)
---- @return table (Entity)
+--- @param player Player
+--- @param weaponHash Hash (Hash*)
+--- @return Entity
 function NetworkGetEntityKillerOfPlayer(player, weaponHash) end
 
     
@@ -3900,7 +3900,7 @@ function NetworkGetCurrentlySelectedGamerHandleFromInviteMenu(p0) end
 ---
 --- @hash 0xC7B4D79B01FA7A5C
 ---
---- @return number (Player)
+--- @return Player
 function NetworkGetHostOfThisScript() end
 
     
@@ -3908,7 +3908,7 @@ function NetworkGetHostOfThisScript() end
 ---
 --- @hash 0x7A1ADEEF01740A24
 --- @param netId number (int)
---- @param weaponHash table (Hash*)
+--- @param weaponHash Hash (Hash*)
 --- @return number (int)
 function NetworkGetDestroyerOfNetworkId(netId, weaponHash) end
 
@@ -3938,7 +3938,7 @@ function NetworkGetPlatformPartyUnk() end
 ---
 --- @hash 0x371EA43692861CF1
 --- @param randomInt number (int)
---- @param coordinates table (Vector3*)
+--- @param coordinates Vector3 (Vector3*)
 --- @param heading table (float*)
 --- @return void
 function NetworkGetRespawnResult(randomInt, coordinates, heading) end
@@ -3948,7 +3948,7 @@ function NetworkGetRespawnResult(randomInt, coordinates, heading) end
 ---
 --- @hash 0xCE4E5D9B0A4FF560
 --- @param netId number (int)
---- @return table (Entity)
+--- @return Entity
 function NetworkGetEntityFromNetworkId(netId) end
 
     
@@ -4034,7 +4034,7 @@ function NetworkGetPresenceInviteHandle(p0, p1) end
 --- NetworkGetPlayerLoudness
 ---
 --- @hash 0x21A1684A25C2867F
---- @param player number (Player)
+--- @param player Player
 --- @return number (float)
 function NetworkGetPlayerLoudness(player) end
 
@@ -4051,7 +4051,7 @@ function NetworkGetNumPresenceInvites() end
 ---
 --- @hash 0xCE5F689CF5A0A49D
 --- @param networkHandle table (int*)
---- @return number (Player)
+--- @return Player
 function NetworkGetPlayerFromGamerHandle(networkHandle) end
 
     
@@ -4184,7 +4184,7 @@ function NetworkGetGamertagFromHandle(networkHandle) end
 --- ```
 ---
 --- @hash 0xFF8FCF9FFC458A1C
---- @param player number (Player)
+--- @param player Player
 --- @return number (int)
 function NetworkGetNumUnackedForPlayer(player) end
 
@@ -4248,7 +4248,7 @@ function NetworkGetPlatformPartyMembers(data, dataSize) end
 --- Does not work if you enter your own player id as p0 (will return `(0.0, 0.0, 0.0)` in that case).
 ---
 --- @hash 0x125E6D638B8605D4
---- @param player number (Player)
+--- @param player Player
 --- @return Vector3
 function NetworkGetPlayerCoords(player) end
 
@@ -4259,7 +4259,7 @@ function NetworkGetPlayerCoords(player) end
 --- ```
 ---
 --- @hash 0xDE564951F95E09ED
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param normal boolean
 --- @param slow boolean
 --- @return void
@@ -4293,7 +4293,7 @@ function NetworkGetRosPrivilege_25() end
 --- NetworkHasControlOfDoor
 ---
 --- @hash 0xCB3C68ADB06195DF
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @return boolean
 function NetworkHasControlOfDoor(doorHash) end
 
@@ -4301,7 +4301,7 @@ function NetworkHasControlOfDoor(doorHash) end
 --- NetworkGetPlayerTutorialSessionInstance
 ---
 --- @hash 0x3B39236746714134
---- @param player number (Player)
+--- @param player Player
 --- @return number (int)
 function NetworkGetPlayerTutorialSessionInstance(player) end
 
@@ -4319,7 +4319,7 @@ function NetworkHasSocialClubAccount() end
 --- @hash 0xC22912B1D85F26B1
 --- @param p0 number (int)
 --- @param banType table (int*)
---- @param timeData table (Vector3*)
+--- @param timeData Vector3 (Vector3*)
 --- @return boolean
 function NetworkHasRosPrivilegeEndDate(p0, banType, timeData) end
 
@@ -4364,8 +4364,8 @@ function NetworkGetFoundGamer(p0, p1) end
 --- ```
 ---
 --- @hash 0x6C0E2E0125610278
---- @param ped table (Ped)
---- @return number (Player)
+--- @param ped Ped
+--- @return Player
 function NetworkGetPlayerIndexFromPed(ped) end
 
     
@@ -4393,7 +4393,7 @@ function NetworkGetTransitionMembers(data, dataCount) end
 --- NetworkIsDoorNetworked
 ---
 --- @hash 0xC01E93FAC20C3346
---- @param doorHash table (Hash)
+--- @param doorHash Hash
 --- @return boolean
 function NetworkIsDoorNetworked(doorHash) end
 
@@ -4465,14 +4465,14 @@ function NetworkHaveJustUploadLater() end
 ---
 --- @hash 0x58575AC3CF2CA8EC
 --- @param networkHandle table (int*)
---- @return table (Hash)
+--- @return Hash
 function NetworkHashFromGamerHandle(networkHandle) end
 
     
 --- NetworkHasControlOfEntity
 ---
 --- @hash 0x01BF60A500E28887
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return boolean
 function NetworkHasControlOfEntity(entity) end
 
@@ -4513,7 +4513,7 @@ function NetworkHaveRosMultiplayerPriv() end
 --- NetworkHasPlayerStartedTransition
 ---
 --- @hash 0x9AC9CCBFA8C29795
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkHasPlayerStartedTransition(player) end
 
@@ -4577,7 +4577,7 @@ function NetworkHasInvitedGamer(p0) end
 --- ```
 ---
 --- @hash 0x388EB2B86C73B6B3
---- @param player number (Player)
+--- @param player Player
 --- @param networkHandle table (int*)
 --- @param bufferSize number (int)
 --- @return void
@@ -4619,7 +4619,7 @@ function NetworkIsActivitySpectatorFromHandle(networkHandle) end
 --- NetworkGetEntityNetScriptId
 ---
 --- @hash 0x815F18AD865F057F
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return number (int)
 function NetworkGetEntityNetScriptId(entity) end
 
@@ -4627,8 +4627,8 @@ function NetworkGetEntityNetScriptId(entity) end
 --- NetworkHashFromPlayerHandle
 ---
 --- @hash 0xBC1D768F2F5D6C05
---- @param player number (Player)
---- @return table (Hash)
+--- @param player Player
+--- @return Hash
 function NetworkHashFromPlayerHandle(player) end
 
     
@@ -4660,7 +4660,7 @@ function NetworkIsHandleValid(networkHandle, bufferSize) end
 --- NetworkGetNetworkIdFromEntity
 ---
 --- @hash 0xA11700682F3AD45C
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return number (int)
 function NetworkGetNetworkIdFromEntity(entity) end
 
@@ -4693,7 +4693,7 @@ function NetworkInviteGamersToTransition(p0, p1) end
 --- NetworkIsEntityFading
 ---
 --- @hash 0x422F32CC7E56ABAD
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return boolean
 function NetworkIsEntityFading(entity) end
 
@@ -4725,7 +4725,7 @@ function NetworkIsClanMembershipFinishedDownloading() end
 --- NetworkIsPlayerConcealed
 ---
 --- @hash 0x919B3C98ED8292F9
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkIsPlayerConcealed(player) end
 
@@ -4834,7 +4834,7 @@ function NetworkHaveRosSocialClubPriv() end
 ---
 --- @hash 0x9D40DF90FAD26098
 --- @param scriptName string (char*)
---- @param player number (Player)
+--- @param player Player
 --- @param p2 boolean
 --- @param p3 any
 --- @return boolean
@@ -4862,7 +4862,7 @@ function NetworkIsFriendInSameTitle(friendName) end
 --- NetworkIsPlayerBlockedByMe
 ---
 --- @hash 0x57AF1F8E27483721
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkIsPlayerBlockedByMe(player) end
 
@@ -4890,7 +4890,7 @@ function NetworkIsTransitionMatchmaking() end
 --- NetworkGetPlayerIndex
 ---
 --- @hash 0x24FB80D107371267
---- @param player number (Player)
+--- @param player Player
 --- @return number (int)
 function NetworkGetPlayerIndex(player) end
 
@@ -4959,7 +4959,7 @@ function NetworkIsInSession() end
 --- NetworkIsPlayerFading
 ---
 --- @hash 0x631DC5DFF4B110E3
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkIsPlayerFading(player) end
 
@@ -5001,7 +5001,7 @@ function NetworkIsFriendIndexOnline(friendIndex) end
 --- NetworkIsPlayerAParticipant
 ---
 --- @hash 0x3CA58F6CB7CBD784
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkIsPlayerAParticipant(player) end
 
@@ -5023,7 +5023,7 @@ function NetworkGetTotalNumPlayers() end
 --- ```
 ---
 --- @hash 0x9D060B08CD63321A
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkJoinTransition(player) end
 
@@ -5045,7 +5045,7 @@ function NetworkIsPendingFriend(p0) end
 --- ```
 ---
 --- @hash 0x97DD4C5944CC2E6A
---- @param player number (Player)
+--- @param player Player
 --- @param toggle boolean
 --- @return void
 function NetworkOverrideSendRestrictions(player, toggle) end
@@ -5121,7 +5121,7 @@ function NetworkOverrideClockTime(Hours, Minutes, Seconds) end
 --- NetworkIsPlayerConnected
 ---
 --- @hash 0x93DC1BE4E1ABE9D1
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkIsPlayerConnected(player) end
 
@@ -5221,7 +5221,7 @@ function NetworkRequestCloudTunables() end
 --- NetworkHasCachedPlayerHeadBlendData
 ---
 --- @hash 0x237D5336A9A54108
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkHasCachedPlayerHeadBlendData(player) end
 
@@ -5229,7 +5229,7 @@ function NetworkHasCachedPlayerHeadBlendData(player) end
 --- This only works with vehicles.
 ---
 --- @hash 0x71302EC70689052A
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return boolean
 function NetworkIsEntityConcealed(entity) end
 
@@ -5363,7 +5363,7 @@ function NetworkSendPresenceTransitionInvite(p0, p1, p2, p3) end
 --- NetworkIsPlayerInMpCutscene
 ---
 --- @hash 0x63F9EE203C3619F2
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkIsPlayerInMpCutscene(player) end
 
@@ -5382,7 +5382,7 @@ function NetworkIsTransitionSolo() end
 --- ```
 ---
 --- @hash 0x7718D2E2060837D2
---- @param player number (Player)
+--- @param player Player
 --- @return string (char*)
 function NetworkPlayerGetName(player) end
 
@@ -5422,7 +5422,7 @@ function NetworkSessionGetInviter(networkHandle) end
 --- ```
 ---
 --- @hash 0xDDF73E2B1FEC5AB4
---- @param player number (Player)
+--- @param player Player
 --- @param toggle boolean
 --- @return void
 function NetworkOverrideReceiveRestrictions(player, toggle) end
@@ -5431,9 +5431,9 @@ function NetworkOverrideReceiveRestrictions(player, toggle) end
 --- NetworkIsPlayerAParticipantOnScript
 ---
 --- @hash 0x1AD5B71586B94820
---- @param p0 number (Player)
+--- @param p0 Player
 --- @param script string (char*)
---- @param p2 number (Player)
+--- @param p2 Player
 --- @return boolean
 function NetworkIsPlayerAParticipantOnScript(p0, script, p2) end
 
@@ -5443,7 +5443,7 @@ function NetworkIsPlayerAParticipantOnScript(p0, script, p2) end
 --- ```
 ---
 --- @hash 0x9DE986FC9A87C474
---- @param player number (Player)
+--- @param player Player
 --- @param index number (int)
 --- @return boolean
 function NetworkIsPlayerEqualToIndex(player, index) end
@@ -5568,7 +5568,7 @@ function NetworkRemoveAllTransitionInvite() end
 --- NetworkRegisterEntityAsNetworked
 ---
 --- @hash 0x06FAACD625D80CAA
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function NetworkRegisterEntityAsNetworked(entity) end
 
@@ -5584,7 +5584,7 @@ function NetworkIsLocalTalking() end
 --- NetworkOverrideCoordsAndHeading
 ---
 --- @hash 0xA7E30DE9272B6D49
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -5624,7 +5624,7 @@ function NetworkSessionSetMatchmakingGroupMax(playerType, playerCount) end
 --- ```
 ---
 --- @hash 0x544ABDDA3B409B6D
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkPlayerIsRockstarDev(player) end
 
@@ -5632,7 +5632,7 @@ function NetworkPlayerIsRockstarDev(player) end
 --- NetworkIsPlayerActive
 ---
 --- @hash 0xB8DFD30D6973E135
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkIsPlayerActive(player) end
 
@@ -5642,7 +5642,7 @@ function NetworkIsPlayerActive(player) end
 --- ```
 ---
 --- @hash 0x031E11F3D447647E
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkIsPlayerTalking(player) end
 
@@ -5666,7 +5666,7 @@ function NetworkPlayerIsCheater() end
 --- NetworkPlayerIndexIsCheater
 ---
 --- @hash 0x565E430DB3B05BEC
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkPlayerIndexIsCheater(player) end
 
@@ -5676,7 +5676,7 @@ function NetworkPlayerIndexIsCheater(player) end
 --- ```
 ---
 --- @hash 0x3039AE5AD2C9C0C4
---- @param player number (Player)
+--- @param player Player
 --- @param toggle boolean
 --- @return void
 function NetworkOverrideChatRestrictions(player, toggle) end
@@ -5693,7 +5693,7 @@ function NetworkSessionBlockJoinRequests(toggle) end
 --- NetworkIsPlayerMutedByMe
 ---
 --- @hash 0x8C71288AE68EDE39
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkIsPlayerMutedByMe(player) end
 
@@ -5786,7 +5786,7 @@ function NetworkIsTunableCloudRequestPending() end
 --- ```
 ---
 --- @hash 0x4927FC39CD0869A0
---- @param player number (Player)
+--- @param player Player
 --- @param userID string (char*)
 --- @return string (char*)
 function NetworkPlayerGetUserid(player, userID) end
@@ -5803,7 +5803,7 @@ function NetworkSessionLeaveSinglePlayer() end
 --- NetworkSetEntityCanBlend
 ---
 --- @hash 0xD830567D88A1E873
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param toggle boolean
 --- @return void
 function NetworkSetEntityCanBlend(entity, toggle) end
@@ -5812,7 +5812,7 @@ function NetworkSetEntityCanBlend(entity, toggle) end
 --- NetworkSessionGetKickVote
 ---
 --- @hash 0xD6D09A6F32F49EF1
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkSessionGetKickVote(player) end
 
@@ -5988,7 +5988,7 @@ function NetworkRemoveEntityArea(p0) end
 --- ```
 ---
 --- @hash 0xFA8904DC5F304220
---- @param player number (Player)
+--- @param player Player
 --- @return void
 function NetworkSessionKickPlayer(player) end
 
@@ -5996,7 +5996,7 @@ function NetworkSessionKickPlayer(player) end
 --- NetworkRequestControlOfEntity
 ---
 --- @hash 0xB69317BF5E782347
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return boolean
 function NetworkRequestControlOfEntity(entity) end
 
@@ -6069,7 +6069,7 @@ function NetworkSessionWasInvited() end
 --- NetworkPlayerHasHeadset
 ---
 --- @hash 0x3FB99A8B08D18FD6
---- @param player number (Player)
+--- @param player Player
 --- @return boolean
 function NetworkPlayerHasHeadset(player) end
 
@@ -6127,7 +6127,7 @@ function NetworkSessionSetMatchmakingMentalState(p0) end
 --- ```
 ---
 --- @hash 0xF1CA12B18AEF5298
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param toggle boolean
 --- @return void
 function NetworkSetEntityInvisibleToNetwork(entity, toggle) end
@@ -6270,7 +6270,7 @@ function NetworkRequestControlOfNetworkId(netId) end
 --- ```
 ---
 --- @hash 0x9769F811D1785B03
---- @param player number (Player)
+--- @param player Player
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -6316,7 +6316,7 @@ function NetworkSessionValidateJoin(p0) end
 ---
 --- @hash 0x423DE3854BB50894
 --- @param toggle boolean
---- @param playerPed table (Ped)
+--- @param playerPed Ped
 --- @return void
 function NetworkSetInSpectatorMode(toggle, playerPed) end
 
@@ -6420,7 +6420,7 @@ function ParticipantIdToInt() end
 --- p8, p9, p10 is another coordinate, or zero, often related to `GET_BLIP_COORDS` in the decompiled scripts.
 ---
 --- @hash 0x4BA92A18502BCA61
---- @param player number (Player)
+--- @param player Player
 --- @param x1 number (float)
 --- @param y1 number (float)
 --- @param z1 number (float)
@@ -6476,7 +6476,7 @@ function NetworkSetNetworkIdDynamic(netID, toggle) end
 ---
 --- @hash 0x419594E137637120
 --- @param toggle boolean
---- @param playerPed table (Ped)
+--- @param playerPed Ped
 --- @param p2 boolean
 --- @return void
 function NetworkSetInSpectatorModeExtended(toggle, playerPed, p2) end
@@ -6552,7 +6552,7 @@ function ReleaseAllCommerceItemImages() end
 --- NetworkUnregisterNetworkedEntity
 ---
 --- @hash 0x7368E683BB9038D6
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function NetworkUnregisterNetworkedEntity(entity) end
 
@@ -6565,7 +6565,7 @@ function NetworkUnregisterNetworkedEntity(entity) end
 --- p5, p6, p7 is another coordinate (or zero), often related to `GET_BLIP_COORDS`, in the decompiled scripts.
 ---
 --- @hash 0x5A6FFA2433E2F14C
---- @param player number (Player)
+--- @param player Player
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -6583,7 +6583,7 @@ function NetworkStartRespawnSearchForPlayer(player, x, y, z, radius, p5, p6, p7,
 --- ```
 ---
 --- @hash 0x0EDEC3C276198689
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function PedToNet(ped) end
 
@@ -6613,7 +6613,7 @@ function NetworkSessionIsSolo() end
 --- ```
 ---
 --- @hash 0x890E2C5ABED7236D
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function NetworkSetVehicleWheelsDestructible(vehicle, toggle) end
@@ -6689,7 +6689,7 @@ function ReserveNetworkLocalObjects(amount) end
 --- ```
 ---
 --- @hash 0x241E289B5C059EDC
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function SetEntityLocallyVisible(entity) end
 
@@ -6781,9 +6781,9 @@ function TextureDownloadHasFailed(p0) end
 --- ```
 ---
 --- @hash 0x46FB3ED415C7641C
---- @param player number (Player)
+--- @param player Player
 --- @param p1 number (int)
---- @param scriptHash table (Hash)
+--- @param scriptHash Hash
 --- @return boolean
 function TriggerScriptCrcCheckOnPlayer(player, p1, scriptHash) end
 
@@ -6868,7 +6868,7 @@ function NetworkIsTransitionClosedCrew() end
 ---
 --- @hash 0x90986E8876CE0A83
 ---
---- @return number (Player)
+--- @return Player
 function ParticipantId() end
 
     
@@ -6878,7 +6878,7 @@ function ParticipantId() end
 ---
 --- @hash 0x5C707A667DF8B9FA
 --- @param toggle boolean
---- @param player number (Player)
+--- @param player Player
 --- @return void
 function NetworkSetChoiceMigrateOptions(toggle, player) end
 
@@ -6888,8 +6888,8 @@ function NetworkSetChoiceMigrateOptions(toggle, player) end
 --- ```
 ---
 --- @hash 0xC7420099936CE286
---- @param tunableContext table (Hash)
---- @param tunableName table (Hash)
+--- @param tunableContext Hash
+--- @param tunableName Hash
 --- @param defaultValue boolean
 --- @return boolean
 function NetworkTryAccessTunableBoolHash(tunableContext, tunableName, defaultValue) end
@@ -7119,7 +7119,7 @@ function NetworkTransitionTrack(hash, p1, p2, state, p4) end
 --- ```
 ---
 --- @hash 0x715135F4B82AC90D
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function RemoveAllStickyBombsFromEntity(entity) end
 
@@ -7147,7 +7147,7 @@ function NetworkSetScriptReadyForEvents(toggle) end
 --- SetPlayerVisibleLocally
 ---
 --- @hash 0xFAA10F1FAFB11AF2
---- @param player number (Player)
+--- @param player Player
 --- @param toggle boolean
 --- @return void
 function SetPlayerVisibleLocally(player, toggle) end
@@ -7242,7 +7242,7 @@ function UgcRequestContentDataFromIndex(p0, p1) end
 ---   end
 --- end
 --- @hash 0xE135A9FF3F5D05D8
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function SetEntityLocallyInvisible(entity) end
 
@@ -7276,7 +7276,7 @@ function ShutdownAndLoadMostRecentSave() end
 --- ```
 ---
 --- @hash 0xB4C94523F023419C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return number (int)
 function VehToNet(vehicle) end
 
@@ -7292,7 +7292,7 @@ function UgcGetContentHash() end
 --- SetPlayerInvisibleLocally
 ---
 --- @hash 0x12B37D54667DB0B8
---- @param player number (Player)
+--- @param player Player
 --- @param toggle boolean
 --- @return void
 function SetPlayerInvisibleLocally(player, toggle) end
@@ -7304,7 +7304,7 @@ function SetPlayerInvisibleLocally(player, toggle) end
 ---
 --- @hash 0xA8A024587329F36A
 --- @param netId number (int)
---- @param player number (Player)
+--- @param player Player
 --- @param toggle boolean
 --- @return void
 function SetNetworkIdSyncToPlayer(netId, player, toggle) end
@@ -7337,7 +7337,7 @@ function NetworkRegisterPlayerBroadcastVariables(vars, numVars) end
 --- ```
 ---
 --- @hash 0x6274C4712850841E
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 function SetNetworkVehicleAsGhost(vehicle, toggle) end

@@ -9,7 +9,7 @@
 ---
 --- @hash 0x4EE5367468A65CCC
 --- @param name string (char*)
---- @param model table (Hash)
+--- @param model Hash
 --- @param p2 number (float)
 --- @param p3 number (float)
 --- @return void
@@ -139,7 +139,7 @@ function N_0x6d6840cee8845831(action) end
 ---
 --- @hash 0x0BE84C318BA6EC22
 --- @param scriptName string (char*)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param p2 number (int)
 --- @param activationRange number (float)
 --- @param p4 number (int)

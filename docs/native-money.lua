@@ -179,7 +179,7 @@ function N_0x84c0116d012e8fc2(p0) end
 ---
 --- @hash 0x650A08A280870AF6
 --- @param propertyCost number (float)
---- @param propertyName table (Hash)
+--- @param propertyName Hash
 --- @param p2 boolean
 --- @param p3 boolean
 --- @return void
@@ -726,7 +726,7 @@ function N_0xfa07759e6fddd7cf(p0, p1, p2, p3) end
 ---
 --- @hash 0x128A747F4A230952
 --- @param amount number (int)
---- @param vehicleHash table (Hash)
+--- @param vehicleHash Hash
 --- @return void
 function NetworkEarnFromDoomsdayFinaleBonus(amount, vehicleHash) end
 
@@ -979,7 +979,7 @@ function NetworkEarnFromRockstar(amount) end
 ---
 --- @hash 0x849648349D77F5C5
 --- @param amount number (int)
---- @param propertyName table (Hash)
+--- @param propertyName Hash
 --- @return void
 function NetworkEarnFromProperty(amount, propertyName) end
 
@@ -1049,7 +1049,7 @@ function N_0xe8b0b270b6e7c76e(p0, p1, p2, p3) end
 ---
 --- @hash 0x0E1E2FF3F4EC11AA
 --- @param amount number (int)
---- @param baseNameHash table (Hash)
+--- @param baseNameHash Hash
 --- @return void
 function NetworkEarnFromSellBase(amount, baseNameHash) end
 
@@ -1609,7 +1609,7 @@ function NetworkSpentBuyArena(amount, p1, p2, p3) end
 ---
 --- @hash 0x7B718E197453F2D9
 --- @param amount number (int)
---- @param victim number (Player)
+--- @param victim Player
 --- @param p2 boolean
 --- @param p3 boolean
 --- @return void
@@ -1687,7 +1687,7 @@ function NetworkCanShareJobCash() end
 --- ```
 ---
 --- @hash 0x876056684281655D
---- @param player number (Player)
+--- @param player Player
 --- @param amount number (int)
 --- @param p1 any
 --- @param p2 boolean
@@ -1902,7 +1902,7 @@ function NetworkEarnFromGangopsJobsFinale(amount, unk) end
 ---
 --- @hash 0xF0077C797F66A355
 --- @param amount number (int)
---- @param item table (Hash)
+--- @param item Hash
 --- @param p2 any
 --- @param p3 any
 --- @param p4 boolean
@@ -2013,7 +2013,7 @@ function NetworkSpentPurchaseHangar(p0, p1, p2, p3) end
 ---
 --- @hash 0x9FF28D88C766E3E8
 --- @param amount number (int)
---- @param vehicleModel table (Hash)
+--- @param vehicleModel Hash
 --- @param networkHandle table (int*)
 --- @param notBankrupt boolean
 --- @param hasTheMoney boolean

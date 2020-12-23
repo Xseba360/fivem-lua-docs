@@ -4,7 +4,7 @@
 --- ```
 ---
 --- @hash 0x5BA652A0CD14DF2F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param amount number (int)
 --- @return void
 function AddArmourToPed(ped, amount) end
@@ -15,7 +15,7 @@ function AddArmourToPed(ped, amount) end
 --- ```
 ---
 --- @hash 0xE43A13C9E4CCCBCF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function BlockPedDeadBodyShockingEvents(ped, toggle) end
@@ -24,7 +24,7 @@ function BlockPedDeadBodyShockingEvents(ped, toggle) end
 --- ApplyPedBloodDamageByZone
 ---
 --- @hash 0x816F6981C60BF53B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 any
 --- @param p2 number (float)
 --- @param p3 number (float)
@@ -36,7 +36,7 @@ function ApplyPedBloodDamageByZone(ped, p1, p2, p3, p4) end
 --- CreateParachuteObject
 ---
 --- @hash 0x8C4F3BF23B6237DB
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @param p2 boolean
 --- @return table (Object)
@@ -49,7 +49,7 @@ function CreateParachuteObject(ped, p1, p2) end
 --- ```
 ---
 --- @hash 0x83F7E01C7B769A26
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param boneIndex number (int)
 --- @param xRot number (float)
 --- @param yRot number (float)
@@ -62,7 +62,7 @@ function ApplyPedBlood(ped, boneIndex, xRot, yRot, zRot, woundType) end
 --- ApplyPedBloodByZone
 ---
 --- @hash 0x3311E47B91EDCBBC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 any
 --- @param p2 number (float)
 --- @param p3 number (float)
@@ -77,7 +77,7 @@ function ApplyPedBloodByZone(ped, p1, p2, p3, p4) end
 --- ```
 ---
 --- @hash 0x128F79EDCECE4FD5
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function CanPedRagdoll(ped) end
 
@@ -87,8 +87,8 @@ function CanPedRagdoll(ped) end
 --- ```
 ---
 --- @hash 0x6CD5A433374D4CFB
---- @param ped1 table (Ped)
---- @param ped2 table (Ped)
+--- @param ped1 Ped
+--- @param ped2 Ped
 --- @return boolean
 function CanPedSeeHatedPed(ped1, ped2) end
 
@@ -96,7 +96,7 @@ function CanPedSeeHatedPed(ped1, ped2) end
 --- CanKnockPedOffVehicle
 ---
 --- @hash 0x51AC07A44D4F5B8A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function CanKnockPedOffVehicle(ped) end
 
@@ -104,7 +104,7 @@ function CanKnockPedOffVehicle(ped) end
 --- ClearPedAlternateWalkAnim
 ---
 --- @hash 0x8844BBFCE30AA9E9
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (float)
 --- @return void
 function ClearPedAlternateWalkAnim(ped, p1) end
@@ -116,7 +116,7 @@ function ClearPedAlternateWalkAnim(ped, p1) end
 --- ```
 ---
 --- @hash 0xCD8A7537A9B52F06
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearAllPedProps(ped) end
 
@@ -131,7 +131,7 @@ function ClearAllPedProps(ped) end
 --- ```
 ---
 --- @hash 0x17C07FC640E86B4E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param boneId number (int)
 --- @param offsetX number (float)
 --- @param offsetY number (float)
@@ -162,7 +162,7 @@ function AddScenarioBlockingArea(x1, y1, z1, x2, y2, z2, p6, p7, p8, p9) end
 --- ```
 ---
 --- @hash 0x637822DC2AFEEBF8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearFacialClipsetOverride(ped) end
 
@@ -170,8 +170,8 @@ function ClearFacialClipsetOverride(ped) end
 --- CanPedInCombatSeeTarget
 ---
 --- @hash 0xEAD42DE3610D0721
---- @param ped table (Ped)
---- @param target table (Ped)
+--- @param ped Ped
+--- @param target Ped
 --- @return boolean
 function CanPedInCombatSeeTarget(ped, target) end
 
@@ -185,12 +185,12 @@ function CanPedInCombatSeeTarget(ped, target) end
 --- ```
 ---
 --- @hash 0x668FD40BCBA5DE48
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param heading any
 --- @param isNetwork any
 --- @param netMissionEntity any
 --- @param p4 any
---- @return table (Ped)
+--- @return Ped
 function ClonePed_2(ped, heading, isNetwork, netMissionEntity, p4) end
 
     
@@ -199,7 +199,7 @@ function ClonePed_2(ped, heading, isNetwork, netMissionEntity, p4) end
 --- ```
 ---
 --- @hash 0x56E3B78C5408D9F4
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (int)
 --- @return void
 function ClearPedBloodDamageByZone(ped, p1) end
@@ -211,7 +211,7 @@ function ClearPedBloodDamageByZone(ped, p1) end
 --- ```
 ---
 --- @hash 0x0943E5B8E078E76E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param propId number (int)
 --- @return void
 function ClearPedProp(ped, propId) end
@@ -220,7 +220,7 @@ function ClearPedProp(ped, propId) end
 --- ApplyPedBloodSpecific
 ---
 --- @hash 0xEF0D582CBF2D9B0F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 any
 --- @param p2 number (float)
 --- @param p3 number (float)
@@ -244,7 +244,7 @@ function CanCreateRandomDriver() end
 --- ClearPedLastDamageBone
 ---
 --- @hash 0x8EF6B7AC68E2F01B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearPedLastDamageBone(ped) end
 
@@ -257,8 +257,8 @@ function ClearPedLastDamageBone(ped) end
 --- ```
 ---
 --- @hash 0xE952D6431689AD9A
---- @param ped table (Ped)
---- @param targetPed table (Ped)
+--- @param ped Ped
+--- @param targetPed Ped
 --- @return void
 function ClonePedToTarget(ped, targetPed) end
 
@@ -278,7 +278,7 @@ function ClonePedToTarget(ped, targetPed) end
 --- @param posX number (float)
 --- @param posY number (float)
 --- @param posZ number (float)
---- @return table (Ped)
+--- @return Ped
 function CreateRandomPed(posX, posY, posZ) end
 
     
@@ -288,7 +288,7 @@ function CreateRandomPed(posX, posY, posZ) end
 --- ```
 ---
 --- @hash 0x523C79AEEFCC4A2A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (int)
 --- @param p2 string (char*)
 --- @return void
@@ -308,7 +308,7 @@ function DoesRelationshipGroupExist(groupHash) end
 --- ClearPedDriveByClipsetOverride
 ---
 --- @hash 0x4AFE3690D7E0B5AC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearPedDriveByClipsetOverride(ped) end
 
@@ -316,7 +316,7 @@ function ClearPedDriveByClipsetOverride(ped) end
 --- DisableHeadBlendPaletteColor
 ---
 --- @hash 0xA21C118553BBDF02
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function DisableHeadBlendPaletteColor(ped) end
 
@@ -347,9 +347,9 @@ function DisableHeadBlendPaletteColor(ped) end
 --- ```
 ---
 --- @hash 0x5F5D1665E352A839
---- @param ped table (Ped)
---- @param collection table (Hash)
---- @param overlay table (Hash)
+--- @param ped Ped
+--- @param collection Hash
+--- @param overlay Hash
 --- @return void
 function AddPedDecorationFromHashes(ped, collection, overlay) end
 
@@ -359,7 +359,7 @@ function AddPedDecorationFromHashes(ped, collection, overlay) end
 --- ```
 ---
 --- @hash 0x6585D955A68452A5
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearPedEnvDirt(ped) end
 
@@ -392,7 +392,7 @@ function ClearPedEnvDirt(ped) end
 --- ```
 ---
 --- @hash 0x46DF918788CB093F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param damagePack string (char*)
 --- @param damage number (float)
 --- @param mult number (float)
@@ -462,21 +462,21 @@ function DoesGroupExist(groupId) end
 ---
 --- @hash 0xD49F9B0955C367DE
 --- @param pedType number (int)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param heading number (float)
 --- @param isNetwork boolean
 --- @param netMissionEntity boolean
---- @return table (Ped)
+--- @return Ped
 function CreatePed(pedType, modelHash, x, y, z, heading, isNetwork, netMissionEntity) end
 
     
 --- ClearPedAlternateMovementAnim
 ---
 --- @hash 0xD8D19675ED5FBDCE
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param stance number (int)
 --- @param p2 number (float)
 --- @return void
@@ -486,7 +486,7 @@ function ClearPedAlternateMovementAnim(ped, stance, p2) end
 --- ClearAllPedVehicleForcedSeatUsage
 ---
 --- @hash 0xE6CA85E7259CE16B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearAllPedVehicleForcedSeatUsage(ped) end
 
@@ -494,7 +494,7 @@ function ClearAllPedVehicleForcedSeatUsage(ped) end
 --- GetPedMaxHealth
 ---
 --- @hash 0x4700A416E8324EF3
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedMaxHealth(ped) end
 
@@ -502,9 +502,9 @@ function GetPedMaxHealth(ped) end
 --- AddPedDecorationFromHashesInCorona
 ---
 --- @hash 0x5619BFA07CFD7833
---- @param ped table (Ped)
---- @param collection table (Hash)
---- @param overlay table (Hash)
+--- @param ped Ped
+--- @param collection Hash
+--- @param overlay Hash
 --- @return void
 function AddPedDecorationFromHashesInCorona(ped, collection, overlay) end
 
@@ -512,7 +512,7 @@ function AddPedDecorationFromHashesInCorona(ped, collection, overlay) end
 --- ClearPedParachutePackVariation
 ---
 --- @hash 0x1280804F7CFD2D6C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearPedParachutePackVariation(ped) end
 
@@ -533,8 +533,8 @@ function ClearPedParachutePackVariation(ped) end
 --- ```
 ---
 --- @hash 0x9FD452BFBE7A7A8B
---- @param collection table (Hash)
---- @param overlay table (Hash)
+--- @param collection Hash
+--- @param overlay Hash
 --- @return number (int)
 function GetPedDecorationZoneFromHashes(collection, overlay) end
 
@@ -542,7 +542,7 @@ function GetPedDecorationZoneFromHashes(collection, overlay) end
 --- ClearPedDecorations
 ---
 --- @hash 0x0E5173C163976E38
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearPedDecorations(ped) end
 
@@ -558,7 +558,7 @@ function DetachSynchronizedScene(sceneID) end
 --- ClearFacialIdleAnimOverride
 ---
 --- @hash 0x726256CC1EEB182F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearFacialIdleAnimOverride(ped) end
 
@@ -583,7 +583,7 @@ function CanCreateRandomCops() end
 --- ```
 ---
 --- @hash 0x697157CED63F18D4
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param damageAmount number (int)
 --- @param armorFirst boolean
 --- @return void
@@ -602,7 +602,7 @@ function CanCreateRandomBikeRider() end
 ---
 --- @hash 0x272E4723B56A3B96
 --- @param sceneID number (int)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param boneIndex number (int)
 --- @return void
 function AttachSynchronizedSceneToEntity(sceneID, entity, boneIndex) end
@@ -613,7 +613,7 @@ function AttachSynchronizedSceneToEntity(sceneID, entity, boneIndex) end
 --- ```
 ---
 --- @hash 0xD86D101FCFD00A4B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param flags number (int)
 --- @return void
 function ClearRagdollBlockingFlags(ped, flags) end
@@ -622,7 +622,7 @@ function ClearRagdollBlockingFlags(ped, flags) end
 --- FreezePedCameraRotation
 ---
 --- @hash 0xFF287323B0E2C69A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function FreezePedCameraRotation(ped) end
 
@@ -643,8 +643,8 @@ function FreezePedCameraRotation(ped) end
 --- ```
 ---
 --- @hash 0x9E6B70061662AE5C
---- @param group1 table (Hash)
---- @param group2 table (Hash)
+--- @param group1 Hash
+--- @param group2 Hash
 --- @return number (int)
 function GetRelationshipBetweenGroups(group1, group2) end
 
@@ -652,7 +652,7 @@ function GetRelationshipBetweenGroups(group1, group2) end
 --- DropAmbientProp
 ---
 --- @hash 0xAFF4710E2A0A6C12
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function DropAmbientProp(ped) end
 
@@ -660,7 +660,7 @@ function DropAmbientProp(ped) end
 --- ForcePedToOpenParachute
 ---
 --- @hash 0x16E42E800B472221
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ForcePedToOpenParachute(ped) end
 
@@ -673,7 +673,7 @@ function ForcePedToOpenParachute(ped) end
 --- ```
 ---
 --- @hash 0xA6E7F1CEB523E171
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param propId number (int)
 --- @param drawableId number (int)
 --- @return number (int)
@@ -683,8 +683,8 @@ function GetNumberOfPedPropTextureVariations(ped, propId, drawableId) end
 --- GetPlayerPedIsFollowing
 ---
 --- @hash 0x6A3975DEA89F9A17
---- @param ped table (Ped)
---- @return number (Player)
+--- @param ped Ped
+--- @return Player
 function GetPlayerPedIsFollowing(ped) end
 
     
@@ -721,7 +721,7 @@ function CreateGroup(unused) end
 --- ClearPedBloodDamage
 ---
 --- @hash 0x8FE22675A5A45817
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearPedBloodDamage(ped) end
 
@@ -753,8 +753,8 @@ function ClearPedBloodDamage(ped) end
 --- ```
 ---
 --- @hash 0xF28965D04F570DCA
---- @param ped table (Ped)
---- @param motionStateHash table (Hash)
+--- @param ped Ped
+--- @param motionStateHash Hash
 --- @param p2 boolean
 --- @param p3 boolean
 --- @param p4 boolean
@@ -767,11 +767,11 @@ function ForcePedMotionState(ped, motionStateHash, p2, p3, p4) end
 --- ```
 ---
 --- @hash 0xEF29A16337FACADB
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param heading number (float)
 --- @param isNetwork boolean
 --- @param netMissionEntity boolean
---- @return table (Ped)
+--- @return Ped
 function ClonePed(ped, heading, isNetwork, netMissionEntity) end
 
     
@@ -779,7 +779,7 @@ function ClonePed(ped, heading, isNetwork, netMissionEntity) end
 ---
 --- @hash 0x5CCE68DBD5FE93EC
 --- @param groupID number (int)
---- @return table (Ped)
+--- @return Ped
 function GetPedAsGroupLeader(groupID) end
 
     
@@ -789,7 +789,7 @@ function GetPedAsGroupLeader(groupID) end
 --- ```
 ---
 --- @hash 0x5FAF9754E789FB47
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param propId number (int)
 --- @return number (int)
 function GetNumberOfPedPropDrawableVariations(ped, propId) end
@@ -808,7 +808,7 @@ function GetNumHairColors() end
 --- Removes the scubagear (for mp male: component id: 8, drawableId: 123, textureId: any) from peds. Does not play the 'remove scuba gear' animation, but instantly removes it.
 ---
 --- @hash 0xB50EB4CCB29704AC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearPedScubaGearVariation(ped) end
 
@@ -827,8 +827,8 @@ function GetPedHeadBlendFirstIndex(type) end
 --- ClonePedToTargetEx
 ---
 --- @hash 0x148B08C2D2ACB884
---- @param ped table (Ped)
---- @param targetPed table (Ped)
+--- @param ped Ped
+--- @param targetPed Ped
 --- @param p2 any
 --- @return void
 function ClonePedToTargetEx(ped, targetPed, p2) end
@@ -846,7 +846,7 @@ function ClonePedToTargetEx(ped, targetPed, p2) end
 --- ```
 ---
 --- @hash 0x2746BD9D88C5C5D0
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param headBlendData table (Any*)
 --- @return boolean
 function GetPedHeadBlendData(ped, headBlendData) end
@@ -885,8 +885,8 @@ function IsAnyPedShootingInArea(x1, y1, z1, x2, y2, z2, p6, p7) end
 ---
 --- @hash 0x5E29243FB56FC6D4
 --- @param relationship number (int)
---- @param group1 table (Hash)
---- @param group2 table (Hash)
+--- @param group1 Hash
+--- @param group2 Hash
 --- @return void
 function ClearRelationshipBetweenGroups(relationship, group1, group2) end
 
@@ -904,7 +904,7 @@ function GetNumMakeupColors() end
 --- ```
 ---
 --- @hash 0x9614299DCB53E54B
---- @param ped table (Ped*)
+--- @param ped Ped (Ped*)
 --- @return void
 function DeletePed(ped) end
 
@@ -920,7 +920,7 @@ function DisposeSynchronizedScene(scene) end
 --- ClearPedDecorationsLeaveScars
 ---
 --- @hash 0xE3B27E70CEAB9F0C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearPedDecorationsLeaveScars(ped) end
 
@@ -950,7 +950,7 @@ function CreateNmMessage(startImmediately, messageId) end
 --- GetPedCombatMovement
 ---
 --- @hash 0xDEA92412FCAEB3F5
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedCombatMovement(ped) end
 
@@ -972,8 +972,8 @@ function GetPedCombatMovement(ped) end
 --- ```
 ---
 --- @hash 0xEBA5AD3A0EAF7121
---- @param ped1 table (Ped)
---- @param ped2 table (Ped)
+--- @param ped1 Ped
+--- @param ped2 Ped
 --- @return number (int)
 function GetRelationshipBetweenPeds(ped1, ped2) end
 
@@ -1001,8 +1001,8 @@ function ClearPedNonCreationArea() end
 --- ```
 ---
 --- @hash 0x16FFE42AB2D2DC59
---- @param ped table (Ped)
---- @return table (Hash)
+--- @param ped Ped
+--- @return Hash
 function GetPedCauseOfDeath(ped) end
 
     
@@ -1017,7 +1017,7 @@ function HasActionModeAssetLoaded(asset) end
 --- GetPedAccuracy
 ---
 --- @hash 0x37F4AD56ECBC0CD6
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedAccuracy(ped) end
 
@@ -1028,7 +1028,7 @@ function GetPedAccuracy(ped) end
 ---
 --- @hash 0xF372BC22FCB88606
 --- @param name string (char*)
---- @param groupHash table (Hash*)
+--- @param groupHash Hash (Hash*)
 --- @return any
 function AddRelationshipGroup(name, groupHash) end
 
@@ -1044,7 +1044,7 @@ function AddRelationshipGroup(name, groupHash) end
 --- ```
 ---
 --- @hash 0xF6AA118530443FD2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedAlertness(ped) end
 
@@ -1052,8 +1052,8 @@ function GetPedAlertness(ped) end
 --- GetPedsJacker
 ---
 --- @hash 0x9B128DC36C1E04CF
---- @param ped table (Ped)
---- @return table (Ped)
+--- @param ped Ped
+--- @return Ped
 function GetPedsJacker(ped) end
 
     
@@ -1065,7 +1065,7 @@ function GetPedsJacker(ped) end
 --- ```
 ---
 --- @hash 0x1E98817B311AE98A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedTimeOfDeath(ped) end
 
@@ -1073,7 +1073,7 @@ function GetPedTimeOfDeath(ped) end
 --- Use [`SetPedIlluminatedClothingGlowIntensity`](#\_0x4E90D746056E273D) to set the illuminated clothing glow intensity for a specific ped.
 ---
 --- @hash 0x1461B28A06717D68
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (float)
 function GetPedIlluminatedClothingGlowIntensity(ped) end
 
@@ -1081,7 +1081,7 @@ function GetPedIlluminatedClothingGlowIntensity(ped) end
 --- GetPedCombatRange
 ---
 --- @hash 0xF9D9F7F2DB8E2FA0
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedCombatRange(ped) end
 
@@ -1093,7 +1093,7 @@ function GetPedCombatRange(ped) end
 --- ```
 ---
 --- @hash 0x7EE53118C892B513
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param flagId number (int)
 --- @param p2 boolean
 --- @return boolean
@@ -1103,7 +1103,7 @@ function GetPedConfigFlag(ped, flagId, p2) end
 --- GetDeadPedPickupCoords
 ---
 --- @hash 0xCD5003B097200F36
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (float)
 --- @param p2 number (float)
 --- @return Vector3
@@ -1113,7 +1113,7 @@ function GetDeadPedPickupCoords(ped, p1, p2) end
 --- IsPedInAnyHeli
 ---
 --- @hash 0x298B91AE825E5705
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInAnyHeli(ped) end
 
@@ -1141,7 +1141,7 @@ function CreateSynchronizedScene(x, y, z, roll, pitch, yaw, p6) end
 --- ```
 ---
 --- @hash 0x9C720776DAA43E7E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearPedWetness(ped) end
 
@@ -1149,15 +1149,15 @@ function ClearPedWetness(ped) end
 --- GetJackTarget
 ---
 --- @hash 0x5486A79D9FBD342D
---- @param ped table (Ped)
---- @return table (Ped)
+--- @param ped Ped
+--- @return Ped
 function GetJackTarget(ped) end
 
     
 --- GetPedEnveffScale
 ---
 --- @hash 0x9C14D30395A51A3C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (float)
 function GetPedEnveffScale(ped) end
 
@@ -1165,7 +1165,7 @@ function GetPedEnveffScale(ped) end
 --- GetPedArmour
 ---
 --- @hash 0x9483AF821605B1D8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedArmour(ped) end
 
@@ -1173,7 +1173,7 @@ function GetPedArmour(ped) end
 --- GetPedDefensiveAreaPosition
 ---
 --- @hash 0x3C06B8786DD94CD1
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return Vector3
 function GetPedDefensiveAreaPosition(ped, p1) end
@@ -1208,7 +1208,7 @@ function GetPedDefensiveAreaPosition(ped, p1) end
 --- ```
 ---
 --- @hash 0xCFF869CBFA210D82
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param sizeAndVehs table (int*)
 --- @return number (int)
 function GetPedNearbyVehicles(ped, sizeAndVehs) end
@@ -1220,7 +1220,7 @@ function GetPedNearbyVehicles(ped, sizeAndVehs) end
 --- ```
 ---
 --- @hash 0x898CC20EA75BACD8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param componentId number (int)
 --- @return number (int)
 function GetPedPropIndex(ped, componentId) end
@@ -1233,7 +1233,7 @@ function GetPedPropIndex(ped, componentId) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @param object table (Hash)
+--- @param object Hash
 --- @return number (int)
 function CreateSynchronizedScene_2(x, y, z, radius, object) end
 
@@ -1241,7 +1241,7 @@ function CreateSynchronizedScene_2(x, y, z, radius, object) end
 --- IsPedDefensiveAreaActive
 ---
 --- @hash 0xBA63D9FE45412247
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return boolean
 function IsPedDefensiveAreaActive(ped, p1) end
@@ -1259,8 +1259,8 @@ function IsPedDefensiveAreaActive(ped, p1) end
 --- ```
 ---
 --- @hash 0xE7E11B8DCBED1058
---- @param ped table (Ped)
---- @return table (Ped)
+--- @param ped Ped
+--- @return Ped
 function GetMount(ped) end
 
     
@@ -1288,7 +1288,7 @@ function GetMount(ped) end
 --- ```
 ---
 --- @hash 0xFF059E1E4C01E63C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedType(ped) end
 
@@ -1308,7 +1308,7 @@ function GetPedheadshotTxdString(handle) end
 --- ```
 ---
 --- @hash 0x3F428D08BE5AAE31
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param boneId number (int)
 --- @return number (int)
 function GetPedBoneIndex(ped, boneId) end
@@ -1317,15 +1317,15 @@ function GetPedBoneIndex(ped, boneId) end
 --- GetMeleeTargetForPed
 ---
 --- @hash 0x18A3E9EE1297FD39
---- @param ped table (Ped)
---- @return table (Ped)
+--- @param ped Ped
+--- @return Ped
 function GetMeleeTargetForPed(ped) end
 
     
 --- IsPedDoingDriveby
 ---
 --- @hash 0xB2C086CC1BF8F2BF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedDoingDriveby(ped) end
 
@@ -1333,16 +1333,16 @@ function IsPedDoingDriveby(ped) end
 --- CreateRandomPedAsDriver
 ---
 --- @hash 0x9B62392B474F44A0
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param returnHandle boolean
---- @return table (Ped)
+--- @return Ped
 function CreateRandomPedAsDriver(vehicle, returnHandle) end
 
     
 --- IsPedInGroup
 ---
 --- @hash 0x5891CAC5D4ACFF74
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInGroup(ped) end
 
@@ -1350,16 +1350,16 @@ function IsPedInGroup(ped) end
 --- Gets the vehicle the specified Ped is/was in depending on bool value.
 ---
 --- @hash 0x9A9112A0FE9A4713
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param lastVehicle boolean
---- @return number (Vehicle)
+--- @return Vehicle
 function GetVehiclePedIsIn(ped, lastVehicle) end
 
     
 --- GetPedMoney
 ---
 --- @hash 0x3F69145BBA87BAE7
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedMoney(ped) end
 
@@ -1369,7 +1369,7 @@ function GetPedMoney(ped) end
 --- ```
 ---
 --- @hash 0xC79196DCB36F6121
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ClearPedCoverClipsetOverride(ped) end
 
@@ -1392,7 +1392,7 @@ function GetGroupSize(groupID, unknown, sizeInMembers) end
 --- ```
 ---
 --- @hash 0x7350823473013C02
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function HasStreamedPedAssetsLoaded(ped) end
 
@@ -1410,7 +1410,7 @@ function IsPedBlushColorValid(colorID) end
 --- ```
 ---
 --- @hash 0xB980061DA992779D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedHuman(ped) end
 
@@ -1462,7 +1462,7 @@ function GetPedMakeupRgbColor(makeupColorIndex, outR, outG, outB) end
 --- ```
 ---
 --- @hash 0x52DFF8A10508090A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (int)
 --- @return number (float)
 function GetCombatFloat(ped, p1) end
@@ -1488,7 +1488,7 @@ function GetCombatFloat(ped, p1) end
 --- ```
 ---
 --- @hash 0xB158DFCCC56E5C5B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function GivePedNmMessage(ped) end
 
@@ -1496,7 +1496,7 @@ function GivePedNmMessage(ped) end
 --- HidePedBloodDamageByZone
 ---
 --- @hash 0x62AB793144DE75DC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 any
 --- @param p2 boolean
 --- @return void
@@ -1506,7 +1506,7 @@ function HidePedBloodDamageByZone(ped, p1, p2) end
 --- GetPedResetFlag
 ---
 --- @hash 0xAF9E59B1B1FBF2A0
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param flagId number (int)
 --- @return boolean
 function GetPedResetFlag(ped, flagId) end
@@ -1550,7 +1550,7 @@ function GetPedHairRgbColor(hairColorIndex, outR, outG, outB) end
 --- @param yRadius number (float)
 --- @param zRadius number (float)
 --- @param pedType number (int)
---- @return table (Ped)
+--- @return Ped
 function GetRandomPedAtCoord(x, y, z, xRadius, yRadius, zRadius, pedType) end
 
     
@@ -1567,7 +1567,7 @@ function HasPedheadshotImgUploadFailed() end
 --- ```
 ---
 --- @hash 0x7C2AC9CA66575FBF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function GetPedStealthMovement(ped) end
 
@@ -1577,8 +1577,8 @@ function GetPedStealthMovement(ped) end
 --- ```
 ---
 --- @hash 0x6094AD011A2EA87D
---- @param ped table (Ped)
---- @return number (Vehicle)
+--- @param ped Ped
+--- @return Vehicle
 function GetVehiclePedIsUsing(ped) end
 
     
@@ -1588,8 +1588,8 @@ function GetVehiclePedIsUsing(ped) end
 --- ```
 ---
 --- @hash 0x2D05CED3A38D0F3A
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @return void
 function ExplodePedHead(ped, weaponHash) end
 
@@ -1599,7 +1599,7 @@ function ExplodePedHead(ped, weaponHash) end
 --- ```
 ---
 --- @hash 0xEF2C71A32CAD5FBD
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (float)
 function GetPedVisualFieldCenterAngle(ped) end
 
@@ -1610,7 +1610,7 @@ function GetPedVisualFieldCenterAngle(ped) end
 --- ```
 ---
 --- @hash 0x04A355E041E004E6
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param componentId number (int)
 --- @return number (int)
 function GetPedTextureVariation(ped, componentId) end
@@ -1622,7 +1622,7 @@ function GetPedTextureVariation(ped, componentId) end
 --- ```
 ---
 --- @hash 0x27561561732A7842
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param componentId number (int)
 --- @return number (int)
 function GetNumberOfPedDrawableVariations(ped, componentId) end
@@ -1634,15 +1634,15 @@ function GetNumberOfPedDrawableVariations(ped, componentId) end
 --- ```
 ---
 --- @hash 0x93C8B64DEB84728C
---- @param ped table (Ped)
---- @return table (Entity)
+--- @param ped Ped
+--- @return Entity
 function GetPedSourceOfDeath(ped) end
 
     
 --- IsPedInFlyingVehicle
 ---
 --- @hash 0x9134873537FA419C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInFlyingVehicle(ped) end
 
@@ -1663,7 +1663,7 @@ function IsPedInFlyingVehicle(ped) end
 --- ```
 ---
 --- @hash 0x67F3780DD425D4FC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param componentId number (int)
 --- @return number (int)
 function GetPedDrawableVariation(ped, componentId) end
@@ -1672,7 +1672,7 @@ function GetPedDrawableVariation(ped, componentId) end
 --- GetPedDecorationsState
 ---
 --- @hash 0x71EAB450D86954A1
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedDecorationsState(ped) end
 
@@ -1680,8 +1680,8 @@ function GetPedDecorationsState(ped) end
 --- GetPedRelationshipGroupHash
 ---
 --- @hash 0x7DBDD04862D95F04
---- @param ped table (Ped)
---- @return table (Hash)
+--- @param ped Ped
+--- @return Hash
 function GetPedRelationshipGroupHash(ped) end
 
     
@@ -1690,8 +1690,8 @@ function GetPedRelationshipGroupHash(ped) end
 --- ```
 ---
 --- @hash 0xD71649DB0A545AA3
---- @param ped table (Ped)
---- @param otherPed table (Ped)
+--- @param ped Ped
+--- @param otherPed Ped
 --- @param angle number (float)
 --- @return boolean
 function IsPedFacingPed(ped, otherPed, angle) end
@@ -1702,7 +1702,7 @@ function IsPedFacingPed(ped, otherPed, angle) end
 --- ```
 ---
 --- @hash 0x784002A632822099
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function HasPedPreloadPropDataFinished(ped) end
 
@@ -1710,7 +1710,7 @@ function HasPedPreloadPropDataFinished(ped) end
 --- IsPedGettingIntoAVehicle
 ---
 --- @hash 0xBB062B2B5722478E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedGettingIntoAVehicle(ped) end
 
@@ -1726,7 +1726,7 @@ function IsPedGettingIntoAVehicle(ped) end
 --- ```
 ---
 --- @hash 0x79CFD9827CC979B6
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedParachuteState(ped) end
 
@@ -1740,7 +1740,7 @@ function GetPedParachuteState(ped) end
 --- ```
 ---
 --- @hash 0x8B9F1FC6AE8166C0
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedParachuteLandingType(ped) end
 
@@ -1758,14 +1758,14 @@ function GetPedParachuteLandingType(ped) end
 --- @hash 0x51455483CF23ED97
 --- @param groupID number (int)
 --- @param memberNumber number (int)
---- @return table (Ped)
+--- @return Ped
 function GetPedAsGroupMember(groupID, memberNumber) end
 
     
 --- IsConversationPedDead
 ---
 --- @hash 0xE0A0AEC214B1FABA
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsConversationPedDead(ped) end
 
@@ -1773,7 +1773,7 @@ function IsConversationPedDead(ped) end
 --- DisablePedHeatscaleOverride
 ---
 --- @hash 0x600048C60D5C2C51
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function DisablePedHeatscaleOverride(ped) end
 
@@ -1781,7 +1781,7 @@ function DisablePedHeatscaleOverride(ped) end
 --- HasPedHeadBlendFinished
 ---
 --- @hash 0x654CD0A825161131
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function HasPedHeadBlendFinished(ped) end
 
@@ -1789,7 +1789,7 @@ function HasPedHeadBlendFinished(ped) end
 --- IsPedJumping
 ---
 --- @hash 0xCEDABC5900A0BF97
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedJumping(ped) end
 
@@ -1797,15 +1797,15 @@ function IsPedJumping(ped) end
 --- GetVehiclePedIsEntering
 ---
 --- @hash 0xF92691AED837A5FC
---- @param ped table (Ped)
---- @return number (Vehicle)
+--- @param ped Ped
+--- @return Vehicle
 function GetVehiclePedIsEntering(ped) end
 
     
 --- IsPedInParachuteFreeFall
 ---
 --- @hash 0x7DCE8BDA0F1C1200
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInParachuteFreeFall(ped) end
 
@@ -1815,7 +1815,7 @@ function IsPedInParachuteFreeFall(ped) end
 --- ```
 ---
 --- @hash 0x60DFD0691A170B88
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param exceptUseWeapon boolean
 --- @return boolean
 function IsPedInCover(ped, exceptUseWeapon) end
@@ -1859,7 +1859,7 @@ function IsPedInCover(ped, exceptUseWeapon) end
 --- @param radius number (float)
 --- @param p4 boolean
 --- @param p5 boolean
---- @param outPed table (Ped*)
+--- @param outPed Ped (Ped*)
 --- @param p7 boolean
 --- @param p8 boolean
 --- @param pedType number (int)
@@ -1872,7 +1872,7 @@ function GetClosestPed(x, y, z, radius, p4, p5, outPed, p7, p8, pedType) end
 --- ```
 ---
 --- @hash 0xF162E133B4E7A675
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetPedGroupIndex(ped) end
 
@@ -1882,7 +1882,7 @@ function GetPedGroupIndex(ped) end
 --- ```
 ---
 --- @hash 0xD75960F6BD9EA49C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param outBone table (int*)
 --- @return boolean
 function GetPedLastDamageBone(ped, outBone) end
@@ -1896,8 +1896,8 @@ function GetPedLastDamageBone(ped, outBone) end
 --- ```
 ---
 --- @hash 0x814FA8BE5449445D
---- @param ped table (Ped)
---- @return number (Vehicle)
+--- @param ped Ped
+--- @return Vehicle
 function GetVehiclePedIsTryingToEnter(ped) end
 
     
@@ -1907,7 +1907,7 @@ function GetVehiclePedIsTryingToEnter(ped) end
 --- ```
 ---
 --- @hash 0xE3DD5F2A84B42281
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param componentId number (int)
 --- @return number (int)
 function GetPedPaletteVariation(ped, componentId) end
@@ -1916,7 +1916,7 @@ function GetPedPaletteVariation(ped, componentId) end
 --- IsPedGoingIntoCover
 ---
 --- @hash 0x9F65DBC537E59AD5
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedGoingIntoCover(ped) end
 
@@ -1931,7 +1931,7 @@ function IsPedGoingIntoCover(ped) end
 --- ```
 ---
 --- @hash 0x3317DEDB88C95038
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return boolean
 function IsPedDeadOrDying(ped, p1) end
@@ -1957,7 +1957,7 @@ function GetAnimInitialOffsetPosition(animDict, animName, x, y, z, xRot, yRot, z
 --- IsPedPlantingBomb
 ---
 --- @hash 0xC70B5FAE151982D8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedPlantingBomb(ped) end
 
@@ -1965,7 +1965,7 @@ function IsPedPlantingBomb(ped) end
 --- IsAnyHostilePedNearPoint
 ---
 --- @hash 0x68772DB2B2526F9F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -1977,7 +1977,7 @@ function IsAnyHostilePedNearPoint(ped, x, y, z, radius) end
 --- IsPedGroupMember
 ---
 --- @hash 0x9BB01E3834671191
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param groupId number (int)
 --- @return boolean
 function IsPedGroupMember(ped, groupId) end
@@ -2005,7 +2005,7 @@ function IsPedHairColorValid(colorID) end
 --- ```
 ---
 --- @hash 0x23F8F5FC7E8C4A6B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param sizeAndPeds table (int*)
 --- @param ignore number (int)
 --- @return number (int)
@@ -2015,7 +2015,7 @@ function GetPedNearbyPeds(ped, sizeAndPeds, ignore) end
 --- IsPedClimbing
 ---
 --- @hash 0x53E8CB4F48BFE623
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedClimbing(ped) end
 
@@ -2031,7 +2031,7 @@ function HasPedheadshotImgUploadSucceeded() end
 --- IsPedBeingStealthKilled
 ---
 --- @hash 0x863B23EFDE9C5DF2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedBeingStealthKilled(ped) end
 
@@ -2039,8 +2039,8 @@ function IsPedBeingStealthKilled(ped) end
 --- IsPedHeadtrackingPed
 ---
 --- @hash 0x5CD3CB88A7F8850D
---- @param ped1 table (Ped)
---- @param ped2 table (Ped)
+--- @param ped1 Ped
+--- @param ped2 Ped
 --- @return boolean
 function IsPedHeadtrackingPed(ped1, ped2) end
 
@@ -2048,7 +2048,7 @@ function IsPedHeadtrackingPed(ped1, ped2) end
 --- IsPedPerformingStealthKill
 ---
 --- @hash 0xFD4CCDBCC59941B7
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedPerformingStealthKill(ped) end
 
@@ -2058,7 +2058,7 @@ function IsPedPerformingStealthKill(ped) end
 --- ```
 ---
 --- @hash 0x66680A92700F43DF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function HasPedPreloadVariationDataFinished(ped) end
 
@@ -2080,7 +2080,7 @@ function IsPedBodyBlemishValid(colorID) end
 --- ```
 ---
 --- @hash 0xE825F6B6CEA7671D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param componentId number (int)
 --- @param drawableId number (int)
 --- @param textureId number (int)
@@ -2091,7 +2091,7 @@ function IsPedComponentVariationValid(ped, componentId, drawableId, textureId) e
 --- GetPedRagdollBoneIndex
 ---
 --- @hash 0x2057EF813397A772
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param bone number (int)
 --- @return number (int)
 function GetPedRagdollBoneIndex(ped, bone) end
@@ -2102,7 +2102,7 @@ function GetPedRagdollBoneIndex(ped, bone) end
 --- ```
 ---
 --- @hash 0x397C38AA7B4A5F83
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param damageZone number (int)
 --- @param xOffset number (float)
 --- @param yOffset number (float)
@@ -2119,7 +2119,7 @@ function ApplyPedDamageDecal(ped, damageZone, xOffset, yOffset, heading, scale, 
 --- IsPedHangingOnToVehicle
 ---
 --- @hash 0x1C86D8AEF8254B78
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedHangingOnToVehicle(ped) end
 
@@ -2129,7 +2129,7 @@ function IsPedHangingOnToVehicle(ped) end
 --- ```
 ---
 --- @hash 0x4FBACCE3B4138EE8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (int)
 --- @return boolean
 function IsPedBeingStunned(ped, p1) end
@@ -2138,7 +2138,7 @@ function IsPedBeingStunned(ped, p1) end
 --- IsPedRunningMobilePhoneTask
 ---
 --- @hash 0x2AFE52F782F25775
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedRunningMobilePhoneTask(ped) end
 
@@ -2146,7 +2146,7 @@ function IsPedRunningMobilePhoneTask(ped) end
 --- IsPedInAnyBoat
 ---
 --- @hash 0x2E0E1C2B4F6CB339
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInAnyBoat(ped) end
 
@@ -2156,7 +2156,7 @@ function IsPedInAnyBoat(ped) end
 --- ```
 ---
 --- @hash 0x530944F6F4B8A214
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedStopped(ped) end
 
@@ -2167,7 +2167,7 @@ function IsPedStopped(ped) end
 --- ```
 ---
 --- @hash 0x6FD7816A36615F48
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @param p2 boolean
 --- @param p3 boolean
@@ -2182,7 +2182,7 @@ function KnockOffPedProp(ped, p1, p2, p3, p4) end
 --- ```
 ---
 --- @hash 0xD839450756ED5A80
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedFatallyInjured(ped) end
 
@@ -2190,7 +2190,7 @@ function IsPedFatallyInjured(ped) end
 --- IsPedPerformingDependentComboLimit
 ---
 --- @hash 0xEBD0EDBA5BE957CF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedPerformingDependentComboLimit(ped) end
 
@@ -2204,7 +2204,7 @@ function IsPedPerformingDependentComboLimit(ped) end
 --- ```
 ---
 --- @hash 0x36B77BB84687C318
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param weaponHash any
 --- @return number (int)
 function GetTimeOfLastPedWeaponDamage(ped, weaponHash) end
@@ -2213,7 +2213,7 @@ function GetTimeOfLastPedWeaponDamage(ped, weaponHash) end
 --- IsPedJacking
 ---
 --- @hash 0x4AE4FF911DFB61DA
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedJacking(ped) end
 
@@ -2224,7 +2224,7 @@ function IsPedJacking(ped) end
 --- ```
 ---
 --- @hash 0x8F7156A3142A6BAD
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param componentId number (int)
 --- @param drawableId number (int)
 --- @return number (int)
@@ -2234,7 +2234,7 @@ function GetNumberOfPedTextureVariations(ped, componentId, drawableId) end
 --- IsPedDiving
 ---
 --- @hash 0x5527B8246FEF9B11
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedDiving(ped) end
 
@@ -2242,7 +2242,7 @@ function IsPedDiving(ped) end
 --- IsPedOnAnyBike
 ---
 --- @hash 0x94495889E22C6479
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedOnAnyBike(ped) end
 
@@ -2250,7 +2250,7 @@ function IsPedOnAnyBike(ped) end
 --- IsPedJumpingOutOfVehicle
 ---
 --- @hash 0x433DDFFE2044B636
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedJumpingOutOfVehicle(ped) end
 
@@ -2273,8 +2273,8 @@ function GetPedHeadOverlayNum(overlayID) end
 --- ```
 ---
 --- @hash 0x414641C26E105898
---- @param ped table (Ped)
---- @param evadingEntity table (Entity*)
+--- @param ped Ped
+--- @param evadingEntity Entity (Entity*)
 --- @return boolean
 function IsPedEvasiveDiving(ped, evadingEntity) end
 
@@ -2294,7 +2294,7 @@ function GetSynchronizedSceneRate(sceneID) end
 --- ```
 ---
 --- @hash 0xE0AF41401ADF87E3
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param worldSpace boolean
 --- @return Vector3
 function GetPedExtractedDisplacement(ped, worldSpace) end
@@ -2311,7 +2311,7 @@ function GetPedExtractedDisplacement(ped, worldSpace) end
 --- ```
 ---
 --- @hash 0x54C7C4A94367717E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param cannotRemove boolean
 --- @param helmetFlag number (int)
 --- @param textureIndex number (int)
@@ -2332,7 +2332,7 @@ function IsPedHairColorValid_2(colorID) end
 --- IsPedAimingFromCover
 ---
 --- @hash 0x3998B1276A3300E5
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedAimingFromCover(ped) end
 
@@ -2340,7 +2340,7 @@ function IsPedAimingFromCover(ped) end
 --- GetPedParachuteTintIndex
 ---
 --- @hash 0xEAF5F7E5AE7C6C9D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param outTintIndex table (int*)
 --- @return void
 function GetPedParachuteTintIndex(ped, outTintIndex) end
@@ -2367,8 +2367,8 @@ function IsCopPedInArea_3d(x1, y1, z1, x2, y2, z2) end
 --- ```
 ---
 --- @hash 0x4859F1FC66A6278E
---- @param ped table (Ped)
---- @param target table (Ped)
+--- @param ped Ped
+--- @param target Ped
 --- @return boolean
 function IsPedInCombat(ped, target) end
 
@@ -2385,7 +2385,7 @@ function N_0x1216e0bfa72cc703(p0, p1) end
 --- HasPedReceivedEvent
 ---
 --- @hash 0x8507BCB710FA6DC0
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param eventId number (int)
 --- @return boolean
 function HasPedReceivedEvent(ped, eventId) end
@@ -2396,7 +2396,7 @@ function HasPedReceivedEvent(ped, eventId) end
 --- ```
 ---
 --- @hash 0x5983BB449D7FDB12
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedHurt(ped) end
 
@@ -2404,7 +2404,7 @@ function IsPedHurt(ped) end
 --- IsPedHeadingTowardsPosition
 ---
 --- @hash 0xFCF37A457CB96DC0
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -2416,7 +2416,7 @@ function IsPedHeadingTowardsPosition(ped, x, y, z, p4) end
 --- IsPedRunningRagdollTask
 ---
 --- @hash 0xE3B6097CC25AA69E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedRunningRagdollTask(ped) end
 
@@ -2424,7 +2424,7 @@ function IsPedRunningRagdollTask(ped) end
 --- IsPedInAnySub
 ---
 --- @hash 0xFBFC01CCFB35D99E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInAnySub(ped) end
 
@@ -2432,7 +2432,7 @@ function IsPedInAnySub(ped) end
 --- IsPedRespondingToEvent
 ---
 --- @hash 0x625B774D75C87068
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param event any
 --- @return boolean
 function IsPedRespondingToEvent(ped, event) end
@@ -2465,7 +2465,7 @@ function N_0x2df9038c90ad5264(p0, p1, p2, p3, p4, interiorFlags, scale, duration
 --- IsPedSwimming
 ---
 --- @hash 0x9DE327631295B4C2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedSwimming(ped) end
 
@@ -2473,7 +2473,7 @@ function IsPedSwimming(ped) end
 --- IsPedUsingScenario
 ---
 --- @hash 0x1BF094736DD62C2E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param scenario string (char*)
 --- @return boolean
 function IsPedUsingScenario(ped, scenario) end
@@ -2492,7 +2492,7 @@ function IsPedLipstickColorValid(colorID) end
 --- ```
 ---
 --- @hash 0x117C70D1F5730B5E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedVaulting(ped) end
 
@@ -2503,7 +2503,7 @@ function IsPedVaulting(ped) end
 --- ```
 ---
 --- @hash 0xE131A28626F81AB2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param componentId number (int)
 --- @return number (int)
 function GetPedPropTextureIndex(ped, componentId) end
@@ -2520,7 +2520,7 @@ function HasStealthModeAssetLoaded(asset) end
 --- IsPedFleeing
 ---
 --- @hash 0xBBCCE00B381F8482
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedFleeing(ped) end
 
@@ -2528,15 +2528,15 @@ function IsPedFleeing(ped) end
 --- GetPedRelationshipGroupDefaultHash
 ---
 --- @hash 0x42FDD0F017B1E38E
---- @param ped table (Ped)
---- @return table (Hash)
+--- @param ped Ped
+--- @return Hash
 function GetPedRelationshipGroupDefaultHash(ped) end
 
     
 --- IsPedFalling
 ---
 --- @hash 0xFB92A102F1C4DFA3
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedFalling(ped) end
 
@@ -2546,7 +2546,7 @@ function IsPedFalling(ped) end
 --- ```
 ---
 --- @hash 0x24B100C68C645951
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedReloading(ped) end
 
@@ -2554,7 +2554,7 @@ function IsPedReloading(ped) end
 --- N_0x061cb768363d6424
 ---
 --- @hash 0x061CB768363D6424
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function N_0x061cb768363d6424(ped, toggle) end
@@ -2565,7 +2565,7 @@ function N_0x061cb768363d6424(ped, toggle) end
 --- ```
 ---
 --- @hash 0x6D9F5FAA7488BA46
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedMale(ped) end
 
@@ -2595,13 +2595,13 @@ function IsPedMale(ped) end
 --- ```
 ---
 --- @hash 0x7DD959874C1FD534
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @param pedType number (int)
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param seat number (int)
 --- @param isNetwork boolean
 --- @param netMissionEntity boolean
---- @return table (Ped)
+--- @return Ped
 function CreatePedInsideVehicle(vehicle, pedType, modelHash, seat, isNetwork, netMissionEntity) end
 
     
@@ -2617,7 +2617,7 @@ function N_0x2f3c3d9f50681de4(p0, p1) end
 --- IsPedHelmetUnk
 ---
 --- @hash 0xB9496CE47546DB2C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedHelmetUnk(ped) end
 
@@ -2625,7 +2625,7 @@ function IsPedHelmetUnk(ped) end
 --- IsPedPerformingMeleeAction
 ---
 --- @hash 0xDCCA191DF9980FD7
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedPerformingMeleeAction(ped) end
 
@@ -2636,8 +2636,8 @@ function IsPedPerformingMeleeAction(ped) end
 --- ```
 ---
 --- @hash 0xA3EE4A07279BB9DB
---- @param ped table (Ped)
---- @param vehicle number (Vehicle)
+--- @param ped Ped
+--- @param vehicle Vehicle
 --- @param atGetIn boolean
 --- @return boolean
 function IsPedInVehicle(ped, vehicle, atGetIn) end
@@ -2658,8 +2658,8 @@ function N_0x336b3d200ab007cb(p0, p1, p2, p3, p4) end
 --- IsPedModel
 ---
 --- @hash 0xC9D55B1A358A5BF7
---- @param ped table (Ped)
---- @param modelHash table (Hash)
+--- @param ped Ped
+--- @param modelHash Hash
 --- @return boolean
 function IsPedModel(ped, modelHash) end
 
@@ -2667,8 +2667,8 @@ function IsPedModel(ped, modelHash) end
 --- IsPedInModel
 ---
 --- @hash 0x796D90EFB19AA332
---- @param ped table (Ped)
---- @param modelHash table (Hash)
+--- @param ped Ped
+--- @param modelHash Hash
 --- @return boolean
 function IsPedInModel(ped, modelHash) end
 
@@ -2680,7 +2680,7 @@ function IsPedInModel(ped, modelHash) end
 --- ```
 ---
 --- @hash 0x67722AEB798E5FAB
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedOnVehicle(ped) end
 
@@ -2698,7 +2698,7 @@ function IsPedheadshotValid(handle) end
 --- N_0x03ea03af85a85cb7
 ---
 --- @hash 0x03EA03AF85A85CB7
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @param p2 boolean
 --- @param p3 boolean
@@ -2725,7 +2725,7 @@ function N_0x03ea03af85a85cb7(ped, p1, p2, p3, p4, p5, p6, p7, p8) end
 --- ```
 ---
 --- @hash 0x110F526AB784111F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (float)
 --- @return void
 function N_0x110f526ab784111f(ped, p1) end
@@ -2737,7 +2737,7 @@ function N_0x110f526ab784111f(ped, p1) end
 --- ```
 ---
 --- @hash 0x84A2DD9AC37C35C1
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInjured(ped) end
 
@@ -2745,7 +2745,7 @@ function IsPedInjured(ped) end
 --- IsPedInAnyTrain
 ---
 --- @hash 0x6F972C1AB75A1ED0
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInAnyTrain(ped) end
 
@@ -2763,7 +2763,7 @@ function N_0xa635c11b8c44afc2() end
 --- ```
 ---
 --- @hash 0x49E50BDB8BA4DAB2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function N_0x49e50bdb8ba4dab2(ped, toggle) end
@@ -2772,7 +2772,7 @@ function N_0x49e50bdb8ba4dab2(ped, toggle) end
 --- IsPedTryingToEnterALockedVehicle
 ---
 --- @hash 0x44D28D5DDFE5F68C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedTryingToEnterALockedVehicle(ped) end
 
@@ -2780,7 +2780,7 @@ function IsPedTryingToEnterALockedVehicle(ped) end
 --- IsPedDucking
 ---
 --- @hash 0xD125AE748725C6BC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedDucking(ped) end
 
@@ -2788,7 +2788,7 @@ function IsPedDucking(ped) end
 --- GetSeatPedIsTryingToEnter
 ---
 --- @hash 0x6F4C85ACD641BCD2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function GetSeatPedIsTryingToEnter(ped) end
 
@@ -2796,7 +2796,7 @@ function GetSeatPedIsTryingToEnter(ped) end
 --- IsPedBeingJacked
 ---
 --- @hash 0x9A497FE2DF198913
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedBeingJacked(ped) end
 
@@ -2806,7 +2806,7 @@ function IsPedBeingJacked(ped) end
 --- ```
 ---
 --- @hash 0x12534C348C6CB68B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedAPlayer(ped) end
 
@@ -2833,7 +2833,7 @@ function GetSynchronizedScenePhase(sceneID) end
 --- ```
 ---
 --- @hash 0xA60EF3B6461A4D43
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param overlayID number (int)
 --- @return number (int)
 function GetPedHeadOverlayValue(ped, overlayID) end
@@ -2869,8 +2869,8 @@ function IsPedheadshotReady(id) end
 --- ```
 ---
 --- @hash 0xA808AA1D79230FC2
---- @param ped table (Ped)
---- @param vehicle number (Vehicle)
+--- @param ped Ped
+--- @param vehicle Vehicle
 --- @return boolean
 function IsPedSittingInVehicle(ped, vehicle) end
 
@@ -2882,7 +2882,7 @@ function IsPedSittingInVehicle(ped, vehicle) end
 --- ```
 ---
 --- @hash 0x46B05BCAE43856B0
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param flag number (int)
 --- @return boolean
 function N_0x46b05bcae43856b0(ped, flag) end
@@ -2893,7 +2893,7 @@ function N_0x46b05bcae43856b0(ped, flag) end
 --- ```
 ---
 --- @hash 0x47E4E977581C5B55
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedRagdoll(ped) end
 
@@ -2901,7 +2901,7 @@ function IsPedRagdoll(ped) end
 --- N_0xf2385935bffd4d92
 ---
 --- @hash 0xF2385935BFFD4D92
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function N_0xf2385935bffd4d92(ped) end
 
@@ -2915,7 +2915,7 @@ function N_0xf2385935bffd4d92(ped) end
 --- ```
 ---
 --- @hash 0x4E209B2C1EAD5159
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInMeleeCombat(ped) end
 
@@ -2942,7 +2942,7 @@ function N_0x5615e0c5eb2bc6e2(p0, p1) end
 --- ```
 ---
 --- @hash 0xF33BDFE19B309B19
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedWearingHelmet(ped) end
 
@@ -2950,7 +2950,7 @@ function IsPedWearingHelmet(ped) end
 --- N_0x733c87d4ce22bea2
 ---
 --- @hash 0x733C87D4CE22BEA2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function N_0x733c87d4ce22bea2(ped) end
 
@@ -2974,7 +2974,7 @@ function N_0x06087579e7aa85a9(p0, p1, p2, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0x826AA586EDB9FEF8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedSittingInAnyVehicle(ped) end
 
@@ -2984,7 +2984,7 @@ function IsPedSittingInAnyVehicle(ped) end
 --- ```
 ---
 --- @hash 0x80054D7FCC70EEC6
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function N_0x80054d7fcc70eec6(ped) end
 
@@ -2994,7 +2994,7 @@ function N_0x80054d7fcc70eec6(ped) end
 --- ```
 ---
 --- @hash 0x460BC76A0E10655E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedOnMount(ped) end
 
@@ -3004,7 +3004,7 @@ function IsPedOnMount(ped) end
 --- ```
 ---
 --- @hash 0x1A330D297AAC6BC1
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (int)
 --- @return void
 function N_0x1a330d297aac6bc1(ped, p1) end
@@ -3015,7 +3015,7 @@ function N_0x1a330d297aac6bc1(ped, p1) end
 --- ```
 ---
 --- @hash 0xAFC976FD0580C7B3
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function N_0xafc976fd0580c7b3(ped, toggle) end
@@ -3034,7 +3034,7 @@ function IsPedLipstickColorValid_2(colorID) end
 --- IsPedInCoverFacingLeft
 ---
 --- @hash 0x845333B3150583AB
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInCoverFacingLeft(ped) end
 
@@ -3042,7 +3042,7 @@ function IsPedInCoverFacingLeft(ped) end
 --- IsPedSwimmingUnderWater
 ---
 --- @hash 0xC024869A53992F34
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedSwimmingUnderWater(ped) end
 
@@ -3050,7 +3050,7 @@ function IsPedSwimmingUnderWater(ped) end
 --- IsPedInAnyTaxi
 ---
 --- @hash 0x6E575D6A898AB852
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInAnyTaxi(ped) end
 
@@ -3068,7 +3068,7 @@ function IsPedInAnyTaxi(ped) end
 --- ```
 ---
 --- @hash 0xA3F3564A5B3646C0
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function N_0xa3f3564a5b3646c0(ped) end
 
@@ -3078,7 +3078,7 @@ function N_0xa3f3564a5b3646c0(ped) end
 --- ```
 ---
 --- @hash 0xB8B52E498014F5B0
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function N_0xb8b52e498014f5b0(ped) end
 
@@ -3088,7 +3088,7 @@ function N_0xb8b52e498014f5b0(ped) end
 --- ```
 ---
 --- @hash 0x88274C11CF0D866D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsScubaGearLightEnabled(ped) end
 
@@ -3105,7 +3105,7 @@ function N_0x711794453cfd692b(p0, p1) end
 --- N_0x2735233a786b1bef
 ---
 --- @hash 0x2735233A786B1BEF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (float)
 --- @return void
 function N_0x2735233a786b1bef(ped, p1) end
@@ -3128,7 +3128,7 @@ function N_0x280c7e3ac7f56e90(p0, p1, p2, p3) end
 ---     print('Local player is in a vehicle!')
 --- en
 --- @hash 0x997ABD671D25CA0B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param atGetIn boolean
 --- @return boolean
 function IsPedInAnyVehicle(ped, atGetIn) end
@@ -3147,8 +3147,8 @@ function N_0x1e77fa7a62ee6c4c(p0) end
 --- IsPedOnSpecificVehicle
 ---
 --- @hash 0xEC5F66E459AF3BB2
---- @param ped table (Ped)
---- @param vehicle number (Vehicle)
+--- @param ped Ped
+--- @param vehicle Vehicle
 --- @return boolean
 function IsPedOnSpecificVehicle(ped, vehicle) end
 
@@ -3156,7 +3156,7 @@ function IsPedOnSpecificVehicle(ped, vehicle) end
 --- IsPedUsingAnyScenario
 ---
 --- @hash 0x57AB4A3080F85143
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedUsingAnyScenario(ped) end
 
@@ -3164,7 +3164,7 @@ function IsPedUsingAnyScenario(ped) end
 --- IsPedInAnyPoliceVehicle
 ---
 --- @hash 0x0BD04E29640C9C12
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInAnyPoliceVehicle(ped) end
 
@@ -3172,7 +3172,7 @@ function IsPedInAnyPoliceVehicle(ped) end
 --- IsPedShaderEffectValid
 ---
 --- @hash 0x81AA517FBBA05D39
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedShaderEffectValid(ped) end
 
@@ -3183,7 +3183,7 @@ function IsPedShaderEffectValid(ped) end
 --- ```
 ---
 --- @hash 0x2208438012482A1A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @param p2 boolean
 --- @return void
@@ -3212,7 +3212,7 @@ function N_0xa52d5247a4227e14(p0) end
 --- N_0x4668d80430d6c299
 ---
 --- @hash 0x4668D80430D6C299
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function N_0x4668d80430d6c299(ped) end
 
@@ -3220,7 +3220,7 @@ function N_0x4668d80430d6c299(ped) end
 --- RemovePedFromGroup
 ---
 --- @hash 0xED74007FFB146BC2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function RemovePedFromGroup(ped) end
 
@@ -3256,7 +3256,7 @@ function IsAnyPedNearPoint(x, y, z, radius) end
 --- ```
 ---
 --- @hash 0x14590DDBEDB1EC85
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function N_0x14590ddbedb1ec85(ped) end
 
@@ -3272,8 +3272,8 @@ function N_0x3c67506996001f5e() end
 --- IsPedHeadtrackingEntity
 ---
 --- @hash 0x813A0A7C9D2E831F
---- @param ped table (Ped)
---- @param entity table (Entity)
+--- @param ped Ped
+--- @param entity Entity
 --- @return boolean
 function IsPedHeadtrackingEntity(ped, entity) end
 
@@ -3281,7 +3281,7 @@ function IsPedHeadtrackingEntity(ped, entity) end
 --- IsPedUsingActionMode
 ---
 --- @hash 0x00E73468D085F745
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedUsingActionMode(ped) end
 
@@ -3289,7 +3289,7 @@ function IsPedUsingActionMode(ped) end
 --- N_0x9d728c1e12bf5518
 ---
 --- @hash 0x9D728C1E12BF5518
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function N_0x9d728c1e12bf5518(ped) end
 
@@ -3305,7 +3305,7 @@ function N_0x451d05012ccec234(p0) end
 --- IsPedRunningMeleeTask
 ---
 --- @hash 0xD1871251F3B5ACD7
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedRunningMeleeTask(ped) end
 
@@ -3321,7 +3321,7 @@ function N_0xf1c03a5352243a30(p0) end
 --- N_0x425aecf167663f48
 ---
 --- @hash 0x425AECF167663F48
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return void
 function N_0x425aecf167663f48(ped, p1) end
@@ -3339,7 +3339,7 @@ function N_0x9e30e91fb03a2caf(p0, p1) end
 --- IsPedTracked
 ---
 --- @hash 0x4C5E1F087CD10BB7
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedTracked(ped) end
 
@@ -3369,7 +3369,7 @@ function N_0x3e9679c1dfcf422c(p0, p1) end
 --- ```
 ---
 --- @hash 0x26AF0E8E30BD2A2C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedOpeningADoor(ped) end
 
@@ -3389,7 +3389,7 @@ function N_0xfec9a3b1820f3331(p0) end
 --- ```
 ---
 --- @hash 0x8D8ACD8388CD99CE
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ReviveInjuredPed(ped) end
 
@@ -3408,7 +3408,7 @@ function N_0x25361a96e0f7e419(p0, p1, p2, p3) end
 --- IsPedOnFoot
 ---
 --- @hash 0x01FEE67DB37F59B2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedOnFoot(ped) end
 
@@ -3454,7 +3454,7 @@ function N_0xb282749d5e028163(p0, p1) end
 --- ReleasePedPreloadVariationData
 ---
 --- @hash 0x5AAB586FFEC0FD96
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ReleasePedPreloadVariationData(ped) end
 
@@ -3464,7 +3464,7 @@ function ReleasePedPreloadVariationData(ped) end
 --- ```
 ---
 --- @hash 0x3795688A307E1EB6
---- @param Ped table (Ped)
+--- @param Ped Ped
 --- @return boolean
 function N_0x3795688a307e1eb6(Ped) end
 
@@ -3490,7 +3490,7 @@ function IsSynchronizedSceneRunning(sceneId) end
 --- IsPedShootingInArea
 ---
 --- @hash 0x7E9DFE24AC1E58EF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param x1 number (float)
 --- @param y1 number (float)
 --- @param z1 number (float)
@@ -3518,7 +3518,7 @@ function N_0x87ddeb611b329a9c(multiplier) end
 --- ```
 ---
 --- @hash 0x74D4E028107450A9
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function RemovePedDefensiveArea(ped, toggle) end
@@ -3527,7 +3527,7 @@ function RemovePedDefensiveArea(ped, toggle) end
 --- IsPedProne
 ---
 --- @hash 0xD6A86331A537A7B9
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedProne(ped) end
 
@@ -3537,7 +3537,7 @@ function IsPedProne(ped) end
 --- ```
 ---
 --- @hash 0x75BA1CB3B7D40CAF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return void
 function N_0x75ba1cb3b7d40caf(ped, p1) end
@@ -3568,7 +3568,7 @@ function N_0xf033419d1b81fae8(p0) end
 --- ```
 ---
 --- @hash 0xF9ACF4A08098EA25
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return void
 function N_0xf9acf4a08098ea25(ped, p1) end
@@ -3588,7 +3588,7 @@ function N_0xfee4a5459472a9f8() end
 --- ```
 ---
 --- @hash 0x91C8E617F64188AC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsTrackedPedVisible(ped) end
 
@@ -3598,7 +3598,7 @@ function IsTrackedPedVisible(ped) end
 --- ```
 ---
 --- @hash 0x4462658788425076
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function RegisterPedheadshot(ped) end
 
@@ -3606,7 +3606,7 @@ function RegisterPedheadshot(ped) end
 --- RequestPedVehicleVisibilityTracking
 ---
 --- @hash 0x2BC338A7B21F4608
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return void
 function RequestPedVehicleVisibilityTracking(ped, p1) end
@@ -3658,8 +3658,8 @@ function N_0xdfe68c4b787e1bfb(p0) end
 --- ```
 ---
 --- @hash 0x2F25D9AEFA34FBA2
---- @param ped table (Ped)
---- @param target table (Ped)
+--- @param ped Ped
+--- @param target Ped
 --- @return void
 function RegisterTarget(ped, target) end
 
@@ -3675,7 +3675,7 @@ function N_0x6b0e6172c9a4d902(p0) end
 --- N_0x2dfc81c9b9608549
 ---
 --- @hash 0x2DFC81C9B9608549
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 table (int*)
 --- @return boolean
 function N_0x2dfc81c9b9608549(ped, p1) end
@@ -3692,7 +3692,7 @@ function N_0x5407b7288d0478b7(p0) end
 --- IsPedInHighCover
 ---
 --- @hash 0x6A03BF943D767C93
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInHighCover(ped) end
 
@@ -3700,7 +3700,7 @@ function IsPedInHighCover(ped) end
 --- N_0xf60165e1d2c5370b
 ---
 --- @hash 0xF60165E1D2C5370B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 table (Any*)
 --- @param p2 table (Any*)
 --- @return boolean
@@ -3713,7 +3713,7 @@ function N_0xf60165e1d2c5370b(ped, p1, p2) end
 ---   print("Gray eyes!")
 --- en
 --- @hash 0x76BBA2CEE66D47E9
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function N_0x76bba2cee66d47e9(ped) end
 
@@ -3740,7 +3740,7 @@ function N_0xb2aff10216defa2f(x, y, z, p3, p4, p5, p6, interiorFlags, scale, dur
 --- ```
 ---
 --- @hash 0x9C6A6C19B6C0C496
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 table (Any*)
 --- @return boolean
 function N_0x9c6a6c19b6c0c496(ped, p1) end
@@ -3751,7 +3751,7 @@ function N_0x9c6a6c19b6c0c496(ped, p1) end
 --- ```
 ---
 --- @hash 0x2016C603D6B8987C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function N_0x2016c603d6b8987c(ped, toggle) end
@@ -3794,7 +3794,7 @@ function ResetAiMeleeWeaponDamageModifier() end
 --- N_0xd33daa36272177c4
 ---
 --- @hash 0xD33DAA36272177C4
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function N_0xd33daa36272177c4(ped) end
 
@@ -3804,7 +3804,7 @@ function N_0xd33daa36272177c4(ped) end
 --- ```
 ---
 --- @hash 0xBB8DE8CF6A8DD8BB
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ResetPedLastVehicle(ped) end
 
@@ -3857,7 +3857,7 @@ function N_0xe906ec930f5fe7c8(p0, p1) end
 --- ```
 ---
 --- @hash 0xEC4B4B3B9908052A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param unk number (float)
 --- @return void
 function N_0xec4b4b3b9908052a(ped, unk) end
@@ -3874,7 +3874,7 @@ function IsSynchronizedSceneLooped(sceneID) end
 --- RemovePedHelmet
 ---
 --- @hash 0xA7B2458D0AD6DED8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param instantly boolean
 --- @return void
 function RemovePedHelmet(ped, instantly) end
@@ -3883,7 +3883,7 @@ function RemovePedHelmet(ped, instantly) end
 --- SetPedAllowedToDuck
 ---
 --- @hash 0xDA1F1B7BE1A8766F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedAllowedToDuck(ped, toggle) end
@@ -3894,7 +3894,7 @@ function SetPedAllowedToDuck(ped, toggle) end
 --- ```
 ---
 --- @hash 0x34616828CD07F1A1
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedShooting(ped) end
 
@@ -3912,7 +3912,7 @@ function N_0xf445de8da80a1792() end
 --- ```
 ---
 --- @hash 0xCD018C591F94CB43
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return void
 function N_0xcd018c591f94cb43(ped, p1) end
@@ -3921,7 +3921,7 @@ function N_0xcd018c591f94cb43(ped, p1) end
 --- RegisterPedheadshot_3
 ---
 --- @hash 0xBA8805A1108A2515
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function RegisterPedheadshot_3(ped) end
 
@@ -3931,7 +3931,7 @@ function RegisterPedheadshot_3(ped) end
 --- ```
 ---
 --- @hash 0x9F8AA94D6D97DBF4
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetBlockingOfNonTemporaryEvents(ped, toggle) end
@@ -3940,7 +3940,7 @@ function SetBlockingOfNonTemporaryEvents(ped, toggle) end
 --- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
 --- @hash 0x6EC47A344923E1ED
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param animDict string (char*)
 --- @param anim string (char*)
 --- @return boolean
@@ -3950,7 +3950,7 @@ function IsScriptedScenarioPedUsingConditionalAnim(ped, animDict, anim) end
 --- Used with [SET_ENABLE_HANDCUFFS](#\_0xDF1AF8B5D56542FA) in decompiled scripts. From my observations, I have noticed that while being ragdolled you are not able to get up but you can still run. Your legs can also bend.
 ---
 --- @hash 0xC52E0F855C58FC2E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetEnableBoundAnkles(ped, toggle) end
@@ -3959,7 +3959,7 @@ function SetEnableBoundAnkles(ped, toggle) end
 --- IsPedInAnyPlane
 ---
 --- @hash 0x5FFF4CFC74D8FB80
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsPedInAnyPlane(ped) end
 
@@ -3974,7 +3974,7 @@ function IsPedInAnyPlane(ped) end
 --- ```
 ---
 --- @hash 0x451294E859ECC018
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function N_0x451294e859ecc018(ped) end
 
@@ -3984,7 +3984,7 @@ function N_0x451294e859ecc018(ped) end
 --- ```
 ---
 --- @hash 0xE861D0B05C7662B8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @param p2 number (int)
 --- @return void
@@ -3996,7 +3996,7 @@ function N_0xe861d0b05c7662b8(ped, p1, p2) end
 --- ```
 ---
 --- @hash 0x9222F300BF8354FE
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param radius number (float)
 --- @return void
 function RegisterHatedTargetsAroundPed(ped, radius) end
@@ -4005,7 +4005,7 @@ function RegisterHatedTargetsAroundPed(ped, radius) end
 --- RemovePedPreferredCoverSet
 ---
 --- @hash 0xFDDB234CF74073D9
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function RemovePedPreferredCoverSet(ped) end
 
@@ -4037,7 +4037,7 @@ function ResetGroupFormationDefaultSpacing(groupHandle) end
 --- RemoveRelationshipGroup
 ---
 --- @hash 0xB6BA2444AB393DA2
---- @param groupHash table (Hash)
+--- @param groupHash Hash
 --- @return void
 function RemoveRelationshipGroup(groupHash) end
 
@@ -4047,7 +4047,7 @@ function RemoveRelationshipGroup(groupHash) end
 --- ```
 ---
 --- @hash 0xEE2476B9EE4A094F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetEnableScubaGearLight(ped, toggle) end
@@ -4067,7 +4067,7 @@ function N_0x83a169eabcdb10a2(p0, p1) end
 --- ```
 ---
 --- @hash 0x687C0B594907D2E8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function N_0x687c0b594907d2e8(ped) end
 
@@ -4096,7 +4096,7 @@ function SetAiMeleeWeaponDamageModifier(modifier) end
 --- ```
 ---
 --- @hash 0xF99F62004024D506
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetEnableScuba(ped, toggle) end
@@ -4116,7 +4116,7 @@ function N_0x2b5aa717a181fb4c(p0, p1) end
 --- ```
 ---
 --- @hash 0xAC6D445B994DF95E
---- @param ped table (Ped*)
+--- @param ped Ped (Ped*)
 --- @return void
 function RemovePedElegantly(ped) end
 
@@ -4132,7 +4132,7 @@ function RequestStealthModeAsset(asset) end
 --- SetPedCanPlayAmbientAnims
 ---
 --- @hash 0x6373D1349925A70E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanPlayAmbientAnims(ped, toggle) end
@@ -4149,7 +4149,7 @@ function RequestActionModeAsset(asset) end
 --- N_0xc56fbf2f228e1dac
 ---
 --- @hash 0xC56FBF2F228E1DAC
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @param p1 any
 --- @param p2 any
 --- @return any
@@ -4159,7 +4159,7 @@ function N_0xc56fbf2f228e1dac(modelHash, p1, p2) end
 --- KnockPedOffVehicle
 ---
 --- @hash 0x45BBCBA77C29A841
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function KnockPedOffVehicle(ped) end
 
@@ -4167,7 +4167,7 @@ function KnockPedOffVehicle(ped) end
 --- SetPedCanEvasiveDive
 ---
 --- @hash 0x6B7A646C242A7059
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanEvasiveDive(ped, toggle) end
@@ -4181,7 +4181,7 @@ function SetPedCanEvasiveDive(ped, toggle) end
 --- ```
 ---
 --- @hash 0xAA74EC0CB0AAEA2C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (float)
 --- @return void
 function ResetPedMovementClipset(ped, p1) end
@@ -4192,7 +4192,7 @@ function ResetPedMovementClipset(ped, p1) end
 --- ```
 ---
 --- @hash 0x511F1A683387C7E2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function N_0x511f1a683387c7e2(ped) end
 
@@ -4212,7 +4212,7 @@ function N_0x0f62619393661d6e(p0, p1, p2) end
 --- ```
 ---
 --- @hash 0x3AC1F7B898F30C05
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return any
 function ResetPedVisibleDamage(ped) end
 
@@ -4223,7 +4223,7 @@ function ResetPedVisibleDamage(ped) end
 --- ```
 ---
 --- @hash 0xCB7553CDCEF4A735
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanCowerInCover(ped, toggle) end
@@ -4232,7 +4232,7 @@ function SetPedCanCowerInCover(ped, toggle) end
 --- SetPedCanArmIk
 ---
 --- @hash 0x6C3B4D6D13B4C841
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanArmIk(ped, toggle) end
@@ -4246,7 +4246,7 @@ function SetPedCanArmIk(ped, toggle) end
 --- ```
 ---
 --- @hash 0xB3B1CB349FF9C75D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @param p2 boolean
 --- @return void
@@ -4267,7 +4267,7 @@ function N_0xa660faf550eb37e5(p0, p1) end
 --- ```
 ---
 --- @hash 0xDED5AF5A0EA4B297
---- @param driver table (Ped)
+--- @param driver Ped
 --- @param modifier number (float)
 --- @return void
 function SetDriverRacingModifier(driver, modifier) end
@@ -4278,7 +4278,7 @@ function SetDriverRacingModifier(driver, modifier) end
 --- ```
 ---
 --- @hash 0xFF41B4B141ED981C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param combatType number (int)
 --- @param p2 number (float)
 --- @return void
@@ -4295,7 +4295,7 @@ function SetCombatFloat(ped, combatType, p2) end
 --- ```
 ---
 --- @hash 0x7D7A2E43E74E2EB8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function RequestPedVisibilityTracking(ped) end
 
@@ -4305,7 +4305,7 @@ function RequestPedVisibilityTracking(ped) end
 --- ```
 ---
 --- @hash 0xED3C76ADFA6D07C4
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function N_0xed3c76adfa6d07c4(ped) end
 
@@ -4321,7 +4321,7 @@ function N_0x5a7f62fda59759bd() end
 --- ResetPedInVehicleContext
 ---
 --- @hash 0x22EF8FF8778030EB
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ResetPedInVehicleContext(ped) end
 
@@ -4329,7 +4329,7 @@ function ResetPedInVehicleContext(ped) end
 --- SetPedAllowVehiclesOverride
 ---
 --- @hash 0x3C028C636A414ED9
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedAllowVehiclesOverride(ped, toggle) end
@@ -4338,7 +4338,7 @@ function SetPedAllowVehiclesOverride(ped, toggle) end
 --- N_0x2b694afcf64e6994
 ---
 --- @hash 0x2B694AFCF64E6994
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return void
 function N_0x2b694afcf64e6994(ped, p1) end
@@ -4347,7 +4347,7 @@ function N_0x2b694afcf64e6994(ped, p1) end
 --- SetPedCanBeDraggedOut
 ---
 --- @hash 0xC1670E958EEE24E5
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanBeDraggedOut(ped, toggle) end
@@ -4356,7 +4356,7 @@ function SetPedCanBeDraggedOut(ped, toggle) end
 --- SetPedBoundsOrientation
 ---
 --- @hash 0x4F5F651ACCC9C4CF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (float)
 --- @param p2 number (float)
 --- @param p3 number (float)
@@ -4379,7 +4379,7 @@ function N_0xa3a9299c4f2adb98(p0) end
 --- ```
 ---
 --- @hash 0xB195FFA8042FC5C3
---- @param driver table (Ped)
+--- @param driver Ped
 --- @param ability number (float)
 --- @return void
 function SetDriverAbility(driver, ability) end
@@ -4388,7 +4388,7 @@ function SetDriverAbility(driver, ability) end
 --- SetPedBlocksPathingWhenDead
 ---
 --- @hash 0x576594E8D64375E2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return void
 function SetPedBlocksPathingWhenDead(ped, p1) end
@@ -4418,7 +4418,7 @@ function SetPedBlocksPathingWhenDead(ped, p1) end
 --- ```
 ---
 --- @hash 0x9F7794730795E019
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param attributeIndex number (int)
 --- @param enabled boolean
 --- @return void
@@ -4428,7 +4428,7 @@ function SetPedCombatAttributes(ped, attributeIndex, enabled) end
 --- SetPedCanRagdollFromPlayerImpact
 ---
 --- @hash 0xDF993EE5E90ABA25
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanRagdollFromPlayerImpact(ped, toggle) end
@@ -4448,7 +4448,7 @@ function N_0xa9b61a329bfdcbea(p0, p1) end
 --- ```
 ---
 --- @hash 0x781DE8FA214E87D2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param name string (char*)
 --- @return void
 function SetMovementModeOverride(ped, name) end
@@ -4457,7 +4457,7 @@ function SetMovementModeOverride(ped, name) end
 --- SetEnablePedEnveffScale
 ---
 --- @hash 0xD2C5AA0C0E8D0F1E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetEnablePedEnveffScale(ped, toggle) end
@@ -4471,7 +4471,7 @@ function SetEnablePedEnveffScale(ped, toggle) end
 --- ```
 ---
 --- @hash 0x71BC8E838B9C6035
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ResurrectPed(ped) end
 
@@ -4487,7 +4487,7 @@ function N_0xea9960d07dadcf10(p0) end
 --- SetForceStepType
 ---
 --- @hash 0xCB968B53FC7F916D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @param type number (int)
 --- @param p3 number (int)
@@ -4498,7 +4498,7 @@ function SetForceStepType(ped, p1, type, p3) end
 --- SetPedCanPlayGestureAnims
 ---
 --- @hash 0xBAF20C5432058024
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanPlayGestureAnims(ped, toggle) end
@@ -4509,7 +4509,7 @@ function SetPedCanPlayGestureAnims(ped, toggle) end
 --- ```
 ---
 --- @hash 0x45EEE61580806D63
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function SetPedDefaultComponentVariation(ped) end
 
@@ -4536,7 +4536,7 @@ function SetGroupFormation(groupId, formationType) end
 --- ```
 ---
 --- @hash 0x7A6535691B477C48
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param state number (int)
 --- @return void
 function SetPedCanBeKnockedOffVehicle(ped, state) end
@@ -4549,7 +4549,7 @@ function SetPedCanBeKnockedOffVehicle(ped, state) end
 --- ```
 ---
 --- @hash 0xCEA04D83135264CC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param amount number (int)
 --- @return void
 function SetPedArmour(ped, amount) end
@@ -4566,7 +4566,7 @@ function SetPedArmour(ped, amount) end
 --- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
 --- @hash 0x90A43CC281FFAB46
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param stance number (int)
 --- @param animDictionary string (char*)
 --- @param animationName string (char*)
@@ -4585,7 +4585,7 @@ function SetPedAlternateMovementAnim(ped, stance, animDictionary, animationName,
 --- ```
 ---
 --- @hash 0x7AEFB85C1D49DEB6
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param accuracy number (int)
 --- @return any
 function SetPedAccuracy(ped, accuracy) end
@@ -4594,7 +4594,7 @@ function SetPedAccuracy(ped, accuracy) end
 --- SetPedCanUseAutoConversationLookat
 ---
 --- @hash 0xEC4686EC06434678
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanUseAutoConversationLookat(ped, toggle) end
@@ -4627,7 +4627,7 @@ function N_0xaaa6a3698a69e048(p0) end
 --- Preview: https://gfycat.com/MaleRareAmazonparrot
 ---
 --- @hash 0xCC9682B8951C5229
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param r number (int)
 --- @param g number (int)
 --- @param b number (int)
@@ -4639,7 +4639,7 @@ function SetHeadBlendPaletteColor(ped, r, g, b, id) end
 --- SetForceFootstepUpdate
 ---
 --- @hash 0x129466ED55140F8D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetForceFootstepUpdate(ped, toggle) end
@@ -4656,9 +4656,9 @@ function SetForceFootstepUpdate(ped, toggle) end
 --- ```
 ---
 --- @hash 0xC32779C16FCEECD9
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param ikIndex number (int)
---- @param entityLookAt table (Entity)
+--- @param entityLookAt Entity
 --- @param boneLookAt number (int)
 --- @param offsetX number (float)
 --- @param offsetY number (float)
@@ -4675,7 +4675,7 @@ function SetIkTarget(ped, ikIndex, entityLookAt, boneLookAt, offsetX, offsetY, o
 --- ```
 ---
 --- @hash 0xF833DDBA3B104D43
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @param p2 boolean
 --- @return void
@@ -4694,7 +4694,7 @@ function N_0xb782f8238512bad5(p0, p1) end
 --- ResetPedStrafeClipset
 ---
 --- @hash 0x20510814175EA477
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ResetPedStrafeClipset(ped) end
 
@@ -4707,7 +4707,7 @@ function ResetPedStrafeClipset(ped) end
 --- ```
 ---
 --- @hash 0xE1E65CA8AC9C00ED
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param animName string (char*)
 --- @param animDict string (char*)
 --- @return void
@@ -4725,7 +4725,7 @@ function SetCreateRandomCops(toggle) end
 --- SetPedCanRagdoll
 ---
 --- @hash 0xB128377056A54E2A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanRagdoll(ped, toggle) end
@@ -4734,7 +4734,7 @@ function SetPedCanRagdoll(ped, toggle) end
 --- N_0xfd325494792302d7
 ---
 --- @hash 0xFD325494792302D7
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function N_0xfd325494792302d7(ped, toggle) end
@@ -4763,7 +4763,7 @@ function RemoveScenarioBlockingArea(p0, p1) end
 --- ```
 ---
 --- @hash 0x9414E18B9434C2FE
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param shapeFirstID number (int)
 --- @param shapeSecondID number (int)
 --- @param shapeThirdID number (int)
@@ -4784,7 +4784,7 @@ function SetPedHeadBlendData(ped, shapeFirstID, shapeSecondID, shapeThirdID, ski
 --- ```
 ---
 --- @hash 0x2E2F4240B3F24647
---- @param pedHandle table (Ped)
+--- @param pedHandle Ped
 --- @param groupHandle number (int)
 --- @param toggle boolean
 --- @return void
@@ -4794,7 +4794,7 @@ function SetPedCanTeleportToGroupLeader(pedHandle, groupHandle, toggle) end
 --- SetPedDriveByClipsetOverride
 ---
 --- @hash 0xED34AB6C5CB36520
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param clipset string (char*)
 --- @return void
 function SetPedDriveByClipsetOverride(ped, clipset) end
@@ -4803,7 +4803,7 @@ function SetPedDriveByClipsetOverride(ped, clipset) end
 --- SetPedCanLegIk
 ---
 --- @hash 0x73518ECE2485412B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanLegIk(ped, toggle) end
@@ -4812,7 +4812,7 @@ function SetPedCanLegIk(ped, toggle) end
 --- SetPedCanBeTargettedByTeam
 ---
 --- @hash 0xBF1CA77833E58F2C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param team number (int)
 --- @param toggle boolean
 --- @return void
@@ -4822,7 +4822,7 @@ function SetPedCanBeTargettedByTeam(ped, team, toggle) end
 --- SetPedCanBeShotInVehicle
 ---
 --- @hash 0xC7EF1BA83230BA07
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanBeShotInVehicle(ped, toggle) end
@@ -4831,7 +4831,7 @@ function SetPedCanBeShotInVehicle(ped, toggle) end
 --- SetPedDiesInVehicle
 ---
 --- @hash 0x2A30922C90C9B42C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedDiesInVehicle(ped, toggle) end
@@ -4840,7 +4840,7 @@ function SetPedDiesInVehicle(ped, toggle) end
 --- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
 --- @hash 0x6C60394CB4F75E9A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param animDict string (char*)
 --- @param animName string (char*)
 --- @param p3 number (float)
@@ -4856,7 +4856,7 @@ function SetPedAlternateWalkAnim(ped, animDict, animName, p3, p4) end
 --- ```
 ---
 --- @hash 0x364DF566EC833DE2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param value number (float)
 --- @return void
 function SetPedCapsule(ped, value) end
@@ -4865,7 +4865,7 @@ function SetPedCapsule(ped, value) end
 --- SetPedCanBeTargetedWithoutLos
 ---
 --- @hash 0x4328652AE5769C71
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanBeTargetedWithoutLos(ped, toggle) end
@@ -4895,7 +4895,7 @@ function SetPedCanBeTargetedWithoutLos(ped, toggle) end
 ---     UnregisterPedheadshot(handle)
 --- end
 --- @hash 0x953563CE563143AF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return number (int)
 function RegisterPedheadshotTransparent(ped) end
 
@@ -4903,7 +4903,7 @@ function RegisterPedheadshotTransparent(ped) end
 --- SetPedAsGroupLeader
 ---
 --- @hash 0x2A7819605465FBCE
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param groupId number (int)
 --- @return void
 function SetPedAsGroupLeader(ped, groupId) end
@@ -4912,7 +4912,7 @@ function SetPedAsGroupLeader(ped, groupId) end
 --- SetPedKeepTask
 ---
 --- @hash 0x971D38760FBC02EF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedKeepTask(ped, toggle) end
@@ -4921,7 +4921,7 @@ function SetPedKeepTask(ped, toggle) end
 --- N_0xc2ee020f5fb4db53
 ---
 --- @hash 0xC2EE020F5FB4DB53
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function N_0xc2ee020f5fb4db53(ped) end
 
@@ -4931,7 +4931,7 @@ function N_0xc2ee020f5fb4db53(ped) end
 --- ```
 ---
 --- @hash 0xBB03C38DD3FB7FFD
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedAsCop(ped, toggle) end
@@ -4940,7 +4940,7 @@ function SetPedAsCop(ped, toggle) end
 --- SetPedAsGroupMember
 ---
 --- @hash 0x9F3480FE65DB31B5
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param groupId number (int)
 --- @return void
 function SetPedAsGroupMember(ped, groupId) end
@@ -4949,8 +4949,8 @@ function SetPedAsGroupMember(ped, groupId) end
 --- SetPedCanBeTargettedByPlayer
 ---
 --- @hash 0x66B57B72E0836A76
---- @param ped table (Ped)
---- @param player number (Player)
+--- @param ped Ped
+--- @param player Player
 --- @param toggle boolean
 --- @return void
 function SetPedCanBeTargettedByPlayer(ped, player, toggle) end
@@ -4961,7 +4961,7 @@ function SetPedCanBeTargettedByPlayer(ped, player, toggle) end
 --- ```
 ---
 --- @hash 0xDBA71115ED9941A6
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param value number (int)
 --- @return void
 function SetPedAlertness(ped, value) end
@@ -4970,7 +4970,7 @@ function SetPedAlertness(ped, value) end
 --- SetPedAngledDefensiveArea
 ---
 --- @hash 0xC7F76DF27A5045A1
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (float)
 --- @param p2 number (float)
 --- @param p3 number (float)
@@ -4987,7 +4987,7 @@ function SetPedAngledDefensiveArea(ped, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 --- ResetPedRagdollTimer
 ---
 --- @hash 0x9FA4664CF62E47E8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ResetPedRagdollTimer(ped) end
 
@@ -4995,7 +4995,7 @@ function ResetPedRagdollTimer(ped) end
 --- SetFacialIdleAnimOverride
 ---
 --- @hash 0xFFC24B988B938B38
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param animName string (char*)
 --- @param animDict string (char*)
 --- @return void
@@ -5010,7 +5010,7 @@ function SetFacialIdleAnimOverride(ped, animName, animDict) end
 --- ```
 ---
 --- @hash 0x3C606747B23E497B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (int)
 --- @return void
 function SetPedCombatRange(ped, p1) end
@@ -5032,7 +5032,7 @@ function SetPedCombatRange(ped, p1) end
 --- ```
 ---
 --- @hash 0x5687C7F05B39E401
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param animDict string (char*)
 --- @return void
 function SetFacialClipsetOverride(ped, animDict) end
@@ -5041,7 +5041,7 @@ function SetFacialClipsetOverride(ped, animDict) end
 --- SetPedCanBeTargetted
 ---
 --- @hash 0x63F58F7C80513AAD
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanBeTargetted(ped, toggle) end
@@ -5050,7 +5050,7 @@ function SetPedCanBeTargetted(ped, toggle) end
 --- SetPedClothPackageIndex
 ---
 --- @hash 0x78C4E9961DB3EB5B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (int)
 --- @return void
 function SetPedClothPackageIndex(ped, p1) end
@@ -5059,7 +5059,7 @@ function SetPedClothPackageIndex(ped, p1) end
 --- SetPedMaxMoveBlendRatio
 ---
 --- @hash 0x433083750C5E064A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param value number (float)
 --- @return void
 function SetPedMaxMoveBlendRatio(ped, value) end
@@ -5076,7 +5076,7 @@ function ResetAiWeaponDamageModifier() end
 --- SetPedCanPeekInCover
 ---
 --- @hash 0xC514825C507E3736
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanPeekInCover(ped, toggle) end
@@ -5085,7 +5085,7 @@ function SetPedCanPeekInCover(ped, toggle) end
 --- ReleasePedPreloadPropData
 ---
 --- @hash 0xF79F9DEF0AADE61A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ReleasePedPreloadPropData(ped) end
 
@@ -5093,7 +5093,7 @@ function ReleasePedPreloadPropData(ped) end
 --- ResetPedWeaponMovementClipset
 ---
 --- @hash 0x97B0DB5B4AA74E77
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function ResetPedWeaponMovementClipset(ped) end
 
@@ -5101,7 +5101,7 @@ function ResetPedWeaponMovementClipset(ped) end
 --- SetPedCoordsNoGang
 ---
 --- @hash 0x87052FE446E07247
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param posX number (float)
 --- @param posY number (float)
 --- @param posZ number (float)
@@ -5112,9 +5112,9 @@ function SetPedCoordsNoGang(ped, posX, posY, posZ) end
 --- SetPedBlendFromParents
 ---
 --- @hash 0x137BBD05230DB22D
---- @param ped table (Ped)
---- @param father table (Ped)
---- @param mother table (Ped)
+--- @param ped Ped
+--- @param father Ped
+--- @param mother Ped
 --- @param fathersSide number (float)
 --- @param mothersSide number (float)
 --- @return void
@@ -5124,7 +5124,7 @@ function SetPedBlendFromParents(ped, father, mother, fathersSide, mothersSide) e
 --- SetPedDefensiveAreaDirection
 ---
 --- @hash 0x413C6C763A4AFFAD
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (float)
 --- @param p2 number (float)
 --- @param p3 number (float)
@@ -5136,7 +5136,7 @@ function SetPedDefensiveAreaDirection(ped, p1, p2, p3, p4) end
 --- SetPedCanHeadIk
 ---
 --- @hash 0xC11C18092C5530DC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanHeadIk(ped, toggle) end
@@ -5145,7 +5145,7 @@ function SetPedCanHeadIk(ped, toggle) end
 --- SetPedCanPlayInjuredAnims
 ---
 --- @hash 0x33A60D8BDD6E508C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return void
 function SetPedCanPlayInjuredAnims(ped, p1) end
@@ -5162,7 +5162,7 @@ function SetAiWeaponDamageModifier(value) end
 --- SetPedCanTorsoVehicleIk
 ---
 --- @hash 0x6647C5F6F5792496
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return void
 function SetPedCanTorsoVehicleIk(ped, p1) end
@@ -5173,7 +5173,7 @@ function SetPedCanTorsoVehicleIk(ped, p1) end
 --- ```
 ---
 --- @hash 0xA549131166868ED3
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 string (char*)
 --- @return void
 function SetPedCowerHash(ped, p1) end
@@ -5200,8 +5200,8 @@ function SetPedCowerHash(ped, p1) end
 --- ```
 ---
 --- @hash 0x9AC577F5A12AD8A9
---- @param ped table (Ped)
---- @param patternHash table (Hash)
+--- @param ped Ped
+--- @param patternHash Hash
 --- @return void
 function SetPedFiringPattern(ped, patternHash) end
 
@@ -5212,7 +5212,7 @@ function SetPedFiringPattern(ped, patternHash) end
 --- ```
 ---
 --- @hash 0x9DBA107B4937F809
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 string (char*)
 --- @return void
 function SetPedCoverClipsetOverride(ped, p1) end
@@ -5223,7 +5223,7 @@ function SetPedCoverClipsetOverride(ped, p1) end
 --- ```
 ---
 --- @hash 0x5BA7919BED300023
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return any
 function SetPedDiesWhenInjured(ped, toggle) end
@@ -5232,8 +5232,8 @@ function SetPedDiesWhenInjured(ped, toggle) end
 --- SetPedDefensiveAreaAttachedToPed
 ---
 --- @hash 0x4EF47FE21698A8B6
---- @param ped table (Ped)
---- @param attachPed table (Ped)
+--- @param ped Ped
+--- @param attachPed Ped
 --- @param p2 number (float)
 --- @param p3 number (float)
 --- @param p4 number (float)
@@ -5258,7 +5258,7 @@ function RequestPedheadshotImgUpload(id) end
 --- SetPedHelmetTextureIndex
 ---
 --- @hash 0xF1550C4BD22582E2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param textureIndex number (int)
 --- @return void
 function SetPedHelmetTextureIndex(ped, textureIndex) end
@@ -5267,8 +5267,8 @@ function SetPedHelmetTextureIndex(ped, textureIndex) end
 --- SetPedDefensiveSphereAttachedToPed
 ---
 --- @hash 0xF9B8F91AAD3B953E
---- @param ped table (Ped)
---- @param target table (Ped)
+--- @param ped Ped
+--- @param target Ped
 --- @param xOffset number (float)
 --- @param yOffset number (float)
 --- @param zOffset number (float)
@@ -5284,7 +5284,7 @@ function SetPedDefensiveSphereAttachedToPed(ped, target, xOffset, yOffset, zOffs
 --- ```
 ---
 --- @hash 0x98EFA132A4117BE1
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param name string (char*)
 --- @return void
 function SetPedNameDebug(ped, name) end
@@ -5296,7 +5296,7 @@ function SetPedNameDebug(ped, name) end
 --- ```
 ---
 --- @hash 0xD69411AA0CEBF9E9
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param r number (int)
 --- @param g number (int)
 --- @param b number (int)
@@ -5307,7 +5307,7 @@ function SetPedEnveffColorModulator(ped, r, g, b) end
 --- SetPedDesiredHeading
 ---
 --- @hash 0xAA5A7ECE2AA8FE70
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param heading number (float)
 --- @return void
 function SetPedDesiredHeading(ped, heading) end
@@ -5365,7 +5365,7 @@ function SetPedDesiredHeading(ped, heading) end
 --- ```
 ---
 --- @hash 0x1913FE4CBF41C463
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param flagId number (int)
 --- @param value boolean
 --- @return void
@@ -5375,7 +5375,7 @@ function SetPedConfigFlag(ped, flagId, value) end
 --- SetPedCanTorsoReactIk
 ---
 --- @hash 0xF5846EDB26A98A24
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return void
 function SetPedCanTorsoReactIk(ped, p1) end
@@ -5395,7 +5395,7 @@ function SetGroupSeparationRange(groupHandle, separationRange) end
 --- SetPedHelmet
 ---
 --- @hash 0x560A43136EB58105
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param canWearHelmet boolean
 --- @return void
 function SetPedHelmet(ped, canWearHelmet) end
@@ -5406,7 +5406,7 @@ function SetPedHelmet(ped, canWearHelmet) end
 --- ```
 ---
 --- @hash 0x9AFEFF481A85AB2E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param posX number (float)
 --- @param posY number (float)
 --- @param posZ number (float)
@@ -5419,7 +5419,7 @@ function SetPedCoordsKeepVehicle(ped, posX, posY, posZ) end
 --- ```
 ---
 --- @hash 0xA731F608CA104E3C
---- @param driver table (Ped)
+--- @param driver Ped
 --- @param aggressiveness number (float)
 --- @return void
 function SetDriverAggressiveness(driver, aggressiveness) end
@@ -5442,7 +5442,7 @@ function SetPedClothProne(p0, p1) end
 --- ```
 ---
 --- @hash 0x4D9CA1009AFBD057
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param combatMovement number (int)
 --- @return void
 function SetPedCombatMovement(ped, combatMovement) end
@@ -5477,7 +5477,7 @@ function SetPedCombatMovement(ped, combatMovement) end
 --- ```
 ---
 --- @hash 0x71A5C1DBA060049E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param index number (int)
 --- @param scale number (float)
 --- @return void
@@ -5489,7 +5489,7 @@ function SetPedFaceFeature(ped, index, scale) end
 --- ```
 ---
 --- @hash 0xDF1AF8B5D56542FA
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetEnableHandcuffs(ped, toggle) end
@@ -5498,7 +5498,7 @@ function SetEnableHandcuffs(ped, toggle) end
 --- SetPedCanTorsoIk
 ---
 --- @hash 0xF2B7106D37947CE0
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanTorsoIk(ped, toggle) end
@@ -5507,7 +5507,7 @@ function SetPedCanTorsoIk(ped, toggle) end
 --- SetPedDiesInstantlyInWater
 ---
 --- @hash 0xEEB64139BA29A7CF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedDiesInstantlyInWater(ped, toggle) end
@@ -5531,7 +5531,7 @@ function SetPedDiesInstantlyInWater(ped, toggle) end
 --- [List of component/props ID](gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html) of player_two with examples
 ---
 --- @hash 0x93376B65A266EB5F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param componentId number (int)
 --- @param drawableId number (int)
 --- @param textureId number (int)
@@ -5543,7 +5543,7 @@ function SetPedPropIndex(ped, componentId, drawableId, textureId, attach) end
 --- SetPedHearingRange
 ---
 --- @hash 0x33A8F7F7D5F7F33C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param value number (float)
 --- @return void
 function SetPedHearingRange(ped, value) end
@@ -5552,7 +5552,7 @@ function SetPedHearingRange(ped, value) end
 --- SetPedGeneratesDeadBodyEvents
 ---
 --- @hash 0x7FB17BA2E7DECA5B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedGeneratesDeadBodyEvents(ped, toggle) end
@@ -5561,7 +5561,7 @@ function SetPedGeneratesDeadBodyEvents(ped, toggle) end
 --- SetPedDiesInSinkingVehicle
 ---
 --- @hash 0xD718A22995E2B4BC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedDiesInSinkingVehicle(ped, toggle) end
@@ -5570,7 +5570,7 @@ function SetPedDiesInSinkingVehicle(ped, toggle) end
 --- SetPedDiesInWater
 ---
 --- @hash 0x56CEF0AC79073BDE
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedDiesInWater(ped, toggle) end
@@ -5579,7 +5579,7 @@ function SetPedDiesInWater(ped, toggle) end
 --- SetPedCanSmashGlass
 ---
 --- @hash 0x1CCE141467FF42A2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @param p2 boolean
 --- @return void
@@ -5604,7 +5604,7 @@ function SetPedModelIsSuppressed(model, toggle) end
 --- ```
 ---
 --- @hash 0x70A2D1137C8ED7C9
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param attributeFlags number (int)
 --- @param enable boolean
 --- @return void
@@ -5636,7 +5636,7 @@ function SetPedFleeAttributes(ped, attributeFlags, enable) end
 --- [List of component/props ID](gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html) of player_two with examples
 ---
 --- @hash 0x262B14F48D29DE80
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param componentId number (int)
 --- @param drawableId number (int)
 --- @param textureId number (int)
@@ -5648,7 +5648,7 @@ function SetPedComponentVariation(ped, componentId, drawableId, textureId, palet
 --- SetPedMotionBlur
 ---
 --- @hash 0x0A986918B102B448
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedMotionBlur(ped, toggle) end
@@ -5657,7 +5657,7 @@ function SetPedMotionBlur(ped, toggle) end
 --- SetPedAsEnemy
 ---
 --- @hash 0x02A0C9720B854BFA
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedAsEnemy(ped, toggle) end
@@ -5699,7 +5699,7 @@ function SetPedAsEnemy(ped, toggle) end
 --- 30. glossed over
 ---
 --- @hash 0x50B56988B170AFDF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param index number (int)
 --- @return void
 function SetPedEyeColor(ped, index) end
@@ -5708,7 +5708,7 @@ function SetPedEyeColor(ped, index) end
 --- SetPedIdRange
 ---
 --- @hash 0xF107E836A70DCE05
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param value number (float)
 --- @return void
 function SetPedIdRange(ped, value) end
@@ -5725,7 +5725,7 @@ function SetPedIdRange(ped, value) end
 --- ```
 ---
 --- @hash 0xC7622C0D36B2FDA8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (int)
 --- @return void
 function SetPedCombatAbility(ped, p1) end
@@ -5736,7 +5736,7 @@ function SetPedCombatAbility(ped, p1) end
 --- ```
 ---
 --- @hash 0x97A790315D3831FD
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return any
 function SetPedEnableWeaponBlocking(ped, toggle) end
@@ -5745,7 +5745,7 @@ function SetPedEnableWeaponBlocking(ped, toggle) end
 --- SetPedIncreasedAvoidanceRadius
 ---
 --- @hash 0x570389D1C3DE3C6B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function SetPedIncreasedAvoidanceRadius(ped) end
 
@@ -5756,7 +5756,7 @@ function SetPedIncreasedAvoidanceRadius(ped) end
 --- ```
 ---
 --- @hash 0xF5F6378C4F3419D3
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param value number (int)
 --- @return void
 function SetPedMaxHealth(ped, value) end
@@ -5774,8 +5774,8 @@ function SetPedMaxHealth(ped, value) end
 --- ```
 ---
 --- @hash 0xF75B0D629E1C063D
---- @param ped table (Ped)
---- @param vehicle number (Vehicle)
+--- @param ped Ped
+--- @param vehicle Vehicle
 --- @param seatIndex number (int)
 --- @return void
 function SetPedIntoVehicle(ped, vehicle, seatIndex) end
@@ -5790,7 +5790,7 @@ function SetPedIntoVehicle(ped, vehicle, seatIndex) end
 --- ```
 ---
 --- @hash 0xDDF803377F94AAA8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param animGroupGesture string (char*)
 --- @return void
 function SetPedGestureGroup(ped, animGroupGesture) end
@@ -5799,7 +5799,7 @@ function SetPedGestureGroup(ped, animGroupGesture) end
 --- SetPedGroupMemberPassengerIndex
 ---
 --- @hash 0x0BDDB8D9EC6BCF3C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param index number (int)
 --- @return void
 function SetPedGroupMemberPassengerIndex(ped, index) end
@@ -5810,7 +5810,7 @@ function SetPedGroupMemberPassengerIndex(ped, index) end
 --- ```
 ---
 --- @hash 0x88CBB5CEB96B7BD2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @param action string (char*)
 --- @return void
@@ -5820,7 +5820,7 @@ function SetPedStealthMovement(ped, p1, action) end
 --- SetPedHighlyPerceptive
 ---
 --- @hash 0x52D59AB61DDC05DD
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedHighlyPerceptive(ped, toggle) end
@@ -5829,7 +5829,7 @@ function SetPedHighlyPerceptive(ped, toggle) end
 --- SetPedGetOutUpsideDownVehicle
 ---
 --- @hash 0xBC0ED94165A48BC2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedGetOutUpsideDownVehicle(ped, toggle) end
@@ -5840,7 +5840,7 @@ function SetPedGetOutUpsideDownVehicle(ped, toggle) end
 --- ```
 ---
 --- @hash 0x030983CA930B692D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedDucking(ped, toggle) end
@@ -5849,7 +5849,7 @@ function SetPedDucking(ped, toggle) end
 --- SetPedMoveAnimsBlendOut
 ---
 --- @hash 0x9E8C908F41584ECD
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function SetPedMoveAnimsBlendOut(ped) end
 
@@ -5859,7 +5859,7 @@ function SetPedMoveAnimsBlendOut(ped) end
 --- ```
 ---
 --- @hash 0x4CFFC65454C93A49
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param colorID number (int)
 --- @param highlightColorID number (int)
 --- @return void
@@ -5873,7 +5873,7 @@ function SetPedHairColor(ped, colorID, highlightColorID) end
 --- ```
 ---
 --- @hash 0xA9C8960E8684C1B5
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param amount number (int)
 --- @return void
 function SetPedMoney(ped, amount) end
@@ -5882,7 +5882,7 @@ function SetPedMoney(ped, amount) end
 --- SetPedCanBeTargetedWhenInjured
 ---
 --- @hash 0x638C03B0F9878F57
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanBeTargetedWhenInjured(ped, toggle) end
@@ -5909,8 +5909,8 @@ function SetPedHeatscaleOverride(p0, p1) end
 --- ```
 ---
 --- @hash 0x530071295899A8C6
---- @param ped table (Ped)
---- @param context table (Hash)
+--- @param ped Ped
+--- @param context Hash
 --- @return void
 function SetPedInVehicleContext(ped, context) end
 
@@ -5918,7 +5918,7 @@ function SetPedInVehicleContext(ped, context) end
 --- SetPedHelmetUnk
 ---
 --- @hash 0x3F7325574E41B44D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @param p2 number (int)
 --- @param p3 number (int)
@@ -5933,7 +5933,7 @@ function SetPedHelmetUnk(ped, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0x39D55A620FCB6A3A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param slot number (int)
 --- @param drawableId number (int)
 --- @param textureId number (int)
@@ -5944,7 +5944,7 @@ function SetPedPreloadVariationData(ped, slot, drawableId, textureId) end
 --- SetPedCanPlayAmbientBaseAnims
 ---
 --- @hash 0x0EB0585D15254740
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanPlayAmbientBaseAnims(ped, toggle) end
@@ -5953,7 +5953,7 @@ function SetPedCanPlayAmbientBaseAnims(ped, toggle) end
 --- SetPedLodMultiplier
 ---
 --- @hash 0xDC2C5C242AAC342B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param multiplier number (float)
 --- @return void
 function SetPedLodMultiplier(ped, multiplier) end
@@ -5966,7 +5966,7 @@ function SetPedLodMultiplier(ped, multiplier) end
 --- ```
 ---
 --- @hash 0xBF29516833893561
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param value number (float)
 --- @return void
 function SetPedEnveffScale(ped, value) end
@@ -5991,7 +5991,7 @@ function SetPedDensityMultiplierThisFrame(multiplier) end
 --- ```
 ---
 --- @hash 0xAAD6D1ACF08F4612
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param pinned boolean
 --- @param p2 number (int)
 --- @return any
@@ -6001,7 +6001,7 @@ function SetPedPinnedDown(ped, pinned, p2) end
 --- SetPedMaxTimeUnderwater
 ---
 --- @hash 0x6BA428C528D9E522
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param value number (float)
 --- @return void
 function SetPedMaxTimeUnderwater(ped, value) end
@@ -6012,7 +6012,7 @@ function SetPedMaxTimeUnderwater(ped, value) end
 --- ```
 ---
 --- @hash 0x01F6594B923B9251
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return any
 function SetPedRagdollForceFall(ped) end
 
@@ -6020,7 +6020,7 @@ function SetPedRagdollForceFall(ped) end
 --- SetPedVisualFieldMinAngle
 ---
 --- @hash 0x2DB492222FB21E26
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param value number (float)
 --- @return void
 function SetPedVisualFieldMinAngle(ped, value) end
@@ -6033,7 +6033,7 @@ function SetPedVisualFieldMinAngle(ped, value) end
 --- ```
 ---
 --- @hash 0x94D94BF1A75AED3D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedPlaysHeadOnHornAnimWhenDiesInVehicle(ped, toggle) end
@@ -6042,7 +6042,7 @@ function SetPedPlaysHeadOnHornAnimWhenDiesInVehicle(ped, toggle) end
 --- SetPedSeeingRange
 ---
 --- @hash 0xF29CF591C4BF6CEE
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param value number (float)
 --- @return void
 function SetPedSeeingRange(ped, value) end
@@ -6051,7 +6051,7 @@ function SetPedSeeingRange(ped, value) end
 --- SetPedWeaponMovementClipset
 ---
 --- @hash 0x2622E35B77D3ACA2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param clipSet string (char*)
 --- @return void
 function SetPedWeaponMovementClipset(ped, clipSet) end
@@ -6069,7 +6069,7 @@ function SetPedWeaponMovementClipset(ped, clipSet) end
 --- ```
 ---
 --- @hash 0x085BF80FA50A39D1
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param value number (float)
 --- @return void
 function SetPedMoveRateOverride(ped, value) end
@@ -6078,7 +6078,7 @@ function SetPedMoveRateOverride(ped, value) end
 --- SetPedCanSwitchWeapon
 ---
 --- @hash 0xED7F7EFE9FABF340
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedCanSwitchWeapon(ped, toggle) end
@@ -6092,7 +6092,7 @@ function SetPedCanSwitchWeapon(ped, toggle) end
 --- ```
 ---
 --- @hash 0x9FF447B6B6AD960A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedGravity(ped, toggle) end
@@ -6117,7 +6117,7 @@ function SetPedGravity(ped, toggle) end
 --- ```
 ---
 --- @hash 0x48F44967FA05CC1E
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param overlayID number (int)
 --- @param index number (int)
 --- @param opacity number (float)
@@ -6128,7 +6128,7 @@ function SetPedHeadOverlay(ped, overlayID, index, opacity) end
 --- SetPedStayInVehicleWhenJacked
 ---
 --- @hash 0xEDF4079F9D54C9A1
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedStayInVehicleWhenJacked(ped, toggle) end
@@ -6137,8 +6137,8 @@ function SetPedStayInVehicleWhenJacked(ped, toggle) end
 --- SetPedDefensiveSphereAttachedToVehicle
 ---
 --- @hash 0xE4723DB6E736CCFF
---- @param ped table (Ped)
---- @param target number (Vehicle)
+--- @param ped Ped
+--- @param target Vehicle
 --- @param xOffset number (float)
 --- @param yOffset number (float)
 --- @param zOffset number (float)
@@ -6153,7 +6153,7 @@ function SetPedDefensiveSphereAttachedToVehicle(ped, target, xOffset, yOffset, z
 --- ```
 ---
 --- @hash 0xFA0675AB151073FA
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param ms number (int)
 --- @return void
 function SetPedMinGroundTimeForStungun(ped, ms) end
@@ -6162,7 +6162,7 @@ function SetPedMinGroundTimeForStungun(ped, ms) end
 --- SetPedMaxTimeInWater
 ---
 --- @hash 0x43C851690662113D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param value number (float)
 --- @return void
 function SetPedMaxTimeInWater(ped, value) end
@@ -6174,7 +6174,7 @@ function SetPedMaxTimeInWater(ped, value) end
 --- ```
 ---
 --- @hash 0xC44AA05345C992C6
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function SetPedRandomProps(ped) end
 
@@ -6185,7 +6185,7 @@ function SetPedRandomProps(ped) end
 --- ```
 ---
 --- @hash 0x2B16A3BFF1FBCE49
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param componentId number (int)
 --- @param drawableId number (int)
 --- @param TextureId number (int)
@@ -6213,7 +6213,7 @@ function SetPedNonCreationArea(x1, y1, z1, x2, y2, z2) end
 --- ```
 ---
 --- @hash 0x7A276EB2C224D70F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param angle number (float)
 --- @return void
 function SetPedVisualFieldMinElevationAngle(ped, angle) end
@@ -6234,7 +6234,7 @@ function SetPopControlSphereThisFrame(x, y, z, p3, p4) end
 --- SetPedVisualFieldPeripheralRange
 ---
 --- @hash 0x9C74B0BC831B753A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param range number (float)
 --- @return void
 function SetPedVisualFieldPeripheralRange(ped, range) end
@@ -6245,7 +6245,7 @@ function SetPedVisualFieldPeripheralRange(ped, range) end
 --- ```
 ---
 --- @hash 0xC396F5B86FF9FEBD
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param mode number (int)
 --- @return void
 function SetPedLegIkMode(ped, mode) end
@@ -6254,7 +6254,7 @@ function SetPedLegIkMode(ped, mode) end
 --- SetPedPreferredCoverSet
 ---
 --- @hash 0x8421EB4DA7E391B9
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param itemSet any
 --- @return void
 function SetPedPreferredCoverSet(ped, itemSet) end
@@ -6263,8 +6263,8 @@ function SetPedPreferredCoverSet(ped, itemSet) end
 --- SetPedRelationshipGroupDefaultHash
 ---
 --- @hash 0xADB3F206518799E8
---- @param ped table (Ped)
---- @param hash table (Hash)
+--- @param ped Ped
+--- @param hash Hash
 --- @return void
 function SetPedRelationshipGroupDefaultHash(ped, hash) end
 
@@ -6276,7 +6276,7 @@ function SetPedRelationshipGroupDefaultHash(ped, hash) end
 --- ```
 ---
 --- @hash 0x497BF74A7B9CB952
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param overlayID number (int)
 --- @param colorType number (int)
 --- @param colorID number (int)
@@ -6288,7 +6288,7 @@ function SetPedHeadOverlayColor(ped, overlayID, colorType, colorID, secondColorI
 --- SetPedNeverLeavesGroup
 ---
 --- @hash 0x3DBFC55D5C9BB447
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedNeverLeavesGroup(ped, toggle) end
@@ -6297,7 +6297,7 @@ function SetPedNeverLeavesGroup(ped, toggle) end
 --- SetPedParachuteTintIndex
 ---
 --- @hash 0x333FC8DB079B7186
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param tintIndex number (int)
 --- @return void
 function SetPedParachuteTintIndex(ped, tintIndex) end
@@ -6308,7 +6308,7 @@ function SetPedParachuteTintIndex(ped, tintIndex) end
 --- ```
 ---
 --- @hash 0x0703B9079823DA4A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param responseType number (int)
 --- @return void
 function SetPedTargetLossResponse(ped, responseType) end
@@ -6326,7 +6326,7 @@ function SetSynchronizedSceneHoldLastFrame(sceneID, toggle) end
 --- SetPedMinMoveBlendRatio
 ---
 --- @hash 0x01A898D26E2333DD
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param value number (float)
 --- @return void
 function SetPedMinMoveBlendRatio(ped, value) end
@@ -6335,8 +6335,8 @@ function SetPedMinMoveBlendRatio(ped, value) end
 --- SetPedRelationshipGroupHash
 ---
 --- @hash 0xC80A74AC829DDD92
---- @param ped table (Ped)
---- @param hash table (Hash)
+--- @param ped Ped
+--- @param hash Hash
 --- @return void
 function SetPedRelationshipGroupHash(ped, hash) end
 
@@ -6353,7 +6353,7 @@ function SetPedRelationshipGroupHash(ped, hash) end
 --- ```
 ---
 --- @hash 0xC8A9481A01E63C28
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @return void
 function SetPedRandomComponentVariation(ped, p1) end
@@ -6362,7 +6362,7 @@ function SetPedRandomComponentVariation(ped, p1) end
 --- SetPedVisualFieldCenterAngle
 ---
 --- @hash 0x3B6405E8AB34A907
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param angle number (float)
 --- @return void
 function SetPedVisualFieldCenterAngle(ped, angle) end
@@ -6378,7 +6378,7 @@ function SetPedVisualFieldCenterAngle(ped, angle) end
 --- ```
 ---
 --- @hash 0x26D83693ED99291C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param propIndex number (int)
 --- @return void
 function SetPedHelmetPropIndex(ped, propIndex) end
@@ -6387,7 +6387,7 @@ function SetPedHelmetPropIndex(ped, propIndex) end
 --- SetPedStrafeClipset
 ---
 --- @hash 0x29A28F3F8CF6D854
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param clipSet string (char*)
 --- @return void
 function SetPedStrafeClipset(ped, clipSet) end
@@ -6396,8 +6396,8 @@ function SetPedStrafeClipset(ped, clipSet) end
 --- SetPedVehicleForcedSeatUsage
 ---
 --- @hash 0x952F06BEECD775CC
---- @param ped table (Ped)
---- @param vehicle number (Vehicle)
+--- @param ped Ped
+--- @param vehicle Vehicle
 --- @param seatIndex number (int)
 --- @param flags number (int)
 --- @return void
@@ -6407,7 +6407,7 @@ function SetPedVehicleForcedSeatUsage(ped, vehicle, seatIndex, flags) end
 --- SetPedSteersAroundObjects
 ---
 --- @hash 0x1509C089ADC208BF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedSteersAroundObjects(ped, toggle) end
@@ -6416,7 +6416,7 @@ function SetPedSteersAroundObjects(ped, toggle) end
 --- SetPedHelmetFlag
 ---
 --- @hash 0xC0E78D5C2CE3EB25
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param helmetFlag number (int)
 --- @return void
 function SetPedHelmetFlag(ped, helmetFlag) end
@@ -6436,7 +6436,7 @@ function SetSynchronizedScenePhase(sceneID, phase) end
 --- ```
 ---
 --- @hash 0xB5485E4907B53019
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function SetPedWetnessEnabledThisFrame(ped) end
 
@@ -6458,8 +6458,8 @@ function SetPedWetnessEnabledThisFrame(ped) end
 ---
 --- @hash 0xBF25EB89375A37AD
 --- @param relationship number (int)
---- @param group1 table (Hash)
---- @param group2 table (Hash)
+--- @param group1 Hash
+--- @param group2 Hash
 --- @return void
 function SetRelationshipBetweenGroups(relationship, group1, group2) end
 
@@ -6467,7 +6467,7 @@ function SetRelationshipBetweenGroups(relationship, group1, group2) end
 --- SetPedSteersAroundVehicles
 ---
 --- @hash 0xEB6FB9D48DDE23EC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedSteersAroundVehicles(ped, toggle) end
@@ -6485,7 +6485,7 @@ function SetSynchronizedSceneLooped(sceneID, toggle) end
 --- SetPedSphereDefensiveArea
 ---
 --- @hash 0x9D3151A373974804
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -6516,7 +6516,7 @@ function SetSynchronizedSceneOrigin(sceneID, x, y, z, roll, pitch, yaw, p7) end
 --- `PRF_PreventGoingIntoStillInVehicleState` = 236 *(fanatic2.c)*
 ---
 --- @hash 0xC1E8A365BF3B29F2
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param flagId number (int)
 --- @param doReset boolean
 --- @return void
@@ -6528,7 +6528,7 @@ function SetPedResetFlag(ped, flagId, doReset) end
 --- ```
 ---
 --- @hash 0x44CB6447D2571AA0
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param height number (float)
 --- @return void
 function SetPedWetnessHeight(ped, height) end
@@ -6537,7 +6537,7 @@ function SetPedWetnessHeight(ped, height) end
 --- SetPedToLoadCover
 ---
 --- @hash 0x332B562EEDA62399
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedToLoadCover(ped, toggle) end
@@ -6546,7 +6546,7 @@ function SetPedToLoadCover(ped, toggle) end
 --- SetPedSteersAroundPeds
 ---
 --- @hash 0x46F2193B3AD1D891
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedSteersAroundPeds(ped, toggle) end
@@ -6557,7 +6557,7 @@ function SetPedSteersAroundPeds(ped, toggle) end
 --- ```
 ---
 --- @hash 0xF0A4F1BBF4FA7497
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedRagdollOnCollision(ped, toggle) end
@@ -6568,7 +6568,7 @@ function SetPedRagdollOnCollision(ped, toggle) end
 --- ```
 ---
 --- @hash 0x614DA022990752DC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param shootRate number (int)
 --- @return void
 function SetPedShootRate(ped, shootRate) end
@@ -6631,7 +6631,7 @@ function SetPedShootRate(ped, shootRate) end
 --- ```
 ---
 --- @hash 0xAF8A94EDE7712BEF
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param clipSet string (char*)
 --- @param p2 number (float)
 --- @return void
@@ -6682,7 +6682,7 @@ function SetPedMovementClipset(ped, clipSet, p2) end
 ---     end
 --- end
 --- @hash 0x4E90D746056E273D
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param intensity number (float)
 --- @return void
 function SetPedIlluminatedClothingGlowIntensity(ped, intensity) end
@@ -6696,8 +6696,8 @@ function SetPedIlluminatedClothingGlowIntensity(ped, intensity) end
 --- ```
 ---
 --- @hash 0xCD17B554996A8D9E
---- @param ped table (Ped)
---- @param lookAt table (Ped)
+--- @param ped Ped
+--- @param lookAt Ped
 --- @return void
 function SetPedPrimaryLookat(ped, lookAt) end
 
@@ -6705,7 +6705,7 @@ function SetPedPrimaryLookat(ped, lookAt) end
 --- WasPedKnockedOut
 ---
 --- @hash 0x61767F73EACEED21
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function WasPedKnockedOut(ped) end
 
@@ -6713,7 +6713,7 @@ function WasPedKnockedOut(ped) end
 --- SetPedVisualFieldMaxAngle
 ---
 --- @hash 0x70793BDCA1E854D4
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param value number (float)
 --- @return void
 function SetPedVisualFieldMaxAngle(ped, value) end
@@ -6728,7 +6728,7 @@ function SetPedVisualFieldMaxAngle(ped, value) end
 --- **Else**: CTaskNMBalance
 ---
 --- @hash 0xAE99FB955581844A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param time1 number (int)
 --- @param time2 number (int)
 --- @param ragdollType number (int)
@@ -6744,7 +6744,7 @@ function SetPedToRagdoll(ped, time1, time2, ragdollType, p4, p5, p6) end
 --- ```
 ---
 --- @hash 0x11B499C1E0FF8559
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function WasPedSkeletonUpdated(ped) end
 
@@ -6761,7 +6761,7 @@ function SetSynchronizedSceneRate(sceneID, rate) end
 --- WasPedKilledByTakedown
 ---
 --- @hash 0x7F08E26039C7347C
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function WasPedKilledByTakedown(ped) end
 
@@ -6769,7 +6769,7 @@ function WasPedKilledByTakedown(ped) end
 --- WasPedKilledByStealth
 ---
 --- @hash 0xF9800AA1A771B000
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function WasPedKilledByStealth(ped) end
 
@@ -6778,7 +6778,7 @@ function WasPedKilledByStealth(ped) end
 --- It works on freemode and player_\* models.
 ---
 --- @hash 0x36C6984C3ED0C911
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function SetPedScubaGearVariation(ped) end
 
@@ -6794,7 +6794,7 @@ function SetPedScubaGearVariation(ped) end
 --- ```
 ---
 --- @hash 0xD76632D99E4966C8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param time number (int)
 --- @param p2 number (int)
 --- @param ragdollType number (int)
@@ -6829,7 +6829,7 @@ function SetScenarioPedsSpawnInSphereArea(x, y, z, range, p4) end
 --- ```
 ---
 --- @hash 0xD75ACCF5E0FB5367
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 boolean
 --- @param p2 number (int)
 --- @param action string (char*)
@@ -6840,7 +6840,7 @@ function SetPedUsingActionMode(ped, p1, p2, action) end
 --- SetScriptedAnimSeatOffset
 ---
 --- @hash 0x5917BBA32D06C230
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (float)
 --- @return void
 function SetScriptedAnimSeatOffset(ped, p1) end
@@ -6849,7 +6849,7 @@ function SetScriptedAnimSeatOffset(ped, p1) end
 --- SetPedPanicExitScenario
 ---
 --- @hash 0xFE07FF6495D52E2A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -6867,7 +6867,7 @@ function SetPedPanicExitScenario(ped, x, y, z) end
 --- ```
 ---
 --- @hash 0x26695EC767728D84
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param flags number (int)
 --- @return void
 function SetRagdollBlockingFlags(ped, flags) end
@@ -6876,7 +6876,7 @@ function SetRagdollBlockingFlags(ped, flags) end
 --- SetPedShootsAtCoord
 ---
 --- @hash 0x96A05E4FB321B1BA
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
@@ -6890,7 +6890,7 @@ function SetPedShootsAtCoord(ped, x, y, z, toggle) end
 --- ```
 ---
 --- @hash 0x78D0B67629D75856
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param angle number (float)
 --- @return void
 function SetPedVisualFieldMaxElevationAngle(ped, angle) end
@@ -6899,7 +6899,7 @@ function SetPedVisualFieldMaxElevationAngle(ped, angle) end
 --- SetPedToInformRespectedFriends
 ---
 --- @hash 0x112942C6E708F70B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param radius number (float)
 --- @param maxFriends number (int)
 --- @return void
@@ -6911,7 +6911,7 @@ function SetPedToInformRespectedFriends(ped, radius, maxFriends) end
 --- ```
 ---
 --- @hash 0x27B0405F59637D1F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param sweat number (float)
 --- @return void
 function SetPedSweat(ped, sweat) end
@@ -6920,7 +6920,7 @@ function SetPedSweat(ped, sweat) end
 --- StopPedWeaponFiringWhenDropped
 ---
 --- @hash 0xC158D28142A34608
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function StopPedWeaponFiringWhenDropped(ped) end
 
@@ -6928,7 +6928,7 @@ function StopPedWeaponFiringWhenDropped(ped) end
 --- SetPedReserveParachuteTintIndex
 ---
 --- @hash 0xE88DA0751C22A2AD
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 any
 --- @return void
 function SetPedReserveParachuteTintIndex(ped, p1) end
@@ -6967,7 +6967,7 @@ function SetScriptedConversionCoordThisFrame(x, y, z) end
 --- Example: Headshotting a player no longer one shots them. Instead they will take the same damage as a torso shot.
 ---
 --- @hash 0xEBD76F2359F190AC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @return void
 function SetPedSuffersCriticalHits(ped, toggle) end
@@ -6978,7 +6978,7 @@ function SetPedSuffersCriticalHits(ped, toggle) end
 --- ```
 ---
 --- @hash 0x723538F61C647C5A
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param shapeMix number (float)
 --- @param skinMix number (float)
 --- @param thirdMix number (float)

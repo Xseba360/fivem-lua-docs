@@ -164,8 +164,8 @@ function NetGameserverDeleteSetTelemetryNonceSeed() end
 --- ```
 ---
 --- @hash 0xC27009422FCCA88D
---- @param itemHash table (Hash)
---- @param categoryHash table (Hash)
+--- @param itemHash Hash
+--- @param categoryHash Hash
 --- @param p2 boolean
 --- @return number (int)
 function NetGameserverGetPrice(itemHash, categoryHash, p2) end
@@ -195,8 +195,8 @@ function NetGameserverIsCatalogValid() end
 ---
 --- @hash 0x3C5FD37B5499582E
 --- @param transactionId table (int*)
---- @param categoryHash table (Hash)
---- @param itemHash table (Hash)
+--- @param categoryHash Hash
+--- @param itemHash Hash
 --- @param actionTypeHash number (int)
 --- @param value number (int)
 --- @param flags number (int)
@@ -214,7 +214,7 @@ function NetGameserverBeginService(transactionId, categoryHash, itemHash, action
 --- ```
 ---
 --- @hash 0x247F0F73A182EA0B
---- @param hash table (Hash)
+--- @param hash Hash
 --- @return boolean
 function NetGameserverCatalogItemExistsHash(hash) end
 

@@ -118,7 +118,7 @@ function GetInvokingResource() end
 --- A getter for [SET_PLAYER_MELEE_WEAPON_DAMAGE_MODIFIER](#\_0x4A3DC7ECCC321032).
 ---
 --- @hash 0x8689A825
---- @param playerId number (Player)
+--- @param playerId Player
 --- @return number (float)
 function GetPlayerMeleeWeaponDamageModifier(playerId) end
 
@@ -126,7 +126,7 @@ function GetPlayerMeleeWeaponDamageModifier(playerId) end
 --- A getter for [SET_PLAYER_WEAPON_DEFENSE_MODIFIER](#\_0x2D83BC011CA14A3C).
 ---
 --- @hash 0xF1543251
---- @param playerId number (Player)
+--- @param playerId Player
 --- @return number (float)
 function GetPlayerWeaponDefenseModifier(playerId) end
 
@@ -170,7 +170,7 @@ function GetRegisteredCommands() end
 --- A getter for [\_SET_PLAYER_WEAPON_DEFENSE_MODIFIER\_2](#\_0xBCFDE9EDE4CF27DC).
 ---
 --- @hash 0x986B65FF
---- @param playerId number (Player)
+--- @param playerId Player
 --- @return number (float)
 function GetPlayerWeaponDefenseModifier_2(playerId) end
 
@@ -201,7 +201,7 @@ function GetResourceKvpInt(key) end
 --- A getter for [SET_PLAYER_WEAPON_DAMAGE_MODIFIER](#\_0xCE07B9F7817AADA3).
 ---
 --- @hash 0x2A3D7CDA
---- @param playerId number (Player)
+--- @param playerId Player
 --- @return number (float)
 function GetPlayerWeaponDamageModifier(playerId) end
 
@@ -237,7 +237,7 @@ function GetResourceState(resourceName) end
 --- GetVehicleHandbrake
 ---
 --- @hash 0x483B013C
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function GetVehicleHandbrake(vehicle) end
 
@@ -270,7 +270,7 @@ function IsPrincipalAceAllowed(principal, object) end
 --- IsVehicleEngineStarting
 ---
 --- @hash 0xBB340D04
---- @param vehicle number (Vehicle)
+--- @param vehicle Vehicle
 --- @return boolean
 function IsVehicleEngineStarting(vehicle) end
 
@@ -308,7 +308,7 @@ function ProfilerEnterScope(scopeName) end
 --- Returns the owner ID of the specified entity.
 ---
 --- @hash 0x526FEE31
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return number (int)
 function NetworkGetEntityOwner(entity) end
 

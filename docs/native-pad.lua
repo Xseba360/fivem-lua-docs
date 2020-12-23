@@ -475,7 +475,7 @@ function StopPadShake(padIndex) end
 --- @hash 0x0499D7B09FC9B407
 --- @param padIndex number (int)
 --- @param control number (int)
---- @param p2 number (Player)
+--- @param p2 Player
 --- @return string (char*)
 function GetControlInstructionalButton(padIndex, control, p2) end
 

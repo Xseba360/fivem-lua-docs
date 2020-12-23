@@ -65,7 +65,7 @@ function IsSrlLoaded() end
 --- HasCollisionForModelLoaded
 ---
 --- @hash 0x22CCA434E368F03A
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function HasCollisionForModelLoaded(model) end
 
@@ -89,7 +89,7 @@ function ClearHdArea() end
 --- AddModelToCreatorBudget
 ---
 --- @hash 0x0BC3144DEB678666
---- @param modelHash table (Hash)
+--- @param modelHash Hash
 --- @return boolean
 function AddModelToCreatorBudget(modelHash) end
 
@@ -115,7 +115,7 @@ function GetPlayerSwitchState() end
 --- IsEntityFocus
 ---
 --- @hash 0x2DDFF3FB9075D747
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return boolean
 function IsEntityFocus(entity) end
 
@@ -201,7 +201,7 @@ function GetPlayerSwitchType() end
 --- ```
 ---
 --- @hash 0x35B9E0803292B641
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function IsModelInCdimage(model) end
 
@@ -270,7 +270,7 @@ function N_0x03f1a106bda7dd3e() end
 --- ```
 ---
 --- @hash 0xC0296A2EDF545E92
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function IsModelValid(model) end
 
@@ -280,7 +280,7 @@ function IsModelValid(model) end
 --- ```
 ---
 --- @hash 0x963D27A58DF860AC
---- @param model table (Hash)
+--- @param model Hash
 --- @return void
 function RequestModel(model) end
 
@@ -396,7 +396,7 @@ function N_0x4e52e752c76e7e7a(p0) end
 --- N_0x0811381ef5062fec
 ---
 --- @hash 0x0811381EF5062FEC
---- @param p0 table (Entity)
+--- @param p0 Entity
 --- @return void
 function N_0x0811381ef5062fec(p0) end
 
@@ -505,7 +505,7 @@ function DisableSwitchOutroFx() end
 --- IsModelAPed
 ---
 --- @hash 0x75816577FEA6DAD5
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function IsModelAPed(model) end
 
@@ -660,7 +660,7 @@ function RemoveNamedPtfxAsset(fxName) end
 --- ```
 ---
 --- @hash 0xA0261AEF7ACFC51E
---- @param model table (Hash)
+--- @param model Hash
 --- @return void
 function RequestMenuPedModel(model) end
 
@@ -714,7 +714,7 @@ function SetHdArea(x, y, z, radius) end
 --- ```
 ---
 --- @hash 0x98A4EB5D89A0C952
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function HasModelLoaded(model) end
 
@@ -835,7 +835,7 @@ function PrefetchSrl(srl) end
 --- ```
 ---
 --- @hash 0x19AAC8F07BFEC53E
---- @param model table (Hash)
+--- @param model Hash
 --- @return boolean
 function IsModelAVehicle(model) end
 
@@ -1071,7 +1071,7 @@ function SetReduceVehicleModelBudget(toggle) end
 --- ```
 ---
 --- @hash 0xE532F5D78798DAAB
---- @param model table (Hash)
+--- @param model Hash
 --- @return void
 function SetModelAsNoLongerNeeded(model) end
 
@@ -1130,8 +1130,8 @@ function RequestClipSet(clipSet) end
 --- ```
 ---
 --- @hash 0xFAA23F2CBA159D67
---- @param from table (Ped)
---- @param to table (Ped)
+--- @param from Ped
+--- @param to Ped
 --- @param flags number (int)
 --- @param switchType number (int)
 --- @return void
@@ -1156,7 +1156,7 @@ function StartPlayerSwitch(from, to, flags, switchType) end
 --- ```
 ---
 --- @hash 0xAAB3200ED59016BC
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param flags number (int)
 --- @param switchType number (int)
 --- @return void
@@ -1168,7 +1168,7 @@ function SwitchOutPlayer(ped, flags, switchType) end
 --- ```
 ---
 --- @hash 0x198F77705FA0931D
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function SetFocusEntity(entity) end
 
@@ -1184,7 +1184,7 @@ function ShutdownCreatorBudget() end
 --- Use after using \_SWITCH_OUT_PLAYER to swoop the camera back down to the player's ped.
 ---
 --- @hash 0xD8295AF639FD9CB8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return void
 function SwitchInPlayer(ped) end
 
@@ -1200,7 +1200,7 @@ function SetStreaming(toggle) end
 --- RequestCollisionForModel
 ---
 --- @hash 0x923CB32A3B874FCB
---- @param model table (Hash)
+--- @param model Hash
 --- @return void
 function RequestCollisionForModel(model) end
 

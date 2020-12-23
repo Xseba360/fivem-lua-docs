@@ -197,9 +197,9 @@ function DisableStuntJumpSet(p0) end
 --- ```
 ---
 --- @hash 0x03E8D3D5F549087A
---- @param modelHash table (Hash)
---- @param minimum table (Vector3*)
---- @param maximum table (Vector3*)
+--- @param modelHash Hash
+--- @param minimum Vector3 (Vector3*)
+--- @param maximum Vector3 (Vector3*)
 --- @return void
 function GetModelDimensions(modelHash, minimum, maximum) end
 
@@ -279,7 +279,7 @@ function AddPopMultiplierArea(x1, y1, z1, x2, y2, z2, p6, p7, p8) end
 ---
 --- @hash 0x05983472F0494E60
 --- @param dispatchService number (int)
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param numUnits number (int)
 --- @param radius number (float)
 --- @param outIncidentID table (int*)
@@ -413,7 +413,7 @@ function EndReplayStats() end
 --- @param y2 number (float)
 --- @param z2 number (float)
 --- @param distance number (float)
---- @param spawnPoint table (Vector3*)
+--- @param spawnPoint Vector3 (Vector3*)
 --- @return boolean
 function FindSpawnPointInDirection(x1, y1, z1, x2, y2, z2, distance, spawnPoint) end
 
@@ -639,7 +639,7 @@ function IsBulletInAngledArea(x1, y1, z1, x2, y2, z2, width, ownedByPlayer) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param groundZ table (float*)
---- @param normal table (Vector3*)
+--- @param normal Vector3 (Vector3*)
 --- @return boolean
 function GetGroundZAndNormalFor_3dCoord(x, y, z, groundZ, normal) end
 
@@ -782,8 +782,8 @@ function ClearCloudHat() end
 --- @param x2 number (float)
 --- @param y2 number (float)
 --- @param z2 number (float)
---- @param projHash table (Hash)
---- @param projPos table (Vector3*)
+--- @param projHash Hash
+--- @param projPos Vector3 (Vector3*)
 --- @param ownedByPlayer boolean
 --- @return boolean
 function GetCoordsOfProjectileTypeInArea(x1, y1, z1, x2, y2, z2, projHash, projPos, ownedByPlayer) end
@@ -798,7 +798,7 @@ function GetCoordsOfProjectileTypeInArea(x1, y1, z1, x2, y2, z2, projHash, projP
 --- en
 --- @hash 0xD24D37CC275948CC
 --- @param string string (char*)
---- @return table (Hash)
+--- @return Hash
 function GetHashKey(string) end
 
     
@@ -887,7 +887,7 @@ function GetCloudHatOpacity() end
 --- ```
 ---
 --- @hash 0x071E2A839DE82D90
---- @param hash table (Hash)
+--- @param hash Hash
 --- @param amount number (int)
 --- @return boolean
 function HasButtonCombinationJustBeenEntered(hash, amount) end
@@ -944,11 +944,11 @@ function ClearAreaOfVehicles(x, y, z, radius, p4, p5, p6, p7, p8) end
 --- ```
 ---
 --- @hash 0x82FDE6A57EE4EE44
---- @param ped table (Ped)
---- @param weaponhash table (Hash)
+--- @param ped Ped
+--- @param weaponhash Hash
 --- @param radius number (float)
---- @param projPos table (Vector3*)
---- @param projEnt table (Entity*)
+--- @param projPos Vector3 (Vector3*)
+--- @param projEnt Entity (Entity*)
 --- @param ownedByPlayer boolean
 --- @return boolean
 function GetProjectileNearPed(ped, weaponhash, radius, projPos, projEnt, ownedByPlayer) end
@@ -960,7 +960,7 @@ function GetProjectileNearPed(ped, weaponhash, radius, projPos, projEnt, ownedBy
 ---
 --- @hash 0x564B884A05EC45A3
 ---
---- @return table (Hash)
+--- @return Hash
 function GetPrevWeatherTypeHashName() end
 
     
@@ -1111,7 +1111,7 @@ function EnableStuntJumpSet(p0) end
 --- ```
 ---
 --- @hash 0x5D5479D115290C3F
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function IsTennisMode(ped) end
 
@@ -1187,7 +1187,7 @@ function ForceSocialClubUpdate() end
 --- GetTennisSwingAnimComplete
 ---
 --- @hash 0x17DF68D720AA77F8
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function GetTennisSwingAnimComplete(ped) end
 
@@ -1244,10 +1244,10 @@ function IsFrontendFading() end
 --- ```
 ---
 --- @hash 0xDFB4138EEFED7B81
---- @param ped table (Ped)
---- @param weaponHash table (Hash)
+--- @param ped Ped
+--- @param weaponHash Hash
 --- @param radius number (float)
---- @param entity table (Vector3*)
+--- @param entity Vector3 (Vector3*)
 --- @param ownedByPlayer boolean
 --- @return boolean
 function GetCoordsOfProjectileTypeWithinDistance(ped, weaponHash, radius, entity, ownedByPlayer) end
@@ -1451,7 +1451,7 @@ function GetOnscreenKeyboardResult() end
 --- ```
 ---
 --- @hash 0x28A04B411933F8A6
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param toggle boolean
 --- @param p2 boolean
 --- @return void
@@ -1508,7 +1508,7 @@ function GetReplayStatMissionType() end
 --- ```
 ---
 --- @hash 0x19BFED045C647C49
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function N_0x19bfed045c647c49(ped) end
 
@@ -1549,7 +1549,7 @@ function IsIncidentValid(incidentId) end
 ---
 --- @hash 0x711327CD09C8F162
 ---
---- @return table (Hash)
+--- @return Hash
 function GetNextWeatherTypeHashName() end
 
     
@@ -1855,7 +1855,7 @@ function IsAutoSaveInProgress() end
 --- @param checkPeds boolean
 --- @param p7 boolean
 --- @param p8 boolean
---- @param ignoreEntity table (Entity)
+--- @param ignoreEntity Entity
 --- @param p10 boolean
 --- @return boolean
 function IsPositionOccupied(x, y, z, range, p4, checkVehicles, checkPeds, p7, p8, ignoreEntity, p10) end
@@ -1954,8 +1954,8 @@ function N_0xd642319c54aadeb6() end
 --- ```
 ---
 --- @hash 0xF3BBE884A14BB413
---- @param weatherType1 table (Hash*)
---- @param weatherType2 table (Hash*)
+--- @param weatherType1 Hash (Hash*)
+--- @param weatherType2 Hash (Hash*)
 --- @param percentWeather2 table (float*)
 --- @return void
 function GetWeatherTypeTransition(weatherType1, weatherType2, percentWeather2) end
@@ -2138,7 +2138,7 @@ function N_0xe532ec1a63231b4f(p0, p1) end
 --- PlayTennisSwingAnim
 ---
 --- @hash 0xE266ED23311F24D4
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param animDict string (char*)
 --- @param animName string (char*)
 --- @param p3 number (float)
@@ -2173,7 +2173,7 @@ function GetRandomFloatInRange(startRange, endRange) end
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param projHash table (Hash)
+--- @param projHash Hash
 --- @param radius number (float)
 --- @param ownedByPlayer boolean
 --- @return boolean
@@ -2445,7 +2445,7 @@ function ResetDispatchTimeBetweenSpawnAttempts(p0) end
 --- SetBeastModeActive
 ---
 --- @hash 0x438822C279B73B93
---- @param player number (Player)
+--- @param player Player
 --- @return void
 function SetBeastModeActive(player) end
 
@@ -2453,7 +2453,7 @@ function SetBeastModeActive(player) end
 --- ScriptRaceGetPlayerSplitTime
 ---
 --- @hash 0x8EF5573A1F801A5C
---- @param player number (Player)
+--- @param player Player
 --- @param p1 table (int*)
 --- @param p2 table (int*)
 --- @return boolean
@@ -2488,7 +2488,7 @@ function IsProjectileTypeInAngledArea(x1, y1, z1, x2, y2, z2, width, p6, p7, own
 --- ```
 ---
 --- @hash 0xA4A0065E39C9F25C
---- @param p0 table (Vector3*)
+--- @param p0 Vector3 (Vector3*)
 --- @param p1 table (float*)
 --- @param fadeInAfterLoad table (BOOL*)
 --- @param p3 table (BOOL*)
@@ -2553,8 +2553,8 @@ function PauseDeathArrestRestart(toggle) end
 --- ```
 ---
 --- @hash 0x578C752848ECFA0C
---- @param weatherType1 table (Hash)
---- @param weatherType2 table (Hash)
+--- @param weatherType1 Hash
+--- @param weatherType2 Hash
 --- @param percentWeather2 number (float)
 --- @return void
 function SetWeatherTypeTransition(weatherType1, weatherType2, percentWeather2) end
@@ -2644,7 +2644,7 @@ function SetThisScriptCanRemoveBlipsCreatedByAnyScript(toggle) end
 --- ```
 ---
 --- @hash 0xE95B0C7D5BA3B96B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @return boolean
 function N_0xe95b0c7d5ba3b96b(ped) end
 
@@ -2753,7 +2753,7 @@ function N_0xfaa457ef263e8763(p0, name) end
 --- ```
 ---
 --- @hash 0xFF1BED81BFDC0FE0
---- @param player number (Player)
+--- @param player Player
 --- @return any
 function SetExplosiveMeleeThisFrame(player) end
 
@@ -2796,7 +2796,7 @@ function N_0x97e7e2c04245115b(p0) end
 --- ```
 ---
 --- @hash 0xA6A12939F16D85BE
---- @param hash table (Hash)
+--- @param hash Hash
 --- @param p1 boolean
 --- @return void
 function RemoveStealthKill(hash, p1) end
@@ -2901,7 +2901,7 @@ function NetworkSetScriptIsSafeForNetworkGame() end
 --- PlayTennisDiveAnim
 ---
 --- @hash 0x8FA9C42FC5D7C64B
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 number (int)
 --- @param p2 number (float)
 --- @param p3 number (float)
@@ -2989,7 +2989,7 @@ function RegisterBoolToSave(p0, name) end
 --- SetExplosiveAmmoThisFrame
 ---
 --- @hash 0xA66C71C98D5F2CFB
---- @param player number (Player)
+--- @param player Player
 --- @return void
 function SetExplosiveAmmoThisFrame(player) end
 
@@ -3009,7 +3009,7 @@ function SetIncidentRequestedUnits(incidentId, dispatchService, numUnits) end
 --- ```
 ---
 --- @hash 0xA1183BCFEE0F93D1
---- @param player number (Player)
+--- @param player Player
 --- @return void
 function SetForcePlayerToJump(player) end
 
@@ -3020,7 +3020,7 @@ function SetForcePlayerToJump(player) end
 --- ```
 ---
 --- @hash 0x54F157E0336A3822
---- @param ped table (Ped)
+--- @param ped Ped
 --- @param p1 string (char*)
 --- @param p2 number (float)
 --- @return void
@@ -3093,7 +3093,7 @@ function ResetDispatchSpawnBlockingAreas() end
 --- ```
 ---
 --- @hash 0x557E43C447E700A8
---- @param hash table (Hash)
+--- @param hash Hash
 --- @return boolean
 function HasCheatStringJustBeenEntered(hash) end
 
@@ -3140,8 +3140,8 @@ function SetDispatchSpawnLocation(x, y, z) end
 --- @param z2 number (float)
 --- @param damage number (int)
 --- @param p7 boolean
---- @param weaponHash table (Hash)
---- @param ownerPed table (Ped)
+--- @param weaponHash Hash
+--- @param ownerPed Ped
 --- @param isAudible boolean
 --- @param isInvisible boolean
 --- @param speed number (float)
@@ -3270,12 +3270,12 @@ function SaveBenchmarkRecording() end
 --- @param z2 number (float)
 --- @param damage number (int)
 --- @param p7 boolean
---- @param weaponHash table (Hash)
---- @param ownerPed table (Ped)
+--- @param weaponHash Hash
+--- @param ownerPed Ped
 --- @param isAudible boolean
 --- @param isInvisible boolean
 --- @param speed number (float)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @return void
 function ShootSingleBulletBetweenCoordsIgnoreEntity(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed, entity) end
 
@@ -3317,12 +3317,12 @@ function StartSaveData(p0, p1, p2) end
 --- @param z2 number (float)
 --- @param damage number (int)
 --- @param p7 boolean
---- @param weaponHash table (Hash)
---- @param ownerPed table (Ped)
+--- @param weaponHash Hash
+--- @param ownerPed Ped
 --- @param isAudible boolean
 --- @param isInvisible boolean
 --- @param speed number (float)
---- @param entity table (Entity)
+--- @param entity Entity
 --- @param p14 boolean
 --- @param p15 boolean
 --- @param p16 boolean
@@ -3383,7 +3383,7 @@ function IsStringNull(string) end
 --- ```
 ---
 --- @hash 0x57FFF03E423A4C0B
---- @param player number (Player)
+--- @param player Player
 --- @return number (int)
 function SetSuperJumpThisFrame(player) end
 
@@ -3451,7 +3451,7 @@ function N_0xf56dfb7b61be7276(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, 
 --- ```
 ---
 --- @hash 0x11879CDD803D30F4
---- @param player number (Player)
+--- @param player Player
 --- @return any
 function SetFireAmmoThisFrame(player) end
 

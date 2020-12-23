@@ -4,8 +4,8 @@
 --- ```
 ---
 --- @hash 0x35AD299F50D91B24
---- @param distri number (Vehicle)
---- @return number (Vehicle)
+--- @param distri Vehicle
+--- @return Vehicle
 function CreateItemset(distri) end
 
     
