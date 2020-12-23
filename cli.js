@@ -80,6 +80,7 @@ function parseType(type) {
             ltype = type = 'boolean';
             break;
         case 'Any':
+        case 'Any*':
             ltype = type = 'any';
             break;
         default:

@@ -177,7 +177,7 @@ function PinRopeVertex(ropeId, vertex, x, y, z) end
 --- ```
 ---
 --- @hash 0x84DE3B5FB3E666F0
---- @param ropeId table (Any*)
+--- @param ropeId any
 --- @return boolean
 function N_0x84de3b5fb3e666f0(ropeId) end
 
@@ -448,7 +448,7 @@ function N_0x9ebd751e5787baf2(p0) end
 --- @param rigid boolean
 --- @param p14 number (float)
 --- @param breakWhenShot boolean
---- @param unkPtr table (Any*)
+--- @param unkPtr any
 --- @return number (int)
 function AddRope(x, y, z, rotX, rotY, rotZ, length, ropeType, maxLength, minLength, windingSpeed, p11, p12, rigid, p14, breakWhenShot, unkPtr) end
 

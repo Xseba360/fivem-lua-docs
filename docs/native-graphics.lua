@@ -3205,8 +3205,8 @@ function N_0x908311265d42a820(p0) end
 ---
 --- @hash 0x4862437A486F91B0
 --- @param p0 string (char*)
---- @param p1 table (Any*)
---- @param p2 table (Any*)
+--- @param p1 any
+--- @param p2 any
 --- @param p3 boolean
 --- @return boolean
 function N_0x4862437a486f91b0(p0, p1, p2, p3) end

@@ -74,7 +74,7 @@ function OnEnterSp() end
 --- ```
 ---
 --- @hash 0x46E2B844905BC5F0
---- @param variable table (Any*)
+--- @param variable any
 --- @param unused any
 --- @return boolean
 function HasCloudRequestsFinished(variable, unused) end

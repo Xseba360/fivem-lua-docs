@@ -81,7 +81,7 @@ function N_0x6e91b04e08773030(action) end
 --- ```
 ---
 --- @hash 0x3CDC7136613284BD
---- @param scriptName table (Any*)
+--- @param scriptName any
 --- @param activationRange number (float)
 --- @param p2 number (int)
 --- @return void

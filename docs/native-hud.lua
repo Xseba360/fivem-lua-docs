@@ -2798,7 +2798,7 @@ function HideMinimapInteriorMapThisFrame() end
 ---
 --- @hash 0x24A49BEAF468DC90
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @param p2 any
 --- @param p3 any
 --- @param p4 any
@@ -2902,7 +2902,7 @@ function EndTextCommandThefeedPostTickerForced(isImportant, bHasTokens) end
 ---
 --- @hash 0x052991E59076E4E4
 --- @param p0 Hash
---- @param p1 table (Any*)
+--- @param p1 any
 --- @return boolean
 function N_0x052991e59076e4e4(p0, p1) end
 
@@ -2956,7 +2956,7 @@ function ThefeedCommentTeleportPoolOff() end
 ---
 --- @hash 0xEF4CED81CEBEDC6D
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @return boolean
 function N_0xef4ced81cebedc6d(p0, p1) end
 
@@ -3146,7 +3146,7 @@ function GetNumberOfActiveBlips() end
 ---
 --- @hash 0x90A6526CF0381030
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @param p2 any
 --- @param p3 any
 --- @return boolean
@@ -3194,8 +3194,8 @@ function N_0x2790f4b17d098e26(toggle) end
 --- N_0x36c1451a88a09630
 ---
 --- @hash 0x36C1451A88A09630
---- @param p0 table (Any*)
---- @param p1 table (Any*)
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0x36c1451a88a09630(p0, p1) end
 
@@ -3250,9 +3250,9 @@ function N_0x2a25adc48f87841f() end
 ---
 --- @hash 0x632B2940C67F4EA9
 --- @param scaleformHandle number (int)
---- @param p1 table (Any*)
---- @param p2 table (Any*)
---- @param p3 table (Any*)
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return boolean
 function N_0x632b2940c67f4ea9(scaleformHandle, p1, p2, p3) end
 
@@ -3283,14 +3283,14 @@ function N_0x2c173ae2bdb9385e(blip) end
 ---
 --- @hash 0x817B86108EB94E51
 --- @param p0 boolean
---- @param p1 table (Any*)
---- @param p2 table (Any*)
---- @param p3 table (Any*)
---- @param p4 table (Any*)
---- @param p5 table (Any*)
---- @param p6 table (Any*)
---- @param p7 table (Any*)
---- @param p8 table (Any*)
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
+--- @param p7 any
+--- @param p8 any
 --- @return void
 function N_0x817b86108eb94e51(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
@@ -3381,9 +3381,9 @@ function LockMinimapPosition(x, y) end
 --- N_0xc8e1071177a23be5
 ---
 --- @hash 0xC8E1071177A23BE5
---- @param p0 table (Any*)
---- @param p1 table (Any*)
---- @param p2 table (Any*)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
 --- @return boolean
 function N_0xc8e1071177a23be5(p0, p1, p2) end
 
@@ -3638,7 +3638,7 @@ function RemoveMultiplayerHudCash() end
 ---
 --- @hash 0x8F08017F9D7C47BD
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @param p2 any
 --- @return boolean
 function N_0x8f08017f9d7c47bd(p0, p1, p2) end
@@ -4268,7 +4268,7 @@ function SetGpsFlashes(toggle) end
 ---
 --- @hash 0xCA6B2F7CE32AB653
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @param p2 any
 --- @return boolean
 function N_0xca6b2f7ce32ab653(p0, p1, p2) end
@@ -4858,8 +4858,8 @@ function SetTextScale(scale, size) end
 --- @param p4 boolean
 --- @param p5 any
 --- @param p6 any
---- @param p7 table (Any*)
---- @param p8 table (Any*)
+--- @param p7 any
+--- @param p8 any
 --- @param p9 boolean
 --- @return void
 function SetWarningMessageWithHeaderAndSubstringFlags(entryHeader, entryLine1, instructionalKey, entryLine2, p4, p5, p6, p7, p8, p9) end
@@ -5283,8 +5283,8 @@ function SetMultiplayerHudCash(p0, p1) end
 --- @param entryLine2 string (char*)
 --- @param p3 boolean
 --- @param p4 number (int)
---- @param background table (Any*)
---- @param p6 table (Any*)
+--- @param background any
+--- @param p6 any
 --- @param showBg boolean
 --- @param p8 any
 --- @return void
@@ -5316,8 +5316,8 @@ function SetTextJustification(justifyType) end
 --- @param entryLine2 string (char*)
 --- @param p4 boolean
 --- @param p5 any
---- @param p6 table (Any*)
---- @param p7 table (Any*)
+--- @param p6 any
+--- @param p7 any
 --- @param showBg boolean
 --- @param p9 any
 --- @param p10 any
@@ -5620,7 +5620,7 @@ function ThefeedSetFlushAnimpostfx(toggle) end
 --- @param p4 boolean
 --- @param p5 any
 --- @param background boolean
---- @param p7 table (Any*)
+--- @param p7 any
 --- @param showBg boolean
 --- @return void
 function SetWarningMessageWithHeader(titleMsg, entryLine1, flags, promptMsg, p4, p5, background, p7, showBg) end

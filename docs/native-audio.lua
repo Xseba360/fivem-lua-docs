@@ -222,8 +222,8 @@ function GetNetworkIdFromSoundId(soundId) end
 ---
 --- @hash 0xA018A12E5C5C2FA6
 --- @param p0 any
---- @param p1 table (Any*)
---- @param p2 table (Any*)
+--- @param p1 any
+--- @param p2 any
 --- @return void
 function InterruptConversation(p0, p1, p2) end
 
@@ -504,7 +504,7 @@ function LockRadioStation(radioStationName, toggle) end
 --- ClearAmbientZoneListState
 ---
 --- @hash 0x120C48C614909FA4
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param p1 boolean
 --- @return void
 function ClearAmbientZoneListState(p0, p1) end
@@ -896,7 +896,7 @@ function PlayAnimalVocalization(pedHandle, p1, p2) end
 ---
 --- @hash 0xC64A06D939F826F5
 --- @param p0 table (float*)
---- @param p1 table (Any*)
+--- @param p1 any
 --- @param p2 table (int*)
 --- @return boolean
 function N_0xc64a06d939f826f5(p0, p1, p2) end
@@ -1019,7 +1019,7 @@ function HasMultiplayerAudioDataLoaded() end
 --- OverrideUnderwaterStream
 ---
 --- @hash 0xF2A9CDABCEA04BD6
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param p1 boolean
 --- @return void
 function OverrideUnderwaterStream(p0, p1) end
@@ -1225,7 +1225,7 @@ function SetAmbientZoneStatePersistent(ambientZone, p1, p2) end
 ---
 --- @hash 0x029FE7CD1B7E2E75
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @return boolean
 function PrepareSynchronizedAudioEventForScene(p0, p1) end
 
@@ -1327,7 +1327,7 @@ function N_0xf3365489e0dd50f9(vehicle, toggle) end
 --- N_0xc8ede9bdbccba6d4
 ---
 --- @hash 0xC8EDE9BDBCCBA6D4
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param p1 number (float)
 --- @param p2 number (float)
 --- @param p3 number (float)
@@ -1430,7 +1430,7 @@ function PlayAmbientSpeechAtCoords(p0, p1, p2, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0xBDA07E5950085E46
---- @param zoneName table (Any*)
+--- @param zoneName any
 --- @param p1 boolean
 --- @param p2 boolean
 --- @return void
@@ -1566,7 +1566,7 @@ function PlayStreamFromVehicle(vehicle) end
 --- N_0xaa19f5572c38b564
 ---
 --- @hash 0xAA19F5572C38B564
---- @param p0 table (Any*)
+--- @param p0 any
 --- @return any
 function N_0xaa19f5572c38b564(p0) end
 

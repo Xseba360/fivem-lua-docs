@@ -29,7 +29,7 @@ function ToFloat(value) end
 ---
 --- @hash 0xC4BB298BD441BE78
 --- @param scriptHash Hash
---- @param args table (Any*)
+--- @param args any
 --- @param argCount number (int)
 --- @param stackSize number (int)
 --- @return number (int)
@@ -137,7 +137,7 @@ function Wait(ms) end
 ---
 --- @hash 0xB8BA7F44DF1575E1
 --- @param scriptName string (char*)
---- @param args table (Any*)
+--- @param args any
 --- @param argCount number (int)
 --- @param stackSize number (int)
 --- @return number (int)

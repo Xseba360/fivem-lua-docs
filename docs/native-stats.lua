@@ -28,7 +28,7 @@ function LeaderboardsGetCacheNumberOfRows(p0) end
 --- @hash 0x9120E8DBA3D69273
 --- @param p0 any
 --- @param p1 any
---- @param p2 table (Any*)
+--- @param p2 any
 --- @return boolean
 function LeaderboardsGetCacheDataRow(p0, p1, p2) end
 
@@ -36,9 +36,9 @@ function LeaderboardsGetCacheDataRow(p0, p1, p2) end
 --- Leaderboards2ReadRankPrediction
 ---
 --- @hash 0xC38DC1E90D22547C
---- @param p0 table (Any*)
---- @param p1 table (Any*)
---- @param p2 table (Any*)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
 --- @return boolean
 function Leaderboards2ReadRankPrediction(p0, p1, p2) end
 
@@ -94,7 +94,7 @@ function HiredLimo(p0, p1) end
 --- Leaderboards2WriteData
 ---
 --- @hash 0xAE2206545888AE49
---- @param p0 table (Any*)
+--- @param p0 any
 --- @return boolean
 function Leaderboards2WriteData(p0) end
 
@@ -123,8 +123,8 @@ function GetPackedBoolStatKey(index, spStat, charStat, character) end
 --- Leaderboards2ReadByHandle
 ---
 --- @hash 0xC30713A383BFBF0E
---- @param p0 table (Any*)
---- @param p1 table (Any*)
+--- @param p0 any
+--- @param p1 any
 --- @return boolean
 function Leaderboards2ReadByHandle(p0, p1) end
 
@@ -132,7 +132,7 @@ function Leaderboards2ReadByHandle(p0, p1) end
 --- Leaderboards2ReadByRank
 ---
 --- @hash 0xBA2C7DB0C129449A
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param p1 any
 --- @param p2 any
 --- @return boolean
@@ -168,8 +168,8 @@ function N_0x4c89fe2bdeb3f169() end
 --- Leaderboards2WriteDataForEventType
 ---
 --- @hash 0xC980E62E33DF1D5C
---- @param p0 table (Any*)
---- @param p1 table (Any*)
+--- @param p0 any
+--- @param p1 any
 --- @return boolean
 function Leaderboards2WriteDataForEventType(p0, p1) end
 
@@ -179,7 +179,7 @@ function Leaderboards2WriteDataForEventType(p0, p1) end
 --- ```
 ---
 --- @hash 0xF1AE5DCDBFCA2721
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param gamerHandleCsv string (char*)
 --- @param platformName string (char*)
 --- @return boolean
@@ -189,7 +189,7 @@ function Leaderboards2ReadByPlatform(p0, gamerHandleCsv, platformName) end
 --- LeaderboardsCacheDataRow
 ---
 --- @hash 0xB9BB18E2C40142ED
---- @param p0 table (Any*)
+--- @param p0 any
 --- @return boolean
 function LeaderboardsCacheDataRow(p0) end
 
@@ -208,12 +208,12 @@ function GetPackedTitleUpdateBoolStatKey(index, spStat, charStat, character) end
 --- Leaderboards2ReadByRow
 ---
 --- @hash 0xA9CDB1E3F0A49883
---- @param p0 table (Any*)
---- @param p1 table (Any*)
+--- @param p0 any
+--- @param p1 any
 --- @param p2 any
---- @param p3 table (Any*)
+--- @param p3 any
 --- @param p4 any
---- @param p5 table (Any*)
+--- @param p5 any
 --- @param p6 any
 --- @return boolean
 function Leaderboards2ReadByRow(p0, p1, p2, p3, p4, p5, p6) end
@@ -250,7 +250,7 @@ function LeaderboardsWriteAddColumn(p0, p1, p2) end
 --- Leaderboards2ReadByScoreFloat
 ---
 --- @hash 0xE662C8B759D08F3C
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param p1 number (float)
 --- @param p2 any
 --- @return boolean
@@ -308,7 +308,7 @@ function N_0x73001e34f85137f8(p0) end
 --- Leaderboards2ReadByScoreInt
 ---
 --- @hash 0x7EEC7E4F6984A16A
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param p1 any
 --- @param p2 any
 --- @return boolean
@@ -353,9 +353,9 @@ function N_0x27aa1c973cacfe63(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 --- Leaderboards2ReadByRadius
 ---
 --- @hash 0x5CE587FB5A42C8C4
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param p1 any
---- @param p2 table (Any*)
+--- @param p2 any
 --- @return boolean
 function Leaderboards2ReadByRadius(p0, p1, p2) end
 
@@ -520,8 +520,8 @@ function N_0x1a7ce7cd3e653485(p0) end
 --- ```
 ---
 --- @hash 0x6DEE77AFF8C21BD1
---- @param playerAccountId table (Any*)
---- @param posixTime table (Any*)
+--- @param playerAccountId any
+--- @param posixTime any
 --- @return boolean
 function N_0x6dee77aff8c21bd1(playerAccountId, posixTime) end
 
@@ -551,7 +551,7 @@ function N_0xd558bec0bba7e8d2(p0, p1, p2, p3, p4) end
 ---
 --- @hash 0x34770B9CE0E03B91
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @return boolean
 function N_0x34770b9ce0e03b91(p0, p1) end
 
@@ -661,7 +661,7 @@ function N_0x5a556b229a169402() end
 --- N_0xa0f93d5465b3094d
 ---
 --- @hash 0xA0F93D5465B3094D
---- @param p0 table (Any*)
+--- @param p0 any
 --- @return boolean
 function N_0xa0f93d5465b3094d(p0) end
 
@@ -703,8 +703,8 @@ function N_0x047cbed6f6f8b63c() end
 --- Leaderboards2ReadFriendsByRow
 ---
 --- @hash 0x918B101666F9CB83
---- @param p0 table (Any*)
---- @param p1 table (Any*)
+--- @param p0 any
+--- @param p1 any
 --- @param p2 any
 --- @param p3 boolean
 --- @param p4 any
@@ -726,10 +726,10 @@ function N_0x5688585e6d563cd8(p0) end
 --- N_0x14e0b2d1ad1044e0
 ---
 --- @hash 0x14E0B2D1AD1044E0
---- @param p0 table (Any*)
---- @param p1 table (Any*)
---- @param p2 table (Any*)
---- @param p3 table (Any*)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function N_0x14e0b2d1ad1044e0(p0, p1, p2, p3) end
 
@@ -754,7 +754,7 @@ function N_0x53cae13e9b426993(p0) end
 --- PlaystatsBuyContraband
 ---
 --- @hash 0xD6781E42755531F7
---- @param data table (Any*)
+--- @param data any
 --- @return void
 function PlaystatsBuyContraband(data) end
 
@@ -876,7 +876,7 @@ function N_0x6551b1f7f6cd46ea(p0) end
 --- @param p0 any
 --- @param p1 any
 --- @param p2 any
---- @param p3 table (Any*)
+--- @param p3 any
 --- @return void
 function N_0x6483c25849031c4f(p0, p1, p2, p3) end
 
@@ -1016,10 +1016,10 @@ function N_0x282b6739644f4347(p0) end
 --- N_0xa736cf7fb7c5bff4
 ---
 --- @hash 0xA736CF7FB7C5BFF4
---- @param p0 table (Any*)
---- @param p1 table (Any*)
---- @param p2 table (Any*)
---- @param p3 table (Any*)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function N_0xa736cf7fb7c5bff4(p0, p1, p2, p3) end
 
@@ -1027,10 +1027,10 @@ function N_0xa736cf7fb7c5bff4(p0, p1, p2, p3) end
 --- N_0xf8c54a461c3e11dc
 ---
 --- @hash 0xF8C54A461C3E11DC
---- @param p0 table (Any*)
---- @param p1 table (Any*)
---- @param p2 table (Any*)
---- @param p3 table (Any*)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function N_0xf8c54a461c3e11dc(p0, p1, p2, p3) end
 
@@ -1064,7 +1064,7 @@ function N_0xb1d2bb1e1631f5b1() end
 --- PlaystatsNpcInvite
 ---
 --- @hash 0x93054C88E6AA7C44
---- @param p0 table (Any*)
+--- @param p0 any
 --- @return void
 function PlaystatsNpcInvite(p0) end
 
@@ -1220,7 +1220,7 @@ function N_0xe496a53ba5f50a56(p0) end
 ---
 --- @hash 0xDEAAF77EB3687E97
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @return any
 function N_0xdeaaf77eb3687e97(p0, p1) end
 
@@ -1238,7 +1238,7 @@ function N_0xd1032e482629049e(p0) end
 --- PlaystatsDupeDetection
 ---
 --- @hash 0x848B66100EE33B05
---- @param data table (Any*)
+--- @param data any
 --- @return void
 function PlaystatsDupeDetection(data) end
 
@@ -1284,7 +1284,7 @@ function N_0xbfafdb5faaa5c5ab(p0) end
 --- ```
 ---
 --- @hash 0x1E1497D0D2108115
---- @param data table (Any*)
+--- @param data any
 --- @param p1 any
 --- @param p2 any
 --- @param p3 any
@@ -1305,7 +1305,7 @@ function N_0xb475f27c6a994d65() end
 --- ```
 ---
 --- @hash 0xB479D9F0D48A1BC5
---- @param data table (Any*)
+--- @param data any
 --- @return void
 function PlaystatsArenaWarsEnded(data) end
 
@@ -1455,7 +1455,7 @@ function N_0xf06a6f41cb445443(p0) end
 --- ```
 ---
 --- @hash 0x878FF156D36E9956
---- @param data table (Any*)
+--- @param data any
 --- @return void
 function PlaystatsEnterSessionPack(data) end
 
@@ -1540,7 +1540,7 @@ function PlaystatsRankUp(rank) end
 ---
 --- @hash 0x8B0FACEFC36C824B
 --- @param statHash Hash
---- @param p1 table (Any*)
+--- @param p1 any
 --- @param p2 any
 --- @param p3 any
 --- @return boolean
@@ -1623,7 +1623,7 @@ function PlaystatsBanAlert(p0) end
 --- PlaystatsMissionCheckpoint
 ---
 --- @hash 0xC900596A63978C1D
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param p1 any
 --- @param p2 any
 --- @param p3 any
@@ -1664,7 +1664,7 @@ function N_0xb26f670685631727(p0) end
 --- PlaystatsMissionOver
 ---
 --- @hash 0x7C4BB33A8CED7324
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param p1 any
 --- @param p2 any
 --- @param p3 boolean
@@ -1703,7 +1703,7 @@ function PlaystatsClothChange(p0, p1, p2, p3, p4) end
 --- ```
 ---
 --- @hash 0x35E39E5570358630
---- @param data table (Any*)
+--- @param data any
 --- @return void
 function PlaystatsStoneHatchetEnd(data) end
 
@@ -1711,10 +1711,10 @@ function PlaystatsStoneHatchetEnd(data) end
 --- N_0xf5bb8dac426a52c0
 ---
 --- @hash 0xF5BB8DAC426A52C0
---- @param p0 table (Any*)
---- @param p1 table (Any*)
---- @param p2 table (Any*)
---- @param p3 table (Any*)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function N_0xf5bb8dac426a52c0(p0, p1, p2, p3) end
 
@@ -1722,7 +1722,7 @@ function N_0xf5bb8dac426a52c0(p0, p1, p2, p3) end
 --- PlaystatsRecoverContraband
 ---
 --- @hash 0x04D90BA8207ADA2D
---- @param data table (Any*)
+--- @param data any
 --- @return void
 function PlaystatsRecoverContraband(data) end
 
@@ -1789,7 +1789,7 @@ function N_0xbed9f5693f34ed17(statName, p1, outValue) end
 --- PlaystatsDirectorMode
 ---
 --- @hash 0x46326E13DA4E0546
---- @param p0 table (Any*)
+--- @param p0 any
 --- @return void
 function PlaystatsDirectorMode(p0) end
 
@@ -1887,7 +1887,7 @@ function PlaystatsImpExp(p0, p1, p2, p3) end
 --- PlaystatsDefendContraband
 ---
 --- @hash 0x2605663BD4F23B5D
---- @param data table (Any*)
+--- @param data any
 --- @return void
 function PlaystatsDefendContraband(data) end
 
@@ -2097,7 +2097,7 @@ function StatSetFloat(statName, value, save) end
 --- PlaystatsMissionStarted
 ---
 --- @hash 0xC19A2925C34D2231
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param p1 any
 --- @param p2 any
 --- @param p3 boolean
@@ -2128,7 +2128,7 @@ function StatSaveMigrationCancel() end
 --- ```
 ---
 --- @hash 0x0BC254FF3A911501
---- @param data table (Any*)
+--- @param data any
 --- @return void
 function PlaystatsDarMissionEnd(data) end
 
@@ -2154,7 +2154,7 @@ function PlaystatsSpentPiCustomLoadout(amount) end
 --- PlaystatsPiMenuHideSettings
 ---
 --- @hash 0x203B381133817079
---- @param data table (Any*)
+--- @param data any
 --- @return void
 function PlaystatsPiMenuHideSettings(data) end
 
@@ -2174,7 +2174,7 @@ function StatGetBoolMasked(statName, mask, p2) end
 --- PlaystatsGunrunMissionEnded
 ---
 --- @hash 0x0EACDF8487D5155A
---- @param data table (Any*)
+--- @param data any
 --- @return void
 function PlaystatsGunrunMissionEnded(data) end
 
@@ -2222,7 +2222,7 @@ function StatGetNumberOfMinutes(statName) end
 ---
 --- @hash 0x655185A06D9EEAAB
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @param p2 any
 --- @param p3 any
 --- @param p4 any
@@ -2234,9 +2234,9 @@ function StatGetMaskedInt(p0, p1, p2, p3, p4) end
 ---
 --- @hash 0x350F82CCB186AA1B
 --- @param p0 any
---- @param p1 table (Any*)
---- @param p2 table (Any*)
---- @param p3 table (Any*)
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @param p4 any
 --- @return boolean
 function StatGetPos(p0, p1, p2, p3, p4) end
@@ -2273,7 +2273,7 @@ function PlaystatsCopyRankIntoNewSlot(p0, p1, p2, p3, p4, p5, p6) end
 --- ```
 ---
 --- @hash 0xCE5AA445ABA8DEE0
---- @param p0 table (Any*)
+--- @param p0 any
 --- @return number (int)
 function StatGetSaveMigrationConsumeContentUnlockStatus(p0) end
 
@@ -2334,7 +2334,7 @@ function StatSetString(statName, value, save) end
 --- PlaystatsSellContraband
 ---
 --- @hash 0xC729991A9065376E
---- @param data table (Any*)
+--- @param data any
 --- @return void
 function PlaystatsSellContraband(data) end
 
@@ -2382,7 +2382,7 @@ function PlaystatsPropChange(p0, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0x320C35147D5B5DDD
---- @param data table (Any*)
+--- @param data any
 --- @return void
 function PlaystatsSmugMissionEnded(data) end
 
@@ -2392,7 +2392,7 @@ function PlaystatsSmugMissionEnded(data) end
 --- ```
 ---
 --- @hash 0xD8AFB345A9C5CCBB
---- @param data table (Any*)
+--- @param data any
 --- @return void
 function PlaystatsH2FmprepEnd(data) end
 
@@ -2598,7 +2598,7 @@ function StatGetLicensePlate(statName) end
 ---
 --- @hash 0x2C29BFB64F4FCBE4
 --- @param statName Hash
---- @param value table (Any*)
+--- @param value any
 --- @param numFields number (int)
 --- @param save boolean
 --- @return boolean
@@ -2650,7 +2650,7 @@ function StatSavePending() end
 --- StatGetSaveMigrationStatus
 ---
 --- @hash 0x886913BBEACA68C1
---- @param data table (Any*)
+--- @param data any
 --- @return number (int)
 function StatGetSaveMigrationStatus(data) end
 

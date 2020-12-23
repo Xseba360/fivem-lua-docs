@@ -747,8 +747,8 @@ function AddPoliceRestart(p0, p1, p2, p3, p4) end
 --- ```
 ---
 --- @hash 0xB335F761606DB47C
---- @param p1 table (Any*)
---- @param p2 table (Any*)
+--- @param p1 any
+--- @param p2 any
 --- @param p3 any
 --- @param p4 boolean
 --- @return boolean
@@ -805,7 +805,7 @@ function GetHashKey(string) end
 --- CopyMemory
 ---
 --- @hash 0x213AEB2B90CBA7AC
---- @param dst table (Any*)
+--- @param dst any
 --- @param src any
 --- @param size number (int)
 --- @return void
@@ -817,7 +817,7 @@ function CopyMemory(dst, src, size) end
 --- @hash 0xCA78CFA0366592FE
 --- @param p0 number (int)
 --- @param windowTitle string (char*)
---- @param p2 table (Any*)
+--- @param p2 any
 --- @param defaultText string (char*)
 --- @param defaultConcat1 string (char*)
 --- @param defaultConcat2 string (char*)
@@ -1669,7 +1669,7 @@ function N_0x23227df0b2115469() end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0x31125FD509D9043F
---- @param p0 table (Any*)
+--- @param p0 any
 --- @return void
 function N_0x31125fd509d9043f(p0) end
 
@@ -1886,7 +1886,7 @@ function IsPointObscuredByAMissionEntity(p0, p1, p2, p3, p4, p5, p6) end
 --- RegisterIntToSave
 ---
 --- @hash 0x34C9EE5986258415
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param name string (char*)
 --- @return void
 function RegisterIntToSave(p0, name) end
@@ -2037,7 +2037,7 @@ function IsInPowerSavingMode() end
 --- ```
 ---
 --- @hash 0x8269816F6CFD40F8
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param name string (char*)
 --- @return void
 function N_0x8269816f6cfd40f8(p0, name) end
@@ -2290,7 +2290,7 @@ function ResetDispatchIdealSpawnDistance() end
 --- ```
 ---
 --- @hash 0x6F7794F28C6B2535
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param name string (char*)
 --- @return void
 function RegisterTextLabelToSave_2(p0, name) end
@@ -2317,7 +2317,7 @@ function SetFadeOutAfterArrest(toggle) end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0xEBD3205A207939ED
---- @param p0 table (Any*)
+--- @param p0 any
 --- @return void
 function N_0xebd3205a207939ed(p0) end
 
@@ -2388,7 +2388,7 @@ function GetMissionFlag() end
 --- RegisterEnumToSave
 ---
 --- @hash 0x10C2FA78D0E128A1
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param name string (char*)
 --- @return void
 function RegisterEnumToSave(p0, name) end
@@ -2512,7 +2512,7 @@ function N_0xd10282b6e3751ba0() end
 --- ```
 ---
 --- @hash 0x48F069265A0E4BEC
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param name string (char*)
 --- @return void
 function N_0x48f069265a0e4bec(p0, name) end
@@ -2683,7 +2683,7 @@ function SetGamePaused(toggle) end
 --- RegisterInt64ToSave
 ---
 --- @hash 0xA735353C77334EA0
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param name string (char*)
 --- @return void
 function RegisterInt64ToSave(p0, name) end
@@ -2742,7 +2742,7 @@ function SetRandomWeatherType() end
 --- ```
 ---
 --- @hash 0xFAA457EF263E8763
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param name string (char*)
 --- @return void
 function N_0xfaa457ef263e8763(p0, name) end
@@ -2773,7 +2773,7 @@ function SetFadeOutAfterDeath(toggle) end
 --- ```
 ---
 --- @hash 0xBF737600CDDBEADD
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param size number (int)
 --- @param structName string (char*)
 --- @return void
@@ -2813,7 +2813,7 @@ function IsStuntJumpMessageShowing() end
 --- RegisterFloatToSave
 ---
 --- @hash 0x7CAEC29ECB5DFEBB
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param name string (char*)
 --- @return void
 function RegisterFloatToSave(p0, name) end
@@ -2922,7 +2922,7 @@ function SetRandomSeed(seed) end
 --- RegisterTextLabelToSave
 ---
 --- @hash 0xEDB1232C5BEAE62F
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param name string (char*)
 --- @return void
 function RegisterTextLabelToSave(p0, name) end
@@ -2980,7 +2980,7 @@ function SetWeatherTypePersist(weatherType) end
 --- RegisterBoolToSave
 ---
 --- @hash 0xC8F4131414C835A1
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param name string (char*)
 --- @return void
 function RegisterBoolToSave(p0, name) end
@@ -3291,7 +3291,7 @@ function WaterOverrideSetOceanwaveamplitude(amplitude) end
 --- StartSaveData
 ---
 --- @hash 0xA9575F812C6A7997
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param p1 any
 --- @param p2 boolean
 --- @return void
@@ -3338,7 +3338,7 @@ function ShootSingleBulletBetweenCoordsIgnoreEntityNew(x1, y1, z1, x2, y2, z2, d
 --- @param p1 number (float)
 --- @param p2 number (float)
 --- @param p3 number (float)
---- @param p4 table (Any*)
+--- @param p4 any
 --- @param p5 any
 --- @param p6 any
 --- @return any
@@ -3573,7 +3573,7 @@ function SetIncidentUnk(incidentId, p1) end
 --- ```
 ---
 --- @hash 0x60FE567DF1B1AF9D
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param size number (int)
 --- @param arrayName string (char*)
 --- @return void

@@ -78,7 +78,7 @@ function GetShopPedApparelVariantComponentCount(componentHash) end
 ---
 --- @hash 0x74C0E2A57EC66760
 --- @param componentHash Hash
---- @param outComponent table (Any*)
+--- @param outComponent any
 --- @return void
 function GetShopPedComponent(componentHash, outComponent) end
 
@@ -94,7 +94,7 @@ function GetShopPedComponent(componentHash, outComponent) end
 ---
 --- @hash 0x6D793F03A631FE56
 --- @param p0 any
---- @param outfit table (Any*)
+--- @param outfit any
 --- @return void
 function GetShopPedQueryOutfit(p0, outfit) end
 
@@ -135,7 +135,7 @@ function GetDlcWeaponData(dlcWeaponIndex, outData) end
 ---
 --- @hash 0xB7952076E444979D
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @return void
 function GetShopPedOutfit(p0, p1) end
 
@@ -161,9 +161,9 @@ function GetShopPedApparelForcedPropCount(componentHash) end
 --- @hash 0x6E11F282F11863B6
 --- @param componentHash Hash
 --- @param componentId number (int)
---- @param nameHash table (Any*)
---- @param enumValue table (Any*)
---- @param componentType table (Any*)
+--- @param nameHash any
+--- @param enumValue any
+--- @param componentType any
 --- @return void
 function GetVariantComponent(componentHash, componentId, nameHash, enumValue, componentType) end
 
@@ -210,7 +210,7 @@ function GetShopPedApparelVariantPropCount(propHash) end
 --- @hash 0x6CF598A2957C2BF8
 --- @param dlcWeaponIndex number (int)
 --- @param dlcWeapCompIndex number (int)
---- @param ComponentDataPtr table (Any*)
+--- @param ComponentDataPtr any
 --- @return boolean
 function GetDlcWeaponComponentData(dlcWeaponIndex, dlcWeapCompIndex, ComponentDataPtr) end
 
@@ -290,7 +290,7 @@ function GetHashNameForComponent(entity, componentId, drawableVariant, textureVa
 --- @hash 0xFF56381874F82086
 --- @param characterType number (int)
 --- @param decorationIndex number (int)
---- @param outComponent table (Any*)
+--- @param outComponent any
 --- @return boolean
 function GetTattooCollectionData(characterType, decorationIndex, outComponent) end
 
@@ -299,7 +299,7 @@ function GetTattooCollectionData(characterType, decorationIndex, outComponent) e
 ---
 --- @hash 0xDE44A00999B2837D
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @return void
 function GetShopPedQueryProp(p0, p1) end
 
@@ -309,7 +309,7 @@ function GetShopPedQueryProp(p0, p1) end
 --- ```
 ---
 --- @hash 0xD4D7B033C3AA243C
---- @param itemHash table (Any*)
+--- @param itemHash any
 --- @return boolean
 function IsContentItemLocked(itemHash) end
 
@@ -363,9 +363,9 @@ function GetNumDlcVehicles() end
 --- @hash 0xE1CA84EBF72E691D
 --- @param componentHash any
 --- @param forcedPropIndex any
---- @param nameHash table (Any*)
---- @param enumValue table (Any*)
---- @param anchorPoint table (Any*)
+--- @param nameHash any
+--- @param enumValue any
+--- @param anchorPoint any
 --- @return void
 function GetForcedProp(componentHash, forcedPropIndex, nameHash, enumValue, anchorPoint) end
 
@@ -379,7 +379,7 @@ function GetForcedProp(componentHash, forcedPropIndex, nameHash, enumValue, anch
 --- @hash 0x19F2A026EDF0013F
 --- @param outfit any
 --- @param slot number (int)
---- @param item table (Any*)
+--- @param item any
 --- @return boolean
 function GetShopPedOutfitComponentVariant(outfit, slot, item) end
 
@@ -389,7 +389,7 @@ function GetShopPedOutfitComponentVariant(outfit, slot, item) end
 --- @hash 0xA9F9C2E0FDE11CBB
 --- @param outfit any
 --- @param slot number (int)
---- @param item table (Any*)
+--- @param item any
 --- @return boolean
 function GetShopPedOutfitPropVariant(outfit, slot, item) end
 
@@ -432,9 +432,9 @@ function N_0xf3fbe2d50a6a8c28(character, p1) end
 --- @hash 0x6C93ED8C2F74859B
 --- @param componentHash Hash
 --- @param componentId number (int)
---- @param nameHash table (Any*)
---- @param enumValue table (Any*)
---- @param componentType table (Any*)
+--- @param nameHash any
+--- @param enumValue any
+--- @param componentType any
 --- @return void
 function GetForcedComponent(componentHash, componentId, nameHash, enumValue, componentType) end
 
@@ -546,7 +546,7 @@ function GetVariantProp(componentHash, variantPropIndex, nameHash, enumValue, an
 ---
 --- @hash 0x5D5CAFF661DDF6FC
 --- @param componentHash any
---- @param outProp table (Any*)
+--- @param outProp any
 --- @return void
 function GetShopPedProp(componentHash, outProp) end
 

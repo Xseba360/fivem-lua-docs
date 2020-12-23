@@ -761,7 +761,7 @@ function NetworkDeductCash(amount, p1, p2, p3, p4, p5) end
 --- @hash 0x131BB5DA15453ACF
 --- @param amount number (int)
 --- @param networkHandle table (int*)
---- @param p2 table (Any*)
+--- @param p2 any
 --- @param p3 any
 --- @return void
 function NetworkEarnFromBounty(amount, networkHandle, p2, p3) end
@@ -1281,7 +1281,7 @@ function N_0xfffba1b1f7c0b6f4(p0) end
 --- @param p1 boolean
 --- @param p2 boolean
 --- @param p3 boolean
---- @param p4 table (Any*)
+--- @param p4 any
 --- @param p5 any
 --- @return boolean
 function NetworkCanSpendMoney_2(p0, p1, p2, p3, p4, p5) end
@@ -1315,7 +1315,7 @@ function NetworkEarnFromGangopsWagesBonus(amount, p1) end
 --- @hash 0xFB6DB092FBAE29E6
 --- @param p0 number (int)
 --- @param p1 string (char*)
---- @param p2 table (Any*)
+--- @param p2 any
 --- @return void
 function NetworkEarnFromAmbientJob(p0, p1, p2) end
 
@@ -1464,7 +1464,7 @@ function NetworkPayMatchEntryFee(amount, matchId, p2, p3) end
 --- @hash 0x1C436FD11FFA692F
 --- @param amount number (int)
 --- @param p1 number (int)
---- @param matchId table (Any*)
+--- @param matchId any
 --- @param p3 boolean
 --- @param p4 boolean
 --- @return void
@@ -1843,7 +1843,7 @@ function NetworkSpentBuyBunker(p0, p1, p2, p3) end
 ---
 --- @hash 0x2B171E6B2F64D8DF
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @param p2 boolean
 --- @return void
 function NetworkEarnFromChallengeWin(p0, p1, p2) end
@@ -2171,7 +2171,7 @@ function NetworkSpentBuyTiltrotor(p0, p1, p2, p3) end
 ---
 --- @hash 0xACDE7185B374177C
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @param p2 boolean
 --- @param p3 boolean
 --- @return void
@@ -2317,7 +2317,7 @@ function NetworkSpentBoatPickup(p0, p1, p2) end
 ---
 --- @hash 0xE1B13771A843C4F6
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @param p2 boolean
 --- @param p3 boolean
 --- @return void
@@ -2498,8 +2498,8 @@ function NetworkSpentBuyRevealPlayers(p0, p1, p2) end
 ---
 --- @hash 0x6816FB4416760775
 --- @param p0 any
---- @param p1 table (Any*)
---- @param p2 table (Any*)
+--- @param p1 any
+--- @param p2 any
 --- @return void
 function NetworkEarnFromJobBonus(p0, p1, p2) end
 

@@ -930,8 +930,8 @@ function GetCollisionNormalOfLastHitForEntity(entity) end
 --- @param animDictionary string (char*)
 --- @param animName string (char*)
 --- @param p2 string (char*)
---- @param p3 table (Any*)
---- @param p4 table (Any*)
+--- @param p3 any
+--- @param p4 any
 --- @return boolean
 function FindAnimEventPhase(animDictionary, animName, p2, p3, p4) end
 
@@ -1298,8 +1298,8 @@ function IsEntityPlayingAnim(entity, animDict, animName, taskFlag) end
 --- @param p3 number (float)
 --- @param p4 any
 --- @param p5 any
---- @param p6 table (Any*)
---- @param p7 table (Any*)
+--- @param p6 any
+--- @param p7 any
 --- @param p8 number (float)
 --- @param p9 number (float)
 --- @param p10 any

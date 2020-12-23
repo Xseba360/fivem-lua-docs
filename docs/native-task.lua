@@ -158,7 +158,7 @@ function DoesScriptedCoverPointExistAtCoords(x, y, z) end
 --- @param p0 number (float)
 --- @param p1 number (float)
 --- @param p2 number (float)
---- @param p3 table (Any*)
+--- @param p3 any
 --- @param p4 number (float)
 --- @param p5 boolean
 --- @return boolean
@@ -1404,9 +1404,9 @@ function SetScenarioTypeEnabled(scenarioType, toggle) end
 ---
 --- @hash 0x77A1EEC547E7FCF1
 --- @param p0 any
---- @param p1 table (Any*)
---- @param p2 table (Any*)
---- @param p3 table (Any*)
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @param p4 number (float)
 --- @param p5 number (float)
 --- @return void
@@ -1751,7 +1751,7 @@ function TaskGetOffBoat(ped, boat) end
 --- @hash 0x3D45B0B355C5E0C9
 --- @param ped Ped
 --- @param p1 string (char*)
---- @param data table (Any*)
+--- @param data any
 --- @param p3 number (float)
 --- @param p4 boolean
 --- @param animDict string (char*)
@@ -2228,9 +2228,9 @@ function TaskPlaneGotoPreciseVtol(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 ---
 --- @hash 0x126EF75F1E17ABE5
 --- @param ped Ped
---- @param p1 table (Any*)
---- @param p2 table (Any*)
---- @param p3 table (Any*)
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @param p4 number (float)
 --- @param p5 number (float)
 --- @return void
@@ -3853,10 +3853,10 @@ function TaskVehicleHeliProtect(pilot, vehicle, entityToFollow, targetSpeed, p4,
 ---
 --- @hash 0x7AFE8FDC10BC07D2
 --- @param p0 any
---- @param p1 table (Any*)
---- @param p2 table (Any*)
---- @param p3 table (Any*)
---- @param p4 table (Any*)
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
 --- @param p5 any
 --- @param p6 number (float)
 --- @param p7 number (float)

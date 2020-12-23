@@ -19,7 +19,7 @@ function N_0x225798743970412b(p0) end
 ---
 --- @hash 0x19853B5B17D77BCA
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @return boolean
 function N_0x19853b5b17d77bca(p0, p1) end
 
@@ -44,9 +44,9 @@ function N_0x2e89990ddff670c3(p0, p1) end
 --- N_0x1989c6e6f67e76a8
 ---
 --- @hash 0x1989C6E6F67E76A8
---- @param p0 table (Any*)
---- @param p1 table (Any*)
---- @param p2 table (Any*)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
 --- @return boolean
 function N_0x1989c6e6f67e76a8(p0, p1, p2) end
 
@@ -227,7 +227,7 @@ function ScInboxMessageGetString(p0) end
 ---
 --- @hash 0x4737980E8A283806
 --- @param p0 number (int)
---- @param p1 table (Any*)
+--- @param p1 any
 --- @return boolean
 function N_0x4737980e8a283806(p0, p1) end
 
@@ -345,7 +345,7 @@ function N_0x1d12a56fc95be92e() end
 --- N_0x44aca259d67651db
 ---
 --- @hash 0x44ACA259D67651DB
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param p1 any
 --- @return void
 function N_0x44aca259d67651db(p0, p1) end
@@ -365,7 +365,7 @@ function ScInboxMessageGetDataBool(p0, p1) end
 --- @hash 0x8CC469AB4D349B7C
 --- @param p0 number (int)
 --- @param p1 string (char*)
---- @param p2 table (Any*)
+--- @param p2 any
 --- @return boolean
 function N_0x8cc469ab4d349b7c(p0, p1, p2) end
 
@@ -383,7 +383,7 @@ function N_0x9237e334f6e43156(p0) end
 --- @hash 0x699E4A5C8C893A18
 --- @param p0 number (int)
 --- @param p1 string (char*)
---- @param p2 table (Any*)
+--- @param p2 any
 --- @return boolean
 function N_0x699e4a5c8c893a18(p0, p1, p2) end
 
@@ -460,7 +460,7 @@ function RockstarMessageGetString() end
 --- N_0x4a7d6e727f941747
 ---
 --- @hash 0x4A7D6E727F941747
---- @param p0 table (Any*)
+--- @param p0 any
 --- @return any
 function N_0x4a7d6e727f941747(p0) end
 
@@ -558,7 +558,7 @@ function ScInboxMessageGetBountyData(index, outData) end
 --- N_0x0f73393bac7e6730
 ---
 --- @hash 0x0F73393BAC7E6730
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param p1 table (int*)
 --- @return boolean
 function N_0x0f73393bac7e6730(p0, p1) end
@@ -586,7 +586,7 @@ function N_0x8a4416c0db05fa66(p0) end
 ---
 --- @hash 0x69D82604A1A5A254
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @return boolean
 function ScInboxMessageGetUgcdata(p0, p1) end
 
@@ -676,9 +676,9 @@ function ScInboxMessagePushGamerToEventRecipList(networkHandle) end
 --- N_0xd0ee05fe193646ea
 ---
 --- @hash 0xD0EE05FE193646EA
---- @param p0 table (Any*)
---- @param p1 table (Any*)
---- @param p2 table (Any*)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
 --- @return boolean
 function N_0xd0ee05fe193646ea(p0, p1, p2) end
 

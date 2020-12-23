@@ -42,7 +42,7 @@ function DoorControl(modelHash, x, y, z, locked, xRotMult, yRotMult, zRotMult) e
 --- @param y number (float)
 --- @param z number (float)
 --- @param modelHash any
---- @param doorOutPointer table (Any*)
+--- @param doorOutPointer any
 --- @return boolean
 function DoorSystemFindExistingDoor(x, y, z, modelHash, doorOutPointer) end
 

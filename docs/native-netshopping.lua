@@ -4,7 +4,7 @@
 --- ```
 ---
 --- @hash 0x0395CB47B022E62C
---- @param p0 table (Any*)
+--- @param p0 any
 --- @return boolean
 function N_0x0395cb47b022e62c(p0) end
 
@@ -50,7 +50,7 @@ function NetGameserverSetTelemetryNonceSeed(p0) end
 --- ```
 ---
 --- @hash 0x279F08B1A4B29B7E
---- @param transactionId table (Any*)
+--- @param transactionId any
 --- @param categoryHash number (int)
 --- @param actionHash number (int)
 --- @param flags number (int)
@@ -63,7 +63,7 @@ function NetGameserverBasketStart(transactionId, categoryHash, actionHash, flags
 --- ```
 ---
 --- @hash 0xF30980718C8ED876
---- @param itemData table (Any*)
+--- @param itemData any
 --- @param quantity number (int)
 --- @return boolean
 function NetGameserverBasketAddItem(itemData, quantity) end
@@ -126,7 +126,7 @@ function NetGameserverCatalogIsReady() end
 --- ```
 ---
 --- @hash 0xC13C38E47EA5DF31
---- @param p0 table (Any*)
+--- @param p0 any
 --- @return boolean
 function N_0xc13c38e47ea5df31(p0) end
 
@@ -268,7 +268,7 @@ function NetGameserverTransferBankToWallet(charSlot, amount) end
 --- ```
 ---
 --- @hash 0x170910093218C8B9
---- @param p0 table (Any*)
+--- @param p0 any
 --- @return boolean
 function N_0x170910093218c8b9(p0) end
 
@@ -340,7 +340,7 @@ function N_0x357b152ef96c30b6() end
 --- ```
 ---
 --- @hash 0x897433D292B44130
---- @param p0 table (Any*)
+--- @param p0 any
 --- @param p1 table (BOOL*)
 --- @return boolean
 function NetGameserverGetTransactionManagerData(p0, p1) end
@@ -362,7 +362,7 @@ function NetGameserverBasketIsFull() end
 ---
 --- @hash 0xE1A0450ED46A7812
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @return boolean
 function NetGameserverBasketApplyServerData(p0, p1) end
 
@@ -398,7 +398,7 @@ function NetGameserverTransferCashGetStatus() end
 --- ```
 ---
 --- @hash 0xCF38DAFBB49EDE5E
---- @param state table (Any*)
+--- @param state any
 --- @return boolean
 function NetGameserverGetCatalogState(state) end
 

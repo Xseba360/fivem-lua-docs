@@ -207,7 +207,7 @@ function GetPedAmmoTypeFromWeapon_2(ped, weaponHash) end
 ---
 --- @hash 0xD92C739EE34C9EBA
 --- @param weaponHash Hash
---- @param outData table (Any*)
+--- @param outData any
 --- @return boolean
 function GetWeaponHudStats(weaponHash, outData) end
 

@@ -66,7 +66,7 @@ function ApplyPedBlood(ped, boneIndex, xRot, yRot, zRot, woundType) end
 --- @param p1 any
 --- @param p2 number (float)
 --- @param p3 number (float)
---- @param p4 table (Any*)
+--- @param p4 any
 --- @return void
 function ApplyPedBloodByZone(ped, p1, p2, p3, p4) end
 
@@ -228,7 +228,7 @@ function ClearPedProp(ped, propId) end
 --- @param p5 number (float)
 --- @param p6 any
 --- @param p7 number (float)
---- @param p8 table (Any*)
+--- @param p8 any
 --- @return void
 function ApplyPedBloodSpecific(ped, p1, p2, p3, p4, p5, p6, p7, p8) end
 
@@ -847,7 +847,7 @@ function ClonePedToTargetEx(ped, targetPed, p2) end
 ---
 --- @hash 0x2746BD9D88C5C5D0
 --- @param ped Ped
---- @param headBlendData table (Any*)
+--- @param headBlendData any
 --- @return boolean
 function GetPedHeadBlendData(ped, headBlendData) end
 
@@ -1380,7 +1380,7 @@ function ClearPedCoverClipsetOverride(ped) end
 ---
 --- @hash 0x8DE69FE35CA09A45
 --- @param groupID number (int)
---- @param unknown table (Any*)
+--- @param unknown any
 --- @param sizeInMembers table (int*)
 --- @return void
 function GetGroupSize(groupID, unknown, sizeInMembers) end
@@ -3115,9 +3115,9 @@ function N_0x2735233a786b1bef(ped, p1) end
 ---
 --- @hash 0x280C7E3AC7F56E90
 --- @param p0 any
---- @param p1 table (Any*)
---- @param p2 table (Any*)
---- @param p3 table (Any*)
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function N_0x280c7e3ac7f56e90(p0, p1, p2, p3) end
 
@@ -3330,8 +3330,8 @@ function N_0x425aecf167663f48(ped, p1) end
 --- N_0x9e30e91fb03a2caf
 ---
 --- @hash 0x9E30E91FB03A2CAF
---- @param p0 table (Any*)
---- @param p1 table (Any*)
+--- @param p0 any
+--- @param p1 any
 --- @return boolean
 function N_0x9e30e91fb03a2caf(p0, p1) end
 
@@ -3701,8 +3701,8 @@ function IsPedInHighCover(ped) end
 ---
 --- @hash 0xF60165E1D2C5370B
 --- @param ped Ped
---- @param p1 table (Any*)
---- @param p2 table (Any*)
+--- @param p1 any
+--- @param p2 any
 --- @return boolean
 function N_0xf60165e1d2c5370b(ped, p1, p2) end
 
@@ -3741,7 +3741,7 @@ function N_0xb2aff10216defa2f(x, y, z, p3, p4, p5, p6, interiorFlags, scale, dur
 ---
 --- @hash 0x9C6A6C19B6C0C496
 --- @param ped Ped
---- @param p1 table (Any*)
+--- @param p1 any
 --- @return boolean
 function N_0x9c6a6c19b6c0c496(ped, p1) end
 
@@ -4686,7 +4686,7 @@ function SetPedCanPlayVisemeAnims(ped, toggle, p2) end
 ---
 --- @hash 0xB782F8238512BAD5
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @return void
 function N_0xb782f8238512bad5(p0, p1) end
 

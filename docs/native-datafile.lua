@@ -2,7 +2,7 @@
 --- DatadictGetBool
 ---
 --- @hash 0x1186940ED72FFEEC
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
 --- @return boolean
 function DatadictGetBool(objectData, key) end
@@ -11,7 +11,7 @@ function DatadictGetBool(objectData, key) end
 --- DataarrayGetString
 ---
 --- @hash 0xD3F2FFEB8D836F52
---- @param arrayData table (Any*)
+--- @param arrayData any
 --- @param arrayIndex number (int)
 --- @return string (char*)
 function DataarrayGetString(arrayData, arrayIndex) end
@@ -20,7 +20,7 @@ function DataarrayGetString(arrayData, arrayIndex) end
 --- DataarrayGetBool
 ---
 --- @hash 0x50C1B2874E50C114
---- @param arrayData table (Any*)
+--- @param arrayData any
 --- @param arrayIndex number (int)
 --- @return boolean
 function DataarrayGetBool(arrayData, arrayIndex) end
@@ -29,7 +29,7 @@ function DataarrayGetBool(arrayData, arrayIndex) end
 --- DataarrayAddBool
 ---
 --- @hash 0xF8B0F5A43E928C76
---- @param arrayData table (Any*)
+--- @param arrayData any
 --- @param value boolean
 --- @return void
 function DataarrayAddBool(arrayData, value) end
@@ -47,7 +47,7 @@ function DataarrayAddBool(arrayData, value) end
 --- ```
 ---
 --- @hash 0x3A0014ADB172A3C5
---- @param arrayData table (Any*)
+--- @param arrayData any
 --- @param arrayIndex number (int)
 --- @return number (int)
 function DataarrayGetType(arrayData, arrayIndex) end
@@ -56,7 +56,7 @@ function DataarrayGetType(arrayData, arrayIndex) end
 --- DatadictGetFloat
 ---
 --- @hash 0x06610343E73B9727
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
 --- @return number (float)
 function DatadictGetFloat(objectData, key) end
@@ -65,7 +65,7 @@ function DatadictGetFloat(objectData, key) end
 --- DataarrayAddString
 ---
 --- @hash 0x2F0661C155AEEEAA
---- @param arrayData table (Any*)
+--- @param arrayData any
 --- @param value string (char*)
 --- @return void
 function DataarrayAddString(arrayData, value) end
@@ -74,7 +74,7 @@ function DataarrayAddString(arrayData, value) end
 --- DataarrayAddInt
 ---
 --- @hash 0xCABDB751D86FE93B
---- @param arrayData table (Any*)
+--- @param arrayData any
 --- @param value number (int)
 --- @return void
 function DataarrayAddInt(arrayData, value) end
@@ -83,7 +83,7 @@ function DataarrayAddInt(arrayData, value) end
 --- DataarrayGetInt
 ---
 --- @hash 0x3E5AE19425CD74BE
---- @param arrayData table (Any*)
+--- @param arrayData any
 --- @param arrayIndex number (int)
 --- @return number (int)
 function DataarrayGetInt(arrayData, arrayIndex) end
@@ -133,7 +133,7 @@ function DatafileIsValidRequestId(index) end
 --- DataarrayGetFloat
 ---
 --- @hash 0xC0C527B525D7CFB5
---- @param arrayData table (Any*)
+--- @param arrayData any
 --- @param arrayIndex number (int)
 --- @return number (float)
 function DataarrayGetFloat(arrayData, arrayIndex) end
@@ -171,7 +171,7 @@ function DatafileStartSaveToCloud(filename) end
 --- DataarrayGetVector
 ---
 --- @hash 0x8D2064E5B64A628A
---- @param arrayData table (Any*)
+--- @param arrayData any
 --- @param arrayIndex number (int)
 --- @return Vector3
 function DataarrayGetVector(arrayData, arrayIndex) end
@@ -180,7 +180,7 @@ function DataarrayGetVector(arrayData, arrayIndex) end
 --- DatadictSetInt
 ---
 --- @hash 0xE7E035450A7948D5
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
 --- @param value number (int)
 --- @return void
@@ -190,7 +190,7 @@ function DatadictSetInt(objectData, key, value) end
 --- DatadictGetString
 ---
 --- @hash 0x3D2FD9E763B24472
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
 --- @return string (char*)
 function DatadictGetString(objectData, key) end
@@ -199,18 +199,18 @@ function DatadictGetString(objectData, key) end
 --- DataarrayGetDict
 ---
 --- @hash 0x8B5FADCC4E3A145F
---- @param arrayData table (Any*)
+--- @param arrayData any
 --- @param arrayIndex number (int)
---- @return table (Any*)
+--- @return any
 function DataarrayGetDict(arrayData, arrayIndex) end
 
     
 --- DatadictGetDict
 ---
 --- @hash 0xB6B9DDC412FCEEE2
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
---- @return table (Any*)
+--- @return any
 function DatadictGetDict(objectData, key) end
 
     
@@ -233,18 +233,18 @@ function DatafileHasLoadedFileData(p0) end
 --- DatadictGetArray
 ---
 --- @hash 0x7A983AA9DA2659ED
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
---- @return table (Any*)
+--- @return any
 function DatadictGetArray(objectData, key) end
 
     
 --- DatadictCreateArray
 ---
 --- @hash 0x5B11728527CA6E5F
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
---- @return table (Any*)
+--- @return any
 function DatadictCreateArray(objectData, key) end
 
     
@@ -259,7 +259,7 @@ function DatafileClearWatchList() end
 --- DataarrayAddVector
 ---
 --- @hash 0x407F8D034F70F0C2
---- @param arrayData table (Any*)
+--- @param arrayData any
 --- @param valueX number (float)
 --- @param valueY number (float)
 --- @param valueZ number (float)
@@ -279,7 +279,7 @@ function DataarrayAddVector(arrayData, valueX, valueY, valueZ) end
 --- ```
 ---
 --- @hash 0x031C55ED33227371
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
 --- @return number (int)
 function DatadictGetType(objectData, key) end
@@ -302,7 +302,7 @@ function UgcCreateMission(contentName, description, tagsCsv, contentTypeName, pu
 --- DatadictGetInt
 ---
 --- @hash 0x78F06F6B1FB5A80C
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
 --- @return number (int)
 function DatadictGetInt(objectData, key) end
@@ -311,7 +311,7 @@ function DatadictGetInt(objectData, key) end
 --- DatadictSetFloat
 ---
 --- @hash 0xC27E1CC2D795105E
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
 --- @param value number (float)
 --- @return void
@@ -321,7 +321,7 @@ function DatadictSetFloat(objectData, key, value) end
 --- DatadictSetBool
 ---
 --- @hash 0x35124302A556A325
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
 --- @param value boolean
 --- @return void
@@ -344,7 +344,7 @@ function DatafileLoadOfflineUgc(filename) end
 --- DatadictSetVector
 ---
 --- @hash 0x4CD49B76338C7DEE
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
 --- @param valueX number (float)
 --- @param valueY number (float)
@@ -380,8 +380,8 @@ function DatafileStoreMissionHeader() end
 --- DataarrayAddDict
 ---
 --- @hash 0x6889498B3E19C797
---- @param arrayData table (Any*)
---- @return table (Any*)
+--- @param arrayData any
+--- @return any
 function DataarrayAddDict(arrayData) end
 
     
@@ -412,9 +412,9 @@ function DatafileSelectUgcData(p0) end
 --- DatadictCreateDict
 ---
 --- @hash 0xA358F56F10732EE1
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
---- @return table (Any*)
+--- @return any
 function DatadictCreateDict(objectData, key) end
 
     
@@ -439,7 +439,7 @@ function DatafileFlushMissionHeader() end
 --- DataarrayGetCount
 ---
 --- @hash 0x065DB281590CEA2D
---- @param arrayData table (Any*)
+--- @param arrayData any
 --- @return number (int)
 function DataarrayGetCount(arrayData) end
 
@@ -447,7 +447,7 @@ function DataarrayGetCount(arrayData) end
 --- DatadictGetVector
 ---
 --- @hash 0x46CD3CB66E0825CC
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
 --- @return Vector3
 function DatadictGetVector(objectData, key) end
@@ -483,7 +483,7 @@ function DatafileIsSavePending() end
 --- DatadictSetString
 ---
 --- @hash 0x8FF3847DADD8E30C
---- @param objectData table (Any*)
+--- @param objectData any
 --- @param key string (char*)
 --- @param value string (char*)
 --- @return void
@@ -493,7 +493,7 @@ function DatadictSetString(objectData, key, value) end
 --- DataarrayAddFloat
 ---
 --- @hash 0x57A995FD75D37F56
---- @param arrayData table (Any*)
+--- @param arrayData any
 --- @param value number (float)
 --- @return void
 function DataarrayAddFloat(arrayData, value) end
@@ -553,7 +553,7 @@ function UgcCreateContent(data, dataCount, contentName, description, tagsCsv, co
 ---
 --- @hash 0x648E7A5434AF7969
 --- @param contentId string (char*)
---- @param data table (Any*)
+--- @param data any
 --- @param dataCount boolean
 --- @param contentName string (char*)
 --- @param description string (char*)

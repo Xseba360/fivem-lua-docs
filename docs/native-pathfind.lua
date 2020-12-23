@@ -184,8 +184,8 @@ function LoadAllPathNodes(keepInMemory) end
 --- @param p4 number (int)
 --- @param p5 Vector3 (Vector3*)
 --- @param p6 Vector3 (Vector3*)
---- @param p7 table (Any*)
---- @param p8 table (Any*)
+--- @param p7 any
+--- @param p8 any
 --- @param p9 table (float*)
 --- @param p10 boolean
 --- @return any
@@ -516,7 +516,7 @@ function GetGpsBlipRouteFound() end
 --- @param nthClosest number (int)
 --- @param outPosition Vector3 (Vector3*)
 --- @param heading table (float*)
---- @param unknown1 table (Any*)
+--- @param unknown1 any
 --- @param unknown2 number (int)
 --- @param unknown3 number (float)
 --- @param unknown4 number (float)

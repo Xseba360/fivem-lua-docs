@@ -841,7 +841,7 @@ function GetRandomVehicleInSphere(x, y, z, radius, modelHash, flags) end
 --- ```
 ---
 --- @hash 0x9B8E1BF04B51F2E8
---- @param vehArray table (Any*)
+--- @param vehArray any
 --- @return number (int)
 function GetAllVehicles(vehArray) end
 
@@ -2144,7 +2144,7 @@ function GetVehicleNumberPlateText(vehicle) end
 --- @hash 0x2058206FBE79A8AD
 --- @param p0 any
 --- @param p1 number (float)
---- @param p2 table (Any*)
+--- @param p2 any
 --- @return number (int)
 function GetRotationOfVehicleRecordingAtTime(p0, p1, p2) end
 
@@ -2741,7 +2741,7 @@ function IsVehicleVisible(vehicle) end
 ---
 --- @hash 0x300D614A4C785FC4
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @return boolean
 function HasVehicleRecordingBeenLoaded(p0, p1) end
 
@@ -3716,7 +3716,7 @@ function N_0xab31ef4de6800ce9(p0, p1) end
 ---
 --- @hash 0x725012A415DBA050
 --- @param p0 any
---- @param p1 table (Any*)
+--- @param p1 any
 --- @param p2 any
 --- @return any
 function N_0x725012a415dba050(p0, p1, p2) end
@@ -8079,7 +8079,7 @@ function SetVehicleWheelsCanBreak(vehicle, enabled) end
 --- @hash 0x29DE5FA52D00428C
 --- @param p0 any
 --- @param p1 any
---- @param p2 table (Any*)
+--- @param p2 any
 --- @param p3 number (float)
 --- @param p4 any
 --- @return void
