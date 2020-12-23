@@ -10,9 +10,12 @@ const [,, ...args] = process.argv
 // Print args
 console.log('Parsing ', args);
 
-let client = '';
-let server = '';
-let shared = '';
+let files = {
+    client: {},
+    server: {},
+    shared: {},
+    native: {}
+}
 
 
 const uppercaseFirst = (str) => str.charAt(0).toUpperCase() + str.slice(1);
@@ -115,28 +118,29 @@ function parseMethod(methodObj) {
     let hash = methodObj.hash;
     let namespace = makeNative(methodObj.ns);
     let apiset = methodObj.apiset;
-    return  `
+    return {
+        namespace, apiset,
+        content:  `
 ${description}
 ${examples}
 --- @hash ${hash}
---- @api ${apiset}
---- @namespace ${namespace}
 ${params}
 --- @return ${results}
 function ${name}(${paramsMethod}) end
 
-    `;
+    `
+    };
 }
 
 function parse(key, methodObj) {
-    let method = parseMethod(methodObj);
-    if(methodObj.apiset === 'server') {
-        server += method;
-    } else if(methodObj.apiset === 'client') {
-        client += method;
-    } else {
-        shared += method;
+    let data = parseMethod(methodObj);
+    let api = data.apiset ? data.apiset.toLowerCase() : 'native';
+    let namespace = data.namespace ? data.namespace.toLowerCase() : 'default';
+    let file = files[api][namespace];
+    if(!file) {
+        file = "";
     }
+    files[api][namespace] = file += data.content;
 }
 
 args.forEach(file => {
@@ -160,8 +164,10 @@ function write(fileName, contents) {
         });
 }
 
-write('client', client);
-write('shared', shared);
-write('server', server);
+for (const api in files) {
+    for(const namespace in files[api]){
+        write(api + '-' + namespace, files[api][namespace]);
+    }
+}
 
 
