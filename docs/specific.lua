@@ -3,13 +3,13 @@
 --- @class Cam
 local Cam = {};
 
---- @class Player
-local Player = {};
-
 --- @class Entity
 local Entity = {};
 
---- @class Vehicle
+--- @class Player : Entity
+local Player = {};
+
+--- @class Vehicle : Entity
 local Vehicle = {};
 
 --- @class Ped
