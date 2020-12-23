@@ -2,7 +2,7 @@
 --- GetPlayerCurrentStealthNoise
 ---
 --- @hash 0x2F395D61F3A1F877
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (float)
 function GetPlayerCurrentStealthNoise(player) end
 
@@ -18,7 +18,7 @@ function AssistedMovementFlushRoute() end
 --- ClearPlayerHasDamagedAtLeastOneNonAnimalPed
 ---
 --- @hash 0x4AACB96203D11A31
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function ClearPlayerHasDamagedAtLeastOneNonAnimalPed(player) end
 
@@ -26,8 +26,8 @@ function ClearPlayerHasDamagedAtLeastOneNonAnimalPed(player) end
 --- GetPlayerParachutePackTintIndex
 ---
 --- @hash 0x6E9C742F340CE5A2
---- @params player number (Player)
---- @params tintIndex table (int*)
+--- @param player number (Player)
+--- @param tintIndex table (int*)
 --- @return void
 function GetPlayerParachutePackTintIndex(player, tintIndex) end
 
@@ -49,7 +49,7 @@ function GetTimeSinceLastDeath() end
 --- ClearPlayerHasDamagedAtLeastOnePed
 ---
 --- @hash 0xF0B67A4DE6AB5F98
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function ClearPlayerHasDamagedAtLeastOnePed(player) end
 
@@ -57,7 +57,7 @@ function ClearPlayerHasDamagedAtLeastOnePed(player) end
 --- ClearPlayerParachuteModelOverride
 ---
 --- @hash 0x8753997EB5F6EE3F
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function ClearPlayerParachuteModelOverride(player) end
 
@@ -75,7 +75,7 @@ function GetPlayerIndex() end
 --- ClearPlayerParachutePackModelOverride
 ---
 --- @hash 0x10C54E4389C12B42
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function ClearPlayerParachutePackModelOverride(player) end
 
@@ -85,7 +85,7 @@ function ClearPlayerParachutePackModelOverride(player) end
 --- ```
 ---
 --- @hash 0xBC8983F38F78ED51
---- @params cleanupFlags number (int)
+--- @param cleanupFlags number (int)
 --- @return void
 function ForceCleanup(cleanupFlags) end
 
@@ -117,9 +117,9 @@ function GetTimeSinceLastArrest() end
 --- ```
 ---
 --- @hash 0x5006D96C995A5827
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function ExtendWorldBoundaryForPlayer(x, y, z) end
 
@@ -135,7 +135,7 @@ function GetCauseOfMostRecentForceCleanup() end
 --- GetPlayerSprintTimeRemaining
 ---
 --- @hash 0x1885BC9B108B4C99
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (float)
 function GetPlayerSprintTimeRemaining(player) end
 
@@ -145,7 +145,7 @@ function GetPlayerSprintTimeRemaining(player) end
 --- ```
 ---
 --- @hash 0x6D0DE6A7B5DA71F8
---- @params player number (Player)
+--- @param player number (Player)
 --- @return string (char*)
 function GetPlayerName(player) end
 
@@ -153,7 +153,7 @@ function GetPlayerName(player) end
 --- GetPlayerHealthRechargeLimit
 ---
 --- @hash 0x8BC515BAE4AAF8FF
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (float)
 function GetPlayerHealthRechargeLimit(player) end
 
@@ -163,7 +163,7 @@ function GetPlayerHealthRechargeLimit(player) end
 --- ```
 ---
 --- @hash 0x0D127585F77030AF
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function GetPlayerGroup(player) end
 
@@ -174,7 +174,7 @@ function GetPlayerGroup(player) end
 --- ```
 ---
 --- @hash 0xB302540597885499
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function ClearPlayerWantedLevel(player) end
 
@@ -184,7 +184,7 @@ function ClearPlayerWantedLevel(player) end
 --- ```
 ---
 --- @hash 0x1FC200409F10E6F1
---- @params team number (int)
+--- @param team number (int)
 --- @return number (int)
 function GetNumberOfPlayersInTeam(team) end
 
@@ -192,7 +192,7 @@ function GetNumberOfPlayersInTeam(team) end
 --- GetAchievementProgression
 ---
 --- @hash 0x1C186837D0619335
---- @params achievement number (int)
+--- @param achievement number (int)
 --- @return number (int)
 function GetAchievementProgression(achievement) end
 
@@ -200,7 +200,7 @@ function GetAchievementProgression(achievement) end
 --- GetTimeSincePlayerHitPed
 ---
 --- @hash 0xE36A25322DC35F42
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function GetTimeSincePlayerHitPed(player) end
 
@@ -211,8 +211,8 @@ function GetTimeSincePlayerHitPed(player) end
 --- ```
 ---
 --- @hash 0x5E6CC07646BBEAB8
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function DisablePlayerFiring(player, toggle) end
 
@@ -220,7 +220,7 @@ function DisablePlayerFiring(player, toggle) end
 --- GetPlayerWantedLevel
 ---
 --- @hash 0xE28E54788CE8F12D
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function GetPlayerWantedLevel(player) end
 
@@ -228,7 +228,7 @@ function GetPlayerWantedLevel(player) end
 --- DisablePlayerVehicleRewards
 ---
 --- @hash 0xC142BE3BB9CE125F
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function DisablePlayerVehicleRewards(player) end
 
@@ -239,9 +239,9 @@ function DisablePlayerVehicleRewards(player) end
 --- ```
 ---
 --- @hash 0x13EDE1A5DBF797C9
---- @params player number (Player)
---- @params entity table (Entity*)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param entity table (Entity*)
+--- @return boolean
 function GetPlayerTargetEntity(player, entity) end
 
     
@@ -251,9 +251,9 @@ function GetPlayerTargetEntity(player, entity) end
 --- ```
 ---
 --- @hash 0x2975C866E6713290
---- @params player number (Player)
---- @params entity table (Entity*)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param entity table (Entity*)
+--- @return boolean
 function GetEntityPlayerIsFreeAimingAt(player, entity) end
 
     
@@ -282,7 +282,7 @@ function GetEntityPlayerIsFreeAimingAt(player, entity) end
 --- ```
 ---
 --- @hash 0x2F7CEB6520288061
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x2f7ceb6520288061(p0) end
 
@@ -292,7 +292,7 @@ function N_0x2f7ceb6520288061(p0) end
 --- ```
 ---
 --- @hash 0x50FAC3A3E030A6E1
---- @params player number (Player)
+--- @param player number (Player)
 --- @return table (Ped)
 function GetPlayerPedScriptIndex(player) end
 
@@ -306,24 +306,24 @@ function GetPlayerPedScriptIndex(player) end
 --- ```
 ---
 --- @hash 0x085DEB493BE80812
---- @params player number (Player)
---- @return Any
+--- @param player number (Player)
+--- @return any
 function GetWantedLevelRadius(player) end
 
     
 --- IsPlayerBluetoothEnable
 ---
 --- @hash 0x65FAEE425DE637B0
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsPlayerBluetoothEnable(player) end
 
     
 --- HasPlayerDamagedAtLeastOneNonAnimalPed
 ---
 --- @hash 0xE4B90F367BD81752
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function HasPlayerDamagedAtLeastOneNonAnimalPed(player) end
 
     
@@ -338,23 +338,23 @@ function AssistedMovementCloseRoute() end
 --- IsPlayerFreeForAmbientTask
 ---
 --- @hash 0xDCCFD3F106C36AB4
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsPlayerFreeForAmbientTask(player) end
 
     
 --- HasAchievementBeenPassed
 ---
 --- @hash 0x867365E111A3B6EB
---- @params achievement number (int)
---- @return boolean (BOOL)
+--- @param achievement number (int)
+--- @return boolean
 function HasAchievementBeenPassed(achievement) end
 
     
 --- GetPlayerWantedCentrePosition
 ---
 --- @hash 0x0C92BA89F1AF26F8
---- @params player number (Player)
+--- @param player number (Player)
 --- @return Vector3
 function GetPlayerWantedCentrePosition(player) end
 
@@ -364,10 +364,10 @@ function GetPlayerWantedCentrePosition(player) end
 --- ```
 ---
 --- @hash 0x048189FAC643DEEE
---- @params player number (Player)
---- @params ped table (Ped)
---- @params b2 boolean (BOOL)
---- @params resetDamage boolean (BOOL)
+--- @param player number (Player)
+--- @param ped table (Ped)
+--- @param b2 boolean
+--- @param resetDamage boolean
 --- @return void
 function ChangePlayerPed(player, ped, b2, resetDamage) end
 
@@ -386,16 +386,16 @@ function GetMaxWantedLevel() end
 --- IsSpecialAbilityMeterFull
 ---
 --- @hash 0x05A1FE504B7F2587
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsSpecialAbilityMeterFull(player) end
 
     
 --- HasForceCleanupOccurred
 ---
 --- @hash 0xC968670BFACE42D9
---- @params cleanupFlags number (int)
---- @return boolean (BOOL)
+--- @param cleanupFlags number (int)
+--- @return boolean
 function HasForceCleanupOccurred(cleanupFlags) end
 
     
@@ -414,7 +414,7 @@ function GetPlayersLastVehicle() end
 --- ```
 ---
 --- @hash 0xFDD179EAF45B556C
---- @params wantedLevel number (int)
+--- @param wantedLevel number (int)
 --- @return number (int)
 function GetWantedLevelThreshold(wantedLevel) end
 
@@ -439,8 +439,8 @@ function GetWantedLevelThreshold(wantedLevel) end
 --- ```
 ---
 --- @hash 0x75D3F7A1B0D9B145
---- @params player number (Player)
---- @params tintIndex table (int*)
+--- @param player number (Player)
+--- @param tintIndex table (int*)
 --- @return void
 function GetPlayerParachuteTintIndex(player, tintIndex) end
 
@@ -450,10 +450,10 @@ function GetPlayerParachuteTintIndex(player, tintIndex) end
 --- ```
 ---
 --- @hash 0xE902EF951DCE178F
---- @params player number (Player)
---- @params r table (int*)
---- @params g table (int*)
---- @params b table (int*)
+--- @param player number (Player)
+--- @param r table (int*)
+--- @param g table (int*)
+--- @param b table (int*)
 --- @return void
 function GetPlayerRgbColour(player, r, g, b) end
 
@@ -463,7 +463,7 @@ function GetPlayerRgbColour(player, r, g, b) end
 --- ```
 ---
 --- @hash 0x41BD2A6B006AF756
---- @params value number (int)
+--- @param value number (int)
 --- @return number (Player)
 function IntToPlayerindex(value) end
 
@@ -471,8 +471,8 @@ function IntToPlayerindex(value) end
 --- IsSpecialAbilityUnlocked
 ---
 --- @hash 0xC6017F6A6CDFA694
---- @params playerModel table (Hash)
---- @return boolean (BOOL)
+--- @param playerModel table (Hash)
+--- @return boolean
 function IsSpecialAbilityUnlocked(playerModel) end
 
     
@@ -482,7 +482,7 @@ function IsSpecialAbilityUnlocked(playerModel) end
 --- ```
 ---
 --- @hash 0x94DD7888C10A979E
---- @params unk boolean (BOOL)
+--- @param unk boolean
 --- @return void
 function DisplaySystemSigninUi(unk) end
 
@@ -493,7 +493,7 @@ function DisplaySystemSigninUi(unk) end
 --- 
 --- -- act on the pe
 --- @hash 0x43A66C31C68491C0
---- @params playerId number (Player)
+--- @param playerId number (Player)
 --- @return table (Ped)
 function GetPlayerPed(playerId) end
 
@@ -504,8 +504,8 @@ function GetPlayerPed(playerId) end
 --- ```
 ---
 --- @hash 0xD55DDFB47991A294
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function HasPlayerLeftTheWorld(player) end
 
     
@@ -514,8 +514,8 @@ function HasPlayerLeftTheWorld(player) end
 --- ```
 ---
 --- @hash 0x8D768602ADEF2245
---- @params player number (Player)
---- @params p1 number (float)
+--- @param player number (Player)
+--- @param p1 number (float)
 --- @return void
 function N_0x8d768602adef2245(player, p1) end
 
@@ -527,14 +527,14 @@ function N_0x8d768602adef2245(player, p1) end
 ---
 --- @hash 0xF25D331DC2627BBC
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsPlayerOnline() end
 
     
 --- GetPlayerMaxArmour
 ---
 --- @hash 0x92659B4CE1863CB3
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function GetPlayerMaxArmour(player) end
 
@@ -542,25 +542,25 @@ function GetPlayerMaxArmour(player) end
 --- IsPlayerWantedLevelGreater
 ---
 --- @hash 0x238DB2A2C23EE9EF
---- @params player number (Player)
---- @params wantedLevel number (int)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param wantedLevel number (int)
+--- @return boolean
 function IsPlayerWantedLevelGreater(player, wantedLevel) end
 
     
 --- ArePlayerFlashingStarsAboutToDrop
 ---
 --- @hash 0xAFAF86043E5874E9
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function ArePlayerFlashingStarsAboutToDrop(player) end
 
     
 --- CanPlayerStartMission
 ---
 --- @hash 0xDE7465A27D403C06
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function CanPlayerStartMission(player) end
 
     
@@ -570,7 +570,7 @@ function CanPlayerStartMission(player) end
 --- ```
 ---
 --- @hash 0x37039302F4E0A008
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function GetPlayerTeam(player) end
 
@@ -580,9 +580,9 @@ function GetPlayerTeam(player) end
 --- ```
 ---
 --- @hash 0x3C06B5C839B38F7B
---- @params player number (Player)
---- @params entity table (Entity)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param entity table (Entity)
+--- @return boolean
 function IsPlayerFreeAimingAtEntity(player, entity) end
 
     
@@ -593,9 +593,9 @@ function IsPlayerFreeAimingAtEntity(player, entity) end
 --- ```
 ---
 --- @hash 0x388A47C51ABDAC8E
---- @params player number (Player)
---- @params atArresting boolean (BOOL)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param atArresting boolean
+--- @return boolean
 function IsPlayerBeingArrested(player, atArresting) end
 
     
@@ -604,16 +604,16 @@ function IsPlayerBeingArrested(player, atArresting) end
 --- ```
 ---
 --- @hash 0x2E397FD2ECD37C87
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsPlayerFreeAiming(player) end
 
     
 --- HasPlayerDamagedAtLeastOnePed
 ---
 --- @hash 0x20CE80B0C2BF4ACC
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function HasPlayerDamagedAtLeastOnePed(player) end
 
     
@@ -627,16 +627,16 @@ function HasPlayerDamagedAtLeastOnePed(player) end
 --- ```
 ---
 --- @hash 0xBEC7076D64130195
---- @params achievement number (int)
---- @return Any
+--- @param achievement number (int)
+--- @return any
 function GiveAchievementToPlayer(achievement) end
 
     
 --- HasPlayerBeenSpottedInStolenVehicle
 ---
 --- @hash 0xD705740BB0A1CF4C
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function HasPlayerBeenSpottedInStolenVehicle(player) end
 
     
@@ -653,7 +653,7 @@ function NetworkPlayerIdToInt() end
 --- GetTimeSincePlayerDroveOnPavement
 ---
 --- @hash 0xD559D2BE9E37853B
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function GetTimeSincePlayerDroveOnPavement(player) end
 
@@ -674,8 +674,8 @@ function N_0x0032a6dba562c518() end
 --- ```
 ---
 --- @hash 0x4C68DDDDF0097317
---- @params name string (char*)
---- @params cleanupFlags number (int)
+--- @param name string (char*)
+--- @param cleanupFlags number (int)
 --- @return void
 function ForceCleanupForAllThreadsWithThisName(name, cleanupFlags) end
 
@@ -685,8 +685,8 @@ function ForceCleanupForAllThreadsWithThisName(name, cleanupFlags) end
 --- ```
 ---
 --- @hash 0x5FC472C501CCADB3
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function N_0x5fc472c501ccadb3(player) end
 
     
@@ -695,9 +695,9 @@ function N_0x5fc472c501ccadb3(player) end
 --- ```
 ---
 --- @hash 0xDD2620B7B9D16FF1
---- @params player number (Player)
---- @params p1 number (float)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 number (float)
+--- @return boolean
 function N_0xdd2620b7b9d16ff1(player, p1) end
 
     
@@ -708,15 +708,15 @@ function N_0xdd2620b7b9d16ff1(player, p1) end
 ---
 --- @hash 0x7C814D2FB49F40C0
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsPlayerCamControlDisabled() end
 
     
 --- ForceCleanupForThreadWithThisId
 ---
 --- @hash 0xF745B37630DF176B
---- @params id number (int)
---- @params cleanupFlags number (int)
+--- @param id number (int)
+--- @param cleanupFlags number (int)
 --- @return void
 function ForceCleanupForThreadWithThisId(id, cleanupFlags) end
 
@@ -724,16 +724,16 @@ function ForceCleanupForThreadWithThisId(id, cleanupFlags) end
 --- ArePlayerStarsGreyedOut
 ---
 --- @hash 0x0A6EB355EE14A2DB
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function ArePlayerStarsGreyedOut(player) end
 
     
 --- N_0xde45d1a1ef45ee61
 ---
 --- @hash 0xDE45D1A1EF45EE61
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function N_0xde45d1a1ef45ee61(player, toggle) end
 
@@ -741,17 +741,17 @@ function N_0xde45d1a1ef45ee61(player, toggle) end
 --- CanPedHearPlayer
 ---
 --- @hash 0xF297383AA91DCA29
---- @params player number (Player)
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param ped table (Ped)
+--- @return boolean
 function CanPedHearPlayer(player, ped) end
 
     
 --- IsPlayerReadyForCutscene
 ---
 --- @hash 0x908CBECC2CAA3690
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsPlayerReadyForCutscene(player) end
 
     
@@ -760,17 +760,17 @@ function IsPlayerReadyForCutscene(player) end
 --- ```
 ---
 --- @hash 0x4EC12697209F2196
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsPlayerRidingTrain(player) end
 
     
 --- IsPlayerTargettingEntity
 ---
 --- @hash 0x7912F7FC4F6264B6
---- @params player number (Player)
---- @params entity table (Entity)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param entity table (Entity)
+--- @return boolean
 function IsPlayerTargettingEntity(player, entity) end
 
     
@@ -780,14 +780,14 @@ function IsPlayerTargettingEntity(player, entity) end
 --- ```
 ---
 --- @hash 0xED51733DC73AED51
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 number (float)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 number (float)
 --- @return void
 function PlayerAttachVirtualBound(p0, p1, p2, p3, p4, p5, p6, p7) end
 
@@ -795,7 +795,7 @@ function PlayerAttachVirtualBound(p0, p1, p2, p3, p4, p5, p6, p7) end
 --- GetPlayerUnderwaterTimeRemaining
 ---
 --- @hash 0xA1FCF8E6AF40B731
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (float)
 function GetPlayerUnderwaterTimeRemaining(player) end
 
@@ -803,8 +803,8 @@ function GetPlayerUnderwaterTimeRemaining(player) end
 --- IsPlayerDead
 ---
 --- @hash 0x424D4687FA1E5652
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsPlayerDead(player) end
 
     
@@ -817,25 +817,25 @@ function IsPlayerDead(player) end
 --- ```
 ---
 --- @hash 0xD465A8599DFF6814
---- @params player number (Player)
---- @params toggle boolean (BOOL)
---- @return Any
+--- @param player number (Player)
+--- @param toggle boolean
+--- @return any
 function SetPlayerCanUseCover(player, toggle) end
 
     
 --- IsPlayerScriptControlOn
 ---
 --- @hash 0x8A876A65283DD7D7
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsPlayerScriptControlOn(player) end
 
     
 --- IsSpecialAbilityEnabled
 ---
 --- @hash 0xB1D200FE26AEF3CB
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsSpecialAbilityEnabled(player) end
 
     
@@ -844,9 +844,9 @@ function IsSpecialAbilityEnabled(player) end
 --- ```
 ---
 --- @hash 0x70A382ADEC069DD3
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
 --- @return void
 function N_0x70a382adec069dd3(p0, p1, p2) end
 
@@ -857,7 +857,7 @@ function N_0x70a382adec069dd3(p0, p1, p2) end
 --- ```
 ---
 --- @hash 0x56105E599CAB0EFA
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function GetPlayerFakeWantedLevel(player) end
 
@@ -865,7 +865,7 @@ function GetPlayerFakeWantedLevel(player) end
 --- GetTimeSincePlayerDroveAgainstTraffic
 ---
 --- @hash 0xDB89591E290D9182
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function GetTimeSincePlayerDroveAgainstTraffic(player) end
 
@@ -877,7 +877,7 @@ function GetTimeSincePlayerDroveAgainstTraffic(player) end
 --- ```
 ---
 --- @hash 0xBC9490CA15AEA8FB
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function N_0xbc9490ca15aea8fb(player) end
 
@@ -885,8 +885,8 @@ function N_0xbc9490ca15aea8fb(player) end
 --- N_0x6e4361ff3e8cd7ca
 ---
 --- @hash 0x6E4361FF3E8CD7CA
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0x6e4361ff3e8cd7ca(p0) end
 
     
@@ -897,24 +897,24 @@ function N_0x6e4361ff3e8cd7ca(p0) end
 --- ```
 ---
 --- @hash 0x49C32D60007AFA47
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsPlayerControlOn(player) end
 
     
 --- GetPlayerHasReserveParachute
 ---
 --- @hash 0x5DDFE2FF727F3CA3
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function GetPlayerHasReserveParachute(player) end
 
     
 --- SetDisableAmbientMeleeMove
 ---
 --- @hash 0x2E8AABFA40A84F8C
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetDisableAmbientMeleeMove(player, toggle) end
 
@@ -937,24 +937,24 @@ function SetDisableAmbientMeleeMove(player, toggle) end
 --- ```
 ---
 --- @hash 0xB721981B2B939E07
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function GetPlayerInvincible(player) end
 
     
 --- N_0x7e07c78925d5fd96
 ---
 --- @hash 0x7E07C78925D5FD96
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0x7e07c78925d5fd96(p0) end
 
     
 --- IsPlayerTargettingAnything
 ---
 --- @hash 0x78CFE51896B6B8A4
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsPlayerTargettingAnything(player) end
 
     
@@ -965,7 +965,7 @@ function IsPlayerTargettingAnything(player) end
 --- ```
 ---
 --- @hash 0x9EC6603812C24710
---- @params value number (int)
+--- @param value number (int)
 --- @return number (int)
 function IntToParticipantindex(value) end
 
@@ -986,12 +986,12 @@ function GetNumberOfPlayers() end
 --- ```
 ---
 --- @hash 0x7BAE68775557AE0B
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
 --- @return void
 function N_0x7bae68775557ae0b(p0, p1, p2, p3, p4, p5) end
 
@@ -999,7 +999,7 @@ function N_0x7bae68775557ae0b(p0, p1, p2, p3, p4, p5) end
 --- ClearPlayerParachuteVariationOverride
 ---
 --- @hash 0x0F4CC924CF8C7B21
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function ClearPlayerParachuteVariationOverride(player) end
 
@@ -1007,8 +1007,8 @@ function ClearPlayerParachuteVariationOverride(player) end
 --- EnableSpecialAbility
 ---
 --- @hash 0x181EC197DAEFE121
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function EnableSpecialAbility(player, toggle) end
 
@@ -1016,8 +1016,8 @@ function EnableSpecialAbility(player, toggle) end
 --- SetEveryoneIgnorePlayer
 ---
 --- @hash 0x8EEDA153AD141BA4
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetEveryoneIgnorePlayer(player, toggle) end
 
@@ -1025,24 +1025,24 @@ function SetEveryoneIgnorePlayer(player, toggle) end
 --- HasPlayerTeleportFinished
 ---
 --- @hash 0xE23D5873C2394C61
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function HasPlayerTeleportFinished(player) end
 
     
 --- IsPlayerPressingHorn
 ---
 --- @hash 0xFA1E2BF8B10598F9
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsPlayerPressingHorn(player) end
 
     
 --- RestorePlayerStamina
 ---
 --- @hash 0xA352C1B864CAFD33
---- @params player number (Player)
---- @params p1 number (float)
+--- @param player number (Player)
+--- @param p1 number (float)
 --- @return void
 function RestorePlayerStamina(player, p1) end
 
@@ -1050,8 +1050,8 @@ function RestorePlayerStamina(player, p1) end
 --- GivePlayerRagdollControl
 ---
 --- @hash 0x3C49C870E66F0A28
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function GivePlayerRagdollControl(player, toggle) end
 
@@ -1060,7 +1060,7 @@ function GivePlayerRagdollControl(player, toggle) end
 ---
 --- @hash 0x02B15662D7F8886F
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsPlayerTeleportActive() end
 
     
@@ -1069,16 +1069,16 @@ function IsPlayerTeleportActive() end
 --- ```
 ---
 --- @hash 0x95E8F73DC65EFB9C
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsPlayerClimbing(player) end
 
     
 --- N_0x31e90b8873a4cd3b
 ---
 --- @hash 0x31E90B8873A4CD3B
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0x31e90b8873a4cd3b(p0, p1) end
 
@@ -1096,7 +1096,7 @@ function N_0x7148e0f43d11f0d9() end
 --- ResetWantedLevelDifficulty
 ---
 --- @hash 0xB9D0DD990DC141DD
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function ResetWantedLevelDifficulty(player) end
 
@@ -1104,8 +1104,8 @@ function ResetWantedLevelDifficulty(player) end
 --- SetPlayerMayOnlyEnterThisVehicle
 ---
 --- @hash 0x8026FF78F208978A
---- @params player number (Player)
---- @params vehicle number (Vehicle)
+--- @param player number (Player)
+--- @param vehicle number (Vehicle)
 --- @return void
 function SetPlayerMayOnlyEnterThisVehicle(player, vehicle) end
 
@@ -1113,16 +1113,16 @@ function SetPlayerMayOnlyEnterThisVehicle(player, vehicle) end
 --- N_0x690a61a6d13583f6
 ---
 --- @hash 0x690A61A6D13583F6
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function N_0x690a61a6d13583f6(player) end
 
     
 --- IsSpecialAbilityActive
 ---
 --- @hash 0x3E5F7FC85D854E15
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsSpecialAbilityActive(player) end
 
     
@@ -1131,15 +1131,15 @@ function IsSpecialAbilityActive(player) end
 --- ```
 ---
 --- @hash 0x38D28DA81E4E9BF9
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsPlayerBattleAware(player) end
 
     
 --- SetAllRandomPedsFleeThisFrame
 ---
 --- @hash 0x471D2FF42A94B4F2
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function SetAllRandomPedsFleeThisFrame(player) end
 
@@ -1147,10 +1147,10 @@ function SetAllRandomPedsFleeThisFrame(player) end
 --- GetPlayerParachuteSmokeTrailColor
 ---
 --- @hash 0xEF56DBABD3CD4887
---- @params player number (Player)
---- @params r table (int*)
---- @params g table (int*)
---- @params b table (int*)
+--- @param player number (Player)
+--- @param r table (int*)
+--- @param g table (int*)
+--- @param b table (int*)
 --- @return void
 function GetPlayerParachuteSmokeTrailColor(player, r, g, b) end
 
@@ -1158,8 +1158,8 @@ function GetPlayerParachuteSmokeTrailColor(player, r, g, b) end
 --- N_0x2f41a3bae005e5fa
 ---
 --- @hash 0x2F41A3BAE005E5FA
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0x2f41a3bae005e5fa(p0, p1) end
 
@@ -1169,8 +1169,8 @@ function N_0x2f41a3bae005e5fa(p0, p1) end
 --- ```
 ---
 --- @hash 0xD2B315B6689D537D
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetAutoGiveScubaGearWhenExitVehicle(player, toggle) end
 
@@ -1184,8 +1184,8 @@ function SetAutoGiveScubaGearWhenExitVehicle(player, toggle) end
 --- ```
 ---
 --- @hash 0xFF300C7649724A0B
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPlayerLeavePedBehind(player, toggle) end
 
@@ -1193,17 +1193,17 @@ function SetPlayerLeavePedBehind(player, toggle) end
 --- Hardcoded to always return false in the retail version.
 ---
 --- @hash 0xC2AFFFDABBDC2C5C
---- @params achievement number (int)
---- @params progress number (int)
---- @return boolean (BOOL)
+--- @param achievement number (int)
+--- @param progress number (int)
+--- @return boolean
 function SetAchievementProgression(achievement, progress) end
 
     
 --- N_0xd821056b9acf8052
 ---
 --- @hash 0xD821056B9ACF8052
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0xd821056b9acf8052(p0, p1) end
 
@@ -1211,7 +1211,7 @@ function N_0xd821056b9acf8052(p0, p1) end
 --- N_0x36f1b38855f2a8df
 ---
 --- @hash 0x36F1B38855F2A8DF
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function N_0x36f1b38855f2a8df(player) end
 
@@ -1221,7 +1221,7 @@ function N_0x36f1b38855f2a8df(player) end
 --- ```
 ---
 --- @hash 0x237440E46D918649
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x237440e46d918649(p0) end
 
@@ -1239,8 +1239,8 @@ function PlayerPedId() end
 --- SetPlayerForceSkipAimIntro
 ---
 --- @hash 0x7651BC64AE59E128
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPlayerForceSkipAimIntro(player, toggle) end
 
@@ -1250,9 +1250,9 @@ function SetPlayerForceSkipAimIntro(player, toggle) end
 --- ```
 ---
 --- @hash 0x55FCC0C390620314
---- @params player1 number (Player)
---- @params player2 number (Player)
---- @params toggle boolean (BOOL)
+--- @param player1 number (Player)
+--- @param player2 number (Player)
+--- @param toggle boolean
 --- @return void
 function N_0x55fcc0c390620314(player1, player2, toggle) end
 
@@ -1260,7 +1260,7 @@ function N_0x55fcc0c390620314(player1, player2, toggle) end
 --- GetPlayerSprintStaminaRemaining
 ---
 --- @hash 0x3F9F16F8E65A7ED7
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (float)
 function GetPlayerSprintStaminaRemaining(player) end
 
@@ -1268,7 +1268,7 @@ function GetPlayerSprintStaminaRemaining(player) end
 --- ResetPlayerStamina
 ---
 --- @hash 0xA6F312FCCE9C1DFE
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function ResetPlayerStamina(player) end
 
@@ -1278,7 +1278,7 @@ function ResetPlayerStamina(player) end
 --- ```
 ---
 --- @hash 0xAD73CE5A09E42D12
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function N_0xad73ce5a09e42d12(player) end
 
@@ -1303,10 +1303,10 @@ function N_0xad73ce5a09e42d12(player) end
 --- ```
 ---
 --- @hash 0xBC0753C9CA14B506
---- @params player number (Player)
---- @params p1 number (int)
---- @params p2 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 number (int)
+--- @param p2 boolean
+--- @return boolean
 function N_0xbc0753c9ca14b506(player, p1, p2) end
 
     
@@ -1330,8 +1330,8 @@ function N_0xbc0753c9ca14b506(player, p1, p2) end
 --- ```
 ---
 --- @hash 0xD5A016BC3C09CF40
---- @params player number (Player)
---- @params index table (int*)
+--- @param player number (Player)
+--- @param index table (int*)
 --- @return void
 function GetPlayerReserveParachuteTintIndex(player, index) end
 
@@ -1339,7 +1339,7 @@ function GetPlayerReserveParachuteTintIndex(player, index) end
 --- N_0xfac75988a7d078d3
 ---
 --- @hash 0xFAC75988A7D078D3
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function N_0xfac75988a7d078d3(player) end
 
@@ -1349,7 +1349,7 @@ function N_0xfac75988a7d078d3(player) end
 --- ```
 ---
 --- @hash 0x4669B3ED80F24B4E
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function N_0x4669b3ed80f24b4e(player) end
 
@@ -1359,7 +1359,7 @@ function N_0x4669b3ed80f24b4e(player) end
 --- ```
 ---
 --- @hash 0x5501B7A5CDB79D37
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function N_0x5501b7a5cdb79d37(player) end
 
@@ -1381,7 +1381,7 @@ function N_0xb885852c39cc265d() end
 ---
 --- @hash 0xCB645E85E97EA48B
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0xcb645e85e97ea48b() end
 
     
@@ -1389,7 +1389,7 @@ function N_0xcb645e85e97ea48b() end
 ---
 --- @hash 0xB9CF1F793A9F1BF1
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0xb9cf1f793a9f1bf1() end
 
     
@@ -1398,8 +1398,8 @@ function N_0xb9cf1f793a9f1bf1() end
 --- ```
 ---
 --- @hash 0x5E9564D8246B909A
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsPlayerPlaying(player) end
 
     
@@ -1409,7 +1409,7 @@ function IsPlayerPlaying(player) end
 ---
 --- @hash 0x74556E1420867ECA
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsPlayerLoggingInNp() end
 
     
@@ -1421,8 +1421,8 @@ function IsPlayerLoggingInNp() end
 --- ```
 ---
 --- @hash 0x5C8B2F450EE4328E
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPlayerLockon(player, toggle) end
 
@@ -1432,17 +1432,17 @@ function SetPlayerLockon(player, toggle) end
 --- ```
 ---
 --- @hash 0xF10B44FD479D69F3
---- @params player number (Player)
---- @params p1 number (int)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 number (int)
+--- @return boolean
 function N_0xf10b44fd479d69f3(player, p1) end
 
     
 --- SetAutoGiveParachuteWhenEnterPlane
 ---
 --- @hash 0x9F343285A00B4BB6
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetAutoGiveParachuteWhenEnterPlane(player, toggle) end
 
@@ -1452,8 +1452,8 @@ function SetAutoGiveParachuteWhenEnterPlane(player, toggle) end
 --- ```
 ---
 --- @hash 0x29961D490E5814FD
---- @params player number (Player)
---- @params range number (float)
+--- @param player number (Player)
+--- @param range number (float)
 --- @return void
 function SetPlayerLockonRangeOverride(player, range) end
 
@@ -1465,8 +1465,8 @@ function SetPlayerLockonRangeOverride(player, range) end
 --- ```
 ---
 --- @hash 0xCA7DC8329F0A1E9E
---- @params player number (Player)
---- @params multiplier number (float)
+--- @param player number (Player)
+--- @param multiplier number (float)
 --- @return void
 function SetAirDragMultiplierForPlayersVehicle(player, multiplier) end
 
@@ -1476,17 +1476,17 @@ function SetAirDragMultiplierForPlayersVehicle(player, multiplier) end
 --- ```
 ---
 --- @hash 0xF3AC26D3CC576528
---- @params player number (Player)
---- @params p2 boolean (BOOL)
---- @return Any
+--- @param player number (Player)
+--- @param p2 boolean
+--- @return any
 function RemovePlayerHelmet(player, p2) end
 
     
 --- SetPlayerNoiseMultiplier
 ---
 --- @hash 0xDB89EF50FF25FCE9
---- @params player number (Player)
---- @params multiplier number (float)
+--- @param player number (Player)
+--- @param multiplier number (float)
 --- @return void
 function SetPlayerNoiseMultiplier(player, multiplier) end
 
@@ -1505,7 +1505,7 @@ function PlayerId() end
 --- SetMaxWantedLevel
 ---
 --- @hash 0xAA5F02DB48D704B9
---- @params maxWantedLevel number (int)
+--- @param maxWantedLevel number (int)
 --- @return void
 function SetMaxWantedLevel(maxWantedLevel) end
 
@@ -1513,7 +1513,7 @@ function SetMaxWantedLevel(maxWantedLevel) end
 --- ReportPoliceSpottedPlayer
 ---
 --- @hash 0xDC64D2C53493ED12
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function ReportPoliceSpottedPlayer(player) end
 
@@ -1531,8 +1531,8 @@ function ResetWorldBoundaryForPlayer() end
 --- SetPlayerInvincibleKeepRagdollEnabled
 ---
 --- @hash 0x6BC97F4F4BB3C04B
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPlayerInvincibleKeepRagdollEnabled(player, toggle) end
 
@@ -1544,8 +1544,8 @@ function SetPlayerInvincibleKeepRagdollEnabled(player, toggle) end
 --- -- To reset it back to the normal recharge speed:
 --- SetPlayerHealthRechargeMultiplier(PlayerId(), 1.0
 --- @hash 0x5DB660B38DD98A31
---- @params player number (Player)
---- @params regenRate number (float)
+--- @param player number (Player)
+--- @param regenRate number (float)
 --- @return void
 function SetPlayerHealthRechargeMultiplier(player, regenRate) end
 
@@ -1553,8 +1553,8 @@ function SetPlayerHealthRechargeMultiplier(player, regenRate) end
 --- SetDispatchCopsForPlayer
 ---
 --- @hash 0xDB172424876553F4
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetDispatchCopsForPlayer(player, toggle) end
 
@@ -1562,7 +1562,7 @@ function SetDispatchCopsForPlayer(player, toggle) end
 --- N_0xffee8fa29ab9a18e
 ---
 --- @hash 0xFFEE8FA29AB9A18E
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function N_0xffee8fa29ab9a18e(player) end
 
@@ -1597,8 +1597,8 @@ function PlayerDetachVirtualBound() end
 --- ```
 ---
 --- @hash 0xAF04C87F5DC1DF38
---- @params player number (Player)
---- @params index number (int)
+--- @param player number (Player)
+--- @param index number (int)
 --- @return void
 function SetPlayerReserveParachuteTintIndex(player, index) end
 
@@ -1606,8 +1606,8 @@ function SetPlayerReserveParachuteTintIndex(player, index) end
 --- N_0x2382ab11450ae7ba
 ---
 --- @hash 0x2382AB11450AE7BA
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0x2382ab11450ae7ba(p0, p1) end
 
@@ -1615,7 +1615,7 @@ function N_0x2382ab11450ae7ba(p0, p1) end
 --- GetTimeSincePlayerHitVehicle
 ---
 --- @hash 0x5D35ECF3A81A0EE0
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function GetTimeSincePlayerHitVehicle(player) end
 
@@ -1625,8 +1625,8 @@ function GetTimeSincePlayerHitVehicle(player) end
 --- ```
 ---
 --- @hash 0xB2C1A29588A9F47C
---- @params player number (Player)
---- @params multiplier number (float)
+--- @param player number (Player)
+--- @param multiplier number (float)
 --- @return void
 function SetPlayerSneakingNoiseMultiplier(player, multiplier) end
 
@@ -1634,8 +1634,8 @@ function SetPlayerSneakingNoiseMultiplier(player, multiplier) end
 --- SetPlayerHealthRechargeLimit
 ---
 --- @hash 0xC388A0F065F5BC34
---- @params player number (Player)
---- @params limit number (float)
+--- @param player number (Player)
+--- @param limit number (float)
 --- @return void
 function SetPlayerHealthRechargeLimit(player, limit) end
 
@@ -1646,7 +1646,7 @@ function SetPlayerHealthRechargeLimit(player, limit) end
 --- ```
 ---
 --- @hash 0xC3376F42B1FACCC6
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function N_0xc3376f42b1faccc6(player) end
 
@@ -1658,8 +1658,8 @@ function N_0xc3376f42b1faccc6(player) end
 --- ```
 ---
 --- @hash 0x239528EACDC3E7DE
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPlayerInvincible(player, toggle) end
 
@@ -1667,8 +1667,8 @@ function SetPlayerInvincible(player, toggle) end
 --- SetPlayerWeaponDefenseModifier
 ---
 --- @hash 0x2D83BC011CA14A3C
---- @params player number (Player)
---- @params modifier number (float)
+--- @param player number (Player)
+--- @param modifier number (float)
 --- @return void
 function SetPlayerWeaponDefenseModifier(player, modifier) end
 
@@ -1678,8 +1678,8 @@ function SetPlayerWeaponDefenseModifier(player, modifier) end
 --- ```
 ---
 --- @hash 0x749FADDF97DFE930
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPlayerClothPinFrames(player, toggle) end
 
@@ -1687,7 +1687,7 @@ function SetPlayerClothPinFrames(player, toggle) end
 --- SpecialAbilityDeactivateFast
 ---
 --- @hash 0x9CB5CE07A3968D5A
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function SpecialAbilityDeactivateFast(player) end
 
@@ -1697,7 +1697,7 @@ function SpecialAbilityDeactivateFast(player) end
 --- ```
 ---
 --- @hash 0x9F7BBA2EA6372500
---- @params index number (int)
+--- @param index number (int)
 --- @return void
 function SetPlayerClothPackageIndex(index) end
 
@@ -1713,9 +1713,9 @@ function SetPlayerClothPackageIndex(index) end
 --- ```
 ---
 --- @hash 0x8D32347D6D4C40A2
---- @params player number (Player)
---- @params bHasControl boolean (BOOL)
---- @params flags number (int)
+--- @param player number (Player)
+--- @param bHasControl boolean
+--- @param flags number (int)
 --- @return void
 function SetPlayerControl(player, bHasControl, flags) end
 
@@ -1726,8 +1726,8 @@ function SetPlayerControl(player, bHasControl, flags) end
 --- ```
 ---
 --- @hash 0x6E8834B52EC20C77
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPlayerCanDoDriveBy(player, toggle) end
 
@@ -1735,7 +1735,7 @@ function SetPlayerCanDoDriveBy(player, toggle) end
 --- SpecialAbilityActivate
 ---
 --- @hash 0x821FDC827D6F4090
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function SpecialAbilityActivate(player) end
 
@@ -1797,9 +1797,9 @@ function SpecialAbilityActivate(player) end
 --- ```
 ---
 --- @hash 0xE9B09589827545E7
---- @params player number (Player)
---- @params crimeType number (int)
---- @params wantedLvlThresh number (int)
+--- @param player number (Player)
+--- @param crimeType number (int)
+--- @param wantedLvlThresh number (int)
 --- @return void
 function ReportCrime(player, crimeType, wantedLvlThresh) end
 
@@ -1807,8 +1807,8 @@ function ReportCrime(player, crimeType, wantedLvlThresh) end
 --- SetPlayerSimulateAiming
 ---
 --- @hash 0xC54C95DA968EC5B5
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPlayerSimulateAiming(player, toggle) end
 
@@ -1816,8 +1816,8 @@ function SetPlayerSimulateAiming(player, toggle) end
 --- SetPlayerForcedAim
 ---
 --- @hash 0x0FEE4F80AC44A726
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPlayerForcedAim(player, toggle) end
 
@@ -1825,7 +1825,7 @@ function SetPlayerForcedAim(player, toggle) end
 --- ResetPlayerInputGait
 ---
 --- @hash 0x19531C47A2ABD691
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function ResetPlayerInputGait(player) end
 
@@ -1838,8 +1838,8 @@ function ResetPlayerInputGait(player) end
 --- ```
 ---
 --- @hash 0x11D5F725F0E780E0
---- @params player number (Player)
---- @params flags number (int)
+--- @param player number (Player)
+--- @param flags number (int)
 --- @return void
 function SetPlayerResetFlagPreferRearSeats(player, flags) end
 
@@ -1853,7 +1853,7 @@ function SetPlayerResetFlagPreferRearSeats(player, flags) end
 --- ```
 ---
 --- @hash 0xB1906895227793F3
---- @params targetMode number (int)
+--- @param targetMode number (int)
 --- @return void
 function SetPlayerTargetingMode(targetMode) end
 
@@ -1863,8 +1863,8 @@ function SetPlayerTargetingMode(targetMode) end
 --- ```
 ---
 --- @hash 0x32C62AA929C2DA6A
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPoliceIgnorePlayer(player, toggle) end
 
@@ -1872,10 +1872,10 @@ function SetPoliceIgnorePlayer(player, toggle) end
 --- SetPlayerParachuteSmokeTrailColor
 ---
 --- @hash 0x8217FD371A4625CF
---- @params player number (Player)
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
+--- @param player number (Player)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
 --- @return void
 function SetPlayerParachuteSmokeTrailColor(player, r, g, b) end
 
@@ -1883,8 +1883,8 @@ function SetPlayerParachuteSmokeTrailColor(player, r, g, b) end
 --- SetPlayerForcedZoom
 ---
 --- @hash 0x75E7D505F2B15902
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPlayerForcedZoom(player, toggle) end
 
@@ -1897,8 +1897,8 @@ function SetPlayerForcedZoom(player, toggle) end
 --- ```
 ---
 --- @hash 0x00A1CADD00108836
---- @params player number (Player)
---- @params model table (Hash)
+--- @param player number (Player)
+--- @param model table (Hash)
 --- @return void
 function SetPlayerModel(player, model) end
 
@@ -1908,8 +1908,8 @@ function SetPlayerModel(player, model) end
 --- ```
 ---
 --- @hash 0xCAC57395B151135F
---- @params player number (Player)
---- @params p1 boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 boolean
 --- @return void
 function N_0xcac57395b151135f(player, p1) end
 
@@ -1919,8 +1919,8 @@ function N_0xcac57395b151135f(player, p1) end
 --- ```
 ---
 --- @hash 0x4A3DC7ECCC321032
---- @params player number (Player)
---- @params modifier number (float)
+--- @param player number (Player)
+--- @param modifier number (float)
 --- @return void
 function SetPlayerMeleeWeaponDamageModifier(player, modifier) end
 
@@ -1930,8 +1930,8 @@ function SetPlayerMeleeWeaponDamageModifier(player, modifier) end
 --- ```
 ---
 --- @hash 0x0299FA38396A4940
---- @params player number (Player)
---- @params team number (int)
+--- @param player number (Player)
+--- @param team number (int)
 --- @return void
 function SetPlayerTeam(player, team) end
 
@@ -1941,8 +1941,8 @@ function SetPlayerTeam(player, team) end
 --- ```
 ---
 --- @hash 0xD5E460AD7020A246
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPlayerCanBeHassledByGangs(player, toggle) end
 
@@ -1950,8 +1950,8 @@ function SetPlayerCanBeHassledByGangs(player, toggle) end
 --- SetIgnoreLowPriorityShockingEvents
 ---
 --- @hash 0x596976B02B6B5700
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetIgnoreLowPriorityShockingEvents(player, toggle) end
 
@@ -1963,9 +1963,9 @@ function SetIgnoreLowPriorityShockingEvents(player, toggle) end
 --- ```
 ---
 --- @hash 0x39FF19C64EF7DA5B
---- @params player number (Player)
---- @params wantedLevel number (int)
---- @params disableNoMission boolean (BOOL)
+--- @param player number (Player)
+--- @param wantedLevel number (int)
+--- @param disableNoMission boolean
 --- @return void
 function SetPlayerWantedLevel(player, wantedLevel, disableNoMission) end
 
@@ -1979,7 +1979,7 @@ function SetPlayerWantedLevel(player, wantedLevel, disableNoMission) end
 --- ```
 ---
 --- @hash 0xB45EFF719D8427A6
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0xb45eff719d8427a6(p0) end
 
@@ -1989,8 +1989,8 @@ function N_0xb45eff719d8427a6(p0) end
 --- ```
 ---
 --- @hash 0xEE4EBDD2593BA844
---- @params player number (Player)
---- @params p1 boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 boolean
 --- @return void
 function SetPlayerHomingRocketDisabled(player, p1) end
 
@@ -2003,7 +2003,7 @@ function SetPlayerHomingRocketDisabled(player, p1) end
 --- ```
 ---
 --- @hash 0x43286D561B72B8BF
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetPoliceRadarBlips(toggle) end
 
@@ -2013,8 +2013,8 @@ function SetPoliceRadarBlips(toggle) end
 --- ```
 ---
 --- @hash 0x77DFCCF5948B8C71
---- @params player number (Player)
---- @params value number (int)
+--- @param player number (Player)
+--- @param value number (int)
 --- @return void
 function SetPlayerMaxArmour(player, value) end
 
@@ -2039,8 +2039,8 @@ function SetPlayerMaxArmour(player, value) end
 --- ```
 ---
 --- @hash 0xA3D0E54541D9A5E5
---- @params player number (Player)
---- @params tintIndex number (int)
+--- @param player number (Player)
+--- @param tintIndex number (int)
 --- @return void
 function SetPlayerParachuteTintIndex(player, tintIndex) end
 
@@ -2050,7 +2050,7 @@ function SetPlayerParachuteTintIndex(player, tintIndex) end
 --- ```
 ---
 --- @hash 0x14D913B777DFF5DA
---- @params value number (int)
+--- @param value number (int)
 --- @return void
 function SetPlayerClothLockCounter(value) end
 
@@ -2059,7 +2059,7 @@ function SetPlayerClothLockCounter(value) end
 ---
 --- @hash 0x5D511E3867C87139
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsSystemUiBeingDisplayed() end
 
     
@@ -2079,10 +2079,10 @@ function IsSystemUiBeingDisplayed() end
 --- ```
 ---
 --- @hash 0x520E541A97A13354
---- @params player number (Player)
---- @params position number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param player number (Player)
+--- @param position number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function SetPlayerWantedCentrePosition(player, position, y, z) end
 
@@ -2090,7 +2090,7 @@ function SetPlayerWantedCentrePosition(player, position, y, z) end
 --- N_0x9edd76e87d5d51ba
 ---
 --- @hash 0x9EDD76E87D5D51BA
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function N_0x9edd76e87d5d51ba(player) end
 
@@ -2100,8 +2100,8 @@ function N_0x9edd76e87d5d51ba(player) end
 --- ```
 ---
 --- @hash 0x3DACA8DDC6FD4980
---- @params player number (Player)
---- @params p1 boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 boolean
 --- @return void
 function SpecialAbilityFillMeter(player, p1) end
 
@@ -2112,8 +2112,8 @@ function SpecialAbilityFillMeter(player, p1) end
 --- ```
 ---
 --- @hash 0x5DC40A8869C22141
---- @params player boolean (BOOL)
---- @params state table (ScrHandle)
+--- @param player boolean
+--- @param state table (ScrHandle)
 --- @return void
 function SetPlayerBluetoothState(player, state) end
 
@@ -2123,9 +2123,9 @@ function SetPlayerBluetoothState(player, state) end
 --- ```
 ---
 --- @hash 0xB7B0870EB531D08D
---- @params player number (Player)
---- @params p1 number (int)
---- @params p2 boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 number (int)
+--- @param p2 boolean
 --- @return void
 function SpecialAbilityChargeAbsolute(player, p1, p2) end
 
@@ -2139,12 +2139,12 @@ function SpecialAbilityChargeAbsolute(player, p1, p2) end
 --- ```
 ---
 --- @hash 0x477D5D63E63ECA5D
---- @params player number (Player)
---- @params amount number (float)
---- @params gaitType number (int)
---- @params speed number (float)
---- @params p4 boolean (BOOL)
---- @params p5 boolean (BOOL)
+--- @param player number (Player)
+--- @param amount number (float)
+--- @param gaitType number (int)
+--- @param speed number (float)
+--- @param p4 boolean
+--- @param p5 boolean
 --- @return void
 function SimulatePlayerInputGait(player, amount, gaitType, speed, p4, p5) end
 
@@ -2152,8 +2152,8 @@ function SimulatePlayerInputGait(player, amount, gaitType, speed, p4, p5) end
 --- SetAllRandomPedsFlee
 ---
 --- @hash 0x056E0FE8534C2949
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetAllRandomPedsFlee(player, toggle) end
 
@@ -2163,8 +2163,8 @@ function SetAllRandomPedsFlee(player, toggle) end
 --- ```
 ---
 --- @hash 0x1D506DBBBC51E64B
---- @params player number (Player)
---- @params p1 boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 boolean
 --- @return void
 function SpecialAbilityDepleteMeter(player, p1) end
 
@@ -2175,11 +2175,11 @@ function SpecialAbilityDepleteMeter(player, p1) end
 --- ```
 ---
 --- @hash 0xD9284A8C0D48352C
---- @params player number (Player)
---- @params p1 number (int)
---- @params p2 Any
---- @params p3 Any
---- @params p4 boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 number (int)
+--- @param p2 any
+--- @param p3 any
+--- @param p4 boolean
 --- @return void
 function SetPlayerParachuteVariationOverride(player, p1, p2, p3, p4) end
 
@@ -2187,7 +2187,7 @@ function SetPlayerParachuteVariationOverride(player, p1, p2, p3, p4) end
 --- SetWantedLevelMultiplier
 ---
 --- @hash 0x020E5F00CDA207BA
---- @params multiplier number (float)
+--- @param multiplier number (float)
 --- @return void
 function SetWantedLevelMultiplier(multiplier) end
 
@@ -2195,7 +2195,7 @@ function SetWantedLevelMultiplier(multiplier) end
 --- SetSpecialAbilityMultiplier
 ---
 --- @hash 0xA49C426ED0CA4AB7
---- @params multiplier number (float)
+--- @param multiplier number (float)
 --- @return void
 function SetSpecialAbilityMultiplier(multiplier) end
 
@@ -2203,8 +2203,8 @@ function SetSpecialAbilityMultiplier(multiplier) end
 --- SetSpecialAbility
 ---
 --- @hash 0xB214D570EAD7F81A
---- @params player number (Player)
---- @params p1 number (int)
+--- @param player number (Player)
+--- @param p1 number (int)
 --- @return void
 function SetSpecialAbility(player, p1) end
 
@@ -2212,7 +2212,7 @@ function SetSpecialAbility(player, p1) end
 --- SpecialAbilityDeplete
 ---
 --- @hash 0x17F7471EACA78290
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function SpecialAbilityDeplete(p0) end
 
@@ -2230,7 +2230,7 @@ function StopPlayerTeleport() end
 --- SetPlayerTargetLevel
 ---
 --- @hash 0x5702B917B99DB1CD
---- @params targetLevel number (int)
+--- @param targetLevel number (int)
 --- @return void
 function SetPlayerTargetLevel(targetLevel) end
 
@@ -2240,9 +2240,9 @@ function SetPlayerTargetLevel(targetLevel) end
 --- ```
 ---
 --- @hash 0xF113E3AA9BC54613
---- @params player number (Player)
---- @params p1 boolean (BOOL)
---- @params p2 boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 boolean
+--- @param p2 boolean
 --- @return void
 function SpecialAbilityChargeMedium(player, p1, p2) end
 
@@ -2250,8 +2250,8 @@ function SpecialAbilityChargeMedium(player, p1, p2) end
 --- SetPlayerParachutePackModelOverride
 ---
 --- @hash 0xDC80A4C2F18A2B64
---- @params player number (Player)
---- @params model table (Hash)
+--- @param player number (Player)
+--- @param model table (Hash)
 --- @return void
 function SetPlayerParachutePackModelOverride(player, model) end
 
@@ -2259,7 +2259,7 @@ function SetPlayerParachutePackModelOverride(player, model) end
 --- SetPlayerHasReserveParachute
 ---
 --- @hash 0x7DDAB28D31FAC363
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function SetPlayerHasReserveParachute(player) end
 
@@ -2267,7 +2267,7 @@ function SetPlayerHasReserveParachute(player) end
 --- SpecialAbilityLock
 ---
 --- @hash 0x6A09D0D590A47D13
---- @params playerModel table (Hash)
+--- @param playerModel table (Hash)
 --- @return void
 function SpecialAbilityLock(playerModel) end
 
@@ -2275,8 +2275,8 @@ function SpecialAbilityLock(playerModel) end
 --- SetPlayerMeleeWeaponDefenseModifier
 ---
 --- @hash 0xAE540335B4ABC4E2
---- @params player number (Player)
---- @params modifier number (float)
+--- @param player number (Player)
+--- @param modifier number (float)
 --- @return void
 function SetPlayerMeleeWeaponDefenseModifier(player, modifier) end
 
@@ -2286,9 +2286,9 @@ function SetPlayerMeleeWeaponDefenseModifier(player, modifier) end
 --- ```
 ---
 --- @hash 0x340E61DE7F471565
---- @params player number (Player)
---- @params wantedLevel number (int)
---- @params p2 boolean (BOOL)
+--- @param player number (Player)
+--- @param wantedLevel number (int)
+--- @param p2 boolean
 --- @return void
 function SetPlayerWantedLevelNoDrop(player, wantedLevel, p2) end
 
@@ -2296,7 +2296,7 @@ function SetPlayerWantedLevelNoDrop(player, wantedLevel, p2) end
 --- StartFiringAmnesty
 ---
 --- @hash 0xBF9BD71691857E48
---- @params duration number (int)
+--- @param duration number (int)
 --- @return void
 function StartFiringAmnesty(duration) end
 
@@ -2306,8 +2306,8 @@ function StartFiringAmnesty(duration) end
 --- ```
 ---
 --- @hash 0xA50E117CDDF82F0C
---- @params player number (Player)
---- @params modifier number (float)
+--- @param player number (Player)
+--- @param modifier number (float)
 --- @return void
 function SetPlayerVehicleDamageModifier(player, modifier) end
 
@@ -2317,8 +2317,8 @@ function SetPlayerVehicleDamageModifier(player, modifier) end
 --- ```
 ---
 --- @hash 0x4C60E6EFDAFF2462
---- @params player number (Player)
---- @params modifier number (float)
+--- @param player number (Player)
+--- @param modifier number (float)
 --- @return void
 function SetPlayerVehicleDefenseModifier(player, modifier) end
 
@@ -2326,8 +2326,8 @@ function SetPlayerVehicleDefenseModifier(player, modifier) end
 --- SetPlayerStealthPerceptionModifier
 ---
 --- @hash 0x4E9021C1FCDD507A
---- @params player number (Player)
---- @params value number (float)
+--- @param player number (Player)
+--- @param value number (float)
 --- @return void
 function SetPlayerStealthPerceptionModifier(player, value) end
 
@@ -2335,9 +2335,9 @@ function SetPlayerStealthPerceptionModifier(player, value) end
 --- N_0xa0d3e4f7aafb7e78
 ---
 --- @hash 0xA0D3E4F7AAFB7E78
---- @params p0 Any
---- @params p1 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @return any
 function N_0xa0d3e4f7aafb7e78(p0, p1) end
 
     
@@ -2346,8 +2346,8 @@ function N_0xa0d3e4f7aafb7e78(p0, p1) end
 --- ```
 ---
 --- @hash 0xEFD79FA81DFBA9CB
---- @params player number (Player)
---- @params distance number (float)
+--- @param player number (Player)
+--- @param distance number (float)
 --- @return void
 function SetPlayerFallDistance(player, distance) end
 
@@ -2357,8 +2357,8 @@ function SetPlayerFallDistance(player, distance) end
 --- ```
 ---
 --- @hash 0xA01B8075D8B92DF4
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPlayerSprint(player, toggle) end
 
@@ -2368,9 +2368,9 @@ function SetPlayerSprint(player, toggle) end
 --- ```
 ---
 --- @hash 0x2E7B9B683481687D
---- @params player number (Player)
---- @params p1 boolean (BOOL)
---- @params p2 boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 boolean
+--- @param p2 boolean
 --- @return void
 function SpecialAbilityChargeSmall(player, p1, p2) end
 
@@ -2378,7 +2378,7 @@ function SpecialAbilityChargeSmall(player, p1, p2) end
 --- ResetPlayerArrestState
 ---
 --- @hash 0x2D03E13C460760D6
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function ResetPlayerArrestState(player) end
 
@@ -2391,8 +2391,8 @@ function ResetPlayerArrestState(player) end
 --- ```
 ---
 --- @hash 0x9A987297ED8BD838
---- @params player number (Player)
---- @params p1 number (int)
+--- @param player number (Player)
+--- @param p1 number (int)
 --- @return void
 function SwitchCrimeType(player, p1) end
 
@@ -2409,7 +2409,7 @@ function SwitchCrimeType(player, p1) end
 --- ```
 ---
 --- @hash 0xC9A763D8FE87436A
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function SpecialAbilityChargeOnMissionFailed(player) end
 
@@ -2419,8 +2419,8 @@ function SpecialAbilityChargeOnMissionFailed(player) end
 --- ```
 ---
 --- @hash 0x9B0BB33B04405E7A
---- @params player number (Player)
---- @params difficulty number (float)
+--- @param player number (Player)
+--- @param difficulty number (float)
 --- @return void
 function SetWantedLevelDifficulty(player, difficulty) end
 
@@ -2428,7 +2428,7 @@ function SetWantedLevelDifficulty(player, difficulty) end
 --- SetPlayerMayNotEnterAnyVehicle
 ---
 --- @hash 0x1DE37BBF9E9CC14A
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function SetPlayerMayNotEnterAnyVehicle(player) end
 
@@ -2440,8 +2440,8 @@ function SetPlayerMayNotEnterAnyVehicle(player) end
 --- ```
 ---
 --- @hash 0xE0A7D1E497FFCD6F
---- @params player number (Player)
---- @params p1 boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 boolean
 --- @return void
 function SetPlayerWantedLevelNow(player, p1) end
 
@@ -2449,14 +2449,14 @@ function SetPlayerWantedLevelNow(player, p1) end
 --- StartPlayerTeleport
 ---
 --- @hash 0xAD15F075A4DA0FDE
---- @params player number (Player)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params heading number (float)
---- @params p5 boolean (BOOL)
---- @params findCollisionLand boolean (BOOL)
---- @params p7 boolean (BOOL)
+--- @param player number (Player)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
+--- @param p5 boolean
+--- @param findCollisionLand boolean
+--- @param p7 boolean
 --- @return void
 function StartPlayerTeleport(player, x, y, z, heading, p5, findCollisionLand, p7) end
 
@@ -2464,7 +2464,7 @@ function StartPlayerTeleport(player, x, y, z, heading, p5, findCollisionLand, p7
 --- SpecialAbilityReset
 ---
 --- @hash 0x375F0E738F861A94
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function SpecialAbilityReset(player) end
 
@@ -2474,9 +2474,9 @@ function SpecialAbilityReset(player) end
 --- ```
 ---
 --- @hash 0xF733F45FA4497D93
---- @params player number (Player)
---- @params p1 boolean (BOOL)
---- @params p2 boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 boolean
+--- @param p2 boolean
 --- @return void
 function SpecialAbilityChargeLarge(player, p1, p2) end
 
@@ -2484,7 +2484,7 @@ function SpecialAbilityChargeLarge(player, p1, p2) end
 --- SpecialAbilityUnlock
 ---
 --- @hash 0xF145F3BE2EFA9A3B
---- @params playerModel table (Hash)
+--- @param playerModel table (Hash)
 --- @return void
 function SpecialAbilityUnlock(playerModel) end
 
@@ -2492,8 +2492,8 @@ function SpecialAbilityUnlock(playerModel) end
 --- SetPlayerCanLeaveParachuteSmokeTrail
 ---
 --- @hash 0xF401B182DBA8AF53
---- @params player number (Player)
---- @params enabled boolean (BOOL)
+--- @param player number (Player)
+--- @param enabled boolean
 --- @return void
 function SetPlayerCanLeaveParachuteSmokeTrail(player, enabled) end
 
@@ -2506,8 +2506,8 @@ function SetPlayerCanLeaveParachuteSmokeTrail(player, enabled) end
 --- ```
 ---
 --- @hash 0xA91C6F0FF7D16A13
---- @params player number (Player)
---- @params multiplier number (float)
+--- @param player number (Player)
+--- @param multiplier number (float)
 --- @return void
 function SetSwimMultiplierForPlayer(player, multiplier) end
 
@@ -2518,9 +2518,9 @@ function SetSwimMultiplierForPlayer(player, multiplier) end
 --- ```
 ---
 --- @hash 0xA0696A65F009EE18
---- @params player number (Player)
---- @params normalizedValue number (float)
---- @params p2 boolean (BOOL)
+--- @param player number (Player)
+--- @param normalizedValue number (float)
+--- @param p2 boolean
 --- @return void
 function SpecialAbilityChargeNormalized(player, normalizedValue, p2) end
 
@@ -2531,8 +2531,8 @@ function SpecialAbilityChargeNormalized(player, normalizedValue, p2) end
 --- ```
 ---
 --- @hash 0x977DB4641F6FC3DB
---- @params player number (Player)
---- @params model table (Hash)
+--- @param player number (Player)
+--- @param model table (Hash)
 --- @return void
 function SetPlayerParachuteModelOverride(player, model) end
 
@@ -2540,7 +2540,7 @@ function SetPlayerParachuteModelOverride(player, model) end
 --- SpecialAbilityDeactivate
 ---
 --- @hash 0xD6A953C6D1492057
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function SpecialAbilityDeactivate(player) end
 
@@ -2551,8 +2551,8 @@ function SpecialAbilityDeactivate(player) end
 --- ```
 ---
 --- @hash 0xCE07B9F7817AADA3
---- @params player number (Player)
---- @params modifier number (float)
+--- @param player number (Player)
+--- @param modifier number (float)
 --- @return void
 function SetPlayerWeaponDamageModifier(player, modifier) end
 
@@ -2562,8 +2562,8 @@ function SetPlayerWeaponDamageModifier(player, modifier) end
 --- ```
 ---
 --- @hash 0xED481732DFF7E997
---- @params player number (Player)
---- @params p2 table (Ped)
+--- @param player number (Player)
+--- @param p2 table (Ped)
 --- @return void
 function SpecialAbilityChargeContinuous(player, p2) end
 
@@ -2576,8 +2576,8 @@ function SpecialAbilityChargeContinuous(player, p2) end
 --- ```
 ---
 --- @hash 0x6DB47AA77FD94E09
---- @params player number (Player)
---- @params multiplier number (float)
+--- @param player number (Player)
+--- @param multiplier number (float)
 --- @return void
 function SetRunSprintMultiplierForPlayer(player, multiplier) end
 
@@ -2591,8 +2591,8 @@ function SetRunSprintMultiplierForPlayer(player, multiplier) end
 --- ```
 ---
 --- @hash 0x93B0FB27C9A04060
---- @params player number (Player)
---- @params tintIndex number (int)
+--- @param player number (Player)
+--- @param tintIndex number (int)
 --- @return void
 function SetPlayerParachutePackTintIndex(player, tintIndex) end
 
@@ -2600,8 +2600,8 @@ function SetPlayerParachutePackTintIndex(player, tintIndex) end
 --- SetPlayerWeaponDefenseModifier_2
 ---
 --- @hash 0xBCFDE9EDE4CF27DC
---- @params player number (Player)
---- @params modifier number (float)
+--- @param player number (Player)
+--- @param modifier number (float)
 --- @return void
 function SetPlayerWeaponDefenseModifier_2(player, modifier) end
 

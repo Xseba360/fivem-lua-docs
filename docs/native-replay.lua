@@ -13,14 +13,14 @@ function ActivateRockstarEditor() end
 ---
 --- @hash 0x95AB8B5C992C7B58
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsInteriorRenderingDisabled() end
 
     
 --- N_0xe058175f8eafe79a
 ---
 --- @hash 0xE058175F8EAFE79A
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0xe058175f8eafe79a(p0) end
 
@@ -45,8 +45,8 @@ function N_0xe058175f8eafe79a(p0) end
 --- ```
 ---
 --- @hash 0x7E2BD3EF6C205F09
---- @params p0 string (char*)
---- @params p1 boolean (BOOL)
+--- @param p0 string (char*)
+--- @param p1 boolean
 --- @return void
 function N_0x7e2bd3ef6c205f09(p0, p1) end
 

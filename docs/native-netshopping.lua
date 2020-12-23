@@ -4,8 +4,8 @@
 --- ```
 ---
 --- @hash 0x0395CB47B022E62C
---- @params p0 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @return boolean
 function N_0x0395cb47b022e62c(p0) end
 
     
@@ -13,7 +13,7 @@ function N_0x0395cb47b022e62c(p0) end
 ---
 --- @hash 0x85F6C9ABA1DE2BCF
 ---
---- @return Any
+--- @return any
 function N_0x85f6c9aba1de2bcf() end
 
     
@@ -22,7 +22,7 @@ function N_0x85f6c9aba1de2bcf() end
 --- ```
 ---
 --- @hash 0x74A0FD0688F1EE45
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return number (int)
 function N_0x74a0fd0688f1ee45(p0) end
 
@@ -31,15 +31,15 @@ function N_0x74a0fd0688f1ee45(p0) end
 ---
 --- @hash 0x613F125BA3BD2EB9
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x613f125ba3bd2eb9() end
 
     
 --- NetGameserverSetTelemetryNonceSeed
 ---
 --- @hash 0x9507D4271988E1AE
---- @params p0 number (int)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @return boolean
 function NetGameserverSetTelemetryNonceSeed(p0) end
 
     
@@ -50,11 +50,11 @@ function NetGameserverSetTelemetryNonceSeed(p0) end
 --- ```
 ---
 --- @hash 0x279F08B1A4B29B7E
---- @params transactionId table (Any*)
---- @params categoryHash number (int)
---- @params actionHash number (int)
---- @params flags number (int)
---- @return boolean (BOOL)
+--- @param transactionId table (Any*)
+--- @param categoryHash number (int)
+--- @param actionHash number (int)
+--- @param flags number (int)
+--- @return boolean
 function NetGameserverBasketStart(transactionId, categoryHash, actionHash, flags) end
 
     
@@ -63,9 +63,9 @@ function NetGameserverBasketStart(transactionId, categoryHash, actionHash, flags
 --- ```
 ---
 --- @hash 0xF30980718C8ED876
---- @params itemData table (Any*)
---- @params quantity number (int)
---- @return boolean (BOOL)
+--- @param itemData table (Any*)
+--- @param quantity number (int)
+--- @return boolean
 function NetGameserverBasketAddItem(itemData, quantity) end
 
     
@@ -75,7 +75,7 @@ function NetGameserverBasketAddItem(itemData, quantity) end
 ---
 --- @hash 0x498C1E05CE5F7877
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetGameserverTransferCashSetTelemetryNonceSeed() end
 
     
@@ -85,7 +85,7 @@ function NetGameserverTransferCashSetTelemetryNonceSeed() end
 ---
 --- @hash 0xFA336E7F40C0A0D0
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetGameserverBasketDelete() end
 
     
@@ -93,7 +93,7 @@ function NetGameserverBasketDelete() end
 ---
 --- @hash 0xA65568121DF2EA26
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetGameserverBasketEnd() end
 
     
@@ -101,7 +101,7 @@ function NetGameserverBasketEnd() end
 ---
 --- @hash 0xE3E5A7C64CA2C6ED
 ---
---- @return Any
+--- @return any
 function N_0xe3e5a7c64ca2c6ed() end
 
     
@@ -109,7 +109,7 @@ function N_0xe3e5a7c64ca2c6ed() end
 ---
 --- @hash 0x810E8431C0614BF9
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetGameserverIsSessionRefreshPending() end
 
     
@@ -117,7 +117,7 @@ function NetGameserverIsSessionRefreshPending() end
 ---
 --- @hash 0x3C4487461E9B0DCB
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetGameserverCatalogIsReady() end
 
     
@@ -126,8 +126,8 @@ function NetGameserverCatalogIsReady() end
 --- ```
 ---
 --- @hash 0xC13C38E47EA5DF31
---- @params p0 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @return boolean
 function N_0xc13c38e47ea5df31(p0) end
 
     
@@ -144,8 +144,8 @@ function NetGameserverDeleteCharacterSlotGetStatus() end
 --- ```
 ---
 --- @hash 0xE2A99A9B524BEFFF
---- @params transactionId number (int)
---- @return boolean (BOOL)
+--- @param transactionId number (int)
+--- @return boolean
 function NetGameserverEndService(transactionId) end
 
     
@@ -155,7 +155,7 @@ function NetGameserverEndService(transactionId) end
 ---
 --- @hash 0x112CEF1615A1139F
 ---
---- @return Any
+--- @return any
 function NetGameserverDeleteSetTelemetryNonceSeed() end
 
     
@@ -164,9 +164,9 @@ function NetGameserverDeleteSetTelemetryNonceSeed() end
 --- ```
 ---
 --- @hash 0xC27009422FCCA88D
---- @params itemHash table (Hash)
---- @params categoryHash table (Hash)
---- @params p2 boolean (BOOL)
+--- @param itemHash table (Hash)
+--- @param categoryHash table (Hash)
+--- @param p2 boolean
 --- @return number (int)
 function NetGameserverGetPrice(itemHash, categoryHash, p2) end
 
@@ -175,7 +175,7 @@ function NetGameserverGetPrice(itemHash, categoryHash, p2) end
 ---
 --- @hash 0x2B949A1E6AEC8F6A
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetGameserverIsCatalogValid() end
 
     
@@ -194,13 +194,13 @@ function NetGameserverIsCatalogValid() end
 --- ```
 ---
 --- @hash 0x3C5FD37B5499582E
---- @params transactionId table (int*)
---- @params categoryHash table (Hash)
---- @params itemHash table (Hash)
---- @params actionTypeHash number (int)
---- @params value number (int)
---- @params flags number (int)
---- @return boolean (BOOL)
+--- @param transactionId table (int*)
+--- @param categoryHash table (Hash)
+--- @param itemHash table (Hash)
+--- @param actionTypeHash number (int)
+--- @param value number (int)
+--- @param flags number (int)
+--- @return boolean
 function NetGameserverBeginService(transactionId, categoryHash, itemHash, actionTypeHash, value, flags) end
 
     
@@ -214,8 +214,8 @@ function NetGameserverBeginService(transactionId, categoryHash, itemHash, action
 --- ```
 ---
 --- @hash 0x247F0F73A182EA0B
---- @params hash table (Hash)
---- @return boolean (BOOL)
+--- @param hash table (Hash)
+--- @return boolean
 function NetGameserverCatalogItemExistsHash(hash) end
 
     
@@ -234,9 +234,9 @@ function NetGameserverTransferCashGetStatus_2() end
 --- ```
 ---
 --- @hash 0x35A1B3E1D1315CFA
---- @params inventory boolean (BOOL)
---- @params playerbalance boolean (BOOL)
---- @return boolean (BOOL)
+--- @param inventory boolean
+--- @param playerbalance boolean
+--- @return boolean
 function NetGameserverGetBalance(inventory, playerbalance) end
 
     
@@ -244,7 +244,7 @@ function NetGameserverGetBalance(inventory, playerbalance) end
 ---
 --- @hash 0xE547E9114277098F
 ---
---- @return Any
+--- @return any
 function N_0xe547e9114277098f() end
 
     
@@ -257,9 +257,9 @@ function N_0xe547e9114277098f() end
 --- ```
 ---
 --- @hash 0xD47A2C1BA117471D
---- @params charSlot number (int)
---- @params amount number (int)
---- @return boolean (BOOL)
+--- @param charSlot number (int)
+--- @param amount number (int)
+--- @return boolean
 function NetGameserverTransferBankToWallet(charSlot, amount) end
 
     
@@ -268,8 +268,8 @@ function NetGameserverTransferBankToWallet(charSlot, amount) end
 --- ```
 ---
 --- @hash 0x170910093218C8B9
---- @params p0 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @return boolean
 function N_0x170910093218c8b9(p0) end
 
     
@@ -282,8 +282,8 @@ function N_0x170910093218c8b9(p0) end
 --- ```
 ---
 --- @hash 0xC830417D630A50F9
---- @params transactionId number (int)
---- @return boolean (BOOL)
+--- @param transactionId number (int)
+--- @return boolean
 function N_0xc830417d630a50f9(transactionId) end
 
     
@@ -291,7 +291,7 @@ function N_0xc830417d630a50f9(transactionId) end
 ---
 --- @hash 0x72EB7BA9B69BF6AB
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x72eb7ba9b69bf6ab() end
 
     
@@ -300,10 +300,10 @@ function N_0x72eb7ba9b69bf6ab() end
 --- ```
 ---
 --- @hash 0x51F1A8E48C3D2F6D
---- @params slot number (int)
---- @params transfer boolean (BOOL)
---- @params reason Any
---- @return boolean (BOOL)
+--- @param slot number (int)
+--- @param transfer boolean
+--- @param reason any
+--- @return boolean
 function NetGameserverDeleteCharacterSlot(slot, transfer, reason) end
 
     
@@ -313,7 +313,7 @@ function NetGameserverDeleteCharacterSlot(slot, transfer, reason) end
 ---
 --- @hash 0x7D2708796355B20B
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetGameserverUseServerTransactions() end
 
     
@@ -322,8 +322,8 @@ function NetGameserverUseServerTransactions() end
 --- ```
 ---
 --- @hash 0xBD4D7EAF8A30F637
---- @params name string (char*)
---- @return boolean (BOOL)
+--- @param name string (char*)
+--- @return boolean
 function NetGameserverCatalogItemExists(name) end
 
     
@@ -331,7 +331,7 @@ function NetGameserverCatalogItemExists(name) end
 ---
 --- @hash 0x357B152EF96C30B6
 ---
---- @return Any
+--- @return any
 function N_0x357b152ef96c30b6() end
 
     
@@ -340,9 +340,9 @@ function N_0x357b152ef96c30b6() end
 --- ```
 ---
 --- @hash 0x897433D292B44130
---- @params p0 table (Any*)
---- @params p1 table (BOOL*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 table (BOOL*)
+--- @return boolean
 function NetGameserverGetTransactionManagerData(p0, p1) end
 
     
@@ -352,7 +352,7 @@ function NetGameserverGetTransactionManagerData(p0, p1) end
 ---
 --- @hash 0x27F76CC6C55AD30E
 ---
---- @return Any
+--- @return any
 function NetGameserverBasketIsFull() end
 
     
@@ -361,25 +361,25 @@ function NetGameserverBasketIsFull() end
 --- ```
 ---
 --- @hash 0xE1A0450ED46A7812
---- @params p0 Any
---- @params p1 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 table (Any*)
+--- @return boolean
 function NetGameserverBasketApplyServerData(p0, p1) end
 
     
 --- NetGameserverSessionApplyReceivedData
 ---
 --- @hash 0x2F41D51BA3BCD1F1
---- @params charSlot number (int)
---- @return boolean (BOOL)
+--- @param charSlot number (int)
+--- @return boolean
 function NetGameserverSessionApplyReceivedData(charSlot) end
 
     
 --- NetGameserverIsSessionValid
 ---
 --- @hash 0xB24F0944DA203D9E
---- @params charSlot number (int)
---- @return boolean (BOOL)
+--- @param charSlot number (int)
+--- @return boolean
 function NetGameserverIsSessionValid(charSlot) end
 
     
@@ -398,16 +398,16 @@ function NetGameserverTransferCashGetStatus() end
 --- ```
 ---
 --- @hash 0xCF38DAFBB49EDE5E
---- @params state table (Any*)
---- @return boolean (BOOL)
+--- @param state table (Any*)
+--- @return boolean
 function NetGameserverGetCatalogState(state) end
 
     
 --- NetGameserverStartSession
 ---
 --- @hash 0xA135AC892A58FC07
---- @params charSlot number (int)
---- @return boolean (BOOL)
+--- @param charSlot number (int)
+--- @return boolean
 function NetGameserverStartSession(charSlot) end
 
     
@@ -420,8 +420,8 @@ function NetGameserverStartSession(charSlot) end
 --- ```
 ---
 --- @hash 0x79EDAC677CA62F81
---- @params transactionId number (int)
---- @return boolean (BOOL)
+--- @param transactionId number (int)
+--- @return boolean
 function N_0x79edac677ca62f81(transactionId) end
 
     
@@ -434,17 +434,17 @@ function N_0x79edac677ca62f81(transactionId) end
 --- ```
 ---
 --- @hash 0xC2F7FE5309181C7D
---- @params charSlot number (int)
---- @params amount number (int)
---- @return boolean (BOOL)
+--- @param charSlot number (int)
+--- @param amount number (int)
+--- @return boolean
 function NetGameserverTransferWalletToBank(charSlot, amount) end
 
     
 --- NetGameserverCheckoutStart
 ---
 --- @hash 0x39BE7CEA8D9CC8E6
---- @params transactionId number (int)
---- @return boolean (BOOL)
+--- @param transactionId number (int)
+--- @return boolean
 function NetGameserverCheckoutStart(transactionId) end
 
     

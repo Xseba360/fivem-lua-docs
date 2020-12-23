@@ -2,13 +2,13 @@
 --- DisableNavmeshInArea
 ---
 --- @hash 0x4C8872D8CDBE1B8B
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
---- @params p6 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
 --- @return void
 function DisableNavmeshInArea(p0, p1, p2, p3, p4, p5, p6) end
 
@@ -18,11 +18,11 @@ function DisableNavmeshInArea(p0, p1, p2, p3, p4, p5, p6) end
 --- ```
 ---
 --- @hash 0xF7B79A50B905A30D
---- @params x1 number (float)
---- @params y1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @return boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @return boolean
 function ArePathNodesLoadedInArea(x1, y1, x2, y2) end
 
     
@@ -50,13 +50,13 @@ function ArePathNodesLoadedInArea(x1, y1, x2, y2) end
 --- ```
 ---
 --- @hash 0xF90125F1F79ECDF8
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params p3 boolean (BOOL)
---- @params direction table (int*)
---- @params vehicle table (float*)
---- @params distToNxJunction table (float*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 boolean
+--- @param direction table (int*)
+--- @param vehicle table (float*)
+--- @param distToNxJunction table (float*)
 --- @return number (int)
 function GenerateDirectionsToCoord(x, y, z, p3, direction, vehicle, distToNxJunction) end
 
@@ -67,13 +67,13 @@ function GenerateDirectionsToCoord(x, y, z, p3, direction, vehicle, distToNxJunc
 --- ```
 ---
 --- @hash 0xF813C7E63F9062A5
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @return boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @return boolean
 function IsNavmeshLoadedInArea(x1, y1, z1, x2, y2, z2) end
 
     
@@ -97,21 +97,21 @@ function IsNavmeshLoadedInArea(x1, y1, z1, x2, y2, z2) end
 --- ```
 ---
 --- @hash 0x240A18690AE96513
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params outPosition table (Vector3*)
---- @params nodeType number (int)
---- @params p5 number (float)
---- @params p6 number (float)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param outPosition table (Vector3*)
+--- @param nodeType number (int)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @return boolean
 function GetClosestVehicleNode(x, y, z, outPosition, nodeType, p5, p6) end
 
     
 --- SetIgnoreNoGpsFlag
 ---
 --- @hash 0x72751156E7678833
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetIgnoreNoGpsFlag(toggle) end
 
@@ -121,13 +121,13 @@ function SetIgnoreNoGpsFlag(toggle) end
 --- ```
 ---
 --- @hash 0x2EABE3B06F58C1BE
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params outPosition table (Vector3*)
---- @params unknown1 number (float)
---- @params unknown2 number (int)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param outPosition table (Vector3*)
+--- @param unknown1 number (float)
+--- @param unknown2 number (int)
+--- @return boolean
 function GetClosestMajorVehicleNode(x, y, z, outPosition, unknown1, unknown2) end
 
     
@@ -136,8 +136,8 @@ function GetClosestMajorVehicleNode(x, y, z, outPosition, unknown1, unknown2) en
 --- ```
 ---
 --- @hash 0x336511A34F2E5185
---- @params x number (float)
---- @params y number (float)
+--- @param x number (float)
+--- @param y number (float)
 --- @return number (float)
 function GetHeightmapBottomZForPosition(x, y) end
 
@@ -146,7 +146,7 @@ function GetHeightmapBottomZForPosition(x, y) end
 ---
 --- @hash 0x8415D95B194A3AEA
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function AreAllNavmeshRegionsLoaded() end
 
     
@@ -157,8 +157,8 @@ function AreAllNavmeshRegionsLoaded() end
 --- ```
 ---
 --- @hash 0x4F5070AA58F69279
---- @params nodeID number (int)
---- @return boolean (BOOL)
+--- @param nodeID number (int)
+--- @return boolean
 function GetVehicleNodeIsSwitchedOff(nodeID) end
 
     
@@ -167,8 +167,8 @@ function GetVehicleNodeIsSwitchedOff(nodeID) end
 --- ```
 ---
 --- @hash 0x80E4A6EDDB0BE8D9
---- @params keepInMemory boolean (BOOL)
---- @return boolean (BOOL)
+--- @param keepInMemory boolean
+--- @return boolean
 function LoadAllPathNodes(keepInMemory) end
 
     
@@ -177,18 +177,18 @@ function LoadAllPathNodes(keepInMemory) end
 --- ```
 ---
 --- @hash 0x132F52BBA570FE92
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params p3 number (float)
---- @params p4 number (int)
---- @params p5 table (Vector3*)
---- @params p6 table (Vector3*)
---- @params p7 table (Any*)
---- @params p8 table (Any*)
---- @params p9 table (float*)
---- @params p10 boolean (BOOL)
---- @return Any
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 number (float)
+--- @param p4 number (int)
+--- @param p5 table (Vector3*)
+--- @param p6 table (Vector3*)
+--- @param p7 table (Any*)
+--- @param p8 table (Any*)
+--- @param p9 table (float*)
+--- @param p10 boolean
+--- @return any
 function GetClosestRoad(x, y, z, p3, p4, p5, p6, p7, p8, p9, p10) end
 
     
@@ -201,13 +201,13 @@ function GetClosestRoad(x, y, z, p3, p4, p5, p6, p7, p8, p9, p10) end
 --- ```
 ---
 --- @hash 0x0027501B9F3B407E
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params width number (float)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param width number (float)
 --- @return void
 function SetRoadsBackToOriginalInAngledArea(x1, y1, z1, x2, y2, z2, width) end
 
@@ -215,9 +215,9 @@ function SetRoadsBackToOriginalInAngledArea(x1, y1, z1, x2, y2, z2, width) end
 --- AddNavmeshRequiredRegion
 ---
 --- @hash 0x387EAD7EE42F6685
---- @params x number (float)
---- @params y number (float)
---- @params radius number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param radius number (float)
 --- @return void
 function AddNavmeshRequiredRegion(x, y, radius) end
 
@@ -228,12 +228,12 @@ function AddNavmeshRequiredRegion(x, y, radius) end
 --- This function returns the value 100000.0 over long distances, seems to be a failure mode result, potentially occurring when not all path nodes are loaded into pathfind.
 ---
 --- @hash 0xADD95C7005C4A197
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
 --- @return number (float)
 function CalculateTravelDistanceBetweenPoints(x1, y1, z1, x2, y2, z2) end
 
@@ -241,13 +241,13 @@ function CalculateTravelDistanceBetweenPoints(x1, y1, z1, x2, y2, z2) end
 --- N_0x01708e8dd3ff8c65
 ---
 --- @hash 0x01708E8DD3FF8C65
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @return Any
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @return any
 function N_0x01708e8dd3ff8c65(p0, p1, p2, p3, p4, p5) end
 
     
@@ -259,13 +259,13 @@ function N_0x01708e8dd3ff8c65(p0, p1, p2, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0xB61C8E878A4199CA
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params onGround boolean (BOOL)
---- @params outPosition table (Vector3*)
---- @params flags number (int)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param onGround boolean
+--- @param outPosition table (Vector3*)
+--- @param flags number (int)
+--- @return boolean
 function GetSafeCoordForPed(x, y, z, onGround, outPosition, flags) end
 
     
@@ -278,11 +278,11 @@ function GetSafeCoordForPed(x, y, z, onGround, outPosition, flags) end
 --- ```
 ---
 --- @hash 0x2EB41072B4C1E4C0
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params streetName table (Hash*)
---- @params crossingRoad table (Hash*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param streetName table (Hash*)
+--- @param crossingRoad table (Hash*)
 --- @return void
 function GetStreetNameAtCoord(x, y, z, streetName, crossingRoad) end
 
@@ -290,32 +290,32 @@ function GetStreetNameAtCoord(x, y, z, streetName, crossingRoad) end
 --- GetPointOnRoadSide
 ---
 --- @hash 0x16F46FB18C8009E4
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params p3 number (int)
---- @params outPosition table (Vector3*)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 number (int)
+--- @param outPosition table (Vector3*)
+--- @return boolean
 function GetPointOnRoadSide(x, y, z, p3, outPosition) end
 
     
 --- DoesNavmeshBlockingObjectExist
 ---
 --- @hash 0x0EAEB0DB4B132399
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function DoesNavmeshBlockingObjectExist(p0) end
 
     
 --- GetRoadSidePointWithHeading
 ---
 --- @hash 0xA0F8A7517A273C05
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params heading number (float)
---- @params outPosition table (Vector3*)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
+--- @param outPosition table (Vector3*)
+--- @return boolean
 function GetRoadSidePointWithHeading(x, y, z, heading, outPosition) end
 
     
@@ -324,24 +324,24 @@ function GetRoadSidePointWithHeading(x, y, z, heading, outPosition) end
 --- ```
 ---
 --- @hash 0x07FB139B592FA687
---- @params x1 number (float)
---- @params y1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @return boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @return boolean
 function RequestPathsPreferAccurateBoundingstruct(x1, y1, x2, y2) end
 
     
 --- N_0xaa76052dda9bfc3e
 ---
 --- @hash 0xAA76052DDA9BFC3E
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
---- @params p6 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
 --- @return void
 function N_0xaa76052dda9bfc3e(p0, p1, p2, p3, p4, p5, p6) end
 
@@ -349,7 +349,7 @@ function N_0xaa76052dda9bfc3e(p0, p1, p2, p3, p4, p5, p6) end
 --- Clears a disabled GPS route area from a certain index previously set using [`SET_GPS_DISABLED_ZONE_AT_INDEX`](#\_0xD0BC1C6FB18EE154).
 ---
 --- @hash 0x2801D0012266DF07
---- @params index number (int)
+--- @param index number (int)
 --- @return void
 function ClearGpsDisabledZoneAtIndex(index) end
 
@@ -377,15 +377,15 @@ function ClearGpsDisabledZoneAtIndex(index) end
 --- ```
 ---
 --- @hash 0xFF071FB798B803B0
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params outPosition table (Vector3*)
---- @params outHeading table (float*)
---- @params nodeType number (int)
---- @params p6 number (float)
---- @params p7 number (int)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param outPosition table (Vector3*)
+--- @param outHeading table (float*)
+--- @param nodeType number (int)
+--- @param p6 number (float)
+--- @param p7 number (int)
+--- @return boolean
 function GetClosestVehicleNodeWithHeading(x, y, z, outPosition, outHeading, nodeType, p6, p7) end
 
     
@@ -396,7 +396,7 @@ function GetClosestVehicleNodeWithHeading(x, y, z, outPosition, outHeading, node
 --- ```
 ---
 --- @hash 0xD3A6A0EF48823A8C
---- @params index number (int)
+--- @param index number (int)
 --- @return number (int)
 function GetNextGpsDisabledZoneIndex(index) end
 
@@ -404,7 +404,7 @@ function GetNextGpsDisabledZoneIndex(index) end
 --- SetAmbientPedRangeMultiplierThisFrame
 ---
 --- @hash 0x0B919E1FB47CC4E0
---- @params multiplier number (float)
+--- @param multiplier number (float)
 --- @return void
 function SetAmbientPedRangeMultiplierThisFrame(multiplier) end
 
@@ -414,8 +414,8 @@ function SetAmbientPedRangeMultiplierThisFrame(multiplier) end
 --- ```
 ---
 --- @hash 0x29C24BFBED8AB8FB
---- @params x number (float)
---- @params y number (float)
+--- @param x number (float)
+--- @param y number (float)
 --- @return number (float)
 function GetHeightmapTopZForPosition(x, y) end
 
@@ -426,8 +426,8 @@ function GetHeightmapTopZForPosition(x, y) end
 --- ```
 ---
 --- @hash 0x703123E5E7D429C2
---- @params nodeId number (int)
---- @params outPosition table (Vector3*)
+--- @param nodeId number (int)
+--- @param outPosition table (Vector3*)
 --- @return void
 function GetVehicleNodePosition(nodeId, outPosition) end
 
@@ -437,8 +437,8 @@ function GetVehicleNodePosition(nodeId, outPosition) end
 --- ```
 ---
 --- @hash 0x1EAF30FCFBF5AF74
---- @params vehicleNodeId number (int)
---- @return boolean (BOOL)
+--- @param vehicleNodeId number (int)
+--- @return boolean
 function IsVehicleNodeIdValid(vehicleNodeId) end
 
     
@@ -449,35 +449,35 @@ function IsVehicleNodeIdValid(vehicleNodeId) end
 --- ```
 ---
 --- @hash 0x45905BE8654AE067
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params desiredX number (float)
---- @params desiredY number (float)
---- @params desiredZ number (float)
---- @params nthClosest number (int)
---- @params outPosition table (Vector3*)
---- @params outHeading table (float*)
---- @params nodetype number (int)
---- @params p10 Any
---- @params p11 Any
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param desiredX number (float)
+--- @param desiredY number (float)
+--- @param desiredZ number (float)
+--- @param nthClosest number (int)
+--- @param outPosition table (Vector3*)
+--- @param outHeading table (float*)
+--- @param nodetype number (int)
+--- @param p10 any
+--- @param p11 any
+--- @return boolean
 function GetNthClosestVehicleNodeFavourDirection(x, y, z, desiredX, desiredY, desiredZ, nthClosest, outPosition, outHeading, nodetype, p10, p11) end
 
     
 --- GetRandomVehicleNode
 ---
 --- @hash 0x93E0DB8440B73A7D
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params p4 boolean (BOOL)
---- @params p5 boolean (BOOL)
---- @params p6 boolean (BOOL)
---- @params outPosition table (Vector3*)
---- @params nodeId table (int*)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param p4 boolean
+--- @param p5 boolean
+--- @param p6 boolean
+--- @param outPosition table (Vector3*)
+--- @param nodeId table (int*)
+--- @return boolean
 function GetRandomVehicleNode(x, y, z, radius, p4, p5, p6, outPosition, nodeId) end
 
     
@@ -486,13 +486,13 @@ function GetRandomVehicleNode(x, y, z, radius, p4, p5, p6, outPosition, nodeId) 
 --- ```
 ---
 --- @hash 0x34F060F4BF92E018
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params unknown boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param unknown boolean
 --- @return void
 function SetPedPathsInArea(x1, y1, z1, x2, y2, z2, unknown) end
 
@@ -501,7 +501,7 @@ function SetPedPathsInArea(x1, y1, z1, x2, y2, z2, unknown) end
 ---
 --- @hash 0x869DAACBBE9FA006
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetGpsBlipRouteFound() end
 
     
@@ -510,32 +510,32 @@ function GetGpsBlipRouteFound() end
 --- ```
 ---
 --- @hash 0x80CA6A8B6C094CC4
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params nthClosest number (int)
---- @params outPosition table (Vector3*)
---- @params heading table (float*)
---- @params unknown1 table (Any*)
---- @params unknown2 number (int)
---- @params unknown3 number (float)
---- @params unknown4 number (float)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param nthClosest number (int)
+--- @param outPosition table (Vector3*)
+--- @param heading table (float*)
+--- @param unknown1 table (Any*)
+--- @param unknown2 number (int)
+--- @param unknown3 number (float)
+--- @param unknown4 number (float)
+--- @return boolean
 function GetNthClosestVehicleNodeWithHeading(x, y, z, nthClosest, outPosition, heading, unknown1, unknown2, unknown3, unknown4) end
 
     
 --- GetNthClosestVehicleNode
 ---
 --- @hash 0xE50E52416CCF948B
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params nthClosest number (int)
---- @params outPosition table (Vector3*)
---- @params unknown1 Any
---- @params unknown2 Any
---- @params unknown3 Any
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param nthClosest number (int)
+--- @param outPosition table (Vector3*)
+--- @param unknown1 any
+--- @param unknown2 any
+--- @param unknown3 any
+--- @return boolean
 function GetNthClosestVehicleNode(x, y, z, nthClosest, outPosition, unknown1, unknown2, unknown3) end
 
     
@@ -544,10 +544,10 @@ function GetNthClosestVehicleNode(x, y, z, nthClosest, outPosition, unknown1, un
 --- ```
 ---
 --- @hash 0x8ABE8608576D9CE3
---- @params x1 number (float)
---- @params y1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
 --- @return number (float)
 function GetHeightmapTopZForArea(x1, y1, x2, y2) end
 
@@ -563,11 +563,11 @@ function GetGpsBlipRouteLength() end
 --- N_0xf3162836c28f9da5
 ---
 --- @hash 0xF3162836C28F9DA5
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @return any
 function N_0xf3162836c28f9da5(p0, p1, p2, p3) end
 
     
@@ -576,12 +576,12 @@ function N_0xf3162836c28f9da5(p0, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0xE04B48F2CC926253
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
 --- @return void
 function SetPedPathsBackToOriginal(p0, p1, p2, p3, p4, p5) end
 
@@ -594,8 +594,8 @@ function SetPedPathsBackToOriginal(p0, p1, p2, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0xA2AE5C478B96E3B6
---- @params nodeID number (int)
---- @return boolean (BOOL)
+--- @param nodeID number (int)
+--- @return boolean
 function GetVehicleNodeIsGpsAllowed(nodeID) end
 
     
@@ -604,13 +604,13 @@ function GetVehicleNodeIsGpsAllowed(nodeID) end
 --- ```
 ---
 --- @hash 0x22D7275A79FE8215
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params nth number (int)
---- @params nodetype number (int)
---- @params p5 number (float)
---- @params p6 number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param nth number (int)
+--- @param nodetype number (int)
+--- @param p5 number (float)
+--- @param p6 number (float)
 --- @return number (int)
 function GetNthClosestVehicleNodeId(x, y, z, nth, nodetype, p5, p6) end
 
@@ -632,12 +632,12 @@ function RemoveNavmeshRequiredRegions() end
 --- ```
 ---
 --- @hash 0x1EE7063B80FFC77C
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
 --- @return void
 function SetRoadsBackToOriginal(p0, p1, p2, p3, p4, p5) end
 
@@ -648,11 +648,11 @@ function SetRoadsBackToOriginal(p0, p1, p2, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0x125BF4ABFC536B09
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params vehicle number (Vehicle)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param vehicle number (Vehicle)
+--- @return boolean
 function IsPointOnRoad(x, y, z, vehicle) end
 
     
@@ -661,7 +661,7 @@ function IsPointOnRoad(x, y, z, vehicle) end
 --- ```
 ---
 --- @hash 0x228E5C6AD4D74BFD
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetAllPathsCacheBoundingstruct(toggle) end
 
@@ -671,10 +671,10 @@ function SetAllPathsCacheBoundingstruct(toggle) end
 --- ```
 ---
 --- @hash 0x3599D741C9AC6310
---- @params x1 number (float)
---- @params y1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
 --- @return number (float)
 function GetHeightmapBottomZForArea(x1, y1, x2, y2) end
 
@@ -689,12 +689,12 @@ function GetHeightmapBottomZForArea(x1, y1, x2, y2) end
 --- ```
 ---
 --- @hash 0xDC20483CD3DD5201
---- @params x1 Any
---- @params y1 Any
---- @params z1 Any
---- @params x2 Any
---- @params y2 Any
---- @params z3 Any
+--- @param x1 any
+--- @param y1 any
+--- @param z1 any
+--- @param x2 any
+--- @param y2 any
+--- @param z3 any
 --- @return void
 function SetGpsDisabledZone(x1, y1, z1, x2, y2, z3) end
 
@@ -702,23 +702,23 @@ function SetGpsDisabledZone(x1, y1, z1, x2, y2, z3) end
 --- AddNavmeshBlockingObject
 ---
 --- @hash 0xFCD5C8E06E502F5A
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 boolean (BOOL)
---- @params p8 Any
---- @return Any
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 boolean
+--- @param p8 any
+--- @return any
 function AddNavmeshBlockingObject(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
     
 --- RemoveNavmeshBlockingObject
 ---
 --- @hash 0x46399A7895957C0E
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function RemoveNavmeshBlockingObject(p0) end
 
@@ -728,16 +728,16 @@ function RemoveNavmeshBlockingObject(p0) end
 --- See [IS_POINT_IN_ANGLED_AREA](#\_0x2A70BAE8883E4C81) for the definition of an angled area.
 ---
 --- @hash 0x1A5AA1208AF5DB59
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params width number (float)
---- @params unknown1 boolean (BOOL)
---- @params unknown2 boolean (BOOL)
---- @params unknown3 boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param width number (float)
+--- @param unknown1 boolean
+--- @param unknown2 boolean
+--- @param unknown3 boolean
 --- @return void
 function SetRoadsInAngledArea(x1, y1, z1, x2, y2, z2, width, unknown1, unknown2, unknown3) end
 
@@ -753,13 +753,13 @@ function SetRoadsInAngledArea(x1, y1, z1, x2, y2, z2, width, unknown1, unknown2,
 --- Enabled Zone (normal): <https://i.imgur.com/BPi24aw.png>
 ---
 --- @hash 0xD0BC1C6FB18EE154
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params index number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param index number (int)
 --- @return void
 function SetGpsDisabledZoneAtIndex(x1, y1, z1, x2, y2, z2, index) end
 
@@ -770,7 +770,7 @@ function SetGpsDisabledZoneAtIndex(x1, y1, z1, x2, y2, z2, index) end
 ---
 --- @hash 0x705A844002B39DC0
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsNavmeshRequiredRegionOwnedByAnyThread() end
 
     
@@ -783,14 +783,14 @@ function IsNavmeshRequiredRegionOwnedByAnyThread() end
 --- `GET_VEHICLE_NODE_IS_SWITCHED_OFF` returns false.
 ---
 --- @hash 0xBF1A602B5BA52FEE
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params nodeEnabled boolean (BOOL)
---- @params unknown2 boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param nodeEnabled boolean
+--- @param unknown2 boolean
 --- @return void
 function SetRoadsInArea(x1, y1, z1, x2, y2, z2, nodeEnabled, unknown2) end
 
@@ -801,16 +801,16 @@ function SetRoadsInArea(x1, y1, z1, x2, y2, z2, nodeEnabled, unknown2) end
 --- ```
 ---
 --- @hash 0x6448050E9C2A7207
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params nthClosest number (int)
---- @params outPosition table (Vector3*)
---- @params outHeading number (float)
---- @params p6 Any
---- @params p7 number (float)
---- @params p8 number (float)
---- @return Any
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param nthClosest number (int)
+--- @param outPosition table (Vector3*)
+--- @param outHeading number (float)
+--- @param p6 any
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @return any
 function GetNthClosestVehicleNodeIdWithHeading(x, y, z, nthClosest, outPosition, outHeading, p6, p7, p8) end
 
     
@@ -819,7 +819,7 @@ function GetNthClosestVehicleNodeIdWithHeading(x, y, z, nthClosest, outPosition,
 --- ```
 ---
 --- @hash 0x1FC289A0C3FF470F
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetIgnoreSecondaryRouteNodes(toggle) end
 
@@ -827,15 +827,15 @@ function SetIgnoreSecondaryRouteNodes(toggle) end
 --- UpdateNavmeshBlockingObject
 ---
 --- @hash 0x109E99373F290687
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 number (float)
---- @params p8 Any
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param p8 any
 --- @return void
 function UpdateNavmeshBlockingObject(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
@@ -847,12 +847,12 @@ function UpdateNavmeshBlockingObject(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 --- ```
 ---
 --- @hash 0x0568566ACBB5DEDC
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params density table (int*)
---- @params flags table (int*)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param density table (int*)
+--- @param flags table (int*)
+--- @return boolean
 function GetVehicleNodeProperties(x, y, z, density, flags) end
 
     

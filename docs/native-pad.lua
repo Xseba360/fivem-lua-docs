@@ -4,7 +4,7 @@
 --- ```
 ---
 --- @hash 0xA5FFE9B05F199DE7
---- @params padIndex number (int)
+--- @param padIndex number (int)
 --- @return void
 function EnableAllControlActions(padIndex) end
 
@@ -15,9 +15,9 @@ function EnableAllControlActions(padIndex) end
 --- Control group 1 and 0 gives the same results as 2. Same results for all players.
 ---
 --- @hash 0xFE99B66D079CF6BC
---- @params padIndex number (int)
---- @params control number (int)
---- @params disable boolean (BOOL)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @param disable boolean
 --- @return void
 function DisableControlAction(padIndex, control, disable) end
 
@@ -28,7 +28,7 @@ function DisableControlAction(padIndex, control, disable) end
 ---
 --- @hash 0xFC859E2374407556
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetAllowMovementWhileZoomed() end
 
     
@@ -37,7 +37,7 @@ function GetAllowMovementWhileZoomed() end
 --- ```
 ---
 --- @hash 0xD7D22F5592AED8BA
---- @params inputGroup number (int)
+--- @param inputGroup number (int)
 --- @return number (int)
 function GetTimeSinceLastInput(inputGroup) end
 
@@ -85,9 +85,9 @@ function GetTimeSinceLastInput(inputGroup) end
 --- ```
 ---
 --- @hash 0x1CEA6BFDF248E5D9
---- @params padIndex number (int)
---- @params control number (int)
---- @return boolean (BOOL)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
 function IsControlEnabled(padIndex, control) end
 
     
@@ -96,16 +96,16 @@ function IsControlEnabled(padIndex, control) end
 --- ```
 ---
 --- @hash 0x91AEF906BCA88877
---- @params padIndex number (int)
---- @params control number (int)
---- @return boolean (BOOL)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
 function IsDisabledControlJustPressed(padIndex, control) end
 
     
 --- DisableInputGroup
 ---
 --- @hash 0x7F4724035FDCA1DD
---- @params inputGroup number (int)
+--- @param inputGroup number (int)
 --- @return void
 function DisableInputGroup(inputGroup) end
 
@@ -116,16 +116,16 @@ function DisableInputGroup(inputGroup) end
 ---
 --- @hash 0x0F70731BACCFBB96
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetIsUsingAlternateDriveby() end
 
     
 --- Returns whether a [control](https://docs.fivem.net/game-references/controls/) is currently pressed.
 ---
 --- @hash 0xF3A21BCD95725A4A
---- @params inputGroup number (int)
---- @params control number (int)
---- @return boolean (BOOL)
+--- @param inputGroup number (int)
+--- @param control number (int)
+--- @return boolean
 function IsControlPressed(inputGroup, control) end
 
     
@@ -136,10 +136,10 @@ function IsControlPressed(inputGroup, control) end
 --- ```
 ---
 --- @hash 0xE8A25867FBA3B05E
---- @params padIndex number (int)
---- @params control number (int)
---- @params amount number (float)
---- @return boolean (BOOL)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @param amount number (float)
+--- @return boolean
 function SetControlNormal(padIndex, control, amount) end
 
     
@@ -149,8 +149,8 @@ function SetControlNormal(padIndex, control, amount) end
 --- ```
 ---
 --- @hash 0xEC3C9B8D5327B563
---- @params padIndex number (int)
---- @params control number (int)
+--- @param padIndex number (int)
+--- @param control number (int)
 --- @return number (float)
 function GetControlNormal(padIndex, control) end
 
@@ -160,9 +160,9 @@ function GetControlNormal(padIndex, control) end
 --- ```
 ---
 --- @hash 0xE2587F8CBBD87B1D
---- @params padIndex number (int)
---- @params control number (int)
---- @return boolean (BOOL)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
 function IsDisabledControlPressed(padIndex, control) end
 
     
@@ -171,8 +171,8 @@ function IsDisabledControlPressed(padIndex, control) end
 --- ```
 ---
 --- @hash 0xF239400E16C23E08
---- @params inputGroup number (int)
---- @params p1 number (int)
+--- @param inputGroup number (int)
+--- @param p1 number (int)
 --- @return void
 function N_0xf239400e16c23e08(inputGroup, p1) end
 
@@ -182,9 +182,9 @@ function N_0xf239400e16c23e08(inputGroup, p1) end
 --- ```
 ---
 --- @hash 0x305C8DCD79DA8B0F
---- @params padIndex number (int)
---- @params control number (int)
---- @return boolean (BOOL)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
 function IsDisabledControlJustReleased(padIndex, control) end
 
     
@@ -195,8 +195,8 @@ function IsDisabledControlJustReleased(padIndex, control) end
 --- ```
 ---
 --- @hash 0x23F09EADC01449D6
---- @params padIndex number (int)
---- @return boolean (BOOL)
+--- @param padIndex number (int)
+--- @return boolean
 function N_0x23f09eadc01449d6(padIndex) end
 
     
@@ -231,7 +231,7 @@ function GetLocalPlayerAimState_2() end
 --- SetPlayerpadShakesWhenControllerDisabled
 ---
 --- @hash 0x798FDEB5B1575088
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetPlayerpadShakesWhenControllerDisabled(toggle) end
 
@@ -239,16 +239,16 @@ function SetPlayerpadShakesWhenControllerDisabled(toggle) end
 --- Returns whether a [control](https://docs.fivem.net/game-references/controls/) was newly released since the last check.
 ---
 --- @hash 0x50F940259D3841E6
---- @params inputGroup number (int)
---- @params control number (int)
---- @return boolean (BOOL)
+--- @param inputGroup number (int)
+--- @param control number (int)
+--- @return boolean
 function IsControlJustReleased(inputGroup, control) end
 
     
 --- N_0xcb0360efefb2580d
 ---
 --- @hash 0xCB0360EFEFB2580D
---- @params padIndex number (int)
+--- @param padIndex number (int)
 --- @return void
 function N_0xcb0360efefb2580d(padIndex) end
 
@@ -258,18 +258,18 @@ function N_0xcb0360efefb2580d(padIndex) end
 --- ```
 ---
 --- @hash 0xFC695459D4D0E219
---- @params x number (float)
---- @params y number (float)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @return boolean
 function SetCursorLocation(x, y) end
 
     
 --- Returns whether a [control](https://docs.fivem.net/game-references/controls/) is currently *not* pressed.
 ---
 --- @hash 0x648EE3E7F38877DD
---- @params inputGroup number (int)
---- @params control number (int)
---- @return boolean (BOOL)
+--- @param inputGroup number (int)
+--- @param control number (int)
+--- @return boolean
 function IsControlReleased(inputGroup, control) end
 
     
@@ -280,8 +280,8 @@ function IsControlReleased(inputGroup, control) end
 --- ```
 ---
 --- @hash 0x4683149ED1DDE7A1
---- @params name string (char*)
---- @return boolean (BOOL)
+--- @param name string (char*)
+--- @return boolean
 function SwitchToInputMappingScheme_2(name) end
 
     
@@ -291,8 +291,8 @@ function SwitchToInputMappingScheme_2(name) end
 --- ```
 ---
 --- @hash 0x4F8A26A890FD62FB
---- @params padIndex number (int)
---- @params control number (int)
+--- @param padIndex number (int)
+--- @param control number (int)
 --- @return number (float)
 function GetDisabledControlUnboundNormal(padIndex, control) end
 
@@ -303,8 +303,8 @@ function GetDisabledControlUnboundNormal(padIndex, control) end
 --- ```
 ---
 --- @hash 0x5B84D09CEC5209C5
---- @params padIndex number (int)
---- @params control number (int)
+--- @param padIndex number (int)
+--- @param control number (int)
 --- @return number (float)
 function GetControlUnboundNormal(padIndex, control) end
 
@@ -314,8 +314,8 @@ function GetControlUnboundNormal(padIndex, control) end
 --- ```
 ---
 --- @hash 0xD95E79E8686D2C27
---- @params padIndex number (int)
---- @params control number (int)
+--- @param padIndex number (int)
+--- @param control number (int)
 --- @return number (int)
 function GetControlValue(padIndex, control) end
 
@@ -325,7 +325,7 @@ function GetControlValue(padIndex, control) end
 --- ```
 ---
 --- @hash 0x5F4B6931816E599B
---- @params padIndex number (int)
+--- @param padIndex number (int)
 --- @return void
 function DisableAllControlActions(padIndex) end
 
@@ -339,8 +339,8 @@ function DisableAllControlActions(padIndex) end
 --- ```
 ---
 --- @hash 0xA571D46727E2B718
---- @params inputGroup number (int)
---- @return boolean (BOOL)
+--- @param inputGroup number (int)
+--- @return boolean
 function IsInputDisabled(inputGroup) end
 
     
@@ -349,8 +349,8 @@ function IsInputDisabled(inputGroup) end
 --- ```
 ---
 --- @hash 0xEDE476E5EE29EDB1
---- @params padIndex number (int)
---- @params control number (int)
+--- @param padIndex number (int)
+--- @param control number (int)
 --- @return void
 function SetInputExclusive(padIndex, control) end
 
@@ -360,17 +360,17 @@ function SetInputExclusive(padIndex, control) end
 --- ```
 ---
 --- @hash 0x3D42B92563939375
---- @params name string (char*)
---- @return boolean (BOOL)
+--- @param name string (char*)
+--- @return boolean
 function SwitchToInputMappingScheme(name) end
 
     
 --- Returns whether a [control](https://docs.fivem.net/game-references/controls/) was newly pressed since the last check.
 ---
 --- @hash 0x580417101DDB492F
---- @params inputGroup number (int)
---- @params control number (int)
---- @return boolean (BOOL)
+--- @param inputGroup number (int)
+--- @param control number (int)
+--- @return boolean
 function IsControlJustPressed(inputGroup, control) end
 
     
@@ -392,14 +392,14 @@ function IsControlJustPressed(inputGroup, control) end
 ---
 --- @hash 0xE1615EC03B3BB4FD
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0xe1615ec03b3bb4fd() end
 
     
 --- N_0x5b73c77d9eb66e24
 ---
 --- @hash 0x5B73C77D9EB66E24
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x5b73c77d9eb66e24(p0) end
 
@@ -407,11 +407,11 @@ function N_0x5b73c77d9eb66e24(p0) end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0x14D29BB12D47F68C
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
 --- @return void
 function N_0x14d29bb12d47f68c(p0, p1, p2, p3, p4) end
 
@@ -422,7 +422,7 @@ function N_0x14d29bb12d47f68c(p0, p1, p2, p3, p4) end
 ---
 --- @hash 0x25AAA32BDC98F2A3
 ---
---- @return Any
+--- @return any
 function N_0x25aaa32bdc98f2a3() end
 
     
@@ -431,8 +431,8 @@ function N_0x25aaa32bdc98f2a3() end
 --- ```
 ---
 --- @hash 0x6CD79468A1E595C6
---- @params padIndex number (int)
---- @return boolean (BOOL)
+--- @param padIndex number (int)
+--- @return boolean
 function N_0x6cd79468a1e595c6(padIndex) end
 
     
@@ -442,8 +442,8 @@ function N_0x6cd79468a1e595c6(padIndex) end
 --- ```
 ---
 --- @hash 0x11E65974A982637C
---- @params padIndex number (int)
---- @params control number (int)
+--- @param padIndex number (int)
+--- @param control number (int)
 --- @return number (float)
 function GetDisabledControlNormal(padIndex, control) end
 
@@ -451,7 +451,7 @@ function GetDisabledControlNormal(padIndex, control) end
 --- StopPadShake
 ---
 --- @hash 0x38C16A305E8CDC8D
---- @params padIndex number (int)
+--- @param padIndex number (int)
 --- @return void
 function StopPadShake(padIndex) end
 
@@ -473,9 +473,9 @@ function StopPadShake(padIndex) end
 --- ```
 ---
 --- @hash 0x0499D7B09FC9B407
---- @params padIndex number (int)
---- @params control number (int)
---- @params p2 number (Player)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @param p2 number (Player)
 --- @return string (char*)
 function GetControlInstructionalButton(padIndex, control, p2) end
 
@@ -484,7 +484,7 @@ function GetControlInstructionalButton(padIndex, control, p2) end
 ---
 --- @hash 0x77B612531280010D
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsLookInverted() end
 
     
@@ -536,9 +536,9 @@ function IsLookInverted() end
 --- ```
 ---
 --- @hash 0x351220255D64C155
---- @params padIndex number (int)
---- @params control number (int)
---- @params enable boolean (BOOL)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @param enable boolean
 --- @return void
 function EnableControlAction(padIndex, control, enable) end
 
@@ -548,10 +548,10 @@ function EnableControlAction(padIndex, control, enable) end
 --- ```
 ---
 --- @hash 0x8290252FFF36ACB5
---- @params padIndex number (int)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
+--- @param padIndex number (int)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
 --- @return void
 function SetControlGroupColor(padIndex, red, green, blue) end
 
@@ -559,7 +559,7 @@ function SetControlGroupColor(padIndex, red, green, blue) end
 --- N_0xa0cefcea390aab9b
 ---
 --- @hash 0xA0CEFCEA390AAB9B
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xa0cefcea390aab9b(p0) end
 
@@ -569,9 +569,9 @@ function N_0xa0cefcea390aab9b(p0) end
 --- ```
 ---
 --- @hash 0x80C2FD58D720C801
---- @params padIndex number (int)
---- @params controlGroup number (int)
---- @params p2 boolean (BOOL)
+--- @param padIndex number (int)
+--- @param controlGroup number (int)
+--- @param p2 boolean
 --- @return string (char*)
 function GetControlGroupInstructionalButton(padIndex, controlGroup, p2) end
 
@@ -585,9 +585,9 @@ function GetControlGroupInstructionalButton(padIndex, controlGroup, p2) end
 --- ```
 ---
 --- @hash 0x48B3886C1358D0D5
---- @params padIndex number (int)
---- @params duration number (int)
---- @params frequency number (int)
+--- @param padIndex number (int)
+--- @param duration number (int)
+--- @param frequency number (int)
 --- @return void
 function SetPadShake(padIndex, duration, frequency) end
 
@@ -598,8 +598,8 @@ function SetPadShake(padIndex, duration, frequency) end
 --- ```
 ---
 --- @hash 0x13337B38DB572509
---- @params inputGroup number (int)
---- @return boolean (BOOL)
+--- @param inputGroup number (int)
+--- @return boolean
 function IsInputJustDisabled(inputGroup) end
 
     
@@ -608,9 +608,9 @@ function IsInputJustDisabled(inputGroup) end
 --- ```
 ---
 --- @hash 0xFB6C4072E9A32E92
---- @params padIndex number (int)
---- @params control number (int)
---- @return boolean (BOOL)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
 function IsDisabledControlReleased(padIndex, control) end
 
     

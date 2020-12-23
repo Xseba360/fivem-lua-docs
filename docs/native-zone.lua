@@ -4,7 +4,7 @@
 --- ```
 ---
 --- @hash 0x5F7B268D15BA0739
---- @params zoneId number (int)
+--- @param zoneId number (int)
 --- @return number (int)
 function GetZoneScumminess(zoneId) end
 
@@ -20,9 +20,9 @@ function GetZoneScumminess(zoneId) end
 --- ```
 ---
 --- @hash 0x7EE64D51E8498728
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return table (Hash)
 function GetHashOfMapAreaAtCoords(x, y, z) end
 
@@ -38,8 +38,8 @@ function GetHashOfMapAreaAtCoords(x, y, z) end
 --- ```
 ---
 --- @hash 0x5F7D596BAC2E7777
---- @params scheduleId number (int)
---- @params vehicleHash table (Hash)
+--- @param scheduleId number (int)
+--- @param vehicleHash table (Hash)
 --- @return void
 function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
 
@@ -138,7 +138,7 @@ function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
 --- ```
 ---
 --- @hash 0x98CD1D2934B76CC1
---- @params zoneName string (char*)
+--- @param zoneName string (char*)
 --- @return number (int)
 function GetZoneFromNameId(zoneName) end
 
@@ -146,8 +146,8 @@ function GetZoneFromNameId(zoneName) end
 --- SetZoneEnabled
 ---
 --- @hash 0xBA5ECEEA120E5611
---- @params zoneId number (int)
---- @params toggle boolean (BOOL)
+--- @param zoneId number (int)
+--- @param toggle boolean
 --- @return void
 function SetZoneEnabled(zoneId, toggle) end
 
@@ -155,7 +155,7 @@ function SetZoneEnabled(zoneId, toggle) end
 --- GetZonePopschedule
 ---
 --- @hash 0x4334BC40AA0CB4BB
---- @params zoneId number (int)
+--- @param zoneId number (int)
 --- @return number (int)
 function GetZonePopschedule(zoneId) end
 
@@ -171,7 +171,7 @@ function GetZonePopschedule(zoneId) end
 --- ```
 ---
 --- @hash 0x5C0DE367AA0D911C
---- @params scheduleId number (int)
+--- @param scheduleId number (int)
 --- @return void
 function ClearPopscheduleOverrideVehicleModel(scheduleId) end
 
@@ -269,9 +269,9 @@ function ClearPopscheduleOverrideVehicleModel(scheduleId) end
 --- ```
 ---
 --- @hash 0xCD90657D4C30E1CA
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return string (char*)
 function GetNameOfZone(x, y, z) end
 
@@ -279,9 +279,9 @@ function GetNameOfZone(x, y, z) end
 --- GetZoneAtCoords
 ---
 --- @hash 0x27040C25DE6CB2F4
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return number (int)
 function GetZoneAtCoords(x, y, z) end
 

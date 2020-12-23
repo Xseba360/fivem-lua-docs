@@ -2,21 +2,21 @@
 --- FormatFocusHeading
 ---
 --- @hash 0x219C7B8D53E429FD
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params rad number (float)
---- @params p4 Any
---- @params p5 Any
---- @return Any
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param rad number (float)
+--- @param p4 any
+--- @param p5 any
+--- @return any
 function FormatFocusHeading(x, y, z, rad, p4, p5) end
 
     
 --- DoesAnimDictExist
 ---
 --- @hash 0x2DA49C3B79856961
---- @params animDict string (char*)
---- @return boolean (BOOL)
+--- @param animDict string (char*)
+--- @return boolean
 function DoesAnimDictExist(animDict) end
 
     
@@ -39,8 +39,8 @@ function ClearFocus() end
 --- N_0x07c313f94746702c
 ---
 --- @hash 0x07C313F94746702C
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0x07c313f94746702c(p0) end
 
     
@@ -49,8 +49,8 @@ function N_0x07c313f94746702c(p0) end
 --- ```
 ---
 --- @hash 0x318234F4F3738AF3
---- @params clipSet string (char*)
---- @return boolean (BOOL)
+--- @param clipSet string (char*)
+--- @return boolean
 function HasClipSetLoaded(clipSet) end
 
     
@@ -58,15 +58,15 @@ function HasClipSetLoaded(clipSet) end
 ---
 --- @hash 0xD0263801A4C5B0BB
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsSrlLoaded() end
 
     
 --- HasCollisionForModelLoaded
 ---
 --- @hash 0x22CCA434E368F03A
---- @params model table (Hash)
---- @return boolean (BOOL)
+--- @param model table (Hash)
+--- @return boolean
 function HasCollisionForModelLoaded(model) end
 
     
@@ -74,7 +74,7 @@ function HasCollisionForModelLoaded(model) end
 ---
 --- @hash 0x5B48A06DD0E792A5
 ---
---- @return Any
+--- @return any
 function N_0x5b48a06dd0e792a5() end
 
     
@@ -89,17 +89,17 @@ function ClearHdArea() end
 --- AddModelToCreatorBudget
 ---
 --- @hash 0x0BC3144DEB678666
---- @params modelHash table (Hash)
---- @return boolean (BOOL)
+--- @param modelHash table (Hash)
+--- @return boolean
 function AddModelToCreatorBudget(modelHash) end
 
     
 --- LoadScene
 ---
 --- @hash 0x4448EB75B4904BDB
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function LoadScene(x, y, z) end
 
@@ -115,15 +115,15 @@ function GetPlayerSwitchState() end
 --- IsEntityFocus
 ---
 --- @hash 0x2DDFF3FB9075D747
---- @params entity table (Entity)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @return boolean
 function IsEntityFocus(entity) end
 
     
 --- N_0x1ee7d8df4425f053
 ---
 --- @hash 0x1EE7D8DF4425F053
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x1ee7d8df4425f053(p0) end
 
@@ -132,7 +132,7 @@ function N_0x1ee7d8df4425f053(p0) end
 ---
 --- @hash 0x41CA5A33160EA4AB
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsNetworkLoadingScene() end
 
     
@@ -148,15 +148,15 @@ function EndSrl() end
 ---
 --- @hash 0x01B8247A7A8B9AD1
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsNewLoadSceneLoaded() end
 
     
 --- N_0x95a7dabddbb78ae7
 ---
 --- @hash 0x95A7DABDDBB78AE7
---- @params iplName1 string (char*)
---- @params iplName2 string (char*)
+--- @param iplName1 string (char*)
+--- @param iplName2 string (char*)
 --- @return void
 function N_0x95a7dabddbb78ae7(iplName1, iplName2) end
 
@@ -165,7 +165,7 @@ function N_0x95a7dabddbb78ae7(iplName1, iplName2) end
 ---
 --- @hash 0xCA7D9B86ECA7481B
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function HasPtfxAssetLoaded() end
 
     
@@ -175,16 +175,16 @@ function HasPtfxAssetLoaded() end
 --- ```
 ---
 --- @hash 0xC4EA073D86FB29B0
---- @params animSet string (char*)
---- @return boolean (BOOL)
+--- @param animSet string (char*)
+--- @return boolean
 function HasAnimSetLoaded(animSet) end
 
     
 --- HasAnimDictLoaded
 ---
 --- @hash 0xD031A9162D01088C
---- @params animDict string (char*)
---- @return boolean (BOOL)
+--- @param animDict string (char*)
+--- @return boolean
 function HasAnimDictLoaded(animDict) end
 
     
@@ -201,8 +201,8 @@ function GetPlayerSwitchType() end
 --- ```
 ---
 --- @hash 0x35B9E0803292B641
---- @params model table (Hash)
---- @return boolean (BOOL)
+--- @param model table (Hash)
+--- @return boolean
 function IsModelInCdimage(model) end
 
     
@@ -228,7 +228,7 @@ function GetNumberOfStreamingRequests() end
 --- ```
 ---
 --- @hash 0x16350528F93024B3
---- @params animSet string (char*)
+--- @param animSet string (char*)
 --- @return void
 function RemoveAnimSet(animSet) end
 
@@ -270,8 +270,8 @@ function N_0x03f1a106bda7dd3e() end
 --- ```
 ---
 --- @hash 0xC0296A2EDF545E92
---- @params model table (Hash)
---- @return boolean (BOOL)
+--- @param model table (Hash)
+--- @return boolean
 function IsModelValid(model) end
 
     
@@ -280,7 +280,7 @@ function IsModelValid(model) end
 --- ```
 ---
 --- @hash 0x963D27A58DF860AC
---- @params model table (Hash)
+--- @param model table (Hash)
 --- @return void
 function RequestModel(model) end
 
@@ -303,7 +303,7 @@ function GetUsedCreatorModelMemoryPercentage() end
 --- N_0xf8155a7f03ddfc8e
 ---
 --- @hash 0xF8155A7F03DDFC8E
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xf8155a7f03ddfc8e(p0) end
 
@@ -315,8 +315,8 @@ function N_0xf8155a7f03ddfc8e(p0) end
 --- ```
 ---
 --- @hash 0xAF12610C644A35C9
---- @params name string (char*)
---- @params toggle boolean (BOOL)
+--- @param name string (char*)
+--- @param toggle boolean
 --- @return void
 function SetMapdatacullboxEnabled(name, toggle) end
 
@@ -327,12 +327,12 @@ function SetMapdatacullboxEnabled(name, toggle) end
 --- ```
 ---
 --- @hash 0xB5D7B26B45720E05
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
 --- @return number (int)
 function GetIdealPlayerSwitchType(x1, y1, z1, x2, y2, z2) end
 
@@ -349,7 +349,7 @@ function N_0x0c15b0e443b2349d() end
 ---
 --- @hash 0xA41A05B6CB741B85
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsNewLoadSceneActive() end
 
     
@@ -358,22 +358,22 @@ function IsNewLoadSceneActive() end
 --- ```
 ---
 --- @hash 0x8702416E512EC454
---- @params assetName string (char*)
---- @return boolean (BOOL)
+--- @param assetName string (char*)
+--- @return boolean
 function HasNamedPtfxAssetLoaded(assetName) end
 
     
 --- N_0x0ad9710cee2f590f
 ---
 --- @hash 0x0AD9710CEE2F590F
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 Any
---- @return Any
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 any
+--- @return any
 function N_0x0ad9710cee2f590f(p0, p1, p2, p3, p4, p5, p6) end
 
     
@@ -381,14 +381,14 @@ function N_0x0ad9710cee2f590f(p0, p1, p2, p3, p4, p5, p6) end
 ---
 --- @hash 0xDFA80CB25D0A19B3
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsSwitchReadyForDescent() end
 
     
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0x4E52E752C76E7E7A
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x4e52e752c76e7e7a(p0) end
 
@@ -396,7 +396,7 @@ function N_0x4e52e752c76e7e7a(p0) end
 --- N_0x0811381ef5062fec
 ---
 --- @hash 0x0811381EF5062FEC
---- @params p0 table (Entity)
+--- @param p0 table (Entity)
 --- @return void
 function N_0x0811381ef5062fec(p0) end
 
@@ -405,7 +405,7 @@ function N_0x0811381ef5062fec(p0) end
 ---
 --- @hash 0x5068F488DDB54DD8
 ---
---- @return Any
+--- @return any
 function N_0x5068f488ddb54dd8() end
 
     
@@ -420,8 +420,8 @@ function N_0x5068f488ddb54dd8() end
 --- ```
 ---
 --- @hash 0x8A7A40100EDFEC58
---- @params interiorID number (int)
---- @params roomName string (char*)
+--- @param interiorID number (int)
+--- @param roomName string (char*)
 --- @return void
 function RequestModelsInRoom(interiorID, roomName) end
 
@@ -458,31 +458,31 @@ function LoadAllObjectsNow() end
 ---     end
 --- end
 --- @hash 0x212A8D0D2BABFAC2
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
---- @params offsetX number (float)
---- @params offsetY number (float)
---- @params offsetZ number (float)
---- @params radius number (float)
---- @params p7 number (int)
---- @return boolean (BOOL)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param offsetX number (float)
+--- @param offsetY number (float)
+--- @param offsetZ number (float)
+--- @param radius number (float)
+--- @param p7 number (int)
+--- @return boolean
 function NewLoadSceneStart(posX, posY, posZ, offsetX, offsetY, offsetZ, radius, p7) end
 
     
 --- N_0x1f3f018bc3afa77c
 ---
 --- @hash 0x1F3F018BC3AFA77C
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 Any
---- @params p8 Any
---- @return Any
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 any
+--- @param p8 any
+--- @return any
 function N_0x1f3f018bc3afa77c(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
     
@@ -505,8 +505,8 @@ function DisableSwitchOutroFx() end
 --- IsModelAPed
 ---
 --- @hash 0x75816577FEA6DAD5
---- @params model table (Hash)
---- @return boolean (BOOL)
+--- @param model table (Hash)
+--- @return boolean
 function IsModelAPed(model) end
 
     
@@ -524,7 +524,7 @@ function GetPlayerSwitchInterpOutDuration() end
 ---
 --- @hash 0x5B74EA8CFD5E3E7E
 ---
---- @return Any
+--- @return any
 function IsSwitchSkippingDescent() end
 
     
@@ -533,7 +533,7 @@ function IsSwitchSkippingDescent() end
 --- ```
 ---
 --- @hash 0x5F2013F8BC24EE69
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function N_0x5f2013f8bc24ee69(p0) end
 
@@ -573,7 +573,7 @@ function N_0x74de2e8739086740() end
 --- SetSrlTime
 ---
 --- @hash 0xA74A541C6884E7B8
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function SetSrlTime(p0) end
 
@@ -581,7 +581,7 @@ function SetSrlTime(p0) end
 --- N_0x40aefd1a244741f2
 ---
 --- @hash 0x40AEFD1A244741F2
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x40aefd1a244741f2(p0) end
 
@@ -589,7 +589,7 @@ function N_0x40aefd1a244741f2(p0) end
 --- N_0x20c6c7e4eb082a7f
 ---
 --- @hash 0x20C6C7E4EB082A7F
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x20c6c7e4eb082a7f(p0) end
 
@@ -599,7 +599,7 @@ function N_0x20c6c7e4eb082a7f(p0) end
 --- ```
 ---
 --- @hash 0x01F73A131C18CD94
---- @params clipSet string (char*)
+--- @param clipSet string (char*)
 --- @return void
 function RemoveClipSet(clipSet) end
 
@@ -607,7 +607,7 @@ function RemoveClipSet(clipSet) end
 --- SetVehiclePopulationBudget
 ---
 --- @hash 0xCB9E1EB3BE2AF4E9
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function SetVehiclePopulationBudget(p0) end
 
@@ -617,7 +617,7 @@ function SetVehiclePopulationBudget(p0) end
 --- ```
 ---
 --- @hash 0xF086AD9354FAC3A3
---- @params modelHash Any
+--- @param modelHash any
 --- @return void
 function RemoveModelFromCreatorBudget(modelHash) end
 
@@ -626,7 +626,7 @@ function RemoveModelFromCreatorBudget(modelHash) end
 ---
 --- @hash 0xBC9823AB80A3DCAC
 ---
---- @return Any
+--- @return any
 function N_0xbc9823ab80a3dcac() end
 
     
@@ -637,7 +637,7 @@ function N_0xbc9823ab80a3dcac() end
 ---
 --- @hash 0xD9D2CFFF49FAB35F
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsPlayerSwitchInProgress() end
 
     
@@ -646,7 +646,7 @@ function IsPlayerSwitchInProgress() end
 --- ```
 ---
 --- @hash 0x5F61EBBE1A00F96D
---- @params fxName string (char*)
+--- @param fxName string (char*)
 --- @return void
 function RemoveNamedPtfxAsset(fxName) end
 
@@ -660,7 +660,7 @@ function RemoveNamedPtfxAsset(fxName) end
 --- ```
 ---
 --- @hash 0xA0261AEF7ACFC51E
---- @params model table (Hash)
+--- @param model table (Hash)
 --- @return void
 function RequestMenuPedModel(model) end
 
@@ -668,12 +668,12 @@ function RequestMenuPedModel(model) end
 --- N_0xef39ee20c537e98c
 ---
 --- @hash 0xEF39EE20C537E98C
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
 --- @return void
 function N_0xef39ee20c537e98c(p0, p1, p2, p3, p4, p5) end
 
@@ -683,8 +683,8 @@ function N_0xef39ee20c537e98c(p0, p1, p2, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0x88A741E44A2B3495
---- @params iplName string (char*)
---- @return boolean (BOOL)
+--- @param iplName string (char*)
+--- @return boolean
 function IsIplActive(iplName) end
 
     
@@ -692,7 +692,7 @@ function IsIplActive(iplName) end
 ---
 --- @hash 0xFB199266061F820A
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0xfb199266061f820a() end
 
     
@@ -701,10 +701,10 @@ function N_0xfb199266061f820a() end
 --- ```
 ---
 --- @hash 0xB85F26619073E775
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
 --- @return void
 function SetHdArea(x, y, z, radius) end
 
@@ -714,8 +714,8 @@ function SetHdArea(x, y, z, radius) end
 --- ```
 ---
 --- @hash 0x98A4EB5D89A0C952
---- @params model table (Hash)
---- @return boolean (BOOL)
+--- @param model table (Hash)
+--- @return boolean
 function HasModelLoaded(model) end
 
     
@@ -758,12 +758,12 @@ function N_0x472397322e92a856() end
 --- ```
 ---
 --- @hash 0xACCFB4ACF53551B0
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params p4 Any
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param p4 any
+--- @return boolean
 function NewLoadSceneStartSphere(x, y, z, radius, p4) end
 
     
@@ -773,14 +773,14 @@ function NewLoadSceneStartSphere(x, y, z, radius, p4) end
 ---
 --- @hash 0x933BBEEB8C61B5F4
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x933bbeeb8c61b5f4() end
 
     
 --- N_0xa76359fc80b2438e
 ---
 --- @hash 0xA76359FC80B2438E
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0xa76359fc80b2438e(p0) end
 
@@ -788,10 +788,10 @@ function N_0xa76359fc80b2438e(p0) end
 --- N_0xbed8ca5ff5e04113
 ---
 --- @hash 0xBED8CA5FF5E04113
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
 --- @return void
 function N_0xbed8ca5ff5e04113(p0, p1, p2, p3) end
 
@@ -799,9 +799,9 @@ function N_0xbed8ca5ff5e04113(p0, p1, p2, p3) end
 --- RequestAdditionalCollisionAtCoord
 ---
 --- @hash 0xC9156DC11411A9EA
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function RequestAdditionalCollisionAtCoord(x, y, z) end
 
@@ -825,7 +825,7 @@ function NewLoadSceneStop() end
 --- end
 --- BeginSrl(
 --- @hash 0x3D245789CE12982C
---- @params srl string (char*)
+--- @param srl string (char*)
 --- @return void
 function PrefetchSrl(srl) end
 
@@ -835,8 +835,8 @@ function PrefetchSrl(srl) end
 --- ```
 ---
 --- @hash 0x19AAC8F07BFEC53E
---- @params model table (Hash)
---- @return boolean (BOOL)
+--- @param model table (Hash)
+--- @return boolean
 function IsModelAVehicle(model) end
 
     
@@ -845,7 +845,7 @@ function IsModelAVehicle(model) end
 --- ```
 ---
 --- @hash 0x6EA47DAE7FAD0EED
---- @params animSet string (char*)
+--- @param animSet string (char*)
 --- @return void
 function RequestAnimSet(animSet) end
 
@@ -854,17 +854,17 @@ function RequestAnimSet(animSet) end
 ---
 --- @hash 0x71E7B2E657449AAD
 ---
---- @return Any
+--- @return any
 function N_0x71e7b2e657449aad() end
 
     
 --- N_0xbeb2d9a1d9a8f55a
 ---
 --- @hash 0xBEB2D9A1D9A8F55A
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function N_0xbeb2d9a1d9a8f55a(p0, p1, p2, p3) end
 
@@ -875,12 +875,12 @@ function N_0xbeb2d9a1d9a8f55a(p0, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0xBB7454BAFF08FE25
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params offsetX number (float)
---- @params offsetY number (float)
---- @params offsetZ number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param offsetX number (float)
+--- @param offsetY number (float)
+--- @param offsetZ number (float)
 --- @return void
 function SetFocusPosAndVel(x, y, z, offsetX, offsetY, offsetZ) end
 
@@ -890,7 +890,7 @@ function SetFocusPosAndVel(x, y, z, offsetX, offsetY, offsetZ) end
 --- ```
 ---
 --- @hash 0xEE6C5AD3ECE0A82D
---- @params iplName string (char*)
+--- @param iplName string (char*)
 --- @return void
 function RemoveIpl(iplName) end
 
@@ -898,8 +898,8 @@ function RemoveIpl(iplName) end
 --- N_0x7d41e9d2d17c5b2d
 ---
 --- @hash 0x7D41E9D2D17C5B2D
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0x7d41e9d2d17c5b2d(p0) end
 
     
@@ -908,7 +908,7 @@ function N_0x7d41e9d2d17c5b2d(p0) end
 --- ```
 ---
 --- @hash 0x0FDE9DBFC0A6BC65
---- @params name string (char*)
+--- @param name string (char*)
 --- @return void
 function SetPlayerSwitchEstablishingShot(name) end
 
@@ -916,8 +916,8 @@ function SetPlayerSwitchEstablishingShot(name) end
 --- SetInteriorActive
 ---
 --- @hash 0xE37B76C387BE28ED
---- @params interiorID number (int)
---- @params toggle boolean (BOOL)
+--- @param interiorID number (int)
+--- @param toggle boolean
 --- @return void
 function SetInteriorActive(interiorID, toggle) end
 
@@ -926,7 +926,7 @@ function SetInteriorActive(interiorID, toggle) end
 --- Range for p0 seems to be 0-3, where 0 is none and 3 is the normal level.
 ---
 --- @hash 0x8C95333CFC3340F3
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function SetPedPopulationBudget(p0) end
 
@@ -934,7 +934,7 @@ function SetPedPopulationBudget(p0) end
 --- SetGamePausesForStreaming
 ---
 --- @hash 0x717CD6E6FAEBBEDC
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetGamePausesForStreaming(toggle) end
 
@@ -944,7 +944,7 @@ function SetGamePausesForStreaming(toggle) end
 --- ```
 ---
 --- @hash 0x42CBE54462D92634
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetDitchPoliceModels(toggle) end
 
@@ -968,7 +968,7 @@ function SetDitchPoliceModels(toggle) end
 --- ```
 ---
 --- @hash 0xB80D8756B4668AB6
---- @params assetName string (char*)
+--- @param assetName string (char*)
 --- @return void
 function RequestNamedPtfxAsset(assetName) end
 
@@ -983,7 +983,7 @@ function RequestNamedPtfxAsset(assetName) end
 ---
 --- @hash 0x944955FB2A3935C8
 ---
---- @return Any
+--- @return any
 function RequestPtfxAsset() end
 
     
@@ -1008,17 +1008,17 @@ function RemovePtfxAsset() end
 --- ```
 ---
 --- @hash 0x07503F7948F491A7
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @return Any
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return any
 function RequestCollisionAtCoord(x, y, z) end
 
     
 --- RemoveAnimDict
 ---
 --- @hash 0xF66A602F829E2A06
---- @params animDict string (char*)
+--- @param animDict string (char*)
 --- @return void
 function RemoveAnimDict(animDict) end
 
@@ -1026,7 +1026,7 @@ function RemoveAnimDict(animDict) end
 --- SetReducePedModelBudget
 ---
 --- @hash 0x77B5F9A36BF96710
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetReducePedModelBudget(toggle) end
 
@@ -1037,7 +1037,7 @@ function SetReducePedModelBudget(toggle) end
 --- ```
 ---
 --- @hash 0x41B4893843BBDB74
---- @params iplName string (char*)
+--- @param iplName string (char*)
 --- @return void
 function RequestIpl(iplName) end
 
@@ -1061,7 +1061,7 @@ function N_0x63eb2b972a218cac() end
 --- SetReduceVehicleModelBudget
 ---
 --- @hash 0x80C527893080CCF3
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetReduceVehicleModelBudget(toggle) end
 
@@ -1071,7 +1071,7 @@ function SetReduceVehicleModelBudget(toggle) end
 --- ```
 ---
 --- @hash 0xE532F5D78798DAAB
---- @params model table (Hash)
+--- @param model table (Hash)
 --- @return void
 function SetModelAsNoLongerNeeded(model) end
 
@@ -1079,7 +1079,7 @@ function SetModelAsNoLongerNeeded(model) end
 --- RequestAnimDict
 ---
 --- @hash 0xD3BD40951412FEF6
---- @params animDict string (char*)
+--- @param animDict string (char*)
 --- @return void
 function RequestAnimDict(animDict) end
 
@@ -1087,15 +1087,15 @@ function RequestAnimDict(animDict) end
 --- SetPlayerSwitchOutro
 ---
 --- @hash 0xC208B673CE446B61
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 number (float)
---- @params p8 Any
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param p8 any
 --- @return void
 function SetPlayerSwitchOutro(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
@@ -1103,7 +1103,7 @@ function SetPlayerSwitchOutro(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 --- RequestClipSet
 ---
 --- @hash 0xD2A71E1A77418A49
---- @params clipSet string (char*)
+--- @param clipSet string (char*)
 --- @return void
 function RequestClipSet(clipSet) end
 
@@ -1130,10 +1130,10 @@ function RequestClipSet(clipSet) end
 --- ```
 ---
 --- @hash 0xFAA23F2CBA159D67
---- @params from table (Ped)
---- @params to table (Ped)
---- @params flags number (int)
---- @params switchType number (int)
+--- @param from table (Ped)
+--- @param to table (Ped)
+--- @param flags number (int)
+--- @param switchType number (int)
 --- @return void
 function StartPlayerSwitch(from, to, flags, switchType) end
 
@@ -1156,9 +1156,9 @@ function StartPlayerSwitch(from, to, flags, switchType) end
 --- ```
 ---
 --- @hash 0xAAB3200ED59016BC
---- @params ped table (Ped)
---- @params flags number (int)
---- @params switchType number (int)
+--- @param ped table (Ped)
+--- @param flags number (int)
+--- @param switchType number (int)
 --- @return void
 function SwitchOutPlayer(ped, flags, switchType) end
 
@@ -1168,7 +1168,7 @@ function SwitchOutPlayer(ped, flags, switchType) end
 --- ```
 ---
 --- @hash 0x198F77705FA0931D
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return void
 function SetFocusEntity(entity) end
 
@@ -1184,7 +1184,7 @@ function ShutdownCreatorBudget() end
 --- Use after using \_SWITCH_OUT_PLAYER to swoop the camera back down to the player's ped.
 ---
 --- @hash 0xD8295AF639FD9CB8
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return void
 function SwitchInPlayer(ped) end
 
@@ -1192,7 +1192,7 @@ function SwitchInPlayer(ped) end
 --- SetStreaming
 ---
 --- @hash 0x6E0C692677008888
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetStreaming(toggle) end
 
@@ -1200,7 +1200,7 @@ function SetStreaming(toggle) end
 --- RequestCollisionForModel
 ---
 --- @hash 0x923CB32A3B874FCB
---- @params model table (Hash)
+--- @param model table (Hash)
 --- @return void
 function RequestCollisionForModel(model) end
 

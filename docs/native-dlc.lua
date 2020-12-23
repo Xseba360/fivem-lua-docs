@@ -3,7 +3,7 @@
 ---
 --- @hash 0x10D0A8F259E93EC9
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetIsLoadingScreenActive() end
 
     
@@ -22,7 +22,7 @@ function GetIsLoadingScreenActive() end
 ---
 --- @hash 0x241FCA5B1AA14F75
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x241fca5b1aa14f75() end
 
     
@@ -30,7 +30,7 @@ function N_0x241fca5b1aa14f75() end
 ---
 --- @hash 0x9489659372A81585
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x9489659372a81585() end
 
     
@@ -74,9 +74,9 @@ function OnEnterSp() end
 --- ```
 ---
 --- @hash 0x46E2B844905BC5F0
---- @params variable table (Any*)
---- @params unused Any
---- @return boolean (BOOL)
+--- @param variable table (Any*)
+--- @param unused any
+--- @return boolean
 function HasCloudRequestsFinished(variable, unused) end
 
     
@@ -90,8 +90,8 @@ function HasCloudRequestsFinished(variable, unused) end
 --- ```
 ---
 --- @hash 0x812595A0644CE1DE
---- @params dlcHash table (Hash)
---- @return boolean (BOOL)
+--- @param dlcHash table (Hash)
+--- @return boolean
 function IsDlcPresent(dlcHash) end
 
     
@@ -99,7 +99,7 @@ function IsDlcPresent(dlcHash) end
 ---
 --- @hash 0xF2E07819EF1A5289
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0xf2e07819ef1a5289() end
 
     
@@ -107,7 +107,7 @@ function N_0xf2e07819ef1a5289() end
 ---
 --- @hash 0xA213B11DFF526300
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0xa213b11dff526300() end
 
     
@@ -115,7 +115,7 @@ function N_0xa213b11dff526300() end
 ---
 --- @hash 0x8D30F648014A92B5
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetExtraContentPackHasBeenInstalled() end
 
     

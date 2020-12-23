@@ -3,8 +3,8 @@
 --- @usage local playerCoords = GetEntityCoords(PlayerPedId())
 --- print(playerCoords) -- vector3(...
 --- @hash 0x3FEF770D40960D5A
---- @params entity table (Entity)
---- @params alive boolean (BOOL)
+--- @param entity table (Entity)
+--- @param alive boolean
 --- @return Vector3
 function GetEntityCoords(entity, alive) end
 

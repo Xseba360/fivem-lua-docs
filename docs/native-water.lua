@@ -4,10 +4,10 @@
 --- ```
 ---
 --- @hash 0xC443FD757C3BA637
---- @params x number (float)
---- @params y number (float)
---- @params radius number (float)
---- @params height number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param radius number (float)
+--- @param height number (float)
 --- @return void
 function ModifyWater(x, y, radius, height) end
 
@@ -27,11 +27,11 @@ function ResetDeepOceanScaler() end
 --- ```
 ---
 --- @hash 0xFDBF4CDBC07E1706
---- @params xLow number (float)
---- @params yLow number (float)
---- @params xHigh number (float)
---- @params yHigh number (float)
---- @params height number (float)
+--- @param xLow number (float)
+--- @param yLow number (float)
+--- @param xHigh number (float)
+--- @param yHigh number (float)
+--- @param height number (float)
 --- @return number (int)
 function AddCurrentRise(xLow, yLow, xHigh, yHigh, height) end
 
@@ -41,7 +41,7 @@ function AddCurrentRise(xLow, yLow, xHigh, yHigh, height) end
 --- ```
 ---
 --- @hash 0xB1252E3E59A82AAF
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function RemoveCurrentRise(p0) end
 
@@ -53,11 +53,11 @@ function RemoveCurrentRise(p0) end
 --- ```
 ---
 --- @hash 0xF6829842C06AE524
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params height table (float*)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param height table (float*)
+--- @return boolean
 function GetWaterHeight(x, y, z, height) end
 
     
@@ -74,26 +74,26 @@ function GetDeepOceanScaler() end
 --- GetWaterHeightNoWaves
 ---
 --- @hash 0x8EE6B53CE13A9794
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params height table (float*)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param height table (float*)
+--- @return boolean
 function GetWaterHeightNoWaves(x, y, z, height) end
 
     
 --- TestProbeAgainstAllWater
 ---
 --- @hash 0x8974647ED222EA5F
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
---- @params p6 Any
---- @params p7 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
+--- @param p7 any
+--- @return boolean
 function TestProbeAgainstAllWater(p0, p1, p2, p3, p4, p5, p6, p7) end
 
     
@@ -102,19 +102,19 @@ function TestProbeAgainstAllWater(p0, p1, p2, p3, p4, p5, p6, p7) end
 --- ```
 ---
 --- @hash 0x2B3451FA1E3142E2
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params p3 Any
---- @params height table (float*)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 any
+--- @param height table (float*)
+--- @return boolean
 function TestVerticalProbeAgainstAllWater(x, y, z, p3, height) end
 
     
 --- N_0x547237aa71ab44de
 ---
 --- @hash 0x547237AA71AB44DE
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0x547237aa71ab44de(p0) end
 
@@ -122,14 +122,14 @@ function N_0x547237aa71ab44de(p0) end
 --- TestProbeAgainstWater
 ---
 --- @hash 0xFFA5D878809819DB
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params result table (Vector3*)
---- @return boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param result table (Vector3*)
+--- @return boolean
 function TestProbeAgainstWater(x1, y1, z1, x2, y2, z2, result) end
 
     
@@ -139,7 +139,7 @@ function TestProbeAgainstWater(x1, y1, z1, x2, y2, z2, result) end
 --- ```
 ---
 --- @hash 0xB96B00E976BE977F
---- @params intensity number (float)
+--- @param intensity number (float)
 --- @return void
 function SetDeepOceanScaler(intensity) end
 

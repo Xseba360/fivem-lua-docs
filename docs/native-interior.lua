@@ -2,7 +2,7 @@
 --- ClearRoomForEntity
 ---
 --- @hash 0xB365FC0C4E27FFA7
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return void
 function ClearRoomForEntity(entity) end
 
@@ -12,7 +12,7 @@ function ClearRoomForEntity(entity) end
 --- ```
 ---
 --- @hash 0xA97F257D0151A6AB
---- @params mapObjectHash table (Hash)
+--- @param mapObjectHash table (Hash)
 --- @return void
 function EnableExteriorCullModelThisFrame(mapObjectHash) end
 
@@ -20,8 +20,8 @@ function EnableExteriorCullModelThisFrame(mapObjectHash) end
 --- IsInteriorCapped
 ---
 --- @hash 0x92BAC8ACF88CEC26
---- @params interiorID number (int)
---- @return boolean (BOOL)
+--- @param interiorID number (int)
+--- @return boolean
 function IsInteriorCapped(interiorID) end
 
     
@@ -34,10 +34,10 @@ function IsInteriorCapped(interiorID) end
 --- ```
 ---
 --- @hash 0xF0F77ADB9F67E79D
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params typeHash number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param typeHash number (int)
 --- @return number (int)
 function GetInteriorAtCoordsWithTypehash(x, y, z, typeHash) end
 
@@ -47,8 +47,8 @@ function GetInteriorAtCoordsWithTypehash(x, y, z, typeHash) end
 --- ```
 ---
 --- @hash 0x55E86AF2712B36A1
---- @params interior number (int)
---- @params entitySetName string (char*)
+--- @param interior number (int)
+--- @param entitySetName string (char*)
 --- @return void
 function ActivateInteriorEntitySet(interior, entitySetName) end
 
@@ -58,7 +58,7 @@ function ActivateInteriorEntitySet(interior, entitySetName) end
 --- ```
 ---
 --- @hash 0x405DC2AEF6AF95B9
---- @params roomHashKey table (Hash)
+--- @param roomHashKey table (Hash)
 --- @return void
 function N_0x405dc2aef6af95b9(roomHashKey) end
 
@@ -70,9 +70,9 @@ function N_0x405dc2aef6af95b9(roomHashKey) end
 --- ```
 ---
 --- @hash 0xB0F7F8663821D9C3
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return number (int)
 function GetInteriorAtCoords(x, y, z) end
 
@@ -90,7 +90,7 @@ function N_0x483aca1176ca93f1() end
 --- ```
 ---
 --- @hash 0x7ECDF98587E92DEC
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x7ecdf98587e92dec(p0) end
 
@@ -98,10 +98,10 @@ function N_0x7ecdf98587e92dec(p0) end
 --- Returns true if the collision at the specified coords is marked as being outside (false if there's an interior)
 ---
 --- @hash 0xEEA5AC2EDA7C33E8
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return boolean
 function IsCollisionMarkedOutside(x, y, z) end
 
     
@@ -112,8 +112,8 @@ function IsCollisionMarkedOutside(x, y, z) end
 --- ```
 ---
 --- @hash 0x6170941419D7D8EC
---- @params interiorID number (int)
---- @params toggle boolean (BOOL)
+--- @param interiorID number (int)
+--- @param toggle boolean
 --- @return void
 function DisableInterior(interiorID, toggle) end
 
@@ -123,7 +123,7 @@ function DisableInterior(interiorID, toggle) end
 --- ```
 ---
 --- @hash 0xE4A84ABF135EF91A
---- @params interior number (int)
+--- @param interior number (int)
 --- @return number (int)
 function GetInteriorGroupId(interior) end
 
@@ -133,8 +133,8 @@ function GetInteriorGroupId(interior) end
 --- ```
 ---
 --- @hash 0x7241CCB7D020DB69
---- @params entity table (Entity)
---- @params toggle boolean (BOOL)
+--- @param entity table (Entity)
+--- @param toggle boolean
 --- @return void
 function N_0x7241ccb7d020db69(entity, toggle) end
 
@@ -142,8 +142,8 @@ function N_0x7241ccb7d020db69(entity, toggle) end
 --- ForceRoomForGameViewport
 ---
 --- @hash 0x920D853F3E17F1DA
---- @params interiorID number (int)
---- @params roomHashKey table (Hash)
+--- @param interiorID number (int)
+--- @param roomHashKey table (Hash)
 --- @return void
 function ForceRoomForGameViewport(interiorID, roomHashKey) end
 
@@ -151,8 +151,8 @@ function ForceRoomForGameViewport(interiorID, roomHashKey) end
 --- IsInteriorDisabled
 ---
 --- @hash 0xBC5115A5A939DD15
---- @params interior number (int)
---- @return boolean (BOOL)
+--- @param interior number (int)
+--- @return boolean
 function IsInteriorDisabled(interior) end
 
     
@@ -161,7 +161,7 @@ function IsInteriorDisabled(interior) end
 --- ```
 ---
 --- @hash 0x399685DB942336BC
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return table (Hash)
 function GetKeyForEntityInRoom(entity) end
 
@@ -177,8 +177,8 @@ function ClearRoomForGameViewport() end
 --- AddPickupToInteriorRoomByName
 ---
 --- @hash 0x3F6167F351168730
---- @params pickup table (Pickup)
---- @params roomName string (char*)
+--- @param pickup table (Pickup)
+--- @param roomName string (char*)
 --- @return void
 function AddPickupToInteriorRoomByName(pickup, roomName) end
 
@@ -188,8 +188,8 @@ function AddPickupToInteriorRoomByName(pickup, roomName) end
 --- ```
 ---
 --- @hash 0xD9175F941610DB54
---- @params interiorID number (int)
---- @params toggle boolean (BOOL)
+--- @param interiorID number (int)
+--- @param toggle boolean
 --- @return void
 function CapInterior(interiorID, toggle) end
 
@@ -197,10 +197,10 @@ function CapInterior(interiorID, toggle) end
 --- GetOffsetFromInteriorInWorldCoords
 ---
 --- @hash 0x9E3B3E6D66F6E22F
---- @params interior number (int)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param interior number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return Vector3
 function GetOffsetFromInteriorInWorldCoords(interior, x, y, z) end
 
@@ -208,7 +208,7 @@ function GetOffsetFromInteriorInWorldCoords(interior, x, y, z) end
 --- RefreshInterior
 ---
 --- @hash 0x41F37C3427C75AE0
---- @params interiorID number (int)
+--- @param interiorID number (int)
 --- @return void
 function RefreshInterior(interiorID) end
 
@@ -216,9 +216,9 @@ function RefreshInterior(interiorID) end
 --- IsInteriorEntitySetActive
 ---
 --- @hash 0x35F7DD45E8C0A16D
---- @params interior number (int)
---- @params entitySetName string (char*)
---- @return boolean (BOOL)
+--- @param interior number (int)
+--- @param entitySetName string (char*)
+--- @return boolean
 function IsInteriorEntitySetActive(interior, entitySetName) end
 
     
@@ -228,7 +228,7 @@ function IsInteriorEntitySetActive(interior, entitySetName) end
 --- ```
 ---
 --- @hash 0x9E6542F0CE8E70A3
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x9e6542f0ce8e70a3(toggle) end
 
@@ -238,7 +238,7 @@ function N_0x9e6542f0ce8e70a3(toggle) end
 --- ```
 ---
 --- @hash 0x2107BA504071A6BB
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return number (int)
 function GetInteriorFromEntity(entity) end
 
@@ -248,7 +248,7 @@ function GetInteriorFromEntity(entity) end
 --- ```
 ---
 --- @hash 0x47C2A06D4F5F424B
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return table (Hash)
 function GetRoomKeyFromEntity(entity) end
 
@@ -260,7 +260,7 @@ function GetRoomKeyFromEntity(entity) end
 --- ```
 ---
 --- @hash 0xF49B58631D9E22D9
---- @params interior number (int)
+--- @param interior number (int)
 --- @return number (float)
 function GetInteriorHeading(interior) end
 
@@ -269,7 +269,7 @@ function GetInteriorHeading(interior) end
 ---
 --- @hash 0xBC72B5D7A1CBD54D
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsInteriorScene() end
 
     
@@ -279,7 +279,7 @@ function IsInteriorScene() end
 --- ```
 ---
 --- @hash 0xAF348AFCB575A441
---- @params roomName string (char*)
+--- @param roomName string (char*)
 --- @return void
 function N_0xaf348afcb575a441(roomName) end
 
@@ -289,17 +289,17 @@ function N_0xaf348afcb575a441(roomName) end
 --- ```
 ---
 --- @hash 0x26B0E73D7EAAF4D3
---- @params interiorID number (int)
---- @return boolean (BOOL)
+--- @param interiorID number (int)
+--- @return boolean
 function IsValidInterior(interiorID) end
 
     
 --- GetInteriorFromCollision
 ---
 --- @hash 0xEC4CF9FCB29A4424
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return number (int)
 function GetInteriorFromCollision(x, y, z) end
 
@@ -312,10 +312,10 @@ function GetInteriorFromCollision(x, y, z) end
 --- ```
 ---
 --- @hash 0x05B7A89BD78797FC
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params interiorType string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param interiorType string (char*)
 --- @return number (int)
 function GetInteriorAtCoordsWithType(x, y, z, interiorType) end
 
@@ -327,9 +327,9 @@ function GetInteriorAtCoordsWithType(x, y, z, interiorType) end
 --- ```
 ---
 --- @hash 0x252BDC06B73FA6EA
---- @params interior number (int)
---- @params position table (Vector3*)
---- @params nameHash table (Hash*)
+--- @param interior number (int)
+--- @param position table (Vector3*)
+--- @param nameHash table (Hash*)
 --- @return void
 function GetInteriorInfo(interior, position, nameHash) end
 
@@ -339,9 +339,9 @@ function GetInteriorInfo(interior, position, nameHash) end
 --- ```
 ---
 --- @hash 0x52923C4710DD9907
---- @params entity table (Entity)
---- @params interior number (int)
---- @params roomHashKey table (Hash)
+--- @param entity table (Entity)
+--- @param interior number (int)
+--- @param roomHashKey table (Hash)
 --- @return void
 function ForceRoomForEntity(entity, interior, roomHashKey) end
 
@@ -351,7 +351,7 @@ function ForceRoomForEntity(entity, interior, roomHashKey) end
 --- ```
 ---
 --- @hash 0x50C375537449F369
---- @params mapObjectHash Any
+--- @param mapObjectHash any
 --- @return void
 function EnableScriptCullModelThisFrame(mapObjectHash) end
 
@@ -359,9 +359,9 @@ function EnableScriptCullModelThisFrame(mapObjectHash) end
 --- SetInteriorEntitySetColor
 ---
 --- @hash 0xC1F1920BAF281317
---- @params interior number (int)
---- @params entitySetName string (char*)
---- @params color number (int)
+--- @param interior number (int)
+--- @param entitySetName string (char*)
+--- @param color number (int)
 --- @return void
 function SetInteriorEntitySetColor(interior, entitySetName, color) end
 
@@ -379,8 +379,8 @@ function GetRoomKeyForGameViewport() end
 --- N_0x82ebb79e258fa2b7
 ---
 --- @hash 0x82EBB79E258FA2B7
---- @params entity table (Entity)
---- @params interiorID number (int)
+--- @param entity table (Entity)
+--- @param interiorID number (int)
 --- @return void
 function N_0x82ebb79e258fa2b7(entity, interiorID) end
 
@@ -390,7 +390,7 @@ function N_0x82ebb79e258fa2b7(entity, interiorID) end
 --- ```
 ---
 --- @hash 0x2CA429C029CCF247
---- @params interior number (int)
+--- @param interior number (int)
 --- @return void
 function PinInteriorInMemory(interior) end
 
@@ -400,16 +400,16 @@ function PinInteriorInMemory(interior) end
 --- ```
 ---
 --- @hash 0x4C2330E61D3DEB56
---- @params interiorID number (int)
---- @return Any
+--- @param interiorID number (int)
+--- @return any
 function N_0x4c2330e61d3deb56(interiorID) end
 
     
 --- DeactivateInteriorEntitySet
 ---
 --- @hash 0x420BD37289EEE162
---- @params interior number (int)
---- @params entitySetName string (char*)
+--- @param interior number (int)
+--- @param entitySetName string (char*)
 --- @return void
 function DeactivateInteriorEntitySet(interior, entitySetName) end
 
@@ -417,8 +417,8 @@ function DeactivateInteriorEntitySet(interior, entitySetName) end
 --- IsInteriorReady
 ---
 --- @hash 0x6726BDCCC1932F0E
---- @params interiorID number (int)
---- @return boolean (BOOL)
+--- @param interiorID number (int)
+--- @return boolean
 function IsInteriorReady(interiorID) end
 
     
@@ -428,7 +428,7 @@ function IsInteriorReady(interiorID) end
 --- ```
 ---
 --- @hash 0x261CCE7EED010641
---- @params interior number (int)
+--- @param interior number (int)
 --- @return void
 function UnpinInterior(interior) end
 
@@ -448,8 +448,8 @@ function GetInteriorFromGameplayCam() end
 --- ```
 ---
 --- @hash 0x38C1CB1CB119A016
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0x38c1cb1cb119a016(p0, p1) end
 

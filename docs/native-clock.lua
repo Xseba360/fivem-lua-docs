@@ -2,9 +2,9 @@
 --- SetClockDate
 ---
 --- @hash 0xB096419DF0D06CE7
---- @params day number (int)
---- @params month number (int)
---- @params year number (int)
+--- @param day number (int)
+--- @param month number (int)
+--- @param year number (int)
 --- @return void
 function SetClockDate(day, month, year) end
 
@@ -51,9 +51,9 @@ function GetClockSeconds() end
 --- ```
 ---
 --- @hash 0x47C3B5848C3E45D8
---- @params hour number (int)
---- @params minute number (int)
---- @params second number (int)
+--- @param hour number (int)
+--- @param minute number (int)
+--- @param second number (int)
 --- @return void
 function SetClockTime(hour, minute, second) end
 
@@ -78,7 +78,7 @@ function GetMillisecondsPerGameMinute() end
 --- PauseClock
 ---
 --- @hash 0x4055E40BD2DBEC1D
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function PauseClock(toggle) end
 
@@ -96,12 +96,12 @@ function GetClockDayOfMonth() end
 --- ```
 ---
 --- @hash 0x8117E09A19EEF4D3
---- @params year table (int*)
---- @params month table (int*)
---- @params day table (int*)
---- @params hour table (int*)
---- @params minute table (int*)
---- @params second table (int*)
+--- @param year table (int*)
+--- @param month table (int*)
+--- @param day table (int*)
+--- @param hour table (int*)
+--- @param minute table (int*)
+--- @param second table (int*)
 --- @return void
 function GetUtcTime(year, month, day, hour, minute, second) end
 
@@ -120,12 +120,12 @@ function GetUtcTime(year, month, day, hour, minute, second) end
 --- ```
 ---
 --- @hash 0x50C7A99057A69748
---- @params year table (int*)
---- @params month table (int*)
---- @params day table (int*)
---- @params hour table (int*)
---- @params minute table (int*)
---- @params second table (int*)
+--- @param year table (int*)
+--- @param month table (int*)
+--- @param day table (int*)
+--- @param hour table (int*)
+--- @param minute table (int*)
+--- @param second table (int*)
 --- @return void
 function GetLocalTime(year, month, day, hour, minute, second) end
 
@@ -153,12 +153,12 @@ function GetClockHours() end
 --- ```
 ---
 --- @hash 0xDA488F299A5B164E
---- @params year table (int*)
---- @params month table (int*)
---- @params day table (int*)
---- @params hour table (int*)
---- @params minute table (int*)
---- @params second table (int*)
+--- @param year table (int*)
+--- @param month table (int*)
+--- @param day table (int*)
+--- @param hour table (int*)
+--- @param minute table (int*)
+--- @param second table (int*)
 --- @return void
 function GetPosixTime(year, month, day, hour, minute, second) end
 
@@ -166,9 +166,9 @@ function GetPosixTime(year, month, day, hour, minute, second) end
 --- AdvanceClockTimeTo
 ---
 --- @hash 0xC8CA9670B9D83B3B
---- @params hour number (int)
---- @params minute number (int)
---- @params second number (int)
+--- @param hour number (int)
+--- @param minute number (int)
+--- @param second number (int)
 --- @return void
 function AdvanceClockTimeTo(hour, minute, second) end
 
@@ -176,9 +176,9 @@ function AdvanceClockTimeTo(hour, minute, second) end
 --- AddToClockTime
 ---
 --- @hash 0xD716F30D8C8980E2
---- @params hours number (int)
---- @params minutes number (int)
---- @params seconds number (int)
+--- @param hours number (int)
+--- @param minutes number (int)
+--- @param seconds number (int)
 --- @return void
 function AddToClockTime(hours, minutes, seconds) end
 

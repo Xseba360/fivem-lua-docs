@@ -8,10 +8,10 @@
 --- ```
 ---
 --- @hash 0x4EE5367468A65CCC
---- @params name string (char*)
---- @params model table (Hash)
---- @params p2 number (float)
---- @params p3 number (float)
+--- @param name string (char*)
+--- @param model table (Hash)
+--- @param p2 number (float)
+--- @param p3 number (float)
 --- @return void
 function AddScriptToRandomPed(name, model, p2, p3) end
 
@@ -19,15 +19,15 @@ function AddScriptToRandomPed(name, model, p2, p3) end
 --- IsObjectWithinBrainActivationRange
 ---
 --- @hash 0xCCBA154209823057
---- @params object table (Object)
---- @return boolean (BOOL)
+--- @param object table (Object)
+--- @return boolean
 function IsObjectWithinBrainActivationRange(object) end
 
     
 --- DisableScriptBrainSet
 ---
 --- @hash 0x14D8518E9760F08F
---- @params brainSet number (int)
+--- @param brainSet number (int)
 --- @return void
 function DisableScriptBrainSet(brainSet) end
 
@@ -37,7 +37,7 @@ function DisableScriptBrainSet(brainSet) end
 --- ```
 ---
 --- @hash 0x67AA4D73F0CFA86B
---- @params brainSet number (int)
+--- @param brainSet number (int)
 --- @return void
 function EnableScriptBrainSet(brainSet) end
 
@@ -48,7 +48,7 @@ function EnableScriptBrainSet(brainSet) end
 ---
 --- @hash 0xC5042CC6F5E3D450
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsWorldPointWithinBrainActivationRange() end
 
     
@@ -71,7 +71,7 @@ function N_0x4d953df78ebf8158() end
 --- ```
 ---
 --- @hash 0x6E91B04E08773030
---- @params action string (char*)
+--- @param action string (char*)
 --- @return void
 function N_0x6e91b04e08773030(action) end
 
@@ -81,9 +81,9 @@ function N_0x6e91b04e08773030(action) end
 --- ```
 ---
 --- @hash 0x3CDC7136613284BD
---- @params scriptName table (Any*)
---- @params activationRange number (float)
---- @params p2 number (int)
+--- @param scriptName table (Any*)
+--- @param activationRange number (float)
+--- @param p2 number (int)
 --- @return void
 function RegisterWorldPointScriptBrain(scriptName, activationRange, p2) end
 
@@ -127,7 +127,7 @@ function N_0x0b40ed49d7d6ff84() end
 --- ```
 ---
 --- @hash 0x6D6840CEE8845831
---- @params action string (char*)
+--- @param action string (char*)
 --- @return void
 function N_0x6d6840cee8845831(action) end
 
@@ -138,12 +138,12 @@ function N_0x6d6840cee8845831(action) end
 --- ```
 ---
 --- @hash 0x0BE84C318BA6EC22
---- @params scriptName string (char*)
---- @params modelHash table (Hash)
---- @params p2 number (int)
---- @params activationRange number (float)
---- @params p4 number (int)
---- @params p5 number (int)
+--- @param scriptName string (char*)
+--- @param modelHash table (Hash)
+--- @param p2 number (int)
+--- @param activationRange number (float)
+--- @param p4 number (int)
+--- @param p5 number (int)
 --- @return void
 function RegisterObjectScriptBrain(scriptName, modelHash, p2, activationRange, p4, p5) end
 

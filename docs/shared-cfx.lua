@@ -10,7 +10,7 @@ function CancelEvent() end
 --- DeleteResourceKvp
 ---
 --- @hash 0x7389B5DF
---- @params key string (char*)
+--- @param key string (char*)
 --- @return void
 function DeleteResourceKvp(key) end
 
@@ -18,7 +18,7 @@ function DeleteResourceKvp(key) end
 --- DeleteFunctionReference
 ---
 --- @hash 0x1E86F206
---- @params referenceIdentity string (char*)
+--- @param referenceIdentity string (char*)
 --- @return void
 function DeleteFunctionReference(referenceIdentity) end
 
@@ -26,7 +26,7 @@ function DeleteFunctionReference(referenceIdentity) end
 --- DuplicateFunctionReference
 ---
 --- @hash 0xF4E2079D
---- @params referenceIdentity string (char*)
+--- @param referenceIdentity string (char*)
 --- @return string (char*)
 function DuplicateFunctionReference(referenceIdentity) end
 
@@ -34,7 +34,7 @@ function DuplicateFunctionReference(referenceIdentity) end
 --- EndFindKvp
 ---
 --- @hash 0xB3210203
---- @params handle number (int)
+--- @param handle number (int)
 --- @return void
 function EndFindKvp(handle) end
 
@@ -42,7 +42,7 @@ function EndFindKvp(handle) end
 --- ExecuteCommand
 ---
 --- @hash 0x561C060B
---- @params commandString string (char*)
+--- @param commandString string (char*)
 --- @return void
 function ExecuteCommand(commandString) end
 
@@ -50,7 +50,7 @@ function ExecuteCommand(commandString) end
 --- FindKvp
 ---
 --- @hash 0xBD7BEBC5
---- @params handle number (int)
+--- @param handle number (int)
 --- @return string (char*)
 function FindKvp(handle) end
 
@@ -66,8 +66,8 @@ function GetCurrentResourceName() end
 --- GetConvarInt
 ---
 --- @hash 0x935C0AB2
---- @params varName string (char*)
---- @params default_ number (int)
+--- @param varName string (char*)
+--- @param default_ number (int)
 --- @return number (int)
 function GetConvarInt(varName, default_) end
 
@@ -83,8 +83,8 @@ function GetInstanceId() end
 --- GetConvar
 ---
 --- @hash 0x6CCD2564
---- @params varName string (char*)
---- @params default_ string (char*)
+--- @param varName string (char*)
+--- @param default_ string (char*)
 --- @return string (char*)
 function GetConvar(varName, default_) end
 
@@ -101,8 +101,8 @@ function GetNumResources() end
 --- See also: [Resource manifest](https://docs.fivem.net/resources/manifest/)
 ---
 --- @hash 0x776E864
---- @params resourceName string (char*)
---- @params metadataKey string (char*)
+--- @param resourceName string (char*)
+--- @param metadataKey string (char*)
 --- @return number (int)
 function GetNumResourceMetadata(resourceName, metadataKey) end
 
@@ -118,7 +118,7 @@ function GetInvokingResource() end
 --- A getter for [SET_PLAYER_MELEE_WEAPON_DAMAGE_MODIFIER](#\_0x4A3DC7ECCC321032).
 ---
 --- @hash 0x8689A825
---- @params playerId number (Player)
+--- @param playerId number (Player)
 --- @return number (float)
 function GetPlayerMeleeWeaponDamageModifier(playerId) end
 
@@ -126,7 +126,7 @@ function GetPlayerMeleeWeaponDamageModifier(playerId) end
 --- A getter for [SET_PLAYER_WEAPON_DEFENSE_MODIFIER](#\_0x2D83BC011CA14A3C).
 ---
 --- @hash 0xF1543251
---- @params playerId number (Player)
+--- @param playerId number (Player)
 --- @return number (float)
 function GetPlayerWeaponDefenseModifier(playerId) end
 
@@ -134,7 +134,7 @@ function GetPlayerWeaponDefenseModifier(playerId) end
 --- GetResourceKvpString
 ---
 --- @hash 0x5240DA5A
---- @params key string (char*)
+--- @param key string (char*)
 --- @return string (char*)
 function GetResourceKvpString(key) end
 
@@ -142,7 +142,7 @@ function GetResourceKvpString(key) end
 --- GetResourceKvpFloat
 ---
 --- @hash 0x35BDCEEA
---- @params key string (char*)
+--- @param key string (char*)
 --- @return number (float)
 function GetResourceKvpFloat(key) end
 
@@ -170,7 +170,7 @@ function GetRegisteredCommands() end
 --- A getter for [\_SET_PLAYER_WEAPON_DEFENSE_MODIFIER\_2](#\_0xBCFDE9EDE4CF27DC).
 ---
 --- @hash 0x986B65FF
---- @params playerId number (Player)
+--- @param playerId number (Player)
 --- @return number (float)
 function GetPlayerWeaponDefenseModifier_2(playerId) end
 
@@ -185,7 +185,7 @@ function GetPlayerWeaponDefenseModifier_2(playerId) end
 --- end
 --- print(table.unpack(resourceList)
 --- @hash 0x387246B7
---- @params findIndex number (int)
+--- @param findIndex number (int)
 --- @return string (char*)
 function GetResourceByFindIndex(findIndex) end
 
@@ -193,7 +193,7 @@ function GetResourceByFindIndex(findIndex) end
 --- GetResourceKvpInt
 ---
 --- @hash 0x557B586A
---- @params key string (char*)
+--- @param key string (char*)
 --- @return number (int)
 function GetResourceKvpInt(key) end
 
@@ -201,7 +201,7 @@ function GetResourceKvpInt(key) end
 --- A getter for [SET_PLAYER_WEAPON_DAMAGE_MODIFIER](#\_0xCE07B9F7817AADA3).
 ---
 --- @hash 0x2A3D7CDA
---- @params playerId number (Player)
+--- @param playerId number (Player)
 --- @return number (float)
 function GetPlayerWeaponDamageModifier(playerId) end
 
@@ -210,9 +210,9 @@ function GetPlayerWeaponDamageModifier(playerId) end
 --- See also: [Resource manifest](https://docs.fivem.net/resources/manifest/)
 ---
 --- @hash 0x964BAB1D
---- @params resourceName string (char*)
---- @params metadataKey string (char*)
---- @params index number (int)
+--- @param resourceName string (char*)
+--- @param metadataKey string (char*)
+--- @param index number (int)
 --- @return string (char*)
 function GetResourceMetadata(resourceName, metadataKey, index) end
 
@@ -220,8 +220,8 @@ function GetResourceMetadata(resourceName, metadataKey, index) end
 --- Returns the value of a state bag key.
 ---
 --- @hash 0x637F4C75
---- @params bagName string (char*)
---- @params key string (char*)
+--- @param bagName string (char*)
+--- @param key string (char*)
 --- @return table (object)
 function GetStateBagValue(bagName, key) end
 
@@ -229,7 +229,7 @@ function GetStateBagValue(bagName, key) end
 --- Returns the current state of the specified resource.
 ---
 --- @hash 0x4039B485
---- @params resourceName string (char*)
+--- @param resourceName string (char*)
 --- @return string (char*)
 function GetResourceState(resourceName) end
 
@@ -237,8 +237,8 @@ function GetResourceState(resourceName) end
 --- GetVehicleHandbrake
 ---
 --- @hash 0x483B013C
---- @params vehicle number (Vehicle)
---- @return boolean (BOOL)
+--- @param vehicle number (Vehicle)
+--- @return boolean
 function GetVehicleHandbrake(vehicle) end
 
     
@@ -246,42 +246,42 @@ function GetVehicleHandbrake(vehicle) end
 ---
 --- @hash 0xCF24C52E
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsDuplicityVersion() end
 
     
 --- IsAceAllowed
 ---
 --- @hash 0x7EBB9929
---- @params object string (char*)
---- @return boolean (BOOL)
+--- @param object string (char*)
+--- @return boolean
 function IsAceAllowed(object) end
 
     
 --- IsPrincipalAceAllowed
 ---
 --- @hash 0x37CF52CE
---- @params principal string (char*)
---- @params object string (char*)
---- @return boolean (BOOL)
+--- @param principal string (char*)
+--- @param object string (char*)
+--- @return boolean
 function IsPrincipalAceAllowed(principal, object) end
 
     
 --- IsVehicleEngineStarting
 ---
 --- @hash 0xBB340D04
---- @params vehicle number (Vehicle)
---- @return boolean (BOOL)
+--- @param vehicle number (Vehicle)
+--- @return boolean
 function IsVehicleEngineStarting(vehicle) end
 
     
 --- InvokeFunctionReference
 ---
 --- @hash 0xE3551879
---- @params referenceIdentity string (char*)
---- @params argsSerialized string (char*)
---- @params argsLength number (int)
---- @params retvalLength table (int*)
+--- @param referenceIdentity string (char*)
+--- @param argsSerialized string (char*)
+--- @param argsLength number (int)
+--- @param retvalLength table (int*)
 --- @return string (char*)
 function InvokeFunctionReference(referenceIdentity, argsSerialized, argsLength, retvalLength) end
 
@@ -291,8 +291,8 @@ function InvokeFunctionReference(referenceIdentity, argsSerialized, argsLength, 
 --- Example: `local data = LoadResourceFile("devtools", "data.json")`
 ---
 --- @hash 0x76A9EE1F
---- @params resourceName string (char*)
---- @params fileName string (char*)
+--- @param resourceName string (char*)
+--- @param fileName string (char*)
 --- @return string (char*)
 function LoadResourceFile(resourceName, fileName) end
 
@@ -300,7 +300,7 @@ function LoadResourceFile(resourceName, fileName) end
 --- Scope entry for profiler.
 ---
 --- @hash 0xC795A4A9
---- @params scopeName string (char*)
+--- @param scopeName string (char*)
 --- @return void
 function ProfilerEnterScope(scopeName) end
 
@@ -308,7 +308,7 @@ function ProfilerEnterScope(scopeName) end
 --- Returns the owner ID of the specified entity.
 ---
 --- @hash 0x526FEE31
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return number (int)
 function NetworkGetEntityOwner(entity) end
 
@@ -325,14 +325,14 @@ function ProfilerExitScope() end
 ---
 --- @hash 0xF8B7D7BB
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function ProfilerIsRecording() end
 
     
 --- An internal function which allows the current resource's HLL script runtimes to receive state for the specified event.
 ---
 --- @hash 0xD233A168
---- @params eventName string (char*)
+--- @param eventName string (char*)
 --- @return void
 function RegisterResourceAsEventHandler(eventName) end
 
@@ -367,9 +367,9 @@ function RegisterResourceAsEventHandler(eventName) end
 ---     end
 --- end, false --[[this command is not restricted, everyone can use this.]]
 --- @hash 0x5FA79B0F
---- @params commandName string (char*)
---- @params handler table (func)
---- @params restricted boolean (BOOL)
+--- @param commandName string (char*)
+--- @param handler table (func)
+--- @param restricted boolean
 --- @return void
 function RegisterCommand(commandName, handler, restricted) end
 
@@ -377,8 +377,8 @@ function RegisterCommand(commandName, handler, restricted) end
 --- SetResourceKvpFloat
 ---
 --- @hash 0x9ADD2938
---- @params key string (char*)
---- @params value number (float)
+--- @param key string (char*)
+--- @param value number (float)
 --- @return void
 function SetResourceKvpFloat(key, value) end
 
@@ -386,8 +386,8 @@ function SetResourceKvpFloat(key, value) end
 --- SetResourceKvpInt
 ---
 --- @hash 0x6A2B1E8
---- @params key string (char*)
---- @params value number (int)
+--- @param key string (char*)
+--- @param value number (int)
 --- @return void
 function SetResourceKvpInt(key, value) end
 
@@ -395,8 +395,8 @@ function SetResourceKvpInt(key, value) end
 --- SetResourceKvp
 ---
 --- @hash 0x21C7A35B
---- @params key string (char*)
---- @params value string (char*)
+--- @param key string (char*)
+--- @param value string (char*)
 --- @return void
 function SetResourceKvp(key, value) end
 
@@ -404,11 +404,11 @@ function SetResourceKvp(key, value) end
 --- Internal function for setting a state bag value.
 ---
 --- @hash 0x8D50E33A
---- @params bagName string (char*)
---- @params keyName string (char*)
---- @params valueData string (char*)
---- @params valueLength number (int)
---- @params replicated boolean (BOOL)
+--- @param bagName string (char*)
+--- @param keyName string (char*)
+--- @param valueData string (char*)
+--- @param valueLength number (int)
+--- @param replicated boolean
 --- @return void
 function SetStateBagValue(bagName, keyName, valueData, valueLength, replicated) end
 
@@ -416,7 +416,7 @@ function SetStateBagValue(bagName, keyName, valueData, valueLength, replicated) 
 --- StartFindKvp
 ---
 --- @hash 0xDD379006
---- @params prefix string (char*)
+--- @param prefix string (char*)
 --- @return number (int)
 function StartFindKvp(prefix) end
 
@@ -425,16 +425,16 @@ function StartFindKvp(prefix) end
 ---
 --- @hash 0x58382A19
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function WasEventCanceled() end
 
     
 --- The backing function for TriggerEvent.
 ---
 --- @hash 0x91310870
---- @params eventName string (char*)
---- @params eventPayload string (char*)
---- @params payloadLength number (int)
+--- @param eventName string (char*)
+--- @param eventPayload string (char*)
+--- @param payloadLength number (int)
 --- @return void
 function TriggerEventInternal(eventName, eventPayload, payloadLength) end
 

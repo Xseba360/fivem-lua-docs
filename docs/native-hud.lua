@@ -55,8 +55,8 @@
 --- ```
 ---
 --- @hash 0x94F2E83EAD7E6B82
---- @params stationName string (char*)
---- @params Toggle boolean (BOOL)
+--- @param stationName string (char*)
+--- @param Toggle boolean
 --- @return void
 function SetRadioStationDisabled(stationName, Toggle) end
 
@@ -64,7 +64,7 @@ function SetRadioStationDisabled(stationName, Toggle) end
 --- AddTextComponentSubstringKeyboardDisplay
 ---
 --- @hash 0x5F68520888E69014
---- @params p0 string (char*)
+--- @param p0 string (char*)
 --- @return void
 function AddTextComponentSubstringKeyboardDisplay(p0) end
 
@@ -73,16 +73,16 @@ function AddTextComponentSubstringKeyboardDisplay(p0) end
 ---
 --- @hash 0xD422FCC5F239A915
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function BusyspinnerIsOn() end
 
     
 --- AddPointToGpsMultiRoute
 ---
 --- @hash 0xA905192A6781C41B
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function AddPointToGpsMultiRoute(x, y, z) end
 
@@ -96,7 +96,7 @@ function AddPointToGpsMultiRoute(x, y, z) end
 --- ```
 ---
 --- @hash 0x25FBB336DF1804CB
---- @params text string (char*)
+--- @param text string (char*)
 --- @return void
 function BeginTextCommandDisplayText(text) end
 
@@ -106,7 +106,7 @@ function BeginTextCommandDisplayText(text) end
 --- ```
 ---
 --- @hash 0x8509B634FBE7DA11
---- @params inputType string (char*)
+--- @param inputType string (char*)
 --- @return void
 function BeginTextCommandDisplayHelp(inputType) end
 
@@ -114,7 +114,7 @@ function BeginTextCommandDisplayHelp(inputType) end
 --- AddNextMessageToPreviousBriefs
 ---
 --- @hash 0x60296AF4BA14ABC5
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function AddNextMessageToPreviousBriefs(p0) end
 
@@ -129,7 +129,7 @@ function AddNextMessageToPreviousBriefs(p0) end
 --- ```
 ---
 --- @hash 0x23D69E0465570028
---- @params p0 string (char*)
+--- @param p0 string (char*)
 --- @return void
 function BeginTextCommandObjective(p0) end
 
@@ -147,8 +147,8 @@ function BusyspinnerIsDisplaying() end
 --- AddTextComponentFormattedInteger
 ---
 --- @hash 0x0E4C749FF9DE9CC4
---- @params value number (int)
---- @params commaSeparated boolean (BOOL)
+--- @param value number (int)
+--- @param commaSeparated boolean
 --- @return void
 function AddTextComponentFormattedInteger(value, commaSeparated) end
 
@@ -157,7 +157,7 @@ function AddTextComponentFormattedInteger(value, commaSeparated) end
 ---
 --- @hash 0x8A9BA1AB3E237613
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function EndTextCommandIsMessageDisplayed() end
 
     
@@ -171,7 +171,7 @@ function EndTextCommandIsMessageDisplayed() end
 --- ```
 ---
 --- @hash 0x8F9EE5687F8EECCD
---- @params gxtEntry string (char*)
+--- @param gxtEntry string (char*)
 --- @return void
 function BeginTextCommandOverrideButtonText(gxtEntry) end
 
@@ -179,7 +179,7 @@ function BeginTextCommandOverrideButtonText(gxtEntry) end
 --- ClearHelp
 ---
 --- @hash 0x8DFCED7A656F8802
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function ClearHelp(toggle) end
 
@@ -199,8 +199,8 @@ function ClearRaceGalleryBlips() end
 --- ```
 ---
 --- @hash 0x1115F16B8AB9E8BF
---- @params timestamp number (int)
---- @params flags number (int)
+--- @param timestamp number (int)
+--- @param flags number (int)
 --- @return void
 function AddTextComponentSubstringTime(timestamp, flags) end
 
@@ -208,7 +208,7 @@ function AddTextComponentSubstringTime(timestamp, flags) end
 --- AddTextComponentSubstringTextLabel
 ---
 --- @hash 0xC63CD5D2920ACBE7
---- @params labelName string (char*)
+--- @param labelName string (char*)
 --- @return void
 function AddTextComponentSubstringTextLabel(labelName) end
 
@@ -236,7 +236,7 @@ function DeleteWaypoint() end
 --- AddTextComponentSubstringPlayerName("Hello " .. GetPlayerName(PlayerId()) .. ".")
 --- EndTextCommandThefeedPostTicker(true, true
 --- @hash 0x202709F4C58A0424
---- @params text string (char*)
+--- @param text string (char*)
 --- @return void
 function BeginTextCommandThefeedPost(text) end
 
@@ -244,7 +244,7 @@ function BeginTextCommandThefeedPost(text) end
 --- AddTextComponentInteger
 ---
 --- @hash 0x03B504CF259931BC
---- @params value number (int)
+--- @param value number (int)
 --- @return void
 function AddTextComponentInteger(value) end
 
@@ -260,7 +260,7 @@ function AddTextComponentInteger(value) end
 --- ```
 ---
 --- @hash 0x521FB041D93DD0E4
---- @params entry string (char*)
+--- @param entry string (char*)
 --- @return void
 function BeginTextCommandLineCount(entry) end
 
@@ -278,10 +278,10 @@ function BusyspinnerOff() end
 --- AddBlipForRadius
 ---
 --- @hash 0x46818D79B1F7499A
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
---- @params radius number (float)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param radius number (float)
 --- @return table (Blip)
 function AddBlipForRadius(posX, posY, posZ, radius) end
 
@@ -301,7 +301,7 @@ function AddBlipForRadius(posX, posY, posZ, radius) end
 --- ```
 ---
 --- @hash 0xBD12F8228410D9B4
---- @params busySpinnerType number (int)
+--- @param busySpinnerType number (int)
 --- @return void
 function EndTextCommandBusyspinnerOn(busySpinnerType) end
 
@@ -322,11 +322,11 @@ function EndTextCommandBusyspinnerOn(busySpinnerType) end
 --- SetBlipRotation(blip, 0)
 --- SetBlipColour(blip, 0xFF00FF80
 --- @hash 0xCE5D0E5E315DB238
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params width number (float)
---- @params height number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param width number (float)
+--- @param height number (float)
 --- @return table (Blip)
 function AddBlipForArea(x, y, z, width, height) end
 
@@ -334,8 +334,8 @@ function AddBlipForArea(x, y, z, width, height) end
 --- DoesBlipHaveGpsRoute
 ---
 --- @hash 0xDD2238F57B977751
---- @params blip table (Blip)
---- @return boolean (BOOL)
+--- @param blip table (Blip)
+--- @return boolean
 function DoesBlipHaveGpsRoute(blip) end
 
     
@@ -345,8 +345,8 @@ function DoesBlipHaveGpsRoute(blip) end
 --- ```
 ---
 --- @hash 0x15B8ECF844EE67ED
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function DoesPedHaveAiBlip(ped) end
 
     
@@ -404,12 +404,12 @@ function DoesPedHaveAiBlip(ped) end
 ---     UnregisterPedheadshot(handle)
 --- end
 --- @hash 0x1CCD9A37359072CF
---- @params textureDict string (char*)
---- @params textureName string (char*)
---- @params flash boolean (BOOL)
---- @params iconType number (int)
---- @params sender string (char*)
---- @params subject string (char*)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param flash boolean
+--- @param iconType number (int)
+--- @param sender string (char*)
+--- @param subject string (char*)
 --- @return number (int)
 function EndTextCommandThefeedPostMessagetext(textureDict, textureName, flash, iconType, sender, subject) end
 
@@ -456,10 +456,10 @@ function CloseMultiplayerChat() end
 --- ```
 ---
 --- @hash 0x238FFE5C7B0498A6
---- @params p0 number (int)
---- @params loop boolean (BOOL)
---- @params beep boolean (BOOL)
---- @params shape number (int)
+--- @param p0 number (int)
+--- @param loop boolean
+--- @param beep boolean
+--- @param shape number (int)
 --- @return void
 function EndTextCommandDisplayHelp(p0, loop, beep, shape) end
 
@@ -467,8 +467,8 @@ function EndTextCommandDisplayHelp(p0, loop, beep, shape) end
 --- EndTextCommandThefeedPostTickerWithTokens
 ---
 --- @hash 0x378E809BF61EC840
---- @params isImportant boolean (BOOL)
---- @params bHasTokens boolean (BOOL)
+--- @param isImportant boolean
+--- @param bHasTokens boolean
 --- @return number (int)
 function EndTextCommandThefeedPostTickerWithTokens(isImportant, bHasTokens) end
 
@@ -484,7 +484,7 @@ function EndTextCommandThefeedPostTickerWithTokens(isImportant, bHasTokens) end
 --- AddTextComponentSubstringPlayerName('Hello, World!')
 --- EndTextCommandDisplayText(0.5, 0.5
 --- @hash 0x6C188BE134E074AA
---- @params text string (char*)
+--- @param text string (char*)
 --- @return void
 function AddTextComponentSubstringPlayerName(text) end
 
@@ -499,8 +499,8 @@ function AddTextComponentSubstringPlayerName(text) end
 --- ```
 ---
 --- @hash 0xCD015E5BB0D96A57
---- @params x number (float)
---- @params y number (float)
+--- @param x number (float)
+--- @param y number (float)
 --- @return void
 function EndTextCommandDisplayText(x, y) end
 
@@ -514,7 +514,7 @@ function EndTextCommandDisplayText(x, y) end
 --- ```
 ---
 --- @hash 0x0A24DA3A41B718F5
---- @params labelName string (char*)
+--- @param labelName string (char*)
 --- @return void
 function BeginTextCommandIsThisHelpMessageBeingDisplayed(labelName) end
 
@@ -522,7 +522,7 @@ function BeginTextCommandIsThisHelpMessageBeingDisplayed(labelName) end
 --- AddBlipForPickup
 ---
 --- @hash 0xBE339365C863BD36
---- @params pickup table (Pickup)
+--- @param pickup table (Pickup)
 --- @return table (Blip)
 function AddBlipForPickup(pickup) end
 
@@ -532,7 +532,7 @@ function AddBlipForPickup(pickup) end
 --- ```
 ---
 --- @hash 0xCF708001E1E536DD
---- @params p0 string (char*)
+--- @param p0 string (char*)
 --- @return void
 function ClearThisPrint(p0) end
 
@@ -558,7 +558,7 @@ function ClearBrief() end
 --- ```
 ---
 --- @hash 0xE124FA80A759019C
---- @params text string (char*)
+--- @param text string (char*)
 --- @return void
 function BeginTextCommandClearPrint(text) end
 
@@ -590,7 +590,7 @@ function ForceCloseTextInputBox() end
 --- ```
 ---
 --- @hash 0x853648FD1063A213
---- @params text string (char*)
+--- @param text string (char*)
 --- @return void
 function BeginTextCommandIsMessageDisplayed(text) end
 
@@ -605,7 +605,7 @@ function BeginTextCommandIsMessageDisplayed(text) end
 --- AddTextComponentSubstringPlayerName('me')
 --- EndTextCommandSetBlipName(blip
 --- @hash 0xBC38B49BCB83BC9B
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return void
 function EndTextCommandSetBlipName(blip) end
 
@@ -613,7 +613,7 @@ function EndTextCommandSetBlipName(blip) end
 --- FlagPlayerContextInTournament
 ---
 --- @hash 0xCEF214315D276FD1
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function FlagPlayerContextInTournament(toggle) end
 
@@ -655,7 +655,7 @@ function FlagPlayerContextInTournament(toggle) end
 --- ```
 ---
 --- @hash 0xABA17D7CE615ADBF
---- @params string string (char*)
+--- @param string string (char*)
 --- @return void
 function BeginTextCommandBusyspinnerOn(string) end
 
@@ -666,8 +666,8 @@ function BeginTextCommandBusyspinnerOn(string) end
 --- ```
 ---
 --- @hash 0x761B77454205A61D
---- @params p0 string (char*)
---- @params p1 number (int)
+--- @param p0 string (char*)
+--- @param p1 number (int)
 --- @return void
 function AddTextComponentSubstringPhoneNumber(p0, p1) end
 
@@ -675,8 +675,8 @@ function AddTextComponentSubstringPhoneNumber(p0, p1) end
 --- AddTextComponentFloat
 ---
 --- @hash 0xE7DCB5B874BCD96E
---- @params value number (float)
---- @params decimalPlaces number (int)
+--- @param value number (float)
+--- @param decimalPlaces number (int)
 --- @return void
 function AddTextComponentFloat(value, decimalPlaces) end
 
@@ -707,7 +707,7 @@ function AllowPauseMenuWhenDeadThisFrame() end
 --- ```
 ---
 --- @hash 0x17299B63C7683A2B
---- @params gxtEntryHash table (Hash)
+--- @param gxtEntryHash table (Hash)
 --- @return void
 function AddTextComponentSubstringTextLabelHashKey(gxtEntryHash) end
 
@@ -715,9 +715,9 @@ function AddTextComponentSubstringTextLabelHashKey(gxtEntryHash) end
 --- Creates a blip for the specified coordinates. You can use `SET_BLIP_` natives to change the blip.
 --- @usage local destination = AddBlipForCoord(200.0, 200.0, 5.0
 --- @hash 0x5A039BB0BCA604B6
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return table (Blip)
 function AddBlipForCoord(x, y, z) end
 
@@ -745,17 +745,17 @@ function AddBlipForCoord(x, y, z) end
 --- ```
 ---
 --- @hash 0x137BC35589E34E1E
---- @params crewTypeIsPrivate boolean (BOOL)
---- @params crewTagContainsRockstar boolean (BOOL)
---- @params crewTag table (int*)
---- @params rank number (int)
---- @params isLeader boolean (BOOL)
---- @params isImportant boolean (BOOL)
---- @params clanHandle number (int)
---- @params gamerStr string (char*)
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
+--- @param crewTypeIsPrivate boolean
+--- @param crewTagContainsRockstar boolean
+--- @param crewTag table (int*)
+--- @param rank number (int)
+--- @param isLeader boolean
+--- @param isImportant boolean
+--- @param clanHandle number (int)
+--- @param gamerStr string (char*)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
 --- @return number (int)
 function EndTextCommandThefeedPostCrewtagWithGameName(crewTypeIsPrivate, crewTagContainsRockstar, crewTag, rank, isLeader, isImportant, clanHandle, gamerStr, r, g, b) end
 
@@ -763,8 +763,8 @@ function EndTextCommandThefeedPostCrewtagWithGameName(crewTypeIsPrivate, crewTag
 --- EndTextCommandIsThisHelpMessageBeingDisplayed
 ---
 --- @hash 0x10BDDBFC529428DD
---- @params p0 number (int)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @return boolean
 function EndTextCommandIsThisHelpMessageBeingDisplayed(p0) end
 
     
@@ -774,11 +774,11 @@ function EndTextCommandIsThisHelpMessageBeingDisplayed(p0) end
 --- ```
 ---
 --- @hash 0x8EFCCF6EC66D85E4
---- @params chTitle string (char*)
---- @params clanTxd string (char*)
---- @params clanTxn string (char*)
---- @params isImportant boolean (BOOL)
---- @params showSubtitle boolean (BOOL)
+--- @param chTitle string (char*)
+--- @param clanTxd string (char*)
+--- @param clanTxn string (char*)
+--- @param isImportant boolean
+--- @param showSubtitle boolean
 --- @return number (int)
 function EndTextCommandThefeedPostCrewRankup(chTitle, clanTxd, clanTxn, isImportant, showSubtitle) end
 
@@ -788,7 +788,7 @@ function EndTextCommandThefeedPostCrewRankup(chTitle, clanTxd, clanTxn, isImport
 --- ```
 ---
 --- @hash 0xA6294919E56FF02A
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function DisplayHud(toggle) end
 
@@ -802,7 +802,7 @@ function DisplayHud(toggle) end
 --- ```
 ---
 --- @hash 0x5CDE92C702A8FCE7
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return table (Blip)
 function AddBlipForEntity(entity) end
 
@@ -810,7 +810,7 @@ function AddBlipForEntity(entity) end
 --- FlashMinimapDisplayWithColor
 ---
 --- @hash 0x6B1DE27EE78E6A19
---- @params hudColorIndex number (int)
+--- @param hudColorIndex number (int)
 --- @return void
 function FlashMinimapDisplayWithColor(hudColorIndex) end
 
@@ -878,19 +878,19 @@ function FlashMinimapDisplayWithColor(hudColorIndex) end
 --- 	end
 --- end
 --- @hash 0x15803FEC3B9A872B
---- @params labelTitle string (char*)
---- @params labelMsg string (char*)
---- @params p2 number (int)
---- @params p3 number (int)
---- @params labelMsg2 string (char*)
---- @params p5 number (int)
---- @params p6 number (int)
---- @params p7 number (int)
---- @params p8 string (char*)
---- @params p9 string (char*)
---- @params background boolean (BOOL)
---- @params errorCode number (int)
---- @return Any
+--- @param labelTitle string (char*)
+--- @param labelMsg string (char*)
+--- @param p2 number (int)
+--- @param p3 number (int)
+--- @param labelMsg2 string (char*)
+--- @param p5 number (int)
+--- @param p6 number (int)
+--- @param p7 number (int)
+--- @param p8 string (char*)
+--- @param p9 string (char*)
+--- @param background boolean
+--- @param errorCode number (int)
+--- @return any
 function DrawFrontendAlert(labelTitle, labelMsg, p2, p3, labelMsg2, p5, p6, p7, p8, p9, background, errorCode) end
 
     
@@ -899,7 +899,7 @@ function DrawFrontendAlert(labelTitle, labelMsg, p2, p3, labelMsg2, p5, p6, p7, 
 --- ```
 ---
 --- @hash 0x94CF4AC034C9C986
---- @params website string (char*)
+--- @param website string (char*)
 --- @return void
 function AddTextComponentSubstringWebsite(website) end
 
@@ -910,12 +910,12 @@ function AddTextComponentSubstringWebsite(website) end
 --- ```
 ---
 --- @hash 0xF9904D11F1ACBEC3
---- @params worldX number (float)
---- @params worldY number (float)
---- @params worldZ number (float)
---- @params screenX table (float*)
---- @params screenY table (float*)
---- @return boolean (BOOL)
+--- @param worldX number (float)
+--- @param worldY number (float)
+--- @param worldZ number (float)
+--- @param screenX table (float*)
+--- @param screenY table (float*)
+--- @return boolean
 function GetHudScreenPositionFromWorldPosition(worldX, worldY, worldZ, screenX, screenY) end
 
     
@@ -976,9 +976,9 @@ function ClearGpsMultiRoute() end
 --- *   FE_MENU_VERSION_LANDING_KEYMAPPING_MENU
 ---
 --- @hash 0xEF01D36B9C9D0C7B
---- @params menuhash table (Hash)
---- @params togglePause boolean (BOOL)
---- @params component number (int)
+--- @param menuhash table (Hash)
+--- @param togglePause boolean
+--- @param component number (int)
 --- @return void
 function ActivateFrontendMenu(menuhash, togglePause, component) end
 
@@ -986,7 +986,7 @@ function ActivateFrontendMenu(menuhash, togglePause, component) end
 --- DisplayAreaName
 ---
 --- @hash 0x276B6CE369C33678
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function DisplayAreaName(toggle) end
 
@@ -996,15 +996,15 @@ function DisplayAreaName(toggle) end
 --- ```
 ---
 --- @hash 0xAC09CA973C564252
---- @params gxt string (char*)
---- @return boolean (BOOL)
+--- @param gxt string (char*)
+--- @return boolean
 function DoesTextLabelExist(gxt) end
 
     
 --- AddTextComponentSubstringBlipName
 ---
 --- @hash 0x80EAD8E2E1D5D52E
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return void
 function AddTextComponentSubstringBlipName(blip) end
 
@@ -1029,14 +1029,14 @@ function AddTextComponentSubstringBlipName(blip) end
 --- ```
 ---
 --- @hash 0x5CBF7BADE20DB93E
---- @params picTxd string (char*)
---- @params picTxn string (char*)
---- @params flash boolean (BOOL)
---- @params iconType number (int)
---- @params nameStr string (char*)
---- @params subtitleStr string (char*)
---- @params duration number (float)
---- @params crewPackedStr string (char*)
+--- @param picTxd string (char*)
+--- @param picTxn string (char*)
+--- @param flash boolean
+--- @param iconType number (int)
+--- @param nameStr string (char*)
+--- @param subtitleStr string (char*)
+--- @param duration number (float)
+--- @param crewPackedStr string (char*)
 --- @return number (int)
 function EndTextCommandThefeedPostMessagetextWithCrewTag(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, duration, crewPackedStr) end
 
@@ -1055,7 +1055,7 @@ function ClearGpsFlags() end
 --- GetBlipColour
 ---
 --- @hash 0xDF729E8D20CF7327
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return number (int)
 function GetBlipColour(blip) end
 
@@ -1067,12 +1067,12 @@ function GetBlipColour(blip) end
 --- ```
 ---
 --- @hash 0xBFEFE3321A3F5015
---- @params ped table (Ped)
---- @params username string (char*)
---- @params pointedClanTag boolean (BOOL)
---- @params isRockstarClan boolean (BOOL)
---- @params clanTag string (char*)
---- @params clanFlag number (int)
+--- @param ped table (Ped)
+--- @param username string (char*)
+--- @param pointedClanTag boolean
+--- @param isRockstarClan boolean
+--- @param clanTag string (char*)
+--- @param clanFlag number (int)
 --- @return number (int)
 function CreateFakeMpGamerTag(ped, username, pointedClanTag, isRockstarClan, clanTag, clanFlag) end
 
@@ -1082,7 +1082,7 @@ function CreateFakeMpGamerTag(ped, username, pointedClanTag, isRockstarClan, cla
 --- ```
 ---
 --- @hash 0xF030907CCBB8A9FD
---- @params string string (char*)
+--- @param string string (char*)
 --- @return number (int)
 function GetLengthOfLiteralString(string) end
 
@@ -1092,8 +1092,8 @@ function GetLengthOfLiteralString(string) end
 --- ```
 ---
 --- @hash 0x50085246ABD3FEFA
---- @params p0 Any
---- @params p1 boolean (BOOL)
+--- @param p0 any
+--- @param p1 boolean
 --- @return void
 function ClearFloatingHelp(p0, p1) end
 
@@ -1101,8 +1101,8 @@ function ClearFloatingHelp(p0, p1) end
 --- DoesBlipExist
 ---
 --- @hash 0xA6DB27D19ECBB7DA
---- @params blip table (Blip)
---- @return boolean (BOOL)
+--- @param blip table (Blip)
+--- @return boolean
 function DoesBlipExist(blip) end
 
     
@@ -1117,7 +1117,7 @@ function DoesBlipExist(blip) end
 --- AddTextComponentSubstringPlayerName('me')
 --- EndTextCommandSetBlipName(blip
 --- @hash 0xF9113A30DE5C6670
---- @params textLabel string (char*)
+--- @param textLabel string (char*)
 --- @return void
 function BeginTextCommandSetBlipName(textLabel) end
 
@@ -1125,7 +1125,7 @@ function BeginTextCommandSetBlipName(textLabel) end
 --- GetBlipAlpha
 ---
 --- @hash 0x970F608F0EE6C885
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return number (int)
 function GetBlipAlpha(blip) end
 
@@ -1133,9 +1133,9 @@ function GetBlipAlpha(blip) end
 --- AddPointToGpsCustomRoute
 ---
 --- @hash 0x311438A071DD9B1A
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function AddPointToGpsCustomRoute(x, y, z) end
 
@@ -1145,7 +1145,7 @@ function AddPointToGpsCustomRoute(x, y, z) end
 --- ```
 ---
 --- @hash 0x7CD934010E115C2C
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return void
 function GetAiBlip_2(ped) end
 
@@ -1161,7 +1161,7 @@ function CloseSocialClubMenu() end
 --- GetBlipCoords
 ---
 --- @hash 0x586AFE3FF72D996E
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return Vector3
 function GetBlipCoords(blip) end
 
@@ -1177,7 +1177,7 @@ function GetBlipCoords(blip) end
 --- ```
 ---
 --- @hash 0xB87A37EEB7FAA67D
---- @params GxtEntry string (char*)
+--- @param GxtEntry string (char*)
 --- @return void
 function BeginTextCommandPrint(GxtEntry) end
 
@@ -1222,8 +1222,8 @@ function DisplayHudWhenPausedThisFrame() end
 --- AddTextComponentSubstringPlayerName("Hello " .. GetPlayerName(PlayerId()) .. ".")
 --- EndTextCommandThefeedPostTicker(true, true
 --- @hash 0x2ED7843F8F801023
---- @params isImportant boolean (BOOL)
---- @params bHasTokens boolean (BOOL)
+--- @param isImportant boolean
+--- @param bHasTokens boolean
 --- @return number (int)
 function EndTextCommandThefeedPostTicker(isImportant, bHasTokens) end
 
@@ -1241,13 +1241,13 @@ function EndTextCommandThefeedPostTicker(isImportant, bHasTokens) end
 --- ![](https://i.imgur.com/YrN4Bcm.png)
 ---
 --- @hash 0x1E6611149DB3DB6B
---- @params picTxd string (char*)
---- @params picTxn string (char*)
---- @params flash boolean (BOOL)
---- @params iconType number (int)
---- @params nameStr string (char*)
---- @params subtitleStr string (char*)
---- @params duration number (float)
+--- @param picTxd string (char*)
+--- @param picTxn string (char*)
+--- @param flash boolean
+--- @param iconType number (int)
+--- @param nameStr string (char*)
+--- @param subtitleStr string (char*)
+--- @param duration number (float)
 --- @return number (int)
 function EndTextCommandThefeedPostMessagetextTu(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, duration) end
 
@@ -1258,7 +1258,7 @@ function EndTextCommandThefeedPostMessagetextTu(picTxd, picTxn, flash, iconType,
 --- ```
 ---
 --- @hash 0x96DEC8D5430208B7
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function DisplayCash(toggle) end
 
@@ -1266,8 +1266,8 @@ function DisplayCash(toggle) end
 --- DoesTextBlockExist
 ---
 --- @hash 0x1C7302E725259789
---- @params gxt string (char*)
---- @return boolean (BOOL)
+--- @param gxt string (char*)
+--- @return boolean
 function DoesTextBlockExist(gxt) end
 
     
@@ -1310,16 +1310,16 @@ function GetWarningMessageTitleHash() end
 --- ```
 ---
 --- @hash 0xA18AFB39081B6A1F
---- @params p0 boolean (BOOL)
---- @return Any
+--- @param p0 boolean
+--- @return any
 function FlashWantedDisplay(p0) end
 
     
 --- ClearAdditionalText
 ---
 --- @hash 0x2A179DF17CCF04CD
---- @params p0 number (int)
---- @params p1 boolean (BOOL)
+--- @param p0 number (int)
+--- @param p1 boolean
 --- @return void
 function ClearAdditionalText(p0, p1) end
 
@@ -1327,15 +1327,15 @@ function ClearAdditionalText(p0, p1) end
 --- CreateMpGamerTagWithCrewColor
 ---
 --- @hash 0x6DD05E9D83EFA4C9
---- @params player number (Player)
---- @params username string (char*)
---- @params pointedClanTag boolean (BOOL)
---- @params isRockstarClan boolean (BOOL)
---- @params clanTag string (char*)
---- @params clanFlag number (int)
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
+--- @param player number (Player)
+--- @param username string (char*)
+--- @param pointedClanTag boolean
+--- @param isRockstarClan boolean
+--- @param clanTag string (char*)
+--- @param clanFlag number (int)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
 --- @return void
 function CreateMpGamerTagWithCrewColor(player, username, pointedClanTag, isRockstarClan, clanTag, clanFlag, r, g, b) end
 
@@ -1343,11 +1343,11 @@ function CreateMpGamerTagWithCrewColor(player, username, pointedClanTag, isRocks
 --- EndTextCommandThefeedPostUnlockTu
 ---
 --- @hash 0xC8F3AAF93D0600BF
---- @params chTitle string (char*)
---- @params iconType number (int)
---- @params chSubtitle string (char*)
---- @params isImportant boolean (BOOL)
---- @return Any
+--- @param chTitle string (char*)
+--- @param iconType number (int)
+--- @param chSubtitle string (char*)
+--- @param isImportant boolean
+--- @return any
 function EndTextCommandThefeedPostUnlockTu(chTitle, iconType, chSubtitle, isImportant) end
 
     
@@ -1363,7 +1363,7 @@ function EndTextCommandThefeedPostUnlockTu(chTitle, iconType, chSubtitle, isImpo
 --- ```
 ---
 --- @hash 0xBE9B0959FFD0779B
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return number (int)
 function GetBlipInfoIdType(blip) end
 
@@ -1374,8 +1374,8 @@ function GetBlipInfoIdType(blip) end
 --- ```
 ---
 --- @hash 0x9040DFB09BE75706
---- @params x number (float)
---- @params y number (float)
+--- @param x number (float)
+--- @param y number (float)
 --- @return number (int)
 function EndTextCommandGetLineCount(x, y) end
 
@@ -1387,7 +1387,7 @@ function EndTextCommandGetLineCount(x, y) end
 --- ```
 ---
 --- @hash 0x85F061DA64ED2F67
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return number (float)
 function EndTextCommandGetWidth(p0) end
 
@@ -1397,8 +1397,8 @@ function EndTextCommandGetWidth(p0) end
 --- ```
 ---
 --- @hash 0xDB88A37483346780
---- @params size number (float)
---- @params font number (int)
+--- @param size number (float)
+--- @param font number (int)
 --- @return number (float)
 function GetTextScaleHeight(size, font) end
 
@@ -1406,7 +1406,7 @@ function GetTextScaleHeight(size, font) end
 --- AllowSonarBlips
 ---
 --- @hash 0x60734CC207C9833C
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function AllowSonarBlips(p0) end
 
@@ -1420,9 +1420,9 @@ function AllowSonarBlips(p0) end
 --- ```
 ---
 --- @hash 0xD202B92CBF1D816F
---- @params eType number (int)
---- @params iIcon number (int)
---- @params sTitle string (char*)
+--- @param eType number (int)
+--- @param iIcon number (int)
+--- @param sTitle string (char*)
 --- @return number (int)
 function EndTextCommandThefeedPostReplayIcon(eType, iIcon, sTitle) end
 
@@ -1442,8 +1442,8 @@ function EndTextCommandThefeedPostReplayIcon(eType, iIcon, sTitle) end
 --- ```
 ---
 --- @hash 0x960C9FF8F616E41C
---- @params message string (char*)
---- @params p1 boolean (BOOL)
+--- @param message string (char*)
+--- @param p1 boolean
 --- @return void
 function DisplayHelpTextThisFrame(message, p1) end
 
@@ -1456,7 +1456,7 @@ function DisplayHelpTextThisFrame(message, p1) end
 --- ```
 ---
 --- @hash 0x54CE8AC98E120CAB
---- @params text string (char*)
+--- @param text string (char*)
 --- @return void
 function BeginTextCommandWidth(text) end
 
@@ -1467,7 +1467,7 @@ function BeginTextCommandWidth(text) end
 ---
 --- @hash 0x4A9923385BDB9DAD
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetStandardBlipEnumId() end
 
     
@@ -1476,7 +1476,7 @@ function GetStandardBlipEnumId() end
 --- ```
 ---
 --- @hash 0xCFDBDF5AE59BA0F4
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function EndTextCommandObjective(p0) end
 
@@ -1486,8 +1486,8 @@ function EndTextCommandObjective(p0) end
 --- ```
 ---
 --- @hash 0xF020C96915705B3A
---- @params isImportant boolean (BOOL)
---- @params bHasTokens boolean (BOOL)
+--- @param isImportant boolean
+--- @param bHasTokens boolean
 --- @return number (int)
 function EndTextCommandThefeedPostMpticker(isImportant, bHasTokens) end
 
@@ -1500,8 +1500,8 @@ function EndTextCommandThefeedPostMpticker(isImportant, bHasTokens) end
 --- ```
 ---
 --- @hash 0x9D77056A530643F6
---- @params duration number (int)
---- @params drawImmediately boolean (BOOL)
+--- @param duration number (int)
+--- @param drawImmediately boolean
 --- @return void
 function EndTextCommandPrint(duration, drawImmediately) end
 
@@ -1510,15 +1510,15 @@ function EndTextCommandPrint(duration, drawImmediately) end
 ---
 --- @hash 0x3BAB9A4E4F2FF5C7
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsFrontendReadyForControl() end
 
     
 --- IsFloatingHelpTextOnScreen
 ---
 --- @hash 0x2432784ACA090DA4
---- @params hudIndex number (int)
---- @return boolean (BOOL)
+--- @param hudIndex number (int)
+--- @return boolean
 function IsFloatingHelpTextOnScreen(hudIndex) end
 
     
@@ -1528,7 +1528,7 @@ function IsFloatingHelpTextOnScreen(hudIndex) end
 ---
 --- @hash 0x1121BFA1A1A522A8
 ---
---- @return Any
+--- @return any
 function ForceSonarBlipsThisFrame() end
 
     
@@ -1543,7 +1543,7 @@ function ClearReminderMessage() end
 --- HideScriptedHudComponentThisFrame
 ---
 --- @hash 0xE374C498D8BADC14
---- @params id number (int)
+--- @param id number (int)
 --- @return void
 function HideScriptedHudComponentThisFrame(id) end
 
@@ -1584,16 +1584,16 @@ function HideScriptedHudComponentThisFrame(id) end
 --- ```
 ---
 --- @hash 0x97C9E4E7024A8F2C
---- @params crewTypeIsPrivate boolean (BOOL)
---- @params crewTagContainsRockstar boolean (BOOL)
---- @params crewTag table (int*)
---- @params rank number (int)
---- @params hasFounderStatus boolean (BOOL)
---- @params isImportant boolean (BOOL)
---- @params clanHandle number (int)
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
+--- @param crewTypeIsPrivate boolean
+--- @param crewTagContainsRockstar boolean
+--- @param crewTag table (int*)
+--- @param rank number (int)
+--- @param hasFounderStatus boolean
+--- @param isImportant boolean
+--- @param clanHandle number (int)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
 --- @return number (int)
 function EndTextCommandThefeedPostCrewtag(crewTypeIsPrivate, crewTagContainsRockstar, crewTag, rank, hasFounderStatus, isImportant, clanHandle, r, g, b) end
 
@@ -1601,7 +1601,7 @@ function EndTextCommandThefeedPostCrewtag(crewTypeIsPrivate, crewTagContainsRock
 --- GetHudComponentPosition
 ---
 --- @hash 0x223CA69A8C4417FD
---- @params id number (int)
+--- @param id number (int)
 --- @return Vector3
 function GetHudComponentPosition(id) end
 
@@ -1640,13 +1640,13 @@ function GetHudComponentPosition(id) end
 ---     UnregisterPedheadshot(handle)
 --- end
 --- @hash 0x2B7E9A4EAAA93C89
---- @params statTitle string (char*)
---- @params iconEnum number (int)
---- @params stepVal boolean (BOOL)
---- @params barValue number (int)
---- @params isImportant boolean (BOOL)
---- @params picTxd string (char*)
---- @params picTxn string (char*)
+--- @param statTitle string (char*)
+--- @param iconEnum number (int)
+--- @param stepVal boolean
+--- @param barValue number (int)
+--- @param isImportant boolean
+--- @param picTxd string (char*)
+--- @param picTxn string (char*)
 --- @return number (int)
 function EndTextCommandThefeedPostStats(statTitle, iconEnum, stepVal, barValue, isImportant, picTxd, picTxn) end
 
@@ -1664,7 +1664,7 @@ function DontTiltMinimapThisFrame() end
 --- GetBlipInfoIdEntityIndex
 ---
 --- @hash 0x4BA4E2553AFEDC2C
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return table (Entity)
 function GetBlipInfoIdEntityIndex(blip) end
 
@@ -1683,7 +1683,7 @@ function ClearGpsCustomRoute() end
 --- ```
 ---
 --- @hash 0xD0EF8A959B8A4CB9
---- @params hash table (Hash)
+--- @param hash table (Hash)
 --- @return string (char*)
 function GetStreetNameFromHashKey(hash) end
 
@@ -1700,12 +1700,12 @@ function GetStreetNameFromHashKey(hash) end
 --- ![](https://i.imgur.com/UglK7Gq.png)
 ---
 --- @hash 0xC6F580E4C94926AC
---- @params picTxd string (char*)
---- @params picTxn string (char*)
---- @params flash boolean (BOOL)
---- @params iconType number (int)
---- @params entryText string (char*)
---- @params text string (char*)
+--- @param picTxd string (char*)
+--- @param picTxn string (char*)
+--- @param flash boolean
+--- @param iconType number (int)
+--- @param entryText string (char*)
+--- @param text string (char*)
 --- @return number (int)
 function EndTextCommandThefeedPostMessagetextEntry(picTxd, picTxn, flash, iconType, entryText, text) end
 
@@ -1714,7 +1714,7 @@ function EndTextCommandThefeedPostMessagetextEntry(picTxd, picTxn, flash, iconTy
 ---
 --- @hash 0x1930DFA731813EC4
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsHudPreferenceSwitchedOn() end
 
     
@@ -1741,9 +1741,9 @@ function GetMinimapFowDiscoveryRatio() end
 --- ```
 ---
 --- @hash 0xDD6CB2CCE7C2735C
---- @params eType number (int)
---- @params sIcon string (char*)
---- @params sSubtitle string (char*)
+--- @param eType number (int)
+--- @param sIcon string (char*)
+--- @param sSubtitle string (char*)
 --- @return number (int)
 function EndTextCommandThefeedPostReplayInput(eType, sIcon, sSubtitle) end
 
@@ -1764,7 +1764,7 @@ function DisplaySniperScopeThisFrame() end
 ---
 --- @hash 0xAF42195A42C63BBA
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsWarningMessageActive_2() end
 
     
@@ -1783,7 +1783,7 @@ function ForceCloseReportugcMenu() end
 --- ```
 ---
 --- @hash 0xA86911979638106F
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function EndTextCommandOverrideButtonText(p0) end
 
@@ -1816,16 +1816,16 @@ function EndTextCommandOverrideButtonText(p0) end
 --- ```
 ---
 --- @hash 0x531B84E7DA981FB6
---- @params picTxd string (char*)
---- @params picTxn string (char*)
---- @params flash boolean (BOOL)
---- @params iconType1 number (int)
---- @params nameStr string (char*)
---- @params subtitleStr string (char*)
---- @params duration number (float)
---- @params crewPackedStr string (char*)
---- @params iconType2 number (int)
---- @params textColor number (int)
+--- @param picTxd string (char*)
+--- @param picTxn string (char*)
+--- @param flash boolean
+--- @param iconType1 number (int)
+--- @param nameStr string (char*)
+--- @param subtitleStr string (char*)
+--- @param duration number (float)
+--- @param crewPackedStr string (char*)
+--- @param iconType2 number (int)
+--- @param textColor number (int)
 --- @return number (int)
 function EndTextCommandThefeedPostMessagetextWithCrewTagAndAdditionalIcon(picTxd, picTxn, flash, iconType1, nameStr, subtitleStr, duration, crewPackedStr, iconType2, textColor) end
 
@@ -1850,9 +1850,9 @@ function HudWeaponWheelIgnoreSelection() end
 --- ```
 ---
 --- @hash 0xCE94AEBA5D82908A
---- @params text string (char*)
---- @params startPosition number (int)
---- @params endPosition number (int)
+--- @param text string (char*)
+--- @param startPosition number (int)
+--- @param endPosition number (int)
 --- @return string (char*)
 function GetTextSubstringSlice(text, startPosition, endPosition) end
 
@@ -1862,9 +1862,9 @@ function GetTextSubstringSlice(text, startPosition, endPosition) end
 --- ```
 ---
 --- @hash 0xADBF060E2B30C5BC
---- @params gxt string (char*)
---- @params slot number (int)
---- @return boolean (BOOL)
+--- @param gxt string (char*)
+--- @param slot number (int)
+--- @return boolean
 function HasThisAdditionalTextLoaded(gxt, slot) end
 
     
@@ -1884,12 +1884,12 @@ function GetDefaultScriptRendertargetRenderId() end
 --- ```
 ---
 --- @hash 0xB6871B0555B02996
---- @params ch1TXD string (char*)
---- @params ch1TXN string (char*)
---- @params val1 number (int)
---- @params ch2TXD string (char*)
---- @params ch2TXN string (char*)
---- @params val2 number (int)
+--- @param ch1TXD string (char*)
+--- @param ch1TXN string (char*)
+--- @param val1 number (int)
+--- @param ch2TXD string (char*)
+--- @param ch2TXN string (char*)
+--- @param val2 number (int)
 --- @return number (int)
 function EndTextCommandThefeedPostVersusTu(ch1TXD, ch1TXN, val1, ch2TXD, ch2TXN, val2) end
 
@@ -1913,7 +1913,7 @@ function GetNorthRadarBlip() end
 --- DisplayAmmoThisFrame
 ---
 --- @hash 0xA5E78BA2B1331C55
---- @params display boolean (BOOL)
+--- @param display boolean
 --- @return void
 function DisplayAmmoThisFrame(display) end
 
@@ -1948,7 +1948,7 @@ function DisplayAmmoThisFrame(display) end
 --- These integers also work for the [`SHOW_HUD_COMPONENT_THIS_FRAME`](#\_0x0B4DF1FA60C0E664) native, but instead shows the HUD Component.
 ---
 --- @hash 0x6806C51AD12B83B8
---- @params id number (int)
+--- @param id number (int)
 --- @return void
 function HideHudComponentThisFrame(id) end
 
@@ -1967,8 +1967,8 @@ function FlashMinimapDisplay() end
 --- IsNamedRendertargetLinked
 ---
 --- @hash 0x113750538FA31298
---- @params modelHash table (Hash)
---- @return boolean (BOOL)
+--- @param modelHash table (Hash)
+--- @return boolean
 function IsNamedRendertargetLinked(modelHash) end
 
     
@@ -1977,11 +1977,11 @@ function IsNamedRendertargetLinked(modelHash) end
 --- ```
 ---
 --- @hash 0x7C9C91AB74A0360F
---- @params hudColorIndex number (int)
---- @params r table (int*)
---- @params g table (int*)
---- @params b table (int*)
---- @params a table (int*)
+--- @param hudColorIndex number (int)
+--- @param r table (int*)
+--- @param g table (int*)
+--- @param b table (int*)
+--- @param a table (int*)
 --- @return void
 function GetHudColour(hudColorIndex, r, g, b, a) end
 
@@ -1989,18 +1989,18 @@ function GetHudColour(hudColorIndex, r, g, b, a) end
 --- GetMinimapFowCoordinateIsRevealed
 ---
 --- @hash 0x6E31B91145873922
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return boolean
 function GetMinimapFowCoordinateIsRevealed(x, y, z) end
 
     
 --- IsScriptedHudComponentHiddenThisFrame
 ---
 --- @hash 0x09C0403ED9A751C2
---- @params id number (int)
---- @return boolean (BOOL)
+--- @param id number (int)
+--- @return boolean
 function IsScriptedHudComponentHiddenThisFrame(id) end
 
     
@@ -2009,7 +2009,7 @@ function IsScriptedHudComponentHiddenThisFrame(id) end
 --- ```
 ---
 --- @hash 0x72C1056D678BB7D8
---- @params weaponHash table (Hash)
+--- @param weaponHash table (Hash)
 --- @return void
 function HudWeaponWheelSetSlotHash(weaponHash) end
 
@@ -2017,10 +2017,10 @@ function HudWeaponWheelSetSlotHash(weaponHash) end
 --- EndTextCommandThefeedPostUnlock
 ---
 --- @hash 0x33EE12743CCD6343
---- @params chTitle string (char*)
---- @params iconType number (int)
---- @params chSubtitle string (char*)
---- @return Any
+--- @param chTitle string (char*)
+--- @param iconType number (int)
+--- @param chSubtitle string (char*)
+--- @return any
 function EndTextCommandThefeedPostUnlock(chTitle, iconType, chSubtitle) end
 
     
@@ -2039,14 +2039,14 @@ function GetCurrentFrontendMenuVersion() end
 ---
 --- @hash 0x4167EFE0527D706E
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsHoveringOverMissionCreatorBlip() end
 
     
 --- GetBlipInfoIdDisplay
 ---
 --- @hash 0x1E314167F701DC3B
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return number (int)
 function GetBlipInfoIdDisplay(blip) end
 
@@ -2060,7 +2060,7 @@ function GetBlipInfoIdDisplay(blip) end
 --- ```
 ---
 --- @hash 0x02CFBA0C9E9275CE
---- @params millisecondsToFlash boolean (BOOL)
+--- @param millisecondsToFlash boolean
 --- @return void
 function FlashAbilityBar(millisecondsToFlash) end
 
@@ -2071,7 +2071,7 @@ function FlashAbilityBar(millisecondsToFlash) end
 ---
 --- @hash 0x9135584D09A3437E
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsReportugcMenuOpen() end
 
     
@@ -2080,7 +2080,7 @@ function IsReportugcMenuOpen() end
 --- ```
 ---
 --- @hash 0x43E4111189E54F0E
---- @params string string (char*)
+--- @param string string (char*)
 --- @return number (int)
 function GetLengthOfLiteralStringInBytes(string) end
 
@@ -2114,8 +2114,8 @@ function GetLengthOfLiteralStringInBytes(string) end
 --- ```
 ---
 --- @hash 0xBC4C9EA5391ECC0D
---- @params id number (int)
---- @return boolean (BOOL)
+--- @param id number (int)
+--- @return boolean
 function IsHudComponentActive(id) end
 
     
@@ -2124,7 +2124,7 @@ function IsHudComponentActive(id) end
 --- ```
 ---
 --- @hash 0x801BD273D3A23F74
---- @params gxt string (char*)
+--- @param gxt string (char*)
 --- @return number (int)
 function GetLengthOfStringWithThisTextLabel(gxt) end
 
@@ -2148,7 +2148,7 @@ function EndTextCommandClearPrint() end
 --- GetBlipInfoIdCoord
 ---
 --- @hash 0xFA7C7F0AADF25D09
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return Vector3
 function GetBlipInfoIdCoord(blip) end
 
@@ -2157,7 +2157,7 @@ function GetBlipInfoIdCoord(blip) end
 ---
 --- @hash 0xAF754F20EB5CD51A
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsMinimapRendering() end
 
     
@@ -2168,8 +2168,8 @@ function IsMinimapRendering() end
 --- This native is used to "give"/duplicate a player ped to a frontend menu as configured via the `ACTIVATE_FRONTEND_MENU` native, you first must utilize the `CLONE_PED` ( https://runtime.fivem.net/doc/natives/#\_0xEF29A16337FACADB ) to clone said ped.
 ---
 --- @hash 0xAC0BFBDC3BE00E14
---- @params ped table (Ped)
---- @params p1 number (int)
+--- @param ped table (Ped)
+--- @param p1 number (int)
 --- @return void
 function GivePedToPauseMenu(ped, p1) end
 
@@ -2179,7 +2179,7 @@ function GivePedToPauseMenu(ped, p1) end
 --- ```
 ---
 --- @hash 0xBC8DBDCA2436F7E8
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return table (Blip)
 function GetBlipFromEntity(entity) end
 
@@ -2188,7 +2188,7 @@ function GetBlipFromEntity(entity) end
 ---
 --- @hash 0x7984C03AA5CC2F41
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsMessageBeingDisplayed() end
 
     
@@ -2231,11 +2231,11 @@ function HideHelpTextThisFrame() end
 ---     UnregisterPedheadshot(handle)
 --- end
 --- @hash 0xAA295B6F28BD587D
---- @params textureDict string (char*)
---- @params textureName string (char*)
---- @params rpBonus number (int)
---- @params colorOverlay number (int)
---- @params titleLabel string (char*)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param rpBonus number (int)
+--- @param colorOverlay number (int)
+--- @param titleLabel string (char*)
 --- @return number (int)
 function EndTextCommandThefeedPostAward(textureDict, textureName, rpBonus, colorOverlay, titleLabel) end
 
@@ -2244,7 +2244,7 @@ function EndTextCommandThefeedPostAward(textureDict, textureName, rpBonus, color
 ---
 --- @hash 0x4D79439A6B55AC67
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsHelpMessageBeingDisplayed() end
 
     
@@ -2259,7 +2259,7 @@ function HideLoadingOnFadeThisFrame() end
 --- N_0x2de6c5e2e996f178
 ---
 --- @hash 0x2DE6C5E2E996F178
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x2de6c5e2e996f178(p0) end
 
@@ -2268,7 +2268,7 @@ function N_0x2de6c5e2e996f178(p0) end
 ---
 --- @hash 0x9EB6522EA68F22FE
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsRadarPreferenceSwitchedOn() end
 
     
@@ -2278,7 +2278,7 @@ function IsRadarPreferenceSwitchedOn() end
 --- ```
 ---
 --- @hash 0x1FC877464A04FC4F
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return number (int)
 function GetBlipSprite(blip) end
 
@@ -2298,7 +2298,7 @@ function HideHudAndRadarThisFrame() end
 --- ```
 ---
 --- @hash 0x1BEDE233E6CD2A1F
---- @params blipSprite number (int)
+--- @param blipSprite number (int)
 --- @return table (Blip)
 function GetFirstBlipInfoId(blipSprite) end
 
@@ -2306,7 +2306,7 @@ function GetFirstBlipInfoId(blipSprite) end
 --- GetNextBlipInfoId
 ---
 --- @hash 0x14F96AA50D6FBEA7
---- @params blipSprite number (int)
+--- @param blipSprite number (int)
 --- @return table (Blip)
 function GetNextBlipInfoId(blipSprite) end
 
@@ -2320,14 +2320,14 @@ function GetNextBlipInfoId(blipSprite) end
 ---
 --- @hash 0x214CD562A939246A
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x214cd562a939246a() end
 
     
 --- GetBlipHudColour
 ---
 --- @hash 0x729B5F1EFBC0AAEE
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return number (int)
 function GetBlipHudColour(blip) end
 
@@ -2336,7 +2336,7 @@ function GetBlipHudColour(blip) end
 ---
 --- @hash 0x6E0EB3EB47C8D7AA
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsMpGamerTagMovieActive() end
 
     
@@ -2345,7 +2345,7 @@ function IsMpGamerTagMovieActive() end
 --- ```
 ---
 --- @hash 0x04655F9D075D0AE5
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x04655f9d075d0ae5(toggle) end
 
@@ -2367,7 +2367,7 @@ function HideAreaAndVehicleNameThisFrame() end
 --- ```
 ---
 --- @hash 0x9B6786E4C03DD382
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return table (Pickup)
 function GetBlipInfoIdPickupIndex(blip) end
 
@@ -2377,7 +2377,7 @@ function GetBlipInfoIdPickupIndex(blip) end
 --- ```
 ---
 --- @hash 0x0C698D8F099174C7
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x0c698d8f099174c7(p0) end
 
@@ -2385,13 +2385,13 @@ function N_0x0c698d8f099174c7(p0) end
 --- EndTextCommandThefeedPostUnlockTuWithColor
 ---
 --- @hash 0x7AE0589093A2E088
---- @params chTitle string (char*)
---- @params iconType number (int)
---- @params chSubtitle string (char*)
---- @params isImportant boolean (BOOL)
---- @params titleColor number (int)
---- @params p5 boolean (BOOL)
---- @return Any
+--- @param chTitle string (char*)
+--- @param iconType number (int)
+--- @param chSubtitle string (char*)
+--- @param isImportant boolean
+--- @param titleColor number (int)
+--- @param p5 boolean
+--- @return any
 function EndTextCommandThefeedPostUnlockTuWithColor(chTitle, iconType, chSubtitle, isImportant, titleColor, p5) end
 
     
@@ -2400,16 +2400,16 @@ function EndTextCommandThefeedPostUnlockTuWithColor(chTitle, iconType, chSubtitl
 --- ```
 ---
 --- @hash 0xEB709A36958ABE0D
---- @params gamerTagId number (int)
---- @return boolean (BOOL)
+--- @param gamerTagId number (int)
+--- @return boolean
 function IsValidMpGamerTagMovie(gamerTagId) end
 
     
 --- IsBlipShortRange
 ---
 --- @hash 0xDA5F8727EB75B926
---- @params blip table (Blip)
---- @return boolean (BOOL)
+--- @param blip table (Blip)
+--- @return boolean
 function IsBlipShortRange(blip) end
 
     
@@ -2418,7 +2418,7 @@ function IsBlipShortRange(blip) end
 --- ```
 ---
 --- @hash 0x7B5280EBA9840C72
---- @params labelName string (char*)
+--- @param labelName string (char*)
 --- @return string (char*)
 function GetLabelText(labelName) end
 
@@ -2429,7 +2429,7 @@ function GetLabelText(labelName) end
 ---
 --- @hash 0xA277800A9EAE340E
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function HasDirectorModeBeenTriggered() end
 
     
@@ -2438,7 +2438,7 @@ function HasDirectorModeBeenTriggered() end
 --- ```
 ---
 --- @hash 0x56176892826A4FE8
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return table (Blip)
 function GetAiBlip(ped) end
 
@@ -2447,7 +2447,7 @@ function GetAiBlip(ped) end
 ---
 --- @hash 0xB0034A223497FFCB
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsPauseMenuActive() end
 
     
@@ -2476,7 +2476,7 @@ function N_0x14621bb1df14e2b2() end
 --- ```
 ---
 --- @hash 0xD484BF71050CA1EE
---- @params blipSprite number (int)
+--- @param blipSprite number (int)
 --- @return table (Blip)
 function GetClosestBlipOfType(blipSprite) end
 
@@ -2490,8 +2490,8 @@ function GetClosestBlipOfType(blipSprite) end
 --- ```
 ---
 --- @hash 0xA0EBB943C300E693
---- @params toggle boolean (BOOL)
---- @return Any
+--- @param toggle boolean
+--- @return any
 function DisplayRadar(toggle) end
 
     
@@ -2514,7 +2514,7 @@ function HideMinimapExteriorMapThisFrame() end
 --- N_0x7c226d5346d4d10a
 ---
 --- @hash 0x7C226D5346D4D10A
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x7c226d5346d4d10a(p0) end
 
@@ -2523,14 +2523,14 @@ function N_0x7c226d5346d4d10a(p0) end
 ---
 --- @hash 0x327EDEEEAC55C369
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsHelpMessageFadingOut() end
 
     
 --- HideNumberOnBlip
 ---
 --- @hash 0x532CFF637EF80148
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return void
 function HideNumberOnBlip(blip) end
 
@@ -2538,7 +2538,7 @@ function HideNumberOnBlip(blip) end
 --- GetNamedRendertargetRenderId
 ---
 --- @hash 0x1A6478B61C6BDC3B
---- @params name string (char*)
+--- @param name string (char*)
 --- @return number (int)
 function GetNamedRendertargetRenderId(name) end
 
@@ -2547,7 +2547,7 @@ function GetNamedRendertargetRenderId(name) end
 ---
 --- @hash 0x2E22FEFA0100275E
 ---
---- @return Any
+--- @return any
 function N_0x2e22fefa0100275e() end
 
     
@@ -2555,7 +2555,7 @@ function N_0x2e22fefa0100275e() end
 ---
 --- @hash 0xA86478C6958735C5
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsHudHidden() end
 
     
@@ -2587,7 +2587,7 @@ function N_0x55f5a5f07134de60() end
 --- ```
 ---
 --- @hash 0x14C9FDCC41F81F63
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function HudWeaponWheelIgnoreControlInput(toggle) end
 
@@ -2595,7 +2595,7 @@ function HudWeaponWheelIgnoreControlInput(toggle) end
 --- LinkNamedRendertarget
 ---
 --- @hash 0xF6C09E276AEB3F2D
---- @params modelHash table (Hash)
+--- @param modelHash table (Hash)
 --- @return void
 function LinkNamedRendertarget(modelHash) end
 
@@ -2603,8 +2603,8 @@ function LinkNamedRendertarget(modelHash) end
 --- N_0x4b5b620c9b59ed34
 ---
 --- @hash 0x4B5B620C9B59ED34
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0x4b5b620c9b59ed34(p0, p1) end
 
@@ -2613,23 +2613,23 @@ function N_0x4b5b620c9b59ed34(p0, p1) end
 ---
 --- @hash 0x3D9ACB1EB139E702
 ---
---- @return Any
+--- @return any
 function N_0x3d9acb1eb139e702() end
 
     
 --- IsBlipFlashing
 ---
 --- @hash 0xA5E41FD83AD6CEF0
---- @params blip table (Blip)
---- @return boolean (BOOL)
+--- @param blip table (Blip)
+--- @return boolean
 function IsBlipFlashing(blip) end
 
     
 --- IsBlipOnMinimap
 ---
 --- @hash 0xE41CA53051197A27
---- @params blip table (Blip)
---- @return boolean (BOOL)
+--- @param blip table (Blip)
+--- @return boolean
 function IsBlipOnMinimap(blip) end
 
     
@@ -2638,7 +2638,7 @@ function IsBlipOnMinimap(blip) end
 --- ```
 ---
 --- @hash 0x4895BDEA16E7C080
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x4895bdea16e7c080(p0) end
 
@@ -2646,8 +2646,8 @@ function N_0x4895bdea16e7c080(p0) end
 --- IsMissionCreatorBlip
 ---
 --- @hash 0x26F49BF3381D933D
---- @params blip table (Blip)
---- @return boolean (BOOL)
+--- @param blip table (Blip)
+--- @return boolean
 function IsMissionCreatorBlip(blip) end
 
     
@@ -2663,7 +2663,7 @@ function GetWaypointBlipEnumId() end
 ---
 --- @hash 0x157F93B036700462
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsRadarHidden() end
 
     
@@ -2679,22 +2679,22 @@ function N_0xd2049635deb9c375() end
 ---
 --- @hash 0x6F72CD94F7B5B68C
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsOnlinePoliciesMenuActive() end
 
     
 --- HasAdditionalTextLoaded
 ---
 --- @hash 0x02245FE4BED318B8
---- @params slot number (int)
---- @return boolean (BOOL)
+--- @param slot number (int)
+--- @return boolean
 function HasAdditionalTextLoaded(slot) end
 
     
 --- N_0x6cdd58146a436083
 ---
 --- @hash 0x6CDD58146A436083
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x6cdd58146a436083(p0) end
 
@@ -2720,10 +2720,10 @@ function N_0x6cdd58146a436083(p0) end
 --- ```
 ---
 --- @hash 0xB2798643312205C5
---- @params text string (char*)
---- @params position number (int)
---- @params length number (int)
---- @params maxLength number (int)
+--- @param text string (char*)
+--- @param position number (int)
+--- @param length number (int)
+--- @param maxLength number (int)
 --- @return string (char*)
 function GetTextSubstringSafe(text, position, length, maxLength) end
 
@@ -2731,8 +2731,8 @@ function GetTextSubstringSafe(text, position, length, maxLength) end
 --- IsMpGamerTagActive
 ---
 --- @hash 0x4E929E7A5796FD26
---- @params gamerTagId number (int)
---- @return boolean (BOOL)
+--- @param gamerTagId number (int)
+--- @return boolean
 function IsMpGamerTagActive(gamerTagId) end
 
     
@@ -2742,7 +2742,7 @@ function IsMpGamerTagActive(gamerTagId) end
 --- ```
 ---
 --- @hash 0x170F541E1CADD1DE
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x170f541e1cadd1de(p0) end
 
@@ -2752,8 +2752,8 @@ function N_0x170f541e1cadd1de(p0) end
 --- ```
 ---
 --- @hash 0x98C3CF913D895111
---- @params string string (char*)
---- @params length number (int)
+--- @param string string (char*)
+--- @param length number (int)
 --- @return string (char*)
 function N_0x98c3cf913d895111(string, length) end
 
@@ -2771,7 +2771,7 @@ function N_0x2916a928514c9827() end
 --- ```
 ---
 --- @hash 0x1185A8087587322C
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x1185a8087587322c(p0) end
 
@@ -2781,8 +2781,8 @@ function N_0x1185a8087587322c(p0) end
 --- ```
 ---
 --- @hash 0xA13E93403F26C812
---- @params weaponTypeIndex number (int)
---- @return Any
+--- @param weaponTypeIndex number (int)
+--- @return any
 function HudWeaponWheelGetSlotHash(weaponTypeIndex) end
 
     
@@ -2797,19 +2797,19 @@ function HideMinimapInteriorMapThisFrame() end
 --- N_0x24a49beaf468dc90
 ---
 --- @hash 0x24A49BEAF468DC90
---- @params p0 Any
---- @params p1 table (Any*)
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 table (Any*)
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @return boolean
 function N_0x24a49beaf468dc90(p0, p1, p2, p3, p4) end
 
     
 --- N_0x62e849b7eb28e770
 ---
 --- @hash 0x62E849B7EB28E770
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x62e849b7eb28e770(p0) end
 
@@ -2817,8 +2817,8 @@ function N_0x62e849b7eb28e770(p0) end
 --- IsStreamingAdditionalText
 ---
 --- @hash 0x8B6817B71B85EBF0
---- @params p0 number (int)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @return boolean
 function IsStreamingAdditionalText(p0) end
 
     
@@ -2835,7 +2835,7 @@ function ThefeedForceRenderOff() end
 --- ```
 ---
 --- @hash 0x504DFE62A1692296
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x504dfe62a1692296(toggle) end
 
@@ -2844,7 +2844,7 @@ function N_0x504dfe62a1692296(toggle) end
 ---
 --- @hash 0xDE03620F8703A9DF
 ---
---- @return Any
+--- @return any
 function N_0xde03620f8703a9df() end
 
     
@@ -2852,7 +2852,7 @@ function N_0xde03620f8703a9df() end
 ---
 --- @hash 0x13C4B962653A5280
 ---
---- @return Any
+--- @return any
 function N_0x13c4b962653a5280() end
 
     
@@ -2860,17 +2860,17 @@ function N_0x13c4b962653a5280() end
 ---
 --- @hash 0x1C491717107431C7
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsPauseMenuRestarting() end
 
     
 --- N_0xa238192f33110615
 ---
 --- @hash 0xA238192F33110615
---- @params p0 table (int*)
---- @params p1 table (int*)
---- @params p2 table (int*)
---- @return boolean (BOOL)
+--- @param p0 table (int*)
+--- @param p1 table (int*)
+--- @param p2 table (int*)
+--- @return boolean
 function N_0xa238192f33110615(p0, p1, p2) end
 
     
@@ -2880,7 +2880,7 @@ function N_0xa238192f33110615(p0, p1, p2) end
 --- ```
 ---
 --- @hash 0x299FAEBB108AE05B
---- @params angle number (int)
+--- @param angle number (int)
 --- @return void
 function LockMinimapAngle(angle) end
 
@@ -2890,8 +2890,8 @@ function LockMinimapAngle(angle) end
 --- ```
 ---
 --- @hash 0x44FA03975424A0EE
---- @params isImportant boolean (BOOL)
---- @params bHasTokens boolean (BOOL)
+--- @param isImportant boolean
+--- @param bHasTokens boolean
 --- @return number (int)
 function EndTextCommandThefeedPostTickerForced(isImportant, bHasTokens) end
 
@@ -2901,9 +2901,9 @@ function EndTextCommandThefeedPostTickerForced(isImportant, bHasTokens) end
 --- ```
 ---
 --- @hash 0x052991E59076E4E4
---- @params p0 table (Hash)
---- @params p1 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Hash)
+--- @param p1 table (Any*)
+--- @return boolean
 function N_0x052991e59076e4e4(p0, p1) end
 
     
@@ -2912,7 +2912,7 @@ function N_0x052991e59076e4e4(p0, p1) end
 --- ```
 ---
 --- @hash 0xEB354E5376BC81A7
---- @params show boolean (BOOL)
+--- @param show boolean
 --- @return void
 function HudForceWeaponWheel(show) end
 
@@ -2930,17 +2930,17 @@ function HudWeaponWheelGetSelectedHash() end
 --- N_0x5fbd7095fe7ae57f
 ---
 --- @hash 0x5FBD7095FE7AE57F
---- @params p0 Any
---- @params p1 table (float*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 table (float*)
+--- @return boolean
 function N_0x5fbd7095fe7ae57f(p0, p1) end
 
     
 --- IsScriptedHudComponentActive
 ---
 --- @hash 0xDD100EB17A94FF65
---- @params id number (int)
---- @return boolean (BOOL)
+--- @param id number (int)
+--- @return boolean
 function IsScriptedHudComponentActive(id) end
 
     
@@ -2955,18 +2955,18 @@ function ThefeedCommentTeleportPoolOff() end
 --- N_0xef4ced81cebedc6d
 ---
 --- @hash 0xEF4CED81CEBEDC6D
---- @params p0 Any
---- @params p1 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 table (Any*)
+--- @return boolean
 function N_0xef4ced81cebedc6d(p0, p1) end
 
     
 --- N_0x7e17be53e1aaabaf
 ---
 --- @hash 0x7E17BE53E1AAABAF
---- @params p0 table (int*)
---- @params p1 table (int*)
---- @params p2 table (int*)
+--- @param p0 table (int*)
+--- @param p1 table (int*)
+--- @param p2 table (int*)
 --- @return void
 function N_0x7e17be53e1aaabaf(p0, p1, p2) end
 
@@ -2979,9 +2979,9 @@ function N_0x7e17be53e1aaabaf(p0, p1, p2) end
 --- ```
 ---
 --- @hash 0x169BD9382084C8C0
---- @params text string (char*)
---- @params position number (int)
---- @params length number (int)
+--- @param text string (char*)
+--- @param position number (int)
+--- @param length number (int)
 --- @return string (char*)
 function GetTextSubstring(text, position, length) end
 
@@ -2998,7 +2998,7 @@ function GetTextSubstring(text, position, length) end
 ---     N_0x98215325a695e78a(false)
 --- end
 --- @hash 0x98215325A695E78A
---- @params enable boolean (BOOL)
+--- @param enable boolean
 --- @return void
 function N_0x98215325a695e78a(enable) end
 
@@ -3006,7 +3006,7 @@ function N_0x98215325a695e78a(enable) end
 --- N_0x0cf54f20de43879c
 ---
 --- @hash 0x0CF54F20DE43879C
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x0cf54f20de43879c(p0) end
 
@@ -3015,7 +3015,7 @@ function N_0x0cf54f20de43879c(p0) end
 ---
 --- @hash 0x9049FE339D5F6F6F
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsMinimapInInterior() end
 
     
@@ -3025,7 +3025,7 @@ function IsMinimapInInterior() end
 ---
 --- @hash 0xB118AF58B5F332A1
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsMultiplayerChatActive() end
 
     
@@ -3033,7 +3033,7 @@ function IsMultiplayerChatActive() end
 ---
 --- @hash 0x1DD1F58F493F1DA5
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsWaypointActive() end
 
     
@@ -3041,23 +3041,23 @@ function IsWaypointActive() end
 ---
 --- @hash 0x359AF31A4B52F5ED
 ---
---- @return Any
+--- @return any
 function N_0x359af31a4b52f5ed() end
 
     
 --- IsNamedRendertargetRegistered
 ---
 --- @hash 0x78DCDC15C9F116B4
---- @params name string (char*)
---- @return boolean (BOOL)
+--- @param name string (char*)
+--- @return boolean
 function IsNamedRendertargetRegistered(name) end
 
     
 --- N_0x2c9f302398e13141
 ---
 --- @hash 0x2C9F302398E13141
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0x2c9f302398e13141(p0, p1) end
 
@@ -3083,7 +3083,7 @@ function OpenSocialClubMenu() end
 --- RemoveMpGamerTag
 ---
 --- @hash 0x31698AA80E0223F8
---- @params gamerTagId number (int)
+--- @param gamerTagId number (int)
 --- @return void
 function RemoveMpGamerTag(gamerTagId) end
 
@@ -3094,7 +3094,7 @@ function RemoveMpGamerTag(gamerTagId) end
 ---
 --- @hash 0x2F057596F2BD0061
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x2f057596f2bd0061() end
 
     
@@ -3102,7 +3102,7 @@ function N_0x2f057596f2bd0061() end
 ---
 --- @hash 0xAD6DACA4BA53E0A4
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsSubtitlePreferenceSwitchedOn() end
 
     
@@ -3111,7 +3111,7 @@ function IsSubtitlePreferenceSwitchedOn() end
 --- ```
 ---
 --- @hash 0x57D760D55F54E071
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function N_0x57d760d55f54e071(p0) end
 
@@ -3129,7 +3129,7 @@ function N_0x8410c5e0cd847b9d() end
 --- N_0xc594b315edf2d4af
 ---
 --- @hash 0xC594B315EDF2D4AF
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return void
 function N_0xc594b315edf2d4af(ped) end
 
@@ -3145,19 +3145,19 @@ function GetNumberOfActiveBlips() end
 --- N_0x90a6526cf0381030
 ---
 --- @hash 0x90A6526CF0381030
---- @params p0 Any
---- @params p1 table (Any*)
---- @params p2 Any
---- @params p3 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 table (Any*)
+--- @param p2 any
+--- @param p3 any
+--- @return boolean
 function N_0x90a6526cf0381030(p0, p1, p2, p3) end
 
     
 --- N_0xb552929b85fc27ec
 ---
 --- @hash 0xB552929B85FC27EC
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0xb552929b85fc27ec(p0, p1) end
 
@@ -3167,8 +3167,8 @@ function N_0xb552929b85fc27ec(p0, p1) end
 --- ```
 ---
 --- @hash 0x71A78003C8E71424
---- @params gxt string (char*)
---- @params slot number (int)
+--- @param gxt string (char*)
+--- @param slot number (int)
 --- @return void
 function RequestAdditionalText(gxt, slot) end
 
@@ -3177,7 +3177,7 @@ function RequestAdditionalText(gxt, slot) end
 ---
 --- @hash 0xC406BE343FC4B9AF
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsSocialClubActive() end
 
     
@@ -3186,7 +3186,7 @@ function IsSocialClubActive() end
 --- ```
 ---
 --- @hash 0x2790F4B17D098E26
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x2790f4b17d098e26(toggle) end
 
@@ -3194,8 +3194,8 @@ function N_0x2790f4b17d098e26(toggle) end
 --- N_0x36c1451a88a09630
 ---
 --- @hash 0x36C1451A88A09630
---- @params p0 table (Any*)
---- @params p1 table (Any*)
+--- @param p0 table (Any*)
+--- @param p1 table (Any*)
 --- @return void
 function N_0x36c1451a88a09630(p0, p1) end
 
@@ -3206,7 +3206,7 @@ function N_0x36c1451a88a09630(p0, p1) end
 --- ```
 ---
 --- @hash 0x2162C446DFDF38FD
---- @params p0 string (char*)
+--- @param p0 string (char*)
 --- @return void
 function LogDebugInfo(p0) end
 
@@ -3214,16 +3214,16 @@ function LogDebugInfo(p0) end
 --- RegisterNamedRendertarget
 ---
 --- @hash 0x57D9C12635E25CE3
---- @params name string (char*)
---- @params p1 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param name string (char*)
+--- @param p1 boolean
+--- @return boolean
 function RegisterNamedRendertarget(name, p1) end
 
     
 --- N_0x7b21e0bb01e8224a
 ---
 --- @hash 0x7B21E0BB01E8224A
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x7b21e0bb01e8224a(p0) end
 
@@ -3234,7 +3234,7 @@ function N_0x7b21e0bb01e8224a(p0) end
 ---
 --- @hash 0xDAD37F45428801AE
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsHelpMessageOnScreen() end
 
     
@@ -3242,18 +3242,18 @@ function IsHelpMessageOnScreen() end
 ---
 --- @hash 0x2A25ADC48F87841F
 ---
---- @return Any
+--- @return any
 function N_0x2a25adc48f87841f() end
 
     
 --- N_0x632b2940c67f4ea9
 ---
 --- @hash 0x632B2940C67F4EA9
---- @params scaleformHandle number (int)
---- @params p1 table (Any*)
---- @params p2 table (Any*)
---- @params p3 table (Any*)
---- @return boolean (BOOL)
+--- @param scaleformHandle number (int)
+--- @param p1 table (Any*)
+--- @param p2 table (Any*)
+--- @param p3 table (Any*)
+--- @return boolean
 function N_0x632b2940c67f4ea9(scaleformHandle, p1, p2, p3) end
 
     
@@ -3272,7 +3272,7 @@ function N_0x632b2940c67f4ea9(scaleformHandle, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0x2C173AE2BDB9385E
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return number (int)
 function N_0x2c173ae2bdb9385e(blip) end
 
@@ -3282,15 +3282,15 @@ function N_0x2c173ae2bdb9385e(blip) end
 --- ```
 ---
 --- @hash 0x817B86108EB94E51
---- @params p0 boolean (BOOL)
---- @params p1 table (Any*)
---- @params p2 table (Any*)
---- @params p3 table (Any*)
---- @params p4 table (Any*)
---- @params p5 table (Any*)
---- @params p6 table (Any*)
---- @params p7 table (Any*)
---- @params p8 table (Any*)
+--- @param p0 boolean
+--- @param p1 table (Any*)
+--- @param p2 table (Any*)
+--- @param p3 table (Any*)
+--- @param p4 table (Any*)
+--- @param p5 table (Any*)
+--- @param p6 table (Any*)
+--- @param p7 table (Any*)
+--- @param p8 table (Any*)
 --- @return void
 function N_0x817b86108eb94e51(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
@@ -3300,7 +3300,7 @@ function N_0x817b86108eb94e51(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 --- Preview: https://i.imgur.com/DfqKWfJ.png
 ---
 --- @hash 0x82CEDC33687E1F50
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x82cedc33687e1f50(p0) end
 
@@ -3310,7 +3310,7 @@ function N_0x82cedc33687e1f50(p0) end
 --- ```
 ---
 --- @hash 0xE4C3B169876D33D7
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xe4c3b169876d33d7(p0) end
 
@@ -3319,7 +3319,7 @@ function N_0xe4c3b169876d33d7(p0) end
 ---
 --- @hash 0x66E7CB63C97B7D20
 ---
---- @return Any
+--- @return any
 function N_0x66e7cb63c97b7d20() end
 
     
@@ -3327,7 +3327,7 @@ function N_0x66e7cb63c97b7d20() end
 ---
 --- @hash 0x593FEAE1F73392D4
 ---
---- @return Any
+--- @return any
 function N_0x593feae1f73392d4() end
 
     
@@ -3336,7 +3336,7 @@ function N_0x593feae1f73392d4() end
 --- ```
 ---
 --- @hash 0xBA8D65C1C65702E5
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0xba8d65c1c65702e5(toggle) end
 
@@ -3346,7 +3346,7 @@ function N_0xba8d65c1c65702e5(toggle) end
 --- ```
 ---
 --- @hash 0x6A1738B4323FE2D9
---- @params gxtEntryHash Any
+--- @param gxtEntryHash any
 --- @return void
 function OverrideMultiplayerChatPrefix(gxtEntryHash) end
 
@@ -3354,7 +3354,7 @@ function OverrideMultiplayerChatPrefix(gxtEntryHash) end
 --- N_0x577599cced639ca2
 ---
 --- @hash 0x577599CCED639CA2
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x577599cced639ca2(p0) end
 
@@ -3362,7 +3362,7 @@ function N_0x577599cced639ca2(p0) end
 --- N_0xd1942374085c8469
 ---
 --- @hash 0xD1942374085C8469
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xd1942374085c8469(p0) end
 
@@ -3372,8 +3372,8 @@ function N_0xd1942374085c8469(p0) end
 --- ```
 ---
 --- @hash 0x1279E861A329E73F
---- @params x number (float)
---- @params y number (float)
+--- @param x number (float)
+--- @param y number (float)
 --- @return void
 function LockMinimapPosition(x, y) end
 
@@ -3381,10 +3381,10 @@ function LockMinimapPosition(x, y) end
 --- N_0xc8e1071177a23be5
 ---
 --- @hash 0xC8E1071177A23BE5
---- @params p0 table (Any*)
---- @params p1 table (Any*)
---- @params p2 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 table (Any*)
+--- @param p2 table (Any*)
+--- @return boolean
 function N_0xc8e1071177a23be5(p0, p1, p2) end
 
     
@@ -3402,15 +3402,15 @@ function OpenReportugcMenu() end
 ---
 --- @hash 0x4E3CD0EF8A489541
 ---
---- @return Any
+--- @return any
 function N_0x4e3cd0ef8a489541() end
 
     
 --- PauseMenuIsContextActive
 ---
 --- @hash 0x84698AB38D0C6636
---- @params contextHash table (Hash)
---- @return boolean (BOOL)
+--- @param contextHash table (Hash)
+--- @return boolean
 function PauseMenuIsContextActive(contextHash) end
 
     
@@ -3420,7 +3420,7 @@ function PauseMenuIsContextActive(contextHash) end
 ---
 --- @hash 0x801879A9B4F4B2FB
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x801879a9b4f4b2fb() end
 
     
@@ -3429,7 +3429,7 @@ function N_0x801879a9b4f4b2fb() end
 --- ```
 ---
 --- @hash 0xB99C4E4D9499DF29
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function N_0xb99c4e4d9499df29(p0) end
 
@@ -3439,8 +3439,8 @@ function N_0xb99c4e4d9499df29(p0) end
 --- ```
 ---
 --- @hash 0x595B5178E412E199
---- @params gamerTagId number (int)
---- @return boolean (BOOL)
+--- @param gamerTagId number (int)
+--- @return boolean
 function IsMpGamerTagFree(gamerTagId) end
 
     
@@ -3449,7 +3449,7 @@ function IsMpGamerTagFree(gamerTagId) end
 --- ```
 ---
 --- @hash 0x9245E81072704B8A
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x9245e81072704b8a(p0) end
 
@@ -3460,8 +3460,8 @@ function N_0x9245e81072704b8a(p0) end
 --- ```
 ---
 --- @hash 0x6F6F290102C02AB4
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function SetBlipAsFriendly(blip, toggle) end
 
@@ -3521,8 +3521,8 @@ function N_0x488043841bbe156f() end
 --- ```
 ---
 --- @hash 0x03D7FB09E75D6B7E
---- @params blip table (Blip)
---- @params color number (int)
+--- @param blip table (Blip)
+--- @param color number (int)
 --- @return void
 function SetBlipColour(blip, color) end
 
@@ -3532,8 +3532,8 @@ function SetBlipColour(blip, color) end
 --- ```
 ---
 --- @hash 0xF87683CDF73C3F6E
---- @params blip table (Blip)
---- @params rotation number (int)
+--- @param blip table (Blip)
+--- @param rotation number (int)
 --- @return void
 function SetBlipRotation(blip, rotation) end
 
@@ -3541,8 +3541,8 @@ function SetBlipRotation(blip, rotation) end
 --- RequestAdditionalTextForDlc
 ---
 --- @hash 0x6009F9F1AE90D8A6
---- @params gxt string (char*)
---- @params slot number (int)
+--- @param gxt string (char*)
+--- @param slot number (int)
 --- @return void
 function RequestAdditionalTextForDlc(gxt, slot) end
 
@@ -3551,7 +3551,7 @@ function RequestAdditionalTextForDlc(gxt, slot) end
 ---
 --- @hash 0xE18B138FABC53103
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsWarningMessageActive() end
 
     
@@ -3580,7 +3580,7 @@ function OpenOnlinePoliciesMenu() end
 --- ```
 ---
 --- @hash 0xCD74233600C4EA6B
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0xcd74233600c4ea6b(toggle) end
 
@@ -3588,7 +3588,7 @@ function N_0xcd74233600c4ea6b(toggle) end
 --- N_0xe67c6dfd386ea5e7
 ---
 --- @hash 0xE67C6DFD386EA5E7
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0xe67c6dfd386ea5e7(p0) end
 
@@ -3601,17 +3601,17 @@ function N_0xe67c6dfd386ea5e7(p0) end
 ---
 --- @hash 0xC2D2AD9EAAE265B8
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0xc2d2ad9eaae265b8() end
 
     
 --- SetBlipCoords
 ---
 --- @hash 0xAE2AF67E9D9AF65D
---- @params blip table (Blip)
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
+--- @param blip table (Blip)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
 --- @return void
 function SetBlipCoords(blip, posX, posY, posZ) end
 
@@ -3619,7 +3619,7 @@ function SetBlipCoords(blip, posX, posY, posZ) end
 --- N_0x77f16b447824da6c
 ---
 --- @hash 0x77F16B447824DA6C
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x77f16b447824da6c(p0) end
 
@@ -3637,17 +3637,17 @@ function RemoveMultiplayerHudCash() end
 --- N_0x8f08017f9d7c47bd
 ---
 --- @hash 0x8F08017F9D7C47BD
---- @params p0 Any
---- @params p1 table (Any*)
---- @params p2 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 table (Any*)
+--- @param p2 any
+--- @return boolean
 function N_0x8f08017f9d7c47bd(p0, p1, p2) end
 
     
 --- N_0xf06ebb91a81e09e3
 ---
 --- @hash 0xF06EBB91A81E09E3
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0xf06ebb91a81e09e3(p0) end
 
@@ -3655,8 +3655,8 @@ function N_0xf06ebb91a81e09e3(p0) end
 --- OverrideMultiplayerChatColour
 ---
 --- @hash 0xF47E567B3630DD12
---- @params p0 number (int)
---- @params hudColor number (int)
+--- @param p0 number (int)
+--- @param hudColor number (int)
 --- @return void
 function OverrideMultiplayerChatColour(p0, hudColor) end
 
@@ -3666,7 +3666,7 @@ function OverrideMultiplayerChatColour(p0, hudColor) end
 --- ```
 ---
 --- @hash 0x35A3CD97B2C0A6D2
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x35a3cd97b2c0a6d2(p0) end
 
@@ -3693,10 +3693,10 @@ function N_0xcdca26e80faecb8f() end
 --- ```
 ---
 --- @hash 0x551DF99658DB6EE8
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @return Any
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return any
 function RaceGalleryAddBlip(x, y, z) end
 
     
@@ -3709,7 +3709,7 @@ function RaceGalleryAddBlip(x, y, z) end
 --- Use [`N_0x35edd5b2e3ff01c0()`](https://runtime.fivem.net/doc/reference.html#\_0x35EDD5B2E3FF01C0) to reset the map when you no longer want to display any golf holes (you still need to unlock zoom, position and angle of the radar manually after calling this).
 ---
 --- @hash 0x71BDB63DBAF8DA59
---- @params hole number (int)
+--- @param hole number (int)
 --- @return void
 function SetMinimapGolfCourse(hole) end
 
@@ -3717,8 +3717,8 @@ function SetMinimapGolfCourse(hole) end
 --- N_0xdaf87174be7454ff
 ---
 --- @hash 0xDAF87174BE7454FF
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function N_0xdaf87174be7454ff(p0) end
 
     
@@ -3758,7 +3758,7 @@ function N_0xdaf87174be7454ff(p0) end
 --- > Scripts do not make this native's purpose clear. However, this native most likely has something to do with decals since in nearly every instance, "OBJECT_DECAL_TOGGLE" is called prior.
 ---
 --- @hash 0xDD564BDD0472C936
---- @params hash table (Hash)
+--- @param hash table (Hash)
 --- @return void
 function PauseMenuActivateContext(hash) end
 
@@ -3766,7 +3766,7 @@ function PauseMenuActivateContext(hash) end
 --- ResetHudComponentValues
 ---
 --- @hash 0x450930E616475D0D
---- @params id number (int)
+--- @param id number (int)
 --- @return void
 function ResetHudComponentValues(id) end
 
@@ -3774,8 +3774,8 @@ function ResetHudComponentValues(id) end
 --- SetBlipShowCone
 ---
 --- @hash 0x13127EC3665E8EE1
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function SetBlipShowCone(blip, toggle) end
 
@@ -3795,8 +3795,8 @@ function N_0xec9264727eec0f28() end
 --- ```
 ---
 --- @hash 0xC4278F70131BAA6D
---- @params blip table (Blip)
---- @params p1 boolean (BOOL)
+--- @param blip table (Blip)
+--- @param p1 boolean
 --- @return void
 function SetBlipDisplayIndicatorOnBlip(blip, p1) end
 
@@ -3805,15 +3805,15 @@ function SetBlipDisplayIndicatorOnBlip(blip, p1) end
 ---
 --- @hash 0xF284AC67940C6812
 ---
---- @return Any
+--- @return any
 function N_0xf284ac67940c6812() end
 
     
 --- SetBlipFlashesAlternate
 ---
 --- @hash 0x2E8D9498C56DD0D1
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function SetBlipFlashesAlternate(blip, toggle) end
 
@@ -3829,9 +3829,9 @@ function RemoveMultiplayerBankCash() end
 --- N_0xa17784fca9548d15
 ---
 --- @hash 0xA17784FCA9548D15
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
 --- @return void
 function N_0xa17784fca9548d15(p0, p1, p2) end
 
@@ -3845,8 +3845,8 @@ function N_0xa17784fca9548d15(p0, p1, p2) end
 --- There's a [list of sprites](https://docs.fivem.net/game-references/blips/) on the FiveM documentation site.
 --- @usage SetBlipSprite(blip, 588) -- changes `blip` to radar_nhp_orbi
 --- @hash 0xDF735600A4696DAF
---- @params blip table (Blip)
---- @params spriteId number (int)
+--- @param blip table (Blip)
+--- @param spriteId number (int)
 --- @return void
 function SetBlipSprite(blip, spriteId) end
 
@@ -3854,7 +3854,7 @@ function SetBlipSprite(blip, spriteId) end
 --- PulseBlip
 ---
 --- @hash 0x742D6FD43115AF73
---- @params blip table (Blip)
+--- @param blip table (Blip)
 --- @return void
 function PulseBlip(blip) end
 
@@ -3862,8 +3862,8 @@ function PulseBlip(blip) end
 --- SetBlipAsMissionCreatorBlip
 ---
 --- @hash 0x24AC0137444F9FD5
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function SetBlipAsMissionCreatorBlip(blip, toggle) end
 
@@ -3872,7 +3872,7 @@ function SetBlipAsMissionCreatorBlip(blip, toggle) end
 ---
 --- @hash 0xF13FE2A80C05C561
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0xf13fe2a80c05c561() end
 
     
@@ -3884,8 +3884,8 @@ function N_0xf13fe2a80c05c561() end
 --- ```
 ---
 --- @hash 0x5B440763A4C8D15B
---- @params p0 number (int)
---- @params p1 number (float)
+--- @param p0 number (int)
+--- @param p1 number (float)
 --- @return void
 function SetGpsFlags(p0, p1) end
 
@@ -3899,8 +3899,8 @@ function SetGpsFlags(p0, p1) end
 --- ```
 ---
 --- @hash 0x45FF974EEE1C8734
---- @params blip table (Blip)
---- @params alpha number (int)
+--- @param blip table (Blip)
+--- @param alpha number (int)
 --- @return void
 function SetBlipAlpha(blip, alpha) end
 
@@ -3923,8 +3923,8 @@ function N_0x7669f9e39dc17063() end
 --- To get the current state of the minimap, use [`GetBigmapActive`](#\_0xF6AE18A7).
 ---
 --- @hash 0x231C8F89D0539D8F
---- @params toggleBigMap boolean (BOOL)
---- @params showFullMap boolean (BOOL)
+--- @param toggleBigMap boolean
+--- @param showFullMap boolean
 --- @return void
 function SetBigmapActive(toggleBigMap, showFullMap) end
 
@@ -3936,8 +3936,8 @@ function SetBigmapActive(toggleBigMap, showFullMap) end
 --- ```
 ---
 --- @hash 0x1CCC708F0F850613
---- @params hudColorIndex number (int)
---- @params hudColorIndex2 number (int)
+--- @param hudColorIndex number (int)
+--- @param hudColorIndex2 number (int)
 --- @return void
 function ReplaceHudColour(hudColorIndex, hudColorIndex2) end
 
@@ -3945,7 +3945,7 @@ function ReplaceHudColour(hudColorIndex, hudColorIndex2) end
 --- N_0x41350b4fc28e3941
 ---
 --- @hash 0x41350B4FC28E3941
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x41350b4fc28e3941(p0) end
 
@@ -3953,8 +3953,8 @@ function N_0x41350b4fc28e3941(p0) end
 --- SetBlipScale
 ---
 --- @hash 0xD38744167B2FA257
---- @params blip table (Blip)
---- @params scale number (float)
+--- @param blip table (Blip)
+--- @param scale number (float)
 --- @return void
 function SetBlipScale(blip, scale) end
 
@@ -3962,16 +3962,16 @@ function SetBlipScale(blip, scale) end
 --- ReleaseNamedRendertarget
 ---
 --- @hash 0xE9F6FFE837354DD4
---- @params name string (char*)
---- @return boolean (BOOL)
+--- @param name string (char*)
+--- @return boolean
 function ReleaseNamedRendertarget(name) end
 
     
 --- SetBlipHiddenOnLegend
 ---
 --- @hash 0x54318C915D27E4CE
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function SetBlipHiddenOnLegend(blip, toggle) end
 
@@ -3982,8 +3982,8 @@ function SetBlipHiddenOnLegend(blip, toggle) end
 --- ```
 ---
 --- @hash 0x9969599CCFF5D85E
---- @params value number (float)
---- @params maxValue number (float)
+--- @param value number (float)
+--- @param maxValue number (float)
 --- @return void
 function SetAbilityBarValue(value, maxValue) end
 
@@ -3991,9 +3991,9 @@ function SetAbilityBarValue(value, maxValue) end
 --- SetBlipFade
 ---
 --- @hash 0x2AEE8F8390D2298C
---- @params blip table (Blip)
---- @params opacity number (int)
---- @params duration number (int)
+--- @param blip table (Blip)
+--- @param opacity number (int)
+--- @param duration number (int)
 --- @return void
 function SetBlipFade(blip, opacity, duration) end
 
@@ -4004,8 +4004,8 @@ function SetBlipFade(blip, opacity, duration) end
 --- ```
 ---
 --- @hash 0xE3B05614DCE1D014
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0xe3b05614dce1d014(p0) end
 
     
@@ -4014,14 +4014,14 @@ function N_0xe3b05614dce1d014(p0) end
 --- ```
 ---
 --- @hash 0xF83D0FEBE75E62C9
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
---- @params p6 Any
---- @params p7 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
+--- @param p7 any
 --- @return void
 function N_0xf83d0febe75e62c9(p0, p1, p2, p3, p4, p5, p6, p7) end
 
@@ -4043,8 +4043,8 @@ function N_0xf83d0febe75e62c9(p0, p1, p2, p3, p4, p5, p6, p7) end
 --- ```
 ---
 --- @hash 0xD30C50DF888D58B5
---- @params ped table (Ped)
---- @params hasCone boolean (BOOL)
+--- @param ped table (Ped)
+--- @param hasCone boolean
 --- @return void
 function SetPedHasAiBlip(ped, hasCone) end
 
@@ -4052,8 +4052,8 @@ function SetPedHasAiBlip(ped, hasCone) end
 --- SetBlipNameToPlayerName
 ---
 --- @hash 0x127DE7B20C60A6A3
---- @params blip table (Blip)
---- @params player number (Player)
+--- @param blip table (Blip)
+--- @param player number (Player)
 --- @return void
 function SetBlipNameToPlayerName(blip, player) end
 
@@ -4063,8 +4063,8 @@ function SetBlipNameToPlayerName(blip, player) end
 --- ```
 ---
 --- @hash 0x4F7D8A9BFB0B43E9
---- @params blip table (Blip)
---- @params enabled boolean (BOOL)
+--- @param blip table (Blip)
+--- @param enabled boolean
 --- @return void
 function SetBlipRoute(blip, enabled) end
 
@@ -4102,7 +4102,7 @@ function SetDirectorModeClearTriggeredFlag() end
 --- ```
 ---
 --- @hash 0x86A652570E5F25DD
---- @params blip table (Blip*)
+--- @param blip table (Blip*)
 --- @return void
 function RemoveBlip(blip) end
 
@@ -4113,8 +4113,8 @@ function RemoveBlip(blip) end
 --- ```
 ---
 --- @hash 0xE45087D85F468BC2
---- @params p0 boolean (BOOL)
---- @params name string (char*)
+--- @param p0 boolean
+--- @param name string (char*)
 --- @return void
 function SetMissionName_2(p0, name) end
 
@@ -4146,8 +4146,8 @@ function PreloadBusyspinner() end
 --- ```
 ---
 --- @hash 0xD201F3FF917A506D
---- @params altitude number (float)
---- @params p1 boolean (BOOL)
+--- @param altitude number (float)
+--- @param p1 boolean
 --- @return void
 function SetMinimapAltitudeIndicatorLevel(altitude, p1) end
 
@@ -4155,7 +4155,7 @@ function SetMinimapAltitudeIndicatorLevel(altitude, p1) end
 --- SetFrontendActive
 ---
 --- @hash 0x745711A75AB09277
---- @params active boolean (BOOL)
+--- @param active boolean
 --- @return void
 function SetFrontendActive(active) end
 
@@ -4165,7 +4165,7 @@ function SetFrontendActive(active) end
 --- ```
 ---
 --- @hash 0x1DFEDD15019315A9
---- @params visible boolean (BOOL)
+--- @param visible boolean
 --- @return void
 function SetAbilityBarVisibilityInMultiplayer(visible) end
 
@@ -4173,9 +4173,9 @@ function SetAbilityBarVisibilityInMultiplayer(visible) end
 --- N_0xc78e239ac5b2ddb9
 ---
 --- @hash 0xC78E239AC5B2DDB9
---- @params p0 boolean (BOOL)
---- @params p1 Any
---- @params p2 Any
+--- @param p0 boolean
+--- @param p1 any
+--- @param p2 any
 --- @return void
 function N_0xc78e239ac5b2ddb9(p0, p1, p2) end
 
@@ -4183,8 +4183,8 @@ function N_0xc78e239ac5b2ddb9(p0, p1, p2) end
 --- SetBlipFlashes
 ---
 --- @hash 0xB14552383D39CE3E
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function SetBlipFlashes(blip, toggle) end
 
@@ -4194,8 +4194,8 @@ function SetBlipFlashes(blip, toggle) end
 --- ```
 ---
 --- @hash 0xAE9FC9EF6A9FAC79
---- @params blip table (Blip)
---- @params priority number (int)
+--- @param blip table (Blip)
+--- @param priority number (int)
 --- @return void
 function SetBlipPriority(blip, priority) end
 
@@ -4212,8 +4212,8 @@ function SetBlipPriority(blip, priority) end
 --- ```
 ---
 --- @hash 0x10706DC6AD2D49C0
---- @params menuHash table (Hash)
---- @params p1 number (int)
+--- @param menuHash table (Hash)
+--- @param p1 number (int)
 --- @return void
 function RestartFrontendMenu(menuHash, p1) end
 
@@ -4221,7 +4221,7 @@ function RestartFrontendMenu(menuHash, p1) end
 --- SetMaxHealthHudDisplay
 ---
 --- @hash 0x975D66A0BC17064C
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function SetMaxHealthHudDisplay(p0) end
 
@@ -4229,8 +4229,8 @@ function SetMaxHealthHudDisplay(p0) end
 --- SetBlipRouteColour
 ---
 --- @hash 0x837155CD2F63DA09
---- @params blip table (Blip)
---- @params colour number (int)
+--- @param blip table (Blip)
+--- @param colour number (int)
 --- @return void
 function SetBlipRouteColour(blip, colour) end
 
@@ -4238,9 +4238,9 @@ function SetBlipRouteColour(blip, colour) end
 --- SetHudComponentPosition
 ---
 --- @hash 0xAABB1F56E2A17CED
---- @params id number (int)
---- @params x number (float)
---- @params y number (float)
+--- @param id number (int)
+--- @param x number (float)
+--- @param y number (float)
 --- @return void
 function SetHudComponentPosition(id, x, y) end
 
@@ -4250,8 +4250,8 @@ function SetHudComponentPosition(id, x, y) end
 --- ```
 ---
 --- @hash 0x7B7723747CCB55B6
---- @params gamerTagId number (int)
---- @params string string (char*)
+--- @param gamerTagId number (int)
+--- @param string string (char*)
 --- @return void
 function SetMpGamerTagBigText(gamerTagId, string) end
 
@@ -4259,7 +4259,7 @@ function SetMpGamerTagBigText(gamerTagId, string) end
 --- SetGpsFlashes
 ---
 --- @hash 0x320D0E0D936A0E9B
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetGpsFlashes(toggle) end
 
@@ -4267,19 +4267,19 @@ function SetGpsFlashes(toggle) end
 --- N_0xca6b2f7ce32ab653
 ---
 --- @hash 0xCA6B2F7CE32AB653
---- @params p0 Any
---- @params p1 table (Any*)
---- @params p2 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 table (Any*)
+--- @param p2 any
+--- @return boolean
 function N_0xca6b2f7ce32ab653(p0, p1, p2) end
 
     
 --- SetHealthHudDisplayValues
 ---
 --- @hash 0x3F5CC444DCAAA8F2
---- @params health number (int)
---- @params capacity number (int)
---- @params wasAdded boolean (BOOL)
+--- @param health number (int)
+--- @param capacity number (int)
+--- @param wasAdded boolean
 --- @return void
 function SetHealthHudDisplayValues(health, capacity, wasAdded) end
 
@@ -4299,8 +4299,8 @@ function N_0xeb81a3dadd503187() end
 --- ```
 ---
 --- @hash 0xEAA0FFE120D92784
---- @params blip table (Blip)
---- @params gxtEntry string (char*)
+--- @param blip table (Blip)
+--- @param gxtEntry string (char*)
 --- @return void
 function SetBlipNameFromTextFile(blip, gxtEntry) end
 
@@ -4308,7 +4308,7 @@ function SetBlipNameFromTextFile(blip, gxtEntry) end
 --- SetMinimapBlockWaypoint
 ---
 --- @hash 0x58FADDED207897DC
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetMinimapBlockWaypoint(toggle) end
 
@@ -4316,10 +4316,10 @@ function SetMinimapBlockWaypoint(toggle) end
 --- SetFloatingHelpTextWorldPosition
 ---
 --- @hash 0x784BA7E0ECEB4178
---- @params hudIndex number (int)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param hudIndex number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function SetFloatingHelpTextWorldPosition(hudIndex, x, y, z) end
 
@@ -4327,7 +4327,7 @@ function SetFloatingHelpTextWorldPosition(hudIndex, x, y, z) end
 --- PauseMenuDeactivateContext
 ---
 --- @hash 0x444D8CF241EC25C5
---- @params contextHash table (Hash)
+--- @param contextHash table (Hash)
 --- @return void
 function PauseMenuDeactivateContext(contextHash) end
 
@@ -4349,8 +4349,8 @@ function PauseMenuDeactivateContext(contextHash) end
 --- Rockstar seem to only use 0, 2, 3, 4, 5 and 8 in the decompiled scripts.
 ---
 --- @hash 0x9029B2F3DA924928
---- @params blip table (Blip)
---- @params displayId number (int)
+--- @param blip table (Blip)
+--- @param displayId number (int)
 --- @return void
 function SetBlipDisplay(blip, displayId) end
 
@@ -4360,7 +4360,7 @@ function SetBlipDisplay(blip, displayId) end
 --- ```
 ---
 --- @hash 0x1EAE6DD17B7A5EFA
---- @params spriteId number (int)
+--- @param spriteId number (int)
 --- @return void
 function RaceGalleryNextBlipSprite(spriteId) end
 
@@ -4368,8 +4368,8 @@ function RaceGalleryNextBlipSprite(spriteId) end
 --- SetBlipFlashInterval
 ---
 --- @hash 0xAA51DB313C010A7E
---- @params blip table (Blip)
---- @params p1 Any
+--- @param blip table (Blip)
+--- @param p1 any
 --- @return void
 function SetBlipFlashInterval(blip, p1) end
 
@@ -4377,8 +4377,8 @@ function SetBlipFlashInterval(blip, p1) end
 --- ShowNumberOnBlip
 ---
 --- @hash 0xA3C0B359DCB848B6
---- @params blip table (Blip)
---- @params number number (int)
+--- @param blip table (Blip)
+--- @param number number (int)
 --- @return void
 function ShowNumberOnBlip(blip, number) end
 
@@ -4388,11 +4388,11 @@ function ShowNumberOnBlip(blip, number) end
 --- ```
 ---
 --- @hash 0xF314CF4F0211894E
---- @params hudColorIndex number (int)
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
---- @params a number (int)
+--- @param hudColorIndex number (int)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param a number (int)
 --- @return void
 function ReplaceHudColourWithRgba(hudColorIndex, r, g, b, a) end
 
@@ -4425,9 +4425,9 @@ function ReplaceHudColourWithRgba(hudColorIndex, r, g, b, a) end
 --- ```
 ---
 --- @hash 0x63BB75ABEDC1F6A0
---- @params gamerTagId number (int)
---- @params component number (int)
---- @params toggle boolean (BOOL)
+--- @param gamerTagId number (int)
+--- @param component number (int)
+--- @param toggle boolean
 --- @return void
 function SetMpGamerTagVisibility(gamerTagId, component, toggle) end
 
@@ -4438,8 +4438,8 @@ function SetMpGamerTagVisibility(gamerTagId, component, toggle) end
 --- ```
 ---
 --- @hash 0x3EED80DFF7325CAA
---- @params ped table (Ped)
---- @params toggle boolean (BOOL)
+--- @param ped table (Ped)
+--- @param toggle boolean
 --- @return void
 function SetPedAiBlipHasCone(ped, toggle) end
 
@@ -4449,8 +4449,8 @@ function SetPedAiBlipHasCone(ped, toggle) end
 --- ```
 ---
 --- @hash 0xD3CD6FD297AE87CC
---- @params blip table (Blip)
---- @params duration number (int)
+--- @param blip table (Blip)
+--- @param duration number (int)
 --- @return void
 function SetBlipFlashTimer(blip, duration) end
 
@@ -4458,7 +4458,7 @@ function SetBlipFlashTimer(blip, duration) end
 --- SetMaxArmourHudDisplay
 ---
 --- @hash 0x06A320535F5F0248
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function SetMaxArmourHudDisplay(p0) end
 
@@ -4468,7 +4468,7 @@ function SetMaxArmourHudDisplay(p0) end
 --- ```
 ---
 --- @hash 0xF8DEE0A5600CBB93
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetMinimapHideFow(toggle) end
 
@@ -4476,8 +4476,8 @@ function SetMinimapHideFow(toggle) end
 --- SetNewWaypoint
 ---
 --- @hash 0xFE43368D2AA4F2FC
---- @params x number (float)
---- @params y number (float)
+--- @param x number (float)
+--- @param y number (float)
 --- @return void
 function SetNewWaypoint(x, y) end
 
@@ -4485,9 +4485,9 @@ function SetNewWaypoint(x, y) end
 --- SetGpsCustomRouteRender
 ---
 --- @hash 0x900086F371220B6F
---- @params toggle boolean (BOOL)
---- @params radarThickness number (int)
---- @params mapThickness number (int)
+--- @param toggle boolean
+--- @param radarThickness number (int)
+--- @param mapThickness number (int)
 --- @return void
 function SetGpsCustomRouteRender(toggle, radarThickness, mapThickness) end
 
@@ -4495,8 +4495,8 @@ function SetGpsCustomRouteRender(toggle, radarThickness, mapThickness) end
 --- Sets whether or not the specified blip should only be displayed when nearby, or on the minimap.
 ---
 --- @hash 0xBE8BE4FE60E27B72
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function SetBlipAsShortRange(blip, toggle) end
 
@@ -4504,8 +4504,8 @@ function SetBlipAsShortRange(blip, toggle) end
 --- SetMpGamerTag
 ---
 --- @hash 0xEE76FF7E6A0166B0
---- @params headDisplayId number (int)
---- @params p1 boolean (BOOL)
+--- @param headDisplayId number (int)
+--- @param p1 boolean
 --- @return void
 function SetMpGamerTag(headDisplayId, p1) end
 
@@ -4513,8 +4513,8 @@ function SetMpGamerTag(headDisplayId, p1) end
 --- SetMinimapInSpectatorMode
 ---
 --- @hash 0x1A5CD7752DD28CD3
---- @params toggle boolean (BOOL)
---- @params ped table (Ped)
+--- @param toggle boolean
+--- @param ped table (Ped)
 --- @return void
 function SetMinimapInSpectatorMode(toggle, ped) end
 
@@ -4526,8 +4526,8 @@ function SetMinimapInSpectatorMode(toggle, ped) end
 --- ```
 ---
 --- @hash 0xE52B8E7F85D39A08
---- @params ped table (Ped)
---- @params gangId number (int)
+--- @param ped table (Ped)
+--- @param gangId number (int)
 --- @return void
 function SetPedAiBlipGangId(ped, gangId) end
 
@@ -4546,7 +4546,7 @@ function SetMinimapGolfCourseOff() end
 --- ```
 ---
 --- @hash 0x5354C5BA2EA868A4
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetMapFullScreen(toggle) end
 
@@ -4557,7 +4557,7 @@ function SetMapFullScreen(toggle) end
 --- ```
 ---
 --- @hash 0x808519373FD336A3
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetPlayerIsInDirectorMode(toggle) end
 
@@ -4567,8 +4567,8 @@ function SetPlayerIsInDirectorMode(toggle) end
 --- ```
 ---
 --- @hash 0xA67F9C46D612B6F1
---- @params gamerTagId number (int)
---- @params p1 boolean (BOOL)
+--- @param gamerTagId number (int)
+--- @param p1 boolean
 --- @return void
 function SetMpGamerTagIcons(gamerTagId, p1) end
 
@@ -4576,7 +4576,7 @@ function SetMpGamerTagIcons(gamerTagId, p1) end
 --- SetGpsMultiRouteRender
 ---
 --- @hash 0x3DDA37128DD1ACA8
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetGpsMultiRouteRender(toggle) end
 
@@ -4586,9 +4586,9 @@ function SetGpsMultiRouteRender(toggle) end
 --- ```
 ---
 --- @hash 0xB13DCB4C6FAAD238
---- @params ped table (Ped)
---- @params hasCone boolean (BOOL)
---- @params color number (int)
+--- @param ped table (Ped)
+--- @param hasCone boolean
+--- @param color number (int)
 --- @return void
 function SetPedHasAiBlipWithColor(ped, hasCone, color) end
 
@@ -4602,7 +4602,7 @@ function SetPedHasAiBlipWithColor(ped, hasCone, color) end
 --- Off: ![lights off](https://vespura.com/hi/i/2019-04-01\_16-10\_8b5e7\_1016.png)
 ---
 --- @hash 0x3CA6050692BC61B0
---- @params state boolean (BOOL)
+--- @param state boolean
 --- @return void
 function SetPauseMenuPedLighting(state) end
 
@@ -4610,10 +4610,10 @@ function SetPauseMenuPedLighting(state) end
 --- SetFloatingHelpTextToEntity
 ---
 --- @hash 0xB094BC1DB4018240
---- @params hudIndex number (int)
---- @params entity table (Entity)
---- @params p2 number (float)
---- @params p3 number (float)
+--- @param hudIndex number (int)
+--- @param entity table (Entity)
+--- @param p2 number (float)
+--- @param p3 number (float)
 --- @return void
 function SetFloatingHelpTextToEntity(hudIndex, entity, p2, p3) end
 
@@ -4624,8 +4624,8 @@ function SetFloatingHelpTextToEntity(hudIndex, entity, p2, p3) end
 --- ```
 ---
 --- @hash 0x0C4BBF625CA98C4E
---- @params ped table (Ped)
---- @params toggle boolean (BOOL)
+--- @param ped table (Ped)
+--- @param toggle boolean
 --- @return void
 function SetPedAiBlipForcedOn(ped, toggle) end
 
@@ -4637,10 +4637,10 @@ function SetPedAiBlipForcedOn(ped, toggle) end
 --- ```
 ---
 --- @hash 0x14892474891E09EB
---- @params blip table (Blip)
---- @params r number (float)
---- @params g number (float)
---- @params b number (float)
+--- @param blip table (Blip)
+--- @param r number (float)
+--- @param g number (float)
+--- @param b number (float)
 --- @return void
 function SetBlipSecondaryColour(blip, r, g, b) end
 
@@ -4658,9 +4658,9 @@ function SetRadarAsExteriorThisFrame() end
 --- ```
 ---
 --- @hash 0x1563FE35E9928E67
---- @params gamerTagId number (int)
---- @params value number (int)
---- @params maximumValue number (int)
+--- @param gamerTagId number (int)
+--- @param value number (int)
+--- @param maximumValue number (int)
 --- @return void
 function SetMpGamerHealthBarMax(gamerTagId, value, maximumValue) end
 
@@ -4670,11 +4670,11 @@ function SetMpGamerHealthBarMax(gamerTagId, value, maximumValue) end
 --- ```
 ---
 --- @hash 0xB9C362BABECDDC7A
---- @params style number (int)
---- @params hudColor number (int)
---- @params alpha number (int)
---- @params p3 number (int)
---- @params p4 number (int)
+--- @param style number (int)
+--- @param hudColor number (int)
+--- @param alpha number (int)
+--- @param p3 number (int)
+--- @param p4 number (int)
 --- @return void
 function SetHelpMessageTextStyle(style, hudColor, alpha, p3, p4) end
 
@@ -4700,7 +4700,7 @@ function SetHelpMessageTextStyle(style, hudColor, alpha, p3, p4) end
 --- ```
 ---
 --- @hash 0x8DB8CFFD58B62552
---- @params spriteId number (int)
+--- @param spriteId number (int)
 --- @return void
 function SetMouseCursorSprite(spriteId) end
 
@@ -4708,11 +4708,11 @@ function SetMouseCursorSprite(spriteId) end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0x441603240D202FA6
---- @params p0 number (int)
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
---- @params a number (int)
+--- @param p0 number (int)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param a number (int)
 --- @return void
 function SetTextEdge(p0, r, g, b, a) end
 
@@ -4730,7 +4730,7 @@ function ResetReticuleValues() end
 --- ```
 ---
 --- @hash 0x39BBF623FC803EAC
---- @params hudColorIndex number (int)
+--- @param hudColorIndex number (int)
 --- @return void
 function SetColourOfNextTextComponent(hudColorIndex) end
 
@@ -4740,9 +4740,9 @@ function SetColourOfNextTextComponent(hudColorIndex) end
 --- ```
 ---
 --- @hash 0xD48FE545CD46F857
---- @params gamerTagId number (int)
---- @params component number (int)
---- @params alpha number (int)
+--- @param gamerTagId number (int)
+--- @param component number (int)
+--- @param alpha number (int)
 --- @return void
 function SetMpGamerTagAlpha(gamerTagId, component, alpha) end
 
@@ -4758,8 +4758,8 @@ function ThefeedSpsExtendWidescreenOn() end
 --- SetMpGamerTagName
 ---
 --- @hash 0xDEA2B8283BAA3944
---- @params gamerTagId number (int)
---- @params string string (char*)
+--- @param gamerTagId number (int)
+--- @param string string (char*)
 --- @return void
 function SetMpGamerTagName(gamerTagId, string) end
 
@@ -4767,8 +4767,8 @@ function SetMpGamerTagName(gamerTagId, string) end
 --- SetBlipHighDetail
 ---
 --- @hash 0xE2590BC29220CEBB
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function SetBlipHighDetail(blip, toggle) end
 
@@ -4778,8 +4778,8 @@ function SetBlipHighDetail(blip, toggle) end
 --- ```
 ---
 --- @hash 0x2B6D467DAB714E8D
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function SetBlipShrink(blip, toggle) end
 
@@ -4787,8 +4787,8 @@ function SetBlipShrink(blip, toggle) end
 --- SetPedAiBlipSprite
 ---
 --- @hash 0xFCFACD0DB9D7A57D
---- @params ped table (Ped)
---- @params spriteId number (int)
+--- @param ped table (Ped)
+--- @param spriteId number (int)
 --- @return void
 function SetPedAiBlipSprite(ped, spriteId) end
 
@@ -4798,8 +4798,8 @@ function SetPedAiBlipSprite(ped, spriteId) end
 --- ```
 ---
 --- @hash 0xCF228E2AA03099C3
---- @params gamerTagId number (int)
---- @params wantedlvl number (int)
+--- @param gamerTagId number (int)
+--- @param wantedlvl number (int)
 --- @return void
 function SetMpGamerTagWantedLevel(gamerTagId, wantedlvl) end
 
@@ -4807,7 +4807,7 @@ function SetMpGamerTagWantedLevel(gamerTagId, wantedlvl) end
 --- SetRaceTrackRender
 ---
 --- @hash 0x1EAC5F91BCBC5073
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetRaceTrackRender(toggle) end
 
@@ -4823,10 +4823,10 @@ function SetMultiplayerWalletCash() end
 --- SetTextColour
 ---
 --- @hash 0xBE6B23FFA53FB442
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function SetTextColour(red, green, blue, alpha) end
 
@@ -4836,8 +4836,8 @@ function SetTextColour(red, green, blue, alpha) end
 --- ```
 ---
 --- @hash 0x07C837F9A01C34C9
---- @params scale number (float)
---- @params size number (float)
+--- @param scale number (float)
+--- @param size number (float)
 --- @return void
 function SetTextScale(scale, size) end
 
@@ -4851,16 +4851,16 @@ function SetTextScale(scale, size) end
 --- ```
 ---
 --- @hash 0x701919482C74B5AB
---- @params entryHeader string (char*)
---- @params entryLine1 string (char*)
---- @params instructionalKey Any
---- @params entryLine2 string (char*)
---- @params p4 boolean (BOOL)
---- @params p5 Any
---- @params p6 Any
---- @params p7 table (Any*)
---- @params p8 table (Any*)
---- @params p9 boolean (BOOL)
+--- @param entryHeader string (char*)
+--- @param entryLine1 string (char*)
+--- @param instructionalKey any
+--- @param entryLine2 string (char*)
+--- @param p4 boolean
+--- @param p5 any
+--- @param p6 any
+--- @param p7 table (Any*)
+--- @param p8 table (Any*)
+--- @param p9 boolean
 --- @return void
 function SetWarningMessageWithHeaderAndSubstringFlags(entryHeader, entryLine1, instructionalKey, entryLine2, p4, p5, p6, p7, p8, p9) end
 
@@ -4868,7 +4868,7 @@ function SetWarningMessageWithHeaderAndSubstringFlags(entryHeader, entryLine1, i
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0x038C1F517D7FDCF8
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function SetTextProportional(p0) end
 
@@ -4876,8 +4876,8 @@ function SetTextProportional(p0) end
 --- SetMpGamerTagUnk
 ---
 --- @hash 0x9C16459B2324B2CF
---- @params gamerTagId number (int)
---- @params p1 number (int)
+--- @param gamerTagId number (int)
+--- @param p1 number (int)
 --- @return void
 function SetMpGamerTagUnk(gamerTagId, p1) end
 
@@ -4887,10 +4887,10 @@ function SetMpGamerTagUnk(gamerTagId, p1) end
 --- ```
 ---
 --- @hash 0x16A304E6CB2BFAB9
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
---- @params a number (int)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param a number (int)
 --- @return void
 function SetScriptVariable_2HudColour(r, g, b, a) end
 
@@ -4932,8 +4932,8 @@ function SetScriptVariable_2HudColour(r, g, b, a) end
 --- SetBlipSprite(blip, 372) -- Hangar For Sale
 --- SetBlipCategory(blip, 10
 --- @hash 0x234CDD44D996FD9A
---- @params blip table (Blip)
---- @params index number (int)
+--- @param blip table (Blip)
+--- @param index number (int)
 --- @return void
 function SetBlipCategory(blip, index) end
 
@@ -4943,7 +4943,7 @@ function SetBlipCategory(blip, index) end
 --- [Example GIF](https://vespura.com/hi/i/2019-04-01\_15-51\_8ed38\_1014.gif)
 ---
 --- @hash 0xECF128344E9FF9F1
---- @params state boolean (BOOL)
+--- @param state boolean
 --- @return void
 function SetPauseMenuPedSleepState(state) end
 
@@ -4954,8 +4954,8 @@ function SetPauseMenuPedSleepState(state) end
 --- ```
 ---
 --- @hash 0x97C65887D4B37FA9
---- @params ped table (Ped)
---- @params range number (float)
+--- @param ped table (Ped)
+--- @param range number (float)
 --- @return void
 function SetPedAiBlipNoticeRange(ped, range) end
 
@@ -4965,8 +4965,8 @@ function SetPedAiBlipNoticeRange(ped, range) end
 --- ```
 ---
 --- @hash 0x9B9AA95688F78DD3
---- @params gamerTagId number (int)
---- @params count number (int)
+--- @param gamerTagId number (int)
+--- @param count number (int)
 --- @return void
 function SetMpGamerTagMpBagLargeCount(gamerTagId, count) end
 
@@ -4974,12 +4974,12 @@ function SetMpGamerTagMpBagLargeCount(gamerTagId, count) end
 --- SetFloatingHelpTextStyle
 ---
 --- @hash 0x788E7FD431BD67F1
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
 --- @return void
 function SetFloatingHelpTextStyle(p0, p1, p2, p3, p4, p5) end
 
@@ -4989,8 +4989,8 @@ function SetFloatingHelpTextStyle(p0, p1, p2, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0x0772DF77852C2E30
---- @params cash number (int)
---- @params bank number (int)
+--- @param cash number (int)
+--- @param bank number (int)
 --- @return void
 function SetPlayerCashChange(cash, bank) end
 
@@ -5005,7 +5005,7 @@ function SetPlayerCashChange(cash, bank) end
 --- ```
 ---
 --- @hash 0xA50ABC31E3CDFAFF
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function SetTextLeading(p0) end
 
@@ -5013,8 +5013,8 @@ function SetTextLeading(p0) end
 --- SetBlipBright
 ---
 --- @hash 0xB203913733F27884
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function SetBlipBright(blip, toggle) end
 
@@ -5030,7 +5030,7 @@ function SetMultiplayerBankCash() end
 --- SetPauseMenuActive
 ---
 --- @hash 0xDF47FC56C71569CF
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetPauseMenuActive(toggle) end
 
@@ -5060,9 +5060,9 @@ function SetPauseMenuActive(toggle) end
 --- -- Set the route to render
 --- SetGpsMultiRouteRender(true
 --- @hash 0x3D3D15AF7BCAAF83
---- @params hudColor number (int)
---- @params routeFromPlayer boolean (BOOL)
---- @params displayOnFoot boolean (BOOL)
+--- @param hudColor number (int)
+--- @param routeFromPlayer boolean
+--- @param displayOnFoot boolean
 --- @return void
 function StartGpsMultiRoute(hudColor, routeFromPlayer, displayOnFoot) end
 
@@ -5070,9 +5070,9 @@ function StartGpsMultiRoute(hudColor, routeFromPlayer, displayOnFoot) end
 --- SetMinimapFowRevealCoordinate
 ---
 --- @hash 0x0923DBF87DFF735E
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function SetMinimapFowRevealCoordinate(x, y, z) end
 
@@ -5092,7 +5092,7 @@ function SetMouseCursorActiveThisFrame() end
 --- ```
 ---
 --- @hash 0x9133955F1A2DA957
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetMinimapInPrologue(toggle) end
 
@@ -5100,8 +5100,8 @@ function SetMinimapInPrologue(toggle) end
 --- SetRadarZoomToBlip
 ---
 --- @hash 0xF98E4B3E56AFC7B1
---- @params blip table (Blip)
---- @params zoom number (float)
+--- @param blip table (Blip)
+--- @param zoom number (float)
 --- @return void
 function SetRadarZoomToBlip(blip, zoom) end
 
@@ -5111,7 +5111,7 @@ function SetRadarZoomToBlip(blip, zoom) end
 --- ```
 ---
 --- @hash 0x66E0276CC5F6B9DA
---- @params fontType number (int)
+--- @param fontType number (int)
 --- @return void
 function SetTextFont(fontType) end
 
@@ -5119,11 +5119,11 @@ function SetTextFont(fontType) end
 --- Sets the drop shadow for the current text style.
 ---
 --- @hash 0x465C84BC39F1C351
---- @params distance number (int)
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
---- @params a number (int)
+--- @param distance number (int)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param a number (int)
 --- @return void
 function SetTextDropshadow(distance, r, g, b, a) end
 
@@ -5133,8 +5133,8 @@ function SetTextDropshadow(distance, r, g, b, a) end
 --- ```
 ---
 --- @hash 0xA8B6AFDAC320AC87
---- @params p0 table (Blip)
---- @params heading number (float)
+--- @param p0 table (Blip)
+--- @param heading number (float)
 --- @return void
 function SetBlipSquaredRotation(p0, heading) end
 
@@ -5153,8 +5153,8 @@ function SetTextDropShadow() end
 --- ```
 ---
 --- @hash 0x5F28ECF5FC84772F
---- @params p0 boolean (BOOL)
---- @params name string (char*)
+--- @param p0 boolean
+--- @param name string (char*)
 --- @return void
 function SetMissionName(p0, name) end
 
@@ -5162,8 +5162,8 @@ function SetMissionName(p0, name) end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0xFD1D220394BCB824
---- @params p0 number (int)
---- @params p1 number (int)
+--- @param p0 number (int)
+--- @param p1 number (int)
 --- @return void
 function SetMultiplayerHudCash(p0, p1) end
 
@@ -5278,15 +5278,15 @@ function SetMultiplayerHudCash(p0, p1) end
 ---     end
 --- end
 --- @hash 0x7B1776B3B53F8D74
---- @params entryLine1 string (char*)
---- @params instructionalKey number (int)
---- @params entryLine2 string (char*)
---- @params p3 boolean (BOOL)
---- @params p4 number (int)
---- @params background table (Any*)
---- @params p6 table (Any*)
---- @params showBg boolean (BOOL)
---- @params p8 Any
+--- @param entryLine1 string (char*)
+--- @param instructionalKey number (int)
+--- @param entryLine2 string (char*)
+--- @param p3 boolean
+--- @param p4 number (int)
+--- @param background table (Any*)
+--- @param p6 table (Any*)
+--- @param showBg boolean
+--- @param p8 any
 --- @return void
 function SetWarningMessage(entryLine1, instructionalKey, entryLine2, p3, p4, background, p6, showBg, p8) end
 
@@ -5300,7 +5300,7 @@ function SetWarningMessage(entryLine1, instructionalKey, entryLine2, p3, p4, bac
 --- ```
 ---
 --- @hash 0x4E096588B13FFECA
---- @params justifyType number (int)
+--- @param justifyType number (int)
 --- @return void
 function SetTextJustification(justifyType) end
 
@@ -5310,17 +5310,17 @@ function SetTextJustification(justifyType) end
 --- ```
 ---
 --- @hash 0x38B55259C2E078ED
---- @params entryHeader string (char*)
---- @params entryLine1 string (char*)
---- @params flags number (int)
---- @params entryLine2 string (char*)
---- @params p4 boolean (BOOL)
---- @params p5 Any
---- @params p6 table (Any*)
---- @params p7 table (Any*)
---- @params showBg boolean (BOOL)
---- @params p9 Any
---- @params p10 Any
+--- @param entryHeader string (char*)
+--- @param entryLine1 string (char*)
+--- @param flags number (int)
+--- @param entryLine2 string (char*)
+--- @param p4 boolean
+--- @param p5 any
+--- @param p6 table (Any*)
+--- @param p7 table (Any*)
+--- @param showBg boolean
+--- @param p9 any
+--- @param p10 any
 --- @return void
 function SetWarningMessageWithHeaderUnk(entryHeader, entryLine1, flags, entryLine2, p4, p5, p6, p7, showBg, p9, p10) end
 
@@ -5331,7 +5331,7 @@ function SetWarningMessageWithHeaderUnk(entryHeader, entryLine1, flags, entryLin
 ---
 --- @hash 0xA9CBFD40B3FA3010
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function ThefeedIsPaused() end
 
     
@@ -5352,8 +5352,8 @@ function ThefeedIsPaused() end
 --- SetBlipSecondaryColour(blip, GetHudColour(18))
 --- -- Result: https://i.imgur.com/iZ9tNWl.pn
 --- @hash 0xDCFB5D4DB8BF367E
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function ShowCrewIndicatorOnBlip(blip, toggle) end
 
@@ -5361,7 +5361,7 @@ function ShowCrewIndicatorOnBlip(blip, toggle) end
 --- SetTextCentre
 ---
 --- @hash 0xC02F4DBFB51D988B
---- @params align boolean (BOOL)
+--- @param align boolean
 --- @return void
 function SetTextCentre(align) end
 
@@ -5408,7 +5408,7 @@ function ShowSigninUi() end
 --- ```
 ---
 --- @hash 0x9E778248D6685FE0
---- @params name string (char*)
+--- @param name string (char*)
 --- @return void
 function SetSocialClubTour(name) end
 
@@ -5416,7 +5416,7 @@ function SetSocialClubTour(name) end
 --- SetRadarZoomToDistance
 ---
 --- @hash 0xCB7CC0D58405AD41
---- @params zoom number (float)
+--- @param zoom number (float)
 --- @return void
 function SetRadarZoomToDistance(zoom) end
 
@@ -5426,7 +5426,7 @@ function SetRadarZoomToDistance(zoom) end
 --- ```
 ---
 --- @hash 0xBD12C5EEE184C337
---- @params zoom number (float)
+--- @param zoom number (float)
 --- @return void
 function SetRadarZoomPrecise(zoom) end
 
@@ -5461,7 +5461,7 @@ function SetRadarZoomPrecise(zoom) end
 --- These integers also work for the [`HIDE_HUD_COMPONENT_THIS_FRAME`](#\_0x6806C51AD12B83B8) native, but instead hides the HUD component.
 ---
 --- @hash 0x0B4DF1FA60C0E664
---- @params id number (int)
+--- @param id number (int)
 --- @return void
 function ShowHudComponentThisFrame(id) end
 
@@ -5471,9 +5471,9 @@ function ShowHudComponentThisFrame(id) end
 --- ```
 ---
 --- @hash 0x613ED644950626AE
---- @params gamerTagId number (int)
---- @params flag number (int)
---- @params color number (int)
+--- @param gamerTagId number (int)
+--- @param flag number (int)
+--- @param color number (int)
 --- @return void
 function SetMpGamerTagColour(gamerTagId, flag, color) end
 
@@ -5491,19 +5491,19 @@ function SetMpGamerTagColour(gamerTagId, flag, color) end
 --- [List of hud colors](https://pastebin.com/d9aHPbXN)
 ---
 --- @hash 0x75A9A10948D1DEA6
---- @params componentID number (int)
---- @params toggle boolean (BOOL)
---- @params hudColor number (int)
---- @return Any
+--- @param componentID number (int)
+--- @param toggle boolean
+--- @param hudColor number (int)
+--- @return any
 function SetMinimapComponent(componentID, toggle, hudColor) end
 
     
 --- SetFloatingHelpTextScreenPosition
 ---
 --- @hash 0x7679CC1BCEBE3D4C
---- @params hudIndex number (int)
---- @params p1 number (float)
---- @params p2 number (float)
+--- @param hudIndex number (int)
+--- @param p1 number (float)
+--- @param p2 number (float)
 --- @return void
 function SetFloatingHelpTextScreenPosition(hudIndex, p1, p2) end
 
@@ -5513,20 +5513,20 @@ function SetFloatingHelpTextScreenPosition(hudIndex, p1, p2) end
 --- ```
 ---
 --- @hash 0x0C5A80A9E096D529
---- @params index number (int)
---- @params name string (char*)
---- @params cash number (int)
---- @params rp number (int)
---- @params lvl number (int)
---- @params colour number (int)
---- @return boolean (BOOL)
+--- @param index number (int)
+--- @param name string (char*)
+--- @param cash number (int)
+--- @param rp number (int)
+--- @param lvl number (int)
+--- @param colour number (int)
+--- @return boolean
 function SetWarningMessageListRow(index, name, cash, rp, lvl, colour) end
 
     
 --- SetTextRenderId
 ---
 --- @hash 0x5F15302936E07111
---- @params renderId number (int)
+--- @param renderId number (int)
 --- @return void
 function SetTextRenderId(renderId) end
 
@@ -5545,11 +5545,11 @@ function SuppressFrontendRenderingThisFrame() end
 --- ```
 ---
 --- @hash 0x59E727A1C9D3E31A
---- @params interior table (Hash)
---- @params x number (float)
---- @params y number (float)
---- @params heading number (int)
---- @params zoom number (int)
+--- @param interior table (Hash)
+--- @param x number (float)
+--- @param y number (float)
+--- @param heading number (int)
+--- @param zoom number (int)
 --- @return void
 function SetRadarAsInteriorThisFrame(interior, x, y, heading, zoom) end
 
@@ -5557,11 +5557,11 @@ function SetRadarAsInteriorThisFrame(interior, x, y, heading, zoom) end
 --- TriggerSonarBlip
 ---
 --- @hash 0x72DD432F3CDFC0EE
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
---- @params radius number (float)
---- @params p4 number (int)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param radius number (float)
+--- @param p4 number (int)
 --- @return void
 function TriggerSonarBlip(posX, posY, posZ, radius, p4) end
 
@@ -5569,7 +5569,7 @@ function TriggerSonarBlip(posX, posY, posZ, radius, p4) end
 --- ToggleStealthRadar
 ---
 --- @hash 0x6AFDFB93754950C7
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function ToggleStealthRadar(toggle) end
 
@@ -5581,10 +5581,10 @@ function ToggleStealthRadar(toggle) end
 --- ```
 ---
 --- @hash 0x317EBA71D7543F52
---- @params txdString1 string (char*)
---- @params txnString1 string (char*)
---- @params txdString2 string (char*)
---- @params txnString2 string (char*)
+--- @param txdString1 string (char*)
+--- @param txnString1 string (char*)
+--- @param txdString2 string (char*)
+--- @param txnString2 string (char*)
 --- @return void
 function ThefeedAddTxdRef(txdString1, txnString1, txdString2, txnString2) end
 
@@ -5594,7 +5594,7 @@ function ThefeedAddTxdRef(txdString1, txnString1, txdString2, txnString2) end
 --- ```
 ---
 --- @hash 0xBAE4F9B97CD43B30
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function ThefeedSetFlushAnimpostfx(toggle) end
 
@@ -5613,15 +5613,15 @@ function ThefeedSetFlushAnimpostfx(toggle) end
 --- ```
 ---
 --- @hash 0xDC38CC1E35B6A5D7
---- @params titleMsg string (char*)
---- @params entryLine1 string (char*)
---- @params flags number (int)
---- @params promptMsg string (char*)
---- @params p4 boolean (BOOL)
---- @params p5 Any
---- @params background boolean (BOOL)
---- @params p7 table (Any*)
---- @params showBg boolean (BOOL)
+--- @param titleMsg string (char*)
+--- @param entryLine1 string (char*)
+--- @param flags number (int)
+--- @param promptMsg string (char*)
+--- @param p4 boolean
+--- @param p5 any
+--- @param background boolean
+--- @param p7 table (Any*)
+--- @param showBg boolean
 --- @return void
 function SetWarningMessageWithHeader(titleMsg, entryLine1, flags, promptMsg, p4, p5, background, p7, showBg) end
 
@@ -5629,8 +5629,8 @@ function SetWarningMessageWithHeader(titleMsg, entryLine1, flags, promptMsg, p4,
 --- SetRadiusBlipEdge
 ---
 --- @hash 0x25615540D894B814
---- @params p0 Any
---- @params p1 boolean (BOOL)
+--- @param p0 any
+--- @param p1 boolean
 --- @return void
 function SetRadiusBlipEdge(p0, p1) end
 
@@ -5642,8 +5642,8 @@ function SetRadiusBlipEdge(p0, p1) end
 --- ```
 ---
 --- @hash 0x63145D9C883A1A70
---- @params start number (float)
---- @params end number (float)
+--- @param start number (float)
+--- @param end number (float)
 --- @return void
 function SetTextWrap(start, end) end
 
@@ -5659,7 +5659,7 @@ function UnlockMinimapAngle() end
 --- ShowStartMissionInstructionalButton
 ---
 --- @hash 0xF1A6C18B35BCADE6
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function ShowStartMissionInstructionalButton(p0) end
 
@@ -5667,8 +5667,8 @@ function ShowStartMissionInstructionalButton(p0) end
 --- ShowHeightOnBlip
 ---
 --- @hash 0x75A16C3DA34F1245
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function ShowHeightOnBlip(blip, toggle) end
 
@@ -5678,7 +5678,7 @@ function ShowHeightOnBlip(blip, toggle) end
 --- ```
 ---
 --- @hash 0x096EF57A0C999BBA
---- @params zoomLevel number (int)
+--- @param zoomLevel number (int)
 --- @return void
 function SetRadarZoom(zoomLevel) end
 
@@ -5688,10 +5688,10 @@ function SetRadarZoom(zoomLevel) end
 --- ```
 ---
 --- @hash 0x17430B918701C342
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function ThefeedSetAnimpostfxColor(red, green, blue, alpha) end
 
@@ -5709,7 +5709,7 @@ function ThefeedResume() end
 --- ```
 ---
 --- @hash 0xBE4390CB40B3E627
---- @params notificationId number (int)
+--- @param notificationId number (int)
 --- @return void
 function ThefeedRemoveItem(notificationId) end
 
@@ -5723,8 +5723,8 @@ function ThefeedRemoveItem(notificationId) end
 --- -- Toggle the friend outline indicator on the blip.
 --- ShowFriendIndicatorOnBlip(blip, true
 --- @hash 0x23C3EB807312F01A
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function ShowFriendIndicatorOnBlip(blip, toggle) end
 
@@ -5734,7 +5734,7 @@ function ShowFriendIndicatorOnBlip(blip, toggle) end
 --- ```
 ---
 --- @hash 0x4A0C7C9BB10ABB36
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function ThefeedSetAnimpostfxSound(toggle) end
 
@@ -5750,7 +5750,7 @@ function ThefeedSpsExtendWidescreenOff() end
 --- ThefeedSetScriptedMenuHeight
 ---
 --- @hash 0x55598D21339CB998
---- @params pos number (float)
+--- @param pos number (float)
 --- @return void
 function ThefeedSetScriptedMenuHeight(pos) end
 
@@ -5773,7 +5773,7 @@ function ThefeedSetScriptedMenuHeight(pos) end
 --- ```
 ---
 --- @hash 0x17AD8C9706BDD88A
---- @params flashCount number (int)
+--- @param flashCount number (int)
 --- @return void
 function ThefeedSetAnimpostfxCount(flashCount) end
 
@@ -5783,8 +5783,8 @@ function ThefeedSetAnimpostfxCount(flashCount) end
 --- ```
 ---
 --- @hash 0xD29EC58C2F6B5014
---- @params gamerTagId number (int)
---- @params p1 boolean (BOOL)
+--- @param gamerTagId number (int)
+--- @param p1 boolean
 --- @return void
 function SetMpGamerHealthBarDisplay(gamerTagId, p1) end
 
@@ -5803,8 +5803,8 @@ function ThefeedPause() end
 --- ```
 ---
 --- @hash 0x77E2DD177910E1CF
---- @params x number (float)
---- @params y number (float)
+--- @param x number (float)
+--- @param y number (float)
 --- @return void
 function SetPlayerBlipPositionThisFrame(x, y) end
 
@@ -5818,8 +5818,8 @@ function SetPlayerBlipPositionThisFrame(x, y) end
 --- Real name is `SHOW_OUTLINE_INDICATOR_ON_BLIP`, discovered by Blattersturm.
 ---
 --- @hash 0xB81656BC81FE24D1
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function ShowOutlineIndicatorOnBlip(blip, toggle) end
 
@@ -5829,8 +5829,8 @@ function ShowOutlineIndicatorOnBlip(blip, toggle) end
 --- ```
 ---
 --- @hash 0x74513EA3E505181E
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function ShowTickOnBlip(blip, toggle) end
 
@@ -5838,7 +5838,7 @@ function ShowTickOnBlip(blip, toggle) end
 --- SetTextRightJustify
 ---
 --- @hash 0x6B3C4650BC8BEE47
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetTextRightJustify(toggle) end
 
@@ -5858,7 +5858,7 @@ function ThefeedFreezeNextPost() end
 --- ```
 ---
 --- @hash 0x1DB21A44B09E8BA3
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function SetTextChatUnk(p0) end
 
@@ -5878,8 +5878,8 @@ function ThefeedCommentTeleportPoolOn() end
 --- ```
 ---
 --- @hash 0x3158C77A7E888AB4
---- @params headDisplayId number (int)
---- @params color number (int)
+--- @param headDisplayId number (int)
+--- @param color number (int)
 --- @return void
 function SetMpGamerTagHealthBarColour(headDisplayId, color) end
 
@@ -5907,9 +5907,9 @@ function SetMpGamerTagHealthBarColour(headDisplayId, color) end
 --- -- Set the route to render
 --- SetGpsCustomRouteRender(true, 16, 16
 --- @hash 0xDB34E8D56FC13B08
---- @params hudColor number (int)
---- @params displayOnFoot boolean (BOOL)
---- @params followPlayer boolean (BOOL)
+--- @param hudColor number (int)
+--- @param displayOnFoot boolean
+--- @param followPlayer boolean
 --- @return void
 function StartGpsCustomRoute(hudColor, displayOnFoot, followPlayer) end
 
@@ -5938,10 +5938,10 @@ function ThefeedGetFirstVisibleDeleteRemaining() end
 --- ```
 ---
 --- @hash 0xD68A5FF8A3A89874
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
---- @params a number (int)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param a number (int)
 --- @return void
 function SetScriptVariableHudColour(r, g, b, a) end
 
@@ -5957,7 +5957,7 @@ function ThefeedDisable() end
 --- SetWidescreenFormat
 ---
 --- @hash 0xC3B07BA00A83B0F1
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function SetWidescreenFormat(p0) end
 
@@ -5976,7 +5976,7 @@ function SetWidescreenFormat(p0) end
 --- ```
 ---
 --- @hash 0x92F0DA1E27DB96DC
---- @params hudColorIndex number (int)
+--- @param hudColorIndex number (int)
 --- @return void
 function ThefeedNextPostBackgroundColor(hudColorIndex) end
 
@@ -6029,8 +6029,8 @@ function ThefeedClearFrozenPost() end
 --- ```
 ---
 --- @hash 0x5FBCA48327B914DF
---- @params blip table (Blip)
---- @params toggle boolean (BOOL)
+--- @param blip table (Blip)
+--- @param toggle boolean
 --- @return void
 function ShowHeadingIndicatorOnBlip(blip, toggle) end
 
@@ -6048,7 +6048,7 @@ function UnlockMinimapPosition() end
 --- ```
 ---
 --- @hash 0x6F1554B0CC2089FA
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function ThefeedOnlyShowTooltips(toggle) end
 

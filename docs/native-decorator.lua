@@ -4,9 +4,9 @@
 --- ```
 ---
 --- @hash 0x05661B80A8C9165F
---- @params entity table (Entity)
---- @params propertyName string (char*)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @param propertyName string (char*)
+--- @return boolean
 function DecorExistOn(entity, propertyName) end
 
     
@@ -15,8 +15,8 @@ function DecorExistOn(entity, propertyName) end
 --- ```
 ---
 --- @hash 0x6524A2F114706F43
---- @params entity table (Entity)
---- @params propertyName string (char*)
+--- @param entity table (Entity)
+--- @param propertyName string (char*)
 --- @return number (float)
 function DecorGetFloat(entity, propertyName) end
 
@@ -26,10 +26,10 @@ function DecorGetFloat(entity, propertyName) end
 --- ```
 ---
 --- @hash 0x6B1E8E2ED1335B71
---- @params entity table (Entity)
---- @params propertyName string (char*)
---- @params value boolean (BOOL)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @param propertyName string (char*)
+--- @param value boolean
+--- @return boolean
 function DecorSetBool(entity, propertyName, value) end
 
     
@@ -46,18 +46,18 @@ function DecorSetBool(entity, propertyName, value) end
 --- ```
 ---
 --- @hash 0x4F14F9F870D6FBC8
---- @params propertyName string (char*)
---- @params type number (int)
---- @return boolean (BOOL)
+--- @param propertyName string (char*)
+--- @param type number (int)
+--- @return boolean
 function DecorIsRegisteredAsType(propertyName, type) end
 
     
 --- DecorRemove
 ---
 --- @hash 0x00EE9F297C738720
---- @params entity table (Entity)
---- @params propertyName string (char*)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @param propertyName string (char*)
+--- @return boolean
 function DecorRemove(entity, propertyName) end
 
     
@@ -66,10 +66,10 @@ function DecorRemove(entity, propertyName) end
 --- ```
 ---
 --- @hash 0x0CE3AA5E1CA19E10
---- @params entity table (Entity)
---- @params propertyName string (char*)
---- @params value number (int)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @param propertyName string (char*)
+--- @param value number (int)
+--- @return boolean
 function DecorSetInt(entity, propertyName, value) end
 
     
@@ -86,9 +86,9 @@ function DecorRegisterLock() end
 --- DecorGetBool
 ---
 --- @hash 0xDACE671663F2F5DB
---- @params entity table (Entity)
---- @params propertyName string (char*)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @param propertyName string (char*)
+--- @return boolean
 function DecorGetBool(entity, propertyName) end
 
     
@@ -147,8 +147,8 @@ function DecorGetBool(entity, propertyName) end
 --- ```
 ---
 --- @hash 0x9FD90732F56403CE
---- @params propertyName string (char*)
---- @params type number (int)
+--- @param propertyName string (char*)
+--- @param type number (int)
 --- @return void
 function DecorRegister(propertyName, type) end
 
@@ -156,8 +156,8 @@ function DecorRegister(propertyName, type) end
 --- DecorGetInt
 ---
 --- @hash 0xA06C969B02A97298
---- @params entity table (Entity)
---- @params propertyName string (char*)
+--- @param entity table (Entity)
+--- @param propertyName string (char*)
 --- @return number (int)
 function DecorGetInt(entity, propertyName) end
 
@@ -165,10 +165,10 @@ function DecorGetInt(entity, propertyName) end
 --- DecorSetTime
 ---
 --- @hash 0x95AED7B8E39ECAA4
---- @params entity table (Entity)
---- @params propertyName string (char*)
---- @params timestamp number (int)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @param propertyName string (char*)
+--- @param timestamp number (int)
+--- @return boolean
 function DecorSetTime(entity, propertyName, timestamp) end
 
     
@@ -177,10 +177,10 @@ function DecorSetTime(entity, propertyName, timestamp) end
 --- ```
 ---
 --- @hash 0x211AB1DD8D0F363A
---- @params entity table (Entity)
---- @params propertyName string (char*)
---- @params value number (float)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @param propertyName string (char*)
+--- @param value number (float)
+--- @return boolean
 function DecorSetFloat(entity, propertyName, value) end
 
     

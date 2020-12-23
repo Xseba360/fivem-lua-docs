@@ -2,7 +2,7 @@
 --- CloudDeleteMemberFile
 ---
 --- @hash 0xC64DED7EF0D2FE37
---- @params p0 string (char*)
+--- @param p0 string (char*)
 --- @return number (int)
 function CloudDeleteMemberFile(p0) end
 
@@ -10,8 +10,8 @@ function CloudDeleteMemberFile(p0) end
 --- CanRegisterMissionObjects
 ---
 --- @hash 0x800DD4721A8B008B
---- @params amount number (int)
---- @return boolean (BOOL)
+--- @param amount number (int)
+--- @return boolean
 function CanRegisterMissionObjects(amount) end
 
     
@@ -24,7 +24,7 @@ function CanRegisterMissionObjects(amount) end
 --- ```
 ---
 --- @hash 0xCF3A965906452031
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return number (int)
 function GetNumReservedMissionVehicles(p0) end
 
@@ -36,11 +36,11 @@ function GetNumReservedMissionVehicles(p0) end
 --- ```
 ---
 --- @hash 0x69778E7564BADE6D
---- @params ped_amt number (int)
---- @params vehicle_amt number (int)
---- @params object_amt number (int)
---- @params pickup_amt number (int)
---- @return boolean (BOOL)
+--- @param ped_amt number (int)
+--- @param vehicle_amt number (int)
+--- @param object_amt number (int)
+--- @param pickup_amt number (int)
+--- @return boolean
 function CanRegisterMissionEntities(ped_amt, vehicle_amt, object_amt, pickup_amt) end
 
     
@@ -56,8 +56,8 @@ function CanRegisterMissionEntities(ped_amt, vehicle_amt, object_amt, pickup_amt
 --- ```
 ---
 --- @hash 0x0AE1F1653B554AB9
---- @params milestoneId number (int)
---- @return boolean (BOOL)
+--- @param milestoneId number (int)
+--- @return boolean
 function FacebookSetMilestoneComplete(milestoneId) end
 
     
@@ -73,17 +73,17 @@ function ClearLaunchParams() end
 ---
 --- @hash 0x43865688AE10F0D7
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function FacebookIsAvailable() end
 
     
 --- BadSportPlayerLeftDetected
 ---
 --- @hash 0xEC5E3AF5289DCA81
---- @params networkHandle table (int*)
---- @params event number (int)
---- @params amountReceived number (int)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @param event number (int)
+--- @param amountReceived number (int)
+--- @return boolean
 function BadSportPlayerLeftDetected(networkHandle, event, amountReceived) end
 
     
@@ -98,27 +98,27 @@ function GetNetworkTime() end
 --- CloudHasRequestCompleted
 ---
 --- @hash 0x4C61B39930D045DA
---- @params handle number (int)
---- @return boolean (BOOL)
+--- @param handle number (int)
+--- @return boolean
 function CloudHasRequestCompleted(handle) end
 
     
 --- FilloutPmPlayerListWithNames
 ---
 --- @hash 0x716B6DB9D1886106
---- @params p0 table (Any*)
---- @params p1 table (Any*)
---- @params p2 Any
---- @params p3 Any
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 table (Any*)
+--- @param p2 any
+--- @param p3 any
+--- @return boolean
 function FilloutPmPlayerListWithNames(p0, p1, p2, p3) end
 
     
 --- ActivateDamageTrackerOnPlayer
 ---
 --- @hash 0xBEC0816FF5ACBCDA
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function ActivateDamageTrackerOnPlayer(player, toggle) end
 
@@ -126,7 +126,7 @@ function ActivateDamageTrackerOnPlayer(player, toggle) end
 --- GetNumCreatedMissionPeds
 ---
 --- @hash 0xCB215C4B56A7FAE7
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return number (int)
 function GetNumCreatedMissionPeds(p0) end
 
@@ -135,7 +135,7 @@ function GetNumCreatedMissionPeds(p0) end
 ---
 --- @hash 0xA72835064DD63E4C
 ---
---- @return Any
+--- @return any
 function GetMaxNumNetworkPickups() end
 
     
@@ -143,7 +143,7 @@ function GetMaxNumNetworkPickups() end
 ---
 --- @hash 0xEA14EEF5B7CD2C30
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsCommerceDataValid() end
 
     
@@ -151,15 +151,15 @@ function IsCommerceDataValid() end
 ---
 --- @hash 0x0C1F7D49C39D2289
 ---
---- @return Any
+--- @return any
 function GetMaxNumNetworkPeds() end
 
     
 --- CanRegisterMissionVehicles
 ---
 --- @hash 0x7277F1F2E085EE74
---- @params amount number (int)
---- @return boolean (BOOL)
+--- @param amount number (int)
+--- @return boolean
 function CanRegisterMissionVehicles(amount) end
 
     
@@ -167,15 +167,15 @@ function CanRegisterMissionVehicles(amount) end
 ---
 --- @hash 0x46718ACEEDEAFC84
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function HasNetworkTimeStarted() end
 
     
 --- ActivateDamageTrackerOnNetworkId
 ---
 --- @hash 0xD45B1FFCCD52FF19
---- @params netID number (int)
---- @params toggle boolean (BOOL)
+--- @param netID number (int)
+--- @param toggle boolean
 --- @return void
 function ActivateDamageTrackerOnNetworkId(netID, toggle) end
 
@@ -184,15 +184,15 @@ function ActivateDamageTrackerOnNetworkId(netID, toggle) end
 ---
 --- @hash 0xC7ABAC5DE675EE3B
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function CloudIsCheckingAvailability() end
 
     
 --- CloudDidRequestSucceed
 ---
 --- @hash 0x3A3D5568AF297CD5
---- @params handle number (int)
---- @return boolean (BOOL)
+--- @param handle number (int)
+--- @return boolean
 function CloudDidRequestSucceed(handle) end
 
     
@@ -201,8 +201,8 @@ function CloudDidRequestSucceed(handle) end
 --- ```
 ---
 --- @hash 0x6F44CBF56D79FAC0
---- @params index number (int)
---- @params index2 number (int)
+--- @param index number (int)
+--- @param index2 number (int)
 --- @return string (char*)
 function GetCommerceItemCat(index, index2) end
 
@@ -212,8 +212,8 @@ function GetCommerceItemCat(index, index2) end
 --- ```
 ---
 --- @hash 0x017008CCDAD48503
---- @params timeA number (int)
---- @params timeB number (int)
+--- @param timeA number (int)
+--- @param timeB number (int)
 --- @return number (int)
 function GetTimeOffset(timeA, timeB) end
 
@@ -222,15 +222,15 @@ function GetTimeOffset(timeA, timeB) end
 ---
 --- @hash 0x62B9FEC9A11F10EF
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function FacebookIsSendingData() end
 
     
 --- N_0x0379daf89ba09aa5
 ---
 --- @hash 0x0379DAF89BA09AA5
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0x0379daf89ba09aa5(p0, p1) end
 
@@ -239,7 +239,7 @@ function N_0x0379daf89ba09aa5(p0, p1) end
 ---
 --- @hash 0x0AFCE529F69B21FF
 ---
---- @return Any
+--- @return any
 function GetMaxNumNetworkVehicles() end
 
     
@@ -247,7 +247,7 @@ function GetMaxNumNetworkVehicles() end
 ---
 --- @hash 0xA75E2B6733DA5142
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function FacebookDoUnkCheck() end
 
     
@@ -266,8 +266,8 @@ function GetCloudTimeAsInt() end
 --- ```
 ---
 --- @hash 0xA2C6FC031D46FFF0
---- @params timeA number (int)
---- @params timeB number (int)
+--- @param timeA number (int)
+--- @param timeB number (int)
 --- @return number (int)
 function GetTimeDifference(timeA, timeB) end
 
@@ -275,10 +275,10 @@ function GetTimeDifference(timeA, timeB) end
 --- FacebookSetHeistComplete
 ---
 --- @hash 0x098AB65B9ED9A9EC
---- @params heistName string (char*)
---- @params cashEarned number (int)
---- @params xpEarned number (int)
---- @return boolean (BOOL)
+--- @param heistName string (char*)
+--- @param cashEarned number (int)
+--- @param xpEarned number (int)
+--- @return boolean
 function FacebookSetHeistComplete(heistName, cashEarned, xpEarned) end
 
     
@@ -288,7 +288,7 @@ function FacebookSetHeistComplete(heistName, cashEarned, xpEarned) end
 ---
 --- @hash 0xDC48473142545431
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function FacebookSetCreateCharacterComplete() end
 
     
@@ -316,7 +316,7 @@ function GetOnlineVersion() end
 --- ```
 ---
 --- @hash 0xAA81B5F10BC43AC2
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return number (int)
 function GetNumReservedMissionObjects(p0) end
 
@@ -324,7 +324,7 @@ function GetNumReservedMissionObjects(p0) end
 --- GetNumCreatedMissionVehicles
 ---
 --- @hash 0x0CD9AB83489430EA
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return number (int)
 function GetNumCreatedMissionVehicles(p0) end
 
@@ -334,7 +334,7 @@ function GetNumCreatedMissionVehicles(p0) end
 --- ```
 ---
 --- @hash 0x416DBD4CD6ED8DD2
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function FadeOutLocalPlayer(p0) end
 
@@ -344,7 +344,7 @@ function FadeOutLocalPlayer(p0) end
 --- ```
 ---
 --- @hash 0x722F5D28B61C5EA8
---- @params index number (int)
+--- @param index number (int)
 --- @return string (char*)
 function GetCommerceItemTexturename(index) end
 
@@ -360,8 +360,8 @@ function N_0x1888694923ef4591() end
 --- IsDamageTrackerActiveOnNetworkId
 ---
 --- @hash 0x6E192E33AD436366
---- @params netID number (int)
---- @return boolean (BOOL)
+--- @param netID number (int)
+--- @return boolean
 function IsDamageTrackerActiveOnNetworkId(netID) end
 
     
@@ -378,7 +378,7 @@ function CloudGetAvailabilityCheckResult() end
 --- N_0x0e4f77f7b9d74d84
 ---
 --- @hash 0x0E4F77F7B9D74D84
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x0e4f77f7b9d74d84(p0) end
 
@@ -386,7 +386,7 @@ function N_0x0e4f77f7b9d74d84(p0) end
 --- GetCommerceItemId
 ---
 --- @hash 0x662635855957C411
---- @params index number (int)
+--- @param index number (int)
 --- @return string (char*)
 function GetCommerceItemId(index) end
 
@@ -394,7 +394,7 @@ function GetCommerceItemId(index) end
 --- GetCommerceItemName
 ---
 --- @hash 0xB4271092CA7EDF48
---- @params index number (int)
+--- @param index number (int)
 --- @return string (char*)
 function GetCommerceItemName(index) end
 
@@ -402,7 +402,7 @@ function GetCommerceItemName(index) end
 --- N_0x1f8e00fb18239600
 ---
 --- @hash 0x1F8E00FB18239600
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x1f8e00fb18239600(p0) end
 
@@ -410,7 +410,7 @@ function N_0x1f8e00fb18239600(p0) end
 --- GetCommerceItemNumCats
 ---
 --- @hash 0x2A7776C709904AB0
---- @params index number (int)
+--- @param index number (int)
 --- @return number (int)
 function GetCommerceItemNumCats(index) end
 
@@ -418,8 +418,8 @@ function GetCommerceItemNumCats(index) end
 --- GetCommerceProductPrice
 ---
 --- @hash 0xCA94551B50B4932C
---- @params index number (int)
---- @return Any
+--- @param index number (int)
+--- @return any
 function GetCommerceProductPrice(index) end
 
     
@@ -428,7 +428,7 @@ function GetCommerceProductPrice(index) end
 --- ```
 ---
 --- @hash 0x0E3A041ED6AC2B45
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (float)
 function N_0x0e3a041ed6ac2b45(player) end
 
@@ -436,8 +436,8 @@ function N_0x0e3a041ed6ac2b45(player) end
 --- IsDamageTrackerActiveOnPlayer
 ---
 --- @hash 0xB2092A1EAA7FD45F
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsDamageTrackerActiveOnPlayer(player) end
 
     
@@ -448,28 +448,28 @@ function IsDamageTrackerActiveOnPlayer(player) end
 --- ```
 ---
 --- @hash 0x16D3D49902F697BB
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function N_0x16d3d49902f697bb(player) end
 
     
 --- IsSphereVisibleToPlayer
 ---
 --- @hash 0xDC3A310219E5DA62
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @return boolean
 function IsSphereVisibleToPlayer(p0, p1, p2, p3, p4) end
 
     
 --- N_0x162c23ca83ed0a62
 ---
 --- @hash 0x162C23CA83ED0A62
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function N_0x162c23ca83ed0a62(p0) end
 
     
@@ -487,7 +487,7 @@ function CloudCheckAvailability() end
 ---
 --- @hash 0xC7BE335216B5EC7C
 ---
---- @return Any
+--- @return any
 function GetMaxNumNetworkObjects() end
 
     
@@ -497,14 +497,14 @@ function GetMaxNumNetworkObjects() end
 ---
 --- @hash 0x023ACAB2DC9DC4A4
 ---
---- @return Any
+--- @return any
 function N_0x023acab2dc9dc4a4() end
 
     
 --- GetNumCreatedMissionObjects
 ---
 --- @hash 0x12B6281B6C6706C0
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return number (int)
 function GetNumCreatedMissionObjects(p0) end
 
@@ -514,20 +514,20 @@ function GetNumCreatedMissionObjects(p0) end
 --- ```
 ---
 --- @hash 0xCB2CF5148012C8D0
---- @params timeA number (int)
---- @params timeB number (int)
---- @return boolean (BOOL)
+--- @param timeA number (int)
+--- @param timeB number (int)
+--- @return boolean
 function IsTimeLessThan(timeA, timeB) end
 
     
 --- IsSphereVisibleToAnotherMachine
 ---
 --- @hash 0xD82CF8E64C8729D8
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @return boolean (BOOL)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @return boolean
 function IsSphereVisibleToAnotherMachine(p0, p1, p2, p3) end
 
     
@@ -536,7 +536,7 @@ function IsSphereVisibleToAnotherMachine(p0, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0x9E23B1777A927DAD
---- @params time number (int)
+--- @param time number (int)
 --- @return string (char*)
 function GetTimeAsString(time) end
 
@@ -550,7 +550,7 @@ function GetTimeAsString(time) end
 --- ```
 ---
 --- @hash 0x1F13D5AE5CB17E17
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return number (int)
 function GetNumReservedMissionPeds(p0) end
 
@@ -561,7 +561,7 @@ function GetNumReservedMissionPeds(p0) end
 ---
 --- @hash 0x14922ED3E38761F0
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x14922ed3e38761f0() end
 
     
@@ -574,7 +574,7 @@ function N_0x14922ed3e38761f0() end
 --- ```
 ---
 --- @hash 0x8BD6C6DEA20E82C6
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return number (int)
 function GetStatusOfTextureDownload(p0) end
 
@@ -582,17 +582,17 @@ function GetStatusOfTextureDownload(p0) end
 --- N_0x04918a41bc9b8157
 ---
 --- @hash 0x04918A41BC9B8157
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @return any
 function N_0x04918a41bc9b8157(p0, p1, p2) end
 
     
 --- N_0x261e97ad7bcf3d40
 ---
 --- @hash 0x261E97AD7BCF3D40
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x261e97ad7bcf3d40(p0) end
 
@@ -602,19 +602,19 @@ function N_0x261e97ad7bcf3d40(p0) end
 --- ```
 ---
 --- @hash 0xF5BC95857BD6D512
---- @params timeA number (int)
---- @params timeB number (int)
---- @return boolean (BOOL)
+--- @param timeA number (int)
+--- @param timeB number (int)
+--- @return boolean
 function IsTimeEqualTo(timeA, timeB) end
 
     
 --- N_0x041c7f2a6c9894e6
 ---
 --- @hash 0x041C7F2A6C9894E6
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @return any
 function N_0x041c7f2a6c9894e6(p0, p1, p2) end
 
     
@@ -622,7 +622,7 @@ function N_0x041c7f2a6c9894e6(p0, p1, p2) end
 ---
 --- @hash 0x883D79C4071E18B3
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsStoreAvailableToUser() end
 
     
@@ -639,9 +639,9 @@ function N_0x1f7bc3539f9e0224() end
 --- N_0x32ebd154cb6b8b99
 ---
 --- @hash 0x32EBD154CB6B8B99
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
 --- @return void
 function N_0x32ebd154cb6b8b99(p0, p1, p2) end
 
@@ -659,7 +659,7 @@ function GetNetworkTimeAccurate() end
 --- N_0x144da052257ae7d8
 ---
 --- @hash 0x144DA052257AE7D8
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x144da052257ae7d8(p0) end
 
@@ -669,8 +669,8 @@ function N_0x144da052257ae7d8(p0) end
 --- ```
 ---
 --- @hash 0x0D77A82DC2D0DA59
---- @params p0 table (Any*)
---- @params p1 table (Any*)
+--- @param p0 table (Any*)
+--- @param p1 table (Any*)
 --- @return void
 function N_0x0d77a82dc2d0da59(p0, p1) end
 
@@ -688,18 +688,18 @@ function N_0x283b6062a2c01e9b() end
 --- ```
 ---
 --- @hash 0x0CF6CC51AA18F0F8
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @return any
 function N_0x0cf6cc51aa18f0f8(p0, p1, p2) end
 
     
 --- CanRegisterMissionPickups
 ---
 --- @hash 0x0A49D1CB6E34AF72
---- @params amount number (int)
---- @return boolean (BOOL)
+--- @param amount number (int)
+--- @return boolean
 function CanRegisterMissionPickups(amount) end
 
     
@@ -707,7 +707,7 @@ function CanRegisterMissionPickups(amount) end
 ---
 --- @hash 0x2EAC52B4019E2782
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsCommerceStoreOpen() end
 
     
@@ -726,7 +726,7 @@ function N_0x155467aca0f55705() end
 --- GetPlayerAdvancedModifierPrivileges
 ---
 --- @hash 0xCD67AD041A394C9C
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return string (char*)
 function GetPlayerAdvancedModifierPrivileges(p0) end
 
@@ -747,22 +747,22 @@ function N_0x25d990f8e0e3f13c() end
 ---
 --- @hash 0x2555CF7DA5473794
 ---
---- @return Any
+--- @return any
 function N_0x2555cf7da5473794() end
 
     
 --- IsNetworkIdOwnedByParticipant
 ---
 --- @hash 0xA1607996431332DF
---- @params netId number (int)
---- @return boolean (BOOL)
+--- @param netId number (int)
+--- @return boolean
 function IsNetworkIdOwnedByParticipant(netId) end
 
     
 --- N_0x1398582b7f72b3ed
 ---
 --- @hash 0x1398582B7F72B3ED
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x1398582b7f72b3ed(p0) end
 
@@ -770,8 +770,8 @@ function N_0x1398582b7f72b3ed(p0) end
 --- N_0x4ba166079d658ed4
 ---
 --- @hash 0x4BA166079D658ED4
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0x4ba166079d658ed4(p0, p1) end
 
@@ -792,7 +792,7 @@ function GetNumCommerceItems() end
 ---
 --- @hash 0x26F07DD83A5F7F98
 ---
---- @return Any
+--- @return any
 function N_0x26f07dd83a5f7f98() end
 
     
@@ -807,7 +807,7 @@ function N_0x140e6a44870a11ce() end
 --- N_0x265559da40b3f327
 ---
 --- @hash 0x265559DA40B3F327
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x265559da40b3f327(p0) end
 
@@ -815,19 +815,19 @@ function N_0x265559da40b3f327(p0) end
 --- N_0x1171a97a3d3981b6
 ---
 --- @hash 0x1171A97A3D3981B6
---- @params p0 table (Any*)
---- @params p1 table (Any*)
---- @params p2 Any
---- @params p3 Any
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 table (Any*)
+--- @param p2 any
+--- @param p3 any
+--- @return boolean
 function N_0x1171a97a3d3981b6(p0, p1, p2, p3) end
 
     
 --- N_0x36391f397731595d
 ---
 --- @hash 0x36391F397731595D
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0x36391f397731595d(p0) end
 
     
@@ -842,15 +842,15 @@ function N_0x4c2a9fdc22377075() end
 --- N_0x3855fb5eb2c5e8b2
 ---
 --- @hash 0x3855FB5EB2C5E8B2
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0x3855fb5eb2c5e8b2(p0) end
 
     
 --- N_0x4811bbac21c5fcd5
 ---
 --- @hash 0x4811BBAC21C5FCD5
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x4811bbac21c5fcd5(p0) end
 
@@ -858,8 +858,8 @@ function N_0x4811bbac21c5fcd5(p0) end
 --- CanRegisterMissionPeds
 ---
 --- @hash 0xBCBF4FEF9FA5D781
---- @params amount number (int)
---- @return boolean (BOOL)
+--- @param amount number (int)
+--- @return boolean
 function CanRegisterMissionPeds(amount) end
 
     
@@ -867,7 +867,7 @@ function CanRegisterMissionPeds(amount) end
 ---
 --- @hash 0x24E4E51FC16305F9
 ---
---- @return Any
+--- @return any
 function N_0x24e4e51fc16305f9() end
 
     
@@ -882,44 +882,44 @@ function N_0x68103e2247887242() end
 --- FilloutPmPlayerList
 ---
 --- @hash 0xCBBD7C4991B64809
---- @params networkHandle table (int*)
---- @params p1 Any
---- @params p2 Any
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @param p1 any
+--- @param p2 any
+--- @return boolean
 function FilloutPmPlayerList(networkHandle, p1, p2) end
 
     
 --- IsPlayerInCutscene
 ---
 --- @hash 0xE73092F4157CD126
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function IsPlayerInCutscene(player) end
 
     
 --- N_0x0ede326d47cd0f3e
 ---
 --- @hash 0x0EDE326D47CD0F3E
---- @params ped table (Ped)
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @param player number (Player)
+--- @return boolean
 function N_0x0ede326d47cd0f3e(ped, player) end
 
     
 --- N_0x2b51edbefc301339
 ---
 --- @hash 0x2B51EDBEFC301339
---- @params p0 number (int)
---- @params p1 string (char*)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @param p1 string (char*)
+--- @return boolean
 function N_0x2b51edbefc301339(p0, p1) end
 
     
 --- N_0x267c78c60e806b9a
 ---
 --- @hash 0x267C78C60E806B9A
---- @params p0 Any
---- @params p1 boolean (BOOL)
+--- @param p0 any
+--- @param p1 boolean
 --- @return void
 function N_0x267c78c60e806b9a(p0, p1) end
 
@@ -927,8 +927,8 @@ function N_0x267c78c60e806b9a(p0, p1) end
 --- N_0x1d610eb0fea716d9
 ---
 --- @hash 0x1D610EB0FEA716D9
---- @params p0 number (int)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @return boolean
 function N_0x1d610eb0fea716d9(p0) end
 
     
@@ -937,7 +937,7 @@ function N_0x1d610eb0fea716d9(p0) end
 --- ```
 ---
 --- @hash 0x33DE49EDF4DDE77A
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return Vector3
 function N_0x33de49edf4dde77a(entity) end
 
@@ -945,8 +945,8 @@ function N_0x33de49edf4dde77a(entity) end
 --- N_0x3fa36981311fa4ff
 ---
 --- @hash 0x3FA36981311FA4FF
---- @params netId number (int)
---- @params state boolean (BOOL)
+--- @param netId number (int)
+--- @param state boolean
 --- @return void
 function N_0x3fa36981311fa4ff(netId, state) end
 
@@ -965,8 +965,8 @@ function N_0x3fa36981311fa4ff(netId, state) end
 --- ```
 ---
 --- @hash 0xAC97AF97FA68E5D5
---- @params unixEpoch number (int)
---- @params timeStructure table (Any*)
+--- @param unixEpoch number (int)
+--- @param timeStructure table (Any*)
 --- @return void
 function GetDateAndTimeFromUnixEpoch(unixEpoch, timeStructure) end
 
@@ -974,19 +974,19 @@ function GetDateAndTimeFromUnixEpoch(unixEpoch, timeStructure) end
 --- N_0x4348bfda56023a2f
 ---
 --- @hash 0x4348BFDA56023A2F
---- @params p0 Any
---- @params p1 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @return any
 function N_0x4348bfda56023a2f(p0, p1) end
 
     
 --- N_0x07eab372c8841d99
 ---
 --- @hash 0x07EAB372C8841D99
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @return any
 function N_0x07eab372c8841d99(p0, p1, p2) end
 
     
@@ -997,7 +997,7 @@ function N_0x07eab372c8841d99(p0, p1, p2) end
 --- ```
 ---
 --- @hash 0x3C5C1E2C2FF814B1
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x3c5c1e2c2ff814b1(toggle) end
 
@@ -1007,15 +1007,15 @@ function N_0x3c5c1e2c2ff814b1(toggle) end
 --- ```
 ---
 --- @hash 0x21D04D7BC538C146
---- @params entity table (Entity)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @return boolean
 function N_0x21d04d7bc538c146(entity) end
 
     
 --- N_0x600f8cb31c7aab6e
 ---
 --- @hash 0x600F8CB31C7AAB6E
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x600f8cb31c7aab6e(p0) end
 
@@ -1027,7 +1027,7 @@ function N_0x600f8cb31c7aab6e(p0) end
 --- ```
 ---
 --- @hash 0x350C23949E43686C
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (float)
 function N_0x350c23949e43686c(player) end
 
@@ -1035,10 +1035,10 @@ function N_0x350c23949e43686c(player) end
 --- N_0x2a5e0621dd815a9a
 ---
 --- @hash 0x2A5E0621DD815A9A
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function N_0x2a5e0621dd815a9a(p0, p1, p2, p3) end
 
@@ -1046,14 +1046,14 @@ function N_0x2a5e0621dd815a9a(p0, p1, p2, p3) end
 --- N_0x45f35c0edc33b03b
 ---
 --- @hash 0x45F35C0EDC33B03B
---- @params entity table (Entity)
---- @params model table (Hash)
---- @params netScene number (int)
---- @params animDict string (char*)
---- @params animName string (char*)
---- @params speed number (float)
---- @params speedMulitiplier number (float)
---- @params flag number (int)
+--- @param entity table (Entity)
+--- @param model table (Hash)
+--- @param netScene number (int)
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @param speed number (float)
+--- @param speedMulitiplier number (float)
+--- @param flag number (int)
 --- @return void
 function N_0x45f35c0edc33b03b(entity, model, netScene, animDict, animName, speed, speedMulitiplier, flag) end
 
@@ -1069,23 +1069,23 @@ function N_0x1153fa02a659051c() end
 --- N_0x5a34cd9c3c5bec44
 ---
 --- @hash 0x5A34CD9C3C5BEC44
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function N_0x5a34cd9c3c5bec44(p0) end
 
     
 --- N_0x2e0bf682cc778d49
 ---
 --- @hash 0x2E0BF682CC778D49
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function N_0x2e0bf682cc778d49(p0) end
 
     
 --- N_0x367ef5e2f439b4c6
 ---
 --- @hash 0x367EF5E2F439B4C6
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function N_0x367ef5e2f439b4c6(p0) end
 
@@ -1095,16 +1095,16 @@ function N_0x367ef5e2f439b4c6(p0) end
 --- ```
 ---
 --- @hash 0xDE350F8651E4346C
---- @params timeA number (int)
---- @params timeB number (int)
---- @return boolean (BOOL)
+--- @param timeA number (int)
+--- @param timeB number (int)
+--- @return boolean
 function IsTimeMoreThan(timeA, timeB) end
 
     
 --- N_0x59d421683d31835a
 ---
 --- @hash 0x59D421683D31835A
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x59d421683d31835a(p0) end
 
@@ -1112,8 +1112,8 @@ function N_0x59d421683d31835a(p0) end
 --- N_0x3f9990bf5f22759c
 ---
 --- @hash 0x3F9990BF5F22759C
---- @params p0 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @return boolean
 function N_0x3f9990bf5f22759c(p0) end
 
     
@@ -1132,7 +1132,7 @@ function N_0x45a83257ed02d9bc() end
 --- ```
 ---
 --- @hash 0x3765C3A3E8192E10
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function N_0x3765c3a3e8192e10(player) end
 
@@ -1148,41 +1148,41 @@ function N_0x2302c0264ea58d31() end
 --- N_0x692d58df40657e8c
 ---
 --- @hash 0x692D58DF40657E8C
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 table (Any*)
---- @params p4 Any
---- @params p5 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 table (Any*)
+--- @param p4 any
+--- @param p5 boolean
+--- @return boolean
 function N_0x692d58df40657e8c(p0, p1, p2, p3, p4, p5) end
 
     
 --- N_0x595f028698072dd9
 ---
 --- @hash 0x595F028698072DD9
---- @params p0 Any
---- @params p1 Any
---- @params p2 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 boolean
+--- @return boolean
 function N_0x595f028698072dd9(p0, p1, p2) end
 
     
 --- N_0x5324a0e3e4ce3570
 ---
 --- @hash 0x5324A0E3E4CE3570
---- @params p0 Any
---- @params p1 Any
---- @params p2 table (Any*)
---- @params p3 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 table (Any*)
+--- @param p3 table (Any*)
+--- @return boolean
 function N_0x5324a0e3e4ce3570(p0, p1, p2, p3) end
 
     
 --- N_0x2ce9d95e4051aecd
 ---
 --- @hash 0x2CE9D95E4051AECD
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x2ce9d95e4051aecd(p0) end
 
@@ -1190,7 +1190,7 @@ function N_0x2ce9d95e4051aecd(p0) end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0x4A9FDE3A5A6D0437
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x4a9fde3a5a6d0437(p0) end
 
@@ -1208,7 +1208,7 @@ function N_0x617f49c2668e6155() end
 --- N_0x658500ae6d723a7e
 ---
 --- @hash 0x658500AE6D723A7E
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x658500ae6d723a7e(p0) end
 
@@ -1219,22 +1219,22 @@ function N_0x658500ae6d723a7e(p0) end
 ---
 --- @hash 0x1D4DC17C38FEAFF0
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x1d4dc17c38feaff0() end
 
     
 --- N_0x2d5dc831176d0114
 ---
 --- @hash 0x2D5DC831176D0114
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function N_0x2d5dc831176d0114(p0) end
 
     
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0x6BFF5F84102DF80A
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x6bff5f84102df80a(p0) end
 
@@ -1245,7 +1245,7 @@ function N_0x6bff5f84102df80a(p0) end
 ---
 --- @hash 0x906CA41A4B74ECA4
 ---
---- @return Any
+--- @return any
 function N_0x906ca41a4b74eca4() end
 
     
@@ -1253,7 +1253,7 @@ function N_0x906ca41a4b74eca4() end
 ---
 --- @hash 0x53C10C8BD774F2C9
 ---
---- @return Any
+--- @return any
 function N_0x53c10c8bd774f2c9() end
 
     
@@ -1261,7 +1261,7 @@ function N_0x53c10c8bd774f2c9() end
 ---
 --- @hash 0x5AE17C6B0134B7F1
 ---
---- @return Any
+--- @return any
 function N_0x5ae17c6b0134b7f1() end
 
     
@@ -1276,10 +1276,10 @@ function N_0x5c497525f803486b() end
 --- N_0x58cc181719256197
 ---
 --- @hash 0x58CC181719256197
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @return any
 function N_0x58cc181719256197(p0, p1, p2) end
 
     
@@ -1310,7 +1310,7 @@ function N_0x17330ebf2f2124a8() end
 --- N_0x7d395ea61622e116
 ---
 --- @hash 0x7D395EA61622E116
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x7d395ea61622e116(p0) end
 
@@ -1319,7 +1319,7 @@ function N_0x7d395ea61622e116(p0) end
 ---
 --- @hash 0x4237E822315D8BA9
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x4237e822315d8ba9() end
 
     
@@ -1327,14 +1327,14 @@ function N_0x4237e822315d8ba9() end
 ---
 --- @hash 0x2BF66D2E7414F686
 ---
---- @return Any
+--- @return any
 function N_0x2bf66d2e7414f686() end
 
     
 --- N_0x5ecd378ee64450ab
 ---
 --- @hash 0x5ECD378EE64450AB
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x5ecd378ee64450ab(p0) end
 
@@ -1342,8 +1342,8 @@ function N_0x5ecd378ee64450ab(p0) end
 --- N_0x742b58f723233ed9
 ---
 --- @hash 0x742B58F723233ED9
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0x742b58f723233ed9(p0) end
 
     
@@ -1352,7 +1352,7 @@ function N_0x742b58f723233ed9(p0) end
 --- ```
 ---
 --- @hash 0x13F1FCB111B820B0
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x13f1fcb111b820b0(p0) end
 
@@ -1361,14 +1361,14 @@ function N_0x13f1fcb111b820b0(p0) end
 ---
 --- @hash 0x2CC848A861D01493
 ---
---- @return Any
+--- @return any
 function N_0x2cc848a861d01493() end
 
     
 --- N_0x5539c3ebf104a53a
 ---
 --- @hash 0x5539C3EBF104A53A
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x5539c3ebf104a53a(p0) end
 
@@ -1376,7 +1376,7 @@ function N_0x5539c3ebf104a53a(p0) end
 --- N_0x5e3aa4ca2b6fb0ee
 ---
 --- @hash 0x5E3AA4CA2B6FB0EE
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x5e3aa4ca2b6fb0ee(p0) end
 
@@ -1387,7 +1387,7 @@ function N_0x5e3aa4ca2b6fb0ee(p0) end
 ---
 --- @hash 0x59328EB08C5CEB2B
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x59328eb08c5ceb2b() end
 
     
@@ -1402,7 +1402,7 @@ function N_0x83fe8d7229593017() end
 --- N_0x77758139ec9b66c7
 ---
 --- @hash 0x77758139EC9B66C7
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x77758139ec9b66c7(p0) end
 
@@ -1410,14 +1410,14 @@ function N_0x77758139ec9b66c7(p0) end
 --- N_0x2e4c123d1c8a710e
 ---
 --- @hash 0x2E4C123D1C8A710E
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
---- @params p6 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
+--- @return any
 function N_0x2e4c123d1c8a710e(p0, p1, p2, p3, p4, p5, p6) end
 
     
@@ -1429,7 +1429,7 @@ function N_0x2e4c123d1c8a710e(p0, p1, p2, p3, p4, p5, p6) end
 ---
 --- @hash 0x60EDD13EB3AC1FF3
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x60edd13eb3ac1ff3() end
 
     
@@ -1456,35 +1456,35 @@ function N_0x444c4525ece0a4b9() end
 --- N_0x78321bea235fd8cd
 ---
 --- @hash 0x78321BEA235FD8CD
---- @params p0 Any
---- @params p1 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 boolean
+--- @return boolean
 function N_0x78321bea235fd8cd(p0, p1) end
 
     
 --- N_0x83660b734994124d
 ---
 --- @hash 0x83660B734994124D
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @return any
 function N_0x83660b734994124d(p0, p1, p2) end
 
     
 --- N_0x2da41ed6e1fcd7a5
 ---
 --- @hash 0x2DA41ED6E1FCD7A5
---- @params p0 Any
---- @params p1 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @return any
 function N_0x2da41ed6e1fcd7a5(p0, p1) end
 
     
 --- N_0x39917e1b4cb0f911
 ---
 --- @hash 0x39917E1B4CB0F911
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x39917e1b4cb0f911(p0) end
 
@@ -1493,7 +1493,7 @@ function N_0x39917e1b4cb0f911(p0) end
 ---
 --- @hash 0xB5D3453C98456528
 ---
---- @return Any
+--- @return any
 function N_0xb5d3453c98456528() end
 
     
@@ -1501,7 +1501,7 @@ function N_0xb5d3453c98456528() end
 ---
 --- @hash 0x88B588B41FF7868E
 ---
---- @return Any
+--- @return any
 function N_0x88b588b41ff7868e() end
 
     
@@ -1521,8 +1521,8 @@ function N_0x741a3d8380319a81() end
 --- If you have control over the entity corresponding to the netId then this will return false (0);
 ---
 --- @hash 0x7242F8B741CE1086
---- @params netId number (int)
---- @return boolean (BOOL)
+--- @param netId number (int)
+--- @return boolean
 function N_0x7242f8b741ce1086(netId) end
 
     
@@ -1530,7 +1530,7 @@ function N_0x7242f8b741ce1086(netId) end
 ---
 --- @hash 0x67FC09BC554A75E5
 ---
---- @return Any
+--- @return any
 function N_0x67fc09bc554a75e5() end
 
     
@@ -1538,7 +1538,7 @@ function N_0x67fc09bc554a75e5() end
 ---
 --- @hash 0xA12D3A5A3753CC23
 ---
---- @return Any
+--- @return any
 function N_0xa12d3a5a3753cc23() end
 
     
@@ -1546,7 +1546,7 @@ function N_0xa12d3a5a3753cc23() end
 ---
 --- @hash 0x63B406D7884BFA95
 ---
---- @return Any
+--- @return any
 function N_0x63b406d7884bfa95() end
 
     
@@ -1555,7 +1555,7 @@ function N_0x63b406d7884bfa95() end
 --- ```
 ---
 --- @hash 0x6A5D89D7769A40D8
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x6a5d89d7769a40d8(toggle) end
 
@@ -1565,8 +1565,8 @@ function N_0x6a5d89d7769a40d8(toggle) end
 --- ```
 ---
 --- @hash 0x71DC455F5CD1C2B1
---- @params networkHandle table (Any*)
---- @return boolean (BOOL)
+--- @param networkHandle table (Any*)
+--- @return boolean
 function N_0x71dc455f5cd1c2b1(networkHandle) end
 
     
@@ -1574,7 +1574,7 @@ function N_0x71dc455f5cd1c2b1(networkHandle) end
 ---
 --- @hash 0x45E816772E93A9DB
 ---
---- @return Any
+--- @return any
 function N_0x45e816772e93a9db() end
 
     
@@ -1582,21 +1582,21 @@ function N_0x45e816772e93a9db() end
 ---
 --- @hash 0x4D02279C83BE69FE
 ---
---- @return Any
+--- @return any
 function N_0x4d02279c83be69fe() end
 
     
 --- N_0x2b1c623823db0d9d
 ---
 --- @hash 0x2B1C623823DB0D9D
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
---- @params p6 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
+--- @return any
 function N_0x2b1c623823db0d9d(p0, p1, p2, p3, p4, p5, p6) end
 
     
@@ -1608,7 +1608,7 @@ function N_0x2b1c623823db0d9d(p0, p1, p2, p3, p4, p5, p6) end
 ---
 --- @hash 0x6FD992C4A1C1B986
 ---
---- @return Any
+--- @return any
 function N_0x6fd992c4a1c1b986() end
 
     
@@ -1619,7 +1619,7 @@ function N_0x6fd992c4a1c1b986() end
 --- But another p0 value may return an entity for player x, but not for player y (it'll just return -1 even if the entity exists on both clients).
 ---
 --- @hash 0x37D5F739FD494675
---- @params p0 Any
+--- @param p0 any
 --- @return number (int)
 function N_0x37d5f739fd494675(p0) end
 
@@ -1627,17 +1627,17 @@ function N_0x37d5f739fd494675(p0) end
 --- N_0xb746d20b17f2a229
 ---
 --- @hash 0xB746D20B17F2A229
---- @params p0 table (Any*)
---- @params p1 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 table (Any*)
+--- @return boolean
 function N_0xb746d20b17f2a229(p0, p1) end
 
     
 --- N_0x4df7cfff471a7fb1
 ---
 --- @hash 0x4DF7CFFF471A7FB1
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function N_0x4df7cfff471a7fb1(p0) end
 
     
@@ -1653,7 +1653,7 @@ function N_0x7db53b37a2f211a0() end
 ---
 --- @hash 0xB37E4E6A2388CA7B
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0xb37e4e6a2388ca7b() end
 
     
@@ -1662,25 +1662,25 @@ function N_0xb37e4e6a2388ca7b() end
 --- ```
 ---
 --- @hash 0x7EF7649B64D7FF10
---- @params entity table (Entity)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @return boolean
 function N_0x7ef7649b64d7ff10(entity) end
 
     
 --- N_0x83f28ce49fbbffba
 ---
 --- @hash 0x83F28CE49FBBFFBA
---- @params p0 Any
---- @params p1 Any
---- @params p2 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 boolean
+--- @return boolean
 function N_0x83f28ce49fbbffba(p0, p1, p2) end
 
     
 --- N_0x702bc4d605522539
 ---
 --- @hash 0x702BC4D605522539
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x702bc4d605522539(p0) end
 
@@ -1688,17 +1688,17 @@ function N_0x702bc4d605522539(p0) end
 --- N_0x584770794d758c18
 ---
 --- @hash 0x584770794D758C18
---- @params p0 Any
---- @params p1 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 table (Any*)
+--- @return boolean
 function N_0x584770794d758c18(p0, p1) end
 
     
 --- N_0x838da0936a24ed4d
 ---
 --- @hash 0x838DA0936A24ED4D
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0x838da0936a24ed4d(p0, p1) end
 
@@ -1707,7 +1707,7 @@ function N_0x838da0936a24ed4d(p0, p1) end
 ---
 --- @hash 0x6FB7BB3607D27FA2
 ---
---- @return Any
+--- @return any
 function N_0x6fb7bb3607d27fa2() end
 
     
@@ -1726,7 +1726,7 @@ function N_0x754615490a029508() end
 --- N_0x973d76aa760a6cb6
 ---
 --- @hash 0x973D76AA760A6CB6
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x973d76aa760a6cb6(p0) end
 
@@ -1742,7 +1742,7 @@ function N_0xb13e88e655e5a3bc() end
 --- N_0x77faddcbe3499df7
 ---
 --- @hash 0x77FADDCBE3499DF7
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x77faddcbe3499df7(p0) end
 
@@ -1755,7 +1755,7 @@ function N_0x77faddcbe3499df7(p0) end
 ---
 --- @hash 0xAEDF1BC1C133D6E3
 ---
---- @return Any
+--- @return any
 function N_0xaedf1bc1c133d6e3() end
 
     
@@ -1763,15 +1763,15 @@ function N_0xaedf1bc1c133d6e3() end
 ---
 --- @hash 0x8B0C2964BA471961
 ---
---- @return Any
+--- @return any
 function N_0x8b0c2964ba471961() end
 
     
 --- N_0xa2a707979fe754dc
 ---
 --- @hash 0xA2A707979FE754DC
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0xa2a707979fe754dc(p0, p1) end
 
@@ -1781,7 +1781,7 @@ function N_0xa2a707979fe754dc(p0, p1) end
 --- ```
 ---
 --- @hash 0x64D779659BC37B19
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return Vector3
 function N_0x64d779659bc37b19(entity) end
 
@@ -1791,8 +1791,8 @@ function N_0x64d779659bc37b19(entity) end
 --- ```
 ---
 --- @hash 0x95BAF97C82464629
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0x95baf97c82464629(p0, p1) end
 
@@ -1810,8 +1810,8 @@ function N_0xf083835b70ba9bfe() end
 --- N_0xa7c511fa1c5bda38
 ---
 --- @hash 0xA7C511FA1C5BDA38
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0xa7c511fa1c5bda38(p0, p1) end
 
@@ -1819,9 +1819,9 @@ function N_0xa7c511fa1c5bda38(p0, p1) end
 --- N_0x4ad490ae1536933b
 ---
 --- @hash 0x4AD490AE1536933B
---- @params p0 Any
---- @params p1 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @return any
 function N_0x4ad490ae1536933b(p0, p1) end
 
     
@@ -1829,7 +1829,7 @@ function N_0x4ad490ae1536933b(p0, p1) end
 ---
 --- @hash 0x941E5306BCD7C2C7
 ---
---- @return Any
+--- @return any
 function N_0x941e5306bcd7c2c7() end
 
     
@@ -1837,7 +1837,7 @@ function N_0x941e5306bcd7c2c7() end
 ---
 --- @hash 0xA0FA4EC6A05DA44E
 ---
---- @return Any
+--- @return any
 function N_0xa0fa4ec6a05da44e() end
 
     
@@ -1848,7 +1848,7 @@ function N_0xa0fa4ec6a05da44e() end
 --- ```
 ---
 --- @hash 0x9D7AFCBF21C51712
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x9d7afcbf21c51712(toggle) end
 
@@ -1865,15 +1865,15 @@ function N_0x9465e683b12d3f6b() end
 ---
 --- @hash 0x7808619F31FF22DB
 ---
---- @return Any
+--- @return any
 function N_0x7808619f31ff22db() end
 
     
 --- N_0xd66c9e72b3cc4982
 ---
 --- @hash 0xD66C9E72B3CC4982
---- @params p0 table (Any*)
---- @params p1 Any
+--- @param p0 table (Any*)
+--- @param p1 any
 --- @return number (int)
 function N_0xd66c9e72b3cc4982(p0, p1) end
 
@@ -1881,7 +1881,7 @@ function N_0xd66c9e72b3cc4982(p0, p1) end
 --- N_0xcfeb46dcd7d8d5eb
 ---
 --- @hash 0xCFEB46DCD7D8D5EB
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0xcfeb46dcd7d8d5eb(p0) end
 
@@ -1892,22 +1892,22 @@ function N_0xcfeb46dcd7d8d5eb(p0) end
 ---
 --- @hash 0x5D10B3795F3FC886
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x5d10b3795f3fc886() end
 
     
 --- N_0x7fcc39c46c3c03bd
 ---
 --- @hash 0x7FCC39C46C3C03BD
---- @params p0 number (int)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @return boolean
 function N_0x7fcc39c46c3c03bd(p0) end
 
     
 --- N_0xf6f4383b7c92f11a
 ---
 --- @hash 0xF6F4383B7C92F11A
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xf6f4383b7c92f11a(p0) end
 
@@ -1915,8 +1915,8 @@ function N_0xf6f4383b7c92f11a(p0) end
 --- N_0xe6717e652b8c8d8a
 ---
 --- @hash 0xE6717E652B8C8D8A
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0xe6717e652b8c8d8a(p0, p1) end
 
@@ -1932,9 +1932,9 @@ function N_0x6ce50e47f5543d0c() end
 --- N_0xc434133d9ba52777
 ---
 --- @hash 0xC434133D9BA52777
---- @params p0 Any
---- @params p1 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @return any
 function N_0xc434133d9ba52777(p0, p1) end
 
     
@@ -1942,7 +1942,7 @@ function N_0xc434133d9ba52777(p0, p1) end
 ---
 --- @hash 0x9FEDF86898F100E9
 ---
---- @return Any
+--- @return any
 function N_0x9fedf86898f100e9() end
 
     
@@ -1950,7 +1950,7 @@ function N_0x9fedf86898f100e9() end
 ---
 --- @hash 0xA8ACB6459542A8C8
 ---
---- @return Any
+--- @return any
 function N_0xa8acb6459542a8c8() end
 
     
@@ -1959,8 +1959,8 @@ function N_0xa8acb6459542a8c8() end
 --- ```
 ---
 --- @hash 0x560B423D73015E77
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0x560b423d73015e77(p0) end
 
     
@@ -1970,7 +1970,7 @@ function N_0x560b423d73015e77(p0) end
 ---
 --- @hash 0xBDB6F89C729CF388
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0xbdb6f89c729cf388() end
 
     
@@ -1981,7 +1981,7 @@ function N_0xbdb6f89c729cf388() end
 --- ```
 ---
 --- @hash 0xA2E9C1AB8A92E8CD
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0xa2e9c1ab8a92e8cd(toggle) end
 
@@ -1989,7 +1989,7 @@ function N_0xa2e9c1ab8a92e8cd(toggle) end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0xB606E6CC59664972
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xb606e6cc59664972(p0) end
 
@@ -1999,19 +1999,19 @@ function N_0xb606e6cc59664972(p0) end
 --- ```
 ---
 --- @hash 0xB07D3185E11657A5
---- @params entity table (Entity)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @return boolean
 function N_0xb07d3185e11657a5(entity) end
 
     
 --- N_0xa7862bc5ed1dfd7e
 ---
 --- @hash 0xA7862BC5ED1DFD7E
---- @params p0 Any
---- @params p1 Any
---- @params p2 table (Any*)
---- @params p3 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 table (Any*)
+--- @param p3 table (Any*)
+--- @return boolean
 function N_0xa7862bc5ed1dfd7e(p0, p1, p2, p3) end
 
     
@@ -2019,7 +2019,7 @@ function N_0xa7862bc5ed1dfd7e(p0, p1, p2, p3) end
 ---
 --- @hash 0x74FB3E29E6D10FA9
 ---
---- @return Any
+--- @return any
 function N_0x74fb3e29e6d10fa9() end
 
     
@@ -2029,14 +2029,14 @@ function N_0x74fb3e29e6d10fa9() end
 ---
 --- @hash 0xC571D0E77D8BBC29
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0xc571d0e77d8bbc29() end
 
     
 --- N_0xca575c391fea25cc
 ---
 --- @hash 0xCA575C391FEA25CC
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xca575c391fea25cc(p0) end
 
@@ -2044,7 +2044,7 @@ function N_0xca575c391fea25cc(p0) end
 --- N_0x94538037ee44f5cf
 ---
 --- @hash 0x94538037EE44F5CF
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x94538037ee44f5cf(p0) end
 
@@ -2052,7 +2052,7 @@ function N_0x94538037ee44f5cf(p0) end
 --- N_0xc9b43a33d09cada7
 ---
 --- @hash 0xC9B43A33D09CADA7
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xc9b43a33d09cada7(p0) end
 
@@ -2063,7 +2063,7 @@ function N_0xc9b43a33d09cada7(p0) end
 ---
 --- @hash 0x94A8394D150B013A
 ---
---- @return Any
+--- @return any
 function N_0x94a8394d150b013a() end
 
     
@@ -2071,15 +2071,15 @@ function N_0x94a8394d150b013a() end
 ---
 --- @hash 0x76BF03FADBF154F5
 ---
---- @return Any
+--- @return any
 function N_0x76bf03fadbf154f5() end
 
     
 --- N_0xb309ebea797e001f
 ---
 --- @hash 0xB309EBEA797E001F
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0xb309ebea797e001f(p0) end
 
     
@@ -2089,14 +2089,14 @@ function N_0xb309ebea797e001f(p0) end
 ---
 --- @hash 0xD313DE83394AF134
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0xd313de83394af134() end
 
     
 --- NetworkBlockJoinQueueInvites
 ---
 --- @hash 0xCFEB8AF24FC1D0BB
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkBlockJoinQueueInvites(toggle) end
 
@@ -2104,8 +2104,8 @@ function NetworkBlockJoinQueueInvites(toggle) end
 --- NetworkAcceptPresenceInvite
 ---
 --- @hash 0xFA91550DF9318B22
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function NetworkAcceptPresenceInvite(p0) end
 
     
@@ -2128,8 +2128,8 @@ function NetworkBail() end
 --- N_0xdeb2b99a1af1a2a6
 ---
 --- @hash 0xDEB2B99A1AF1A2A6
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0xdeb2b99a1af1a2a6(p0) end
 
     
@@ -2137,16 +2137,16 @@ function N_0xdeb2b99a1af1a2a6(p0) end
 ---
 --- @hash 0x793FF272D5B365F4
 ---
---- @return Any
+--- @return any
 function N_0x793ff272d5b365f4() end
 
     
 --- NetworkAddFriend
 ---
 --- @hash 0x8E02D73914064223
---- @params networkHandle table (int*)
---- @params message string (char*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @param message string (char*)
+--- @return boolean
 function NetworkAddFriend(networkHandle, message) end
 
     
@@ -2155,8 +2155,8 @@ function NetworkAddFriend(networkHandle, message) end
 --- ```
 ---
 --- @hash 0xBF22E0F32968E967
---- @params player number (Player)
---- @params p1 boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 boolean
 --- @return void
 function N_0xbf22e0f32968e967(player, p1) end
 
@@ -2164,9 +2164,9 @@ function N_0xbf22e0f32968e967(player, p1) end
 --- N_0xaeef48cdf5b6ce7c
 ---
 --- @hash 0xAEEF48CDF5B6CE7C
---- @params p0 Any
---- @params p1 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @return boolean
 function N_0xaeef48cdf5b6ce7c(p0, p1) end
 
     
@@ -2174,7 +2174,7 @@ function N_0xaeef48cdf5b6ce7c(p0, p1) end
 ---
 --- @hash 0xC42DD763159F3461
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0xc42dd763159f3461() end
 
     
@@ -2193,7 +2193,7 @@ function N_0xaa5fafcd2c5f5e47() end
 --- ```
 ---
 --- @hash 0xA6FCECCF4721D679
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xa6fceccf4721d679(p0) end
 
@@ -2201,11 +2201,11 @@ function N_0xa6fceccf4721d679(p0) end
 --- N_0x8b4ffc790ca131ef
 ---
 --- @hash 0x8B4FFC790CA131EF
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @return any
 function N_0x8b4ffc790ca131ef(p0, p1, p2, p3) end
 
     
@@ -2213,15 +2213,15 @@ function N_0x8b4ffc790ca131ef(p0, p1, p2, p3) end
 ---
 --- @hash 0xBA9775570DB788CF
 ---
---- @return Any
+--- @return any
 function N_0xba9775570db788cf() end
 
     
 --- NetworkCanViewGamerUserContent
 ---
 --- @hash 0xB57A49545BA53CE7
---- @params networkHandle table (Any*)
---- @return boolean (BOOL)
+--- @param networkHandle table (Any*)
+--- @return boolean
 function NetworkCanViewGamerUserContent(networkHandle) end
 
     
@@ -2230,17 +2230,17 @@ function NetworkCanViewGamerUserContent(networkHandle) end
 --- ```
 ---
 --- @hash 0xFB1F9381E80FA13F
---- @params p0 number (int)
---- @params p1 table (Any*)
---- @return Any
+--- @param p0 number (int)
+--- @param p1 table (Any*)
+--- @return any
 function N_0xfb1f9381e80fa13f(p0, p1) end
 
     
 --- N_0x8c8d2739ba44af0f
 ---
 --- @hash 0x8C8D2739BA44AF0F
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function N_0x8c8d2739ba44af0f(p0) end
 
     
@@ -2248,15 +2248,15 @@ function N_0x8c8d2739ba44af0f(p0) end
 ---
 --- @hash 0xF287F506767CC8A9
 ---
---- @return Any
+--- @return any
 function N_0xf287f506767cc8a9() end
 
     
 --- N_0xba7f0b77d80a4eb7
 ---
 --- @hash 0xBA7F0B77D80A4EB7
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0xba7f0b77d80a4eb7(p0, p1) end
 
@@ -2273,7 +2273,7 @@ function N_0xfa2888e3833c8e96() end
 ---
 --- @hash 0xF12E6CD06C73D69E
 ---
---- @return Any
+--- @return any
 function N_0xf12e6cd06c73d69e() end
 
     
@@ -2284,7 +2284,7 @@ function N_0xf12e6cd06c73d69e() end
 --- ```
 ---
 --- @hash 0xC505036A35AFD01B
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0xc505036a35afd01b(toggle) end
 
@@ -2292,7 +2292,7 @@ function N_0xc505036a35afd01b(toggle) end
 --- NetToVeh
 ---
 --- @hash 0x367B936610BA360C
---- @params netHandle number (int)
+--- @param netHandle number (int)
 --- @return number (Vehicle)
 function NetToVeh(netHandle) end
 
@@ -2301,7 +2301,7 @@ function NetToVeh(netHandle) end
 ---
 --- @hash 0xC32EA7A2F6CA7557
 ---
---- @return Any
+--- @return any
 function N_0xc32ea7a2f6ca7557() end
 
     
@@ -2311,9 +2311,9 @@ function N_0xc32ea7a2f6ca7557() end
 --- ```
 ---
 --- @hash 0xADB57E5B663CCA8B
---- @params p0 number (Player)
---- @params p1 table (float*)
---- @params p2 table (float*)
+--- @param p0 number (Player)
+--- @param p1 table (float*)
+--- @param p2 table (float*)
 --- @return void
 function N_0xadb57e5b663cca8b(p0, p1, p2) end
 
@@ -2321,18 +2321,18 @@ function N_0xadb57e5b663cca8b(p0, p1, p2) end
 --- N_0xe16aa70ce9beedc3
 ---
 --- @hash 0xE16AA70CE9BEEDC3
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0xe16aa70ce9beedc3(p0) end
 
     
 --- NetworkAccessTunableFloatHash
 ---
 --- @hash 0x972BC203BBC4C4D5
---- @params tunableContext table (Hash)
---- @params tunableName table (Hash)
---- @params value table (float*)
---- @return boolean (BOOL)
+--- @param tunableContext table (Hash)
+--- @param tunableName table (Hash)
+--- @param value table (float*)
+--- @return boolean
 function NetworkAccessTunableFloatHash(tunableContext, tunableName, value) end
 
     
@@ -2340,7 +2340,7 @@ function NetworkAccessTunableFloatHash(tunableContext, tunableName, value) end
 ---
 --- @hash 0xF9B83B77929D8863
 ---
---- @return Any
+--- @return any
 function N_0xf9b83b77929d8863() end
 
     
@@ -2349,7 +2349,7 @@ function N_0xf9b83b77929d8863() end
 --- ```
 ---
 --- @hash 0xD8515F5FEA14CB3F
---- @params netHandle number (int)
+--- @param netHandle number (int)
 --- @return table (Object)
 function NetToObj(netHandle) end
 
@@ -2367,9 +2367,9 @@ function NetToObj(netHandle) end
 --- ```
 ---
 --- @hash 0xAA6A47A573ABB75A
---- @params tunableContext string (char*)
---- @params tunableName string (char*)
---- @return boolean (BOOL)
+--- @param tunableContext string (char*)
+--- @param tunableName string (char*)
+--- @return boolean
 function NetworkAccessTunableBool(tunableContext, tunableName) end
 
     
@@ -2386,13 +2386,13 @@ function N_0xebf8284d8cadeb53() end
 --- ```
 ---
 --- @hash 0xE42D626EEC94E5D9
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
---- @params p6 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
 --- @return void
 function N_0xe42d626eec94e5d9(p0, p1, p2, p3, p4, p5, p6) end
 
@@ -2400,8 +2400,8 @@ function N_0xe42d626eec94e5d9(p0, p1, p2, p3, p4, p5, p6) end
 --- N_0xebfa8d50addc54c4
 ---
 --- @hash 0xEBFA8D50ADDC54C4
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function N_0xebfa8d50addc54c4(p0) end
 
     
@@ -2409,7 +2409,7 @@ function N_0xebfa8d50addc54c4(p0) end
 ---
 --- @hash 0xC87E740D9F3872CC
 ---
---- @return Any
+--- @return any
 function N_0xc87e740d9f3872cc() end
 
     
@@ -2417,15 +2417,15 @@ function N_0xc87e740d9f3872cc() end
 ---
 --- @hash 0xBD545D44CCE70597
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0xbd545d44cce70597() end
 
     
 --- NetworkApplyPedScarData
 ---
 --- @hash 0xE66C690248F11150
---- @params ped table (Ped)
---- @params p1 number (int)
+--- @param ped table (Ped)
+--- @param p1 number (int)
 --- @return void
 function NetworkApplyPedScarData(ped, p1) end
 
@@ -2435,7 +2435,7 @@ function NetworkApplyPedScarData(ped, p1) end
 --- ```
 ---
 --- @hash 0xD414BE129BB81B32
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (float)
 function N_0xd414be129bb81b32(player) end
 
@@ -2444,7 +2444,7 @@ function N_0xd414be129bb81b32(player) end
 ---
 --- @hash 0xA306F470D1660581
 ---
---- @return Any
+--- @return any
 function N_0xa306f470d1660581() end
 
     
@@ -2455,15 +2455,15 @@ function N_0xa306f470d1660581() end
 --- ```
 ---
 --- @hash 0xAF50DA1A3F8B1BA4
---- @params loadingState table (int*)
---- @return boolean (BOOL)
+--- @param loadingState table (int*)
+--- @return boolean
 function NetworkCanAccessMultiplayer(loadingState) end
 
     
 --- N_0xf1b84178f8674195
 ---
 --- @hash 0xF1B84178F8674195
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xf1b84178f8674195(p0) end
 
@@ -2471,8 +2471,8 @@ function N_0xf1b84178f8674195(p0) end
 --- NetworkApplyTransitionParameter
 ---
 --- @hash 0x521638ADA1BA0D18
---- @params p0 number (int)
---- @params p1 number (int)
+--- @param p0 number (int)
+--- @param p1 number (int)
 --- @return void
 function NetworkApplyTransitionParameter(p0, p1) end
 
@@ -2480,7 +2480,7 @@ function NetworkApplyTransitionParameter(p0, p1) end
 --- N_0xcd71a4ecab22709e
 ---
 --- @hash 0xCD71A4ECAB22709E
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return void
 function N_0xcd71a4ecab22709e(entity) end
 
@@ -2488,8 +2488,8 @@ function N_0xcd71a4ecab22709e(entity) end
 --- N_0xaeab987727c5a8a4
 ---
 --- @hash 0xAEAB987727C5A8A4
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function N_0xaeab987727c5a8a4(p0) end
 
     
@@ -2497,14 +2497,14 @@ function N_0xaeab987727c5a8a4(p0) end
 ---
 --- @hash 0xEBCAB9E5048434F4
 ---
---- @return Any
+--- @return any
 function N_0xebcab9e5048434f4() end
 
     
 --- N_0xf49abc20d8552257
 ---
 --- @hash 0xF49ABC20D8552257
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xf49abc20d8552257(p0) end
 
@@ -2532,7 +2532,7 @@ function NetworkClearFoundGamers() end
 --- N_0xf98dde0a8ed09323
 ---
 --- @hash 0xF98DDE0A8ED09323
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0xf98dde0a8ed09323(p0) end
 
@@ -2542,7 +2542,7 @@ function N_0xf98dde0a8ed09323(p0) end
 --- ```
 ---
 --- @hash 0xBFFEAB45A9A9094A
---- @params netHandle number (int)
+--- @param netHandle number (int)
 --- @return table (Entity)
 function NetToEnt(netHandle) end
 
@@ -2550,7 +2550,7 @@ function NetToEnt(netHandle) end
 --- N_0xfd75dabc0957bf33
 ---
 --- @hash 0xFD75DABC0957BF33
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0xfd75dabc0957bf33(p0) end
 
@@ -2562,8 +2562,8 @@ function N_0xfd75dabc0957bf33(p0) end
 --- ```
 ---
 --- @hash 0x8F5D1AD832AEB06C
---- @params networkHandle table (Any*)
---- @return boolean (BOOL)
+--- @param networkHandle table (Any*)
+--- @return boolean
 function NetworkCanCommunicateWithGamer_2(networkHandle) end
 
     
@@ -2579,7 +2579,7 @@ function N_0xf814fec6a19fd6e0() end
 ---
 --- @hash 0x4EEBC3694E49C572
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkCanSessionEnd() end
 
     
@@ -2587,7 +2587,7 @@ function NetworkCanSessionEnd() end
 ---
 --- @hash 0xC88156EBB786F8D5
 ---
---- @return Any
+--- @return any
 function NetworkActionFollowInvite() end
 
     
@@ -2597,9 +2597,9 @@ function NetworkActionFollowInvite() end
 --- ```
 ---
 --- @hash 0xFAE628F1E9ADB239
---- @params p0 Any
---- @params p1 number (int)
---- @params p2 Any
+--- @param p0 any
+--- @param p1 number (int)
+--- @param p2 any
 --- @return void
 function N_0xfae628f1e9adb239(p0, p1, p2) end
 
@@ -2607,16 +2607,16 @@ function N_0xfae628f1e9adb239(p0, p1, p2) end
 --- NetworkCanCommunicateWithGamer
 ---
 --- @hash 0xA150A4F065806B1F
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkCanCommunicateWithGamer(networkHandle) end
 
     
 --- NetworkAreTransitionDetailsValid
 ---
 --- @hash 0x2615AA2A695930C1
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function NetworkAreTransitionDetailsValid(p0) end
 
     
@@ -2628,16 +2628,16 @@ function NetworkAreTransitionDetailsValid(p0) end
 ---
 --- @hash 0x62A0296C1BB1CEB3
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkAcceptInvite() end
 
     
 --- NetworkAreHandlesTheSame
 ---
 --- @hash 0x57DBA049E110F217
---- @params netHandle1 table (int*)
---- @params netHandle2 table (int*)
---- @return boolean (BOOL)
+--- @param netHandle1 table (int*)
+--- @param netHandle2 table (int*)
+--- @return boolean
 function NetworkAreHandlesTheSame(netHandle1, netHandle2) end
 
     
@@ -2646,16 +2646,16 @@ function NetworkAreHandlesTheSame(netHandle1, netHandle2) end
 --- ```
 ---
 --- @hash 0xA5EAFE473E45C442
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
---- @params p6 Any
---- @params p7 Any
---- @params p8 Any
---- @params p9 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
+--- @param p7 any
+--- @param p8 any
+--- @param p9 any
 --- @return void
 function N_0xa5eafe473e45c442(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
@@ -2663,26 +2663,26 @@ function N_0xa5eafe473e45c442(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 --- NetworkAccessTunableBoolHash
 ---
 --- @hash 0xEA16B69D93D71A45
---- @params tunableContext table (Hash)
---- @params tunableName table (Hash)
---- @return boolean (BOOL)
+--- @param tunableContext table (Hash)
+--- @param tunableName table (Hash)
+--- @return boolean
 function NetworkAccessTunableBoolHash(tunableContext, tunableName) end
 
     
 --- NetworkCheckDataManagerSucceededForHandle
 ---
 --- @hash 0x44B37CDCAE765AAE
---- @params p0 Any
---- @params p1 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 table (Any*)
+--- @return boolean
 function NetworkCheckDataManagerSucceededForHandle(p0, p1) end
 
     
 --- N_0xfb680d403909dc70
 ---
 --- @hash 0xFB680D403909DC70
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0xfb680d403909dc70(p0, p1) end
 
@@ -2690,9 +2690,9 @@ function N_0xfb680d403909dc70(p0, p1) end
 --- NetworkAttachSynchronisedSceneToEntity
 ---
 --- @hash 0x478DCBD2A98B705A
---- @params netScene number (int)
---- @params entity table (Entity)
---- @params bone number (int)
+--- @param netScene number (int)
+--- @param entity table (Entity)
+--- @param bone number (int)
 --- @return void
 function NetworkAttachSynchronisedSceneToEntity(netScene, entity, bone) end
 
@@ -2702,7 +2702,7 @@ function NetworkAttachSynchronisedSceneToEntity(netScene, entity, bone) end
 --- ```
 ---
 --- @hash 0xBDCD95FC216A8B3E
---- @params netHandle number (int)
+--- @param netHandle number (int)
 --- @return table (Ped)
 function NetToPed(netHandle) end
 
@@ -2740,18 +2740,18 @@ function NetToPed(netHandle) end
 --- ```
 ---
 --- @hash 0xE5608CA7BC163A5F
---- @params tunableContext string (char*)
---- @params tunableName string (char*)
---- @params value table (float*)
---- @return boolean (BOOL)
+--- @param tunableContext string (char*)
+--- @param tunableName string (char*)
+--- @param value table (float*)
+--- @return boolean
 function NetworkAccessTunableFloat(tunableContext, tunableName, value) end
 
     
 --- NetworkClanDownloadMembershipPending
 ---
 --- @hash 0x5B9E023DC6EBEDC0
---- @params p0 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @return boolean
 function NetworkClanDownloadMembershipPending(p0) end
 
     
@@ -2765,9 +2765,9 @@ function NetworkClanDownloadMembershipPending(p0) end
 --- ```
 ---
 --- @hash 0x48DE78AF2C8885B8
---- @params memberDesc table (int*)
---- @params p1 number (int)
---- @return boolean (BOOL)
+--- @param memberDesc table (int*)
+--- @param p1 number (int)
+--- @return boolean
 function NetworkClanGetMembershipDesc(memberDesc, p1) end
 
     
@@ -2776,8 +2776,8 @@ function NetworkClanGetMembershipDesc(memberDesc, p1) end
 --- ```
 ---
 --- @hash 0x236406F60CF216D6
---- @params p0 table (int*)
---- @params p1 number (int)
+--- @param p0 table (int*)
+--- @param p1 number (int)
 --- @return void
 function NetworkAddFollowers(p0, p1) end
 
@@ -2785,20 +2785,20 @@ function NetworkAddFollowers(p0, p1) end
 --- NetworkAddEntityArea
 ---
 --- @hash 0x494C8FB299290269
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @return Any
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @return any
 function NetworkAddEntityArea(p0, p1, p2, p3, p4, p5) end
 
     
 --- NetworkDisableProximityMigration
 ---
 --- @hash 0x407091CF6037118E
---- @params netID number (int)
+--- @param netID number (int)
 --- @return void
 function NetworkDisableProximityMigration(netID) end
 
@@ -2806,8 +2806,8 @@ function NetworkDisableProximityMigration(netID) end
 --- NetworkClanRequestEmblem
 ---
 --- @hash 0x13518FF1C6B28938
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function NetworkClanRequestEmblem(p0) end
 
     
@@ -2822,8 +2822,8 @@ function NetworkClanRequestEmblem(p0) end
 --- ```
 ---
 --- @hash 0x1F4ED342ACEFE62D
---- @params entity table (Entity)
---- @params state boolean (BOOL)
+--- @param entity table (Entity)
+--- @param state boolean
 --- @return void
 function NetworkFadeInEntity(entity, state) end
 
@@ -2831,16 +2831,16 @@ function NetworkFadeInEntity(entity, state) end
 --- NetworkAddPedToSynchronisedScene
 ---
 --- @hash 0x742A637471BCECD9
---- @params ped table (Ped)
---- @params netScene number (int)
---- @params animDict string (char*)
---- @params animnName string (char*)
---- @params blendInSpeed number (float)
---- @params blendOutSpeed number (float)
---- @params duration number (int)
---- @params flag number (int)
---- @params playbackRate number (float)
---- @params p9 Any
+--- @param ped table (Ped)
+--- @param netScene number (int)
+--- @param animDict string (char*)
+--- @param animnName string (char*)
+--- @param blendInSpeed number (float)
+--- @param blendOutSpeed number (float)
+--- @param duration number (int)
+--- @param flag number (int)
+--- @param playbackRate number (float)
+--- @param p9 any
 --- @return void
 function NetworkAddPedToSynchronisedScene(ped, netScene, animDict, animnName, blendInSpeed, blendOutSpeed, duration, flag, playbackRate, p9) end
 
@@ -2848,7 +2848,7 @@ function NetworkAddPedToSynchronisedScene(ped, netScene, animDict, animnName, bl
 --- NetworkBlockInvites
 ---
 --- @hash 0x34F9E9049454A7A0
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkBlockInvites(toggle) end
 
@@ -2858,14 +2858,14 @@ function NetworkBlockInvites(toggle) end
 --- See [IS_POINT_IN_ANGLED_AREA](#\_0x2A70BAE8883E4C81) for the definition of an angled area.
 ---
 --- @hash 0x376C6375BA60293A
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params width number (float)
---- @return Any
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param width number (float)
+--- @return any
 function NetworkAddEntityAngledArea(x1, y1, z1, x2, y2, z2, width) end
 
     
@@ -2873,28 +2873,28 @@ function NetworkAddEntityAngledArea(x1, y1, z1, x2, y2, z2, width) end
 ---
 --- @hash 0xFAFC23AEE23868DB
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkAllocateTunablesRegistrationDataMap() end
 
     
 --- NetworkAmIMutedByGamer
 ---
 --- @hash 0xDF02A2C93F1F26DA
---- @params networkHandle table (Any*)
---- @return boolean (BOOL)
+--- @param networkHandle table (Any*)
+--- @return boolean
 function NetworkAmIMutedByGamer(networkHandle) end
 
     
 --- NetworkAddEntityToSynchronisedScene
 ---
 --- @hash 0xF2404D68CBC855FA
---- @params entity table (Entity)
---- @params netScene number (int)
---- @params animDict string (char*)
---- @params animName string (char*)
---- @params speed number (float)
---- @params speedMulitiplier number (float)
---- @params flag number (int)
+--- @param entity table (Entity)
+--- @param netScene number (int)
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @param speed number (float)
+--- @param speedMulitiplier number (float)
+--- @param flag number (int)
 --- @return void
 function NetworkAddEntityToSynchronisedScene(entity, netScene, animDict, animName, speed, speedMulitiplier, flag) end
 
@@ -2902,18 +2902,18 @@ function NetworkAddEntityToSynchronisedScene(entity, netScene, animDict, animNam
 --- NetworkClanRemoteMembershipsAreInCache
 ---
 --- @hash 0xBB6E6FEE99D866B2
---- @params p0 table (int*)
---- @return boolean (BOOL)
+--- @param p0 table (int*)
+--- @return boolean
 function NetworkClanRemoteMembershipsAreInCache(p0) end
 
     
 --- NetworkAccessTunableIntHash
 ---
 --- @hash 0x40FCE03E50E8DBE8
---- @params tunableContext table (Hash)
---- @params tunableName table (Hash)
---- @params value table (int*)
---- @return boolean (BOOL)
+--- @param tunableContext table (Hash)
+--- @param tunableName table (Hash)
+--- @param value table (int*)
+--- @return boolean
 function NetworkAccessTunableIntHash(tunableContext, tunableName, value) end
 
     
@@ -2921,7 +2921,7 @@ function NetworkAccessTunableIntHash(tunableContext, tunableName, value) end
 ---
 --- @hash 0x7E782A910C362C25
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkCanEnterMultiplayer() end
 
     
@@ -2938,7 +2938,7 @@ function N_0xfac18e7356bd3210() end
 --- NetworkGetActivityPlayerNum
 ---
 --- @hash 0x73E2B500410DA5A2
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return number (int)
 function NetworkGetActivityPlayerNum(p0) end
 
@@ -2948,10 +2948,10 @@ function NetworkGetActivityPlayerNum(p0) end
 --- ```
 ---
 --- @hash 0xDBD2056652689917
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return boolean
 function NetworkApplyVoiceProximityOverride(x, y, z) end
 
     
@@ -2962,7 +2962,7 @@ function NetworkApplyVoiceProximityOverride(x, y, z) end
 --- ```
 ---
 --- @hash 0xCAE55F48D3D7875C
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function N_0xcae55f48d3d7875c(p0) end
 
@@ -2970,32 +2970,32 @@ function N_0xcae55f48d3d7875c(p0) end
 --- NetworkCanPlayMultiplayerWithGamer
 ---
 --- @hash 0x07DD29D5E22763F1
---- @params networkHandle table (Any*)
---- @return boolean (BOOL)
+--- @param networkHandle table (Any*)
+--- @return boolean
 function NetworkCanPlayMultiplayerWithGamer(networkHandle) end
 
     
 --- NetworkDoTransitionToGame
 ---
 --- @hash 0x3E9BB38102A589B0
---- @params p0 boolean (BOOL)
---- @params maxPlayers number (int)
---- @return boolean (BOOL)
+--- @param p0 boolean
+--- @param maxPlayers number (int)
+--- @return boolean
 function NetworkDoTransitionToGame(p0, maxPlayers) end
 
     
 --- NetworkAmIMutedByPlayer
 ---
 --- @hash 0x9D6981DFC91A8604
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkAmIMutedByPlayer(player) end
 
     
 --- N_0xd7b6c73cad419bcf
 ---
 --- @hash 0xD7B6C73CAD419BCF
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0xd7b6c73cad419bcf(p0) end
 
@@ -3003,29 +3003,29 @@ function N_0xd7b6c73cad419bcf(p0) end
 --- NetworkAddEntityDisplayedBoundaries
 ---
 --- @hash 0x25B99872D588A101
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @return Any
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @return any
 function NetworkAddEntityDisplayedBoundaries(p0, p1, p2, p3, p4, p5) end
 
     
 --- NetworkClanDownloadMembership
 ---
 --- @hash 0xA989044E70010ABE
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkClanDownloadMembership(networkHandle) end
 
     
 --- NetworkGamerHasHeadset
 ---
 --- @hash 0xF2FD55CB574BCC55
---- @params networkHandle table (Any*)
---- @return boolean (BOOL)
+--- @param networkHandle table (Any*)
+--- @return boolean
 function NetworkGamerHasHeadset(networkHandle) end
 
     
@@ -3041,7 +3041,7 @@ function NetworkClearVoiceChannel() end
 ---
 --- @hash 0xC927EC229934AF60
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkCanSetWaypoint() end
 
     
@@ -3049,7 +3049,7 @@ function NetworkCanSetWaypoint() end
 ---
 --- @hash 0x580CE4438479CC61
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkCanBail() end
 
     
@@ -3074,11 +3074,11 @@ function NetworkCanBail() end
 --- ```
 ---
 --- @hash 0x301A42153C9AD707
---- @params vehicle number (Vehicle)
---- @params isAudible boolean (BOOL)
---- @params isInvisible boolean (BOOL)
---- @params p3 boolean (BOOL)
---- @return Any
+--- @param vehicle number (Vehicle)
+--- @param isAudible boolean
+--- @param isInvisible boolean
+--- @param p3 boolean
+--- @return any
 function NetworkExplodeVehicle(vehicle, isAudible, isInvisible, p3) end
 
     
@@ -3098,9 +3098,9 @@ function NetworkCacheLocalPlayerHeadBlendData() end
 --- ```
 ---
 --- @hash 0xEBEFC2E77084F599
---- @params p0 number (int)
---- @params string string (char*)
---- @params p2 boolean (BOOL)
+--- @param p0 number (int)
+--- @param string string (char*)
+--- @param p2 boolean
 --- @return void
 function NetworkApplyTransitionParameterString(p0, string, p2) end
 
@@ -3108,8 +3108,8 @@ function NetworkApplyTransitionParameterString(p0, string, p2) end
 --- NetworkAmIBlockedByGamer
 ---
 --- @hash 0x15337C7C268A27B2
---- @params networkHandle table (Any*)
---- @return boolean (BOOL)
+--- @param networkHandle table (Any*)
+--- @return boolean
 function NetworkAmIBlockedByGamer(networkHandle) end
 
     
@@ -3118,9 +3118,9 @@ function NetworkAmIBlockedByGamer(networkHandle) end
 --- ```
 ---
 --- @hash 0x99B72C7ABDE5C910
---- @params ped table (Ped)
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @param player number (Player)
+--- @return boolean
 function NetworkApplyCachedPlayerHeadBlendData(ped, player) end
 
     
@@ -3148,7 +3148,7 @@ function NetworkCancelRespawnSearch() end
 --- ```
 ---
 --- @hash 0x187382F8A3E0A6C3
---- @params contentHash table (Hash)
+--- @param contentHash table (Hash)
 --- @return number (int)
 function NetworkGetContentModifierListId(contentHash) end
 
@@ -3166,7 +3166,7 @@ function NetworkClanGetLocalMembershipsCount() end
 --- NetworkBlockKickedPlayers
 ---
 --- @hash 0x6B07B9CE4D390375
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function NetworkBlockKickedPlayers(p0) end
 
@@ -3180,9 +3180,9 @@ function NetworkBlockKickedPlayers(p0) end
 --- ```
 ---
 --- @hash 0x1D6A14F1F9A736FC
---- @params scriptName string (char*)
---- @params p1 number (int)
---- @params p2 number (int)
+--- @param scriptName string (char*)
+--- @param p1 number (int)
+--- @param p2 number (int)
 --- @return number (Player)
 function NetworkGetHostOfScript(scriptName, p1, p2) end
 
@@ -3225,18 +3225,18 @@ function NetworkClearFollowers() end
 --- ```
 ---
 --- @hash 0xC8BC2011F67B3411
---- @params p0 table (int*)
---- @params clanMembership table (int*)
---- @params p2 number (int)
---- @return boolean (BOOL)
+--- @param p0 table (int*)
+--- @param clanMembership table (int*)
+--- @param p2 number (int)
+--- @return boolean
 function NetworkClanGetMembership(p0, clanMembership, p2) end
 
     
 --- NetworkCanGamerPlayMultiplayerWithMe
 ---
 --- @hash 0x135F9B7B7ADD2185
---- @params networkHandle table (Any*)
---- @return boolean (BOOL)
+--- @param networkHandle table (Any*)
+--- @return boolean
 function NetworkCanGamerPlayMultiplayerWithMe(networkHandle) end
 
     
@@ -3245,18 +3245,18 @@ function NetworkCanGamerPlayMultiplayerWithMe(networkHandle) end
 --- ```
 ---
 --- @hash 0x729E3401F0430686
---- @params animDict string (char*)
---- @params animName string (char*)
---- @return boolean (BOOL)
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @return boolean
 function NetworkClanAnimation(animDict, animName) end
 
     
 --- NetworkDoesTunableExistHash
 ---
 --- @hash 0xE4E53E1419D81127
---- @params tunableContext table (Hash)
---- @params tunableName table (Hash)
---- @return boolean (BOOL)
+--- @param tunableContext table (Hash)
+--- @param tunableName table (Hash)
+--- @return boolean
 function NetworkDoesTunableExistHash(tunableContext, tunableName) end
 
     
@@ -3265,24 +3265,24 @@ function NetworkDoesTunableExistHash(tunableContext, tunableName) end
 --- ```
 ---
 --- @hash 0x7543BB439F63792B
---- @params clanDesc table (int*)
---- @params bufferSize number (int)
---- @return boolean (BOOL)
+--- @param clanDesc table (int*)
+--- @param bufferSize number (int)
+--- @return boolean
 function NetworkClanIsRockstarClan(clanDesc, bufferSize) end
 
     
 --- NetworkGetPlayerOwnsWaypoint
 ---
 --- @hash 0x82377B65E943F72D
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkGetPlayerOwnsWaypoint(player) end
 
     
 --- NetworkClanReleaseEmblem
 ---
 --- @hash 0x113E6E3E50E286B0
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function NetworkClanReleaseEmblem(p0) end
 
@@ -3290,19 +3290,19 @@ function NetworkClanReleaseEmblem(p0) end
 --- NetworkGetBackgroundLoadingRecipients
 ---
 --- @hash 0x97A770BEEF227E2B
---- @params p0 Any
---- @params p1 Any
---- @params p2 table (Any*)
---- @params p3 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 table (Any*)
+--- @param p3 table (Any*)
+--- @return boolean
 function NetworkGetBackgroundLoadingRecipients(p0, p1, p2, p3) end
 
     
 --- NetworkClanJoin
 ---
 --- @hash 0x9FAAA4F4FC71F87F
---- @params clanDesc number (int)
---- @return boolean (BOOL)
+--- @param clanDesc number (int)
+--- @return boolean
 function NetworkClanJoin(clanDesc) end
 
     
@@ -3315,9 +3315,9 @@ function NetworkClanJoin(clanDesc) end
 --- ```
 ---
 --- @hash 0xF45352426FF3A4F0
---- @params clanDesc table (int*)
---- @params bufferSize number (int)
---- @params formattedTag table (int*)
+--- @param clanDesc table (int*)
+--- @param bufferSize number (int)
+--- @param formattedTag table (int*)
 --- @return void
 function NetworkClanGetUiFormattedTag(clanDesc, bufferSize, formattedTag) end
 
@@ -3333,9 +3333,9 @@ function NetworkCloseTransitionMatchmaking() end
 --- NetworkClanIsEmblemReady
 ---
 --- @hash 0xA134777FF7F33331
---- @params p0 Any
---- @params p1 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 table (Any*)
+--- @return boolean
 function NetworkClanIsEmblemReady(p0, p1) end
 
     
@@ -3369,27 +3369,27 @@ function NetworkClanIsEmblemReady(p0, p1) end
 --- ```
 ---
 --- @hash 0x85E5F8B9B898B20A
---- @params tunableContext string (char*)
---- @params tunableName string (char*)
---- @return boolean (BOOL)
+--- @param tunableContext string (char*)
+--- @param tunableName string (char*)
+--- @return boolean
 function NetworkDoesTunableExist(tunableContext, tunableName) end
 
     
 --- NetworkCreateSynchronisedScene
 ---
 --- @hash 0x7CD6BC4C2BBDD526
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params xRot number (float)
---- @params yRot number (float)
---- @params zRot number (float)
---- @params rotationOrder number (int)
---- @params useOcclusionPortal boolean (BOOL)
---- @params looped boolean (BOOL)
---- @params p9 number (float)
---- @params animTime number (float)
---- @params p11 number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param rotationOrder number (int)
+--- @param useOcclusionPortal boolean
+--- @param looped boolean
+--- @param p9 number (float)
+--- @param animTime number (float)
+--- @param p11 number (float)
 --- @return number (int)
 function NetworkCreateSynchronisedScene(x, y, z, xRot, yRot, zRot, rotationOrder, useOcclusionPortal, looped, p9, animTime, p11) end
 
@@ -3405,8 +3405,8 @@ function NetworkGetPrimaryClanDataCancel() end
 --- NetworkClanPlayerIsActive
 ---
 --- @hash 0xB124B57F571D8F18
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkClanPlayerIsActive(networkHandle) end
 
     
@@ -3418,17 +3418,17 @@ function NetworkClanPlayerIsActive(networkHandle) end
 --- ```
 ---
 --- @hash 0xEEE6EACBE8874FBA
---- @params clanDesc table (int*)
---- @params bufferSize number (int)
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param clanDesc table (int*)
+--- @param bufferSize number (int)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkClanPlayerGetDesc(clanDesc, bufferSize, networkHandle) end
 
     
 --- NetworkGetFriendName
 ---
 --- @hash 0xE11EBBB2A783FE8B
---- @params friendIndex number (int)
+--- @param friendIndex number (int)
 --- @return string (char*)
 function NetworkGetFriendName(friendIndex) end
 
@@ -3439,11 +3439,11 @@ function NetworkGetFriendName(friendIndex) end
 --- ```
 ---
 --- @hash 0x71FB0EBCD4915D56
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @return boolean
 function NetworkDoTransitionQuickmatch(p0, p1, p2, p3) end
 
     
@@ -3458,9 +3458,9 @@ function NetworkClearClockTimeOverride() end
 --- NetworkForceLocalUseOfSyncedSceneCamera
 ---
 --- @hash 0xCF8BD3B0BD6D42D7
---- @params netScene number (int)
---- @params animDict string (char*)
---- @params animName string (char*)
+--- @param netScene number (int)
+--- @param animDict string (char*)
+--- @param animName string (char*)
 --- @return void
 function NetworkForceLocalUseOfSyncedSceneCamera(netScene, animDict, animName) end
 
@@ -3468,8 +3468,8 @@ function NetworkForceLocalUseOfSyncedSceneCamera(netScene, animDict, animName) e
 --- NetworkChangeTransitionSlots
 ---
 --- @hash 0xEEEDA5E6D7080987
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function NetworkChangeTransitionSlots(p0, p1) end
 
@@ -3477,8 +3477,8 @@ function NetworkChangeTransitionSlots(p0, p1) end
 --- NetworkAmIBlockedByPlayer
 ---
 --- @hash 0x87F395D957D4353D
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkAmIBlockedByPlayer(player) end
 
     
@@ -3487,26 +3487,26 @@ function NetworkAmIBlockedByPlayer(player) end
 --- ```
 ---
 --- @hash 0x5835D9CD92E83184
---- @params netHandle table (Player*)
---- @params txdName table (Any*)
---- @return boolean (BOOL)
+--- @param netHandle table (Player*)
+--- @param txdName table (Any*)
+--- @return boolean
 function NetworkClanGetEmblemTxdName(netHandle, txdName) end
 
     
 --- NetworkEntityAreaIsOccupied
 ---
 --- @hash 0x4A2D4E8BF4265B0F
---- @params areaHandle number (int)
---- @return boolean (BOOL)
+--- @param areaHandle number (int)
+--- @return boolean
 function NetworkEntityAreaIsOccupied(areaHandle) end
 
     
 --- This is what R\* uses to hide players in MP interiors.
 ---
 --- @hash 0xBBDF066252829606
---- @params player number (Player)
---- @params toggle boolean (BOOL)
---- @params p2 boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
+--- @param p2 boolean
 --- @return void
 function NetworkConcealPlayer(player, toggle, p2) end
 
@@ -3514,8 +3514,8 @@ function NetworkConcealPlayer(player, toggle, p2) end
 --- NetworkDoesEntityExistWithNetworkId
 ---
 --- @hash 0x18A47D074708FD68
---- @params netId number (int)
---- @return boolean (BOOL)
+--- @param netId number (int)
+--- @return boolean
 function NetworkDoesEntityExistWithNetworkId(netId) end
 
     
@@ -3541,21 +3541,21 @@ function NetworkClearGetGamerStatus() end
 --- ```
 ---
 --- @hash 0x9C4AB58491FDC98A
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 table (Any*)
---- @params p5 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 table (Any*)
+--- @param p5 any
+--- @return boolean
 function NetworkDoTransitionQuickmatchWithGroup(p0, p1, p2, p3, p4, p5) end
 
     
 --- NetworkDoesNetworkIdExist
 ---
 --- @hash 0x38CE16C96BD11344
---- @params netID number (int)
---- @return boolean (BOOL)
+--- @param netID number (int)
+--- @return boolean
 function NetworkDoesNetworkIdExist(netID) end
 
     
@@ -3565,20 +3565,20 @@ function NetworkDoesNetworkIdExist(netID) end
 --- ```
 ---
 --- @hash 0xA091A5E44F0072E5
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @return boolean
 function NetworkDoTransitionQuickmatchAsync(p0, p1, p2, p3) end
 
     
 --- NetworkClanGetMembershipValid
 ---
 --- @hash 0x48A59CF88D43DF0E
---- @params p0 table (int*)
---- @params p1 Any
---- @return boolean (BOOL)
+--- @param p0 table (int*)
+--- @param p1 any
+--- @return boolean
 function NetworkClanGetMembershipValid(p0, p1) end
 
     
@@ -3620,10 +3620,10 @@ function NetworkClearVoiceProximityOverride() end
 --- ```
 ---
 --- @hash 0x8BE1146DFD5D4468
---- @params tunableContext string (char*)
---- @params tunableName string (char*)
---- @params value table (int*)
---- @return boolean (BOOL)
+--- @param tunableContext string (char*)
+--- @param tunableName string (char*)
+--- @param value table (int*)
+--- @return boolean
 function NetworkAccessTunableInt(tunableContext, tunableName, value) end
 
     
@@ -3633,8 +3633,8 @@ function NetworkAccessTunableInt(tunableContext, tunableName, value) end
 --- ```
 ---
 --- @hash 0xE86051786B66CD8E
---- @params networkHandle table (int*)
---- @params bufferSize number (int)
+--- @param networkHandle table (int*)
+--- @param bufferSize number (int)
 --- @return void
 function NetworkGetLocalHandle(networkHandle, bufferSize) end
 
@@ -3642,16 +3642,16 @@ function NetworkGetLocalHandle(networkHandle, bufferSize) end
 --- NetworkGetEntityIsLocal
 ---
 --- @hash 0x0991549DE4D64762
---- @params entity table (Entity)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @return boolean
 function NetworkGetEntityIsLocal(entity) end
 
     
 --- NetworkConcealEntity
 ---
 --- @hash 0x1632BE0AC1E62876
---- @params entity table (Entity)
---- @params toggle boolean (BOOL)
+--- @param entity table (Entity)
+--- @param toggle boolean
 --- @return void
 function NetworkConcealEntity(entity, toggle) end
 
@@ -3675,7 +3675,7 @@ function NetworkGetMaxNumParticipants() end
 ---
 --- @hash 0xB071E27958EF4CF0
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkGamertagFromHandlePending() end
 
     
@@ -3693,12 +3693,12 @@ function NetworkClearPropertyId() end
 --- ```
 ---
 --- @hash 0x3AAD8B2FCA1E289F
---- @params p0 table (Any*)
---- @params p1 Any
---- @params p2 boolean (BOOL)
---- @params players number (int)
---- @params p4 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 any
+--- @param p2 boolean
+--- @param players number (int)
+--- @param p4 boolean
+--- @return boolean
 function NetworkDoTransitionToFreemode(p0, p1, p2, players, p4) end
 
     
@@ -3716,27 +3716,27 @@ function NetworkFinishBroadcastingData() end
 ---
 --- @hash 0xAC8C7B9B88C4A668
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkHasPendingInvite() end
 
     
 --- NetworkDoTransitionToNewGame
 ---
 --- @hash 0x4665F51EFED00034
---- @params p0 boolean (BOOL)
---- @params maxPlayers number (int)
---- @params p2 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 boolean
+--- @param maxPlayers number (int)
+--- @param p2 boolean
+--- @return boolean
 function NetworkDoTransitionToNewGame(p0, maxPlayers, p2) end
 
     
 --- NetworkGetDestroyerOfEntity
 ---
 --- @hash 0x4CACA84440FA26F6
---- @params p0 Any
---- @params p1 Any
---- @params weaponHash table (Hash*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param weaponHash table (Hash*)
+--- @return boolean
 function NetworkGetDestroyerOfEntity(p0, p1, weaponHash) end
 
     
@@ -3751,13 +3751,13 @@ function NetworkGetNumBodyTrackers() end
 --- NetworkDoTransitionToNewFreemode
 ---
 --- @hash 0x9E80A5BA8109F974
---- @params p0 table (Any*)
---- @params p1 table (Any*)
---- @params players number (int)
---- @params p3 boolean (BOOL)
---- @params p4 boolean (BOOL)
---- @params p5 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 table (Any*)
+--- @param players number (int)
+--- @param p3 boolean
+--- @param p4 boolean
+--- @param p5 boolean
+--- @return boolean
 function NetworkDoTransitionToNewFreemode(p0, p1, players, p3, p4, p5) end
 
     
@@ -3775,8 +3775,8 @@ function NetworkDoTransitionToNewFreemode(p0, p1, players, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0x9DD368BF06983221
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function NetworkDisableInvincibleFlashing(player, toggle) end
 
@@ -3784,8 +3784,8 @@ function NetworkDisableInvincibleFlashing(player, toggle) end
 --- NetworkGetEntityIsNetworked
 ---
 --- @hash 0xC7827959479DCC78
---- @params entity table (Entity)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @return boolean
 function NetworkGetEntityIsNetworked(entity) end
 
     
@@ -3796,7 +3796,7 @@ function NetworkGetEntityIsNetworked(entity) end
 --- ```
 ---
 --- @hash 0x52C1EADAF7B10302
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function NetworkGetOldestResendCountForPlayer(player) end
 
@@ -3806,7 +3806,7 @@ function NetworkGetOldestResendCountForPlayer(player) end
 --- ```
 ---
 --- @hash 0x02C40BF885C567B6
---- @params netScene number (int)
+--- @param netScene number (int)
 --- @return number (int)
 function NetworkConvertSynchronisedSceneToSynchronizedScene(netScene) end
 
@@ -3814,8 +3814,8 @@ function NetworkConvertSynchronisedSceneToSynchronizedScene(netScene) end
 --- NetworkGetEntityKillerOfPlayer
 ---
 --- @hash 0x42B2DAA6B596F5F8
---- @params player number (Player)
---- @params weaponHash table (Hash*)
+--- @param player number (Player)
+--- @param weaponHash table (Hash*)
 --- @return table (Entity)
 function NetworkGetEntityKillerOfPlayer(player, weaponHash) end
 
@@ -3823,26 +3823,26 @@ function NetworkGetEntityKillerOfPlayer(player, weaponHash) end
 --- NetworkGetPrimaryClanDataStart
 ---
 --- @hash 0xCE86D8191B762107
---- @params p0 table (Any*)
---- @params p1 Any
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 any
+--- @return boolean
 function NetworkGetPrimaryClanDataStart(p0, p1) end
 
     
 --- NetworkEntityAreaDoesExist
 ---
 --- @hash 0xE64A3CA08DFA37A9
---- @params areaHandle number (int)
---- @return boolean (BOOL)
+--- @param areaHandle number (int)
+--- @return boolean
 function NetworkEntityAreaDoesExist(areaHandle) end
 
     
 --- NetworkGetGamerStatusResult
 ---
 --- @hash 0x02A8BEC6FD9AF660
---- @params p0 table (Any*)
---- @params p1 Any
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 any
+--- @return boolean
 function NetworkGetGamerStatusResult(p0, p1) end
 
     
@@ -3850,7 +3850,7 @@ function NetworkGetGamerStatusResult(p0, p1) end
 ---
 --- @hash 0x439BFDE3CD0610F6
 ---
---- @return Any
+--- @return any
 function NetworkClearFollowInvite() end
 
     
@@ -3868,15 +3868,15 @@ function NetworkGetMaxFriends() end
 ---
 --- @hash 0x579CCED0265D4896
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkClanServiceIsValid() end
 
     
 --- NetworkGetPresenceInviteIsTournament
 ---
 --- @hash 0x8806CEBFABD3CE05
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function NetworkGetPresenceInviteIsTournament(p0) end
 
     
@@ -3891,8 +3891,8 @@ function NetworkGetAgeGroup() end
 --- NetworkGetCurrentlySelectedGamerHandleFromInviteMenu
 ---
 --- @hash 0x74881E6BCAE2327C
---- @params p0 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @return boolean
 function NetworkGetCurrentlySelectedGamerHandleFromInviteMenu(p0) end
 
     
@@ -3907,8 +3907,8 @@ function NetworkGetHostOfThisScript() end
 --- NetworkGetDestroyerOfNetworkId
 ---
 --- @hash 0x7A1ADEEF01740A24
---- @params netId number (int)
---- @params weaponHash table (Hash*)
+--- @param netId number (int)
+--- @param weaponHash table (Hash*)
 --- @return number (int)
 function NetworkGetDestroyerOfNetworkId(netId, weaponHash) end
 
@@ -3916,11 +3916,11 @@ function NetworkGetDestroyerOfNetworkId(netId, weaponHash) end
 --- NetworkFindMatchedGamers
 ---
 --- @hash 0xF7B2CFDE5C9F700D
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @return boolean
 function NetworkFindMatchedGamers(p0, p1, p2, p3) end
 
     
@@ -3937,9 +3937,9 @@ function NetworkGetPlatformPartyUnk() end
 --- ```
 ---
 --- @hash 0x371EA43692861CF1
---- @params randomInt number (int)
---- @params coordinates table (Vector3*)
---- @params heading table (float*)
+--- @param randomInt number (int)
+--- @param coordinates table (Vector3*)
+--- @param heading table (float*)
 --- @return void
 function NetworkGetRespawnResult(randomInt, coordinates, heading) end
 
@@ -3947,7 +3947,7 @@ function NetworkGetRespawnResult(randomInt, coordinates, heading) end
 --- NetworkGetEntityFromNetworkId
 ---
 --- @hash 0xCE4E5D9B0A4FF560
---- @params netId number (int)
+--- @param netId number (int)
 --- @return table (Entity)
 function NetworkGetEntityFromNetworkId(netId) end
 
@@ -3956,7 +3956,7 @@ function NetworkGetEntityFromNetworkId(netId) end
 ---
 --- @hash 0xFD00798DBA7523DD
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkGamertagFromHandleSucceeded() end
 
     
@@ -3972,15 +3972,15 @@ function NetworkGetFriendCount() end
 ---
 --- @hash 0xB5074DB804E28CE7
 ---
---- @return Any
+--- @return any
 function NetworkGetPrimaryClanDataPending() end
 
     
 --- NetworkGamertagFromHandleStart
 ---
 --- @hash 0x9F0C0A981D73FA56
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkGamertagFromHandleStart(networkHandle) end
 
     
@@ -3988,7 +3988,7 @@ function NetworkGamertagFromHandleStart(networkHandle) end
 ---
 --- @hash 0x76D9B976C4C09FDE
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkHasFollowInvite() end
 
     
@@ -4015,9 +4015,9 @@ function NetworkEndTutorialSession() end
 --- ```
 ---
 --- @hash 0x6D03BFBD643B2A02
---- @params hours table (int*)
---- @params minutes table (int*)
---- @params seconds table (int*)
+--- @param hours table (int*)
+--- @param minutes table (int*)
+--- @param seconds table (int*)
 --- @return void
 function NetworkGetGlobalMultiplayerClock(hours, minutes, seconds) end
 
@@ -4025,16 +4025,16 @@ function NetworkGetGlobalMultiplayerClock(hours, minutes, seconds) end
 --- NetworkGetPresenceInviteHandle
 ---
 --- @hash 0x38D5B0FEBB086F75
---- @params p0 Any
---- @params p1 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 table (Any*)
+--- @return boolean
 function NetworkGetPresenceInviteHandle(p0, p1) end
 
     
 --- NetworkGetPlayerLoudness
 ---
 --- @hash 0x21A1684A25C2867F
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (float)
 function NetworkGetPlayerLoudness(player) end
 
@@ -4050,7 +4050,7 @@ function NetworkGetNumPresenceInvites() end
 --- NetworkGetPlayerFromGamerHandle
 ---
 --- @hash 0xCE5F689CF5A0A49D
---- @params networkHandle table (int*)
+--- @param networkHandle table (int*)
 --- @return number (Player)
 function NetworkGetPlayerFromGamerHandle(networkHandle) end
 
@@ -4068,7 +4068,7 @@ function NetworkGetNumConnectedPlayers() end
 --- NetworkClanGetMembershipCount
 ---
 --- @hash 0xAAB11F6C4ADBC2C1
---- @params p0 table (int*)
+--- @param p0 table (int*)
 --- @return number (int)
 function NetworkClanGetMembershipCount(p0) end
 
@@ -4076,7 +4076,7 @@ function NetworkClanGetMembershipCount(p0) end
 --- NetworkGetParticipantIndex
 ---
 --- @hash 0x1B84DF6AF2A46938
---- @params index number (int)
+--- @param index number (int)
 --- @return number (int)
 function NetworkGetParticipantIndex(index) end
 
@@ -4084,8 +4084,8 @@ function NetworkGetParticipantIndex(index) end
 --- NetworkGetPresenceInviteFromAdmin
 ---
 --- @hash 0x3DBF2DF0AEB7D289
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function NetworkGetPresenceInviteFromAdmin(p0) end
 
     
@@ -4101,14 +4101,14 @@ function NetworkGetTunableCloudCrc() end
 ---
 --- @hash 0x74698374C45701D2
 ---
---- @return Any
+--- @return any
 function NetworkIsOfflineInvitePending() end
 
     
 --- NetworkGetFriendNameFromIndex
 ---
 --- @hash 0x4164F227D052E293
---- @params friendIndex number (int)
+--- @param friendIndex number (int)
 --- @return string (char*)
 function NetworkGetFriendNameFromIndex(friendIndex) end
 
@@ -4116,17 +4116,17 @@ function NetworkGetFriendNameFromIndex(friendIndex) end
 --- NetworkHasControlOfNetworkId
 ---
 --- @hash 0x4D36070FE0215186
---- @params netId number (int)
---- @return boolean (BOOL)
+--- @param netId number (int)
+--- @return boolean
 function NetworkHasControlOfNetworkId(netId) end
 
     
 --- NetworkGetNumScriptParticipants
 ---
 --- @hash 0x3658E8CD94FC121A
---- @params p0 table (Any*)
---- @params p1 Any
---- @params p2 Any
+--- @param p0 table (Any*)
+--- @param p1 any
+--- @param p2 any
 --- @return number (int)
 function NetworkGetNumScriptParticipants(p0, p1, p2) end
 
@@ -4138,25 +4138,25 @@ function NetworkGetNumScriptParticipants(p0, p1, p2) end
 --- You also need to use `NetworkJoinTransition(Player player)` and `NetworkLaunchTransition()`.
 ---
 --- @hash 0xA60BB5CE242BB254
---- @params p0 number (int)
---- @params p1 number (int)
---- @params p2 number (int)
---- @params p3 number (int)
---- @params p4 Any
---- @params p5 boolean (BOOL)
---- @params p6 boolean (BOOL)
---- @params p7 number (int)
---- @params p8 Any
---- @params p9 number (int)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @param p1 number (int)
+--- @param p2 number (int)
+--- @param p3 number (int)
+--- @param p4 any
+--- @param p5 boolean
+--- @param p6 boolean
+--- @param p7 number (int)
+--- @param p8 any
+--- @param p9 number (int)
+--- @return boolean
 function NetworkHostTransition(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
     
 --- NetworkGetGamerStatus
 ---
 --- @hash 0x85A0EF54A500882C
---- @params p0 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @return boolean
 function NetworkGetGamerStatus(p0) end
 
     
@@ -4165,8 +4165,8 @@ function NetworkGetGamerStatus(p0) end
 --- ```
 ---
 --- @hash 0xE30CF56F1EFA5F43
---- @params rangeStart number (int)
---- @params rangeEnd number (int)
+--- @param rangeStart number (int)
+--- @param rangeEnd number (int)
 --- @return number (int)
 function NetworkGetRandomIntRanged(rangeStart, rangeEnd) end
 
@@ -4174,7 +4174,7 @@ function NetworkGetRandomIntRanged(rangeStart, rangeEnd) end
 --- NetworkGetGamertagFromHandle
 ---
 --- @hash 0x426141162EBE5CDB
---- @params networkHandle table (int*)
+--- @param networkHandle table (int*)
 --- @return string (char*)
 function NetworkGetGamertagFromHandle(networkHandle) end
 
@@ -4184,7 +4184,7 @@ function NetworkGetGamertagFromHandle(networkHandle) end
 --- ```
 ---
 --- @hash 0xFF8FCF9FFC458A1C
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function NetworkGetNumUnackedForPlayer(player) end
 
@@ -4192,16 +4192,16 @@ function NetworkGetNumUnackedForPlayer(player) end
 --- NetworkGetPresenceInviteContentId
 ---
 --- @hash 0x24409FC4C55CB22D
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function NetworkGetPresenceInviteContentId(p0) end
 
     
 --- NetworkGetPresenceInviteId
 ---
 --- @hash 0xDFF09646E12EC386
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function NetworkGetPresenceInviteId(p0) end
 
     
@@ -4211,9 +4211,9 @@ function NetworkGetPresenceInviteId(p0) end
 --- ```
 ---
 --- @hash 0xA0FD21BED61E5C4C
---- @params memberId string (char*)
---- @params networkHandle table (int*)
---- @params bufferSize number (int)
+--- @param memberId string (char*)
+--- @param networkHandle table (int*)
+--- @param bufferSize number (int)
 --- @return void
 function NetworkHandleFromMemberId(memberId, networkHandle, bufferSize) end
 
@@ -4221,24 +4221,24 @@ function NetworkHandleFromMemberId(memberId, networkHandle, bufferSize) end
 --- NetworkGetPresenceInviteSessionId
 ---
 --- @hash 0x26E1CD96B0903D60
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function NetworkGetPresenceInviteSessionId(p0) end
 
     
 --- NetworkGetPresenceInvitePlaylistCurrent
 ---
 --- @hash 0x728C4CC7920CD102
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function NetworkGetPresenceInvitePlaylistCurrent(p0) end
 
     
 --- NetworkGetPlatformPartyMembers
 ---
 --- @hash 0x120364DE2845DAF8
---- @params data table (Any*)
---- @params dataSize number (int)
+--- @param data table (Any*)
+--- @param dataSize number (int)
 --- @return number (int)
 function NetworkGetPlatformPartyMembers(data, dataSize) end
 
@@ -4248,7 +4248,7 @@ function NetworkGetPlatformPartyMembers(data, dataSize) end
 --- Does not work if you enter your own player id as p0 (will return `(0.0, 0.0, 0.0)` in that case).
 ---
 --- @hash 0x125E6D638B8605D4
---- @params player number (Player)
+--- @param player number (Player)
 --- @return Vector3
 function NetworkGetPlayerCoords(player) end
 
@@ -4259,9 +4259,9 @@ function NetworkGetPlayerCoords(player) end
 --- ```
 ---
 --- @hash 0xDE564951F95E09ED
---- @params entity table (Entity)
---- @params normal boolean (BOOL)
---- @params slow boolean (BOOL)
+--- @param entity table (Entity)
+--- @param normal boolean
+--- @param slow boolean
 --- @return void
 function NetworkFadeOutEntity(entity, normal, slow) end
 
@@ -4270,7 +4270,7 @@ function NetworkFadeOutEntity(entity, normal, slow) end
 ---
 --- @hash 0x9AA46BADAD0E27ED
 ---
---- @return Any
+--- @return any
 function NetworkGetPrimaryClanDataClear() end
 
     
@@ -4286,22 +4286,22 @@ function NetworkGetPrimaryClanDataClear() end
 ---
 --- @hash 0x91B87C55093DE351
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkGetRosPrivilege_25() end
 
     
 --- NetworkHasControlOfDoor
 ---
 --- @hash 0xCB3C68ADB06195DF
---- @params doorHash table (Hash)
---- @return boolean (BOOL)
+--- @param doorHash table (Hash)
+--- @return boolean
 function NetworkHasControlOfDoor(doorHash) end
 
     
 --- NetworkGetPlayerTutorialSessionInstance
 ---
 --- @hash 0x3B39236746714134
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function NetworkGetPlayerTutorialSessionInstance(player) end
 
@@ -4310,17 +4310,17 @@ function NetworkGetPlayerTutorialSessionInstance(player) end
 ---
 --- @hash 0x67A5589628E0CFF6
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkHasSocialClubAccount() end
 
     
 --- NetworkHasRosPrivilegeEndDate
 ---
 --- @hash 0xC22912B1D85F26B1
---- @params p0 number (int)
---- @params banType table (int*)
---- @params timeData table (Vector3*)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @param banType table (int*)
+--- @param timeData table (Vector3*)
+--- @return boolean
 function NetworkHasRosPrivilegeEndDate(p0, banType, timeData) end
 
     
@@ -4328,17 +4328,17 @@ function NetworkHasRosPrivilegeEndDate(p0, banType, timeData) end
 ---
 --- @hash 0xDDDF64C91BFCF0AA
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsFindingGamers() end
 
     
 --- NetworkIsThisScriptMarked
 ---
 --- @hash 0xD1110739EEADB592
---- @params p0 Any
---- @params p1 boolean (BOOL)
---- @params p2 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 boolean
+--- @param p2 any
+--- @return boolean
 function NetworkIsThisScriptMarked(p0, p1, p2) end
 
     
@@ -4353,9 +4353,9 @@ function NetworkGetNumParticipants() end
 --- NetworkGetFoundGamer
 ---
 --- @hash 0x9DCFF2AFB68B3476
---- @params p0 table (Any*)
---- @params p1 Any
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 any
+--- @return boolean
 function NetworkGetFoundGamer(p0, p1) end
 
     
@@ -4364,7 +4364,7 @@ function NetworkGetFoundGamer(p0, p1) end
 --- ```
 ---
 --- @hash 0x6C0E2E0125610278
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return number (Player)
 function NetworkGetPlayerIndexFromPed(ped) end
 
@@ -4375,7 +4375,7 @@ function NetworkGetPlayerIndexFromPed(ped) end
 ---
 --- @hash 0x1353F87E89946207
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkHasAgeRestrictedProfile() end
 
     
@@ -4384,8 +4384,8 @@ function NetworkHasAgeRestrictedProfile() end
 --- ```
 ---
 --- @hash 0x73B000F7FBC55829
---- @params data table (Any*)
---- @params dataCount number (int)
+--- @param data table (Any*)
+--- @param dataCount number (int)
 --- @return number (int)
 function NetworkGetTransitionMembers(data, dataCount) end
 
@@ -4393,8 +4393,8 @@ function NetworkGetTransitionMembers(data, dataCount) end
 --- NetworkIsDoorNetworked
 ---
 --- @hash 0xC01E93FAC20C3346
---- @params doorHash table (Hash)
---- @return boolean (BOOL)
+--- @param doorHash table (Hash)
+--- @return boolean
 function NetworkIsDoorNetworked(doorHash) end
 
     
@@ -4402,15 +4402,15 @@ function NetworkIsDoorNetworked(doorHash) end
 ---
 --- @hash 0x2910669969E9535E
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkGetThisScriptIsNetworkScript() end
 
     
 --- NetworkHasViewGamerUserContentResult
 ---
 --- @hash 0xCCA4318E1AB03F1F
---- @params networkHandle table (Any*)
---- @return boolean (BOOL)
+--- @param networkHandle table (Any*)
+--- @return boolean
 function NetworkHasViewGamerUserContentResult(networkHandle) end
 
     
@@ -4418,7 +4418,7 @@ function NetworkHasViewGamerUserContentResult(networkHandle) end
 ---
 --- @hash 0x8020A73847E0CA7D
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkHaveRosBannedPriv() end
 
     
@@ -4426,7 +4426,7 @@ function NetworkHaveRosBannedPriv() end
 ---
 --- @hash 0x66B59CFFD78467AF
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkGetRosPrivilege_9() end
 
     
@@ -4436,9 +4436,9 @@ function NetworkGetRosPrivilege_9() end
 --- ```
 ---
 --- @hash 0xDCD51DD8F87AEC5C
---- @params userId string (char*)
---- @params networkHandle table (int*)
---- @params bufferSize number (int)
+--- @param userId string (char*)
+--- @param networkHandle table (int*)
+--- @param bufferSize number (int)
 --- @return void
 function NetworkHandleFromUserId(userId, networkHandle, bufferSize) end
 
@@ -4446,8 +4446,8 @@ function NetworkHandleFromUserId(userId, networkHandle, bufferSize) end
 --- NetworkGetPresenceInviteInviter
 ---
 --- @hash 0x4962CC4AA2F345B7
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function NetworkGetPresenceInviteInviter(p0) end
 
     
@@ -4457,14 +4457,14 @@ function NetworkGetPresenceInviteInviter(p0) end
 ---
 --- @hash 0x85443FF4C328F53B
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkHaveJustUploadLater() end
 
     
 --- NetworkHashFromGamerHandle
 ---
 --- @hash 0x58575AC3CF2CA8EC
---- @params networkHandle table (int*)
+--- @param networkHandle table (int*)
 --- @return table (Hash)
 function NetworkHashFromGamerHandle(networkHandle) end
 
@@ -4472,17 +4472,17 @@ function NetworkHashFromGamerHandle(networkHandle) end
 --- NetworkHasControlOfEntity
 ---
 --- @hash 0x01BF60A500E28887
---- @params entity table (Entity)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @return boolean
 function NetworkHasControlOfEntity(entity) end
 
     
 --- NetworkGetPrimaryClanDataNew
 ---
 --- @hash 0xC080FF658B2E41DA
---- @params p0 table (Any*)
---- @params p1 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 table (Any*)
+--- @return boolean
 function NetworkGetPrimaryClanDataNew(p0, p1) end
 
     
@@ -4490,15 +4490,15 @@ function NetworkGetPrimaryClanDataNew(p0, p1) end
 ---
 --- @hash 0x593570C289A77688
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkGetRosPrivilege_24() end
 
     
 --- NetworkGetRespawnResultFlags
 ---
 --- @hash 0x6C34F1208B8923FD
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function NetworkGetRespawnResultFlags(p0) end
 
     
@@ -4506,15 +4506,15 @@ function NetworkGetRespawnResultFlags(p0) end
 ---
 --- @hash 0x5F91D5D0B36AA310
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkHaveRosMultiplayerPriv() end
 
     
 --- NetworkHasPlayerStartedTransition
 ---
 --- @hash 0x9AC9CCBFA8C29795
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkHasPlayerStartedTransition(player) end
 
     
@@ -4529,8 +4529,8 @@ function NetworkGetNumFoundGamers() end
 --- NetworkIsParticipantActive
 ---
 --- @hash 0x6FF8FF40B6357D45
---- @params p0 number (int)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @return boolean
 function NetworkIsParticipantActive(p0) end
 
     
@@ -4540,7 +4540,7 @@ function NetworkIsParticipantActive(p0) end
 ---
 --- @hash 0xD23A1A815D21DB19
 ---
---- @return Any
+--- @return any
 function NetworkLeaveTransition() end
 
     
@@ -4548,15 +4548,15 @@ function NetworkLeaveTransition() end
 ---
 --- @hash 0xA0AD7E2AF5349F61
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkHaveRosCreateTicketPriv() end
 
     
 --- NetworkHasInvitedGamer
 ---
 --- @hash 0x4D86CD31E8976ECE
---- @params p0 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @return boolean
 function NetworkHasInvitedGamer(p0) end
 
     
@@ -4577,9 +4577,9 @@ function NetworkHasInvitedGamer(p0) end
 --- ```
 ---
 --- @hash 0x388EB2B86C73B6B3
---- @params player number (Player)
---- @params networkHandle table (int*)
---- @params bufferSize number (int)
+--- @param player number (Player)
+--- @param networkHandle table (int*)
+--- @param bufferSize number (int)
 --- @return void
 function NetworkHandleFromPlayer(player, networkHandle, bufferSize) end
 
@@ -4587,8 +4587,8 @@ function NetworkHandleFromPlayer(player, networkHandle, bufferSize) end
 --- NetworkGetTransitionHost
 ---
 --- @hash 0x65042B9774C4435E
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkGetTransitionHost(networkHandle) end
 
     
@@ -4596,7 +4596,7 @@ function NetworkGetTransitionHost(networkHandle) end
 ---
 --- @hash 0x10FAB35428CCC9D7
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsGameInProgress() end
 
     
@@ -4611,15 +4611,15 @@ function NetworkGetRandomInt() end
 --- NetworkIsActivitySpectatorFromHandle
 ---
 --- @hash 0x2763BBAA72A7BCB9
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkIsActivitySpectatorFromHandle(networkHandle) end
 
     
 --- NetworkGetEntityNetScriptId
 ---
 --- @hash 0x815F18AD865F057F
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return number (int)
 function NetworkGetEntityNetScriptId(entity) end
 
@@ -4627,7 +4627,7 @@ function NetworkGetEntityNetScriptId(entity) end
 --- NetworkHashFromPlayerHandle
 ---
 --- @hash 0xBC1D768F2F5D6C05
---- @params player number (Player)
+--- @param player number (Player)
 --- @return table (Hash)
 function NetworkHashFromPlayerHandle(player) end
 
@@ -4643,24 +4643,24 @@ function NetworkGetScriptStatus() end
 --- NetworkHasControlOfPickup
 ---
 --- @hash 0x5BC9495F0B3B6FA6
---- @params pickup table (Pickup)
---- @return boolean (BOOL)
+--- @param pickup table (Pickup)
+--- @return boolean
 function NetworkHasControlOfPickup(pickup) end
 
     
 --- NetworkIsHandleValid
 ---
 --- @hash 0x6F79B93B0A8E4133
---- @params networkHandle table (int*)
---- @params bufferSize number (int)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @param bufferSize number (int)
+--- @return boolean
 function NetworkIsHandleValid(networkHandle, bufferSize) end
 
     
 --- NetworkGetNetworkIdFromEntity
 ---
 --- @hash 0xA11700682F3AD45C
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return number (int)
 function NetworkGetNetworkIdFromEntity(entity) end
 
@@ -4668,33 +4668,33 @@ function NetworkGetNetworkIdFromEntity(entity) end
 --- NetworkIsGamerInMySession
 ---
 --- @hash 0x0F10B05DDF8D16E9
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkIsGamerInMySession(networkHandle) end
 
     
 --- NetworkGetPresenceInvitePlaylistLength
 ---
 --- @hash 0xD39B3FFF8FFDD5BF
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function NetworkGetPresenceInvitePlaylistLength(p0) end
 
     
 --- NetworkInviteGamersToTransition
 ---
 --- @hash 0x4A595C32F77DFF76
---- @params p0 table (Any*)
---- @params p1 Any
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 any
+--- @return boolean
 function NetworkInviteGamersToTransition(p0, p1) end
 
     
 --- NetworkIsEntityFading
 ---
 --- @hash 0x422F32CC7E56ABAD
---- @params entity table (Entity)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @return boolean
 function NetworkIsEntityFading(entity) end
 
     
@@ -4702,7 +4702,7 @@ function NetworkIsEntityFading(entity) end
 ---
 --- @hash 0x6CC27C9FA2040220
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsInMpCutscene() end
 
     
@@ -4710,7 +4710,7 @@ function NetworkIsInMpCutscene() end
 ---
 --- @hash 0x5B4F04F19376A0BA
 ---
---- @return Any
+--- @return any
 function NetworkGetPrimaryClanDataSuccess() end
 
     
@@ -4718,31 +4718,31 @@ function NetworkGetPrimaryClanDataSuccess() end
 ---
 --- @hash 0xB3F64A6A91432477
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsClanMembershipFinishedDownloading() end
 
     
 --- NetworkIsPlayerConcealed
 ---
 --- @hash 0x919B3C98ED8292F9
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkIsPlayerConcealed(player) end
 
     
 --- NetworkHasInvitedGamerToTransition
 ---
 --- @hash 0x7284A47B3540E6CF
---- @params p0 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @return boolean
 function NetworkHasInvitedGamerToTransition(p0) end
 
     
 --- NetworkHaveUserContentPrivileges
 ---
 --- @hash 0x72D918C99BCACC54
---- @params p0 number (int)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @return boolean
 function NetworkHaveUserContentPrivileges(p0) end
 
     
@@ -4750,7 +4750,7 @@ function NetworkHaveUserContentPrivileges(p0) end
 ---
 --- @hash 0x05095437424397FA
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsActivitySession() end
 
     
@@ -4758,7 +4758,7 @@ function NetworkIsActivitySession() end
 ---
 --- @hash 0x68049AEFF83D8F0A
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsInTransition() end
 
     
@@ -4766,15 +4766,15 @@ function NetworkIsInTransition() end
 ---
 --- @hash 0x25CB5A9F37BFD063
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkHaveOnlinePrivileges() end
 
     
 --- NetworkIsFriend
 ---
 --- @hash 0x1A24A179F9B31654
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkIsFriend(networkHandle) end
 
     
@@ -4782,7 +4782,7 @@ function NetworkIsFriend(networkHandle) end
 ---
 --- @hash 0x8132C0EB8B2B3293
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsCloudBackgroundScriptRequestPending() end
 
     
@@ -4790,7 +4790,7 @@ function NetworkIsCloudBackgroundScriptRequestPending() end
 ---
 --- @hash 0x422D396F80A96547
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkHaveRosLeaderboardWritePriv() end
 
     
@@ -4809,16 +4809,16 @@ function NetworkGetTargetingMode() end
 --- ```
 ---
 --- @hash 0x8DE9945BCC9AEC52
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkIsChattingInPlatformParty(networkHandle) end
 
     
 --- NetworkIsGamerTalking
 ---
 --- @hash 0x71C33B22606CD88A
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkIsGamerTalking(networkHandle) end
 
     
@@ -4826,26 +4826,26 @@ function NetworkIsGamerTalking(networkHandle) end
 ---
 --- @hash 0x606E4D3E3CCCF3EB
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkHaveRosSocialClubPriv() end
 
     
 --- NetworkIsScriptActive
 ---
 --- @hash 0x9D40DF90FAD26098
---- @params scriptName string (char*)
---- @params player number (Player)
---- @params p2 boolean (BOOL)
---- @params p3 Any
---- @return boolean (BOOL)
+--- @param scriptName string (char*)
+--- @param player number (Player)
+--- @param p2 boolean
+--- @param p3 any
+--- @return boolean
 function NetworkIsScriptActive(scriptName, player, p2, p3) end
 
     
 --- NetworkIsFriendOnline
 ---
 --- @hash 0x425A44533437B64D
---- @params name string (char*)
---- @return boolean (BOOL)
+--- @param name string (char*)
+--- @return boolean
 function NetworkIsFriendOnline(name) end
 
     
@@ -4854,16 +4854,16 @@ function NetworkIsFriendOnline(name) end
 --- ```
 ---
 --- @hash 0x2EA9A3BEDF3F17B8
---- @params friendName string (char*)
---- @return boolean (BOOL)
+--- @param friendName string (char*)
+--- @return boolean
 function NetworkIsFriendInSameTitle(friendName) end
 
     
 --- NetworkIsPlayerBlockedByMe
 ---
 --- @hash 0x57AF1F8E27483721
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkIsPlayerBlockedByMe(player) end
 
     
@@ -4872,7 +4872,7 @@ function NetworkIsPlayerBlockedByMe(player) end
 --- ```
 ---
 --- @hash 0x0FF2862B61A58AF9
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkOverrideReceiveRestrictionsAll(toggle) end
 
@@ -4883,14 +4883,14 @@ function NetworkOverrideReceiveRestrictionsAll(toggle) end
 ---
 --- @hash 0x292564C735375EDF
 ---
---- @return Any
+--- @return any
 function NetworkIsTransitionMatchmaking() end
 
     
 --- NetworkGetPlayerIndex
 ---
 --- @hash 0x24FB80D107371267
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function NetworkGetPlayerIndex(player) end
 
@@ -4902,7 +4902,7 @@ function NetworkGetPlayerIndex(player) end
 ---
 --- @hash 0x659CF2EF7F550C4F
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkHasGameBeenAltered() end
 
     
@@ -4912,7 +4912,7 @@ function NetworkHasGameBeenAltered() end
 ---
 --- @hash 0x520F3282A53D26B7
 ---
---- @return Any
+--- @return any
 function NetworkIsTransitionBusy() end
 
     
@@ -4920,7 +4920,7 @@ function NetworkIsTransitionBusy() end
 ---
 --- @hash 0xD7C95D322FF57522
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsClockTimeOverridden() end
 
     
@@ -4928,7 +4928,7 @@ function NetworkIsClockTimeOverridden() end
 ---
 --- @hash 0xEFFB25453D8600F9
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsCableConnected() end
 
     
@@ -4936,7 +4936,7 @@ function NetworkIsCableConnected() end
 ---
 --- @hash 0x6EA101606F6E4D81
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsAddingFriend() end
 
     
@@ -4944,7 +4944,7 @@ function NetworkIsAddingFriend() end
 ---
 --- @hash 0xE870F9F1F7B4F1FA
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkHasHeadset() end
 
     
@@ -4952,15 +4952,15 @@ function NetworkHasHeadset() end
 ---
 --- @hash 0xCA97246103B63917
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsInSession() end
 
     
 --- NetworkIsPlayerFading
 ---
 --- @hash 0x631DC5DFF4B110E3
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkIsPlayerFading(player) end
 
     
@@ -4968,7 +4968,7 @@ function NetworkIsPlayerFading(player) end
 ---
 --- @hash 0x83CD99A1E6061AB5
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsHostOfThisScript() end
 
     
@@ -4976,7 +4976,7 @@ function NetworkIsHostOfThisScript() end
 ---
 --- @hash 0x8A8694B48715B000
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsLocalPlayerInvincible() end
 
     
@@ -4986,23 +4986,23 @@ function NetworkIsLocalPlayerInvincible() end
 ---
 --- @hash 0xADA24309FE08DACF
 ---
---- @return Any
+--- @return any
 function NetworkIsInTutorialSession() end
 
     
 --- NetworkIsFriendIndexOnline
 ---
 --- @hash 0xBAD8F2A42B844821
---- @params friendIndex number (int)
---- @return boolean (BOOL)
+--- @param friendIndex number (int)
+--- @return boolean
 function NetworkIsFriendIndexOnline(friendIndex) end
 
     
 --- NetworkIsPlayerAParticipant
 ---
 --- @hash 0x3CA58F6CB7CBD784
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkIsPlayerAParticipant(player) end
 
     
@@ -5023,8 +5023,8 @@ function NetworkGetTotalNumPlayers() end
 --- ```
 ---
 --- @hash 0x9D060B08CD63321A
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkJoinTransition(player) end
 
     
@@ -5033,8 +5033,8 @@ function NetworkJoinTransition(player) end
 --- ```
 ---
 --- @hash 0x0BE73DA6984A6E33
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function NetworkIsPendingFriend(p0) end
 
     
@@ -5045,8 +5045,8 @@ function NetworkIsPendingFriend(p0) end
 --- ```
 ---
 --- @hash 0x97DD4C5944CC2E6A
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function NetworkOverrideSendRestrictions(player, toggle) end
 
@@ -5054,8 +5054,8 @@ function NetworkOverrideSendRestrictions(player, toggle) end
 --- NetworkIsTransitionHostFromHandle
 ---
 --- @hash 0x6B5C83BA3EFE6A10
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkIsTransitionHostFromHandle(networkHandle) end
 
     
@@ -5063,15 +5063,15 @@ function NetworkIsTransitionHostFromHandle(networkHandle) end
 ---
 --- @hash 0x59DF79317F85A7E0
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkJoinPreviouslyFailedSession() end
 
     
 --- NetworkIsFriendInMultiplayer
 ---
 --- @hash 0x57005C18827F3A28
---- @params friendName string (char*)
---- @return boolean (BOOL)
+--- @param friendName string (char*)
+--- @return boolean
 function NetworkIsFriendInMultiplayer(friendName) end
 
     
@@ -5081,26 +5081,26 @@ function NetworkIsFriendInMultiplayer(friendName) end
 --- ```
 ---
 --- @hash 0x3A8B55FDA4C8DDEF
---- @params contextHash Any
---- @params nameHash Any
---- @params value table (int*)
---- @return boolean (BOOL)
+--- @param contextHash any
+--- @param nameHash any
+--- @param value table (int*)
+--- @return boolean
 function NetworkRegisterTunableIntHash(contextHash, nameHash, value) end
 
     
 --- NetworkIsGamerMutedByMe
 ---
 --- @hash 0xCE60DE011B6C7978
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkIsGamerMutedByMe(networkHandle) end
 
     
 --- NetworkIsGamerBlockedByMe
 ---
 --- @hash 0xE944C4F5AF1B5883
---- @params networkHandle table (Any*)
---- @return boolean (BOOL)
+--- @param networkHandle table (Any*)
+--- @return boolean
 function NetworkIsGamerBlockedByMe(networkHandle) end
 
     
@@ -5111,9 +5111,9 @@ function NetworkIsGamerBlockedByMe(networkHandle) end
 --- Passing wrong data (e.g. hours above 23) will cause the game to crash.
 ---
 --- @hash 0xE679E3E06E363892
---- @params Hours number (int)
---- @params Minutes number (int)
---- @params Seconds number (int)
+--- @param Hours number (int)
+--- @param Minutes number (int)
+--- @param Seconds number (int)
 --- @return void
 function NetworkOverrideClockTime(Hours, Minutes, Seconds) end
 
@@ -5121,17 +5121,17 @@ function NetworkOverrideClockTime(Hours, Minutes, Seconds) end
 --- NetworkIsPlayerConnected
 ---
 --- @hash 0x93DC1BE4E1ABE9D1
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkIsPlayerConnected(player) end
 
     
 --- NetworkHandleFromFriend
 ---
 --- @hash 0xD45CB817D7E177D2
---- @params friendIndex number (int)
---- @params networkHandle table (int*)
---- @params bufferSize number (int)
+--- @param friendIndex number (int)
+--- @param networkHandle table (int*)
+--- @param bufferSize number (int)
 --- @return void
 function NetworkHandleFromFriend(friendIndex, networkHandle, bufferSize) end
 
@@ -5142,15 +5142,15 @@ function NetworkHandleFromFriend(friendIndex, networkHandle, bufferSize) end
 ---
 --- @hash 0x054354A99211EB96
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsSignedIn() end
 
     
 --- NetworkIsFriendHandleOnline
 ---
 --- @hash 0x87EB7A3FFCB314DB
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkIsFriendHandleOnline(networkHandle) end
 
     
@@ -5165,7 +5165,7 @@ function NetworkIsFriendHandleOnline(networkHandle) end
 ---
 --- @hash 0x966C2BC2A7FE3F30
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsInParty() end
 
     
@@ -5175,7 +5175,7 @@ function NetworkIsInParty() end
 ---
 --- @hash 0x2FC5650B0271CB57
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsInPlatformParty() end
 
     
@@ -5184,16 +5184,16 @@ function NetworkIsInPlatformParty() end
 --- ```
 ---
 --- @hash 0xA699957E60D80214
---- @params index number (int)
---- @return boolean (BOOL)
+--- @param index number (int)
+--- @return boolean
 function NetworkHasRosPrivilege(index) end
 
     
 --- NetworkIsInactiveProfile
 ---
 --- @hash 0x7E58745504313A2E
---- @params p0 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @return boolean
 function NetworkIsInactiveProfile(p0) end
 
     
@@ -5204,7 +5204,7 @@ function NetworkIsInactiveProfile(p0) end
 ---
 --- @hash 0x9DE624D2FC4B603F
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsSessionStarted() end
 
     
@@ -5221,16 +5221,16 @@ function NetworkRequestCloudTunables() end
 --- NetworkHasCachedPlayerHeadBlendData
 ---
 --- @hash 0x237D5336A9A54108
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkHasCachedPlayerHeadBlendData(player) end
 
     
 --- This only works with vehicles.
 ---
 --- @hash 0x71302EC70689052A
---- @params entity table (Entity)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @return boolean
 function NetworkIsEntityConcealed(entity) end
 
     
@@ -5252,8 +5252,8 @@ function NetworkOpenTransitionMatchmaking() end
 --- ```
 ---
 --- @hash 0x676ED266AADD31E0
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkIsPartyMember(networkHandle) end
 
     
@@ -5261,7 +5261,7 @@ function NetworkIsPartyMember(networkHandle) end
 ---
 --- @hash 0x35F0B98A8387274D
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsTutorialSessionChangePending() end
 
     
@@ -5271,7 +5271,7 @@ function NetworkIsTutorialSessionChangePending() end
 ---
 --- @hash 0x0B824797C9BF2159
 ---
---- @return Any
+--- @return any
 function NetworkIsTransitionHost() end
 
     
@@ -5279,14 +5279,14 @@ function NetworkIsTransitionHost() end
 ---
 --- @hash 0x8D11E61A4ABF49CC
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsPsnAvailable() end
 
     
 --- NetworkMemberIdFromGamerHandle
 ---
 --- @hash 0xC82630132081BB6F
---- @params networkHandle table (int*)
+--- @param networkHandle table (int*)
 --- @return string (char*)
 function NetworkMemberIdFromGamerHandle(networkHandle) end
 
@@ -5295,7 +5295,7 @@ function NetworkMemberIdFromGamerHandle(networkHandle) end
 ---
 --- @hash 0x5EA784D197556507
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkHaveOnlinePrivilege_2() end
 
     
@@ -5305,7 +5305,7 @@ function NetworkHaveOnlinePrivilege_2() end
 ---
 --- @hash 0x2DCF46CB1A4F0884
 ---
---- @return Any
+--- @return any
 function NetworkLaunchTransition() end
 
     
@@ -5325,7 +5325,7 @@ function NetworkIsMultiplayerDisabled() end
 ---
 --- @hash 0xD0A484CB2F829FBE
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsTransitionVisibilityLocked() end
 
     
@@ -5335,7 +5335,7 @@ function NetworkIsTransitionVisibilityLocked() end
 ---
 --- @hash 0x9D7696D8F4FA6CB7
 ---
---- @return Any
+--- @return any
 function NetworkIsTransitionToGame() end
 
     
@@ -5343,7 +5343,7 @@ function NetworkIsTransitionToGame() end
 ---
 --- @hash 0x53FA83401D9C07FE
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsTransitionStarted() end
 
     
@@ -5352,19 +5352,19 @@ function NetworkIsTransitionStarted() end
 --- ```
 ---
 --- @hash 0xC116FF9B4D488291
---- @params p0 table (Any*)
---- @params p1 table (Any*)
---- @params p2 Any
---- @params p3 Any
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 table (Any*)
+--- @param p2 any
+--- @param p3 any
+--- @return boolean
 function NetworkSendPresenceTransitionInvite(p0, p1, p2, p3) end
 
     
 --- NetworkIsPlayerInMpCutscene
 ---
 --- @hash 0x63F9EE203C3619F2
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkIsPlayerInMpCutscene(player) end
 
     
@@ -5372,7 +5372,7 @@ function NetworkIsPlayerInMpCutscene(player) end
 ---
 --- @hash 0x5DC577201723960A
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsTransitionSolo() end
 
     
@@ -5382,7 +5382,7 @@ function NetworkIsTransitionSolo() end
 --- ```
 ---
 --- @hash 0x7718D2E2060837D2
---- @params player number (Player)
+--- @param player number (Player)
 --- @return string (char*)
 function NetworkPlayerGetName(player) end
 
@@ -5391,7 +5391,7 @@ function NetworkPlayerGetName(player) end
 ---
 --- @hash 0x9A4CF4F48AD77302
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsCloudAvailable() end
 
     
@@ -5401,17 +5401,17 @@ function NetworkIsCloudAvailable() end
 --- ```
 ---
 --- @hash 0x1950DAE9848A4739
---- @params contextHash Any
---- @params nameHash Any
---- @params value table (float*)
---- @return boolean (BOOL)
+--- @param contextHash any
+--- @param nameHash any
+--- @param value table (float*)
+--- @return boolean
 function NetworkRegisterTunableFloatHash(contextHash, nameHash, value) end
 
     
 --- NetworkSessionGetInviter
 ---
 --- @hash 0xE57397B4A3429DD0
---- @params networkHandle table (int*)
+--- @param networkHandle table (int*)
 --- @return void
 function NetworkSessionGetInviter(networkHandle) end
 
@@ -5422,8 +5422,8 @@ function NetworkSessionGetInviter(networkHandle) end
 --- ```
 ---
 --- @hash 0xDDF73E2B1FEC5AB4
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function NetworkOverrideReceiveRestrictions(player, toggle) end
 
@@ -5431,10 +5431,10 @@ function NetworkOverrideReceiveRestrictions(player, toggle) end
 --- NetworkIsPlayerAParticipantOnScript
 ---
 --- @hash 0x1AD5B71586B94820
---- @params p0 number (Player)
---- @params script string (char*)
---- @params p2 number (Player)
---- @return boolean (BOOL)
+--- @param p0 number (Player)
+--- @param script string (char*)
+--- @param p2 number (Player)
+--- @return boolean
 function NetworkIsPlayerAParticipantOnScript(p0, script, p2) end
 
     
@@ -5443,9 +5443,9 @@ function NetworkIsPlayerAParticipantOnScript(p0, script, p2) end
 --- ```
 ---
 --- @hash 0x9DE986FC9A87C474
---- @params player number (Player)
---- @params index number (int)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param index number (int)
+--- @return boolean
 function NetworkIsPlayerEqualToIndex(player, index) end
 
     
@@ -5455,15 +5455,15 @@ function NetworkIsPlayerEqualToIndex(player, index) end
 ---
 --- @hash 0x12103B9E0C9F92FB
 ---
---- @return Any
+--- @return any
 function NetworkIsActivitySpectator() end
 
     
 --- NetworkMarkTransitionGamerAsFullyJoined
 ---
 --- @hash 0x5728BB6D63E3FF1D
---- @params p0 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @return boolean
 function NetworkMarkTransitionGamerAsFullyJoined(p0) end
 
     
@@ -5473,16 +5473,16 @@ function NetworkMarkTransitionGamerAsFullyJoined(p0) end
 ---
 --- @hash 0x5FCF4D7069B09026
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsTextChatActive() end
 
     
 --- NetworkSendTextMessage
 ---
 --- @hash 0x3A214F2EC889B100
---- @params message string (char*)
---- @params networkHandle table (int*)
---- @return boolean (BOOL)
+--- @param message string (char*)
+--- @param networkHandle table (int*)
+--- @return boolean
 function NetworkSendTextMessage(message, networkHandle) end
 
     
@@ -5493,7 +5493,7 @@ function NetworkSendTextMessage(message, networkHandle) end
 ---
 --- @hash 0x19D8DA0E5A68045A
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkPlayerIsBadsport() end
 
     
@@ -5501,14 +5501,14 @@ function NetworkPlayerIsBadsport() end
 ---
 --- @hash 0x37A4494483B9F5C9
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsTransitionOpenToMatchmaking() end
 
     
 --- NetworkOverrideTransitionChat
 ---
 --- @hash 0xAF66059A131AA269
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function NetworkOverrideTransitionChat(p0) end
 
@@ -5517,7 +5517,7 @@ function NetworkOverrideTransitionChat(p0) end
 ---
 --- @hash 0xEF0912DDF7C4CB4B
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkSessionIsVoiceSessionBusy() end
 
     
@@ -5529,11 +5529,11 @@ function NetworkSessionIsVoiceSessionBusy() end
 --- ```
 ---
 --- @hash 0x9D80CD1D0E6327DE
---- @params p0 table (Any*)
---- @params p1 Any
---- @params p2 table (Any*)
---- @params p3 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 any
+--- @param p2 table (Any*)
+--- @param p3 table (Any*)
+--- @return boolean
 function NetworkInviteGamers(p0, p1, p2, p3) end
 
     
@@ -5541,7 +5541,7 @@ function NetworkInviteGamers(p0, p1, p2, p3) end
 ---
 --- @hash 0x5A6AA44FF8E931E6
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsTransitionPrivate() end
 
     
@@ -5553,7 +5553,7 @@ function NetworkIsTransitionPrivate() end
 ---
 --- @hash 0x8DB296B814EDDA07
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsHost() end
 
     
@@ -5568,7 +5568,7 @@ function NetworkRemoveAllTransitionInvite() end
 --- NetworkRegisterEntityAsNetworked
 ---
 --- @hash 0x06FAACD625D80CAA
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return void
 function NetworkRegisterEntityAsNetworked(entity) end
 
@@ -5577,18 +5577,18 @@ function NetworkRegisterEntityAsNetworked(entity) end
 ---
 --- @hash 0xC0D2AF00BCC234CA
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsLocalTalking() end
 
     
 --- NetworkOverrideCoordsAndHeading
 ---
 --- @hash 0xA7E30DE9272B6D49
---- @params entity table (Entity)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params heading number (float)
+--- @param entity table (Entity)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
 --- @return void
 function NetworkOverrideCoordsAndHeading(entity, x, y, z, heading) end
 
@@ -5597,7 +5597,7 @@ function NetworkOverrideCoordsAndHeading(entity, x, y, z, heading) end
 ---
 --- @hash 0x048746E388762E11
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsInSpectatorMode() end
 
     
@@ -5609,8 +5609,8 @@ function NetworkIsInSpectatorMode() end
 --- ```
 ---
 --- @hash 0x8B6A4DD0AF9CE215
---- @params playerType number (int)
---- @params playerCount number (int)
+--- @param playerType number (int)
+--- @param playerCount number (int)
 --- @return void
 function NetworkSessionSetMatchmakingGroupMax(playerType, playerCount) end
 
@@ -5624,16 +5624,16 @@ function NetworkSessionSetMatchmakingGroupMax(playerType, playerCount) end
 --- ```
 ---
 --- @hash 0x544ABDDA3B409B6D
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkPlayerIsRockstarDev(player) end
 
     
 --- NetworkIsPlayerActive
 ---
 --- @hash 0xB8DFD30D6973E135
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkIsPlayerActive(player) end
 
     
@@ -5642,15 +5642,15 @@ function NetworkIsPlayerActive(player) end
 --- ```
 ---
 --- @hash 0x031E11F3D447647E
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkIsPlayerTalking(player) end
 
     
 --- NetworkRemoveTransitionInvite
 ---
 --- @hash 0x7524B431B2E6F7EE
---- @params p0 table (Any*)
+--- @param p0 table (Any*)
 --- @return void
 function NetworkRemoveTransitionInvite(p0) end
 
@@ -5659,15 +5659,15 @@ function NetworkRemoveTransitionInvite(p0) end
 ---
 --- @hash 0x655B91F1495A9090
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkPlayerIsCheater() end
 
     
 --- NetworkPlayerIndexIsCheater
 ---
 --- @hash 0x565E430DB3B05BEC
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkPlayerIndexIsCheater(player) end
 
     
@@ -5676,8 +5676,8 @@ function NetworkPlayerIndexIsCheater(player) end
 --- ```
 ---
 --- @hash 0x3039AE5AD2C9C0C4
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function NetworkOverrideChatRestrictions(player, toggle) end
 
@@ -5685,7 +5685,7 @@ function NetworkOverrideChatRestrictions(player, toggle) end
 --- NetworkSessionBlockJoinRequests
 ---
 --- @hash 0xA73667484D7037C3
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkSessionBlockJoinRequests(toggle) end
 
@@ -5693,16 +5693,16 @@ function NetworkSessionBlockJoinRequests(toggle) end
 --- NetworkIsPlayerMutedByMe
 ---
 --- @hash 0x8C71288AE68EDE39
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkIsPlayerMutedByMe(player) end
 
     
 --- NetworkSessionChangeSlots
 ---
 --- @hash 0xB4AB419E0D86ACAE
---- @params p0 number (int)
---- @params p1 boolean (BOOL)
+--- @param p0 number (int)
+--- @param p1 boolean
 --- @return void
 function NetworkSessionChangeSlots(p0, p1) end
 
@@ -5711,7 +5711,7 @@ function NetworkSessionChangeSlots(p0, p1) end
 ---
 --- @hash 0xF4435D66A8E2905E
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsSessionBusy() end
 
     
@@ -5720,12 +5720,12 @@ function NetworkIsSessionBusy() end
 --- ```
 ---
 --- @hash 0xEA23C49EAA83ACFB
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params heading number (float)
---- @params unk boolean (BOOL)
---- @params changetime boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
+--- @param unk boolean
+--- @param changetime boolean
 --- @return void
 function NetworkResurrectLocalPlayer(x, y, z, heading, unk, changetime) end
 
@@ -5734,19 +5734,19 @@ function NetworkResurrectLocalPlayer(x, y, z, heading, unk, changetime) end
 ---
 --- @hash 0xFD8B834A8BA05048
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsInPlatformPartyChat() end
 
     
 --- NetworkSessionCrewMatchmaking
 ---
 --- @hash 0x94BC51E9449D917F
---- @params p0 number (int)
---- @params p1 number (int)
---- @params p2 number (int)
---- @params maxPlayers number (int)
---- @params p4 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @param p1 number (int)
+--- @param p2 number (int)
+--- @param maxPlayers number (int)
+--- @param p4 boolean
+--- @return boolean
 function NetworkSessionCrewMatchmaking(p0, p1, p2, maxPlayers, p4) end
 
     
@@ -5754,18 +5754,18 @@ function NetworkSessionCrewMatchmaking(p0, p1, p2, maxPlayers, p4) end
 ---
 --- @hash 0xFFE1E5B792D92B34
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkJoinPreviouslyFailedTransition() end
 
     
 --- NetworkSessionActivityQuickmatch
 ---
 --- @hash 0xBE3E347A87ACEB82
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @return boolean
 function NetworkSessionActivityQuickmatch(p0, p1, p2, p3) end
 
     
@@ -5773,7 +5773,7 @@ function NetworkSessionActivityQuickmatch(p0, p1, p2, p3) end
 ---
 --- @hash 0x0467C11ED88B7D28
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsTunableCloudRequestPending() end
 
     
@@ -5786,8 +5786,8 @@ function NetworkIsTunableCloudRequestPending() end
 --- ```
 ---
 --- @hash 0x4927FC39CD0869A0
---- @params player number (Player)
---- @params userID string (char*)
+--- @param player number (Player)
+--- @param userID string (char*)
 --- @return string (char*)
 function NetworkPlayerGetUserid(player, userID) end
 
@@ -5803,8 +5803,8 @@ function NetworkSessionLeaveSinglePlayer() end
 --- NetworkSetEntityCanBlend
 ---
 --- @hash 0xD830567D88A1E873
---- @params entity table (Entity)
---- @params toggle boolean (BOOL)
+--- @param entity table (Entity)
+--- @param toggle boolean
 --- @return void
 function NetworkSetEntityCanBlend(entity, toggle) end
 
@@ -5812,8 +5812,8 @@ function NetworkSetEntityCanBlend(entity, toggle) end
 --- NetworkSessionGetKickVote
 ---
 --- @hash 0xD6D09A6F32F49EF1
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkSessionGetKickVote(player) end
 
     
@@ -5821,7 +5821,7 @@ function NetworkSessionGetKickVote(player) end
 ---
 --- @hash 0x172F75B6EE2233BA
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkPlayerGetCheaterReason() end
 
     
@@ -5829,7 +5829,7 @@ function NetworkPlayerGetCheaterReason() end
 ---
 --- @hash 0x855BC38818F6F684
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkSessionIsInVoiceSession() end
 
     
@@ -5838,8 +5838,8 @@ function NetworkSessionIsInVoiceSession() end
 --- ```
 ---
 --- @hash 0x3E9B2F01C50DF595
---- @params vars table (int*)
---- @params numVars number (int)
+--- @param vars table (int*)
+--- @param numVars number (int)
 --- @return void
 function NetworkRegisterHostBroadcastVariables(vars, numVars) end
 
@@ -5848,14 +5848,14 @@ function NetworkRegisterHostBroadcastVariables(vars, numVars) end
 ---
 --- @hash 0xD83C2B94E7508980
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsSessionActive() end
 
     
 --- NetworkSessionGetMatchmakingGroupFree
 ---
 --- @hash 0x56CE820830EF040B
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return number (int)
 function NetworkSessionGetMatchmakingGroupFree(p0) end
 
@@ -5863,16 +5863,16 @@ function NetworkSessionGetMatchmakingGroupFree(p0) end
 --- NetworkRequestControlOfDoor
 ---
 --- @hash 0x870DDFD5A4A796E4
---- @params doorID number (int)
---- @return boolean (BOOL)
+--- @param doorID number (int)
+--- @return boolean
 function NetworkRequestControlOfDoor(doorID) end
 
     
 --- NetworkSetInMpCutscene
 ---
 --- @hash 0x9CA5DE655269FEC4
---- @params p0 boolean (BOOL)
---- @params p1 boolean (BOOL)
+--- @param p0 boolean
+--- @param p1 boolean
 --- @return void
 function NetworkSetInMpCutscene(p0, p1) end
 
@@ -5880,11 +5880,11 @@ function NetworkSetInMpCutscene(p0, p1) end
 --- NetworkSessionFriendMatchmaking
 ---
 --- @hash 0x2CFC76E0D087C994
---- @params p0 number (int)
---- @params p1 number (int)
---- @params maxPlayers number (int)
---- @params p3 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @param p1 number (int)
+--- @param maxPlayers number (int)
+--- @param p3 boolean
+--- @return boolean
 function NetworkSessionFriendMatchmaking(p0, p1, maxPlayers, p3) end
 
     
@@ -5899,18 +5899,18 @@ function NetworkResetBodyTracker() end
 --- NetworkSendPresenceInvite
 ---
 --- @hash 0xC3C7A6AFDB244624
---- @params networkHandle table (int*)
---- @params p1 table (Any*)
---- @params p2 Any
---- @params p3 Any
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @param p1 table (Any*)
+--- @param p2 any
+--- @param p3 any
+--- @return boolean
 function NetworkSendPresenceInvite(networkHandle, p1, p2, p3) end
 
     
 --- NetworkOverrideSendRestrictionsAll
 ---
 --- @hash 0x57B192B4D4AD23D5
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkOverrideSendRestrictionsAll(toggle) end
 
@@ -5922,7 +5922,7 @@ function NetworkOverrideSendRestrictionsAll(toggle) end
 ---
 --- @hash 0x1077788E268557C2
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsSignedOnline() end
 
     
@@ -5939,21 +5939,21 @@ function NetworkIsSignedOnline() end
 --- ```
 ---
 --- @hash 0x330ED4D05491934F
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params maxPlayers number (int)
---- @params p4 Any
---- @params p5 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param maxPlayers number (int)
+--- @param p4 any
+--- @param p5 any
+--- @return any
 function NetworkSessionEnter(p0, p1, p2, maxPlayers, p4, p5) end
 
     
 --- NetworkQueryRespawnResults
 ---
 --- @hash 0x3C891A251567DFCE
---- @params p0 table (Any*)
---- @return Any
+--- @param p0 table (Any*)
+--- @return any
 function NetworkQueryRespawnResults(p0) end
 
     
@@ -5962,7 +5962,7 @@ function NetworkQueryRespawnResults(p0) end
 --- ```
 ---
 --- @hash 0x49EC8030F5015F8B
---- @params matchmakingGroup number (int)
+--- @param matchmakingGroup number (int)
 --- @return void
 function NetworkSessionSetMatchmakingGroup(matchmakingGroup) end
 
@@ -5971,15 +5971,15 @@ function NetworkSessionSetMatchmakingGroup(matchmakingGroup) end
 ---
 --- @hash 0x6512765E3BE78C50
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsTransitionClosedFriends() end
 
     
 --- NetworkRemoveEntityArea
 ---
 --- @hash 0x93CF869BAA0C4874
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function NetworkRemoveEntityArea(p0) end
 
     
@@ -5988,7 +5988,7 @@ function NetworkRemoveEntityArea(p0) end
 --- ```
 ---
 --- @hash 0xFA8904DC5F304220
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function NetworkSessionKickPlayer(player) end
 
@@ -5996,8 +5996,8 @@ function NetworkSessionKickPlayer(player) end
 --- NetworkRequestControlOfEntity
 ---
 --- @hash 0xB69317BF5E782347
---- @params entity table (Entity)
---- @return boolean (BOOL)
+--- @param entity table (Entity)
+--- @return boolean
 function NetworkRequestControlOfEntity(entity) end
 
     
@@ -6005,14 +6005,14 @@ function NetworkRequestControlOfEntity(entity) end
 ---
 --- @hash 0xA06509A691D12BE4
 ---
---- @return Any
+--- @return any
 function NetworkJoinGroupActivity() end
 
     
 --- NetworkSessionSetMatchmakingPropertyId
 ---
 --- @hash 0x3F52E880AAF6C8CA
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function NetworkSessionSetMatchmakingPropertyId(p0) end
 
@@ -6044,16 +6044,16 @@ function NetworkSessionJoinInvite() end
 --- NetworkSessionHostClosed
 ---
 --- @hash 0xED34C0C02C098BB7
---- @params p0 number (int)
---- @params maxPlayers number (int)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @param maxPlayers number (int)
+--- @return boolean
 function NetworkSessionHostClosed(p0, maxPlayers) end
 
     
 --- NetworkSetLocalPlayerSyncLookAt
 ---
 --- @hash 0x524FF0AEFF9C3973
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkSetLocalPlayerSyncLookAt(toggle) end
 
@@ -6062,15 +6062,15 @@ function NetworkSetLocalPlayerSyncLookAt(toggle) end
 ---
 --- @hash 0x23DFB504655D0CE4
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkSessionWasInvited() end
 
     
 --- NetworkPlayerHasHeadset
 ---
 --- @hash 0x3FB99A8B08D18FD6
---- @params player number (Player)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @return boolean
 function NetworkPlayerHasHeadset(player) end
 
     
@@ -6078,7 +6078,7 @@ function NetworkPlayerHasHeadset(player) end
 ---
 --- @hash 0xBA416D68C631496A
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkSessionIsVisible() end
 
     
@@ -6087,17 +6087,17 @@ function NetworkSessionIsVisible() end
 --- ```
 ---
 --- @hash 0xB9CFD27A5D578D83
---- @params p0 number (int)
---- @params maxPlayers number (int)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @param maxPlayers number (int)
+--- @return boolean
 function NetworkSessionHostFriendsOnly(p0, maxPlayers) end
 
     
 --- NetworkRemovePresenceInvite
 ---
 --- @hash 0xF0210268DB0974B1
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function NetworkRemovePresenceInvite(p0) end
 
     
@@ -6112,7 +6112,7 @@ function NetworkSessionForceCancelInvite() end
 --- NetworkSessionSetMatchmakingMentalState
 ---
 --- @hash 0xF1EEA2DDA9FFA69D
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function NetworkSessionSetMatchmakingMentalState(p0) end
 
@@ -6127,8 +6127,8 @@ function NetworkSessionSetMatchmakingMentalState(p0) end
 --- ```
 ---
 --- @hash 0xF1CA12B18AEF5298
---- @params entity table (Entity)
---- @params toggle boolean (BOOL)
+--- @param entity table (Entity)
+--- @param toggle boolean
 --- @return void
 function NetworkSetEntityInvisibleToNetwork(entity, toggle) end
 
@@ -6138,7 +6138,7 @@ function NetworkSetEntityInvisibleToNetwork(entity, toggle) end
 --- ```
 ---
 --- @hash 0x1775961C2FBBCB5C
---- @params id number (int)
+--- @param id number (int)
 --- @return void
 function NetworkSetPropertyId(id) end
 
@@ -6159,7 +6159,7 @@ function NetworkSetPropertyId(id) end
 ---
 --- @hash 0x924426BFFD82E915
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkRequestCloudBackgroundScripts() end
 
     
@@ -6182,7 +6182,7 @@ function NetworkRequestCloudBackgroundScripts() end
 --- ```
 ---
 --- @hash 0xABD5E88B8A2D3DB2
---- @params globalPtr table (Any*)
+--- @param globalPtr table (Any*)
 --- @return void
 function NetworkSessionVoiceConnectToPlayer(globalPtr) end
 
@@ -6192,10 +6192,10 @@ function NetworkSessionVoiceConnectToPlayer(globalPtr) end
 --- ```
 ---
 --- @hash 0x6F3D4ED9BEE4E61D
---- @params p0 number (int)
---- @params maxPlayers number (int)
---- @params p2 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @param maxPlayers number (int)
+--- @param p2 boolean
+--- @return boolean
 function NetworkSessionHost(p0, maxPlayers, p2) end
 
     
@@ -6207,7 +6207,7 @@ function NetworkSessionHost(p0, maxPlayers, p2) end
 --- ```
 ---
 --- @hash 0xC74C33FCA52856D5
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function NetworkSessionHostSinglePlayer(p0) end
 
@@ -6220,9 +6220,9 @@ function NetworkSessionHostSinglePlayer(p0) end
 --- ```
 ---
 --- @hash 0xA02E59562D711006
---- @params p0 boolean (BOOL)
---- @params p1 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 boolean
+--- @param p1 boolean
+--- @return boolean
 function NetworkSessionEnd(p0, p1) end
 
     
@@ -6237,7 +6237,7 @@ function NetworkSessionVoiceLeave() end
 --- NetworkSetLocalPlayerInvincibleTime
 ---
 --- @hash 0x2D95C7E2D7E07307
---- @params time number (int)
+--- @param time number (int)
 --- @return void
 function NetworkSetLocalPlayerInvincibleTime(time) end
 
@@ -6248,20 +6248,20 @@ function NetworkSetLocalPlayerInvincibleTime(time) end
 --- ```
 ---
 --- @hash 0x31D1D2B858D25E6B
---- @params networkHandle table (int*)
---- @params p1 string (char*)
---- @params p2 number (int)
---- @params p3 number (int)
---- @params p4 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param networkHandle table (int*)
+--- @param p1 string (char*)
+--- @param p2 number (int)
+--- @param p3 number (int)
+--- @param p4 boolean
+--- @return boolean
 function NetworkSendTransitionGamerInstruction(networkHandle, p1, p2, p3, p4) end
 
     
 --- NetworkRequestControlOfNetworkId
 ---
 --- @hash 0xA670B3662FAFFBD0
---- @params netId number (int)
---- @return boolean (BOOL)
+--- @param netId number (int)
+--- @return boolean
 function NetworkRequestControlOfNetworkId(netId) end
 
     
@@ -6270,12 +6270,12 @@ function NetworkRequestControlOfNetworkId(netId) end
 --- ```
 ---
 --- @hash 0x9769F811D1785B03
---- @params player number (Player)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params p4 boolean (BOOL)
---- @params p5 boolean (BOOL)
+--- @param player number (Player)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p4 boolean
+--- @param p5 boolean
 --- @return void
 function NetworkRespawnCoords(player, x, y, z, p4, p5) end
 
@@ -6283,7 +6283,7 @@ function NetworkRespawnCoords(player, x, y, z, p4, p5) end
 --- NetworkSetVoiceActive
 ---
 --- @hash 0xBABEC9E69A91C57B
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkSetVoiceActive(toggle) end
 
@@ -6307,7 +6307,7 @@ function NetworkReportMyself() end
 --- NetworkSessionValidateJoin
 ---
 --- @hash 0xC19F6C8E7865A6FF
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function NetworkSessionValidateJoin(p0) end
 
@@ -6315,8 +6315,8 @@ function NetworkSessionValidateJoin(p0) end
 --- NetworkSetInSpectatorMode
 ---
 --- @hash 0x423DE3854BB50894
---- @params toggle boolean (BOOL)
---- @params playerPed table (Ped)
+--- @param toggle boolean
+--- @param playerPed table (Ped)
 --- @return void
 function NetworkSetInSpectatorMode(toggle, playerPed) end
 
@@ -6324,7 +6324,7 @@ function NetworkSetInSpectatorMode(toggle, playerPed) end
 --- NetworkSetNoSpectatorChat
 ---
 --- @hash 0xF46A1E03E8755980
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkSetNoSpectatorChat(toggle) end
 
@@ -6332,8 +6332,8 @@ function NetworkSetNoSpectatorChat(toggle) end
 --- NetworkOverrideTeamRestrictions
 ---
 --- @hash 0x6F697A66CE78674E
---- @params team number (int)
---- @params toggle boolean (BOOL)
+--- @param team number (int)
+--- @param toggle boolean
 --- @return void
 function NetworkOverrideTeamRestrictions(team, toggle) end
 
@@ -6343,7 +6343,7 @@ function NetworkOverrideTeamRestrictions(team, toggle) end
 --- ```
 ---
 --- @hash 0xF808475FA571D823
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkSetFriendlyFireOption(toggle) end
 
@@ -6351,7 +6351,7 @@ function NetworkSetFriendlyFireOption(toggle) end
 --- NetworkSessionMarkVisible
 ---
 --- @hash 0x271CC6AB59EBF9A5
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkSessionMarkVisible(toggle) end
 
@@ -6362,14 +6362,14 @@ function NetworkSessionMarkVisible(toggle) end
 ---
 --- @hash 0x82A2B386716608F1
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkShouldShowConnectivityTroubleshooting() end
 
     
 --- NetworkSetTransitionCreatorHandle
 ---
 --- @hash 0xEF26739BCD9907D5
---- @params p0 table (Any*)
+--- @param p0 table (Any*)
 --- @return void
 function NetworkSetTransitionCreatorHandle(p0) end
 
@@ -6377,7 +6377,7 @@ function NetworkSetTransitionCreatorHandle(p0) end
 --- NetworkSessionVoiceSetTimeout
 ---
 --- @hash 0x5B8ED3DB018927B1
---- @params timeout number (int)
+--- @param timeout number (int)
 --- @return void
 function NetworkSessionVoiceSetTimeout(timeout) end
 
@@ -6385,7 +6385,7 @@ function NetworkSessionVoiceSetTimeout(timeout) end
 --- NetworkSetTeamOnlyChat
 ---
 --- @hash 0xD5B4883AC32F24C3
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkSetTeamOnlyChat(toggle) end
 
@@ -6393,7 +6393,7 @@ function NetworkSetTeamOnlyChat(toggle) end
 --- NetworkSetTalkerProximity
 ---
 --- @hash 0xCBF12D65F95AD686
---- @params value number (float)
+--- @param value number (float)
 --- @return void
 function NetworkSetTalkerProximity(value) end
 
@@ -6401,7 +6401,7 @@ function NetworkSetTalkerProximity(value) end
 --- NetworkStartSynchronisedScene
 ---
 --- @hash 0x9A1B3FCDB36C8697
---- @params netScene number (int)
+--- @param netScene number (int)
 --- @return void
 function NetworkStartSynchronisedScene(netScene) end
 
@@ -6420,19 +6420,19 @@ function ParticipantIdToInt() end
 --- p8, p9, p10 is another coordinate, or zero, often related to `GET_BLIP_COORDS` in the decompiled scripts.
 ---
 --- @hash 0x4BA92A18502BCA61
---- @params player number (Player)
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params width number (float)
---- @params p8 number (float)
---- @params p9 number (float)
---- @params p10 number (float)
---- @params flags number (int)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param width number (float)
+--- @param p8 number (float)
+--- @param p9 number (float)
+--- @param p10 number (float)
+--- @param flags number (int)
+--- @return boolean
 function NetworkStartRespawnSearchInAngledAreaForPlayer(player, x1, y1, z1, x2, y2, z2, width, p8, p9, p10, flags) end
 
     
@@ -6442,10 +6442,10 @@ function NetworkStartRespawnSearchInAngledAreaForPlayer(player, x1, y1, z1, x2, 
 --- ```
 ---
 --- @hash 0x697F508861875B42
---- @params contextHash Any
---- @params nameHash Any
---- @params value table (BOOL*)
---- @return boolean (BOOL)
+--- @param contextHash any
+--- @param nameHash any
+--- @param value table (BOOL*)
+--- @return boolean
 function NetworkRegisterTunableBoolHash(contextHash, nameHash, value) end
 
     
@@ -6453,7 +6453,7 @@ function NetworkRegisterTunableBoolHash(contextHash, nameHash, value) end
 ---
 --- @hash 0xFBCFA2EA2E206890
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkSessionIsClosedFriends() end
 
     
@@ -6466,8 +6466,8 @@ function NetworkSessionIsClosedFriends() end
 --- ```
 ---
 --- @hash 0x2B1813ABA29016C5
---- @params netID number (int)
---- @params toggle boolean (BOOL)
+--- @param netID number (int)
+--- @param toggle boolean
 --- @return void
 function NetworkSetNetworkIdDynamic(netID, toggle) end
 
@@ -6475,9 +6475,9 @@ function NetworkSetNetworkIdDynamic(netID, toggle) end
 --- NetworkSetInSpectatorModeExtended
 ---
 --- @hash 0x419594E137637120
---- @params toggle boolean (BOOL)
---- @params playerPed table (Ped)
---- @params p2 boolean (BOOL)
+--- @param toggle boolean
+--- @param playerPed table (Ped)
+--- @param p2 boolean
 --- @return void
 function NetworkSetInSpectatorModeExtended(toggle, playerPed, p2) end
 
@@ -6491,8 +6491,8 @@ function NetworkSetInSpectatorModeExtended(toggle, playerPed, p2) end
 --- ```
 ---
 --- @hash 0x58C21165F6545892
---- @params p0 string (char*)
---- @params p1 string (char*)
+--- @param p0 string (char*)
+--- @param p1 string (char*)
 --- @return void
 function OpenCommerceStore(p0, p1) end
 
@@ -6502,9 +6502,9 @@ function OpenCommerceStore(p0, p1) end
 --- ```
 ---
 --- @hash 0x1CA59E306ECB80A5
---- @params lobbySize number (int)
---- @params p1 boolean (BOOL)
---- @params playerId number (int)
+--- @param lobbySize number (int)
+--- @param p1 boolean
+--- @param playerId number (int)
 --- @return void
 function NetworkSetThisScriptIsNetworkScript(lobbySize, p1, playerId) end
 
@@ -6512,7 +6512,7 @@ function NetworkSetThisScriptIsNetworkScript(lobbySize, p1, playerId) end
 --- NetworkStopSynchronisedScene
 ---
 --- @hash 0xC254481A4574CB2F
---- @params netScene number (int)
+--- @param netScene number (int)
 --- @return void
 function NetworkStopSynchronisedScene(netScene) end
 
@@ -6520,7 +6520,7 @@ function NetworkStopSynchronisedScene(netScene) end
 --- NetworkSetGamerInvitedToTransition
 ---
 --- @hash 0xCA2C8073411ECDB6
---- @params networkHandle table (int*)
+--- @param networkHandle table (int*)
 --- @return void
 function NetworkSetGamerInvitedToTransition(networkHandle) end
 
@@ -6528,8 +6528,8 @@ function NetworkSetGamerInvitedToTransition(networkHandle) end
 --- NetworkSetCurrentDataManagerHandle
 ---
 --- @hash 0x796A87B3B68D1F3D
---- @params p0 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @return boolean
 function NetworkSetCurrentDataManagerHandle(p0) end
 
     
@@ -6552,7 +6552,7 @@ function ReleaseAllCommerceItemImages() end
 --- NetworkUnregisterNetworkedEntity
 ---
 --- @hash 0x7368E683BB9038D6
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return void
 function NetworkUnregisterNetworkedEntity(entity) end
 
@@ -6565,16 +6565,16 @@ function NetworkUnregisterNetworkedEntity(entity) end
 --- p5, p6, p7 is another coordinate (or zero), often related to `GET_BLIP_COORDS`, in the decompiled scripts.
 ---
 --- @hash 0x5A6FFA2433E2F14C
---- @params player number (Player)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 number (float)
---- @params flags number (int)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param flags number (int)
+--- @return boolean
 function NetworkStartRespawnSearchForPlayer(player, x, y, z, radius, p5, p6, p7, flags) end
 
     
@@ -6583,7 +6583,7 @@ function NetworkStartRespawnSearchForPlayer(player, x, y, z, radius, p5, p6, p7,
 --- ```
 ---
 --- @hash 0x0EDEC3C276198689
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return number (int)
 function PedToNet(ped) end
 
@@ -6591,7 +6591,7 @@ function PedToNet(ped) end
 --- NetworkSuppressInvite
 ---
 --- @hash 0xA0682D67EF1FBA3D
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkSuppressInvite(toggle) end
 
@@ -6600,7 +6600,7 @@ function NetworkSuppressInvite(toggle) end
 ---
 --- @hash 0xF3929C2379B60CCE
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkSessionIsSolo() end
 
     
@@ -6613,8 +6613,8 @@ function NetworkSessionIsSolo() end
 --- ```
 ---
 --- @hash 0x890E2C5ABED7236D
---- @params vehicle number (Vehicle)
---- @params toggle boolean (BOOL)
+--- @param vehicle number (Vehicle)
+--- @param toggle boolean
 --- @return void
 function NetworkSetVehicleWheelsDestructible(vehicle, toggle) end
 
@@ -6623,7 +6623,7 @@ function NetworkSetVehicleWheelsDestructible(vehicle, toggle) end
 ---
 --- @hash 0xCEF70AA5B3F89BA1
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkSessionIsPrivate() end
 
     
@@ -6633,7 +6633,7 @@ function NetworkSessionIsPrivate() end
 --- ```
 ---
 --- @hash 0x99BFDC94A603E541
---- @params object table (Object)
+--- @param object table (Object)
 --- @return number (int)
 function ObjToNet(object) end
 
@@ -6641,7 +6641,7 @@ function ObjToNet(object) end
 --- NetworkSetPlayerIsPassive
 ---
 --- @hash 0x1B857666604B1A74
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkSetPlayerIsPassive(toggle) end
 
@@ -6653,8 +6653,8 @@ function NetworkSetPlayerIsPassive(toggle) end
 --- ```
 ---
 --- @hash 0x3E200C2BCF4164EB
---- @params p0 number (int)
---- @params gxtLabel string (char*)
+--- @param p0 number (int)
+--- @param gxtLabel string (char*)
 --- @return void
 function NetworkSetRichPresence_2(p0, gxtLabel) end
 
@@ -6664,8 +6664,8 @@ function NetworkSetRichPresence_2(p0, gxtLabel) end
 --- ```
 ---
 --- @hash 0x299EEB23175895FC
---- @params netId number (int)
---- @params toggle boolean (BOOL)
+--- @param netId number (int)
+--- @param toggle boolean
 --- @return void
 function SetNetworkIdCanMigrate(netId, toggle) end
 
@@ -6679,7 +6679,7 @@ function SetNetworkIdCanMigrate(netId, toggle) end
 --- ```
 ---
 --- @hash 0x797F9C5E661D920E
---- @params amount number (int)
+--- @param amount number (int)
 --- @return void
 function ReserveNetworkLocalObjects(amount) end
 
@@ -6689,7 +6689,7 @@ function ReserveNetworkLocalObjects(amount) end
 --- ```
 ---
 --- @hash 0x241E289B5C059EDC
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return void
 function SetEntityLocallyVisible(entity) end
 
@@ -6697,8 +6697,8 @@ function SetEntityLocallyVisible(entity) end
 --- SetNetworkIdExistsOnAllMachines
 ---
 --- @hash 0xE05E81A888FA63C8
---- @params netId number (int)
---- @params toggle boolean (BOOL)
+--- @param netId number (int)
+--- @param toggle boolean
 --- @return void
 function SetNetworkIdExistsOnAllMachines(netId, toggle) end
 
@@ -6706,7 +6706,7 @@ function SetNetworkIdExistsOnAllMachines(netId, toggle) end
 --- NetworkSetTransitionActivityId
 ---
 --- @hash 0x30DE938B516F0AD2
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function NetworkSetTransitionActivityId(p0) end
 
@@ -6714,8 +6714,8 @@ function NetworkSetTransitionActivityId(p0) end
 --- NetworkSessionVoiceRespondToRequest
 ---
 --- @hash 0x7F8413B7FC2AA6B9
---- @params p0 boolean (BOOL)
---- @params p1 number (int)
+--- @param p0 boolean
+--- @param p1 number (int)
 --- @return void
 function NetworkSessionVoiceRespondToRequest(p0, p1) end
 
@@ -6723,8 +6723,8 @@ function NetworkSessionVoiceRespondToRequest(p0, p1) end
 --- SetLocalPlayerVisibleInCutscene
 ---
 --- @hash 0xD1065D68947E7B6E
---- @params p0 boolean (BOOL)
---- @params p1 boolean (BOOL)
+--- @param p0 boolean
+--- @param p1 boolean
 --- @return void
 function SetLocalPlayerVisibleInCutscene(p0, p1) end
 
@@ -6732,15 +6732,15 @@ function SetLocalPlayerVisibleInCutscene(p0, p1) end
 --- RefreshPlayerListStats
 ---
 --- @hash 0xE26CCFF8094D8C74
---- @params p0 number (int)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @return boolean
 function RefreshPlayerListStats(p0) end
 
     
 --- SetLocalPlayerVisibleLocally
 ---
 --- @hash 0x7619364C82D3BF14
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function SetLocalPlayerVisibleLocally(p0) end
 
@@ -6748,7 +6748,7 @@ function SetLocalPlayerVisibleLocally(p0) end
 --- ReserveNetworkMissionVehicles
 ---
 --- @hash 0x76B02E21ED27A469
---- @params amount number (int)
+--- @param amount number (int)
 --- @return void
 function ReserveNetworkMissionVehicles(amount) end
 
@@ -6759,10 +6759,10 @@ function ReserveNetworkMissionVehicles(amount) end
 --- ```
 ---
 --- @hash 0x1DCCACDCFC569362
---- @params p0 number (int)
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
+--- @param p0 number (int)
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function NetworkSetRichPresence(p0, p1, p2, p3) end
 
@@ -6770,8 +6770,8 @@ function NetworkSetRichPresence(p0, p1, p2, p3) end
 --- TextureDownloadHasFailed
 ---
 --- @hash 0x5776ED562C134687
---- @params p0 number (int)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @return boolean
 function TextureDownloadHasFailed(p0) end
 
     
@@ -6781,10 +6781,10 @@ function TextureDownloadHasFailed(p0) end
 --- ```
 ---
 --- @hash 0x46FB3ED415C7641C
---- @params player number (Player)
---- @params p1 number (int)
---- @params scriptHash table (Hash)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 number (int)
+--- @param scriptHash table (Hash)
+--- @return boolean
 function TriggerScriptCrcCheckOnPlayer(player, p1, scriptHash) end
 
     
@@ -6796,7 +6796,7 @@ function TriggerScriptCrcCheckOnPlayer(player, p1, scriptHash) end
 --- ```
 ---
 --- @hash 0x859ED1CEA343FCA8
---- @params networkHandle table (int*)
+--- @param networkHandle table (int*)
 --- @return void
 function NetworkShowProfileUi(networkHandle) end
 
@@ -6804,10 +6804,10 @@ function NetworkShowProfileUi(networkHandle) end
 --- TextureDownloadRequest
 ---
 --- @hash 0x16160DA74A8E74A2
---- @params PlayerHandle table (int*)
---- @params FilePath string (char*)
---- @params Name string (char*)
---- @params p3 boolean (BOOL)
+--- @param PlayerHandle table (int*)
+--- @param FilePath string (char*)
+--- @param Name string (char*)
+--- @param p3 boolean
 --- @return number (int)
 function TextureDownloadRequest(PlayerHandle, FilePath, Name, p3) end
 
@@ -6815,8 +6815,8 @@ function TextureDownloadRequest(PlayerHandle, FilePath, Name, p3) end
 --- RequestCommerceItemImage
 ---
 --- @hash 0xA2F952104FC6DD4B
---- @params index number (int)
---- @return boolean (BOOL)
+--- @param index number (int)
+--- @return boolean
 function RequestCommerceItemImage(index) end
 
     
@@ -6825,7 +6825,7 @@ function RequestCommerceItemImage(index) end
 --- ```
 ---
 --- @hash 0x42613035157E4208
---- @params amount number (int)
+--- @param amount number (int)
 --- @return void
 function ReserveNetworkLocalVehicles(amount) end
 
@@ -6833,7 +6833,7 @@ function ReserveNetworkLocalVehicles(amount) end
 --- NetworkSetOverrideSpectatorMode
 ---
 --- @hash 0x70DA3BF8DACD3210
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkSetOverrideSpectatorMode(toggle) end
 
@@ -6841,15 +6841,15 @@ function NetworkSetOverrideSpectatorMode(toggle) end
 --- NetworkSetCurrentlySelectedGamerHandleFromInviteMenu
 ---
 --- @hash 0x7206F674F2A3B1BB
---- @params p0 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @return boolean
 function NetworkSetCurrentlySelectedGamerHandleFromInviteMenu(p0) end
 
     
 --- NetworkSetActivitySpectator
 ---
 --- @hash 0x75138790B4359A74
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkSetActivitySpectator(toggle) end
 
@@ -6858,7 +6858,7 @@ function NetworkSetActivitySpectator(toggle) end
 ---
 --- @hash 0x0DBD5D7E3C5BEC3B
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkIsTransitionClosedCrew() end
 
     
@@ -6877,8 +6877,8 @@ function ParticipantId() end
 --- ```
 ---
 --- @hash 0x5C707A667DF8B9FA
---- @params toggle boolean (BOOL)
---- @params player number (Player)
+--- @param toggle boolean
+--- @param player number (Player)
 --- @return void
 function NetworkSetChoiceMigrateOptions(toggle, player) end
 
@@ -6888,17 +6888,17 @@ function NetworkSetChoiceMigrateOptions(toggle, player) end
 --- ```
 ---
 --- @hash 0xC7420099936CE286
---- @params tunableContext table (Hash)
---- @params tunableName table (Hash)
---- @params defaultValue boolean (BOOL)
---- @return boolean (BOOL)
+--- @param tunableContext table (Hash)
+--- @param tunableName table (Hash)
+--- @param defaultValue boolean
+--- @return boolean
 function NetworkTryAccessTunableBoolHash(tunableContext, tunableName, defaultValue) end
 
     
 --- TextureDownloadGetName
 ---
 --- @hash 0x3448505B6E35262D
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return string (char*)
 function TextureDownloadGetName(p0) end
 
@@ -6907,23 +6907,23 @@ function TextureDownloadGetName(p0) end
 ---
 --- @hash 0x597F8DBA9B206FC7
 ---
---- @return Any
+--- @return any
 function UgcGetCreatorNum() end
 
     
 --- UgcGetContentHasPlayerBookmarked
 ---
 --- @hash 0x993CBE59D350D225
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function UgcGetContentHasPlayerBookmarked(p0) end
 
     
 --- NetworkXAffectsGamers
 ---
 --- @hash 0xE532D6811B3A4D2A
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function NetworkXAffectsGamers(p0) end
 
     
@@ -6943,14 +6943,14 @@ function UgcClearModifyResult() end
 ---
 --- @hash 0x472841A026D26D8B
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function RemoteCheatDetected() end
 
     
 --- NetworkSetActivitySpectatorMax
 ---
 --- @hash 0x9D277B76D1D12222
---- @params maxSpectators number (int)
+--- @param maxSpectators number (int)
 --- @return void
 function NetworkSetActivitySpectatorMax(maxSpectators) end
 
@@ -6960,8 +6960,8 @@ function NetworkSetActivitySpectatorMax(maxSpectators) end
 --- ```
 ---
 --- @hash 0xBAF6BABF9E7CCC13
---- @params p0 number (int)
---- @params p1 table (Any*)
+--- @param p0 number (int)
+--- @param p1 table (Any*)
 --- @return string (char*)
 function UgcGetContentPath(p0, p1) end
 
@@ -6969,16 +6969,16 @@ function UgcGetContentPath(p0, p1) end
 --- UgcGetContentRatingNegativeCount
 ---
 --- @hash 0x4E548C0D7AE39FF9
---- @params p0 Any
---- @params p1 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @return any
 function UgcGetContentRatingNegativeCount(p0, p1) end
 
     
 --- NetworkSetInFreeCamMode
 ---
 --- @hash 0xFC18DB55AE19E046
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkSetInFreeCamMode(toggle) end
 
@@ -6986,7 +6986,7 @@ function NetworkSetInFreeCamMode(toggle) end
 --- TextureDownloadRelease
 ---
 --- @hash 0x487EB90B98E9FB19
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function TextureDownloadRelease(p0) end
 
@@ -7000,7 +7000,7 @@ function TextureDownloadRelease(p0) end
 --- ```
 ---
 --- @hash 0x2C8DF5D129595281
---- @params amount number (int)
+--- @param amount number (int)
 --- @return void
 function ReserveNetworkLocalPeds(amount) end
 
@@ -7018,7 +7018,7 @@ function NetworkStartSoloTutorialSession() end
 --- SetNetworkCutsceneEntities
 ---
 --- @hash 0xAAA553E7DD28A457
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetNetworkCutsceneEntities(toggle) end
 
@@ -7026,9 +7026,9 @@ function SetNetworkCutsceneEntities(toggle) end
 --- SetNetworkIdVisibleInCutscene
 ---
 --- @hash 0xA6928482543022B4
---- @params netId number (int)
---- @params p1 boolean (BOOL)
---- @params p2 boolean (BOOL)
+--- @param netId number (int)
+--- @param p1 boolean
+--- @param p2 boolean
 --- @return void
 function SetNetworkIdVisibleInCutscene(netId, p1, p2) end
 
@@ -7047,23 +7047,23 @@ function ShutdownAndLaunchSinglePlayerGame() end
 ---
 --- @hash 0xE0A6138401BCB837
 ---
---- @return Any
+--- @return any
 function UgcGetContentNum() end
 
     
 --- UgcGetContentRatingPositiveCount
 ---
 --- @hash 0x87E5C46C187FE0AE
---- @params p0 Any
---- @params p1 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @return any
 function UgcGetContentRatingPositiveCount(p0, p1) end
 
     
 --- NetworkSetVoiceChannel
 ---
 --- @hash 0xEF6212C2EFEF1A23
---- @params channel number (int)
+--- @param channel number (int)
 --- @return void
 function NetworkSetVoiceChannel(channel) end
 
@@ -7074,16 +7074,16 @@ function NetworkSetVoiceChannel(channel) end
 --- ```
 ---
 --- @hash 0x815E5E3073DA1D67
---- @params contentId table (Any*)
---- @params contentTypeName table (Any*)
---- @return boolean (BOOL)
+--- @param contentId table (Any*)
+--- @param contentTypeName table (Any*)
+--- @return boolean
 function SetBalanceAddMachine(contentId, contentTypeName) end
 
     
 --- UgcGetContentCategory
 ---
 --- @hash 0xA7BAB11E7C9C6C5A
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return number (int)
 function UgcGetContentCategory(p0) end
 
@@ -7092,7 +7092,7 @@ function UgcGetContentCategory(p0) end
 ---
 --- @hash 0xFBC5E768C7A77A6A
 ---
---- @return Any
+--- @return any
 function UgcGetCreateResult() end
 
     
@@ -7101,11 +7101,11 @@ function UgcGetCreateResult() end
 --- ```
 ---
 --- @hash 0xC3BFED92026A2AAD
---- @params hash Any
---- @params p1 number (int)
---- @params p2 number (int)
---- @params state number (int)
---- @params p4 number (int)
+--- @param hash any
+--- @param p1 number (int)
+--- @param p2 number (int)
+--- @param state number (int)
+--- @param p4 number (int)
 --- @return void
 function NetworkTransitionTrack(hash, p1, p2, state, p4) end
 
@@ -7119,7 +7119,7 @@ function NetworkTransitionTrack(hash, p1, p2, state, p4) end
 --- ```
 ---
 --- @hash 0x715135F4B82AC90D
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return void
 function RemoveAllStickyBombsFromEntity(entity) end
 
@@ -7130,8 +7130,8 @@ function RemoveAllStickyBombsFromEntity(entity) end
 --- ```
 ---
 --- @hash 0xEC51713AB6EC36E8
---- @params netId number (int)
---- @params time number (int)
+--- @param netId number (int)
+--- @param time number (int)
 --- @return void
 function SetNetworkVehicleRespotTimer(netId, time) end
 
@@ -7139,7 +7139,7 @@ function SetNetworkVehicleRespotTimer(netId, time) end
 --- NetworkSetScriptReadyForEvents
 ---
 --- @hash 0x7AC752103856FB20
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function NetworkSetScriptReadyForEvents(toggle) end
 
@@ -7147,8 +7147,8 @@ function NetworkSetScriptReadyForEvents(toggle) end
 --- SetPlayerVisibleLocally
 ---
 --- @hash 0xFAA10F1FAFB11AF2
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPlayerVisibleLocally(player, toggle) end
 
@@ -7158,8 +7158,8 @@ function SetPlayerVisibleLocally(player, toggle) end
 --- ```
 ---
 --- @hash 0x0C978FDA19692C2C
---- @params p0 boolean (BOOL)
---- @params p1 boolean (BOOL)
+--- @param p0 boolean
+--- @param p1 boolean
 --- @return void
 function NetworkSetTransitionVisibilityLock(p0, p1) end
 
@@ -7167,7 +7167,7 @@ function NetworkSetTransitionVisibilityLock(p0, p1) end
 --- ReserveNetworkMissionObjects
 ---
 --- @hash 0x4E5C93BD0C32FBF8
---- @params amount number (int)
+--- @param amount number (int)
 --- @return void
 function ReserveNetworkMissionObjects(amount) end
 
@@ -7175,16 +7175,16 @@ function ReserveNetworkMissionObjects(amount) end
 --- UgcGetContentName
 ---
 --- @hash 0xBF09786A7FCAB582
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function UgcGetContentName(p0) end
 
     
 --- UgcGetContentUpdatedDate
 ---
 --- @hash 0xCFD115B373C0DF63
---- @params p0 Any
---- @params p1 table (Any*)
+--- @param p0 any
+--- @param p1 table (Any*)
 --- @return void
 function UgcGetContentUpdatedDate(p0, p1) end
 
@@ -7194,7 +7194,7 @@ function UgcGetContentUpdatedDate(p0, p1) end
 --- ```
 ---
 --- @hash 0x9641A9FF718E9C5E
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetStoreEnabled(toggle) end
 
@@ -7202,9 +7202,9 @@ function SetStoreEnabled(toggle) end
 --- UgcGetContentRating
 ---
 --- @hash 0x1ACCFBA3D8DAB2EE
---- @params p0 Any
---- @params p1 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @return any
 function UgcGetContentRating(p0, p1) end
 
     
@@ -7213,7 +7213,7 @@ function UgcGetContentRating(p0, p1) end
 --- ```
 ---
 --- @hash 0xC0173D6BFF4E0348
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return string (char*)
 function UgcGetRootContentId(p0) end
 
@@ -7221,8 +7221,8 @@ function UgcGetRootContentId(p0) end
 --- UgcRequestContentDataFromIndex
 ---
 --- @hash 0x171DF6A0C07FB3DC
---- @params p0 number (int)
---- @params p1 number (int)
+--- @param p0 number (int)
+--- @param p1 number (int)
 --- @return number (int)
 function UgcRequestContentDataFromIndex(p0, p1) end
 
@@ -7242,7 +7242,7 @@ function UgcRequestContentDataFromIndex(p0, p1) end
 ---   end
 --- end
 --- @hash 0xE135A9FF3F5D05D8
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return void
 function SetEntityLocallyInvisible(entity) end
 
@@ -7250,10 +7250,10 @@ function SetEntityLocallyInvisible(entity) end
 --- UgcQueryByContentId
 ---
 --- @hash 0x158EC424F35EC469
---- @params contentId string (char*)
---- @params latestVersion boolean (BOOL)
---- @params contentTypeName string (char*)
---- @return boolean (BOOL)
+--- @param contentId string (char*)
+--- @param latestVersion boolean
+--- @param contentTypeName string (char*)
+--- @return boolean
 function UgcQueryByContentId(contentId, latestVersion, contentTypeName) end
 
     
@@ -7267,7 +7267,7 @@ function UgcQueryByContentId(contentId, latestVersion, contentTypeName) end
 ---
 --- @hash 0x9ECA15ADFE141431
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function ShutdownAndLoadMostRecentSave() end
 
     
@@ -7276,7 +7276,7 @@ function ShutdownAndLoadMostRecentSave() end
 --- ```
 ---
 --- @hash 0xB4C94523F023419C
---- @params vehicle number (Vehicle)
+--- @param vehicle number (Vehicle)
 --- @return number (int)
 function VehToNet(vehicle) end
 
@@ -7285,15 +7285,15 @@ function VehToNet(vehicle) end
 ---
 --- @hash 0x3A17A27D75C74887
 ---
---- @return Any
+--- @return any
 function UgcGetContentHash() end
 
     
 --- SetPlayerInvisibleLocally
 ---
 --- @hash 0x12B37D54667DB0B8
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetPlayerInvisibleLocally(player, toggle) end
 
@@ -7303,9 +7303,9 @@ function SetPlayerInvisibleLocally(player, toggle) end
 --- ```
 ---
 --- @hash 0xA8A024587329F36A
---- @params netId number (int)
---- @params player number (Player)
---- @params toggle boolean (BOOL)
+--- @param netId number (int)
+--- @param player number (Player)
+--- @param toggle boolean
 --- @return void
 function SetNetworkIdSyncToPlayer(netId, player, toggle) end
 
@@ -7313,18 +7313,18 @@ function SetNetworkIdSyncToPlayer(netId, player, toggle) end
 --- UgcSetBookmarked
 ---
 --- @hash 0x274A1519DFC1094F
---- @params contentId string (char*)
---- @params bookmarked boolean (BOOL)
---- @params contentTypeName string (char*)
---- @return boolean (BOOL)
+--- @param contentId string (char*)
+--- @param bookmarked boolean
+--- @param contentTypeName string (char*)
+--- @return boolean
 function UgcSetBookmarked(contentId, bookmarked, contentTypeName) end
 
     
 --- NetworkRegisterPlayerBroadcastVariables
 ---
 --- @hash 0x3364AA97340CA215
---- @params vars table (int*)
---- @params numVars number (int)
+--- @param vars table (int*)
+--- @param numVars number (int)
 --- @return void
 function NetworkRegisterPlayerBroadcastVariables(vars, numVars) end
 
@@ -7337,8 +7337,8 @@ function NetworkRegisterPlayerBroadcastVariables(vars, numVars) end
 --- ```
 ---
 --- @hash 0x6274C4712850841E
---- @params vehicle number (Vehicle)
---- @params toggle boolean (BOOL)
+--- @param vehicle number (Vehicle)
+--- @param toggle boolean
 --- @return void
 function SetNetworkVehicleAsGhost(vehicle, toggle) end
 
@@ -7355,26 +7355,26 @@ function UgcCancelQuery() end
 ---
 --- @hash 0xEDF7F927136C224B
 ---
---- @return Any
+--- @return any
 function UgcGetQueryResult() end
 
     
 --- UgcSetDeleted
 ---
 --- @hash 0xD05D1A6C74DA3498
---- @params p0 table (Any*)
---- @params p1 boolean (BOOL)
---- @params p2 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 boolean
+--- @param p2 table (Any*)
+--- @return boolean
 function UgcSetDeleted(p0, p1, p2) end
 
     
 --- SetEntityVisibleInCutscene
 ---
 --- @hash 0xE0031D3C8F36AB82
---- @params p0 Any
---- @params p1 boolean (BOOL)
---- @params p2 boolean (BOOL)
+--- @param p0 any
+--- @param p1 boolean
+--- @param p2 boolean
 --- @return void
 function SetEntityVisibleInCutscene(p0, p1, p2) end
 
@@ -7382,18 +7382,18 @@ function SetEntityVisibleInCutscene(p0, p1, p2) end
 --- UgcGetCachedDescription
 ---
 --- @hash 0x40F7E66472DF3E5C
---- @params p0 Any
---- @params p1 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @return any
 function UgcGetCachedDescription(p0, p1) end
 
     
 --- UgcGetContentFileVersion
 ---
 --- @hash 0x37025B27D9B658B1
---- @params p0 Any
---- @params p1 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @return any
 function UgcGetContentFileVersion(p0, p1) end
 
     
@@ -7402,10 +7402,10 @@ function UgcGetContentFileVersion(p0, p1) end
 --- ```
 ---
 --- @hash 0xB8322EEB38BE7C26
---- @params data table (Any*)
---- @params dataCount number (int)
---- @params contentTypeName table (Any*)
---- @return boolean (BOOL)
+--- @param data table (Any*)
+--- @param dataCount number (int)
+--- @param contentTypeName table (Any*)
+--- @return boolean
 function SetBalanceAddMachines(data, dataCount, contentTypeName) end
 
     
@@ -7414,7 +7414,7 @@ function SetBalanceAddMachines(data, dataCount, contentTypeName) end
 --- ```
 ---
 --- @hash 0x55AA95F481D694D2
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return string (char*)
 function UgcGetContentId(p0) end
 
@@ -7422,7 +7422,7 @@ function UgcGetContentId(p0) end
 --- SetLocalPlayerInvisibleLocally
 ---
 --- @hash 0xE5F773C1A1D9D168
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function SetLocalPlayerInvisibleLocally(p0) end
 
@@ -7430,16 +7430,16 @@ function SetLocalPlayerInvisibleLocally(p0) end
 --- UgcGetContentRatingCount
 ---
 --- @hash 0x759299C5BB31D2A9
---- @params p0 Any
---- @params p1 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @return any
 function UgcGetContentRatingCount(p0, p1) end
 
     
 --- ReserveNetworkMissionPeds
 ---
 --- @hash 0xB60FEBA45333D36F
---- @params amount number (int)
+--- @param amount number (int)
 --- @return void
 function ReserveNetworkMissionPeds(amount) end
 
@@ -7448,7 +7448,7 @@ function ReserveNetworkMissionPeds(amount) end
 ---
 --- @hash 0x769951E2455E2EB5
 ---
---- @return Any
+--- @return any
 function UgcGetContentTotal() end
 
     
@@ -7456,15 +7456,15 @@ function UgcGetContentTotal() end
 ---
 --- @hash 0xD53ACDBEF24A46E8
 ---
---- @return Any
+--- @return any
 function UgcIsGetting() end
 
     
 --- UgcGetContentUserName
 ---
 --- @hash 0x703F12425ECA8BF5
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function UgcGetContentUserName(p0) end
 
     
@@ -7472,23 +7472,23 @@ function UgcGetContentUserName(p0) end
 ---
 --- @hash 0x5A0A3D1A186A5508
 ---
---- @return Any
+--- @return any
 function UgcGetModifyResult() end
 
     
 --- UgcGetContentHasPlayerRecord
 ---
 --- @hash 0x70EA8DA57840F9BE
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function UgcGetContentHasPlayerRecord(p0) end
 
     
 --- UgcGetContentIsVerified
 ---
 --- @hash 0xA9240A96C74CCA13
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function UgcGetContentIsVerified(p0) end
 
     
@@ -7503,31 +7503,31 @@ function UgcClearOfflineQuery() end
 --- UgcGetFriendContent
 ---
 --- @hash 0xF9E1CCAE8BA4C281
---- @params p0 Any
---- @params p1 Any
---- @params p2 table (Any*)
---- @params p3 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 table (Any*)
+--- @param p3 table (Any*)
+--- @return boolean
 function UgcGetFriendContent(p0, p1, p2, p3) end
 
     
 --- UgcQueryRecentlyCreatedContent
 ---
 --- @hash 0x6D4CB481FAC835E8
---- @params offset number (int)
---- @params count number (int)
---- @params contentTypeName string (char*)
---- @params p3 number (int)
---- @return boolean (BOOL)
+--- @param offset number (int)
+--- @param count number (int)
+--- @param contentTypeName string (char*)
+--- @param p3 number (int)
+--- @return boolean
 function UgcQueryRecentlyCreatedContent(offset, count, contentTypeName, p3) end
 
     
 --- TitleTextureDownloadRequest
 ---
 --- @hash 0x0B203B4AFDE53A4F
---- @params FilePath string (char*)
---- @params Name string (char*)
---- @params p2 boolean (BOOL)
+--- @param FilePath string (char*)
+--- @param Name string (char*)
+--- @param p2 boolean
 --- @return number (int)
 function TitleTextureDownloadRequest(FilePath, Name, p2) end
 
@@ -7535,11 +7535,11 @@ function TitleTextureDownloadRequest(FilePath, Name, p2) end
 --- UgcRequestContentDataFromParams
 ---
 --- @hash 0x7FD2990AF016795E
---- @params contentTypeName string (char*)
---- @params contentId string (char*)
---- @params p2 number (int)
---- @params p3 number (int)
---- @params p4 number (int)
+--- @param contentTypeName string (char*)
+--- @param contentId string (char*)
+--- @param p2 number (int)
+--- @param p3 number (int)
+--- @param p4 number (int)
 --- @return number (int)
 function UgcRequestContentDataFromParams(contentTypeName, contentId, p2, p3, p4) end
 
@@ -7547,9 +7547,9 @@ function UgcRequestContentDataFromParams(contentTypeName, contentId, p2, p3, p4)
 --- UgcCopyContent
 ---
 --- @hash 0x152D90E4C1B4738A
---- @params p0 table (Any*)
---- @params p1 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 table (Any*)
+--- @return boolean
 function UgcCopyContent(p0, p1) end
 
     
@@ -7557,14 +7557,14 @@ function UgcCopyContent(p0, p1) end
 ---
 --- @hash 0x74732C6CA90DA2B4
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function NetworkSessionIsClosedCrew() end
 
     
 --- UgcRequestCachedDescription
 ---
 --- @hash 0x5E0165278F6339EE
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return number (int)
 function UgcRequestCachedDescription(p0) end
 
@@ -7580,21 +7580,21 @@ function UgcClearCreateResult() end
 --- UgcTextureDownloadRequest
 ---
 --- @hash 0x308F96458B7087CC
---- @params p0 table (Any*)
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 table (Any*)
---- @params p5 boolean (BOOL)
---- @return Any
+--- @param p0 table (Any*)
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 table (Any*)
+--- @param p5 boolean
+--- @return any
 function UgcTextureDownloadRequest(p0, p1, p2, p3, p4, p5) end
 
     
 --- UgcGetContentIsPublished
 ---
 --- @hash 0x3054F114121C21EA
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function UgcGetContentIsPublished(p0) end
 
     
@@ -7602,67 +7602,67 @@ function UgcGetContentIsPublished(p0) end
 ---
 --- @hash 0xC55A0B40FFB1ED23
 ---
---- @return Any
+--- @return any
 function UgcGetCreateContentId() end
 
     
 --- UgcGetBookmarkedContent
 ---
 --- @hash 0xD5A4B59980401588
---- @params p0 Any
---- @params p1 Any
---- @params p2 table (Any*)
---- @params p3 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 table (Any*)
+--- @param p3 table (Any*)
+--- @return boolean
 function UgcGetBookmarkedContent(p0, p1, p2, p3) end
 
     
 --- UgcQueryByContentIds
 ---
 --- @hash 0xC7397A83F7A2A462
---- @params data table (Any*)
---- @params count number (int)
---- @params latestVersion boolean (BOOL)
---- @params contentTypeName string (char*)
---- @return boolean (BOOL)
+--- @param data table (Any*)
+--- @param count number (int)
+--- @param latestVersion boolean
+--- @param contentTypeName string (char*)
+--- @return boolean
 function UgcQueryByContentIds(data, count, latestVersion, contentTypeName) end
 
     
 --- UgcIsLanguageSupported
 ---
 --- @hash 0xF53E48461B71EECB
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function UgcIsLanguageSupported(p0) end
 
     
 --- UgcGetGetByCategory
 ---
 --- @hash 0x678BB03C1A3BD51E
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 table (Any*)
---- @params p4 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 table (Any*)
+--- @param p4 table (Any*)
+--- @return boolean
 function UgcGetGetByCategory(p0, p1, p2, p3, p4) end
 
     
 --- UgcGetContentLanguage
 ---
 --- @hash 0x32DD916F3F7C9672
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function UgcGetContentLanguage(p0) end
 
     
 --- UgcPublish
 ---
 --- @hash 0x1DE0F5F50D723CAA
---- @params contentId string (char*)
---- @params baseContentId string (char*)
---- @params contentTypeName string (char*)
---- @return boolean (BOOL)
+--- @param contentId string (char*)
+--- @param baseContentId string (char*)
+--- @param contentTypeName string (char*)
+--- @return boolean
 function UgcPublish(contentId, baseContentId, contentTypeName) end
 
     
@@ -7670,7 +7670,7 @@ function UgcPublish(contentId, baseContentId, contentTypeName) end
 ---
 --- @hash 0x02ADA21EA2F6918F
 ---
---- @return Any
+--- @return any
 function UgcHasGetFinished() end
 
     
@@ -7678,19 +7678,19 @@ function UgcHasGetFinished() end
 ---
 --- @hash 0x299EF3C576773506
 ---
---- @return Any
+--- @return any
 function UgcHasModifyFinished() end
 
     
 --- UgcGetCrewContent
 ---
 --- @hash 0x9F6E2821885CAEE2
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 table (Any*)
---- @params p4 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 table (Any*)
+--- @param p4 table (Any*)
+--- @return boolean
 function UgcGetCrewContent(p0, p1, p2, p3, p4) end
 
     
@@ -7698,14 +7698,14 @@ function UgcGetCrewContent(p0, p1, p2, p3, p4) end
 ---
 --- @hash 0x5E24341A7F92A74B
 ---
---- @return Any
+--- @return any
 function UgcHasCreateFinished() end
 
     
 --- NetworkSetInviteOnCallForInviteMenu
 ---
 --- @hash 0x66F010A4B031A331
---- @params p0 table (Any*)
+--- @param p0 table (Any*)
 --- @return void
 function NetworkSetInviteOnCallForInviteMenu(p0) end
 
@@ -7715,13 +7715,13 @@ function NetworkSetInviteOnCallForInviteMenu(p0) end
 --- ```
 ---
 --- @hash 0x9BF438815F5D96EA
---- @params p0 Any
---- @params p1 Any
---- @params p2 table (Any*)
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 table (Any*)
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @return boolean
 function UgcQueryMyContent(p0, p1, p2, p3, p4, p5) end
 
     
@@ -7730,7 +7730,7 @@ function UgcQueryMyContent(p0, p1, p2, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0x5FFE9B4144F9712F
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function UsePlayerColourInsteadOfTeamColour(toggle) end
 
@@ -7738,15 +7738,15 @@ function UsePlayerColourInsteadOfTeamColour(toggle) end
 --- UgcPoliciesMakePrivate
 ---
 --- @hash 0x5CAE833B0EE0C500
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function UgcPoliciesMakePrivate(p0) end
 
     
 --- UgcGetContentDescriptionHash
 ---
 --- @hash 0x7CF0448787B23758
---- @params p0 Any
+--- @param p0 any
 --- @return number (int)
 function UgcGetContentDescriptionHash(p0) end
 
@@ -7770,11 +7770,11 @@ function UgcClearQueryResults() end
 --- UgcGetMyContent
 ---
 --- @hash 0x3195F8DD0D531052
---- @params p0 Any
---- @params p1 Any
---- @params p2 table (Any*)
---- @params p3 table (Any*)
---- @return boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 table (Any*)
+--- @param p3 table (Any*)
+--- @return boolean
 function UgcGetMyContent(p0, p1, p2, p3) end
 
     

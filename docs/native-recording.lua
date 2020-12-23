@@ -13,7 +13,7 @@ function StopRecordingAndDiscardClip() end
 ---
 --- @hash 0x4282E08174868BE3
 ---
---- @return Any
+--- @return any
 function N_0x4282e08174868be3() end
 
     
@@ -28,9 +28,9 @@ function N_0xf854439efbb3b583() end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0x66972397E0757E7A
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
 --- @return void
 function N_0x66972397e0757e7a(p0, p1, p2) end
 
@@ -43,7 +43,7 @@ function N_0x66972397e0757e7a(p0, p1, p2) end
 ---
 --- @hash 0x1897CA71995A90B4
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsRecording() end
 
     
@@ -51,7 +51,7 @@ function IsRecording() end
 ---
 --- @hash 0x644546EC5287471B
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function SaveRecordingClip() end
 
     
@@ -97,7 +97,7 @@ function N_0x81cbae94390f9f89() end
 --- ```
 ---
 --- @hash 0xC3AC2FFF9612AC81
---- @params mode number (int)
+--- @param mode number (int)
 --- @return void
 function StartRecording(mode) end
 
@@ -106,7 +106,7 @@ function StartRecording(mode) end
 ---
 --- @hash 0xDF4B952F7D381B95
 ---
---- @return Any
+--- @return any
 function N_0xdf4b952f7d381b95() end
 
     
@@ -117,8 +117,8 @@ function N_0xdf4b952f7d381b95() end
 --- ```
 ---
 --- @hash 0x208784099002BC30
---- @params missionNameLabel string (char*)
---- @params p1 Any
+--- @param missionNameLabel string (char*)
+--- @param p1 any
 --- @return void
 function N_0x208784099002bc30(missionNameLabel, p1) end
 
@@ -126,9 +126,9 @@ function N_0x208784099002bc30(missionNameLabel, p1) end
 --- N_0x293220da1b46cebc
 ---
 --- @hash 0x293220DA1B46CEBC
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (int)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (int)
 --- @return void
 function N_0x293220da1b46cebc(p0, p1, p2) end
 
@@ -136,15 +136,15 @@ function N_0x293220da1b46cebc(p0, p1, p2) end
 --- N_0x33d47e85b476abcd
 ---
 --- @hash 0x33D47E85B476ABCD
---- @params p0 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 boolean
+--- @return boolean
 function N_0x33d47e85b476abcd(p0) end
 
     
 --- N_0x48621c9fca3ebd28
 ---
 --- @hash 0x48621C9FCA3EBD28
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function N_0x48621c9fca3ebd28(p0) end
 

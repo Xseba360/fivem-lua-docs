@@ -2,8 +2,8 @@
 --- RemoveShockingEvent
 ---
 --- @hash 0x2CDA538C44C6CCE5
---- @params event table (ScrHandle)
---- @return boolean (BOOL)
+--- @param event table (ScrHandle)
+--- @return boolean
 function RemoveShockingEvent(event) end
 
     
@@ -13,9 +13,9 @@ function RemoveShockingEvent(event) end
 --- ```
 ---
 --- @hash 0x7FD8F3BE76F89422
---- @params type number (int)
---- @params entity table (Entity)
---- @params duration number (float)
+--- @param type number (int)
+--- @param entity table (Entity)
+--- @param duration number (float)
 --- @return table (ScrHandle)
 function AddShockingEventForEntity(type, entity, duration) end
 
@@ -23,8 +23,8 @@ function AddShockingEventForEntity(type, entity, duration) end
 --- ClearDecisionMakerEventResponse
 ---
 --- @hash 0x4FC9381A7AEE8968
---- @params name table (Hash)
---- @params type number (int)
+--- @param name table (Hash)
+--- @param type number (int)
 --- @return void
 function ClearDecisionMakerEventResponse(name, type) end
 
@@ -32,8 +32,8 @@ function ClearDecisionMakerEventResponse(name, type) end
 --- SetDecisionMaker
 ---
 --- @hash 0xB604A2942ADED0EE
---- @params ped table (Ped)
---- @params name table (Hash)
+--- @param ped table (Ped)
+--- @param name table (Hash)
 --- @return void
 function SetDecisionMaker(ped, name) end
 
@@ -57,8 +57,8 @@ function SuppressAgitationEventsNextFrame() end
 --- UnblockDecisionMakerEvent
 ---
 --- @hash 0xD7CD9CF34F2C99E8
---- @params name table (Hash)
---- @params type number (int)
+--- @param name table (Hash)
+--- @param type number (int)
 --- @return void
 function UnblockDecisionMakerEvent(name, type) end
 
@@ -66,8 +66,8 @@ function UnblockDecisionMakerEvent(name, type) end
 --- BlockDecisionMakerEvent
 ---
 --- @hash 0xE42FCDFD0E4196F7
---- @params name table (Hash)
---- @params type number (int)
+--- @param name table (Hash)
+--- @param type number (int)
 --- @return void
 function BlockDecisionMakerEvent(name, type) end
 
@@ -83,7 +83,7 @@ function SuppressShockingEventsNextFrame() end
 --- SuppressShockingEventTypeNextFrame
 ---
 --- @hash 0x3FD2EC8BF1F1CF30
---- @params type number (int)
+--- @param type number (int)
 --- @return void
 function SuppressShockingEventTypeNextFrame(type) end
 
@@ -94,11 +94,11 @@ function SuppressShockingEventTypeNextFrame(type) end
 --- ```
 ---
 --- @hash 0xD9F8455409B525E9
---- @params type number (int)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params duration number (float)
+--- @param type number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param duration number (float)
 --- @return table (ScrHandle)
 function AddShockingEventAtPosition(type, x, y, z, duration) end
 
@@ -106,7 +106,7 @@ function AddShockingEventAtPosition(type, x, y, z, duration) end
 --- RemoveAllShockingEvents
 ---
 --- @hash 0xEAABE8FDFA21274C
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function RemoveAllShockingEvents(p0) end
 
@@ -134,12 +134,12 @@ function RemoveAllShockingEvents(p0) end
 --- ```
 ---
 --- @hash 0x1374ABB7C15BAB92
---- @params type number (int)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @return boolean (BOOL)
+--- @param type number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @return boolean
 function IsShockingEventInSphere(type, x, y, z, radius) end
 
     

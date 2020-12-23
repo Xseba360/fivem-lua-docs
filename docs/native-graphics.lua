@@ -9,22 +9,22 @@
 --- ```
 ---
 --- @hash 0x428BDCB9DA58DA53
---- @params vehicle number (Vehicle)
---- @params ped table (Ped)
---- @params boneIndex number (int)
---- @params x1 number (float)
---- @params x2 number (float)
---- @params x3 number (float)
---- @params y1 number (float)
---- @params y2 number (float)
---- @params y3 number (float)
---- @params z1 number (float)
---- @params z2 number (float)
---- @params z3 number (float)
---- @params scale number (float)
---- @params p13 Any
---- @params alpha number (int)
---- @return boolean (BOOL)
+--- @param vehicle number (Vehicle)
+--- @param ped table (Ped)
+--- @param boneIndex number (int)
+--- @param x1 number (float)
+--- @param x2 number (float)
+--- @param x3 number (float)
+--- @param y1 number (float)
+--- @param y2 number (float)
+--- @param y3 number (float)
+--- @param z1 number (float)
+--- @param z2 number (float)
+--- @param z3 number (float)
+--- @param scale number (float)
+--- @param p13 any
+--- @param alpha number (int)
+--- @return boolean
 function AddVehicleCrewEmblem(vehicle, ped, boneIndex, x1, x2, x3, y1, y2, y3, z1, z2, z3, scale, p13, alpha) end
 
     
@@ -35,8 +35,8 @@ function AddVehicleCrewEmblem(vehicle, ped, boneIndex, x1, x2, x3, y1, y2, y3, z
 --- ```
 ---
 --- @hash 0x36AD3E690DA5ACEB
---- @params effectName string (char*)
---- @return boolean (BOOL)
+--- @param effectName string (char*)
+--- @return boolean
 function AnimpostfxIsRunning(effectName) end
 
     
@@ -47,9 +47,9 @@ function AnimpostfxIsRunning(effectName) end
 --- ```
 ---
 --- @hash 0x9CD43EEE12BF4DD0
---- @params entity table (Entity)
---- @params icon string (char*)
---- @return Any
+--- @param entity table (Entity)
+--- @param icon string (char*)
+--- @return any
 function AddEntityIcon(entity, icon) end
 
     
@@ -58,7 +58,7 @@ function AddEntityIcon(entity, icon) end
 --- ```
 ---
 --- @hash 0x845BAD77CC770633
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return void
 function AttachTvAudioToEntity(entity) end
 
@@ -77,13 +77,13 @@ function CascadeshadowsResetType() end
 --- ```
 ---
 --- @hash 0x51BC1ED3CC44E8F7
---- @params scaleform number (int)
---- @params methodName string (char*)
---- @params param1 string (char*)
---- @params param2 string (char*)
---- @params param3 string (char*)
---- @params param4 string (char*)
---- @params param5 string (char*)
+--- @param scaleform number (int)
+--- @param methodName string (char*)
+--- @param param1 string (char*)
+--- @param param2 string (char*)
+--- @param param3 string (char*)
+--- @param param4 string (char*)
+--- @param param5 string (char*)
 --- @return void
 function CallScaleformMovieMethodWithString(scaleform, methodName, param1, param2, param3, param4, param5) end
 
@@ -97,9 +97,9 @@ function CallScaleformMovieMethodWithString(scaleform, methodName, param1, param
 --- ```
 ---
 --- @hash 0x98C494FD5BDFBFD5
---- @params hudComponent number (int)
---- @params methodName string (char*)
---- @return boolean (BOOL)
+--- @param hudComponent number (int)
+--- @param methodName string (char*)
+--- @return boolean
 function BeginScaleformScriptHudMovieMethod(hudComponent, methodName) end
 
     
@@ -108,8 +108,8 @@ function BeginScaleformScriptHudMovieMethod(hudComponent, methodName) end
 --- ```
 ---
 --- @hash 0xFBD96D87AC96D533
---- @params scaleform number (int)
---- @params method string (char*)
+--- @param scaleform number (int)
+--- @param method string (char*)
 --- @return void
 function CallScaleformMovieMethod(scaleform, method) end
 
@@ -119,9 +119,9 @@ function CallScaleformMovieMethod(scaleform, method) end
 --- ```
 ---
 --- @hash 0xF6E48914C7A8694E
---- @params scaleform number (int)
---- @params methodName string (char*)
---- @return boolean (BOOL)
+--- @param scaleform number (int)
+--- @param methodName string (char*)
+--- @return boolean
 function BeginScaleformMovieMethod(scaleform, methodName) end
 
     
@@ -130,18 +130,18 @@ function BeginScaleformMovieMethod(scaleform, methodName) end
 --- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND`](#\_0xAB58C27C2E6123C6) to customize the content inside the frontend menus.
 ---
 --- @hash 0xB9449845F73F5E9C
---- @params functionName string (char*)
---- @return boolean (BOOL)
+--- @param functionName string (char*)
+--- @return boolean
 function BeginScaleformMovieMethodOnFrontendHeader(functionName) end
 
     
 --- AddPetrolTrailDecalInfo
 ---
 --- @hash 0x967278682CB6967A
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params p3 number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 number (float)
 --- @return void
 function AddPetrolTrailDecalInfo(x, y, z, p3) end
 
@@ -206,26 +206,26 @@ function AddPetrolTrailDecalInfo(x, y, z, p3) end
 --- ```
 ---
 --- @hash 0xB302244A1839BDAD
---- @params decalType number (int)
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 number (float)
---- @params p8 number (float)
---- @params p9 number (float)
---- @params width number (float)
---- @params height number (float)
---- @params rCoef number (float)
---- @params gCoef number (float)
---- @params bCoef number (float)
---- @params opacity number (float)
---- @params timeout number (float)
---- @params p17 boolean (BOOL)
---- @params p18 boolean (BOOL)
---- @params p19 boolean (BOOL)
+--- @param decalType number (int)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @param p9 number (float)
+--- @param width number (float)
+--- @param height number (float)
+--- @param rCoef number (float)
+--- @param gCoef number (float)
+--- @param bCoef number (float)
+--- @param opacity number (float)
+--- @param timeout number (float)
+--- @param p17 boolean
+--- @param p18 boolean
+--- @param p19 boolean
 --- @return number (int)
 function AddDecal(decalType, posX, posY, posZ, p4, p5, p6, p7, p8, p9, width, height, rCoef, gCoef, bCoef, opacity, timeout, p17, p18, p19) end
 
@@ -235,16 +235,16 @@ function AddDecal(decalType, posX, posY, posZ, p4, p5, p6, p7, p8, p9, width, he
 --- ```
 ---
 --- @hash 0x7FDFADE676AA3CB0
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
---- @params a number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param a number (int)
 --- @return void
 function DrawDebugLine(x1, y1, z1, x2, y2, z2, r, g, b, a) end
 
@@ -254,14 +254,14 @@ function DrawDebugLine(x1, y1, z1, x2, y2, z2, r, g, b, a) end
 --- ```
 ---
 --- @hash 0x3903E216620488E8
---- @params text string (char*)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param text string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function DrawDebugText(text, x, y, z, red, green, blue, alpha) end
 
@@ -271,20 +271,20 @@ function DrawDebugText(text, x, y, z, red, green, blue, alpha) end
 --- ```
 ---
 --- @hash 0x87D51D72255D4E78
---- @params scaleform number (int)
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
---- @params rotX number (float)
---- @params rotY number (float)
---- @params rotZ number (float)
---- @params p7 number (float)
---- @params sharpness number (float)
---- @params p9 number (float)
---- @params scaleX number (float)
---- @params scaleY number (float)
---- @params scaleZ number (float)
---- @params p13 Any
+--- @param scaleform number (int)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param p7 number (float)
+--- @param sharpness number (float)
+--- @param p9 number (float)
+--- @param scaleX number (float)
+--- @param scaleY number (float)
+--- @param scaleZ number (float)
+--- @param p13 any
 --- @return void
 function DrawScaleformMovie_3d(scaleform, posX, posY, posZ, rotX, rotY, rotZ, p7, sharpness, p9, scaleX, scaleY, scaleZ, p13) end
 
@@ -309,7 +309,7 @@ function DrawScaleformMovie_3d(scaleform, posX, posY, posZ, rotX, rotY, rotZ, p7
 --- ```
 ---
 --- @hash 0x80338406F3475E55
---- @params componentType string (char*)
+--- @param componentType string (char*)
 --- @return void
 function BeginTextCommandScaleformString(componentType) end
 
@@ -317,8 +317,8 @@ function BeginTextCommandScaleformString(componentType) end
 --- DoesParticleFxLoopedExist
 ---
 --- @hash 0x74AFEF0D2E1E409B
---- @params ptfxHandle number (int)
---- @return boolean (BOOL)
+--- @param ptfxHandle number (int)
+--- @return boolean
 function DoesParticleFxLoopedExist(ptfxHandle) end
 
     
@@ -333,7 +333,7 @@ function DoesParticleFxLoopedExist(ptfxHandle) end
 --- ```
 ---
 --- @hash 0xD2209BE128B5418C
---- @params effectName string (char*)
+--- @param effectName string (char*)
 --- @return void
 function AnimpostfxStopAndDoUnk(effectName) end
 
@@ -344,8 +344,8 @@ function AnimpostfxStopAndDoUnk(effectName) end
 --- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND_HEADER`](#\_0xB9449845F73F5E9C) for header scaleform functions.
 ---
 --- @hash 0xAB58C27C2E6123C6
---- @params functionName string (char*)
---- @return boolean (BOOL)
+--- @param functionName string (char*)
+--- @return boolean
 function BeginScaleformMovieMethodOnFrontend(functionName) end
 
     
@@ -354,14 +354,14 @@ function BeginScaleformMovieMethodOnFrontend(functionName) end
 --- ```
 ---
 --- @hash 0xA3BB2E9555C05A8F
---- @params text string (char*)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param text string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function DrawDebugText_2d(text, x, y, z, red, green, blue, alpha) end
 
@@ -371,16 +371,16 @@ function DrawDebugText_2d(text, x, y, z, red, green, blue, alpha) end
 --- ```
 ---
 --- @hash 0x7118E83EEB9F7238
---- @params binkMovie number (int)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
---- @params a number (int)
+--- @param binkMovie number (int)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param a number (int)
 --- @return void
 function DrawBinkMovie(binkMovie, p1, p2, p3, p4, p5, r, g, b, a) end
 
@@ -396,7 +396,7 @@ function AnimpostfxStopAll() end
 --- DisableVehicleDistantlights
 ---
 --- @hash 0xC9F98AC1884E73A2
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function DisableVehicleDistantlights(toggle) end
 
@@ -404,13 +404,13 @@ function DisableVehicleDistantlights(toggle) end
 --- AddPetrolDecal
 ---
 --- @hash 0x4F5212C7AD880DF8
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params groundLvl number (float)
---- @params width number (float)
---- @params transparency number (float)
---- @return Any
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param groundLvl number (float)
+--- @param width number (float)
+--- @param transparency number (float)
+--- @return any
 function AddPetrolDecal(x, y, z, groundLvl, width, transparency) end
 
     
@@ -419,31 +419,31 @@ function AddPetrolDecal(x, y, z, groundLvl, width, transparency) end
 --- ```
 ---
 --- @hash 0xE82728F0DE75D13A
---- @params type number (int)
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
---- @params dirX number (float)
---- @params dirY number (float)
---- @params dirZ number (float)
---- @params rotX number (float)
---- @params rotY number (float)
---- @params rotZ number (float)
---- @params scaleX number (float)
---- @params scaleY number (float)
---- @params scaleZ number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
---- @params bobUpAndDown boolean (BOOL)
---- @params faceCamera boolean (BOOL)
---- @params p19 number (int)
---- @params rotate boolean (BOOL)
---- @params textureDict string (char*)
---- @params textureName string (char*)
---- @params drawOnEnts boolean (BOOL)
---- @params p24 boolean (BOOL)
+--- @param type number (int)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param dirX number (float)
+--- @param dirY number (float)
+--- @param dirZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param scaleX number (float)
+--- @param scaleY number (float)
+--- @param scaleZ number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @param bobUpAndDown boolean
+--- @param faceCamera boolean
+--- @param p19 number (int)
+--- @param rotate boolean
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param drawOnEnts boolean
+--- @param p24 boolean
 --- @return void
 function DrawMarker_2(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown, faceCamera, p19, rotate, textureDict, textureName, drawOnEnts, p24) end
 
@@ -453,14 +453,14 @@ function DrawMarker_2(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ
 --- ```
 ---
 --- @hash 0x73B1189623049839
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params size number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param size number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function DrawDebugCross(x, y, z, size, red, green, blue, alpha) end
 
@@ -471,13 +471,13 @@ function DrawDebugCross(x, y, z, size, red, green, blue, alpha) end
 --- ```
 ---
 --- @hash 0xD0837058AE2E4BEE
---- @params scaleform number (int)
---- @params methodName string (char*)
---- @params param1 number (float)
---- @params param2 number (float)
---- @params param3 number (float)
---- @params param4 number (float)
---- @params param5 number (float)
+--- @param scaleform number (int)
+--- @param methodName string (char*)
+--- @param param1 number (float)
+--- @param param2 number (float)
+--- @param param3 number (float)
+--- @param param4 number (float)
+--- @param param5 number (float)
 --- @return void
 function CallScaleformMovieMethodWithNumber(scaleform, methodName, param1, param2, param3, param4, param5) end
 
@@ -500,14 +500,14 @@ function CallScaleformMovieMethodWithNumber(scaleform, methodName, param1, param
 --- ```
 ---
 --- @hash 0x3A618A217E5154F0
---- @params x number (float)
---- @params y number (float)
---- @params width number (float)
---- @params height number (float)
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
---- @params a number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param width number (float)
+--- @param height number (float)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param a number (int)
 --- @return void
 function DrawRect(x, y, width, height, r, g, b, a) end
 
@@ -531,16 +531,16 @@ function DrawRect(x, y, width, height, r, g, b, a) end
 --- ```
 ---
 --- @hash 0xD3A9971CADAC7252
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function DrawBox(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
 
@@ -548,7 +548,7 @@ function DrawBox(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
 --- AnimpostfxGetUnk
 ---
 --- @hash 0xE35B38A27E8E7179
---- @params effectName string (char*)
+--- @param effectName string (char*)
 --- @return number (float)
 function AnimpostfxGetUnk(effectName) end
 
@@ -560,7 +560,7 @@ function AnimpostfxGetUnk(effectName) end
 --- ```
 ---
 --- @hash 0xB11D94BC55F41932
---- @params type string (char*)
+--- @param type string (char*)
 --- @return void
 function CascadeshadowsSetType(type) end
 
@@ -572,9 +572,9 @@ function CascadeshadowsSetType(type) end
 --- ```
 ---
 --- @hash 0x2206BF9A37B7F724
---- @params effectName string (char*)
---- @params duration number (int)
---- @params looped boolean (BOOL)
+--- @param effectName string (char*)
+--- @param duration number (int)
+--- @param looped boolean
 --- @return void
 function AnimpostfxPlay(effectName, duration, looped) end
 
@@ -596,17 +596,17 @@ function AnimpostfxPlay(effectName, duration, looped) end
 --- ```
 ---
 --- @hash 0xE7FFAE5EBF23D890
---- @params textureDict string (char*)
---- @params textureName string (char*)
---- @params screenX number (float)
---- @params screenY number (float)
---- @params width number (float)
---- @params height number (float)
---- @params heading number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param screenX number (float)
+--- @param screenY number (float)
+--- @param width number (float)
+--- @param height number (float)
+--- @param heading number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function DrawSprite(textureDict, textureName, screenX, screenY, width, height, heading, red, green, blue, alpha) end
 
@@ -614,14 +614,14 @@ function DrawSprite(textureDict, textureName, screenX, screenY, width, height, h
 --- DrawSphere
 ---
 --- @hash 0x799017F9E3B10112
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
---- @params opacity number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param opacity number (float)
 --- @return void
 function DrawSphere(x, y, z, radius, r, g, b, opacity) end
 
@@ -629,7 +629,7 @@ function DrawSphere(x, y, z, radius, r, g, b, opacity) end
 --- FadeUpPedLight
 ---
 --- @hash 0xC9B18B4619F48F7B
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function FadeUpPedLight(p0) end
 
@@ -637,8 +637,8 @@ function FadeUpPedLight(p0) end
 --- AddTcmodifierOverride
 ---
 --- @hash 0x1A8E2C8B9CF4549C
---- @params modifierName1 string (char*)
---- @params modifierName2 string (char*)
+--- @param modifierName1 string (char*)
+--- @param modifierName2 string (char*)
 --- @return void
 function AddTcmodifierOverride(modifierName1, modifierName2) end
 
@@ -646,15 +646,15 @@ function AddTcmodifierOverride(modifierName1, modifierName2) end
 --- DrawLightWithRangeAndShadow
 ---
 --- @hash 0xF49E9A9716A04595
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
---- @params range number (float)
---- @params intensity number (float)
---- @params shadow number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param range number (float)
+--- @param intensity number (float)
+--- @param shadow number (float)
 --- @return void
 function DrawLightWithRangeAndShadow(x, y, z, r, g, b, range, intensity, shadow) end
 
@@ -664,7 +664,7 @@ function DrawLightWithRangeAndShadow(x, y, z, r, g, b, range, intensity, shadow)
 --- This native does not seem to work, however by using the [START_SCREEN_EFFECT](https://runtime.fivem.net/doc/natives/#\_0x2206BF9A37B7F724) native with "DrugsMichaelAliensFight" as the effect parameter, you should be able to get the effect.
 ---
 --- @hash 0x9DCE1F0F78260875
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function EnableAlienBloodVfx(toggle) end
 
@@ -672,7 +672,7 @@ function EnableAlienBloodVfx(toggle) end
 --- DisableScriptAmbientEffects
 ---
 --- @hash 0xEFD97FF47B745B8D
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function DisableScriptAmbientEffects(p0) end
 
@@ -682,16 +682,16 @@ function DisableScriptAmbientEffects(p0) end
 --- ```
 ---
 --- @hash 0x083A2CA4F2E573BD
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params r number (int)
---- @params g number (int)
---- @params b number (int)
---- @params a number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param a number (int)
 --- @return void
 function DrawDebugBox(x1, y1, z1, x2, y2, z2, r, g, b, a) end
 
@@ -735,20 +735,20 @@ function ClearTimecycleModifier() end
 --- ```
 ---
 --- @hash 0xD8B9A8AC5608FF94
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params r1 number (int)
---- @params g1 number (int)
---- @params b1 number (int)
---- @params r2 number (int)
---- @params g2 number (int)
---- @params b2 number (int)
---- @params alpha1 number (int)
---- @params alpha2 number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param r1 number (int)
+--- @param g1 number (int)
+--- @param b1 number (int)
+--- @param r2 number (int)
+--- @param g2 number (int)
+--- @param b2 number (int)
+--- @param alpha1 number (int)
+--- @param alpha2 number (int)
 --- @return void
 function DrawDebugLineWithTwoColours(x1, y1, z1, x2, y2, z2, r1, g1, b1, r2, g2, b2, alpha1, alpha2) end
 
@@ -756,7 +756,7 @@ function DrawDebugLineWithTwoColours(x1, y1, z1, x2, y2, z2, r1, g1, b1, r2, g2,
 --- GetAspectRatio
 ---
 --- @hash 0xF1307EF624A80D87
---- @params b boolean (BOOL)
+--- @param b boolean
 --- @return number (float)
 function GetAspectRatio(b) end
 
@@ -799,19 +799,19 @@ function GetAspectRatio(b) end
 --- ```
 ---
 --- @hash 0x0134F0835AB6BFCB
---- @params type number (int)
---- @params posX1 number (float)
---- @params posY1 number (float)
---- @params posZ1 number (float)
---- @params posX2 number (float)
---- @params posY2 number (float)
---- @params posZ2 number (float)
---- @params radius number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
---- @params reserved number (int)
+--- @param type number (int)
+--- @param posX1 number (float)
+--- @param posY1 number (float)
+--- @param posZ1 number (float)
+--- @param posX2 number (float)
+--- @param posY2 number (float)
+--- @param posZ2 number (float)
+--- @param radius number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @param reserved number (int)
 --- @return number (int)
 function CreateCheckpoint(type, posX1, posY1, posZ1, posX2, posY2, posZ2, radius, red, green, blue, alpha, reserved) end
 
@@ -828,18 +828,18 @@ function CreateCheckpoint(type, posX1, posY1, posZ1, posX2, posY2, posZ2, radius
 --- ```
 ---
 --- @hash 0xEF662D8D57E290B1
---- @params scaleform number (int)
---- @params methodName string (char*)
---- @params floatParam1 number (float)
---- @params floatParam2 number (float)
---- @params floatParam3 number (float)
---- @params floatParam4 number (float)
---- @params floatParam5 number (float)
---- @params stringParam1 string (char*)
---- @params stringParam2 string (char*)
---- @params stringParam3 string (char*)
---- @params stringParam4 string (char*)
---- @params stringParam5 string (char*)
+--- @param scaleform number (int)
+--- @param methodName string (char*)
+--- @param floatParam1 number (float)
+--- @param floatParam2 number (float)
+--- @param floatParam3 number (float)
+--- @param floatParam4 number (float)
+--- @param floatParam5 number (float)
+--- @param stringParam1 string (char*)
+--- @param stringParam2 string (char*)
+--- @param stringParam3 string (char*)
+--- @param stringParam4 string (char*)
+--- @param stringParam5 string (char*)
 --- @return void
 function CallScaleformMovieMethodWithNumberAndString(scaleform, methodName, floatParam1, floatParam2, floatParam3, floatParam4, floatParam5, stringParam1, stringParam2, stringParam3, stringParam4, stringParam5) end
 
@@ -849,14 +849,14 @@ function CallScaleformMovieMethodWithNumberAndString(scaleform, methodName, floa
 --- ```
 ---
 --- @hash 0xAAD68E1AB39DA632
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function DrawDebugSphere(x, y, z, radius, red, green, blue, alpha) end
 
@@ -864,12 +864,12 @@ function DrawDebugSphere(x, y, z, radius, red, green, blue, alpha) end
 --- DrawScaleformMovieFullscreenMasked
 ---
 --- @hash 0xCF537FDE4FBD4CE5
---- @params scaleform1 number (int)
---- @params scaleform2 number (int)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param scaleform1 number (int)
+--- @param scaleform2 number (int)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function DrawScaleformMovieFullscreenMasked(scaleform1, scaleform2, red, green, blue, alpha) end
 
@@ -915,15 +915,15 @@ function GetSafeZoneSize() end
 --- ```
 ---
 --- @hash 0xFDDC2B4ED3C69DF0
---- @params xPos number (float)
---- @params yPos number (float)
---- @params xScale number (float)
---- @params yScale number (float)
---- @params rotation number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param xScale number (float)
+--- @param yScale number (float)
+--- @param rotation number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function DrawTvChannel(xPos, yPos, xScale, yScale, rotation, red, green, blue, alpha) end
 
@@ -967,19 +967,19 @@ function GetTvVolume() end
 --- ```
 ---
 --- @hash 0xAC26716048436851
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params x3 number (float)
---- @params y3 number (float)
---- @params z3 number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param x3 number (float)
+--- @param y3 number (float)
+--- @param z3 number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function DrawPoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha) end
 
@@ -1001,17 +1001,17 @@ function DrawPoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha) e
 --- ```
 ---
 --- @hash 0x2BC54A8188768488
---- @params textureDict string (char*)
---- @params textureName string (char*)
---- @params screenX number (float)
---- @params screenY number (float)
---- @params width number (float)
---- @params height number (float)
---- @params heading number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param screenX number (float)
+--- @param screenY number (float)
+--- @param width number (float)
+--- @param height number (float)
+--- @param heading number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function DrawInteractiveSprite(textureDict, textureName, screenX, screenY, width, height, heading, red, green, blue, alpha) end
 
@@ -1019,7 +1019,7 @@ function DrawInteractiveSprite(textureDict, textureName, screenX, screenY, width
 --- DestroyTrackedPoint
 ---
 --- @hash 0xB25DC90BAD56CA42
---- @params point number (int)
+--- @param point number (int)
 --- @return void
 function DestroyTrackedPoint(point) end
 
@@ -1046,14 +1046,14 @@ function EndTextCommandScaleformString_2() end
 ---
 --- @hash 0xA67C35C56EB1BD9D
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function BeginTakeHighQualityPhoto() end
 
     
 --- DeleteCheckpoint
 ---
 --- @hash 0xF5ED37F54CD4D52E
---- @params checkpoint number (int)
+--- @param checkpoint number (int)
 --- @return void
 function DeleteCheckpoint(checkpoint) end
 
@@ -1065,30 +1065,30 @@ function DeleteCheckpoint(checkpoint) end
 --- ```
 ---
 --- @hash 0x29280002282F1928
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params x3 number (float)
---- @params y3 number (float)
---- @params z3 number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
---- @params textureDict string (char*)
---- @params textureName string (char*)
---- @params u1 number (float)
---- @params v1 number (float)
---- @params w1 number (float)
---- @params u2 number (float)
---- @params v2 number (float)
---- @params w2 number (float)
---- @params u3 number (float)
---- @params v3 number (float)
---- @params w3 number (float)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param x3 number (float)
+--- @param y3 number (float)
+--- @param z3 number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param u1 number (float)
+--- @param v1 number (float)
+--- @param w1 number (float)
+--- @param u2 number (float)
+--- @param v2 number (float)
+--- @param w2 number (float)
+--- @param u3 number (float)
+--- @param v3 number (float)
+--- @param w3 number (float)
 --- @return void
 function DrawSpritePoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha, textureDict, textureName, u1, v1, w1, u2, v2, w2, u3, v3, w3) end
 
@@ -1102,14 +1102,14 @@ function DrawSpritePoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, al
 ---
 --- @hash 0x30CF4BDA4FCB1905
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetIsWidescreen() end
 
     
 --- EnableMovieSubtitles
 ---
 --- @hash 0x873FA65C778AD970
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function EnableMovieSubtitles(toggle) end
 
@@ -1128,7 +1128,7 @@ function GetMaximumNumberOfPhotos() end
 --- EnableMovieKeyframeWait
 ---
 --- @hash 0x74C180030FDE4B69
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function EnableMovieKeyframeWait(toggle) end
 
@@ -1137,7 +1137,7 @@ function EnableMovieKeyframeWait(toggle) end
 ---
 --- @hash 0xEB3DAC2C86001E5E
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetTogglePausedRenderphasesStatus() end
 
     
@@ -1154,7 +1154,7 @@ function GetExtraTimecycleModifierIndex() end
 --- ```
 ---
 --- @hash 0x068E835A1D0DC0E3
---- @params effectName string (char*)
+--- @param effectName string (char*)
 --- @return void
 function AnimpostfxStop(effectName) end
 
@@ -1165,7 +1165,7 @@ function AnimpostfxStop(effectName) end
 ---
 --- @hash 0x44B80ABAB9D80BD3
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetUsingseethrough() end
 
     
@@ -1178,38 +1178,38 @@ function GetUsingseethrough() end
 --- ```
 ---
 --- @hash 0x736D7AA1B750856B
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params x3 number (float)
---- @params y3 number (float)
---- @params z3 number (float)
---- @params red1 number (float)
---- @params green1 number (float)
---- @params blue1 number (float)
---- @params alpha1 number (int)
---- @params red2 number (float)
---- @params green2 number (float)
---- @params blue2 number (float)
---- @params alpha2 number (int)
---- @params red3 number (float)
---- @params green3 number (float)
---- @params blue3 number (float)
---- @params alpha3 number (int)
---- @params textureDict string (char*)
---- @params textureName string (char*)
---- @params u1 number (float)
---- @params v1 number (float)
---- @params w1 number (float)
---- @params u2 number (float)
---- @params v2 number (float)
---- @params w2 number (float)
---- @params u3 number (float)
---- @params v3 number (float)
---- @params w3 number (float)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param x3 number (float)
+--- @param y3 number (float)
+--- @param z3 number (float)
+--- @param red1 number (float)
+--- @param green1 number (float)
+--- @param blue1 number (float)
+--- @param alpha1 number (int)
+--- @param red2 number (float)
+--- @param green2 number (float)
+--- @param blue2 number (float)
+--- @param alpha2 number (int)
+--- @param red3 number (float)
+--- @param green3 number (float)
+--- @param blue3 number (float)
+--- @param alpha3 number (int)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param u1 number (float)
+--- @param v1 number (float)
+--- @param w1 number (float)
+--- @param u2 number (float)
+--- @param v2 number (float)
+--- @param w2 number (float)
+--- @param u3 number (float)
+--- @param v3 number (float)
+--- @param w3 number (float)
 --- @return void
 function DrawSpritePoly_2(x1, y1, z1, x2, y2, z2, x3, y3, z3, red1, green1, blue1, alpha1, red2, green2, blue2, alpha2, red3, green3, blue3, alpha3, textureDict, textureName, u1, v1, w1, u2, v2, w2, u3, v3, w3) end
 
@@ -1238,8 +1238,8 @@ function ClearDrawOrigin() end
 --- ```
 ---
 --- @hash 0xDF6E5987D2B4D140
---- @params hudComponent number (int)
---- @return boolean (BOOL)
+--- @param hudComponent number (int)
+--- @return boolean
 function HasScaleformScriptHudMovieLoaded(hudComponent) end
 
     
@@ -1248,11 +1248,11 @@ function HasScaleformScriptHudMovieLoaded(hudComponent) end
 --- ```
 ---
 --- @hash 0x2F09F7976C512404
---- @params xCoord number (float)
---- @params yCoord number (float)
---- @params zCoord number (float)
---- @params radius number (float)
---- @return boolean (BOOL)
+--- @param xCoord number (float)
+--- @param yCoord number (float)
+--- @param zCoord number (float)
+--- @param radius number (float)
+--- @return boolean
 function GetIsPetrolDecalInRange(xCoord, yCoord, zCoord, radius) end
 
     
@@ -1262,16 +1262,16 @@ function GetIsPetrolDecalInRange(xCoord, yCoord, zCoord, radius) end
 --- ```
 ---
 --- @hash 0x54972ADAF0294A93
---- @params scaleformHandle number (int)
---- @params x number (float)
---- @params y number (float)
---- @params width number (float)
---- @params height number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
---- @params unk number (int)
+--- @param scaleformHandle number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param width number (float)
+--- @param height number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @param unk number (int)
 --- @return void
 function DrawScaleformMovie(scaleformHandle, x, y, width, height, red, green, blue, alpha, unk) end
 
@@ -1279,14 +1279,14 @@ function DrawScaleformMovie(scaleformHandle, x, y, width, height, red, green, bl
 --- DrawLightWithRange
 ---
 --- @hash 0xF2A1B2771A01DBD4
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
---- @params colorR number (int)
---- @params colorG number (int)
---- @params colorB number (int)
---- @params range number (float)
---- @params intensity number (float)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param colorR number (int)
+--- @param colorG number (int)
+--- @param colorB number (int)
+--- @param range number (float)
+--- @param intensity number (float)
 --- @return void
 function DrawLightWithRange(posX, posY, posZ, colorR, colorG, colorB, range, intensity) end
 
@@ -1294,7 +1294,7 @@ function DrawLightWithRange(posX, posY, posZ, colorR, colorG, colorB, range, int
 --- GolfTrailSetEnabled
 ---
 --- @hash 0xA51C4B86B71652AE
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function GolfTrailSetEnabled(toggle) end
 
@@ -1304,18 +1304,18 @@ function GolfTrailSetEnabled(toggle) end
 --- ```
 ---
 --- @hash 0x12995F2E53FFA601
---- @params p0 number (int)
---- @params p1 number (int)
---- @params p2 number (int)
---- @params p3 number (int)
---- @params p4 number (int)
---- @params p5 number (int)
---- @params p6 number (int)
---- @params p7 number (int)
---- @params p8 number (int)
---- @params p9 number (int)
---- @params p10 number (int)
---- @params p11 number (int)
+--- @param p0 number (int)
+--- @param p1 number (int)
+--- @param p2 number (int)
+--- @param p3 number (int)
+--- @param p4 number (int)
+--- @param p5 number (int)
+--- @param p6 number (int)
+--- @param p7 number (int)
+--- @param p8 number (int)
+--- @param p9 number (int)
+--- @param p10 number (int)
+--- @param p11 number (int)
 --- @return void
 function GolfTrailSetColour(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) end
 
@@ -1327,8 +1327,8 @@ function GolfTrailSetColour(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) en
 --- ```
 ---
 --- @hash 0x888D57E407E63624
---- @params x table (int*)
---- @params y table (int*)
+--- @param x table (int*)
+--- @param y table (int*)
 --- @return void
 function GetScreenResolution(x, y) end
 
@@ -1352,16 +1352,16 @@ function GetScreenResolution(x, y) end
 --- ```
 ---
 --- @hash 0x6B7256074AE34680
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function DrawLine(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
 
@@ -1369,7 +1369,7 @@ function DrawLine(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
 --- ClearTvChannelPlaylist
 ---
 --- @hash 0xBEB3D46BB7F043C0
---- @params tvChannel number (int)
+--- @param tvChannel number (int)
 --- @return void
 function ClearTvChannelPlaylist(tvChannel) end
 
@@ -1389,7 +1389,7 @@ function GetCurrentNumberOfPhotos() end
 --- ```
 ---
 --- @hash 0xD821490579791273
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function EnableClownBloodVfx(toggle) end
 
@@ -1397,8 +1397,8 @@ function EnableClownBloodVfx(toggle) end
 --- GetScaleformMovieMethodReturnValueBool
 ---
 --- @hash 0xD80A80346A45D761
---- @params returnValueData number (int)
---- @return boolean (BOOL)
+--- @param returnValueData number (int)
+--- @return boolean
 function GetScaleformMovieMethodReturnValueBool(returnValueData) end
 
     
@@ -1407,21 +1407,21 @@ function GetScaleformMovieMethodReturnValueBool(returnValueData) end
 --- ```
 ---
 --- @hash 0x5BCA583A583194DB
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
---- @params dirX number (float)
---- @params dirY number (float)
---- @params dirZ number (float)
---- @params colorR number (int)
---- @params colorG number (int)
---- @params colorB number (int)
---- @params distance number (float)
---- @params brightness number (float)
---- @params roundness number (float)
---- @params radius number (float)
---- @params falloff number (float)
---- @params shadowId number (int)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param dirX number (float)
+--- @param dirY number (float)
+--- @param dirZ number (float)
+--- @param colorR number (int)
+--- @param colorG number (int)
+--- @param colorB number (int)
+--- @param distance number (float)
+--- @param brightness number (float)
+--- @param roundness number (float)
+--- @param radius number (float)
+--- @param falloff number (float)
+--- @param shadowId number (int)
 --- @return void
 function DrawSpotLightWithShadow(posX, posY, posZ, dirX, dirY, dirZ, colorR, colorG, colorB, distance, brightness, roundness, radius, falloff, shadowId) end
 
@@ -1429,7 +1429,7 @@ function DrawSpotLightWithShadow(posX, posY, posZ, dirX, dirY, dirZ, colorR, col
 --- N_0x25fc3e33a31ad0c9
 ---
 --- @hash 0x25FC3E33A31AD0C9
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x25fc3e33a31ad0c9(p0) end
 
@@ -1439,12 +1439,12 @@ function N_0x25fc3e33a31ad0c9(p0) end
 --- ```
 ---
 --- @hash 0x0DF606929C105BE1
---- @params scaleform number (int)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
---- @params unk number (int)
+--- @param scaleform number (int)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @param unk number (int)
 --- @return void
 function DrawScaleformMovieFullscreen(scaleform, red, green, blue, alpha, unk) end
 
@@ -1455,13 +1455,13 @@ function DrawScaleformMovieFullscreen(scaleform, red, green, blue, alpha, unk) e
 --- ```
 ---
 --- @hash 0x6D955F6A9E0295B1
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
 --- @return void
 function GrassLodShrinkScriptAreas(x, y, z, radius, p4, p5, p6) end
 
@@ -1484,7 +1484,7 @@ function GrassLodShrinkScriptAreas(x, y, z, radius, p4, p5, p6) end
 ---     Citizen.Wait(0)
 --- en
 --- @hash 0xE1E258829A885245
---- @params method_return number (int)
+--- @param method_return number (int)
 --- @return string (char*)
 function GetScaleformMovieMethodReturnValueString(method_return) end
 
@@ -1509,20 +1509,20 @@ function GetScaleformMovieMethodReturnValueString(method_return) end
 --- ```
 ---
 --- @hash 0xD0F64B265C8C8B33
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
---- @params dirX number (float)
---- @params dirY number (float)
---- @params dirZ number (float)
---- @params colorR number (int)
---- @params colorG number (int)
---- @params colorB number (int)
---- @params distance number (float)
---- @params brightness number (float)
---- @params hardness number (float)
---- @params radius number (float)
---- @params falloff number (float)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param dirX number (float)
+--- @param dirY number (float)
+--- @param dirZ number (float)
+--- @param colorR number (int)
+--- @param colorG number (int)
+--- @param colorB number (int)
+--- @param distance number (float)
+--- @param brightness number (float)
+--- @param hardness number (float)
+--- @param radius number (float)
+--- @param falloff number (float)
 --- @return void
 function DrawSpotLight(posX, posY, posZ, dirX, dirY, dirZ, colorR, colorG, colorB, distance, brightness, hardness, radius, falloff) end
 
@@ -1530,8 +1530,8 @@ function DrawSpotLight(posX, posY, posZ, dirX, dirY, dirZ, colorR, colorG, color
 --- IsDecalAlive
 ---
 --- @hash 0xC694D74949CAFD0C
---- @params decal number (int)
---- @return boolean (BOOL)
+--- @param decal number (int)
+--- @return boolean
 function IsDecalAlive(decal) end
 
     
@@ -1540,20 +1540,20 @@ function IsDecalAlive(decal) end
 --- ```
 ---
 --- @hash 0x1CE592FDC749D6F5
---- @params scaleform number (int)
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
---- @params rotX number (float)
---- @params rotY number (float)
---- @params rotZ number (float)
---- @params p7 number (float)
---- @params p8 number (float)
---- @params p9 number (float)
---- @params scaleX number (float)
---- @params scaleY number (float)
---- @params scaleZ number (float)
---- @params p13 Any
+--- @param scaleform number (int)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @param p9 number (float)
+--- @param scaleX number (float)
+--- @param scaleY number (float)
+--- @param scaleZ number (float)
+--- @param p13 any
 --- @return void
 function DrawScaleformMovie_3dSolid(scaleform, posX, posY, posZ, rotX, rotY, rotZ, p7, p8, p9, scaleX, scaleY, scaleZ, p13) end
 
@@ -1571,7 +1571,7 @@ function EndScaleformMovieMethodReturnValue() end
 --- GolfTrailSetFacing
 ---
 --- @hash 0x06F761EA47C1D3ED
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function GolfTrailSetFacing(p0) end
 
@@ -1579,7 +1579,7 @@ function GolfTrailSetFacing(p0) end
 --- N_0x0ae73d8df3a762b2
 ---
 --- @hash 0x0AE73D8DF3A762B2
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x0ae73d8df3a762b2(p0) end
 
@@ -1591,7 +1591,7 @@ function N_0x0ae73d8df3a762b2(p0) end
 ---
 --- @hash 0x2202A3F42C8E5F79
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetUsingnightvision() end
 
     
@@ -1601,21 +1601,21 @@ function GetUsingnightvision() end
 --- ```
 ---
 --- @hash 0x98C4FE6EC34154CA
---- @params p0 string (char*)
---- @params ped table (Ped)
---- @params p2 number (int)
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
---- @return boolean (BOOL)
+--- @param p0 string (char*)
+--- @param ped table (Ped)
+--- @param p2 number (int)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @return boolean
 function DrawShowroom(p0, ped, p2, posX, posY, posZ) end
 
     
 --- HasScaleformMovieLoaded
 ---
 --- @hash 0x85F01B8D5B90570E
---- @params scaleformHandle number (int)
---- @return boolean (BOOL)
+--- @param scaleformHandle number (int)
+--- @return boolean
 function HasScaleformMovieLoaded(scaleformHandle) end
 
     
@@ -1630,7 +1630,7 @@ function N_0x0218ba067d249dea() end
 --- N_0x36f6626459d91457
 ---
 --- @hash 0x36F6626459D91457
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0x36f6626459d91457(p0) end
 
@@ -1648,30 +1648,30 @@ function N_0x36f6626459d91457(p0) end
 --- 	end
 --- end
 --- @hash 0x28477EC23D892089
---- @params type number (int)
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
---- @params dirX number (float)
---- @params dirY number (float)
---- @params dirZ number (float)
---- @params rotX number (float)
---- @params rotY number (float)
---- @params rotZ number (float)
---- @params scaleX number (float)
---- @params scaleY number (float)
---- @params scaleZ number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
---- @params bobUpAndDown boolean (BOOL)
---- @params faceCamera boolean (BOOL)
---- @params p19 number (int)
---- @params rotate boolean (BOOL)
---- @params textureDict string (char*)
---- @params textureName string (char*)
---- @params drawOnEnts boolean (BOOL)
+--- @param type number (int)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param dirX number (float)
+--- @param dirY number (float)
+--- @param dirZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param scaleX number (float)
+--- @param scaleY number (float)
+--- @param scaleZ number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @param bobUpAndDown boolean
+--- @param faceCamera boolean
+--- @param p19 number (int)
+--- @param rotate boolean
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param drawOnEnts boolean
 --- @return void
 function DrawMarker(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown, faceCamera, p19, rotate, textureDict, textureName, drawOnEnts) end
 
@@ -1680,10 +1680,10 @@ function DrawMarker(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, 
 --- `SET_SCRIPT_GFX_ALIGN_PARAMS`.
 --- @usage local calcX, calcX = GetScriptGfxPosition(0.2, 0.2
 --- @hash 0x6DD8F5AA635EB4B2
---- @params x number (float)
---- @params y number (float)
---- @params calculatedX table (float*)
---- @params calculatedY table (float*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param calculatedX table (float*)
+--- @param calculatedY table (float*)
 --- @return void
 function GetScriptGfxPosition(x, y, calculatedX, calculatedY) end
 
@@ -1700,7 +1700,7 @@ function GetTimecycleTransitionModifierIndex() end
 ---
 --- @hash 0x35FB78DC42B7BD21
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetRequestingnightvision() end
 
     
@@ -1709,8 +1709,8 @@ function GetRequestingnightvision() end
 --- ```
 ---
 --- @hash 0x873C9F3104101DD3
---- @params x table (int*)
---- @params y table (int*)
+--- @param x table (int*)
+--- @param y table (int*)
 --- @return void
 function GetActiveScreenResolution(x, y) end
 
@@ -1721,8 +1721,8 @@ function GetActiveScreenResolution(x, y) end
 --- ```
 ---
 --- @hash 0x35736EE65BD00C11
---- @params textureDict string (char*)
---- @params textureName string (char*)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
 --- @return Vector3
 function GetTextureResolution(textureDict, textureName) end
 
@@ -1730,7 +1730,7 @@ function GetTextureResolution(textureDict, textureName) end
 --- GolfTrailGetVisualControlPoint
 ---
 --- @hash 0xA4664972A9B8F8BA
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return Vector3
 function GolfTrailGetVisualControlPoint(p0) end
 
@@ -1747,7 +1747,7 @@ function GetTvChannel() end
 ---
 --- @hash 0x7B226C785A52A0A9
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsScreenblurFadeRunning() end
 
     
@@ -1775,12 +1775,12 @@ function IsScreenblurFadeRunning() end
 --- ```
 ---
 --- @hash 0x34E82F05DF2974F5
---- @params worldX number (float)
---- @params worldY number (float)
---- @params worldZ number (float)
---- @params screenX table (float*)
---- @params screenY table (float*)
---- @return boolean (BOOL)
+--- @param worldX number (float)
+--- @param worldY number (float)
+--- @param worldZ number (float)
+--- @param screenX table (float*)
+--- @param screenY table (float*)
+--- @return boolean
 function GetScreenCoordFromWorldCoord(worldX, worldY, worldZ, screenX, screenY) end
 
     
@@ -1830,7 +1830,7 @@ function GetStatusOfTakeHighQualityPhoto() end
 --- ```
 ---
 --- @hash 0x2DE7EFA66B906036
---- @params method_return number (int)
+--- @param method_return number (int)
 --- @return number (int)
 function GetScaleformMovieMethodReturnValueInt(method_return) end
 
@@ -1840,7 +1840,7 @@ function GetScaleformMovieMethodReturnValueInt(method_return) end
 --- ```
 ---
 --- @hash 0x108BE26959A9D9BB
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x108be26959a9d9bb(toggle) end
 
@@ -1848,8 +1848,8 @@ function N_0x108be26959a9d9bb(toggle) end
 --- N_0x2c42340f916c5930
 ---
 --- @hash 0x2C42340F916C5930
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0x2c42340f916c5930(p0) end
 
     
@@ -1862,15 +1862,15 @@ function N_0x2c42340f916c5930(p0) end
 --- ```
 ---
 --- @hash 0xB1BB03742917A5D6
---- @params type number (int)
---- @params xPos number (float)
---- @params yPos number (float)
---- @params zPos number (float)
---- @params p4 number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param type number (int)
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param zPos number (float)
+--- @param p4 number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function GolfTrailSetFixedControlPoint(type, xPos, yPos, zPos, p4, red, green, blue, alpha) end
 
@@ -1878,8 +1878,8 @@ function GolfTrailSetFixedControlPoint(type, xPos, yPos, zPos, p4, red, green, b
 --- MoveVehicleDecals
 ---
 --- @hash 0x84C8D7C2D30D3280
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function MoveVehicleDecals(p0, p1) end
 
@@ -1887,7 +1887,7 @@ function MoveVehicleDecals(p0, p1) end
 --- GetDecalWashLevel
 ---
 --- @hash 0x323F647679A09103
---- @params decal number (int)
+--- @param decal number (int)
 --- @return number (float)
 function GetDecalWashLevel(decal) end
 
@@ -1902,15 +1902,15 @@ function GetDecalWashLevel(decal) end
 --- ```
 ---
 --- @hash 0x0C1C5D756FB5F337
---- @params scaleformName string (char*)
---- @return boolean (BOOL)
+--- @param scaleformName string (char*)
+--- @return boolean
 function HasScaleformMovieFilenameLoaded(scaleformName) end
 
     
 --- N_0x2b40a97646381508
 ---
 --- @hash 0x2B40A97646381508
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x2b40a97646381508(p0) end
 
@@ -1920,11 +1920,11 @@ function N_0x2b40a97646381508(p0) end
 --- ```
 ---
 --- @hash 0xD77EDADB0420E6E0
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
 --- @return void
 function FadeDecalsInRange(p0, p1, p2, p3, p4) end
 
@@ -1950,8 +1950,8 @@ function EndTextCommandScaleformString() end
 --- GolfTrailSetTessellation
 ---
 --- @hash 0xDBAA5EC848BA2D46
---- @params p0 number (int)
---- @params p1 number (int)
+--- @param p0 number (int)
+--- @param p1 number (int)
 --- @return void
 function GolfTrailSetTessellation(p0, p1) end
 
@@ -1961,9 +1961,9 @@ function GolfTrailSetTessellation(p0, p1) end
 --- ```
 ---
 --- @hash 0x060D935D3981A275
---- @params vehicle number (Vehicle)
---- @params p1 number (int)
---- @return boolean (BOOL)
+--- @param vehicle number (Vehicle)
+--- @param p1 number (int)
+--- @return boolean
 function DoesVehicleHaveCrewEmblem(vehicle, p1) end
 
     
@@ -1972,16 +1972,16 @@ function DoesVehicleHaveCrewEmblem(vehicle, p1) end
 --- ```
 ---
 --- @hash 0x1F710BFF7DAE6261
---- @params tvChannel number (int)
---- @params p1 Any
---- @return boolean (BOOL)
+--- @param tvChannel number (int)
+--- @param p1 any
+--- @return boolean
 function IsPlaylistUnk(tvChannel, p1) end
 
     
 --- N_0x5f0f3f56635809ef
 ---
 --- @hash 0x5F0F3F56635809EF
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0x5f0f3f56635809ef(p0) end
 
@@ -1989,8 +1989,8 @@ function N_0x5f0f3f56635809ef(p0) end
 --- N_0x2a893980e96b659a
 ---
 --- @hash 0x2A893980E96B659A
---- @params p0 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 boolean
+--- @return boolean
 function N_0x2a893980e96b659a(p0) end
 
     
@@ -2001,7 +2001,7 @@ function N_0x2a893980e96b659a(p0) end
 ---
 --- @hash 0x84ED31191CC5D2C9
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetIsHidef() end
 
     
@@ -2010,7 +2010,7 @@ function GetIsHidef() end
 --- ```
 ---
 --- @hash 0x02369D5C8A51FDCF
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x02369d5c8a51fdcf(toggle) end
 
@@ -2018,7 +2018,7 @@ function N_0x02369d5c8a51fdcf(toggle) end
 --- N_0x03300b57fcac6ddb
 ---
 --- @hash 0x03300B57FCAC6DDB
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x03300b57fcac6ddb(p0) end
 
@@ -2026,7 +2026,7 @@ function N_0x03300b57fcac6ddb(p0) end
 --- LoadMovieMeshSet
 ---
 --- @hash 0xB66064452270E8F1
---- @params movieMeshSetName string (char*)
+--- @param movieMeshSetName string (char*)
 --- @return number (int)
 function LoadMovieMeshSet(movieMeshSetName) end
 
@@ -2036,8 +2036,8 @@ function LoadMovieMeshSet(movieMeshSetName) end
 --- ```
 ---
 --- @hash 0x0AD973CA1E077B60
---- @params videoCliphash table (Hash)
---- @return boolean (BOOL)
+--- @param videoCliphash table (Hash)
+--- @return boolean
 function IsTvPlaylistItemPlaying(videoCliphash) end
 
     
@@ -2046,7 +2046,7 @@ function IsTvPlaylistItemPlaying(videoCliphash) end
 --- ```
 ---
 --- @hash 0x615D3925E87A3B26
---- @params checkpoint number (int)
+--- @param checkpoint number (int)
 --- @return void
 function N_0x615d3925e87a3b26(checkpoint) end
 
@@ -2054,7 +2054,7 @@ function N_0x615d3925e87a3b26(checkpoint) end
 --- N_0x1bbc135a4d25edde
 ---
 --- @hash 0x1BBC135A4D25EDDE
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x1bbc135a4d25edde(p0) end
 
@@ -2070,7 +2070,7 @@ function GrassLodResetScriptAreas() end
 --- N_0x1670f8d05056f257
 ---
 --- @hash 0x1670F8D05056F257
---- @params p0 string (char*)
+--- @param p0 string (char*)
 --- @return number (int)
 function N_0x1670f8d05056f257(p0) end
 
@@ -2086,7 +2086,7 @@ function GetStatusOfSaveHighQualityPhoto() end
 --- N_0x0e4299c549f0d1f1
 ---
 --- @hash 0x0E4299C549F0D1F1
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x0e4299c549f0d1f1(toggle) end
 
@@ -2094,8 +2094,8 @@ function N_0x0e4299c549f0d1f1(toggle) end
 --- N_0x759650634f07b6b4
 ---
 --- @hash 0x759650634F07B6B4
---- @params p0 number (int)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @return boolean
 function N_0x759650634f07b6b4(p0) end
 
     
@@ -2104,8 +2104,8 @@ function N_0x759650634f07b6b4(p0) end
 --- ```
 ---
 --- @hash 0x5E657EF1099EDD65
---- @params p0 number (int)
---- @return boolean (BOOL)
+--- @param p0 number (int)
+--- @return boolean
 function N_0x5e657ef1099edd65(p0) end
 
     
@@ -2130,7 +2130,7 @@ function GetMaximumNumberOfCloudPhotos() end
 --- N_0x22a249a53034450a
 ---
 --- @hash 0x22A249A53034450A
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x22a249a53034450a(p0) end
 
@@ -2146,18 +2146,18 @@ function N_0x851cd923176eba7c() end
 --- N_0x27feb5254759cde3
 ---
 --- @hash 0x27FEB5254759CDE3
---- @params textureDict string (char*)
---- @params p1 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param textureDict string (char*)
+--- @param p1 boolean
+--- @return boolean
 function N_0x27feb5254759cde3(textureDict, p1) end
 
     
 --- GolfTrailSetRadius
 ---
 --- @hash 0x2485D34E50A22E84
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
 --- @return void
 function GolfTrailSetRadius(p0, p1, p2) end
 
@@ -2173,8 +2173,8 @@ function N_0x14fc5833464340a8() end
 --- HasScaleformContainerMovieLoadedIntoParent
 ---
 --- @hash 0x8217150E1217EBFD
---- @params scaleformHandle number (int)
---- @return boolean (BOOL)
+--- @param scaleformHandle number (int)
+--- @return boolean
 function HasScaleformContainerMovieLoadedIntoParent(scaleformHandle) end
 
     
@@ -2191,16 +2191,16 @@ function N_0x2a251aa48b2b46db() end
 --- HasStreamedTextureDictLoaded
 ---
 --- @hash 0x0145F696AAAAD2E4
---- @params textureDict string (char*)
---- @return boolean (BOOL)
+--- @param textureDict string (char*)
+--- @return boolean
 function HasStreamedTextureDictLoaded(textureDict) end
 
     
 --- N_0x32f34ff7f617643b
 ---
 --- @hash 0x32F34FF7F617643B
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0x32f34ff7f617643b(p0, p1) end
 
@@ -2208,8 +2208,8 @@ function N_0x32f34ff7f617643b(p0, p1) end
 --- GetVehicleCrewEmblemRequestState
 ---
 --- @hash 0xFE26117A5841B2FF
---- @params vehicle number (Vehicle)
---- @params p1 number (int)
+--- @param vehicle number (Vehicle)
+--- @param p1 number (int)
 --- @return number (int)
 function GetVehicleCrewEmblemRequestState(vehicle, p1) end
 
@@ -2218,14 +2218,14 @@ function GetVehicleCrewEmblemRequestState(vehicle, p1) end
 ---
 --- @hash 0x7FA5D82B8F58EC06
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x7fa5d82b8f58ec06() end
 
     
 --- N_0x46d1a61a21f566fc
 ---
 --- @hash 0x46D1A61A21F566FC
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0x46d1a61a21f566fc(p0) end
 
@@ -2245,7 +2245,7 @@ function N_0x30432a0118736e00() end
 --- N_0x54e22ea2c1956a8d
 ---
 --- @hash 0x54E22EA2C1956A8D
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0x54e22ea2c1956a8d(p0) end
 
@@ -2253,8 +2253,8 @@ function N_0x54e22ea2c1956a8d(p0) end
 --- N_0x1072f115dab0717e
 ---
 --- @hash 0x1072F115DAB0717E
---- @params p0 boolean (BOOL)
---- @params p1 boolean (BOOL)
+--- @param p0 boolean
+--- @param p1 boolean
 --- @return void
 function N_0x1072f115dab0717e(p0, p1) end
 
@@ -2274,18 +2274,18 @@ function N_0x1072f115dab0717e(p0, p1) end
 ---   return number
 --- en
 --- @hash 0x2D3B147AFAD49DE0
---- @params textureDict string (char*)
---- @params textureName string (char*)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 number (float)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function N_0x2d3b147afad49de0(textureDict, textureName, p2, p3, p4, p5, p6, p7, red, green, blue, alpha) end
 
@@ -2295,15 +2295,15 @@ function N_0x2d3b147afad49de0(textureDict, textureName, p2, p3, p4, p5, p6, p7, 
 --- ```
 ---
 --- @hash 0x312342E1A4874F3F
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 number (float)
---- @params p8 boolean (BOOL)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param p8 boolean
 --- @return void
 function GolfTrailSetPath(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 
@@ -2311,15 +2311,15 @@ function GolfTrailSetPath(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 --- IsTrackedPointVisible
 ---
 --- @hash 0xC45CCDAAC9221CA8
---- @params point number (int)
---- @return boolean (BOOL)
+--- @param point number (int)
+--- @return boolean
 function IsTrackedPointVisible(point) end
 
     
 --- N_0x5dbf05db5926d089
 ---
 --- @hash 0x5DBF05DB5926D089
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x5dbf05db5926d089(p0) end
 
@@ -2327,7 +2327,7 @@ function N_0x5dbf05db5926d089(p0) end
 --- N_0xbb90e12cac1dab25
 ---
 --- @hash 0xBB90E12CAC1DAB25
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0xbb90e12cac1dab25(p0) end
 
@@ -2353,7 +2353,7 @@ function N_0x4af92acd3141d96c() end
 --- ```
 ---
 --- @hash 0x1CBA05AE7BD7EE05
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0x1cba05ae7bd7ee05(p0) end
 
@@ -2361,7 +2361,7 @@ function N_0x1cba05ae7bd7ee05(p0) end
 --- N_0x6ddbf9dffc4ac080
 ---
 --- @hash 0x6DDBF9DFFC4AC080
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x6ddbf9dffc4ac080(p0) end
 
@@ -2379,7 +2379,7 @@ function EndScaleformMovieMethod() end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0x61F95E5BB3E0A8C6
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x61f95e5bb3e0a8c6(p0) end
 
@@ -2387,7 +2387,7 @@ function N_0x61f95e5bb3e0a8c6(p0) end
 --- N_0x814af7dcaacc597b
 ---
 --- @hash 0x814AF7DCAACC597B
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x814af7dcaacc597b(p0) end
 
@@ -2396,7 +2396,7 @@ function N_0x814af7dcaacc597b(p0) end
 ---
 --- @hash 0x1DD2139A9A20DCE8
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x1dd2139a9a20dce8() end
 
     
@@ -2413,17 +2413,17 @@ function N_0x7a42b2e236e71415() end
 --- N_0x95eb5e34f821babe
 ---
 --- @hash 0x95EB5E34F821BABE
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @return any
 function N_0x95eb5e34f821babe(p0, p1, p2) end
 
     
 --- N_0x5e9daf5a20f15908
 ---
 --- @hash 0x5E9DAF5A20F15908
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0x5e9daf5a20f15908(p0) end
 
@@ -2431,7 +2431,7 @@ function N_0x5e9daf5a20f15908(p0) end
 --- N_0x02ac28f3a01fa04a
 ---
 --- @hash 0x02AC28F3A01FA04A
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0x02ac28f3a01fa04a(p0) end
 
@@ -2449,14 +2449,14 @@ function N_0x0a46af8a78dc5e0a() end
 --- ```
 ---
 --- @hash 0xAAE9BE70EC7C69AB
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
---- @params p6 Any
---- @params p7 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
+--- @param p7 any
 --- @return void
 function N_0xaae9be70ec7c69ab(p0, p1, p2, p3, p4, p5, p6, p7) end
 
@@ -2465,7 +2465,7 @@ function N_0xaae9be70ec7c69ab(p0, p1, p2, p3, p4, p5, p6, p7) end
 ---
 --- @hash 0x393BD2275CEB7793
 ---
---- @return Any
+--- @return any
 function N_0x393bd2275ceb7793() end
 
     
@@ -2474,7 +2474,7 @@ function N_0x393bd2275ceb7793() end
 --- ```
 ---
 --- @hash 0x43FA7CBE20DAB219
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x43fa7cbe20dab219(p0) end
 
@@ -2485,7 +2485,7 @@ function N_0x43fa7cbe20dab219(p0) end
 ---
 --- @hash 0x98D18905BF723B99
 ---
---- @return Any
+--- @return any
 function N_0x98d18905bf723b99() end
 
     
@@ -2504,8 +2504,8 @@ function N_0x98edf76a7271e4f2() end
 --- ```
 ---
 --- @hash 0x86255B1FC929E33E
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0x86255b1fc929e33e(p0) end
 
     
@@ -2514,10 +2514,10 @@ function N_0x86255b1fc929e33e(p0) end
 --- ```
 ---
 --- @hash 0x3C788E7F6438754D
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function N_0x3c788e7f6438754d(p0, p1, p2, p3) end
 
@@ -2527,15 +2527,15 @@ function N_0x3c788e7f6438754d(p0, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0x2FCB133CA50A49EB
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0x2fcb133ca50a49eb(p0) end
 
     
 --- N_0x649c97d52332341a
 ---
 --- @hash 0x649C97D52332341A
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x649c97d52332341a(p0) end
 
@@ -2559,11 +2559,11 @@ function N_0xd801cc02177fa3f1() end
 --- ```
 ---
 --- @hash 0x9CFDD90B2B844BF7
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
 --- @return void
 function GolfTrailSetShaderParams(p0, p1, p2, p3, p4) end
 
@@ -2571,7 +2571,7 @@ function GolfTrailSetShaderParams(p0, p1, p2, p3, p4) end
 --- N_0xc5c8f970d4edff71
 ---
 --- @hash 0xC5C8F970D4EDFF71
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xc5c8f970d4edff71(p0) end
 
@@ -2579,8 +2579,8 @@ function N_0xc5c8f970d4edff71(p0) end
 --- N_0x44621483ff966526
 ---
 --- @hash 0x44621483FF966526
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0x44621483ff966526(p0, p1) end
 
@@ -2590,7 +2590,7 @@ function N_0x44621483ff966526(p0, p1) end
 --- ```
 ---
 --- @hash 0x15E33297C3E8DC60
---- @params p0 string (char*)
+--- @param p0 string (char*)
 --- @return void
 function N_0x15e33297c3e8dc60(p0) end
 
@@ -2615,14 +2615,14 @@ function N_0x90a78ecaa4e78453() end
 ---
 --- @hash 0xBCEDB009461DA156
 ---
---- @return Any
+--- @return any
 function N_0xbcedb009461da156() end
 
     
 --- N_0x949f397a288b28b3
 ---
 --- @hash 0x949F397A288B28B3
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0x949f397a288b28b3(p0) end
 
@@ -2630,8 +2630,8 @@ function N_0x949f397a288b28b3(p0) end
 --- This native is used in some casino scripts to fit the scaleform in the rendertarget.
 ---
 --- @hash 0xE6A9F00D4240B519
---- @params scaleform number (int)
---- @params p1 boolean (BOOL)
+--- @param scaleform number (int)
+--- @param p1 boolean
 --- @return void
 function N_0xe6a9f00d4240b519(scaleform, p1) end
 
@@ -2641,7 +2641,7 @@ function N_0xe6a9f00d4240b519(scaleform, p1) end
 --- ```
 ---
 --- @hash 0x9B079E5221D984D3
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x9b079e5221d984d3(p0) end
 
@@ -2653,7 +2653,7 @@ function N_0x9b079e5221d984d3(p0) end
 --- ```
 ---
 --- @hash 0xB3C641F3630BF6DA
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0xb3c641f3630bf6da(p0) end
 
@@ -2661,7 +2661,7 @@ function N_0xb3c641f3630bf6da(p0) end
 --- N_0xca465d9cc0d231ba
 ---
 --- @hash 0xCA465D9CC0D231BA
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xca465d9cc0d231ba(p0) end
 
@@ -2669,8 +2669,8 @@ function N_0xca465d9cc0d231ba(p0) end
 --- N_0xd1c7cb175e012964
 ---
 --- @hash 0xD1C7CB175E012964
---- @params scaleformHandle number (int)
---- @return boolean (BOOL)
+--- @param scaleformHandle number (int)
+--- @return boolean
 function N_0xd1c7cb175e012964(scaleformHandle) end
 
     
@@ -2679,7 +2679,7 @@ function N_0xd1c7cb175e012964(scaleformHandle) end
 --- ```
 ---
 --- @hash 0x5F6DF3D92271E8A1
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x5f6df3d92271e8a1(toggle) end
 
@@ -2687,7 +2687,7 @@ function N_0x5f6df3d92271e8a1(toggle) end
 --- N_0xca4ae345a153d573
 ---
 --- @hash 0xCA4AE345A153D573
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0xca4ae345a153d573(p0) end
 
@@ -2708,14 +2708,14 @@ function GetTimecycleModifierIndex() end
 --- N_0xd2936cab8b58fcbd
 ---
 --- @hash 0xD2936CAB8B58FCBD
---- @params p0 Any
---- @params p1 boolean (BOOL)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 boolean (BOOL)
---- @params p7 number (float)
+--- @param p0 any
+--- @param p1 boolean
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 boolean
+--- @param p7 number (float)
 --- @return void
 function N_0xd2936cab8b58fcbd(p0, p1, p2, p3, p4, p5, p6, p7) end
 
@@ -2723,7 +2723,7 @@ function N_0xd2936cab8b58fcbd(p0, p1, p2, p3, p4, p5, p6, p7) end
 --- ReleaseMovieMeshSet
 ---
 --- @hash 0xEB119AA014E89183
---- @params movieMeshSet number (int)
+--- @param movieMeshSet number (int)
 --- @return void
 function ReleaseMovieMeshSet(movieMeshSet) end
 
@@ -2732,7 +2732,7 @@ function ReleaseMovieMeshSet(movieMeshSet) end
 ---
 --- @hash 0xB2EBE8CBC58B90E9
 ---
---- @return Any
+--- @return any
 function N_0xb2ebe8cbc58b90e9() end
 
     
@@ -2747,7 +2747,7 @@ function N_0x5b0316762afd4a64() end
 --- N_0xf78b803082d4386f
 ---
 --- @hash 0xF78B803082D4386F
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0xf78b803082d4386f(p0) end
 
@@ -2755,7 +2755,7 @@ function N_0xf78b803082d4386f(p0) end
 --- N_0xa46b73faa3460ae1
 ---
 --- @hash 0xA46B73FAA3460AE1
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0xa46b73faa3460ae1(p0) end
 
@@ -2771,7 +2771,7 @@ function N_0x5debd9c4dc995692() end
 --- N_0xe2892e7e55d7073a
 ---
 --- @hash 0xE2892E7E55D7073A
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function N_0xe2892e7e55d7073a(p0) end
 
@@ -2779,11 +2779,11 @@ function N_0xe2892e7e55d7073a(p0) end
 --- N_0xae51bc858f32ba66
 ---
 --- @hash 0xAE51BC858F32BA66
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
 --- @return void
 function N_0xae51bc858f32ba66(p0, p1, p2, p3, p4) end
 
@@ -2791,8 +2791,8 @@ function N_0xae51bc858f32ba66(p0, p1, p2, p3, p4) end
 --- N_0x9b6e70c5ceef4eeb
 ---
 --- @hash 0x9B6E70C5CEEF4EEB
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0x9b6e70c5ceef4eeb(p0) end
 
     
@@ -2811,7 +2811,7 @@ function N_0xe59343e9e96529e7() end
 --- N_0xb569f41f3e7e83a4
 ---
 --- @hash 0xB569F41F3E7E83A4
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xb569f41f3e7e83a4(p0) end
 
@@ -2822,7 +2822,7 @@ function N_0xb569f41f3e7e83a4(p0) end
 --- ```
 ---
 --- @hash 0xF5BED327CEA362B1
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return number (int)
 function N_0xf5bed327cea362b1(p0) end
 
@@ -2838,7 +2838,7 @@ function N_0x03fc694ae06c5a20() end
 --- OverrideInteriorSmokeLevel
 ---
 --- @hash 0x1600FD8CF72EBC12
---- @params level number (float)
+--- @param level number (float)
 --- @return void
 function OverrideInteriorSmokeLevel(level) end
 
@@ -2848,7 +2848,7 @@ function OverrideInteriorSmokeLevel(level) end
 --- ```
 ---
 --- @hash 0x04D950EEFA4EED8C
---- @params binkMovie number (int)
+--- @param binkMovie number (int)
 --- @return void
 function ReleaseBinkMovie(binkMovie) end
 
@@ -2856,8 +2856,8 @@ function ReleaseBinkMovie(binkMovie) end
 --- N_0x7ac24eab6d74118d
 ---
 --- @hash 0x7AC24EAB6D74118D
---- @params p0 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 boolean
+--- @return boolean
 function N_0x7ac24eab6d74118d(p0) end
 
     
@@ -2874,7 +2874,7 @@ function ResetPausedRenderphases() end
 --- ```
 ---
 --- @hash 0xC0416B061F2B7E5E
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0xc0416b061f2b7e5e(p0) end
 
@@ -2886,9 +2886,9 @@ function N_0xc0416b061f2b7e5e(p0) end
 --- ```
 ---
 --- @hash 0x8A35C742130C6080
---- @params decalType number (int)
---- @params textureDict string (char*)
---- @params textureName string (char*)
+--- @param decalType number (int)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
 --- @return void
 function PatchDecalDiffuseMap(decalType, textureDict, textureName) end
 
@@ -2904,7 +2904,7 @@ function PopTimecycleModifier() end
 --- SeethroughSetMaxThickness
 ---
 --- @hash 0x0C8FAC83902A62DF
---- @params thickness number (float)
+--- @param thickness number (float)
 --- @return void
 function SeethroughSetMaxThickness(thickness) end
 
@@ -2914,7 +2914,7 @@ function SeethroughSetMaxThickness(thickness) end
 --- ```
 ---
 --- @hash 0xD1C55B110E4DF534
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xd1c55b110e4df534(p0) end
 
@@ -2924,7 +2924,7 @@ function N_0xd1c55b110e4df534(p0) end
 --- ```
 ---
 --- @hash 0xE3E2C1B4C59DBC77
---- @params unk number (int)
+--- @param unk number (int)
 --- @return void
 function N_0xe3e2c1b4c59dbc77(unk) end
 
@@ -2934,16 +2934,16 @@ function N_0xe3e2c1b4c59dbc77(unk) end
 --- ```
 ---
 --- @hash 0xEC72C258667BE5EA
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0xec72c258667be5ea(p0) end
 
     
 --- N_0x82acc484ffa3b05f
 ---
 --- @hash 0x82ACC484FFA3B05F
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0x82acc484ffa3b05f(p0) end
 
     
@@ -2952,7 +2952,7 @@ function N_0x82acc484ffa3b05f(p0) end
 --- ```
 ---
 --- @hash 0xBA3D194057C79A7B
---- @params p0 string (char*)
+--- @param p0 string (char*)
 --- @return void
 function N_0xba3d194057c79a7b(p0) end
 
@@ -2962,7 +2962,7 @@ function N_0xba3d194057c79a7b(p0) end
 --- ```
 ---
 --- @hash 0xE63D7C6EECECB66B
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0xe63d7c6eececb66b(toggle) end
 
@@ -2974,7 +2974,7 @@ function N_0xe63d7c6eececb66b(toggle) end
 --- ```
 ---
 --- @hash 0x8CDE909A0370BB3A
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x8cde909a0370bb3a(toggle) end
 
@@ -2982,8 +2982,8 @@ function N_0x8cde909a0370bb3a(toggle) end
 --- SeethroughSetHeatscale
 ---
 --- @hash 0xD7D0B00177485411
---- @params index number (int)
---- @params heatScale number (float)
+--- @param index number (int)
+--- @param heatScale number (float)
 --- @return void
 function SeethroughSetHeatscale(index, heatScale) end
 
@@ -2991,7 +2991,7 @@ function SeethroughSetHeatscale(index, heatScale) end
 --- N_0x9641588dab93b4b5
 ---
 --- @hash 0x9641588DAB93B4B5
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x9641588dab93b4b5(p0) end
 
@@ -3009,11 +3009,11 @@ function PushTimecycleModifier() end
 --- ```
 ---
 --- @hash 0xB9EA40907C680580
---- @params checkpoint number (int)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param checkpoint number (int)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function SetCheckpointIconRgba(checkpoint, red, green, blue, alpha) end
 
@@ -3023,8 +3023,8 @@ function SetCheckpointIconRgba(checkpoint, red, green, blue, alpha) end
 --- ```
 ---
 --- @hash 0xF3F776ADA161E47D
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0xf3f776ada161e47d(p0, p1) end
 
@@ -3049,7 +3049,7 @@ function N_0xd9454b5752c857dc() end
 --- ```
 ---
 --- @hash 0xBD06C611BB9048C2
---- @params scaleformName string (char*)
+--- @param scaleformName string (char*)
 --- @return number (int)
 function RequestScaleformMovieInteractive(scaleformName) end
 
@@ -3057,7 +3057,7 @@ function RequestScaleformMovieInteractive(scaleformName) end
 --- N_0xcb82a0bf0e3e3265
 ---
 --- @hash 0xCB82A0BF0E3E3265
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return number (int)
 function N_0xcb82a0bf0e3e3265(p0) end
 
@@ -3067,7 +3067,7 @@ function N_0xcb82a0bf0e3e3265(p0) end
 --- ```
 ---
 --- @hash 0x89C8553DD3274AAE
---- @params name string (char*)
+--- @param name string (char*)
 --- @return void
 function ResetParticleFxOverride(name) end
 
@@ -3075,8 +3075,8 @@ function ResetParticleFxOverride(name) end
 --- RemoveParticleFx
 ---
 --- @hash 0xC401503DFE8D53CF
---- @params ptfxHandle number (int)
---- @params p1 boolean (BOOL)
+--- @param ptfxHandle number (int)
+--- @param p1 boolean
 --- @return void
 function RemoveParticleFx(ptfxHandle, p1) end
 
@@ -3084,7 +3084,7 @@ function RemoveParticleFx(ptfxHandle, p1) end
 --- RemoveDecalsFromVehicle
 ---
 --- @hash 0xE91F1B65F2B48D57
---- @params vehicle number (Vehicle)
+--- @param vehicle number (Vehicle)
 --- @return void
 function RemoveDecalsFromVehicle(vehicle) end
 
@@ -3094,7 +3094,7 @@ function RemoveDecalsFromVehicle(vehicle) end
 --- ```
 ---
 --- @hash 0xDC459CFA0CCE245B
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0xdc459cfa0cce245b(toggle) end
 
@@ -3119,15 +3119,15 @@ function N_0xdc459cfa0cce245b(toggle) end
 --- ```
 ---
 --- @hash 0x768FF8961BA904D6
---- @params method_return number (int)
---- @return boolean (BOOL)
+--- @param method_return number (int)
+--- @return boolean
 function IsScaleformMovieMethodReturnValueReady(method_return) end
 
     
 --- RemoveDecal
 ---
 --- @hash 0xED3F346429CCD659
---- @params decal number (int)
+--- @param decal number (int)
 --- @return void
 function RemoveDecal(decal) end
 
@@ -3149,7 +3149,7 @@ function RemoveDecal(decal) end
 --- ```
 ---
 --- @hash 0x11FE353CF9733E6F
---- @params scaleformName string (char*)
+--- @param scaleformName string (char*)
 --- @return number (int)
 function RequestScaleformMovie(scaleformName) end
 
@@ -3169,7 +3169,7 @@ function ResetScriptGfxAlign() end
 --- ```
 ---
 --- @hash 0xC58424BA936EB458
---- @params value boolean (BOOL)
+--- @param value boolean
 --- @return void
 function ScaleformMovieMethodAddParamBool(value) end
 
@@ -3177,8 +3177,8 @@ function ScaleformMovieMethodAddParamBool(value) end
 --- RemoveVehicleCrewEmblem
 ---
 --- @hash 0xD2300034310557E4
---- @params vehicle number (Vehicle)
---- @params p1 number (int)
+--- @param vehicle number (Vehicle)
+--- @param p1 number (int)
 --- @return void
 function RemoveVehicleCrewEmblem(vehicle, p1) end
 
@@ -3186,7 +3186,7 @@ function RemoveVehicleCrewEmblem(vehicle, p1) end
 --- ScaleformMovieMethodAddParamLatestBriefString
 ---
 --- @hash 0xEC52C631A1831C03
---- @params value number (int)
+--- @param value number (int)
 --- @return void
 function ScaleformMovieMethodAddParamLatestBriefString(value) end
 
@@ -3196,7 +3196,7 @@ function ScaleformMovieMethodAddParamLatestBriefString(value) end
 --- ```
 ---
 --- @hash 0x908311265D42A820
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x908311265d42a820(p0) end
 
@@ -3204,11 +3204,11 @@ function N_0x908311265d42a820(p0) end
 --- N_0x4862437a486f91b0
 ---
 --- @hash 0x4862437A486F91B0
---- @params p0 string (char*)
---- @params p1 table (Any*)
---- @params p2 table (Any*)
---- @params p3 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 string (char*)
+--- @param p1 table (Any*)
+--- @param p2 table (Any*)
+--- @param p3 boolean
+--- @return boolean
 function N_0x4862437a486f91b0(p0, p1, p2, p3) end
 
     
@@ -3217,7 +3217,7 @@ function N_0x4862437a486f91b0(p0, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0x9304881D6F6537EA
---- @params hudComponent number (int)
+--- @param hudComponent number (int)
 --- @return void
 function RequestScaleformScriptHudMovie(hudComponent) end
 
@@ -3225,7 +3225,7 @@ function RequestScaleformScriptHudMovie(hudComponent) end
 --- N_0xd39d13c9febf0511
 ---
 --- @hash 0xD39D13C9FEBF0511
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0xd39d13c9febf0511(p0) end
 
@@ -3243,10 +3243,10 @@ function N_0xefabc7722293da7c() end
 --- RemoveParticleFxInRange
 ---
 --- @hash 0xDD19FA1C6D657305
---- @params X number (float)
---- @params Y number (float)
---- @params Z number (float)
---- @params radius number (float)
+--- @param X number (float)
+--- @param Y number (float)
+--- @param Z number (float)
+--- @param radius number (float)
 --- @return void
 function RemoveParticleFxInRange(X, Y, Z, radius) end
 
@@ -3256,7 +3256,7 @@ function RemoveParticleFxInRange(X, Y, Z, radius) end
 --- ```
 ---
 --- @hash 0x338D9F609FD632DB
---- @params name string (char*)
+--- @param name string (char*)
 --- @return number (int)
 function SetBinkMovie(name) end
 
@@ -3266,10 +3266,10 @@ function SetBinkMovie(name) end
 --- ```
 ---
 --- @hash 0x5D6B2D4830A67C62
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params range number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param range number (float)
 --- @return void
 function RemoveDecalsInRange(x, y, z, range) end
 
@@ -3277,7 +3277,7 @@ function RemoveDecalsInRange(x, y, z, range) end
 --- SetParticleFxBulletImpactScale
 ---
 --- @hash 0x27E32866E9A5C416
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function SetParticleFxBulletImpactScale(p0) end
 
@@ -3301,7 +3301,7 @@ function OverrideInteriorSmokeEnd() end
 --- -- Enable all lights in the map.
 --- SetArtificialLightsState(false
 --- @hash 0x1268615ACE24D504
---- @params state boolean (BOOL)
+--- @param state boolean
 --- @return void
 function SetArtificialLightsState(state) end
 
@@ -3309,7 +3309,7 @@ function SetArtificialLightsState(state) end
 --- SetBackfaceculling
 ---
 --- @hash 0x23BA6B0C2AD7B0D3
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetBackfaceculling(toggle) end
 
@@ -3319,11 +3319,11 @@ function SetBackfaceculling(toggle) end
 --- ```
 ---
 --- @hash 0x0AB84296FED9CFC6
---- @params p0 number (float)
---- @params p1 number (float)
---- @params fadeIn number (float)
---- @params duration number (float)
---- @params fadeOut number (float)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param fadeIn number (float)
+--- @param duration number (float)
+--- @param fadeOut number (float)
 --- @return void
 function SetFlash(p0, p1, fadeIn, duration, fadeOut) end
 
@@ -3331,9 +3331,9 @@ function SetFlash(p0, p1, fadeIn, duration, fadeOut) end
 --- only works on some fx's, not networked
 ---
 --- @hash 0x26143A59EF48B262
---- @params r number (float)
---- @params g number (float)
---- @params b number (float)
+--- @param r number (float)
+--- @param g number (float)
+--- @param b number (float)
 --- @return void
 function SetParticleFxNonLoopedColour(r, g, b) end
 
@@ -3344,11 +3344,11 @@ function SetParticleFxNonLoopedColour(r, g, b) end
 --- ```
 ---
 --- @hash 0x7F8F65877F88783B
---- @params ptfxHandle number (int)
---- @params r number (float)
---- @params g number (float)
---- @params b number (float)
---- @params p4 boolean (BOOL)
+--- @param ptfxHandle number (int)
+--- @param r number (float)
+--- @param g number (float)
+--- @param b number (float)
+--- @param p4 boolean
 --- @return void
 function SetParticleFxLoopedColour(ptfxHandle, r, g, b, p4) end
 
@@ -3366,7 +3366,7 @@ function ResetExtraTimecycleModifierStrength() end
 --- ```
 ---
 --- @hash 0x70D2CC8A542A973C
---- @params binkMovie number (int)
+--- @param binkMovie number (int)
 --- @return void
 function PlayBinkMovie(binkMovie) end
 
@@ -3374,7 +3374,7 @@ function PlayBinkMovie(binkMovie) end
 --- SeethroughSetFadeStartDistance
 ---
 --- @hash 0xA78DE25577300BA1
---- @params distance number (float)
+--- @param distance number (float)
 --- @return void
 function SeethroughSetFadeStartDistance(distance) end
 
@@ -3382,13 +3382,13 @@ function SeethroughSetFadeStartDistance(distance) end
 --- N_0xf51d36185993515d
 ---
 --- @hash 0xF51D36185993515D
---- @params checkpoint number (int)
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
---- @params unkX number (float)
---- @params unkY number (float)
---- @params unkZ number (float)
+--- @param checkpoint number (int)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param unkX number (float)
+--- @param unkY number (float)
+--- @param unkZ number (float)
 --- @return void
 function N_0xf51d36185993515d(checkpoint, posX, posY, posZ, unkX, unkY, unkZ) end
 
@@ -3398,7 +3398,7 @@ function N_0xf51d36185993515d(checkpoint, posX, posY, posZ, unkX, unkY, unkZ) en
 --- ```
 ---
 --- @hash 0x4CC7F0FEA5283FE0
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetForceVehicleTrails(toggle) end
 
@@ -3406,7 +3406,7 @@ function SetForceVehicleTrails(toggle) end
 --- N_0xef398beee4ef45f9
 ---
 --- @hash 0xEF398BEEE4EF45F9
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0xef398beee4ef45f9(p0) end
 
@@ -3414,7 +3414,7 @@ function N_0xef398beee4ef45f9(p0) end
 --- SeethroughSetNoiseAmountMax
 ---
 --- @hash 0xFEBFBFDFB66039DE
---- @params amount number (float)
+--- @param amount number (float)
 --- @return void
 function SeethroughSetNoiseAmountMax(amount) end
 
@@ -3422,7 +3422,7 @@ function SeethroughSetNoiseAmountMax(amount) end
 --- SeethroughSetHiLightIntensity
 ---
 --- @hash 0x19E50EB6E33E1D28
---- @params intensity number (float)
+--- @param intensity number (float)
 --- @return void
 function SeethroughSetHiLightIntensity(intensity) end
 
@@ -3430,7 +3430,7 @@ function SeethroughSetHiLightIntensity(intensity) end
 --- RemoveParticleFxFromEntity
 ---
 --- @hash 0xB8FEAEEBCC127425
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return void
 function RemoveParticleFxFromEntity(entity) end
 
@@ -3441,7 +3441,7 @@ function RemoveParticleFxFromEntity(entity) end
 --- Both \_0xBA7148484BD90365 / \_0x77FE3402004CD1B0 works, but \_0x77FE3402004CD1B0 is usually used for "name" (organisation, players..).
 ---
 --- @hash 0x77FE3402004CD1B0
---- @params string string (char*)
+--- @param string string (char*)
 --- @return void
 function ScaleformMovieMethodAddParamTextureNameString_2(string) end
 
@@ -3451,21 +3451,21 @@ function ScaleformMovieMethodAddParamTextureNameString_2(string) end
 --- ```
 ---
 --- @hash 0xBE197EAA669238F4
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @return any
 function N_0xbe197eaa669238f4(p0, p1, p2, p3) end
 
     
 --- RemoveDecalsFromObjectFacing
 ---
 --- @hash 0xA6F6F70FDC6D144C
---- @params obj table (Object)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param obj table (Object)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function RemoveDecalsFromObjectFacing(obj, x, y, z) end
 
@@ -3475,7 +3475,7 @@ function RemoveDecalsFromObjectFacing(obj, x, y, z) end
 --- ```
 ---
 --- @hash 0xC3D0841A0CC546A6
---- @params value number (int)
+--- @param value number (int)
 --- @return void
 function ScaleformMovieMethodAddParamInt(value) end
 
@@ -3483,7 +3483,7 @@ function ScaleformMovieMethodAddParamInt(value) end
 --- ReturnTwo
 ---
 --- @hash 0x40AFB081F8ADD4EE
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return number (int)
 function ReturnTwo(p0) end
 
@@ -3492,7 +3492,7 @@ function ReturnTwo(p0) end
 --- menu. This is usually used for TV channels and other draw commands that are used with a world render target.
 ---
 --- @hash 0xC6372ECD45D73BCD
---- @params flag boolean (BOOL)
+--- @param flag boolean
 --- @return void
 function SetScriptGfxDrawBehindPausemenu(flag) end
 
@@ -3502,8 +3502,8 @@ function SetScriptGfxDrawBehindPausemenu(flag) end
 --- ```
 ---
 --- @hash 0xDFA2EF8E04127DD5
---- @params textureDict string (char*)
---- @params p1 boolean (BOOL)
+--- @param textureDict string (char*)
+--- @param p1 boolean
 --- @return void
 function RequestStreamedTextureDict(textureDict, p1) end
 
@@ -3515,8 +3515,8 @@ function RequestStreamedTextureDict(textureDict, p1) end
 --- ```
 ---
 --- @hash 0x0CB6B3446855B57A
---- @params binkMovie number (int)
---- @params progress number (float)
+--- @param binkMovie number (int)
+--- @param progress number (float)
 --- @return void
 function SetBinkMovieTime(binkMovie, progress) end
 
@@ -3526,7 +3526,7 @@ function SetBinkMovieTime(binkMovie, progress) end
 --- ```
 ---
 --- @hash 0xBF59707B3E5ED531
---- @params modifierName string (char*)
+--- @param modifierName string (char*)
 --- @return void
 function SetNextPlayerTcmodifier(modifierName) end
 
@@ -3546,8 +3546,8 @@ function SeethroughReset() end
 --- ```
 ---
 --- @hash 0x6805D58CAA427B72
---- @params binkMovie number (int)
---- @params shouldSkip boolean (BOOL)
+--- @param binkMovie number (int)
+--- @param shouldSkip boolean
 --- @return void
 function SetBinkShouldSkip(binkMovie, shouldSkip) end
 
@@ -3555,7 +3555,7 @@ function SetBinkShouldSkip(binkMovie, shouldSkip) end
 --- SetTimecycleModifierStrength
 ---
 --- @hash 0x82E7FFCD5B2326B3
---- @params strength number (float)
+--- @param strength number (float)
 --- @return void
 function SetTimecycleModifierStrength(strength) end
 
@@ -3569,25 +3569,25 @@ function SetTimecycleModifierStrength(strength) end
 --- ```
 ---
 --- @hash 0xF56B8137DF10135D
---- @params effectName string (char*)
---- @params xPos number (float)
---- @params yPos number (float)
---- @params zPos number (float)
---- @params xRot number (float)
---- @params yRot number (float)
---- @params zRot number (float)
---- @params scale number (float)
---- @params xAxis boolean (BOOL)
---- @params yAxis boolean (BOOL)
---- @params zAxis boolean (BOOL)
---- @return boolean (BOOL)
+--- @param effectName string (char*)
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param zPos number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param scale number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
+--- @return boolean
 function StartNetworkedParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
 
     
 --- N_0x259ba6d4e6f808f1
 ---
 --- @hash 0x259BA6D4E6F808F1
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x259ba6d4e6f808f1(p0) end
 
@@ -3603,8 +3603,8 @@ function N_0x259ba6d4e6f808f1(p0) end
 --- ```
 ---
 --- @hash 0x4B5B4DA5D79F1943
---- @params checkpoint number (int)
---- @params p0 number (float)
+--- @param checkpoint number (int)
+--- @param p0 number (float)
 --- @return void
 function SetCheckpointScale(checkpoint, p0) end
 
@@ -3614,15 +3614,15 @@ function SetCheckpointScale(checkpoint, p0) end
 --- ```
 ---
 --- @hash 0xE791DF1F73ED2C8B
---- @params p0 Any
---- @return Any
+--- @param p0 any
+--- @return any
 function N_0xe791df1f73ed2c8b(p0) end
 
     
 --- SeethroughSetFadeEndDistance
 ---
 --- @hash 0x9D75795B9DC6EBBF
---- @params distance number (float)
+--- @param distance number (float)
 --- @return void
 function SeethroughSetFadeEndDistance(distance) end
 
@@ -3645,10 +3645,10 @@ function SeethroughSetFadeEndDistance(distance) end
 --- ```
 ---
 --- @hash 0xAA0008F3BBB8F416
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params p3 Any
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 any
 --- @return void
 function SetDrawOrigin(x, y, z, p3) end
 
@@ -3664,7 +3664,7 @@ function RegisterNoirScreenEffectThisFrame() end
 --- SetTvChannel
 ---
 --- @hash 0xBAABBB23EB6E484E
---- @params channel number (int)
+--- @param channel number (int)
 --- @return void
 function SetTvChannel(channel) end
 
@@ -3672,7 +3672,7 @@ function SetTvChannel(channel) end
 --- Another [REQUEST_SCALEFORM_MOVIE](#\_0x11FE353CF9733E6F) equivalent.
 ---
 --- @hash 0x65E7E78842E74CDB
---- @params scaleformName string (char*)
+--- @param scaleformName string (char*)
 --- @return number (int)
 function RequestScaleformMovie_2(scaleformName) end
 
@@ -3680,7 +3680,7 @@ function RequestScaleformMovie_2(scaleformName) end
 --- The same as [`SetTimecycleModifierStrength`](#\_0x82E7FFCD5B2326B3) but for the secondary tiemcycle modifier.
 ---
 --- @hash 0x2C328AF17210F009
---- @params strength number (float)
+--- @param strength number (float)
 --- @return void
 function SetExtraTimecycleModifierStrength(strength) end
 
@@ -3698,10 +3698,10 @@ function SetExtraTimecycleModifierStrength(strength) end
 --- ```
 ---
 --- @hash 0x5F0C4B5B1C393BE2
---- @params ptfxHandle number (int)
---- @params propertyName string (char*)
---- @params amount number (float)
---- @params noNetwork boolean (BOOL)
+--- @param ptfxHandle number (int)
+--- @param propertyName string (char*)
+--- @param amount number (float)
+--- @param noNetwork boolean
 --- @return void
 function SetParticleFxLoopedEvolution(ptfxHandle, propertyName, amount, noNetwork) end
 
@@ -3711,7 +3711,7 @@ function SetParticleFxLoopedEvolution(ptfxHandle, propertyName, amount, noNetwor
 --- ```
 ---
 --- @hash 0x175B6BFC15CDD0C5
---- @params enabled boolean (BOOL)
+--- @param enabled boolean
 --- @return void
 function SetDebugLinesAndSpheresDrawingActive(enabled) end
 
@@ -3719,7 +3719,7 @@ function SetDebugLinesAndSpheresDrawingActive(enabled) end
 --- SetNoisinessoveride
 ---
 --- @hash 0xCB6A7C3BB17A0C67
---- @params value number (float)
+--- @param value number (float)
 --- @return void
 function SetNoisinessoveride(value) end
 
@@ -3727,7 +3727,7 @@ function SetNoisinessoveride(value) end
 --- SetCurrentPlayerTcmodifier
 ---
 --- @hash 0xBBF327DED94E4DEB
---- @params modifierName string (char*)
+--- @param modifierName string (char*)
 --- @return void
 function SetCurrentPlayerTcmodifier(modifierName) end
 
@@ -3738,7 +3738,7 @@ function SetCurrentPlayerTcmodifier(modifierName) end
 --- ```
 ---
 --- @hash 0xE83A3E3557A56640
---- @params string string (char*)
+--- @param string string (char*)
 --- @return void
 function ScaleformMovieMethodAddParamPlayerNameString(string) end
 
@@ -3746,8 +3746,8 @@ function ScaleformMovieMethodAddParamPlayerNameString(string) end
 --- SetEntityIconVisibility
 ---
 --- @hash 0xE0E8BEECCA96BA31
---- @params entity table (Entity)
---- @params toggle boolean (BOOL)
+--- @param entity table (Entity)
+--- @param toggle boolean
 --- @return void
 function SetEntityIconVisibility(entity, toggle) end
 
@@ -3757,11 +3757,11 @@ function SetEntityIconVisibility(entity, toggle) end
 --- ```
 ---
 --- @hash 0x7167371E8AD747F7
---- @params checkpoint number (int)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param checkpoint number (int)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function SetCheckpointRgba(checkpoint, red, green, blue, alpha) end
 
@@ -3771,7 +3771,7 @@ function SetCheckpointRgba(checkpoint, red, green, blue, alpha) end
 --- ```
 ---
 --- @hash 0xF44A5456AC3F4F97
---- @params hudComponent number (int)
+--- @param hudComponent number (int)
 --- @return void
 function RemoveScaleformScriptHudMovie(hudComponent) end
 
@@ -3779,7 +3779,7 @@ function RemoveScaleformScriptHudMovie(hudComponent) end
 --- SetParticleFxCamInsideVehicle
 ---
 --- @hash 0xEEC4047028426510
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function SetParticleFxCamInsideVehicle(p0) end
 
@@ -3794,18 +3794,18 @@ function SetParticleFxCamInsideVehicle(p0) end
 --- GRAPHICS::\_0x5CE62918F8D703C7(255, 0, 0, 64, 255, 255, 255, 5, 255, 255, 0, 64);
 ---
 --- @hash 0x5CE62918F8D703C7
---- @params lowR number (int)
---- @params lowG number (int)
---- @params lowB number (int)
---- @params lowAlpha number (int)
---- @params R number (int)
---- @params G number (int)
---- @params B number (int)
---- @params Alpha number (int)
---- @params highR number (int)
---- @params highG number (int)
---- @params highB number (int)
---- @params highAlpha number (int)
+--- @param lowR number (int)
+--- @param lowG number (int)
+--- @param lowB number (int)
+--- @param lowAlpha number (int)
+--- @param R number (int)
+--- @param G number (int)
+--- @param B number (int)
+--- @param Alpha number (int)
+--- @param highR number (int)
+--- @param highG number (int)
+--- @param highB number (int)
+--- @param highAlpha number (int)
 --- @return void
 function TerraingridSetColours(lowR, lowG, lowB, lowAlpha, R, G, B, Alpha, highR, highG, highB, highAlpha) end
 
@@ -3813,7 +3813,7 @@ function TerraingridSetColours(lowR, lowG, lowB, lowAlpha, R, G, B, Alpha, highR
 --- OverrideInteriorSmokeName
 ---
 --- @hash 0x2A2A52824DB96700
---- @params name string (char*)
+--- @param name string (char*)
 --- @return void
 function OverrideInteriorSmokeName(name) end
 
@@ -3821,7 +3821,7 @@ function OverrideInteriorSmokeName(name) end
 --- StartPetrolTrailDecals
 ---
 --- @hash 0x99AC7F0D8B9C893D
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function StartPetrolTrailDecals(p0) end
 
@@ -3831,10 +3831,10 @@ function StartPetrolTrailDecals(p0) end
 --- command.
 ---
 --- @hash 0xF5A2C681787E579D
---- @params x number (float)
---- @params y number (float)
---- @params w number (float)
---- @params h number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param w number (float)
+--- @param h number (float)
 --- @return void
 function SetScriptGfxAlignParams(x, y, w, h) end
 
@@ -3850,7 +3850,7 @@ function SetScriptGfxAlignParams(x, y, w, h) end
 --- ```
 ---
 --- @hash 0x18F621F7A5B1F85D
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetNightvision(toggle) end
 
@@ -3864,10 +3864,10 @@ function SetNightvision(toggle) end
 --- ```
 ---
 --- @hash 0x2707AAE9D9297D89
---- @params checkpoint number (int)
---- @params nearHeight number (float)
---- @params farHeight number (float)
---- @params radius number (float)
+--- @param checkpoint number (int)
+--- @param nearHeight number (float)
+--- @param farHeight number (float)
+--- @param radius number (float)
 --- @return void
 function SetCheckpointCylinderHeight(checkpoint, nearHeight, farHeight, radius) end
 
@@ -3877,7 +3877,7 @@ function SetCheckpointCylinderHeight(checkpoint, nearHeight, farHeight, radius) 
 --- ```
 ---
 --- @hash 0x6A51F78772175A51
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x6a51f78772175a51(toggle) end
 
@@ -3887,7 +3887,7 @@ function N_0x6a51f78772175a51(toggle) end
 --- ```
 ---
 --- @hash 0xDB1EA9411C8911EC
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xdb1ea9411c8911ec(p0) end
 
@@ -3895,8 +3895,8 @@ function N_0xdb1ea9411c8911ec(p0) end
 --- SetParticleFxOverride
 ---
 --- @hash 0xEA1E2D93F6F75ED9
---- @params oldAsset string (char*)
---- @params newAsset string (char*)
+--- @param oldAsset string (char*)
+--- @param newAsset string (char*)
 --- @return void
 function SetParticleFxOverride(oldAsset, newAsset) end
 
@@ -3904,7 +3904,7 @@ function SetParticleFxOverride(oldAsset, newAsset) end
 --- SetTvVolume
 ---
 --- @hash 0x2982BF73F66E9DDC
---- @params volume number (float)
+--- @param volume number (float)
 --- @return void
 function SetTvVolume(volume) end
 
@@ -3917,7 +3917,7 @@ function SetTvVolume(volume) end
 --- ```
 ---
 --- @hash 0x2C933ABF17A1DF41
---- @params modifierName string (char*)
+--- @param modifierName string (char*)
 --- @return void
 function SetTimecycleModifier(modifierName) end
 
@@ -3928,7 +3928,7 @@ function SetTimecycleModifier(modifierName) end
 --- ```
 ---
 --- @hash 0xD7021272EB0A451E
---- @params timecycleModifierName string (char*)
+--- @param timecycleModifierName string (char*)
 --- @return void
 function PresetInteriorAmbientCache(timecycleModifierName) end
 
@@ -3944,7 +3944,7 @@ function SetDisableDecalRenderingThisFrame() end
 --- SetStreamedTextureDictAsNoLongerNeeded
 ---
 --- @hash 0xBE2CACCF5A8AA805
---- @params textureDict string (char*)
+--- @param textureDict string (char*)
 --- @return void
 function SetStreamedTextureDictAsNoLongerNeeded(textureDict) end
 
@@ -3956,7 +3956,7 @@ function SetStreamedTextureDictAsNoLongerNeeded(textureDict) end
 --- ```
 ---
 --- @hash 0x77168D722C58B2FC
---- @params alpha number (float)
+--- @param alpha number (float)
 --- @return void
 function SetParticleFxNonLoopedAlpha(alpha) end
 
@@ -3965,14 +3965,14 @@ function SetParticleFxNonLoopedAlpha(alpha) end
 ---
 --- @hash 0xD3A10FC7FD8D98CD
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function Ui3dsceneIsAvailable() end
 
     
 --- SetParticleFxShootoutBoat
 ---
 --- @hash 0x96EF97DAEB89BEF5
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function SetParticleFxShootoutBoat(p0) end
 
@@ -3980,11 +3980,11 @@ function SetParticleFxShootoutBoat(p0) end
 --- WashDecalsInRange
 ---
 --- @hash 0x9C30613D50A6ADEF
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
 --- @return void
 function WashDecalsInRange(p0, p1, p2, p3, p4) end
 
@@ -3992,7 +3992,7 @@ function WashDecalsInRange(p0, p1, p2, p3, p4) end
 --- TogglePausedRenderphases
 ---
 --- @hash 0xDFC252D8A3E15AB7
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function TogglePausedRenderphases(toggle) end
 
@@ -4002,7 +4002,7 @@ function TogglePausedRenderphases(toggle) end
 --- ```
 ---
 --- @hash 0xD69736AAE04DB51A
---- @params value number (float)
+--- @param value number (float)
 --- @return void
 function ScaleformMovieMethodAddParamFloat(value) end
 
@@ -4011,7 +4011,7 @@ function ScaleformMovieMethodAddParamFloat(value) end
 --- This requires these two natives to be called as well to configure the grid: [`0x1c4fc5752bcd8e48`](https://runtime.fivem.net/doc/reference.html#\_0x1C4FC5752BCD8E48) and [`0x5ce62918f8d703c7`](https://runtime.fivem.net/doc/reference.html#\_0x5CE62918F8D703C7).
 ---
 --- @hash 0xA356990E161C9E65
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function TerraingridActivate(toggle) end
 
@@ -4019,7 +4019,7 @@ function TerraingridActivate(toggle) end
 --- ScaleformMovieMethodAddParamTextureNameString
 ---
 --- @hash 0xBA7148484BD90365
---- @params string string (char*)
+--- @param string string (char*)
 --- @return void
 function ScaleformMovieMethodAddParamTextureNameString(string) end
 
@@ -4027,16 +4027,16 @@ function ScaleformMovieMethodAddParamTextureNameString(string) end
 --- SaveHighQualityPhoto
 ---
 --- @hash 0x3DEC726C25A11BAC
---- @params unused number (int)
---- @return boolean (BOOL)
+--- @param unused number (int)
+--- @return boolean
 function SaveHighQualityPhoto(unused) end
 
     
 --- SetParticleFxLoopedFarClipDist
 ---
 --- @hash 0xDCB194B85EF7B541
---- @params ptfxHandle number (int)
---- @params range number (float)
+--- @param ptfxHandle number (int)
+--- @param range number (float)
 --- @return void
 function SetParticleFxLoopedFarClipDist(ptfxHandle, range) end
 
@@ -4044,17 +4044,17 @@ function SetParticleFxLoopedFarClipDist(ptfxHandle, range) end
 --- TriggerScreenblurFadeOut
 ---
 --- @hash 0xEFACC8AEF94430D5
---- @params transitionTime number (float)
---- @return boolean (BOOL)
+--- @param transitionTime number (float)
+--- @return boolean
 function TriggerScreenblurFadeOut(transitionTime) end
 
     
 --- SetTvChannelPlaylistAtHour
 ---
 --- @hash 0x2201C576FACAEBE8
---- @params tvChannel number (int)
---- @params playlistName string (char*)
---- @params hour number (int)
+--- @param tvChannel number (int)
+--- @param playlistName string (char*)
+--- @param hour number (int)
 --- @return void
 function SetTvChannelPlaylistAtHour(tvChannel, playlistName, hour) end
 
@@ -4062,8 +4062,8 @@ function SetTvChannelPlaylistAtHour(tvChannel, playlistName, hour) end
 --- TriggerScreenblurFadeIn
 ---
 --- @hash 0xA328A24AAA6B7FDC
---- @params transitionTime number (float)
---- @return boolean (BOOL)
+--- @param transitionTime number (float)
+--- @return boolean
 function TriggerScreenblurFadeIn(transitionTime) end
 
     
@@ -4072,7 +4072,7 @@ function TriggerScreenblurFadeIn(transitionTime) end
 --- ```
 ---
 --- @hash 0x7E08924259E08CE0
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetSeethrough(toggle) end
 
@@ -4090,8 +4090,8 @@ function SeethroughGetMaxThickness() end
 --- N_0xba0127da25fd54c9
 ---
 --- @hash 0xBA0127DA25FD54C9
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0xba0127da25fd54c9(p0, p1) end
 
@@ -4101,8 +4101,8 @@ function N_0xba0127da25fd54c9(p0, p1) end
 --- ```
 ---
 --- @hash 0xAFF33B1178172223
---- @params binkMovie number (int)
---- @params value number (float)
+--- @param binkMovie number (int)
+--- @param value number (float)
 --- @return void
 function SetBinkMovieUnk(binkMovie, value) end
 
@@ -4147,8 +4147,8 @@ function SetBinkMovieUnk(binkMovie, value) end
 --- -- reset the script draw alignment
 --- ResetScriptGfxAlign(
 --- @hash 0xB8A850F20A067EB6
---- @params horizontalAlign number (int)
---- @params verticalAlign number (int)
+--- @param horizontalAlign number (int)
+--- @param verticalAlign number (int)
 --- @return void
 function SetScriptGfxAlign(horizontalAlign, verticalAlign) end
 
@@ -4156,11 +4156,11 @@ function SetScriptGfxAlign(horizontalAlign, verticalAlign) end
 --- SetTrackedPointInfo
 ---
 --- @hash 0x164ECBB3CF750CB0
---- @params point number (int)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
+--- @param point number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
 --- @return void
 function SetTrackedPointInfo(point, x, y, z, radius) end
 
@@ -4170,7 +4170,7 @@ function SetTrackedPointInfo(point, x, y, z, radius) end
 --- ```
 ---
 --- @hash 0xC514489CFB8AF806
---- @params scaleformName string (char*)
+--- @param scaleformName string (char*)
 --- @return number (int)
 function RequestScaleformMovieInstance(scaleformName) end
 
@@ -4178,8 +4178,8 @@ function RequestScaleformMovieInstance(scaleformName) end
 --- SetScaleformMovieToUseSystemTime
 ---
 --- @hash 0x6D8EB211944DCE08
---- @params scaleform number (int)
---- @params toggle boolean (BOOL)
+--- @param scaleform number (int)
+--- @param toggle boolean
 --- @return void
 function SetScaleformMovieToUseSystemTime(scaleform, toggle) end
 
@@ -4190,7 +4190,7 @@ function SetScaleformMovieToUseSystemTime(scaleform, toggle) end
 --- ```
 ---
 --- @hash 0x80ECBC0C856D3B0B
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetFarShadowsSuppressed(toggle) end
 
@@ -4198,9 +4198,9 @@ function SetFarShadowsSuppressed(toggle) end
 --- SeethroughSetColorNear
 ---
 --- @hash 0x1086127B3A63505E
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
 --- @return void
 function SeethroughSetColorNear(red, green, blue) end
 
@@ -4212,19 +4212,19 @@ function SeethroughSetColorNear(red, green, blue) end
 --- All those natives combined they will output something like this: https://i.imgur.com/TC6cku6.png
 ---
 --- @hash 0x1C4FC5752BCD8E48
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params p3 number (float)
---- @params rotation number (float)
---- @params p5 number (float)
---- @params width number (float)
---- @params height number (float)
---- @params p8 number (float)
---- @params scale number (float)
---- @params glowIntensity number (float)
---- @params normalHeight number (float)
---- @params heightDiff number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 number (float)
+--- @param rotation number (float)
+--- @param p5 number (float)
+--- @param width number (float)
+--- @param height number (float)
+--- @param p8 number (float)
+--- @param scale number (float)
+--- @param glowIntensity number (float)
+--- @param normalHeight number (float)
+--- @param heightDiff number (float)
 --- @return void
 function TerraingridSetParams(x, y, z, p3, rotation, p5, width, height, p8, scale, glowIntensity, normalHeight, heightDiff) end
 
@@ -4232,7 +4232,7 @@ function TerraingridSetParams(x, y, z, p3, rotation, p5, width, height, p8, scal
 --- Sets a secondary timecycle modifier.
 ---
 --- @hash 0x5096FD9CCB49056D
---- @params modifierName string (char*)
+--- @param modifierName string (char*)
 --- @return void
 function SetExtraTimecycleModifier(modifierName) end
 
@@ -4249,7 +4249,7 @@ function SetExtraTimecycleModifier(modifierName) end
 --- ```
 ---
 --- @hash 0x6C38AF3693A69A91
---- @params name string (char*)
+--- @param name string (char*)
 --- @return void
 function UseParticleFxAsset(name) end
 
@@ -4257,11 +4257,11 @@ function UseParticleFxAsset(name) end
 --- SetEntityIconColor
 ---
 --- @hash 0x1D5F595CCAE2E238
---- @params entity table (Entity)
---- @params red number (int)
---- @params green number (int)
---- @params blue number (int)
---- @params alpha number (int)
+--- @param entity table (Entity)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
 --- @return void
 function SetEntityIconColor(entity, red, green, blue, alpha) end
 
@@ -4269,8 +4269,8 @@ function SetEntityIconColor(entity, red, green, blue, alpha) end
 --- SetParticleFxLoopedAlpha
 ---
 --- @hash 0x726845132380142E
---- @params ptfxHandle number (int)
---- @params alpha number (float)
+--- @param ptfxHandle number (int)
+--- @param alpha number (float)
 --- @return void
 function SetParticleFxLoopedAlpha(ptfxHandle, alpha) end
 
@@ -4278,8 +4278,8 @@ function SetParticleFxLoopedAlpha(ptfxHandle, alpha) end
 --- SetParticleFxCamInsideNonplayerVehicle
 ---
 --- @hash 0xACEE6F360FC1F6B6
---- @params vehicle number (Vehicle)
---- @params p1 boolean (BOOL)
+--- @param vehicle number (Vehicle)
+--- @param p1 boolean
 --- @return void
 function SetParticleFxCamInsideNonplayerVehicle(vehicle, p1) end
 
@@ -4289,15 +4289,15 @@ function SetParticleFxCamInsideNonplayerVehicle(vehicle, p1) end
 --- ```
 ---
 --- @hash 0xF1CEA8A4198D8E9A
---- @params presetName string (char*)
---- @return boolean (BOOL)
+--- @param presetName string (char*)
+--- @return boolean
 function Ui3dscenePushPreset(presetName) end
 
     
 --- SetPlayerTcmodifierTransition
 ---
 --- @hash 0xBDEB86F4D5809204
---- @params value number (float)
+--- @param value number (float)
 --- @return void
 function SetPlayerTcmodifierTransition(value) end
 
@@ -4307,7 +4307,7 @@ function SetPlayerTcmodifierTransition(value) end
 --- ```
 ---
 --- @hash 0xAEEDAD1420C65CC0
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetForcePedFootstepsTracks(toggle) end
 
@@ -4318,18 +4318,18 @@ function SetForcePedFootstepsTracks(toggle) end
 --- ```
 ---
 --- @hash 0xE184F4F0DC5910E7
---- @params effectName string (char*)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params xRot number (float)
---- @params yRot number (float)
---- @params zRot number (float)
---- @params scale number (float)
---- @params xAxis boolean (BOOL)
---- @params yAxis boolean (BOOL)
---- @params zAxis boolean (BOOL)
---- @params p11 boolean (BOOL)
+--- @param effectName string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param scale number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
+--- @param p11 boolean
 --- @return number (int)
 function StartParticleFxLoopedAtCoord(effectName, x, y, z, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis, p11) end
 
@@ -4337,7 +4337,7 @@ function StartParticleFxLoopedAtCoord(effectName, x, y, z, xRot, yRot, zRot, sca
 --- SeethroughSetHiLightNoise
 ---
 --- @hash 0x1636D7FC127B10D2
---- @params noise number (float)
+--- @param noise number (float)
 --- @return void
 function SeethroughSetHiLightNoise(noise) end
 
@@ -4348,7 +4348,7 @@ function SeethroughSetHiLightNoise(noise) end
 --- ```
 ---
 --- @hash 0xB7ED70C49521A61D
---- @params decalType number (int)
+--- @param decalType number (int)
 --- @return void
 function UnpatchDecalDiffuseMap(decalType) end
 
@@ -4356,7 +4356,7 @@ function UnpatchDecalDiffuseMap(decalType) end
 --- RemoveDecalsFromObject
 ---
 --- @hash 0xCCF71CBDDF5B6CB9
---- @params obj table (Object)
+--- @param obj table (Object)
 --- @return void
 function RemoveDecalsFromObject(obj) end
 
@@ -4364,13 +4364,13 @@ function RemoveDecalsFromObject(obj) end
 --- SetParticleFxLoopedOffsets
 ---
 --- @hash 0xF7DDEBEC43483C43
---- @params ptfxHandle number (int)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params rotX number (float)
---- @params rotY number (float)
---- @params rotZ number (float)
+--- @param ptfxHandle number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
 --- @return void
 function SetParticleFxLoopedOffsets(ptfxHandle, x, y, z, rotX, rotY, rotZ) end
 
@@ -4387,18 +4387,18 @@ function SetParticleFxLoopedOffsets(ptfxHandle, x, y, z, rotX, rotY, rotZ) end
 --- ```
 ---
 --- @hash 0x6F60E89A7B64EE1D
---- @params effectName string (char*)
---- @params entity table (Entity)
---- @params xOffset number (float)
---- @params yOffset number (float)
---- @params zOffset number (float)
---- @params xRot number (float)
---- @params yRot number (float)
---- @params zRot number (float)
---- @params scale number (float)
---- @params xAxis boolean (BOOL)
---- @params yAxis boolean (BOOL)
---- @params zAxis boolean (BOOL)
+--- @param effectName string (char*)
+--- @param entity table (Entity)
+--- @param xOffset number (float)
+--- @param yOffset number (float)
+--- @param zOffset number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param scale number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
 --- @return number (int)
 function StartNetworkedParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
 
@@ -4406,19 +4406,19 @@ function StartNetworkedParticleFxLoopedOnEntity(effectName, entity, xOffset, yOf
 --- StartParticleFxLoopedOnPedBone
 ---
 --- @hash 0xF28DA9F38CD1787C
---- @params effectName string (char*)
---- @params ped table (Ped)
---- @params xOffset number (float)
---- @params yOffset number (float)
---- @params zOffset number (float)
---- @params xRot number (float)
---- @params yRot number (float)
---- @params zRot number (float)
---- @params boneIndex number (int)
---- @params scale number (float)
---- @params xAxis boolean (BOOL)
---- @params yAxis boolean (BOOL)
---- @params zAxis boolean (BOOL)
+--- @param effectName string (char*)
+--- @param ped table (Ped)
+--- @param xOffset number (float)
+--- @param yOffset number (float)
+--- @param zOffset number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param boneIndex number (int)
+--- @param scale number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
 --- @return number (int)
 function StartParticleFxLoopedOnPedBone(effectName, ped, xOffset, yOffset, zOffset, xRot, yRot, zRot, boneIndex, scale, xAxis, yAxis, zAxis) end
 
@@ -4426,7 +4426,7 @@ function StartParticleFxLoopedOnPedBone(effectName, ped, xOffset, yOffset, zOffs
 --- SetNoiseoveride
 ---
 --- @hash 0xE787BF1C5CF823C9
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetNoiseoveride(toggle) end
 
@@ -4434,19 +4434,19 @@ function SetNoiseoveride(toggle) end
 --- StartParticleFxLoopedOnEntityBone
 ---
 --- @hash 0xC6EB449E33977F0B
---- @params effectName string (char*)
---- @params entity table (Entity)
---- @params xOffset number (float)
---- @params yOffset number (float)
---- @params zOffset number (float)
---- @params xRot number (float)
---- @params yRot number (float)
---- @params zRot number (float)
---- @params boneIndex number (int)
---- @params scale number (float)
---- @params xAxis boolean (BOOL)
---- @params yAxis boolean (BOOL)
---- @params zAxis boolean (BOOL)
+--- @param effectName string (char*)
+--- @param entity table (Entity)
+--- @param xOffset number (float)
+--- @param yOffset number (float)
+--- @param zOffset number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param boneIndex number (int)
+--- @param scale number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
 --- @return number (int)
 function StartParticleFxLoopedOnEntityBone(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, boneIndex, scale, xAxis, yAxis, zAxis) end
 
@@ -4463,19 +4463,19 @@ function StartParticleFxLoopedOnEntityBone(effectName, entity, xOffset, yOffset,
 --- ```
 ---
 --- @hash 0xDDE23F30CC5A0F03
---- @params effectName string (char*)
---- @params entity table (Entity)
---- @params xOffset number (float)
---- @params yOffset number (float)
---- @params zOffset number (float)
---- @params xRot number (float)
---- @params yRot number (float)
---- @params zRot number (float)
---- @params boneIndex number (int)
---- @params scale number (float)
---- @params xAxis boolean (BOOL)
---- @params yAxis boolean (BOOL)
---- @params zAxis boolean (BOOL)
+--- @param effectName string (char*)
+--- @param entity table (Entity)
+--- @param xOffset number (float)
+--- @param yOffset number (float)
+--- @param zOffset number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param boneIndex number (int)
+--- @param scale number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
 --- @return number (int)
 function StartNetworkedParticleFxLoopedOnEntityBone(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, boneIndex, scale, xAxis, yAxis, zAxis) end
 
@@ -4485,7 +4485,7 @@ function StartNetworkedParticleFxLoopedOnEntityBone(effectName, entity, xOffset,
 --- ```
 ---
 --- @hash 0x63606A61DE68898A
---- @params binkMovie number (int)
+--- @param binkMovie number (int)
 --- @return void
 function StopBinkMovie(binkMovie) end
 
@@ -4497,7 +4497,7 @@ function StopBinkMovie(binkMovie) end
 --- ```
 ---
 --- @hash 0x113D2C5DC57E1774
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetTvAudioFrontend(toggle) end
 
@@ -4514,7 +4514,7 @@ function SetTvAudioFrontend(toggle) end
 --- ```
 ---
 --- @hash 0x61BB1D9B3A95D802
---- @params order number (int)
+--- @param order number (int)
 --- @return void
 function SetScriptGfxDrawOrder(order) end
 
@@ -4536,17 +4536,17 @@ function SetScriptGfxDrawOrder(order) end
 --- ```
 ---
 --- @hash 0x25129531F77B9ED3
---- @params effectName string (char*)
---- @params xPos number (float)
---- @params yPos number (float)
---- @params zPos number (float)
---- @params xRot number (float)
---- @params yRot number (float)
---- @params zRot number (float)
---- @params scale number (float)
---- @params xAxis boolean (BOOL)
---- @params yAxis boolean (BOOL)
---- @params zAxis boolean (BOOL)
+--- @param effectName string (char*)
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param zPos number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param scale number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
 --- @return number (int)
 function StartParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
 
@@ -4577,9 +4577,9 @@ function StartParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRo
 --- https://pastebin.com/zUzGB6h7
 ---
 --- @hash 0xF7B38B8305F1FE8B
---- @params tvChannel number (int)
---- @params playlistName string (char*)
---- @params restart boolean (BOOL)
+--- @param tvChannel number (int)
+--- @param playlistName string (char*)
+--- @param restart boolean
 --- @return void
 function SetTvChannelPlaylist(tvChannel, playlistName, restart) end
 
@@ -4587,7 +4587,7 @@ function SetTvChannelPlaylist(tvChannel, playlistName, restart) end
 --- SeethroughSetNoiseAmountMin
 ---
 --- @hash 0xFF5992E1C9E65D05
---- @params amount number (float)
+--- @param amount number (float)
 --- @return void
 function SeethroughSetNoiseAmountMin(amount) end
 
@@ -4595,12 +4595,12 @@ function SeethroughSetNoiseAmountMin(amount) end
 --- SetHidofOverride
 ---
 --- @hash 0xBA3D65906822BED5
---- @params p0 boolean (BOOL)
---- @params p1 boolean (BOOL)
---- @params nearplaneOut number (float)
---- @params nearplaneIn number (float)
---- @params farplaneOut number (float)
---- @params farplaneIn number (float)
+--- @param p0 boolean
+--- @param p1 boolean
+--- @param nearplaneOut number (float)
+--- @param nearplaneIn number (float)
+--- @param farplaneOut number (float)
+--- @param farplaneIn number (float)
 --- @return void
 function SetHidofOverride(p0, p1, nearplaneOut, nearplaneIn, farplaneOut, farplaneIn) end
 
@@ -4608,7 +4608,7 @@ function SetHidofOverride(p0, p1, nearplaneOut, nearplaneIn, farplaneOut, farpla
 --- UpdateLightsOnEntity
 ---
 --- @hash 0xDEADC0DEDEADC0DE
---- @params entity table (Entity)
+--- @param entity table (Entity)
 --- @return void
 function UpdateLightsOnEntity(entity) end
 
@@ -4618,8 +4618,8 @@ function UpdateLightsOnEntity(entity) end
 --- ```
 ---
 --- @hash 0x3BCF567485E1971C
---- @params modifierName string (char*)
---- @params transition number (float)
+--- @param modifierName string (char*)
+--- @param transition number (float)
 --- @return void
 function SetTransitionTimecycleModifier(modifierName, transition) end
 
@@ -4627,7 +4627,7 @@ function SetTransitionTimecycleModifier(modifierName, transition) end
 --- SetScaleformMovieAsNoLongerNeeded
 ---
 --- @hash 0x1D132D614DD86811
---- @params scaleformHandle table (int*)
+--- @param scaleformHandle table (int*)
 --- @return void
 function SetScaleformMovieAsNoLongerNeeded(scaleformHandle) end
 
@@ -4643,19 +4643,19 @@ function SetScaleformMovieAsNoLongerNeeded(scaleformHandle) end
 --- ```
 ---
 --- @hash 0x0D53A3B8DA0809D2
---- @params effectName string (char*)
---- @params entity table (Entity)
---- @params offsetX number (float)
---- @params offsetY number (float)
---- @params offsetZ number (float)
---- @params rotX number (float)
---- @params rotY number (float)
---- @params rotZ number (float)
---- @params scale number (float)
---- @params axisX boolean (BOOL)
---- @params axisY boolean (BOOL)
---- @params axisZ boolean (BOOL)
---- @return boolean (BOOL)
+--- @param effectName string (char*)
+--- @param entity table (Entity)
+--- @param offsetX number (float)
+--- @param offsetY number (float)
+--- @param offsetZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param scale number (float)
+--- @param axisX boolean
+--- @param axisY boolean
+--- @param axisZ boolean
+--- @return boolean
 function StartParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, scale, axisX, axisY, axisZ) end
 
     
@@ -4664,18 +4664,18 @@ function StartParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, 
 --- ```
 ---
 --- @hash 0x1AE42C1660FD6517
---- @params effectName string (char*)
---- @params entity table (Entity)
---- @params xOffset number (float)
---- @params yOffset number (float)
---- @params zOffset number (float)
---- @params xRot number (float)
---- @params yRot number (float)
---- @params zRot number (float)
---- @params scale number (float)
---- @params xAxis boolean (BOOL)
---- @params yAxis boolean (BOOL)
---- @params zAxis boolean (BOOL)
+--- @param effectName string (char*)
+--- @param entity table (Entity)
+--- @param xOffset number (float)
+--- @param yOffset number (float)
+--- @param zOffset number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param scale number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
 --- @return number (int)
 function StartParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
 
@@ -4683,8 +4683,8 @@ function StartParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOf
 --- WashDecalsFromVehicle
 ---
 --- @hash 0x5B712761429DBC14
---- @params vehicle number (Vehicle)
---- @params p1 number (float)
+--- @param vehicle number (Vehicle)
+--- @param p1 number (float)
 --- @return void
 function WashDecalsFromVehicle(vehicle, p1) end
 
@@ -4692,8 +4692,8 @@ function WashDecalsFromVehicle(vehicle, p1) end
 --- SetParticleFxLoopedScale
 ---
 --- @hash 0xB44250AAA456492D
---- @params ptfxHandle number (int)
---- @params scale number (float)
+--- @param ptfxHandle number (int)
+--- @param scale number (float)
 --- @return void
 function SetParticleFxLoopedScale(ptfxHandle, scale) end
 
@@ -4703,8 +4703,8 @@ function SetParticleFxLoopedScale(ptfxHandle, scale) end
 --- ```
 ---
 --- @hash 0x8F75998877616996
---- @params ptfxHandle number (int)
---- @params p1 boolean (BOOL)
+--- @param ptfxHandle number (int)
+--- @param p1 boolean
 --- @return void
 function StopParticleFxLooped(ptfxHandle, p1) end
 
@@ -4714,20 +4714,20 @@ function StopParticleFxLooped(ptfxHandle, p1) end
 --- ```
 ---
 --- @hash 0xA41B6A43642AC2CF
---- @params effectName string (char*)
---- @params ped table (Ped)
---- @params offsetX number (float)
---- @params offsetY number (float)
---- @params offsetZ number (float)
---- @params rotX number (float)
---- @params rotY number (float)
---- @params rotZ number (float)
---- @params boneIndex number (int)
---- @params scale number (float)
---- @params axisX boolean (BOOL)
---- @params axisY boolean (BOOL)
---- @params axisZ boolean (BOOL)
---- @return boolean (BOOL)
+--- @param effectName string (char*)
+--- @param ped table (Ped)
+--- @param offsetX number (float)
+--- @param offsetY number (float)
+--- @param offsetZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param boneIndex number (int)
+--- @param scale number (float)
+--- @param axisX boolean
+--- @param axisY boolean
+--- @param axisZ boolean
+--- @return boolean
 function StartNetworkedParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, boneIndex, scale, axisX, axisY, axisZ) end
 
     
@@ -4738,20 +4738,20 @@ function StartNetworkedParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, of
 --- ```
 ---
 --- @hash 0x0E7E72961BA18619
---- @params effectName string (char*)
---- @params ped table (Ped)
---- @params offsetX number (float)
---- @params offsetY number (float)
---- @params offsetZ number (float)
---- @params rotX number (float)
---- @params rotY number (float)
---- @params rotZ number (float)
---- @params boneIndex number (int)
---- @params scale number (float)
---- @params axisX boolean (BOOL)
---- @params axisY boolean (BOOL)
---- @params axisZ boolean (BOOL)
---- @return boolean (BOOL)
+--- @param effectName string (char*)
+--- @param ped table (Ped)
+--- @param offsetX number (float)
+--- @param offsetY number (float)
+--- @param offsetZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param boneIndex number (int)
+--- @param scale number (float)
+--- @param axisX boolean
+--- @param axisY boolean
+--- @param axisZ boolean
+--- @return boolean
 function StartParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, boneIndex, scale, axisX, axisY, axisZ) end
 
     
@@ -4760,19 +4760,19 @@ function StartParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, offsetY, of
 --- ```
 ---
 --- @hash 0xC95EB1DB6E92113D
---- @params effectName string (char*)
---- @params entity table (Entity)
---- @params offsetX number (float)
---- @params offsetY number (float)
---- @params offsetZ number (float)
---- @params rotX number (float)
---- @params rotY number (float)
---- @params rotZ number (float)
---- @params scale number (float)
---- @params axisX boolean (BOOL)
---- @params axisY boolean (BOOL)
---- @params axisZ boolean (BOOL)
---- @return boolean (BOOL)
+--- @param effectName string (char*)
+--- @param entity table (Entity)
+--- @param offsetX number (float)
+--- @param offsetY number (float)
+--- @param offsetZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param scale number (float)
+--- @param axisX boolean
+--- @param axisY boolean
+--- @param axisZ boolean
+--- @return boolean
 function StartNetworkedParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, scale, axisX, axisY, axisZ) end
 
     

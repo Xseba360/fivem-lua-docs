@@ -52,7 +52,6 @@ function parseType(type) {
             ltype = 'number';
             break;
         case 'void':
-        case 'Any':
         case 'Vector2':
         case 'Vector3':
         case 'Vector4':
@@ -64,7 +63,10 @@ function parseType(type) {
             ltype = 'string';
             break;
         case 'BOOL':
-            ltype = 'boolean';
+            ltype = type = 'boolean';
+            break;
+        case 'Any':
+            ltype = type = 'any';
             break;
         default:
             ltype = 'table';
@@ -78,7 +80,7 @@ function parseParams(params) {
     params.forEach(element => {
         let name = element.name;
         let type = parseType(element.type);
-        result += `--- @params ${name} ${type}\n`;
+        result += `--- @param ${name} ${type}\n`;
     })
     return result.length > 0 ? result.substring(0, result.length -1) : '---';
 }

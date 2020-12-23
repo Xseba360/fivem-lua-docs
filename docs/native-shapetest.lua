@@ -2,12 +2,12 @@
 --- [Materials list](https://d0p3t.nl/enums/materialhash.html#plastersolid)
 ---
 --- @hash 0x65287525D951F6BE
---- @params rayHandle number (int)
---- @params hit table (BOOL*)
---- @params endCoords table (Vector3*)
---- @params surfaceNormal table (Vector3*)
---- @params materialHash table (Hash*)
---- @params entityHit table (Entity*)
+--- @param rayHandle number (int)
+--- @param hit table (BOOL*)
+--- @param endCoords table (Vector3*)
+--- @param surfaceNormal table (Vector3*)
+--- @param materialHash table (Hash*)
+--- @param entityHit table (Entity*)
 --- @return number (int)
 function GetShapeTestResultIncludingMaterial(rayHandle, hit, endCoords, surfaceNormal, materialHash, entityHit) end
 
@@ -15,9 +15,9 @@ function GetShapeTestResultIncludingMaterial(rayHandle, hit, endCoords, surfaceN
 --- StartShapeTestBoundingBox
 ---
 --- @hash 0x052837721A854EC7
---- @params entity table (Entity)
---- @params flags1 number (int)
---- @params flags2 number (int)
+--- @param entity table (Entity)
+--- @param flags1 number (int)
+--- @param flags2 number (int)
 --- @return number (int)
 function StartShapeTestBoundingBox(entity, flags1, flags2) end
 
@@ -38,11 +38,11 @@ function StartShapeTestBoundingBox(entity, flags1, flags2) end
 --- ```
 ---
 --- @hash 0x3D87450E15D98694
---- @params rayHandle number (int)
---- @params hit table (BOOL*)
---- @params endCoords table (Vector3*)
---- @params surfaceNormal table (Vector3*)
---- @params entityHit table (Entity*)
+--- @param rayHandle number (int)
+--- @param hit table (BOOL*)
+--- @param endCoords table (Vector3*)
+--- @param surfaceNormal table (Vector3*)
+--- @param entityHit table (Entity*)
 --- @return number (int)
 function GetShapeTestResult(rayHandle, hit, endCoords, surfaceNormal, entityHit) end
 
@@ -50,7 +50,7 @@ function GetShapeTestResult(rayHandle, hit, endCoords, surfaceNormal, entityHit)
 --- ShapeTestResultEntity
 ---
 --- @hash 0x2B3334BCA57CD799
---- @params entityHit table (Entity)
+--- @param entityHit table (Entity)
 --- @return void
 function ShapeTestResultEntity(entityHit) end
 
@@ -61,11 +61,11 @@ function ShapeTestResultEntity(entityHit) end
 --- ```
 ---
 --- @hash 0xFF6BE494C7987F34
---- @params pVec1 table (Vector3*)
---- @params pVec2 table (Vector3*)
---- @params flag number (int)
---- @params entity table (Entity)
---- @params flag2 number (int)
+--- @param pVec1 table (Vector3*)
+--- @param pVec2 table (Vector3*)
+--- @param flag number (int)
+--- @param entity table (Entity)
+--- @param flag2 number (int)
 --- @return number (int)
 function StartShapeTestSurroundingCoords(pVec1, pVec2, flag, entity, flag2) end
 
@@ -73,19 +73,19 @@ function StartShapeTestSurroundingCoords(pVec1, pVec2, flag, entity, flag2) end
 --- StartShapeTestBox
 ---
 --- @hash 0xFE466162C4401D18
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params x1 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params rotX number (float)
---- @params rotY number (float)
---- @params rotZ number (float)
---- @params p9 Any
---- @params p10 Any
---- @params entity Any
---- @params p12 Any
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param x1 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param p9 any
+--- @param p10 any
+--- @param entity any
+--- @param p12 any
 --- @return number (int)
 function StartShapeTestBox(x, y, z, x1, y2, z2, rotX, rotY, rotZ, p9, p10, entity, p12) end
 
@@ -110,15 +110,15 @@ function StartShapeTestBox(x, y, z, x1, y2, z2, rotX, rotY, rotZ, p9, p10, entit
 --- ```
 ---
 --- @hash 0x377906D8A31E5586
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params flags number (int)
---- @params entity table (Entity)
---- @params p8 number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param flags number (int)
+--- @param entity table (Entity)
+--- @param p8 number (int)
 --- @return number (int)
 function StartShapeTestRay(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 
@@ -131,15 +131,15 @@ function StartShapeTestRay(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 --- ```
 ---
 --- @hash 0x7EE9F5D83DD4F90E
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params flags number (int)
---- @params ent table (Entity)
---- @params p8 number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param flags number (int)
+--- @param ent table (Entity)
+--- @param p8 number (int)
 --- @return number (int)
 function StartShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, ent, p8) end
 
@@ -149,16 +149,16 @@ function StartShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, ent, p8) end
 --- ```
 ---
 --- @hash 0xE6AC6C45FBE83004
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params radius number (float)
---- @params flags number (int)
---- @params entity table (Entity)
---- @params p9 Any
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param radius number (float)
+--- @param flags number (int)
+--- @param entity table (Entity)
+--- @param p9 any
 --- @return number (int)
 function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
 
@@ -174,16 +174,16 @@ function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity
 --- ```
 ---
 --- @hash 0x28579D1B8F8AAC80
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params radius number (float)
---- @params flags number (int)
---- @params entity table (Entity)
---- @params p9 number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param radius number (float)
+--- @param flags number (int)
+--- @param entity table (Entity)
+--- @param p9 number (int)
 --- @return number (int)
 function StartShapeTestCapsule(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
 
@@ -191,9 +191,9 @@ function StartShapeTestCapsule(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9
 --- StartShapeTestBound
 ---
 --- @hash 0x37181417CE7C8900
---- @params entity table (Entity)
---- @params flags1 number (int)
---- @params flags2 number (int)
+--- @param entity table (Entity)
+--- @param flags1 number (int)
+--- @param flags2 number (int)
 --- @return number (int)
 function StartShapeTestBound(entity, flags1, flags2) end
 

@@ -3,7 +3,7 @@
 ---
 --- @hash 0xEF7D17BC6C85264C
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function LoadingscreenGetLoadFreemode() end
 
     
@@ -11,7 +11,7 @@ function LoadingscreenGetLoadFreemode() end
 ---
 --- @hash 0x8AA464D4E0F6ACCD
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function LoadingscreenGetLoadFreemodeWithEventName() end
 
     
@@ -20,7 +20,7 @@ function LoadingscreenGetLoadFreemodeWithEventName() end
 --- ```
 ---
 --- @hash 0xFC309E94546FCDB5
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function LoadingscreenSetLoadFreemodeWithEventName(toggle) end
 
@@ -28,7 +28,7 @@ function LoadingscreenSetLoadFreemodeWithEventName(toggle) end
 --- N_0xfa1e0e893d915215
 ---
 --- @hash 0xFA1E0E893D915215
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0xfa1e0e893d915215(toggle) end
 
@@ -37,14 +37,14 @@ function N_0xfa1e0e893d915215(toggle) end
 ---
 --- @hash 0xC6DC823253FBB366
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function LoadingscreenIsLoadingFreemode() end
 
     
 --- LoadingscreenSetLoadFreemode
 ---
 --- @hash 0xB0C56BD3D808D863
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function LoadingscreenSetLoadFreemode(toggle) end
 
@@ -52,7 +52,7 @@ function LoadingscreenSetLoadFreemode(toggle) end
 --- LoadingscreenSetIsLoadingFreemode
 ---
 --- @hash 0xC7E7181C09F33B69
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function LoadingscreenSetIsLoadingFreemode(toggle) end
 

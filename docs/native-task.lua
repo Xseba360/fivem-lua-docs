@@ -2,8 +2,8 @@
 --- AddPatrolRouteLink
 ---
 --- @hash 0x23083260DEC3A551
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function AddPatrolRouteLink(p0, p1) end
 
@@ -19,7 +19,7 @@ function ClosePatrolRoute() end
 --- AssistedMovementOverrideLoadDistanceThisFrame
 ---
 --- @hash 0x13945951E16EF912
---- @params dist number (float)
+--- @param dist number (float)
 --- @return void
 function AssistedMovementOverrideLoadDistanceThisFrame(dist) end
 
@@ -27,14 +27,14 @@ function AssistedMovementOverrideLoadDistanceThisFrame(dist) end
 --- AddCoverPoint
 ---
 --- @hash 0xD5C12A75C7B9497F
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 Any
---- @params p5 Any
---- @params p6 Any
---- @params p7 boolean (BOOL)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
+--- @param p7 boolean
 --- @return table (ScrHandle)
 function AddCoverPoint(p0, p1, p2, p3, p4, p5, p6, p7) end
 
@@ -42,16 +42,16 @@ function AddCoverPoint(p0, p1, p2, p3, p4, p5, p6, p7) end
 --- AddCoverBlockingArea
 ---
 --- @hash 0x45C597097DD7CB81
---- @params playerX number (float)
---- @params playerY number (float)
---- @params playerZ number (float)
---- @params radiusX number (float)
---- @params radiusY number (float)
---- @params radiusZ number (float)
---- @params p6 boolean (BOOL)
---- @params p7 boolean (BOOL)
---- @params p8 boolean (BOOL)
---- @params p9 boolean (BOOL)
+--- @param playerX number (float)
+--- @param playerY number (float)
+--- @param playerZ number (float)
+--- @param radiusX number (float)
+--- @param radiusY number (float)
+--- @param radiusZ number (float)
+--- @param p6 boolean
+--- @param p7 boolean
+--- @param p8 boolean
+--- @param p9 boolean
 --- @return void
 function AddCoverBlockingArea(playerX, playerY, playerZ, radiusX, radiusY, radiusZ, p6, p7, p8, p9) end
 
@@ -61,7 +61,7 @@ function AddCoverBlockingArea(playerX, playerY, playerZ, radiusX, radiusY, radiu
 --- ```
 ---
 --- @hash 0x817268968605947A
---- @params route string (char*)
+--- @param route string (char*)
 --- @return void
 function AssistedMovementRequestRoute(route) end
 
@@ -72,7 +72,7 @@ function AssistedMovementRequestRoute(route) end
 --- ```
 ---
 --- @hash 0x00A9010CFE1E3533
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return number (int)
 function GetSequenceProgress(ped) end
 
@@ -80,7 +80,7 @@ function GetSequenceProgress(ped) end
 --- GetVehicleWaypointTargetPoint
 ---
 --- @hash 0x416B62AC8B9E5BBD
---- @params vehicle number (Vehicle)
+--- @param vehicle number (Vehicle)
 --- @return number (int)
 function GetVehicleWaypointTargetPoint(vehicle) end
 
@@ -107,15 +107,15 @@ function CreatePatrolRoute() end
 --- ```
 ---
 --- @hash 0x8EDF950167586B7C
---- @params p0 number (int)
---- @params p1 string (char*)
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params p8 number (int)
+--- @param p0 number (int)
+--- @param p1 string (char*)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param p8 number (int)
 --- @return void
 function AddPatrolRouteNode(p0, p1, x1, y1, z1, x2, y2, z2, p8) end
 
@@ -123,19 +123,19 @@ function AddPatrolRouteNode(p0, p1, x1, y1, z1, x2, y2, z2, p8) end
 --- DoesScenarioExistInArea
 ---
 --- @hash 0x5A59271FFADD33C1
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params b boolean (BOOL)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param b boolean
+--- @return boolean
 function DoesScenarioExistInArea(x, y, z, radius, b) end
 
     
 --- ClearPedSecondaryTask
 ---
 --- @hash 0x176CECF6F920D707
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return void
 function ClearPedSecondaryTask(ped) end
 
@@ -145,31 +145,31 @@ function ClearPedSecondaryTask(ped) end
 --- ```
 ---
 --- @hash 0xA98B8E3C088E5A31
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return boolean
 function DoesScriptedCoverPointExistAtCoords(x, y, z) end
 
     
 --- DoesScenarioOfTypeExistInArea
 ---
 --- @hash 0x0A9D0C2A3BBC86C1
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 table (Any*)
---- @params p4 number (float)
---- @params p5 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 table (Any*)
+--- @param p4 number (float)
+--- @param p5 boolean
+--- @return boolean
 function DoesScenarioOfTypeExistInArea(p0, p1, p2, p3, p4, p5) end
 
     
 --- IsMoveBlendRatioRunning
 ---
 --- @hash 0xD4D8636C0199A939
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsMoveBlendRatioRunning(ped) end
 
     
@@ -178,10 +178,10 @@ function IsMoveBlendRatioRunning(ped) end
 --- ```
 ---
 --- @hash 0x5CF0D8F9BBA0DD75
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function AddVehicleSubtaskAttackCoord(ped, x, y, z) end
 
@@ -189,8 +189,8 @@ function AddVehicleSubtaskAttackCoord(ped, x, y, z) end
 --- AssistedMovementSetRouteProperties
 ---
 --- @hash 0xD5002D78B7162E1B
---- @params route string (char*)
---- @params props number (int)
+--- @param route string (char*)
+--- @param props number (int)
 --- @return void
 function AssistedMovementSetRouteProperties(route, props) end
 
@@ -200,7 +200,7 @@ function AssistedMovementSetRouteProperties(route, props) end
 --- ```
 ---
 --- @hash 0xAAA34F8A7CB32098
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return void
 function ClearPedTasksImmediately(ped) end
 
@@ -208,16 +208,16 @@ function ClearPedTasksImmediately(ped) end
 --- AssistedMovementIsRouteLoaded
 ---
 --- @hash 0x60F9A4393A21F741
---- @params route string (char*)
---- @return boolean (BOOL)
+--- @param route string (char*)
+--- @return boolean
 function AssistedMovementIsRouteLoaded(route) end
 
     
 --- AddVehicleSubtaskAttackPed
 ---
 --- @hash 0x85F462BADC7DA47F
---- @params ped table (Ped)
---- @params ped2 table (Ped)
+--- @param ped table (Ped)
+--- @param ped2 table (Ped)
 --- @return void
 function AddVehicleSubtaskAttackPed(ped, ped2) end
 
@@ -229,9 +229,9 @@ function AddVehicleSubtaskAttackPed(ped, ped2) end
 --- ```
 ---
 --- @hash 0xA7FFBA498E4AAF67
---- @params ped table (Ped)
---- @params signalName string (char*)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @param signalName string (char*)
+--- @return boolean
 function GetTaskMoveNetworkSignalBool(ped, signalName) end
 
     
@@ -240,8 +240,8 @@ function GetTaskMoveNetworkSignalBool(ped, signalName) end
 --- ```
 ---
 --- @hash 0x74E559B3BC910685
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsPedCuffed(ped) end
 
     
@@ -252,8 +252,8 @@ function IsPedCuffed(ped) end
 --- ```
 ---
 --- @hash 0x77F1BEB8863288D5
---- @params targetPed table (Ped)
---- @params taskHash table (Hash)
+--- @param targetPed table (Ped)
+--- @param taskHash table (Hash)
 --- @return number (int)
 function GetScriptTaskStatus(targetPed, taskHash) end
 
@@ -263,16 +263,16 @@ function GetScriptTaskStatus(targetPed, taskHash) end
 --- ```
 ---
 --- @hash 0x90A09F3A45FED688
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsPedBeingArrested(ped) end
 
     
 --- IsTaskMoveNetworkActive
 ---
 --- @hash 0x921CE12C489C4C41
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsTaskMoveNetworkActive(ped) end
 
     
@@ -281,15 +281,15 @@ function IsTaskMoveNetworkActive(ped) end
 --- ```
 ---
 --- @hash 0xCB4E8BE8A0063C5D
---- @params name string (char*)
---- @return boolean (BOOL)
+--- @param name string (char*)
+--- @return boolean
 function GetIsWaypointRecordingLoaded(name) end
 
     
 --- GetActiveVehicleMissionType
 ---
 --- @hash 0x534AEBA6E5ED4CAB
---- @params vehicle number (Vehicle)
+--- @param vehicle number (Vehicle)
 --- @return number (int)
 function GetActiveVehicleMissionType(vehicle) end
 
@@ -300,7 +300,7 @@ function GetActiveVehicleMissionType(vehicle) end
 --- ```
 ---
 --- @hash 0x717E4D1F2048376D
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return string (char*)
 function GetTaskMoveNetworkState(ped) end
 
@@ -312,16 +312,16 @@ function GetTaskMoveNetworkState(ped) end
 --- ```
 ---
 --- @hash 0xB0760331C7AA4155
---- @params ped table (Ped)
---- @params taskIndex number (int)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @param taskIndex number (int)
+--- @return boolean
 function GetIsTaskActive(ped, taskIndex) end
 
     
 --- GetPedWaypointDistance
 ---
 --- @hash 0xE6A877C64CAF1BC5
---- @params p0 Any
+--- @param p0 any
 --- @return number (float)
 function GetPedWaypointDistance(p0) end
 
@@ -329,8 +329,8 @@ function GetPedWaypointDistance(p0) end
 --- GetWaypointDistanceAlongRoute
 ---
 --- @hash 0xA5B769058763E497
---- @params p0 string (char*)
---- @params p1 number (int)
+--- @param p0 string (char*)
+--- @param p1 number (int)
 --- @return number (float)
 function GetWaypointDistanceAlongRoute(p0, p1) end
 
@@ -338,17 +338,17 @@ function GetWaypointDistanceAlongRoute(p0, p1) end
 --- IsWaypointPlaybackGoingOnForVehicle
 ---
 --- @hash 0xF5134943EA29868C
---- @params vehicle number (Vehicle)
---- @return boolean (BOOL)
+--- @param vehicle number (Vehicle)
+--- @return boolean
 function IsWaypointPlaybackGoingOnForVehicle(vehicle) end
 
     
 --- GetTaskMoveNetworkEvent
 ---
 --- @hash 0xB4F47213DF45A64C
---- @params ped table (Ped)
---- @params eventName string (char*)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @param eventName string (char*)
+--- @return boolean
 function GetTaskMoveNetworkEvent(ped, eventName) end
 
     
@@ -357,8 +357,8 @@ function GetTaskMoveNetworkEvent(ped, eventName) end
 --- ```
 ---
 --- @hash 0xE45B7F222DE47E09
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsPedStrafing(ped) end
 
     
@@ -398,15 +398,15 @@ function IsPedStrafing(ped) end
 --- ```
 ---
 --- @hash 0xF9034C136C9E00D3
---- @params scenarioGroup string (char*)
---- @return boolean (BOOL)
+--- @param scenarioGroup string (char*)
+--- @return boolean
 function DoesScenarioGroupExist(scenarioGroup) end
 
     
 --- RemoveCoverPoint
 ---
 --- @hash 0xAE287C923D891715
---- @params coverpoint table (ScrHandle)
+--- @param coverpoint table (ScrHandle)
 --- @return void
 function RemoveCoverPoint(coverpoint) end
 
@@ -414,7 +414,7 @@ function RemoveCoverPoint(coverpoint) end
 --- GetPhoneGestureAnimCurrentTime
 ---
 --- @hash 0x47619ABE8B268C60
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return number (float)
 function GetPhoneGestureAnimCurrentTime(ped) end
 
@@ -422,7 +422,7 @@ function GetPhoneGestureAnimCurrentTime(ped) end
 --- GetClipSetForScriptedGunTask
 ---
 --- @hash 0x3A8CADC7D37AACC5
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return string (char*)
 function GetClipSetForScriptedGunTask(p0) end
 
@@ -432,15 +432,15 @@ function GetClipSetForScriptedGunTask(p0) end
 --- ```
 ---
 --- @hash 0x3841422E9C488D8C
---- @params taskSequenceId table (int*)
---- @return Any
+--- @param taskSequenceId table (int*)
+--- @return any
 function ClearSequenceTask(taskSequenceId) end
 
     
 --- ClearDrivebyTaskUnderneathDrivingTask
 ---
 --- @hash 0xC35B5CDB2824CF69
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return void
 function ClearDrivebyTaskUnderneathDrivingTask(ped) end
 
@@ -448,12 +448,12 @@ function ClearDrivebyTaskUnderneathDrivingTask(ped) end
 --- IsScenarioOccupied
 ---
 --- @hash 0x788756D73AC2E07C
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 boolean
+--- @return boolean
 function IsScenarioOccupied(p0, p1, p2, p3, p4) end
 
     
@@ -467,9 +467,9 @@ function IsScenarioOccupied(p0, p1, p2, p3, p4) end
 --- ```
 ---
 --- @hash 0xC6F5C0BCDC74D62D
---- @params ped table (Ped)
---- @params distRemaining table (float*)
---- @params isPathReady table (BOOL*)
+--- @param ped table (Ped)
+--- @param distRemaining table (float*)
+--- @param isPathReady table (BOOL*)
 --- @return number (int)
 function GetNavmeshRouteDistanceRemaining(ped, distRemaining, isPathReady) end
 
@@ -477,7 +477,7 @@ function GetNavmeshRouteDistanceRemaining(ped, distRemaining, isPathReady) end
 --- GetVehicleWaypointProgress
 ---
 --- @hash 0x9824CFF8FC66E159
---- @params vehicle number (Vehicle)
+--- @param vehicle number (Vehicle)
 --- @return number (int)
 function GetVehicleWaypointProgress(vehicle) end
 
@@ -485,23 +485,23 @@ function GetVehicleWaypointProgress(vehicle) end
 --- IsMountedWeaponTaskUnderneathDrivingTask
 ---
 --- @hash 0xA320EF046186FA3B
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsMountedWeaponTaskUnderneathDrivingTask(ped) end
 
     
 --- IsMoveBlendRatioWalking
 ---
 --- @hash 0xF133BBBE91E1691F
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsMoveBlendRatioWalking(ped) end
 
     
 --- GetPhoneGestureAnimTotalTime
 ---
 --- @hash 0x1EE0F68A7C25DEC6
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return number (float)
 function GetPhoneGestureAnimTotalTime(ped) end
 
@@ -515,7 +515,7 @@ function GetPhoneGestureAnimTotalTime(ped) end
 --- ```
 ---
 --- @hash 0x7767DD9D65E91319
---- @params patrolRoute string (char*)
+--- @param patrolRoute string (char*)
 --- @return void
 function DeletePatrolRoute(patrolRoute) end
 
@@ -523,7 +523,7 @@ function DeletePatrolRoute(patrolRoute) end
 --- AssistedMovementRemoveRoute
 ---
 --- @hash 0x3548536485DD792B
---- @params route string (char*)
+--- @param route string (char*)
 --- @return void
 function AssistedMovementRemoveRoute(route) end
 
@@ -531,8 +531,8 @@ function AssistedMovementRemoveRoute(route) end
 --- IsPlayingPhoneGestureAnim
 ---
 --- @hash 0xB8EBB1E9D3588C10
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsPlayingPhoneGestureAnim(ped) end
 
     
@@ -542,8 +542,8 @@ function IsPlayingPhoneGestureAnim(ped) end
 --- ```
 ---
 --- @hash 0xDCFE42068FE0135A
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function ControlMountedWeapon(ped) end
 
     
@@ -552,7 +552,7 @@ function ControlMountedWeapon(ped) end
 --- ```
 ---
 --- @hash 0x2720AAA75001E094
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return number (int)
 function GetPedWaypointProgress(ped) end
 
@@ -568,9 +568,9 @@ function ResetExclusiveScenarioGroup() end
 --- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
 --- @hash 0x748040460F8DF5DC
---- @params ped table (Ped)
---- @params animDict string (char*)
---- @params animName string (char*)
+--- @param ped table (Ped)
+--- @param animDict string (char*)
+--- @param animName string (char*)
 --- @return void
 function PlayAnimOnRunningScenario(ped, animDict, animName) end
 
@@ -578,7 +578,7 @@ function PlayAnimOnRunningScenario(ped, animDict, animName) end
 --- ClearPedTasks
 ---
 --- @hash 0xE1EF3C1216AFF2CD
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return void
 function ClearPedTasks(ped) end
 
@@ -590,7 +590,7 @@ function ClearPedTasks(ped) end
 --- ```
 ---
 --- @hash 0x53DDC75BC3AC0A90
---- @params vehicle number (Vehicle)
+--- @param vehicle number (Vehicle)
 --- @return void
 function N_0x53ddc75bc3ac0a90(vehicle) end
 
@@ -600,7 +600,7 @@ function N_0x53ddc75bc3ac0a90(vehicle) end
 --- ```
 ---
 --- @hash 0x6C6B148586F934F7
---- @params height number (float)
+--- @param height number (float)
 --- @return void
 function SetGlobalMinBirdFlightHeight(height) end
 
@@ -608,8 +608,8 @@ function SetGlobalMinBirdFlightHeight(height) end
 --- IsWaypointPlaybackGoingOnForPed
 ---
 --- @hash 0xE03B3F2D3DC59B64
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function IsWaypointPlaybackGoingOnForPed(p0) end
 
     
@@ -618,9 +618,9 @@ function IsWaypointPlaybackGoingOnForPed(p0) end
 --- ```
 ---
 --- @hash 0x77A5B103C87F476E
---- @params ped table (Ped)
---- @params Toggle boolean (BOOL)
---- @return Any
+--- @param ped table (Ped)
+--- @param Toggle boolean
+--- @return any
 function SetPedPathCanUseLadders(ped, Toggle) end
 
     
@@ -629,7 +629,7 @@ function SetPedPathCanUseLadders(ped, Toggle) end
 --- ```
 ---
 --- @hash 0x632E831F382A0FA8
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return number (int)
 function GetNavmeshRouteResult(ped) end
 
@@ -637,10 +637,10 @@ function GetNavmeshRouteResult(ped) end
 --- SetAnimRate
 ---
 --- @hash 0x032D49C5E359C847
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 Any
---- @params p3 boolean (BOOL)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 any
+--- @param p3 boolean
 --- @return void
 function SetAnimRate(p0, p1, p2, p3) end
 
@@ -648,24 +648,24 @@ function SetAnimRate(p0, p1, p2, p3) end
 --- IsPedActiveInScenario
 ---
 --- @hash 0xAA135F9482C82CC3
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsPedActiveInScenario(ped) end
 
     
 --- IsDrivebyTaskUnderneathDrivingTask
 ---
 --- @hash 0x8785E6E40C7A8818
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsDrivebyTaskUnderneathDrivingTask(ped) end
 
     
 --- IsMoveBlendRatioSprinting
 ---
 --- @hash 0x24A2AD74FA9814E2
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsMoveBlendRatioSprinting(ped) end
 
     
@@ -700,16 +700,16 @@ function IsMoveBlendRatioSprinting(ped) end
 --- ```
 ---
 --- @hash 0x367A09DED4E05B99
---- @params scenarioGroup string (char*)
---- @return boolean (BOOL)
+--- @param scenarioGroup string (char*)
+--- @return boolean
 function IsScenarioGroupEnabled(scenarioGroup) end
 
     
 --- IsPedStill
 ---
 --- @hash 0xAC29253EEF8F0180
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsPedStill(ped) end
 
     
@@ -718,12 +718,12 @@ function IsPedStill(ped) end
 --- ```
 ---
 --- @hash 0xE5B302114D8162EE
---- @params shootingPed table (Ped)
---- @params targetPed table (Ped)
---- @params targetVehicle number (Vehicle)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param shootingPed table (Ped)
+--- @param targetPed table (Ped)
+--- @param targetVehicle number (Vehicle)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function SetDrivebyTaskTarget(shootingPed, targetPed, targetVehicle, x, y, z) end
 
@@ -737,9 +737,9 @@ function SetDrivebyTaskTarget(shootingPed, targetPed, targetVehicle, x, y, z) en
 --- ```
 ---
 --- @hash 0xAB13A5565480B6D9
---- @params ped table (Ped)
---- @params p1 string (char*)
---- @return Any
+--- @param ped table (Ped)
+--- @param p1 string (char*)
+--- @return any
 function N_0xab13a5565480b6d9(ped, p1) end
 
     
@@ -756,15 +756,15 @@ function N_0xab13a5565480b6d9(ped, p1) end
 --- ```
 ---
 --- @hash 0x3A815DB3EA088722
---- @params scenarioType string (char*)
---- @return boolean (BOOL)
+--- @param scenarioType string (char*)
+--- @return boolean
 function IsScenarioTypeEnabled(scenarioType) end
 
     
 --- GetScriptedCoverPointCoords
 ---
 --- @hash 0x594A1028FC2A3E85
---- @params coverpoint table (ScrHandle)
+--- @param coverpoint table (ScrHandle)
 --- @return Vector3
 function GetScriptedCoverPointCoords(coverpoint) end
 
@@ -774,24 +774,24 @@ function GetScriptedCoverPointCoords(coverpoint) end
 --- ```
 ---
 --- @hash 0x39E72BC99E6360CB
---- @params taskSequenceId number (int)
---- @return Any
+--- @param taskSequenceId number (int)
+--- @return any
 function CloseSequenceTask(taskSequenceId) end
 
     
 --- IsPedRunning
 ---
 --- @hash 0xC5286FFC176F28A2
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsPedRunning(ped) end
 
     
 --- SetTaskVehicleChaseIdealPursuitDistance
 ---
 --- @hash 0x639B642FACBE4EDD
---- @params ped table (Ped)
---- @params distance number (float)
+--- @param ped table (Ped)
+--- @param distance number (float)
 --- @return void
 function SetTaskVehicleChaseIdealPursuitDistance(ped, distance) end
 
@@ -801,8 +801,8 @@ function SetTaskVehicleChaseIdealPursuitDistance(ped, distance) end
 --- ```
 ---
 --- @hash 0x3E38E28A1D80DDF6
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function N_0x3e38e28a1d80ddf6(ped) end
 
     
@@ -811,8 +811,8 @@ function N_0x3e38e28a1d80ddf6(ped) end
 --- ```
 ---
 --- @hash 0x44AB0B3AFECCE242
---- @params ped table (Ped)
---- @params signalName string (char*)
+--- @param ped table (Ped)
+--- @param signalName string (char*)
 --- @return number (float)
 function GetTaskMoveNetworkSignalFloat(ped, signalName) end
 
@@ -820,7 +820,7 @@ function GetTaskMoveNetworkSignalFloat(ped, signalName) end
 --- GetPedDesiredMoveBlendRatio
 ---
 --- @hash 0x8517D4A6CA8513ED
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return number (float)
 function GetPedDesiredMoveBlendRatio(ped) end
 
@@ -831,8 +831,8 @@ function GetPedDesiredMoveBlendRatio(ped) end
 --- ```
 ---
 --- @hash 0x621C6E4729388E41
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function N_0x621c6e4729388e41(ped) end
 
     
@@ -843,9 +843,9 @@ function N_0x621c6e4729388e41(ped) end
 --- ```
 ---
 --- @hash 0xFA83CA6776038F64
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function N_0xfa83ca6776038f64(x, y, z) end
 
@@ -853,8 +853,8 @@ function N_0xfa83ca6776038f64(x, y, z) end
 --- IsMoveBlendRatioStill
 ---
 --- @hash 0x349CE7B56DAFD95C
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsMoveBlendRatioStill(ped) end
 
     
@@ -865,7 +865,7 @@ function IsMoveBlendRatioStill(ped) end
 --- ```
 ---
 --- @hash 0xDBBC7A2432524127
---- @params vehicle number (Vehicle)
+--- @param vehicle number (Vehicle)
 --- @return void
 function N_0xdbbc7a2432524127(vehicle) end
 
@@ -875,9 +875,9 @@ function N_0xdbbc7a2432524127(vehicle) end
 --- ```
 ---
 --- @hash 0x8634CEF2522D987B
---- @params ped table (Ped)
---- @params p1 string (char*)
---- @params value number (float)
+--- @param ped table (Ped)
+--- @param p1 string (char*)
+--- @param value number (float)
 --- @return void
 function N_0x8634cef2522d987b(ped, p1, value) end
 
@@ -889,7 +889,7 @@ function N_0x8634cef2522d987b(ped, p1, value) end
 --- ```
 ---
 --- @hash 0x9EEFB62EB27B5792
---- @params name string (char*)
+--- @param name string (char*)
 --- @return void
 function RequestWaypointRecording(name) end
 
@@ -897,18 +897,18 @@ function RequestWaypointRecording(name) end
 --- IsPedSprinting
 ---
 --- @hash 0x57E457CD2C0FC168
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsPedSprinting(ped) end
 
     
 --- SetAnimLooped
 ---
 --- @hash 0x70033C3CC29A1FF4
---- @params p0 Any
---- @params p1 boolean (BOOL)
---- @params p2 Any
---- @params p3 boolean (BOOL)
+--- @param p0 any
+--- @param p1 boolean
+--- @param p2 any
+--- @param p3 boolean
 --- @return void
 function SetAnimLooped(p0, p1, p2, p3) end
 
@@ -916,18 +916,18 @@ function SetAnimLooped(p0, p1, p2, p3) end
 --- This native checks if a ped is on the ground, in pain from a (gunshot) wound.
 ---
 --- @hash 0xDEB6D52126E7D640
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsPedInWrithe(ped) end
 
     
 --- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
 --- @hash 0x97FF36A1D40EA00A
---- @params ped table (Ped)
---- @params animDictionary string (char*)
---- @params animationName string (char*)
---- @params p3 number (float)
+--- @param ped table (Ped)
+--- @param animDictionary string (char*)
+--- @param animationName string (char*)
+--- @param p3 number (float)
 --- @return void
 function StopAnimTask(ped, animDictionary, animationName, p3) end
 
@@ -935,8 +935,8 @@ function StopAnimTask(ped, animDictionary, animationName, p3) end
 --- TaskAgitatedAction
 ---
 --- @hash 0x19D1B791CB3670FE
---- @params ped table (Ped)
---- @params ped2 table (Ped)
+--- @param ped table (Ped)
+--- @param ped2 table (Ped)
 --- @return void
 function TaskAgitatedAction(ped, ped2) end
 
@@ -952,8 +952,8 @@ function RemoveAllCoverBlockingAreas() end
 --- SetDriveTaskMaxCruiseSpeed
 ---
 --- @hash 0x404A5AA9B9F0B746
---- @params p0 Any
---- @params p1 number (float)
+--- @param p0 any
+--- @param p1 number (float)
 --- @return void
 function SetDriveTaskMaxCruiseSpeed(p0, p1) end
 
@@ -963,8 +963,8 @@ function SetDriveTaskMaxCruiseSpeed(p0, p1) end
 --- ```
 ---
 --- @hash 0xE8854A4326B9E12B
---- @params taskSequenceId table (int*)
---- @return Any
+--- @param taskSequenceId table (int*)
+--- @return any
 function OpenSequenceTask(taskSequenceId) end
 
     
@@ -973,9 +973,9 @@ function OpenSequenceTask(taskSequenceId) end
 --- ```
 ---
 --- @hash 0x373EF409B82697A3
---- @params ped table (Ped)
---- @params signalName string (char*)
---- @params value number (float)
+--- @param ped table (Ped)
+--- @param signalName string (char*)
+--- @param value number (float)
 --- @return void
 function SetTaskMoveNetworkSignalFloat_2(ped, signalName, value) end
 
@@ -983,11 +983,11 @@ function SetTaskMoveNetworkSignalFloat_2(ped, signalName, value) end
 --- TaskExitCover
 ---
 --- @hash 0x79B258E397854D29
---- @params p0 Any
---- @params p1 Any
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
 --- @return void
 function TaskExitCover(p0, p1, p2, p3, p4) end
 
@@ -997,7 +997,7 @@ function TaskExitCover(p0, p1, p2, p3, p4) end
 --- ```
 ---
 --- @hash 0xFF1B8B4AA1C25DC8
---- @params name string (char*)
+--- @param name string (char*)
 --- @return void
 function RemoveWaypointRecording(name) end
 
@@ -1005,16 +1005,16 @@ function RemoveWaypointRecording(name) end
 --- IsTaskMoveNetworkReadyForTransition
 ---
 --- @hash 0x30ED88D5E0C56A37
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsTaskMoveNetworkReadyForTransition(ped) end
 
     
 --- IsPedWalking
 ---
 --- @hash 0xDE4C184B2B9B071A
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsPedWalking(ped) end
 
     
@@ -1023,10 +1023,10 @@ function IsPedWalking(ped) end
 --- ```
 ---
 --- @hash 0x9B53BB6E8943AF53
---- @params ped table (Ped)
---- @params entity table (Entity)
---- @params duration number (int)
---- @params p3 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param entity table (Entity)
+--- @param duration number (int)
+--- @param p3 boolean
 --- @return void
 function TaskAimGunAtEntity(ped, entity, duration, p3) end
 
@@ -1034,8 +1034,8 @@ function TaskAimGunAtEntity(ped, entity, duration, p3) end
 --- SetDriveTaskCruiseSpeed
 ---
 --- @hash 0x5C9B84BD7D31D908
---- @params driver table (Ped)
---- @params cruiseSpeed number (float)
+--- @param driver table (Ped)
+--- @param cruiseSpeed number (float)
 --- @return void
 function SetDriveTaskCruiseSpeed(driver, cruiseSpeed) end
 
@@ -1043,9 +1043,9 @@ function SetDriveTaskCruiseSpeed(driver, cruiseSpeed) end
 --- RequestTaskMoveNetworkStateTransition
 ---
 --- @hash 0xD01015C7316AE176
---- @params ped table (Ped)
---- @params name string (char*)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @param name string (char*)
+--- @return boolean
 function RequestTaskMoveNetworkStateTransition(ped, name) end
 
     
@@ -1058,9 +1058,9 @@ function RequestTaskMoveNetworkStateTransition(ped, name) end
 --- ```
 ---
 --- @hash 0xD5BB4025AE449A4E
---- @params ped table (Ped)
---- @params signalName string (char*)
---- @params value number (float)
+--- @param ped table (Ped)
+--- @param signalName string (char*)
+--- @param value number (float)
 --- @return void
 function SetTaskMoveNetworkSignalFloat(ped, signalName, value) end
 
@@ -1071,9 +1071,9 @@ function SetTaskMoveNetworkSignalFloat(ped, signalName, value) end
 --- ```
 ---
 --- @hash 0x7BF835BB9E2698C8
---- @params ped table (Ped)
---- @params radius number (float)
---- @params p2 number (int)
+--- @param ped table (Ped)
+--- @param radius number (float)
+--- @param p2 number (int)
 --- @return void
 function TaskCombatHatedTargetsAroundPed(ped, radius, p2) end
 
@@ -1081,16 +1081,16 @@ function TaskCombatHatedTargetsAroundPed(ped, radius, p2) end
 --- N_0x1f351cf1c6475734
 ---
 --- @hash 0x1F351CF1C6475734
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
---- @params p6 Any
---- @params p7 Any
---- @params p8 Any
---- @params p9 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
+--- @param p7 any
+--- @param p8 any
+--- @param p9 any
 --- @return void
 function N_0x1f351cf1c6475734(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
@@ -1098,24 +1098,24 @@ function N_0x1f351cf1c6475734(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 --- PedHasUseScenarioTask
 ---
 --- @hash 0x295E3CCEC879CCD7
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function PedHasUseScenarioTask(ped) end
 
     
 --- IsPedRunningArrestTask
 ---
 --- @hash 0x3DC52677769B4AE0
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsPedRunningArrestTask(ped) end
 
     
 --- SetSequenceToRepeat
 ---
 --- @hash 0x58C70CF3A41E4AE7
---- @params taskSequenceId number (int)
---- @params repeat boolean (BOOL)
+--- @param taskSequenceId number (int)
+--- @param repeat boolean
 --- @return void
 function SetSequenceToRepeat(taskSequenceId, repeat) end
 
@@ -1123,8 +1123,8 @@ function SetSequenceToRepeat(taskSequenceId, repeat) end
 --- SetPedPathCanDropFromHeight
 ---
 --- @hash 0xE361C5C71C431A4F
---- @params ped table (Ped)
---- @params Toggle boolean (BOOL)
+--- @param ped table (Ped)
+--- @param Toggle boolean
 --- @return void
 function SetPedPathCanDropFromHeight(ped, Toggle) end
 
@@ -1154,7 +1154,7 @@ function SetPedPathCanDropFromHeight(ped, Toggle) end
 --- ```
 ---
 --- @hash 0xA36BFB5EE89F3D82
---- @params patrolRoute string (char*)
+--- @param patrolRoute string (char*)
 --- @return void
 function OpenPatrolRoute(patrolRoute) end
 
@@ -1164,8 +1164,8 @@ function OpenPatrolRoute(patrolRoute) end
 --- ```
 ---
 --- @hash 0x02C8E5B49848664E
---- @params scenarioGroup string (char*)
---- @params p1 boolean (BOOL)
+--- @param scenarioGroup string (char*)
+--- @param p1 boolean
 --- @return void
 function SetScenarioGroupEnabled(scenarioGroup, p1) end
 
@@ -1173,8 +1173,8 @@ function SetScenarioGroupEnabled(scenarioGroup, p1) end
 --- IsPedGettingUp
 ---
 --- @hash 0x2A74E1D5F2F00EEC
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsPedGettingUp(ped) end
 
     
@@ -1183,9 +1183,9 @@ function IsPedGettingUp(ped) end
 --- Call [TASK_FLUSH_ROUTE](#\_0x841142A1376E9006) before the first call to this. Call [TASK_FOLLOW_POINT_ROUTE](#\_0x595583281858626E) to make the Ped go the route.
 ---
 --- @hash 0x1E7889778264843A
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function TaskExtendRoute(x, y, z) end
 
@@ -1193,8 +1193,8 @@ function TaskExtendRoute(x, y, z) end
 --- SetPedPathPreferToAvoidWater
 ---
 --- @hash 0x38FE1EC73743793C
---- @params ped table (Ped)
---- @params avoidWater boolean (BOOL)
+--- @param ped table (Ped)
+--- @param avoidWater boolean
 --- @return void
 function SetPedPathPreferToAvoidWater(ped, avoidWater) end
 
@@ -1202,8 +1202,8 @@ function SetPedPathPreferToAvoidWater(ped, avoidWater) end
 --- SetPedDesiredMoveBlendRatio
 ---
 --- @hash 0x1E982AC8716912C5
---- @params ped table (Ped)
---- @params p1 number (float)
+--- @param ped table (Ped)
+--- @param p1 number (float)
 --- @return void
 function SetPedDesiredMoveBlendRatio(ped, p1) end
 
@@ -1215,10 +1215,10 @@ function SetPedDesiredMoveBlendRatio(ped, p1) end
 --- ```
 ---
 --- @hash 0xF166E48407BAC484
---- @params ped table (Ped)
---- @params targetPed table (Ped)
---- @params p2 number (int)
---- @params p3 number (int)
+--- @param ped table (Ped)
+--- @param targetPed table (Ped)
+--- @param p2 number (int)
+--- @param p3 number (int)
 --- @return void
 function TaskCombatPed(ped, targetPed, p2, p3) end
 
@@ -1226,7 +1226,7 @@ function TaskCombatPed(ped, targetPed, p2, p3) end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0xF1B9F16E89E2C93A
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function SetNextDesiredMoveState(p0) end
 
@@ -1236,9 +1236,9 @@ function SetNextDesiredMoveState(p0) end
 --- ```
 ---
 --- @hash 0x8423541E8B3A1589
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
 --- @return void
 function N_0x8423541e8b3a1589(p0, p1, p2) end
 
@@ -1248,12 +1248,12 @@ function N_0x8423541e8b3a1589(p0, p1, p2) end
 --- ```
 ---
 --- @hash 0x4CF5F55DAC3280A0
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params p5 Any
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param p5 any
 --- @return void
 function TaskCombatHatedTargetsInArea(ped, x, y, z, radius, p5) end
 
@@ -1266,9 +1266,9 @@ function TaskCombatHatedTargetsInArea(ped, x, y, z, radius, p5) end
 --- ```
 ---
 --- @hash 0xB0A6CFD2C69C1088
---- @params ped table (Ped)
---- @params signalName string (char*)
---- @params value boolean (BOOL)
+--- @param ped table (Ped)
+--- @param signalName string (char*)
+--- @param value boolean
 --- @return void
 function SetTaskMoveNetworkSignalBool(ped, signalName, value) end
 
@@ -1287,13 +1287,13 @@ function SetTaskMoveNetworkSignalBool(ped, signalName, value) end
 --- ```
 ---
 --- @hash 0xC20E50AA46D09CA8
---- @params ped table (Ped)
---- @params vehicle number (Vehicle)
---- @params timeout number (int)
---- @params seat number (int)
---- @params speed number (float)
---- @params flag number (int)
---- @params p6 Any
+--- @param ped table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param timeout number (int)
+--- @param seat number (int)
+--- @param speed number (float)
+--- @param flag number (int)
+--- @param p6 any
 --- @return void
 function TaskEnterVehicle(ped, vehicle, timeout, seat, speed, flag, p6) end
 
@@ -1301,8 +1301,8 @@ function TaskEnterVehicle(ped, vehicle, timeout, seat, speed, flag, p6) end
 --- SetParachuteTaskThrust
 ---
 --- @hash 0x0729BAC1B8C64317
---- @params ped table (Ped)
---- @params thrust number (float)
+--- @param ped table (Ped)
+--- @param thrust number (float)
 --- @return void
 function SetParachuteTaskThrust(ped, thrust) end
 
@@ -1310,7 +1310,7 @@ function SetParachuteTaskThrust(ped, thrust) end
 --- TaskClearDefensiveArea
 ---
 --- @hash 0x95A6C46A31D1917D
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function TaskClearDefensiveArea(p0) end
 
@@ -1318,11 +1318,11 @@ function TaskClearDefensiveArea(p0) end
 --- SetAnimWeight
 ---
 --- @hash 0x207F1A47C0342F48
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 Any
---- @params p3 Any
---- @params p4 boolean (BOOL)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 any
+--- @param p3 any
+--- @param p4 boolean
 --- @return void
 function SetAnimWeight(p0, p1, p2, p3, p4) end
 
@@ -1350,10 +1350,10 @@ function ResetScenarioTypesEnabled() end
 --- Even numbers appear to work best.
 ---
 --- @hash 0x8C825BDC7741D37C
---- @params ped table (Ped)
---- @params duration Any
---- @params p2 Any
---- @params p3 Any
+--- @param ped table (Ped)
+--- @param duration any
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function SetHighFallTask(ped, duration, p2, p3) end
 
@@ -1394,8 +1394,8 @@ function SetHighFallTask(ped, duration, p2, p3) end
 --- ```
 ---
 --- @hash 0xEB47EC4E34FB7EE1
---- @params scenarioType string (char*)
---- @params toggle boolean (BOOL)
+--- @param scenarioType string (char*)
+--- @param toggle boolean
 --- @return void
 function SetScenarioTypeEnabled(scenarioType, toggle) end
 
@@ -1403,12 +1403,12 @@ function SetScenarioTypeEnabled(scenarioType, toggle) end
 --- PlayEntityScriptedAnim
 ---
 --- @hash 0x77A1EEC547E7FCF1
---- @params p0 Any
---- @params p1 table (Any*)
---- @params p2 table (Any*)
---- @params p3 table (Any*)
---- @params p4 number (float)
---- @params p5 number (float)
+--- @param p0 any
+--- @param p1 table (Any*)
+--- @param p2 table (Any*)
+--- @param p3 table (Any*)
+--- @param p4 number (float)
+--- @param p5 number (float)
 --- @return void
 function PlayEntityScriptedAnim(p0, p1, p2, p3, p4, p5) end
 
@@ -1423,7 +1423,7 @@ function PlayEntityScriptedAnim(p0, p1, p2, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0x535E97E1F7FC0C6A
---- @params scenarioGroup string (char*)
+--- @param scenarioGroup string (char*)
 --- @return void
 function SetExclusiveScenarioGroup(scenarioGroup) end
 
@@ -1455,21 +1455,21 @@ function SetExclusiveScenarioGroup(scenarioGroup) end
 --- ```
 ---
 --- @hash 0xA55547801EB331FC
---- @params pedHandle table (Ped)
---- @params goToLocationX number (float)
---- @params goToLocationY number (float)
---- @params goToLocationZ number (float)
---- @params focusLocationX number (float)
---- @params focusLocationY number (float)
---- @params focusLocationZ number (float)
---- @params speed number (float)
---- @params shootAtEnemies boolean (BOOL)
---- @params distanceToStopAt number (float)
---- @params noRoadsDistance number (float)
---- @params unkTrue boolean (BOOL)
---- @params unkFlag number (int)
---- @params aimingFlag number (int)
---- @params firingPattern table (Hash)
+--- @param pedHandle table (Ped)
+--- @param goToLocationX number (float)
+--- @param goToLocationY number (float)
+--- @param goToLocationZ number (float)
+--- @param focusLocationX number (float)
+--- @param focusLocationY number (float)
+--- @param focusLocationZ number (float)
+--- @param speed number (float)
+--- @param shootAtEnemies boolean
+--- @param distanceToStopAt number (float)
+--- @param noRoadsDistance number (float)
+--- @param unkTrue boolean
+--- @param unkFlag number (int)
+--- @param aimingFlag number (int)
+--- @param firingPattern table (Hash)
 --- @return void
 function TaskGoToCoordAndAimAtHatedEntitiesNearCoord(pedHandle, goToLocationX, goToLocationY, goToLocationZ, focusLocationX, focusLocationY, focusLocationZ, speed, shootAtEnemies, distanceToStopAt, noRoadsDistance, unkTrue, unkFlag, aimingFlag, firingPattern) end
 
@@ -1480,14 +1480,14 @@ function TaskGoToCoordAndAimAtHatedEntitiesNearCoord(pedHandle, goToLocationX, g
 --- ```
 ---
 --- @hash 0x8C338E0263E4FD19
---- @params ped table (Ped)
---- @params target table (Ped)
---- @params p2 Any
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 number (float)
+--- @param ped table (Ped)
+--- @param target table (Ped)
+--- @param p2 any
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 number (float)
 --- @return void
 function TaskChatToPed(ped, target, p2, p3, p4, p5, p6, p7) end
 
@@ -1495,10 +1495,10 @@ function TaskChatToPed(ped, target, p2, p3, p4, p5, p6, p7) end
 --- TaskPerformSequenceFromProgress
 ---
 --- @hash 0x89221B16730234F0
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function TaskPerformSequenceFromProgress(p0, p1, p2, p3) end
 
@@ -1506,8 +1506,8 @@ function TaskPerformSequenceFromProgress(p0, p1, p2, p3) end
 --- TaskCower
 ---
 --- @hash 0x3EB1FE9E8E908E15
---- @params ped table (Ped)
---- @params duration number (int)
+--- @param ped table (Ped)
+--- @param duration number (int)
 --- @return void
 function TaskCower(ped, duration) end
 
@@ -1515,20 +1515,20 @@ function TaskCower(ped, duration) end
 --- TaskGoToCoordWhileAimingAtEntity
 ---
 --- @hash 0xB2A16444EAD9AE47
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 Any
---- @params p5 number (float)
---- @params p6 boolean (BOOL)
---- @params p7 number (float)
---- @params p8 number (float)
---- @params p9 boolean (BOOL)
---- @params p10 Any
---- @params p11 boolean (BOOL)
---- @params p12 Any
---- @params p13 Any
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 any
+--- @param p5 number (float)
+--- @param p6 boolean
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @param p9 boolean
+--- @param p10 any
+--- @param p11 boolean
+--- @param p12 any
+--- @param p13 any
 --- @return void
 function TaskGoToCoordWhileAimingAtEntity(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13) end
 
@@ -1543,8 +1543,8 @@ function TaskGoToCoordWhileAimingAtEntity(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9
 --- ```
 ---
 --- @hash 0xDACE1BE37D88AF67
---- @params ped table (Ped)
---- @params drivingStyle number (int)
+--- @param ped table (Ped)
+--- @param drivingStyle number (int)
 --- @return void
 function SetDriveTaskDrivingStyle(ped, drivingStyle) end
 
@@ -1556,15 +1556,15 @@ function SetDriveTaskDrivingStyle(ped, drivingStyle) end
 --- ```
 ---
 --- @hash 0x304AE42E357B8C7E
---- @params ped table (Ped)
---- @params entity table (Entity)
---- @params offsetX number (float)
---- @params offsetY number (float)
---- @params offsetZ number (float)
---- @params movementSpeed number (float)
---- @params timeout number (int)
---- @params stoppingRange number (float)
---- @params persistFollowing boolean (BOOL)
+--- @param ped table (Ped)
+--- @param entity table (Entity)
+--- @param offsetX number (float)
+--- @param offsetY number (float)
+--- @param offsetZ number (float)
+--- @param movementSpeed number (float)
+--- @param timeout number (int)
+--- @param stoppingRange number (float)
+--- @param persistFollowing boolean
 --- @return void
 function TaskFollowToOffsetOfEntity(ped, entity, offsetX, offsetY, offsetZ, movementSpeed, timeout, stoppingRange, persistFollowing) end
 
@@ -1577,13 +1577,13 @@ function TaskFollowToOffsetOfEntity(ped, entity, offsetX, offsetY, offsetZ, move
 --- ```
 ---
 --- @hash 0x6A071245EB0D1882
---- @params entity table (Entity)
---- @params target table (Entity)
---- @params duration number (int)
---- @params distance number (float)
---- @params speed number (float)
---- @params p5 number (float)
---- @params p6 number (int)
+--- @param entity table (Entity)
+--- @param target table (Entity)
+--- @param duration number (int)
+--- @param distance number (float)
+--- @param speed number (float)
+--- @param p5 number (float)
+--- @param p6 number (int)
 --- @return void
 function TaskGoToEntity(entity, target, duration, distance, speed, p5, p6) end
 
@@ -1607,17 +1607,17 @@ function ResetScenarioGroupsEnabled() end
 --- ```
 ---
 --- @hash 0xC946FE14BE0EB5E2
---- @params p0 table (Ped)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 Any
---- @params p7 number (float)
---- @params p8 number (float)
---- @params p9 number (float)
---- @params p10 number (float)
+--- @param p0 table (Ped)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 any
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @param p9 number (float)
+--- @param p10 number (float)
 --- @return void
 function TaskGuardSphereDefensiveArea(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
 
@@ -1625,7 +1625,7 @@ function TaskGuardSphereDefensiveArea(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p1
 --- TaskEveryoneLeaveVehicle
 ---
 --- @hash 0x7F93691AB4B92272
---- @params vehicle number (Vehicle)
+--- @param vehicle number (Vehicle)
 --- @return void
 function TaskEveryoneLeaveVehicle(vehicle) end
 
@@ -1633,8 +1633,8 @@ function TaskEveryoneLeaveVehicle(vehicle) end
 --- SetPedPathClimbCostModifier
 ---
 --- @hash 0x88E32DB8C1A4AA4B
---- @params ped table (Ped)
---- @params p1 number (float)
+--- @param ped table (Ped)
+--- @param p1 number (float)
 --- @return void
 function SetPedPathClimbCostModifier(ped, p1) end
 
@@ -1642,8 +1642,8 @@ function SetPedPathClimbCostModifier(ped, p1) end
 --- SetPedPathAvoidFire
 ---
 --- @hash 0x4455517B28441E60
---- @params ped table (Ped)
---- @params avoidFire boolean (BOOL)
+--- @param ped table (Ped)
+--- @param avoidFire boolean
 --- @return void
 function SetPedPathAvoidFire(ped, avoidFire) end
 
@@ -1651,10 +1651,10 @@ function SetPedPathAvoidFire(ped, avoidFire) end
 --- TaskCombatPedTimed
 ---
 --- @hash 0x944F30DCB7096BDE
---- @params p0 Any
---- @params ped table (Ped)
---- @params p2 number (int)
---- @params p3 Any
+--- @param p0 any
+--- @param ped table (Ped)
+--- @param p2 number (int)
+--- @param p3 any
 --- @return void
 function TaskCombatPedTimed(p0, ped, p2, p3) end
 
@@ -1662,14 +1662,14 @@ function TaskCombatPedTimed(p0, ped, p2, p3) end
 --- This native will make the ped move straight to a coordinate.
 ---
 --- @hash 0xD76B57B44F1E6F8B
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params speed number (float)
---- @params timeout number (int)
---- @params targetHeading number (float)
---- @params distanceToSlide number (float)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param timeout number (int)
+--- @param targetHeading number (float)
+--- @param distanceToSlide number (float)
 --- @return void
 function TaskGoStraightToCoord(ped, x, y, z, speed, timeout, targetHeading, distanceToSlide) end
 
@@ -1679,18 +1679,18 @@ function TaskGoStraightToCoord(ped, x, y, z, speed, timeout, targetHeading, dist
 --- ```
 ---
 --- @hash 0x1DD45F9ECFDB1BC9
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params speed number (float)
---- @params p5 Any
---- @params p6 boolean (BOOL)
---- @params walkingStyle number (int)
---- @params p8 number (float)
---- @params p9 Any
---- @params p10 Any
---- @params p11 Any
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param p5 any
+--- @param p6 boolean
+--- @param walkingStyle number (int)
+--- @param p8 number (float)
+--- @param p9 any
+--- @param p10 any
+--- @param p11 any
 --- @return void
 function TaskGoToCoordAnyMeansExtraParams(ped, x, y, z, speed, p5, p6, walkingStyle, p8, p9, p10, p11) end
 
@@ -1702,9 +1702,9 @@ function TaskGoToCoordAnyMeansExtraParams(ped, x, y, z, speed, p5, p6, walkingSt
 --- ```
 ---
 --- @hash 0xEE08C992D238C5D1
---- @params ped table (Ped)
---- @params p1 number (int)
---- @params p2 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param p1 number (int)
+--- @param p2 boolean
 --- @return void
 function StopAnimPlayback(ped, p1, p2) end
 
@@ -1726,7 +1726,7 @@ function StopAnimPlayback(ped, p1, p2) end
 --- ```
 ---
 --- @hash 0x0F804F1DB19B9689
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return void
 function TaskClearLookAt(ped) end
 
@@ -1736,8 +1736,8 @@ function TaskClearLookAt(ped) end
 --- ```
 ---
 --- @hash 0x9C00E77AF14B2DFF
---- @params ped table (Ped)
---- @params boat number (Vehicle)
+--- @param ped table (Ped)
+--- @param boat number (Vehicle)
 --- @return void
 function TaskGetOffBoat(ped, boat) end
 
@@ -1749,13 +1749,13 @@ function TaskGetOffBoat(ped, boat) end
 --- ```
 ---
 --- @hash 0x3D45B0B355C5E0C9
---- @params ped table (Ped)
---- @params p1 string (char*)
---- @params data table (Any*)
---- @params p3 number (float)
---- @params p4 boolean (BOOL)
---- @params animDict string (char*)
---- @params flags number (int)
+--- @param ped table (Ped)
+--- @param p1 string (char*)
+--- @param data table (Any*)
+--- @param p3 number (float)
+--- @param p4 boolean
+--- @param animDict string (char*)
+--- @param flags number (int)
 --- @return void
 function TaskMoveNetworkScripted(ped, p1, data, p3, p4, animDict, flags) end
 
@@ -1765,9 +1765,9 @@ function TaskMoveNetworkScripted(ped, p1, data, p3, p4, animDict, flags) end
 --- ```
 ---
 --- @hash 0x8E06A6FE76C9EFF4
---- @params ped table (Ped)
---- @params Toggle boolean (BOOL)
---- @return Any
+--- @param ped table (Ped)
+--- @param Toggle boolean
+--- @return any
 function SetPedPathCanUseClimbovers(ped, Toggle) end
 
     
@@ -1778,9 +1778,9 @@ function SetPedPathCanUseClimbovers(ped, Toggle) end
 --- ```
 ---
 --- @hash 0x4F056E1AFFEF17AB
---- @params ped table (Ped)
---- @params state table (Hash)
---- @params p2 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param state table (Hash)
+--- @param p2 boolean
 --- @return void
 function TaskForceMotionState(ped, state, p2) end
 
@@ -1790,8 +1790,8 @@ function TaskForceMotionState(ped, state, p2) end
 --- ```
 ---
 --- @hash 0x89D9FCC2435112F1
---- @params ped table (Ped)
---- @params unused boolean (BOOL)
+--- @param ped table (Ped)
+--- @param unused boolean
 --- @return void
 function TaskClimb(ped, unused) end
 
@@ -1799,12 +1799,12 @@ function TaskClimb(ped, unused) end
 --- TaskSeekCoverFromPos
 ---
 --- @hash 0x75AC2B60386D89F2
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params duration number (int)
---- @params p5 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param duration number (int)
+--- @param p5 boolean
 --- @return void
 function TaskSeekCoverFromPos(ped, x, y, z, duration, p5) end
 
@@ -1814,10 +1814,10 @@ function TaskSeekCoverFromPos(ped, x, y, z, duration, p5) end
 --- ```
 ---
 --- @hash 0xB33E291AFA6BD03A
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function TaskParachuteToTarget(ped, x, y, z) end
 
@@ -1825,8 +1825,8 @@ function TaskParachuteToTarget(ped, x, y, z) end
 --- SetPedPathMayEnterWater
 ---
 --- @hash 0xF35425A4204367EC
---- @params ped table (Ped)
---- @params mayEnterWater boolean (BOOL)
+--- @param ped table (Ped)
+--- @param mayEnterWater boolean
 --- @return void
 function SetPedPathMayEnterWater(ped, mayEnterWater) end
 
@@ -1834,13 +1834,13 @@ function SetPedPathMayEnterWater(ped, mayEnterWater) end
 --- TaskAimGunAtCoord
 ---
 --- @hash 0x6671F3EEC681BDA1
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params time number (int)
---- @params p5 boolean (BOOL)
---- @params p6 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param time number (int)
+--- @param p5 boolean
+--- @param p6 boolean
 --- @return void
 function TaskAimGunAtCoord(ped, x, y, z, time, p5, p6) end
 
@@ -1857,8 +1857,8 @@ function TaskAimGunAtCoord(ped, x, y, z, time, p5, p6) end
 --- ```
 ---
 --- @hash 0xF3B9A78A178572B1
---- @params ped table (Ped)
---- @params target table (Ped)
+--- @param ped table (Ped)
+--- @param target table (Ped)
 --- @return void
 function TaskArrestPed(ped, target) end
 
@@ -1866,13 +1866,13 @@ function TaskArrestPed(ped, target) end
 --- TaskGuardAssignedDefensiveArea
 ---
 --- @hash 0xD2A207EEBDF9889B
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 Any
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 any
 --- @return void
 function TaskGuardAssignedDefensiveArea(p0, p1, p2, p3, p4, p5, p6) end
 
@@ -1880,9 +1880,9 @@ function TaskGuardAssignedDefensiveArea(p0, p1, p2, p3, p4, p5, p6) end
 --- TaskLeaveAnyVehicle
 ---
 --- @hash 0x504D54DF3F6F2247
---- @params ped table (Ped)
---- @params p1 number (int)
---- @params p2 number (int)
+--- @param ped table (Ped)
+--- @param p1 number (int)
+--- @param p2 number (int)
 --- @return void
 function TaskLeaveAnyVehicle(ped, p1, p2) end
 
@@ -1890,10 +1890,10 @@ function TaskLeaveAnyVehicle(ped, p1, p2) end
 --- SetParachuteTaskTarget
 ---
 --- @hash 0xC313379AF0FCEDA7
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function SetParachuteTaskTarget(ped, x, y, z) end
 
@@ -1906,9 +1906,9 @@ function SetParachuteTaskTarget(ped, x, y, z) end
 --- ```
 ---
 --- @hash 0x93B93A37987F1F3D
---- @params ped table (Ped)
---- @params heading number (float)
---- @params timeout number (int)
+--- @param ped table (Ped)
+--- @param heading number (float)
+--- @param timeout number (int)
 --- @return void
 function TaskAchieveHeading(ped, heading, timeout) end
 
@@ -1921,11 +1921,11 @@ function TaskAchieveHeading(ped, heading, timeout) end
 --- ```
 ---
 --- @hash 0xAC83B1DB38D0ADA0
---- @params pilot table (Ped)
---- @params entityToFollow table (Entity)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param pilot table (Ped)
+--- @param entityToFollow table (Entity)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function TaskHeliChase(pilot, entityToFollow, x, y, z) end
 
@@ -1933,14 +1933,14 @@ function TaskHeliChase(pilot, entityToFollow, x, y, z) end
 --- TaskGotoEntityOffsetXy
 ---
 --- @hash 0x338E7EF52B6095A9
---- @params ped table (Ped)
---- @params entity table (Entity)
---- @params duration number (int)
---- @params xOffset number (float)
---- @params yOffset number (float)
---- @params zOffset number (float)
---- @params moveBlendRatio number (float)
---- @params useNavmesh boolean (BOOL)
+--- @param ped table (Ped)
+--- @param entity table (Entity)
+--- @param duration number (int)
+--- @param xOffset number (float)
+--- @param yOffset number (float)
+--- @param zOffset number (float)
+--- @param moveBlendRatio number (float)
+--- @param useNavmesh boolean
 --- @return void
 function TaskGotoEntityOffsetXy(ped, entity, duration, xOffset, yOffset, zOffset, moveBlendRatio, useNavmesh) end
 
@@ -1950,14 +1950,14 @@ function TaskGotoEntityOffsetXy(ped, entity, duration, xOffset, yOffset, zOffset
 --- ```
 ---
 --- @hash 0xBF19721FA34D32C0
---- @params pilot table (Ped)
---- @params plane number (Vehicle)
---- @params runwayStartX number (float)
---- @params runwayStartY number (float)
---- @params runwayStartZ number (float)
---- @params runwayEndX number (float)
---- @params runwayEndY number (float)
---- @params runwayEndZ number (float)
+--- @param pilot table (Ped)
+--- @param plane number (Vehicle)
+--- @param runwayStartX number (float)
+--- @param runwayStartY number (float)
+--- @param runwayStartZ number (float)
+--- @param runwayEndX number (float)
+--- @param runwayEndY number (float)
+--- @param runwayEndZ number (float)
 --- @return void
 function TaskPlaneLand(pilot, plane, runwayStartX, runwayStartY, runwayStartZ, runwayEndX, runwayEndY, runwayEndZ) end
 
@@ -1975,9 +1975,9 @@ function TaskPlaneLand(pilot, plane, runwayStartX, runwayStartY, runwayStartZ, r
 --- ```
 ---
 --- @hash 0xD3DBCE61A490BE02
---- @params ped table (Ped)
---- @params vehicle number (Vehicle)
---- @params flags number (int)
+--- @param ped table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param flags number (int)
 --- @return void
 function TaskLeaveVehicle(ped, vehicle, flags) end
 
@@ -1985,11 +1985,11 @@ function TaskLeaveVehicle(ped, vehicle, flags) end
 --- SetPedWaypointRouteOffset
 ---
 --- @hash 0xED98E10B0AFCE4B4
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @return Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @return any
 function SetPedWaypointRouteOffset(p0, p1, p2, p3) end
 
     
@@ -2003,18 +2003,18 @@ function SetPedWaypointRouteOffset(p0, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0x15C86013127CE63F
---- @params pedDriver table (Ped)
---- @params boat number (Vehicle)
---- @params p2 Any
---- @params p3 Any
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params p7 Any
---- @params maxSpeed number (float)
---- @params drivingStyle number (int)
---- @params p10 number (float)
---- @params p11 Any
+--- @param pedDriver table (Ped)
+--- @param boat number (Vehicle)
+--- @param p2 any
+--- @param p3 any
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p7 any
+--- @param maxSpeed number (float)
+--- @param drivingStyle number (int)
+--- @param p10 number (float)
+--- @param p11 any
 --- @return void
 function TaskBoatMission(pedDriver, boat, p2, p3, x, y, z, p7, maxSpeed, drivingStyle, p10, p11) end
 
@@ -2027,9 +2027,9 @@ function TaskBoatMission(pedDriver, boat, p2, p3, x, y, z, p7, maxSpeed, driving
 --- ```
 ---
 --- @hash 0x8FD89A6240813FD0
---- @params ped table (Ped)
---- @params p1 boolean (BOOL)
---- @params p2 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param p1 boolean
+--- @param p2 boolean
 --- @return void
 function SetPedCanPlayAmbientIdles(ped, p1, p2) end
 
@@ -2044,9 +2044,9 @@ function SetPedCanPlayAmbientIdles(ped, p1, p2) end
 --- ```
 ---
 --- @hash 0x595583281858626E
---- @params ped table (Ped)
---- @params speed number (float)
---- @params unknown number (int)
+--- @param ped table (Ped)
+--- @param speed number (float)
+--- @param unknown number (int)
 --- @return void
 function TaskFollowPointRoute(ped, speed, unknown) end
 
@@ -2054,11 +2054,11 @@ function TaskFollowPointRoute(ped, speed, unknown) end
 --- TaskSetSphereDefensiveArea
 ---
 --- @hash 0x933C06518B52A9A4
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
 --- @return void
 function TaskSetSphereDefensiveArea(p0, p1, p2, p3, p4) end
 
@@ -2073,12 +2073,12 @@ function TaskSetSphereDefensiveArea(p0, p1, p2, p3, p4) end
 --- ```
 ---
 --- @hash 0xCCD892192C6D2BB9
---- @params shootingPed table (Ped)
---- @params targetPed table (Ped)
---- @params targetVehicle number (Vehicle)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param shootingPed table (Ped)
+--- @param targetPed table (Ped)
+--- @param targetVehicle number (Vehicle)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function SetMountedWeaponTarget(shootingPed, targetPed, targetVehicle, x, y, z) end
 
@@ -2086,10 +2086,10 @@ function SetMountedWeaponTarget(shootingPed, targetPed, targetVehicle, x, y, z) 
 --- TaskAimGunScripted
 ---
 --- @hash 0x7A192BE16D373D00
---- @params ped table (Ped)
---- @params scriptTask table (Hash)
---- @params p2 boolean (BOOL)
---- @params p3 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param scriptTask table (Hash)
+--- @param p2 boolean
+--- @param p3 boolean
 --- @return void
 function TaskAimGunScripted(ped, scriptTask, p2, p3) end
 
@@ -2097,14 +2097,14 @@ function TaskAimGunScripted(ped, scriptTask, p2, p3) end
 --- TaskAimGunScriptedWithTarget
 ---
 --- @hash 0x8605AF0DE8B3A5AC
---- @params p0 Any
---- @params p1 Any
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 Any
---- @params p6 boolean (BOOL)
---- @params p7 boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 any
+--- @param p6 boolean
+--- @param p7 boolean
 --- @return void
 function TaskAimGunScriptedWithTarget(p0, p1, p2, p3, p4, p5, p6, p7) end
 
@@ -2119,8 +2119,8 @@ function TaskAimGunScriptedWithTarget(p0, p1, p2, p3, p4, p5, p6, p7) end
 --- ```
 ---
 --- @hash 0x62D2916F56B9CD2D
---- @params ped table (Ped)
---- @params unused boolean (BOOL)
+--- @param ped table (Ped)
+--- @param unused boolean
 --- @return void
 function TaskReloadWeapon(ped, unused) end
 
@@ -2145,11 +2145,11 @@ function TaskReloadWeapon(ped, unused) end
 --- ```
 ---
 --- @hash 0xBDA5DF49D080FE4E
---- @params ped table (Ped)
---- @params p1 string (char*)
---- @params p2 Any
---- @params p3 boolean (BOOL)
---- @params p4 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param p1 string (char*)
+--- @param p2 any
+--- @param p3 boolean
+--- @param p4 boolean
 --- @return void
 function TaskPatrol(ped, p1, p2, p3, p4) end
 
@@ -2161,11 +2161,11 @@ function TaskPatrol(ped, p1, p2, p3, p4) end
 --- ```
 ---
 --- @hash 0x69F4BE8C8CC4796C
---- @params ped table (Ped)
---- @params lookAt table (Entity)
---- @params duration number (int)
---- @params unknown1 number (int)
---- @params unknown2 number (int)
+--- @param ped table (Ped)
+--- @param lookAt table (Entity)
+--- @param duration number (int)
+--- @param unknown1 number (int)
+--- @param unknown2 number (int)
 --- @return void
 function TaskLookAtEntity(ped, lookAt, duration, unknown1, unknown2) end
 
@@ -2175,16 +2175,16 @@ function TaskLookAtEntity(ped, lookAt, duration, unknown1, unknown2) end
 --- ```
 ---
 --- @hash 0xF7F9DCCA89E7505B
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
---- @params p6 Any
---- @params p7 Any
---- @params p8 Any
---- @params p9 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
+--- @param p7 any
+--- @param p8 any
+--- @param p9 any
 --- @return void
 function TaskPlaneGotoPreciseVtol(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
@@ -2227,12 +2227,12 @@ function TaskPlaneGotoPreciseVtol(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 --- ```
 ---
 --- @hash 0x126EF75F1E17ABE5
---- @params ped table (Ped)
---- @params p1 table (Any*)
---- @params p2 table (Any*)
---- @params p3 table (Any*)
---- @params p4 number (float)
---- @params p5 number (float)
+--- @param ped table (Ped)
+--- @param p1 table (Any*)
+--- @param p2 table (Any*)
+--- @param p3 table (Any*)
+--- @param p4 number (float)
+--- @param p5 number (float)
 --- @return void
 function TaskScriptedAnimation(ped, p1, p2, p3, p4, p5) end
 
@@ -2240,9 +2240,9 @@ function TaskScriptedAnimation(ped, p1, p2, p3, p4, p5) end
 --- SetTaskVehicleChaseBehaviorFlag
 ---
 --- @hash 0xCC665AAC360D31E7
---- @params ped table (Ped)
---- @params flag number (int)
---- @params set boolean (BOOL)
+--- @param ped table (Ped)
+--- @param flag number (int)
+--- @param set boolean
 --- @return void
 function SetTaskVehicleChaseBehaviorFlag(ped, flag, set) end
 
@@ -2254,16 +2254,16 @@ function SetTaskVehicleChaseBehaviorFlag(ped, flag, set) end
 --- ```
 ---
 --- @hash 0x97465886D35210E9
---- @params ped table (Ped)
---- @params entityToWalkTo table (Entity)
---- @params entityToAimAt table (Entity)
---- @params speed number (float)
---- @params shootatEntity boolean (BOOL)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 boolean (BOOL)
---- @params p8 boolean (BOOL)
---- @params firingPattern table (Hash)
+--- @param ped table (Ped)
+--- @param entityToWalkTo table (Entity)
+--- @param entityToAimAt table (Entity)
+--- @param speed number (float)
+--- @param shootatEntity boolean
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 boolean
+--- @param p8 boolean
+--- @param firingPattern table (Hash)
 --- @return void
 function TaskGoToEntityWhileAimingAtEntity(ped, entityToWalkTo, entityToAimAt, speed, shootatEntity, p5, p6, p7, p8, firingPattern) end
 
@@ -2278,16 +2278,16 @@ function TaskGoToEntityWhileAimingAtEntity(ped, entityToWalkTo, entityToAimAt, s
 --- ```
 ---
 --- @hash 0x2F8AF0E82773A171
---- @params driverPed table (Ped)
---- @params targetPed table (Ped)
---- @params targetVehicle number (Vehicle)
---- @params targetX number (float)
---- @params targetY number (float)
---- @params targetZ number (float)
---- @params distanceToShoot number (float)
---- @params pedAccuracy number (int)
---- @params p8 boolean (BOOL)
---- @params firingPattern table (Hash)
+--- @param driverPed table (Ped)
+--- @param targetPed table (Ped)
+--- @param targetVehicle number (Vehicle)
+--- @param targetX number (float)
+--- @param targetY number (float)
+--- @param targetZ number (float)
+--- @param distanceToShoot number (float)
+--- @param pedAccuracy number (int)
+--- @param p8 boolean
+--- @param firingPattern table (Hash)
 --- @return void
 function TaskDriveBy(driverPed, targetPed, targetVehicle, targetX, targetY, targetZ, distanceToShoot, pedAccuracy, p8, firingPattern) end
 
@@ -2297,15 +2297,15 @@ function TaskDriveBy(driverPed, targetPed, targetVehicle, targetX, targetY, targ
 --- ```
 ---
 --- @hash 0x15D3A79D4E44B913
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params speed number (float)
---- @params timeout number (int)
---- @params stoppingRange number (float)
---- @params persistFollowing boolean (BOOL)
---- @params unk number (float)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param timeout number (int)
+--- @param stoppingRange number (float)
+--- @param persistFollowing boolean
+--- @param unk number (float)
 --- @return void
 function TaskFollowNavMeshToCoord(ped, x, y, z, speed, timeout, stoppingRange, persistFollowing, unk) end
 
@@ -2315,12 +2315,12 @@ function TaskFollowNavMeshToCoord(ped, x, y, z, speed, timeout, stoppingRange, p
 --- ```
 ---
 --- @hash 0xB385523325077210
---- @params pilot table (Ped)
---- @params heli1 number (Vehicle)
---- @params heli2 number (Vehicle)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
+--- @param pilot table (Ped)
+--- @param heli1 number (Vehicle)
+--- @param heli2 number (Vehicle)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
 --- @return void
 function TaskHeliEscortHeli(pilot, heli1, heli2, p3, p4, p5) end
 
@@ -2328,10 +2328,10 @@ function TaskHeliEscortHeli(pilot, heli1, heli2, p3, p4, p5) end
 --- TaskCombatHatedTargetsAroundPedTimed
 ---
 --- @hash 0x2BBA30B854534A0C
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 Any
---- @params p3 Any
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function TaskCombatHatedTargetsAroundPedTimed(p0, p1, p2, p3) end
 
@@ -2339,8 +2339,8 @@ function TaskCombatHatedTargetsAroundPedTimed(p0, p1, p2, p3) end
 --- TaskPerformSequenceLocally
 ---
 --- @hash 0x8C33220C8D78CA0D
---- @params ped table (Ped)
---- @params taskSequenceId number (int)
+--- @param ped table (Ped)
+--- @param taskSequenceId number (int)
 --- @return void
 function TaskPerformSequenceLocally(ped, taskSequenceId) end
 
@@ -2348,13 +2348,13 @@ function TaskPerformSequenceLocally(ped, taskSequenceId) end
 --- TaskSeekCoverToCoverPoint
 ---
 --- @hash 0xD43D95C7A869447F
---- @params p0 Any
---- @params p1 Any
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 Any
---- @params p6 boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 any
+--- @param p6 boolean
 --- @return void
 function TaskSeekCoverToCoverPoint(p0, p1, p2, p3, p4, p5, p6) end
 
@@ -2362,8 +2362,8 @@ function TaskSeekCoverToCoverPoint(p0, p1, p2, p3, p4, p5, p6) end
 --- TaskClimbLadder
 ---
 --- @hash 0xB6C987F9285A3814
---- @params ped table (Ped)
---- @params p1 number (int)
+--- @param ped table (Ped)
+--- @param p1 number (int)
 --- @return void
 function TaskClimbLadder(ped, p1) end
 
@@ -2374,15 +2374,15 @@ function TaskClimbLadder(ped, p1) end
 --- ```
 ---
 --- @hash 0x5BC448CB78FA3E88
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params speed number (float)
---- @params p5 Any
---- @params p6 boolean (BOOL)
---- @params walkingStyle number (int)
---- @params p8 number (float)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param p5 any
+--- @param p6 boolean
+--- @param walkingStyle number (int)
+--- @param p8 number (float)
 --- @return void
 function TaskGoToCoordAnyMeans(ped, x, y, z, speed, p5, p6, walkingStyle, p8) end
 
@@ -2392,11 +2392,11 @@ function TaskGoToCoordAnyMeans(ped, x, y, z, speed, p5, p6, walkingStyle, p8) en
 --- ```
 ---
 --- @hash 0x1DDA930A0AC38571
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params duration number (int)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param duration number (int)
 --- @return void
 function TaskTurnPedToFaceCoord(ped, x, y, z, duration) end
 
@@ -2404,11 +2404,11 @@ function TaskTurnPedToFaceCoord(ped, x, y, z, duration) end
 --- TaskPlaneChase
 ---
 --- @hash 0x2D2386F273FF7A25
---- @params pilot table (Ped)
---- @params entityToFollow table (Entity)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param pilot table (Ped)
+--- @param entityToFollow table (Entity)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function TaskPlaneChase(pilot, entityToFollow, x, y, z) end
 
@@ -2428,15 +2428,15 @@ function TaskPlaneChase(pilot, entityToFollow, x, y, z) end
 --- ```
 ---
 --- @hash 0xFA4EFC79F69D4F07
---- @params ped table (Ped)
---- @params scenarioName string (char*)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params heading number (float)
---- @params duration number (int)
---- @params sittingScenario boolean (BOOL)
---- @params teleport boolean (BOOL)
+--- @param ped table (Ped)
+--- @param scenarioName string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
+--- @param duration number (int)
+--- @param sittingScenario boolean
+--- @param teleport boolean
 --- @return void
 function TaskStartScenarioAtPosition(ped, scenarioName, x, y, z, heading, duration, sittingScenario, teleport) end
 
@@ -2454,8 +2454,8 @@ function TaskStartScenarioAtPosition(ped, scenarioName, x, y, z, heading, durati
 --- ```
 ---
 --- @hash 0x0AE4086104E067B1
---- @params ped table (Ped)
---- @params unused boolean (BOOL)
+--- @param ped table (Ped)
+--- @param unused boolean
 --- @return void
 function TaskJump(ped, unused) end
 
@@ -2471,8 +2471,8 @@ function TaskJump(ped, unused) end
 --- ```
 ---
 --- @hash 0xD2F1C53C97EE81AB
---- @params ped table (Ped)
---- @params p1 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param p1 boolean
 --- @return void
 function TaskParachute(ped, p1) end
 
@@ -2482,13 +2482,13 @@ function TaskParachute(ped, p1) end
 --- ```
 ---
 --- @hash 0x6FA46612594F7973
---- @params entity table (Entity)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params duration number (float)
---- @params p5 Any
---- @params p6 Any
+--- @param entity table (Entity)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param duration number (float)
+--- @param p5 any
+--- @param p6 any
 --- @return void
 function TaskLookAtCoord(entity, x, y, z, duration, p5, p6) end
 
@@ -2509,10 +2509,10 @@ function TaskLookAtCoord(entity, x, y, z, duration, p5, p6) end
 --- ```
 ---
 --- @hash 0x7285951DBF6B5A51
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function TaskThrowProjectile(ped, x, y, z) end
 
@@ -2520,18 +2520,18 @@ function TaskThrowProjectile(ped, x, y, z) end
 --- TaskFollowNavMeshToCoordAdvanced
 ---
 --- @hash 0x17F58B88D085DBAC
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params speed number (float)
---- @params timeout number (int)
---- @params unkFloat number (float)
---- @params unkInt number (int)
---- @params unkX number (float)
---- @params unkY number (float)
---- @params unkZ number (float)
---- @params unk_40000f number (float)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param timeout number (int)
+--- @param unkFloat number (float)
+--- @param unkInt number (int)
+--- @param unkX number (float)
+--- @param unkY number (float)
+--- @param unkZ number (float)
+--- @param unk_40000f number (float)
 --- @return void
 function TaskFollowNavMeshToCoordAdvanced(ped, x, y, z, speed, timeout, unkFloat, unkInt, unkX, unkY, unkZ, unk_40000f) end
 
@@ -2539,13 +2539,13 @@ function TaskFollowNavMeshToCoordAdvanced(ped, x, y, z, speed, timeout, unkFloat
 --- TaskGotoEntityOffset
 ---
 --- @hash 0xE39B4FF4FDEBDE27
---- @params ped table (Ped)
---- @params p1 Any
---- @params p2 Any
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params duration number (int)
+--- @param ped table (Ped)
+--- @param p1 any
+--- @param p2 any
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param duration number (int)
 --- @return void
 function TaskGotoEntityOffset(ped, p1, p2, x, y, z, duration) end
 
@@ -2553,8 +2553,8 @@ function TaskGotoEntityOffset(ped, p1, p2, x, y, z, duration) end
 --- TaskUseMobilePhoneTimed
 ---
 --- @hash 0x5EE02954A14C69DB
---- @params ped table (Ped)
---- @params duration number (int)
+--- @param ped table (Ped)
+--- @param duration number (int)
 --- @return void
 function TaskUseMobilePhoneTimed(ped, duration) end
 
@@ -2562,10 +2562,10 @@ function TaskUseMobilePhoneTimed(ped, duration) end
 --- TaskSeekCoverFromPed
 ---
 --- @hash 0x84D32B3BEC531324
---- @params ped table (Ped)
---- @params target table (Ped)
---- @params duration number (int)
---- @params p3 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param target table (Ped)
+--- @param duration number (int)
+--- @param p3 boolean
 --- @return void
 function TaskSeekCoverFromPed(ped, target, duration, p3) end
 
@@ -2575,7 +2575,7 @@ function TaskSeekCoverFromPed(ped, target, duration, p3) end
 --- ```
 ---
 --- @hash 0x601736CFE536B0A0
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return void
 function TaskSkyDive(ped) end
 
@@ -2599,11 +2599,11 @@ function TaskSkyDive(ped) end
 --- ```
 ---
 --- @hash 0xAA5DC05579D60BD9
---- @params killer table (Ped)
---- @params target table (Ped)
---- @params actionType table (Hash)
---- @params p3 number (float)
---- @params p4 Any
+--- @param killer table (Ped)
+--- @param target table (Ped)
+--- @param actionType table (Hash)
+--- @param p3 number (float)
+--- @param p4 any
 --- @return void
 function TaskStealthKill(killer, target, actionType, p3, p4) end
 
@@ -2611,18 +2611,18 @@ function TaskStealthKill(killer, target, actionType, p3, p4) end
 --- TaskGoToEntityWhileAimingAtCoord
 ---
 --- @hash 0x04701832B739DCE5
---- @params p0 Any
---- @params p1 Any
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 boolean (BOOL)
---- @params p7 number (float)
---- @params p8 number (float)
---- @params p9 boolean (BOOL)
---- @params p10 boolean (BOOL)
---- @params p11 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 boolean
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @param p9 boolean
+--- @param p10 boolean
+--- @param p11 any
 --- @return void
 function TaskGoToEntityWhileAimingAtCoord(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) end
 
@@ -2632,19 +2632,19 @@ function TaskGoToEntityWhileAimingAtCoord(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9
 --- ```
 ---
 --- @hash 0xB8ECD61F531A7B02
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params speed number (float)
---- @params p5 Any
---- @params p6 boolean (BOOL)
---- @params walkingStyle number (int)
---- @params p8 number (float)
---- @params p9 Any
---- @params p10 Any
---- @params p11 Any
---- @params p12 Any
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param p5 any
+--- @param p6 boolean
+--- @param walkingStyle number (int)
+--- @param p8 number (float)
+--- @param p9 any
+--- @param p10 any
+--- @param p11 any
+--- @param p12 any
 --- @return void
 function TaskGoToCoordAnyMeansExtraParamsWithCruiseSpeed(ped, x, y, z, speed, p5, p6, walkingStyle, p8, p9, p10, p11, p12) end
 
@@ -2655,10 +2655,10 @@ function TaskGoToCoordAnyMeansExtraParamsWithCruiseSpeed(ped, x, y, z, speed, p5
 --- ```
 ---
 --- @hash 0x4A58A47A72E3FCB4
---- @params p0 table (Ped)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 boolean (BOOL)
+--- @param p0 table (Ped)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 boolean
 --- @return void
 function TaskGuardCurrentPosition(p0, p1, p2, p3) end
 
@@ -2666,13 +2666,13 @@ function TaskGuardCurrentPosition(p0, p1, p2, p3) end
 --- TaskGoStraightToCoordRelativeToEntity
 ---
 --- @hash 0x61E360B7E040D12E
---- @params entity1 table (Entity)
---- @params entity2 table (Entity)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 Any
+--- @param entity1 table (Entity)
+--- @param entity2 table (Entity)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 any
 --- @return void
 function TaskGoStraightToCoordRelativeToEntity(entity1, entity2, p2, p3, p4, p5, p6) end
 
@@ -2680,15 +2680,15 @@ function TaskGoStraightToCoordRelativeToEntity(entity1, entity2, p2, p3, p4, p5,
 --- TaskVehicleMission
 ---
 --- @hash 0x659427E0EF36BCDE
---- @params p0 number (int)
---- @params p1 number (int)
---- @params veh number (Vehicle)
---- @params p3 Any
---- @params p4 number (float)
---- @params p5 Any
---- @params p6 number (float)
---- @params p7 number (float)
---- @params p8 boolean (BOOL)
+--- @param p0 number (int)
+--- @param p1 number (int)
+--- @param veh number (Vehicle)
+--- @param p3 any
+--- @param p4 number (float)
+--- @param p5 any
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param p8 boolean
 --- @return void
 function TaskVehicleMission(p0, p1, veh, p3, p4, p5, p6, p7, p8) end
 
@@ -2730,21 +2730,21 @@ function TaskVehicleMission(p0, p1, veh, p3, p4, p5, p6, p7, p8) end
 --- ```
 ---
 --- @hash 0xDAD029E187A2BEB4
---- @params pilot table (Ped)
---- @params aircraft number (Vehicle)
---- @params targetVehicle number (Vehicle)
---- @params targetPed table (Ped)
---- @params destinationX number (float)
---- @params destinationY number (float)
---- @params destinationZ number (float)
---- @params missionFlag number (int)
---- @params maxSpeed number (float)
---- @params landingRadius number (float)
---- @params targetHeading number (float)
---- @params unk1 number (int)
---- @params unk2 number (int)
---- @params unk3 table (Hash)
---- @params landingFlags number (int)
+--- @param pilot table (Ped)
+--- @param aircraft number (Vehicle)
+--- @param targetVehicle number (Vehicle)
+--- @param targetPed table (Ped)
+--- @param destinationX number (float)
+--- @param destinationY number (float)
+--- @param destinationZ number (float)
+--- @param missionFlag number (int)
+--- @param maxSpeed number (float)
+--- @param landingRadius number (float)
+--- @param targetHeading number (float)
+--- @param unk1 number (int)
+--- @param unk2 number (int)
+--- @param unk3 table (Hash)
+--- @param landingFlags number (int)
 --- @return void
 function TaskHeliMission(pilot, aircraft, targetVehicle, targetPed, destinationX, destinationY, destinationZ, missionFlag, maxSpeed, landingRadius, targetHeading, unk1, unk2, unk3, landingFlags) end
 
@@ -2752,7 +2752,7 @@ function TaskHeliMission(pilot, aircraft, targetVehicle, targetPed, destinationX
 --- VehicleWaypointPlaybackPause
 ---
 --- @hash 0x8A4E6AC373666BC5
---- @params vehicle number (Vehicle)
+--- @param vehicle number (Vehicle)
 --- @return void
 function VehicleWaypointPlaybackPause(vehicle) end
 
@@ -2760,12 +2760,12 @@ function VehicleWaypointPlaybackPause(vehicle) end
 --- TaskShootAtCoord
 ---
 --- @hash 0x46A6CC01E0826106
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params duration number (int)
---- @params firingPattern table (Hash)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param duration number (int)
+--- @param firingPattern table (Hash)
 --- @return void
 function TaskShootAtCoord(ped, x, y, z, duration, firingPattern) end
 
@@ -2775,9 +2775,9 @@ function TaskShootAtCoord(ped, x, y, z, duration, firingPattern) end
 --- ```
 ---
 --- @hash 0x5ABA3986D90D8A3B
---- @params ped table (Ped)
---- @params taskSequenceId number (int)
---- @return Any
+--- @param ped table (Ped)
+--- @param taskSequenceId number (int)
+--- @return any
 function TaskPerformSequence(ped, taskSequenceId) end
 
     
@@ -2787,12 +2787,12 @@ function TaskPerformSequence(ped, taskSequenceId) end
 --- ```
 ---
 --- @hash 0x2D537BA194896636
---- @params ped table (Ped)
---- @params task string (char*)
---- @params multiplier number (float)
---- @params p3 boolean (BOOL)
---- @params animDict string (char*)
---- @params flags number (int)
+--- @param ped table (Ped)
+--- @param task string (char*)
+--- @param multiplier number (float)
+--- @param p3 boolean
+--- @param animDict string (char*)
+--- @param flags number (int)
 --- @return void
 function TaskMoveNetworkByName(ped, task, multiplier, p3, animDict, flags) end
 
@@ -2811,8 +2811,8 @@ function TaskMoveNetworkByName(ped, task, multiplier, p3, animDict, flags) end
 --- ```
 ---
 --- @hash 0x09693B0312F91649
---- @params ped table (Ped)
---- @params unused number (int)
+--- @param ped table (Ped)
+--- @param unused number (int)
 --- @return void
 function TaskRappelFromHeli(ped, unused) end
 
@@ -2820,21 +2820,21 @@ function TaskRappelFromHeli(ped, unused) end
 --- Will make the ped move to a coordinate while aiming (and optionally shooting) at given coordinates.
 ---
 --- @hash 0x11315AB3385B8AC0
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params aimAtX number (float)
---- @params aimAtY number (float)
---- @params aimAtZ number (float)
---- @params moveSpeed number (float)
---- @params shoot boolean (BOOL)
---- @params p9 number (float)
---- @params p10 number (float)
---- @params p11 boolean (BOOL)
---- @params flags Any
---- @params p13 boolean (BOOL)
---- @params firingPattern table (Hash)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param aimAtX number (float)
+--- @param aimAtY number (float)
+--- @param aimAtZ number (float)
+--- @param moveSpeed number (float)
+--- @param shoot boolean
+--- @param p9 number (float)
+--- @param p10 number (float)
+--- @param p11 boolean
+--- @param flags any
+--- @param p13 boolean
+--- @param firingPattern table (Hash)
 --- @return void
 function TaskGoToCoordWhileAimingAtCoord(ped, x, y, z, aimAtX, aimAtY, aimAtZ, moveSpeed, shoot, p9, p10, p11, flags, p13, firingPattern) end
 
@@ -2844,8 +2844,8 @@ function TaskGoToCoordWhileAimingAtCoord(ped, x, y, z, aimAtX, aimAtY, aimAtZ, m
 --- ```
 ---
 --- @hash 0x919BE13EED931959
---- @params ped table (Ped)
---- @params time number (int)
+--- @param ped table (Ped)
+--- @param time number (int)
 --- @return void
 function TaskStandStill(ped, time) end
 
@@ -2901,17 +2901,17 @@ function TaskStandStill(ped, time) end
 --- ```
 ---
 --- @hash 0xEA47FE3719165B94
---- @params ped table (Ped)
---- @params animDictionary string (char*)
---- @params animationName string (char*)
---- @params blendInSpeed number (float)
---- @params blendOutSpeed number (float)
---- @params duration number (int)
---- @params flag number (int)
---- @params playbackRate number (float)
---- @params lockX boolean (BOOL)
---- @params lockY boolean (BOOL)
---- @params lockZ boolean (BOOL)
+--- @param ped table (Ped)
+--- @param animDictionary string (char*)
+--- @param animationName string (char*)
+--- @param blendInSpeed number (float)
+--- @param blendOutSpeed number (float)
+--- @param duration number (int)
+--- @param flag number (int)
+--- @param playbackRate number (float)
+--- @param lockX boolean
+--- @param lockY boolean
+--- @param lockZ boolean
 --- @return void
 function TaskPlayAnim(ped, animDictionary, animationName, blendInSpeed, blendOutSpeed, duration, flag, playbackRate, lockX, lockY, lockZ) end
 
@@ -2925,15 +2925,15 @@ function TaskPlayAnim(ped, animDictionary, animationName, blendInSpeed, blendOut
 --- ```
 ---
 --- @hash 0x39246A6958EF072C
---- @params ped table (Ped)
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params p7 Any
---- @params p8 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param p7 any
+--- @param p8 boolean
 --- @return void
 function TaskSeekCoverToCoords(ped, x1, y1, z1, x2, y2, z2, p7, p8) end
 
@@ -2951,7 +2951,7 @@ function TaskFlushRoute() end
 --- ```
 ---
 --- @hash 0x3FA00D4F4641BFAE
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return void
 function TaskStopPhoneGestureAnimation(ped) end
 
@@ -2961,12 +2961,12 @@ function TaskStopPhoneGestureAnimation(ped) end
 --- ```
 ---
 --- @hash 0xAE032F8BBA959E90
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params heading number (float)
---- @params scenarioName string (char*)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
+--- @param scenarioName string (char*)
 --- @return void
 function TaskStandGuard(ped, x, y, z, heading, scenarioName) end
 
@@ -2983,8 +2983,8 @@ function TaskStandGuard(ped, x, y, z, heading, scenarioName) end
 --- ```
 ---
 --- @hash 0xBD2A8EC3AF4DE7DB
---- @params ped table (Ped)
---- @params p1 number (int)
+--- @param ped table (Ped)
+--- @param p1 number (int)
 --- @return void
 function TaskUseMobilePhone(ped, p1) end
 
@@ -2999,10 +2999,10 @@ function TaskUseMobilePhone(ped, p1) end
 --- ```
 ---
 --- @hash 0xA9DA48FAB8A76C12
---- @params ped table (Ped)
---- @params target table (Entity)
---- @params distanceToStopAt number (float)
---- @params StartAimingDist number (float)
+--- @param ped table (Ped)
+--- @param target table (Entity)
+--- @param distanceToStopAt number (float)
+--- @param StartAimingDist number (float)
 --- @return void
 function TaskGotoEntityAiming(ped, target, distanceToStopAt, StartAimingDist) end
 
@@ -3016,12 +3016,12 @@ function TaskGotoEntityAiming(ped, target, distanceToStopAt, StartAimingDist) en
 --- ```
 ---
 --- @hash 0xFC545A9F0626E3B6
---- @params driver table (Ped)
---- @params vehicle number (Vehicle)
---- @params targetEntity table (Entity)
---- @params speed number (float)
---- @params drivingStyle number (int)
---- @params minDistance number (int)
+--- @param driver table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param targetEntity table (Entity)
+--- @param speed number (float)
+--- @param drivingStyle number (int)
+--- @param minDistance number (int)
 --- @return void
 function TaskVehicleFollow(driver, vehicle, targetEntity, speed, drivingStyle, minDistance) end
 
@@ -3029,8 +3029,8 @@ function TaskVehicleFollow(driver, vehicle, targetEntity, speed, drivingStyle, m
 --- TaskSwapWeapon
 ---
 --- @hash 0xA21C51255B205245
---- @params ped table (Ped)
---- @params p1 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param p1 boolean
 --- @return void
 function TaskSwapWeapon(ped, p1) end
 
@@ -3038,11 +3038,11 @@ function TaskSwapWeapon(ped, p1) end
 --- TaskFollowWaypointRecording
 ---
 --- @hash 0x0759591819534F7B
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
 --- @return void
 function TaskFollowWaypointRecording(p0, p1, p2, p3, p4) end
 
@@ -3051,8 +3051,8 @@ function TaskFollowWaypointRecording(p0, p1, p2, p3, p4) end
 --- This is useful if you want to add a delay between tasks when using a sequence task.
 ---
 --- @hash 0xE73A266DB0CA9042
---- @params ped table (Ped)
---- @params ms number (int)
+--- @param ped table (Ped)
+--- @param ms number (int)
 --- @return void
 function TaskPause(ped, ms) end
 
@@ -3069,9 +3069,9 @@ function TaskPause(ped, ms) end
 --- ```
 ---
 --- @hash 0x9A7D091411C5F684
---- @params ped table (Ped)
---- @params vehicle number (Vehicle)
---- @params seat number (int)
+--- @param ped table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param seat number (int)
 --- @return void
 function TaskWarpPedIntoVehicle(ped, vehicle, seat) end
 
@@ -3079,10 +3079,10 @@ function TaskWarpPedIntoVehicle(ped, vehicle, seat) end
 --- TaskVehicleDriveWander
 ---
 --- @hash 0x480142959D337D00
---- @params ped table (Ped)
---- @params vehicle number (Vehicle)
---- @params speed number (float)
---- @params drivingStyle number (int)
+--- @param ped table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param speed number (float)
+--- @param drivingStyle number (int)
 --- @return void
 function TaskVehicleDriveWander(ped, vehicle, speed, drivingStyle) end
 
@@ -3093,19 +3093,19 @@ function TaskVehicleDriveWander(ped, vehicle, speed, drivingStyle) end
 --- ```
 ---
 --- @hash 0xD5B35BEA41919ACB
---- @params ped table (Ped)
---- @params p1 string (char*)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 number (float)
---- @params p8 Any
---- @params p9 number (float)
---- @params p10 boolean (BOOL)
---- @params animDict string (char*)
---- @params flags number (int)
+--- @param ped table (Ped)
+--- @param p1 string (char*)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param p8 any
+--- @param p9 number (float)
+--- @param p10 boolean
+--- @param animDict string (char*)
+--- @param flags number (int)
 --- @return void
 function TaskMoveNetworkAdvancedByName(ped, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, animDict, flags) end
 
@@ -3116,12 +3116,12 @@ function TaskMoveNetworkAdvancedByName(ped, p1, p2, p3, p4, p5, p6, p7, p8, p9, 
 --- ```
 ---
 --- @hash 0x277F471BA9DB000B
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params distance number (float)
---- @params duration number (int)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param distance number (float)
+--- @param duration number (int)
 --- @return void
 function TaskUseNearestScenarioToCoord(ped, x, y, z, distance, duration) end
 
@@ -3131,8 +3131,8 @@ function TaskUseNearestScenarioToCoord(ped, x, y, z, distance, duration) end
 --- ```
 ---
 --- @hash 0xEB8517DDA73720DA
---- @params ped table (Ped)
---- @params p1 table (Hash)
+--- @param ped table (Ped)
+--- @param p1 table (Hash)
 --- @return void
 function TaskSetDecisionMaker(ped, p1) end
 
@@ -3140,8 +3140,8 @@ function TaskSetDecisionMaker(ped, p1) end
 --- UpdateTaskSweepAimEntity
 ---
 --- @hash 0xE4973DBDBE6E44B3
---- @params ped table (Ped)
---- @params entity table (Entity)
+--- @param ped table (Ped)
+--- @param entity table (Entity)
 --- @return void
 function UpdateTaskSweepAimEntity(ped, entity) end
 
@@ -3149,13 +3149,13 @@ function UpdateTaskSweepAimEntity(ped, entity) end
 --- TaskPedSlideToCoordHdgRate
 ---
 --- @hash 0x5A4A6A6D3DC64F52
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params heading number (float)
---- @params p5 number (float)
---- @params p6 number (float)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
 --- @return void
 function TaskPedSlideToCoordHdgRate(ped, x, y, z, heading, p5, p6) end
 
@@ -3163,11 +3163,11 @@ function TaskPedSlideToCoordHdgRate(ped, x, y, z, heading, p5, p6) end
 --- TaskOpenVehicleDoor
 ---
 --- @hash 0x965791A9A488A062
---- @params ped table (Ped)
---- @params vehicle number (Vehicle)
---- @params timeOut number (int)
---- @params doorIndex number (int)
---- @params speed number (float)
+--- @param ped table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param timeOut number (int)
+--- @param doorIndex number (int)
+--- @param speed number (float)
 --- @return void
 function TaskOpenVehicleDoor(ped, vehicle, timeOut, doorIndex, speed) end
 
@@ -3175,10 +3175,10 @@ function TaskOpenVehicleDoor(ped, vehicle, timeOut, doorIndex, speed) end
 --- TaskVehicleAimAtCoord
 ---
 --- @hash 0x447C1E9EF844BC0F
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function TaskVehicleAimAtCoord(ped, x, y, z) end
 
@@ -3193,8 +3193,8 @@ function TaskVehicleAimAtCoord(ped, x, y, z) end
 --- ```
 ---
 --- @hash 0x7AA80209BDA643EB
---- @params ped table (Ped)
---- @params vehicle number (Vehicle)
+--- @param ped table (Ped)
+--- @param vehicle number (Vehicle)
 --- @return void
 function TaskShuffleToNextVehicleSeat(ped, vehicle) end
 
@@ -3210,10 +3210,10 @@ function TaskShuffleToNextVehicleSeat(ped, vehicle) end
 --- ```
 ---
 --- @hash 0x08DA95E8298AE772
---- @params entity table (Entity)
---- @params target table (Entity)
---- @params duration number (int)
---- @params firingPattern table (Hash)
+--- @param entity table (Entity)
+--- @param target table (Entity)
+--- @param duration number (int)
+--- @param firingPattern table (Hash)
 --- @return void
 function TaskShootAtEntity(entity, target, duration, firingPattern) end
 
@@ -3223,22 +3223,22 @@ function TaskShootAtEntity(entity, target, duration, firingPattern) end
 --- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
 --- @hash 0x83CDB10EA29B370B
---- @params ped table (Ped)
---- @params animDict string (char*)
---- @params animName string (char*)
---- @params posX number (float)
---- @params posY number (float)
---- @params posZ number (float)
---- @params rotX number (float)
---- @params rotY number (float)
---- @params rotZ number (float)
---- @params animEnterSpeed number (float)
---- @params animExitSpeed number (float)
---- @params duration number (int)
---- @params flag Any
---- @params animTime number (float)
---- @params p14 Any
---- @params p15 Any
+--- @param ped table (Ped)
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param animEnterSpeed number (float)
+--- @param animExitSpeed number (float)
+--- @param duration number (int)
+--- @param flag any
+--- @param animTime number (float)
+--- @param p14 any
+--- @param p15 any
 --- @return void
 function TaskPlayAnimAdvanced(ped, animDict, animName, posX, posY, posZ, rotX, rotY, rotZ, animEnterSpeed, animExitSpeed, duration, flag, animTime, p14, p15) end
 
@@ -3248,9 +3248,9 @@ function TaskPlayAnimAdvanced(ped, animDict, animName, posX, posY, posZ, rotX, r
 --- ```
 ---
 --- @hash 0x5AD23D40115353AC
---- @params ped table (Ped)
---- @params entity table (Entity)
---- @params duration number (int)
+--- @param ped table (Ped)
+--- @param entity table (Entity)
+--- @param duration number (int)
 --- @return void
 function TaskTurnPedToFaceEntity(ped, entity, duration) end
 
@@ -3258,17 +3258,17 @@ function TaskTurnPedToFaceEntity(ped, entity, duration) end
 --- TaskPutPedDirectlyIntoCover
 ---
 --- @hash 0x4172393E6BE1FECE
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params timeout Any
---- @params p5 boolean (BOOL)
---- @params p6 number (float)
---- @params p7 boolean (BOOL)
---- @params p8 boolean (BOOL)
---- @params p9 Any
---- @params p10 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param timeout any
+--- @param p5 boolean
+--- @param p6 number (float)
+--- @param p7 boolean
+--- @param p8 boolean
+--- @param p9 any
+--- @param p10 boolean
 --- @return void
 function TaskPutPedDirectlyIntoCover(ped, x, y, z, timeout, p5, p6, p7, p8, p9, p10) end
 
@@ -3288,15 +3288,15 @@ function TaskPutPedDirectlyIntoCover(ped, x, y, z, timeout, p5, p6, p7, p8, p9, 
 --- ```
 ---
 --- @hash 0x0FA6E4B75F302400
---- @params ped table (Ped)
---- @params vehicle number (Vehicle)
---- @params targetVehicle number (Vehicle)
---- @params mode number (int)
---- @params speed number (float)
---- @params drivingStyle number (int)
---- @params minDistance number (float)
---- @params p7 number (int)
---- @params noRoadsDistance number (float)
+--- @param ped table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param targetVehicle number (Vehicle)
+--- @param mode number (int)
+--- @param speed number (float)
+--- @param drivingStyle number (int)
+--- @param minDistance number (float)
+--- @param p7 number (int)
+--- @param noRoadsDistance number (float)
 --- @return void
 function TaskVehicleEscort(ped, vehicle, targetVehicle, mode, speed, drivingStyle, minDistance, p7, noRoadsDistance) end
 
@@ -3331,10 +3331,10 @@ function TaskVehicleEscort(ped, vehicle, targetVehicle, mode, speed, drivingStyl
 --- ```
 ---
 --- @hash 0x142A02425FF02BD9
---- @params ped table (Ped)
---- @params scenarioName string (char*)
---- @params unkDelay number (int)
---- @params playEnterAnim boolean (BOOL)
+--- @param ped table (Ped)
+--- @param scenarioName string (char*)
+--- @param unkDelay number (int)
+--- @param playEnterAnim boolean
 --- @return void
 function TaskStartScenarioInPlace(ped, scenarioName, unkDelay, playEnterAnim) end
 
@@ -3342,7 +3342,7 @@ function TaskStartScenarioInPlace(ped, scenarioName, unkDelay, playEnterAnim) en
 --- VehicleWaypointPlaybackUseDefaultSpeed
 ---
 --- @hash 0x5CEB25A7D2848963
---- @params vehicle number (Vehicle)
+--- @param vehicle number (Vehicle)
 --- @return void
 function VehicleWaypointPlaybackUseDefaultSpeed(vehicle) end
 
@@ -3361,14 +3361,14 @@ function VehicleWaypointPlaybackUseDefaultSpeed(vehicle) end
 --- ```
 ---
 --- @hash 0x195AEEB13CEFE2EE
---- @params ped table (Ped)
---- @params vehicle number (Vehicle)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params speed number (float)
---- @params behaviorFlag number (int)
---- @params stoppingRange number (float)
+--- @param ped table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param behaviorFlag number (int)
+--- @param stoppingRange number (float)
 --- @return void
 function TaskVehicleGotoNavmesh(ped, vehicle, x, y, z, speed, behaviorFlag, stoppingRange) end
 
@@ -3380,11 +3380,11 @@ function TaskVehicleGotoNavmesh(ped, vehicle, x, y, z, speed, behaviorFlag, stop
 --- ```
 ---
 --- @hash 0xF2EAB31979A7F910
---- @params ped table (Ped)
---- @params duration number (int)
---- @params facingPed table (Ped)
---- @params p3 number (int)
---- @params p4 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param duration number (int)
+--- @param facingPed table (Ped)
+--- @param p3 number (int)
+--- @param p4 boolean
 --- @return void
 function TaskHandsUp(ped, duration, facingPed, p3, p4) end
 
@@ -3396,12 +3396,12 @@ function TaskHandsUp(ped, duration, facingPed, p3, p4) end
 --- ```
 ---
 --- @hash 0x22B0D0E37CCB840D
---- @params ped table (Ped)
---- @params fleeTarget table (Ped)
---- @params distance number (float)
---- @params fleeTime Any
---- @params p4 boolean (BOOL)
---- @params p5 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param fleeTarget table (Ped)
+--- @param distance number (float)
+--- @param fleeTime any
+--- @param p4 boolean
+--- @param p5 boolean
 --- @return void
 function TaskSmartFleePed(ped, fleeTarget, distance, fleeTime, p4, p5) end
 
@@ -3420,15 +3420,15 @@ function TaskSmartFleePed(ped, fleeTarget, distance, fleeTime, p4, p5) end
 --- ```
 ---
 --- @hash 0x9454528DF15D657A
---- @params ped table (Ped)
---- @params vehicle number (Vehicle)
---- @params pedTarget table (Ped)
---- @params mode number (int)
---- @params maxSpeed number (float)
---- @params drivingStyle number (int)
---- @params minDistance number (float)
---- @params p7 number (float)
---- @params p8 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param pedTarget table (Ped)
+--- @param mode number (int)
+--- @param maxSpeed number (float)
+--- @param drivingStyle number (int)
+--- @param minDistance number (float)
+--- @param p7 number (float)
+--- @param p8 boolean
 --- @return void
 function TaskVehicleMissionPedTarget(ped, vehicle, pedTarget, mode, maxSpeed, drivingStyle, minDistance, p7, p8) end
 
@@ -3436,13 +3436,13 @@ function TaskVehicleMissionPedTarget(ped, vehicle, pedTarget, mode, maxSpeed, dr
 --- TaskPlaneTaxi
 ---
 --- @hash 0x92C360B5F15D2302
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
---- @params p4 Any
---- @params p5 Any
---- @params p6 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
 --- @return void
 function TaskPlaneTaxi(p0, p1, p2, p3, p4, p5, p6) end
 
@@ -3450,8 +3450,8 @@ function TaskPlaneTaxi(p0, p1, p2, p3, p4, p5, p6) end
 --- TaskShockingEventReact
 ---
 --- @hash 0x452419CBD838065B
---- @params ped table (Ped)
---- @params eventHandle number (int)
+--- @param ped table (Ped)
+--- @param eventHandle number (int)
 --- @return void
 function TaskShockingEventReact(ped, eventHandle) end
 
@@ -3459,11 +3459,11 @@ function TaskShockingEventReact(ped, eventHandle) end
 --- TaskPlantBomb
 ---
 --- @hash 0x965FEC691D55E9BF
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params heading number (float)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
 --- @return void
 function TaskPlantBomb(ped, x, y, z, heading) end
 
@@ -3479,9 +3479,9 @@ function TaskPlantBomb(ped, x, y, z, heading) end
 --- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
 --- @hash 0x69F5C3BD0F3EBD89
---- @params vehicle number (Vehicle)
---- @params animation_set string (char*)
---- @params animation_name string (char*)
+--- @param vehicle number (Vehicle)
+--- @param animation_set string (char*)
+--- @param animation_name string (char*)
 --- @return void
 function TaskVehiclePlayAnim(vehicle, animation_set, animation_name) end
 
@@ -3489,10 +3489,10 @@ function TaskVehiclePlayAnim(vehicle, animation_set, animation_name) end
 --- UpdateTaskSweepAimPosition
 ---
 --- @hash 0xBB106883F5201FC4
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
 --- @return void
 function UpdateTaskSweepAimPosition(p0, p1, p2, p3) end
 
@@ -3500,12 +3500,12 @@ function UpdateTaskSweepAimPosition(p0, p1, p2, p3) end
 --- TaskUseNearestScenarioChainToCoord
 ---
 --- @hash 0x9FDA1B3D7E7028B3
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 Any
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 any
 --- @return void
 function TaskUseNearestScenarioChainToCoord(p0, p1, p2, p3, p4, p5) end
 
@@ -3517,8 +3517,8 @@ function TaskUseNearestScenarioChainToCoord(p0, p1, p2, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0x90D2156198831D69
---- @params ped table (Ped)
---- @params toggle boolean (BOOL)
+--- @param ped table (Ped)
+--- @param toggle boolean
 --- @return void
 function TaskSetBlockingOfNonTemporaryEvents(ped, toggle) end
 
@@ -3529,9 +3529,9 @@ function TaskSetBlockingOfNonTemporaryEvents(ped, toggle) end
 --- ```
 ---
 --- @hash 0x5343532C01A07234
---- @params name string (char*)
---- @params points table (int*)
---- @return boolean (BOOL)
+--- @param name string (char*)
+--- @param points table (int*)
+--- @return boolean
 function WaypointRecordingGetNumPoints(name, points) end
 
     
@@ -3584,19 +3584,19 @@ function WaypointRecordingGetNumPoints(name, points) end
 --- ```
 ---
 --- @hash 0x23703CD154E83B88
---- @params pilot table (Ped)
---- @params aircraft number (Vehicle)
---- @params targetVehicle number (Vehicle)
---- @params targetPed table (Ped)
---- @params destinationX number (float)
---- @params destinationY number (float)
---- @params destinationZ number (float)
---- @params missionFlag number (int)
---- @params angularDrag number (float)
---- @params unk number (float)
---- @params targetHeading number (float)
---- @params maxZ number (float)
---- @params minZ number (float)
+--- @param pilot table (Ped)
+--- @param aircraft number (Vehicle)
+--- @param targetVehicle number (Vehicle)
+--- @param targetPed table (Ped)
+--- @param destinationX number (float)
+--- @param destinationY number (float)
+--- @param destinationZ number (float)
+--- @param missionFlag number (int)
+--- @param angularDrag number (float)
+--- @param unk number (float)
+--- @param targetHeading number (float)
+--- @param maxZ number (float)
+--- @param minZ number (float)
 --- @return void
 function TaskPlaneMission(pilot, aircraft, targetVehicle, targetPed, destinationX, destinationY, destinationZ, missionFlag, angularDrag, unk, targetHeading, maxZ, minZ) end
 
@@ -3604,8 +3604,8 @@ function TaskPlaneMission(pilot, aircraft, targetVehicle, targetPed, destination
 --- TaskReactAndFleePed
 ---
 --- @hash 0x72C896464915D1B1
---- @params ped table (Ped)
---- @params fleeTarget table (Ped)
+--- @param ped table (Ped)
+--- @param fleeTarget table (Ped)
 --- @return void
 function TaskReactAndFleePed(ped, fleeTarget) end
 
@@ -3620,15 +3620,15 @@ function TaskReactAndFleePed(ped, fleeTarget) end
 --- ```
 ---
 --- @hash 0x0F3E34E968EA374E
---- @params ped table (Ped)
---- @params vehicle number (Vehicle)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params heading number (float)
---- @params mode number (int)
---- @params radius number (float)
---- @params keepEngineOn boolean (BOOL)
+--- @param ped table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
+--- @param mode number (int)
+--- @param radius number (float)
+--- @param keepEngineOn boolean
 --- @return void
 function TaskVehiclePark(ped, vehicle, x, y, z, heading, mode, radius, keepEngineOn) end
 
@@ -3636,12 +3636,12 @@ function TaskVehiclePark(ped, vehicle, x, y, z, heading, mode, radius, keepEngin
 --- TaskPedSlideToCoord
 ---
 --- @hash 0xD04FE6765D990A06
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params heading number (float)
---- @params duration number (float)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
+--- @param duration number (float)
 --- @return void
 function TaskPedSlideToCoord(ped, x, y, z, heading, duration) end
 
@@ -3649,8 +3649,8 @@ function TaskPedSlideToCoord(ped, x, y, z, heading, duration) end
 --- UpdateTaskHandsUpDuration
 ---
 --- @hash 0xA98FCAFD7893C834
---- @params ped table (Ped)
---- @params duration number (int)
+--- @param ped table (Ped)
+--- @param duration number (int)
 --- @return void
 function UpdateTaskHandsUpDuration(ped, duration) end
 
@@ -3658,7 +3658,7 @@ function UpdateTaskHandsUpDuration(ped, duration) end
 --- WaypointPlaybackStopAimingOrShooting
 ---
 --- @hash 0x47EFA040EBB8E2EA
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function WaypointPlaybackStopAimingOrShooting(p0) end
 
@@ -3668,14 +3668,14 @@ function WaypointPlaybackStopAimingOrShooting(p0) end
 --- ```
 ---
 --- @hash 0x94587F17E9C365D5
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params distance number (float)
---- @params time number (int)
---- @params p6 boolean (BOOL)
---- @params p7 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param distance number (float)
+--- @param time number (int)
+--- @param p6 boolean
+--- @param p7 boolean
 --- @return void
 function TaskSmartFleeCoord(ped, x, y, z, distance, time, p6, p7) end
 
@@ -3686,12 +3686,12 @@ function TaskSmartFleeCoord(ped, x, y, z, distance, time, p6, p7) end
 --- ```
 ---
 --- @hash 0xB629A298081F876F
---- @params name string (char*)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params point table (int*)
---- @return boolean (BOOL)
+--- @param name string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param point table (int*)
+--- @return boolean
 function WaypointRecordingGetClosestWaypoint(name, x, y, z, point) end
 
     
@@ -3700,7 +3700,7 @@ function WaypointRecordingGetClosestWaypoint(name, x, y, z, point) end
 --- ```
 ---
 --- @hash 0xE5DA8615A6180789
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return void
 function TaskStayInCover(ped) end
 
@@ -3711,16 +3711,16 @@ function TaskStayInCover(ped) end
 --- ```
 ---
 --- @hash 0xEEA929141F699854
---- @params ped table (Ped)
---- @params scene number (int)
---- @params animDictionary string (char*)
---- @params animationName string (char*)
---- @params blendInSpeed number (float)
---- @params blendOutSpeed number (float)
---- @params duration number (int)
---- @params flag number (int)
---- @params playbackRate number (float)
---- @params p9 Any
+--- @param ped table (Ped)
+--- @param scene number (int)
+--- @param animDictionary string (char*)
+--- @param animationName string (char*)
+--- @param blendInSpeed number (float)
+--- @param blendOutSpeed number (float)
+--- @param duration number (int)
+--- @param flag number (int)
+--- @param playbackRate number (float)
+--- @param p9 any
 --- @return void
 function TaskSynchronizedScene(ped, scene, animDictionary, animationName, blendInSpeed, blendOutSpeed, duration, flag, playbackRate, p9) end
 
@@ -3728,8 +3728,8 @@ function TaskSynchronizedScene(ped, scene, animDictionary, animationName, blendI
 --- TaskVehicleAimAtPed
 ---
 --- @hash 0xE41885592B08B097
---- @params ped table (Ped)
---- @params target table (Ped)
+--- @param ped table (Ped)
+--- @param target table (Ped)
 --- @return void
 function TaskVehicleAimAtPed(ped, target) end
 
@@ -3737,12 +3737,12 @@ function TaskVehicleAimAtPed(ped, target) end
 --- UpdateTaskAimGunScriptedTarget
 ---
 --- @hash 0x9724FB59A3E72AD0
---- @params p0 table (Ped)
---- @params p1 table (Ped)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 boolean (BOOL)
+--- @param p0 table (Ped)
+--- @param p1 table (Ped)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 boolean
 --- @return void
 function UpdateTaskAimGunScriptedTarget(p0, p1, p2, p3, p4, p5) end
 
@@ -3750,10 +3750,10 @@ function UpdateTaskAimGunScriptedTarget(p0, p1, p2, p3, p4, p5) end
 --- WaypointPlaybackResume
 ---
 --- @hash 0x244F70C84C547D2D
---- @params p0 Any
---- @params p1 boolean (BOOL)
---- @params p2 Any
---- @params p3 Any
+--- @param p0 any
+--- @param p1 boolean
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function WaypointPlaybackResume(p0, p1, p2, p3) end
 
@@ -3764,17 +3764,17 @@ function WaypointPlaybackResume(p0, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0xF0AF20AA7731F8C3
---- @params ped table (Ped)
---- @params vehicle number (Vehicle)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params p5 number (int)
---- @params p6 number (int)
---- @params p7 number (int)
---- @params p8 number (float)
---- @params p9 number (float)
---- @params p10 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p5 number (int)
+--- @param p6 number (int)
+--- @param p7 number (int)
+--- @param p8 number (float)
+--- @param p9 number (float)
+--- @param p10 boolean
 --- @return void
 function TaskVehicleMissionCoorsTarget(ped, vehicle, x, y, z, p5, p6, p7, p8, p9, p10) end
 
@@ -3786,8 +3786,8 @@ function TaskVehicleMissionCoorsTarget(ped, vehicle, x, y, z, p5, p6, p7, p8, p9
 --- ```
 ---
 --- @hash 0x3C08A8E30363B353
---- @params driver table (Ped)
---- @params targetEnt table (Entity)
+--- @param driver table (Ped)
+--- @param targetEnt table (Entity)
 --- @return void
 function TaskVehicleChase(driver, targetEnt) end
 
@@ -3795,7 +3795,7 @@ function TaskVehicleChase(driver, targetEnt) end
 --- UncuffPed
 ---
 --- @hash 0x67406F2C8F87FC4F
---- @params ped table (Ped)
+--- @param ped table (Ped)
 --- @return void
 function UncuffPed(ped) end
 
@@ -3803,9 +3803,9 @@ function UncuffPed(ped) end
 --- WaypointPlaybackOverrideSpeed
 ---
 --- @hash 0x7D7D2B47FA788E85
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 boolean (BOOL)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 boolean
 --- @return void
 function WaypointPlaybackOverrideSpeed(p0, p1, p2) end
 
@@ -3816,12 +3816,12 @@ function WaypointPlaybackOverrideSpeed(p0, p1, p2) end
 --- ```
 ---
 --- @hash 0x1C6CD14A876FFE39
---- @params ped table (Ped)
---- @params meleeTarget table (Ped)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param meleeTarget table (Ped)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 boolean
 --- @return void
 function TaskPutPedDirectlyIntoMelee(ped, meleeTarget, p2, p3, p4, p5) end
 
@@ -3837,14 +3837,14 @@ function TaskPutPedDirectlyIntoMelee(ped, meleeTarget, p2, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0x1E09C32048FEFD1C
---- @params pilot table (Ped)
---- @params vehicle number (Vehicle)
---- @params entityToFollow table (Entity)
---- @params targetSpeed number (float)
---- @params p4 number (int)
---- @params radius number (float)
---- @params altitude number (int)
---- @params p7 number (int)
+--- @param pilot table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param entityToFollow table (Entity)
+--- @param targetSpeed number (float)
+--- @param p4 number (int)
+--- @param radius number (float)
+--- @param altitude number (int)
+--- @param p7 number (int)
 --- @return void
 function TaskVehicleHeliProtect(pilot, vehicle, entityToFollow, targetSpeed, p4, radius, altitude, p7) end
 
@@ -3852,17 +3852,17 @@ function TaskVehicleHeliProtect(pilot, vehicle, entityToFollow, targetSpeed, p4,
 --- TaskSweepAimPosition
 ---
 --- @hash 0x7AFE8FDC10BC07D2
---- @params p0 Any
---- @params p1 table (Any*)
---- @params p2 table (Any*)
---- @params p3 table (Any*)
---- @params p4 table (Any*)
---- @params p5 Any
---- @params p6 number (float)
---- @params p7 number (float)
---- @params p8 number (float)
---- @params p9 number (float)
---- @params p10 number (float)
+--- @param p0 any
+--- @param p1 table (Any*)
+--- @param p2 table (Any*)
+--- @param p3 table (Any*)
+--- @param p4 table (Any*)
+--- @param p5 any
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @param p9 number (float)
+--- @param p10 number (float)
 --- @return void
 function TaskSweepAimPosition(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
 
@@ -3901,10 +3901,10 @@ function TaskSweepAimPosition(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
 --- ```
 ---
 --- @hash 0xC429DCEEB339E129
---- @params driver table (Ped)
---- @params vehicle number (Vehicle)
---- @params action number (int)
---- @params time number (int)
+--- @param driver table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param action number (int)
+--- @param time number (int)
 --- @return void
 function TaskVehicleTempAction(driver, vehicle, action, time) end
 
@@ -3912,12 +3912,12 @@ function TaskVehicleTempAction(driver, vehicle, action, time) end
 --- TaskUseNearestScenarioChainToCoordWarp
 ---
 --- @hash 0x97A28E63F0BA5631
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 Any
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 any
 --- @return void
 function TaskUseNearestScenarioChainToCoordWarp(p0, p1, p2, p3, p4, p5) end
 
@@ -3925,13 +3925,13 @@ function TaskUseNearestScenarioChainToCoordWarp(p0, p1, p2, p3, p4, p5) end
 --- TaskWanderInArea
 ---
 --- @hash 0xE054346CA3A0F315
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params minimalLength number (float)
---- @params timeBetweenWalks number (float)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param minimalLength number (float)
+--- @param timeBetweenWalks number (float)
 --- @return void
 function TaskWanderInArea(ped, x, y, z, radius, minimalLength, timeBetweenWalks) end
 
@@ -3942,10 +3942,10 @@ function TaskWanderInArea(ped, x, y, z, radius, minimalLength, timeBetweenWalks)
 --- ```
 ---
 --- @hash 0x2FB897405C90B361
---- @params name string (char*)
---- @params point number (int)
---- @params coord table (Vector3*)
---- @return boolean (BOOL)
+--- @param name string (char*)
+--- @param point number (int)
+--- @param coord table (Vector3*)
+--- @return boolean
 function WaypointRecordingGetCoord(name, point, coord) end
 
     
@@ -3955,10 +3955,10 @@ function WaypointRecordingGetCoord(name, point, coord) end
 --- ```
 ---
 --- @hash 0xCDDC2B77CE54AC6E
---- @params ped table (Ped)
---- @params target table (Ped)
---- @params time number (int)
---- @params p3 number (int)
+--- @param ped table (Ped)
+--- @param target table (Ped)
+--- @param time number (int)
+--- @param p3 number (int)
 --- @return void
 function TaskWrithe(ped, target, time, p3) end
 
@@ -3966,12 +3966,12 @@ function TaskWrithe(ped, target, time, p3) end
 --- TaskUseNearestScenarioToCoordWarp
 ---
 --- @hash 0x58E2E0F23F6B76C3
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params p5 Any
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param p5 any
 --- @return void
 function TaskUseNearestScenarioToCoordWarp(ped, x, y, z, radius, p5) end
 
@@ -3984,15 +3984,15 @@ function TaskUseNearestScenarioToCoordWarp(ped, x, y, z, radius, p5) end
 --- ```
 ---
 --- @hash 0x2047C02158D6405A
---- @params ped table (Ped)
---- @params anim string (char*)
---- @params p2 string (char*)
---- @params p3 string (char*)
---- @params p4 string (char*)
---- @params p5 number (int)
---- @params vehicle number (Vehicle)
---- @params p7 number (float)
---- @params p8 number (float)
+--- @param ped table (Ped)
+--- @param anim string (char*)
+--- @param p2 string (char*)
+--- @param p3 string (char*)
+--- @param p4 string (char*)
+--- @param p5 number (int)
+--- @param vehicle number (Vehicle)
+--- @param p7 number (float)
+--- @param p8 number (float)
 --- @return void
 function TaskSweepAimEntity(ped, anim, p2, p3, p4, p5, vehicle, p7, p8) end
 
@@ -4000,14 +4000,14 @@ function TaskSweepAimEntity(ped, anim, p2, p3, p4, p5, vehicle, p7, p8) end
 --- TaskVehicleDriveToCoordLongrange
 ---
 --- @hash 0x158BB33F920D360C
---- @params ped table (Ped)
---- @params vehicle number (Vehicle)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params speed number (float)
---- @params driveMode number (int)
---- @params stopRange number (float)
+--- @param ped table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param driveMode number (int)
+--- @param stopRange number (float)
 --- @return void
 function TaskVehicleDriveToCoordLongrange(ped, vehicle, x, y, z, speed, driveMode, stopRange) end
 
@@ -4018,8 +4018,8 @@ function TaskVehicleDriveToCoordLongrange(ped, vehicle, x, y, z, speed, driveMod
 --- ```
 ---
 --- @hash 0xAC96609B9995EDF8
---- @params p0 boolean (BOOL)
---- @params p1 boolean (BOOL)
+--- @param p0 boolean
+--- @param p1 boolean
 --- @return void
 function TaskToggleDuck(p0, p1) end
 
@@ -4044,14 +4044,14 @@ function TaskToggleDuck(p0, p1) end
 --- ```
 ---
 --- @hash 0x8FBB6758B3B3E9EC
---- @params ped table (Ped)
---- @params animDict string (char*)
---- @params animation string (char*)
---- @params boneMaskType string (char*)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 boolean (BOOL)
---- @params p7 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param animDict string (char*)
+--- @param animation string (char*)
+--- @param boneMaskType string (char*)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 boolean
+--- @param p7 boolean
 --- @return void
 function TaskPlayPhoneGestureAnimation(ped, animDict, animation, boneMaskType, p4, p5, p6, p7) end
 
@@ -4059,11 +4059,11 @@ function TaskPlayPhoneGestureAnimation(ped, animDict, animation, boneMaskType, p
 --- WaypointPlaybackStartAimingAtCoord
 ---
 --- @hash 0x8968400D900ED8B3
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 boolean (BOOL)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 boolean
 --- @return void
 function WaypointPlaybackStartAimingAtCoord(p0, p1, p2, p3, p4) end
 
@@ -4071,7 +4071,7 @@ function WaypointPlaybackStartAimingAtCoord(p0, p1, p2, p3, p4) end
 --- WaypointPlaybackUseDefaultSpeed
 ---
 --- @hash 0x6599D834B12D0800
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function WaypointPlaybackUseDefaultSpeed(p0) end
 
@@ -4079,10 +4079,10 @@ function WaypointPlaybackUseDefaultSpeed(p0) end
 --- WaypointPlaybackStartShootingAtPed
 ---
 --- @hash 0xE70BA7B90F8390DC
---- @params p0 Any
---- @params p1 Any
---- @params p2 boolean (BOOL)
---- @params p3 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 boolean
+--- @param p3 any
 --- @return void
 function WaypointPlaybackStartShootingAtPed(p0, p1, p2, p3) end
 
@@ -4100,16 +4100,16 @@ function WaypointPlaybackStartShootingAtPed(p0, p1, p2, p3) end
 --- ```
 ---
 --- @hash 0x3123FAA6DB1CF7ED
---- @params ped table (Ped)
---- @params vehicle number (Vehicle)
---- @params WPRecording string (char*)
---- @params p3 number (int)
---- @params p4 number (int)
---- @params p5 number (int)
---- @params p6 number (int)
---- @params p7 number (float)
---- @params p8 boolean (BOOL)
---- @params p9 number (float)
+--- @param ped table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param WPRecording string (char*)
+--- @param p3 number (int)
+--- @param p4 number (int)
+--- @param p5 number (int)
+--- @param p6 number (int)
+--- @param p7 number (float)
+--- @param p8 boolean
+--- @param p9 number (float)
 --- @return void
 function TaskVehicleFollowWaypointRecording(ped, vehicle, WPRecording, p3, p4, p5, p6, p7, p8, p9) end
 
@@ -4117,10 +4117,10 @@ function TaskVehicleFollowWaypointRecording(ped, vehicle, WPRecording, p3, p4, p
 --- UseWaypointRecordingAsAssistedMovementRoute
 ---
 --- @hash 0x5A353B8E6B1095B5
---- @params name string (char*)
---- @params p1 boolean (BOOL)
---- @params p2 number (float)
---- @params p3 number (float)
+--- @param name string (char*)
+--- @param p1 boolean
+--- @param p2 number (float)
+--- @param p3 number (float)
 --- @return void
 function UseWaypointRecordingAsAssistedMovementRoute(name, p1, p2, p3) end
 
@@ -4128,8 +4128,8 @@ function UseWaypointRecordingAsAssistedMovementRoute(name, p1, p2, p3) end
 --- VehicleWaypointPlaybackOverrideSpeed
 ---
 --- @hash 0x121F0593E0A431D7
---- @params vehicle number (Vehicle)
---- @params speed number (float)
+--- @param vehicle number (Vehicle)
+--- @param speed number (float)
 --- @return void
 function VehicleWaypointPlaybackOverrideSpeed(vehicle, speed) end
 
@@ -4144,17 +4144,17 @@ function VehicleWaypointPlaybackOverrideSpeed(vehicle, speed) end
 --- ```
 ---
 --- @hash 0xE2A2AA2F659D77A7
---- @params ped table (Ped)
---- @params vehicle number (Vehicle)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params speed number (float)
---- @params p6 Any
---- @params vehicleModel table (Hash)
---- @params drivingMode number (int)
---- @params stopRange number (float)
---- @params p10 number (float)
+--- @param ped table (Ped)
+--- @param vehicle number (Vehicle)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param p6 any
+--- @param vehicleModel table (Hash)
+--- @param drivingMode number (int)
+--- @param stopRange number (float)
+--- @param p10 number (float)
 --- @return void
 function TaskVehicleDriveToCoord(ped, vehicle, x, y, z, speed, p6, vehicleModel, drivingMode, stopRange, p10) end
 
@@ -4162,9 +4162,9 @@ function TaskVehicleDriveToCoord(ped, vehicle, x, y, z, speed, p6, vehicleModel,
 --- WaypointPlaybackStartAimingAtPed
 ---
 --- @hash 0x20E330937C399D29
---- @params p0 Any
---- @params p1 Any
---- @params p2 boolean (BOOL)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 boolean
 --- @return void
 function WaypointPlaybackStartAimingAtPed(p0, p1, p2) end
 
@@ -4175,9 +4175,9 @@ function WaypointPlaybackStartAimingAtPed(p0, p1, p2) end
 --- ```
 ---
 --- @hash 0xBB9CE077274F6A1B
---- @params ped table (Ped)
---- @params p1 number (float)
---- @params p2 number (int)
+--- @param ped table (Ped)
+--- @param p1 number (float)
+--- @param p2 number (int)
 --- @return void
 function TaskWanderStandard(ped, p1, p2) end
 
@@ -4185,9 +4185,9 @@ function TaskWanderStandard(ped, p1, p2) end
 --- WaypointPlaybackPause
 ---
 --- @hash 0x0F342546AA06FED5
---- @params p0 Any
---- @params p1 boolean (BOOL)
---- @params p2 boolean (BOOL)
+--- @param p0 any
+--- @param p1 boolean
+--- @param p2 boolean
 --- @return void
 function WaypointPlaybackPause(p0, p1, p2) end
 
@@ -4195,19 +4195,19 @@ function WaypointPlaybackPause(p0, p1, p2) end
 --- WaypointPlaybackGetIsPaused
 ---
 --- @hash 0x701375A7D43F01CB
---- @params p0 Any
---- @return boolean (BOOL)
+--- @param p0 any
+--- @return boolean
 function WaypointPlaybackGetIsPaused(p0) end
 
     
 --- TaskVehicleShootAtCoord
 ---
 --- @hash 0x5190796ED39C9B6D
---- @params ped table (Ped)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params p4 number (float)
+--- @param ped table (Ped)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p4 number (float)
 --- @return void
 function TaskVehicleShootAtCoord(ped, x, y, z, p4) end
 
@@ -4215,12 +4215,12 @@ function TaskVehicleShootAtCoord(ped, x, y, z, p4) end
 --- WaypointPlaybackStartShootingAtCoord
 ---
 --- @hash 0x057A25CFCC9DB671
---- @params p0 Any
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 boolean (BOOL)
---- @params p5 Any
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 boolean
+--- @param p5 any
 --- @return void
 function WaypointPlaybackStartShootingAtCoord(p0, p1, p2, p3, p4, p5) end
 
@@ -4228,8 +4228,8 @@ function WaypointPlaybackStartShootingAtCoord(p0, p1, p2, p3, p4, p5) end
 --- WaypointRecordingGetSpeedAtPoint
 ---
 --- @hash 0x005622AEBC33ACA9
---- @params name string (char*)
---- @params point number (int)
+--- @param name string (char*)
+--- @param point number (int)
 --- @return number (float)
 function WaypointRecordingGetSpeedAtPoint(name, point) end
 
@@ -4237,9 +4237,9 @@ function WaypointRecordingGetSpeedAtPoint(name, point) end
 --- TaskVehicleShootAtPed
 ---
 --- @hash 0x10AB107B887214D8
---- @params ped table (Ped)
---- @params target table (Ped)
---- @params p2 number (float)
+--- @param ped table (Ped)
+--- @param target table (Ped)
+--- @param p2 number (float)
 --- @return void
 function TaskVehicleShootAtPed(ped, target, p2) end
 
@@ -4247,7 +4247,7 @@ function TaskVehicleShootAtPed(ped, target, p2) end
 --- VehicleWaypointPlaybackResume
 ---
 --- @hash 0xDC04FCAA7839D492
---- @params vehicle number (Vehicle)
+--- @param vehicle number (Vehicle)
 --- @return void
 function VehicleWaypointPlaybackResume(vehicle) end
 

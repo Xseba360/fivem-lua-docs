@@ -4,18 +4,18 @@
 --- ```
 ---
 --- @hash 0x11DB3500F042A8AA
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params width number (float)
---- @params p7 boolean (BOOL)
---- @params p8 boolean (BOOL)
---- @params p9 boolean (BOOL)
---- @params p10 boolean (BOOL)
---- @params p11 boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param width number (float)
+--- @param p7 boolean
+--- @param p8 boolean
+--- @param p9 boolean
+--- @param p10 boolean
+--- @param p11 boolean
 --- @return void
 function ClearAngledAreaOfVehicles(x1, y1, z1, x2, y2, z2, width, p7, p8, p9, p10, p11) end
 
@@ -23,24 +23,24 @@ function ClearAngledAreaOfVehicles(x1, y1, z1, x2, y2, z2, width, p7, p8, p9, p1
 --- See description of [`ADD_STUNT_JUMP_ANGLED`](#\_0xBBE5D803A5360CBF) for detailed info. The only difference really is this one does not have the radius (or angle, not sure) floats parameters for entry and landing zones.
 ---
 --- @hash 0x1A992DA297A4630C
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params x3 number (float)
---- @params y3 number (float)
---- @params z3 number (float)
---- @params x4 number (float)
---- @params y4 number (float)
---- @params z4 number (float)
---- @params camX number (float)
---- @params camY number (float)
---- @params camZ number (float)
---- @params unk1 number (int)
---- @params unk2 number (int)
---- @params unk3 number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param x3 number (float)
+--- @param y3 number (float)
+--- @param z3 number (float)
+--- @param x4 number (float)
+--- @param y4 number (float)
+--- @param z4 number (float)
+--- @param camX number (float)
+--- @param camY number (float)
+--- @param camZ number (float)
+--- @param unk1 number (int)
+--- @param unk2 number (int)
+--- @param unk3 number (int)
 --- @return number (int)
 function AddStuntJump(x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, camX, camY, camZ, unk1, unk2, unk3) end
 
@@ -58,8 +58,8 @@ function CancelOnscreenKeyboard() end
 --- BlockDispatchServiceResourceCreation
 ---
 --- @hash 0x9B2BD3773123EA2F
---- @params dispatchService number (int)
---- @params toggle boolean (BOOL)
+--- @param dispatchService number (int)
+--- @param toggle boolean
 --- @return void
 function BlockDispatchServiceResourceCreation(dispatchService, toggle) end
 
@@ -67,8 +67,8 @@ function BlockDispatchServiceResourceCreation(dispatchService, toggle) end
 --- Atan2
 ---
 --- @hash 0x8927CBF9D22261A4
---- @params p0 number (float)
---- @params p1 number (float)
+--- @param p0 number (float)
+--- @param p1 number (float)
 --- @return number (float)
 function Atan2(p0, p1) end
 
@@ -76,7 +76,7 @@ function Atan2(p0, p1) end
 --- Absi
 ---
 --- @hash 0xF0D31AD191A74F87
---- @params value number (int)
+--- @param value number (int)
 --- @return number (int)
 function Absi(value) end
 
@@ -111,14 +111,14 @@ function Absi(value) end
 --- ```
 ---
 --- @hash 0x00DC833F2568DBF6
---- @params p0 number (int)
---- @params windowTitle string (char*)
---- @params p2 string (char*)
---- @params defaultText string (char*)
---- @params defaultConcat1 string (char*)
---- @params defaultConcat2 string (char*)
---- @params defaultConcat3 string (char*)
---- @params maxInputLength number (int)
+--- @param p0 number (int)
+--- @param windowTitle string (char*)
+--- @param p2 string (char*)
+--- @param defaultText string (char*)
+--- @param defaultConcat1 string (char*)
+--- @param defaultConcat2 string (char*)
+--- @param defaultConcat3 string (char*)
+--- @param maxInputLength number (int)
 --- @return void
 function DisplayOnscreenKeyboard(p0, windowTitle, p2, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, maxInputLength) end
 
@@ -128,14 +128,14 @@ function DisplayOnscreenKeyboard(p0, windowTitle, p2, defaultText, defaultConcat
 --- ```
 ---
 --- @hash 0x957838AAF91BD12D
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params p4 boolean (BOOL)
---- @params p5 boolean (BOOL)
---- @params p6 boolean (BOOL)
---- @params p7 boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param p4 boolean
+--- @param p5 boolean
+--- @param p6 boolean
+--- @param p7 boolean
 --- @return void
 function ClearAreaOfEverything(x, y, z, radius, p4, p5, p6, p7) end
 
@@ -146,11 +146,11 @@ function ClearAreaOfEverything(x, y, z, radius, p4, p5, p6, p7) end
 --- ```
 ---
 --- @hash 0x1F464EF988465A81
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params p3 number (float)
---- @params p4 Any
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 number (float)
+--- @param p4 any
 --- @return number (int)
 function AddHospitalRestart(x, y, z, p3, p4) end
 
@@ -162,8 +162,8 @@ function AddHospitalRestart(x, y, z, p3, p4) end
 --- ```
 ---
 --- @hash 0x23285DED6EBD7EA3
---- @params policeIndex number (int)
---- @params toggle boolean (BOOL)
+--- @param policeIndex number (int)
+--- @param toggle boolean
 --- @return void
 function DisablePoliceRestart(policeIndex, toggle) end
 
@@ -172,14 +172,14 @@ function DisablePoliceRestart(policeIndex, toggle) end
 ---
 --- @hash 0x5AA3BEFA29F03AD4
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function AreProfileSettingsValid() end
 
     
 --- DisableStuntJumpSet
 ---
 --- @hash 0xA5272EBEDD4747F6
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function DisableStuntJumpSet(p0) end
 
@@ -197,9 +197,9 @@ function DisableStuntJumpSet(p0) end
 --- ```
 ---
 --- @hash 0x03E8D3D5F549087A
---- @params modelHash table (Hash)
---- @params minimum table (Vector3*)
---- @params maximum table (Vector3*)
+--- @param modelHash table (Hash)
+--- @param minimum table (Vector3*)
+--- @param maximum table (Vector3*)
 --- @return void
 function GetModelDimensions(modelHash, minimum, maximum) end
 
@@ -209,11 +209,11 @@ function GetModelDimensions(modelHash, minimum, maximum) end
 --- ```
 ---
 --- @hash 0xDD9B9B385AAC7F5B
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params flags number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param flags number (int)
 --- @return void
 function ClearAreaOfObjects(x, y, z, radius, flags) end
 
@@ -239,15 +239,15 @@ function CleanupAsyncInstall() end
 --- ```
 ---
 --- @hash 0x67F6413D3220E18D
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params p6 number (float)
---- @params p7 number (float)
---- @params p8 boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param p8 boolean
 --- @return number (int)
 function AddPopMultiplierArea(x1, y1, z1, x2, y2, z2, p6, p7, p8) end
 
@@ -278,20 +278,20 @@ function AddPopMultiplierArea(x1, y1, z1, x2, y2, z2, p6, p7, p8) end
 --- ```
 ---
 --- @hash 0x05983472F0494E60
---- @params dispatchService number (int)
---- @params ped table (Ped)
---- @params numUnits number (int)
---- @params radius number (float)
---- @params outIncidentID table (int*)
---- @return boolean (BOOL)
+--- @param dispatchService number (int)
+--- @param ped table (Ped)
+--- @param numUnits number (int)
+--- @param radius number (float)
+--- @param outIncidentID table (int*)
+--- @return boolean
 function CreateIncidentWithEntity(dispatchService, ped, numUnits, radius, outIncidentID) end
 
     
 --- DoesPopMultiplierSphereExist
 ---
 --- @hash 0x171BAFB3C60389F4
---- @params id number (int)
---- @return boolean (BOOL)
+--- @param id number (int)
+--- @return boolean
 function DoesPopMultiplierSphereExist(id) end
 
     
@@ -300,11 +300,11 @@ function DoesPopMultiplierSphereExist(id) end
 --- ```
 ---
 --- @hash 0x04F8FC8FCF58F88D
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params flags number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param flags number (int)
 --- @return void
 function ClearAreaOfCops(x, y, z, radius, flags) end
 
@@ -312,7 +312,7 @@ function ClearAreaOfCops(x, y, z, radius, flags) end
 --- Absf
 ---
 --- @hash 0x73D57CFFDD12C355
---- @params value number (float)
+--- @param value number (float)
 --- @return number (float)
 function Absf(value) end
 
@@ -330,7 +330,7 @@ function CancelStuntJump() end
 --- ```
 ---
 --- @hash 0xA9D1795CD5043663
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return number (float)
 function Atan(p0) end
 
@@ -344,8 +344,8 @@ function Atan(p0) end
 --- ```
 ---
 --- @hash 0xE80492A9AC099A93
---- @params address table (int*)
---- @params offset number (int)
+--- @param address table (int*)
+--- @param offset number (int)
 --- @return void
 function ClearBit(address, offset) end
 
@@ -353,7 +353,7 @@ function ClearBit(address, offset) end
 --- AllowMissionCreatorWarp
 ---
 --- @hash 0xDEA36202FC3382DF
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function AllowMissionCreatorWarp(toggle) end
 
@@ -363,14 +363,14 @@ function AllowMissionCreatorWarp(toggle) end
 --- See [IS_POINT_IN_ANGLED_AREA](#\_0x2A70BAE8883E4C81) for the definition of an angled area.
 ---
 --- @hash 0x918C7B2D2FF3928B
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params width number (float)
---- @return Any
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param width number (float)
+--- @return any
 function AddDispatchSpawnBlockingAngledArea(x1, y1, z1, x2, y2, z2, width) end
 
     
@@ -379,7 +379,7 @@ function AddDispatchSpawnBlockingAngledArea(x1, y1, z1, x2, y2, z2, width) end
 --- ```
 ---
 --- @hash 0xC843060B5765DCE7
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return number (float)
 function Asin(p0) end
 
@@ -406,15 +406,15 @@ function EndReplayStats() end
 --- ```
 ---
 --- @hash 0x6874E2190B0C1972
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params distance number (float)
---- @params spawnPoint table (Vector3*)
---- @return boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param distance number (float)
+--- @param spawnPoint table (Vector3*)
+--- @return boolean
 function FindSpawnPointInDirection(x1, y1, z1, x2, y2, z2, distance, spawnPoint) end
 
     
@@ -430,13 +430,13 @@ function FindSpawnPointInDirection(x1, y1, z1, x2, y2, z2, distance, spawnPoint)
 --- local dist = #(firstVec - secondVec) -- Use Z
 --- local dist = #(firstVec.xy - secondVec.xy) -- Do not use 
 --- @hash 0xF1B760881820C952
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params useZ boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param useZ boolean
 --- @return number (float)
 function GetDistanceBetweenCoords(x1, y1, z1, x2, y2, z2, useZ) end
 
@@ -452,7 +452,7 @@ function GetAllocatedStackSize() end
 --- DeleteStuntJump
 ---
 --- @hash 0xDC518000E39DAE1F
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function DeleteStuntJump(p0) end
 
@@ -482,8 +482,8 @@ function ForceGameStatePlaying() end
 --- ```
 ---
 --- @hash 0x2FFB6B224F4B2926
---- @params dx number (float)
---- @params dy number (float)
+--- @param dx number (float)
+--- @param dy number (float)
 --- @return number (float)
 function GetHeadingFromVector_2d(dx, dy) end
 
@@ -498,7 +498,7 @@ function GetHeadingFromVector_2d(dx, dy) end
 --- ```
 ---
 --- @hash 0x556C1AA270D5A207
---- @params incidentId number (int)
+--- @param incidentId number (int)
 --- @return void
 function DeleteIncident(incidentId) end
 
@@ -508,7 +508,7 @@ function DeleteIncident(incidentId) end
 --- ```
 ---
 --- @hash 0x1D08B970013C34B6
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return number (float)
 function Acos(p0) end
 
@@ -532,7 +532,7 @@ function ClearWeatherTypePersist() end
 --- GetNumberOfDispatchedUnitsForPlayer
 ---
 --- @hash 0xEB4A0C2D56441717
---- @params dispatchService number (int)
+--- @param dispatchService number (int)
 --- @return number (int)
 function GetNumberOfDispatchedUnitsForPlayer(dispatchService) end
 
@@ -548,7 +548,7 @@ function GetFrameCount() end
 --- AddReplayStatValue
 ---
 --- @hash 0x69FE6DC87BD2A5E9
---- @params value Any
+--- @param value any
 --- @return void
 function AddReplayStatValue(value) end
 
@@ -556,8 +556,8 @@ function AddReplayStatValue(value) end
 --- BeginReplayStats
 ---
 --- @hash 0xE0E500246FF73D66
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function BeginReplayStats(p0, p1) end
 
@@ -567,11 +567,11 @@ function BeginReplayStats(p0, p1) end
 --- ```
 ---
 --- @hash 0x0A1CB9094635D1A6
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params flags boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param flags boolean
 --- @return void
 function ClearAreaOfProjectiles(x, y, z, radius, flags) end
 
@@ -587,14 +587,14 @@ function GetReplayStatCount() end
 --- AddPopMultiplierSphere
 ---
 --- @hash 0x32C7A7E8C43A1F80
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 boolean (BOOL)
---- @params p7 boolean (BOOL)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 boolean
+--- @param p7 boolean
 --- @return number (int)
 function AddPopMultiplierSphere(p0, p1, p2, p3, p4, p5, p6, p7) end
 
@@ -602,8 +602,8 @@ function AddPopMultiplierSphere(p0, p1, p2, p3, p4, p5, p6, p7) end
 --- DoesPopMultiplierAreaExist
 ---
 --- @hash 0x1327E2FE9746BAEE
---- @params id number (int)
---- @return boolean (BOOL)
+--- @param id number (int)
+--- @return boolean
 function DoesPopMultiplierAreaExist(id) end
 
     
@@ -620,27 +620,27 @@ function ClearOverrideWeather() end
 --- For projectiles, see: [IS_PROJECTILE_TYPE_IN_ANGLED_AREA](#\_0xF0BC12401061DEA0)
 ---
 --- @hash 0x1A8B5F3C01E2B477
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params width number (float)
---- @params ownedByPlayer boolean (BOOL)
---- @return boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param width number (float)
+--- @param ownedByPlayer boolean
+--- @return boolean
 function IsBulletInAngledArea(x1, y1, z1, x2, y2, z2, width, ownedByPlayer) end
 
     
 --- GetGroundZAndNormalFor_3dCoord
 ---
 --- @hash 0x8BDC7BFC57A81E76
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params groundZ table (float*)
---- @params normal table (Vector3*)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param groundZ table (float*)
+--- @param normal table (Vector3*)
+--- @return boolean
 function GetGroundZAndNormalFor_3dCoord(x, y, z, groundZ, normal) end
 
     
@@ -650,7 +650,7 @@ function GetGroundZAndNormalFor_3dCoord(x, y, z, groundZ, normal) end
 ---
 --- @hash 0xE8B9C0EC9E183F35
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function HasResumedFromSuspend() end
 
     
@@ -678,10 +678,10 @@ function HasResumedFromSuspend() end
 --- ```
 ---
 --- @hash 0x1E34710ECD4AB0EB
---- @params str1 string (char*)
---- @params str2 string (char*)
---- @params matchCase boolean (BOOL)
---- @params maxLength number (int)
+--- @param str1 string (char*)
+--- @param str2 string (char*)
+--- @param matchCase boolean
+--- @param maxLength number (int)
 --- @return number (int)
 function CompareStrings(str1, str2, matchCase, maxLength) end
 
@@ -691,23 +691,23 @@ function CompareStrings(str1, str2, matchCase, maxLength) end
 --- ```
 ---
 --- @hash 0x0C515FAB3FF9EA92
---- @params string1 string (char*)
---- @params string2 string (char*)
---- @return boolean (BOOL)
+--- @param string1 string (char*)
+--- @param string2 string (char*)
+--- @return boolean
 function AreStringsEqual(string1, string2) end
 
     
 --- IsBulletInBox
 ---
 --- @hash 0xDE0F6D7450D37351
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params ownedByPlayer boolean (BOOL)
---- @return boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param ownedByPlayer boolean
+--- @return boolean
 function IsBulletInBox(x1, y1, z1, x2, y2, z2, ownedByPlayer) end
 
     
@@ -717,14 +717,14 @@ function IsBulletInBox(x1, y1, z1, x2, y2, z2, ownedByPlayer) end
 ---
 --- @hash 0xD2D57F1D764117B1
 ---
---- @return Any
+--- @return any
 function GetRandomEventFlag() end
 
     
 --- GetReplayStatAtIndex
 ---
 --- @hash 0x8098C8D6597AAE18
---- @params index number (int)
+--- @param index number (int)
 --- @return number (int)
 function GetReplayStatAtIndex(index) end
 
@@ -732,12 +732,12 @@ function GetReplayStatAtIndex(index) end
 --- AddPoliceRestart
 ---
 --- @hash 0x452736765B31FC4B
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 Any
---- @return Any
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 any
+--- @return any
 function AddPoliceRestart(p0, p1, p2, p3, p4) end
 
     
@@ -747,11 +747,11 @@ function AddPoliceRestart(p0, p1, p2, p3, p4) end
 --- ```
 ---
 --- @hash 0xB335F761606DB47C
---- @params p1 table (Any*)
---- @params p2 table (Any*)
---- @params p3 Any
---- @params p4 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p1 table (Any*)
+--- @param p2 table (Any*)
+--- @param p3 any
+--- @param p4 boolean
+--- @return boolean
 function GetBaseElementMetadata(p1, p2, p3, p4) end
 
     
@@ -776,16 +776,16 @@ function ClearCloudHat() end
 --- ```
 ---
 --- @hash 0x8D7A43EC6A5FEA45
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params projHash table (Hash)
---- @params projPos table (Vector3*)
---- @params ownedByPlayer boolean (BOOL)
---- @return boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param projHash table (Hash)
+--- @param projPos table (Vector3*)
+--- @param ownedByPlayer boolean
+--- @return boolean
 function GetCoordsOfProjectileTypeInArea(x1, y1, z1, x2, y2, z2, projHash, projPos, ownedByPlayer) end
 
     
@@ -797,7 +797,7 @@ function GetCoordsOfProjectileTypeInArea(x1, y1, z1, x2, y2, z2, projHash, projP
 ---     print('Car is a zentorno!')
 --- en
 --- @hash 0xD24D37CC275948CC
---- @params string string (char*)
+--- @param string string (char*)
 --- @return table (Hash)
 function GetHashKey(string) end
 
@@ -805,9 +805,9 @@ function GetHashKey(string) end
 --- CopyMemory
 ---
 --- @hash 0x213AEB2B90CBA7AC
---- @params dst table (Any*)
---- @params src Any
---- @params size number (int)
+--- @param dst table (Any*)
+--- @param src any
+--- @param size number (int)
 --- @return void
 function CopyMemory(dst, src, size) end
 
@@ -815,18 +815,18 @@ function CopyMemory(dst, src, size) end
 --- DisplayOnscreenKeyboardWithLongerInitialString
 ---
 --- @hash 0xCA78CFA0366592FE
---- @params p0 number (int)
---- @params windowTitle string (char*)
---- @params p2 table (Any*)
---- @params defaultText string (char*)
---- @params defaultConcat1 string (char*)
---- @params defaultConcat2 string (char*)
---- @params defaultConcat3 string (char*)
---- @params defaultConcat4 string (char*)
---- @params defaultConcat5 string (char*)
---- @params defaultConcat6 string (char*)
---- @params defaultConcat7 string (char*)
---- @params maxInputLength number (int)
+--- @param p0 number (int)
+--- @param windowTitle string (char*)
+--- @param p2 table (Any*)
+--- @param defaultText string (char*)
+--- @param defaultConcat1 string (char*)
+--- @param defaultConcat2 string (char*)
+--- @param defaultConcat3 string (char*)
+--- @param defaultConcat4 string (char*)
+--- @param defaultConcat5 string (char*)
+--- @param defaultConcat6 string (char*)
+--- @param defaultConcat7 string (char*)
+--- @param maxInputLength number (int)
 --- @return void
 function DisplayOnscreenKeyboardWithLongerInitialString(p0, windowTitle, p2, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, defaultConcat4, defaultConcat5, defaultConcat6, defaultConcat7, maxInputLength) end
 
@@ -863,14 +863,14 @@ function GetBenchmarkIterationsFromCommandLine() end
 --- ```
 ---
 --- @hash 0x3F892CAF67444AE7
---- @params dispatchService number (int)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params numUnits number (int)
---- @params radius number (float)
---- @params outIncidentID table (int*)
---- @return boolean (BOOL)
+--- @param dispatchService number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param numUnits number (int)
+--- @param radius number (float)
+--- @param outIncidentID table (int*)
+--- @return boolean
 function CreateIncident(dispatchService, x, y, z, numUnits, radius, outIncidentID) end
 
     
@@ -887,9 +887,9 @@ function GetCloudHatOpacity() end
 --- ```
 ---
 --- @hash 0x071E2A839DE82D90
---- @params hash table (Hash)
---- @params amount number (int)
---- @return boolean (BOOL)
+--- @param hash table (Hash)
+--- @param amount number (int)
+--- @return boolean
 function HasButtonCombinationJustBeenEntered(hash, amount) end
 
     
@@ -907,12 +907,12 @@ function HasButtonCombinationJustBeenEntered(hash, amount) end
 --- ```
 ---
 --- @hash 0xC906A7DAB05C8D2B
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params groundZ table (float*)
---- @params unk boolean (BOOL)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param groundZ table (float*)
+--- @param unk boolean
+--- @return boolean
 function GetGroundZFor_3dCoord(x, y, z, groundZ, unk) end
 
     
@@ -925,15 +925,15 @@ function GetGroundZFor_3dCoord(x, y, z, groundZ, unk) end
 --- ```
 ---
 --- @hash 0x01C7B9B38428AEB6
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params p4 boolean (BOOL)
---- @params p5 boolean (BOOL)
---- @params p6 boolean (BOOL)
---- @params p7 boolean (BOOL)
---- @params p8 boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param p4 boolean
+--- @param p5 boolean
+--- @param p6 boolean
+--- @param p7 boolean
+--- @param p8 boolean
 --- @return void
 function ClearAreaOfVehicles(x, y, z, radius, p4, p5, p6, p7, p8) end
 
@@ -944,13 +944,13 @@ function ClearAreaOfVehicles(x, y, z, radius, p4, p5, p6, p7, p8) end
 --- ```
 ---
 --- @hash 0x82FDE6A57EE4EE44
---- @params ped table (Ped)
---- @params weaponhash table (Hash)
---- @params radius number (float)
---- @params projPos table (Vector3*)
---- @params projEnt table (Entity*)
---- @params ownedByPlayer boolean (BOOL)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @param weaponhash table (Hash)
+--- @param radius number (float)
+--- @param projPos table (Vector3*)
+--- @param projEnt table (Entity*)
+--- @param ownedByPlayer boolean
+--- @return boolean
 function GetProjectileNearPed(ped, weaponhash, radius, projPos, projEnt, ownedByPlayer) end
 
     
@@ -967,11 +967,11 @@ function GetPrevWeatherTypeHashName() end
 --- AddDispatchSpawnBlockingArea
 ---
 --- @hash 0x2D4259F1FEB81DA9
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @return Any
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @return any
 function AddDispatchSpawnBlockingArea(p0, p1, p2, p3) end
 
     
@@ -988,9 +988,9 @@ function GetGlobalCharBuffer() end
 --- GetBitsInRange
 ---
 --- @hash 0x53158863FCC0893A
---- @params var number (int)
---- @params rangeStart number (int)
---- @params rangeEnd number (int)
+--- @param var number (int)
+--- @param rangeStart number (int)
+--- @param rangeEnd number (int)
 --- @return number (int)
 function GetBitsInRange(var, rangeStart, rangeEnd) end
 
@@ -1074,26 +1074,26 @@ function GetPowerSavingModeDuration() end
 ---     end
 --- end
 --- @hash 0xBBE5D803A5360CBF
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params radius1 number (float)
---- @params x3 number (float)
---- @params y3 number (float)
---- @params z3 number (float)
---- @params x4 number (float)
---- @params y4 number (float)
---- @params z4 number (float)
---- @params radius2 number (float)
---- @params camX number (float)
---- @params camY number (float)
---- @params camZ number (float)
---- @params unk1 number (int)
---- @params unk2 number (int)
---- @params unk3 number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param radius1 number (float)
+--- @param x3 number (float)
+--- @param y3 number (float)
+--- @param z3 number (float)
+--- @param x4 number (float)
+--- @param y4 number (float)
+--- @param z4 number (float)
+--- @param radius2 number (float)
+--- @param camX number (float)
+--- @param camY number (float)
+--- @param camZ number (float)
+--- @param unk1 number (int)
+--- @param unk2 number (int)
+--- @param unk3 number (int)
 --- @return number (int)
 function AddStuntJumpAngled(x1, y1, z1, x2, y2, z2, radius1, x3, y3, z3, x4, y4, z4, radius2, camX, camY, camZ, unk1, unk2, unk3) end
 
@@ -1101,7 +1101,7 @@ function AddStuntJumpAngled(x1, y1, z1, x2, y2, z2, radius1, x3, y3, z3, x4, y4,
 --- EnableStuntJumpSet
 ---
 --- @hash 0xE369A5783B866016
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function EnableStuntJumpSet(p0) end
 
@@ -1111,8 +1111,8 @@ function EnableStuntJumpSet(p0) end
 --- ```
 ---
 --- @hash 0x5D5479D115290C3F
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function IsTennisMode(ped) end
 
     
@@ -1129,11 +1129,11 @@ function ClearTacticalAnalysisPoints() end
 --- ```
 ---
 --- @hash 0xBE31FD6CE464AC59
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params flags number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param flags number (int)
 --- @return void
 function ClearAreaOfPeds(x, y, z, radius, flags) end
 
@@ -1152,7 +1152,7 @@ function ClearRestartCustomPosition() end
 ---
 --- @hash 0x2B4A15E44DE0F478
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsMinigameInProgress() end
 
     
@@ -1160,7 +1160,7 @@ function IsMinigameInProgress() end
 ---
 --- @hash 0x7A3F19700A4D0525
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsStuntJumpInProgress() end
 
     
@@ -1170,7 +1170,7 @@ function IsStuntJumpInProgress() end
 ---
 --- @hash 0xA049A5BE0F04F2F8
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsCommandLineBenchmarkValueSet() end
 
     
@@ -1187,15 +1187,15 @@ function ForceSocialClubUpdate() end
 --- GetTennisSwingAnimComplete
 ---
 --- @hash 0x17DF68D720AA77F8
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function GetTennisSwingAnimComplete(ped) end
 
     
 --- IgnoreNextRestart
 ---
 --- @hash 0x21FFB63D8C615361
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function IgnoreNextRestart(toggle) end
 
@@ -1214,8 +1214,8 @@ function GetIndexOfCurrentLevel() end
 --- ```
 ---
 --- @hash 0xC8535819C450EBA8
---- @params hospitalIndex number (int)
---- @params toggle boolean (BOOL)
+--- @param hospitalIndex number (int)
+--- @param toggle boolean
 --- @return void
 function DisableHospitalRestart(hospitalIndex, toggle) end
 
@@ -1224,7 +1224,7 @@ function DisableHospitalRestart(hospitalIndex, toggle) end
 ---
 --- @hash 0x8A75CE2956274ADD
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsMemoryCardInUse() end
 
     
@@ -1234,7 +1234,7 @@ function IsMemoryCardInUse() end
 ---
 --- @hash 0x7EA2B6AF97ECA6ED
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsFrontendFading() end
 
     
@@ -1244,12 +1244,12 @@ function IsFrontendFading() end
 --- ```
 ---
 --- @hash 0xDFB4138EEFED7B81
---- @params ped table (Ped)
---- @params weaponHash table (Hash)
---- @params radius number (float)
---- @params entity table (Vector3*)
---- @params ownedByPlayer boolean (BOOL)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @param weaponHash table (Hash)
+--- @param radius number (float)
+--- @param entity table (Vector3*)
+--- @param ownedByPlayer boolean
+--- @return boolean
 function GetCoordsOfProjectileTypeWithinDistance(ped, weaponHash, radius, entity, ownedByPlayer) end
 
     
@@ -1258,9 +1258,9 @@ function GetCoordsOfProjectileTypeWithinDistance(ped, weaponHash, radius, entity
 --- ```
 ---
 --- @hash 0xB8721407EE9C3FF6
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function AddTacticalAnalysisPoint(x, y, z) end
 
@@ -1269,7 +1269,7 @@ function AddTacticalAnalysisPoint(x, y, z) end
 ---
 --- @hash 0x4D982ADB1978442D
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsDurangoVersion() end
 
     
@@ -1285,7 +1285,7 @@ function GetGameTimer() end
 ---
 --- @hash 0x48AF36444B965238
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsPcVersion() end
 
     
@@ -1309,9 +1309,9 @@ function ForceLightningFlash() end
 --- ```
 ---
 --- @hash 0xA921AA820C25702F
---- @params address number (int)
---- @params offset number (int)
---- @return boolean (BOOL)
+--- @param address number (int)
+--- @param offset number (int)
+--- @return boolean
 function IsBitSet(address, offset) end
 
     
@@ -1321,7 +1321,7 @@ function IsBitSet(address, offset) end
 ---
 --- @hash 0x14832BF2ABA53FC5
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function HasAsyncInstallFinished() end
 
     
@@ -1362,8 +1362,8 @@ function GetRainLevel() end
 --- IsPrevWeatherType
 ---
 --- @hash 0x44F28F86433B10A9
---- @params weatherType string (char*)
---- @return boolean (BOOL)
+--- @param weatherType string (char*)
+--- @return boolean
 function IsPrevWeatherType(weatherType) end
 
     
@@ -1372,13 +1372,13 @@ function IsPrevWeatherType(weatherType) end
 --- ```
 ---
 --- @hash 0x9870ACFB89A90995
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params p3 number (float)
---- @params p4 boolean (BOOL)
---- @params p5 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 number (float)
+--- @param p4 boolean
+--- @param p5 boolean
+--- @return boolean
 function HasBulletImpactedInArea(x, y, z, p3, p4, p5) end
 
     
@@ -1387,13 +1387,13 @@ function HasBulletImpactedInArea(x, y, z, p3, p4, p5) end
 --- ```
 ---
 --- @hash 0xFEFCF11B01287125
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @return boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @return boolean
 function IsSniperBulletInArea(x1, y1, z1, x2, y2, z2) end
 
     
@@ -1403,7 +1403,7 @@ function IsSniperBulletInArea(x1, y1, z1, x2, y2, z2) end
 ---
 --- @hash 0x6E04F06094C87047
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetIsAutoSaveOff() end
 
     
@@ -1413,7 +1413,7 @@ function GetIsAutoSaveOff() end
 --- ```
 ---
 --- @hash 0x02DEAAC8F8EA7FE7
---- @params p0 string (char*)
+--- @param p0 string (char*)
 --- @return void
 function N_0x02deaac8f8ea7fe7(p0) end
 
@@ -1423,7 +1423,7 @@ function N_0x02deaac8f8ea7fe7(p0) end
 --- ```
 ---
 --- @hash 0xC488FF2356EA7791
---- @params profileSetting number (int)
+--- @param profileSetting number (int)
 --- @return number (int)
 function GetProfileSetting(profileSetting) end
 
@@ -1431,7 +1431,7 @@ function GetProfileSetting(profileSetting) end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0x703CC7F60CBB2B57
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x703cc7f60cbb2b57(p0) end
 
@@ -1451,9 +1451,9 @@ function GetOnscreenKeyboardResult() end
 --- ```
 ---
 --- @hash 0x28A04B411933F8A6
---- @params ped table (Ped)
---- @params toggle boolean (BOOL)
---- @params p2 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param toggle boolean
+--- @param p2 boolean
 --- @return void
 function EnableTennisMode(ped, toggle, p2) end
 
@@ -1471,15 +1471,15 @@ function GetFrameTime() end
 --- ```
 ---
 --- @hash 0x2E0DC353342C4A6D
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params type number (int)
---- @params ownedByPlayer boolean (BOOL)
---- @return boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param type number (int)
+--- @param ownedByPlayer boolean
+--- @return boolean
 function IsProjectileTypeInArea(x1, y1, z1, x2, y2, z2, type, ownedByPlayer) end
 
     
@@ -1489,7 +1489,7 @@ function IsProjectileTypeInArea(x1, y1, z1, x2, y2, z2, type, ownedByPlayer) end
 ---
 --- @hash 0x61A23B7EDA9BDA24
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsSniperInverted() end
 
     
@@ -1508,8 +1508,8 @@ function GetReplayStatMissionType() end
 --- ```
 ---
 --- @hash 0x19BFED045C647C49
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function N_0x19bfed045c647c49(ped) end
 
     
@@ -1524,7 +1524,7 @@ function GetTotalSuccessfulStuntJumps() end
 --- GetNumberOfFreeStacksOfThisSize
 ---
 --- @hash 0xFEAD16FC8F9DFC0F
---- @params stackSize number (int)
+--- @param stackSize number (int)
 --- @return number (int)
 function GetNumberOfFreeStacksOfThisSize(stackSize) end
 
@@ -1538,8 +1538,8 @@ function GetNumberOfFreeStacksOfThisSize(stackSize) end
 --- ```
 ---
 --- @hash 0xC8BC6461E629BEAA
---- @params incidentId number (int)
---- @return boolean (BOOL)
+--- @param incidentId number (int)
+--- @return boolean
 function IsIncidentValid(incidentId) end
 
     
@@ -1558,12 +1558,12 @@ function GetNextWeatherTypeHashName() end
 --- ```
 ---
 --- @hash 0x9E82F0F362881B29
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params groundZ table (float*)
---- @params p4 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param groundZ table (float*)
+--- @param p4 boolean
+--- @return boolean
 function GetGroundZFor_3dCoord_2(x, y, z, groundZ, p4) end
 
     
@@ -1573,7 +1573,7 @@ function GetGroundZFor_3dCoord_2(x, y, z, groundZ, p4) end
 --- ```
 ---
 --- @hash 0x3ED1438C1F5C6612
---- @params p0 number (int)
+--- @param p0 number (int)
 --- @return void
 function N_0x3ed1438c1f5c6612(p0) end
 
@@ -1584,14 +1584,14 @@ function N_0x3ed1438c1f5c6612(p0) end
 --- ```
 ---
 --- @hash 0x5270A8FBC098C3F8
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params ownedByPlayer boolean (BOOL)
---- @return boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param ownedByPlayer boolean
+--- @return boolean
 function IsProjectileInArea(x1, y1, z1, x2, y2, z2, ownedByPlayer) end
 
     
@@ -1600,14 +1600,14 @@ function IsProjectileInArea(x1, y1, z1, x2, y2, z2, ownedByPlayer) end
 --- ```
 ---
 --- @hash 0xA56F01F3765B93A0
---- @params X number (float)
---- @params Y number (float)
---- @params Z number (float)
---- @params radius number (float)
---- @params p4 boolean (BOOL)
---- @params ignoreCopCars boolean (BOOL)
---- @params ignoreObjects boolean (BOOL)
---- @params p7 boolean (BOOL)
+--- @param X number (float)
+--- @param Y number (float)
+--- @param Z number (float)
+--- @param radius number (float)
+--- @param p4 boolean
+--- @param ignoreCopCars boolean
+--- @param ignoreObjects boolean
+--- @param p7 boolean
 --- @return void
 function ClearArea(X, Y, Z, radius, p4, ignoreCopCars, ignoreObjects, p7) end
 
@@ -1618,14 +1618,14 @@ function ClearArea(X, Y, Z, radius, p4, ignoreCopCars, ignoreObjects, p7) end
 ---
 --- @hash 0xC5868A966E5BE3AE
 ---
---- @return Any
+--- @return any
 function GetSnowLevel() end
 
     
 --- N_0x2587a48bc88dfadf
 ---
 --- @hash 0x2587A48BC88DFADF
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return void
 function N_0x2587a48bc88dfadf(p0) end
 
@@ -1633,15 +1633,15 @@ function N_0x2587a48bc88dfadf(p0) end
 --- OverrideSaveHouse
 ---
 --- @hash 0x1162EA8AE9D24EEA
---- @params p0 boolean (BOOL)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 boolean (BOOL)
---- @params p6 number (float)
---- @params p7 number (float)
---- @return boolean (BOOL)
+--- @param p0 boolean
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 boolean
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @return boolean
 function OverrideSaveHouse(p0, p1, p2, p3, p4, p5, p6, p7) end
 
     
@@ -1650,10 +1650,10 @@ function OverrideSaveHouse(p0, p1, p2, p3, p4, p5, p6, p7) end
 --- ```
 ---
 --- @hash 0x186FC4BE848E1C92
---- @params x1 number (float)
---- @params y1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
 --- @return number (float)
 function GetAngleBetween_2dVectors(x1, y1, x2, y2) end
 
@@ -1669,7 +1669,7 @@ function N_0x23227df0b2115469() end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0x31125FD509D9043F
---- @params p0 table (Any*)
+--- @param p0 table (Any*)
 --- @return void
 function N_0x31125fd509d9043f(p0) end
 
@@ -1697,10 +1697,10 @@ function N_0x06462a961e94b67c() end
 --- N_0x1bb299305c3e8c13
 ---
 --- @hash 0x1BB299305C3E8C13
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function N_0x1bb299305c3e8c13(p0, p1, p2, p3) end
 
@@ -1709,7 +1709,7 @@ function N_0x1bb299305c3e8c13(p0, p1, p2, p3) end
 ---
 --- @hash 0x5B1F2E327B6B6FE1
 ---
---- @return Any
+--- @return any
 function N_0x5b1f2e327b6b6fe1() end
 
     
@@ -1717,7 +1717,7 @@ function N_0x5b1f2e327b6b6fe1() end
 ---
 --- @hash 0x44A0BDC559B35F6E
 ---
---- @return Any
+--- @return any
 function N_0x44a0bdc559b35f6e() end
 
     
@@ -1747,8 +1747,8 @@ function N_0x44a0bdc559b35f6e() end
 --- ```
 ---
 --- @hash 0xDC0F817884CDD856
---- @params dispatchService number (int)
---- @params toggle boolean (BOOL)
+--- @param dispatchService number (int)
+--- @param toggle boolean
 --- @return void
 function EnableDispatchService(dispatchService, toggle) end
 
@@ -1760,7 +1760,7 @@ function EnableDispatchService(dispatchService, toggle) end
 --- ```
 ---
 --- @hash 0x65D2EBB47E1CEC21
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x65d2ebb47e1cec21(toggle) end
 
@@ -1770,8 +1770,8 @@ function N_0x65d2ebb47e1cec21(toggle) end
 --- ```
 ---
 --- @hash 0x1312F4B242609CE3
---- @params id number (int)
---- @return boolean (BOOL)
+--- @param id number (int)
+--- @return boolean
 function IsPopMultiplierAreaUnk(id) end
 
     
@@ -1793,8 +1793,8 @@ function IsPopMultiplierAreaUnk(id) end
 --- ```
 ---
 --- @hash 0x1EAE0A6E978894A2
---- @params p0 number (int)
---- @params p1 boolean (BOOL)
+--- @param p0 number (int)
+--- @param p1 boolean
 --- @return void
 function N_0x1eae0a6e978894a2(p0, p1) end
 
@@ -1802,7 +1802,7 @@ function N_0x1eae0a6e978894a2(p0, p1) end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0xBA4B8D83BDC75551
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0xba4b8d83bdc75551(p0) end
 
@@ -1810,15 +1810,15 @@ function N_0xba4b8d83bdc75551(p0) end
 --- HasBulletImpactedInBox
 ---
 --- @hash 0xDC8C5D7CFEAB8394
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 boolean (BOOL)
---- @params p7 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 boolean
+--- @param p7 boolean
+--- @return boolean
 function HasBulletImpactedInBox(p0, p1, p2, p3, p4, p5, p6, p7) end
 
     
@@ -1829,8 +1829,8 @@ function HasBulletImpactedInBox(p0, p1, p2, p3, p4, p5, p6, p7) end
 --- ```
 ---
 --- @hash 0xD53343AA4FB7DD28
---- @params startRange number (int)
---- @params endRange number (int)
+--- @param startRange number (int)
+--- @param endRange number (int)
 --- @return number (int)
 function GetRandomIntInRange(startRange, endRange) end
 
@@ -1839,25 +1839,25 @@ function GetRandomIntInRange(startRange, endRange) end
 ---
 --- @hash 0x69240733738C19A0
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsAutoSaveInProgress() end
 
     
 --- The BOOL parameters that are documented have not been confirmed. They are just documented from what I've found during testing. They may not work as expected in all cases.
 ---
 --- @hash 0xADCDE75E1C60F32D
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params range number (float)
---- @params p4 boolean (BOOL)
---- @params checkVehicles boolean (BOOL)
---- @params checkPeds boolean (BOOL)
---- @params p7 boolean (BOOL)
---- @params p8 boolean (BOOL)
---- @params ignoreEntity table (Entity)
---- @params p10 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param range number (float)
+--- @param p4 boolean
+--- @param checkVehicles boolean
+--- @param checkPeds boolean
+--- @param p7 boolean
+--- @param p8 boolean
+--- @param ignoreEntity table (Entity)
+--- @param p10 boolean
+--- @return boolean
 function IsPositionOccupied(x, y, z, range, p4, checkVehicles, checkPeds, p7, p8, ignoreEntity, p10) end
 
     
@@ -1872,22 +1872,22 @@ function GetWindDirection() end
 --- IsPointObscuredByAMissionEntity
 ---
 --- @hash 0xE54E209C35FFA18D
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 Any
---- @return boolean (BOOL)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 any
+--- @return boolean
 function IsPointObscuredByAMissionEntity(p0, p1, p2, p3, p4, p5, p6) end
 
     
 --- RegisterIntToSave
 ---
 --- @hash 0x34C9EE5986258415
---- @params p0 table (Any*)
---- @params name string (char*)
+--- @param p0 table (Any*)
+--- @param name string (char*)
 --- @return void
 function RegisterIntToSave(p0, name) end
 
@@ -1898,7 +1898,7 @@ function RegisterIntToSave(p0, name) end
 ---
 --- @hash 0x3BBBD13E5041A79E
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function LandingMenuIsActive() end
 
     
@@ -1931,8 +1931,8 @@ function GetNumSuccessfulStuntJumps() end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0xEB078CA2B5E82ADD
---- @params p0 Any
---- @params p1 Any
+--- @param p0 any
+--- @param p1 any
 --- @return void
 function N_0xeb078ca2b5e82add(p0, p1) end
 
@@ -1941,7 +1941,7 @@ function N_0xeb078ca2b5e82add(p0, p1) end
 ---
 --- @hash 0xD642319C54AADEB6
 ---
---- @return Any
+--- @return any
 function N_0xd642319c54aadeb6() end
 
     
@@ -1954,9 +1954,9 @@ function N_0xd642319c54aadeb6() end
 --- ```
 ---
 --- @hash 0xF3BBE884A14BB413
---- @params weatherType1 table (Hash*)
---- @params weatherType2 table (Hash*)
---- @params percentWeather2 table (float*)
+--- @param weatherType1 table (Hash*)
+--- @param weatherType2 table (Hash*)
+--- @param percentWeather2 table (float*)
 --- @return void
 function GetWeatherTypeTransition(weatherType1, weatherType2, percentWeather2) end
 
@@ -1964,7 +1964,7 @@ function GetWeatherTypeTransition(weatherType1, weatherType2, percentWeather2) e
 --- N_0x0cf97f497fe7d048
 ---
 --- @hash 0x0CF97F497FE7D048
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x0cf97f497fe7d048(p0) end
 
@@ -1972,7 +1972,7 @@ function N_0x0cf97f497fe7d048(p0) end
 --- N_0xb51b9ab9ef81868c
 ---
 --- @hash 0xB51B9AB9EF81868C
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0xb51b9ab9ef81868c(toggle) end
 
@@ -1982,7 +1982,7 @@ function N_0xb51b9ab9ef81868c(toggle) end
 --- ```
 ---
 --- @hash 0xA09F896CE912481F
---- @params p0 boolean (BOOL)
+--- @param p0 boolean
 --- @return number (int)
 function N_0xa09f896ce912481f(p0) end
 
@@ -1992,7 +1992,7 @@ function N_0xa09f896ce912481f(p0) end
 --- ```
 ---
 --- @hash 0x8D74E26F54B4E5C3
---- @params p0 string (char*)
+--- @param p0 string (char*)
 --- @return void
 function N_0x8d74e26f54b4e5c3(p0) end
 
@@ -2026,7 +2026,7 @@ function RestartGame() end
 ---
 --- @hash 0x684A41975F077262
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsInPowerSavingMode() end
 
     
@@ -2037,8 +2037,8 @@ function IsInPowerSavingMode() end
 --- ```
 ---
 --- @hash 0x8269816F6CFD40F8
---- @params p0 table (Any*)
---- @params name string (char*)
+--- @param p0 table (Any*)
+--- @param name string (char*)
 --- @return void
 function N_0x8269816f6cfd40f8(p0, name) end
 
@@ -2046,20 +2046,20 @@ function N_0x8269816f6cfd40f8(p0, name) end
 --- IsBulletInArea
 ---
 --- @hash 0x3F2023999AD51C1F
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params radius number (float)
---- @params ownedByPlayer boolean (BOOL)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param ownedByPlayer boolean
+--- @return boolean
 function IsBulletInArea(x, y, z, radius, ownedByPlayer) end
 
     
 --- IsStringNullOrEmpty
 ---
 --- @hash 0xCA042B6957743895
---- @params string string (char*)
---- @return boolean (BOOL)
+--- @param string string (char*)
+--- @return boolean
 function IsStringNullOrEmpty(string) end
 
     
@@ -2079,7 +2079,7 @@ function N_0x7ec6f9a478a6a512() end
 ---
 --- @hash 0xF6201B4DAF662A9D
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsXbox360Version() end
 
     
@@ -2088,7 +2088,7 @@ function IsXbox360Version() end
 --- ```
 ---
 --- @hash 0xFB80AB299D2EE1BD
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0xfb80ab299d2ee1bd(toggle) end
 
@@ -2118,8 +2118,8 @@ function N_0xfb80ab299d2ee1bd(toggle) end
 --- ```
 ---
 --- @hash 0xFC4842A34657BFCB
---- @params name string (char*)
---- @params transitionTime number (float)
+--- @param name string (char*)
+--- @param transitionTime number (float)
 --- @return void
 function LoadCloudHat(name, transitionTime) end
 
@@ -2129,8 +2129,8 @@ function LoadCloudHat(name, transitionTime) end
 --- ```
 ---
 --- @hash 0xE532EC1A63231B4F
---- @params p0 number (int)
---- @params p1 number (int)
+--- @param p0 number (int)
+--- @param p1 number (int)
 --- @return void
 function N_0xe532ec1a63231b4f(p0, p1) end
 
@@ -2138,12 +2138,12 @@ function N_0xe532ec1a63231b4f(p0, p1) end
 --- PlayTennisSwingAnim
 ---
 --- @hash 0xE266ED23311F24D4
---- @params ped table (Ped)
---- @params animDict string (char*)
---- @params animName string (char*)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 boolean
 --- @return void
 function PlayTennisSwingAnim(ped, animDict, animName, p3, p4, p5) end
 
@@ -2154,15 +2154,15 @@ function PlayTennisSwingAnim(ped, animDict, animName, p3, p4, p5) end
 ---
 --- @hash 0x9689123E3F213AA5
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetIsPlayerInAnimalForm() end
 
     
 --- GetRandomFloatInRange
 ---
 --- @hash 0x313CE5879CEB6FCD
---- @params startRange number (float)
---- @params endRange number (float)
+--- @param startRange number (float)
+--- @param endRange number (float)
 --- @return number (float)
 function GetRandomFloatInRange(startRange, endRange) end
 
@@ -2170,21 +2170,21 @@ function GetRandomFloatInRange(startRange, endRange) end
 --- IsProjectileTypeWithinDistance
 ---
 --- @hash 0x34318593248C8FB2
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params projHash table (Hash)
---- @params radius number (float)
---- @params ownedByPlayer boolean (BOOL)
---- @return boolean (BOOL)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param projHash table (Hash)
+--- @param radius number (float)
+--- @param ownedByPlayer boolean
+--- @return boolean
 function IsProjectileTypeWithinDistance(x, y, z, projHash, radius, ownedByPlayer) end
 
     
 --- IsNextWeatherType
 ---
 --- @hash 0x2FAA3A30BEC0F25D
---- @params weatherType string (char*)
---- @return boolean (BOOL)
+--- @param weatherType string (char*)
+--- @return boolean
 function IsNextWeatherType(weatherType) end
 
     
@@ -2194,7 +2194,7 @@ function IsNextWeatherType(weatherType) end
 ---
 --- @hash 0x6FDDF453C0C756EC
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x6fddf453c0c756ec() end
 
     
@@ -2209,8 +2209,8 @@ function N_0x6fddf453c0c756ec() end
 --- ```
 ---
 --- @hash 0x933D6A9EEC1BACD0
---- @params address table (int*)
---- @params offset number (int)
+--- @param address table (int*)
+--- @param offset number (int)
 --- @return void
 function SetBit(address, offset) end
 
@@ -2218,7 +2218,7 @@ function SetBit(address, offset) end
 --- SetCloudHatOpacity
 ---
 --- @hash 0xF36199225D6D8C86
---- @params opacity number (float)
+--- @param opacity number (float)
 --- @return void
 function SetCloudHatOpacity(opacity) end
 
@@ -2234,7 +2234,7 @@ function SetCloudHatOpacity(opacity) end
 ---
 --- @hash 0x9F1935CA1F724008
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsAussieVersion() end
 
     
@@ -2243,16 +2243,16 @@ function IsAussieVersion() end
 --- ```
 ---
 --- @hash 0x21C235BC64831E5A
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 number (float)
---- @params p8 number (float)
---- @params p9 boolean (BOOL)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @param p9 boolean
 --- @return Vector3
 function N_0x21c235bc64831e5a(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
@@ -2268,7 +2268,7 @@ function N_0xfb00ca71da386228() end
 --- SetDispatchIdealSpawnDistance
 ---
 --- @hash 0x6FE601A64180D423
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function SetDispatchIdealSpawnDistance(p0) end
 
@@ -2290,8 +2290,8 @@ function ResetDispatchIdealSpawnDistance() end
 --- ```
 ---
 --- @hash 0x6F7794F28C6B2535
---- @params p0 table (Any*)
---- @params name string (char*)
+--- @param p0 table (Any*)
+--- @param name string (char*)
 --- @return void
 function RegisterTextLabelToSave_2(p0, name) end
 
@@ -2300,7 +2300,7 @@ function RegisterTextLabelToSave_2(p0, name) end
 ---
 --- @hash 0xA72BC0B675B1519E
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsOrbisVersion() end
 
     
@@ -2309,7 +2309,7 @@ function IsOrbisVersion() end
 --- ```
 ---
 --- @hash 0x1E0B4DC0D990A4E7
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetFadeOutAfterArrest(toggle) end
 
@@ -2317,7 +2317,7 @@ function SetFadeOutAfterArrest(toggle) end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0xEBD3205A207939ED
---- @params p0 table (Any*)
+--- @param p0 table (Any*)
 --- @return void
 function N_0xebd3205a207939ed(p0) end
 
@@ -2325,8 +2325,8 @@ function N_0xebd3205a207939ed(p0) end
 --- SetWeatherTypeOvertimePersist
 ---
 --- @hash 0xFB5045B7C42B75BF
---- @params weatherType string (char*)
---- @params time number (float)
+--- @param weatherType string (char*)
+--- @param time number (float)
 --- @return void
 function SetWeatherTypeOvertimePersist(weatherType, time) end
 
@@ -2334,20 +2334,20 @@ function SetWeatherTypeOvertimePersist(weatherType, time) end
 --- IsAreaOccupied
 ---
 --- @hash 0xA61B4DF533DCB56E
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 boolean (BOOL)
---- @params p7 boolean (BOOL)
---- @params p8 boolean (BOOL)
---- @params p9 boolean (BOOL)
---- @params p10 boolean (BOOL)
---- @params p11 Any
---- @params p12 boolean (BOOL)
---- @return boolean (BOOL)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 boolean
+--- @param p7 boolean
+--- @param p8 boolean
+--- @param p9 boolean
+--- @param p10 boolean
+--- @param p11 any
+--- @param p12 boolean
+--- @return boolean
 function IsAreaOccupied(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12) end
 
     
@@ -2365,7 +2365,7 @@ function N_0x8951eb9c6906d3c8() end
 ---
 --- @hash 0x2107A3773771186D
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x2107a3773771186d() end
 
     
@@ -2373,7 +2373,7 @@ function N_0x2107a3773771186d() end
 ---
 --- @hash 0x2B5E102E4A42F2BF
 ---
---- @return Any
+--- @return any
 function N_0x2b5e102e4a42f2bf() end
 
     
@@ -2381,15 +2381,15 @@ function N_0x2b5e102e4a42f2bf() end
 ---
 --- @hash 0xA33CDCCDA663159E
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetMissionFlag() end
 
     
 --- RegisterEnumToSave
 ---
 --- @hash 0x10C2FA78D0E128A1
---- @params p0 table (Any*)
---- @params name string (char*)
+--- @param p0 table (Any*)
+--- @param name string (char*)
 --- @return void
 function RegisterEnumToSave(p0, name) end
 
@@ -2400,7 +2400,7 @@ function RegisterEnumToSave(p0, name) end
 --- ```
 ---
 --- @hash 0x1454F2448DE30163
---- @params fakeWantedLevel number (int)
+--- @param fakeWantedLevel number (int)
 --- @return void
 function SetFakeWantedLevel(fakeWantedLevel) end
 
@@ -2409,7 +2409,7 @@ function SetFakeWantedLevel(fakeWantedLevel) end
 ---
 --- @hash 0xEB2104E905C6F2E9
 ---
---- @return Any
+--- @return any
 function N_0xeb2104e905c6f2e9() end
 
     
@@ -2419,7 +2419,7 @@ function N_0xeb2104e905c6f2e9() end
 --- ```
 ---
 --- @hash 0x11B56FBBF7224868
---- @params name string (char*)
+--- @param name string (char*)
 --- @return void
 function PreloadCloudHat(name) end
 
@@ -2427,7 +2427,7 @@ function PreloadCloudHat(name) end
 --- SetCreditsActive
 ---
 --- @hash 0xB938B7E6D3C0620C
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetCreditsActive(toggle) end
 
@@ -2437,7 +2437,7 @@ function SetCreditsActive(toggle) end
 --- ```
 ---
 --- @hash 0xEB2DB0CAD13154B3
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function ResetDispatchTimeBetweenSpawnAttempts(p0) end
 
@@ -2445,7 +2445,7 @@ function ResetDispatchTimeBetweenSpawnAttempts(p0) end
 --- SetBeastModeActive
 ---
 --- @hash 0x438822C279B73B93
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function SetBeastModeActive(player) end
 
@@ -2453,10 +2453,10 @@ function SetBeastModeActive(player) end
 --- ScriptRaceGetPlayerSplitTime
 ---
 --- @hash 0x8EF5573A1F801A5C
---- @params player number (Player)
---- @params p1 table (int*)
---- @params p2 table (int*)
---- @return boolean (BOOL)
+--- @param player number (Player)
+--- @param p1 table (int*)
+--- @param p2 table (int*)
+--- @return boolean
 function ScriptRaceGetPlayerSplitTime(player, p1, p2) end
 
     
@@ -2467,17 +2467,17 @@ function ScriptRaceGetPlayerSplitTime(player, p1, p2) end
 --- ```
 ---
 --- @hash 0xF0BC12401061DEA0
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params width number (float)
---- @params p6 number (float)
---- @params p7 Any
---- @params ownedByPlayer boolean (BOOL)
---- @return boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param width number (float)
+--- @param p6 number (float)
+--- @param p7 any
+--- @param ownedByPlayer boolean
+--- @return boolean
 function IsProjectileTypeInAngledArea(x1, y1, z1, x2, y2, z2, width, p6, p7, ownedByPlayer) end
 
     
@@ -2488,11 +2488,11 @@ function IsProjectileTypeInAngledArea(x1, y1, z1, x2, y2, z2, width, p6, p7, own
 --- ```
 ---
 --- @hash 0xA4A0065E39C9F25C
---- @params p0 table (Vector3*)
---- @params p1 table (float*)
---- @params fadeInAfterLoad table (BOOL*)
---- @params p3 table (BOOL*)
---- @return boolean (BOOL)
+--- @param p0 table (Vector3*)
+--- @param p1 table (float*)
+--- @param fadeInAfterLoad table (BOOL*)
+--- @param p3 table (BOOL*)
+--- @return boolean
 function N_0xa4a0065e39c9f25c(p0, p1, fadeInAfterLoad, p3) end
 
     
@@ -2500,7 +2500,7 @@ function N_0xa4a0065e39c9f25c(p0, p1, fadeInAfterLoad, p3) end
 ---
 --- @hash 0xD10282B6E3751BA0
 ---
---- @return Any
+--- @return any
 function N_0xd10282b6e3751ba0() end
 
     
@@ -2512,8 +2512,8 @@ function N_0xd10282b6e3751ba0() end
 --- ```
 ---
 --- @hash 0x48F069265A0E4BEC
---- @params p0 table (Any*)
---- @params name string (char*)
+--- @param p0 table (Any*)
+--- @param name string (char*)
 --- @return void
 function N_0x48f069265a0e4bec(p0, name) end
 
@@ -2522,14 +2522,14 @@ function N_0x48f069265a0e4bec(p0, name) end
 ---
 --- @hash 0x075F1D57402C93BA
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function HaveCreditsReachedEnd() end
 
     
 --- PauseDeathArrestRestart
 ---
 --- @hash 0x2C2B3493FBF51C71
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function PauseDeathArrestRestart(toggle) end
 
@@ -2553,9 +2553,9 @@ function PauseDeathArrestRestart(toggle) end
 --- ```
 ---
 --- @hash 0x578C752848ECFA0C
---- @params weatherType1 table (Hash)
---- @params weatherType2 table (Hash)
---- @params percentWeather2 number (float)
+--- @param weatherType1 table (Hash)
+--- @param weatherType2 table (Hash)
+--- @param percentWeather2 number (float)
 --- @return void
 function SetWeatherTypeTransition(weatherType1, weatherType2, percentWeather2) end
 
@@ -2576,15 +2576,15 @@ function N_0x397baa01068baa96() end
 ---
 --- @hash 0xEA2F2061875EED90
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function UiIsSingleplayerPauseMenuActive() end
 
     
 --- RemovePopMultiplierSphere
 ---
 --- @hash 0xE6869BECDD8F2403
---- @params id number (int)
---- @params p1 boolean (BOOL)
+--- @param id number (int)
+--- @param p1 boolean
 --- @return void
 function RemovePopMultiplierSphere(id, p1) end
 
@@ -2592,8 +2592,8 @@ function RemovePopMultiplierSphere(id, p1) end
 --- RemovePopMultiplierArea
 ---
 --- @hash 0xB129E447A2EDA4BF
---- @params id number (int)
---- @params p1 boolean (BOOL)
+--- @param id number (int)
+--- @param p1 boolean
 --- @return void
 function RemovePopMultiplierArea(id, p1) end
 
@@ -2607,7 +2607,7 @@ function RemovePopMultiplierArea(id, p1) end
 --- ```
 ---
 --- @hash 0x740E14FAD5842351
---- @params level number (int)
+--- @param level number (int)
 --- @return void
 function SetGravityLevel(level) end
 
@@ -2616,15 +2616,15 @@ function SetGravityLevel(level) end
 ---
 --- @hash 0xCCA1072C29D096C2
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsPs3Version() end
 
     
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0x4DCDF92BF64236CD
---- @params p0 string (char*)
---- @params p1 string (char*)
+--- @param p0 string (char*)
+--- @param p1 string (char*)
 --- @return void
 function N_0x4dcdf92bf64236cd(p0, p1) end
 
@@ -2632,7 +2632,7 @@ function N_0x4dcdf92bf64236cd(p0, p1) end
 --- SetThisScriptCanRemoveBlipsCreatedByAnyScript
 ---
 --- @hash 0xB98236CAAECEF897
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetThisScriptCanRemoveBlipsCreatedByAnyScript(toggle) end
 
@@ -2644,8 +2644,8 @@ function SetThisScriptCanRemoveBlipsCreatedByAnyScript(toggle) end
 --- ```
 ---
 --- @hash 0xE95B0C7D5BA3B96B
---- @params ped table (Ped)
---- @return boolean (BOOL)
+--- @param ped table (Ped)
+--- @return boolean
 function N_0xe95b0c7d5ba3b96b(ped) end
 
     
@@ -2654,10 +2654,10 @@ function N_0xe95b0c7d5ba3b96b(ped) end
 --- ```
 ---
 --- @hash 0x706B5EDCAA7FA663
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params heading number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
 --- @return void
 function SetCustomRespawnPosition(x, y, z, heading) end
 
@@ -2675,7 +2675,7 @@ function ScriptRaceShutdown() end
 --- ```
 ---
 --- @hash 0x577D1284D6873711
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetGamePaused(toggle) end
 
@@ -2683,8 +2683,8 @@ function SetGamePaused(toggle) end
 --- RegisterInt64ToSave
 ---
 --- @hash 0xA735353C77334EA0
---- @params p0 table (Any*)
---- @params name string (char*)
+--- @param p0 table (Any*)
+--- @param name string (char*)
 --- @return void
 function RegisterInt64ToSave(p0, name) end
 
@@ -2692,7 +2692,7 @@ function RegisterInt64ToSave(p0, name) end
 --- UsingMissionCreator
 ---
 --- @hash 0xF14878FC50BEC6EE
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function UsingMissionCreator(toggle) end
 
@@ -2714,7 +2714,7 @@ function UsingMissionCreator(toggle) end
 --- ```
 ---
 --- @hash 0xED712CA327900C8A
---- @params weatherType string (char*)
+--- @param weatherType string (char*)
 --- @return void
 function SetWeatherTypeNowPersist(weatherType) end
 
@@ -2742,8 +2742,8 @@ function SetRandomWeatherType() end
 --- ```
 ---
 --- @hash 0xFAA457EF263E8763
---- @params p0 table (Any*)
---- @params name string (char*)
+--- @param p0 table (Any*)
+--- @param name string (char*)
 --- @return void
 function N_0xfaa457ef263e8763(p0, name) end
 
@@ -2753,8 +2753,8 @@ function N_0xfaa457ef263e8763(p0, name) end
 --- ```
 ---
 --- @hash 0xFF1BED81BFDC0FE0
---- @params player number (Player)
---- @return Any
+--- @param player number (Player)
+--- @return any
 function SetExplosiveMeleeThisFrame(player) end
 
     
@@ -2763,7 +2763,7 @@ function SetExplosiveMeleeThisFrame(player) end
 --- ```
 ---
 --- @hash 0x4A18E01DF2C87B86
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetFadeOutAfterDeath(toggle) end
 
@@ -2773,9 +2773,9 @@ function SetFadeOutAfterDeath(toggle) end
 --- ```
 ---
 --- @hash 0xBF737600CDDBEADD
---- @params p0 table (Any*)
---- @params size number (int)
---- @params structName string (char*)
+--- @param p0 table (Any*)
+--- @param size number (int)
+--- @param structName string (char*)
 --- @return void
 function StartSaveStructWithSize(p0, size, structName) end
 
@@ -2783,7 +2783,7 @@ function StartSaveStructWithSize(p0, size, structName) end
 --- **This native does absolutely nothing, just a nullsub**
 ---
 --- @hash 0x97E7E2C04245115B
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function N_0x97e7e2c04245115b(p0) end
 
@@ -2796,8 +2796,8 @@ function N_0x97e7e2c04245115b(p0) end
 --- ```
 ---
 --- @hash 0xA6A12939F16D85BE
---- @params hash table (Hash)
---- @params p1 boolean (BOOL)
+--- @param hash table (Hash)
+--- @param p1 boolean
 --- @return void
 function RemoveStealthKill(hash, p1) end
 
@@ -2806,15 +2806,15 @@ function RemoveStealthKill(hash, p1) end
 ---
 --- @hash 0x2272B0A1343129F4
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsStuntJumpMessageShowing() end
 
     
 --- RegisterFloatToSave
 ---
 --- @hash 0x7CAEC29ECB5DFEBB
---- @params p0 table (Any*)
---- @params name string (char*)
+--- @param p0 table (Any*)
+--- @param name string (char*)
 --- @return void
 function RegisterFloatToSave(p0, name) end
 
@@ -2822,10 +2822,10 @@ function RegisterFloatToSave(p0, name) end
 --- SetBitsInRange
 ---
 --- @hash 0x8EF07E15701D61ED
---- @params var table (int*)
---- @params rangeStart number (int)
---- @params rangeEnd number (int)
---- @params p3 number (int)
+--- @param var table (int*)
+--- @param rangeStart number (int)
+--- @param rangeEnd number (int)
+--- @param p3 number (int)
 --- @return void
 function SetBitsInRange(var, rangeStart, rangeEnd, p3) end
 
@@ -2836,7 +2836,7 @@ function SetBitsInRange(var, rangeStart, rangeEnd, p3) end
 --- ```
 ---
 --- @hash 0xC5F0A8EBD3F361CE
---- @params flag number (int)
+--- @param flag number (int)
 --- @return void
 function SetInstancePriorityHint(flag) end
 
@@ -2847,7 +2847,7 @@ function SetInstancePriorityHint(flag) end
 --- ```
 ---
 --- @hash 0xA43D5C6FE51ADBEF
---- @params weatherType string (char*)
+--- @param weatherType string (char*)
 --- @return void
 function SetOverrideWeather(weatherType) end
 
@@ -2855,7 +2855,7 @@ function SetOverrideWeather(weatherType) end
 --- WaterOverrideSetRippledisturb
 ---
 --- @hash 0xB9854DFDE0D833D6
---- @params disturb number (float)
+--- @param disturb number (float)
 --- @return void
 function WaterOverrideSetRippledisturb(disturb) end
 
@@ -2867,7 +2867,7 @@ function WaterOverrideSetRippledisturb(disturb) end
 --- ```
 ---
 --- @hash 0x6F2135B6129620C1
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function N_0x6f2135b6129620c1(toggle) end
 
@@ -2877,7 +2877,7 @@ function N_0x6f2135b6129620c1(toggle) end
 --- ```
 ---
 --- @hash 0x9D8D44ADBBA61EF2
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetPlayerRockstarEditorDisabled(toggle) end
 
@@ -2885,7 +2885,7 @@ function SetPlayerRockstarEditorDisabled(toggle) end
 --- SetMinigameInProgress
 ---
 --- @hash 0x19E00D7322C6F85B
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetMinigameInProgress(toggle) end
 
@@ -2901,12 +2901,12 @@ function NetworkSetScriptIsSafeForNetworkGame() end
 --- PlayTennisDiveAnim
 ---
 --- @hash 0x8FA9C42FC5D7C64B
---- @params ped table (Ped)
---- @params p1 number (int)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 boolean (BOOL)
+--- @param ped table (Ped)
+--- @param p1 number (int)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 boolean
 --- @return void
 function PlayTennisDiveAnim(ped, p1, p2, p3, p4, p5) end
 
@@ -2914,7 +2914,7 @@ function PlayTennisDiveAnim(ped, p1, p2, p3, p4, p5) end
 --- SetRandomSeed
 ---
 --- @hash 0x444D98F98C11F3EC
---- @params seed number (int)
+--- @param seed number (int)
 --- @return void
 function SetRandomSeed(seed) end
 
@@ -2922,8 +2922,8 @@ function SetRandomSeed(seed) end
 --- RegisterTextLabelToSave
 ---
 --- @hash 0xEDB1232C5BEAE62F
---- @params p0 table (Any*)
---- @params name string (char*)
+--- @param p0 table (Any*)
+--- @param name string (char*)
 --- @return void
 function RegisterTextLabelToSave(p0, name) end
 
@@ -2935,7 +2935,7 @@ function RegisterTextLabelToSave(p0, name) end
 --- ```
 ---
 --- @hash 0xC4301E5121A0ED73
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetMissionFlag(toggle) end
 
@@ -2950,7 +2950,7 @@ function SetMissionFlag(toggle) end
 --- ```
 ---
 --- @hash 0x971927086CFD2158
---- @params toggle Any
+--- @param toggle any
 --- @return void
 function SetRandomEventFlag(toggle) end
 
@@ -2972,7 +2972,7 @@ function SetRandomEventFlag(toggle) end
 --- ```
 ---
 --- @hash 0x704983DF373B198F
---- @params weatherType string (char*)
+--- @param weatherType string (char*)
 --- @return void
 function SetWeatherTypePersist(weatherType) end
 
@@ -2980,8 +2980,8 @@ function SetWeatherTypePersist(weatherType) end
 --- RegisterBoolToSave
 ---
 --- @hash 0xC8F4131414C835A1
---- @params p0 table (Any*)
---- @params name string (char*)
+--- @param p0 table (Any*)
+--- @param name string (char*)
 --- @return void
 function RegisterBoolToSave(p0, name) end
 
@@ -2989,7 +2989,7 @@ function RegisterBoolToSave(p0, name) end
 --- SetExplosiveAmmoThisFrame
 ---
 --- @hash 0xA66C71C98D5F2CFB
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function SetExplosiveAmmoThisFrame(player) end
 
@@ -2997,9 +2997,9 @@ function SetExplosiveAmmoThisFrame(player) end
 --- SetIncidentRequestedUnits
 ---
 --- @hash 0xB08B85D860E7BA3C
---- @params incidentId number (int)
---- @params dispatchService number (int)
---- @params numUnits number (int)
+--- @param incidentId number (int)
+--- @param dispatchService number (int)
+--- @param numUnits number (int)
 --- @return void
 function SetIncidentRequestedUnits(incidentId, dispatchService, numUnits) end
 
@@ -3009,7 +3009,7 @@ function SetIncidentRequestedUnits(incidentId, dispatchService, numUnits) end
 --- ```
 ---
 --- @hash 0xA1183BCFEE0F93D1
---- @params player number (Player)
+--- @param player number (Player)
 --- @return void
 function SetForcePlayerToJump(player) end
 
@@ -3020,9 +3020,9 @@ function SetForcePlayerToJump(player) end
 --- ```
 ---
 --- @hash 0x54F157E0336A3822
---- @params ped table (Ped)
---- @params p1 string (char*)
---- @params p2 number (float)
+--- @param ped table (Ped)
+--- @param p1 string (char*)
+--- @param p2 number (float)
 --- @return void
 function N_0x54f157e0336a3822(ped, p1, p2) end
 
@@ -3033,9 +3033,9 @@ function N_0x54f157e0336a3822(ped, p1, p2) end
 --- ```
 ---
 --- @hash 0x5A5F40FE637EB584
---- @params string string (char*)
---- @params outInteger table (int*)
---- @return boolean (BOOL)
+--- @param string string (char*)
+--- @param outInteger table (int*)
+--- @return boolean
 function StringToInt(string, outInteger) end
 
     
@@ -3051,14 +3051,14 @@ function StopSaveArray() end
 ---
 --- @hash 0x7B30F65D7B710098
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function IsThisAMinigameScript() end
 
     
 --- WaterOverrideSetOceannoiseminamplitude
 ---
 --- @hash 0x31727907B2C43C55
---- @params minAmplitude number (float)
+--- @param minAmplitude number (float)
 --- @return void
 function WaterOverrideSetOceannoiseminamplitude(minAmplitude) end
 
@@ -3066,7 +3066,7 @@ function WaterOverrideSetOceannoiseminamplitude(minAmplitude) end
 --- SetFadeInAfterLoad
 ---
 --- @hash 0xF3D78F59DFE18D79
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetFadeInAfterLoad(toggle) end
 
@@ -3093,8 +3093,8 @@ function ResetDispatchSpawnBlockingAreas() end
 --- ```
 ---
 --- @hash 0x557E43C447E700A8
---- @params hash table (Hash)
---- @return boolean (BOOL)
+--- @param hash table (Hash)
+--- @return boolean
 function HasCheatStringJustBeenEntered(hash) end
 
     
@@ -3103,7 +3103,7 @@ function HasCheatStringJustBeenEntered(hash) end
 --- ```
 ---
 --- @hash 0xC9BF75D28165FF77
---- @params ignoreVehicle boolean (BOOL)
+--- @param ignoreVehicle boolean
 --- @return void
 function SetSaveMenuActive(ignoreVehicle) end
 
@@ -3111,10 +3111,10 @@ function SetSaveMenuActive(ignoreVehicle) end
 --- ScriptRaceInit
 ---
 --- @hash 0x0A60017F841A54F2
---- @params p0 Any
---- @params p1 Any
---- @params p2 Any
---- @params p3 Any
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
 function ScriptRaceInit(p0, p1, p2, p3) end
 
@@ -3122,9 +3122,9 @@ function ScriptRaceInit(p0, p1, p2, p3) end
 --- SetDispatchSpawnLocation
 ---
 --- @hash 0xD10F442036302D50
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
 function SetDispatchSpawnLocation(x, y, z) end
 
@@ -3132,19 +3132,19 @@ function SetDispatchSpawnLocation(x, y, z) end
 --- ShootSingleBulletBetweenCoords
 ---
 --- @hash 0x867654CBC7606F2C
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params damage number (int)
---- @params p7 boolean (BOOL)
---- @params weaponHash table (Hash)
---- @params ownerPed table (Ped)
---- @params isAudible boolean (BOOL)
---- @params isInvisible boolean (BOOL)
---- @params speed number (float)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param damage number (int)
+--- @param p7 boolean
+--- @param weaponHash table (Hash)
+--- @param ownerPed table (Ped)
+--- @param isAudible boolean
+--- @param isInvisible boolean
+--- @param speed number (float)
 --- @return void
 function ShootSingleBulletBetweenCoords(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed) end
 
@@ -3152,7 +3152,7 @@ function ShootSingleBulletBetweenCoords(x1, y1, z1, x2, y2, z2, damage, p7, weap
 --- WaterOverrideSetShorewaveamplitude
 ---
 --- @hash 0xB8F87EAD7533B176
---- @params amplitude number (float)
+--- @param amplitude number (float)
 --- @return void
 function WaterOverrideSetShorewaveamplitude(amplitude) end
 
@@ -3161,14 +3161,14 @@ function WaterOverrideSetShorewaveamplitude(amplitude) end
 ---
 --- @hash 0x72DE52178C291CB5
 ---
---- @return Any
+--- @return any
 function N_0x72de52178c291cb5() end
 
     
 --- WaterOverrideFadeIn
 ---
 --- @hash 0xA8434F1DFF41D6E7
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function WaterOverrideFadeIn(p0) end
 
@@ -3176,8 +3176,8 @@ function WaterOverrideFadeIn(p0) end
 --- SetDispatchTimeBetweenSpawnAttemptsMultiplier
 ---
 --- @hash 0x48838ED9937A15D1
---- @params p0 Any
---- @params p1 number (float)
+--- @param p0 any
+--- @param p1 number (float)
 --- @return void
 function SetDispatchTimeBetweenSpawnAttemptsMultiplier(p0, p1) end
 
@@ -3185,7 +3185,7 @@ function SetDispatchTimeBetweenSpawnAttemptsMultiplier(p0, p1) end
 --- SetThisScriptCanBePaused
 ---
 --- @hash 0xAA391C728106F7AF
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetThisScriptCanBePaused(toggle) end
 
@@ -3195,7 +3195,7 @@ function SetThisScriptCanBePaused(toggle) end
 --- ```
 ---
 --- @hash 0xEE09ECEDBABE47FC
---- @params speed number (float)
+--- @param speed number (float)
 --- @return void
 function SetWindSpeed(speed) end
 
@@ -3203,7 +3203,7 @@ function SetWindSpeed(speed) end
 --- RemoveDispatchSpawnBlockingArea
 ---
 --- @hash 0x264AC28B01B353A5
---- @params p0 Any
+--- @param p0 any
 --- @return void
 function RemoveDispatchSpawnBlockingArea(p0) end
 
@@ -3214,7 +3214,7 @@ function RemoveDispatchSpawnBlockingArea(p0) end
 --- ```
 ---
 --- @hash 0x4EBB7E87AA0DBED4
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function ShowPedInPauseMenu(toggle) end
 
@@ -3228,7 +3228,7 @@ function ShowPedInPauseMenu(toggle) end
 --- ```
 ---
 --- @hash 0x1D408577D440E81E
---- @params timeScale number (float)
+--- @param timeScale number (float)
 --- @return void
 function SetTimeScale(timeScale) end
 
@@ -3238,7 +3238,7 @@ function SetTimeScale(timeScale) end
 --- ```
 ---
 --- @hash 0xAC3A74E8384A9919
---- @params speed number (float)
+--- @param speed number (float)
 --- @return void
 function SetWind(speed) end
 
@@ -3262,20 +3262,20 @@ function SaveBenchmarkRecording() end
 --- ```
 ---
 --- @hash 0xE3A7742E0B7A2F8B
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params damage number (int)
---- @params p7 boolean (BOOL)
---- @params weaponHash table (Hash)
---- @params ownerPed table (Ped)
---- @params isAudible boolean (BOOL)
---- @params isInvisible boolean (BOOL)
---- @params speed number (float)
---- @params entity table (Entity)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param damage number (int)
+--- @param p7 boolean
+--- @param weaponHash table (Hash)
+--- @param ownerPed table (Ped)
+--- @param isAudible boolean
+--- @param isInvisible boolean
+--- @param speed number (float)
+--- @param entity table (Entity)
 --- @return void
 function ShootSingleBulletBetweenCoordsIgnoreEntity(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed, entity) end
 
@@ -3283,7 +3283,7 @@ function ShootSingleBulletBetweenCoordsIgnoreEntity(x1, y1, z1, x2, y2, z2, dama
 --- WaterOverrideSetOceanwaveamplitude
 ---
 --- @hash 0x405591EC8FD9096D
---- @params amplitude number (float)
+--- @param amplitude number (float)
 --- @return void
 function WaterOverrideSetOceanwaveamplitude(amplitude) end
 
@@ -3291,9 +3291,9 @@ function WaterOverrideSetOceanwaveamplitude(amplitude) end
 --- StartSaveData
 ---
 --- @hash 0xA9575F812C6A7997
---- @params p0 table (Any*)
---- @params p1 Any
---- @params p2 boolean (BOOL)
+--- @param p0 table (Any*)
+--- @param p1 any
+--- @param p2 boolean
 --- @return void
 function StartSaveData(p0, p1, p2) end
 
@@ -3309,24 +3309,24 @@ function StartSaveData(p0, p1, p2) end
 --- ```
 ---
 --- @hash 0xBFE5756E7407064A
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params x2 number (float)
---- @params y2 number (float)
---- @params z2 number (float)
---- @params damage number (int)
---- @params p7 boolean (BOOL)
---- @params weaponHash table (Hash)
---- @params ownerPed table (Ped)
---- @params isAudible boolean (BOOL)
---- @params isInvisible boolean (BOOL)
---- @params speed number (float)
---- @params entity table (Entity)
---- @params p14 boolean (BOOL)
---- @params p15 boolean (BOOL)
---- @params p16 boolean (BOOL)
---- @params p17 boolean (BOOL)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param damage number (int)
+--- @param p7 boolean
+--- @param weaponHash table (Hash)
+--- @param ownerPed table (Ped)
+--- @param isAudible boolean
+--- @param isInvisible boolean
+--- @param speed number (float)
+--- @param entity table (Entity)
+--- @param p14 boolean
+--- @param p15 boolean
+--- @param p16 boolean
+--- @param p17 boolean
 --- @return void
 function ShootSingleBulletBetweenCoordsIgnoreEntityNew(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed, entity, p14, p15, p16, p17) end
 
@@ -3334,14 +3334,14 @@ function ShootSingleBulletBetweenCoordsIgnoreEntityNew(x1, y1, z1, x2, y2, z2, d
 --- RegisterSaveHouse
 ---
 --- @hash 0xC0714D0A7EEECA54
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 table (Any*)
---- @params p5 Any
---- @params p6 Any
---- @return Any
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 table (Any*)
+--- @param p5 any
+--- @param p6 any
+--- @return any
 function RegisterSaveHouse(p0, p1, p2, p3, p4, p5, p6) end
 
     
@@ -3363,9 +3363,9 @@ function UpdateOnscreenKeyboard() end
 --- SetSaveHouse
 ---
 --- @hash 0x4F548CABEAE553BC
---- @params p0 Any
---- @params p1 boolean (BOOL)
---- @params p2 boolean (BOOL)
+--- @param p0 any
+--- @param p1 boolean
+--- @param p2 boolean
 --- @return void
 function SetSaveHouse(p0, p1, p2) end
 
@@ -3373,8 +3373,8 @@ function SetSaveHouse(p0, p1, p2) end
 --- IsStringNull
 ---
 --- @hash 0xF22B6C47C6EAB066
---- @params string string (char*)
---- @return boolean (BOOL)
+--- @param string string (char*)
+--- @return boolean
 function IsStringNull(string) end
 
     
@@ -3383,7 +3383,7 @@ function IsStringNull(string) end
 --- ```
 ---
 --- @hash 0x57FFF03E423A4C0B
---- @params player number (Player)
+--- @param player number (Player)
 --- @return number (int)
 function SetSuperJumpThisFrame(player) end
 
@@ -3394,8 +3394,8 @@ function SetSuperJumpThisFrame(player) end
 --- ```
 ---
 --- @hash 0xA74802FB8D0B7814
---- @params name string (char*)
---- @params p1 number (float)
+--- @param name string (char*)
+--- @param p1 number (float)
 --- @return void
 function UnloadCloudHat(name, p1) end
 
@@ -3403,7 +3403,7 @@ function UnloadCloudHat(name, p1) end
 --- WaterOverrideFadeOut
 ---
 --- @hash 0xC3C221ADDDE31A11
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return void
 function WaterOverrideFadeOut(p0) end
 
@@ -3421,7 +3421,7 @@ function StopSaveData() end
 --- ```
 ---
 --- @hash 0x632106CC96E82E91
---- @params p0 number (float)
+--- @param p0 number (float)
 --- @return number (float)
 function Tan(p0) end
 
@@ -3429,20 +3429,20 @@ function Tan(p0) end
 --- N_0xf56dfb7b61be7276
 ---
 --- @hash 0xF56DFB7B61BE7276
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 number (float)
---- @params p8 number (float)
---- @params p9 number (float)
---- @params p10 number (float)
---- @params p11 number (float)
---- @params p12 table (float*)
---- @return boolean (BOOL)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @param p9 number (float)
+--- @param p10 number (float)
+--- @param p11 number (float)
+--- @param p12 table (float*)
+--- @return boolean
 function N_0xf56dfb7b61be7276(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12) end
 
     
@@ -3451,8 +3451,8 @@ function N_0xf56dfb7b61be7276(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, 
 --- ```
 ---
 --- @hash 0x11879CDD803D30F4
---- @params player number (Player)
---- @return Any
+--- @param player number (Player)
+--- @return any
 function SetFireAmmoThisFrame(player) end
 
     
@@ -3464,7 +3464,7 @@ function SetFireAmmoThisFrame(player) end
 --- ```
 ---
 --- @hash 0xC54A08C85AE4D410
---- @params strength number (float)
+--- @param strength number (float)
 --- @return void
 function WaterOverrideSetStrength(strength) end
 
@@ -3474,7 +3474,7 @@ function WaterOverrideSetStrength(strength) end
 --- ```
 ---
 --- @hash 0x9DC711BC69C548DF
---- @params scriptName string (char*)
+--- @param scriptName string (char*)
 --- @return void
 function TerminateAllScriptsWithThisName(scriptName) end
 
@@ -3482,7 +3482,7 @@ function TerminateAllScriptsWithThisName(scriptName) end
 --- WaterOverrideSetShorewavemaxamplitude
 ---
 --- @hash 0xA7A1127490312C36
---- @params maxAmplitude number (float)
+--- @param maxAmplitude number (float)
 --- @return void
 function WaterOverrideSetShorewavemaxamplitude(maxAmplitude) end
 
@@ -3500,7 +3500,7 @@ function WaterOverrideSetShorewavemaxamplitude(maxAmplitude) end
 --- ```
 ---
 --- @hash 0x9BAE5AD2508DF078
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetInstancePriorityMode(toggle) end
 
@@ -3518,7 +3518,7 @@ function ResetBenchmarkRecording() end
 --- SetStuntJumpsCanTrigger
 ---
 --- @hash 0xD79185689F8FD5DF
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetStuntJumpsCanTrigger(toggle) end
 
@@ -3540,7 +3540,7 @@ function SetStuntJumpsCanTrigger(toggle) end
 --- ```
 ---
 --- @hash 0x29B487C359E19889
---- @params weatherType string (char*)
+--- @param weatherType string (char*)
 --- @return void
 function SetWeatherTypeNow(weatherType) end
 
@@ -3562,8 +3562,8 @@ function StartBenchmarkRecording() end
 --- ```
 ---
 --- @hash 0xD261BA3E7E998072
---- @params incidentId number (int)
---- @params p1 number (float)
+--- @param incidentId number (int)
+--- @param p1 number (float)
 --- @return void
 function SetIncidentUnk(incidentId, p1) end
 
@@ -3573,9 +3573,9 @@ function SetIncidentUnk(incidentId, p1) end
 --- ```
 ---
 --- @hash 0x60FE567DF1B1AF9D
---- @params p0 table (Any*)
---- @params size number (int)
---- @params arrayName string (char*)
+--- @param p0 table (Any*)
+--- @param size number (int)
+--- @param arrayName string (char*)
 --- @return void
 function StartSaveArrayWithSize(p0, size, arrayName) end
 
@@ -3593,16 +3593,16 @@ function StopBenchmarkRecording() end
 --- N_0x7f8f6405f4777af6
 ---
 --- @hash 0x7F8F6405F4777AF6
---- @params p0 number (float)
---- @params p1 number (float)
---- @params p2 number (float)
---- @params p3 number (float)
---- @params p4 number (float)
---- @params p5 number (float)
---- @params p6 number (float)
---- @params p7 number (float)
---- @params p8 number (float)
---- @params p9 boolean (BOOL)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @param p9 boolean
 --- @return number (float)
 function N_0x7f8f6405f4777af6(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
@@ -3610,7 +3610,7 @@ function N_0x7f8f6405f4777af6(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 --- WaterOverrideSetRippleminbumpiness
 ---
 --- @hash 0x6216B116083A7CB4
---- @params minBumpiness number (float)
+--- @param minBumpiness number (float)
 --- @return void
 function WaterOverrideSetRippleminbumpiness(minBumpiness) end
 
@@ -3618,8 +3618,8 @@ function WaterOverrideSetRippleminbumpiness(minBumpiness) end
 --- SetDispatchTimeBetweenSpawnAttempts
 ---
 --- @hash 0x44F7CBC1BEB3327D
---- @params p0 Any
---- @params p1 number (float)
+--- @param p0 any
+--- @param p1 number (float)
 --- @return void
 function SetDispatchTimeBetweenSpawnAttempts(p0, p1) end
 
@@ -3627,7 +3627,7 @@ function SetDispatchTimeBetweenSpawnAttempts(p0, p1) end
 --- WaterOverrideSetOceanwavemaxamplitude
 ---
 --- @hash 0xB3E6360DDE733E82
---- @params maxAmplitude number (float)
+--- @param maxAmplitude number (float)
 --- @return void
 function WaterOverrideSetOceanwavemaxamplitude(maxAmplitude) end
 
@@ -3641,7 +3641,7 @@ function WaterOverrideSetOceanwavemaxamplitude(maxAmplitude) end
 --- To use the rain level of the current weather, call this native with `-1f` as `level`.
 ---
 --- @hash 0x643E26EA6E024D92
---- @params level number (float)
+--- @param level number (float)
 --- @return void
 function SetRainLevel(level) end
 
@@ -3649,7 +3649,7 @@ function SetRainLevel(level) end
 --- WaterOverrideSetRipplebumpiness
 ---
 --- @hash 0x7C9C0B1EEB1F9072
---- @params bumpiness number (float)
+--- @param bumpiness number (float)
 --- @return void
 function WaterOverrideSetRipplebumpiness(bumpiness) end
 
@@ -3657,7 +3657,7 @@ function WaterOverrideSetRipplebumpiness(bumpiness) end
 --- WaterOverrideSetShorewaveminamplitude
 ---
 --- @hash 0xC3EAD29AB273ECE8
---- @params minAmplitude number (float)
+--- @param minAmplitude number (float)
 --- @return void
 function WaterOverrideSetShorewaveminamplitude(minAmplitude) end
 
@@ -3667,7 +3667,7 @@ function WaterOverrideSetShorewaveminamplitude(minAmplitude) end
 --- ```
 ---
 --- @hash 0xDA66D2796BA33F12
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetFadeInAfterDeathArrest(toggle) end
 
@@ -3675,7 +3675,7 @@ function SetFadeInAfterDeathArrest(toggle) end
 --- WaterOverrideSetOceanwaveminamplitude
 ---
 --- @hash 0xF751B16FB32ABC1D
---- @params minAmplitude number (float)
+--- @param minAmplitude number (float)
 --- @return void
 function WaterOverrideSetOceanwaveminamplitude(minAmplitude) end
 
@@ -3683,19 +3683,19 @@ function WaterOverrideSetOceanwaveminamplitude(minAmplitude) end
 --- This native always come right before SetEntityQuaternion where its final 4 parameters are SlerpNearQuaternion p9 to p12
 ---
 --- @hash 0xF2F6A2FA49278625
---- @params t number (float)
---- @params x number (float)
---- @params y number (float)
---- @params z number (float)
---- @params w number (float)
---- @params x1 number (float)
---- @params y1 number (float)
---- @params z1 number (float)
---- @params w1 number (float)
---- @params outX table (float*)
---- @params outY table (float*)
---- @params outZ table (float*)
---- @params outW table (float*)
+--- @param t number (float)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param w number (float)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param w1 number (float)
+--- @param outX table (float*)
+--- @param outY table (float*)
+--- @param outZ table (float*)
+--- @param outW table (float*)
 --- @return void
 function SlerpNearQuaternion(t, x, y, z, w, x1, y1, z1, w1, outX, outY, outZ, outW) end
 
@@ -3717,7 +3717,7 @@ function StopSaveStruct() end
 --- en
 --- @hash 0xD3D15555431AB793
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function ShouldUseMetricMeasurements() end
 
     
@@ -3729,7 +3729,7 @@ function ShouldUseMetricMeasurements() end
 --- ```
 ---
 --- @hash 0xEB0F4468467B4528
---- @params direction number (float)
+--- @param direction number (float)
 --- @return void
 function SetWindDirection(direction) end
 
@@ -3737,7 +3737,7 @@ function SetWindDirection(direction) end
 --- WaterOverrideSetRipplemaxbumpiness
 ---
 --- @hash 0x9F5E6BB6B34540DA
---- @params maxBumpiness number (float)
+--- @param maxBumpiness number (float)
 --- @return void
 function WaterOverrideSetRipplemaxbumpiness(maxBumpiness) end
 

@@ -6,7 +6,7 @@
 --- ```
 ---
 --- @hash 0xDC2BACD920D0A0DD
---- @params contextName string (char*)
+--- @param contextName string (char*)
 --- @return void
 function BgEndContext(contextName) end
 
@@ -26,7 +26,7 @@ function GetThisScriptName() end
 --- ```
 ---
 --- @hash 0x107E5CC7CA942BC1
---- @params contextHash table (Hash)
+--- @param contextHash table (Hash)
 --- @return void
 function BgEndContextHash(contextHash) end
 
@@ -40,7 +40,7 @@ function BgEndContextHash(contextHash) end
 --- ```
 ---
 --- @hash 0x2C83A9DA6BFFC4F9
---- @params scriptHash table (Hash)
+--- @param scriptHash table (Hash)
 --- @return number (int)
 function GetNumberOfInstancesOfScriptWithNameHash(scriptHash) end
 
@@ -75,7 +75,7 @@ function ScriptThreadIteratorGetNextThreadId() end
 --- ```
 ---
 --- @hash 0x05A42BA9FC8DA96B
---- @params threadId number (int)
+--- @param threadId number (int)
 --- @return string (char*)
 function GetNameOfThread(threadId) end
 
@@ -87,7 +87,7 @@ function GetNameOfThread(threadId) end
 --- ```
 ---
 --- @hash 0x75B18E49607874C7
---- @params contextHash table (Hash)
+--- @param contextHash table (Hash)
 --- @return void
 function BgStartContextHash(contextHash) end
 
@@ -97,8 +97,8 @@ function BgStartContextHash(contextHash) end
 --- ```
 ---
 --- @hash 0xFC04745FBE67C19A
---- @params scriptName string (char*)
---- @return boolean (BOOL)
+--- @param scriptName string (char*)
+--- @return boolean
 function DoesScriptExist(scriptName) end
 
     
@@ -107,7 +107,7 @@ function DoesScriptExist(scriptName) end
 --- ```
 ---
 --- @hash 0xD62A67D26D9653E6
---- @params scriptHash table (Hash)
+--- @param scriptHash table (Hash)
 --- @return void
 function RequestScriptWithNameHash(scriptHash) end
 
@@ -125,11 +125,11 @@ function GetIdOfThisThread() end
 --- ```
 ---
 --- @hash 0x2902843FCD2B2D79
---- @params eventGroup number (int)
---- @params eventIndex number (int)
---- @params argStruct table (int*)
---- @params argStructSize number (int)
---- @return boolean (BOOL)
+--- @param eventGroup number (int)
+--- @param eventIndex number (int)
+--- @param argStruct table (int*)
+--- @param argStructSize number (int)
+--- @return boolean
 function GetEventData(eventGroup, eventIndex, argStruct, argStructSize) end
 
     
@@ -139,8 +139,8 @@ function GetEventData(eventGroup, eventIndex, argStruct, argStructSize) end
 --- ```
 ---
 --- @hash 0xF86AA3C56BA31381
---- @params scriptHash table (Hash)
---- @return boolean (BOOL)
+--- @param scriptHash table (Hash)
+--- @return boolean
 function DoesScriptWithNameHashExist(scriptHash) end
 
     
@@ -149,8 +149,8 @@ function DoesScriptWithNameHashExist(scriptHash) end
 --- ```
 ---
 --- @hash 0xD8F66A3A60C62153
---- @params eventGroup number (int)
---- @params eventIndex number (int)
+--- @param eventGroup number (int)
+--- @param eventIndex number (int)
 --- @return number (int)
 function GetEventAtIndex(eventGroup, eventIndex) end
 
@@ -170,24 +170,24 @@ function GetHashOfThisScriptName() end
 --- ```
 ---
 --- @hash 0x0F6F1EBBC4E1D5E6
---- @params scriptIndex number (int)
---- @params p1 string (char*)
---- @return boolean (BOOL)
+--- @param scriptIndex number (int)
+--- @param p1 string (char*)
+--- @return boolean
 function N_0x0f6f1ebbc4e1d5e6(scriptIndex, p1) end
 
     
 --- HasScriptWithNameHashLoaded
 ---
 --- @hash 0x5F0F0C783EB16C04
---- @params scriptHash table (Hash)
---- @return boolean (BOOL)
+--- @param scriptHash table (Hash)
+--- @return boolean
 function HasScriptWithNameHashLoaded(scriptHash) end
 
     
 --- TerminateThread
 ---
 --- @hash 0xC8B189ED9138BCD4
---- @params threadId number (int)
+--- @param threadId number (int)
 --- @return void
 function TerminateThread(threadId) end
 
@@ -197,7 +197,7 @@ function TerminateThread(threadId) end
 --- ```
 ---
 --- @hash 0xC90D2DCACD56184C
---- @params scriptName string (char*)
+--- @param scriptName string (char*)
 --- @return void
 function SetScriptAsNoLongerNeeded(scriptName) end
 
@@ -209,8 +209,8 @@ function SetScriptAsNoLongerNeeded(scriptName) end
 --- ```
 ---
 --- @hash 0x22E21FBCFC88C149
---- @params scriptIndex number (int)
---- @params p1 string (char*)
+--- @param scriptIndex number (int)
+--- @param p1 string (char*)
 --- @return number (int)
 function N_0x22e21fbcfc88c149(scriptIndex, p1) end
 
@@ -225,22 +225,22 @@ function N_0x22e21fbcfc88c149(scriptIndex, p1) end
 ---
 --- @hash 0x836B62713E0534CA
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function N_0x836b62713e0534ca() end
 
     
 --- IsThreadActive
 ---
 --- @hash 0x46E9AE36D8FA6417
---- @params threadId number (int)
---- @return boolean (BOOL)
+--- @param threadId number (int)
+--- @return boolean
 function IsThreadActive(threadId) end
 
     
 --- SetNoLoadingScreen
 ---
 --- @hash 0x5262CC1995D07E09
---- @params toggle boolean (BOOL)
+--- @param toggle boolean
 --- @return void
 function SetNoLoadingScreen(toggle) end
 
@@ -258,7 +258,7 @@ function TerminateThisThread() end
 --- ```
 ---
 --- @hash 0x6EB5F71AA68F2E8E
---- @params scriptName string (char*)
+--- @param scriptName string (char*)
 --- @return void
 function RequestScript(scriptName) end
 
@@ -268,9 +268,9 @@ function RequestScript(scriptName) end
 --- ```
 ---
 --- @hash 0x936E6168A9BCEDB5
---- @params eventGroup number (int)
---- @params eventIndex number (int)
---- @return boolean (BOOL)
+--- @param eventGroup number (int)
+--- @param eventIndex number (int)
+--- @return boolean
 function GetEventExists(eventGroup, eventIndex) end
 
     
@@ -301,7 +301,7 @@ function N_0x760910b49d2b98ea() end
 --- ```
 ---
 --- @hash 0x5F92A689A06620AA
---- @params eventGroup number (int)
+--- @param eventGroup number (int)
 --- @return number (int)
 function GetNumberOfEvents(eventGroup) end
 
@@ -318,7 +318,7 @@ function N_0xb1577667c3708f9b() end
 ---
 --- @hash 0x18C1270EA7F199BC
 ---
---- @return boolean (BOOL)
+--- @return boolean
 function GetNoLoadingScreen() end
 
     
@@ -329,10 +329,10 @@ function GetNoLoadingScreen() end
 --- ```
 ---
 --- @hash 0x5AE99C571D5BBE5D
---- @params eventGroup number (int)
---- @params args table (int*)
---- @params argCount number (int)
---- @params bit number (int)
+--- @param eventGroup number (int)
+--- @param args table (int*)
+--- @param argCount number (int)
+--- @param bit number (int)
 --- @return void
 function TriggerScriptEvent(eventGroup, args, argCount, bit) end
 
@@ -348,7 +348,7 @@ function ShutdownLoadingScreen() end
 --- SetScriptWithNameHashAsNoLongerNeeded
 ---
 --- @hash 0xC5BC038960E9DB27
---- @params scriptHash table (Hash)
+--- @param scriptHash table (Hash)
 --- @return void
 function SetScriptWithNameHashAsNoLongerNeeded(scriptHash) end
 
@@ -360,7 +360,7 @@ function SetScriptWithNameHashAsNoLongerNeeded(scriptHash) end
 --- ```
 ---
 --- @hash 0x829CD22E043A2577
---- @params p0 table (Hash)
+--- @param p0 table (Hash)
 --- @return number (int)
 function N_0x829cd22e043a2577(p0) end
 
@@ -370,10 +370,10 @@ function N_0x829cd22e043a2577(p0) end
 --- ```
 ---
 --- @hash 0xA40CC53DF8E50837
---- @params eventGroup boolean (BOOL)
---- @params args table (int*)
---- @params argCount number (int)
---- @params bit number (int)
+--- @param eventGroup boolean
+--- @param args table (int*)
+--- @param argCount number (int)
+--- @param bit number (int)
 --- @return void
 function TriggerScriptEvent_2(eventGroup, args, argCount, bit) end
 
@@ -384,8 +384,8 @@ function TriggerScriptEvent_2(eventGroup, args, argCount, bit) end
 --- ```
 ---
 --- @hash 0xE6CC9F3BA0FB9EF1
---- @params scriptName string (char*)
---- @return boolean (BOOL)
+--- @param scriptName string (char*)
+--- @return boolean
 function HasScriptLoaded(scriptName) end
 
     
@@ -396,7 +396,7 @@ function HasScriptLoaded(scriptName) end
 --- ```
 ---
 --- @hash 0x9D5A25BADB742ACD
---- @params contextName string (char*)
+--- @param contextName string (char*)
 --- @return void
 function BgStartContext(contextName) end
 
