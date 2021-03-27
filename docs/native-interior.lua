@@ -1,28 +1,45 @@
 
---- ClearRoomForEntity
----
---- @hash 0xB365FC0C4E27FFA7
---- @param entity Entity
---- @return void
-function ClearRoomForEntity(entity) end
-
-    
 --- ```
---- This is the native that is used to hide the exterior of GTA Online apartment buildings when you are inside an apartment.
+--- Does something similar to INTERIOR::DISABLE_INTERIOR  
 --- ```
 ---
---- @hash 0xA97F257D0151A6AB
---- @param mapObjectHash Hash
---- @return void
-function EnableExteriorCullModelThisFrame(mapObjectHash) end
-
-    
---- IsInteriorCapped
----
---- @hash 0x92BAC8ACF88CEC26
+--- @hash 0xD9175F941610DB54
 --- @param interiorID number (int)
---- @return boolean
-function IsInteriorCapped(interiorID) end
+--- @param toggle boolean
+--- @return void
+function CapInterior(interiorID, toggle) end
+
+    
+--- ```
+--- Returns the room hash key from the current gameplay cam.  
+--- ```
+---
+--- @hash 0xA6575914D2A0B450
+---
+--- @return Hash
+function GetRoomKeyForGameViewport() end
+
+    
+--- DeactivateInteriorEntitySet
+---
+--- @hash 0x420BD37289EEE162
+--- @param interior number (int)
+--- @param entitySetName string (char*)
+--- @return void
+function DeactivateInteriorEntitySet(interior, entitySetName) end
+
+    
+--- ```
+--- Example:   
+--- This removes the interior from the strip club and when trying to walk inside the player just falls:  
+--- INTERIOR::DISABLE_INTERIOR(118018, true);  
+--- ```
+---
+--- @hash 0x6170941419D7D8EC
+--- @param interiorID number (int)
+--- @param toggle boolean
+--- @return void
+function DisableInterior(interiorID, toggle) end
 
     
 --- ```
@@ -42,6 +59,43 @@ function IsInteriorCapped(interiorID) end
 function GetInteriorAtCoordsWithTypehash(x, y, z, typeHash) end
 
     
+--- ForceRoomForGameViewport
+---
+--- @hash 0x920D853F3E17F1DA
+--- @param interiorID number (int)
+--- @param roomHashKey Hash
+--- @return void
+function ForceRoomForGameViewport(interiorID, roomHashKey) end
+
+    
+--- ClearRoomForEntity
+---
+--- @hash 0xB365FC0C4E27FFA7
+--- @param entity Entity
+--- @return void
+function ClearRoomForEntity(entity) end
+
+    
+--- ```
+--- Returns the group ID of the specified interior. For example, regular interiors have group 0, subway interiors have group 1. There are a few other groups too.  
+--- ```
+---
+--- @hash 0xE4A84ABF135EF91A
+--- @param interior number (int)
+--- @return number (int)
+function GetInteriorGroupId(interior) end
+
+    
+--- ```
+--- NativeDB Parameter 0: Hash mapObjectHash
+--- ```
+---
+--- @hash 0x50C375537449F369
+--- @param mapObjectHash any
+--- @return void
+function EnableScriptCullModelThisFrame(mapObjectHash) end
+
+    
 --- ```
 --- More info: http://gtaforums.com/topic/836367-adding-props-to-interiors/  
 --- ```
@@ -53,14 +107,32 @@ function GetInteriorAtCoordsWithTypehash(x, y, z, typeHash) end
 function ActivateInteriorEntitySet(interior, entitySetName) end
 
     
+--- N_0x82ebb79e258fa2b7
+---
+--- @hash 0x82EBB79E258FA2B7
+--- @param entity Entity
+--- @param interiorID number (int)
+--- @return void
+function N_0x82ebb79e258fa2b7(entity, interiorID) end
+
+    
+--- N_0x483aca1176ca93f1
+---
+--- @hash 0x483ACA1176CA93F1
+---
+--- @return void
+function N_0x483aca1176ca93f1() end
+
+    
 --- ```
---- Usage: INTERIOR::_0x405DC2AEF6AF95B9(INTERIOR::GET_KEY_FOR_ENTITY_IN_ROOM(PLAYER::PLAYER_PED_ID()));  
+--- Only found 4 times in Rockstar scripts.  
+--- Clearly has something to do with Cutscenes.  
 --- ```
 ---
---- @hash 0x405DC2AEF6AF95B9
---- @param roomHashKey Hash
+--- @hash 0x9E6542F0CE8E70A3
+--- @param toggle boolean
 --- @return void
-function N_0x405dc2aef6af95b9(roomHashKey) end
+function N_0x9e6542f0ce8e70a3(toggle) end
 
     
 --- ```
@@ -77,22 +149,53 @@ function N_0x405dc2aef6af95b9(roomHashKey) end
 function GetInteriorAtCoords(x, y, z) end
 
     
---- N_0x483aca1176ca93f1
+--- IsInteriorEntitySetActive
 ---
---- @hash 0x483ACA1176CA93F1
+--- @hash 0x35F7DD45E8C0A16D
+--- @param interior number (int)
+--- @param entitySetName string (char*)
+--- @return boolean
+function IsInteriorEntitySetActive(interior, entitySetName) end
+
+    
+--- ```
+--- This is the native that is used to hide the exterior of GTA Online apartment buildings when you are inside an apartment.
+--- ```
 ---
+--- @hash 0xA97F257D0151A6AB
+--- @param mapObjectHash Hash
 --- @return void
-function N_0x483aca1176ca93f1() end
+function EnableExteriorCullModelThisFrame(mapObjectHash) end
+
+    
+--- ```
+--- Return if interior is valid.  
+--- ```
+---
+--- @hash 0x26B0E73D7EAAF4D3
+--- @param interiorID number (int)
+--- @return boolean
+function IsValidInterior(interiorID) end
+
+    
+--- SetInteriorEntitySetColor
+---
+--- @hash 0xC1F1920BAF281317
+--- @param interior number (int)
+--- @param entitySetName string (char*)
+--- @param color number (int)
+--- @return void
+function SetInteriorEntitySetColor(interior, entitySetName, color) end
 
     
 --- ```
 --- NativeDB Introduced: v1604
 --- ```
 ---
---- @hash 0x7ECDF98587E92DEC
---- @param p0 any
---- @return void
-function N_0x7ecdf98587e92dec(p0) end
+--- @hash 0xE7D267EC6CA966C3
+---
+--- @return number (int)
+function GetInteriorFromGameplayCam() end
 
     
 --- Returns true if the collision at the specified coords is marked as being outside (false if there's an interior)
@@ -106,151 +209,13 @@ function IsCollisionMarkedOutside(x, y, z) end
 
     
 --- ```
---- Example:   
---- This removes the interior from the strip club and when trying to walk inside the player just falls:  
---- INTERIOR::DISABLE_INTERIOR(118018, true);  
+--- NativeDB Introduced: v1604
 --- ```
 ---
---- @hash 0x6170941419D7D8EC
---- @param interiorID number (int)
---- @param toggle boolean
+--- @hash 0x7ECDF98587E92DEC
+--- @param p0 any
 --- @return void
-function DisableInterior(interiorID, toggle) end
-
-    
---- ```
---- Returns the group ID of the specified interior. For example, regular interiors have group 0, subway interiors have group 1. There are a few other groups too.  
---- ```
----
---- @hash 0xE4A84ABF135EF91A
---- @param interior number (int)
---- @return number (int)
-function GetInteriorGroupId(interior) end
-
-    
---- ```
---- Jenkins hash _might_ be 0xFC227584.
---- ```
----
---- @hash 0x7241CCB7D020DB69
---- @param entity Entity
---- @param toggle boolean
---- @return void
-function N_0x7241ccb7d020db69(entity, toggle) end
-
-    
---- ForceRoomForGameViewport
----
---- @hash 0x920D853F3E17F1DA
---- @param interiorID number (int)
---- @param roomHashKey Hash
---- @return void
-function ForceRoomForGameViewport(interiorID, roomHashKey) end
-
-    
---- IsInteriorDisabled
----
---- @hash 0xBC5115A5A939DD15
---- @param interior number (int)
---- @return boolean
-function IsInteriorDisabled(interior) end
-
-    
---- ```
---- Seems to do the exact same as INTERIOR::GET_ROOM_KEY_FROM_ENTITY  
---- ```
----
---- @hash 0x399685DB942336BC
---- @param entity Entity
---- @return Hash
-function GetKeyForEntityInRoom(entity) end
-
-    
---- ClearRoomForGameViewport
----
---- @hash 0x23B59D8912F94246
----
---- @return void
-function ClearRoomForGameViewport() end
-
-    
---- AddPickupToInteriorRoomByName
----
---- @hash 0x3F6167F351168730
---- @param pickup table (Pickup)
---- @param roomName string (char*)
---- @return void
-function AddPickupToInteriorRoomByName(pickup, roomName) end
-
-    
---- ```
---- Does something similar to INTERIOR::DISABLE_INTERIOR  
---- ```
----
---- @hash 0xD9175F941610DB54
---- @param interiorID number (int)
---- @param toggle boolean
---- @return void
-function CapInterior(interiorID, toggle) end
-
-    
---- GetOffsetFromInteriorInWorldCoords
----
---- @hash 0x9E3B3E6D66F6E22F
---- @param interior number (int)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @return Vector3
-function GetOffsetFromInteriorInWorldCoords(interior, x, y, z) end
-
-    
---- RefreshInterior
----
---- @hash 0x41F37C3427C75AE0
---- @param interiorID number (int)
---- @return void
-function RefreshInterior(interiorID) end
-
-    
---- IsInteriorEntitySetActive
----
---- @hash 0x35F7DD45E8C0A16D
---- @param interior number (int)
---- @param entitySetName string (char*)
---- @return boolean
-function IsInteriorEntitySetActive(interior, entitySetName) end
-
-    
---- ```
---- Only found 4 times in Rockstar scripts.  
---- Clearly has something to do with Cutscenes.  
---- ```
----
---- @hash 0x9E6542F0CE8E70A3
---- @param toggle boolean
---- @return void
-function N_0x9e6542f0ce8e70a3(toggle) end
-
-    
---- ```
---- Returns the handle of the interior that the entity is in. Returns 0 if outside.  
---- ```
----
---- @hash 0x2107BA504071A6BB
---- @param entity Entity
---- @return number (int)
-function GetInteriorFromEntity(entity) end
-
-    
---- ```
---- Gets the room hash key from the room that the specified entity is in. Each room in every interior has a unique key. Returns 0 if the entity is outside.  
---- ```
----
---- @hash 0x47C2A06D4F5F424B
---- @param entity Entity
---- @return Hash
-function GetRoomKeyFromEntity(entity) end
+function N_0x7ecdf98587e92dec(p0) end
 
     
 --- ```
@@ -265,43 +230,35 @@ function GetRoomKeyFromEntity(entity) end
 function GetInteriorHeading(interior) end
 
     
---- IsInteriorScene
----
---- @hash 0xBC72B5D7A1CBD54D
----
---- @return boolean
-function IsInteriorScene() end
-
-    
 --- ```
---- Exemple of use(carmod_shop.c4)  
---- INTERIOR::_AF348AFCB575A441("V_CarModRoom");  
+--- Jenkins hash _might_ be 0xFC227584.
 --- ```
 ---
---- @hash 0xAF348AFCB575A441
---- @param roomName string (char*)
+--- @hash 0x7241CCB7D020DB69
+--- @param entity Entity
+--- @param toggle boolean
 --- @return void
-function N_0xaf348afcb575a441(roomName) end
+function N_0x7241ccb7d020db69(entity, toggle) end
+
+    
+--- ClearRoomForGameViewport
+---
+--- @hash 0x23B59D8912F94246
+---
+--- @return void
+function ClearRoomForGameViewport() end
 
     
 --- ```
---- Return if interior is valid.  
+--- Forces the particular room in an interior to load incase not teleporting into the portal.
 --- ```
 ---
---- @hash 0x26B0E73D7EAAF4D3
---- @param interiorID number (int)
---- @return boolean
-function IsValidInterior(interiorID) end
-
-    
---- GetInteriorFromCollision
----
---- @hash 0xEC4CF9FCB29A4424
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @return number (int)
-function GetInteriorFromCollision(x, y, z) end
+--- @hash 0x52923C4710DD9907
+--- @param entity Entity
+--- @param interior number (int)
+--- @param roomHashKey Hash
+--- @return void
+function ForceRoomForEntity(entity, interior, roomHashKey) end
 
     
 --- ```
@@ -321,6 +278,138 @@ function GetInteriorAtCoordsWithType(x, y, z, interiorType) end
 
     
 --- ```
+--- Returns the handle of the interior that the entity is in. Returns 0 if outside.  
+--- ```
+---
+--- @hash 0x2107BA504071A6BB
+--- @param entity Entity
+--- @return number (int)
+function GetInteriorFromEntity(entity) end
+
+    
+--- AddPickupToInteriorRoomByName
+---
+--- @hash 0x3F6167F351168730
+--- @param pickup table (Pickup)
+--- @param roomName string (char*)
+--- @return void
+function AddPickupToInteriorRoomByName(pickup, roomName) end
+
+    
+--- ```
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash 0x38C1CB1CB119A016
+--- @param p0 any
+--- @param p1 any
+--- @return void
+function N_0x38c1cb1cb119a016(p0, p1) end
+
+    
+--- ```
+--- Load interior  
+--- ```
+---
+--- @hash 0x2CA429C029CCF247
+--- @param interior number (int)
+--- @return void
+function PinInteriorInMemory(interior) end
+
+    
+--- ```
+--- Usage: INTERIOR::_0x405DC2AEF6AF95B9(INTERIOR::GET_KEY_FOR_ENTITY_IN_ROOM(PLAYER::PLAYER_PED_ID()));  
+--- ```
+---
+--- @hash 0x405DC2AEF6AF95B9
+--- @param roomHashKey Hash
+--- @return void
+function N_0x405dc2aef6af95b9(roomHashKey) end
+
+    
+--- IsInteriorScene
+---
+--- @hash 0xBC72B5D7A1CBD54D
+---
+--- @return boolean
+function IsInteriorScene() end
+
+    
+--- ```
+--- Seems to do the exact same as INTERIOR::GET_ROOM_KEY_FROM_ENTITY  
+--- ```
+---
+--- @hash 0x399685DB942336BC
+--- @param entity Entity
+--- @return Hash
+function GetKeyForEntityInRoom(entity) end
+
+    
+--- IsInteriorDisabled
+---
+--- @hash 0xBC5115A5A939DD15
+--- @param interior number (int)
+--- @return boolean
+function IsInteriorDisabled(interior) end
+
+    
+--- GetOffsetFromInteriorInWorldCoords
+---
+--- @hash 0x9E3B3E6D66F6E22F
+--- @param interior number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return Vector3
+function GetOffsetFromInteriorInWorldCoords(interior, x, y, z) end
+
+    
+--- ```
+--- Gets the room hash key from the room that the specified entity is in. Each room in every interior has a unique key. Returns 0 if the entity is outside.  
+--- ```
+---
+--- @hash 0x47C2A06D4F5F424B
+--- @param entity Entity
+--- @return Hash
+function GetRoomKeyFromEntity(entity) end
+
+    
+--- ```
+--- Exemple of use(carmod_shop.c4)  
+--- INTERIOR::_AF348AFCB575A441("V_CarModRoom");  
+--- ```
+---
+--- @hash 0xAF348AFCB575A441
+--- @param roomName string (char*)
+--- @return void
+function N_0xaf348afcb575a441(roomName) end
+
+    
+--- RefreshInterior
+---
+--- @hash 0x41F37C3427C75AE0
+--- @param interiorID number (int)
+--- @return void
+function RefreshInterior(interiorID) end
+
+    
+--- IsInteriorCapped
+---
+--- @hash 0x92BAC8ACF88CEC26
+--- @param interiorID number (int)
+--- @return boolean
+function IsInteriorCapped(interiorID) end
+
+    
+--- IsInteriorReady
+---
+--- @hash 0x6726BDCCC1932F0E
+--- @param interiorID number (int)
+--- @return boolean
+function IsInteriorReady(interiorID) end
+
+    
+--- ```
 --- GET_INTERIOR_*
 --- 
 --- NativeDB Introduced: v1290
@@ -335,67 +424,6 @@ function GetInteriorInfo(interior, position, nameHash) end
 
     
 --- ```
---- Forces the particular room in an interior to load incase not teleporting into the portal.
---- ```
----
---- @hash 0x52923C4710DD9907
---- @param entity Entity
---- @param interior number (int)
---- @param roomHashKey Hash
---- @return void
-function ForceRoomForEntity(entity, interior, roomHashKey) end
-
-    
---- ```
---- NativeDB Parameter 0: Hash mapObjectHash
---- ```
----
---- @hash 0x50C375537449F369
---- @param mapObjectHash any
---- @return void
-function EnableScriptCullModelThisFrame(mapObjectHash) end
-
-    
---- SetInteriorEntitySetColor
----
---- @hash 0xC1F1920BAF281317
---- @param interior number (int)
---- @param entitySetName string (char*)
---- @param color number (int)
---- @return void
-function SetInteriorEntitySetColor(interior, entitySetName, color) end
-
-    
---- ```
---- Returns the room hash key from the current gameplay cam.  
---- ```
----
---- @hash 0xA6575914D2A0B450
----
---- @return Hash
-function GetRoomKeyForGameViewport() end
-
-    
---- N_0x82ebb79e258fa2b7
----
---- @hash 0x82EBB79E258FA2B7
---- @param entity Entity
---- @param interiorID number (int)
---- @return void
-function N_0x82ebb79e258fa2b7(entity, interiorID) end
-
-    
---- ```
---- Load interior  
---- ```
----
---- @hash 0x2CA429C029CCF247
---- @param interior number (int)
---- @return void
-function PinInteriorInMemory(interior) end
-
-    
---- ```
 --- Only used once in the entire game scripts, probably useless. Always returns 0.  
 --- ```
 ---
@@ -405,21 +433,14 @@ function PinInteriorInMemory(interior) end
 function N_0x4c2330e61d3deb56(interiorID) end
 
     
---- DeactivateInteriorEntitySet
+--- GetInteriorFromCollision
 ---
---- @hash 0x420BD37289EEE162
---- @param interior number (int)
---- @param entitySetName string (char*)
---- @return void
-function DeactivateInteriorEntitySet(interior, entitySetName) end
-
-    
---- IsInteriorReady
----
---- @hash 0x6726BDCCC1932F0E
---- @param interiorID number (int)
---- @return boolean
-function IsInteriorReady(interiorID) end
+--- @hash 0xEC4CF9FCB29A4424
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return number (int)
+function GetInteriorFromCollision(x, y, z) end
 
     
 --- ```
@@ -431,26 +452,5 @@ function IsInteriorReady(interiorID) end
 --- @param interior number (int)
 --- @return void
 function UnpinInterior(interior) end
-
-    
---- ```
---- NativeDB Introduced: v1604
---- ```
----
---- @hash 0xE7D267EC6CA966C3
----
---- @return number (int)
-function GetInteriorFromGameplayCam() end
-
-    
---- ```
---- NativeDB Introduced: v1493
---- ```
----
---- @hash 0x38C1CB1CB119A016
---- @param p0 any
---- @param p1 any
---- @return void
-function N_0x38c1cb1cb119a016(p0, p1) end
 
     

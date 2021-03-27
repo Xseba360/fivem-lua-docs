@@ -7,20 +7,28 @@
 function CancelEvent() end
 
     
---- DeleteResourceKvp
----
---- @hash 0x7389B5DF
---- @param key string (char*)
---- @return void
-function DeleteResourceKvp(key) end
-
-    
 --- DeleteFunctionReference
 ---
 --- @hash 0x1E86F206
 --- @param referenceIdentity string (char*)
 --- @return void
 function DeleteFunctionReference(referenceIdentity) end
+
+    
+--- DeleteResourceKvp
+--- @usage DeleteResourceKvp('liberty_city'
+--- @hash 0x7389B5DF
+--- @param key string (char*)
+--- @return void
+function DeleteResourceKvp(key) end
+
+    
+--- ExecuteCommand
+---
+--- @hash 0x561C060B
+--- @param commandString string (char*)
+--- @return void
+function ExecuteCommand(commandString) end
 
     
 --- DuplicateFunctionReference
@@ -39,14 +47,6 @@ function DuplicateFunctionReference(referenceIdentity) end
 function EndFindKvp(handle) end
 
     
---- ExecuteCommand
----
---- @hash 0x561C060B
---- @param commandString string (char*)
---- @return void
-function ExecuteCommand(commandString) end
-
-    
 --- FindKvp
 ---
 --- @hash 0xBD7BEBC5
@@ -55,12 +55,13 @@ function ExecuteCommand(commandString) end
 function FindKvp(handle) end
 
     
---- Returns the name of the currently executing resource.
+--- GetConvar
 ---
---- @hash 0xE5E9EBBB
----
+--- @hash 0x6CCD2564
+--- @param varName string (char*)
+--- @param default_ string (char*)
 --- @return string (char*)
-function GetCurrentResourceName() end
+function GetConvar(varName, default_) end
 
     
 --- GetConvarInt
@@ -72,6 +73,14 @@ function GetCurrentResourceName() end
 function GetConvarInt(varName, default_) end
 
     
+--- Returns the name of the currently executing resource.
+---
+--- @hash 0xE5E9EBBB
+---
+--- @return string (char*)
+function GetCurrentResourceName() end
+
+    
 --- GetInstanceId
 ---
 --- @hash 0x9F1C4383
@@ -80,13 +89,12 @@ function GetConvarInt(varName, default_) end
 function GetInstanceId() end
 
     
---- GetConvar
+--- GetInvokingResource
 ---
---- @hash 0x6CCD2564
---- @param varName string (char*)
---- @param default_ string (char*)
+--- @hash 0x4D52FE5B
+---
 --- @return string (char*)
-function GetConvar(varName, default_) end
+function GetInvokingResource() end
 
     
 --- GetNumResources
@@ -107,44 +115,12 @@ function GetNumResources() end
 function GetNumResourceMetadata(resourceName, metadataKey) end
 
     
---- GetInvokingResource
----
---- @hash 0x4D52FE5B
----
---- @return string (char*)
-function GetInvokingResource() end
-
-    
 --- A getter for [SET_PLAYER_MELEE_WEAPON_DAMAGE_MODIFIER](#\_0x4A3DC7ECCC321032).
 ---
 --- @hash 0x8689A825
 --- @param playerId Player
 --- @return number (float)
 function GetPlayerMeleeWeaponDamageModifier(playerId) end
-
-    
---- A getter for [SET_PLAYER_WEAPON_DEFENSE_MODIFIER](#\_0x2D83BC011CA14A3C).
----
---- @hash 0xF1543251
---- @param playerId Player
---- @return number (float)
-function GetPlayerWeaponDefenseModifier(playerId) end
-
-    
---- GetResourceKvpString
----
---- @hash 0x5240DA5A
---- @param key string (char*)
---- @return string (char*)
-function GetResourceKvpString(key) end
-
-    
---- GetResourceKvpFloat
----
---- @hash 0x35BDCEEA
---- @param key string (char*)
---- @return number (float)
-function GetResourceKvpFloat(key) end
 
     
 --- Returns all commands that are registered in the command system.
@@ -167,12 +143,69 @@ function GetResourceKvpFloat(key) end
 function GetRegisteredCommands() end
 
     
+--- A getter for [SET_PLAYER_WEAPON_DAMAGE_MODIFIER](#\_0xCE07B9F7817AADA3).
+---
+--- @hash 0x2A3D7CDA
+--- @param playerId Player
+--- @return number (float)
+function GetPlayerWeaponDamageModifier(playerId) end
+
+    
 --- A getter for [\_SET_PLAYER_WEAPON_DEFENSE_MODIFIER\_2](#\_0xBCFDE9EDE4CF27DC).
 ---
 --- @hash 0x986B65FF
 --- @param playerId Player
 --- @return number (float)
 function GetPlayerWeaponDefenseModifier_2(playerId) end
+
+    
+--- Gets the metadata value at a specified key/index from a resource's manifest.
+--- See also: [Resource manifest](https://docs.fivem.net/resources/manifest/)
+---
+--- @hash 0x964BAB1D
+--- @param resourceName string (char*)
+--- @param metadataKey string (char*)
+--- @param index number (int)
+--- @return string (char*)
+function GetResourceMetadata(resourceName, metadataKey, index) end
+
+    
+--- A getter for [SET_PLAYER_WEAPON_DEFENSE_MODIFIER](#\_0x2D83BC011CA14A3C).
+---
+--- @hash 0xF1543251
+--- @param playerId Player
+--- @return number (float)
+function GetPlayerWeaponDefenseModifier(playerId) end
+
+    
+--- A getter for [SET_RESOURCE_KVP_FLOAT](#\_0x9ADD2938).
+--- @usage local kvpValue = GetResourceKvpInt('mollis') 
+--- if kvpValue then
+--- 	-- do something!
+--- en
+--- @hash 0x35BDCEEA
+--- @param key string (char*)
+--- @return number (float)
+function GetResourceKvpFloat(key) end
+
+    
+--- Returns the current state of the specified resource.
+---
+--- @hash 0x4039B485
+--- @param resourceName string (char*)
+--- @return string (char*)
+function GetResourceState(resourceName) end
+
+    
+--- A getter for [SET_RESOURCE_KVP](#\_0x21C7A35B).
+--- @usage local kvpValue = GetResourceKvpString('codfish') 
+--- if kvpValue then
+--- 	-- do something!
+--- en
+--- @hash 0x5240DA5A
+--- @param key string (char*)
+--- @return string (char*)
+function GetResourceKvpString(key) end
 
     
 --- GetResourceByFindIndex
@@ -190,33 +223,6 @@ function GetPlayerWeaponDefenseModifier_2(playerId) end
 function GetResourceByFindIndex(findIndex) end
 
     
---- GetResourceKvpInt
----
---- @hash 0x557B586A
---- @param key string (char*)
---- @return number (int)
-function GetResourceKvpInt(key) end
-
-    
---- A getter for [SET_PLAYER_WEAPON_DAMAGE_MODIFIER](#\_0xCE07B9F7817AADA3).
----
---- @hash 0x2A3D7CDA
---- @param playerId Player
---- @return number (float)
-function GetPlayerWeaponDamageModifier(playerId) end
-
-    
---- Gets the metadata value at a specified key/index from a resource's manifest.
---- See also: [Resource manifest](https://docs.fivem.net/resources/manifest/)
----
---- @hash 0x964BAB1D
---- @param resourceName string (char*)
---- @param metadataKey string (char*)
---- @param index number (int)
---- @return string (char*)
-function GetResourceMetadata(resourceName, metadataKey, index) end
-
-    
 --- Returns the value of a state bag key.
 ---
 --- @hash 0x637F4C75
@@ -226,12 +232,15 @@ function GetResourceMetadata(resourceName, metadataKey, index) end
 function GetStateBagValue(bagName, key) end
 
     
---- Returns the current state of the specified resource.
----
---- @hash 0x4039B485
---- @param resourceName string (char*)
---- @return string (char*)
-function GetResourceState(resourceName) end
+--- A getter for [SET_RESOURCE_KVP_INT](#\_0x6A2B1E8).
+--- @usage local kvpValue = GetResourceKvpInt('bananabread') 
+--- if kvpValue then
+--- 	-- do something!
+--- en
+--- @hash 0x557B586A
+--- @param key string (char*)
+--- @return number (int)
+function GetResourceKvpInt(key) end
 
     
 --- GetVehicleHandbrake
@@ -240,39 +249,6 @@ function GetResourceState(resourceName) end
 --- @param vehicle Vehicle
 --- @return boolean
 function GetVehicleHandbrake(vehicle) end
-
-    
---- Gets whether or not this is the CitizenFX server.
----
---- @hash 0xCF24C52E
----
---- @return boolean
-function IsDuplicityVersion() end
-
-    
---- IsAceAllowed
----
---- @hash 0x7EBB9929
---- @param object string (char*)
---- @return boolean
-function IsAceAllowed(object) end
-
-    
---- IsPrincipalAceAllowed
----
---- @hash 0x37CF52CE
---- @param principal string (char*)
---- @param object string (char*)
---- @return boolean
-function IsPrincipalAceAllowed(principal, object) end
-
-    
---- IsVehicleEngineStarting
----
---- @hash 0xBB340D04
---- @param vehicle Vehicle
---- @return boolean
-function IsVehicleEngineStarting(vehicle) end
 
     
 --- InvokeFunctionReference
@@ -286,6 +262,30 @@ function IsVehicleEngineStarting(vehicle) end
 function InvokeFunctionReference(referenceIdentity, argsSerialized, argsLength, retvalLength) end
 
     
+--- Gets whether or not this is the CitizenFX server.
+---
+--- @hash 0xCF24C52E
+---
+--- @return boolean
+function IsDuplicityVersion() end
+
+    
+--- IsVehicleEngineStarting
+---
+--- @hash 0xBB340D04
+--- @param vehicle Vehicle
+--- @return boolean
+function IsVehicleEngineStarting(vehicle) end
+
+    
+--- IsAceAllowed
+---
+--- @hash 0x7EBB9929
+--- @param object string (char*)
+--- @return boolean
+function IsAceAllowed(object) end
+
+    
 --- Reads the contents of a text file in a specified resource.
 --- If executed on the client, this file has to be included in `files` in the resource manifest.
 --- Example: `local data = LoadResourceFile("devtools", "data.json")`
@@ -297,20 +297,13 @@ function InvokeFunctionReference(referenceIdentity, argsSerialized, argsLength, 
 function LoadResourceFile(resourceName, fileName) end
 
     
---- Scope entry for profiler.
+--- IsPrincipalAceAllowed
 ---
---- @hash 0xC795A4A9
---- @param scopeName string (char*)
---- @return void
-function ProfilerEnterScope(scopeName) end
-
-    
---- Returns the owner ID of the specified entity.
----
---- @hash 0x526FEE31
---- @param entity Entity
---- @return number (int)
-function NetworkGetEntityOwner(entity) end
+--- @hash 0x37CF52CE
+--- @param principal string (char*)
+--- @param object string (char*)
+--- @return boolean
+function IsPrincipalAceAllowed(principal, object) end
 
     
 --- Scope exit for profiler.
@@ -321,12 +314,12 @@ function NetworkGetEntityOwner(entity) end
 function ProfilerExitScope() end
 
     
---- Returns true if the profiler is active.
+--- Scope entry for profiler.
 ---
---- @hash 0xF8B7D7BB
----
---- @return boolean
-function ProfilerIsRecording() end
+--- @hash 0xC795A4A9
+--- @param scopeName string (char*)
+--- @return void
+function ProfilerEnterScope(scopeName) end
 
     
 --- An internal function which allows the current resource's HLL script runtimes to receive state for the specified event.
@@ -335,6 +328,22 @@ function ProfilerIsRecording() end
 --- @param eventName string (char*)
 --- @return void
 function RegisterResourceAsEventHandler(eventName) end
+
+    
+--- Returns true if the profiler is active.
+---
+--- @hash 0xF8B7D7BB
+---
+--- @return boolean
+function ProfilerIsRecording() end
+
+    
+--- Returns the owner ID of the specified entity.
+---
+--- @hash 0x526FEE31
+--- @param entity Entity
+--- @return number (int)
+function NetworkGetEntityOwner(entity) end
 
     
 --- Registered commands can be executed by entering them in the client console (this works for client side and server side registered commands). Or by entering them in the server console/through an RCON client (only works for server side registered commands). Or if you use a supported chat resource, like the default one provided in the cfx-server-data repository, then you can enter the command in chat by prefixing it with a `/`.
@@ -374,17 +383,18 @@ function RegisterResourceAsEventHandler(eventName) end
 function RegisterCommand(commandName, handler, restricted) end
 
     
---- SetResourceKvpFloat
----
---- @hash 0x9ADD2938
+--- A setter for [GET_RESOURCE_KVP_STRING](#\_0x5240DA5A).
+--- @usage SetResourceKvp('mollis', 'vesuvius citrate'
+--- @hash 0x21C7A35B
 --- @param key string (char*)
---- @param value number (float)
+--- @param value string (char*)
 --- @return void
-function SetResourceKvpFloat(key, value) end
+function SetResourceKvp(key, value) end
 
     
---- SetResourceKvpInt
----
+--- A setter for [GET_RESOURCE_KVP_INT](#\_0x557B586A).
+--- @usage local lickMy = 42
+--- SetResourceKvp('bananabread', lickMy
 --- @hash 0x6A2B1E8
 --- @param key string (char*)
 --- @param value number (int)
@@ -392,13 +402,14 @@ function SetResourceKvpFloat(key, value) end
 function SetResourceKvpInt(key, value) end
 
     
---- SetResourceKvp
----
---- @hash 0x21C7A35B
+--- A setter for [GET_RESOURCE_KVP_FLOAT](#\_0x35BDCEEA).
+--- @usage local lickMy = 42
+--- SetResourceKvp('bananabread', lickMy
+--- @hash 0x9ADD2938
 --- @param key string (char*)
---- @param value string (char*)
+--- @param value number (float)
 --- @return void
-function SetResourceKvp(key, value) end
+function SetResourceKvpFloat(key, value) end
 
     
 --- Internal function for setting a state bag value.
@@ -413,12 +424,14 @@ function SetResourceKvp(key, value) end
 function SetStateBagValue(bagName, keyName, valueData, valueLength, replicated) end
 
     
---- StartFindKvp
+--- The backing function for TriggerEvent.
 ---
---- @hash 0xDD379006
---- @param prefix string (char*)
---- @return number (int)
-function StartFindKvp(prefix) end
+--- @hash 0x91310870
+--- @param eventName string (char*)
+--- @param eventPayload string (char*)
+--- @param payloadLength number (int)
+--- @return void
+function TriggerEventInternal(eventName, eventPayload, payloadLength) end
 
     
 --- Returns whether or not the currently executing event was canceled.
@@ -429,13 +442,29 @@ function StartFindKvp(prefix) end
 function WasEventCanceled() end
 
     
---- The backing function for TriggerEvent.
----
---- @hash 0x91310870
---- @param eventName string (char*)
---- @param eventPayload string (char*)
---- @param payloadLength number (int)
---- @return void
-function TriggerEventInternal(eventName, eventPayload, payloadLength) end
+--- StartFindKvp
+--- @usage SetResourceKvp('mollis:2', 'should be taken with alcohol')
+--- SetResourceKvp('mollis:1', 'vesuvius citrate')
+--- SetResourceKvp('mollis:manufacturer', 'Betta Pharmaceuticals')
+--- 
+--- local kvpHandle = StartFindKvp('mollis:')
+--- 
+--- if kvpHandle ~= -1 then 
+--- 	local key
+--- 	
+--- 	repeat
+--- 		key = FindKvp(kvpHandle)
+--- 
+--- 		if key then
+--- 			print(('%s: %s'):format(key, GetResourceKvpString(key)))
+--- 		end
+--- 	until key
+--- 
+--- 	EndFindKvp(kvpHandle)
+--- en
+--- @hash 0xDD379006
+--- @param prefix string (char*)
+--- @return number (int)
+function StartFindKvp(prefix) end
 
     

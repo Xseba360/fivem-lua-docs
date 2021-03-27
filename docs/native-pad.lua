@@ -3,23 +3,18 @@
 --- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
 --- ```
 ---
---- @hash 0xA5FFE9B05F199DE7
+--- @hash 0x5F4B6931816E599B
 --- @param padIndex number (int)
 --- @return void
-function EnableAllControlActions(padIndex) end
+function DisableAllControlActions(padIndex) end
 
     
---- [Control values and meaning](https://docs.fivem.net/docs/game-references/controls/#controls)
---- 
---- Example: `CONTROLS::DISABLE_CONTROL_ACTION(2, 19, true)` disables the switching UI from appearing both when using a keyboard and Xbox 360 controller. Needs to be executed each frame.
---- Control group 1 and 0 gives the same results as 2. Same results for all players.
+--- DisableInputGroup
 ---
---- @hash 0xFE99B66D079CF6BC
---- @param padIndex number (int)
---- @param control number (int)
---- @param disable boolean
+--- @hash 0x7F4724035FDCA1DD
+--- @param inputGroup number (int)
 --- @return void
-function DisableControlAction(padIndex, control, disable) end
+function DisableInputGroup(inputGroup) end
 
     
 --- ```
@@ -33,13 +28,104 @@ function GetAllowMovementWhileZoomed() end
 
     
 --- ```
---- The number of milliseconds since last inputGroup registered pressed
+--- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
 --- ```
 ---
---- @hash 0xD7D22F5592AED8BA
---- @param inputGroup number (int)
+--- @hash 0xD95E79E8686D2C27
+--- @param padIndex number (int)
+--- @param control number (int)
 --- @return number (int)
-function GetTimeSinceLastInput(inputGroup) end
+function GetControlValue(padIndex, control) end
+
+    
+--- IsLookInverted
+---
+--- @hash 0x77B612531280010D
+---
+--- @return boolean
+function IsLookInverted() end
+
+    
+--- ```
+--- control - c# works with (int)GTA.Control.CursorY / (int)GTA.Control.CursorX and returns the mouse movement (additive).  
+--- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
+--- ```
+---
+--- @hash 0x11E65974A982637C
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return number (float)
+function GetDisabledControlNormal(padIndex, control) end
+
+    
+--- ```
+--- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
+--- ```
+---
+--- @hash 0x80C2FD58D720C801
+--- @param padIndex number (int)
+--- @param controlGroup number (int)
+--- @param p2 boolean
+--- @return string (char*)
+function GetControlGroupInstructionalButton(padIndex, controlGroup, p2) end
+
+    
+--- ```
+--- Disables SET_PAD_SHAKE when set to -1 for a given inputGroup
+--- ```
+---
+--- @hash 0xF239400E16C23E08
+--- @param inputGroup number (int)
+--- @param p1 number (int)
+--- @return void
+function N_0xf239400e16c23e08(inputGroup, p1) end
+
+    
+--- ```
+--- The "disabled" variant of _0x5B84D09CEC5209C5.  
+--- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
+--- ```
+---
+--- @hash 0x4F8A26A890FD62FB
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return number (float)
+function GetDisabledControlUnboundNormal(padIndex, control) end
+
+    
+--- N_0xa0cefcea390aab9b
+---
+--- @hash 0xA0CEFCEA390AAB9B
+--- @param p0 any
+--- @return void
+function N_0xa0cefcea390aab9b(p0) end
+
+    
+--- GetLocalPlayerAimState
+---
+--- @hash 0xBB41AFBBBC0A0287
+---
+--- @return number (int)
+function GetLocalPlayerAimState() end
+
+    
+--- ```
+--- Same behavior as GET_LOCAL_PLAYER_AIM_STATE but only used on the PC version.  
+--- ```
+---
+--- @hash 0x59B9A7AF4C95133C
+---
+--- @return number (int)
+function GetLocalPlayerAimState_2() end
+
+    
+--- Returns whether a [control](https://docs.fivem.net/game-references/controls/) is currently pressed.
+---
+--- @hash 0xF3A21BCD95725A4A
+--- @param inputGroup number (int)
+--- @param control number (int)
+--- @return boolean
+function IsControlPressed(inputGroup, control) end
 
     
 --- ```
@@ -95,52 +181,29 @@ function IsControlEnabled(padIndex, control) end
 --- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
 --- ```
 ---
---- @hash 0x91AEF906BCA88877
+--- @hash 0xE2587F8CBBD87B1D
 --- @param padIndex number (int)
 --- @param control number (int)
 --- @return boolean
-function IsDisabledControlJustPressed(padIndex, control) end
+function IsDisabledControlPressed(padIndex, control) end
 
     
---- DisableInputGroup
+--- ```
+--- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
+--- ```
 ---
---- @hash 0x7F4724035FDCA1DD
---- @param inputGroup number (int)
+--- @hash 0xA5FFE9B05F199DE7
+--- @param padIndex number (int)
 --- @return void
-function DisableInputGroup(inputGroup) end
+function EnableAllControlActions(padIndex) end
 
     
---- ```
---- Returns profile setting 225.
---- ```
+--- N_0x5b73c77d9eb66e24
 ---
---- @hash 0x0F70731BACCFBB96
----
---- @return boolean
-function GetIsUsingAlternateDriveby() end
-
-    
---- Returns whether a [control](https://docs.fivem.net/game-references/controls/) is currently pressed.
----
---- @hash 0xF3A21BCD95725A4A
---- @param inputGroup number (int)
---- @param control number (int)
---- @return boolean
-function IsControlPressed(inputGroup, control) end
-
-    
---- ```
---- This is for simulating player input.  
---- amount is a float value from 0   
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
----
---- @hash 0xE8A25867FBA3B05E
---- @param padIndex number (int)
---- @param control number (int)
---- @param amount number (float)
---- @return boolean
-function SetControlNormal(padIndex, control, amount) end
+--- @hash 0x5B73C77D9EB66E24
+--- @param p0 boolean
+--- @return void
+function N_0x5b73c77d9eb66e24(p0) end
 
     
 --- ```
@@ -156,178 +219,13 @@ function GetControlNormal(padIndex, control) end
 
     
 --- ```
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
+--- The number of milliseconds since last inputGroup registered pressed
 --- ```
 ---
---- @hash 0xE2587F8CBBD87B1D
---- @param padIndex number (int)
---- @param control number (int)
---- @return boolean
-function IsDisabledControlPressed(padIndex, control) end
-
-    
---- ```
---- Disables SET_PAD_SHAKE when set to -1 for a given inputGroup
---- ```
----
---- @hash 0xF239400E16C23E08
+--- @hash 0xD7D22F5592AED8BA
 --- @param inputGroup number (int)
---- @param p1 number (int)
---- @return void
-function N_0xf239400e16c23e08(inputGroup, p1) end
-
-    
---- ```
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
----
---- @hash 0x305C8DCD79DA8B0F
---- @param padIndex number (int)
---- @param control number (int)
---- @return boolean
-function IsDisabledControlJustReleased(padIndex, control) end
-
-    
---- ```
---- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
---- 
---- Hardcoded to return false.
---- ```
----
---- @hash 0x23F09EADC01449D6
---- @param padIndex number (int)
---- @return boolean
-function N_0x23f09eadc01449d6(padIndex) end
-
-    
---- GetLocalPlayerAimState
----
---- @hash 0xBB41AFBBBC0A0287
----
 --- @return number (int)
-function GetLocalPlayerAimState() end
-
-    
---- ```
---- S*
---- ```
----
---- @hash 0x643ED62D5EA3BEBD
----
---- @return void
-function ResetInputMappingScheme() end
-
-    
---- ```
---- Same behavior as GET_LOCAL_PLAYER_AIM_STATE but only used on the PC version.  
---- ```
----
---- @hash 0x59B9A7AF4C95133C
----
---- @return number (int)
-function GetLocalPlayerAimState_2() end
-
-    
---- SetPlayerpadShakesWhenControllerDisabled
----
---- @hash 0x798FDEB5B1575088
---- @param toggle boolean
---- @return void
-function SetPlayerpadShakesWhenControllerDisabled(toggle) end
-
-    
---- Returns whether a [control](https://docs.fivem.net/game-references/controls/) was newly released since the last check.
----
---- @hash 0x50F940259D3841E6
---- @param inputGroup number (int)
---- @param control number (int)
---- @return boolean
-function IsControlJustReleased(inputGroup, control) end
-
-    
---- N_0xcb0360efefb2580d
----
---- @hash 0xCB0360EFEFB2580D
---- @param padIndex number (int)
---- @return void
-function N_0xcb0360efefb2580d(padIndex) end
-
-    
---- ```
---- Renamed to SET_CURSOR_LOCATION (I previously named it _SET_CURSOR_POSTION) which is the correct name as far as I can tell.  
---- ```
----
---- @hash 0xFC695459D4D0E219
---- @param x number (float)
---- @param y number (float)
---- @return boolean
-function SetCursorLocation(x, y) end
-
-    
---- Returns whether a [control](https://docs.fivem.net/game-references/controls/) is currently *not* pressed.
----
---- @hash 0x648EE3E7F38877DD
---- @param inputGroup number (int)
---- @param control number (int)
---- @return boolean
-function IsControlReleased(inputGroup, control) end
-
-    
---- ```
---- Same as 0x3D42B92563939375
---- 
---- S*
---- ```
----
---- @hash 0x4683149ED1DDE7A1
---- @param name string (char*)
---- @return boolean
-function SwitchToInputMappingScheme_2(name) end
-
-    
---- ```
---- The "disabled" variant of _0x5B84D09CEC5209C5.  
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
----
---- @hash 0x4F8A26A890FD62FB
---- @param padIndex number (int)
---- @param control number (int)
---- @return number (float)
-function GetDisabledControlUnboundNormal(padIndex, control) end
-
-    
---- ```
---- Seems to return values between -1 and 1 for controls like gas and steering.  
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
----
---- @hash 0x5B84D09CEC5209C5
---- @param padIndex number (int)
---- @param control number (int)
---- @return number (float)
-function GetControlUnboundNormal(padIndex, control) end
-
-    
---- ```
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
----
---- @hash 0xD95E79E8686D2C27
---- @param padIndex number (int)
---- @param control number (int)
---- @return number (int)
-function GetControlValue(padIndex, control) end
-
-    
---- ```
---- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
---- ```
----
---- @hash 0x5F4B6931816E599B
---- @param padIndex number (int)
---- @return void
-function DisableAllControlActions(padIndex) end
+function GetTimeSinceLastInput(inputGroup) end
 
     
 --- ```
@@ -345,85 +243,14 @@ function IsInputDisabled(inputGroup) end
 
     
 --- ```
---- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
+--- I may be wrong with this one, but from the looks of the scripts, it sets keyboard related stuff as soon as this returns true.  
+--- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
 --- ```
 ---
---- @hash 0xEDE476E5EE29EDB1
---- @param padIndex number (int)
---- @param control number (int)
---- @return void
-function SetInputExclusive(padIndex, control) end
-
-    
---- ```
---- Used in carsteal3 script with p0 = "Carsteal4_spycar".  
---- ```
----
---- @hash 0x3D42B92563939375
---- @param name string (char*)
---- @return boolean
-function SwitchToInputMappingScheme(name) end
-
-    
---- Returns whether a [control](https://docs.fivem.net/game-references/controls/) was newly pressed since the last check.
----
---- @hash 0x580417101DDB492F
+--- @hash 0x13337B38DB572509
 --- @param inputGroup number (int)
---- @param control number (int)
 --- @return boolean
-function IsControlJustPressed(inputGroup, control) end
-
-    
---- ```
---- Used with IS_LOOK_INVERTED() and negates its affect.  
---- --  
---- Not sure how the person above got that description, but here's an actual example:  
---- if (CONTROLS::_GET_LAST_INPUT_METHOD(2)) {  
----     if (a_5) {  
----         if (CONTROLS::IS_LOOK_INVERTED()) {  
----             a_3 *= -1;  
----         }  
----         if (CONTROLS::_E1615EC03B3BB4FD()) {  
----             a_3 *= -1;  
----         }  
----     }  
---- }  
---- ```
----
---- @hash 0xE1615EC03B3BB4FD
----
---- @return boolean
-function N_0xe1615ec03b3bb4fd() end
-
-    
---- N_0x5b73c77d9eb66e24
----
---- @hash 0x5B73C77D9EB66E24
---- @param p0 boolean
---- @return void
-function N_0x5b73c77d9eb66e24(p0) end
-
-    
---- **This native does absolutely nothing, just a nullsub**
----
---- @hash 0x14D29BB12D47F68C
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @param p4 any
---- @return void
-function N_0x14d29bb12d47f68c(p0, p1, p2, p3, p4) end
-
-    
---- ```
---- NativeDB Introduced: v1365
---- ```
----
---- @hash 0x25AAA32BDC98F2A3
----
---- @return any
-function N_0x25aaa32bdc98f2a3() end
+function IsInputJustDisabled(inputGroup) end
 
     
 --- ```
@@ -437,55 +264,22 @@ function N_0x6cd79468a1e595c6(padIndex) end
 
     
 --- ```
---- control - c# works with (int)GTA.Control.CursorY / (int)GTA.Control.CursorX and returns the mouse movement (additive).  
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
+--- Renamed to SET_CURSOR_LOCATION (I previously named it _SET_CURSOR_POSTION) which is the correct name as far as I can tell.  
 --- ```
 ---
---- @hash 0x11E65974A982637C
---- @param padIndex number (int)
---- @param control number (int)
---- @return number (float)
-function GetDisabledControlNormal(padIndex, control) end
-
-    
---- StopPadShake
----
---- @hash 0x38C16A305E8CDC8D
---- @param padIndex number (int)
---- @return void
-function StopPadShake(padIndex) end
-
-    
---- ```
---- formerly called _GET_CONTROL_ACTION_NAME incorrectly  
---- p2 appears to always be true.  
---- p2 is unused variable in function.  
---- EG:  
---- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 201, 1) /*INPUT_FRONTEND_ACCEPT (e.g. Enter button)*/  
---- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 202, 1) /*INPUT_FRONTEND_CANCEL (e.g. ESC button)*/  
---- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 51, 1) /*INPUT_CONTEXT (e.g. E button)*/  
---- gtaforums.com/topic/819070-c-draw-instructional-buttons-scaleform-movie/#entry1068197378  
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
---- 
---- ```
---- NativeDB Parameter 2: BOOL p2
---- ```
----
---- @hash 0x0499D7B09FC9B407
---- @param padIndex number (int)
---- @param control number (int)
---- @param p2 Player
---- @return string (char*)
-function GetControlInstructionalButton(padIndex, control, p2) end
-
-    
---- IsLookInverted
----
---- @hash 0x77B612531280010D
----
+--- @hash 0xFC695459D4D0E219
+--- @param x number (float)
+--- @param y number (float)
 --- @return boolean
-function IsLookInverted() end
+function SetCursorLocation(x, y) end
+
+    
+--- SetPlayerpadShakesWhenControllerDisabled
+---
+--- @hash 0x798FDEB5B1575088
+--- @param toggle boolean
+--- @return void
+function SetPlayerpadShakesWhenControllerDisabled(toggle) end
 
     
 --- ```
@@ -544,36 +338,33 @@ function EnableControlAction(padIndex, control, enable) end
 
     
 --- ```
---- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
+--- NativeDB Introduced: v1365
 --- ```
 ---
---- @hash 0x8290252FFF36ACB5
---- @param padIndex number (int)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @return void
-function SetControlGroupColor(padIndex, red, green, blue) end
-
-    
---- N_0xa0cefcea390aab9b
+--- @hash 0x25AAA32BDC98F2A3
 ---
---- @hash 0xA0CEFCEA390AAB9B
---- @param p0 any
---- @return void
-function N_0xa0cefcea390aab9b(p0) end
+--- @return any
+function N_0x25aaa32bdc98f2a3() end
 
     
 --- ```
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
+--- Used in carsteal3 script with p0 = "Carsteal4_spycar".  
 --- ```
 ---
---- @hash 0x80C2FD58D720C801
---- @param padIndex number (int)
---- @param controlGroup number (int)
---- @param p2 boolean
---- @return string (char*)
-function GetControlGroupInstructionalButton(padIndex, controlGroup, p2) end
+--- @hash 0x3D42B92563939375
+--- @param name string (char*)
+--- @return boolean
+function SwitchToInputMappingScheme(name) end
+
+    
+--- ```
+--- S*
+--- ```
+---
+--- @hash 0x643ED62D5EA3BEBD
+---
+--- @return void
+function ResetInputMappingScheme() end
 
     
 --- ```
@@ -593,14 +384,202 @@ function SetPadShake(padIndex, duration, frequency) end
 
     
 --- ```
---- I may be wrong with this one, but from the looks of the scripts, it sets keyboard related stuff as soon as this returns true.  
+--- Returns profile setting 225.
+--- ```
+---
+--- @hash 0x0F70731BACCFBB96
+---
+--- @return boolean
+function GetIsUsingAlternateDriveby() end
+
+    
+--- ```
+--- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
+--- ```
+---
+--- @hash 0xEDE476E5EE29EDB1
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return void
+function SetInputExclusive(padIndex, control) end
+
+    
+--- ```
+--- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
+--- ```
+---
+--- @hash 0x8290252FFF36ACB5
+--- @param padIndex number (int)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @return void
+function SetControlGroupColor(padIndex, red, green, blue) end
+
+    
+--- Returns whether a [control](https://docs.fivem.net/game-references/controls/) was newly pressed since the last check.
+---
+--- @hash 0x580417101DDB492F
+--- @param inputGroup number (int)
+--- @param control number (int)
+--- @return boolean
+function IsControlJustPressed(inputGroup, control) end
+
+    
+--- ```
+--- Seems to return values between -1 and 1 for controls like gas and steering.  
 --- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
 --- ```
 ---
---- @hash 0x13337B38DB572509
---- @param inputGroup number (int)
+--- @hash 0x5B84D09CEC5209C5
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return number (float)
+function GetControlUnboundNormal(padIndex, control) end
+
+    
+--- [Control values and meaning](https://docs.fivem.net/docs/game-references/controls/#controls)
+--- 
+--- Example: `CONTROLS::DISABLE_CONTROL_ACTION(2, 19, true)` disables the switching UI from appearing both when using a keyboard and Xbox 360 controller. Needs to be executed each frame.
+--- Control group 1 and 0 gives the same results as 2. Same results for all players.
+---
+--- @hash 0xFE99B66D079CF6BC
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @param disable boolean
+--- @return void
+function DisableControlAction(padIndex, control, disable) end
+
+    
+--- ```
+--- This is for simulating player input.  
+--- amount is a float value from 0   
+--- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
+--- ```
+---
+--- @hash 0xE8A25867FBA3B05E
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @param amount number (float)
 --- @return boolean
-function IsInputJustDisabled(inputGroup) end
+function SetControlNormal(padIndex, control, amount) end
+
+    
+--- Returns whether a [control](https://docs.fivem.net/game-references/controls/) was newly released since the last check.
+---
+--- @hash 0x50F940259D3841E6
+--- @param inputGroup number (int)
+--- @param control number (int)
+--- @return boolean
+function IsControlJustReleased(inputGroup, control) end
+
+    
+--- ```
+--- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
+--- 
+--- Hardcoded to return false.
+--- ```
+---
+--- @hash 0x23F09EADC01449D6
+--- @param padIndex number (int)
+--- @return boolean
+function N_0x23f09eadc01449d6(padIndex) end
+
+    
+--- ```
+--- Used with IS_LOOK_INVERTED() and negates its affect.  
+--- --  
+--- Not sure how the person above got that description, but here's an actual example:  
+--- if (CONTROLS::_GET_LAST_INPUT_METHOD(2)) {  
+---     if (a_5) {  
+---         if (CONTROLS::IS_LOOK_INVERTED()) {  
+---             a_3 *= -1;  
+---         }  
+---         if (CONTROLS::_E1615EC03B3BB4FD()) {  
+---             a_3 *= -1;  
+---         }  
+---     }  
+--- }  
+--- ```
+---
+--- @hash 0xE1615EC03B3BB4FD
+---
+--- @return boolean
+function N_0xe1615ec03b3bb4fd() end
+
+    
+--- **This native does absolutely nothing, just a nullsub**
+---
+--- @hash 0x14D29BB12D47F68C
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @return void
+function N_0x14d29bb12d47f68c(p0, p1, p2, p3, p4) end
+
+    
+--- StopPadShake
+---
+--- @hash 0x38C16A305E8CDC8D
+--- @param padIndex number (int)
+--- @return void
+function StopPadShake(padIndex) end
+
+    
+--- ```
+--- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
+--- ```
+---
+--- @hash 0x305C8DCD79DA8B0F
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
+function IsDisabledControlJustReleased(padIndex, control) end
+
+    
+--- ```
+--- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
+--- ```
+---
+--- @hash 0x91AEF906BCA88877
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
+function IsDisabledControlJustPressed(padIndex, control) end
+
+    
+--- ```
+--- formerly called _GET_CONTROL_ACTION_NAME incorrectly  
+--- p2 appears to always be true.  
+--- p2 is unused variable in function.  
+--- EG:  
+--- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 201, 1) /*INPUT_FRONTEND_ACCEPT (e.g. Enter button)*/  
+--- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 202, 1) /*INPUT_FRONTEND_CANCEL (e.g. ESC button)*/  
+--- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 51, 1) /*INPUT_CONTEXT (e.g. E button)*/  
+--- gtaforums.com/topic/819070-c-draw-instructional-buttons-scaleform-movie/#entry1068197378  
+--- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
+--- ```
+--- 
+--- ```
+--- NativeDB Parameter 2: BOOL p2
+--- ```
+---
+--- @hash 0x0499D7B09FC9B407
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @param p2 Player
+--- @return string (char*)
+function GetControlInstructionalButton(padIndex, control, p2) end
+
+    
+--- N_0xcb0360efefb2580d
+---
+--- @hash 0xCB0360EFEFB2580D
+--- @param padIndex number (int)
+--- @return void
+function N_0xcb0360efefb2580d(padIndex) end
 
     
 --- ```
@@ -612,5 +591,26 @@ function IsInputJustDisabled(inputGroup) end
 --- @param control number (int)
 --- @return boolean
 function IsDisabledControlReleased(padIndex, control) end
+
+    
+--- Returns whether a [control](https://docs.fivem.net/game-references/controls/) is currently *not* pressed.
+---
+--- @hash 0x648EE3E7F38877DD
+--- @param inputGroup number (int)
+--- @param control number (int)
+--- @return boolean
+function IsControlReleased(inputGroup, control) end
+
+    
+--- ```
+--- Same as 0x3D42B92563939375
+--- 
+--- S*
+--- ```
+---
+--- @hash 0x4683149ED1DDE7A1
+--- @param name string (char*)
+--- @return boolean
+function SwitchToInputMappingScheme_2(name) end
 
     

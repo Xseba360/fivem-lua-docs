@@ -1,12 +1,4 @@
 
---- GetIsLoadingScreenActive
----
---- @hash 0x10D0A8F259E93EC9
----
---- @return boolean
-function GetIsLoadingScreenActive() end
-
-    
 --- ```
 --- ------------------------  
 --- | Belongs in DLC2 |  
@@ -26,6 +18,14 @@ function GetIsLoadingScreenActive() end
 function N_0x241fca5b1aa14f75() end
 
     
+--- N_0xa213b11dff526300
+---
+--- @hash 0xA213B11DFF526300
+---
+--- @return boolean
+function N_0xa213b11dff526300() end
+
+    
 --- N_0x9489659372a81585
 ---
 --- @hash 0x9489659372A81585
@@ -34,16 +34,12 @@ function N_0x241fca5b1aa14f75() end
 function N_0x9489659372a81585() end
 
     
---- ```
---- This loads the GTA:O dlc map parts (high end garages, apartments).
---- Works in singleplayer.
---- In order to use GTA:O heist IPL's you have to call this native with the following params: _9BAE5AD2508DF078(1);
---- ```
+--- GetExtraContentPackHasBeenInstalled
 ---
---- @hash 0x0888C3502DBBEEF5
+--- @hash 0x8D30F648014A92B5
 ---
---- @return void
-function OnEnterMp() end
+--- @return boolean
+function GetExtraContentPackHasBeenInstalled() end
 
     
 --- ```
@@ -57,6 +53,18 @@ function OnEnterMp() end
 ---
 --- @return void
 function OnEnterSp() end
+
+    
+--- ```
+--- This loads the GTA:O dlc map parts (high end garages, apartments).
+--- Works in singleplayer.
+--- In order to use GTA:O heist IPL's you have to call this native with the following params: _9BAE5AD2508DF078(1);
+--- ```
+---
+--- @hash 0x0888C3502DBBEEF5
+---
+--- @return void
+function OnEnterMp() end
 
     
 --- ```
@@ -80,6 +88,22 @@ function OnEnterSp() end
 function HasCloudRequestsFinished(variable, unused) end
 
     
+--- N_0xf2e07819ef1a5289
+---
+--- @hash 0xF2E07819EF1A5289
+---
+--- @return boolean
+function N_0xf2e07819ef1a5289() end
+
+    
+--- GetIsLoadingScreenActive
+---
+--- @hash 0x10D0A8F259E93EC9
+---
+--- @return boolean
+function GetIsLoadingScreenActive() end
+
+    
 --- ```
 --- Example:  
 --- DLC2::IS_DLC_PRESENT($\mpbusiness2\);  
@@ -93,29 +117,5 @@ function HasCloudRequestsFinished(variable, unused) end
 --- @param dlcHash Hash
 --- @return boolean
 function IsDlcPresent(dlcHash) end
-
-    
---- N_0xf2e07819ef1a5289
----
---- @hash 0xF2E07819EF1A5289
----
---- @return boolean
-function N_0xf2e07819ef1a5289() end
-
-    
---- N_0xa213b11dff526300
----
---- @hash 0xA213B11DFF526300
----
---- @return boolean
-function N_0xa213b11dff526300() end
-
-    
---- GetExtraContentPackHasBeenInstalled
----
---- @hash 0x8D30F648014A92B5
----
---- @return boolean
-function GetExtraContentPackHasBeenInstalled() end
 
     

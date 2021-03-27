@@ -8,16 +8,6 @@ function LocalizationGetSystemLanguage() end
 
     
 --- ```
---- Possible return values: 0, 1, 2
---- ```
----
---- @hash 0xA8AE43AEC1A61314
----
---- @return number (int)
-function LocalizationGetSystemDateFormat() end
-
-    
---- ```
 --- american = 0  
 --- french = 1   
 --- german = 2  
@@ -37,5 +27,15 @@ function LocalizationGetSystemDateFormat() end
 ---
 --- @return number (int)
 function GetCurrentLanguage() end
+
+    
+--- ```
+--- Possible return values: 0, 1, 2
+--- ```
+---
+--- @hash 0xA8AE43AEC1A61314
+---
+--- @return number (int)
+function LocalizationGetSystemDateFormat() end
 
     

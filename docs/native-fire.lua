@@ -1,20 +1,7 @@
 
---- ```
---- Returns TRUE if it found something. FALSE if not.  
---- ```
+--- See [IS_POINT_IN_ANGLED_AREA](#\_0x2A70BAE8883E4C81) for the definition of an angled area.
 ---
---- @hash 0x352A9F6BCF90081F
---- @param outPosition Vector3 (Vector3*)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @return boolean
-function GetClosestFirePos(outPosition, x, y, z) end
-
-    
---- IsExplosionActiveInArea
----
---- @hash 0x6070104B699B2EF4
+--- @hash 0xA079A6C51525DC4B
 --- @param explosionType number (int)
 --- @param x1 number (float)
 --- @param y1 number (float)
@@ -22,25 +9,55 @@ function GetClosestFirePos(outPosition, x, y, z) end
 --- @param x2 number (float)
 --- @param y2 number (float)
 --- @param z2 number (float)
+--- @param width number (float)
 --- @return boolean
-function IsExplosionActiveInArea(explosionType, x1, y1, z1, x2, y2, z2) end
+function IsExplosionInAngledArea(explosionType, x1, y1, z1, x2, y2, z2, width) end
 
     
 --- ```
---- Starts a fire:  
---- xyz: Location of fire  
---- maxChildren: The max amount of times a fire can spread to other objects. Must be 25 or less, or the function will do nothing.  
---- isGasFire: Whether or not the fire is powered by gasoline.  
+--- Returns a handle to the first entity within the a circle spawned inside the 2 points from a radius. It could return a ped or an entity, but the scripts expect a ped, but still check if it's a ped.  
 --- ```
 ---
---- @hash 0x6B83617E04503888
---- @param X number (float)
---- @param Y number (float)
---- @param Z number (float)
---- @param maxChildren number (int)
---- @param isGasFire boolean
+--- @hash 0x14BA4BA137AF6CEC
+--- @param explosionType number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param radius number (float)
+--- @return Entity
+function GetEntityInsideExplosionArea(explosionType, x1, y1, z1, x2, y2, z2, radius) end
+
+    
+--- RemoveScriptFire
+---
+--- @hash 0x7FF548385680673F
+--- @param fireHandle table (FireId)
+--- @return void
+function RemoveScriptFire(fireHandle) end
+
+    
+--- StartEntityFire
+---
+--- @hash 0xF6A9D9708F6F23DF
+--- @param entity Entity
 --- @return table (FireId)
-function StartScriptFire(X, Y, Z, maxChildren, isGasFire) end
+function StartEntityFire(entity) end
+
+    
+--- ```
+--- This doesn't stop fire nor the fire propagation in a loop... for some reasons.  
+--- ```
+---
+--- @hash 0x056A8A219B8E829F
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @return void
+function StopFireInRange(x, y, z, radius) end
 
     
 --- AddExplosionWithUserVfx
@@ -59,17 +76,20 @@ function StartScriptFire(X, Y, Z, maxChildren, isGasFire) end
 function AddExplosionWithUserVfx(x, y, z, explosionType, explosionFx, damageScale, isAudible, isInvisible, cameraShake) end
 
     
---- StartEntityFire
+--- GetNumberOfFiresInRange
 ---
---- @hash 0xF6A9D9708F6F23DF
---- @param entity Entity
---- @return table (FireId)
-function StartEntityFire(entity) end
+--- @hash 0x50CAD495A460B305
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @return number (int)
+function GetNumberOfFiresInRange(x, y, z, radius) end
 
     
---- IsExplosionInArea
+--- IsExplosionActiveInArea
 ---
---- @hash 0x2E2EBA0EE7CED0E0
+--- @hash 0x6070104B699B2EF4
 --- @param explosionType number (int)
 --- @param x1 number (float)
 --- @param y1 number (float)
@@ -78,19 +98,38 @@ function StartEntityFire(entity) end
 --- @param y2 number (float)
 --- @param z2 number (float)
 --- @return boolean
-function IsExplosionInArea(explosionType, x1, y1, z1, x2, y2, z2) end
+function IsExplosionActiveInArea(explosionType, x1, y1, z1, x2, y2, z2) end
 
     
---- IsExplosionInSphere
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
 ---
---- @hash 0xAB0F816885B0E483
+--- @hash 0xB3CD51E3DB86F176
 --- @param explosionType number (int)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @return boolean
-function IsExplosionInSphere(explosionType, x, y, z, radius) end
+--- @return Entity
+function GetEntityInsideExplosionSphere(explosionType, x, y, z, radius) end
+
+    
+--- ```
+--- Starts a fire:  
+--- xyz: Location of fire  
+--- maxChildren: The max amount of times a fire can spread to other objects. Must be 25 or less, or the function will do nothing.  
+--- isGasFire: Whether or not the fire is powered by gasoline.  
+--- ```
+---
+--- @hash 0x6B83617E04503888
+--- @param X number (float)
+--- @param Y number (float)
+--- @param Z number (float)
+--- @param maxChildren number (int)
+--- @param isGasFire boolean
+--- @return table (FireId)
+function StartScriptFire(X, Y, Z, maxChildren, isGasFire) end
 
     
 --- ```
@@ -157,27 +196,6 @@ function AddExplosion(x, y, z, explosionType, damageScale, isAudible, isInvisibl
 
     
 --- ```
---- This doesn't stop fire nor the fire propagation in a loop... for some reasons.  
---- ```
----
---- @hash 0x056A8A219B8E829F
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @return void
-function StopFireInRange(x, y, z, radius) end
-
-    
---- StopEntityFire
----
---- @hash 0x7F0DD2EBBB651AFF
---- @param entity Entity
---- @return void
-function StopEntityFire(entity) end
-
-    
---- ```
 --- enum ExplosionTypes  
 --- {  
 --- 	EXPLOSION_GRENADE,  
@@ -235,37 +253,43 @@ function StopEntityFire(entity) end
 function AddOwnedExplosion(ped, x, y, z, explosionType, damageScale, isAudible, isInvisible, cameraShake) end
 
     
---- RemoveScriptFire
+--- ```
+--- Returns TRUE if it found something. FALSE if not.  
+--- ```
 ---
---- @hash 0x7FF548385680673F
---- @param fireHandle table (FireId)
---- @return void
-function RemoveScriptFire(fireHandle) end
+--- @hash 0x352A9F6BCF90081F
+--- @param outPosition Vector3 (Vector3*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return boolean
+function GetClosestFirePos(outPosition, x, y, z) end
 
     
---- ```
---- NativeDB Introduced: v1290
---- ```
+--- IsExplosionInArea
 ---
---- @hash 0xB3CD51E3DB86F176
+--- @hash 0x2E2EBA0EE7CED0E0
+--- @param explosionType number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @return boolean
+function IsExplosionInArea(explosionType, x1, y1, z1, x2, y2, z2) end
+
+    
+--- IsExplosionInSphere
+---
+--- @hash 0xAB0F816885B0E483
 --- @param explosionType number (int)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @return Entity
-function GetEntityInsideExplosionSphere(explosionType, x, y, z, radius) end
-
-    
---- GetNumberOfFiresInRange
----
---- @hash 0x50CAD495A460B305
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @return number (int)
-function GetNumberOfFiresInRange(x, y, z, radius) end
+--- @return boolean
+function IsExplosionInSphere(explosionType, x, y, z, radius) end
 
     
 --- IsEntityOnFire
@@ -276,35 +300,11 @@ function GetNumberOfFiresInRange(x, y, z, radius) end
 function IsEntityOnFire(entity) end
 
     
---- See [IS_POINT_IN_ANGLED_AREA](#\_0x2A70BAE8883E4C81) for the definition of an angled area.
+--- StopEntityFire
 ---
---- @hash 0xA079A6C51525DC4B
---- @param explosionType number (int)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param width number (float)
---- @return boolean
-function IsExplosionInAngledArea(explosionType, x1, y1, z1, x2, y2, z2, width) end
-
-    
---- ```
---- Returns a handle to the first entity within the a circle spawned inside the 2 points from a radius. It could return a ped or an entity, but the scripts expect a ped, but still check if it's a ped.  
---- ```
----
---- @hash 0x14BA4BA137AF6CEC
---- @param explosionType number (int)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param radius number (float)
---- @return Entity
-function GetEntityInsideExplosionArea(explosionType, x1, y1, z1, x2, y2, z2, radius) end
+--- @hash 0x7F0DD2EBBB651AFF
+--- @param entity Entity
+--- @return void
+function StopEntityFire(entity) end
 
     

@@ -1,91 +1,64 @@
 
 --- ```
---- Returns a float value representing animation's total playtime in milliseconds.  
---- Example:  
---- GET_ENTITY_ANIM_TOTAL_TIME(PLAYER_ID(),"amb@world_human_yoga@female@base","base_b")   
---- return 20800.000000  
---- ```
---- 
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash 0x50BD2730B191E360
---- @param entity Entity
---- @param animDict string (char*)
---- @param animName string (char*)
---- @return number (float)
-function GetEntityAnimTotalTime(entity, animDict, animName) end
-
-    
---- ```
---- Returns the LOD distance of an entity.  
---- ```
----
---- @hash 0x4159C2762B5791D6
---- @param entity Entity
---- @return number (int)
-function GetEntityLodDist(entity) end
-
-    
---- CreateForcedObject
----
---- @hash 0x150E808B375A385A
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param p3 any
---- @param modelHash Hash
---- @param p5 boolean
---- @return void
-function CreateForcedObject(x, y, z, p3, modelHash, p5) end
-
-    
---- ```
---- breakForce is the amount of force required to break the bond.  
---- fixedRot - if false it ignores entity vector  
---- p15 - is 1 or 0 in scripts - unknoun what it does  
+--- Attaches entity1 to bone (boneIndex) of entity2.  
+--- boneIndex - this is different to boneID, use GET_PED_BONE_INDEX to get the index from the ID. use the index for attaching to specific bones. entity1 will be attached to entity2's centre if bone index given doesn't correspond to bone indexes for that entity type.  
+--- useSoftPinning - when 2 entities with collision collide and form into a ball they will break the attachment of the entity that they were attached to. Or when an entity is attached far away and then the resets.  
 --- collision - controls collision between the two entities (FALSE disables collision).  
---- teleport - do not teleport entity to be attached to the position of the bone Index of the target entity (if 1, entity will not be teleported to target bone)  
---- p18 - is always 2 in scripts.  
---- -------------------------  
---- teleport is not exactly "doNotTeleport". What it actually does is the following:  
---- if true, entities will be attached as if loosely tethered, up to the maximum offset position specified. Almost as if attached by an invisible rope.  
---- if false, entities will be attached in a fixed position as specified in the offset position.  
---- When p15 = true, it seems to force teleport to false.  
---- It also lets the Rotation params actually work.  
+--- isPed - pitch doesnt work when false and roll will only work on negative numbers (only peds)  
+--- vertexIndex - position of vertex  
+--- fixedRot - if false it ignores entity vector  
 --- ```
 ---
---- @hash 0xC3675780C92F90F9
+--- @hash 0x6B9BBD38AB0796DF
 --- @param entity1 Entity
 --- @param entity2 Entity
---- @param boneIndex1 number (int)
---- @param boneIndex2 number (int)
---- @param xPos1 number (float)
---- @param yPos1 number (float)
---- @param zPos1 number (float)
---- @param xPos2 number (float)
---- @param yPos2 number (float)
---- @param zPos2 number (float)
+--- @param boneIndex number (int)
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param zPos number (float)
 --- @param xRot number (float)
 --- @param yRot number (float)
 --- @param zRot number (float)
---- @param breakForce number (float)
---- @param fixedRot boolean
---- @param p15 boolean
+--- @param p9 boolean
+--- @param useSoftPinning boolean
 --- @param collision boolean
---- @param teleport boolean
---- @param p18 number (int)
+--- @param isPed boolean
+--- @param vertexIndex number (int)
+--- @param fixedRot boolean
 --- @return void
-function AttachEntityToEntityPhysically(entity1, entity2, boneIndex1, boneIndex2, xPos1, yPos1, zPos1, xPos2, yPos2, zPos2, xRot, yRot, zRot, breakForce, fixedRot, p15, collision, teleport, p18) end
+function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRot, yRot, zRot, p9, useSoftPinning, collision, isPed, vertexIndex, fixedRot) end
+
+    
+--- Checks whether an entity exists in the game world.
+--- @usage local currentVehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- 
+--- if DoesEntityExist(currentVehicle) then
+---     DeleteEntity(currentVehicle)
+--- en
+--- @hash 0x7239B21A38F536BA
+--- @param entity Entity
+--- @return boolean
+function DoesEntityExist(entity) end
 
     
 --- ```
---- ENABLE_*
+--- Gets the entity's forward vector.
 --- ```
 ---
---- @hash 0x6CE177D014502E8A
+--- @hash 0x0A794A5A57F8DF91
 --- @param entity Entity
+--- @return Vector3
+function GetEntityForwardVector(entity) end
+
+    
+--- ```
+--- Deletes the specified entity, then sets the handle pointed to by the pointer to NULL.
+--- ```
+---
+--- @hash 0xAE3CBE5BF394C9C9
+--- @param entity Entity (Entity*)
 --- @return void
-function EnableEntityUnk(entity) end
+function DeleteEntity(entity) end
 
     
 --- ApplyForceToEntityCenterOfMass
@@ -104,6 +77,68 @@ function EnableEntityUnk(entity) end
 function ApplyForceToEntityCenterOfMass(entity, forceType, x, y, z, p5, isDirectionRel, isForceRel, p8) end
 
     
+--- ```
+--- No, this should be called SET_ENTITY_KINEMATIC. It does more than just "freeze" it's position.
+--- ^Rockstar Devs named it like that, Now cry about it.
+--- ```
+--- 
+--- Freezes or unfreezes an entity preventing its coordinates to change by the player if set to `true`. You can still change the entity position using SET_ENTITY_COORDS.
+--- @usage FreezeEntityPosition(PlayerPedId(), true
+--- @hash 0x428CA6DBD1094446
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+function FreezeEntityPosition(entity, toggle) end
+
+    
+--- AttachEntityBoneToEntityBone
+---
+--- @hash 0x5C48B75732C8456C
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @param entityBone number (int)
+--- @param entityBone2 number (int)
+--- @param p4 boolean
+--- @param p5 boolean
+--- @return void
+function AttachEntityBoneToEntityBone(entity1, entity2, entityBone, entityBone2, p4, p5) end
+
+    
+--- DetachEntity
+---
+--- @hash 0x961AC54BF0613F5D
+--- @param entity Entity
+--- @param dynamic boolean
+--- @param collision boolean
+--- @return void
+function DetachEntity(entity, dynamic, collision) end
+
+    
+--- ```
+--- Only works with objects!  
+--- Network players do not see changes done with this.  
+--- ```
+---
+--- @hash 0x92C47782FDA8B2A3
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param originalModel Hash
+--- @param newModel Hash
+--- @param p6 boolean
+--- @return void
+function CreateModelSwap(x, y, z, radius, originalModel, newModel, p6) end
+
+    
+--- GetEntityAlpha
+---
+--- @hash 0x5A47B3B5E63E94C6
+--- @param entity Entity
+--- @return number (int)
+function GetEntityAlpha(entity) end
+
+    
 --- AttachEntityBoneToEntityBonePhysically
 ---
 --- @hash 0xFD1695C5D3B05439
@@ -117,41 +152,6 @@ function ApplyForceToEntityCenterOfMass(entity, forceType, x, y, z, p5, isDirect
 function AttachEntityBoneToEntityBonePhysically(entity1, entity2, entityBone, entityBone2, p4, p5) end
 
     
---- DoesEntityHaveDrawable
----
---- @hash 0x060D6E96F8B8E48D
---- @param entity Entity
---- @return boolean
-function DoesEntityHaveDrawable(entity) end
-
-    
---- GetWorldPositionOfEntityBone_2
----
---- @hash 0x46F8696933A63C9B
---- @param entity Entity
---- @param boneIndex number (int)
---- @return Vector3
-function GetWorldPositionOfEntityBone_2(entity, boneIndex) end
-
-    
---- GetEntityAlpha
----
---- @hash 0x5A47B3B5E63E94C6
---- @param entity Entity
---- @return number (int)
-function GetEntityAlpha(entity) end
-
-    
---- ```
---- Based on carmod_shop script decompile this takes a vehicle parameter. It is called when repair is done on initial enter.  
---- ```
----
---- @hash 0x40FDEDB72F8293B2
---- @param entity Entity
---- @return void
-function ForceEntityAiAndAnimationUpdate(entity) end
-
-    
 --- DoesEntityBelongToThisScript
 ---
 --- @hash 0xDDE6DF5AE89981D2
@@ -161,25 +161,161 @@ function ForceEntityAiAndAnimationUpdate(entity) end
 function DoesEntityBelongToThisScript(entity, p2) end
 
     
---- GetEntityHeight
+--- DoesEntityHaveDrawable
 ---
---- @hash 0x5A504562485944DD
+--- @hash 0x060D6E96F8B8E48D
 --- @param entity Entity
---- @param X number (float)
---- @param Y number (float)
---- @param Z number (float)
---- @param atTop boolean
---- @param inWorldCoords boolean
---- @return number (float)
-function GetEntityHeight(entity, X, Y, Z, atTop, inWorldCoords) end
+--- @return boolean
+function DoesEntityHaveDrawable(entity) end
 
     
---- GetEntityPitch
+--- ```
+--- p5 = sets as true in scripts  
+--- Same as the comment for CREATE_MODEL_SWAP unless for some reason p5 affects it this only works with objects as well.  
+--- Network players do not see changes done with this.  
+--- ```
 ---
---- @hash 0xD45DC2893621E1FE
+--- @hash 0x8A97BCA30A0CE478
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param model Hash
+--- @param p5 boolean
+--- @return void
+function CreateModelHide(x, y, z, radius, model, p5) end
+
+    
+--- GetEntityUprightValue
+---
+--- @hash 0x95EED5A694951F9F
 --- @param entity Entity
 --- @return number (float)
-function GetEntityPitch(entity) end
+function GetEntityUprightValue(entity) end
+
+    
+--- CreateForcedObject
+---
+--- @hash 0x150E808B375A385A
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 any
+--- @param modelHash Hash
+--- @param p5 boolean
+--- @return void
+function CreateForcedObject(x, y, z, p3, modelHash, p5) end
+
+    
+--- ```
+--- Returns the LOD distance of an entity.  
+--- ```
+---
+--- @hash 0x4159C2762B5791D6
+--- @param entity Entity
+--- @return number (int)
+function GetEntityLodDist(entity) end
+
+    
+--- ```
+--- Returns the index of the bone. If the bone was not found, -1 will be returned.   
+--- list:  
+--- pastebin.com/D7JMnX1g  
+--- BoneNames:  
+--- 	chassis,  
+--- 	windscreen,  
+--- 	seat_pside_r,  
+--- 	seat_dside_r,  
+--- 	bodyshell,  
+--- 	suspension_lm,  
+--- 	suspension_lr,  
+--- 	platelight,  
+--- 	attach_female,  
+--- 	attach_male,  
+--- 	bonnet,  
+--- 	boot,  
+--- 	chassis_dummy,	//Center of the dummy  
+--- 	chassis_Control,	//Not found yet  
+--- 	door_dside_f,	//Door left, front  
+--- 	door_dside_r,	//Door left, back  
+--- 	door_pside_f,	//Door right, front  
+--- 	door_pside_r,	//Door right, back  
+--- 	Gun_GripR,  
+--- 	windscreen_f,  
+--- 	platelight,	//Position where the light above the numberplate is located  
+--- 	VFX_Emitter,  
+--- 	window_lf,	//Window left, front  
+--- 	window_lr,	//Window left, back  
+--- 	window_rf,	//Window right, front  
+--- 	window_rr,	//Window right, back  
+--- 	engine,	//Position of the engine  
+--- 	gun_ammo,  
+--- 	ROPE_ATTATCH,	//Not misspelled. In script "finale_heist2b.c4".  
+--- 	wheel_lf,	//Wheel left, front  
+--- 	wheel_lr,	//Wheel left, back  
+--- 	wheel_rf,	//Wheel right, front  
+--- 	wheel_rr,	//Wheel right, back  
+--- 	exhaust,	//Exhaust. shows only the position of the stock-exhaust  
+--- 	overheat,	//A position on the engine(not exactly sure, how to name it)  
+--- 	misc_e,	//Not a car-bone.  
+--- 	seat_dside_f,	//Driver-seat  
+--- 	seat_pside_f,	//Seat next to driver  
+--- 	Gun_Nuzzle,  
+--- 	seat_r  
+--- I doubt that the function is case-sensitive, since I found a "Chassis" and a "chassis". - Just tested: Definitely not case-sensitive.  
+--- ```
+---
+--- @hash 0xFB71170B7E76ACBA
+--- @param entity Entity
+--- @param boneName string (char*)
+--- @return number (int)
+function GetEntityBoneIndexByName(entity, boneName) end
+
+    
+--- ```
+--- Returns an integer value of entity's current health.
+--- Example of range for ped:
+--- - Player [0 to 200]
+--- - Ped [100 to 200]
+--- - Vehicle [0 to 1000]
+--- - Object [0 to 1000]
+--- Health is actually a float value but this native casts it to int.
+--- In order to get the actual value, do:
+--- float health = *(float *)(entityAddress + 0x280);
+--- ```
+--- @usage local health = GetEntityHealth(PlayerPedId())
+--- print(health
+--- @hash 0xEEF059FAD016D209
+--- @param entity Entity
+--- @return number (int)
+function GetEntityHealth(entity) end
+
+    
+--- ```
+--- Returns a float value representing animation's total playtime in milliseconds.  
+--- Example:  
+--- GET_ENTITY_ANIM_TOTAL_TIME(PLAYER_ID(),"amb@world_human_yoga@female@base","base_b")   
+--- return 20800.000000  
+--- ```
+--- 
+--- [Animations list](https://alexguirre.github.io/animations-list/)
+---
+--- @hash 0x50BD2730B191E360
+--- @param entity Entity
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @return number (float)
+function GetEntityAnimTotalTime(entity, animDict, animName) end
+
+    
+--- ```
+--- Gets the X-component of the entity's forward vector.  
+--- ```
+---
+--- @hash 0x8BB4EF4214E0E6D5
+--- @param entity Entity
+--- @return number (float)
+function GetEntityForwardX(entity) end
 
     
 --- GetEntityCollisionDisabled
@@ -201,6 +337,59 @@ function GetEntityCollisionDisabled(entity) end
 function GetEntityHeading(entity) end
 
     
+--- [Animations list](https://alexguirre.github.io/animations-list/)
+---
+--- @hash 0xFEDDF04D62B8D790
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @return number (float)
+function GetAnimDuration(animDict, animName) end
+
+    
+--- GetEntityPitch
+---
+--- @hash 0xD45DC2893621E1FE
+--- @param entity Entity
+--- @return number (float)
+function GetEntityPitch(entity) end
+
+    
+--- GetEntityHeight
+---
+--- @hash 0x5A504562485944DD
+--- @param entity Entity
+--- @param X number (float)
+--- @param Y number (float)
+--- @param Z number (float)
+--- @param atTop boolean
+--- @param inWorldCoords boolean
+--- @return number (float)
+function GetEntityHeight(entity, X, Y, Z, atTop, inWorldCoords) end
+
+    
+--- ```
+--- Return height (z-dimension) above ground.   
+--- Example: The pilot in a titan plane is 1.844176 above ground.  
+--- How can i convert it to meters?  
+--- Everything seems to be in meters, probably this too.  
+--- ```
+---
+--- @hash 0x1DD55701034110E5
+--- @param entity Entity
+--- @return number (float)
+function GetEntityHeightAboveGround(entity) end
+
+    
+--- ```
+--- NativeDB Return Type: void
+--- ```
+---
+--- @hash 0xA72CD9CA74A5ECBA
+--- @param entity Entity
+--- @return any
+function ClearEntityLastDamageEntity(entity) end
+
+    
 --- CreateModelHideExcludingScriptObjects
 ---
 --- @hash 0x3A52AE588830BF7F
@@ -214,118 +403,28 @@ function GetEntityHeading(entity) end
 function CreateModelHideExcludingScriptObjects(x, y, z, radius, model, p5) end
 
     
---- IsEntityAttachedToAnyVehicle
+--- ```
+--- In the script "player_scene_t_bbfight.c4":  
+--- "if (ENTITY::FIND_ANIM_EVENT_PHASE(&l_16E, &l_19F[v_4/*16*/], v_9, &v_A, &v_B))"  
+--- -- &l_16E (p0) is requested as an anim dictionary earlier in the script.  
+--- -- &l_19F[v_4/*16*/] (p1) is used in other natives in the script as the "animation" param.  
+--- -- v_9 (p2) is instantiated as "victim_fall"; I'm guessing that's another anim  
+--- --v_A and v_B (p3 & p4) are both set as -1.0, but v_A is used immediately after this native for:   
+--- "if (v_A < ENTITY::GET_ENTITY_ANIM_CURRENT_TIME(...))"  
+--- Both v_A and v_B are seemingly used to contain both Vector3's and floats, so I can't say what either really is other than that they are both output parameters. p4 looks more like a *Vector3 though  
+--- -alphazolam  
+--- ```
+--- 
+--- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
---- @hash 0x26AA915AD89BFB4B
---- @param entity Entity
+--- @hash 0x07F1BE2BCCAA27A7
+--- @param animDictionary string (char*)
+--- @param animName string (char*)
+--- @param p2 string (char*)
+--- @param p3 any
+--- @param p4 any
 --- @return boolean
-function IsEntityAttachedToAnyVehicle(entity) end
-
-    
---- ```
---- Returns the model hash from the entity
---- Sometimes throws an exception, idk what causes it though.
---- ```
---- @usage local hash = GetEntityModel(PlayerPedId())
---- 
---- if hash == `mp_m_freemode_01` then
----     print("This player is using the male freemode model.")
---- en
---- @hash 0x9F47B058362C84B5
---- @param entity Entity
---- @return Hash
-function GetEntityModel(entity) end
-
-    
---- ```
---- Gets the heading of the entity physics in degrees, which tends to be more accurate than just "GET_ENTITY_HEADING". This can be clearly seen while, for example, ragdolling a ped/player.  
---- NOTE: The name and description of this native are based on independent research. If you find this native to be more suitable under a different name and/or described differently, please feel free to do so.  
---- ```
----
---- @hash 0x846BF6291198A71E
---- @param entity Entity
---- @return number (float)
-function GetEntityPhysicsHeading(entity) end
-
-    
---- ```
---- Offset values are relative to the entity.  
---- x = left/right  
---- y = forward/backward  
---- z = up/down  
---- ```
----
---- @hash 0x1899F328B0E12848
---- @param entity Entity
---- @param offsetX number (float)
---- @param offsetY number (float)
---- @param offsetZ number (float)
---- @return Vector3
-function GetOffsetFromEntityInWorldCoords(entity, offsetX, offsetY, offsetZ) end
-
-    
---- ```
---- Displays the current ROLL axis of the entity [-180.0000/180.0000+]  
---- (Sideways Roll) such as a vehicle tipped on its side  
---- ```
----
---- @hash 0x831E0242595560DF
---- @param entity Entity
---- @return number (float)
-function GetEntityRoll(entity) end
-
-    
---- ```
---- No, this should be called SET_ENTITY_KINEMATIC. It does more than just "freeze" it's position.
---- ^Rockstar Devs named it like that, Now cry about it.
---- ```
---- 
---- Freezes or unfreezes an entity preventing its coordinates to change by the player if set to `true`. You can still change the entity position using SET_ENTITY_COORDS.
---- @usage FreezeEntityPosition(PlayerPedId(), true
---- @hash 0x428CA6DBD1094446
---- @param entity Entity
---- @param toggle boolean
---- @return void
-function FreezeEntityPosition(entity, toggle) end
-
-    
---- ```
---- Relative can be used for getting speed relative to the frame of the vehicle, to determine for example, if you are going in reverse (-y speed) or not (+y speed).  
---- ```
----
---- @hash 0x9A8D700A51CB7B0D
---- @param entity Entity
---- @param relative boolean
---- @return Vector3
-function GetEntitySpeedVector(entity, relative) end
-
-    
---- ```
---- Only works with objects!  
---- Network players do not see changes done with this.  
---- ```
----
---- @hash 0x92C47782FDA8B2A3
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @param originalModel Hash
---- @param newModel Hash
---- @param p6 boolean
---- @return void
-function CreateModelSwap(x, y, z, radius, originalModel, newModel, p6) end
-
-    
---- ```
---- All ambient entities in-world seem to have the same value for the second argument (Any *script), depending on when the scripthook was activated/re-activated. I've seen numbers from ~5 to almost 70 when the value was translated with to_string. The function return value seems to always be 0.  
---- ```
----
---- @hash 0xA6E9C38DB51D7748
---- @param entity Entity
---- @param script table (ScrHandle*)
---- @return string (char*)
-function GetEntityScript(entity, script) end
+function FindAnimEventPhase(animDictionary, animName, p2, p3, p4) end
 
     
 --- Applies a force to the specified entity.
@@ -397,31 +496,229 @@ function GetEntityScript(entity, script) end
 function ApplyForceToEntity(entity, forceType, x, y, z, offX, offY, offZ, boneIndex, isDirectionRel, ignoreUpVec, isForceRel, p12, p13) end
 
     
---- DetachEntity
----
---- @hash 0x961AC54BF0613F5D
+--- ```
+--- rotationOrder refers to the order yaw pitch roll is applied; value ranges from 0 to 5 and is usually *2* in scripts.
+--- 
+--- What you use for rotationOrder when getting must be the same as rotationOrder when setting the rotation.
+--- 
+--- What it returns is the yaw on the z part of the vector, which makes sense considering R* considers z as vertical. Here's a picture for those of you who don't understand pitch, yaw, and roll:
+--- www.allstar.fiu.edu/aero/images/pic5-1.gif
+--- ```
+--- 
+--- ### Rotation Orders
+--- 
+--- **0**: ZYX - Rotate around the z-axis, then the y-axis and finally the x-axis.
+--- **1**: YZX - Rotate around the y-axis, then the z-axis and finally the x-axis.
+--- **2**: ZXY - Rotate around the z-axis, then the x-axis and finally the y-axis.
+--- **3**: XZY - Rotate around the x-axis, then the z-axis and finally the y-axis.
+--- **4**: YXZ - Rotate around the y-axis, then the x-axis and finally the z-axis.
+--- **5**: XYZ - Rotate around the x-axis, then the y-axis and finally the z-axis.
+--- @usage local playerRotation = GetEntityRotation(PlayerPedId(), 2)
+--- print(playerRotation
+--- @hash 0xAFBD61CC738D9EB9
 --- @param entity Entity
---- @param dynamic boolean
---- @param collision boolean
---- @return void
-function DetachEntity(entity, dynamic, collision) end
+--- @param rotationOrder number (int)
+--- @return Vector3
+function GetEntityRotation(entity, rotationOrder) end
+
+    
+--- GetEntityAttachedTo
+---
+--- @hash 0x48C2BED9180FE123
+--- @param entity Entity
+--- @return Entity
+function GetEntityAttachedTo(entity) end
+
+    
+--- DoesEntityHavePhysics
+---
+--- @hash 0xDA95EA3317CC5064
+--- @param entity Entity
+--- @return boolean
+function DoesEntityHavePhysics(entity) end
 
     
 --- ```
---- p5 = sets as true in scripts  
---- Same as the comment for CREATE_MODEL_SWAP unless for some reason p5 affects it this only works with objects as well.  
---- Network players do not see changes done with this.  
+--- ENABLE_*
 --- ```
 ---
---- @hash 0x8A97BCA30A0CE478
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @param model Hash
---- @param p5 boolean
+--- @hash 0x6CE177D014502E8A
+--- @param entity Entity
 --- @return void
-function CreateModelHide(x, y, z, radius, model, p5) end
+function EnableEntityUnk(entity) end
+
+    
+--- GetEntityCanBeDamaged
+---
+--- @hash 0xD95CC5D2AB15A09F
+--- @param entity Entity
+--- @return boolean
+function GetEntityCanBeDamaged(entity) end
+
+    
+--- ```
+--- Returns the model hash from the entity
+--- Sometimes throws an exception, idk what causes it though.
+--- ```
+--- @usage local hash = GetEntityModel(PlayerPedId())
+--- 
+--- if hash == `mp_m_freemode_01` then
+---     print("This player is using the male freemode model.")
+--- en
+--- @hash 0x9F47B058362C84B5
+--- @param entity Entity
+--- @return Hash
+function GetEntityModel(entity) end
+
+    
+--- IsEntityAttachedToAnyVehicle
+---
+--- @hash 0x26AA915AD89BFB4B
+--- @param entity Entity
+--- @return boolean
+function IsEntityAttachedToAnyVehicle(entity) end
+
+    
+--- ```
+--- Displays the current ROLL axis of the entity [-180.0000/180.0000+]  
+--- (Sideways Roll) such as a vehicle tipped on its side  
+--- ```
+---
+--- @hash 0x831E0242595560DF
+--- @param entity Entity
+--- @return number (float)
+function GetEntityRoll(entity) end
+
+    
+--- ```
+--- Based on carmod_shop script decompile this takes a vehicle parameter. It is called when repair is done on initial enter.  
+--- ```
+---
+--- @hash 0x40FDEDB72F8293B2
+--- @param entity Entity
+--- @return void
+function ForceEntityAiAndAnimationUpdate(entity) end
+
+    
+--- ```
+--- breakForce is the amount of force required to break the bond.  
+--- fixedRot - if false it ignores entity vector  
+--- p15 - is 1 or 0 in scripts - unknoun what it does  
+--- collision - controls collision between the two entities (FALSE disables collision).  
+--- teleport - do not teleport entity to be attached to the position of the bone Index of the target entity (if 1, entity will not be teleported to target bone)  
+--- p18 - is always 2 in scripts.  
+--- -------------------------  
+--- teleport is not exactly "doNotTeleport". What it actually does is the following:  
+--- if true, entities will be attached as if loosely tethered, up to the maximum offset position specified. Almost as if attached by an invisible rope.  
+--- if false, entities will be attached in a fixed position as specified in the offset position.  
+--- When p15 = true, it seems to force teleport to false.  
+--- It also lets the Rotation params actually work.  
+--- ```
+---
+--- @hash 0xC3675780C92F90F9
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @param boneIndex1 number (int)
+--- @param boneIndex2 number (int)
+--- @param xPos1 number (float)
+--- @param yPos1 number (float)
+--- @param zPos1 number (float)
+--- @param xPos2 number (float)
+--- @param yPos2 number (float)
+--- @param zPos2 number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param breakForce number (float)
+--- @param fixedRot boolean
+--- @param p15 boolean
+--- @param collision boolean
+--- @param teleport boolean
+--- @param p18 number (int)
+--- @return void
+function AttachEntityToEntityPhysically(entity1, entity2, boneIndex1, boneIndex2, xPos1, yPos1, zPos1, xPos2, yPos2, zPos2, xRot, yRot, zRot, breakForce, fixedRot, p15, collision, teleport, p18) end
+
+    
+--- ```
+--- Get how much of the entity is submerged.  1.0f is whole entity.  
+--- ```
+---
+--- @hash 0xE81AFC1BC4CC41CE
+--- @param entity Entity
+--- @return number (float)
+function GetEntitySubmergedLevel(entity) end
+
+    
+--- ```
+--- result is in meters per second  
+--- ------------------------------------------------------------  
+--- So would the conversion to mph and km/h, be along the lines of this.  
+--- float speed = GET_ENTITY_SPEED(veh);  
+--- float kmh = (speed * 3.6);  
+--- float mph = (speed * 2.236936);  
+--- ```
+---
+--- @hash 0xD5037BA82E12416F
+--- @param entity Entity
+--- @return number (float)
+function GetEntitySpeed(entity) end
+
+    
+--- ```
+--- All ambient entities in-world seem to have the same value for the second argument (Any *script), depending on when the scripthook was activated/re-activated. I've seen numbers from ~5 to almost 70 when the value was translated with to_string. The function return value seems to always be 0.  
+--- ```
+---
+--- @hash 0xA6E9C38DB51D7748
+--- @param entity Entity
+--- @param script table (ScrHandle*)
+--- @return string (char*)
+function GetEntityScript(entity, script) end
+
+    
+--- ```
+--- Gets the Y-component of the entity's forward vector.  
+--- ```
+---
+--- @hash 0x866A4A5FAE349510
+--- @param entity Entity
+--- @return number (float)
+function GetEntityForwardY(entity) end
+
+    
+--- ```
+--- Return an integer value of entity's maximum health.  
+--- Example:  
+--- - Player = 200  
+--- ```
+---
+--- @hash 0x15D757606D170C3C
+--- @param entity Entity
+--- @return number (int)
+function GetEntityMaxHealth(entity) end
+
+    
+--- ```
+--- Offset values are relative to the entity.  
+--- x = left/right  
+--- y = forward/backward  
+--- z = up/down  
+--- ```
+---
+--- @hash 0x1899F328B0E12848
+--- @param entity Entity
+--- @param offsetX number (float)
+--- @param offsetY number (float)
+--- @param offsetZ number (float)
+--- @return Vector3
+function GetOffsetFromEntityInWorldCoords(entity, offsetX, offsetY, offsetZ) end
+
+    
+--- GetCollisionNormalOfLastHitForEntity
+---
+--- @hash 0xE465D4AB7CA6AE72
+--- @param entity Entity
+--- @return Vector3
+function GetCollisionNormalOfLastHitForEntity(entity) end
 
     
 --- ```
@@ -441,6 +738,295 @@ function CreateModelHide(x, y, z, radius, model, p5) end
 --- @param posZ number (float)
 --- @return Vector3
 function GetOffsetFromEntityGivenWorldCoords(entity, posX, posY, posZ) end
+
+    
+--- ```
+--- Returns a float value representing animation's current playtime with respect to its total playtime. This value increasing in a range from [0 to 1] and wrap back to 0 when it reach 1.  
+--- Example:  
+--- 0.000000 - mark the starting of animation.  
+--- 0.500000 - mark the midpoint of the animation.  
+--- 1.000000 - mark the end of animation.  
+--- ```
+--- 
+--- [Animations list](https://alexguirre.github.io/animations-list/)
+---
+--- @hash 0x346D81500D088F42
+--- @param entity Entity
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @return number (float)
+function GetEntityAnimCurrentTime(entity, animDict, animName) end
+
+    
+--- GetNearestPlayerToEntity
+---
+--- @hash 0x7196842CB375CDB3
+--- @param entity Entity
+--- @return Player
+function GetNearestPlayerToEntity(entity) end
+
+    
+--- HasCollisionLoadedAroundEntity
+---
+--- @hash 0xE9676F61BC0B3321
+--- @param entity Entity
+--- @return boolean
+function HasCollisionLoadedAroundEntity(entity) end
+
+    
+--- ```
+--- Entity 1 = Victim  
+--- Entity 2 = Attacker  
+--- p2 seems to always be 1  
+--- ```
+---
+--- @hash 0xC86D67D52A707CF8
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @param p2 boolean
+--- @return boolean
+function HasEntityBeenDamagedByEntity(entity1, entity2, p2) end
+
+    
+--- HasEntityBeenDamagedByAnyPed
+---
+--- @hash 0x605F5A140F202491
+--- @param entity Entity
+--- @return boolean
+function HasEntityBeenDamagedByAnyPed(entity) end
+
+    
+--- ```
+--- Returns:  
+--- 0 = no entity  
+--- 1 = ped  
+--- 2 = vehicle  
+--- 3 = object  
+--- This is weird, because in memory atleast on xbox360 it stores it from testing with a variety of (ped, vehicle, and objects).  
+--- 03   
+--- 04   
+--- 05   
+--- The above is more then likely true for the native's return, but if you were to skip using the native it's a bit weird it returns different results.  
+--- ```
+---
+--- @hash 0x8ACD366038D14505
+--- @param entity Entity
+--- @return number (int)
+function GetEntityType(entity) end
+
+    
+--- ```
+--- the unit is m/s along each axis  
+--- GET_ENTITY_VELOCITY(aEntity) is the same as GET_ENTITY_SPEED_VECTOR(aEntity,false)  
+--- ```
+---
+--- @hash 0x4805D2B1D8CF94A9
+--- @param entity Entity
+--- @return Vector3
+function GetEntityVelocity(entity) end
+
+    
+--- GetEntityMatrix
+---
+--- @hash 0xECB2FC7235A7D137
+--- @param entity Entity
+--- @param forwardVector Vector3 (Vector3*)
+--- @param rightVector Vector3 (Vector3*)
+--- @param upVector Vector3 (Vector3*)
+--- @param position Vector3 (Vector3*)
+--- @return void
+function GetEntityMatrix(entity, forwardVector, rightVector, upVector, position) end
+
+    
+--- ```
+--- Relative can be used for getting speed relative to the frame of the vehicle, to determine for example, if you are going in reverse (-y speed) or not (+y speed).  
+--- ```
+---
+--- @hash 0x9A8D700A51CB7B0D
+--- @param entity Entity
+--- @param relative boolean
+--- @return Vector3
+function GetEntitySpeedVector(entity, relative) end
+
+    
+--- GetLastMaterialHitByEntity
+---
+--- @hash 0x5C3D0A935F535C4C
+--- @param entity Entity
+--- @return Hash
+function GetLastMaterialHitByEntity(entity) end
+
+    
+--- GetNearestPlayerToEntityOnTeam
+---
+--- @hash 0x4DC9A62F844D9337
+--- @param entity Entity
+--- @param team number (int)
+--- @return Player
+function GetNearestPlayerToEntityOnTeam(entity, team) end
+
+    
+--- HasEntityBeenDamagedByAnyObject
+---
+--- @hash 0x95EB9964FF5C5C65
+--- @param entity Entity
+--- @return boolean
+function HasEntityBeenDamagedByAnyObject(entity) end
+
+    
+--- IsAnEntity
+---
+--- @hash 0x731EC8A916BD11A1
+--- @param handle number (int)
+--- @return boolean
+function IsAnEntity(handle) end
+
+    
+--- IsEntityAPed
+---
+--- @hash 0x524AC5ECEA15343E
+--- @param entity Entity
+--- @return boolean
+function IsEntityAPed(entity) end
+
+    
+--- ```
+--- NativeDB Introduced: v1604
+--- ```
+---
+--- @hash 0xBE8CD9BE829BBEBF
+--- @param entity Entity
+--- @param bulletProof table (BOOL*)
+--- @param fireProof table (BOOL*)
+--- @param explosionProof table (BOOL*)
+--- @param collisionProof table (BOOL*)
+--- @param meleeProof table (BOOL*)
+--- @param steamProof table (BOOL*)
+--- @param p7 table (BOOL*)
+--- @param drownProof table (BOOL*)
+--- @return boolean
+function GetEntityProofs(entity, bulletProof, fireProof, explosionProof, collisionProof, meleeProof, steamProof, p7, drownProof) end
+
+    
+--- ```
+--- Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
+--- ```
+---
+--- @hash 0x04A2A40C73395041
+--- @param entity Entity
+--- @return Ped
+function GetPedIndexFromEntityIndex(entity) end
+
+    
+--- ```
+--- Returns the coordinates of an entity-bone.  
+--- ```
+---
+--- @hash 0x44A8FCB8ED227738
+--- @param entity Entity
+--- @param boneIndex number (int)
+--- @return Vector3
+function GetWorldPositionOfEntityBone(entity, boneIndex) end
+
+    
+--- ```
+--- w is the correct parameter name!  
+--- ```
+---
+--- @hash 0x7B3703D2D32DFA18
+--- @param entity Entity
+--- @param x table (float*)
+--- @param y table (float*)
+--- @param z table (float*)
+--- @param w table (float*)
+--- @return void
+function GetEntityQuaternion(entity, x, y, z, w) end
+
+    
+--- ```
+--- Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
+--- ```
+---
+--- @hash 0x4B53F92932ADFAC0
+--- @param entity Entity
+--- @return Vehicle
+function GetVehicleIndexFromEntityIndex(entity) end
+
+    
+--- GetEntityRotationVelocity
+---
+--- @hash 0x213B91045D09B983
+--- @param entity Entity
+--- @return Vector3
+function GetEntityRotationVelocity(entity) end
+
+    
+--- IsEntityAttachedToAnyObject
+---
+--- @hash 0xCF511840CEEDE0CC
+--- @param entity Entity
+--- @return boolean
+function IsEntityAttachedToAnyObject(entity) end
+
+    
+--- ```
+--- Has the entity1 got a clear line of sight to the other entity2 from the direction entity1 is facing.  
+--- This is one of the most CPU demanding BOOL natives in the game; avoid calling this in things like nested for-loops  
+--- ```
+---
+--- @hash 0x0267D00AF114F17A
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @return boolean
+function HasEntityClearLosToEntityInFront(entity1, entity2) end
+
+    
+--- ```
+--- Checks if entity is within x/y/zSize distance of x/y/z.   
+--- Last three are unknown ints, almost always p7 = 0, p8 = 1, p9 = 0  
+--- ```
+---
+--- @hash 0x20B60995556D004F
+--- @param entity Entity
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param zPos number (float)
+--- @param xSize number (float)
+--- @param ySize number (float)
+--- @param zSize number (float)
+--- @param p7 boolean
+--- @param p8 boolean
+--- @param p9 number (int)
+--- @return boolean
+function IsEntityAtCoord(entity, xPos, yPos, zPos, xSize, ySize, zSize, p7, p8, p9) end
+
+    
+--- GetWorldPositionOfEntityBone_2
+---
+--- @hash 0x46F8696933A63C9B
+--- @param entity Entity
+--- @param boneIndex number (int)
+--- @return Vector3
+function GetWorldPositionOfEntityBone_2(entity, boneIndex) end
+
+    
+--- ```
+--- what does it do?  
+--- ```
+---
+--- @hash 0x694E00132F2823ED
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+function N_0x694e00132f2823ed(entity, toggle) end
+
+    
+--- IsEntityAnObject
+---
+--- @hash 0x8D68C8FD0FACA94E
+--- @param entity Entity
+--- @return boolean
+function IsEntityAnObject(entity) end
 
     
 --- Gets an entity's population type.
@@ -470,40 +1056,50 @@ function GetOffsetFromEntityGivenWorldCoords(entity, posX, posY, posZ) end
 function GetEntityPopulationType(entity) end
 
     
---- HasEntityBeenDamagedByAnyPed
+--- IsEntityInWater
 ---
---- @hash 0x605F5A140F202491
+--- @hash 0xCFB0A0D8EDD145A3
 --- @param entity Entity
 --- @return boolean
-function HasEntityBeenDamagedByAnyPed(entity) end
+function IsEntityInWater(entity) end
 
     
---- ```
---- Deletes the specified entity, then sets the handle pointed to by the pointer to NULL.
---- ```
+--- IsEntityAVehicle
 ---
---- @hash 0xAE3CBE5BF394C9C9
---- @param entity Entity (Entity*)
---- @return void
-function DeleteEntity(entity) end
-
-    
---- ```
---- Gets the entity's forward vector.
---- ```
----
---- @hash 0x0A794A5A57F8DF91
+--- @hash 0x6AC7003FA6E5575E
 --- @param entity Entity
---- @return Vector3
-function GetEntityForwardVector(entity) end
+--- @return boolean
+function IsEntityAVehicle(entity) end
 
     
---- GetNearestPlayerToEntity
+--- ```
+--- A static ped will not react to natives like "APPLY_FORCE_TO_ENTITY" or "SET_ENTITY_VELOCITY" and oftentimes will not react to task-natives like "AI::TASK_COMBAT_PED". The only way I know of to make one of these peds react is to ragdoll them (or sometimes to use CLEAR_PED_TASKS_IMMEDIATELY(). Static peds include almost all far-away peds, beach-combers, peds in certain scenarios, peds crossing a crosswalk, peds walking to get back into their cars, and others. If anyone knows how to make a ped non-static without ragdolling them, please edit this with the solution.  
+--- ^ Attach a phCollider to the ped.  
+--- ```
 ---
---- @hash 0x7196842CB375CDB3
+--- @hash 0x1218E6886D3D8327
 --- @param entity Entity
---- @return Player
-function GetNearestPlayerToEntity(entity) end
+--- @return boolean
+function IsEntityStatic(entity) end
+
+    
+--- ```
+--- Gets the heading of the entity physics in degrees, which tends to be more accurate than just "GET_ENTITY_HEADING". This can be clearly seen while, for example, ragdolling a ped/player.  
+--- NOTE: The name and description of this native are based on independent research. If you find this native to be more suitable under a different name and/or described differently, please feel free to do so.  
+--- ```
+---
+--- @hash 0x846BF6291198A71E
+--- @param entity Entity
+--- @return number (float)
+function GetEntityPhysicsHeading(entity) end
+
+    
+--- IsEntityAMissionEntity
+---
+--- @hash 0x0A7B270912999B3C
+--- @param entity Entity
+--- @return boolean
+function IsEntityAMissionEntity(entity) end
 
     
 --- ```
@@ -521,271 +1117,81 @@ function GetNearestPlayerToEntity(entity) end
 function GetEntityPickup(entity, modelHash) end
 
     
+--- IsEntityInAir
+---
+--- @hash 0x886E37EC497200B6
+--- @param entity Entity
+--- @return boolean
+function IsEntityInAir(entity) end
+
+    
 --- ```
---- rotationOrder refers to the order yaw pitch roll is applied; value ranges from 0 to 5 and is usually *2* in scripts.
+--- NativeDB Added Parameter 2: BOOL p1
+--- ```
+---
+--- @hash 0x5F9532F3B5CC2551
+--- @param entity Entity
+--- @return boolean
+function IsEntityDead(entity) end
+
+    
+--- ```
+--- Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
+--- ```
+---
+--- @hash 0xD7E3B9735C0F89D6
+--- @param entity Entity
+--- @return table (Object)
+function GetObjectIndexFromEntityIndex(entity) end
+
+    
+--- IsEntityInZone
+---
+--- @hash 0xB6463CF6AF527071
+--- @param entity Entity
+--- @param zone string (char*)
+--- @return boolean
+function IsEntityInZone(entity, zone) end
+
+    
+--- p10 is some entity flag check, also used in `IS_ENTITY_AT_ENTITY`, `IS_ENTITY_IN_AREA`, and `IS_ENTITY_AT_COORD`.
 --- 
---- What you use for rotationOrder when getting must be the same as rotationOrder when setting the rotation.
---- 
---- What it returns is the yaw on the z part of the vector, which makes sense considering R* considers z as vertical. Here's a picture for those of you who don't understand pitch, yaw, and roll:
---- www.allstar.fiu.edu/aero/images/pic5-1.gif
---- ```
---- 
---- ### Rotation Orders
---- 
---- **0**: ZYX - Rotate around the z-axis, then the y-axis and finally the x-axis.
---- **1**: YZX - Rotate around the y-axis, then the z-axis and finally the x-axis.
---- **2**: ZXY - Rotate around the z-axis, then the x-axis and finally the y-axis.
---- **3**: XZY - Rotate around the x-axis, then the z-axis and finally the y-axis.
---- **4**: YXZ - Rotate around the y-axis, then the x-axis and finally the z-axis.
---- **5**: XYZ - Rotate around the x-axis, then the y-axis and finally the z-axis.
---- @usage local playerRotation = GetEntityRotation(PlayerPedId(), 2)
---- print(playerRotation
---- @hash 0xAFBD61CC738D9EB9
+--- See [IS_POINT_IN_ANGLED_AREA](#\_0x2A70BAE8883E4C81) for the definition of an angled area.
+---
+--- @hash 0x51210CED3DA1C78A
 --- @param entity Entity
---- @param rotationOrder number (int)
---- @return Vector3
-function GetEntityRotation(entity, rotationOrder) end
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param width number (float)
+--- @param p8 boolean
+--- @param includez boolean
+--- @param p10 any
+--- @return boolean
+function IsEntityInAngledArea(entity, x1, y1, z1, x2, y2, z2, width, p8, includez, p10) end
 
     
---- Checks whether an entity exists in the game world.
---- @usage local currentVehicle = GetVehiclePedIsIn(PlayerPedId(), false)
---- 
---- if DoesEntityExist(currentVehicle) then
----     DeleteEntity(currentVehicle)
---- en
---- @hash 0x7239B21A38F536BA
+--- ```
+--- Returns true if the entity is in between the minimum and maximum values for the 2d screen coords.   
+--- This means that it will return true even if the entity is behind a wall for example, as long as you're looking at their location.   
+--- Chipping  
+--- ```
+---
+--- @hash 0xE659E47AF827484B
 --- @param entity Entity
 --- @return boolean
-function DoesEntityExist(entity) end
+function IsEntityOnScreen(entity) end
 
     
---- ```
---- Attaches entity1 to bone (boneIndex) of entity2.  
---- boneIndex - this is different to boneID, use GET_PED_BONE_INDEX to get the index from the ID. use the index for attaching to specific bones. entity1 will be attached to entity2's centre if bone index given doesn't correspond to bone indexes for that entity type.  
---- useSoftPinning - when 2 entities with collision collide and form into a ball they will break the attachment of the entity that they were attached to. Or when an entity is attached far away and then the resets.  
---- collision - controls collision between the two entities (FALSE disables collision).  
---- isPed - pitch doesnt work when false and roll will only work on negative numbers (only peds)  
---- vertexIndex - position of vertex  
---- fixedRot - if false it ignores entity vector  
---- ```
+--- IsEntityVisibleToScript
 ---
---- @hash 0x6B9BBD38AB0796DF
---- @param entity1 Entity
---- @param entity2 Entity
---- @param boneIndex number (int)
---- @param xPos number (float)
---- @param yPos number (float)
---- @param zPos number (float)
---- @param xRot number (float)
---- @param yRot number (float)
---- @param zRot number (float)
---- @param p9 boolean
---- @param useSoftPinning boolean
---- @param collision boolean
---- @param isPed boolean
---- @param vertexIndex number (int)
---- @param fixedRot boolean
---- @return void
-function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRot, yRot, zRot, p9, useSoftPinning, collision, isPed, vertexIndex, fixedRot) end
-
-    
---- ```
---- Gets the Y-component of the entity's forward vector.  
---- ```
----
---- @hash 0x866A4A5FAE349510
---- @param entity Entity
---- @return number (float)
-function GetEntityForwardY(entity) end
-
-    
---- GetEntityUprightValue
----
---- @hash 0x95EED5A694951F9F
---- @param entity Entity
---- @return number (float)
-function GetEntityUprightValue(entity) end
-
-    
---- AttachEntityBoneToEntityBone
----
---- @hash 0x5C48B75732C8456C
---- @param entity1 Entity
---- @param entity2 Entity
---- @param entityBone number (int)
---- @param entityBone2 number (int)
---- @param p4 boolean
---- @param p5 boolean
---- @return void
-function AttachEntityBoneToEntityBone(entity1, entity2, entityBone, entityBone2, p4, p5) end
-
-    
---- HasCollisionLoadedAroundEntity
----
---- @hash 0xE9676F61BC0B3321
+--- @hash 0xD796CB5BA8F20E32
 --- @param entity Entity
 --- @return boolean
-function HasCollisionLoadedAroundEntity(entity) end
-
-    
---- ```
---- NativeDB Introduced: v1604
---- ```
----
---- @hash 0xBE8CD9BE829BBEBF
---- @param entity Entity
---- @param bulletProof table (BOOL*)
---- @param fireProof table (BOOL*)
---- @param explosionProof table (BOOL*)
---- @param collisionProof table (BOOL*)
---- @param meleeProof table (BOOL*)
---- @param steamProof table (BOOL*)
---- @param p7 table (BOOL*)
---- @param drownProof table (BOOL*)
---- @return boolean
-function GetEntityProofs(entity, bulletProof, fireProof, explosionProof, collisionProof, meleeProof, steamProof, p7, drownProof) end
-
-    
---- GetEntityMatrix
----
---- @hash 0xECB2FC7235A7D137
---- @param entity Entity
---- @param forwardVector Vector3 (Vector3*)
---- @param rightVector Vector3 (Vector3*)
---- @param upVector Vector3 (Vector3*)
---- @param position Vector3 (Vector3*)
---- @return void
-function GetEntityMatrix(entity, forwardVector, rightVector, upVector, position) end
-
-    
---- HasEntityBeenDamagedByAnyObject
----
---- @hash 0x95EB9964FF5C5C65
---- @param entity Entity
---- @return boolean
-function HasEntityBeenDamagedByAnyObject(entity) end
-
-    
---- IsEntityAPed
----
---- @hash 0x524AC5ECEA15343E
---- @param entity Entity
---- @return boolean
-function IsEntityAPed(entity) end
-
-    
---- ```
---- Checks if entity1 is within the box defined by x/y/zSize of entity2.  
---- Last three parameters are almost alwasy p5 = 0, p6 = 1, p7 = 0  
---- ```
----
---- @hash 0x751B70C3D034E187
---- @param entity1 Entity
---- @param entity2 Entity
---- @param xSize number (float)
---- @param ySize number (float)
---- @param zSize number (float)
---- @param p5 boolean
---- @param p6 boolean
---- @param p7 number (int)
---- @return boolean
-function IsEntityAtEntity(entity1, entity2, xSize, ySize, zSize, p5, p6, p7) end
-
-    
---- ```
---- NativeDB Return Type: void
---- ```
----
---- @hash 0xA72CD9CA74A5ECBA
---- @param entity Entity
---- @return any
-function ClearEntityLastDamageEntity(entity) end
-
-    
---- DoesEntityHavePhysics
----
---- @hash 0xDA95EA3317CC5064
---- @param entity Entity
---- @return boolean
-function DoesEntityHavePhysics(entity) end
-
-    
---- GetEntityCanBeDamaged
----
---- @hash 0xD95CC5D2AB15A09F
---- @param entity Entity
---- @return boolean
-function GetEntityCanBeDamaged(entity) end
-
-    
---- ```
---- P3 is always 3 as far as i cant tell  
---- ```
---- 
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash 0x20B711662962B472
---- @param entity Entity
---- @param animDict string (char*)
---- @param animName string (char*)
---- @param p3 number (int)
---- @return boolean
-function HasEntityAnimFinished(entity, animDict, animName, p3) end
-
-    
---- ```
---- Returns the index of the bone. If the bone was not found, -1 will be returned.   
---- list:  
---- pastebin.com/D7JMnX1g  
---- BoneNames:  
---- 	chassis,  
---- 	windscreen,  
---- 	seat_pside_r,  
---- 	seat_dside_r,  
---- 	bodyshell,  
---- 	suspension_lm,  
---- 	suspension_lr,  
---- 	platelight,  
---- 	attach_female,  
---- 	attach_male,  
---- 	bonnet,  
---- 	boot,  
---- 	chassis_dummy,	//Center of the dummy  
---- 	chassis_Control,	//Not found yet  
---- 	door_dside_f,	//Door left, front  
---- 	door_dside_r,	//Door left, back  
---- 	door_pside_f,	//Door right, front  
---- 	door_pside_r,	//Door right, back  
---- 	Gun_GripR,  
---- 	windscreen_f,  
---- 	platelight,	//Position where the light above the numberplate is located  
---- 	VFX_Emitter,  
---- 	window_lf,	//Window left, front  
---- 	window_lr,	//Window left, back  
---- 	window_rf,	//Window right, front  
---- 	window_rr,	//Window right, back  
---- 	engine,	//Position of the engine  
---- 	gun_ammo,  
---- 	ROPE_ATTATCH,	//Not misspelled. In script "finale_heist2b.c4".  
---- 	wheel_lf,	//Wheel left, front  
---- 	wheel_lr,	//Wheel left, back  
---- 	wheel_rf,	//Wheel right, front  
---- 	wheel_rr,	//Wheel right, back  
---- 	exhaust,	//Exhaust. shows only the position of the stock-exhaust  
---- 	overheat,	//A position on the engine(not exactly sure, how to name it)  
---- 	misc_e,	//Not a car-bone.  
---- 	seat_dside_f,	//Driver-seat  
---- 	seat_pside_f,	//Seat next to driver  
---- 	Gun_Nuzzle,  
---- 	seat_r  
---- I doubt that the function is case-sensitive, since I found a "Chassis" and a "chassis". - Just tested: Definitely not case-sensitive.  
---- ```
----
---- @hash 0xFB71170B7E76ACBA
---- @param entity Entity
---- @param boneName string (char*)
---- @return number (int)
-function GetEntityBoneIndexByName(entity, boneName) end
+function IsEntityVisibleToScript(entity) end
 
     
 --- N_0x36f32de87082343e
@@ -808,165 +1214,73 @@ function N_0x36f32de87082343e(p0, p1) end
 function HasAnimEventFired(entity, actionHash) end
 
     
---- GetLastMaterialHitByEntity
----
---- @hash 0x5C3D0A935F535C4C
---- @param entity Entity
---- @return Hash
-function GetLastMaterialHitByEntity(entity) end
-
-    
 --- ```
---- Return an integer value of entity's maximum health.  
---- Example:  
---- - Player = 200  
+--- SET_ENTITY_*  
 --- ```
 ---
---- @hash 0x15D757606D170C3C
+--- @hash 0x1A092BB0C3808B96
 --- @param entity Entity
---- @return number (int)
-function GetEntityMaxHealth(entity) end
-
-    
---- GetEntityAttachedTo
----
---- @hash 0x48C2BED9180FE123
---- @param entity Entity
---- @return Entity
-function GetEntityAttachedTo(entity) end
-
-    
---- IsEntityVisibleToScript
----
---- @hash 0xD796CB5BA8F20E32
---- @param entity Entity
---- @return boolean
-function IsEntityVisibleToScript(entity) end
-
-    
---- ```
---- Returns a float value representing animation's current playtime with respect to its total playtime. This value increasing in a range from [0 to 1] and wrap back to 0 when it reach 1.  
---- Example:  
---- 0.000000 - mark the starting of animation.  
---- 0.500000 - mark the midpoint of the animation.  
---- 1.000000 - mark the end of animation.  
---- ```
---- 
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash 0x346D81500D088F42
---- @param entity Entity
---- @param animDict string (char*)
---- @param animName string (char*)
---- @return number (float)
-function GetEntityAnimCurrentTime(entity, animDict, animName) end
-
-    
---- ```
---- the unit is m/s along each axis  
---- GET_ENTITY_VELOCITY(aEntity) is the same as GET_ENTITY_SPEED_VECTOR(aEntity,false)  
---- ```
----
---- @hash 0x4805D2B1D8CF94A9
---- @param entity Entity
---- @return Vector3
-function GetEntityVelocity(entity) end
-
-    
---- ```
---- Only called once in the scripts.  
---- Related to weapon objects.  
---- ```
----
---- @hash 0x5C3B791D580E0BC2
---- @param entity Entity
---- @param p1 number (float)
+--- @param p1 boolean
 --- @return void
-function N_0x5c3b791d580e0bc2(entity, p1) end
+function N_0x1a092bb0c3808b96(entity, p1) end
 
     
 --- ```
---- Returns:  
---- 0 = no entity  
---- 1 = ped  
---- 2 = vehicle  
---- 3 = object  
---- This is weird, because in memory atleast on xbox360 it stores it from testing with a variety of (ped, vehicle, and objects).  
---- 03   
---- 04   
---- 05   
---- The above is more then likely true for the native's return, but if you were to skip using the native it's a bit weird it returns different results.  
+--- Called on tick.  
+--- Tested with vehicles, returns true whenever the vehicle is touching any entity.  
+--- Note: for vehicles, the wheels can touch the ground and it will still return false, but if the body of the vehicle touches the ground, it will return true.  
 --- ```
 ---
---- @hash 0x8ACD366038D14505
+--- @hash 0x8BAD02F0368D9E14
 --- @param entity Entity
---- @return number (int)
-function GetEntityType(entity) end
+--- @return boolean
+function HasEntityCollidedWithAnything(entity) end
 
     
---- GetCollisionNormalOfLastHitForEntity
+--- HasEntityBeenDamagedByAnyVehicle
 ---
---- @hash 0xE465D4AB7CA6AE72
+--- @hash 0xDFD5033FDBA0A9C8
 --- @param entity Entity
---- @return Vector3
-function GetCollisionNormalOfLastHitForEntity(entity) end
+--- @return boolean
+function HasEntityBeenDamagedByAnyVehicle(entity) end
 
     
---- ```
---- In the script "player_scene_t_bbfight.c4":  
---- "if (ENTITY::FIND_ANIM_EVENT_PHASE(&l_16E, &l_19F[v_4/*16*/], v_9, &v_A, &v_B))"  
---- -- &l_16E (p0) is requested as an anim dictionary earlier in the script.  
---- -- &l_19F[v_4/*16*/] (p1) is used in other natives in the script as the "animation" param.  
---- -- v_9 (p2) is instantiated as "victim_fall"; I'm guessing that's another anim  
---- --v_A and v_B (p3 & p4) are both set as -1.0, but v_A is used immediately after this native for:   
---- "if (v_A < ENTITY::GET_ENTITY_ANIM_CURRENT_TIME(...))"  
---- Both v_A and v_B are seemingly used to contain both Vector3's and floats, so I can't say what either really is other than that they are both output parameters. p4 looks more like a *Vector3 though  
---- -alphazolam  
---- ```
+--- IsEntityAttached
+--- @usage local ped = PlayerPedId()
 --- 
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash 0x07F1BE2BCCAA27A7
---- @param animDictionary string (char*)
---- @param animName string (char*)
---- @param p2 string (char*)
---- @param p3 any
---- @param p4 any
---- @return boolean
-function FindAnimEventPhase(animDictionary, animName, p2, p3, p4) end
-
-    
---- ```
---- NativeDB Added Parameter 2: BOOL p1
---- ```
----
---- @hash 0x5F9532F3B5CC2551
+--- if IsEntityAttached(ped) then
+---     DetachEntity(ped, true, true)
+--- en
+--- @hash 0xB346476EF1A64897
 --- @param entity Entity
 --- @return boolean
-function IsEntityDead(entity) end
+function IsEntityAttached(entity) end
 
     
---- ```
---- Does nothing (essentially a nullsub).
---- ```
+--- GetWorldRotationOfEntityBone
 ---
---- @hash 0x490861B88F4FD846
+--- @hash 0xCE6294A232D03786
+--- @param entity Entity
+--- @param boneIndex number (int)
+--- @return Vector3
+function GetWorldRotationOfEntityBone(entity, boneIndex) end
+
+    
+--- IsEntityVisible
+---
+--- @hash 0x47D6F43D77935C75
+--- @param entity Entity
+--- @return boolean
+function IsEntityVisible(entity) end
+
+    
+--- N_0x352e2b5cf420bf3b
+---
+--- @hash 0x352E2B5CF420BF3B
 --- @param p0 any
+--- @param p1 any
 --- @return void
-function N_0x490861b88f4fd846(p0) end
-
-    
---- ```
---- Return height (z-dimension) above ground.   
---- Example: The pilot in a titan plane is 1.844176 above ground.  
---- How can i convert it to meters?  
---- Everything seems to be in meters, probably this too.  
---- ```
----
---- @hash 0x1DD55701034110E5
---- @param entity Entity
---- @return number (float)
-function GetEntityHeightAboveGround(entity) end
+function N_0x352e2b5cf420bf3b(p0, p1) end
 
     
 --- IsEntityInArea
@@ -986,130 +1300,210 @@ function GetEntityHeightAboveGround(entity) end
 function IsEntityInArea(entity, x1, y1, z1, x2, y2, z2, p7, p8, p9) end
 
     
---- ```
---- w is the correct parameter name!  
---- ```
+--- IsEntityTouchingEntity
 ---
---- @hash 0x7B3703D2D32DFA18
+--- @hash 0x17FFC1B2BA35A494
 --- @param entity Entity
---- @param x table (float*)
---- @param y table (float*)
---- @param z table (float*)
---- @param w table (float*)
---- @return void
-function GetEntityQuaternion(entity, x, y, z, w) end
-
-    
---- SetEntityCollision
----
---- @hash 0x1A9205C1B9EE827F
---- @param entity Entity
---- @param toggle boolean
---- @param keepPhysics boolean
---- @return void
-function SetEntityCollision(entity, toggle, keepPhysics) end
-
-    
---- ```
---- Called on tick.  
---- Tested with vehicles, returns true whenever the vehicle is touching any entity.  
---- Note: for vehicles, the wheels can touch the ground and it will still return false, but if the body of the vehicle touches the ground, it will return true.  
---- ```
----
---- @hash 0x8BAD02F0368D9E14
---- @param entity Entity
+--- @param targetEntity Entity
 --- @return boolean
-function HasEntityCollidedWithAnything(entity) end
-
-    
---- IsAnEntity
----
---- @hash 0x731EC8A916BD11A1
---- @param handle number (int)
---- @return boolean
-function IsAnEntity(handle) end
-
-    
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash 0xFEDDF04D62B8D790
---- @param animDict string (char*)
---- @param animName string (char*)
---- @return number (float)
-function GetAnimDuration(animDict, animName) end
-
-    
---- IsEntityAttachedToAnyPed
----
---- @hash 0xB1632E9A5F988D11
---- @param entity Entity
---- @return boolean
-function IsEntityAttachedToAnyPed(entity) end
-
-    
---- GetNearestPlayerToEntityOnTeam
----
---- @hash 0x4DC9A62F844D9337
---- @param entity Entity
---- @param team number (int)
---- @return Player
-function GetNearestPlayerToEntityOnTeam(entity, team) end
+function IsEntityTouchingEntity(entity, targetEntity) end
 
     
 --- ```
---- A static ped will not react to natives like "APPLY_FORCE_TO_ENTITY" or "SET_ENTITY_VELOCITY" and oftentimes will not react to task-natives like "AI::TASK_COMBAT_PED". The only way I know of to make one of these peds react is to ragdoll them (or sometimes to use CLEAR_PED_TASKS_IMMEDIATELY(). Static peds include almost all far-away peds, beach-combers, peds in certain scenarios, peds crossing a crosswalk, peds walking to get back into their cars, and others. If anyone knows how to make a ped non-static without ragdolling them, please edit this with the solution.  
---- ^ Attach a phCollider to the ped.  
---- ```
----
---- @hash 0x1218E6886D3D8327
---- @param entity Entity
---- @return boolean
-function IsEntityStatic(entity) end
-
-    
---- ```
---- delta and bitset are guessed fields. They are based on the fact that most of the calls have 0 or nil field types passed in.  
---- The only time bitset has a value is 0x4000 and the only time delta has a value is during stealth with usually <1.0f values.  
+--- P3 is always 3 as far as i cant tell  
 --- ```
 --- 
 --- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
---- @hash 0x7FB218262B810701
+--- @hash 0x20B711662962B472
 --- @param entity Entity
---- @param animName string (char*)
 --- @param animDict string (char*)
---- @param p3 number (float)
---- @param loop boolean
---- @param stayInAnim boolean
---- @param p6 boolean
---- @param delta number (float)
---- @param bitset any
+--- @param animName string (char*)
+--- @param p3 number (int)
 --- @return boolean
-function PlayEntityAnim(entity, animName, animDict, p3, loop, stayInAnim, p6, delta, bitset) end
+function HasEntityAnimFinished(entity, animDict, animName, p3) end
 
     
---- GetWorldRotationOfEntityBone
+--- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
---- @hash 0xCE6294A232D03786
---- @param entity Entity
---- @param boneIndex number (int)
---- @return Vector3
-function GetWorldRotationOfEntityBone(entity, boneIndex) end
+--- @hash 0xB9C54555ED30FBC4
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
+--- @param p7 any
+--- @param p8 number (float)
+--- @param p9 number (float)
+--- @param p10 any
+--- @param p11 number (float)
+--- @return boolean
+function PlaySynchronizedMapEntityAnim(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) end
 
     
 --- ```
---- result is in meters per second  
---- ------------------------------------------------------------  
---- So would the conversion to mph and km/h, be along the lines of this.  
---- float speed = GET_ENTITY_SPEED(veh);  
---- float kmh = (speed * 3.6);  
---- float mph = (speed * 2.236936);  
+--- SET_ENTITY_*
 --- ```
 ---
---- @hash 0xD5037BA82E12416F
+--- @hash 0xC34BC448DA29F5E9
 --- @param entity Entity
---- @return number (float)
-function GetEntitySpeed(entity) end
+--- @param toggle boolean
+--- @return void
+function N_0xc34bc448da29f5e9(entity, toggle) end
+
+    
+--- IsEntityWaitingForWorldCollision
+---
+--- @hash 0xD05BFF0C0A12C68F
+--- @param entity Entity
+--- @return boolean
+function IsEntityWaitingForWorldCollision(entity) end
+
+    
+--- SetEntityHasGravity
+---
+--- @hash 0x4A4722448F18EEF5
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+function SetEntityHasGravity(entity, toggle) end
+
+    
+--- ```
+--- traceType is always 17 in the scripts.  
+--- There is other codes used for traceType:  
+--- 19 - in jewelry_prep1a  
+--- 126 - in am_hunt_the_beast  
+--- 256 & 287 - in fm_mission_controller  
+--- ```
+---
+--- @hash 0xFCDFF7B72D23A1AC
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @param traceType number (int)
+--- @return boolean
+function HasEntityClearLosToEntity(entity1, entity2, traceType) end
+
+    
+--- IsEntityOccluded
+---
+--- @hash 0xE31C2C72B8692B64
+--- @param entity Entity
+--- @return boolean
+function IsEntityOccluded(entity) end
+
+    
+--- ```
+--- Called to update entity attachments.  
+--- When using ATTACH_ENTITY_TO_ENTITY and using bone '0' then you set the first entity invisible. The attachments will mess up, use bone '-1' to fix that issue  
+--- ```
+---
+--- @hash 0xF4080490ADC51C6F
+--- @param entity Entity
+--- @return void
+function ProcessEntityAttachments(entity) end
+
+    
+--- ```
+--- Makes the specified entity (ped, vehicle or object) persistent. Persistent entities will not automatically be removed by the engine.  
+--- p1 has no effect when either its on or off   
+--- maybe a quick disassembly will tell us what it does  
+--- p2 has no effect when either its on or off   
+--- maybe a quick disassembly will tell us what it does  
+--- ```
+---
+--- @hash 0xAD738C3085FE7E11
+--- @param entity Entity
+--- @param p1 boolean
+--- @param p2 boolean
+--- @return void
+function SetEntityAsMissionEntity(entity, p1, p2) end
+
+    
+--- IsEntityAttachedToEntity
+---
+--- @hash 0xEFBE71898A993728
+--- @param from Entity
+--- @param to Entity
+--- @return boolean
+function IsEntityAttachedToEntity(from, to) end
+
+    
+--- ```
+--- See also PED::IS_SCRIPTED_SCENARIO_PED_USING_CONDITIONAL_ANIM 0x6EC47A344923E1ED 0x3C30B447  
+--- Taken from ENTITY::IS_ENTITY_PLAYING_ANIM(PLAYER::PLAYER_PED_ID(), "creatures@shark@move", "attack_player", 3)  
+--- p4 is always 3 in the scripts.  
+--- taskFlag:  
+--- 2 - Check synchronized scene  
+--- ```
+--- 
+--- [Animations list](https://alexguirre.github.io/animations-list/)
+---
+--- @hash 0x1F0B79228E461EC9
+--- @param entity Entity
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @param taskFlag number (int)
+--- @return boolean
+function IsEntityPlayingAnim(entity, animDict, animName, taskFlag) end
+
+    
+--- SetEntityAlwaysPrerender
+---
+--- @hash 0xACAD101E1FB66689
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+function SetEntityAlwaysPrerender(entity, toggle) end
+
+    
+--- N_0xcea7c8e1b48ff68c
+---
+--- @hash 0xCEA7C8E1B48FF68C
+--- @param p0 any
+--- @param p1 any
+--- @return void
+function N_0xcea7c8e1b48ff68c(p0, p1) end
+
+    
+--- SetCanClimbOnEntity
+---
+--- @hash 0xA80AE305E0A3044F
+--- @param entity Entity
+--- @param p1 boolean
+--- @return void
+function SetCanClimbOnEntity(entity, p1) end
+
+    
+--- IsEntityTouchingModel
+---
+--- @hash 0x0F42323798A58C8C
+--- @param entity Entity
+--- @param modelHash Hash
+--- @return boolean
+function IsEntityTouchingModel(entity, modelHash) end
+
+    
+--- ```
+--- NativeDB Introduced: v1180
+--- ```
+---
+--- @hash 0xD7B80E7C3BEFC396
+--- @param p0 any
+--- @param p1 any
+--- @return void
+function N_0xd7b80e7c3befc396(p0, p1) end
+
+    
+--- SetCanAutoVaultOnEntity
+---
+--- @hash 0xE12ABE5E3A389A6C
+--- @param entity Entity
+--- @param p1 boolean
+--- @return void
+function SetCanAutoVaultOnEntity(entity, p1) end
 
     
 --- ```
@@ -1137,76 +1531,68 @@ function IsEntityUpright(entity, angle) end
 
     
 --- ```
---- Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
+--- Related to cutscene entities. Unsure about the use.  
 --- ```
 ---
---- @hash 0x4B53F92932ADFAC0
+--- @hash 0x78E8E3A640178255
 --- @param entity Entity
---- @return Vehicle
-function GetVehicleIndexFromEntityIndex(entity) end
-
-    
---- ```
---- Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
---- ```
----
---- @hash 0xD7E3B9735C0F89D6
---- @param entity Entity
---- @return table (Object)
-function GetObjectIndexFromEntityIndex(entity) end
-
-    
---- SetCanClimbOnEntity
----
---- @hash 0xA80AE305E0A3044F
---- @param entity Entity
---- @param p1 boolean
 --- @return void
-function SetCanClimbOnEntity(entity, p1) end
+function N_0x78e8e3a640178255(entity) end
 
     
---- IsEntityTouchingEntity
----
---- @hash 0x17FFC1B2BA35A494
+--- This native sets the entity's alpha level.
+--- 
+--- The skin parameter is actually a BOOL, but can't be changed due to backwards compatibility issues for C# scripts.
+--- @usage SetEntityAlpha(PlayerPedId(), 51, false
+--- @hash 0x44A0870B7E92D7C0
 --- @param entity Entity
---- @param targetEntity Entity
---- @return boolean
-function IsEntityTouchingEntity(entity, targetEntity) end
+--- @param alphaLevel number (int)
+--- @param skin number (int)
+--- @return void
+function SetEntityAlpha(entity, alphaLevel, skin) end
 
     
 --- ```
---- traceType is always 17 in the scripts.  
---- There is other codes used for traceType:  
---- 19 - in jewelry_prep1a  
---- 126 - in am_hunt_the_beast  
---- 256 & 287 - in fm_mission_controller  
+--- Axis - Invert Axis Flags  
 --- ```
 ---
---- @hash 0xFCDFF7B72D23A1AC
+--- @hash 0x239A3351AC1DA385
+--- @param entity Entity
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param zPos number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
+--- @return void
+function SetEntityCoordsNoOffset(entity, xPos, yPos, zPos, xAxis, yAxis, zAxis) end
+
+    
+--- N_0xb17bc6453f6cf5ac
+---
+--- @hash 0xB17BC6453F6CF5AC
+--- @param p0 any
+--- @param p1 any
+--- @return void
+function N_0xb17bc6453f6cf5ac(p0, p1) end
+
+    
+--- ```
+--- Checks if entity1 is within the box defined by x/y/zSize of entity2.  
+--- Last three parameters are almost alwasy p5 = 0, p6 = 1, p7 = 0  
+--- ```
+---
+--- @hash 0x751B70C3D034E187
 --- @param entity1 Entity
 --- @param entity2 Entity
---- @param traceType number (int)
+--- @param xSize number (float)
+--- @param ySize number (float)
+--- @param zSize number (float)
+--- @param p5 boolean
+--- @param p6 boolean
+--- @param p7 number (int)
 --- @return boolean
-function HasEntityClearLosToEntity(entity1, entity2, traceType) end
-
-    
---- ```
---- Returns an integer value of entity's current health.
---- Example of range for ped:
---- - Player [0 to 200]
---- - Ped [100 to 200]
---- - Vehicle [0 to 1000]
---- - Object [0 to 1000]
---- Health is actually a float value but this native casts it to int.
---- In order to get the actual value, do:
---- float health = *(float *)(entityAddress + 0x280);
---- ```
---- @usage local health = GetEntityHealth(PlayerPedId())
---- print(health
---- @hash 0xEEF059FAD016D209
---- @param entity Entity
---- @return number (int)
-function GetEntityHealth(entity) end
+function IsEntityAtEntity(entity1, entity2, xSize, ySize, zSize, p5, p6, p7) end
 
     
 --- ```
@@ -1219,220 +1605,92 @@ function GetEntityHealth(entity) end
 function ResetEntityAlpha(entity) end
 
     
---- SetEntityHasGravity
+--- RemoveForcedObject
 ---
---- @hash 0x4A4722448F18EEF5
---- @param entity Entity
---- @param toggle boolean
---- @return void
-function SetEntityHasGravity(entity, toggle) end
-
-    
---- IsEntityVisible
----
---- @hash 0x47D6F43D77935C75
---- @param entity Entity
---- @return boolean
-function IsEntityVisible(entity) end
-
-    
---- ```
---- Entity 1 = Victim  
---- Entity 2 = Attacker  
---- p2 seems to always be 1  
---- ```
----
---- @hash 0xC86D67D52A707CF8
---- @param entity1 Entity
---- @param entity2 Entity
---- @param p2 boolean
---- @return boolean
-function HasEntityBeenDamagedByEntity(entity1, entity2, p2) end
-
-    
---- ```
---- Checks if entity is within x/y/zSize distance of x/y/z.   
---- Last three are unknown ints, almost always p7 = 0, p8 = 1, p9 = 0  
---- ```
----
---- @hash 0x20B60995556D004F
---- @param entity Entity
---- @param xPos number (float)
---- @param yPos number (float)
---- @param zPos number (float)
---- @param xSize number (float)
---- @param ySize number (float)
---- @param zSize number (float)
---- @param p7 boolean
---- @param p8 boolean
---- @param p9 number (int)
---- @return boolean
-function IsEntityAtCoord(entity, xPos, yPos, zPos, xSize, ySize, zSize, p7, p8, p9) end
-
-    
---- ```
---- See also PED::IS_SCRIPTED_SCENARIO_PED_USING_CONDITIONAL_ANIM 0x6EC47A344923E1ED 0x3C30B447  
---- Taken from ENTITY::IS_ENTITY_PLAYING_ANIM(PLAYER::PLAYER_PED_ID(), "creatures@shark@move", "attack_player", 3)  
---- p4 is always 3 in the scripts.  
---- taskFlag:  
---- 2 - Check synchronized scene  
---- ```
---- 
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash 0x1F0B79228E461EC9
---- @param entity Entity
---- @param animDict string (char*)
---- @param animName string (char*)
---- @param taskFlag number (int)
---- @return boolean
-function IsEntityPlayingAnim(entity, animDict, animName, taskFlag) end
-
-    
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash 0xB9C54555ED30FBC4
---- @param p0 number (float)
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 any
---- @param p5 any
---- @param p6 any
---- @param p7 any
---- @param p8 number (float)
---- @param p9 number (float)
---- @param p10 any
---- @param p11 number (float)
---- @return boolean
-function PlaySynchronizedMapEntityAnim(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) end
-
-    
---- HasEntityBeenDamagedByAnyVehicle
----
---- @hash 0xDFD5033FDBA0A9C8
---- @param entity Entity
---- @return boolean
-function HasEntityBeenDamagedByAnyVehicle(entity) end
-
-    
---- IsEntityAnObject
----
---- @hash 0x8D68C8FD0FACA94E
---- @param entity Entity
---- @return boolean
-function IsEntityAnObject(entity) end
-
-    
---- IsEntityAttachedToAnyObject
----
---- @hash 0xCF511840CEEDE0CC
---- @param entity Entity
---- @return boolean
-function IsEntityAttachedToAnyObject(entity) end
-
-    
---- ```
---- Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
---- ```
----
---- @hash 0x04A2A40C73395041
---- @param entity Entity
---- @return Ped
-function GetPedIndexFromEntityIndex(entity) end
-
-    
---- GetEntityRotationVelocity
----
---- @hash 0x213B91045D09B983
---- @param entity Entity
---- @return Vector3
-function GetEntityRotationVelocity(entity) end
-
-    
---- ```
---- Returns the coordinates of an entity-bone.  
---- ```
----
---- @hash 0x44A8FCB8ED227738
---- @param entity Entity
---- @param boneIndex number (int)
---- @return Vector3
-function GetWorldPositionOfEntityBone(entity, boneIndex) end
-
-    
---- IsEntityAMissionEntity
----
---- @hash 0x0A7B270912999B3C
---- @param entity Entity
---- @return boolean
-function IsEntityAMissionEntity(entity) end
-
-    
---- IsEntityAVehicle
----
---- @hash 0x6AC7003FA6E5575E
---- @param entity Entity
---- @return boolean
-function IsEntityAVehicle(entity) end
-
-    
---- ```
---- what does it do?  
---- ```
----
---- @hash 0x694E00132F2823ED
---- @param entity Entity
---- @param toggle boolean
---- @return void
-function N_0x694e00132f2823ed(entity, toggle) end
-
-    
---- IsEntityWaitingForWorldCollision
----
---- @hash 0xD05BFF0C0A12C68F
---- @param entity Entity
---- @return boolean
-function IsEntityWaitingForWorldCollision(entity) end
-
-    
---- SetEntityMotionBlur
----
---- @hash 0x295D82A8559F9150
---- @param entity Entity
---- @param toggle boolean
---- @return void
-function SetEntityMotionBlur(entity, toggle) end
-
-    
---- N_0x352e2b5cf420bf3b
----
---- @hash 0x352E2B5CF420BF3B
+--- @hash 0x61B6775E83C0DB6F
 --- @param p0 any
 --- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
 --- @return void
-function N_0x352e2b5cf420bf3b(p0, p1) end
+function RemoveForcedObject(p0, p1, p2, p3, p4) end
 
     
---- SetEntityDynamic
+--- ```
+--- delta and bitset are guessed fields. They are based on the fact that most of the calls have 0 or nil field types passed in.  
+--- The only time bitset has a value is 0x4000 and the only time delta has a value is during stealth with usually <1.0f values.  
+--- ```
+--- 
+--- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
---- @hash 0x1718DE8E3F2823CA
+--- @hash 0x7FB218262B810701
+--- @param entity Entity
+--- @param animName string (char*)
+--- @param animDict string (char*)
+--- @param p3 number (float)
+--- @param loop boolean
+--- @param stayInAnim boolean
+--- @param p6 boolean
+--- @param delta number (float)
+--- @param bitset any
+--- @return boolean
+function PlayEntityAnim(entity, animName, animDict, p3, loop, stayInAnim, p6, delta, bitset) end
+
+    
+--- SetEntityRenderScorched
+---
+--- @hash 0x730F5F8D3F0F2050
 --- @param entity Entity
 --- @param toggle boolean
 --- @return void
-function SetEntityDynamic(entity, toggle) end
+function SetEntityRenderScorched(entity, toggle) end
 
     
---- IsEntityAttached
---- @usage local ped = PlayerPedId()
---- 
---- if IsEntityAttached(ped) then
----     DetachEntity(ped, true, true)
---- en
---- @hash 0xB346476EF1A64897
+--- ```
+--- SET_ENTITY_*  
+--- x360 Hash: 0xA0466A69  
+--- Only called within 1 script for x360. 'fm_mission_controller' and it used on an object.   
+--- Ran after these 2 natives,  
+--- set_object_targettable(uParam0, 0);  
+--- set_entity_invincible(uParam0, 1);  
+--- ```
+---
+--- @hash 0xDC6F8601FAF2E893
 --- @param entity Entity
---- @return boolean
-function IsEntityAttached(entity) end
+--- @param toggle boolean
+--- @return void
+function N_0xdc6f8601faf2e893(entity, toggle) end
+
+    
+--- SetEntityCanBeDamagedByRelationshipGroup
+---
+--- @hash 0xE22D8FDE858B8119
+--- @param entity Entity
+--- @param bCanBeDamaged boolean
+--- @param relGroup number (int)
+--- @return void
+function SetEntityCanBeDamagedByRelationshipGroup(entity, bCanBeDamaged, relGroup) end
+
+    
+--- ```
+--- Does nothing (essentially a nullsub).
+--- ```
+---
+--- @hash 0x490861B88F4FD846
+--- @param p0 any
+--- @return void
+function N_0x490861b88f4fd846(p0) end
+
+    
+--- ```
+--- This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.  
+--- ```
+---
+--- @hash 0x2595DD4236549CE3
+--- @param ped Ped (Ped*)
+--- @return void
+function SetPedAsNoLongerNeeded(ped) end
 
     
 --- SetEntityCanBeDamaged
@@ -1445,42 +1703,63 @@ function SetEntityCanBeDamaged(entity, toggle) end
 
     
 --- ```
---- Get how much of the entity is submerged.  1.0f is whole entity.  
+--- p4 and p7 are usually 1000.0f.  
 --- ```
+--- 
+--- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
---- @hash 0xE81AFC1BC4CC41CE
+--- @hash 0xC77720A12FE14A86
 --- @param entity Entity
---- @return number (float)
-function GetEntitySubmergedLevel(entity) end
+--- @param syncedScene number (int)
+--- @param animation string (char*)
+--- @param propName string (char*)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 any
+--- @param p7 number (float)
+--- @return boolean
+function PlaySynchronizedEntityAnim(entity, syncedScene, animation, propName, p4, p5, p6, p7) end
 
     
---- IsEntityInAir
+--- IsEntityUpsidedown
 ---
---- @hash 0x886E37EC497200B6
+--- @hash 0x1DBD58820FA61D71
 --- @param entity Entity
 --- @return boolean
-function IsEntityInAir(entity) end
+function IsEntityUpsidedown(entity) end
 
     
 --- ```
---- NativeDB Introduced: v1180
+--- Marks the specified entity (ped, vehicle or object) as no longer needed.  
+--- Entities marked as no longer needed, will be deleted as the engine sees fit.  
 --- ```
 ---
---- @hash 0xD7B80E7C3BEFC396
---- @param p0 any
---- @param p1 any
+--- @hash 0xB736A491E64A32CF
+--- @param entity Entity (Entity*)
 --- @return void
-function N_0xd7b80e7c3befc396(p0, p1) end
+function SetEntityAsNoLongerNeeded(entity) end
 
     
 --- ```
---- This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.  
+--- LOD distance can be 0 to 0xFFFF (higher values will result in 0xFFFF) as it is actually stored as a 16-bit value (aka uint16_t).  
 --- ```
 ---
---- @hash 0x3AE22DEB5BA5A3E6
---- @param object table (Object*)
+--- @hash 0x5927F96A78577363
+--- @param entity Entity
+--- @param value number (int)
 --- @return void
-function SetObjectAsNoLongerNeeded(object) end
+function SetEntityLodDist(entity, value) end
+
+    
+--- [Animations list](https://alexguirre.github.io/animations-list/)
+---
+--- @hash 0x4487C259F0F70977
+--- @param entity Entity
+--- @param animDictionary string (char*)
+--- @param animName string (char*)
+--- @param time number (float)
+--- @return void
+function SetEntityAnimCurrentTime(entity, animDictionary, animName, time) end
 
     
 --- SetEntityLights
@@ -1492,65 +1771,74 @@ function SetObjectAsNoLongerNeeded(object) end
 function SetEntityLights(entity, toggle) end
 
     
---- ```
---- Gets the X-component of the entity's forward vector.  
---- ```
+--- IsEntityAttachedToAnyPed
 ---
---- @hash 0x8BB4EF4214E0E6D5
+--- @hash 0xB1632E9A5F988D11
 --- @param entity Entity
---- @return number (float)
-function GetEntityForwardX(entity) end
-
-    
---- p10 is some entity flag check, also used in `IS_ENTITY_AT_ENTITY`, `IS_ENTITY_IN_AREA`, and `IS_ENTITY_AT_COORD`.
---- 
---- See [IS_POINT_IN_ANGLED_AREA](#\_0x2A70BAE8883E4C81) for the definition of an angled area.
----
---- @hash 0x51210CED3DA1C78A
---- @param entity Entity
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param width number (float)
---- @param p8 boolean
---- @param includez boolean
---- @param p10 any
 --- @return boolean
-function IsEntityInAngledArea(entity, x1, y1, z1, x2, y2, z2, width, p8, includez, p10) end
+function IsEntityAttachedToAnyPed(entity) end
 
     
---- ```
---- Called to update entity attachments.  
---- When using ATTACH_ENTITY_TO_ENTITY and using bone '0' then you set the first entity invisible. The attachments will mess up, use bone '-1' to fix that issue  
---- ```
+--- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
---- @hash 0xF4080490ADC51C6F
+--- @hash 0x28D1A16553C51776
 --- @param entity Entity
+--- @param animDictionary string (char*)
+--- @param animName string (char*)
+--- @param speedMultiplier number (float)
 --- @return void
-function ProcessEntityAttachments(entity) end
+function SetEntityAnimSpeed(entity, animDictionary, animName, speedMultiplier) end
 
     
---- ```
---- Sets whether the entity can be targeted without being in line-of-sight.  
---- ```
+--- SetEntityOnlyDamagedByPlayer
 ---
---- @hash 0xD3997889736FD899
+--- @hash 0x79F020FF9EDC0748
 --- @param entity Entity
 --- @param toggle boolean
 --- @return void
-function SetEntityCanBeTargetedWithoutLos(entity, toggle) end
+function SetEntityOnlyDamagedByPlayer(entity, toggle) end
 
     
---- IsEntityTouchingModel
+--- SetEntityMaxSpeed
 ---
---- @hash 0x0F42323798A58C8C
+--- @hash 0x0E46A3FCBDE2A1B1
 --- @param entity Entity
---- @param modelHash Hash
---- @return boolean
-function IsEntityTouchingModel(entity, modelHash) end
+--- @param speed number (float)
+--- @return void
+function SetEntityMaxSpeed(entity, speed) end
+
+    
+--- N_0xb328dcc3a3aa401b
+---
+--- @hash 0xB328DCC3A3AA401B
+--- @param p0 any
+--- @return any
+function N_0xb328dcc3a3aa401b(p0) end
+
+    
+--- SetEntityCollision
+---
+--- @hash 0x1A9205C1B9EE827F
+--- @param entity Entity
+--- @param toggle boolean
+--- @param keepPhysics boolean
+--- @return void
+function SetEntityCollision(entity, toggle, keepPhysics) end
+
+    
+--- ```
+--- RAGEPluginHook list: docs.ragepluginhook.net/html/62951c37-a440-478c-b389-c471230ddfc5.htm  
+--- ```
+--- 
+--- [Animations list](https://alexguirre.github.io/animations-list/)
+---
+--- @hash 0x28004F88151E03E0
+--- @param entity Entity
+--- @param animation string (char*)
+--- @param animGroup string (char*)
+--- @param p3 number (float)
+--- @return any
+function StopEntityAnim(entity, animation, animGroup, p3) end
 
     
 --- ```
@@ -1581,114 +1869,18 @@ function IsEntityTouchingModel(entity, modelHash) end
 function SetEntityCoords(entity, xPos, yPos, zPos, xAxis, yAxis, zAxis, clearArea) end
 
     
---- N_0xb17bc6453f6cf5ac
+--- RemoveModelSwap
 ---
---- @hash 0xB17BC6453F6CF5AC
---- @param p0 any
---- @param p1 any
+--- @hash 0x033C0F9A64E229AE
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param originalModel Hash
+--- @param newModel Hash
+--- @param p6 boolean
 --- @return void
-function N_0xb17bc6453f6cf5ac(p0, p1) end
-
-    
---- ```
---- SET_ENTITY_*  
---- x360 Hash: 0xA0466A69  
---- Only called within 1 script for x360. 'fm_mission_controller' and it used on an object.   
---- Ran after these 2 natives,  
---- set_object_targettable(uParam0, 0);  
---- set_entity_invincible(uParam0, 1);  
---- ```
----
---- @hash 0xDC6F8601FAF2E893
---- @param entity Entity
---- @param toggle boolean
---- @return void
-function N_0xdc6f8601faf2e893(entity, toggle) end
-
-    
---- ```
---- SET_ENTITY_*
---- ```
----
---- @hash 0xC34BC448DA29F5E9
---- @param entity Entity
---- @param toggle boolean
---- @return void
-function N_0xc34bc448da29f5e9(entity, toggle) end
-
-    
---- IsEntityUpsidedown
----
---- @hash 0x1DBD58820FA61D71
---- @param entity Entity
---- @return boolean
-function IsEntityUpsidedown(entity) end
-
-    
---- ```
---- SET_ENTITY_*  
---- ```
----
---- @hash 0x2C2E3DC128F44309
---- @param entity Entity
---- @param p1 boolean
---- @return void
-function N_0x2c2e3dc128f44309(entity, p1) end
-
-    
---- ```
---- Calling this function disables collision between two entities.
---- The importance of the order for entity1 and entity2 is unclear.
---- The third parameter, `thisFrame`, decides whether the collision is to be disabled until it is turned back on, or if it's just this frame.
---- ```
----
---- @hash 0xA53ED5520C07654A
---- @param entity1 Entity
---- @param entity2 Entity
---- @param thisFrameOnly boolean
---- @return void
-function SetEntityNoCollisionEntity(entity1, entity2, thisFrameOnly) end
-
-    
---- ```
---- Returns true if the entity is in between the minimum and maximum values for the 2d screen coords.   
---- This means that it will return true even if the entity is behind a wall for example, as long as you're looking at their location.   
---- Chipping  
---- ```
----
---- @hash 0xE659E47AF827484B
---- @param entity Entity
---- @return boolean
-function IsEntityOnScreen(entity) end
-
-    
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash 0x4487C259F0F70977
---- @param entity Entity
---- @param animDictionary string (char*)
---- @param animName string (char*)
---- @param time number (float)
---- @return void
-function SetEntityAnimCurrentTime(entity, animDictionary, animName, time) end
-
-    
---- IsEntityInZone
----
---- @hash 0xB6463CF6AF527071
---- @param entity Entity
---- @param zone string (char*)
---- @return boolean
-function IsEntityInZone(entity, zone) end
-
-    
---- N_0xcea7c8e1b48ff68c
----
---- @hash 0xCEA7C8E1B48FF68C
---- @param p0 any
---- @param p1 any
---- @return void
-function N_0xcea7c8e1b48ff68c(p0, p1) end
+function RemoveModelSwap(x, y, z, radius, originalModel, newModel, p6) end
 
     
 --- RemoveModelHide
@@ -1704,93 +1896,6 @@ function N_0xcea7c8e1b48ff68c(p0, p1) end
 function RemoveModelHide(p0, p1, p2, p3, p4, p5) end
 
     
---- IsEntityInWater
----
---- @hash 0xCFB0A0D8EDD145A3
---- @param entity Entity
---- @return boolean
-function IsEntityInWater(entity) end
-
-    
---- ```
---- NativeDB Introduced: v1180
---- ```
----
---- @hash 0x68B562E124CC0AEF
---- @param p0 any
---- @param p1 any
---- @return void
-function N_0x68b562e124cc0aef(p0, p1) end
-
-    
---- This native sets the entity's alpha level.
---- 
---- The skin parameter is actually a BOOL, but can't be changed due to backwards compatibility issues for C# scripts.
---- @usage SetEntityAlpha(PlayerPedId(), 51, false
---- @hash 0x44A0870B7E92D7C0
---- @param entity Entity
---- @param alphaLevel number (int)
---- @param skin number (int)
---- @return void
-function SetEntityAlpha(entity, alphaLevel, skin) end
-
-    
---- RemoveForcedObject
----
---- @hash 0x61B6775E83C0DB6F
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @param p4 any
---- @return void
-function RemoveForcedObject(p0, p1, p2, p3, p4) end
-
-    
---- ```
---- does the same as SET_ENTITY_COORDS.  
---- ```
----
---- @hash 0x621873ECE1178967
---- @param entity Entity
---- @param xPos number (float)
---- @param yPos number (float)
---- @param zPos number (float)
---- @param xAxis boolean
---- @param yAxis boolean
---- @param zAxis boolean
---- @param clearArea boolean
---- @return void
-function SetEntityCoords_2(entity, xPos, yPos, zPos, xAxis, yAxis, zAxis, clearArea) end
-
-    
---- IsEntityAttachedToEntity
----
---- @hash 0xEFBE71898A993728
---- @param from Entity
---- @param to Entity
---- @return boolean
-function IsEntityAttachedToEntity(from, to) end
-
-    
---- SetEntityCanBeDamagedByRelationshipGroup
----
---- @hash 0xE22D8FDE858B8119
---- @param entity Entity
---- @param bCanBeDamaged boolean
---- @param relGroup number (int)
---- @return void
-function SetEntityCanBeDamagedByRelationshipGroup(entity, bCanBeDamaged, relGroup) end
-
-    
---- IsEntityOccluded
----
---- @hash 0xE31C2C72B8692B64
---- @param entity Entity
---- @return boolean
-function IsEntityOccluded(entity) end
-
-    
 --- ```
 --- internally it calls the same function as 'SET_ENTITY_COLLISION'. but uses a hard coded parameter that only activates when toggle is set to true
 --- ```
@@ -1801,70 +1906,6 @@ function IsEntityOccluded(entity) end
 --- @param keepPhysics boolean
 --- @return void
 function SetEntityCompletelyDisableCollision(entity, toggle, keepPhysics) end
-
-    
---- ```
---- SET_ENTITY_*  
---- ```
----
---- @hash 0x1A092BB0C3808B96
---- @param entity Entity
---- @param p1 boolean
---- @return void
-function N_0x1a092bb0c3808b96(entity, p1) end
-
-    
---- Set the heading of an entity in degrees also known as "Yaw".
---- @usage SetEntityHeading(PlayerPedId(), 40.0
---- @hash 0x8E2530AA8ADA980E
---- @param entity Entity
---- @param heading number (float)
---- @return void
-function SetEntityHeading(entity, heading) end
-
-    
---- N_0xb328dcc3a3aa401b
----
---- @hash 0xB328DCC3A3AA401B
---- @param p0 any
---- @return any
-function N_0xb328dcc3a3aa401b(p0) end
-
-    
---- ```
---- RAGEPluginHook list: docs.ragepluginhook.net/html/62951c37-a440-478c-b389-c471230ddfc5.htm  
---- ```
---- 
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash 0x28004F88151E03E0
---- @param entity Entity
---- @param animation string (char*)
---- @param animGroup string (char*)
---- @param p3 number (float)
---- @return any
-function StopEntityAnim(entity, animation, animGroup, p3) end
-
-    
---- SetEntityRenderScorched
----
---- @hash 0x730F5F8D3F0F2050
---- @param entity Entity
---- @param toggle boolean
---- @return void
-function SetEntityRenderScorched(entity, toggle) end
-
-    
---- ```
---- Has the entity1 got a clear line of sight to the other entity2 from the direction entity1 is facing.  
---- This is one of the most CPU demanding BOOL natives in the game; avoid calling this in things like nested for-loops  
---- ```
----
---- @hash 0x0267D00AF114F17A
---- @param entity1 Entity
---- @param entity2 Entity
---- @return boolean
-function HasEntityClearLosToEntityInFront(entity1, entity2) end
 
     
 --- health >= 0
@@ -1882,13 +1923,82 @@ function HasEntityClearLosToEntityInFront(entity1, entity2) end
 function SetEntityHealth(entity, health) end
 
     
---- SetEntityOnlyDamagedByPlayer
+--- Loads collision grid for an entity spawned outside of a player's loaded area. This allows peds to execute tasks rather than sit dormant because of a lack of a physics grid.
+--- 
+--- Certainly not the main usage of this native but when set to true for a Vehicle, it will prevent the vehicle to explode if it is spawned far away from the player.
+--- 
+--- ```
+--- NativeDB Added Parameter 3: Any p2
+--- ```
 ---
---- @hash 0x79F020FF9EDC0748
+--- @hash 0x0DC7CABAB1E9B67E
 --- @param entity Entity
 --- @param toggle boolean
 --- @return void
-function SetEntityOnlyDamagedByPlayer(entity, toggle) end
+function SetEntityLoadCollisionFlag(entity, toggle) end
+
+    
+--- SetEntityOnlyDamagedByRelationshipGroup
+---
+--- @hash 0x7022BD828FA0B082
+--- @param entity Entity
+--- @param p1 boolean
+--- @param relationshipHash Hash
+--- @return void
+function SetEntityOnlyDamagedByRelationshipGroup(entity, p1, relationshipHash) end
+
+    
+--- SetEntityRecordsCollisions
+---
+--- @hash 0x0A50A1EEDAD01E65
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+function SetEntityRecordsCollisions(entity, toggle) end
+
+    
+--- ```
+--- This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.  
+--- ```
+---
+--- @hash 0x629BFA74418D6239
+--- @param vehicle Vehicle (Vehicle*)
+--- @return void
+function SetVehicleAsNoLongerNeeded(vehicle) end
+
+    
+--- ```
+--- NativeDB Introduced: v1180
+--- ```
+---
+--- @hash 0x68B562E124CC0AEF
+--- @param p0 any
+--- @param p1 any
+--- @return void
+function N_0x68b562e124cc0aef(p0, p1) end
+
+    
+--- ```
+--- w is the correct parameter name!  
+--- ```
+---
+--- @hash 0x77B21BE7AC540F07
+--- @param entity Entity
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param w number (float)
+--- @return void
+function SetEntityQuaternion(entity, x, y, z, w) end
+
+    
+--- SetEntityDynamic
+---
+--- @hash 0x1718DE8E3F2823CA
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+function SetEntityDynamic(entity, toggle) end
 
     
 --- ```
@@ -1916,271 +2026,26 @@ function SetEntityInvincible(entity, toggle) end
 
     
 --- ```
---- LOD distance can be 0 to 0xFFFF (higher values will result in 0xFFFF) as it is actually stored as a 16-bit value (aka uint16_t).  
+--- p1 sync task id?  
 --- ```
 ---
---- @hash 0x5927F96A78577363
+--- @hash 0x43D3807C077261E3
 --- @param entity Entity
---- @param value number (int)
---- @return void
-function SetEntityLodDist(entity, value) end
-
-    
---- ```
---- p4 and p7 are usually 1000.0f.  
---- ```
---- 
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash 0xC77720A12FE14A86
---- @param entity Entity
---- @param syncedScene number (int)
---- @param animation string (char*)
---- @param propName string (char*)
---- @param p4 number (float)
---- @param p5 number (float)
---- @param p6 any
---- @param p7 number (float)
---- @return boolean
-function PlaySynchronizedEntityAnim(entity, syncedScene, animation, propName, p4, p5, p6, p7) end
-
-    
---- RemoveModelSwap
----
---- @hash 0x033C0F9A64E229AE
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @param originalModel Hash
---- @param newModel Hash
---- @param p6 boolean
---- @return void
-function RemoveModelSwap(x, y, z, radius, originalModel, newModel, p6) end
-
-    
---- ```
---- This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.  
---- ```
----
---- @hash 0x629BFA74418D6239
---- @param vehicle Vehicle (Vehicle*)
---- @return void
-function SetVehicleAsNoLongerNeeded(vehicle) end
-
-    
---- StopSynchronizedMapEntityAnim
----
---- @hash 0x11E79CAB7183B6F5
---- @param p0 number (float)
 --- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 any
---- @param p5 number (float)
---- @return boolean
-function StopSynchronizedMapEntityAnim(p0, p1, p2, p3, p4, p5) end
-
-    
---- ```
---- For instance: ENTITY::SET_ENTITY_MAX_HEALTH(PLAYER::PLAYER_PED_ID(), 200); // director_mode.c4: 67849  
---- ```
----
---- @hash 0x166E7CF68597D8B5
---- @param entity Entity
---- @param value number (int)
---- @return void
-function SetEntityMaxHealth(entity, value) end
-
-    
---- ```
---- Related to cutscene entities. Unsure about the use.  
---- ```
----
---- @hash 0x78E8E3A640178255
---- @param entity Entity
---- @return void
-function N_0x78e8e3a640178255(entity) end
-
-    
---- ```
---- Axis - Invert Axis Flags  
---- ```
----
---- @hash 0x239A3351AC1DA385
---- @param entity Entity
---- @param xPos number (float)
---- @param yPos number (float)
---- @param zPos number (float)
---- @param xAxis boolean
---- @param yAxis boolean
---- @param zAxis boolean
---- @return void
-function SetEntityCoordsNoOffset(entity, xPos, yPos, zPos, xAxis, yAxis, zAxis) end
-
-    
---- SetEntityAlwaysPrerender
----
---- @hash 0xACAD101E1FB66689
---- @param entity Entity
---- @param toggle boolean
---- @return void
-function SetEntityAlwaysPrerender(entity, toggle) end
-
-    
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash 0x28D1A16553C51776
---- @param entity Entity
---- @param animDictionary string (char*)
---- @param animName string (char*)
---- @param speedMultiplier number (float)
---- @return void
-function SetEntityAnimSpeed(entity, animDictionary, animName, speedMultiplier) end
-
-    
---- ```
---- Marks the specified entity (ped, vehicle or object) as no longer needed.  
---- Entities marked as no longer needed, will be deleted as the engine sees fit.  
---- ```
----
---- @hash 0xB736A491E64A32CF
---- @param entity Entity (Entity*)
---- @return void
-function SetEntityAsNoLongerNeeded(entity) end
-
-    
---- SetEntityIsTargetPriority
----
---- @hash 0xEA02E132F5C68722
---- @param entity Entity
---- @param p1 boolean
---- @param p2 number (float)
---- @return void
-function SetEntityIsTargetPriority(entity, p1, p2) end
-
-    
---- ```
---- what does this native do?  
---- bool IsEntitySomething(Entity entity)  
---- {  
---- 	auto addr = getScriptHandleBaseAddress(entity);  
---- 	printf("addr: 0x%X \n", addr);  
---- 	if (addr)  
---- 	{  
---- DWORD flag = *(DWORD *)(addr + 0x48D);  
---- printf("flag: 0x%X \n", flag);  
---- return ((flag & (1 << 3)) != 0) || ((flag & (1 << 30)) != 0);  
---- 	}  
---- 	return false;  
---- }  
---- wot ?  
---- ```
----
---- @hash 0x3910051CCECDB00C
---- @param entity Entity
---- @param toggle boolean
---- @return void
-function SetEntitySomething(entity, toggle) end
-
-    
---- ```
---- First parameter was previously an Entity but after further research it is definitely a hash.  
---- ```
----
---- @hash 0xEE5D2A122E09EC42
---- @param entityModelHash Hash
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param p4 boolean
---- @return boolean
-function WouldEntityBeOccluded(entityModelHash, x, y, z, p4) end
-
-    
---- ```
---- Makes the specified entity (ped, vehicle or object) persistent. Persistent entities will not automatically be removed by the engine.  
---- p1 has no effect when either its on or off   
---- maybe a quick disassembly will tell us what it does  
---- p2 has no effect when either its on or off   
---- maybe a quick disassembly will tell us what it does  
---- ```
----
---- @hash 0xAD738C3085FE7E11
---- @param entity Entity
---- @param p1 boolean
 --- @param p2 boolean
---- @return void
-function SetEntityAsMissionEntity(entity, p1, p2) end
+--- @return boolean
+function StopSynchronizedEntityAnim(entity, p1, p2) end
 
     
---- Loads collision grid for an entity spawned outside of a player's loaded area. This allows peds to execute tasks rather than sit dormant because of a lack of a physics grid.
---- 
---- Certainly not the main usage of this native but when set to true for a Vehicle, it will prevent the vehicle to explode if it is spawned far away from the player.
---- 
 --- ```
---- NativeDB Added Parameter 3: Any p2
+--- SET_ENTITY_*  
 --- ```
 ---
---- @hash 0x0DC7CABAB1E9B67E
---- @param entity Entity
---- @param toggle boolean
---- @return void
-function SetEntityLoadCollisionFlag(entity, toggle) end
-
-    
---- SetCanAutoVaultOnEntity
----
---- @hash 0xE12ABE5E3A389A6C
+--- @hash 0x2C2E3DC128F44309
 --- @param entity Entity
 --- @param p1 boolean
 --- @return void
-function SetCanAutoVaultOnEntity(entity, p1) end
-
-    
---- ```
---- This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.  
---- ```
----
---- @hash 0x2595DD4236549CE3
---- @param ped Ped (Ped*)
---- @return void
-function SetPedAsNoLongerNeeded(ped) end
-
-    
---- SetEntityMaxSpeed
----
---- @hash 0x0E46A3FCBDE2A1B1
---- @param entity Entity
---- @param speed number (float)
---- @return void
-function SetEntityMaxSpeed(entity, speed) end
-
-    
---- ```
---- rotationOrder refers to the order yaw pitch roll is applied, see [GET_ENTITY_ROTATION](#_0xAFBD61CC738D9EB9)
---- 
---- p5 is usually set as true
---- ```
----
---- @hash 0x8524A8B0171D5E07
---- @param entity Entity
---- @param pitch number (float)
---- @param roll number (float)
---- @param yaw number (float)
---- @param rotationOrder number (int)
---- @param p5 boolean
---- @return void
-function SetEntityRotation(entity, pitch, roll, yaw, rotationOrder, p5) end
-
-    
---- SetEntityRecordsCollisions
----
---- @hash 0x0A50A1EEDAD01E65
---- @param entity Entity
---- @param toggle boolean
---- @return void
-function SetEntityRecordsCollisions(entity, toggle) end
+function N_0x2c2e3dc128f44309(entity, p1) end
 
     
 --- ```
@@ -2216,6 +2081,18 @@ function SetEntityVisible(entity, toggle, unk) end
 
     
 --- ```
+--- Only called once in the scripts.  
+--- Related to weapon objects.  
+--- ```
+---
+--- @hash 0x5C3B791D580E0BC2
+--- @param entity Entity
+--- @param p1 number (float)
+--- @return void
+function N_0x5c3b791d580e0bc2(entity, p1) end
+
+    
+--- ```
 --- Example here: www.gtaforums.com/topic/830463-help-with-turning-lights-green-and-causing-peds-to-crash-into-each-other/#entry1068211340  
 --- 0 = green  
 --- 1 = red  
@@ -2231,6 +2108,86 @@ function SetEntityTrafficlightOverride(entity, state) end
 
     
 --- ```
+--- First parameter was previously an Entity but after further research it is definitely a hash.  
+--- ```
+---
+--- @hash 0xEE5D2A122E09EC42
+--- @param entityModelHash Hash
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p4 boolean
+--- @return boolean
+function WouldEntityBeOccluded(entityModelHash, x, y, z, p4) end
+
+    
+--- SetEntityIsTargetPriority
+---
+--- @hash 0xEA02E132F5C68722
+--- @param entity Entity
+--- @param p1 boolean
+--- @param p2 number (float)
+--- @return void
+function SetEntityIsTargetPriority(entity, p1, p2) end
+
+    
+--- ```
+--- For instance: ENTITY::SET_ENTITY_MAX_HEALTH(PLAYER::PLAYER_PED_ID(), 200); // director_mode.c4: 67849  
+--- ```
+---
+--- @hash 0x166E7CF68597D8B5
+--- @param entity Entity
+--- @param value number (int)
+--- @return void
+function SetEntityMaxHealth(entity, value) end
+
+    
+--- ```
+--- rotationOrder refers to the order yaw pitch roll is applied, see [GET_ENTITY_ROTATION](#_0xAFBD61CC738D9EB9)
+--- 
+--- p5 is usually set as true
+--- ```
+---
+--- @hash 0x8524A8B0171D5E07
+--- @param entity Entity
+--- @param pitch number (float)
+--- @param roll number (float)
+--- @param yaw number (float)
+--- @param rotationOrder number (int)
+--- @param p5 boolean
+--- @return void
+function SetEntityRotation(entity, pitch, roll, yaw, rotationOrder, p5) end
+
+    
+--- ```
+--- Sets whether the entity can be targeted without being in line-of-sight.  
+--- ```
+---
+--- @hash 0xD3997889736FD899
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+function SetEntityCanBeTargetedWithoutLos(entity, toggle) end
+
+    
+--- ```
+--- does the same as SET_ENTITY_COORDS.  
+--- ```
+---
+--- @hash 0x621873ECE1178967
+--- @param entity Entity
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param zPos number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
+--- @param clearArea boolean
+--- @return void
+function SetEntityCoords_2(entity, xPos, yPos, zPos, xAxis, yAxis, zAxis, clearArea) end
+
+    
+--- ```
 --- Note that the third parameter(denoted as z) is "up and down" with positive ment.  
 --- ```
 ---
@@ -2243,39 +2200,82 @@ function SetEntityTrafficlightOverride(entity, state) end
 function SetEntityVelocity(entity, x, y, z) end
 
     
---- ```
---- w is the correct parameter name!  
---- ```
+--- SetEntityMotionBlur
 ---
---- @hash 0x77B21BE7AC540F07
+--- @hash 0x295D82A8559F9150
 --- @param entity Entity
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param w number (float)
+--- @param toggle boolean
 --- @return void
-function SetEntityQuaternion(entity, x, y, z, w) end
-
-    
---- SetEntityOnlyDamagedByRelationshipGroup
----
---- @hash 0x7022BD828FA0B082
---- @param entity Entity
---- @param p1 boolean
---- @param relationshipHash Hash
---- @return void
-function SetEntityOnlyDamagedByRelationshipGroup(entity, p1, relationshipHash) end
+function SetEntityMotionBlur(entity, toggle) end
 
     
 --- ```
---- p1 sync task id?  
+--- Calling this function disables collision between two entities.
+--- The importance of the order for entity1 and entity2 is unclear.
+--- The third parameter, `thisFrame`, decides whether the collision is to be disabled until it is turned back on, or if it's just this frame.
 --- ```
 ---
---- @hash 0x43D3807C077261E3
+--- @hash 0xA53ED5520C07654A
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @param thisFrameOnly boolean
+--- @return void
+function SetEntityNoCollisionEntity(entity1, entity2, thisFrameOnly) end
+
+    
+--- ```
+--- This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.  
+--- ```
+---
+--- @hash 0x3AE22DEB5BA5A3E6
+--- @param object table (Object*)
+--- @return void
+function SetObjectAsNoLongerNeeded(object) end
+
+    
+--- ```
+--- what does this native do?  
+--- bool IsEntitySomething(Entity entity)  
+--- {  
+--- 	auto addr = getScriptHandleBaseAddress(entity);  
+--- 	printf("addr: 0x%X \n", addr);  
+--- 	if (addr)  
+--- 	{  
+--- DWORD flag = *(DWORD *)(addr + 0x48D);  
+--- printf("flag: 0x%X \n", flag);  
+--- return ((flag & (1 << 3)) != 0) || ((flag & (1 << 30)) != 0);  
+--- 	}  
+--- 	return false;  
+--- }  
+--- wot ?  
+--- ```
+---
+--- @hash 0x3910051CCECDB00C
 --- @param entity Entity
+--- @param toggle boolean
+--- @return void
+function SetEntitySomething(entity, toggle) end
+
+    
+--- Set the heading of an entity in degrees also known as "Yaw".
+--- @usage SetEntityHeading(PlayerPedId(), 40.0
+--- @hash 0x8E2530AA8ADA980E
+--- @param entity Entity
+--- @param heading number (float)
+--- @return void
+function SetEntityHeading(entity, heading) end
+
+    
+--- StopSynchronizedMapEntityAnim
+---
+--- @hash 0x11E79CAB7183B6F5
+--- @param p0 number (float)
 --- @param p1 number (float)
---- @param p2 boolean
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 any
+--- @param p5 number (float)
 --- @return boolean
-function StopSynchronizedEntityAnim(entity, p1, p2) end
+function StopSynchronizedMapEntityAnim(p0, p1, p2, p3, p4, p5) end
 
     

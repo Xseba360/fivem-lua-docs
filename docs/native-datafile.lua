@@ -1,31 +1,4 @@
 
---- DatadictGetBool
----
---- @hash 0x1186940ED72FFEEC
---- @param objectData any
---- @param key string (char*)
---- @return boolean
-function DatadictGetBool(objectData, key) end
-
-    
---- DataarrayGetString
----
---- @hash 0xD3F2FFEB8D836F52
---- @param arrayData any
---- @param arrayIndex number (int)
---- @return string (char*)
-function DataarrayGetString(arrayData, arrayIndex) end
-
-    
---- DataarrayGetBool
----
---- @hash 0x50C1B2874E50C114
---- @param arrayData any
---- @param arrayIndex number (int)
---- @return boolean
-function DataarrayGetBool(arrayData, arrayIndex) end
-
-    
 --- DataarrayAddBool
 ---
 --- @hash 0xF8B0F5A43E928C76
@@ -46,6 +19,62 @@ function DataarrayAddBool(arrayData, value) end
 --- 7 = Array  
 --- ```
 ---
+--- @hash 0x031C55ED33227371
+--- @param objectData any
+--- @param key string (char*)
+--- @return number (int)
+function DatadictGetType(objectData, key) end
+
+    
+--- DatadictSetFloat
+---
+--- @hash 0xC27E1CC2D795105E
+--- @param objectData any
+--- @param key string (char*)
+--- @param value number (float)
+--- @return void
+function DatadictSetFloat(objectData, key, value) end
+
+    
+--- DatadictSetInt
+---
+--- @hash 0xE7E035450A7948D5
+--- @param objectData any
+--- @param key string (char*)
+--- @param value number (int)
+--- @return void
+function DatadictSetInt(objectData, key, value) end
+
+    
+--- DataarrayGetBool
+---
+--- @hash 0x50C1B2874E50C114
+--- @param arrayData any
+--- @param arrayIndex number (int)
+--- @return boolean
+function DataarrayGetBool(arrayData, arrayIndex) end
+
+    
+--- DatadictGetDict
+---
+--- @hash 0xB6B9DDC412FCEEE2
+--- @param objectData any
+--- @param key string (char*)
+--- @return any
+function DatadictGetDict(objectData, key) end
+
+    
+--- ```
+--- Types:  
+--- 1 = Boolean  
+--- 2 = Integer  
+--- 3 = Float  
+--- 4 = String  
+--- 5 = Vector3  
+--- 6 = Object  
+--- 7 = Array  
+--- ```
+---
 --- @hash 0x3A0014ADB172A3C5
 --- @param arrayData any
 --- @param arrayIndex number (int)
@@ -53,31 +82,29 @@ function DataarrayAddBool(arrayData, value) end
 function DataarrayGetType(arrayData, arrayIndex) end
 
     
---- DatadictGetFloat
+--- DatafileUpdateSaveToCloud
 ---
---- @hash 0x06610343E73B9727
+--- @hash 0x4DFDD9EB705F8140
+--- @param p0 table (BOOL*)
+--- @return boolean
+function DatafileUpdateSaveToCloud(p0) end
+
+    
+--- DatadictGetArray
+---
+--- @hash 0x7A983AA9DA2659ED
 --- @param objectData any
 --- @param key string (char*)
---- @return number (float)
-function DatadictGetFloat(objectData, key) end
+--- @return any
+function DatadictGetArray(objectData, key) end
 
     
---- DataarrayAddString
+--- DataarrayGetCount
 ---
---- @hash 0x2F0661C155AEEEAA
+--- @hash 0x065DB281590CEA2D
 --- @param arrayData any
---- @param value string (char*)
---- @return void
-function DataarrayAddString(arrayData, value) end
-
-    
---- DataarrayAddInt
----
---- @hash 0xCABDB751D86FE93B
---- @param arrayData any
---- @param value number (int)
---- @return void
-function DataarrayAddInt(arrayData, value) end
+--- @return number (int)
+function DataarrayGetCount(arrayData) end
 
     
 --- DataarrayGetInt
@@ -89,6 +116,115 @@ function DataarrayAddInt(arrayData, value) end
 function DataarrayGetInt(arrayData, arrayIndex) end
 
     
+--- DataarrayAddFloat
+---
+--- @hash 0x57A995FD75D37F56
+--- @param arrayData any
+--- @param value number (float)
+--- @return void
+function DataarrayAddFloat(arrayData, value) end
+
+    
+--- DataarrayAddDict
+---
+--- @hash 0x6889498B3E19C797
+--- @param arrayData any
+--- @return any
+function DataarrayAddDict(arrayData) end
+
+    
+--- DatadictCreateArray
+---
+--- @hash 0x5B11728527CA6E5F
+--- @param objectData any
+--- @param key string (char*)
+--- @return any
+function DatadictCreateArray(objectData, key) end
+
+    
+--- DataarrayGetDict
+---
+--- @hash 0x8B5FADCC4E3A145F
+--- @param arrayData any
+--- @param arrayIndex number (int)
+--- @return any
+function DataarrayGetDict(arrayData, arrayIndex) end
+
+    
+--- DatadictSetString
+---
+--- @hash 0x8FF3847DADD8E30C
+--- @param objectData any
+--- @param key string (char*)
+--- @param value string (char*)
+--- @return void
+function DatadictSetString(objectData, key, value) end
+
+    
+--- DataarrayAddString
+---
+--- @hash 0x2F0661C155AEEEAA
+--- @param arrayData any
+--- @param value string (char*)
+--- @return void
+function DataarrayAddString(arrayData, value) end
+
+    
+--- DatafileDeleteRequestedFile
+---
+--- @hash 0x8F5EA1C01D65A100
+--- @param p0 any
+--- @return boolean
+function DatafileDeleteRequestedFile(p0) end
+
+    
+--- DatadictGetVector
+---
+--- @hash 0x46CD3CB66E0825CC
+--- @param objectData any
+--- @param key string (char*)
+--- @return Vector3
+function DatadictGetVector(objectData, key) end
+
+    
+--- DatadictSetBool
+---
+--- @hash 0x35124302A556A325
+--- @param objectData any
+--- @param key string (char*)
+--- @param value boolean
+--- @return void
+function DatadictSetBool(objectData, key, value) end
+
+    
+--- DatadictGetString
+---
+--- @hash 0x3D2FD9E763B24472
+--- @param objectData any
+--- @param key string (char*)
+--- @return string (char*)
+function DatadictGetString(objectData, key) end
+
+    
+--- DataarrayAddInt
+---
+--- @hash 0xCABDB751D86FE93B
+--- @param arrayData any
+--- @param value number (int)
+--- @return void
+function DataarrayAddInt(arrayData, value) end
+
+    
+--- ```
+--- Adds the given request ID to the watch list.
+--- ```
+---
+--- @hash 0xAD6875BBC0FC899C
+--- @param id number (int)
+--- @return void
+function DatafileWatchRequestId(id) end
+
+    
 --- DatafileDelete
 ---
 --- @hash 0x9AB9C1CFC8862DFB
@@ -97,29 +233,12 @@ function DataarrayGetInt(arrayData, arrayIndex) end
 function DatafileDelete() end
 
     
---- DatafileSelectUgcStats
+--- DatafileStoreMissionHeader
 ---
---- @hash 0x9CB0BFA7A9342C3D
---- @param p0 number (int)
---- @param p1 boolean
---- @return boolean
-function DatafileSelectUgcStats(p0, p1) end
-
-    
---- DatafileCreate
----
---- @hash 0xD27058A1CA2B13EE
+--- @hash 0x2ED61456317B8178
 ---
 --- @return void
-function DatafileCreate() end
-
-    
---- DatafileSelectUgcPlayerData
----
---- @hash 0x52818819057F2B40
---- @param p0 number (int)
---- @return boolean
-function DatafileSelectUgcPlayerData(p0) end
+function DatafileStoreMissionHeader() end
 
     
 --- DatafileIsValidRequestId
@@ -130,13 +249,30 @@ function DatafileSelectUgcPlayerData(p0) end
 function DatafileIsValidRequestId(index) end
 
     
---- DataarrayGetFloat
+--- DatadictGetFloat
 ---
---- @hash 0xC0C527B525D7CFB5
+--- @hash 0x06610343E73B9727
+--- @param objectData any
+--- @param key string (char*)
+--- @return number (float)
+function DatadictGetFloat(objectData, key) end
+
+    
+--- DatafileCreate
+---
+--- @hash 0xD27058A1CA2B13EE
+---
+--- @return void
+function DatafileCreate() end
+
+    
+--- DataarrayGetVector
+---
+--- @hash 0x8D2064E5B64A628A
 --- @param arrayData any
 --- @param arrayIndex number (int)
---- @return number (float)
-function DataarrayGetFloat(arrayData, arrayIndex) end
+--- @return Vector3
+function DataarrayGetVector(arrayData, arrayIndex) end
 
     
 --- ```
@@ -168,135 +304,65 @@ function DataarrayGetFloat(arrayData, arrayIndex) end
 function DatafileStartSaveToCloud(filename) end
 
     
---- DataarrayGetVector
----
---- @hash 0x8D2064E5B64A628A
---- @param arrayData any
---- @param arrayIndex number (int)
---- @return Vector3
-function DataarrayGetVector(arrayData, arrayIndex) end
-
-    
---- DatadictSetInt
----
---- @hash 0xE7E035450A7948D5
---- @param objectData any
---- @param key string (char*)
---- @param value number (int)
---- @return void
-function DatadictSetInt(objectData, key, value) end
-
-    
---- DatadictGetString
----
---- @hash 0x3D2FD9E763B24472
---- @param objectData any
---- @param key string (char*)
---- @return string (char*)
-function DatadictGetString(objectData, key) end
-
-    
---- DataarrayGetDict
----
---- @hash 0x8B5FADCC4E3A145F
---- @param arrayData any
---- @param arrayIndex number (int)
---- @return any
-function DataarrayGetDict(arrayData, arrayIndex) end
-
-    
---- DatadictGetDict
----
---- @hash 0xB6B9DDC412FCEEE2
---- @param objectData any
---- @param key string (char*)
---- @return any
-function DatadictGetDict(objectData, key) end
-
-    
---- DatafileGetFileDict
----
---- @hash 0x906B778CA1DC72B6
----
---- @return string (char*)
-function DatafileGetFileDict() end
-
-    
---- DatafileHasLoadedFileData
----
---- @hash 0x15FF52B809DB2353
---- @param p0 any
---- @return boolean
-function DatafileHasLoadedFileData(p0) end
-
-    
---- DatadictGetArray
----
---- @hash 0x7A983AA9DA2659ED
---- @param objectData any
---- @param key string (char*)
---- @return any
-function DatadictGetArray(objectData, key) end
-
-    
---- DatadictCreateArray
----
---- @hash 0x5B11728527CA6E5F
---- @param objectData any
---- @param key string (char*)
---- @return any
-function DatadictCreateArray(objectData, key) end
-
-    
---- DatafileClearWatchList
----
---- @hash 0x6CC86E78358D5119
----
---- @return void
-function DatafileClearWatchList() end
-
-    
---- DataarrayAddVector
----
---- @hash 0x407F8D034F70F0C2
---- @param arrayData any
---- @param valueX number (float)
---- @param valueY number (float)
---- @param valueZ number (float)
---- @return void
-function DataarrayAddVector(arrayData, valueX, valueY, valueZ) end
-
-    
 --- ```
---- Types:  
---- 1 = Boolean  
---- 2 = Integer  
---- 3 = Float  
---- 4 = String  
---- 5 = Vector3  
---- 6 = Object  
---- 7 = Array  
+--- NOTE: 'p2' might be some kind of array.  
 --- ```
 ---
---- @hash 0x031C55ED33227371
---- @param objectData any
---- @param key string (char*)
---- @return number (int)
-function DatadictGetType(objectData, key) end
-
-    
---- ```
---- NOTE: 'p1' might be some kind of array.  
---- ```
----
---- @hash 0xA5EFC3E847D60507
+--- @hash 0x4645DE9980999E93
+--- @param contentId string (char*)
 --- @param contentName string (char*)
 --- @param description string (char*)
 --- @param tagsCsv string (char*)
 --- @param contentTypeName string (char*)
---- @param publish boolean
 --- @return boolean
-function UgcCreateMission(contentName, description, tagsCsv, contentTypeName, publish) end
+function UgcUpdateMission(contentId, contentName, description, tagsCsv, contentTypeName) end
+
+    
+--- DatadictCreateDict
+---
+--- @hash 0xA358F56F10732EE1
+--- @param objectData any
+--- @param key string (char*)
+--- @return any
+function DatadictCreateDict(objectData, key) end
+
+    
+--- DatafileHasValidFileData
+---
+--- @hash 0xF8CC1EBE0B62E29F
+--- @param p0 any
+--- @return boolean
+function DatafileHasValidFileData(p0) end
+
+    
+--- DataarrayGetFloat
+---
+--- @hash 0xC0C527B525D7CFB5
+--- @param arrayData any
+--- @param arrayIndex number (int)
+--- @return number (float)
+function DataarrayGetFloat(arrayData, arrayIndex) end
+
+    
+--- DataarrayGetString
+---
+--- @hash 0xD3F2FFEB8D836F52
+--- @param arrayData any
+--- @param arrayIndex number (int)
+--- @return string (char*)
+function DataarrayGetString(arrayData, arrayIndex) end
+
+    
+--- DatadictSetVector
+---
+--- @hash 0x4CD49B76338C7DEE
+--- @param objectData any
+--- @param key string (char*)
+--- @param valueX number (float)
+--- @param valueY number (float)
+--- @param valueZ number (float)
+--- @return void
+function DatadictSetVector(objectData, key, valueX, valueY, valueZ) end
 
     
 --- DatadictGetInt
@@ -308,24 +374,37 @@ function UgcCreateMission(contentName, description, tagsCsv, contentTypeName, pu
 function DatadictGetInt(objectData, key) end
 
     
---- DatadictSetFloat
+--- DatafileClearWatchList
 ---
---- @hash 0xC27E1CC2D795105E
---- @param objectData any
---- @param key string (char*)
---- @param value number (float)
+--- @hash 0x6CC86E78358D5119
+---
 --- @return void
-function DatadictSetFloat(objectData, key, value) end
+function DatafileClearWatchList() end
 
     
---- DatadictSetBool
+--- DatadictGetBool
 ---
---- @hash 0x35124302A556A325
+--- @hash 0x1186940ED72FFEEC
 --- @param objectData any
 --- @param key string (char*)
---- @param value boolean
+--- @return boolean
+function DatadictGetBool(objectData, key) end
+
+    
+--- DatafileFlushMissionHeader
+---
+--- @hash 0xC55854C7D7274882
+---
 --- @return void
-function DatadictSetBool(objectData, key, value) end
+function DatafileFlushMissionHeader() end
+
+    
+--- DatafileSelectCreatorStats
+---
+--- @hash 0x01095C95CD46B624
+--- @param p0 number (int)
+--- @return boolean
+function DatafileSelectCreatorStats(p0) end
 
     
 --- ```
@@ -341,116 +420,12 @@ function DatadictSetBool(objectData, key, value) end
 function DatafileLoadOfflineUgc(filename) end
 
     
---- DatadictSetVector
+--- DatafileGetFileDict
 ---
---- @hash 0x4CD49B76338C7DEE
---- @param objectData any
---- @param key string (char*)
---- @param valueX number (float)
---- @param valueY number (float)
---- @param valueZ number (float)
---- @return void
-function DatadictSetVector(objectData, key, valueX, valueY, valueZ) end
-
-    
---- DatafileSelectCreatorStats
+--- @hash 0x906B778CA1DC72B6
 ---
---- @hash 0x01095C95CD46B624
---- @param p0 number (int)
---- @return boolean
-function DatafileSelectCreatorStats(p0) end
-
-    
---- DatafileDeleteRequestedFile
----
---- @hash 0x8F5EA1C01D65A100
---- @param p0 any
---- @return boolean
-function DatafileDeleteRequestedFile(p0) end
-
-    
---- DatafileStoreMissionHeader
----
---- @hash 0x2ED61456317B8178
----
---- @return void
-function DatafileStoreMissionHeader() end
-
-    
---- DataarrayAddDict
----
---- @hash 0x6889498B3E19C797
---- @param arrayData any
---- @return any
-function DataarrayAddDict(arrayData) end
-
-    
---- DatafileUpdateSaveToCloud
----
---- @hash 0x4DFDD9EB705F8140
---- @param p0 table (BOOL*)
---- @return boolean
-function DatafileUpdateSaveToCloud(p0) end
-
-    
---- DatafileHasValidFileData
----
---- @hash 0xF8CC1EBE0B62E29F
---- @param p0 any
---- @return boolean
-function DatafileHasValidFileData(p0) end
-
-    
---- DatafileSelectUgcData
----
---- @hash 0xA69AC4ADE82B57A4
---- @param p0 number (int)
---- @return boolean
-function DatafileSelectUgcData(p0) end
-
-    
---- DatadictCreateDict
----
---- @hash 0xA358F56F10732EE1
---- @param objectData any
---- @param key string (char*)
---- @return any
-function DatadictCreateDict(objectData, key) end
-
-    
---- ```
---- Adds the given request ID to the watch list.
---- ```
----
---- @hash 0xAD6875BBC0FC899C
---- @param id number (int)
---- @return void
-function DatafileWatchRequestId(id) end
-
-    
---- DatafileFlushMissionHeader
----
---- @hash 0xC55854C7D7274882
----
---- @return void
-function DatafileFlushMissionHeader() end
-
-    
---- DataarrayGetCount
----
---- @hash 0x065DB281590CEA2D
---- @param arrayData any
---- @return number (int)
-function DataarrayGetCount(arrayData) end
-
-    
---- DatadictGetVector
----
---- @hash 0x46CD3CB66E0825CC
---- @param objectData any
---- @param key string (char*)
---- @return Vector3
-function DatadictGetVector(objectData, key) end
+--- @return string (char*)
+function DatafileGetFileDict() end
 
     
 --- ```
@@ -480,37 +455,34 @@ function DatadictGetVector(objectData, key) end
 function DatafileIsSavePending() end
 
     
---- DatadictSetString
+--- DatafileSelectUgcPlayerData
 ---
---- @hash 0x8FF3847DADD8E30C
---- @param objectData any
---- @param key string (char*)
---- @param value string (char*)
---- @return void
-function DatadictSetString(objectData, key, value) end
+--- @hash 0x52818819057F2B40
+--- @param p0 number (int)
+--- @return boolean
+function DatafileSelectUgcPlayerData(p0) end
 
     
---- DataarrayAddFloat
+--- DatafileHasLoadedFileData
 ---
---- @hash 0x57A995FD75D37F56
---- @param arrayData any
---- @param value number (float)
---- @return void
-function DataarrayAddFloat(arrayData, value) end
+--- @hash 0x15FF52B809DB2353
+--- @param p0 any
+--- @return boolean
+function DatafileHasLoadedFileData(p0) end
 
     
 --- ```
---- NOTE: 'p2' might be some kind of array.  
+--- NOTE: 'p1' might be some kind of array.  
 --- ```
 ---
---- @hash 0x4645DE9980999E93
---- @param contentId string (char*)
+--- @hash 0xA5EFC3E847D60507
 --- @param contentName string (char*)
 --- @param description string (char*)
 --- @param tagsCsv string (char*)
 --- @param contentTypeName string (char*)
+--- @param publish boolean
 --- @return boolean
-function UgcUpdateMission(contentId, contentName, description, tagsCsv, contentTypeName) end
+function UgcCreateMission(contentName, description, tagsCsv, contentTypeName, publish) end
 
     
 --- UgcSetPlayerData
@@ -531,6 +503,17 @@ function UgcSetPlayerData(contentId, rating, contentTypeName) end
 function DatafileSelectActiveFile(p0) end
 
     
+--- DataarrayAddVector
+---
+--- @hash 0x407F8D034F70F0C2
+--- @param arrayData any
+--- @param valueX number (float)
+--- @param valueY number (float)
+--- @param valueZ number (float)
+--- @return void
+function DataarrayAddVector(arrayData, valueX, valueY, valueZ) end
+
+    
 --- ```
 --- NativeDB Parameter 1: int dataCount
 --- ```
@@ -547,6 +530,15 @@ function DatafileSelectActiveFile(p0) end
 function UgcCreateContent(data, dataCount, contentName, description, tagsCsv, contentTypeName, publish) end
 
     
+--- DatafileSelectUgcStats
+---
+--- @hash 0x9CB0BFA7A9342C3D
+--- @param p0 number (int)
+--- @param p1 boolean
+--- @return boolean
+function DatafileSelectUgcStats(p0, p1) end
+
+    
 --- ```
 --- NativeDB Parameter 2: int dataCount
 --- ```
@@ -561,5 +553,13 @@ function UgcCreateContent(data, dataCount, contentName, description, tagsCsv, co
 --- @param contentTypeName string (char*)
 --- @return boolean
 function UgcUpdateContent(contentId, data, dataCount, contentName, description, tagsCsv, contentTypeName) end
+
+    
+--- DatafileSelectUgcData
+---
+--- @hash 0xA69AC4ADE82B57A4
+--- @param p0 number (int)
+--- @return boolean
+function DatafileSelectUgcData(p0) end
 
     

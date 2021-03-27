@@ -7,21 +7,13 @@
 function CanPlayerStartCommerceSession(playerSrc) end
 
     
---- Deletes the specified entity.
+--- Requests whether or not the player owns the specified SKU.
 ---
---- @hash 0xFAA3D236
---- @param entity Entity
---- @return void
-function DeleteEntity(entity) end
-
-    
---- DropPlayer
----
---- @hash 0xBA0613E1
+--- @hash 0x167ABA27
 --- @param playerSrc string (char*)
---- @param reason string (char*)
---- @return void
-function DropPlayer(playerSrc, reason) end
+--- @param skuId number (int)
+--- @return boolean
+function DoesPlayerOwnSku(playerSrc, skuId) end
 
     
 --- Requests whether or not the player owns the specified package.
@@ -33,29 +25,20 @@ function DropPlayer(playerSrc, reason) end
 function DoesPlayerOwnSkuExt(playerSrc, skuId) end
 
     
+--- Deletes the specified entity.
+---
+--- @hash 0xFAA3D236
+--- @param entity Entity
+--- @return void
+function DeleteEntity(entity) end
+
+    
 --- DoesEntityExist
 ---
 --- @hash 0x3AC90869
 --- @param entity table (Object)
 --- @return boolean
 function DoesEntityExist(entity) end
-
-    
---- Requests whether or not the player owns the specified SKU.
----
---- @hash 0x167ABA27
---- @param playerSrc string (char*)
---- @param skuId number (int)
---- @return boolean
-function DoesPlayerOwnSku(playerSrc, skuId) end
-
-    
---- EnableEnhancedHostSupport
----
---- @hash 0xF97B1C93
---- @param enabled boolean
---- @return void
-function EnableEnhancedHostSupport(enabled) end
 
     
 --- Internal function for ensuring an entity has a state bag.
@@ -66,38 +49,29 @@ function EnableEnhancedHostSupport(enabled) end
 function EnsureEntityStateBag(entity) end
 
     
---- GetAirDragMultiplierForPlayersVehicle
+--- EnableEnhancedHostSupport
 ---
---- @hash 0x62FC38D0
+--- @hash 0xF97B1C93
+--- @param enabled boolean
+--- @return void
+function EnableEnhancedHostSupport(enabled) end
+
+    
+--- DropPlayer
+---
+--- @hash 0xBA0613E1
 --- @param playerSrc string (char*)
---- @return number (float)
-function GetAirDragMultiplierForPlayersVehicle(playerSrc) end
+--- @param reason string (char*)
+--- @return void
+function DropPlayer(playerSrc, reason) end
 
     
---- Returns all vehicle handles known to the server.
---- The data returned adheres to the following layout:
---- 
---- ```
---- [127, 42, 13, 37]
---- ```
+--- Returns the current console output buffer.
 ---
---- @hash 0x332169F5
+--- @hash 0xE57429FA
 ---
---- @return table (object)
-function GetAllVehicles() end
-
-    
---- Returns all object handles known to the server.
---- The data returned adheres to the following layout:
---- 
---- ```
---- [127, 42, 13, 37]
---- ```
----
---- @hash 0x6886C3FE
----
---- @return table (object)
-function GetAllObjects() end
+--- @return string (char*)
+function GetConsoleBuffer() end
 
     
 --- Returns all peds handles known to the server.
@@ -113,6 +87,19 @@ function GetAllObjects() end
 function GetAllPeds() end
 
     
+--- Returns all object handles known to the server.
+--- The data returned adheres to the following layout:
+--- 
+--- ```
+--- [127, 42, 13, 37]
+--- ```
+---
+--- @hash 0x6886C3FE
+---
+--- @return table (object)
+function GetAllObjects() end
+
+    
 --- FlagServerAsPrivate
 ---
 --- @hash 0x13B6855D
@@ -121,12 +108,41 @@ function GetAllPeds() end
 function FlagServerAsPrivate(private_) end
 
     
---- Currently it only works with peds.
+--- GetAirDragMultiplierForPlayersVehicle
 ---
---- @hash 0xC7AE6AA1
+--- @hash 0x62FC38D0
+--- @param playerSrc string (char*)
+--- @return number (float)
+function GetAirDragMultiplierForPlayersVehicle(playerSrc) end
+
+    
+--- GetEntityHeading
+---
+--- @hash 0x972CC383
 --- @param entity Entity
---- @return number (int)
-function GetEntityMaxHealth(entity) end
+--- @return number (float)
+function GetEntityHeading(entity) end
+
+    
+--- Returns all vehicle handles known to the server.
+--- The data returned adheres to the following layout:
+--- 
+--- ```
+--- [127, 42, 13, 37]
+--- ```
+---
+--- @hash 0x332169F5
+---
+--- @return table (object)
+function GetAllVehicles() end
+
+    
+--- GetEntityRotation
+---
+--- @hash 0x8FF45B04
+--- @param entity Entity
+--- @return Vector3
+function GetEntityRotation(entity) end
 
     
 --- Gets the current coordinates for a specified entity. This native is used server side when using OneSync. See <a href="#_0x3FEF770D40960D5A" >GET_ENTITY_COORDS</a> for client side.
@@ -146,6 +162,30 @@ function GetEntityMaxHealth(entity) end
 function GetEntityCoords(entity) end
 
     
+--- GetEntityRotationVelocity
+---
+--- @hash 0x9BF8A73F
+--- @param entity Entity
+--- @return Vector3
+function GetEntityRotationVelocity(entity) end
+
+    
+--- This native gets an entity's population type.
+---
+--- @hash 0xFC30DDFF
+--- @param entity Entity
+--- @return number (int)
+function GetEntityPopulationType(entity) end
+
+    
+--- Gets the current game timer in milliseconds.
+---
+--- @hash 0xA4EA0691
+---
+--- @return number (long)
+function GetGameTimer() end
+
+    
 --- Currently it only works with peds.
 ---
 --- @hash 0x8E3222B7
@@ -154,12 +194,22 @@ function GetEntityCoords(entity) end
 function GetEntityHealth(entity) end
 
     
---- Returns the current console output buffer.
+--- GetEntityType
 ---
---- @hash 0xE57429FA
+--- @hash 0xB1BD08D
+--- @param entity Entity
+--- @return number (int)
+function GetEntityType(entity) end
+
+    
+--- Gets the routing bucket for the specified entity.
+--- 
+--- Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
 ---
---- @return string (char*)
-function GetConsoleBuffer() end
+--- @hash 0xED4B0486
+--- @param entity Entity
+--- @return number (int)
+function GetEntityRoutingBucket(entity) end
 
     
 --- GetEntityModel
@@ -170,12 +220,28 @@ function GetConsoleBuffer() end
 function GetEntityModel(entity) end
 
     
---- GetEntityHeading
+--- Currently it only works with peds.
 ---
---- @hash 0x972CC383
+--- @hash 0xC7AE6AA1
 --- @param entity Entity
---- @return number (float)
-function GetEntityHeading(entity) end
+--- @return number (int)
+function GetEntityMaxHealth(entity) end
+
+    
+--- GetEntityVelocity
+---
+--- @hash 0xC14C9B6B
+--- @param entity Entity
+--- @return Vector3
+function GetEntityVelocity(entity) end
+
+    
+--- This native converts the passed string to a hash.
+---
+--- @hash 0x98EFF6F1
+--- @param model string (char*)
+--- @return Hash
+function GetHashKey(model) end
 
     
 --- GetEntityScript
@@ -194,94 +260,12 @@ function GetEntityScript(entity) end
 function GetHostId() end
 
     
---- GetEntityRotation
----
---- @hash 0x8FF45B04
---- @param entity Entity
---- @return Vector3
-function GetEntityRotation(entity) end
-
-    
---- GetEntityVelocity
----
---- @hash 0xC14C9B6B
---- @param entity Entity
---- @return Vector3
-function GetEntityVelocity(entity) end
-
-    
---- GetEntityType
----
---- @hash 0xB1BD08D
---- @param entity Entity
---- @return number (int)
-function GetEntityType(entity) end
-
-    
---- This native gets an entity's population type.
----
---- @hash 0xFC30DDFF
---- @param entity Entity
---- @return number (int)
-function GetEntityPopulationType(entity) end
-
-    
---- This native converts the passed string to a hash.
----
---- @hash 0x98EFF6F1
---- @param model string (char*)
---- @return Hash
-function GetHashKey(model) end
-
-    
---- Gets the current game timer in milliseconds.
----
---- @hash 0xA4EA0691
----
---- @return number (long)
-function GetGameTimer() end
-
-    
---- Gets the routing bucket for the specified entity.
---- 
---- Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
----
---- @hash 0xED4B0486
---- @param entity Entity
---- @return number (int)
-function GetEntityRoutingBucket(entity) end
-
-    
---- GetEntityRotationVelocity
----
---- @hash 0x9BF8A73F
---- @param entity Entity
---- @return Vector3
-function GetEntityRotationVelocity(entity) end
-
-    
---- GetIsVehiclePrimaryColourCustom
----
---- @hash 0xD7EC8760
---- @param vehicle Vehicle
---- @return boolean
-function GetIsVehiclePrimaryColourCustom(vehicle) end
-
-    
 --- GetIsVehicleSecondaryColourCustom
 ---
 --- @hash 0x288AD228
 --- @param vehicle Vehicle
 --- @return boolean
 function GetIsVehicleSecondaryColourCustom(vehicle) end
-
-    
---- GetIsVehicleEngineRunning
----
---- @hash 0x7DC6D022
---- @param vehicle Vehicle
---- @return boolean
-function GetIsVehicleEngineRunning(vehicle) end
 
     
 --- GetNumPlayerIdentifiers
@@ -292,20 +276,12 @@ function GetIsVehicleEngineRunning(vehicle) end
 function GetNumPlayerIdentifiers(playerSrc) end
 
     
---- GetNumPlayerIndices
+--- GetIsVehicleEngineRunning
 ---
---- @hash 0x63D13184
----
---- @return number (int)
-function GetNumPlayerIndices() end
-
-    
---- GetPedDesiredHeading
----
---- @hash 0xC182F76E
---- @param ped Ped
---- @return number (float)
-function GetPedDesiredHeading(ped) end
+--- @hash 0x7DC6D022
+--- @param vehicle Vehicle
+--- @return boolean
+function GetIsVehicleEngineRunning(vehicle) end
 
     
 --- GetPasswordHash
@@ -316,85 +292,36 @@ function GetPedDesiredHeading(ped) end
 function GetPasswordHash(password) end
 
     
---- GetPedMaxHealth
+--- GetIsVehiclePrimaryColourCustom
 ---
---- @hash 0xA45B6C8D
---- @param ped Ped
---- @return number (int)
-function GetPedMaxHealth(ped) end
-
-    
---- GetPedCauseOfDeath
----
---- @hash 0x63458C27
---- @param ped Ped
---- @return Hash
-function GetPedCauseOfDeath(ped) end
-
-    
---- GetPlayerLastMsg
----
---- @hash 0x427E8E6A
---- @param playerSrc string (char*)
---- @return number (int)
-function GetPlayerLastMsg(playerSrc) end
-
-    
---- GetPlayerIdentifier
----
---- @hash 0x7302DBCF
---- @param playerSrc string (char*)
---- @param identifier number (int)
---- @return string (char*)
-function GetPlayerIdentifier(playerSrc, identifier) end
-
-    
---- GetPlayerFromIndex
----
---- @hash 0xC8A9CE08
---- @param index number (int)
---- @return string (char*)
-function GetPlayerFromIndex(index) end
-
-    
---- GetPlayerInvincible
----
---- @hash 0x680C90EE
---- @param playerSrc string (char*)
+--- @hash 0xD7EC8760
+--- @param vehicle Vehicle
 --- @return boolean
-function GetPlayerInvincible(playerSrc) end
+function GetIsVehiclePrimaryColourCustom(vehicle) end
 
     
---- GetPlayerMaxHealth
+--- Gets the current camera rotation for a specified player. This native is used server side when using OneSync.
 ---
---- @hash 0x8154E470
+--- @hash 0x433C765D
+--- @param playerSrc string (char*)
+--- @return Vector3
+function GetPlayerCameraRotation(playerSrc) end
+
+    
+--- GetNumPlayerTokens
+---
+--- @hash 0x619E4A3D
 --- @param playerSrc string (char*)
 --- @return number (int)
-function GetPlayerMaxHealth(playerSrc) end
+function GetNumPlayerTokens(playerSrc) end
 
     
---- GetPlayerEndpoint
+--- GetPedDesiredHeading
 ---
---- @hash 0xFEE404F9
---- @param playerSrc string (char*)
---- @return string (char*)
-function GetPlayerEndpoint(playerSrc) end
-
-    
---- GetPlayerName
----
---- @hash 0x406B4B20
---- @param playerSrc string (char*)
---- @return string (char*)
-function GetPlayerName(playerSrc) end
-
-    
---- GetPlayerGuid
----
---- @hash 0xE52D9680
---- @param playerSrc string (char*)
---- @return string (char*)
-function GetPlayerGuid(playerSrc) end
+--- @hash 0xC182F76E
+--- @param ped Ped
+--- @return number (float)
+function GetPedDesiredHeading(ped) end
 
     
 --- GetPedArmour
@@ -405,22 +332,20 @@ function GetPlayerGuid(playerSrc) end
 function GetPedArmour(ped) end
 
     
---- Gets the routing bucket for the specified player.
---- 
---- Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
+--- GetNumPlayerIndices
 ---
---- @hash 0x52441C34
---- @param playerSrc string (char*)
+--- @hash 0x63D13184
+---
 --- @return number (int)
-function GetPlayerRoutingBucket(playerSrc) end
+function GetNumPlayerIndices() end
 
     
---- GetPlayerPing
+--- GetPlayerEndpoint
 ---
---- @hash 0xFF1290D4
+--- @hash 0xFEE404F9
 --- @param playerSrc string (char*)
---- @return number (int)
-function GetPlayerPing(playerSrc) end
+--- @return string (char*)
+function GetPlayerEndpoint(playerSrc) end
 
     
 --- GetPlayerMaxArmour
@@ -431,22 +356,76 @@ function GetPlayerPing(playerSrc) end
 function GetPlayerMaxArmour(playerSrc) end
 
     
---- ```
---- Returns given players wanted level server-side.
---- ```
+--- GetPedCauseOfDeath
 ---
---- @hash 0xBDCDD163
---- @param playerSrc string (char*)
---- @return number (int)
-function GetPlayerWantedLevel(playerSrc) end
+--- @hash 0x63458C27
+--- @param ped Ped
+--- @return Hash
+function GetPedCauseOfDeath(ped) end
 
     
---- GetPlayerPed
+--- GetPlayerMaxHealth
 ---
---- @hash 0x6E31E993
+--- @hash 0x8154E470
 --- @param playerSrc string (char*)
---- @return Entity
-function GetPlayerPed(playerSrc) end
+--- @return number (int)
+function GetPlayerMaxHealth(playerSrc) end
+
+    
+--- GetPedMaxHealth
+---
+--- @hash 0xA45B6C8D
+--- @param ped Ped
+--- @return number (int)
+function GetPedMaxHealth(ped) end
+
+    
+--- GetPlayerLastMsg
+---
+--- @hash 0x427E8E6A
+--- @param playerSrc string (char*)
+--- @return number (int)
+function GetPlayerLastMsg(playerSrc) end
+
+    
+--- GetPlayerGuid
+---
+--- @hash 0xE52D9680
+--- @param playerSrc string (char*)
+--- @return string (char*)
+function GetPlayerGuid(playerSrc) end
+
+    
+--- GetPlayerName
+---
+--- @hash 0x406B4B20
+--- @param playerSrc string (char*)
+--- @return string (char*)
+function GetPlayerName(playerSrc) end
+
+    
+--- Gets the current fake wanted level for a specified player. This native is used server side when using OneSync.
+---
+--- @hash 0x98D244
+--- @param playerSrc string (char*)
+--- @return number (int)
+function GetPlayerFakeWantedLevel(playerSrc) end
+
+    
+--- GetPlayerTeam
+---
+--- @hash 0x9873E404
+--- @param playerSrc string (char*)
+--- @return number (int)
+function GetPlayerTeam(playerSrc) end
+
+    
+--- GetPlayerInvincible
+---
+--- @hash 0x680C90EE
+--- @param playerSrc string (char*)
+--- @return boolean
+function GetPlayerInvincible(playerSrc) end
 
     
 --- ```
@@ -462,20 +441,74 @@ function GetPlayerPed(playerSrc) end
 function GetPlayerTimeInPursuit(playerSrc, lastPursuit) end
 
     
---- GetPlayerTeam
+--- GetPlayerPed
 ---
---- @hash 0x9873E404
+--- @hash 0x6E31E993
 --- @param playerSrc string (char*)
---- @return number (int)
-function GetPlayerTeam(playerSrc) end
+--- @return Entity
+function GetPlayerPed(playerSrc) end
 
     
---- Returns the physical on-disk path of the specified resource.
+--- Gets the routing bucket for the specified player.
+--- 
+--- Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
 ---
---- @hash 0x61DCF017
---- @param resourceName string (char*)
+--- @hash 0x52441C34
+--- @param playerSrc string (char*)
+--- @return number (int)
+function GetPlayerRoutingBucket(playerSrc) end
+
+    
+--- GetPlayerIdentifier
+---
+--- @hash 0x7302DBCF
+--- @param playerSrc string (char*)
+--- @param identifier number (int)
 --- @return string (char*)
-function GetResourcePath(resourceName) end
+function GetPlayerIdentifier(playerSrc, identifier) end
+
+    
+--- Gets a player's token. Tokens can be used to enhance banning logic, however are specific to a server.
+---
+--- @hash 0x54C06897
+--- @param playerSrc string (char*)
+--- @param index number (int)
+--- @return string (char*)
+function GetPlayerToken(playerSrc, index) end
+
+    
+--- GetPlayerPing
+---
+--- @hash 0xFF1290D4
+--- @param playerSrc string (char*)
+--- @return number (int)
+function GetPlayerPing(playerSrc) end
+
+    
+--- ```
+--- Returns given players wanted level server-side.
+--- ```
+---
+--- @hash 0xBDCDD163
+--- @param playerSrc string (char*)
+--- @return number (int)
+function GetPlayerWantedLevel(playerSrc) end
+
+    
+--- GetPlayerFromIndex
+---
+--- @hash 0xC8A9CE08
+--- @param index number (int)
+--- @return string (char*)
+function GetPlayerFromIndex(index) end
+
+    
+--- Gets the current known coordinates for the specified player from cops perspective. This native is used server side when using OneSync.
+---
+--- @hash 0x821F2D2C
+--- @param playerSrc string (char*)
+--- @return Vector3
+function GetPlayerWantedCentrePosition(playerSrc) end
 
     
 --- Returns a hash of selected ped weapon.
@@ -486,25 +519,28 @@ function GetResourcePath(resourceName) end
 function GetSelectedPedWeapon(ped) end
 
     
---- GetVehicleCustomSecondaryColour
+--- GetVehicleBodyHealth
 ---
---- @hash 0x3FF247A2
+--- @hash 0x2B2FCC28
 --- @param vehicle Vehicle
---- @param r table (int*)
---- @param g table (int*)
---- @param b table (int*)
---- @return void
-function GetVehicleCustomSecondaryColour(vehicle, r, g, b) end
+--- @return number (float)
+function GetVehicleBodyHealth(vehicle) end
 
     
---- GetVehicleColours
+--- Returns the physical on-disk path of the specified resource.
 ---
---- @hash 0x40D82D88
---- @param vehicle Vehicle
---- @param colorPrimary table (int*)
---- @param colorSecondary table (int*)
---- @return void
-function GetVehicleColours(vehicle, colorPrimary, colorSecondary) end
+--- @hash 0x61DCF017
+--- @param resourceName string (char*)
+--- @return string (char*)
+function GetResourcePath(resourceName) end
+
+    
+--- GetTrainCarriageIndex
+---
+--- @hash 0x4B8285CF
+--- @param train Vehicle
+--- @return number (int)
+function GetTrainCarriageIndex(train) end
 
     
 --- GetVehicleCustomPrimaryColour
@@ -518,53 +554,12 @@ function GetVehicleColours(vehicle, colorPrimary, colorSecondary) end
 function GetVehicleCustomPrimaryColour(vehicle, r, g, b) end
 
     
---- Currently it only works when set to "all players".
+--- GetVehicleDoorStatus
 ---
---- @hash 0x1DC50247
+--- @hash 0x6E35C49C
 --- @param vehicle Vehicle
 --- @return number (int)
-function GetVehicleDoorsLockedForPlayer(vehicle) end
-
-    
---- GetVehicleEngineHealth
----
---- @hash 0x8880038A
---- @param vehicle Vehicle
---- @return number (float)
-function GetVehicleEngineHealth(vehicle) end
-
-    
---- GetVehicleBodyHealth
----
---- @hash 0x2B2FCC28
---- @param vehicle Vehicle
---- @return number (float)
-function GetVehicleBodyHealth(vehicle) end
-
-    
---- GetVehicleDirtLevel
----
---- @hash 0xFD15C065
---- @param vehicle Vehicle
---- @return number (float)
-function GetVehicleDirtLevel(vehicle) end
-
-    
---- GetVehicleDashboardColour
----
---- @hash 0xA0DBD08D
---- @param vehicle Vehicle
---- @param color table (int*)
---- @return void
-function GetVehicleDashboardColour(vehicle, color) end
-
-    
---- GetVehicleHeadlightsColour
----
---- @hash 0xD7147656
---- @param vehicle Vehicle
---- @return number (int)
-function GetVehicleHeadlightsColour(vehicle) end
+function GetVehicleDoorStatus(vehicle) end
 
     
 --- ```
@@ -586,28 +581,66 @@ function GetVehicleHeadlightsColour(vehicle) end
 function GetVehicleDoorLockStatus(vehicle) end
 
     
---- GetVehicleDoorStatus
+--- GetVehicleCustomSecondaryColour
 ---
---- @hash 0x6E35C49C
+--- @hash 0x3FF247A2
 --- @param vehicle Vehicle
---- @return number (int)
-function GetVehicleDoorStatus(vehicle) end
+--- @param r table (int*)
+--- @param g table (int*)
+--- @param b table (int*)
+--- @return void
+function GetVehicleCustomSecondaryColour(vehicle, r, g, b) end
 
     
---- GetVehicleLivery
+--- GetVehicleDashboardColour
 ---
---- @hash 0xEC82A51D
+--- @hash 0xA0DBD08D
 --- @param vehicle Vehicle
---- @return number (int)
-function GetVehicleLivery(vehicle) end
+--- @param color table (int*)
+--- @return void
+function GetVehicleDashboardColour(vehicle, color) end
 
     
---- GetVehiclePetrolTankHealth
+--- GetVehicleHeadlightsColour
 ---
---- @hash 0xE41595CE
+--- @hash 0xD7147656
+--- @param vehicle Vehicle
+--- @return number (int)
+function GetVehicleHeadlightsColour(vehicle) end
+
+    
+--- GetTrainCarriageEngine
+---
+--- @hash 0x95070FA
+--- @param train Vehicle
+--- @return number (int)
+function GetTrainCarriageEngine(train) end
+
+    
+--- Currently it only works when set to "all players".
+---
+--- @hash 0x1DC50247
+--- @param vehicle Vehicle
+--- @return number (int)
+function GetVehicleDoorsLockedForPlayer(vehicle) end
+
+    
+--- GetVehicleColours
+---
+--- @hash 0x40D82D88
+--- @param vehicle Vehicle
+--- @param colorPrimary table (int*)
+--- @param colorSecondary table (int*)
+--- @return void
+function GetVehicleColours(vehicle, colorPrimary, colorSecondary) end
+
+    
+--- GetVehicleDirtLevel
+---
+--- @hash 0xFD15C065
 --- @param vehicle Vehicle
 --- @return number (float)
-function GetVehiclePetrolTankHealth(vehicle) end
+function GetVehicleDirtLevel(vehicle) end
 
     
 --- GetVehicleLightsState
@@ -620,15 +653,6 @@ function GetVehiclePetrolTankHealth(vehicle) end
 function GetVehicleLightsState(vehicle, lightsOn, highbeamsOn) end
 
     
---- GetVehicleInteriorColour
----
---- @hash 0xCCFF3B6E
---- @param vehicle Vehicle
---- @param color table (int*)
---- @return void
-function GetVehicleInteriorColour(vehicle, color) end
-
-    
 --- GetVehicleExtraColours
 ---
 --- @hash 0x80E4659B
@@ -639,6 +663,14 @@ function GetVehicleInteriorColour(vehicle, color) end
 function GetVehicleExtraColours(vehicle, pearlescentColor, wheelColor) end
 
     
+--- GetVehicleEngineHealth
+---
+--- @hash 0x8880038A
+--- @param vehicle Vehicle
+--- @return number (float)
+function GetVehicleEngineHealth(vehicle) end
+
+    
 --- GetVehicleRoofLivery
 ---
 --- @hash 0x872CF42
@@ -647,12 +679,20 @@ function GetVehicleExtraColours(vehicle, pearlescentColor, wheelColor) end
 function GetVehicleRoofLivery(vehicle) end
 
     
---- GetVehicleNumberPlateTextIndex
+--- GetVehicleRadioStationIndex
 ---
---- @hash 0x499747B6
+--- @hash 0x57037960
 --- @param vehicle Vehicle
 --- @return number (int)
-function GetVehicleNumberPlateTextIndex(vehicle) end
+function GetVehicleRadioStationIndex(vehicle) end
+
+    
+--- GetVehicleLivery
+---
+--- @hash 0xEC82A51D
+--- @param vehicle Vehicle
+--- @return number (int)
+function GetVehicleLivery(vehicle) end
 
     
 --- Gets the vehicle the specified Ped is/was in depending on bool value. This native is used server side when using OneSync.
@@ -664,20 +704,29 @@ function GetVehicleNumberPlateTextIndex(vehicle) end
 function GetVehiclePedIsIn(ped, lastVehicle) end
 
     
---- GetVehicleRadioStationIndex
+--- GetVehicleInteriorColour
 ---
---- @hash 0x57037960
+--- @hash 0xCCFF3B6E
 --- @param vehicle Vehicle
---- @return number (int)
-function GetVehicleRadioStationIndex(vehicle) end
+--- @param color table (int*)
+--- @return void
+function GetVehicleInteriorColour(vehicle, color) end
 
     
---- GetVehicleWheelType
+--- GetVehicleNumberPlateTextIndex
 ---
---- @hash 0xDA58D7AE
+--- @hash 0x499747B6
 --- @param vehicle Vehicle
 --- @return number (int)
-function GetVehicleWheelType(vehicle) end
+function GetVehicleNumberPlateTextIndex(vehicle) end
+
+    
+--- GetVehiclePetrolTankHealth
+---
+--- @hash 0xE41595CE
+--- @param vehicle Vehicle
+--- @return number (float)
+function GetVehiclePetrolTankHealth(vehicle) end
 
     
 --- GetVehicleNumberPlateText
@@ -699,12 +748,20 @@ function GetVehicleNumberPlateText(vehicle) end
 function GetVehicleTyreSmokeColor(vehicle, r, g, b) end
 
     
---- GetVehicleWindowTint
+--- HasEntityBeenMarkedAsNoLongerNeeded
 ---
---- @hash 0x13D53892
+--- @hash 0x9C9A3BE0
 --- @param vehicle Vehicle
---- @return number (int)
-function GetVehicleWindowTint(vehicle) end
+--- @return boolean
+function HasEntityBeenMarkedAsNoLongerNeeded(vehicle) end
+
+    
+--- Requests whether or not the commerce data for the specified player has loaded.
+---
+--- @hash 0xBEFE93F4
+--- @param playerSrc string (char*)
+--- @return boolean
+function IsPlayerCommerceInfoLoaded(playerSrc) end
 
     
 --- HasVehicleBeenOwnedByPlayer
@@ -715,12 +772,20 @@ function GetVehicleWindowTint(vehicle) end
 function HasVehicleBeenOwnedByPlayer(vehicle) end
 
     
---- HasEntityBeenMarkedAsNoLongerNeeded
+--- GetVehicleWheelType
 ---
---- @hash 0x9C9A3BE0
+--- @hash 0xDA58D7AE
 --- @param vehicle Vehicle
---- @return boolean
-function HasEntityBeenMarkedAsNoLongerNeeded(vehicle) end
+--- @return number (int)
+function GetVehicleWheelType(vehicle) end
+
+    
+--- GetVehicleWindowTint
+---
+--- @hash 0x13D53892
+--- @param vehicle Vehicle
+--- @return number (int)
+function GetVehicleWindowTint(vehicle) end
 
     
 --- This native checks if the given ped is a player.
@@ -731,17 +796,12 @@ function HasEntityBeenMarkedAsNoLongerNeeded(vehicle) end
 function IsPedAPlayer(ped) end
 
     
---- ```
---- This will return true if the player is evading wanted level, meaning that the wanted level stars are blink.
---- Otherwise will return false.
---- 
---- If the player is not wanted, it simply returns false.
---- ```
+--- IsPlayerUsingSuperJump
 ---
---- @hash 0x89A3881A
+--- @hash 0xC7D2C20C
 --- @param playerSrc string (char*)
 --- @return boolean
-function IsPlayerEvadingWantedLevel(playerSrc) end
+function IsPlayerUsingSuperJump(playerSrc) end
 
     
 --- Requests whether or not the commerce data for the specified player has loaded from Tebex.
@@ -761,12 +821,27 @@ function IsPlayerCommerceInfoLoadedExt(playerSrc) end
 function IsPlayerAceAllowed(playerSrc, object) end
 
     
---- IsPlayerUsingSuperJump
+--- IsVehicleTyreBurst
 ---
---- @hash 0xC7D2C20C
+--- @hash 0x48C80210
+--- @param vehicle Vehicle
+--- @param wheelID number (int)
+--- @param completely boolean
+--- @return boolean
+function IsVehicleTyreBurst(vehicle, wheelID, completely) end
+
+    
+--- ```
+--- This will return true if the player is evading wanted level, meaning that the wanted level stars are blink.
+--- Otherwise will return false.
+--- 
+--- If the player is not wanted, it simply returns false.
+--- ```
+---
+--- @hash 0x89A3881A
 --- @param playerSrc string (char*)
 --- @return boolean
-function IsPlayerUsingSuperJump(playerSrc) end
+function IsPlayerEvadingWantedLevel(playerSrc) end
 
     
 --- IsVehicleExtraTurnedOn
@@ -776,16 +851,6 @@ function IsPlayerUsingSuperJump(playerSrc) end
 --- @param extraId number (int)
 --- @return boolean
 function IsVehicleExtraTurnedOn(vehicle, extraId) end
-
-    
---- IsVehicleTyreBurst
----
---- @hash 0x48C80210
---- @param vehicle Vehicle
---- @param wheelID number (int)
---- @param completely boolean
---- @return boolean
-function IsVehicleTyreBurst(vehicle, wheelID, completely) end
 
     
 --- Requests the commerce data from Tebex for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
@@ -804,20 +869,12 @@ function LoadPlayerCommerceDataExt(playerSrc) end
 function IsVehicleSirenOn(vehicle) end
 
     
---- Requests the commerce data for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
+--- NetworkGetVoiceProximityOverride
 ---
---- @hash 0xA8F63EAB
+--- @hash 0x7A6462F4
 --- @param playerSrc string (char*)
---- @return void
-function LoadPlayerCommerceData(playerSrc) end
-
-    
---- Requests whether or not the commerce data for the specified player has loaded.
----
---- @hash 0xBEFE93F4
---- @param playerSrc string (char*)
---- @return boolean
-function IsPlayerCommerceInfoLoaded(playerSrc) end
+--- @return Vector3
+function NetworkGetVoiceProximityOverride(playerSrc) end
 
     
 --- Create a permanent voice channel.
@@ -826,14 +883,6 @@ function IsPlayerCommerceInfoLoaded(playerSrc) end
 --- @param id number (int)
 --- @return void
 function MumbleCreateChannel(id) end
-
-    
---- NetworkGetNetworkIdFromEntity
----
---- @hash 0x9E35DAB6
---- @param entity Entity
---- @return number (int)
-function NetworkGetNetworkIdFromEntity(entity) end
 
     
 --- PerformHttpRequestInternal
@@ -845,6 +894,14 @@ function NetworkGetNetworkIdFromEntity(entity) end
 function PerformHttpRequestInternal(requestData, requestDataLength) end
 
     
+--- Requests the commerce data for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
+---
+--- @hash 0xA8F63EAB
+--- @param playerSrc string (char*)
+--- @return void
+function LoadPlayerCommerceData(playerSrc) end
+
+    
 --- NetworkGetEntityFromNetworkId
 ---
 --- @hash 0x5B912C3F
@@ -853,20 +910,43 @@ function PerformHttpRequestInternal(requestData, requestDataLength) end
 function NetworkGetEntityFromNetworkId(netId) end
 
     
---- NetworkGetVoiceProximityOverride
----
---- @hash 0x7A6462F4
---- @param playerSrc string (char*)
---- @return Vector3
-function NetworkGetVoiceProximityOverride(playerSrc) end
-
-    
 --- Registers a listener for console output messages.
 ---
 --- @hash 0x281B5448
 --- @param listener table (func)
 --- @return void
 function RegisterConsoleListener(listener) end
+
+    
+--- NetworkGetNetworkIdFromEntity
+---
+--- @hash 0x9E35DAB6
+--- @param entity Entity
+--- @return number (int)
+function NetworkGetNetworkIdFromEntity(entity) end
+
+    
+--- **Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
+--- 
+--- Registers a cached resource asset with the resource system, similar to the automatic scanning of the `stream/` folder.
+---
+--- @hash 0x9862B266
+--- @param resourceName string (char*)
+--- @param fileName string (char*)
+--- @return string (char*)
+function RegisterResourceAsset(resourceName, fileName) end
+
+    
+--- Writes the specified data to a file in the specified resource.
+--- Using a length of `-1` will automatically detect the length assuming the data is a C string.
+---
+--- @hash 0xA09E7E7B
+--- @param resourceName string (char*)
+--- @param fileName string (char*)
+--- @param data string (char*)
+--- @param dataLength number (int)
+--- @return boolean
+function SaveResourceFile(resourceName, fileName, data, dataLength) end
 
     
 --- Registers a build task factory for resources.
@@ -898,37 +978,6 @@ function RegisterResourceBuildTaskFactory(factoryId, factoryFn) end
 function ScheduleResourceTick(resourceName) end
 
     
---- Writes the specified data to a file in the specified resource.
---- Using a length of `-1` will automatically detect the length assuming the data is a C string.
----
---- @hash 0xA09E7E7B
---- @param resourceName string (char*)
---- @param fileName string (char*)
---- @param data string (char*)
---- @param dataLength number (int)
---- @return boolean
-function SaveResourceFile(resourceName, fileName, data, dataLength) end
-
-    
---- Requests the specified player to buy the passed SKU. This'll pop up a prompt on the client, which upon acceptance
---- will open the browser prompting further purchase details.
----
---- @hash 0x96F93CCE
---- @param playerSrc string (char*)
---- @param skuId number (int)
---- @return void
-function RequestPlayerCommerceSession(playerSrc, skuId) end
-
-    
---- SetConvarReplicated
----
---- @hash 0xF292858C
---- @param varName string (char*)
---- @param value string (char*)
---- @return void
-function SetConvarReplicated(varName, value) end
-
-    
 --- SetConvarServerInfo
 ---
 --- @hash 0x9338D547
@@ -936,52 +985,6 @@ function SetConvarReplicated(varName, value) end
 --- @param value string (char*)
 --- @return void
 function SetConvarServerInfo(varName, value) end
-
-    
---- SetConvar
----
---- @hash 0x341B16D2
---- @param varName string (char*)
---- @param value string (char*)
---- @return void
-function SetConvar(varName, value) end
-
-    
---- **Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
---- 
---- Registers a cached resource asset with the resource system, similar to the automatic scanning of the `stream/` folder.
----
---- @hash 0x9862B266
---- @param resourceName string (char*)
---- @param fileName string (char*)
---- @return string (char*)
-function RegisterResourceAsset(resourceName, fileName) end
-
-    
---- SetGameType
----
---- @hash 0xF90B7469
---- @param gametypeName string (char*)
---- @return void
-function SetGameType(gametypeName) end
-
-    
---- SetHttpHandler
----
---- @hash 0xF5C6330C
---- @param handler table (func)
---- @return void
-function SetHttpHandler(handler) end
-
-    
---- It overrides the default distance culling radius of an entity. Set to `0.0` to reset.
---- If you want to interact with an entity outside of your players' scopes set the radius to a huge number.
----
---- @hash 0xD3A183A3
---- @param entity Entity
---- @param radius number (float)
---- @return void
-function SetEntityDistanceCullingRadius(entity, radius) end
 
     
 --- Sets the routing bucket for the specified entity.
@@ -995,12 +998,66 @@ function SetEntityDistanceCullingRadius(entity, radius) end
 function SetEntityRoutingBucket(entity, bucket) end
 
     
+--- SetConvar
+---
+--- @hash 0x341B16D2
+--- @param varName string (char*)
+--- @param value string (char*)
+--- @return void
+function SetConvar(varName, value) end
+
+    
+--- Requests the specified player to buy the passed SKU. This'll pop up a prompt on the client, which upon acceptance
+--- will open the browser prompting further purchase details.
+---
+--- @hash 0x96F93CCE
+--- @param playerSrc string (char*)
+--- @param skuId number (int)
+--- @return void
+function RequestPlayerCommerceSession(playerSrc, skuId) end
+
+    
+--- SetGameType
+---
+--- @hash 0xF90B7469
+--- @param gametypeName string (char*)
+--- @return void
+function SetGameType(gametypeName) end
+
+    
+--- It overrides the default distance culling radius of an entity. Set to `0.0` to reset.
+--- If you want to interact with an entity outside of your players' scopes set the radius to a huge number.
+---
+--- @hash 0xD3A183A3
+--- @param entity Entity
+--- @param radius number (float)
+--- @return void
+function SetEntityDistanceCullingRadius(entity, radius) end
+
+    
+--- SetHttpHandler
+---
+--- @hash 0xF5C6330C
+--- @param handler table (func)
+--- @return void
+function SetHttpHandler(handler) end
+
+    
 --- SetMapName
 ---
 --- @hash 0xB7BA82DC
 --- @param mapName string (char*)
 --- @return void
 function SetMapName(mapName) end
+
+    
+--- SetConvarReplicated
+---
+--- @hash 0xF292858C
+--- @param varName string (char*)
+--- @param value string (char*)
+--- @return void
+function SetConvarReplicated(varName, value) end
 
     
 --- Sets the routing bucket for the specified player.
@@ -1014,13 +1071,30 @@ function SetMapName(mapName) end
 function SetPlayerRoutingBucket(playerSrc, bucket) end
 
     
---- TempBanPlayer
+--- Sets the entity lockdown mode for a specific routing bucket.
+--- 
+--- Lockdown modes are:
+--- 
+--- | Mode       | Meaning                                                    |
+--- | ---------- | ---------------------------------------------------------- |
+--- | `strict`   | No entities can be created by clients at all.              |
+--- | `relaxed`  | Only script-owned entities created by clients are blocked. |
+--- | `inactive` | Clients can create any entity they want.                   |
 ---
---- @hash 0x1E35DBBA
---- @param playerSrc string (char*)
---- @param reason string (char*)
+--- @hash 0xA0F2201F
+--- @param bucketId number (int)
+--- @param mode string (char*)
 --- @return void
-function TempBanPlayer(playerSrc, reason) end
+function SetRoutingBucketEntityLockdownMode(bucketId, mode) end
+
+    
+--- Sets whether or not the specified routing bucket has automatically-created population enabled.
+---
+--- @hash 0xCE51AC2C
+--- @param bucketId number (int)
+--- @param mode boolean
+--- @return void
+function SetRoutingBucketPopulationEnabled(bucketId, mode) end
 
     
 --- StartResource
@@ -1029,23 +1103,6 @@ function TempBanPlayer(playerSrc, reason) end
 --- @param resourceName string (char*)
 --- @return boolean
 function StartResource(resourceName) end
-
-    
---- StopResource
----
---- @hash 0x21783161
---- @param resourceName string (char*)
---- @return boolean
-function StopResource(resourceName) end
-
-    
---- VerifyPasswordHash
----
---- @hash 0x2E310ACD
---- @param password string (char*)
---- @param hash string (char*)
---- @return boolean
-function VerifyPasswordHash(password, hash) end
 
     
 --- The backing function for TriggerClientEvent.
@@ -1069,5 +1126,31 @@ function TriggerClientEventInternal(eventName, eventTarget, eventPayload, payloa
 --- @param bps number (int)
 --- @return void
 function TriggerLatentClientEventInternal(eventName, eventTarget, eventPayload, payloadLength, bps) end
+
+    
+--- TempBanPlayer
+---
+--- @hash 0x1E35DBBA
+--- @param playerSrc string (char*)
+--- @param reason string (char*)
+--- @return void
+function TempBanPlayer(playerSrc, reason) end
+
+    
+--- VerifyPasswordHash
+---
+--- @hash 0x2E310ACD
+--- @param password string (char*)
+--- @param hash string (char*)
+--- @return boolean
+function VerifyPasswordHash(password, hash) end
+
+    
+--- StopResource
+---
+--- @hash 0x21783161
+--- @param resourceName string (char*)
+--- @return boolean
+function StopResource(resourceName) end
 
     

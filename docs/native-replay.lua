@@ -8,6 +8,16 @@ function ActivateRockstarEditor() end
 
     
 --- ```
+--- Disables some other rendering (internal)  
+--- ```
+---
+--- @hash 0x5AD3932DAEB1E5D3
+---
+--- @return void
+function N_0x5ad3932daeb1e5d3() end
+
+    
+--- ```
 --- Returns a bool if interior rendering is disabled, if yes, all "normal" rendered interiors are invisible  
 --- ```
 ---
@@ -23,6 +33,16 @@ function IsInteriorRenderingDisabled() end
 --- @param p0 boolean
 --- @return void
 function N_0xe058175f8eafe79a(p0) end
+
+    
+--- ```
+--- Sets (almost, not sure) all Rockstar Editor values (bIsRecording etc) to 0.  
+--- ```
+---
+--- @hash 0x3353D13F09307691
+---
+--- @return void
+function ResetEditorValues() end
 
     
 --- **This native does absolutely nothing, just a nullsub**
@@ -49,25 +69,5 @@ function N_0xe058175f8eafe79a(p0) end
 --- @param p1 boolean
 --- @return void
 function N_0x7e2bd3ef6c205f09(p0, p1) end
-
-    
---- ```
---- Sets (almost, not sure) all Rockstar Editor values (bIsRecording etc) to 0.  
---- ```
----
---- @hash 0x3353D13F09307691
----
---- @return void
-function ResetEditorValues() end
-
-    
---- ```
---- Disables some other rendering (internal)  
---- ```
----
---- @hash 0x5AD3932DAEB1E5D3
----
---- @return void
-function N_0x5ad3932daeb1e5d3() end
 
     

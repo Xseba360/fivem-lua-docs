@@ -9,6 +9,22 @@
 function CreateItemset(distri) end
 
     
+--- CleanItemset
+---
+--- @hash 0x41BC0D722FC04221
+--- @param p0 any
+--- @return void
+function CleanItemset(p0) end
+
+    
+--- GetItemsetSize
+---
+--- @hash 0xD9127E83ABF7C631
+--- @param x table (ScrHandle)
+--- @return any
+function GetItemsetSize(x) end
+
+    
 --- IsInItemset
 ---
 --- @hash 0x2D0FC594D1E9C107
@@ -18,21 +34,20 @@ function CreateItemset(distri) end
 function IsInItemset(p0, p1) end
 
     
---- AddToItemset
+--- IsItemsetValid
 ---
---- @hash 0xE3945201F14637DD
+--- @hash 0xB1B1EA596344DFAB
 --- @param p0 any
---- @param p1 any
 --- @return boolean
-function AddToItemset(p0, p1) end
+function IsItemsetValid(p0) end
 
     
---- GetItemsetSize
+--- DestroyItemset
 ---
---- @hash 0xD9127E83ABF7C631
---- @param x table (ScrHandle)
---- @return any
-function GetItemsetSize(x) end
+--- @hash 0xDE18220B1C183EDA
+--- @param p0 any
+--- @return void
+function DestroyItemset(p0) end
 
     
 --- RemoveFromItemset
@@ -44,14 +59,6 @@ function GetItemsetSize(x) end
 function RemoveFromItemset(p0, p1) end
 
     
---- IsItemsetValid
----
---- @hash 0xB1B1EA596344DFAB
---- @param p0 any
---- @return boolean
-function IsItemsetValid(p0) end
-
-    
 --- GetIndexedItemInItemset
 ---
 --- @hash 0x7A197E2521EE2BAB
@@ -61,19 +68,12 @@ function IsItemsetValid(p0) end
 function GetIndexedItemInItemset(p0, p1) end
 
     
---- CleanItemset
+--- AddToItemset
 ---
---- @hash 0x41BC0D722FC04221
+--- @hash 0xE3945201F14637DD
 --- @param p0 any
---- @return void
-function CleanItemset(p0) end
-
-    
---- DestroyItemset
----
---- @hash 0xDE18220B1C183EDA
---- @param p0 any
---- @return void
-function DestroyItemset(p0) end
+--- @param p1 any
+--- @return boolean
+function AddToItemset(p0, p1) end
 
     

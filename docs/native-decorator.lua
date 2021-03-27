@@ -1,16 +1,5 @@
 
 --- ```
---- Returns whether or not the specified property is set for the entity.  
---- ```
----
---- @hash 0x05661B80A8C9165F
---- @param entity Entity
---- @param propertyName string (char*)
---- @return boolean
-function DecorExistOn(entity, propertyName) end
-
-    
---- ```
 --- The native name is correct but the db automatically prefixes "_" to unknown natives when changed.  
 --- ```
 ---
@@ -19,77 +8,6 @@ function DecorExistOn(entity, propertyName) end
 --- @param propertyName string (char*)
 --- @return number (float)
 function DecorGetFloat(entity, propertyName) end
-
-    
---- ```
---- This function sets metadata of type bool to specified entity.  
---- ```
----
---- @hash 0x6B1E8E2ED1335B71
---- @param entity Entity
---- @param propertyName string (char*)
---- @param value boolean
---- @return boolean
-function DecorSetBool(entity, propertyName, value) end
-
-    
---- ```
---- Is property of that type.  
---- enum eDecorType  
---- {  
---- 	DECOR_TYPE_FLOAT = 1,  
---- 	DECOR_TYPE_BOOL,  
---- 	DECOR_TYPE_INT,  
---- 	DECOR_TYPE_UNK,  
---- 	DECOR_TYPE_TIME  
---- };  
---- ```
----
---- @hash 0x4F14F9F870D6FBC8
---- @param propertyName string (char*)
---- @param type number (int)
---- @return boolean
-function DecorIsRegisteredAsType(propertyName, type) end
-
-    
---- DecorRemove
----
---- @hash 0x00EE9F297C738720
---- @param entity Entity
---- @param propertyName string (char*)
---- @return boolean
-function DecorRemove(entity, propertyName) end
-
-    
---- ```
---- Sets property to int.  
---- ```
----
---- @hash 0x0CE3AA5E1CA19E10
---- @param entity Entity
---- @param propertyName string (char*)
---- @param value number (int)
---- @return boolean
-function DecorSetInt(entity, propertyName, value) end
-
-    
---- ```
---- Called after all decorator type initializations.  
---- ```
----
---- @hash 0xA9D14EEA259F9248
----
---- @return void
-function DecorRegisterLock() end
-
-    
---- DecorGetBool
----
---- @hash 0xDACE671663F2F5DB
---- @param entity Entity
---- @param propertyName string (char*)
---- @return boolean
-function DecorGetBool(entity, propertyName) end
 
     
 --- ```
@@ -162,14 +80,74 @@ function DecorRegister(propertyName, type) end
 function DecorGetInt(entity, propertyName) end
 
     
---- DecorSetTime
+--- DecorRemove
 ---
---- @hash 0x95AED7B8E39ECAA4
+--- @hash 0x00EE9F297C738720
 --- @param entity Entity
 --- @param propertyName string (char*)
---- @param timestamp number (int)
 --- @return boolean
-function DecorSetTime(entity, propertyName, timestamp) end
+function DecorRemove(entity, propertyName) end
+
+    
+--- ```
+--- Sets property to int.  
+--- ```
+---
+--- @hash 0x0CE3AA5E1CA19E10
+--- @param entity Entity
+--- @param propertyName string (char*)
+--- @param value number (int)
+--- @return boolean
+function DecorSetInt(entity, propertyName, value) end
+
+    
+--- DecorGetBool
+---
+--- @hash 0xDACE671663F2F5DB
+--- @param entity Entity
+--- @param propertyName string (char*)
+--- @return boolean
+function DecorGetBool(entity, propertyName) end
+
+    
+--- ```
+--- Is property of that type.  
+--- enum eDecorType  
+--- {  
+--- 	DECOR_TYPE_FLOAT = 1,  
+--- 	DECOR_TYPE_BOOL,  
+--- 	DECOR_TYPE_INT,  
+--- 	DECOR_TYPE_UNK,  
+--- 	DECOR_TYPE_TIME  
+--- };  
+--- ```
+---
+--- @hash 0x4F14F9F870D6FBC8
+--- @param propertyName string (char*)
+--- @param type number (int)
+--- @return boolean
+function DecorIsRegisteredAsType(propertyName, type) end
+
+    
+--- ```
+--- Called after all decorator type initializations.  
+--- ```
+---
+--- @hash 0xA9D14EEA259F9248
+---
+--- @return void
+function DecorRegisterLock() end
+
+    
+--- ```
+--- Returns whether or not the specified property is set for the entity.  
+--- ```
+---
+--- @hash 0x05661B80A8C9165F
+--- @param entity Entity
+--- @param propertyName string (char*)
+--- @return boolean
+function DecorExistOn(entity, propertyName) end
 
     
 --- ```
@@ -182,5 +160,27 @@ function DecorSetTime(entity, propertyName, timestamp) end
 --- @param value number (float)
 --- @return boolean
 function DecorSetFloat(entity, propertyName, value) end
+
+    
+--- ```
+--- This function sets metadata of type bool to specified entity.  
+--- ```
+---
+--- @hash 0x6B1E8E2ED1335B71
+--- @param entity Entity
+--- @param propertyName string (char*)
+--- @param value boolean
+--- @return boolean
+function DecorSetBool(entity, propertyName, value) end
+
+    
+--- DecorSetTime
+---
+--- @hash 0x95AED7B8E39ECAA4
+--- @param entity Entity
+--- @param propertyName string (char*)
+--- @param timestamp number (int)
+--- @return boolean
+function DecorSetTime(entity, propertyName, timestamp) end
 
     

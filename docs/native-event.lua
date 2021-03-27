@@ -1,10 +1,10 @@
 
---- RemoveShockingEvent
+--- RemoveShockingEventSpawnBlockingAreas
 ---
---- @hash 0x2CDA538C44C6CCE5
---- @param event table (ScrHandle)
---- @return boolean
-function RemoveShockingEvent(event) end
+--- @hash 0x340F1415B68AEADE
+---
+--- @return void
+function RemoveShockingEventSpawnBlockingAreas() end
 
     
 --- ```
@@ -20,49 +20,6 @@ function RemoveShockingEvent(event) end
 function AddShockingEventForEntity(type, entity, duration) end
 
     
---- ClearDecisionMakerEventResponse
----
---- @hash 0x4FC9381A7AEE8968
---- @param name Hash
---- @param type number (int)
---- @return void
-function ClearDecisionMakerEventResponse(name, type) end
-
-    
---- SetDecisionMaker
----
---- @hash 0xB604A2942ADED0EE
---- @param ped Ped
---- @param name Hash
---- @return void
-function SetDecisionMaker(ped, name) end
-
-    
---- RemoveShockingEventSpawnBlockingAreas
----
---- @hash 0x340F1415B68AEADE
----
---- @return void
-function RemoveShockingEventSpawnBlockingAreas() end
-
-    
---- SuppressAgitationEventsNextFrame
----
---- @hash 0x5F3B7749C112D552
----
---- @return void
-function SuppressAgitationEventsNextFrame() end
-
-    
---- UnblockDecisionMakerEvent
----
---- @hash 0xD7CD9CF34F2C99E8
---- @param name Hash
---- @param type number (int)
---- @return void
-function UnblockDecisionMakerEvent(name, type) end
-
-    
 --- BlockDecisionMakerEvent
 ---
 --- @hash 0xE42FCDFD0E4196F7
@@ -70,22 +27,6 @@ function UnblockDecisionMakerEvent(name, type) end
 --- @param type number (int)
 --- @return void
 function BlockDecisionMakerEvent(name, type) end
-
-    
---- SuppressShockingEventsNextFrame
----
---- @hash 0x2F9A292AD0A3BD89
----
---- @return void
-function SuppressShockingEventsNextFrame() end
-
-    
---- SuppressShockingEventTypeNextFrame
----
---- @hash 0x3FD2EC8BF1F1CF30
---- @param type number (int)
---- @return void
-function SuppressShockingEventTypeNextFrame(type) end
 
     
 --- ```
@@ -103,12 +44,12 @@ function SuppressShockingEventTypeNextFrame(type) end
 function AddShockingEventAtPosition(type, x, y, z, duration) end
 
     
---- RemoveAllShockingEvents
+--- SuppressShockingEventsNextFrame
 ---
---- @hash 0xEAABE8FDFA21274C
---- @param p0 boolean
+--- @hash 0x2F9A292AD0A3BD89
+---
 --- @return void
-function RemoveAllShockingEvents(p0) end
+function SuppressShockingEventsNextFrame() end
 
     
 --- ```
@@ -141,5 +82,64 @@ function RemoveAllShockingEvents(p0) end
 --- @param radius number (float)
 --- @return boolean
 function IsShockingEventInSphere(type, x, y, z, radius) end
+
+    
+--- RemoveAllShockingEvents
+---
+--- @hash 0xEAABE8FDFA21274C
+--- @param p0 boolean
+--- @return void
+function RemoveAllShockingEvents(p0) end
+
+    
+--- RemoveShockingEvent
+---
+--- @hash 0x2CDA538C44C6CCE5
+--- @param event table (ScrHandle)
+--- @return boolean
+function RemoveShockingEvent(event) end
+
+    
+--- SetDecisionMaker
+---
+--- @hash 0xB604A2942ADED0EE
+--- @param ped Ped
+--- @param name Hash
+--- @return void
+function SetDecisionMaker(ped, name) end
+
+    
+--- SuppressShockingEventTypeNextFrame
+---
+--- @hash 0x3FD2EC8BF1F1CF30
+--- @param type number (int)
+--- @return void
+function SuppressShockingEventTypeNextFrame(type) end
+
+    
+--- UnblockDecisionMakerEvent
+---
+--- @hash 0xD7CD9CF34F2C99E8
+--- @param name Hash
+--- @param type number (int)
+--- @return void
+function UnblockDecisionMakerEvent(name, type) end
+
+    
+--- SuppressAgitationEventsNextFrame
+---
+--- @hash 0x5F3B7749C112D552
+---
+--- @return void
+function SuppressAgitationEventsNextFrame() end
+
+    
+--- ClearDecisionMakerEventResponse
+---
+--- @hash 0x4FC9381A7AEE8968
+--- @param name Hash
+--- @param type number (int)
+--- @return void
+function ClearDecisionMakerEventResponse(name, type) end
 
     
