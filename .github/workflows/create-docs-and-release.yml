@@ -12,6 +12,8 @@ jobs:
     name: 'Build latest docs and release'
     runs-on: ubuntu-latest
     steps:
+    - name: set env
+      run: echo "NOW=$(date +%Y-%m-%d)" >> $GITHUB_ENV
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Use Node.js
@@ -36,11 +38,11 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
       with:
-        tag_name:  ${{ github.event.inputs.tags }}
-        release_name: Release ${{ github.event.inputs.tags }}
+        tag_name:  ${{ env.NOW }}
+        release_name: Release ${{ env.NOW }}
         body: |
           Changes in this Release
-          - build date  ${{ github.event.inputs.tags }}
+          - build date  ${{ env.NOW }}
           - based on 
           - * https://runtime.fivem.net/doc/natives_cfx.json
           - * https://runtime.fivem.net/doc/natives.json
