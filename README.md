@@ -1,16 +1,20 @@
 # fivem-lua-docs
-Generated lua file reference for use with autocompletion
-Generated Lua file reference for use with [Luanalysis](https://github.com/Benjamin-Dobell/IntelliJ-Luanalysis),
-a plugin for JetBrains IDEs
 
-Originally created by [SnakeSVx](https://github.com/SnakeSVx/fivem-lua-docs)
+Originally created by [SnakeSVx](https://github.com/SnakeSVx/fivem-lua-docs).
 
+Lua file reference for use with [Luanalysis](https://github.com/Benjamin-Dobell/IntelliJ-Luanalysis), a plugin for
+JetBrains IDEs. **It will definitely not work with EmmyLua** due to `@shape` and `@overload`being used.
+
+The code could definitely use some refactoring, as this was not meant to be anything more than a simple hack.
 
 ## Tweaks
-The generated files are tweaked to be more accurate. See below (docs are truncated).
+
+The generated methods are tweaked to be more accurate manually. See some of them below (the docs are truncated).
 
 ### GetGamePool
-Different type is returned based on the pool parameter
+
+Different type is returned based on the pool parameter.
+
 ```lua
 --- @param poolName string (char*)
 --- @return (Ped|Object|Vehicle|Pickup)[]
@@ -22,8 +26,10 @@ function GetGamePool(poolName) end
 ```
 
 ### GetEntityCoords
-The `alive` parameter is marked as optional, so it doesn't show up as error when used
-on server (where the alive parameter does not exist)
+
+The `alive` parameter is marked as optional, so it doesn't show up as error when used on server (where the alive
+parameter does not exist).
+
 ```lua
 --- @param entity Entity
 --- @param alive boolean
@@ -33,8 +39,9 @@ function GetEntityCoords(entity, alive) end
 ```
 
 ### AddRelationshipGroup
-This native has two pointer parameters, therefore it does not qualify as a single-pointer native
-and has to be fixed manually
+
+This native has two pointer parameters, therefore it doesn't qualify as a single-pointer native and is fixed manually.
+
 ```lua
 --- @param name string (char*)
 --- @param groupHash Hash (Hash*)
