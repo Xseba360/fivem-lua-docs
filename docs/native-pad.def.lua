@@ -1,285 +1,163 @@
 
+--- [Control values and meaning](https://docs.fivem.net/docs/game-references/controls/#controls)
+--- 
+--- Example: `CONTROLS::DISABLE_CONTROL_ACTION(2, 19, true)` disables the switching UI from appearing both when using a keyboard and Xbox 360 controller. Needs to be executed each frame.
+--- Control group 1 and 0 gives the same results as 2. Same results for all players.
+---
+--- @hash [0xFE99B66D079CF6BC](https://docs.fivem.net/natives/?_0xFE99B66D079CF6BC)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @param disable boolean
+--- @return void
+--- @overload fun(padIndex: number, control: number, disable: boolean): void
+function DisableControlAction(padIndex, control, disable) end
+
+    
 --- ```
---- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
+--- padIndex: 
+--- 0 - PLAYER_CONTROL
+--- 1 - Unknown 
+--- 2 - FRONTEND_CONTROL
 --- ```
 ---
---- @hash 0x5F4B6931816E599B
+--- @hash [0xA5FFE9B05F199DE7](https://docs.fivem.net/natives/?_0xA5FFE9B05F199DE7)
 --- @param padIndex number (int)
 --- @return void
+--- @overload fun(padIndex: number): void
+function EnableAllControlActions(padIndex) end
+
+    
+--- DisableAllControlActions
+---
+--- @hash [0x5F4B6931816E599B](https://docs.fivem.net/natives/?_0x5F4B6931816E599B)
+--- @param padIndex number (int)
+--- @return void
+--- @overload fun(padIndex: number): void
 function DisableAllControlActions(padIndex) end
+
+    
+--- GetControlGroupInstructionalButton
+---
+--- @hash [0x80C2FD58D720C801](https://docs.fivem.net/natives/?_0x80C2FD58D720C801)
+--- @param padIndex number (int)
+--- @param controlGroup number (int)
+--- @param p2 boolean
+--- @return string
+--- @overload fun(padIndex: number, controlGroup: number, p2: boolean): string
+function GetControlGroupInstructionalButton(padIndex, controlGroup, p2) end
+
+    
+--- # New Name: GetControlGroupInstructionalButton
+--- GetControlGroupInstructionalButton
+---
+--- @hash [0x80C2FD58D720C801](https://docs.fivem.net/natives/?_0x80C2FD58D720C801)
+--- @param padIndex number (int)
+--- @param controlGroup number (int)
+--- @param p2 boolean
+--- @return string
+--- @overload fun(padIndex: number, controlGroup: number, p2: boolean): string
+--- @deprecated
+function N_0x80c2fd58d720c801(padIndex, controlGroup, p2) end
 
     
 --- DisableInputGroup
 ---
---- @hash 0x7F4724035FDCA1DD
---- @param inputGroup number (int)
+--- @hash [0x7F4724035FDCA1DD](https://docs.fivem.net/natives/?_0x7F4724035FDCA1DD)
+--- @param padIndex number (int)
 --- @return void
-function DisableInputGroup(inputGroup) end
+--- @overload fun(padIndex: number): void
+function DisableInputGroup(padIndex) end
+
+    
+--- # New Name: DisableInputGroup
+--- DisableInputGroup
+---
+--- @hash [0x7F4724035FDCA1DD](https://docs.fivem.net/natives/?_0x7F4724035FDCA1DD)
+--- @param padIndex number (int)
+--- @return void
+--- @overload fun(padIndex: number): void
+--- @deprecated
+function N_0x7f4724035fdca1dd(padIndex) end
 
     
 --- ```
---- Returns profile setting 17.
---- ```
----
---- @hash 0xFC859E2374407556
----
---- @return boolean
-function GetAllowMovementWhileZoomed() end
-
-    
---- ```
+--- formerly called _GET_CONTROL_ACTION_NAME incorrectly  
+--- p2 appears to always be true.  
+--- p2 is unused variable in function.  
+--- EG:  
+--- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 201, 1) /*INPUT_FRONTEND_ACCEPT (e.g. Enter button)*/  
+--- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 202, 1) /*INPUT_FRONTEND_CANCEL (e.g. ESC button)*/  
+--- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 51, 1) /*INPUT_CONTEXT (e.g. E button)*/  
+--- gtaforums.com/topic/819070-c-draw-instructional-buttons-scaleform-movie/#entry1068197378  
 --- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
 --- ```
 ---
---- @hash 0xD95E79E8686D2C27
+--- @hash [0x0499D7B09FC9B407](https://docs.fivem.net/natives/?_0x0499D7B09FC9B407)
 --- @param padIndex number (int)
 --- @param control number (int)
---- @return number (int)
-function GetControlValue(padIndex, control) end
-
-    
---- IsLookInverted
----
---- @hash 0x77B612531280010D
----
---- @return boolean
-function IsLookInverted() end
-
-    
---- ```
---- control - c# works with (int)GTA.Control.CursorY / (int)GTA.Control.CursorX and returns the mouse movement (additive).  
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
----
---- @hash 0x11E65974A982637C
---- @param padIndex number (int)
---- @param control number (int)
---- @return number (float)
-function GetDisabledControlNormal(padIndex, control) end
-
-    
---- ```
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
----
---- @hash 0x80C2FD58D720C801
---- @param padIndex number (int)
---- @param controlGroup number (int)
 --- @param p2 boolean
---- @return string (char*)
-function GetControlGroupInstructionalButton(padIndex, controlGroup, p2) end
+--- @return string
+--- @overload fun(padIndex: number, control: number, p2: boolean): string
+function GetControlInstructionalButton(padIndex, control, p2) end
 
     
+--- # New Name: GetControlInstructionalButton
 --- ```
---- Disables SET_PAD_SHAKE when set to -1 for a given inputGroup
---- ```
----
---- @hash 0xF239400E16C23E08
---- @param inputGroup number (int)
---- @param p1 number (int)
---- @return void
-function N_0xf239400e16c23e08(inputGroup, p1) end
-
-    
---- ```
---- The "disabled" variant of _0x5B84D09CEC5209C5.  
+--- formerly called _GET_CONTROL_ACTION_NAME incorrectly  
+--- p2 appears to always be true.  
+--- p2 is unused variable in function.  
+--- EG:  
+--- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 201, 1) /*INPUT_FRONTEND_ACCEPT (e.g. Enter button)*/  
+--- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 202, 1) /*INPUT_FRONTEND_CANCEL (e.g. ESC button)*/  
+--- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 51, 1) /*INPUT_CONTEXT (e.g. E button)*/  
+--- gtaforums.com/topic/819070-c-draw-instructional-buttons-scaleform-movie/#entry1068197378  
 --- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
 --- ```
 ---
---- @hash 0x4F8A26A890FD62FB
+--- @hash [0x0499D7B09FC9B407](https://docs.fivem.net/natives/?_0x0499D7B09FC9B407)
 --- @param padIndex number (int)
 --- @param control number (int)
---- @return number (float)
-function GetDisabledControlUnboundNormal(padIndex, control) end
+--- @param p2 boolean
+--- @return string
+--- @overload fun(padIndex: number, control: number, p2: boolean): string
+--- @deprecated
+function N_0x0499d7b09fc9b407(padIndex, control, p2) end
 
     
---- N_0xa0cefcea390aab9b
+--- GetControlNormal
 ---
---- @hash 0xA0CEFCEA390AAB9B
---- @param p0 any
---- @return void
-function N_0xa0cefcea390aab9b(p0) end
-
-    
---- GetLocalPlayerAimState
----
---- @hash 0xBB41AFBBBC0A0287
----
---- @return number (int)
-function GetLocalPlayerAimState() end
-
-    
---- ```
---- Same behavior as GET_LOCAL_PLAYER_AIM_STATE but only used on the PC version.  
---- ```
----
---- @hash 0x59B9A7AF4C95133C
----
---- @return number (int)
-function GetLocalPlayerAimState_2() end
-
-    
---- Returns whether a [control](https://docs.fivem.net/game-references/controls/) is currently pressed.
----
---- @hash 0xF3A21BCD95725A4A
---- @param inputGroup number (int)
---- @param control number (int)
---- @return boolean
-function IsControlPressed(inputGroup, control) end
-
-    
---- ```
---- Control Groups:  
---- enum InputGroups  
---- {  
---- 	INPUTGROUP_MOVE = 0,  
---- 	INPUTGROUP_LOOK = 1,  
---- 	INPUTGROUP_WHEEL = 2,  
---- 	INPUTGROUP_CELLPHONE_NAVIGATE = 3,  
---- 	INPUTGROUP_CELLPHONE_NAVIGATE_UD = 4,  
---- 	INPUTGROUP_CELLPHONE_NAVIGATE_LR = 5,  
---- 	INPUTGROUP_FRONTEND_DPAD_ALL = 6,  
---- 	INPUTGROUP_FRONTEND_DPAD_UD = 7,  
---- 	INPUTGROUP_FRONTEND_DPAD_LR = 8,  
---- 	INPUTGROUP_FRONTEND_LSTICK_ALL = 9,  
---- 	INPUTGROUP_FRONTEND_RSTICK_ALL = 10,  
---- 	INPUTGROUP_FRONTEND_GENERIC_UD = 11,  
---- 	INPUTGROUP_FRONTEND_GENERIC_LR = 12,  
---- 	INPUTGROUP_FRONTEND_GENERIC_ALL = 13,  
---- 	INPUTGROUP_FRONTEND_BUMPERS = 14,  
---- 	INPUTGROUP_FRONTEND_TRIGGERS = 15,  
---- 	INPUTGROUP_FRONTEND_STICKS = 16,  
---- 	INPUTGROUP_SCRIPT_DPAD_ALL = 17,  
---- 	INPUTGROUP_SCRIPT_DPAD_UD = 18,  
---- 	INPUTGROUP_SCRIPT_DPAD_LR = 19,  
---- 	INPUTGROUP_SCRIPT_LSTICK_ALL = 20,  
---- 	INPUTGROUP_SCRIPT_RSTICK_ALL = 21,  
---- 	INPUTGROUP_SCRIPT_BUMPERS = 22,  
---- 	INPUTGROUP_SCRIPT_TRIGGERS = 23,  
---- 	INPUTGROUP_WEAPON_WHEEL_CYCLE = 24,  
---- 	INPUTGROUP_FLY = 25,  
---- 	INPUTGROUP_SUB = 26,  
---- 	INPUTGROUP_VEH_MOVE_ALL = 27,  
---- 	INPUTGROUP_CURSOR = 28,  
---- 	INPUTGROUP_CURSOR_SCROLL = 29,  
---- 	INPUTGROUP_SNIPER_ZOOM_SECONDARY = 30,  
---- 	INPUTGROUP_VEH_HYDRAULICS_CONTROL = 31,  
---- 	MAX_INPUTGROUPS = 32,  
---- 	INPUTGROUP_INVALID = 33  
---- };  
---- 0, 1 and 2 used in the scripts.  
---- ```
----
---- @hash 0x1CEA6BFDF248E5D9
+--- @hash [0xEC3C9B8D5327B563](https://docs.fivem.net/natives/?_0xEC3C9B8D5327B563)
 --- @param padIndex number (int)
 --- @param control number (int)
---- @return boolean
-function IsControlEnabled(padIndex, control) end
-
-    
---- ```
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
----
---- @hash 0xE2587F8CBBD87B1D
---- @param padIndex number (int)
---- @param control number (int)
---- @return boolean
-function IsDisabledControlPressed(padIndex, control) end
-
-    
---- ```
---- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
---- ```
----
---- @hash 0xA5FFE9B05F199DE7
---- @param padIndex number (int)
---- @return void
-function EnableAllControlActions(padIndex) end
-
-    
---- N_0x5b73c77d9eb66e24
----
---- @hash 0x5B73C77D9EB66E24
---- @param p0 boolean
---- @return void
-function N_0x5b73c77d9eb66e24(p0) end
-
-    
---- ```
---- Returns the value of CONTROLS::GET_CONTROL_VALUE Normalized (ie a real number value between -1 and 1)  
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
----
---- @hash 0xEC3C9B8D5327B563
---- @param padIndex number (int)
---- @param control number (int)
---- @return number (float)
+--- @return number
+--- @overload fun(padIndex: number, control: number): number
 function GetControlNormal(padIndex, control) end
 
     
 --- ```
---- The number of milliseconds since last inputGroup registered pressed
+--- Seems to return values between -1 and 1 for controls like gas and steering.
 --- ```
 ---
---- @hash 0xD7D22F5592AED8BA
---- @param inputGroup number (int)
---- @return number (int)
-function GetTimeSinceLastInput(inputGroup) end
-
-    
---- ```
---- Seems to return true if the input is currently disabled. "_GET_LAST_INPUT_METHOD" didn't seem very accurate, but I've left the original description below.  
---- --  
---- index usually 2  
---- returns true if the last input method was made with mouse + keyboard, false if it was made with a gamepad  
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
----
---- @hash 0xA571D46727E2B718
---- @param inputGroup number (int)
---- @return boolean
-function IsInputDisabled(inputGroup) end
-
-    
---- ```
---- I may be wrong with this one, but from the looks of the scripts, it sets keyboard related stuff as soon as this returns true.  
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
----
---- @hash 0x13337B38DB572509
---- @param inputGroup number (int)
---- @return boolean
-function IsInputJustDisabled(inputGroup) end
-
-    
---- ```
---- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
---- ```
----
---- @hash 0x6CD79468A1E595C6
+--- @hash [0x5B84D09CEC5209C5](https://docs.fivem.net/natives/?_0x5B84D09CEC5209C5)
 --- @param padIndex number (int)
---- @return boolean
-function N_0x6cd79468a1e595c6(padIndex) end
+--- @param control number (int)
+--- @return number
+--- @overload fun(padIndex: number, control: number): number
+function GetControlUnboundNormal(padIndex, control) end
 
     
+--- # New Name: GetControlUnboundNormal
 --- ```
---- Renamed to SET_CURSOR_LOCATION (I previously named it _SET_CURSOR_POSTION) which is the correct name as far as I can tell.  
+--- Seems to return values between -1 and 1 for controls like gas and steering.
 --- ```
 ---
---- @hash 0xFC695459D4D0E219
---- @param x number (float)
---- @param y number (float)
---- @return boolean
-function SetCursorLocation(x, y) end
-
-    
---- SetPlayerpadShakesWhenControllerDisabled
----
---- @hash 0x798FDEB5B1575088
---- @param toggle boolean
---- @return void
-function SetPlayerpadShakesWhenControllerDisabled(toggle) end
+--- @hash [0x5B84D09CEC5209C5](https://docs.fivem.net/natives/?_0x5B84D09CEC5209C5)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return number
+--- @overload fun(padIndex: number, control: number): number
+--- @deprecated
+function N_0x5b84d09cec5209c5(padIndex, control) end
 
     
 --- ```
@@ -329,42 +207,545 @@ function SetPlayerpadShakesWhenControllerDisabled(toggle) end
 --- Took those in IDA Pro.Not sure in which order they go  
 --- ```
 ---
---- @hash 0x351220255D64C155
+--- @hash [0x351220255D64C155](https://docs.fivem.net/natives/?_0x351220255D64C155)
 --- @param padIndex number (int)
 --- @param control number (int)
 --- @param enable boolean
 --- @return void
+--- @overload fun(padIndex: number, control: number, enable: boolean): void
 function EnableControlAction(padIndex, control, enable) end
+
+    
+--- ```
+--- Returns profile setting 17.
+--- ```
+---
+--- @hash [0xFC859E2374407556](https://docs.fivem.net/natives/?_0xFC859E2374407556)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function GetAllowMovementWhileZoomed() end
+
+    
+--- # New Name: GetAllowMovementWhileZoomed
+--- ```
+--- Returns profile setting 17.
+--- ```
+---
+--- @hash [0xFC859E2374407556](https://docs.fivem.net/natives/?_0xFC859E2374407556)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0xfc859e2374407556() end
+
+    
+--- ```
+--- Returns profile setting 225.
+--- ```
+---
+--- @hash [0x0F70731BACCFBB96](https://docs.fivem.net/natives/?_0x0F70731BACCFBB96)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function GetIsUsingAlternateDriveby() end
+
+    
+--- # New Name: GetIsUsingAlternateDriveby
+--- ```
+--- Returns profile setting 225.
+--- ```
+---
+--- @hash [0x0F70731BACCFBB96](https://docs.fivem.net/natives/?_0x0F70731BACCFBB96)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0x0f70731baccfbb96() end
+
+    
+--- Returns the local player's targeting mode. See [`SET_PLAYER_TARGETING_MODE`](https://docs.fivem.net/natives/?_0xB1906895227793F3).
+---
+--- @hash [0xBB41AFBBBC0A0287](https://docs.fivem.net/natives/?_0xBB41AFBBBC0A0287)
+---
+--- @return number
+--- @overload fun(): number
+function GetLocalPlayerAimState() end
+
+    
+--- GetControlValue
+---
+--- @hash [0xD95E79E8686D2C27](https://docs.fivem.net/natives/?_0xD95E79E8686D2C27)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return number
+--- @overload fun(padIndex: number, control: number): number
+function GetControlValue(padIndex, control) end
+
+    
+--- GetDisabledControlNormal
+---
+--- @hash [0x11E65974A982637C](https://docs.fivem.net/natives/?_0x11E65974A982637C)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return number
+--- @overload fun(padIndex: number, control: number): number
+function GetDisabledControlNormal(padIndex, control) end
+
+    
+--- ```
+--- The number of milliseconds since last padIndex registered pressed
+--- ```
+---
+--- @hash [0xD7D22F5592AED8BA](https://docs.fivem.net/natives/?_0xD7D22F5592AED8BA)
+--- @param padIndex number (int)
+--- @return number
+--- @overload fun(padIndex: number): number
+function GetTimeSinceLastInput(padIndex) end
+
+    
+--- # New Name: GetTimeSinceLastInput
+--- ```
+--- The number of milliseconds since last padIndex registered pressed
+--- ```
+---
+--- @hash [0xD7D22F5592AED8BA](https://docs.fivem.net/natives/?_0xD7D22F5592AED8BA)
+--- @param padIndex number (int)
+--- @return number
+--- @overload fun(padIndex: number): number
+--- @deprecated
+function N_0xd7d22f5592aed8ba(padIndex) end
+
+    
+--- GetDisabledControlUnboundNormal
+---
+--- @hash [0x4F8A26A890FD62FB](https://docs.fivem.net/natives/?_0x4F8A26A890FD62FB)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return number
+--- @overload fun(padIndex: number, control: number): number
+function GetDisabledControlUnboundNormal(padIndex, control) end
+
+    
+--- # New Name: GetDisabledControlUnboundNormal
+--- GetDisabledControlUnboundNormal
+---
+--- @hash [0x4F8A26A890FD62FB](https://docs.fivem.net/natives/?_0x4F8A26A890FD62FB)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return number
+--- @overload fun(padIndex: number, control: number): number
+--- @deprecated
+function N_0x4f8a26a890fd62fb(padIndex, control) end
+
+    
+--- IsControlEnabled
+---
+--- @hash [0x1CEA6BFDF248E5D9](https://docs.fivem.net/natives/?_0x1CEA6BFDF248E5D9)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
+--- @overload fun(padIndex: number, control: number): boolean
+function IsControlEnabled(padIndex, control) end
+
+    
+--- Returns whether a control was newly released since the last check.
+---
+--- @hash [0x50F940259D3841E6](https://docs.fivem.net/natives/?_0x50F940259D3841E6)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
+--- @overload fun(padIndex: number, control: number): boolean
+function IsControlJustReleased(padIndex, control) end
+
+    
+--- ```
+--- Same behavior as GET_LOCAL_PLAYER_AIM_STATE but only used on the PC version.  
+--- ```
+---
+--- @hash [0x59B9A7AF4C95133C](https://docs.fivem.net/natives/?_0x59B9A7AF4C95133C)
+---
+--- @return number
+--- @overload fun(): number
+function GetLocalPlayerAimState_2() end
+
+    
+--- # New Name: GetLocalPlayerAimState_2
+--- ```
+--- Same behavior as GET_LOCAL_PLAYER_AIM_STATE but only used on the PC version.  
+--- ```
+---
+--- @hash [0x59B9A7AF4C95133C](https://docs.fivem.net/natives/?_0x59B9A7AF4C95133C)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
+function N_0x59b9a7af4c95133c() end
+
+    
+--- Returns whether a control is currently pressed.
+---
+--- @hash [0xF3A21BCD95725A4A](https://docs.fivem.net/natives/?_0xF3A21BCD95725A4A)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
+--- @overload fun(padIndex: number, control: number): boolean
+function IsControlPressed(padIndex, control) end
+
+    
+--- Returns whether a control was newly pressed since the last check.
+---
+--- @hash [0x580417101DDB492F](https://docs.fivem.net/natives/?_0x580417101DDB492F)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
+--- @overload fun(padIndex: number, control: number): boolean
+function IsControlJustPressed(padIndex, control) end
+
+    
+--- Returns whether a control is currently *not* pressed.
+---
+--- @hash [0x648EE3E7F38877DD](https://docs.fivem.net/natives/?_0x648EE3E7F38877DD)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
+--- @overload fun(padIndex: number, control: number): boolean
+function IsControlReleased(padIndex, control) end
+
+    
+--- IsDisabledControlJustReleased
+---
+--- @hash [0x305C8DCD79DA8B0F](https://docs.fivem.net/natives/?_0x305C8DCD79DA8B0F)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
+--- @overload fun(padIndex: number, control: number): boolean
+function IsDisabledControlJustReleased(padIndex, control) end
+
+    
+--- IsDisabledControlJustPressed
+---
+--- @hash [0x91AEF906BCA88877](https://docs.fivem.net/natives/?_0x91AEF906BCA88877)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
+--- @overload fun(padIndex: number, control: number): boolean
+function IsDisabledControlJustPressed(padIndex, control) end
+
+    
+--- IsDisabledControlReleased
+---
+--- @hash [0xFB6C4072E9A32E92](https://docs.fivem.net/natives/?_0xFB6C4072E9A32E92)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
+--- @overload fun(padIndex: number, control: number): boolean
+function IsDisabledControlReleased(padIndex, control) end
+
+    
+--- # New Name: IsDisabledControlReleased
+--- IsDisabledControlReleased
+---
+--- @hash [0xFB6C4072E9A32E92](https://docs.fivem.net/natives/?_0xFB6C4072E9A32E92)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
+--- @overload fun(padIndex: number, control: number): boolean
+--- @deprecated
+function N_0xfb6c4072e9a32e92(padIndex, control) end
+
+    
+--- IsDisabledControlPressed
+---
+--- @hash [0xE2587F8CBBD87B1D](https://docs.fivem.net/natives/?_0xE2587F8CBBD87B1D)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @return boolean
+--- @overload fun(padIndex: number, control: number): boolean
+function IsDisabledControlPressed(padIndex, control) end
+
+    
+--- IsLookInverted
+---
+--- @hash [0x77B612531280010D](https://docs.fivem.net/natives/?_0x77B612531280010D)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function IsLookInverted() end
+
+    
+--- IsUsingKeyboard_2
+---
+--- @hash [0x13337B38DB572509](https://docs.fivem.net/natives/?_0x13337B38DB572509)
+--- @param padIndex number (int)
+--- @return boolean
+--- @overload fun(padIndex: number): boolean
+function IsUsingKeyboard_2(padIndex) end
+
+    
+--- # New Name: IsUsingKeyboard_2
+--- IsUsingKeyboard_2
+---
+--- @hash [0x13337B38DB572509](https://docs.fivem.net/natives/?_0x13337B38DB572509)
+--- @param padIndex number (int)
+--- @return boolean
+--- @overload fun(padIndex: number): boolean
+--- @deprecated
+function N_0x13337b38db572509(padIndex) end
+
+    
+--- # New Name: IsUsingKeyboard_2
+--- IsUsingKeyboard_2
+---
+--- @hash [0x13337B38DB572509](https://docs.fivem.net/natives/?_0x13337B38DB572509)
+--- @param padIndex number (int)
+--- @return boolean
+--- @overload fun(padIndex: number): boolean
+--- @deprecated
+function IsInputJustDisabled(padIndex) end
+
+    
+--- IsUsingKeyboard
+---
+--- @hash [0xA571D46727E2B718](https://docs.fivem.net/natives/?_0xA571D46727E2B718)
+--- @param padIndex number (int)
+--- @return boolean
+--- @overload fun(padIndex: number): boolean
+function IsUsingKeyboard(padIndex) end
+
+    
+--- # New Name: IsUsingKeyboard
+--- IsUsingKeyboard
+---
+--- @hash [0xA571D46727E2B718](https://docs.fivem.net/natives/?_0xA571D46727E2B718)
+--- @param padIndex number (int)
+--- @return boolean
+--- @overload fun(padIndex: number): boolean
+--- @deprecated
+function GetLastInputMethod(padIndex) end
+
+    
+--- # New Name: IsUsingKeyboard
+--- IsUsingKeyboard
+---
+--- @hash [0xA571D46727E2B718](https://docs.fivem.net/natives/?_0xA571D46727E2B718)
+--- @param padIndex number (int)
+--- @return boolean
+--- @overload fun(padIndex: number): boolean
+--- @deprecated
+function IsInputDisabled(padIndex) end
+
+    
+--- **This native does absolutely nothing, just a nullsub**
+---
+--- @hash [0x14D29BB12D47F68C](https://docs.fivem.net/natives/?_0x14D29BB12D47F68C)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any): void
+function N_0x14d29bb12d47f68c(p0, p1, p2, p3, p4) end
+
+    
+--- N_0x5b73c77d9eb66e24
+---
+--- @hash [0x5B73C77D9EB66E24](https://docs.fivem.net/natives/?_0x5B73C77D9EB66E24)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function N_0x5b73c77d9eb66e24(p0) end
+
+    
+--- Hardcoded to return false.
+---
+--- @hash [0x23F09EADC01449D6](https://docs.fivem.net/natives/?_0x23F09EADC01449D6)
+--- @param padIndex number (int)
+--- @return boolean
+--- @overload fun(padIndex: number): boolean
+function N_0x23f09eadc01449d6(padIndex) end
+
+    
+--- N_0x6cd79468a1e595c6
+---
+--- @hash [0x6CD79468A1E595C6](https://docs.fivem.net/natives/?_0x6CD79468A1E595C6)
+--- @param padIndex number (int)
+--- @return boolean
+--- @overload fun(padIndex: number): boolean
+function N_0x6cd79468a1e595c6(padIndex) end
 
     
 --- ```
 --- NativeDB Introduced: v1365
 --- ```
 ---
---- @hash 0x25AAA32BDC98F2A3
+--- @hash [0x25AAA32BDC98F2A3](https://docs.fivem.net/natives/?_0x25AAA32BDC98F2A3)
 ---
 --- @return any
+--- @overload fun(): any
 function N_0x25aaa32bdc98f2a3() end
 
     
---- ```
---- Used in carsteal3 script with p0 = "Carsteal4_spycar".  
---- ```
+--- N_0xcb0360efefb2580d
 ---
---- @hash 0x3D42B92563939375
---- @param name string (char*)
---- @return boolean
-function SwitchToInputMappingScheme(name) end
+--- @hash [0xCB0360EFEFB2580D](https://docs.fivem.net/natives/?_0xCB0360EFEFB2580D)
+--- @param padIndex number (int)
+--- @return void
+--- @overload fun(padIndex: number): void
+function N_0xcb0360efefb2580d(padIndex) end
+
+    
+--- N_0xa0cefcea390aab9b
+---
+--- @hash [0xA0CEFCEA390AAB9B](https://docs.fivem.net/natives/?_0xA0CEFCEA390AAB9B)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function N_0xa0cefcea390aab9b(p0) end
 
     
 --- ```
 --- S*
 --- ```
 ---
---- @hash 0x643ED62D5EA3BEBD
+--- @hash [0x643ED62D5EA3BEBD](https://docs.fivem.net/natives/?_0x643ED62D5EA3BEBD)
 ---
 --- @return void
+--- @overload fun(): void
 function ResetInputMappingScheme() end
+
+    
+--- # New Name: ResetInputMappingScheme
+--- ```
+--- S*
+--- ```
+---
+--- @hash [0x643ED62D5EA3BEBD](https://docs.fivem.net/natives/?_0x643ED62D5EA3BEBD)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function N_0x643ed62d5ea3bebd() end
+
+    
+--- ```
+--- Used with IS_LOOK_INVERTED() and negates its affect.
+--- --
+--- Not sure how the person above got that description, but here's an actual example:
+--- if (PAD::_GET_LAST_INPUT_METHOD(2)) {
+---     if (a_5) {
+---         if (PAD::IS_LOOK_INVERTED()) {
+---             a_3 *= -1;
+---         }
+---         if (PAD::_E1615EC03B3BB4FD()) {
+---             a_3 *= -1;
+---         }
+---     }
+--- }
+--- ```
+---
+--- @hash [0xE1615EC03B3BB4FD](https://docs.fivem.net/natives/?_0xE1615EC03B3BB4FD)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function N_0xe1615ec03b3bb4fd() end
+
+    
+--- N_0xf239400e16c23e08
+---
+--- @hash [0xF239400E16C23E08](https://docs.fivem.net/natives/?_0xF239400E16C23E08)
+--- @param padIndex number (int)
+--- @param p1 number (int)
+--- @return void
+--- @overload fun(padIndex: number, p1: number): void
+function N_0xf239400e16c23e08(padIndex, p1) end
+
+    
+--- This is for simulating player input.
+---
+--- @hash [0xE8A25867FBA3B05E](https://docs.fivem.net/natives/?_0xE8A25867FBA3B05E)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @param amount number (float)
+--- @return boolean
+--- @overload fun(padIndex: number, control: number, amount: number): boolean
+function SetControlNormal(padIndex, control, amount) end
+
+    
+--- # New Name: SetControlNormal
+--- This is for simulating player input.
+---
+--- @hash [0xE8A25867FBA3B05E](https://docs.fivem.net/natives/?_0xE8A25867FBA3B05E)
+--- @param padIndex number (int)
+--- @param control number (int)
+--- @param amount number (float)
+--- @return boolean
+--- @overload fun(padIndex: number, control: number, amount: number): boolean
+--- @deprecated
+function N_0xe8a25867fba3b05e(padIndex, control, amount) end
+
+    
+--- SetControlLightEffectColor
+---
+--- @hash [0x8290252FFF36ACB5](https://docs.fivem.net/natives/?_0x8290252FFF36ACB5)
+--- @param padIndex number (int)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @return void
+--- @overload fun(padIndex: number, red: number, green: number, blue: number): void
+function SetControlLightEffectColor(padIndex, red, green, blue) end
+
+    
+--- # New Name: SetControlLightEffectColor
+--- SetControlLightEffectColor
+---
+--- @hash [0x8290252FFF36ACB5](https://docs.fivem.net/natives/?_0x8290252FFF36ACB5)
+--- @param padIndex number (int)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @return void
+--- @overload fun(padIndex: number, red: number, green: number, blue: number): void
+--- @deprecated
+function N_0x8290252fff36acb5(padIndex, red, green, blue) end
+
+    
+--- # New Name: SetControlLightEffectColor
+--- SetControlLightEffectColor
+---
+--- @hash [0x8290252FFF36ACB5](https://docs.fivem.net/natives/?_0x8290252FFF36ACB5)
+--- @param padIndex number (int)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @return void
+--- @overload fun(padIndex: number, red: number, green: number, blue: number): void
+--- @deprecated
+function SetControlGroupColor(padIndex, red, green, blue) end
+
+    
+--- SetCursorLocation
+---
+--- @hash [0xFC695459D4D0E219](https://docs.fivem.net/natives/?_0xFC695459D4D0E219)
+--- @param x number (float)
+--- @param y number (float)
+--- @return boolean
+--- @overload fun(x: number, y: number): boolean
+function SetCursorLocation(x, y) end
+
+    
+--- # New Name: SetCursorLocation
+--- SetCursorLocation
+---
+--- @hash [0xFC695459D4D0E219](https://docs.fivem.net/natives/?_0xFC695459D4D0E219)
+--- @param x number (float)
+--- @param y number (float)
+--- @return boolean
+--- @overload fun(x: number, y: number): boolean
+--- @deprecated
+function N_0xfc695459d4d0e219(x, y) end
 
     
 --- ```
@@ -375,231 +756,41 @@ function ResetInputMappingScheme() end
 --- SET_PAD_SHAKE(0, 100, 200);  
 --- ```
 ---
---- @hash 0x48B3886C1358D0D5
+--- @hash [0x48B3886C1358D0D5](https://docs.fivem.net/natives/?_0x48B3886C1358D0D5)
 --- @param padIndex number (int)
 --- @param duration number (int)
 --- @param frequency number (int)
 --- @return void
+--- @overload fun(padIndex: number, duration: number, frequency: number): void
 function SetPadShake(padIndex, duration, frequency) end
 
     
---- ```
---- Returns profile setting 225.
---- ```
+--- SetInputExclusive
 ---
---- @hash 0x0F70731BACCFBB96
----
---- @return boolean
-function GetIsUsingAlternateDriveby() end
-
-    
---- ```
---- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
---- ```
----
---- @hash 0xEDE476E5EE29EDB1
+--- @hash [0xEDE476E5EE29EDB1](https://docs.fivem.net/natives/?_0xEDE476E5EE29EDB1)
 --- @param padIndex number (int)
 --- @param control number (int)
 --- @return void
+--- @overload fun(padIndex: number, control: number): void
 function SetInputExclusive(padIndex, control) end
-
-    
---- ```
---- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
---- ```
----
---- @hash 0x8290252FFF36ACB5
---- @param padIndex number (int)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @return void
-function SetControlGroupColor(padIndex, red, green, blue) end
-
-    
---- Returns whether a [control](https://docs.fivem.net/game-references/controls/) was newly pressed since the last check.
----
---- @hash 0x580417101DDB492F
---- @param inputGroup number (int)
---- @param control number (int)
---- @return boolean
-function IsControlJustPressed(inputGroup, control) end
-
-    
---- ```
---- Seems to return values between -1 and 1 for controls like gas and steering.  
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
----
---- @hash 0x5B84D09CEC5209C5
---- @param padIndex number (int)
---- @param control number (int)
---- @return number (float)
-function GetControlUnboundNormal(padIndex, control) end
-
-    
---- [Control values and meaning](https://docs.fivem.net/docs/game-references/controls/#controls)
---- 
---- Example: `CONTROLS::DISABLE_CONTROL_ACTION(2, 19, true)` disables the switching UI from appearing both when using a keyboard and Xbox 360 controller. Needs to be executed each frame.
---- Control group 1 and 0 gives the same results as 2. Same results for all players.
----
---- @hash 0xFE99B66D079CF6BC
---- @param padIndex number (int)
---- @param control number (int)
---- @param disable boolean
---- @return void
-function DisableControlAction(padIndex, control, disable) end
-
-    
---- ```
---- This is for simulating player input.  
---- amount is a float value from 0   
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
----
---- @hash 0xE8A25867FBA3B05E
---- @param padIndex number (int)
---- @param control number (int)
---- @param amount number (float)
---- @return boolean
-function SetControlNormal(padIndex, control, amount) end
-
-    
---- Returns whether a [control](https://docs.fivem.net/game-references/controls/) was newly released since the last check.
----
---- @hash 0x50F940259D3841E6
---- @param inputGroup number (int)
---- @param control number (int)
---- @return boolean
-function IsControlJustReleased(inputGroup, control) end
-
-    
---- ```
---- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
---- 
---- Hardcoded to return false.
---- ```
----
---- @hash 0x23F09EADC01449D6
---- @param padIndex number (int)
---- @return boolean
-function N_0x23f09eadc01449d6(padIndex) end
-
-    
---- ```
---- Used with IS_LOOK_INVERTED() and negates its affect.  
---- --  
---- Not sure how the person above got that description, but here's an actual example:  
---- if (CONTROLS::_GET_LAST_INPUT_METHOD(2)) {  
----     if (a_5) {  
----         if (CONTROLS::IS_LOOK_INVERTED()) {  
----             a_3 *= -1;  
----         }  
----         if (CONTROLS::_E1615EC03B3BB4FD()) {  
----             a_3 *= -1;  
----         }  
----     }  
---- }  
---- ```
----
---- @hash 0xE1615EC03B3BB4FD
----
---- @return boolean
-function N_0xe1615ec03b3bb4fd() end
-
-    
---- **This native does absolutely nothing, just a nullsub**
----
---- @hash 0x14D29BB12D47F68C
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @param p4 any
---- @return void
-function N_0x14d29bb12d47f68c(p0, p1, p2, p3, p4) end
 
     
 --- StopPadShake
 ---
---- @hash 0x38C16A305E8CDC8D
+--- @hash [0x38C16A305E8CDC8D](https://docs.fivem.net/natives/?_0x38C16A305E8CDC8D)
 --- @param padIndex number (int)
 --- @return void
+--- @overload fun(padIndex: number): void
 function StopPadShake(padIndex) end
 
     
---- ```
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
+--- SetPlayerpadShakesWhenControllerDisabled
 ---
---- @hash 0x305C8DCD79DA8B0F
---- @param padIndex number (int)
---- @param control number (int)
---- @return boolean
-function IsDisabledControlJustReleased(padIndex, control) end
-
-    
---- ```
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
----
---- @hash 0x91AEF906BCA88877
---- @param padIndex number (int)
---- @param control number (int)
---- @return boolean
-function IsDisabledControlJustPressed(padIndex, control) end
-
-    
---- ```
---- formerly called _GET_CONTROL_ACTION_NAME incorrectly  
---- p2 appears to always be true.  
---- p2 is unused variable in function.  
---- EG:  
---- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 201, 1) /*INPUT_FRONTEND_ACCEPT (e.g. Enter button)*/  
---- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 202, 1) /*INPUT_FRONTEND_CANCEL (e.g. ESC button)*/  
---- GET_CONTROL_INSTRUCTIONAL_BUTTON (2, 51, 1) /*INPUT_CONTEXT (e.g. E button)*/  
---- gtaforums.com/topic/819070-c-draw-instructional-buttons-scaleform-movie/#entry1068197378  
---- 0, 1 and 2 used in the scripts. 0 is by far the most common of them.  
---- ```
---- 
---- ```
---- NativeDB Parameter 2: BOOL p2
---- ```
----
---- @hash 0x0499D7B09FC9B407
---- @param padIndex number (int)
---- @param control number (int)
---- @param p2 Player
---- @return string (char*)
-function GetControlInstructionalButton(padIndex, control, p2) end
-
-    
---- N_0xcb0360efefb2580d
----
---- @hash 0xCB0360EFEFB2580D
---- @param padIndex number (int)
+--- @hash [0x798FDEB5B1575088](https://docs.fivem.net/natives/?_0x798FDEB5B1575088)
+--- @param toggle boolean
 --- @return void
-function N_0xcb0360efefb2580d(padIndex) end
-
-    
---- ```
---- inputGroup: 0 (PLAYER_CONTROL), 1 (unk) and 2 (unk) used in the scripts.
---- ```
----
---- @hash 0xFB6C4072E9A32E92
---- @param padIndex number (int)
---- @param control number (int)
---- @return boolean
-function IsDisabledControlReleased(padIndex, control) end
-
-    
---- Returns whether a [control](https://docs.fivem.net/game-references/controls/) is currently *not* pressed.
----
---- @hash 0x648EE3E7F38877DD
---- @param inputGroup number (int)
---- @param control number (int)
---- @return boolean
-function IsControlReleased(inputGroup, control) end
+--- @overload fun(toggle: boolean): void
+function SetPlayerpadShakesWhenControllerDisabled(toggle) end
 
     
 --- ```
@@ -608,9 +799,51 @@ function IsControlReleased(inputGroup, control) end
 --- S*
 --- ```
 ---
---- @hash 0x4683149ED1DDE7A1
+--- @hash [0x4683149ED1DDE7A1](https://docs.fivem.net/natives/?_0x4683149ED1DDE7A1)
 --- @param name string (char*)
 --- @return boolean
+--- @overload fun(name: string): boolean
 function SwitchToInputMappingScheme_2(name) end
+
+    
+--- # New Name: SwitchToInputMappingScheme_2
+--- ```
+--- Same as 0x3D42B92563939375
+--- 
+--- S*
+--- ```
+---
+--- @hash [0x4683149ED1DDE7A1](https://docs.fivem.net/natives/?_0x4683149ED1DDE7A1)
+--- @param name string (char*)
+--- @return boolean
+--- @overload fun(name: string): boolean
+--- @deprecated
+function N_0x4683149ed1dde7a1(name) end
+
+    
+--- ```
+--- Used in carsteal3 script with p0 = "Carsteal4_spycar".
+--- S*
+--- ```
+---
+--- @hash [0x3D42B92563939375](https://docs.fivem.net/natives/?_0x3D42B92563939375)
+--- @param name string (char*)
+--- @return boolean
+--- @overload fun(name: string): boolean
+function SwitchToInputMappingScheme(name) end
+
+    
+--- # New Name: SwitchToInputMappingScheme
+--- ```
+--- Used in carsteal3 script with p0 = "Carsteal4_spycar".
+--- S*
+--- ```
+---
+--- @hash [0x3D42B92563939375](https://docs.fivem.net/natives/?_0x3D42B92563939375)
+--- @param name string (char*)
+--- @return boolean
+--- @overload fun(name: string): boolean
+--- @deprecated
+function N_0x3d42b92563939375(name) end
 
     

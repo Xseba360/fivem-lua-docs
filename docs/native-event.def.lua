@@ -1,145 +1,147 @@
 
---- RemoveShockingEventSpawnBlockingAreas
----
---- @hash 0x340F1415B68AEADE
----
---- @return void
-function RemoveShockingEventSpawnBlockingAreas() end
-
-    
 --- ```
---- duration is float here  
---- Event types - camx.me/gtav/tasks/shockingevents.txt  
+--- eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
 --- ```
 ---
---- @hash 0x7FD8F3BE76F89422
---- @param type number (int)
---- @param entity Entity
---- @param duration number (float)
---- @return table (ScrHandle)
-function AddShockingEventForEntity(type, entity, duration) end
-
-    
---- BlockDecisionMakerEvent
----
---- @hash 0xE42FCDFD0E4196F7
---- @param name Hash
---- @param type number (int)
---- @return void
-function BlockDecisionMakerEvent(name, type) end
-
-    
---- ```
---- duration is float here  
---- Event types- camx.me/gtav/tasks/shockingevents.txt  
---- ```
----
---- @hash 0xD9F8455409B525E9
---- @param type number (int)
+--- @hash [0xD9F8455409B525E9](https://docs.fivem.net/natives/?_0xD9F8455409B525E9)
+--- @param eventType number (int)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param duration number (float)
---- @return table (ScrHandle)
-function AddShockingEventAtPosition(type, x, y, z, duration) end
+--- @return ScrHandle
+--- @overload fun(eventType: number, x: number, y: number, z: number, duration: number): ScrHandle
+function AddShockingEventAtPosition(eventType, x, y, z, duration) end
 
     
---- SuppressShockingEventsNextFrame
+--- ```
+--- eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
+--- This is limited to 4 blocked events at a time.
+--- ```
 ---
---- @hash 0x2F9A292AD0A3BD89
----
+--- @hash [0xE42FCDFD0E4196F7](https://docs.fivem.net/natives/?_0xE42FCDFD0E4196F7)
+--- @param name Hash
+--- @param eventType number (int)
 --- @return void
-function SuppressShockingEventsNextFrame() end
+--- @overload fun(name: Hash, eventType: number): void
+function BlockDecisionMakerEvent(name, eventType) end
 
     
 --- ```
---- Some events that i found, not sure about them, but seems to have logic based on my tests:  
---- '82 - dead body  
---- '86   
---- '87   
---- '88 - shooting, fire extinguisher in use  
---- '89   
---- '93 - ped using horn  
---- '95 - ped receiving melee attack  
---- '102 - living ped receiving shot  
---- '104 - player thrown grenade, tear gas, smoke grenade, jerry can dropping gasoline  
---- '105 - melee attack against veh  
---- '106 - player running  
---- '108 - vehicle theft  
---- '112 - melee attack  
---- '113 - veh rollover ped  
---- '114 - dead ped receiving shot  
---- '116 - aiming at ped  
---- '121   
---- 		Here is full dump of shocking event types from the exe camx.me/gtav/tasks/shockingevents.txt  
+--- eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
 --- ```
 ---
---- @hash 0x1374ABB7C15BAB92
---- @param type number (int)
+--- @hash [0x7FD8F3BE76F89422](https://docs.fivem.net/natives/?_0x7FD8F3BE76F89422)
+--- @param eventType number (int)
+--- @param entity Entity
+--- @param duration number (float)
+--- @return ScrHandle
+--- @overload fun(eventType: number, entity: Entity, duration: number): ScrHandle
+function AddShockingEventForEntity(eventType, entity, duration) end
+
+    
+--- ```
+--- eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
+--- ```
+---
+--- @hash [0x1374ABB7C15BAB92](https://docs.fivem.net/natives/?_0x1374ABB7C15BAB92)
+--- @param eventType number (int)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
 --- @return boolean
-function IsShockingEventInSphere(type, x, y, z, radius) end
-
-    
---- RemoveAllShockingEvents
----
---- @hash 0xEAABE8FDFA21274C
---- @param p0 boolean
---- @return void
-function RemoveAllShockingEvents(p0) end
+--- @overload fun(eventType: number, x: number, y: number, z: number, radius: number): boolean
+function IsShockingEventInSphere(eventType, x, y, z, radius) end
 
     
 --- RemoveShockingEvent
 ---
---- @hash 0x2CDA538C44C6CCE5
---- @param event table (ScrHandle)
+--- @hash [0x2CDA538C44C6CCE5](https://docs.fivem.net/natives/?_0x2CDA538C44C6CCE5)
+--- @param event ScrHandle
 --- @return boolean
+--- @overload fun(event: ScrHandle): boolean
 function RemoveShockingEvent(event) end
+
+    
+--- ```
+--- eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
+--- ```
+---
+--- @hash [0x4FC9381A7AEE8968](https://docs.fivem.net/natives/?_0x4FC9381A7AEE8968)
+--- @param name Hash
+--- @param eventType number (int)
+--- @return void
+--- @overload fun(name: Hash, eventType: number): void
+function ClearDecisionMakerEventResponse(name, eventType) end
+
+    
+--- RemoveAllShockingEvents
+---
+--- @hash [0xEAABE8FDFA21274C](https://docs.fivem.net/natives/?_0xEAABE8FDFA21274C)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function RemoveAllShockingEvents(p0) end
+
+    
+--- ```
+--- eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
+--- ```
+---
+--- @hash [0x3FD2EC8BF1F1CF30](https://docs.fivem.net/natives/?_0x3FD2EC8BF1F1CF30)
+--- @param eventType number (int)
+--- @return void
+--- @overload fun(eventType: number): void
+function SuppressShockingEventTypeNextFrame(eventType) end
+
+    
+--- RemoveShockingEventSpawnBlockingAreas
+---
+--- @hash [0x340F1415B68AEADE](https://docs.fivem.net/natives/?_0x340F1415B68AEADE)
+---
+--- @return void
+--- @overload fun(): void
+function RemoveShockingEventSpawnBlockingAreas() end
 
     
 --- SetDecisionMaker
 ---
---- @hash 0xB604A2942ADED0EE
+--- @hash [0xB604A2942ADED0EE](https://docs.fivem.net/natives/?_0xB604A2942ADED0EE)
 --- @param ped Ped
 --- @param name Hash
 --- @return void
+--- @overload fun(ped: Ped, name: Hash): void
 function SetDecisionMaker(ped, name) end
 
     
---- SuppressShockingEventTypeNextFrame
+--- SuppressShockingEventsNextFrame
 ---
---- @hash 0x3FD2EC8BF1F1CF30
---- @param type number (int)
---- @return void
-function SuppressShockingEventTypeNextFrame(type) end
-
-    
---- UnblockDecisionMakerEvent
+--- @hash [0x2F9A292AD0A3BD89](https://docs.fivem.net/natives/?_0x2F9A292AD0A3BD89)
 ---
---- @hash 0xD7CD9CF34F2C99E8
---- @param name Hash
---- @param type number (int)
 --- @return void
-function UnblockDecisionMakerEvent(name, type) end
+--- @overload fun(): void
+function SuppressShockingEventsNextFrame() end
 
     
 --- SuppressAgitationEventsNextFrame
 ---
---- @hash 0x5F3B7749C112D552
+--- @hash [0x5F3B7749C112D552](https://docs.fivem.net/natives/?_0x5F3B7749C112D552)
 ---
 --- @return void
+--- @overload fun(): void
 function SuppressAgitationEventsNextFrame() end
 
     
---- ClearDecisionMakerEventResponse
+--- ```
+--- eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
+--- ```
 ---
---- @hash 0x4FC9381A7AEE8968
+--- @hash [0xD7CD9CF34F2C99E8](https://docs.fivem.net/natives/?_0xD7CD9CF34F2C99E8)
 --- @param name Hash
---- @param type number (int)
+--- @param eventType number (int)
 --- @return void
-function ClearDecisionMakerEventResponse(name, type) end
+--- @overload fun(name: Hash, eventType: number): void
+function UnblockDecisionMakerEvent(name, eventType) end
 
     
