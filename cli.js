@@ -592,7 +592,7 @@ args.forEach(file => {
 })
 
 function write (fileName, contents) {
-  fs.writeFileSync('docs/' + fileName + '.def.lua', contents, (err) => {
+  fs.writeFileSync('docs-gen/' + fileName + '.def.lua', contents, (err) => {
     // throws an error, you could also catch it here
     if (err) throw err
 
