@@ -1,11 +1,48 @@
 
---- N_0x48621c9fca3ebd28
+--- ```
+--- Stops recording and saves the recorded clip.  
+--- ```
 ---
---- @hash [0x48621C9FCA3EBD28](https://docs.fivem.net/natives/?_0x48621C9FCA3EBD28)
---- @param p0 number (int)
+--- @hash [0x071A5197D6AFC8B3](https://docs.fivem.net/natives/?_0x071A5197D6AFC8B3)
+---
 --- @return void
---- @overload fun(p0: number): void
-function N_0x48621c9fca3ebd28(p0) end
+--- @overload fun(): void
+function StopRecordingAndSaveClip() end
+
+    
+--- # New Name: StopRecordingAndSaveClip
+--- ```
+--- Stops recording and saves the recorded clip.  
+--- ```
+---
+--- @hash [0x071A5197D6AFC8B3](https://docs.fivem.net/natives/?_0x071A5197D6AFC8B3)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function StopRecording() end
+
+    
+--- N_0x13b350b8ad0eee10
+---
+--- @hash [0x13B350B8AD0EEE10](https://docs.fivem.net/natives/?_0x13B350B8AD0EEE10)
+---
+--- @return void
+--- @overload fun(): void
+function N_0x13b350b8ad0eee10() end
+
+    
+--- ```
+--- Checks if you're recording, returns TRUE when you start recording (F1) or turn on action replay (F2)  
+--- mov al, cs:g_bIsRecordingGameplay // byte_141DD0CD0 in b944  
+--- retn  
+--- ```
+---
+--- @hash [0x1897CA71995A90B4](https://docs.fivem.net/natives/?_0x1897CA71995A90B4)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function IsRecording() end
 
     
 --- ```
@@ -22,13 +59,15 @@ function N_0x48621c9fca3ebd28(p0) end
 function N_0x208784099002bc30(missionNameLabel, p1) end
 
     
---- N_0x4282e08174868be3
+--- N_0x293220da1b46cebc
 ---
---- @hash [0x4282E08174868BE3](https://docs.fivem.net/natives/?_0x4282E08174868BE3)
----
---- @return any
---- @overload fun(): any
-function N_0x4282e08174868be3() end
+--- @hash [0x293220DA1B46CEBC](https://docs.fivem.net/natives/?_0x293220DA1B46CEBC)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (int)
+--- @return void
+--- @overload fun(p0: number, p1: number, p2: number): void
+function N_0x293220da1b46cebc(p0, p1, p2) end
 
     
 --- N_0x33d47e85b476abcd
@@ -40,13 +79,62 @@ function N_0x4282e08174868be3() end
 function N_0x33d47e85b476abcd(p0) end
 
     
---- N_0x13b350b8ad0eee10
+--- N_0x4282e08174868be3
 ---
---- @hash [0x13B350B8AD0EEE10](https://docs.fivem.net/natives/?_0x13B350B8AD0EEE10)
+--- @hash [0x4282E08174868BE3](https://docs.fivem.net/natives/?_0x4282E08174868BE3)
+---
+--- @return any
+--- @overload fun(): any
+function N_0x4282e08174868be3() end
+
+    
+--- N_0x48621c9fca3ebd28
+---
+--- @hash [0x48621C9FCA3EBD28](https://docs.fivem.net/natives/?_0x48621C9FCA3EBD28)
+--- @param p0 number (int)
+--- @return void
+--- @overload fun(p0: number): void
+function N_0x48621c9fca3ebd28(p0) end
+
+    
+--- SaveRecordingClip
+---
+--- @hash [0x644546EC5287471B](https://docs.fivem.net/natives/?_0x644546EC5287471B)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function SaveRecordingClip() end
+
+    
+--- # New Name: SaveRecordingClip
+--- SaveRecordingClip
+---
+--- @hash [0x644546EC5287471B](https://docs.fivem.net/natives/?_0x644546EC5287471B)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0x644546ec5287471b() end
+
+    
+--- **This native does absolutely nothing, just a nullsub**
+---
+--- @hash [0x66972397E0757E7A](https://docs.fivem.net/natives/?_0x66972397E0757E7A)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: any): void
+function N_0x66972397e0757e7a(p0, p1, p2) end
+
+    
+--- N_0x81cbae94390f9f89
+---
+--- @hash [0x81CBAE94390F9F89](https://docs.fivem.net/natives/?_0x81CBAE94390F9F89)
 ---
 --- @return void
 --- @overload fun(): void
-function N_0x13b350b8ad0eee10() end
+function N_0x81cbae94390f9f89() end
 
     
 --- ```
@@ -101,15 +189,6 @@ function DisableRockstarEditorCameraChanges() end
 function N_0xaf66dcee6609b148() end
 
     
---- N_0x81cbae94390f9f89
----
---- @hash [0x81CBAE94390F9F89](https://docs.fivem.net/natives/?_0x81CBAE94390F9F89)
----
---- @return void
---- @overload fun(): void
-function N_0x81cbae94390f9f89() end
-
-    
 --- ```
 --- Starts recording a replay.  
 --- If mode is 0, turns on action replay.  
@@ -140,6 +219,15 @@ function StartRecording(mode) end
 function N_0xc3ac2fff9612ac81(mode) end
 
     
+--- N_0xdf4b952f7d381b95
+---
+--- @hash [0xDF4B952F7D381B95](https://docs.fivem.net/natives/?_0xDF4B952F7D381B95)
+---
+--- @return any
+--- @overload fun(): any
+function N_0xdf4b952f7d381b95() end
+
+    
 --- This disable the recording feature and has to be called every frame.
 ---
 --- @hash [0xEB2D525B57F42B40](https://docs.fivem.net/natives/?_0xEB2D525B57F42B40)
@@ -158,94 +246,6 @@ function StopRecordingThisFrame() end
 --- @overload fun(): void
 --- @deprecated
 function N_0xeb2d525b57f42b40() end
-
-    
---- N_0xdf4b952f7d381b95
----
---- @hash [0xDF4B952F7D381B95](https://docs.fivem.net/natives/?_0xDF4B952F7D381B95)
----
---- @return any
---- @overload fun(): any
-function N_0xdf4b952f7d381b95() end
-
-    
---- ```
---- Stops recording and saves the recorded clip.  
---- ```
----
---- @hash [0x071A5197D6AFC8B3](https://docs.fivem.net/natives/?_0x071A5197D6AFC8B3)
----
---- @return void
---- @overload fun(): void
-function StopRecordingAndSaveClip() end
-
-    
---- # New Name: StopRecordingAndSaveClip
---- ```
---- Stops recording and saves the recorded clip.  
---- ```
----
---- @hash [0x071A5197D6AFC8B3](https://docs.fivem.net/natives/?_0x071A5197D6AFC8B3)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function StopRecording() end
-
-    
---- ```
---- Checks if you're recording, returns TRUE when you start recording (F1) or turn on action replay (F2)  
---- mov al, cs:g_bIsRecordingGameplay // byte_141DD0CD0 in b944  
---- retn  
---- ```
----
---- @hash [0x1897CA71995A90B4](https://docs.fivem.net/natives/?_0x1897CA71995A90B4)
----
---- @return boolean
---- @overload fun(): boolean
-function IsRecording() end
-
-    
---- SaveRecordingClip
----
---- @hash [0x644546EC5287471B](https://docs.fivem.net/natives/?_0x644546EC5287471B)
----
---- @return boolean
---- @overload fun(): boolean
-function SaveRecordingClip() end
-
-    
---- # New Name: SaveRecordingClip
---- SaveRecordingClip
----
---- @hash [0x644546EC5287471B](https://docs.fivem.net/natives/?_0x644546EC5287471B)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function N_0x644546ec5287471b() end
-
-    
---- N_0x293220da1b46cebc
----
---- @hash [0x293220DA1B46CEBC](https://docs.fivem.net/natives/?_0x293220DA1B46CEBC)
---- @param p0 number (float)
---- @param p1 number (float)
---- @param p2 number (int)
---- @return void
---- @overload fun(p0: number, p1: number, p2: number): void
-function N_0x293220da1b46cebc(p0, p1, p2) end
-
-    
---- **This native does absolutely nothing, just a nullsub**
----
---- @hash [0x66972397E0757E7A](https://docs.fivem.net/natives/?_0x66972397E0757E7A)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @return void
---- @overload fun(p0: any, p1: any, p2: any): void
-function N_0x66972397e0757e7a(p0, p1, p2) end
 
     
 --- N_0xf854439efbb3b583

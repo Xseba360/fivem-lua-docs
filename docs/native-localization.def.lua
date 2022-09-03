@@ -1,29 +1,5 @@
 
 --- ```
---- Possible return values: 0, 1, 2
---- ```
----
---- @hash [0xA8AE43AEC1A61314](https://docs.fivem.net/natives/?_0xA8AE43AEC1A61314)
----
---- @return number
---- @overload fun(): number
-function LocalizationGetSystemDateFormat() end
-
-    
---- # New Name: LocalizationGetSystemDateFormat
---- ```
---- Possible return values: 0, 1, 2
---- ```
----
---- @hash [0xA8AE43AEC1A61314](https://docs.fivem.net/natives/?_0xA8AE43AEC1A61314)
----
---- @return number
---- @overload fun(): number
---- @deprecated
-function GetUserLanguageId() end
-
-    
---- ```
 --- 0 = american (en-US)
 --- 1 = french (fr-FR)
 --- 2 = german (de-DE)
@@ -118,5 +94,29 @@ function LocalizationGetSystemLanguage() end
 --- @overload fun(): number
 --- @deprecated
 function N_0x497420e022796b3f() end
+
+    
+--- ```
+--- Possible return values: 0, 1, 2
+--- ```
+---
+--- @hash [0xA8AE43AEC1A61314](https://docs.fivem.net/natives/?_0xA8AE43AEC1A61314)
+---
+--- @return number
+--- @overload fun(): number
+function LocalizationGetSystemDateFormat() end
+
+    
+--- # New Name: LocalizationGetSystemDateFormat
+--- ```
+--- Possible return values: 0, 1, 2
+--- ```
+---
+--- @hash [0xA8AE43AEC1A61314](https://docs.fivem.net/natives/?_0xA8AE43AEC1A61314)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
+function GetUserLanguageId() end
 
     

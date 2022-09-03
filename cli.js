@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// noinspection SpellCheckingInspection
 
 'use strict'
 process.env.FORCE_COLOR = String(true)
@@ -192,6 +193,7 @@ function parseType (type, isReturn, hash) {
       break
     case 'BOOL*':
     case 'BOOL':
+    case 'bool*':
     case 'bool':
       lType = type = 'boolean'
       break
@@ -212,12 +214,13 @@ function parseType (type, isReturn, hash) {
     case '{name: string}[]':
     case '{doorHash: Hash, doorHandle: number}[]':
     case 'number[]':
+    case 'RegisteredCommandInfo[]':
       // don't touch these values and just return them
       lType = type
       break
 
     default:
-      console.info(`\x1b[41m\x1b[30mERROR:\x1b[0m \x1b[31mPossible unknown type ${type}! Fix Me and run again!\x1b[0m`)
+      console.info(`\x1b[41m\x1b[30mERROR:\x1b[0m \x1b[31mPossible unknown type ${type} in hash ${hash}! Fix Me and run again!\x1b[0m`)
       process.exit()
 
       lType = 'table'
@@ -398,29 +401,50 @@ function parseDescription (name, desc) {
 
 function getTemporaryManualOverload (apiset, namespace, name) {
   let manual = ''
-  if (name === 'GetEntityCoords') {
-    manual = 'fun(entity: Entity): Vector3'
-  } else if (name === 'GetEntityRotation') {
-    manual = 'fun(entity: Entity): Vector3'
-  } else if (name === 'GetGamePool') {
-    manual = `fun(poolname: 'CPed'): Ped[]
+  switch (name) {
+    case 'GetVehicleLockOnTarget':
+      manual = `fun(vehicle: Vehicle): Vehicle
+--- @overload fun(vehicle: Vehicle): boolean, Entity`
+      break
+    case 'AddRelationshipGroup':
+      manual = 'fun(name: string): Hash'
+      break
+    case 'GetEntityCoords':
+      manual = 'fun(entity: Entity): Vector3'
+      break
+    case 'NetworkFadeInEntity':
+      manual = 'fun(entity: Entity, state: boolean, slow: boolean): void'
+      break
+    case 'SetResourceKvp':
+      manual = 'fun(key: string, value: string|JsonString<any>): void'
+      break
+    case 'GetEntityRotation':
+      manual = 'fun(entity: Entity): Vector3'
+      break
+    case 'GetGamePool':
+      manual = `fun(poolname: 'CPed'): Ped[]
 --- @overload fun(poolname: 'CObject'): Object[]
 --- @overload fun(poolname: 'CVehicle'): Vehicle[]
 --- @overload fun(poolname: 'CPickup'): Pickup[]`
-  } else if (name === 'GetVehicleDoorsLockedForPlayer') {
-    manual = 'fun(vehicle: Vehicle, player: Player): boolean'
-  } else if (name === 'DrawMarker') {
-    manual = 'fun(type: number, posX: number, posY: number, posZ: number, dirX: number, dirY: number, dirZ: number, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, red: number, green: number, blue: number, alpha: number, bobUpAndDown: boolean, faceCamera: boolean, p19: number, rotate: boolean): void'
-  } else if (name === 'SetFacialIdleAnimOverride') {
-    manual = 'fun(ped: Ped, animName: string, animDict: number): void'
-  } else {
-    return ''
+      break
+    case 'GetVehicleDoorsLockedForPlayer':
+      manual = 'fun(vehicle: Vehicle, player: Player): boolean'
+      break
+    case 'DrawMarker':
+      manual = 'fun(type: number, posX: number, posY: number, posZ: number, dirX: number, dirY: number, dirZ: number, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, red: number, green: number, blue: number, alpha: number, bobUpAndDown: boolean, faceCamera: boolean, p19: number, rotate: boolean): void'
+      break
+    case 'SetFacialIdleAnimOverride':
+      manual = 'fun(ped: Ped, animName: string, animDict: number): void'
+      break
+    default:
+      return ''
   }
   return manual
 }
 
 function fixMethod (methodObj) {
   if (methodObj.hash === '0x9B8E1BF04B51F2E8') {
+    // GetAllVehciles() should only be used on server, on client GetGamePool() should be used.
     return false
 
   } else if (methodObj.hash === '0x760A2D67') {
@@ -445,7 +469,7 @@ function fixMethod (methodObj) {
     methodObj.results = '(Ped|Object|Vehicle|Pickup)[]'
 
   } else if (methodObj.hash === '0xD4BEF069') {
-    methodObj.results = '{name: string}[]'
+    methodObj.results = 'RegisteredCommandInfo[]'
 
   }
   return true
@@ -560,7 +584,8 @@ args.forEach(file => {
   let parsed = JSON.parse(String(rawData))
   for (const ns in parsed) {
     let contents = parsed[ns]
-    for (const method in contents) {
+    const keys = Object.keys(contents).sort()
+    for (const method of keys) {
       parse(method, contents[method])
     }
   }

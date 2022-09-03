@@ -1,22 +1,84 @@
 
---- N_0xf2ca003f167e21d2
+--- LoadingscreenGetLoadFreemodeWithEventName
 ---
---- @hash [0xF2CA003F167E21D2](https://docs.fivem.net/natives/?_0xF2CA003F167E21D2)
+--- @hash [0x8AA464D4E0F6ACCD](https://docs.fivem.net/natives/?_0x8AA464D4E0F6ACCD)
 ---
---- @return number
---- @overload fun(): number
-function N_0xf2ca003f167e21d2() end
+--- @return boolean
+--- @overload fun(): boolean
+function LoadingscreenGetLoadFreemodeWithEventName() end
 
     
---- # New Name: N_0xf2ca003f167e21d2
---- N_0xf2ca003f167e21d2
+--- # New Name: LoadingscreenGetLoadFreemodeWithEventName
+--- LoadingscreenGetLoadFreemodeWithEventName
 ---
---- @hash [0xF2CA003F167E21D2](https://docs.fivem.net/natives/?_0xF2CA003F167E21D2)
+--- @hash [0x8AA464D4E0F6ACCD](https://docs.fivem.net/natives/?_0x8AA464D4E0F6ACCD)
 ---
---- @return number
---- @overload fun(): number
+--- @return boolean
+--- @overload fun(): boolean
 --- @deprecated
-function ReturnZero() end
+function N_0x8aa464d4e0f6accd() end
+
+    
+--- LoadingscreenSetLoadFreemode
+---
+--- @hash [0xB0C56BD3D808D863](https://docs.fivem.net/natives/?_0xB0C56BD3D808D863)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function LoadingscreenSetLoadFreemode(toggle) end
+
+    
+--- # New Name: LoadingscreenSetLoadFreemode
+--- LoadingscreenSetLoadFreemode
+---
+--- @hash [0xB0C56BD3D808D863](https://docs.fivem.net/natives/?_0xB0C56BD3D808D863)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function GetBroadcastFinshedLosSound(toggle) end
+
+    
+--- # New Name: LoadingscreenSetLoadFreemode
+--- LoadingscreenSetLoadFreemode
+---
+--- @hash [0xB0C56BD3D808D863](https://docs.fivem.net/natives/?_0xB0C56BD3D808D863)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function N_0xb0c56bd3d808d863(toggle) end
+
+    
+--- LoadingscreenIsLoadingFreemode
+---
+--- @hash [0xC6DC823253FBB366](https://docs.fivem.net/natives/?_0xC6DC823253FBB366)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function LoadingscreenIsLoadingFreemode() end
+
+    
+--- # New Name: LoadingscreenIsLoadingFreemode
+--- LoadingscreenIsLoadingFreemode
+---
+--- @hash [0xC6DC823253FBB366](https://docs.fivem.net/natives/?_0xC6DC823253FBB366)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0xc6dc823253fbb366() end
+
+    
+--- # New Name: LoadingscreenIsLoadingFreemode
+--- LoadingscreenIsLoadingFreemode
+---
+--- @hash [0xC6DC823253FBB366](https://docs.fivem.net/natives/?_0xC6DC823253FBB366)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function IsUiLoadingMultiplayer() end
 
     
 --- LoadingscreenSetIsLoadingFreemode
@@ -59,55 +121,33 @@ function LoadingscreenGetLoadFreemode() end
 function N_0xef7d17bc6c85264c() end
 
     
---- LoadingscreenGetLoadFreemodeWithEventName
+--- N_0xf2ca003f167e21d2
 ---
---- @hash [0x8AA464D4E0F6ACCD](https://docs.fivem.net/natives/?_0x8AA464D4E0F6ACCD)
+--- @hash [0xF2CA003F167E21D2](https://docs.fivem.net/natives/?_0xF2CA003F167E21D2)
 ---
---- @return boolean
---- @overload fun(): boolean
-function LoadingscreenGetLoadFreemodeWithEventName() end
+--- @return number
+--- @overload fun(): number
+function N_0xf2ca003f167e21d2() end
 
     
---- # New Name: LoadingscreenGetLoadFreemodeWithEventName
---- LoadingscreenGetLoadFreemodeWithEventName
+--- # New Name: N_0xf2ca003f167e21d2
+--- N_0xf2ca003f167e21d2
 ---
---- @hash [0x8AA464D4E0F6ACCD](https://docs.fivem.net/natives/?_0x8AA464D4E0F6ACCD)
+--- @hash [0xF2CA003F167E21D2](https://docs.fivem.net/natives/?_0xF2CA003F167E21D2)
 ---
---- @return boolean
---- @overload fun(): boolean
+--- @return number
+--- @overload fun(): number
 --- @deprecated
-function N_0x8aa464d4e0f6accd() end
+function ReturnZero() end
 
     
---- LoadingscreenIsLoadingFreemode
+--- N_0xfa1e0e893d915215
 ---
---- @hash [0xC6DC823253FBB366](https://docs.fivem.net/natives/?_0xC6DC823253FBB366)
----
---- @return boolean
---- @overload fun(): boolean
-function LoadingscreenIsLoadingFreemode() end
-
-    
---- # New Name: LoadingscreenIsLoadingFreemode
---- LoadingscreenIsLoadingFreemode
----
---- @hash [0xC6DC823253FBB366](https://docs.fivem.net/natives/?_0xC6DC823253FBB366)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function N_0xc6dc823253fbb366() end
-
-    
---- # New Name: LoadingscreenIsLoadingFreemode
---- LoadingscreenIsLoadingFreemode
----
---- @hash [0xC6DC823253FBB366](https://docs.fivem.net/natives/?_0xC6DC823253FBB366)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function IsUiLoadingMultiplayer() end
+--- @hash [0xFA1E0E893D915215](https://docs.fivem.net/natives/?_0xFA1E0E893D915215)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function N_0xfa1e0e893d915215(toggle) end
 
     
 --- ```
@@ -145,45 +185,5 @@ function N_0xfc309e94546fcdb5(toggle) end
 --- @overload fun(toggle: boolean): void
 --- @deprecated
 function IsInLoadingScreen(toggle) end
-
-    
---- LoadingscreenSetLoadFreemode
----
---- @hash [0xB0C56BD3D808D863](https://docs.fivem.net/natives/?_0xB0C56BD3D808D863)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function LoadingscreenSetLoadFreemode(toggle) end
-
-    
---- # New Name: LoadingscreenSetLoadFreemode
---- LoadingscreenSetLoadFreemode
----
---- @hash [0xB0C56BD3D808D863](https://docs.fivem.net/natives/?_0xB0C56BD3D808D863)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
---- @deprecated
-function GetBroadcastFinshedLosSound(toggle) end
-
-    
---- # New Name: LoadingscreenSetLoadFreemode
---- LoadingscreenSetLoadFreemode
----
---- @hash [0xB0C56BD3D808D863](https://docs.fivem.net/natives/?_0xB0C56BD3D808D863)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
---- @deprecated
-function N_0xb0c56bd3d808d863(toggle) end
-
-    
---- N_0xfa1e0e893d915215
----
---- @hash [0xFA1E0E893D915215](https://docs.fivem.net/natives/?_0xFA1E0E893D915215)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function N_0xfa1e0e893d915215(toggle) end
 
     

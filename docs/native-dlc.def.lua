@@ -1,13 +1,4 @@
 
---- N_0xf2e07819ef1a5289
----
---- @hash [0xF2E07819EF1A5289](https://docs.fivem.net/natives/?_0xF2E07819EF1A5289)
----
---- @return boolean
---- @overload fun(): boolean
-function N_0xf2e07819ef1a5289() end
-
-    
 --- ```
 --- This loads the GTA:O dlc map parts (high end garages, apartments).
 --- Works in singleplayer.
@@ -34,6 +25,33 @@ function OnEnterMp() end
 --- @overload fun(): void
 --- @deprecated
 function LoadMpDlcMaps() end
+
+    
+--- GetIsLoadingScreenActive
+---
+--- @hash [0x10D0A8F259E93EC9](https://docs.fivem.net/natives/?_0x10D0A8F259E93EC9)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function GetIsLoadingScreenActive() end
+
+    
+--- ```
+--- Only used once in scripts, in maintransition.
+--- maintransition.c4, line ~82432:
+--- if (PED::_7350823473013C02(PLAYER::PLAYER_PED_ID()) && (DECORATOR::_241FCA5B1AA14F75() == 0)) {
+---     g_2542A5 = a_1; // 'g_2542A5' used in 'building_controller.ysc' for IPL stuff?
+---     return 1;
+--- }
+--- Likely used solely for the players ped. The function it's in seems to only be used for initialization/quitting. Called among natives to discard scaleforms, disable frontend, fading in/out, etc. Neighboring strings to some calls include "HUD_JOINING", "HUD_QUITTING".
+--- Most likely ARE_*
+--- ```
+---
+--- @hash [0x241FCA5B1AA14F75](https://docs.fivem.net/natives/?_0x241FCA5B1AA14F75)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function N_0x241fca5b1aa14f75() end
 
     
 --- ```
@@ -80,24 +98,6 @@ function Nullify(variable, unused) end
 function IsDlcPresent(dlcHash) end
 
     
---- ```
---- Only used once in scripts, in maintransition.
---- maintransition.c4, line ~82432:
---- if (PED::_7350823473013C02(PLAYER::PLAYER_PED_ID()) && (DECORATOR::_241FCA5B1AA14F75() == 0)) {
----     g_2542A5 = a_1; // 'g_2542A5' used in 'building_controller.ysc' for IPL stuff?
----     return 1;
---- }
---- Likely used solely for the players ped. The function it's in seems to only be used for initialization/quitting. Called among natives to discard scaleforms, disable frontend, fading in/out, etc. Neighboring strings to some calls include "HUD_JOINING", "HUD_QUITTING".
---- Most likely ARE_*
---- ```
----
---- @hash [0x241FCA5B1AA14F75](https://docs.fivem.net/natives/?_0x241FCA5B1AA14F75)
----
---- @return boolean
---- @overload fun(): boolean
-function N_0x241fca5b1aa14f75() end
-
-    
 --- GetExtraContentPackHasBeenInstalled
 ---
 --- @hash [0x8D30F648014A92B5](https://docs.fivem.net/natives/?_0x8D30F648014A92B5)
@@ -118,13 +118,35 @@ function GetExtraContentPackHasBeenInstalled() end
 function N_0x8d30f648014a92b5() end
 
     
---- GetIsLoadingScreenActive
+--- N_0x9489659372a81585
 ---
---- @hash [0x10D0A8F259E93EC9](https://docs.fivem.net/natives/?_0x10D0A8F259E93EC9)
+--- @hash [0x9489659372A81585](https://docs.fivem.net/natives/?_0x9489659372A81585)
 ---
 --- @return boolean
 --- @overload fun(): boolean
-function GetIsLoadingScreenActive() end
+function N_0x9489659372a81585() end
+
+    
+--- N_0xa213b11dff526300
+---
+--- @hash [0xA213B11DFF526300](https://docs.fivem.net/natives/?_0xA213B11DFF526300)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function N_0xa213b11dff526300() end
+
+    
+--- GET_IS_LOADING_\*
+--- 
+--- ```
+--- NativeDB Introduced: v1734
+--- ```
+---
+--- @hash [0xC4637A6D03C24CC3](https://docs.fivem.net/natives/?_0xC4637A6D03C24CC3)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function N_0xc4637a6d03c24cc3() end
 
     
 --- ```
@@ -173,34 +195,12 @@ function N_0xd7c10c4a637992c9() end
 function LoadSpDlcMaps() end
 
     
---- N_0x9489659372a81585
+--- N_0xf2e07819ef1a5289
 ---
---- @hash [0x9489659372A81585](https://docs.fivem.net/natives/?_0x9489659372A81585)
----
---- @return boolean
---- @overload fun(): boolean
-function N_0x9489659372a81585() end
-
-    
---- N_0xa213b11dff526300
----
---- @hash [0xA213B11DFF526300](https://docs.fivem.net/natives/?_0xA213B11DFF526300)
+--- @hash [0xF2E07819EF1A5289](https://docs.fivem.net/natives/?_0xF2E07819EF1A5289)
 ---
 --- @return boolean
 --- @overload fun(): boolean
-function N_0xa213b11dff526300() end
-
-    
---- GET_IS_LOADING_\*
---- 
---- ```
---- NativeDB Introduced: v1734
---- ```
----
---- @hash [0xC4637A6D03C24CC3](https://docs.fivem.net/natives/?_0xC4637A6D03C24CC3)
----
---- @return boolean
---- @overload fun(): boolean
-function N_0xc4637a6d03c24cc3() end
+function N_0xf2e07819ef1a5289() end
 
     

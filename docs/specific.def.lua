@@ -592,4 +592,5 @@ function vector4(x, y, z, w) end
 function norm(vector)
 end
 
-
+---@shape RegisteredCommandInfo
+---@field name string

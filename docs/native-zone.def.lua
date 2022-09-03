@@ -1,4 +1,24 @@
 
+--- GetZoneAtCoords
+---
+--- @hash [0x27040C25DE6CB2F4](https://docs.fivem.net/natives/?_0x27040C25DE6CB2F4)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return number
+--- @overload fun(x: number, y: number, z: number): number
+function GetZoneAtCoords(x, y, z) end
+
+    
+--- GetZonePopschedule
+---
+--- @hash [0x4334BC40AA0CB4BB](https://docs.fivem.net/natives/?_0x4334BC40AA0CB4BB)
+--- @param zoneId number (int)
+--- @return number
+--- @overload fun(zoneId: number): number
+function GetZonePopschedule(zoneId) end
+
+    
 --- ```
 --- Only used once in the decompiled scripts. Seems to be related to scripted vehicle generators.  
 --- Modified example from "am_imp_exp.c4", line 6418:  
@@ -14,6 +34,35 @@
 --- @return void
 --- @overload fun(scheduleId: number): void
 function ClearPopscheduleOverrideVehicleModel(scheduleId) end
+
+    
+--- ```
+--- cellphone range 1- 5 used for signal bar in iFruit phone  
+--- ```
+---
+--- @hash [0x5F7B268D15BA0739](https://docs.fivem.net/natives/?_0x5F7B268D15BA0739)
+--- @param zoneId number (int)
+--- @return number
+--- @overload fun(zoneId: number): number
+function GetZoneScumminess(zoneId) end
+
+    
+--- ```
+--- Only used once in the decompiled scripts. Seems to be related to scripted vehicle generators.  
+--- Modified example from "am_imp_exp.c4", line 6406:  
+--- /* popSchedules[0] = ZONE::GET_ZONE_POPSCHEDULE(ZONE::GET_ZONE_AT_COORDS(891.3, 807.9, 188.1));  
+--- etc.  
+--- */  
+--- ZONE::OVERRIDE_POPSCHEDULE_VEHICLE_MODEL(popSchedules[index], vehicleHash);  
+--- STREAMING::REQUEST_MODEL(vehicleHash);  
+--- ```
+---
+--- @hash [0x5F7D596BAC2E7777](https://docs.fivem.net/natives/?_0x5F7D596BAC2E7777)
+--- @param scheduleId number (int)
+--- @param vehicleHash Hash
+--- @return void
+--- @overload fun(scheduleId: number, vehicleHash: Hash): void
+function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
 
     
 --- ```
@@ -33,6 +82,116 @@ function ClearPopscheduleOverrideVehicleModel(scheduleId) end
 --- @return Hash
 --- @overload fun(x: number, y: number, z: number): Hash
 function GetHashOfMapAreaAtCoords(x, y, z) end
+
+    
+--- ```
+--- 'zoneName' corresponds to an entry in 'popzone.ipl'.  
+--- AIRP = Los Santos International Airport  
+--- ALAMO = Alamo Sea  
+--- ALTA = Alta  
+--- ARMYB = Fort Zancudo  
+--- BANHAMC = Banham Canyon Dr  
+--- BANNING = Banning  
+--- BEACH = Vespucci Beach  
+--- BHAMCA = Banham Canyon  
+--- BRADP = Braddock Pass  
+--- BRADT = Braddock Tunnel  
+--- BURTON = Burton  
+--- CALAFB = Calafia Bridge  
+--- CANNY = Raton Canyon  
+--- CCREAK = Cassidy Creek  
+--- CHAMH = Chamberlain Hills  
+--- CHIL = Vinewood Hills  
+--- CHU = Chumash  
+--- CMSW = Chiliad Mountain State Wilderness  
+--- CYPRE = Cypress Flats  
+--- DAVIS = Davis  
+--- DELBE = Del Perro Beach  
+--- DELPE = Del Perro  
+--- DELSOL = La Puerta  
+--- DESRT = Grand Senora Desert  
+--- DOWNT = Downtown  
+--- DTVINE = Downtown Vinewood  
+--- EAST_V = East Vinewood  
+--- EBURO = El Burro Heights  
+--- ELGORL = El Gordo Lighthouse  
+--- ELYSIAN = Elysian Island  
+--- GALFISH = Galilee  
+--- GOLF = GWC and Golfing Society  
+--- GRAPES = Grapeseed  
+--- GREATC = Great Chaparral  
+--- HARMO = Harmony  
+--- HAWICK = Hawick  
+--- HORS = Vinewood Racetrack  
+--- HUMLAB = Humane Labs and Research  
+--- JAIL = Bolingbroke Penitentiary  
+--- KOREAT = Little Seoul  
+--- LACT = Land Act Reservoir  
+--- LAGO = Lago Zancudo  
+--- LDAM = Land Act Dam  
+--- LEGSQU = Legion Square  
+--- LMESA = La Mesa  
+--- LOSPUER = La Puerta  
+--- MIRR = Mirror Park  
+--- MORN = Morningwood  
+--- MOVIE = Richards Majestic  
+--- MTCHIL = Mount Chiliad  
+--- MTGORDO = Mount Gordo  
+--- MTJOSE = Mount Josiah  
+--- MURRI = Murrieta Heights  
+--- NCHU = North Chumash  
+--- NOOSE = N.O.O.S.E  
+--- OCEANA = Pacific Ocean  
+--- PALCOV = Paleto Cove  
+--- PALETO = Paleto Bay  
+--- PALFOR = Paleto Forest  
+--- PALHIGH = Palomino Highlands  
+--- PALMPOW = Palmer-Taylor Power Station  
+--- PBLUFF = Pacific Bluffs  
+--- PBOX = Pillbox Hill  
+--- PROCOB = Procopio Beach  
+--- RANCHO = Rancho  
+--- RGLEN = Richman Glen  
+--- RICHM = Richman  
+--- ROCKF = Rockford Hills  
+--- RTRAK = Redwood Lights Track  
+--- SANAND = San Andreas  
+--- SANCHIA = San Chianski Mountain Range  
+--- SANDY = Sandy Shores  
+--- SKID = Mission Row  
+--- SLAB = Stab City  
+--- STAD = Maze Bank Arena  
+--- STRAW = Strawberry  
+--- TATAMO = Tataviam Mountains  
+--- TERMINA = Terminal  
+--- TEXTI = Textile City  
+--- TONGVAH = Tongva Hills  
+--- TONGVAV = Tongva Valley  
+--- VCANA = Vespucci Canals  
+--- VESP = Vespucci  
+--- VINE = Vinewood  
+--- WINDF = Ron Alternates Wind Farm  
+--- WVINE = West Vinewood  
+--- ZANCUDO = Zancudo River  
+--- ZP_ORT = Port of South Los Santos  
+--- ZQ_UAR = Davis Quartz  
+--- ```
+---
+--- @hash [0x98CD1D2934B76CC1](https://docs.fivem.net/natives/?_0x98CD1D2934B76CC1)
+--- @param zoneName string (char*)
+--- @return number
+--- @overload fun(zoneName: string): number
+function GetZoneFromNameId(zoneName) end
+
+    
+--- SetZoneEnabled
+---
+--- @hash [0xBA5ECEEA120E5611](https://docs.fivem.net/natives/?_0xBA5ECEEA120E5611)
+--- @param zoneId number (int)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(zoneId: number, toggle: boolean): void
+function SetZoneEnabled(zoneId, toggle) end
 
     
 --- ```
@@ -136,164 +295,5 @@ function GetHashOfMapAreaAtCoords(x, y, z) end
 --- @return string
 --- @overload fun(x: number, y: number, z: number): string
 function GetNameOfZone(x, y, z) end
-
-    
---- ```
---- Only used once in the decompiled scripts. Seems to be related to scripted vehicle generators.  
---- Modified example from "am_imp_exp.c4", line 6406:  
---- /* popSchedules[0] = ZONE::GET_ZONE_POPSCHEDULE(ZONE::GET_ZONE_AT_COORDS(891.3, 807.9, 188.1));  
---- etc.  
---- */  
---- ZONE::OVERRIDE_POPSCHEDULE_VEHICLE_MODEL(popSchedules[index], vehicleHash);  
---- STREAMING::REQUEST_MODEL(vehicleHash);  
---- ```
----
---- @hash [0x5F7D596BAC2E7777](https://docs.fivem.net/natives/?_0x5F7D596BAC2E7777)
---- @param scheduleId number (int)
---- @param vehicleHash Hash
---- @return void
---- @overload fun(scheduleId: number, vehicleHash: Hash): void
-function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
-
-    
---- GetZoneAtCoords
----
---- @hash [0x27040C25DE6CB2F4](https://docs.fivem.net/natives/?_0x27040C25DE6CB2F4)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @return number
---- @overload fun(x: number, y: number, z: number): number
-function GetZoneAtCoords(x, y, z) end
-
-    
---- SetZoneEnabled
----
---- @hash [0xBA5ECEEA120E5611](https://docs.fivem.net/natives/?_0xBA5ECEEA120E5611)
---- @param zoneId number (int)
---- @param toggle boolean
---- @return void
---- @overload fun(zoneId: number, toggle: boolean): void
-function SetZoneEnabled(zoneId, toggle) end
-
-    
---- GetZonePopschedule
----
---- @hash [0x4334BC40AA0CB4BB](https://docs.fivem.net/natives/?_0x4334BC40AA0CB4BB)
---- @param zoneId number (int)
---- @return number
---- @overload fun(zoneId: number): number
-function GetZonePopschedule(zoneId) end
-
-    
---- ```
---- 'zoneName' corresponds to an entry in 'popzone.ipl'.  
---- AIRP = Los Santos International Airport  
---- ALAMO = Alamo Sea  
---- ALTA = Alta  
---- ARMYB = Fort Zancudo  
---- BANHAMC = Banham Canyon Dr  
---- BANNING = Banning  
---- BEACH = Vespucci Beach  
---- BHAMCA = Banham Canyon  
---- BRADP = Braddock Pass  
---- BRADT = Braddock Tunnel  
---- BURTON = Burton  
---- CALAFB = Calafia Bridge  
---- CANNY = Raton Canyon  
---- CCREAK = Cassidy Creek  
---- CHAMH = Chamberlain Hills  
---- CHIL = Vinewood Hills  
---- CHU = Chumash  
---- CMSW = Chiliad Mountain State Wilderness  
---- CYPRE = Cypress Flats  
---- DAVIS = Davis  
---- DELBE = Del Perro Beach  
---- DELPE = Del Perro  
---- DELSOL = La Puerta  
---- DESRT = Grand Senora Desert  
---- DOWNT = Downtown  
---- DTVINE = Downtown Vinewood  
---- EAST_V = East Vinewood  
---- EBURO = El Burro Heights  
---- ELGORL = El Gordo Lighthouse  
---- ELYSIAN = Elysian Island  
---- GALFISH = Galilee  
---- GOLF = GWC and Golfing Society  
---- GRAPES = Grapeseed  
---- GREATC = Great Chaparral  
---- HARMO = Harmony  
---- HAWICK = Hawick  
---- HORS = Vinewood Racetrack  
---- HUMLAB = Humane Labs and Research  
---- JAIL = Bolingbroke Penitentiary  
---- KOREAT = Little Seoul  
---- LACT = Land Act Reservoir  
---- LAGO = Lago Zancudo  
---- LDAM = Land Act Dam  
---- LEGSQU = Legion Square  
---- LMESA = La Mesa  
---- LOSPUER = La Puerta  
---- MIRR = Mirror Park  
---- MORN = Morningwood  
---- MOVIE = Richards Majestic  
---- MTCHIL = Mount Chiliad  
---- MTGORDO = Mount Gordo  
---- MTJOSE = Mount Josiah  
---- MURRI = Murrieta Heights  
---- NCHU = North Chumash  
---- NOOSE = N.O.O.S.E  
---- OCEANA = Pacific Ocean  
---- PALCOV = Paleto Cove  
---- PALETO = Paleto Bay  
---- PALFOR = Paleto Forest  
---- PALHIGH = Palomino Highlands  
---- PALMPOW = Palmer-Taylor Power Station  
---- PBLUFF = Pacific Bluffs  
---- PBOX = Pillbox Hill  
---- PROCOB = Procopio Beach  
---- RANCHO = Rancho  
---- RGLEN = Richman Glen  
---- RICHM = Richman  
---- ROCKF = Rockford Hills  
---- RTRAK = Redwood Lights Track  
---- SANAND = San Andreas  
---- SANCHIA = San Chianski Mountain Range  
---- SANDY = Sandy Shores  
---- SKID = Mission Row  
---- SLAB = Stab City  
---- STAD = Maze Bank Arena  
---- STRAW = Strawberry  
---- TATAMO = Tataviam Mountains  
---- TERMINA = Terminal  
---- TEXTI = Textile City  
---- TONGVAH = Tongva Hills  
---- TONGVAV = Tongva Valley  
---- VCANA = Vespucci Canals  
---- VESP = Vespucci  
---- VINE = Vinewood  
---- WINDF = Ron Alternates Wind Farm  
---- WVINE = West Vinewood  
---- ZANCUDO = Zancudo River  
---- ZP_ORT = Port of South Los Santos  
---- ZQ_UAR = Davis Quartz  
---- ```
----
---- @hash [0x98CD1D2934B76CC1](https://docs.fivem.net/natives/?_0x98CD1D2934B76CC1)
---- @param zoneName string (char*)
---- @return number
---- @overload fun(zoneName: string): number
-function GetZoneFromNameId(zoneName) end
-
-    
---- ```
---- cellphone range 1- 5 used for signal bar in iFruit phone  
---- ```
----
---- @hash [0x5F7B268D15BA0739](https://docs.fivem.net/natives/?_0x5F7B268D15BA0739)
---- @param zoneId number (int)
---- @return number
---- @overload fun(zoneId: number): number
-function GetZoneScumminess(zoneId) end
 
     

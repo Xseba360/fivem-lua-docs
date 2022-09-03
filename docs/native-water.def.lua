@@ -49,36 +49,128 @@ function GetWavesIntensity() end
 function GetCurrentIntensity() end
 
     
---- ```
---- Most likely ADD_CURRENT_*
---- ```
+--- TestVerticalProbeAgainstAllWater
 ---
---- @hash [0xFDBF4CDBC07E1706](https://docs.fivem.net/natives/?_0xFDBF4CDBC07E1706)
---- @param xLow number (float)
---- @param yLow number (float)
---- @param xHigh number (float)
---- @param yHigh number (float)
---- @param height number (float)
---- @return number
---- @overload fun(xLow: number, yLow: number, xHigh: number, yHigh: number, height: number): number
-function AddCurrentRise(xLow, yLow, xHigh, yHigh, height) end
+--- @hash [0x2B3451FA1E3142E2](https://docs.fivem.net/natives/?_0x2B3451FA1E3142E2)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 any
+--- @param height number (float*)
+--- @return boolean
+--- @overload fun(x: number, y: number, z: number, p3: any): boolean, number
+function TestVerticalProbeAgainstAllWater(x, y, z, p3, height) end
 
     
---- # New Name: AddCurrentRise
+--- N_0x547237aa71ab44de
+---
+--- @hash [0x547237AA71AB44DE](https://docs.fivem.net/natives/?_0x547237AA71AB44DE)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+function N_0x547237aa71ab44de(p0) end
+
+    
 --- ```
---- Most likely ADD_CURRENT_*
+--- Sets the waves intensity back to original (1.0 in most cases). 
 --- ```
 ---
---- @hash [0xFDBF4CDBC07E1706](https://docs.fivem.net/natives/?_0xFDBF4CDBC07E1706)
---- @param xLow number (float)
---- @param yLow number (float)
---- @param xHigh number (float)
---- @param yHigh number (float)
---- @param height number (float)
---- @return number
---- @overload fun(xLow: number, yLow: number, xHigh: number, yHigh: number, height: number): number
+--- @hash [0x5E5E99285AE812DB](https://docs.fivem.net/natives/?_0x5E5E99285AE812DB)
+---
+--- @return void
+--- @overload fun(): void
+function ResetDeepOceanScaler() end
+
+    
+--- # New Name: ResetDeepOceanScaler
+--- ```
+--- Sets the waves intensity back to original (1.0 in most cases). 
+--- ```
+---
+--- @hash [0x5E5E99285AE812DB](https://docs.fivem.net/natives/?_0x5E5E99285AE812DB)
+---
+--- @return void
+--- @overload fun(): void
 --- @deprecated
-function N_0xfdbf4cdbc07e1706(xLow, yLow, xHigh, yHigh, height) end
+function N_0x5e5e99285ae812db() end
+
+    
+--- # New Name: ResetDeepOceanScaler
+--- ```
+--- Sets the waves intensity back to original (1.0 in most cases). 
+--- ```
+---
+--- @hash [0x5E5E99285AE812DB](https://docs.fivem.net/natives/?_0x5E5E99285AE812DB)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function ResetWavesIntensity() end
+
+    
+--- # New Name: ResetDeepOceanScaler
+--- ```
+--- Sets the waves intensity back to original (1.0 in most cases). 
+--- ```
+---
+--- @hash [0x5E5E99285AE812DB](https://docs.fivem.net/natives/?_0x5E5E99285AE812DB)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function ResetCurrentIntensity() end
+
+    
+--- TestProbeAgainstAllWater
+---
+--- @hash [0x8974647ED222EA5F](https://docs.fivem.net/natives/?_0x8974647ED222EA5F)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
+--- @param p7 any
+--- @return boolean
+--- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any, p6: any, p7: any): boolean
+function TestProbeAgainstAllWater(p0, p1, p2, p3, p4, p5, p6, p7) end
+
+    
+--- GetWaterHeightNoWaves
+---
+--- @hash [0x8EE6B53CE13A9794](https://docs.fivem.net/natives/?_0x8EE6B53CE13A9794)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param height number (float*)
+--- @return boolean
+--- @overload fun(x: number, y: number, z: number): boolean, number
+function GetWaterHeightNoWaves(x, y, z, height) end
+
+    
+--- ```
+--- p0 is the handle returned from _0xFDBF4CDBC07E1706  
+--- ```
+---
+--- @hash [0xB1252E3E59A82AAF](https://docs.fivem.net/natives/?_0xB1252E3E59A82AAF)
+--- @param p0 number (int)
+--- @return void
+--- @overload fun(p0: number): void
+function RemoveCurrentRise(p0) end
+
+    
+--- # New Name: RemoveCurrentRise
+--- ```
+--- p0 is the handle returned from _0xFDBF4CDBC07E1706  
+--- ```
+---
+--- @hash [0xB1252E3E59A82AAF](https://docs.fivem.net/natives/?_0xB1252E3E59A82AAF)
+--- @param p0 number (int)
+--- @return void
+--- @overload fun(p0: number): void
+--- @deprecated
+function N_0xb1252e3e59a82aaf(p0) end
 
     
 --- ```
@@ -136,56 +228,6 @@ function SetCurrentIntensity(intensity) end
 
     
 --- ```
---- Sets the waves intensity back to original (1.0 in most cases). 
---- ```
----
---- @hash [0x5E5E99285AE812DB](https://docs.fivem.net/natives/?_0x5E5E99285AE812DB)
----
---- @return void
---- @overload fun(): void
-function ResetDeepOceanScaler() end
-
-    
---- # New Name: ResetDeepOceanScaler
---- ```
---- Sets the waves intensity back to original (1.0 in most cases). 
---- ```
----
---- @hash [0x5E5E99285AE812DB](https://docs.fivem.net/natives/?_0x5E5E99285AE812DB)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function N_0x5e5e99285ae812db() end
-
-    
---- # New Name: ResetDeepOceanScaler
---- ```
---- Sets the waves intensity back to original (1.0 in most cases). 
---- ```
----
---- @hash [0x5E5E99285AE812DB](https://docs.fivem.net/natives/?_0x5E5E99285AE812DB)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function ResetWavesIntensity() end
-
-    
---- # New Name: ResetDeepOceanScaler
---- ```
---- Sets the waves intensity back to original (1.0 in most cases). 
---- ```
----
---- @hash [0x5E5E99285AE812DB](https://docs.fivem.net/natives/?_0x5E5E99285AE812DB)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function ResetCurrentIntensity() end
-
-    
---- ```
 --- Sets the water height for a given position and radius.  
 --- ```
 ---
@@ -197,18 +239,6 @@ function ResetCurrentIntensity() end
 --- @return void
 --- @overload fun(x: number, y: number, radius: number, height: number): void
 function ModifyWater(x, y, radius, height) end
-
-    
---- GetWaterHeightNoWaves
----
---- @hash [0x8EE6B53CE13A9794](https://docs.fivem.net/natives/?_0x8EE6B53CE13A9794)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param height number (float*)
---- @return boolean
---- @overload fun(x: number, y: number, z: number): boolean, number
-function GetWaterHeightNoWaves(x, y, z, height) end
 
     
 --- ```
@@ -228,27 +258,35 @@ function GetWaterHeight(x, y, z, height) end
 
     
 --- ```
---- p0 is the handle returned from _0xFDBF4CDBC07E1706  
+--- Most likely ADD_CURRENT_*
 --- ```
 ---
---- @hash [0xB1252E3E59A82AAF](https://docs.fivem.net/natives/?_0xB1252E3E59A82AAF)
---- @param p0 number (int)
---- @return void
---- @overload fun(p0: number): void
-function RemoveCurrentRise(p0) end
+--- @hash [0xFDBF4CDBC07E1706](https://docs.fivem.net/natives/?_0xFDBF4CDBC07E1706)
+--- @param xLow number (float)
+--- @param yLow number (float)
+--- @param xHigh number (float)
+--- @param yHigh number (float)
+--- @param height number (float)
+--- @return number
+--- @overload fun(xLow: number, yLow: number, xHigh: number, yHigh: number, height: number): number
+function AddCurrentRise(xLow, yLow, xHigh, yHigh, height) end
 
     
---- # New Name: RemoveCurrentRise
+--- # New Name: AddCurrentRise
 --- ```
---- p0 is the handle returned from _0xFDBF4CDBC07E1706  
+--- Most likely ADD_CURRENT_*
 --- ```
 ---
---- @hash [0xB1252E3E59A82AAF](https://docs.fivem.net/natives/?_0xB1252E3E59A82AAF)
---- @param p0 number (int)
---- @return void
---- @overload fun(p0: number): void
+--- @hash [0xFDBF4CDBC07E1706](https://docs.fivem.net/natives/?_0xFDBF4CDBC07E1706)
+--- @param xLow number (float)
+--- @param yLow number (float)
+--- @param xHigh number (float)
+--- @param yHigh number (float)
+--- @param height number (float)
+--- @return number
+--- @overload fun(xLow: number, yLow: number, xHigh: number, yHigh: number, height: number): number
 --- @deprecated
-function N_0xb1252e3e59a82aaf(p0) end
+function N_0xfdbf4cdbc07e1706(xLow, yLow, xHigh, yHigh, height) end
 
     
 --- TestProbeAgainstWater
@@ -264,43 +302,5 @@ function N_0xb1252e3e59a82aaf(p0) end
 --- @return boolean
 --- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number): boolean, Vector3
 function TestProbeAgainstWater(x1, y1, z1, x2, y2, z2, result) end
-
-    
---- TestProbeAgainstAllWater
----
---- @hash [0x8974647ED222EA5F](https://docs.fivem.net/natives/?_0x8974647ED222EA5F)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @param p4 any
---- @param p5 any
---- @param p6 any
---- @param p7 any
---- @return boolean
---- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any, p6: any, p7: any): boolean
-function TestProbeAgainstAllWater(p0, p1, p2, p3, p4, p5, p6, p7) end
-
-    
---- N_0x547237aa71ab44de
----
---- @hash [0x547237AA71AB44DE](https://docs.fivem.net/natives/?_0x547237AA71AB44DE)
---- @param p0 number (float)
---- @return void
---- @overload fun(p0: number): void
-function N_0x547237aa71ab44de(p0) end
-
-    
---- TestVerticalProbeAgainstAllWater
----
---- @hash [0x2B3451FA1E3142E2](https://docs.fivem.net/natives/?_0x2B3451FA1E3142E2)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param p3 any
---- @param height number (float*)
---- @return boolean
---- @overload fun(x: number, y: number, z: number, p3: any): boolean, number
-function TestVerticalProbeAgainstAllWater(x, y, z, p3, height) end
 
     
