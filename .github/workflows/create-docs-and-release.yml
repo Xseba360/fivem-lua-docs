@@ -1,12 +1,5 @@
 name: Node.js CI
 
-on:
-  workflow_dispatch:
-    inputs:
-      tags:
-        required: false
-        description: 'tag name for release'
-
 jobs:
   build:
     name: 'Build latest docs and release'
@@ -30,7 +23,7 @@ jobs:
            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
            git checkout master
            git add docs-gen
-           git diff-index --quiet HEAD || git commit -m "prepare for release  ${{ github.event.inputs.tags }}"
+           git diff-index --quiet HEAD || git commit -m "Release  ${{ env.NOW }}"
            git push
     - name: Create Release
       id: create_release
