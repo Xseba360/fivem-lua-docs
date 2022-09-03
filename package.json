@@ -1,0 +1,27 @@
+{
+  "name": "fivem-lua-docs",
+  "version": "1.0.0",
+  "description": "Generated lua file reference for use with autocompletion",
+  "main": "cli.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p tsconfig.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xseba360/fivem-lua-docs.git"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/Xseba360/fivem-lua-docs/issues"
+  },
+  "homepage": "https://github.com/Xseba360/fivem-lua-docs#readme",
+  "dependencies": {
+    "@types/node": "16.11.7",
+    "typescript": "^4.8.2"
+  }
+}
