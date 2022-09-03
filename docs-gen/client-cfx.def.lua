@@ -1,3 +1,4 @@
+
 --- GetInteriorRoomName
 --- @usage local playerPed = PlayerPedId()
 --- local interiorId = GetInteriorFromEntity(playerPed)
@@ -14,6 +15,7 @@
 --- @return string
 --- @overload fun(interiorId: number, roomIndex: number): string
 function GetInteriorRoomName(interiorId, roomIndex) end
+
     
 --- Resets values from the zoom level data by index to defaults from mapzoomdata.meta.
 ---
@@ -22,6 +24,7 @@ function GetInteriorRoomName(interiorId, roomIndex) end
 --- @return void
 --- @overload fun(index: number): void
 function ResetMapZoomDataLevel(index) end
+
     
 --- Sets a handling override for a specific vehicle. Certain handling flags can only be set globally using `SET_HANDLING_VECTOR`, this might require some experimentation.
 ---
