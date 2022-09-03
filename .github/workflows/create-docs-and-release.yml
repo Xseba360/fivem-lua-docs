@@ -10,7 +10,7 @@ jobs:
     name: 'Build latest docs and release'
     runs-on: ubuntu-latest
     steps:
-    - name: set env
+    - name: Save date in env
       run: echo "NOW=$(date +%Y-%m-%d)" >> $GITHUB_ENV
     - name: Checkout code
       uses: actions/checkout@v2
@@ -36,9 +36,12 @@ jobs:
            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
            git checkout master
            git add docs-gen
+           echo "COMMIT_BEFORE=$(git rev-parse HEAD)" >> $GITHUB_ENV
            git diff-index --quiet HEAD || git commit -m "Release  ${{ env.NOW }}"
+           echo "COMMIT_AFTER=$(git rev-parse HEAD)" >> $GITHUB_ENV
            git push
     - name: Create Release
+      if: ${{ env.COMMIT_BEFORE != env.COMMIT_AFTER }}
       id: create_release
       uses: actions/create-release@v1
       env:
