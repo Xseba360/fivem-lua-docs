@@ -2150,6 +2150,11 @@ function GetInteriorPortalEntityArchetype(interiorId, portalIndex, entityIndex) 
 --- @overload fun(submixId: number, effectSlot: number, paramIndex: number, paramValue: number): void
 function SetAudioSubmixEffectParamFloat(submixId, effectSlot, paramIndex, paramValue) end
 
+
+
+
+
+
     
 --- GetVehicleDashboardSpeed
 ---
