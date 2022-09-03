@@ -1,5 +1,10 @@
 name: Node.js CI
 
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 13 * * 1"
+
 jobs:
   build:
     name: 'Build latest docs and release'
