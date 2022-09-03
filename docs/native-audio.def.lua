@@ -56,6 +56,76 @@ function N_0xd01005d2ba2eb778(p0) end
 function AddLineToConversation(index, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12) end
 
     
+--- CancelCurrentPoliceReport
+---
+--- @hash [0xB4F90FAF7670B16F](https://docs.fivem.net/natives/?_0xB4F90FAF7670B16F)
+---
+--- @return void
+--- @overload fun(): void
+function CancelCurrentPoliceReport() end
+
+    
+--- # New Name: CancelCurrentPoliceReport
+--- CancelCurrentPoliceReport
+---
+--- @hash [0xB4F90FAF7670B16F](https://docs.fivem.net/natives/?_0xB4F90FAF7670B16F)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function N_0xb4f90faf7670b16f() end
+
+    
+--- # New Name: CancelCurrentPoliceReport
+--- CancelCurrentPoliceReport
+---
+--- @hash [0xB4F90FAF7670B16F](https://docs.fivem.net/natives/?_0xB4F90FAF7670B16F)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function DisablePoliceReports() end
+
+    
+--- AudioIsScriptedMusicPlaying
+---
+--- @hash [0x845FFC3A4FEEFA3E](https://docs.fivem.net/natives/?_0x845FFC3A4FEEFA3E)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function AudioIsScriptedMusicPlaying() end
+
+    
+--- # New Name: AudioIsScriptedMusicPlaying
+--- AudioIsScriptedMusicPlaying
+---
+--- @hash [0x845FFC3A4FEEFA3E](https://docs.fivem.net/natives/?_0x845FFC3A4FEEFA3E)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0x3d120012440e6683() end
+
+    
+--- ClearAmbientZoneListState
+---
+--- @hash [0x120C48C614909FA4](https://docs.fivem.net/natives/?_0x120C48C614909FA4)
+--- @param p0 any
+--- @param p1 boolean
+--- @return void
+--- @overload fun(p1: boolean): any
+function ClearAmbientZoneListState(p0, p1) end
+
+    
+--- ClearAllBrokenGlass
+---
+--- @hash [0xB32209EFFDC04913](https://docs.fivem.net/natives/?_0xB32209EFFDC04913)
+---
+--- @return void
+--- @overload fun(): void
+function ClearAllBrokenGlass() end
+
+    
 --- ```
 --- All found occurrences in b678d:
 --- pastebin.com/ceu67jz8
@@ -102,142 +172,6 @@ function N_0x153973ab99fe8980(entity, groupName, p2) end
 function DynamicMixerRelatedFn(entity, groupName, p2) end
 
     
---- AudioIsScriptedMusicPlaying
----
---- @hash [0x845FFC3A4FEEFA3E](https://docs.fivem.net/natives/?_0x845FFC3A4FEEFA3E)
----
---- @return boolean
---- @overload fun(): boolean
-function AudioIsScriptedMusicPlaying() end
-
-    
---- # New Name: AudioIsScriptedMusicPlaying
---- AudioIsScriptedMusicPlaying
----
---- @hash [0x845FFC3A4FEEFA3E](https://docs.fivem.net/natives/?_0x845FFC3A4FEEFA3E)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function N_0x3d120012440e6683() end
-
-    
---- ```
---- 4 calls in the b617d scripts. The only one with p0 and p2 in clear text:
---- AUDIO::ADD_PED_TO_CONVERSATION(5, l_AF, "DINAPOLI");
---- =================================================
---- One of the 2 calls in dialogue_handler.c p0 is in a while-loop, and so is determined to also possibly be 0 - 15.
---- ```
----
---- @hash [0x95D9F4BC443956E7](https://docs.fivem.net/natives/?_0x95D9F4BC443956E7)
---- @param index number (int)
---- @param ped Ped
---- @param p2 string (char*)
---- @return void
---- @overload fun(index: number, ped: Ped, p2: string): void
-function AddPedToConversation(index, ped, p2) end
-
-    
---- BlockDeathJingle
----
---- @hash [0xF154B8D1775B2DEC](https://docs.fivem.net/natives/?_0xF154B8D1775B2DEC)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function BlockDeathJingle(toggle) end
-
-    
---- # New Name: BlockDeathJingle
---- BlockDeathJingle
----
---- @hash [0xF154B8D1775B2DEC](https://docs.fivem.net/natives/?_0xF154B8D1775B2DEC)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
---- @deprecated
-function N_0xf154b8d1775b2dec(toggle) end
-
-    
---- ```
---- Plays the siren sound of a vehicle which is otherwise activated when fastly double-pressing the horn key.  
---- Only works on vehicles with a police siren.  
---- ```
----
---- @hash [0x1B9025BDA76822B6](https://docs.fivem.net/natives/?_0x1B9025BDA76822B6)
---- @param vehicle Vehicle
---- @return void
---- @overload fun(vehicle: Vehicle): void
-function BlipSiren(vehicle) end
-
-    
---- CancelCurrentPoliceReport
----
---- @hash [0xB4F90FAF7670B16F](https://docs.fivem.net/natives/?_0xB4F90FAF7670B16F)
----
---- @return void
---- @overload fun(): void
-function CancelCurrentPoliceReport() end
-
-    
---- # New Name: CancelCurrentPoliceReport
---- CancelCurrentPoliceReport
----
---- @hash [0xB4F90FAF7670B16F](https://docs.fivem.net/natives/?_0xB4F90FAF7670B16F)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function N_0xb4f90faf7670b16f() end
-
-    
---- # New Name: CancelCurrentPoliceReport
---- CancelCurrentPoliceReport
----
---- @hash [0xB4F90FAF7670B16F](https://docs.fivem.net/natives/?_0xB4F90FAF7670B16F)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function DisablePoliceReports() end
-
-    
---- ```
---- Checks if the ped can play the speech or has the speech file, last parameter is usually 0  
---- ```
----
---- @hash [0x49B99BF3FDA89A7A](https://docs.fivem.net/natives/?_0x49B99BF3FDA89A7A)
---- @param ped Ped
---- @param speechName string (char*)
---- @param unk boolean
---- @return boolean
---- @overload fun(ped: Ped, speechName: string, unk: boolean): boolean
-function CanPedSpeak(ped, speechName, unk) end
-
-    
---- # New Name: CanPedSpeak
---- ```
---- Checks if the ped can play the speech or has the speech file, last parameter is usually 0  
---- ```
----
---- @hash [0x49B99BF3FDA89A7A](https://docs.fivem.net/natives/?_0x49B99BF3FDA89A7A)
---- @param ped Ped
---- @param speechName string (char*)
---- @param unk boolean
---- @return boolean
---- @overload fun(ped: Ped, speechName: string, unk: boolean): boolean
---- @deprecated
-function N_0x49b99bf3fda89a7a(ped, speechName, unk) end
-
-    
---- ClearAllBrokenGlass
----
---- @hash [0xB32209EFFDC04913](https://docs.fivem.net/natives/?_0xB32209EFFDC04913)
----
---- @return void
---- @overload fun(): void
-function ClearAllBrokenGlass() end
-
-    
 --- ```
 --- This function also has a p2, unknown. Signature AUDIO::CLEAR_AMBIENT_ZONE_STATE(const char* zoneName, bool p1, Any p2);
 --- Still needs more research.
@@ -251,75 +185,6 @@ function ClearAllBrokenGlass() end
 function ClearAmbientZoneState(zoneName, p1) end
 
     
---- ```
---- All music event names found in the b617d scripts: pastebin.com/GnYt0R3P  
---- ```
----
---- @hash [0x5B17A90291133DA5](https://docs.fivem.net/natives/?_0x5B17A90291133DA5)
---- @param eventName string (char*)
---- @return boolean
---- @overload fun(eventName: string): boolean
-function CancelMusicEvent(eventName) end
-
-    
---- ClearAmbientZoneListState
----
---- @hash [0x120C48C614909FA4](https://docs.fivem.net/natives/?_0x120C48C614909FA4)
---- @param p0 any
---- @param p1 boolean
---- @return void
---- @overload fun(p1: boolean): any
-function ClearAmbientZoneListState(p0, p1) end
-
-    
---- ```
---- 3 calls in the b617d scripts, removed duplicate.
---- AUDIO::CLEAR_CUSTOM_RADIO_TRACK_LIST("RADIO_16_SILVERLAKE");
---- AUDIO::CLEAR_CUSTOM_RADIO_TRACK_LIST("RADIO_01_CLASS_ROCK");
---- ```
----
---- @hash [0x1654F24A88A8E3FE](https://docs.fivem.net/natives/?_0x1654F24A88A8E3FE)
---- @param radioStation string (char*)
---- @return void
---- @overload fun(radioStation: string): void
-function ClearCustomRadioTrackList(radioStation) end
-
-    
---- # New Name: ClearCustomRadioTrackList
---- ```
---- 3 calls in the b617d scripts, removed duplicate.
---- AUDIO::CLEAR_CUSTOM_RADIO_TRACK_LIST("RADIO_16_SILVERLAKE");
---- AUDIO::CLEAR_CUSTOM_RADIO_TRACK_LIST("RADIO_01_CLASS_ROCK");
---- ```
----
---- @hash [0x1654F24A88A8E3FE](https://docs.fivem.net/natives/?_0x1654F24A88A8E3FE)
---- @param radioStation string (char*)
---- @return void
---- @overload fun(radioStation: string): void
---- @deprecated
-function N_0x1654f24a88a8e3fe(radioStation) end
-
-    
---- DeactivateAudioSlowmoMode
----
---- @hash [0xDDC635D5B3262C56](https://docs.fivem.net/natives/?_0xDDC635D5B3262C56)
---- @param p0 string (char*)
---- @return void
---- @overload fun(p0: string): void
-function DeactivateAudioSlowmoMode(p0) end
-
-    
---- # New Name: DeactivateAudioSlowmoMode
---- DeactivateAudioSlowmoMode
----
---- @hash [0xDDC635D5B3262C56](https://docs.fivem.net/natives/?_0xDDC635D5B3262C56)
---- @param p0 string (char*)
---- @return void
---- @overload fun(p0: string): void
---- @deprecated
-function N_0xddc635d5b3262c56(p0) end
-
-    
 --- CreateNewScriptedConversation
 ---
 --- @hash [0xD2C91A0B572AAE56](https://docs.fivem.net/natives/?_0xD2C91A0B572AAE56)
@@ -329,54 +194,13 @@ function N_0xddc635d5b3262c56(p0) end
 function CreateNewScriptedConversation() end
 
     
---- DisablePedPainAudio
+--- FindRadioStationIndex
 ---
---- @hash [0xA9A41C1E940FB0E8](https://docs.fivem.net/natives/?_0xA9A41C1E940FB0E8)
---- @param ped Ped
---- @param toggle boolean
---- @return void
---- @overload fun(ped: Ped, toggle: boolean): void
-function DisablePedPainAudio(ped, toggle) end
-
-    
---- ```
---- If value is set to true, and ambient siren sound will be played.
---- Appears to enable/disable an audio flag.
---- ```
----
---- @hash [0x552369F549563AD5](https://docs.fivem.net/natives/?_0x552369F549563AD5)
---- @param value boolean
---- @return void
---- @overload fun(value: boolean): void
-function DistantCopCarSirens(value) end
-
-    
---- # New Name: DistantCopCarSirens
---- ```
---- If value is set to true, and ambient siren sound will be played.
---- Appears to enable/disable an audio flag.
---- ```
----
---- @hash [0x552369F549563AD5](https://docs.fivem.net/natives/?_0x552369F549563AD5)
---- @param value boolean
---- @return void
---- @overload fun(value: boolean): void
---- @deprecated
-function N_0x552369f549563ad5(value) end
-
-    
---- # New Name: DistantCopCarSirens
---- ```
---- If value is set to true, and ambient siren sound will be played.
---- Appears to enable/disable an audio flag.
---- ```
----
---- @hash [0x552369F549563AD5](https://docs.fivem.net/natives/?_0x552369F549563AD5)
---- @param value boolean
---- @return void
---- @overload fun(value: boolean): void
---- @deprecated
-function ForceAmbientSiren(value) end
+--- @hash [0x8D67489793FF428B](https://docs.fivem.net/natives/?_0x8D67489793FF428B)
+--- @param stationNameHash number (int)
+--- @return number
+--- @overload fun(stationNameHash: number): number
+function FindRadioStationIndex(stationNameHash) end
 
     
 --- EnableStallWarningSounds
@@ -401,33 +225,15 @@ function EnableStallWarningSounds(vehicle, toggle) end
 function N_0xc15907d667f7cfb2(vehicle, toggle) end
 
     
---- DoesPlayerVehHaveRadio
+--- ```
+--- All music event names found in the b617d scripts: pastebin.com/GnYt0R3P  
+--- ```
 ---
---- @hash [0x109697E2FFBAC8A1](https://docs.fivem.net/natives/?_0x109697E2FFBAC8A1)
----
+--- @hash [0x5B17A90291133DA5](https://docs.fivem.net/natives/?_0x5B17A90291133DA5)
+--- @param eventName string (char*)
 --- @return boolean
---- @overload fun(): boolean
-function DoesPlayerVehHaveRadio() end
-
-    
---- # New Name: DoesPlayerVehHaveRadio
---- DoesPlayerVehHaveRadio
----
---- @hash [0x109697E2FFBAC8A1](https://docs.fivem.net/natives/?_0x109697E2FFBAC8A1)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function N_0x109697e2ffbac8a1() end
-
-    
---- FindRadioStationIndex
----
---- @hash [0x8D67489793FF428B](https://docs.fivem.net/natives/?_0x8D67489793FF428B)
---- @param stationNameHash number (int)
---- @return number
---- @overload fun(stationNameHash: number): number
-function FindRadioStationIndex(stationNameHash) end
+--- @overload fun(eventName: string): boolean
+function CancelMusicEvent(eventName) end
 
     
 --- Sets whether the vehicle passed has exhaust pops.
@@ -450,34 +256,6 @@ function EnableVehicleExhaustPops(vehicle, toggle) end
 --- @overload fun(vehicle: Vehicle, toggle: boolean): void
 --- @deprecated
 function N_0x2be4bc731d039d5a(vehicle, toggle) end
-
-    
---- ```
---- NativeDB Introduced: v2372
---- ```
----
---- @hash [0x4E0AF9114608257C](https://docs.fivem.net/natives/?_0x4E0AF9114608257C)
---- @param radioStation string (char*)
---- @param trackListName string (char*)
---- @param milliseconds number (int)
---- @return void
---- @overload fun(radioStation: string, trackListName: string, milliseconds: number): void
-function ForceRadioTrackListPosition(radioStation, trackListName, milliseconds) end
-
-    
---- # New Name: ForceRadioTrackListPosition
---- ```
---- NativeDB Introduced: v2372
---- ```
----
---- @hash [0x4E0AF9114608257C](https://docs.fivem.net/natives/?_0x4E0AF9114608257C)
---- @param radioStation string (char*)
---- @param trackListName string (char*)
---- @param milliseconds number (int)
---- @return void
---- @overload fun(radioStation: string, trackListName: string, milliseconds: number): void
---- @deprecated
-function N_0x4e0af9114608257c(radioStation, trackListName, milliseconds) end
 
     
 --- ```
@@ -535,6 +313,26 @@ function N_0x4f0c413926060b38(vehicle, audioName) end
 function SetVehicleAudio(vehicle, audioName) end
 
     
+--- BlockDeathJingle
+---
+--- @hash [0xF154B8D1775B2DEC](https://docs.fivem.net/natives/?_0xF154B8D1775B2DEC)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function BlockDeathJingle(toggle) end
+
+    
+--- # New Name: BlockDeathJingle
+--- BlockDeathJingle
+---
+--- @hash [0xF154B8D1775B2DEC](https://docs.fivem.net/natives/?_0xF154B8D1775B2DEC)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function N_0xf154b8d1775b2dec(toggle) end
+
+    
 --- FreezeRadioStation
 ---
 --- @hash [0x344F393B027E38C3](https://docs.fivem.net/natives/?_0x344F393B027E38C3)
@@ -542,6 +340,62 @@ function SetVehicleAudio(vehicle, audioName) end
 --- @return void
 --- @overload fun(radioStation: string): void
 function FreezeRadioStation(radioStation) end
+
+    
+--- ```
+--- 4 calls in the b617d scripts. The only one with p0 and p2 in clear text:
+--- AUDIO::ADD_PED_TO_CONVERSATION(5, l_AF, "DINAPOLI");
+--- =================================================
+--- One of the 2 calls in dialogue_handler.c p0 is in a while-loop, and so is determined to also possibly be 0 - 15.
+--- ```
+---
+--- @hash [0x95D9F4BC443956E7](https://docs.fivem.net/natives/?_0x95D9F4BC443956E7)
+--- @param index number (int)
+--- @param ped Ped
+--- @param p2 string (char*)
+--- @return void
+--- @overload fun(index: number, ped: Ped, p2: string): void
+function AddPedToConversation(index, ped, p2) end
+
+    
+--- GetIsPreloadedConversationReady
+---
+--- @hash [0xE73364DB90778FFA](https://docs.fivem.net/natives/?_0xE73364DB90778FFA)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function GetIsPreloadedConversationReady() end
+
+    
+--- # New Name: GetIsPreloadedConversationReady
+--- GetIsPreloadedConversationReady
+---
+--- @hash [0xE73364DB90778FFA](https://docs.fivem.net/natives/?_0xE73364DB90778FFA)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0xe73364db90778ffa() end
+
+    
+--- DeactivateAudioSlowmoMode
+---
+--- @hash [0xDDC635D5B3262C56](https://docs.fivem.net/natives/?_0xDDC635D5B3262C56)
+--- @param p0 string (char*)
+--- @return void
+--- @overload fun(p0: string): void
+function DeactivateAudioSlowmoMode(p0) end
+
+    
+--- # New Name: DeactivateAudioSlowmoMode
+--- DeactivateAudioSlowmoMode
+---
+--- @hash [0xDDC635D5B3262C56](https://docs.fivem.net/natives/?_0xDDC635D5B3262C56)
+--- @param p0 string (char*)
+--- @return void
+--- @overload fun(p0: string): void
+--- @deprecated
+function N_0xddc635d5b3262c56(p0) end
 
     
 --- GetAudibleMusicTrackTextId
@@ -553,53 +407,331 @@ function FreezeRadioStation(radioStation) end
 function GetAudibleMusicTrackTextId() end
 
     
---- FreezeMicrophone
+--- ```
+--- Plays the siren sound of a vehicle which is otherwise activated when fastly double-pressing the horn key.  
+--- Only works on vehicles with a police siren.  
+--- ```
 ---
---- @hash [0xD57AAAE0E2214D11](https://docs.fivem.net/natives/?_0xD57AAAE0E2214D11)
----
+--- @hash [0x1B9025BDA76822B6](https://docs.fivem.net/natives/?_0x1B9025BDA76822B6)
+--- @param vehicle Vehicle
 --- @return void
---- @overload fun(): void
-function FreezeMicrophone() end
+--- @overload fun(vehicle: Vehicle): void
+function BlipSiren(vehicle) end
 
     
---- # New Name: FreezeMicrophone
---- FreezeMicrophone
+--- GetMusicPlaytime
 ---
---- @hash [0xD57AAAE0E2214D11](https://docs.fivem.net/natives/?_0xD57AAAE0E2214D11)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function N_0xd57aaae0e2214d11() end
-
-    
---- GetCurrentScriptedConversationLine
----
---- @hash [0x480357EE890C295A](https://docs.fivem.net/natives/?_0x480357EE890C295A)
+--- @hash [0xE7A0D23DC414507B](https://docs.fivem.net/natives/?_0xE7A0D23DC414507B)
 ---
 --- @return number
 --- @overload fun(): number
-function GetCurrentScriptedConversationLine() end
+function GetMusicPlaytime() end
 
     
---- GetAmbientVoiceNameHash
+--- ```
+--- Checks if the ped can play the speech or has the speech file, last parameter is usually 0  
+--- ```
 ---
---- @hash [0x5E203DA2BA15D436](https://docs.fivem.net/natives/?_0x5E203DA2BA15D436)
+--- @hash [0x49B99BF3FDA89A7A](https://docs.fivem.net/natives/?_0x49B99BF3FDA89A7A)
 --- @param ped Ped
---- @return Hash
---- @overload fun(ped: Ped): Hash
-function GetAmbientVoiceNameHash(ped) end
+--- @param speechName string (char*)
+--- @param unk boolean
+--- @return boolean
+--- @overload fun(ped: Ped, speechName: string, unk: boolean): boolean
+function CanPedSpeak(ped, speechName, unk) end
 
     
---- # New Name: GetAmbientVoiceNameHash
---- GetAmbientVoiceNameHash
+--- # New Name: CanPedSpeak
+--- ```
+--- Checks if the ped can play the speech or has the speech file, last parameter is usually 0  
+--- ```
 ---
---- @hash [0x5E203DA2BA15D436](https://docs.fivem.net/natives/?_0x5E203DA2BA15D436)
+--- @hash [0x49B99BF3FDA89A7A](https://docs.fivem.net/natives/?_0x49B99BF3FDA89A7A)
 --- @param ped Ped
---- @return Hash
---- @overload fun(ped: Ped): Hash
+--- @param speechName string (char*)
+--- @param unk boolean
+--- @return boolean
+--- @overload fun(ped: Ped, speechName: string, unk: boolean): boolean
 --- @deprecated
-function N_0x5e203da2ba15d436(ped) end
+function N_0x49b99bf3fda89a7a(ped, speechName, unk) end
+
+    
+--- DoesPlayerVehHaveRadio
+---
+--- @hash [0x109697E2FFBAC8A1](https://docs.fivem.net/natives/?_0x109697E2FFBAC8A1)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function DoesPlayerVehHaveRadio() end
+
+    
+--- # New Name: DoesPlayerVehHaveRadio
+--- DoesPlayerVehHaveRadio
+---
+--- @hash [0x109697E2FFBAC8A1](https://docs.fivem.net/natives/?_0x109697E2FFBAC8A1)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0x109697e2ffbac8a1() end
+
+    
+--- ```
+--- NativeDB Introduced: v2372
+--- ```
+---
+--- @hash [0x4E0AF9114608257C](https://docs.fivem.net/natives/?_0x4E0AF9114608257C)
+--- @param radioStation string (char*)
+--- @param trackListName string (char*)
+--- @param milliseconds number (int)
+--- @return void
+--- @overload fun(radioStation: string, trackListName: string, milliseconds: number): void
+function ForceRadioTrackListPosition(radioStation, trackListName, milliseconds) end
+
+    
+--- # New Name: ForceRadioTrackListPosition
+--- ```
+--- NativeDB Introduced: v2372
+--- ```
+---
+--- @hash [0x4E0AF9114608257C](https://docs.fivem.net/natives/?_0x4E0AF9114608257C)
+--- @param radioStation string (char*)
+--- @param trackListName string (char*)
+--- @param milliseconds number (int)
+--- @return void
+--- @overload fun(radioStation: string, trackListName: string, milliseconds: number): void
+--- @deprecated
+function N_0x4e0af9114608257c(radioStation, trackListName, milliseconds) end
+
+    
+--- GetNumUnlockedRadioStations
+---
+--- @hash [0xF1620ECB50E01DE7](https://docs.fivem.net/natives/?_0xF1620ECB50E01DE7)
+---
+--- @return number
+--- @overload fun(): number
+function GetNumUnlockedRadioStations() end
+
+    
+--- # New Name: GetNumUnlockedRadioStations
+--- GetNumUnlockedRadioStations
+---
+--- @hash [0xF1620ECB50E01DE7](https://docs.fivem.net/natives/?_0xF1620ECB50E01DE7)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
+function MaxRadioStationIndex() end
+
+    
+--- GetPlayerRadioStationGenre
+---
+--- @hash [0xA571991A7FE6CCEB](https://docs.fivem.net/natives/?_0xA571991A7FE6CCEB)
+---
+--- @return number
+--- @overload fun(): number
+function GetPlayerRadioStationGenre() end
+
+    
+--- Counterpart: [`GET_NETWORK_ID_FROM_SOUND_ID`](https://docs.fivem.net/natives/?_0x2DE3F0A134FFBC0D).
+---
+--- @hash [0x75262FD12D0A1C84](https://docs.fivem.net/natives/?_0x75262FD12D0A1C84)
+--- @param netId number (int)
+--- @return number
+--- @overload fun(netId: number): number
+function GetSoundIdFromNetworkId(netId) end
+
+    
+--- # New Name: GetSoundIdFromNetworkId
+--- Counterpart: [`GET_NETWORK_ID_FROM_SOUND_ID`](https://docs.fivem.net/natives/?_0x2DE3F0A134FFBC0D).
+---
+--- @hash [0x75262FD12D0A1C84](https://docs.fivem.net/natives/?_0x75262FD12D0A1C84)
+--- @param netId number (int)
+--- @return number
+--- @overload fun(netId: number): number
+--- @deprecated
+function N_0x75262fd12d0a1c84(netId) end
+
+    
+--- ```
+--- Returns String with radio station name.  
+--- ```
+---
+--- @hash [0xB28ECA15046CA8B9](https://docs.fivem.net/natives/?_0xB28ECA15046CA8B9)
+--- @param radioStation number (int)
+--- @return string
+--- @overload fun(radioStation: number): string
+function GetRadioStationName(radioStation) end
+
+    
+--- GetStreamPlayTime
+---
+--- @hash [0x4E72BBDBCA58A3DB](https://docs.fivem.net/natives/?_0x4E72BBDBCA58A3DB)
+---
+--- @return number
+--- @overload fun(): number
+function GetStreamPlayTime() end
+
+    
+--- ```
+--- 3 calls in the b617d scripts, removed duplicate.
+--- AUDIO::CLEAR_CUSTOM_RADIO_TRACK_LIST("RADIO_16_SILVERLAKE");
+--- AUDIO::CLEAR_CUSTOM_RADIO_TRACK_LIST("RADIO_01_CLASS_ROCK");
+--- ```
+---
+--- @hash [0x1654F24A88A8E3FE](https://docs.fivem.net/natives/?_0x1654F24A88A8E3FE)
+--- @param radioStation string (char*)
+--- @return void
+--- @overload fun(radioStation: string): void
+function ClearCustomRadioTrackList(radioStation) end
+
+    
+--- # New Name: ClearCustomRadioTrackList
+--- ```
+--- 3 calls in the b617d scripts, removed duplicate.
+--- AUDIO::CLEAR_CUSTOM_RADIO_TRACK_LIST("RADIO_16_SILVERLAKE");
+--- AUDIO::CLEAR_CUSTOM_RADIO_TRACK_LIST("RADIO_01_CLASS_ROCK");
+--- ```
+---
+--- @hash [0x1654F24A88A8E3FE](https://docs.fivem.net/natives/?_0x1654F24A88A8E3FE)
+--- @param radioStation string (char*)
+--- @return void
+--- @overload fun(radioStation: string): void
+--- @deprecated
+function N_0x1654f24a88a8e3fe(radioStation) end
+
+    
+--- ```
+--- If value is set to true, and ambient siren sound will be played.
+--- Appears to enable/disable an audio flag.
+--- ```
+---
+--- @hash [0x552369F549563AD5](https://docs.fivem.net/natives/?_0x552369F549563AD5)
+--- @param value boolean
+--- @return void
+--- @overload fun(value: boolean): void
+function DistantCopCarSirens(value) end
+
+    
+--- # New Name: DistantCopCarSirens
+--- ```
+--- If value is set to true, and ambient siren sound will be played.
+--- Appears to enable/disable an audio flag.
+--- ```
+---
+--- @hash [0x552369F549563AD5](https://docs.fivem.net/natives/?_0x552369F549563AD5)
+--- @param value boolean
+--- @return void
+--- @overload fun(value: boolean): void
+--- @deprecated
+function N_0x552369f549563ad5(value) end
+
+    
+--- # New Name: DistantCopCarSirens
+--- ```
+--- If value is set to true, and ambient siren sound will be played.
+--- Appears to enable/disable an audio flag.
+--- ```
+---
+--- @hash [0x552369F549563AD5](https://docs.fivem.net/natives/?_0x552369F549563AD5)
+--- @param value boolean
+--- @return void
+--- @overload fun(value: boolean): void
+--- @deprecated
+function ForceAmbientSiren(value) end
+
+    
+--- DisablePedPainAudio
+---
+--- @hash [0xA9A41C1E940FB0E8](https://docs.fivem.net/natives/?_0xA9A41C1E940FB0E8)
+--- @param ped Ped
+--- @param toggle boolean
+--- @return void
+--- @overload fun(ped: Ped, toggle: boolean): void
+function DisablePedPainAudio(ped, toggle) end
+
+    
+--- ```
+--- Return the hash of the radio stations current track.
+--- 
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0x34D66BC058019CE0](https://docs.fivem.net/natives/?_0x34D66BC058019CE0)
+--- @param radioStationName string (char*)
+--- @return Hash
+--- @overload fun(radioStationName: string): Hash
+function GetCurrentRadioTrackName(radioStationName) end
+
+    
+--- # New Name: GetCurrentRadioTrackName
+--- ```
+--- Return the hash of the radio stations current track.
+--- 
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0x34D66BC058019CE0](https://docs.fivem.net/natives/?_0x34D66BC058019CE0)
+--- @param radioStationName string (char*)
+--- @return Hash
+--- @overload fun(radioStationName: string): Hash
+--- @deprecated
+function N_0x34d66bc058019ce0(radioStationName) end
+
+    
+--- ```
+--- HAS_*
+--- ```
+---
+--- @hash [0x5B50ABB1FE3746F4](https://docs.fivem.net/natives/?_0x5B50ABB1FE3746F4)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function HasMultiplayerAudioDataUnloaded() end
+
+    
+--- # New Name: HasMultiplayerAudioDataUnloaded
+--- ```
+--- HAS_*
+--- ```
+---
+--- @hash [0x5B50ABB1FE3746F4](https://docs.fivem.net/natives/?_0x5B50ABB1FE3746F4)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0x5b50abb1fe3746f4() end
+
+    
+--- GetVehicleDefaultHornIgnoreMods
+---
+--- @hash [0xACB5DCCA1EC76840](https://docs.fivem.net/natives/?_0xACB5DCCA1EC76840)
+--- @param vehicle Vehicle
+--- @return Hash
+--- @overload fun(vehicle: Vehicle): Hash
+function GetVehicleDefaultHornIgnoreMods(vehicle) end
+
+    
+--- # New Name: GetVehicleDefaultHornIgnoreMods
+--- GetVehicleDefaultHornIgnoreMods
+---
+--- @hash [0xACB5DCCA1EC76840](https://docs.fivem.net/natives/?_0xACB5DCCA1EC76840)
+--- @param vehicle Vehicle
+--- @return Hash
+--- @overload fun(vehicle: Vehicle): Hash
+--- @deprecated
+function N_0xacb5dcca1ec76840(vehicle) end
+
+    
+--- # New Name: GetVehicleDefaultHornIgnoreMods
+--- GetVehicleDefaultHornIgnoreMods
+---
+--- @hash [0xACB5DCCA1EC76840](https://docs.fivem.net/natives/?_0xACB5DCCA1EC76840)
+--- @param vehicle Vehicle
+--- @return Hash
+--- @overload fun(vehicle: Vehicle): Hash
+--- @deprecated
+function GetVehicleHornHash(vehicle) end
 
     
 --- ```
@@ -646,31 +778,207 @@ function GetCurrentRadioStationHash(radioStationName) end
 
     
 --- ```
---- Return the hash of the radio stations current track.
---- 
---- NativeDB Introduced: v1493
+--- NativeDB Added Parameter 3: Any p2
 --- ```
 ---
---- @hash [0x34D66BC058019CE0](https://docs.fivem.net/natives/?_0x34D66BC058019CE0)
---- @param radioStationName string (char*)
---- @return Hash
---- @overload fun(radioStationName: string): Hash
-function GetCurrentRadioTrackName(radioStationName) end
+--- @hash [0x8F8C0E370AE62F5C](https://docs.fivem.net/natives/?_0x8F8C0E370AE62F5C)
+--- @param p0 any
+--- @param p1 any
+--- @return any
+--- @overload fun(p0: any, p1: any): any
+function HintAmbientAudioBank(p0, p1) end
 
     
---- # New Name: GetCurrentRadioTrackName
 --- ```
---- Return the hash of the radio stations current track.
---- 
---- NativeDB Introduced: v1493
+--- Example:  
+--- bool playing = AUDIO::IS_ALARM_PLAYING("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS");  
 --- ```
 ---
---- @hash [0x34D66BC058019CE0](https://docs.fivem.net/natives/?_0x34D66BC058019CE0)
---- @param radioStationName string (char*)
---- @return Hash
---- @overload fun(radioStationName: string): Hash
+--- @hash [0x226435CB96CCFC8C](https://docs.fivem.net/natives/?_0x226435CB96CCFC8C)
+--- @param alarmName string (char*)
+--- @return boolean
+--- @overload fun(alarmName: string): boolean
+function IsAlarmPlaying(alarmName) end
+
+    
+--- ```
+--- One call found in the b617d scripts:
+--- AUDIO::_8A694D7A68F8DC38(NETWORK::NET_TO_PED(l_3989._f26F[0/*1*/]), "CONV_INTERRUPT_QUIT_IT", "LESTER");
+--- ```
+---
+--- @hash [0x8A694D7A68F8DC38](https://docs.fivem.net/natives/?_0x8A694D7A68F8DC38)
+--- @param ped Ped
+--- @param p1 string (char*)
+--- @param p2 string (char*)
+--- @return void
+--- @overload fun(ped: Ped, p1: string, p2: string): void
+function InterruptConversationAndPause(ped, p1, p2) end
+
+    
+--- # New Name: InterruptConversationAndPause
+--- ```
+--- One call found in the b617d scripts:
+--- AUDIO::_8A694D7A68F8DC38(NETWORK::NET_TO_PED(l_3989._f26F[0/*1*/]), "CONV_INTERRUPT_QUIT_IT", "LESTER");
+--- ```
+---
+--- @hash [0x8A694D7A68F8DC38](https://docs.fivem.net/natives/?_0x8A694D7A68F8DC38)
+--- @param ped Ped
+--- @param p1 string (char*)
+--- @param p2 string (char*)
+--- @return void
+--- @overload fun(ped: Ped, p1: string, p2: string): void
 --- @deprecated
-function N_0x34d66bc058019ce0(radioStationName) end
+function N_0x8a694d7a68f8dc38(ped, p1, p2) end
+
+    
+--- FreezeMicrophone
+---
+--- @hash [0xD57AAAE0E2214D11](https://docs.fivem.net/natives/?_0xD57AAAE0E2214D11)
+---
+--- @return void
+--- @overload fun(): void
+function FreezeMicrophone() end
+
+    
+--- # New Name: FreezeMicrophone
+--- FreezeMicrophone
+---
+--- @hash [0xD57AAAE0E2214D11](https://docs.fivem.net/natives/?_0xD57AAAE0E2214D11)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function N_0xd57aaae0e2214d11() end
+
+    
+--- GetCurrentScriptedConversationLine
+---
+--- @hash [0x480357EE890C295A](https://docs.fivem.net/natives/?_0x480357EE890C295A)
+---
+--- @return number
+--- @overload fun(): number
+function GetCurrentScriptedConversationLine() end
+
+    
+--- IsAmbientZoneEnabled
+---
+--- @hash [0x01E2817A479A7F9B](https://docs.fivem.net/natives/?_0x01E2817A479A7F9B)
+--- @param ambientZone string (char*)
+--- @return boolean
+--- @overload fun(ambientZone: string): boolean
+function IsAmbientZoneEnabled(ambientZone) end
+
+    
+--- GetAmbientVoiceNameHash
+---
+--- @hash [0x5E203DA2BA15D436](https://docs.fivem.net/natives/?_0x5E203DA2BA15D436)
+--- @param ped Ped
+--- @return Hash
+--- @overload fun(ped: Ped): Hash
+function GetAmbientVoiceNameHash(ped) end
+
+    
+--- # New Name: GetAmbientVoiceNameHash
+--- GetAmbientVoiceNameHash
+---
+--- @hash [0x5E203DA2BA15D436](https://docs.fivem.net/natives/?_0x5E203DA2BA15D436)
+--- @param ped Ped
+--- @return Hash
+--- @overload fun(ped: Ped): Hash
+--- @deprecated
+function N_0x5e203da2ba15d436(ped) end
+
+    
+--- IsAnimalVocalizationPlaying
+---
+--- @hash [0xC265DF9FB44A9FBD](https://docs.fivem.net/natives/?_0xC265DF9FB44A9FBD)
+--- @param pedHandle Ped
+--- @return boolean
+--- @overload fun(pedHandle: Ped): boolean
+function IsAnimalVocalizationPlaying(pedHandle) end
+
+    
+--- # New Name: IsAnimalVocalizationPlaying
+--- IsAnimalVocalizationPlaying
+---
+--- @hash [0xC265DF9FB44A9FBD](https://docs.fivem.net/natives/?_0xC265DF9FB44A9FBD)
+--- @param pedHandle Ped
+--- @return boolean
+--- @overload fun(pedHandle: Ped): boolean
+--- @deprecated
+function N_0xc265df9fb44a9fbd(pedHandle) end
+
+    
+--- ```
+--- Returns active radio station name  
+--- ```
+---
+--- @hash [0xF6D733C32076AD03](https://docs.fivem.net/natives/?_0xF6D733C32076AD03)
+---
+--- @return string
+--- @overload fun(): string
+function GetPlayerRadioStationName() end
+
+    
+--- IsAudioSceneActive
+---
+--- @hash [0xB65B60556E2A9225](https://docs.fivem.net/natives/?_0xB65B60556E2A9225)
+--- @param scene string (char*)
+--- @return boolean
+--- @overload fun(scene: string): boolean
+function IsAudioSceneActive(scene) end
+
+    
+--- IsMissionCompletePlaying
+---
+--- @hash [0x19A30C23F5827F8A](https://docs.fivem.net/natives/?_0x19A30C23F5827F8A)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function IsMissionCompletePlaying() end
+
+    
+--- ```
+--- Checks whether the horn of a vehicle is currently played.  
+--- ```
+---
+--- @hash [0x9D6BFC12B05C6121](https://docs.fivem.net/natives/?_0x9D6BFC12B05C6121)
+--- @param vehicle Vehicle
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+function IsHornActive(vehicle) end
+
+    
+--- ```
+--- Returns hash of default vehicle horn  
+--- Hash is stored in audVehicleAudioEntity  
+--- ```
+---
+--- @hash [0x02165D55000219AC](https://docs.fivem.net/natives/?_0x02165D55000219AC)
+--- @param vehicle Vehicle
+--- @return Hash
+--- @overload fun(vehicle: Vehicle): Hash
+function GetVehicleDefaultHorn(vehicle) end
+
+    
+--- IsMusicOneshotPlaying
+---
+--- @hash [0xA097AB275061FB21](https://docs.fivem.net/natives/?_0xA097AB275061FB21)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function IsMusicOneshotPlaying() end
+
+    
+--- # New Name: IsMusicOneshotPlaying
+--- IsMusicOneshotPlaying
+---
+--- @hash [0xA097AB275061FB21](https://docs.fivem.net/natives/?_0xA097AB275061FB21)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0xa097ab275061fb21() end
 
     
 --- ```
@@ -685,53 +993,40 @@ function N_0x34d66bc058019ce0(radioStationName) end
 function GetNetworkIdFromSoundId(soundId) end
 
     
---- GetIsPreloadedConversationReady
+--- GetSoundId
 ---
---- @hash [0xE73364DB90778FFA](https://docs.fivem.net/natives/?_0xE73364DB90778FFA)
+--- @hash [0x430386FE9BF80B45](https://docs.fivem.net/natives/?_0x430386FE9BF80B45)
+---
+--- @return number
+--- @overload fun(): number
+function GetSoundId() end
+
+    
+--- IsMobilePhoneCallOngoing
+---
+--- @hash [0x7497D2CE2C30D24C](https://docs.fivem.net/natives/?_0x7497D2CE2C30D24C)
 ---
 --- @return boolean
 --- @overload fun(): boolean
-function GetIsPreloadedConversationReady() end
+function IsMobilePhoneCallOngoing() end
 
     
---- # New Name: GetIsPreloadedConversationReady
---- GetIsPreloadedConversationReady
+--- IsScriptedConversationLoaded
 ---
---- @hash [0xE73364DB90778FFA](https://docs.fivem.net/natives/?_0xE73364DB90778FFA)
+--- @hash [0xDF0D54BE7A776737](https://docs.fivem.net/natives/?_0xDF0D54BE7A776737)
 ---
 --- @return boolean
 --- @overload fun(): boolean
---- @deprecated
-function N_0xe73364db90778ffa() end
+function IsScriptedConversationLoaded() end
 
     
---- GetNumUnlockedRadioStations
+--- IsPedRingtonePlaying
 ---
---- @hash [0xF1620ECB50E01DE7](https://docs.fivem.net/natives/?_0xF1620ECB50E01DE7)
----
---- @return number
---- @overload fun(): number
-function GetNumUnlockedRadioStations() end
-
-    
---- # New Name: GetNumUnlockedRadioStations
---- GetNumUnlockedRadioStations
----
---- @hash [0xF1620ECB50E01DE7](https://docs.fivem.net/natives/?_0xF1620ECB50E01DE7)
----
---- @return number
---- @overload fun(): number
---- @deprecated
-function MaxRadioStationIndex() end
-
-    
---- GetMusicPlaytime
----
---- @hash [0xE7A0D23DC414507B](https://docs.fivem.net/natives/?_0xE7A0D23DC414507B)
----
---- @return number
---- @overload fun(): number
-function GetMusicPlaytime() end
+--- @hash [0x1E8E5E20937E3137](https://docs.fivem.net/natives/?_0x1E8E5E20937E3137)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsPedRingtonePlaying(ped) end
 
     
 --- ```
@@ -745,104 +1040,111 @@ function GetMusicPlaytime() end
 function GetPlayerRadioStationIndex() end
 
     
---- ```
---- Returns String with radio station name.  
---- ```
+--- IsRadioFadedOut
 ---
---- @hash [0xB28ECA15046CA8B9](https://docs.fivem.net/natives/?_0xB28ECA15046CA8B9)
---- @param radioStation number (int)
---- @return string
---- @overload fun(radioStation: number): string
-function GetRadioStationName(radioStation) end
+--- @hash [0x0626A247D2405330](https://docs.fivem.net/natives/?_0x0626A247D2405330)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function IsRadioFadedOut() end
 
     
---- GetPlayerRadioStationGenre
+--- # New Name: IsRadioFadedOut
+--- IsRadioFadedOut
 ---
---- @hash [0xA571991A7FE6CCEB](https://docs.fivem.net/natives/?_0xA571991A7FE6CCEB)
+--- @hash [0x0626A247D2405330](https://docs.fivem.net/natives/?_0x0626A247D2405330)
 ---
---- @return number
---- @overload fun(): number
-function GetPlayerRadioStationGenre() end
-
-    
---- Counterpart: [`GET_NETWORK_ID_FROM_SOUND_ID`](https://docs.fivem.net/natives/?_0x2DE3F0A134FFBC0D).
----
---- @hash [0x75262FD12D0A1C84](https://docs.fivem.net/natives/?_0x75262FD12D0A1C84)
---- @param netId number (int)
---- @return number
---- @overload fun(netId: number): number
-function GetSoundIdFromNetworkId(netId) end
-
-    
---- # New Name: GetSoundIdFromNetworkId
---- Counterpart: [`GET_NETWORK_ID_FROM_SOUND_ID`](https://docs.fivem.net/natives/?_0x2DE3F0A134FFBC0D).
----
---- @hash [0x75262FD12D0A1C84](https://docs.fivem.net/natives/?_0x75262FD12D0A1C84)
---- @param netId number (int)
---- @return number
---- @overload fun(netId: number): number
+--- @return boolean
+--- @overload fun(): boolean
 --- @deprecated
-function N_0x75262fd12d0a1c84(netId) end
+function N_0x0626a247d2405330() end
+
+    
+--- HasSoundFinished
+---
+--- @hash [0xFCBDCE714A7C88E5](https://docs.fivem.net/natives/?_0xFCBDCE714A7C88E5)
+--- @param soundId number (int)
+--- @return boolean
+--- @overload fun(soundId: number): boolean
+function HasSoundFinished(soundId) end
+
+    
+--- IsVehicleAudiblyDamaged
+---
+--- @hash [0x5DB8010EE71FDEF2](https://docs.fivem.net/natives/?_0x5DB8010EE71FDEF2)
+--- @param vehicle Vehicle
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+function IsVehicleAudiblyDamaged(vehicle) end
+
+    
+--- # New Name: IsVehicleAudiblyDamaged
+--- IsVehicleAudiblyDamaged
+---
+--- @hash [0x5DB8010EE71FDEF2](https://docs.fivem.net/natives/?_0x5DB8010EE71FDEF2)
+--- @param vehicle Vehicle
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+--- @deprecated
+function N_0x5db8010ee71fdef2(vehicle) end
 
     
 --- ```
---- Returns active radio station name  
+--- NativeDB Introduced: v2372
 --- ```
 ---
---- @hash [0xF6D733C32076AD03](https://docs.fivem.net/natives/?_0xF6D733C32076AD03)
----
---- @return string
---- @overload fun(): string
-function GetPlayerRadioStationName() end
+--- @hash [0xFF5E5EA2DCEEACF3](https://docs.fivem.net/natives/?_0xFF5E5EA2DCEEACF3)
+--- @param radioStation string (char*)
+--- @param trackListName string (char*)
+--- @return void
+--- @overload fun(radioStation: string, trackListName: string): void
+function LockRadioStationTrackList(radioStation, trackListName) end
 
     
---- GetVehicleDefaultHornIgnoreMods
+--- IsScriptedConversationOngoing
 ---
---- @hash [0xACB5DCCA1EC76840](https://docs.fivem.net/natives/?_0xACB5DCCA1EC76840)
+--- @hash [0x16754C556D2EDE3D](https://docs.fivem.net/natives/?_0x16754C556D2EDE3D)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function IsScriptedConversationOngoing() end
+
+    
+--- ```
+--- NativeDB Added Parameter 3: Any p2
+--- ```
+---
+--- @hash [0xFB380A29641EC31A](https://docs.fivem.net/natives/?_0xFB380A29641EC31A)
+--- @param p0 any
+--- @param p1 number (int)
+--- @return any
+--- @overload fun(p0: any, p1: number): any
+function HintScriptAudioBank(p0, p1) end
+
+    
+--- IsVehicleRadioLoud
+---
+--- @hash [0x032A116663A4D5AC](https://docs.fivem.net/natives/?_0x032A116663A4D5AC)
 --- @param vehicle Vehicle
---- @return Hash
---- @overload fun(vehicle: Vehicle): Hash
-function GetVehicleDefaultHornIgnoreMods(vehicle) end
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+function IsVehicleRadioLoud(vehicle) end
 
     
---- # New Name: GetVehicleDefaultHornIgnoreMods
---- GetVehicleDefaultHornIgnoreMods
+--- ```
+--- Example:  
+--- AUDIO::LOAD_STREAM("CAR_STEAL_1_PASSBY", "CAR_STEAL_1_SOUNDSET");  
+--- All found occurrences in the b678d decompiled scripts: pastebin.com/3rma6w5w  
+--- Stream names often ends with "_MASTER", "_SMALL" or "_STREAM". Also "_IN", "_OUT" and numbers.     
+--- soundSet is often set to 0 in the scripts. These are common to end the soundSets: "_SOUNDS", "_SOUNDSET" and numbers.  
+--- ```
 ---
---- @hash [0xACB5DCCA1EC76840](https://docs.fivem.net/natives/?_0xACB5DCCA1EC76840)
---- @param vehicle Vehicle
---- @return Hash
---- @overload fun(vehicle: Vehicle): Hash
---- @deprecated
-function N_0xacb5dcca1ec76840(vehicle) end
-
-    
---- # New Name: GetVehicleDefaultHornIgnoreMods
---- GetVehicleDefaultHornIgnoreMods
----
---- @hash [0xACB5DCCA1EC76840](https://docs.fivem.net/natives/?_0xACB5DCCA1EC76840)
---- @param vehicle Vehicle
---- @return Hash
---- @overload fun(vehicle: Vehicle): Hash
---- @deprecated
-function GetVehicleHornHash(vehicle) end
-
-    
---- GetSoundId
----
---- @hash [0x430386FE9BF80B45](https://docs.fivem.net/natives/?_0x430386FE9BF80B45)
----
---- @return number
---- @overload fun(): number
-function GetSoundId() end
-
-    
---- GetStreamPlayTime
----
---- @hash [0x4E72BBDBCA58A3DB](https://docs.fivem.net/natives/?_0x4E72BBDBCA58A3DB)
----
---- @return number
---- @overload fun(): number
-function GetStreamPlayTime() end
+--- @hash [0x1F1F957154EC51DF](https://docs.fivem.net/natives/?_0x1F1F957154EC51DF)
+--- @param streamName string (char*)
+--- @param soundSet string (char*)
+--- @return boolean
+--- @overload fun(streamName: string, soundSet: string): boolean
+function LoadStream(streamName, soundSet) end
 
     
 --- ```
@@ -883,18 +1185,6 @@ function N_0x22fecb546c276a30(vehicle) end
 
     
 --- ```
---- Returns hash of default vehicle horn  
---- Hash is stored in audVehicleAudioEntity  
---- ```
----
---- @hash [0x02165D55000219AC](https://docs.fivem.net/natives/?_0x02165D55000219AC)
---- @param vehicle Vehicle
---- @return Hash
---- @overload fun(vehicle: Vehicle): Hash
-function GetVehicleDefaultHorn(vehicle) end
-
-    
---- ```
 --- HAS_*
 --- ```
 ---
@@ -918,105 +1208,6 @@ function HasMultiplayerAudioDataLoaded() end
 function N_0x544810ed9db6bbe6() end
 
     
---- HasSoundFinished
----
---- @hash [0xFCBDCE714A7C88E5](https://docs.fivem.net/natives/?_0xFCBDCE714A7C88E5)
---- @param soundId number (int)
---- @return boolean
---- @overload fun(soundId: number): boolean
-function HasSoundFinished(soundId) end
-
-    
---- ```
---- HAS_*
---- ```
----
---- @hash [0x5B50ABB1FE3746F4](https://docs.fivem.net/natives/?_0x5B50ABB1FE3746F4)
----
---- @return boolean
---- @overload fun(): boolean
-function HasMultiplayerAudioDataUnloaded() end
-
-    
---- # New Name: HasMultiplayerAudioDataUnloaded
---- ```
---- HAS_*
---- ```
----
---- @hash [0x5B50ABB1FE3746F4](https://docs.fivem.net/natives/?_0x5B50ABB1FE3746F4)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function N_0x5b50abb1fe3746f4() end
-
-    
---- ```
---- NativeDB Added Parameter 3: Any p2
---- ```
----
---- @hash [0xFB380A29641EC31A](https://docs.fivem.net/natives/?_0xFB380A29641EC31A)
---- @param p0 any
---- @param p1 number (int)
---- @return any
---- @overload fun(p0: any, p1: number): any
-function HintScriptAudioBank(p0, p1) end
-
-    
---- ```
---- NativeDB Added Parameter 3: Any p2
---- ```
----
---- @hash [0x8F8C0E370AE62F5C](https://docs.fivem.net/natives/?_0x8F8C0E370AE62F5C)
---- @param p0 any
---- @param p1 any
---- @return any
---- @overload fun(p0: any, p1: any): any
-function HintAmbientAudioBank(p0, p1) end
-
-    
---- ```
---- One call found in the b617d scripts:
---- AUDIO::_8A694D7A68F8DC38(NETWORK::NET_TO_PED(l_3989._f26F[0/*1*/]), "CONV_INTERRUPT_QUIT_IT", "LESTER");
---- ```
----
---- @hash [0x8A694D7A68F8DC38](https://docs.fivem.net/natives/?_0x8A694D7A68F8DC38)
---- @param ped Ped
---- @param p1 string (char*)
---- @param p2 string (char*)
---- @return void
---- @overload fun(ped: Ped, p1: string, p2: string): void
-function InterruptConversationAndPause(ped, p1, p2) end
-
-    
---- # New Name: InterruptConversationAndPause
---- ```
---- One call found in the b617d scripts:
---- AUDIO::_8A694D7A68F8DC38(NETWORK::NET_TO_PED(l_3989._f26F[0/*1*/]), "CONV_INTERRUPT_QUIT_IT", "LESTER");
---- ```
----
---- @hash [0x8A694D7A68F8DC38](https://docs.fivem.net/natives/?_0x8A694D7A68F8DC38)
---- @param ped Ped
---- @param p1 string (char*)
---- @param p2 string (char*)
---- @return void
---- @overload fun(ped: Ped, p1: string, p2: string): void
---- @deprecated
-function N_0x8a694d7a68f8dc38(ped, p1, p2) end
-
-    
---- ```
---- Common in the scripts:  
---- AUDIO::IS_AMBIENT_SPEECH_DISABLED(PLAYER::PLAYER_PED_ID());  
---- ```
----
---- @hash [0x932C2D096A2C3FFF](https://docs.fivem.net/natives/?_0x932C2D096A2C3FFF)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsAmbientSpeechDisabled(ped) end
-
-    
 --- InterruptConversation
 ---
 --- @hash [0xA018A12E5C5C2FA6](https://docs.fivem.net/natives/?_0xA018A12E5C5C2FA6)
@@ -1026,407 +1217,22 @@ function IsAmbientSpeechDisabled(ped) end
 function InterruptConversation(p0) end
 
     
---- IsAmbientZoneEnabled
+--- N_0x11579d940949c49e
 ---
---- @hash [0x01E2817A479A7F9B](https://docs.fivem.net/natives/?_0x01E2817A479A7F9B)
---- @param ambientZone string (char*)
---- @return boolean
---- @overload fun(ambientZone: string): boolean
-function IsAmbientZoneEnabled(ambientZone) end
-
-    
---- ```
---- Example:  
---- bool playing = AUDIO::IS_ALARM_PLAYING("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS");  
---- ```
----
---- @hash [0x226435CB96CCFC8C](https://docs.fivem.net/natives/?_0x226435CB96CCFC8C)
---- @param alarmName string (char*)
---- @return boolean
---- @overload fun(alarmName: string): boolean
-function IsAlarmPlaying(alarmName) end
-
-    
---- IsAnimalVocalizationPlaying
----
---- @hash [0xC265DF9FB44A9FBD](https://docs.fivem.net/natives/?_0xC265DF9FB44A9FBD)
---- @param pedHandle Ped
---- @return boolean
---- @overload fun(pedHandle: Ped): boolean
-function IsAnimalVocalizationPlaying(pedHandle) end
-
-    
---- # New Name: IsAnimalVocalizationPlaying
---- IsAnimalVocalizationPlaying
----
---- @hash [0xC265DF9FB44A9FBD](https://docs.fivem.net/natives/?_0xC265DF9FB44A9FBD)
---- @param pedHandle Ped
---- @return boolean
---- @overload fun(pedHandle: Ped): boolean
---- @deprecated
-function N_0xc265df9fb44a9fbd(pedHandle) end
-
-    
---- IsAudioSceneActive
----
---- @hash [0xB65B60556E2A9225](https://docs.fivem.net/natives/?_0xB65B60556E2A9225)
---- @param scene string (char*)
---- @return boolean
---- @overload fun(scene: string): boolean
-function IsAudioSceneActive(scene) end
-
-    
---- IsAmbientSpeechPlaying
----
---- @hash [0x9072C8B49907BFAD](https://docs.fivem.net/natives/?_0x9072C8B49907BFAD)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsAmbientSpeechPlaying(ped) end
-
-    
---- IsAnySpeechPlaying
----
---- @hash [0x729072355FA39EC9](https://docs.fivem.net/natives/?_0x729072355FA39EC9)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsAnySpeechPlaying(ped) end
-
-    
---- ```
---- Checks whether the horn of a vehicle is currently played.  
---- ```
----
---- @hash [0x9D6BFC12B05C6121](https://docs.fivem.net/natives/?_0x9D6BFC12B05C6121)
---- @param vehicle Vehicle
---- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
-function IsHornActive(vehicle) end
-
-    
---- ```
---- Hardcoded to return 1  
---- ```
----
---- @hash [0x6D28DC1671E334FD](https://docs.fivem.net/natives/?_0x6D28DC1671E334FD)
----
---- @return boolean
---- @overload fun(): boolean
-function IsGameInControlOfMusic() end
-
-    
---- IsMissionNewsStoryUnlocked
----
---- @hash [0x66E49BF55B4B1874](https://docs.fivem.net/natives/?_0x66E49BF55B4B1874)
---- @param newsStory number (int)
---- @return boolean
---- @overload fun(newsStory: number): boolean
-function IsMissionNewsStoryUnlocked(newsStory) end
-
-    
---- # New Name: IsMissionNewsStoryUnlocked
---- IsMissionNewsStoryUnlocked
----
---- @hash [0x66E49BF55B4B1874](https://docs.fivem.net/natives/?_0x66E49BF55B4B1874)
---- @param newsStory number (int)
---- @return boolean
---- @overload fun(newsStory: number): boolean
---- @deprecated
-function GetNumberOfPassengerVoiceVariations(newsStory) end
-
-    
---- IsMissionCompletePlaying
----
---- @hash [0x19A30C23F5827F8A](https://docs.fivem.net/natives/?_0x19A30C23F5827F8A)
----
---- @return boolean
---- @overload fun(): boolean
-function IsMissionCompletePlaying() end
-
-    
---- IsMobilePhoneRadioActive
----
---- @hash [0xB35CE999E8EF317E](https://docs.fivem.net/natives/?_0xB35CE999E8EF317E)
----
---- @return boolean
---- @overload fun(): boolean
-function IsMobilePhoneRadioActive() end
-
-    
---- IsMusicOneshotPlaying
----
---- @hash [0xA097AB275061FB21](https://docs.fivem.net/natives/?_0xA097AB275061FB21)
----
---- @return boolean
---- @overload fun(): boolean
-function IsMusicOneshotPlaying() end
-
-    
---- # New Name: IsMusicOneshotPlaying
---- IsMusicOneshotPlaying
----
---- @hash [0xA097AB275061FB21](https://docs.fivem.net/natives/?_0xA097AB275061FB21)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function N_0xa097ab275061fb21() end
-
-    
---- IsMissionCompleteReadyForUi
----
---- @hash [0x6F259F82D873B8B8](https://docs.fivem.net/natives/?_0x6F259F82D873B8B8)
----
---- @return boolean
---- @overload fun(): boolean
-function IsMissionCompleteReadyForUi() end
-
-    
---- # New Name: IsMissionCompleteReadyForUi
---- IsMissionCompleteReadyForUi
----
---- @hash [0x6F259F82D873B8B8](https://docs.fivem.net/natives/?_0x6F259F82D873B8B8)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function N_0x6f259f82d873b8b8() end
-
-    
---- IsMobilePhoneCallOngoing
----
---- @hash [0x7497D2CE2C30D24C](https://docs.fivem.net/natives/?_0x7497D2CE2C30D24C)
----
---- @return boolean
---- @overload fun(): boolean
-function IsMobilePhoneCallOngoing() end
-
-    
---- IsPedRingtonePlaying
----
---- @hash [0x1E8E5E20937E3137](https://docs.fivem.net/natives/?_0x1E8E5E20937E3137)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsPedRingtonePlaying(ped) end
-
-    
---- IsRadioFadedOut
----
---- @hash [0x0626A247D2405330](https://docs.fivem.net/natives/?_0x0626A247D2405330)
----
---- @return boolean
---- @overload fun(): boolean
-function IsRadioFadedOut() end
-
-    
---- # New Name: IsRadioFadedOut
---- IsRadioFadedOut
----
---- @hash [0x0626A247D2405330](https://docs.fivem.net/natives/?_0x0626A247D2405330)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function N_0x0626a247d2405330() end
-
-    
---- IsPedInCurrentConversation
----
---- @hash [0x049E937F18F4020C](https://docs.fivem.net/natives/?_0x049E937F18F4020C)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsPedInCurrentConversation(ped) end
-
-    
---- IsRadioRetuning
----
---- @hash [0xA151A7394A214E65](https://docs.fivem.net/natives/?_0xA151A7394A214E65)
----
---- @return boolean
---- @overload fun(): boolean
-function IsRadioRetuning() end
-
-    
---- IsPlayerVehRadioEnable
----
---- @hash [0x5F43D83FD6738741](https://docs.fivem.net/natives/?_0x5F43D83FD6738741)
----
---- @return boolean
---- @overload fun(): boolean
-function IsPlayerVehRadioEnable() end
-
-    
---- # New Name: IsPlayerVehRadioEnable
---- IsPlayerVehRadioEnable
----
---- @hash [0x5F43D83FD6738741](https://docs.fivem.net/natives/?_0x5F43D83FD6738741)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function N_0x5f43d83fd6738741() end
-
-    
---- # New Name: IsPlayerVehRadioEnable
---- IsPlayerVehRadioEnable
----
---- @hash [0x5F43D83FD6738741](https://docs.fivem.net/natives/?_0x5F43D83FD6738741)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function IsPlayerVehicleRadioEnabled() end
-
-    
---- IsScriptedConversationLoaded
----
---- @hash [0xDF0D54BE7A776737](https://docs.fivem.net/natives/?_0xDF0D54BE7A776737)
----
---- @return boolean
---- @overload fun(): boolean
-function IsScriptedConversationLoaded() end
-
-    
---- IsScriptedConversationOngoing
----
---- @hash [0x16754C556D2EDE3D](https://docs.fivem.net/natives/?_0x16754C556D2EDE3D)
----
---- @return boolean
---- @overload fun(): boolean
-function IsScriptedConversationOngoing() end
-
-    
---- IsScriptedSpeechPlaying
----
---- @hash [0xCC9AA18DCC7084F4](https://docs.fivem.net/natives/?_0xCC9AA18DCC7084F4)
+--- @hash [0x11579D940949C49E](https://docs.fivem.net/natives/?_0x11579D940949C49E)
 --- @param p0 any
---- @return boolean
---- @overload fun(p0: any): boolean
-function IsScriptedSpeechPlaying(p0) end
-
-    
---- IsStreamPlaying
----
---- @hash [0xD11FA52EB849D978](https://docs.fivem.net/natives/?_0xD11FA52EB849D978)
----
---- @return boolean
---- @overload fun(): boolean
-function IsStreamPlaying() end
-
-    
---- IsVehicleAudiblyDamaged
----
---- @hash [0x5DB8010EE71FDEF2](https://docs.fivem.net/natives/?_0x5DB8010EE71FDEF2)
---- @param vehicle Vehicle
---- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
-function IsVehicleAudiblyDamaged(vehicle) end
-
-    
---- # New Name: IsVehicleAudiblyDamaged
---- IsVehicleAudiblyDamaged
----
---- @hash [0x5DB8010EE71FDEF2](https://docs.fivem.net/natives/?_0x5DB8010EE71FDEF2)
---- @param vehicle Vehicle
---- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
---- @deprecated
-function N_0x5db8010ee71fdef2(vehicle) end
-
-    
---- ```
---- IS_VEHICLE_*
---- ```
---- @usage local radioEnabled = IsVehicleRadioEnabled(GetVehiclePedIsIn(PlayerPedId(), false))
---- print(radioEnabled
---- @hash [0x0BE4BE946463F917](https://docs.fivem.net/natives/?_0x0BE4BE946463F917)
---- @param vehicle Vehicle
---- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
-function IsVehicleRadioEnabled(vehicle) end
-
-    
---- # New Name: IsVehicleRadioEnabled
---- ```
---- IS_VEHICLE_*
---- ```
---- @usage local radioEnabled = IsVehicleRadioEnabled(GetVehiclePedIsIn(PlayerPedId(), false))
---- print(radioEnabled
---- @hash [0x0BE4BE946463F917](https://docs.fivem.net/natives/?_0x0BE4BE946463F917)
---- @param vehicle Vehicle
---- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
---- @deprecated
-function N_0x0be4be946463f917(vehicle) end
-
-    
---- IsVehicleRadioLoud
----
---- @hash [0x032A116663A4D5AC](https://docs.fivem.net/natives/?_0x032A116663A4D5AC)
---- @param vehicle Vehicle
---- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
-function IsVehicleRadioLoud(vehicle) end
-
-    
---- ```
---- L* (LINK_*?)
---- ```
----
---- @hash [0x651D3228960D08AF](https://docs.fivem.net/natives/?_0x651D3228960D08AF)
---- @param emitterName string (char*)
---- @param entity Entity
 --- @return void
---- @overload fun(emitterName: string, entity: Entity): void
-function LinkStaticEmitterToEntity(emitterName, entity) end
+--- @overload fun(p0: any): void
+function N_0x11579d940949c49e(p0) end
 
     
---- # New Name: LinkStaticEmitterToEntity
---- ```
---- L* (LINK_*?)
---- ```
+--- N_0x0150b6ff25a9e2e5
 ---
---- @hash [0x651D3228960D08AF](https://docs.fivem.net/natives/?_0x651D3228960D08AF)
---- @param emitterName string (char*)
---- @param entity Entity
+--- @hash [0x0150B6FF25A9E2E5](https://docs.fivem.net/natives/?_0x0150B6FF25A9E2E5)
+---
 --- @return void
---- @overload fun(emitterName: string, entity: Entity): void
---- @deprecated
-function N_0x651d3228960d08af(emitterName, entity) end
-
-    
---- ```
---- Example:  
---- AUDIO::LOAD_STREAM("CAR_STEAL_1_PASSBY", "CAR_STEAL_1_SOUNDSET");  
---- All found occurrences in the b678d decompiled scripts: pastebin.com/3rma6w5w  
---- Stream names often ends with "_MASTER", "_SMALL" or "_STREAM". Also "_IN", "_OUT" and numbers.     
---- soundSet is often set to 0 in the scripts. These are common to end the soundSets: "_SOUNDS", "_SOUNDSET" and numbers.  
---- ```
----
---- @hash [0x1F1F957154EC51DF](https://docs.fivem.net/natives/?_0x1F1F957154EC51DF)
---- @param streamName string (char*)
---- @param soundSet string (char*)
---- @return boolean
---- @overload fun(streamName: string, soundSet: string): boolean
-function LoadStream(streamName, soundSet) end
-
-    
---- ```
---- Example:  
---- AUDIO::LOAD_STREAM_WITH_START_OFFSET("STASH_TOXIN_STREAM", 2400, "FBI_05_SOUNDS");  
---- Only called a few times in the scripts.  
---- ```
----
---- @hash [0x59C16B79F53B3712](https://docs.fivem.net/natives/?_0x59C16B79F53B3712)
---- @param streamName string (char*)
---- @param startOffset number (int)
---- @param soundSet string (char*)
---- @return boolean
---- @overload fun(streamName: string, startOffset: number, soundSet: string): boolean
-function LoadStreamWithStartOffset(streamName, startOffset, soundSet) end
+--- @overload fun(): void
+function N_0x0150b6ff25a9e2e5() end
 
     
 --- ```
@@ -1475,36 +1281,6 @@ function N_0x94f2e83ead7e6b82(radioStationName, toggle) end
 function SetRadioStationDisabled(radioStationName, toggle) end
 
     
---- **This native does absolutely nothing, just a nullsub**
----
---- @hash [0x02E93C796ABD3A97](https://docs.fivem.net/natives/?_0x02E93C796ABD3A97)
---- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
-function N_0x02e93c796abd3a97(p0) end
-
-    
---- ```
---- NativeDB Introduced: v2372
---- ```
----
---- @hash [0xFF5E5EA2DCEEACF3](https://docs.fivem.net/natives/?_0xFF5E5EA2DCEEACF3)
---- @param radioStation string (char*)
---- @param trackListName string (char*)
---- @return void
---- @overload fun(radioStation: string, trackListName: string): void
-function LockRadioStationTrackList(radioStation, trackListName) end
-
-    
---- N_0x0150b6ff25a9e2e5
----
---- @hash [0x0150B6FF25A9E2E5](https://docs.fivem.net/natives/?_0x0150B6FF25A9E2E5)
----
---- @return void
---- @overload fun(): void
-function N_0x0150b6ff25a9e2e5() end
-
-    
 --- ```
 --- FORCE_*
 --- ```
@@ -1516,6 +1292,44 @@ function N_0x0150b6ff25a9e2e5() end
 function N_0x062d5ead4da2fa6a() end
 
     
+--- IsAnySpeechPlaying
+---
+--- @hash [0x729072355FA39EC9](https://docs.fivem.net/natives/?_0x729072355FA39EC9)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsAnySpeechPlaying(ped) end
+
+    
+--- **This native does absolutely nothing, just a nullsub**
+---
+--- @hash [0x02E93C796ABD3A97](https://docs.fivem.net/natives/?_0x02E93C796ABD3A97)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function N_0x02e93c796abd3a97(p0) end
+
+    
+--- IsMissionCompleteReadyForUi
+---
+--- @hash [0x6F259F82D873B8B8](https://docs.fivem.net/natives/?_0x6F259F82D873B8B8)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function IsMissionCompleteReadyForUi() end
+
+    
+--- # New Name: IsMissionCompleteReadyForUi
+--- IsMissionCompleteReadyForUi
+---
+--- @hash [0x6F259F82D873B8B8](https://docs.fivem.net/natives/?_0x6F259F82D873B8B8)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0x6f259f82d873b8b8() end
+
+    
 --- N_0x0b568201dd99f0eb
 ---
 --- @hash [0x0B568201DD99F0EB](https://docs.fivem.net/natives/?_0x0B568201DD99F0EB)
@@ -1523,99 +1337,6 @@ function N_0x062d5ead4da2fa6a() end
 --- @return void
 --- @overload fun(p0: boolean): void
 function N_0x0b568201dd99f0eb(p0) end
-
-    
---- N_0x11579d940949c49e
----
---- @hash [0x11579D940949C49E](https://docs.fivem.net/natives/?_0x11579D940949C49E)
---- @param p0 any
---- @return void
---- @overload fun(p0: any): void
-function N_0x11579d940949c49e(p0) end
-
-    
---- N_0x149aee66f0cb3a99
----
---- @hash [0x149AEE66F0CB3A99](https://docs.fivem.net/natives/?_0x149AEE66F0CB3A99)
---- @param p0 number (float)
---- @param p1 number (float)
---- @return void
---- @overload fun(p0: number, p1: number): void
-function N_0x149aee66f0cb3a99(p0, p1) end
-
-    
---- N_0x159b7318403a1cd8
----
---- @hash [0x159B7318403A1CD8](https://docs.fivem.net/natives/?_0x159B7318403A1CD8)
---- @param p0 any
---- @return void
---- @overload fun(p0: any): void
-function N_0x159b7318403a1cd8(p0) end
-
-    
---- N_0x19af7ed9b9d23058
----
---- @hash [0x19AF7ED9B9D23058](https://docs.fivem.net/natives/?_0x19AF7ED9B9D23058)
----
---- @return void
---- @overload fun(): void
-function N_0x19af7ed9b9d23058() end
-
-    
---- ```
---- ENABLE_VEHICLE_*
---- ```
----
---- @hash [0x1C073274E065C6D2](https://docs.fivem.net/natives/?_0x1C073274E065C6D2)
---- @param vehicle Vehicle
---- @param toggle boolean
---- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function N_0x1c073274e065c6d2(vehicle, toggle) end
-
-    
---- N_0x1b7abe26cbcbf8c7
----
---- @hash [0x1B7ABE26CBCBF8C7](https://docs.fivem.net/natives/?_0x1B7ABE26CBCBF8C7)
---- @param ped Ped
---- @param p1 any
---- @param p2 any
---- @return void
---- @overload fun(ped: Ped, p1: any, p2: any): void
-function N_0x1b7abe26cbcbf8c7(ped, p1, p2) end
-
-    
---- ```
---- NativeDB Introduced: v463
---- ```
----
---- @hash [0x2DD39BF3E2F9C47F](https://docs.fivem.net/natives/?_0x2DD39BF3E2F9C47F)
----
---- @return any
---- @overload fun(): any
-function N_0x2dd39bf3e2f9c47f() end
-
-    
---- ```
---- NativeDB Introduced: v1493
---- ```
----
---- @hash [0x2ACABED337622DF2](https://docs.fivem.net/natives/?_0x2ACABED337622DF2)
---- @param p0 string (char*)
---- @return void
---- @overload fun(p0: string): void
-function N_0x2acabed337622df2(p0) end
-
-    
---- ```
---- NativeDB Introduced: v2189
---- ```
----
---- @hash [0x30CA2EF91D15ADF8](https://docs.fivem.net/natives/?_0x30CA2EF91D15ADF8)
----
---- @return any
---- @overload fun(): any
-function N_0x30ca2ef91d15adf8() end
 
     
 --- N_0x33e3c6c6f2f0b506
@@ -1630,13 +1351,76 @@ function N_0x30ca2ef91d15adf8() end
 function N_0x33e3c6c6f2f0b506(p0, p1, p2, p3) end
 
     
---- N_0x3a48ab4445d499be
+--- N_0x19af7ed9b9d23058
 ---
---- @hash [0x3A48AB4445D499BE](https://docs.fivem.net/natives/?_0x3A48AB4445D499BE)
+--- @hash [0x19AF7ED9B9D23058](https://docs.fivem.net/natives/?_0x19AF7ED9B9D23058)
 ---
---- @return any
---- @overload fun(): any
-function N_0x3a48ab4445d499be() end
+--- @return void
+--- @overload fun(): void
+function N_0x19af7ed9b9d23058() end
+
+    
+--- ```
+--- Hardcoded to return 1  
+--- ```
+---
+--- @hash [0x6D28DC1671E334FD](https://docs.fivem.net/natives/?_0x6D28DC1671E334FD)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function IsGameInControlOfMusic() end
+
+    
+--- ```
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0x2ACABED337622DF2](https://docs.fivem.net/natives/?_0x2ACABED337622DF2)
+--- @param p0 string (char*)
+--- @return void
+--- @overload fun(p0: string): void
+function N_0x2acabed337622df2(p0) end
+
+    
+--- IsAmbientSpeechPlaying
+---
+--- @hash [0x9072C8B49907BFAD](https://docs.fivem.net/natives/?_0x9072C8B49907BFAD)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsAmbientSpeechPlaying(ped) end
+
+    
+--- N_0x1b7abe26cbcbf8c7
+---
+--- @hash [0x1B7ABE26CBCBF8C7](https://docs.fivem.net/natives/?_0x1B7ABE26CBCBF8C7)
+--- @param ped Ped
+--- @param p1 any
+--- @param p2 any
+--- @return void
+--- @overload fun(ped: Ped, p1: any, p2: any): void
+function N_0x1b7abe26cbcbf8c7(ped, p1, p2) end
+
+    
+--- ```
+--- Common in the scripts:  
+--- AUDIO::IS_AMBIENT_SPEECH_DISABLED(PLAYER::PLAYER_PED_ID());  
+--- ```
+---
+--- @hash [0x932C2D096A2C3FFF](https://docs.fivem.net/natives/?_0x932C2D096A2C3FFF)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsAmbientSpeechDisabled(ped) end
+
+    
+--- IsPedInCurrentConversation
+---
+--- @hash [0x049E937F18F4020C](https://docs.fivem.net/natives/?_0x049E937F18F4020C)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsPedInCurrentConversation(ped) end
 
     
 --- N_0x40763ea7b9b783e7
@@ -1650,37 +1434,31 @@ function N_0x3a48ab4445d499be() end
 function N_0x40763ea7b9b783e7(p0, p1, p2) end
 
     
---- N_0x43fa0dfc5df87815
+--- N_0x3a48ab4445d499be
 ---
---- @hash [0x43FA0DFC5DF87815](https://docs.fivem.net/natives/?_0x43FA0DFC5DF87815)
---- @param vehicle Vehicle
---- @param p1 boolean
---- @return void
---- @overload fun(vehicle: Vehicle, p1: boolean): void
-function N_0x43fa0dfc5df87815(vehicle, p1) end
+--- @hash [0x3A48AB4445D499BE](https://docs.fivem.net/natives/?_0x3A48AB4445D499BE)
+---
+--- @return any
+--- @overload fun(): any
+function N_0x3a48ab4445d499be() end
 
     
---- ```
---- NativeDB Introduced: v1868
---- ```
+--- N_0x61631f5df50d1c34
 ---
---- @hash [0x55ECF4D13D9903B0](https://docs.fivem.net/natives/?_0x55ECF4D13D9903B0)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
+--- @hash [0x61631F5DF50D1C34](https://docs.fivem.net/natives/?_0x61631F5DF50D1C34)
+--- @param p0 boolean
 --- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any): void
-function N_0x55ecf4d13d9903b0(p0, p1, p2, p3) end
+--- @overload fun(p0: boolean): void
+function N_0x61631f5df50d1c34(p0) end
 
     
---- N_0x5d2bfaab8d956e0e
+--- IsRadioRetuning
 ---
---- @hash [0x5D2BFAAB8D956E0E](https://docs.fivem.net/natives/?_0x5D2BFAAB8D956E0E)
+--- @hash [0xA151A7394A214E65](https://docs.fivem.net/natives/?_0xA151A7394A214E65)
 ---
---- @return void
---- @overload fun(): void
-function N_0x5d2bfaab8d956e0e() end
+--- @return boolean
+--- @overload fun(): boolean
+function IsRadioRetuning() end
 
     
 --- N_0x58bb377bec7cd5f4
@@ -1691,15 +1469,6 @@ function N_0x5d2bfaab8d956e0e() end
 --- @return void
 --- @overload fun(p0: boolean, p1: boolean): void
 function N_0x58bb377bec7cd5f4(p0, p1) end
-
-    
---- N_0x61631f5df50d1c34
----
---- @hash [0x61631F5DF50D1C34](https://docs.fivem.net/natives/?_0x61631F5DF50D1C34)
---- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
-function N_0x61631f5df50d1c34(p0) end
 
     
 --- N_0x5b9853296731e88d
@@ -1716,40 +1485,6 @@ function N_0x61631f5df50d1c34(p0) end
 function N_0x5b9853296731e88d(p0, p1, p2, p3, p4, p5) end
 
     
---- N_0x70b8ec8fc108a634
----
---- @hash [0x70B8EC8FC108A634](https://docs.fivem.net/natives/?_0x70B8EC8FC108A634)
---- @param p0 boolean
---- @param p1 any
---- @return void
---- @overload fun(p0: boolean, p1: any): void
-function N_0x70b8ec8fc108a634(p0, p1) end
-
-    
---- ```
---- SET_P*
---- ```
----
---- @hash [0x6FDDAD856E36988A](https://docs.fivem.net/natives/?_0x6FDDAD856E36988A)
---- @param vehicle Vehicle
---- @param toggle boolean
---- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function N_0x6fddad856e36988a(vehicle, toggle) end
-
-    
---- N_0x7ec3c679d0e7e46b
----
---- @hash [0x7EC3C679D0E7E46B](https://docs.fivem.net/natives/?_0x7EC3C679D0E7E46B)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any): void
-function N_0x7ec3c679d0e7e46b(p0, p1, p2, p3) end
-
-    
 --- N_0x8bf907833be275de
 ---
 --- @hash [0x8BF907833BE275DE](https://docs.fivem.net/natives/?_0x8BF907833BE275DE)
@@ -1760,6 +1495,66 @@ function N_0x7ec3c679d0e7e46b(p0, p1, p2, p3) end
 function N_0x8bf907833be275de(p0, p1) end
 
     
+--- IsMissionNewsStoryUnlocked
+---
+--- @hash [0x66E49BF55B4B1874](https://docs.fivem.net/natives/?_0x66E49BF55B4B1874)
+--- @param newsStory number (int)
+--- @return boolean
+--- @overload fun(newsStory: number): boolean
+function IsMissionNewsStoryUnlocked(newsStory) end
+
+    
+--- # New Name: IsMissionNewsStoryUnlocked
+--- IsMissionNewsStoryUnlocked
+---
+--- @hash [0x66E49BF55B4B1874](https://docs.fivem.net/natives/?_0x66E49BF55B4B1874)
+--- @param newsStory number (int)
+--- @return boolean
+--- @overload fun(newsStory: number): boolean
+--- @deprecated
+function GetNumberOfPassengerVoiceVariations(newsStory) end
+
+    
+--- IsPlayerVehRadioEnable
+---
+--- @hash [0x5F43D83FD6738741](https://docs.fivem.net/natives/?_0x5F43D83FD6738741)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function IsPlayerVehRadioEnable() end
+
+    
+--- # New Name: IsPlayerVehRadioEnable
+--- IsPlayerVehRadioEnable
+---
+--- @hash [0x5F43D83FD6738741](https://docs.fivem.net/natives/?_0x5F43D83FD6738741)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0x5f43d83fd6738741() end
+
+    
+--- # New Name: IsPlayerVehRadioEnable
+--- IsPlayerVehRadioEnable
+---
+--- @hash [0x5F43D83FD6738741](https://docs.fivem.net/natives/?_0x5F43D83FD6738741)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function IsPlayerVehicleRadioEnabled() end
+
+    
+--- IsMobilePhoneRadioActive
+---
+--- @hash [0xB35CE999E8EF317E](https://docs.fivem.net/natives/?_0xB35CE999E8EF317E)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function IsMobilePhoneRadioActive() end
+
+    
 --- N_0x9ac92eed5e4793ab
 ---
 --- @hash [0x9AC92EED5E4793AB](https://docs.fivem.net/natives/?_0x9AC92EED5E4793AB)
@@ -1767,6 +1562,16 @@ function N_0x8bf907833be275de(p0, p1) end
 --- @return void
 --- @overload fun(): void
 function N_0x9ac92eed5e4793ab() end
+
+    
+--- N_0x70b8ec8fc108a634
+---
+--- @hash [0x70B8EC8FC108A634](https://docs.fivem.net/natives/?_0x70B8EC8FC108A634)
+--- @param p0 boolean
+--- @param p1 any
+--- @return void
+--- @overload fun(p0: boolean, p1: any): void
+function N_0x70b8ec8fc108a634(p0, p1) end
 
     
 --- N_0x892b6ab8f33606f5
@@ -1780,36 +1585,38 @@ function N_0x892b6ab8f33606f5(p0, entity) end
 
     
 --- ```
---- SET_H*
+--- IS_VEHICLE_*
 --- ```
----
---- @hash [0x9D3AF56E94C9AE98](https://docs.fivem.net/natives/?_0x9D3AF56E94C9AE98)
+--- @usage local radioEnabled = IsVehicleRadioEnabled(GetVehiclePedIsIn(PlayerPedId(), false))
+--- print(radioEnabled
+--- @hash [0x0BE4BE946463F917](https://docs.fivem.net/natives/?_0x0BE4BE946463F917)
 --- @param vehicle Vehicle
---- @param p1 number (float)
---- @return void
---- @overload fun(vehicle: Vehicle, p1: number): void
-function N_0x9d3af56e94c9ae98(vehicle, p1) end
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+function IsVehicleRadioEnabled(vehicle) end
 
     
+--- # New Name: IsVehicleRadioEnabled
 --- ```
---- NativeDB Introduced: v2372
+--- IS_VEHICLE_*
 --- ```
----
---- @hash [0x97FFB4ADEED08066](https://docs.fivem.net/natives/?_0x97FFB4ADEED08066)
---- @param p0 any
---- @param p1 any
---- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0x97ffb4adeed08066(p0, p1) end
+--- @usage local radioEnabled = IsVehicleRadioEnabled(GetVehiclePedIsIn(PlayerPedId(), false))
+--- print(radioEnabled
+--- @hash [0x0BE4BE946463F917](https://docs.fivem.net/natives/?_0x0BE4BE946463F917)
+--- @param vehicle Vehicle
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+--- @deprecated
+function N_0x0be4be946463f917(vehicle) end
 
     
---- N_0xaa19f5572c38b564
+--- N_0xb81cf134aeb56ffb
 ---
---- @hash [0xAA19F5572C38B564](https://docs.fivem.net/natives/?_0xAA19F5572C38B564)
---- @param p0 any
---- @return any
---- @overload fun(): any, any
-function N_0xaa19f5572c38b564(p0) end
+--- @hash [0xB81CF134AEB56FFB](https://docs.fivem.net/natives/?_0xB81CF134AEB56FFB)
+---
+--- @return void
+--- @overload fun(): void
+function N_0xb81cf134aeb56ffb() end
 
     
 --- ```
@@ -1826,6 +1633,32 @@ function N_0x9bd7bd55e4533183(p0, p1, p2) end
 
     
 --- ```
+--- SET_VEH*
+--- ```
+---
+--- @hash [0xC1805D05E6D4FE10](https://docs.fivem.net/natives/?_0xC1805D05E6D4FE10)
+--- @param vehicle Vehicle
+--- @return void
+--- @overload fun(vehicle: Vehicle): void
+function N_0xc1805d05e6d4fe10(vehicle) end
+
+    
+--- ```
+--- Example:  
+--- AUDIO::LOAD_STREAM_WITH_START_OFFSET("STASH_TOXIN_STREAM", 2400, "FBI_05_SOUNDS");  
+--- Only called a few times in the scripts.  
+--- ```
+---
+--- @hash [0x59C16B79F53B3712](https://docs.fivem.net/natives/?_0x59C16B79F53B3712)
+--- @param streamName string (char*)
+--- @param startOffset number (int)
+--- @param soundSet string (char*)
+--- @return boolean
+--- @overload fun(streamName: string, startOffset: number, soundSet: string): boolean
+function LoadStreamWithStartOffset(streamName, startOffset, soundSet) end
+
+    
+--- ```
 --- NativeDB Introduced: v1493
 --- ```
 ---
@@ -1837,13 +1670,66 @@ function N_0x9bd7bd55e4533183(p0, p1, p2) end
 function N_0xa8a7d434afb4b97b(p0, p1) end
 
     
---- N_0xb81cf134aeb56ffb
+--- IsStreamPlaying
 ---
---- @hash [0xB81CF134AEB56FFB](https://docs.fivem.net/natives/?_0xB81CF134AEB56FFB)
+--- @hash [0xD11FA52EB849D978](https://docs.fivem.net/natives/?_0xD11FA52EB849D978)
 ---
+--- @return boolean
+--- @overload fun(): boolean
+function IsStreamPlaying() end
+
+    
+--- ```
+--- L* (LINK_*?)
+--- ```
+---
+--- @hash [0x651D3228960D08AF](https://docs.fivem.net/natives/?_0x651D3228960D08AF)
+--- @param emitterName string (char*)
+--- @param entity Entity
 --- @return void
---- @overload fun(): void
-function N_0xb81cf134aeb56ffb() end
+--- @overload fun(emitterName: string, entity: Entity): void
+function LinkStaticEmitterToEntity(emitterName, entity) end
+
+    
+--- # New Name: LinkStaticEmitterToEntity
+--- ```
+--- L* (LINK_*?)
+--- ```
+---
+--- @hash [0x651D3228960D08AF](https://docs.fivem.net/natives/?_0x651D3228960D08AF)
+--- @param emitterName string (char*)
+--- @param entity Entity
+--- @return void
+--- @overload fun(emitterName: string, entity: Entity): void
+--- @deprecated
+function N_0x651d3228960d08af(emitterName, entity) end
+
+    
+--- IsScriptedSpeechPlaying
+---
+--- @hash [0xCC9AA18DCC7084F4](https://docs.fivem.net/natives/?_0xCC9AA18DCC7084F4)
+--- @param p0 any
+--- @return boolean
+--- @overload fun(p0: any): boolean
+function IsScriptedSpeechPlaying(p0) end
+
+    
+--- N_0xb542de8c3d1cb210
+---
+--- @hash [0xB542DE8C3D1CB210](https://docs.fivem.net/natives/?_0xB542DE8C3D1CB210)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function N_0xb542de8c3d1cb210(p0) end
+
+    
+--- N_0xd2dccd8e16e20997
+---
+--- @hash [0xD2DCCD8E16E20997](https://docs.fivem.net/natives/?_0xD2DCCD8E16E20997)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function N_0xd2dccd8e16e20997(p0) end
 
     
 --- ```
@@ -1858,68 +1744,25 @@ function N_0xb81cf134aeb56ffb() end
 function N_0xab6781a5f3101470(p0, p1) end
 
     
---- N_0xb542de8c3d1cb210
+--- ```
+--- Tune Backwards... ?
+--- SET_RADIO_*
+--- ```
 ---
---- @hash [0xB542DE8C3D1CB210](https://docs.fivem.net/natives/?_0xB542DE8C3D1CB210)
---- @param p0 boolean
+--- @hash [0xDD6BCF9E94425DF9](https://docs.fivem.net/natives/?_0xDD6BCF9E94425DF9)
+---
 --- @return void
---- @overload fun(p0: boolean): void
-function N_0xb542de8c3d1cb210(p0) end
+--- @overload fun(): void
+function N_0xdd6bcf9e94425df9() end
 
     
---- N_0xbf4dc1784be94dfa
+--- N_0x159b7318403a1cd8
 ---
---- @hash [0xBF4DC1784BE94DFA](https://docs.fivem.net/natives/?_0xBF4DC1784BE94DFA)
---- @param ped Ped
---- @param p1 boolean
---- @param hash Hash
+--- @hash [0x159B7318403A1CD8](https://docs.fivem.net/natives/?_0x159B7318403A1CD8)
+--- @param p0 any
 --- @return void
---- @overload fun(ped: Ped, p1: boolean, hash: Hash): void
-function N_0xbf4dc1784be94dfa(ped, p1, hash) end
-
-    
---- ```
---- SET_VEH*
---- ```
----
---- @hash [0xC1805D05E6D4FE10](https://docs.fivem.net/natives/?_0xC1805D05E6D4FE10)
---- @param vehicle Vehicle
---- @return void
---- @overload fun(vehicle: Vehicle): void
-function N_0xc1805d05e6d4fe10(vehicle) end
-
-    
---- N_0xbef34b1d9624d5dd
----
---- @hash [0xBEF34B1D9624D5DD](https://docs.fivem.net/natives/?_0xBEF34B1D9624D5DD)
---- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
-function N_0xbef34b1d9624d5dd(p0) end
-
-    
---- ```
---- GET_NE*
---- 
---- NativeDB Introduced: v1493
---- ```
----
---- @hash [0xC64A06D939F826F5](https://docs.fivem.net/natives/?_0xC64A06D939F826F5)
----
---- @return boolean, number, any, number
---- @overload fun(): boolean, number, any, number
-function N_0xc64a06d939f826f5() end
-
-    
---- ```
---- IS_MOBILE_PHONE_*
---- ```
----
---- @hash [0xC8B1B2425604CDD0](https://docs.fivem.net/natives/?_0xC8B1B2425604CDD0)
----
---- @return boolean
---- @overload fun(): boolean
-function N_0xc8b1b2425604cdd0() end
+--- @overload fun(p0: any): void
+function N_0x159b7318403a1cd8(p0) end
 
     
 --- N_0xc8ede9bdbccba6d4
@@ -1934,15 +1777,6 @@ function N_0xc8b1b2425604cdd0() end
 function N_0xc8ede9bdbccba6d4(p0, p1, p2, p3) end
 
     
---- N_0xd2dccd8e16e20997
----
---- @hash [0xD2DCCD8E16E20997](https://docs.fivem.net/natives/?_0xD2DCCD8E16E20997)
---- @param p0 any
---- @return void
---- @overload fun(p0: any): void
-function N_0xd2dccd8e16e20997(p0) end
-
-    
 --- N_0xda07819e452ffe8f
 ---
 --- @hash [0xDA07819E452FFE8F](https://docs.fivem.net/natives/?_0xDA07819E452FFE8F)
@@ -1952,16 +1786,14 @@ function N_0xd2dccd8e16e20997(p0) end
 function N_0xda07819e452ffe8f(p0) end
 
     
---- ```
---- Tune Backwards... ?
---- SET_RADIO_*
---- ```
+--- N_0x149aee66f0cb3a99
 ---
---- @hash [0xDD6BCF9E94425DF9](https://docs.fivem.net/natives/?_0xDD6BCF9E94425DF9)
----
+--- @hash [0x149AEE66F0CB3A99](https://docs.fivem.net/natives/?_0x149AEE66F0CB3A99)
+--- @param p0 number (float)
+--- @param p1 number (float)
 --- @return void
---- @overload fun(): void
-function N_0xdd6bcf9e94425df9() end
+--- @overload fun(p0: number, p1: number): void
+function N_0x149aee66f0cb3a99(p0, p1) end
 
     
 --- ```
@@ -1976,88 +1808,25 @@ function N_0xe4e6dd5566d28c82() end
 
     
 --- ```
---- SET_VEHICLE_*
+--- NativeDB Introduced: v463
 --- ```
 ---
---- @hash [0xF3365489E0DD50F9](https://docs.fivem.net/natives/?_0xF3365489E0DD50F9)
---- @param vehicle Vehicle
---- @param toggle boolean
---- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function N_0xf3365489e0dd50f9(vehicle, toggle) end
+--- @hash [0x2DD39BF3E2F9C47F](https://docs.fivem.net/natives/?_0x2DD39BF3E2F9C47F)
+---
+--- @return any
+--- @overload fun(): any
+function N_0x2dd39bf3e2f9c47f() end
 
     
 --- ```
---- 2 calls found in the b617d scripts:  
---- AUDIO::_F1F8157B8C3F171C(l_A42, "Franklin_Bike_Rev", "BIG_SCORE_3A_SOUNDS");  
---- AUDIO::_F1F8157B8C3F171C(l_166, "Trevor_Revs_Off", "PALETO_SCORE_SETUP_SOUNDS");  
+--- NativeDB Introduced: v2189
 --- ```
 ---
---- @hash [0xF1F8157B8C3F171C](https://docs.fivem.net/natives/?_0xF1F8157B8C3F171C)
---- @param vehicle Vehicle
---- @param p1 string (char*)
---- @param p2 string (char*)
---- @return void
---- @overload fun(vehicle: Vehicle, p1: string, p2: string): void
-function N_0xf1f8157b8c3f171c(vehicle, p1, p2) end
-
-    
---- ```
---- Tune Forward... ?
---- SET_RADIO_*
---- ```
+--- @hash [0x30CA2EF91D15ADF8](https://docs.fivem.net/natives/?_0x30CA2EF91D15ADF8)
 ---
---- @hash [0xFF266D1D0EB1195D](https://docs.fivem.net/natives/?_0xFF266D1D0EB1195D)
----
---- @return void
---- @overload fun(): void
-function N_0xff266d1d0eb1195d() end
-
-    
---- BL\*
---- 
---- ```
---- NativeDB Introduced: v1734
---- ```
----
---- @hash [0xF8AD2EED7C47E8FE](https://docs.fivem.net/natives/?_0xF8AD2EED7C47E8FE)
---- @param ped Ped
---- @param p1 boolean
---- @param p2 boolean
---- @return void
---- @overload fun(ped: Ped, p1: boolean, p2: boolean): void
-function N_0xf8ad2eed7c47e8fe(ped, p1, p2) end
-
-    
---- OverridePlayerGroundMaterial
----
---- @hash [0xD2CC78CD3D0B50F9](https://docs.fivem.net/natives/?_0xD2CC78CD3D0B50F9)
---- @param hash Hash
---- @param toggle boolean
---- @return void
---- @overload fun(hash: Hash, toggle: boolean): void
-function OverridePlayerGroundMaterial(hash, toggle) end
-
-    
---- # New Name: OverridePlayerGroundMaterial
---- OverridePlayerGroundMaterial
----
---- @hash [0xD2CC78CD3D0B50F9](https://docs.fivem.net/natives/?_0xD2CC78CD3D0B50F9)
---- @param hash Hash
---- @param toggle boolean
---- @return void
---- @overload fun(hash: Hash, toggle: boolean): void
---- @deprecated
-function N_0xd2cc78cd3d0b50f9(hash, toggle) end
-
-    
---- This native enables the audio flag "TrevorRageIsOverridden" and sets the voice effect to `voiceEffect`
----
---- @hash [0x13AD665062541A7E](https://docs.fivem.net/natives/?_0x13AD665062541A7E)
---- @param voiceEffect string (char*)
---- @return void
---- @overload fun(voiceEffect: string): void
-function OverrideTrevorRage(voiceEffect) end
+--- @return any
+--- @overload fun(): any
+function N_0x30ca2ef91d15adf8() end
 
     
 --- Sets audio flag "OverrideMicrophoneSettings"
@@ -2080,6 +1849,18 @@ function OverrideMicrophoneSettings(hash, toggle) end
 --- @overload fun(hash: Hash, toggle: boolean): void
 --- @deprecated
 function N_0x75773e11ba459e90(hash, toggle) end
+
+    
+--- ```
+--- ENABLE_VEHICLE_*
+--- ```
+---
+--- @hash [0x1C073274E065C6D2](https://docs.fivem.net/natives/?_0x1C073274E065C6D2)
+--- @param vehicle Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+function N_0x1c073274e065c6d2(vehicle, toggle) end
 
     
 --- Overrides the vehicle's horn hash.
@@ -2126,14 +1907,13 @@ function N_0x75773e11ba459e90(hash, toggle) end
 function OverrideVehHorn(vehicle, override, hornHash) end
 
     
---- OverrideUnderwaterStream
+--- This native enables the audio flag "TrevorRageIsOverridden" and sets the voice effect to `voiceEffect`
 ---
---- @hash [0xF2A9CDABCEA04BD6](https://docs.fivem.net/natives/?_0xF2A9CDABCEA04BD6)
---- @param p0 any
---- @param p1 boolean
+--- @hash [0x13AD665062541A7E](https://docs.fivem.net/natives/?_0x13AD665062541A7E)
+--- @param voiceEffect string (char*)
 --- @return void
---- @overload fun(p1: boolean): any
-function OverrideUnderwaterStream(p0, p1) end
+--- @overload fun(voiceEffect: string): void
+function OverrideTrevorRage(voiceEffect) end
 
     
 --- PauseScriptedConversation
@@ -2145,110 +1925,26 @@ function OverrideUnderwaterStream(p0, p1) end
 function PauseScriptedConversation(p0) end
 
     
---- PlayAmbientSpeechFromPositionNative
+--- OverridePlayerGroundMaterial
 ---
---- @hash [0xED640017ED337E45](https://docs.fivem.net/natives/?_0xED640017ED337E45)
---- @param speechName string (char*)
---- @param voiceName string (char*)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param speechParam string (char*)
+--- @hash [0xD2CC78CD3D0B50F9](https://docs.fivem.net/natives/?_0xD2CC78CD3D0B50F9)
+--- @param hash Hash
+--- @param toggle boolean
 --- @return void
---- @overload fun(speechName: string, voiceName: string, x: number, y: number, z: number, speechParam: string): void
-function PlayAmbientSpeechFromPositionNative(speechName, voiceName, x, y, z, speechParam) end
+--- @overload fun(hash: Hash, toggle: boolean): void
+function OverridePlayerGroundMaterial(hash, toggle) end
 
     
---- # New Name: PlayAmbientSpeechFromPositionNative
---- PlayAmbientSpeechFromPositionNative
+--- # New Name: OverridePlayerGroundMaterial
+--- OverridePlayerGroundMaterial
 ---
---- @hash [0xED640017ED337E45](https://docs.fivem.net/natives/?_0xED640017ED337E45)
---- @param speechName string (char*)
---- @param voiceName string (char*)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param speechParam string (char*)
+--- @hash [0xD2CC78CD3D0B50F9](https://docs.fivem.net/natives/?_0xD2CC78CD3D0B50F9)
+--- @param hash Hash
+--- @param toggle boolean
 --- @return void
---- @overload fun(speechName: string, voiceName: string, x: number, y: number, z: number, speechParam: string): void
+--- @overload fun(hash: Hash, toggle: boolean): void
 --- @deprecated
-function N_0xed640017ed337e45(speechName, voiceName, x, y, z, speechParam) end
-
-    
---- # New Name: PlayAmbientSpeechFromPositionNative
---- PlayAmbientSpeechFromPositionNative
----
---- @hash [0xED640017ED337E45](https://docs.fivem.net/natives/?_0xED640017ED337E45)
---- @param speechName string (char*)
---- @param voiceName string (char*)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param speechParam string (char*)
---- @return void
---- @overload fun(speechName: string, voiceName: string, x: number, y: number, z: number, speechParam: string): void
---- @deprecated
-function PlayAmbientSpeechAtCoords(speechName, voiceName, x, y, z, speechParam) end
-
-    
---- ```
---- Plays sounds from a ped with chop model. For example it used to play bark or sniff sounds. p1 is always 3 or 4294967295 in decompiled scripts. By a quick disassembling I can assume that this arg is unused.
---- This native is works only when you call it on the ped with right model (ac_chop only ?)
---- Speech Name can be: CHOP_SNIFF_SEQ CHOP_WHINE CHOP_LICKS_MOUTH CHOP_PANT bark GROWL SNARL BARK_SEQ
---- ```
----
---- @hash [0xEE066C7006C49C0A](https://docs.fivem.net/natives/?_0xEE066C7006C49C0A)
---- @param pedHandle Ped
---- @param p1 number (int)
---- @param speechName string (char*)
---- @return void
---- @overload fun(pedHandle: Ped, p1: number, speechName: string): void
-function PlayAnimalVocalization(pedHandle, p1, speechName) end
-
-    
---- # New Name: PlayAnimalVocalization
---- ```
---- Plays sounds from a ped with chop model. For example it used to play bark or sniff sounds. p1 is always 3 or 4294967295 in decompiled scripts. By a quick disassembling I can assume that this arg is unused.
---- This native is works only when you call it on the ped with right model (ac_chop only ?)
---- Speech Name can be: CHOP_SNIFF_SEQ CHOP_WHINE CHOP_LICKS_MOUTH CHOP_PANT bark GROWL SNARL BARK_SEQ
---- ```
----
---- @hash [0xEE066C7006C49C0A](https://docs.fivem.net/natives/?_0xEE066C7006C49C0A)
---- @param pedHandle Ped
---- @param p1 number (int)
---- @param speechName string (char*)
---- @return void
---- @overload fun(pedHandle: Ped, p1: number, speechName: string): void
---- @deprecated
-function N_0xee066c7006c49c0a(pedHandle, p1, speechName) end
-
-    
---- ```
---- Only call found in the b617d scripts:
---- AUDIO::PLAY_DEFERRED_SOUND_FRONTEND("BACK", "HUD_FREEMODE_SOUNDSET");
---- ```
----
---- @hash [0xCADA5A0D0702381E](https://docs.fivem.net/natives/?_0xCADA5A0D0702381E)
---- @param soundName string (char*)
---- @param soundsetName string (char*)
---- @return void
---- @overload fun(soundName: string, soundsetName: string): void
-function PlayDeferredSoundFrontend(soundName, soundsetName) end
-
-    
---- # New Name: PlayDeferredSoundFrontend
---- ```
---- Only call found in the b617d scripts:
---- AUDIO::PLAY_DEFERRED_SOUND_FRONTEND("BACK", "HUD_FREEMODE_SOUNDSET");
---- ```
----
---- @hash [0xCADA5A0D0702381E](https://docs.fivem.net/natives/?_0xCADA5A0D0702381E)
---- @param soundName string (char*)
---- @param soundsetName string (char*)
---- @return void
---- @overload fun(soundName: string, soundsetName: string): void
---- @deprecated
-function N_0xcada5a0d0702381e(soundName, soundsetName) end
+function N_0xd2cc78cd3d0b50f9(hash, toggle) end
 
     
 --- PlayEndCreditsMusic
@@ -2261,76 +1957,51 @@ function PlayEndCreditsMusic(play) end
 
     
 --- ```
---- Called 38 times in the scripts. There are 5 different audioNames used.
----  One unknown removed below.
---- AUDIO::PLAY_MISSION_COMPLETE_AUDIO("DEAD");
---- AUDIO::PLAY_MISSION_COMPLETE_AUDIO("FRANKLIN_BIG_01");
---- AUDIO::PLAY_MISSION_COMPLETE_AUDIO("GENERIC_FAILED");
---- AUDIO::PLAY_MISSION_COMPLETE_AUDIO("TREVOR_SMALL_01");
+--- SET_P*
 --- ```
 ---
---- @hash [0xB138AAB8A70D3C69](https://docs.fivem.net/natives/?_0xB138AAB8A70D3C69)
---- @param audioName string (char*)
+--- @hash [0x6FDDAD856E36988A](https://docs.fivem.net/natives/?_0x6FDDAD856E36988A)
+--- @param vehicle Vehicle
+--- @param toggle boolean
 --- @return void
---- @overload fun(audioName: string): void
-function PlayMissionCompleteAudio(audioName) end
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+function N_0x6fddad856e36988a(vehicle, toggle) end
 
     
 --- ```
---- Needs another parameter [int p2]. The signature is PED::PLAY_PAIN(Ped ped, int painID, int p1, int p2);  
---- Last 2 parameters always seem to be 0.  
---- EX: Function.Call(Hash.PLAY_PAIN, TestPed, 6, 0, 0);  
---- Known Pain IDs  
---- ________________________  
---- 1 - Doesn't seem to do anything. Does NOT crash the game like previously said. (Latest patch)  
---- 6 - Scream (Short)  
---- 7 - Scared Scream (Kinda Long)  
---- 8 - On Fire  
---- ```
---- 
---- ```
---- NativeDB Added Parameter 4: Any p3
+--- NativeDB Introduced: v1868
 --- ```
 ---
---- @hash [0xBC9AE166038A5CEC](https://docs.fivem.net/natives/?_0xBC9AE166038A5CEC)
---- @param ped Ped
---- @param painID number (int)
---- @param p1 number (int)
+--- @hash [0x55ECF4D13D9903B0](https://docs.fivem.net/natives/?_0x55ECF4D13D9903B0)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
---- @overload fun(ped: Ped, painID: number, p1: number): void
-function PlayPain(ped, painID, p1) end
+--- @overload fun(p0: any, p1: any, p2: any, p3: any): void
+function N_0x55ecf4d13d9903b0(p0, p1, p2, p3) end
 
     
---- See [`PLAY_PED_AMBIENT_SPEECH_NATIVE`](https://docs.fivem.net/natives/?_0x8E04FEDD28D42462) for parameter specifications.
---- 
---- ```
---- NativeDB Added Parameter 4: Any p3
---- ```
+--- N_0x7ec3c679d0e7e46b
 ---
---- @hash [0xC6941B4A3A8FBBB9](https://docs.fivem.net/natives/?_0xC6941B4A3A8FBBB9)
---- @param ped Ped
---- @param speechName string (char*)
---- @param speechParam string (char*)
+--- @hash [0x7EC3C679D0E7E46B](https://docs.fivem.net/natives/?_0x7EC3C679D0E7E46B)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
---- @overload fun(ped: Ped, speechName: string, speechParam: string): void
-function PlayPedAmbientSpeechAndCloneNative(ped, speechName, speechParam) end
+--- @overload fun(p0: any, p1: any, p2: any, p3: any): void
+function N_0x7ec3c679d0e7e46b(p0, p1, p2, p3) end
 
     
---- # New Name: PlayPedAmbientSpeechAndCloneNative
---- See [`PLAY_PED_AMBIENT_SPEECH_NATIVE`](https://docs.fivem.net/natives/?_0x8E04FEDD28D42462) for parameter specifications.
---- 
---- ```
---- NativeDB Added Parameter 4: Any p3
---- ```
+--- N_0x43fa0dfc5df87815
 ---
---- @hash [0xC6941B4A3A8FBBB9](https://docs.fivem.net/natives/?_0xC6941B4A3A8FBBB9)
---- @param ped Ped
---- @param speechName string (char*)
---- @param speechParam string (char*)
+--- @hash [0x43FA0DFC5DF87815](https://docs.fivem.net/natives/?_0x43FA0DFC5DF87815)
+--- @param vehicle Vehicle
+--- @param p1 boolean
 --- @return void
---- @overload fun(ped: Ped, speechName: string, speechParam: string): void
---- @deprecated
-function PlayAmbientSpeech2(ped, speechName, speechParam) end
+--- @overload fun(vehicle: Vehicle, p1: boolean): void
+function N_0x43fa0dfc5df87815(vehicle, p1) end
 
     
 --- Plays ambient speech; see also [`PLAY_PED_AMBIENT_SPEECH_AND_CLONE_NATIVE`](https://docs.fivem.net/natives/?_0xC6941B4A3A8FBBB9).
@@ -2449,6 +2120,43 @@ function PlayPedAmbientSpeechNative(ped, speechName, speechParam) end
 function PlayAmbientSpeech1(ped, speechName, speechParam) end
 
     
+--- N_0x5d2bfaab8d956e0e
+---
+--- @hash [0x5D2BFAAB8D956E0E](https://docs.fivem.net/natives/?_0x5D2BFAAB8D956E0E)
+---
+--- @return void
+--- @overload fun(): void
+function N_0x5d2bfaab8d956e0e() end
+
+    
+--- ```
+--- All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/RFb4GTny  
+--- AUDIO::PLAY_PED_RINGTONE("Remote_Ring", PLAYER::PLAYER_PED_ID(), 1);  
+--- AUDIO::PLAY_PED_RINGTONE("Dial_and_Remote_Ring", PLAYER::PLAYER_PED_ID(), 1);  
+--- ```
+---
+--- @hash [0xF9E56683CA8E11A5](https://docs.fivem.net/natives/?_0xF9E56683CA8E11A5)
+--- @param ringtoneName string (char*)
+--- @param ped Ped
+--- @param p2 boolean
+--- @return void
+--- @overload fun(ringtoneName: string, ped: Ped, p2: boolean): void
+function PlayPedRingtone(ringtoneName, ped, p2) end
+
+    
+--- ```
+--- Plays the given police radio message.
+--- All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/GBnsQ5hr
+--- ```
+---
+--- @hash [0xDFEBD56D9BD1EB16](https://docs.fivem.net/natives/?_0xDFEBD56D9BD1EB16)
+--- @param name string (char*)
+--- @param p1 number (float)
+--- @return number
+--- @overload fun(name: string, p1: number): number
+function PlayPoliceReport(name, p1) end
+
+    
 --- ```
 --- This is the same as PLAY_PED_AMBIENT_SPEECH_NATIVE and PLAY_PED_AMBIENT_SPEECH_AND_CLONE_NATIVE but it will allow you to play a speech file from a specific voice file. It works on players and all peds, even animals.
 --- EX (C#):
@@ -2488,65 +2196,81 @@ function PlayAmbientSpeechWithVoice(ped, speechName, voiceName, speechParam, p4)
 
     
 --- ```
---- All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/RFb4GTny  
---- AUDIO::PLAY_PED_RINGTONE("Remote_Ring", PLAYER::PLAYER_PED_ID(), 1);  
---- AUDIO::PLAY_PED_RINGTONE("Dial_and_Remote_Ring", PLAYER::PLAYER_PED_ID(), 1);  
+--- Plays sounds from a ped with chop model. For example it used to play bark or sniff sounds. p1 is always 3 or 4294967295 in decompiled scripts. By a quick disassembling I can assume that this arg is unused.
+--- This native is works only when you call it on the ped with right model (ac_chop only ?)
+--- Speech Name can be: CHOP_SNIFF_SEQ CHOP_WHINE CHOP_LICKS_MOUTH CHOP_PANT bark GROWL SNARL BARK_SEQ
 --- ```
 ---
---- @hash [0xF9E56683CA8E11A5](https://docs.fivem.net/natives/?_0xF9E56683CA8E11A5)
---- @param ringtoneName string (char*)
---- @param ped Ped
---- @param p2 boolean
+--- @hash [0xEE066C7006C49C0A](https://docs.fivem.net/natives/?_0xEE066C7006C49C0A)
+--- @param pedHandle Ped
+--- @param p1 number (int)
+--- @param speechName string (char*)
 --- @return void
---- @overload fun(ringtoneName: string, ped: Ped, p2: boolean): void
-function PlayPedRingtone(ringtoneName, ped, p2) end
+--- @overload fun(pedHandle: Ped, p1: number, speechName: string): void
+function PlayAnimalVocalization(pedHandle, p1, speechName) end
+
+    
+--- # New Name: PlayAnimalVocalization
+--- ```
+--- Plays sounds from a ped with chop model. For example it used to play bark or sniff sounds. p1 is always 3 or 4294967295 in decompiled scripts. By a quick disassembling I can assume that this arg is unused.
+--- This native is works only when you call it on the ped with right model (ac_chop only ?)
+--- Speech Name can be: CHOP_SNIFF_SEQ CHOP_WHINE CHOP_LICKS_MOUTH CHOP_PANT bark GROWL SNARL BARK_SEQ
+--- ```
+---
+--- @hash [0xEE066C7006C49C0A](https://docs.fivem.net/natives/?_0xEE066C7006C49C0A)
+--- @param pedHandle Ped
+--- @param p1 number (int)
+--- @param speechName string (char*)
+--- @return void
+--- @overload fun(pedHandle: Ped, p1: number, speechName: string): void
+--- @deprecated
+function N_0xee066c7006c49c0a(pedHandle, p1, speechName) end
 
     
 --- ```
---- Plays the given police radio message.
---- All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/GBnsQ5hr
+--- GET_NE*
+--- 
+--- NativeDB Introduced: v1493
 --- ```
 ---
---- @hash [0xDFEBD56D9BD1EB16](https://docs.fivem.net/natives/?_0xDFEBD56D9BD1EB16)
---- @param name string (char*)
+--- @hash [0xC64A06D939F826F5](https://docs.fivem.net/natives/?_0xC64A06D939F826F5)
+---
+--- @return boolean, number, any, number
+--- @overload fun(): boolean, number, any, number
+function N_0xc64a06d939f826f5() end
+
+    
+--- ```
+--- NativeDB Introduced: v2372
+--- ```
+---
+--- @hash [0x97FFB4ADEED08066](https://docs.fivem.net/natives/?_0x97FFB4ADEED08066)
+--- @param p0 any
+--- @param p1 any
+--- @return void
+--- @overload fun(p0: any, p1: any): void
+function N_0x97ffb4adeed08066(p0, p1) end
+
+    
+--- N_0xbef34b1d9624d5dd
+---
+--- @hash [0xBEF34B1D9624D5DD](https://docs.fivem.net/natives/?_0xBEF34B1D9624D5DD)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function N_0xbef34b1d9624d5dd(p0) end
+
+    
+--- ```
+--- SET_H*
+--- ```
+---
+--- @hash [0x9D3AF56E94C9AE98](https://docs.fivem.net/natives/?_0x9D3AF56E94C9AE98)
+--- @param vehicle Vehicle
 --- @param p1 number (float)
---- @return number
---- @overload fun(name: string, p1: number): number
-function PlayPoliceReport(name, p1) end
-
-    
---- ```
---- All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/A8Ny8AHZ  
---- ```
----
---- @hash [0x7FF4944CC209192D](https://docs.fivem.net/natives/?_0x7FF4944CC209192D)
---- @param soundId number (int)
---- @param audioName string (char*)
---- @param audioRef string (char*)
---- @param p3 boolean
---- @param p4 any
---- @param p5 boolean
 --- @return void
---- @overload fun(soundId: number, audioName: string, audioRef: string, p3: boolean, p4: any, p5: boolean): void
-function PlaySound(soundId, audioName, audioRef, p3, p4, p5) end
-
-    
---- ```
---- All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/f2A7vTj0   
---- No changes made in b678d.  
---- gtaforums.com/topic/795622-audio-for-mods  
---- ```
----
---- @hash [0xE65F427EB70AB1ED](https://docs.fivem.net/natives/?_0xE65F427EB70AB1ED)
---- @param soundId number (int)
---- @param audioName string (char*)
---- @param entity Entity
---- @param audioRef string (char*)
---- @param isNetwork boolean
---- @param p5 any
---- @return void
---- @overload fun(soundId: number, audioName: string, entity: Entity, audioRef: string, isNetwork: boolean, p5: any): void
-function PlaySoundFromEntity(soundId, audioName, entity, audioRef, isNetwork, p5) end
+--- @overload fun(vehicle: Vehicle, p1: number): void
+function N_0x9d3af56e94c9ae98(vehicle, p1) end
 
     
 --- ```
@@ -2569,57 +2293,13 @@ function PlaySoundFromEntity(soundId, audioName, entity, audioRef, isNetwork, p5
 function PlaySoundFromCoord(soundId, audioName, x, y, z, audioRef, isNetwork, range, p8) end
 
     
---- PlayStreamFromPed
+--- N_0xaa19f5572c38b564
 ---
---- @hash [0x89049DD63C08B5D1](https://docs.fivem.net/natives/?_0x89049DD63C08B5D1)
---- @param ped Ped
---- @return void
---- @overload fun(ped: Ped): void
-function PlayStreamFromPed(ped) end
-
-    
---- # New Name: PlayStreamFromPed
---- PlayStreamFromPed
----
---- @hash [0x89049DD63C08B5D1](https://docs.fivem.net/natives/?_0x89049DD63C08B5D1)
---- @param ped Ped
---- @return void
---- @overload fun(ped: Ped): void
---- @deprecated
-function N_0x89049dd63c08b5d1(ped) end
-
-    
---- ```
---- List: https://pastebin.com/DCeRiaLJ
---- All occurrences as of Cayo Perico Heist DLC (b2189), sorted alphabetically and identical lines removed: https://git.io/JtLxM
---- ```
----
---- @hash [0x67C540AA08E4A6F5](https://docs.fivem.net/natives/?_0x67C540AA08E4A6F5)
---- @param soundId number (int)
---- @param audioName string (char*)
---- @param audioRef string (char*)
---- @param p3 boolean
---- @return void
---- @overload fun(soundId: number, audioName: string, audioRef: string, p3: boolean): void
-function PlaySoundFrontend(soundId, audioName, audioRef, p3) end
-
-    
---- PlayStreamFromVehicle
----
---- @hash [0xB70374A758007DFA](https://docs.fivem.net/natives/?_0xB70374A758007DFA)
---- @param vehicle Vehicle
---- @return void
---- @overload fun(vehicle: Vehicle): void
-function PlayStreamFromVehicle(vehicle) end
-
-    
---- PlaySynchronizedAudioEvent
----
---- @hash [0x8B2FD4560E55DD2D](https://docs.fivem.net/natives/?_0x8B2FD4560E55DD2D)
+--- @hash [0xAA19F5572C38B564](https://docs.fivem.net/natives/?_0xAA19F5572C38B564)
 --- @param p0 any
---- @return boolean
---- @overload fun(p0: any): boolean
-function PlaySynchronizedAudioEvent(p0) end
+--- @return any
+--- @overload fun(): any, any
+function N_0xaa19f5572c38b564(p0) end
 
     
 --- ```
@@ -2652,16 +2332,6 @@ function PlayStreamFromObject(object) end
 function PlayVehicleDoorCloseSound(vehicle, doorIndex) end
 
     
---- PreloadScriptPhoneConversation
----
---- @hash [0x6004BCB0E226AAEA](https://docs.fivem.net/natives/?_0x6004BCB0E226AAEA)
---- @param p0 boolean
---- @param p1 boolean
---- @return void
---- @overload fun(p0: boolean, p1: boolean): void
-function PreloadScriptPhoneConversation(p0, p1) end
-
-    
 --- PlayStreamFromPosition
 ---
 --- @hash [0x21442F412E8DE56B](https://docs.fivem.net/natives/?_0x21442F412E8DE56B)
@@ -2687,56 +2357,86 @@ function SpecialFrontendEqual(x, y, z) end
 
     
 --- ```
---- Example:  
---- bool prepareAlarm = AUDIO::PREPARE_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS");  
+--- List: https://pastebin.com/DCeRiaLJ
+--- All occurrences as of Cayo Perico Heist DLC (b2189), sorted alphabetically and identical lines removed: https://git.io/JtLxM
 --- ```
 ---
---- @hash [0x9D74AE343DB65533](https://docs.fivem.net/natives/?_0x9D74AE343DB65533)
---- @param alarmName string (char*)
---- @return boolean
---- @overload fun(alarmName: string): boolean
-function PrepareAlarm(alarmName) end
-
-    
---- PlayStreamFrontend
----
---- @hash [0x58FCE43488F9F5F4](https://docs.fivem.net/natives/?_0x58FCE43488F9F5F4)
----
---- @return void
---- @overload fun(): void
-function PlayStreamFrontend() end
-
-    
---- PrepareSynchronizedAudioEvent
----
---- @hash [0xC7ABCACA4985A766](https://docs.fivem.net/natives/?_0xC7ABCACA4985A766)
---- @param p0 string (char*)
---- @param p1 any
---- @return any
---- @overload fun(p0: string, p1: any): any
-function PrepareSynchronizedAudioEvent(p0, p1) end
-
-    
---- PlayVehicleDoorOpenSound
----
---- @hash [0x3A539D52857EA82D](https://docs.fivem.net/natives/?_0x3A539D52857EA82D)
---- @param vehicle Vehicle
---- @param doorIndex number (int)
---- @return void
---- @overload fun(vehicle: Vehicle, doorIndex: number): void
-function PlayVehicleDoorOpenSound(vehicle, doorIndex) end
-
-    
---- PreloadScriptConversation
----
---- @hash [0x3B3CAD6166916D87](https://docs.fivem.net/natives/?_0x3B3CAD6166916D87)
---- @param p0 boolean
---- @param p1 boolean
---- @param p2 boolean
+--- @hash [0x67C540AA08E4A6F5](https://docs.fivem.net/natives/?_0x67C540AA08E4A6F5)
+--- @param soundId number (int)
+--- @param audioName string (char*)
+--- @param audioRef string (char*)
 --- @param p3 boolean
 --- @return void
---- @overload fun(p0: boolean, p1: boolean, p2: boolean, p3: boolean): void
-function PreloadScriptConversation(p0, p1, p2, p3) end
+--- @overload fun(soundId: number, audioName: string, audioRef: string, p3: boolean): void
+function PlaySoundFrontend(soundId, audioName, audioRef, p3) end
+
+    
+--- ```
+--- SET_VEHICLE_*
+--- ```
+---
+--- @hash [0xF3365489E0DD50F9](https://docs.fivem.net/natives/?_0xF3365489E0DD50F9)
+--- @param vehicle Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+function N_0xf3365489e0dd50f9(vehicle, toggle) end
+
+    
+--- PlaySynchronizedAudioEvent
+---
+--- @hash [0x8B2FD4560E55DD2D](https://docs.fivem.net/natives/?_0x8B2FD4560E55DD2D)
+--- @param p0 any
+--- @return boolean
+--- @overload fun(p0: any): boolean
+function PlaySynchronizedAudioEvent(p0) end
+
+    
+--- ```
+--- IS_MOBILE_PHONE_*
+--- ```
+---
+--- @hash [0xC8B1B2425604CDD0](https://docs.fivem.net/natives/?_0xC8B1B2425604CDD0)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function N_0xc8b1b2425604cdd0() end
+
+    
+--- ```
+--- 2 calls found in the b617d scripts:  
+--- AUDIO::_F1F8157B8C3F171C(l_A42, "Franklin_Bike_Rev", "BIG_SCORE_3A_SOUNDS");  
+--- AUDIO::_F1F8157B8C3F171C(l_166, "Trevor_Revs_Off", "PALETO_SCORE_SETUP_SOUNDS");  
+--- ```
+---
+--- @hash [0xF1F8157B8C3F171C](https://docs.fivem.net/natives/?_0xF1F8157B8C3F171C)
+--- @param vehicle Vehicle
+--- @param p1 string (char*)
+--- @param p2 string (char*)
+--- @return void
+--- @overload fun(vehicle: Vehicle, p1: string, p2: string): void
+function N_0xf1f8157b8c3f171c(vehicle, p1, p2) end
+
+    
+--- N_0xbf4dc1784be94dfa
+---
+--- @hash [0xBF4DC1784BE94DFA](https://docs.fivem.net/natives/?_0xBF4DC1784BE94DFA)
+--- @param ped Ped
+--- @param p1 boolean
+--- @param hash Hash
+--- @return void
+--- @overload fun(ped: Ped, p1: boolean, hash: Hash): void
+function N_0xbf4dc1784be94dfa(ped, p1, hash) end
+
+    
+--- PreloadScriptPhoneConversation
+---
+--- @hash [0x6004BCB0E226AAEA](https://docs.fivem.net/natives/?_0x6004BCB0E226AAEA)
+--- @param p0 boolean
+--- @param p1 boolean
+--- @return void
+--- @overload fun(p0: boolean, p1: boolean): void
+function PreloadScriptPhoneConversation(p0, p1) end
 
     
 --- PrepareSynchronizedAudioEventForScene
@@ -2749,28 +2449,38 @@ function PreloadScriptConversation(p0, p1, p2, p3) end
 function PrepareSynchronizedAudioEventForScene(p0, p1) end
 
     
---- ```
---- NativeDB Introduced: v1180
---- ```
+--- PlayVehicleDoorOpenSound
 ---
---- @hash [0xCA4CEA6AE0000A7E](https://docs.fivem.net/natives/?_0xCA4CEA6AE0000A7E)
---- @param model Hash
+--- @hash [0x3A539D52857EA82D](https://docs.fivem.net/natives/?_0x3A539D52857EA82D)
+--- @param vehicle Vehicle
+--- @param doorIndex number (int)
 --- @return void
---- @overload fun(model: Hash): void
-function PreloadVehicleAudio(model) end
+--- @overload fun(vehicle: Vehicle, doorIndex: number): void
+function PlayVehicleDoorOpenSound(vehicle, doorIndex) end
 
     
---- # New Name: PreloadVehicleAudio
+--- PlayStreamFrontend
+---
+--- @hash [0x58FCE43488F9F5F4](https://docs.fivem.net/natives/?_0x58FCE43488F9F5F4)
+---
+--- @return void
+--- @overload fun(): void
+function PlayStreamFrontend() end
+
+    
+--- BL\*
+--- 
 --- ```
---- NativeDB Introduced: v1180
+--- NativeDB Introduced: v1734
 --- ```
 ---
---- @hash [0xCA4CEA6AE0000A7E](https://docs.fivem.net/natives/?_0xCA4CEA6AE0000A7E)
---- @param model Hash
+--- @hash [0xF8AD2EED7C47E8FE](https://docs.fivem.net/natives/?_0xF8AD2EED7C47E8FE)
+--- @param ped Ped
+--- @param p1 boolean
+--- @param p2 boolean
 --- @return void
---- @overload fun(model: Hash): void
---- @deprecated
-function N_0xca4cea6ae0000a7e(model) end
+--- @overload fun(ped: Ped, p1: boolean, p2: boolean): void
+function N_0xf8ad2eed7c47e8fe(ped, p1, p2) end
 
     
 --- **This native does absolutely nothing, just a nullsub**
@@ -2782,24 +2492,51 @@ function N_0xca4cea6ae0000a7e(model) end
 function RegisterScriptWithAudio(p0) end
 
     
---- ```
---- All music event names found in the b617d scripts: pastebin.com/GnYt0R3P  
---- ```
+--- PrepareSynchronizedAudioEvent
 ---
---- @hash [0x1E5185B72EF5158A](https://docs.fivem.net/natives/?_0x1E5185B72EF5158A)
---- @param eventName string (char*)
---- @return boolean
---- @overload fun(eventName: string): boolean
-function PrepareMusicEvent(eventName) end
+--- @hash [0xC7ABCACA4985A766](https://docs.fivem.net/natives/?_0xC7ABCACA4985A766)
+--- @param p0 string (char*)
+--- @param p1 any
+--- @return any
+--- @overload fun(p0: string, p1: any): any
+function PrepareSynchronizedAudioEvent(p0, p1) end
 
     
---- ReleaseAmbientAudioBank
+--- ReleaseMissionAudioBank
 ---
---- @hash [0x65475A218FFAA93D](https://docs.fivem.net/natives/?_0x65475A218FFAA93D)
+--- @hash [0x0EC92A1BF0857187](https://docs.fivem.net/natives/?_0x0EC92A1BF0857187)
 ---
 --- @return void
 --- @overload fun(): void
-function ReleaseAmbientAudioBank() end
+function ReleaseMissionAudioBank() end
+
+    
+--- ```
+--- Only call found in the b617d scripts:
+--- AUDIO::PLAY_DEFERRED_SOUND_FRONTEND("BACK", "HUD_FREEMODE_SOUNDSET");
+--- ```
+---
+--- @hash [0xCADA5A0D0702381E](https://docs.fivem.net/natives/?_0xCADA5A0D0702381E)
+--- @param soundName string (char*)
+--- @param soundsetName string (char*)
+--- @return void
+--- @overload fun(soundName: string, soundsetName: string): void
+function PlayDeferredSoundFrontend(soundName, soundsetName) end
+
+    
+--- # New Name: PlayDeferredSoundFrontend
+--- ```
+--- Only call found in the b617d scripts:
+--- AUDIO::PLAY_DEFERRED_SOUND_FRONTEND("BACK", "HUD_FREEMODE_SOUNDSET");
+--- ```
+---
+--- @hash [0xCADA5A0D0702381E](https://docs.fivem.net/natives/?_0xCADA5A0D0702381E)
+--- @param soundName string (char*)
+--- @param soundsetName string (char*)
+--- @return void
+--- @overload fun(soundName: string, soundsetName: string): void
+--- @deprecated
+function N_0xcada5a0d0702381e(soundName, soundsetName) end
 
     
 --- ReleaseNamedScriptAudioBank
@@ -2809,6 +2546,18 @@ function ReleaseAmbientAudioBank() end
 --- @return void
 --- @overload fun(audioBank: string): void
 function ReleaseNamedScriptAudioBank(audioBank) end
+
+    
+--- ```
+--- Tune Forward... ?
+--- SET_RADIO_*
+--- ```
+---
+--- @hash [0xFF266D1D0EB1195D](https://docs.fivem.net/natives/?_0xFF266D1D0EB1195D)
+---
+--- @return void
+--- @overload fun(): void
+function N_0xff266d1d0eb1195d() end
 
     
 --- RecordBrokenGlass
@@ -2837,31 +2586,39 @@ function RecordBrokenGlass(x, y, z, radius) end
 function N_0xfbe20329593dec9d(x, y, z, radius) end
 
     
---- ReleaseMissionAudioBank
+--- OverrideUnderwaterStream
 ---
---- @hash [0x0EC92A1BF0857187](https://docs.fivem.net/natives/?_0x0EC92A1BF0857187)
+--- @hash [0xF2A9CDABCEA04BD6](https://docs.fivem.net/natives/?_0xF2A9CDABCEA04BD6)
+--- @param p0 any
+--- @param p1 boolean
+--- @return void
+--- @overload fun(p1: boolean): any
+function OverrideUnderwaterStream(p0, p1) end
+
+    
+--- ```
+--- Called 38 times in the scripts. There are 5 different audioNames used.
+---  One unknown removed below.
+--- AUDIO::PLAY_MISSION_COMPLETE_AUDIO("DEAD");
+--- AUDIO::PLAY_MISSION_COMPLETE_AUDIO("FRANKLIN_BIG_01");
+--- AUDIO::PLAY_MISSION_COMPLETE_AUDIO("GENERIC_FAILED");
+--- AUDIO::PLAY_MISSION_COMPLETE_AUDIO("TREVOR_SMALL_01");
+--- ```
+---
+--- @hash [0xB138AAB8A70D3C69](https://docs.fivem.net/natives/?_0xB138AAB8A70D3C69)
+--- @param audioName string (char*)
+--- @return void
+--- @overload fun(audioName: string): void
+function PlayMissionCompleteAudio(audioName) end
+
+    
+--- ResetTrevorRage
+---
+--- @hash [0xE78503B10C4314E0](https://docs.fivem.net/natives/?_0xE78503B10C4314E0)
 ---
 --- @return void
 --- @overload fun(): void
-function ReleaseMissionAudioBank() end
-
-    
---- ReleaseSoundId
----
---- @hash [0x353FC880830B88FA](https://docs.fivem.net/natives/?_0x353FC880830B88FA)
---- @param soundId number (int)
---- @return void
---- @overload fun(soundId: number): void
-function ReleaseSoundId(soundId) end
-
-    
---- ReleaseScriptAudioBank
----
---- @hash [0x7A2D8AD0A9EB9C3F](https://docs.fivem.net/natives/?_0x7A2D8AD0A9EB9C3F)
----
---- @return void
---- @overload fun(): void
-function ReleaseScriptAudioBank() end
+function ResetTrevorRage() end
 
     
 --- ```
@@ -2897,38 +2654,50 @@ function RemoveEntityFromAudioMixGroup(entity, p1) end
 function N_0x18eb48cfc41f2ea0(entity, p1) end
 
     
---- ```
----  Found in the b617d scripts, duplicates removed:
----  AUDIO::_B4BBFD9CD8B3922B("V_CARSHOWROOM_PS_WINDOW_UNBROKEN");
----  AUDIO::_B4BBFD9CD8B3922B("V_CIA_PS_WINDOW_UNBROKEN");
----  AUDIO::_B4BBFD9CD8B3922B("V_DLC_HEIST_APARTMENT_DOOR_CLOSED");
----  AUDIO::_B4BBFD9CD8B3922B("V_FINALEBANK_PS_VAULT_INTACT");
----  AUDIO::_B4BBFD9CD8B3922B("V_MICHAEL_PS_BATHROOM_WITH_WINDOW");
---- ```
+--- PlayAmbientSpeechFromPositionNative
 ---
---- @hash [0xB4BBFD9CD8B3922B](https://docs.fivem.net/natives/?_0xB4BBFD9CD8B3922B)
---- @param p0 string (char*)
+--- @hash [0xED640017ED337E45](https://docs.fivem.net/natives/?_0xED640017ED337E45)
+--- @param speechName string (char*)
+--- @param voiceName string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speechParam string (char*)
 --- @return void
---- @overload fun(p0: string): void
-function RemovePortalSettingsOverride(p0) end
+--- @overload fun(speechName: string, voiceName: string, x: number, y: number, z: number, speechParam: string): void
+function PlayAmbientSpeechFromPositionNative(speechName, voiceName, x, y, z, speechParam) end
 
     
---- # New Name: RemovePortalSettingsOverride
---- ```
----  Found in the b617d scripts, duplicates removed:
----  AUDIO::_B4BBFD9CD8B3922B("V_CARSHOWROOM_PS_WINDOW_UNBROKEN");
----  AUDIO::_B4BBFD9CD8B3922B("V_CIA_PS_WINDOW_UNBROKEN");
----  AUDIO::_B4BBFD9CD8B3922B("V_DLC_HEIST_APARTMENT_DOOR_CLOSED");
----  AUDIO::_B4BBFD9CD8B3922B("V_FINALEBANK_PS_VAULT_INTACT");
----  AUDIO::_B4BBFD9CD8B3922B("V_MICHAEL_PS_BATHROOM_WITH_WINDOW");
---- ```
+--- # New Name: PlayAmbientSpeechFromPositionNative
+--- PlayAmbientSpeechFromPositionNative
 ---
---- @hash [0xB4BBFD9CD8B3922B](https://docs.fivem.net/natives/?_0xB4BBFD9CD8B3922B)
---- @param p0 string (char*)
+--- @hash [0xED640017ED337E45](https://docs.fivem.net/natives/?_0xED640017ED337E45)
+--- @param speechName string (char*)
+--- @param voiceName string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speechParam string (char*)
 --- @return void
---- @overload fun(p0: string): void
+--- @overload fun(speechName: string, voiceName: string, x: number, y: number, z: number, speechParam: string): void
 --- @deprecated
-function N_0xb4bbfd9cd8b3922b(p0) end
+function N_0xed640017ed337e45(speechName, voiceName, x, y, z, speechParam) end
+
+    
+--- # New Name: PlayAmbientSpeechFromPositionNative
+--- PlayAmbientSpeechFromPositionNative
+---
+--- @hash [0xED640017ED337E45](https://docs.fivem.net/natives/?_0xED640017ED337E45)
+--- @param speechName string (char*)
+--- @param voiceName string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speechParam string (char*)
+--- @return void
+--- @overload fun(speechName: string, voiceName: string, x: number, y: number, z: number, speechParam: string): void
+--- @deprecated
+function PlayAmbientSpeechAtCoords(speechName, voiceName, x, y, z, speechParam) end
 
     
 --- ```
@@ -2947,6 +2716,15 @@ function N_0xb4bbfd9cd8b3922b(p0) end
 function RequestMissionAudioBank(p0, p1) end
 
     
+--- ReleaseSoundId
+---
+--- @hash [0x353FC880830B88FA](https://docs.fivem.net/natives/?_0x353FC880830B88FA)
+--- @param soundId number (int)
+--- @return void
+--- @overload fun(soundId: number): void
+function ReleaseSoundId(soundId) end
+
+    
 --- ResetPedAudioFlags
 ---
 --- @hash [0xF54BB7B61036F335](https://docs.fivem.net/natives/?_0xF54BB7B61036F335)
@@ -2956,40 +2734,121 @@ function RequestMissionAudioBank(p0, p1) end
 function ResetPedAudioFlags(ped) end
 
     
+--- SetAmbientZoneListStatePersistent
+---
+--- @hash [0xF3638DAE8C4045E1](https://docs.fivem.net/natives/?_0xF3638DAE8C4045E1)
+--- @param ambientZone string (char*)
+--- @param p1 boolean
+--- @param p2 boolean
+--- @return void
+--- @overload fun(ambientZone: string, p1: boolean, p2: boolean): void
+function SetAmbientZoneListStatePersistent(ambientZone, p1, p2) end
+
+    
 --- ```
---- All occurrences and usages found in b617d, sorted alphabetically and identical lines removed: pastebin.com/XZ1tmGEz
+--- Needs another parameter [int p2]. The signature is PED::PLAY_PAIN(Ped ped, int painID, int p1, int p2);  
+--- Last 2 parameters always seem to be 0.  
+--- EX: Function.Call(Hash.PLAY_PAIN, TestPed, 6, 0, 0);  
+--- Known Pain IDs  
+--- ________________________  
+--- 1 - Doesn't seem to do anything. Does NOT crash the game like previously said. (Latest patch)  
+--- 6 - Scream (Short)  
+--- 7 - Scared Scream (Kinda Long)  
+--- 8 - On Fire  
 --- ```
 --- 
 --- ```
---- NativeDB Added Parameter 3: Any p2
+--- NativeDB Added Parameter 4: Any p3
 --- ```
 ---
---- @hash [0xFE02FFBED8CA9D99](https://docs.fivem.net/natives/?_0xFE02FFBED8CA9D99)
+--- @hash [0xBC9AE166038A5CEC](https://docs.fivem.net/natives/?_0xBC9AE166038A5CEC)
+--- @param ped Ped
+--- @param painID number (int)
+--- @param p1 number (int)
+--- @return void
+--- @overload fun(ped: Ped, painID: number, p1: number): void
+function PlayPain(ped, painID, p1) end
+
+    
+--- SetAmbientZoneListState
+---
+--- @hash [0x9748FA4DE50CCE3E](https://docs.fivem.net/natives/?_0x9748FA4DE50CCE3E)
 --- @param p0 string (char*)
 --- @param p1 boolean
---- @return boolean
---- @overload fun(p0: string, p1: boolean): boolean
-function RequestAmbientAudioBank(p0, p1) end
-
-    
---- RestartScriptedConversation
----
---- @hash [0x9AEB285D1818C9AC](https://docs.fivem.net/natives/?_0x9AEB285D1818C9AC)
----
+--- @param p2 boolean
 --- @return void
---- @overload fun(): void
-function RestartScriptedConversation() end
+--- @overload fun(p0: string, p1: boolean, p2: boolean): void
+function SetAmbientZoneListState(p0, p1, p2) end
 
     
 --- ```
---- Makes pedestrians sound their horn longer, faster and more agressive when they use their horn.  
+--- All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/f2A7vTj0   
+--- No changes made in b678d.  
+--- gtaforums.com/topic/795622-audio-for-mods  
 --- ```
 ---
---- @hash [0x395BF71085D1B1D9](https://docs.fivem.net/natives/?_0x395BF71085D1B1D9)
---- @param toggle boolean
+--- @hash [0xE65F427EB70AB1ED](https://docs.fivem.net/natives/?_0xE65F427EB70AB1ED)
+--- @param soundId number (int)
+--- @param audioName string (char*)
+--- @param entity Entity
+--- @param audioRef string (char*)
+--- @param isNetwork boolean
+--- @param p5 any
 --- @return void
---- @overload fun(toggle: boolean): void
-function SetAggressiveHorns(toggle) end
+--- @overload fun(soundId: number, audioName: string, entity: Entity, audioRef: string, isNetwork: boolean, p5: any): void
+function PlaySoundFromEntity(soundId, audioName, entity, audioRef, isNetwork, p5) end
+
+    
+--- PlayStreamFromPed
+---
+--- @hash [0x89049DD63C08B5D1](https://docs.fivem.net/natives/?_0x89049DD63C08B5D1)
+--- @param ped Ped
+--- @return void
+--- @overload fun(ped: Ped): void
+function PlayStreamFromPed(ped) end
+
+    
+--- # New Name: PlayStreamFromPed
+--- PlayStreamFromPed
+---
+--- @hash [0x89049DD63C08B5D1](https://docs.fivem.net/natives/?_0x89049DD63C08B5D1)
+--- @param ped Ped
+--- @return void
+--- @overload fun(ped: Ped): void
+--- @deprecated
+function N_0x89049dd63c08b5d1(ped) end
+
+    
+--- See [`PLAY_PED_AMBIENT_SPEECH_NATIVE`](https://docs.fivem.net/natives/?_0x8E04FEDD28D42462) for parameter specifications.
+--- 
+--- ```
+--- NativeDB Added Parameter 4: Any p3
+--- ```
+---
+--- @hash [0xC6941B4A3A8FBBB9](https://docs.fivem.net/natives/?_0xC6941B4A3A8FBBB9)
+--- @param ped Ped
+--- @param speechName string (char*)
+--- @param speechParam string (char*)
+--- @return void
+--- @overload fun(ped: Ped, speechName: string, speechParam: string): void
+function PlayPedAmbientSpeechAndCloneNative(ped, speechName, speechParam) end
+
+    
+--- # New Name: PlayPedAmbientSpeechAndCloneNative
+--- See [`PLAY_PED_AMBIENT_SPEECH_NATIVE`](https://docs.fivem.net/natives/?_0x8E04FEDD28D42462) for parameter specifications.
+--- 
+--- ```
+--- NativeDB Added Parameter 4: Any p3
+--- ```
+---
+--- @hash [0xC6941B4A3A8FBBB9](https://docs.fivem.net/natives/?_0xC6941B4A3A8FBBB9)
+--- @param ped Ped
+--- @param speechName string (char*)
+--- @param speechParam string (char*)
+--- @return void
+--- @overload fun(ped: Ped, speechName: string, speechParam: string): void
+--- @deprecated
+function PlayAmbientSpeech2(ped, speechName, speechParam) end
 
     
 --- SetAmbientVoiceNameHash
@@ -3015,99 +2874,14 @@ function N_0x9a53ded9921de990(ped, hash) end
 
     
 --- ```
---- All occurrences and usages found in b617d, sorted alphabetically and identical lines removed: pastebin.com/AkmDAVn6  
---- ```
---- 
---- ```
---- NativeDB Added Parameter 3: int p2
+--- Makes pedestrians sound their horn longer, faster and more agressive when they use their horn.  
 --- ```
 ---
---- @hash [0x2F844A8B08D76685](https://docs.fivem.net/natives/?_0x2F844A8B08D76685)
---- @param p0 string (char*)
---- @param p1 boolean
---- @return boolean
---- @overload fun(p0: string, p1: boolean): boolean
-function RequestScriptAudioBank(p0, p1) end
-
-    
---- SetAmbientZoneListStatePersistent
----
---- @hash [0xF3638DAE8C4045E1](https://docs.fivem.net/natives/?_0xF3638DAE8C4045E1)
---- @param ambientZone string (char*)
---- @param p1 boolean
---- @param p2 boolean
+--- @hash [0x395BF71085D1B1D9](https://docs.fivem.net/natives/?_0x395BF71085D1B1D9)
+--- @param toggle boolean
 --- @return void
---- @overload fun(ambientZone: string, p1: boolean, p2: boolean): void
-function SetAmbientZoneListStatePersistent(ambientZone, p1, p2) end
-
-    
---- ResetTrevorRage
----
---- @hash [0xE78503B10C4314E0](https://docs.fivem.net/natives/?_0xE78503B10C4314E0)
----
---- @return void
---- @overload fun(): void
-function ResetTrevorRage() end
-
-    
---- ```
---- Audio List  
---- gtaforums.com/topic/795622-audio-for-mods/  
---- All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/FTeAj4yZ  
---- Yes  
---- ```
----
---- @hash [0x6C8065A3B780185B](https://docs.fivem.net/natives/?_0x6C8065A3B780185B)
---- @param ped Ped
---- @param name string (char*)
---- @return void
---- @overload fun(ped: Ped, name: string): void
-function SetAmbientVoiceName(ped, name) end
-
-    
---- SetAmbientZoneListState
----
---- @hash [0x9748FA4DE50CCE3E](https://docs.fivem.net/natives/?_0x9748FA4DE50CCE3E)
---- @param p0 string (char*)
---- @param p1 boolean
---- @param p2 boolean
---- @return void
---- @overload fun(p0: string, p1: boolean, p2: boolean): void
-function SetAmbientZoneListState(p0, p1, p2) end
-
-    
---- ```
---- mood can be 0 or 1 (it's not a boolean value!). Effects audio of the animal.  
---- ```
----
---- @hash [0xCC97B29285B1DC3B](https://docs.fivem.net/natives/?_0xCC97B29285B1DC3B)
---- @param animal Ped
---- @param mood number (int)
---- @return void
---- @overload fun(animal: Ped, mood: number): void
-function SetAnimalMood(animal, mood) end
-
-    
---- SetAmbientZoneState
----
---- @hash [0xBDA07E5950085E46](https://docs.fivem.net/natives/?_0xBDA07E5950085E46)
---- @param zoneName string (char*)
---- @param p1 boolean
---- @param p2 boolean
---- @return void
---- @overload fun(zoneName: string, p1: boolean, p2: boolean): void
-function SetAmbientZoneState(zoneName, p1, p2) end
-
-    
---- SetAmbientZoneStatePersistent
----
---- @hash [0x1D6650420CEC9D3B](https://docs.fivem.net/natives/?_0x1D6650420CEC9D3B)
---- @param ambientZone string (char*)
---- @param p1 boolean
---- @param p2 boolean
---- @return void
---- @overload fun(ambientZone: string, p1: boolean, p2: boolean): void
-function SetAmbientZoneStatePersistent(ambientZone, p1, p2) end
+--- @overload fun(toggle: boolean): void
+function SetAggressiveHorns(toggle) end
 
     
 --- ```
@@ -3227,59 +3001,6 @@ function SetAmbientZoneStatePersistent(ambientZone, p1, p2) end
 function SetAudioFlag(flagName, toggle) end
 
     
---- SetAudioScriptCleanupTime
----
---- @hash [0xA5F377B175A699C5](https://docs.fivem.net/natives/?_0xA5F377B175A699C5)
---- @param time number (int)
---- @return void
---- @overload fun(time: number): void
-function SetAudioScriptCleanupTime(time) end
-
-    
---- # New Name: SetAudioScriptCleanupTime
---- SetAudioScriptCleanupTime
----
---- @hash [0xA5F377B175A699C5](https://docs.fivem.net/natives/?_0xA5F377B175A699C5)
---- @param time number (int)
---- @return void
---- @overload fun(time: number): void
---- @deprecated
-function N_0xa5f377b175a699c5(time) end
-
-    
---- SetAudioSceneVariable
----
---- @hash [0xEF21A9EF089A2668](https://docs.fivem.net/natives/?_0xEF21A9EF089A2668)
---- @param scene string (char*)
---- @param variable string (char*)
---- @param value number (float)
---- @return void
---- @overload fun(scene: string, variable: string, value: number): void
-function SetAudioSceneVariable(scene, variable, value) end
-
-    
---- Needs to be called every frame.
---- Audio mode to apply this frame: https://alloc8or.re/gta5/doc/enums/audSpecialEffectMode.txt
----
---- @hash [0x12561FCBB62D5B9C](https://docs.fivem.net/natives/?_0x12561FCBB62D5B9C)
---- @param mode number (int)
---- @return void
---- @overload fun(mode: number): void
-function SetAudioSpecialEffectMode(mode) end
-
-    
---- # New Name: SetAudioSpecialEffectMode
---- Needs to be called every frame.
---- Audio mode to apply this frame: https://alloc8or.re/gta5/doc/enums/audSpecialEffectMode.txt
----
---- @hash [0x12561FCBB62D5B9C](https://docs.fivem.net/natives/?_0x12561FCBB62D5B9C)
---- @param mode number (int)
---- @return void
---- @overload fun(mode: number): void
---- @deprecated
-function N_0x12561fcbb62d5b9c(mode) end
-
-    
 --- SetAudioVehiclePriority
 ---
 --- @hash [0xE5564483E407F914](https://docs.fivem.net/natives/?_0xE5564483E407F914)
@@ -3288,20 +3009,6 @@ function N_0x12561fcbb62d5b9c(mode) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, p1: any): void
 function SetAudioVehiclePriority(vehicle, p1) end
-
-    
---- ```
---- All occurrences found in b617d, sorted alphabetically and identical lines removed:   
---- AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_AK");  
---- AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_CUSTOM");  
---- AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_TOOTHLESS");  
---- ```
----
---- @hash [0x3B4BF5F0859204D9](https://docs.fivem.net/natives/?_0x3B4BF5F0859204D9)
---- @param name string (char*)
---- @return void
---- @overload fun(name: string): void
-function SetCutsceneAudioOverride(name) end
 
     
 --- ```
@@ -3348,148 +3055,97 @@ function SetCustomRadioTrackList(radioStation, trackListName, p2) end
 function N_0x4e404a9361f75bb2(radioStation, trackListName, p2) end
 
     
---- SetFrontendRadioActive
+--- SetAudioScriptCleanupTime
 ---
---- @hash [0xF7F26C6E9CC9EBB8](https://docs.fivem.net/natives/?_0xF7F26C6E9CC9EBB8)
---- @param active boolean
+--- @hash [0xA5F377B175A699C5](https://docs.fivem.net/natives/?_0xA5F377B175A699C5)
+--- @param time number (int)
 --- @return void
---- @overload fun(active: boolean): void
-function SetFrontendRadioActive(active) end
+--- @overload fun(time: number): void
+function SetAudioScriptCleanupTime(time) end
 
     
---- SetEmitterRadioStation
+--- # New Name: SetAudioScriptCleanupTime
+--- SetAudioScriptCleanupTime
 ---
---- @hash [0xACF57305B12AF907](https://docs.fivem.net/natives/?_0xACF57305B12AF907)
---- @param emitterName string (char*)
---- @param radioStation string (char*)
+--- @hash [0xA5F377B175A699C5](https://docs.fivem.net/natives/?_0xA5F377B175A699C5)
+--- @param time number (int)
 --- @return void
---- @overload fun(emitterName: string, radioStation: string): void
-function SetEmitterRadioStation(emitterName, radioStation) end
-
-    
---- SetGpsActive
----
---- @hash [0x3BD3F52BA9B1E4E8](https://docs.fivem.net/natives/?_0x3BD3F52BA9B1E4E8)
---- @param active boolean
---- @return void
---- @overload fun(active: boolean): void
-function SetGpsActive(active) end
+--- @overload fun(time: number): void
+--- @deprecated
+function N_0xa5f377b175a699c5(time) end
 
     
 --- ```
---- If this is the correct name, what microphone? I know your TV isn't going to reach out and adjust your headset so..  
+--- All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/A8Ny8AHZ  
 --- ```
 ---
---- @hash [0xB6AE90EDDE95C762](https://docs.fivem.net/natives/?_0xB6AE90EDDE95C762)
---- @param p0 boolean
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param x3 number (float)
---- @param y3 number (float)
---- @param z3 number (float)
+--- @hash [0x7FF4944CC209192D](https://docs.fivem.net/natives/?_0x7FF4944CC209192D)
+--- @param soundId number (int)
+--- @param audioName string (char*)
+--- @param audioRef string (char*)
+--- @param p3 boolean
+--- @param p4 any
+--- @param p5 boolean
 --- @return void
---- @overload fun(p0: boolean, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, x3: number, y3: number, z3: number): void
-function SetMicrophonePosition(p0, x1, y1, z1, x2, y2, z2, x3, y3, z3) end
+--- @overload fun(soundId: number, audioName: string, audioRef: string, p3: boolean, p4: any, p5: boolean): void
+function PlaySound(soundId, audioName, audioRef, p3, p4, p5) end
 
     
---- SetMobileRadioEnabledDuringGameplay
+--- PlayStreamFromVehicle
 ---
---- @hash [0x1098355A16064BB3](https://docs.fivem.net/natives/?_0x1098355A16064BB3)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function SetMobileRadioEnabledDuringGameplay(toggle) end
-
-    
---- SetHornEnabled
----
---- @hash [0x76D683C108594D0E](https://docs.fivem.net/natives/?_0x76D683C108594D0E)
+--- @hash [0xB70374A758007DFA](https://docs.fivem.net/natives/?_0xB70374A758007DFA)
 --- @param vehicle Vehicle
---- @param toggle boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function SetHornEnabled(vehicle, toggle) end
-
-    
---- SetInitialPlayerStation
----
---- @hash [0x88795F13FACDA88D](https://docs.fivem.net/natives/?_0x88795F13FACDA88D)
---- @param radioStation string (char*)
---- @return void
---- @overload fun(radioStation: string): void
-function SetInitialPlayerStation(radioStation) end
+--- @overload fun(vehicle: Vehicle): void
+function PlayStreamFromVehicle(vehicle) end
 
     
 --- ```
---- Enables/disables ped's "loud" footstep sound.
---- ```
---- 
---- ```
---- NativeDB Introduced: v1493
+--- All music event names found in the b617d scripts: pastebin.com/GnYt0R3P  
 --- ```
 ---
---- @hash [0x0653B735BFBDFE87](https://docs.fivem.net/natives/?_0x0653B735BFBDFE87)
---- @param ped Ped
---- @param toggle boolean
---- @return void
---- @overload fun(ped: Ped, toggle: boolean): void
-function SetPedAudioFootstepLoud(ped, toggle) end
+--- @hash [0x1E5185B72EF5158A](https://docs.fivem.net/natives/?_0x1E5185B72EF5158A)
+--- @param eventName string (char*)
+--- @return boolean
+--- @overload fun(eventName: string): boolean
+function PrepareMusicEvent(eventName) end
 
     
---- # New Name: SetPedAudioFootstepLoud
---- ```
---- Enables/disables ped's "loud" footstep sound.
---- ```
---- 
---- ```
---- NativeDB Introduced: v1493
---- ```
+--- SetAudioSceneVariable
 ---
---- @hash [0x0653B735BFBDFE87](https://docs.fivem.net/natives/?_0x0653B735BFBDFE87)
---- @param ped Ped
---- @param toggle boolean
+--- @hash [0xEF21A9EF089A2668](https://docs.fivem.net/natives/?_0xEF21A9EF089A2668)
+--- @param scene string (char*)
+--- @param variable string (char*)
+--- @param value number (float)
 --- @return void
---- @overload fun(ped: Ped, toggle: boolean): void
---- @deprecated
-function N_0x0653b735bfbdfe87(ped, toggle) end
+--- @overload fun(scene: string, variable: string, value: number): void
+function SetAudioSceneVariable(scene, variable, value) end
 
     
 --- ```
---- Enables/disables ped's "quiet" footstep sound.
---- ```
---- 
---- ```
---- NativeDB Introduced: v1493
+--- Example:  
+--- bool prepareAlarm = AUDIO::PREPARE_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS");  
 --- ```
 ---
---- @hash [0x29DA3CA8D8B2692D](https://docs.fivem.net/natives/?_0x29DA3CA8D8B2692D)
---- @param ped Ped
---- @param toggle boolean
---- @return void
---- @overload fun(ped: Ped, toggle: boolean): void
-function SetPedAudioFootstepQuiet(ped, toggle) end
+--- @hash [0x9D74AE343DB65533](https://docs.fivem.net/natives/?_0x9D74AE343DB65533)
+--- @param alarmName string (char*)
+--- @return boolean
+--- @overload fun(alarmName: string): boolean
+function PrepareAlarm(alarmName) end
 
     
---- # New Name: SetPedAudioFootstepQuiet
 --- ```
---- Enables/disables ped's "quiet" footstep sound.
---- ```
---- 
---- ```
---- NativeDB Introduced: v1493
+--- All occurrences found in b617d, sorted alphabetically and identical lines removed:   
+--- AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_AK");  
+--- AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_CUSTOM");  
+--- AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_TOOTHLESS");  
 --- ```
 ---
---- @hash [0x29DA3CA8D8B2692D](https://docs.fivem.net/natives/?_0x29DA3CA8D8B2692D)
---- @param ped Ped
---- @param toggle boolean
+--- @hash [0x3B4BF5F0859204D9](https://docs.fivem.net/natives/?_0x3B4BF5F0859204D9)
+--- @param name string (char*)
 --- @return void
---- @overload fun(ped: Ped, toggle: boolean): void
---- @deprecated
-function N_0x29da3ca8d8b2692d(ped, toggle) end
+--- @overload fun(name: string): void
+function SetCutsceneAudioOverride(name) end
 
     
 --- SetMobilePhoneRadioState
@@ -3501,51 +3157,16 @@ function N_0x29da3ca8d8b2692d(ped, toggle) end
 function SetMobilePhoneRadioState(state) end
 
     
---- ```
---- Sets the ped drunk sounds.  Only works with PLAYER_PED_ID
---- ====================================================
---- As mentioned above, this only sets the drunk sound to ped/player.
---- To give the Ped a drunk effect with drunk walking animation try using SET_PED_MOVEMENT_CLIPSET
---- Below is an example
---- if (!Function.Call<bool>(Hash.HAS_ANIM_SET_LOADED, "move_m@drunk@verydrunk"))
----                 {
----                     Function.Call(Hash.REQUEST_ANIM_SET, "move_m@drunk@verydrunk");
----                 }
----                 Function.Call(Hash.SET_PED_MOVEMENT_CLIPSET, Ped.Handle, "move_m@drunk@verydrunk", 0x3E800000);
---- And to stop the effect use
---- RESET_PED_MOVEMENT_CLIPSET
---- ```
+--- PreloadScriptConversation
 ---
---- @hash [0x95D2D383D5396B8A](https://docs.fivem.net/natives/?_0x95D2D383D5396B8A)
---- @param ped Ped
---- @param toggle boolean
+--- @hash [0x3B3CAD6166916D87](https://docs.fivem.net/natives/?_0x3B3CAD6166916D87)
+--- @param p0 boolean
+--- @param p1 boolean
+--- @param p2 boolean
+--- @param p3 boolean
 --- @return void
---- @overload fun(ped: Ped, toggle: boolean): void
-function SetPedIsDrunk(ped, toggle) end
-
-    
---- ```
---- Assigns some ambient voice to the ped.  
---- ```
----
---- @hash [0x40CF0D12D142A9E8](https://docs.fivem.net/natives/?_0x40CF0D12D142A9E8)
---- @param ped Ped
---- @return void
---- @overload fun(ped: Ped): void
-function SetPedScream(ped) end
-
-    
---- # New Name: SetPedScream
---- ```
---- Assigns some ambient voice to the ped.  
---- ```
----
---- @hash [0x40CF0D12D142A9E8](https://docs.fivem.net/natives/?_0x40CF0D12D142A9E8)
---- @param ped Ped
---- @return void
---- @overload fun(ped: Ped): void
---- @deprecated
-function N_0x40cf0d12d142a9e8(ped) end
+--- @overload fun(p0: boolean, p1: boolean, p2: boolean, p3: boolean): void
+function PreloadScriptConversation(p0, p1, p2, p3) end
 
     
 --- SetPedAudioGender
@@ -3571,71 +3192,74 @@ function N_0xa5342d390cda41d6(ped, p1) end
 
     
 --- ```
---- Speech related.  
+--- If this is the correct name, what microphone? I know your TV isn't going to reach out and adjust your headset so..  
 --- ```
 ---
---- @hash [0x4ADA3F19BE4A6047](https://docs.fivem.net/natives/?_0x4ADA3F19BE4A6047)
---- @param ped Ped
+--- @hash [0xB6AE90EDDE95C762](https://docs.fivem.net/natives/?_0xB6AE90EDDE95C762)
+--- @param p0 boolean
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param x3 number (float)
+--- @param y3 number (float)
+--- @param z3 number (float)
 --- @return void
---- @overload fun(ped: Ped): void
-function SetPedTalk(ped) end
+--- @overload fun(p0: boolean, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, x3: number, y3: number, z3: number): void
+function SetMicrophonePosition(p0, x1, y1, z1, x2, y2, z2, x3, y3, z3) end
 
     
---- # New Name: SetPedTalk
+--- ReleaseAmbientAudioBank
+---
+--- @hash [0x65475A218FFAA93D](https://docs.fivem.net/natives/?_0x65475A218FFAA93D)
+---
+--- @return void
+--- @overload fun(): void
+function ReleaseAmbientAudioBank() end
+
+    
+--- SetFrontendRadioActive
+---
+--- @hash [0xF7F26C6E9CC9EBB8](https://docs.fivem.net/natives/?_0xF7F26C6E9CC9EBB8)
+--- @param active boolean
+--- @return void
+--- @overload fun(active: boolean): void
+function SetFrontendRadioActive(active) end
+
+    
 --- ```
---- Speech related.  
+--- NativeDB Introduced: v1180
 --- ```
 ---
---- @hash [0x4ADA3F19BE4A6047](https://docs.fivem.net/natives/?_0x4ADA3F19BE4A6047)
---- @param ped Ped
+--- @hash [0xCA4CEA6AE0000A7E](https://docs.fivem.net/natives/?_0xCA4CEA6AE0000A7E)
+--- @param model Hash
 --- @return void
---- @overload fun(ped: Ped): void
+--- @overload fun(model: Hash): void
+function PreloadVehicleAudio(model) end
+
+    
+--- # New Name: PreloadVehicleAudio
+--- ```
+--- NativeDB Introduced: v1180
+--- ```
+---
+--- @hash [0xCA4CEA6AE0000A7E](https://docs.fivem.net/natives/?_0xCA4CEA6AE0000A7E)
+--- @param model Hash
+--- @return void
+--- @overload fun(model: Hash): void
 --- @deprecated
-function N_0x4ada3f19be4a6047(ped) end
+function N_0xca4cea6ae0000a7e(model) end
 
     
---- SetPlayerAngry
+--- SetMobileRadioEnabledDuringGameplay
 ---
---- @hash [0xEA241BB04110F091](https://docs.fivem.net/natives/?_0xEA241BB04110F091)
---- @param ped Ped
+--- @hash [0x1098355A16064BB3](https://docs.fivem.net/natives/?_0x1098355A16064BB3)
 --- @param toggle boolean
 --- @return void
---- @overload fun(ped: Ped, toggle: boolean): void
-function SetPlayerAngry(ped, toggle) end
-
-    
---- ```
---- From the scripts:
---- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("PAIGE_PVG"));
---- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("TALINA_PVG"));
---- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("FEMALE_LOST_BLACK_PVG"));
---- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("FEMALE_LOST_WHITE_PVG"));
---- ```
----
---- @hash [0x7CDC8C3B89F661B3](https://docs.fivem.net/natives/?_0x7CDC8C3B89F661B3)
---- @param ped Ped
---- @param voiceGroupHash Hash
---- @return void
---- @overload fun(ped: Ped, voiceGroupHash: Hash): void
-function SetPedVoiceGroup(ped, voiceGroupHash) end
-
-    
---- # New Name: SetPedVoiceGroup
---- ```
---- From the scripts:
---- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("PAIGE_PVG"));
---- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("TALINA_PVG"));
---- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("FEMALE_LOST_BLACK_PVG"));
---- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("FEMALE_LOST_WHITE_PVG"));
---- ```
----
---- @hash [0x7CDC8C3B89F661B3](https://docs.fivem.net/natives/?_0x7CDC8C3B89F661B3)
---- @param ped Ped
---- @param voiceGroupHash Hash
---- @return void
---- @overload fun(ped: Ped, voiceGroupHash: Hash): void
---- @deprecated
-function N_0x7cdc8c3b89f661b3(ped, voiceGroupHash) end
+--- @overload fun(toggle: boolean): void
+function SetMobileRadioEnabledDuringGameplay(toggle) end
 
     
 --- ```
@@ -3674,6 +3298,148 @@ function SetPortalSettingsOverride(p0, p1) end
 function N_0x044dbad7a7fa2be5(p0, p1) end
 
     
+--- ```
+--- All occurrences and usages found in b617d, sorted alphabetically and identical lines removed: pastebin.com/XZ1tmGEz
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 3: Any p2
+--- ```
+---
+--- @hash [0xFE02FFBED8CA9D99](https://docs.fivem.net/natives/?_0xFE02FFBED8CA9D99)
+--- @param p0 string (char*)
+--- @param p1 boolean
+--- @return boolean
+--- @overload fun(p0: string, p1: boolean): boolean
+function RequestAmbientAudioBank(p0, p1) end
+
+    
+--- ```
+--- All occurrences and usages found in b617d, sorted alphabetically and identical lines removed: pastebin.com/AkmDAVn6  
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 3: int p2
+--- ```
+---
+--- @hash [0x2F844A8B08D76685](https://docs.fivem.net/natives/?_0x2F844A8B08D76685)
+--- @param p0 string (char*)
+--- @param p1 boolean
+--- @return boolean
+--- @overload fun(p0: string, p1: boolean): boolean
+function RequestScriptAudioBank(p0, p1) end
+
+    
+--- ```
+--- Speech related.  
+--- ```
+---
+--- @hash [0x4ADA3F19BE4A6047](https://docs.fivem.net/natives/?_0x4ADA3F19BE4A6047)
+--- @param ped Ped
+--- @return void
+--- @overload fun(ped: Ped): void
+function SetPedTalk(ped) end
+
+    
+--- # New Name: SetPedTalk
+--- ```
+--- Speech related.  
+--- ```
+---
+--- @hash [0x4ADA3F19BE4A6047](https://docs.fivem.net/natives/?_0x4ADA3F19BE4A6047)
+--- @param ped Ped
+--- @return void
+--- @overload fun(ped: Ped): void
+--- @deprecated
+function N_0x4ada3f19be4a6047(ped) end
+
+    
+--- ReleaseScriptAudioBank
+---
+--- @hash [0x7A2D8AD0A9EB9C3F](https://docs.fivem.net/natives/?_0x7A2D8AD0A9EB9C3F)
+---
+--- @return void
+--- @overload fun(): void
+function ReleaseScriptAudioBank() end
+
+    
+--- ```
+--- Sets the ped drunk sounds.  Only works with PLAYER_PED_ID
+--- ====================================================
+--- As mentioned above, this only sets the drunk sound to ped/player.
+--- To give the Ped a drunk effect with drunk walking animation try using SET_PED_MOVEMENT_CLIPSET
+--- Below is an example
+--- if (!Function.Call<bool>(Hash.HAS_ANIM_SET_LOADED, "move_m@drunk@verydrunk"))
+---                 {
+---                     Function.Call(Hash.REQUEST_ANIM_SET, "move_m@drunk@verydrunk");
+---                 }
+---                 Function.Call(Hash.SET_PED_MOVEMENT_CLIPSET, Ped.Handle, "move_m@drunk@verydrunk", 0x3E800000);
+--- And to stop the effect use
+--- RESET_PED_MOVEMENT_CLIPSET
+--- ```
+---
+--- @hash [0x95D2D383D5396B8A](https://docs.fivem.net/natives/?_0x95D2D383D5396B8A)
+--- @param ped Ped
+--- @param toggle boolean
+--- @return void
+--- @overload fun(ped: Ped, toggle: boolean): void
+function SetPedIsDrunk(ped, toggle) end
+
+    
+--- ```
+--- Enables/disables ped's "loud" footstep sound.
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0x0653B735BFBDFE87](https://docs.fivem.net/natives/?_0x0653B735BFBDFE87)
+--- @param ped Ped
+--- @param toggle boolean
+--- @return void
+--- @overload fun(ped: Ped, toggle: boolean): void
+function SetPedAudioFootstepLoud(ped, toggle) end
+
+    
+--- # New Name: SetPedAudioFootstepLoud
+--- ```
+--- Enables/disables ped's "loud" footstep sound.
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0x0653B735BFBDFE87](https://docs.fivem.net/natives/?_0x0653B735BFBDFE87)
+--- @param ped Ped
+--- @param toggle boolean
+--- @return void
+--- @overload fun(ped: Ped, toggle: boolean): void
+--- @deprecated
+function N_0x0653b735bfbdfe87(ped, toggle) end
+
+    
+--- RestartScriptedConversation
+---
+--- @hash [0x9AEB285D1818C9AC](https://docs.fivem.net/natives/?_0x9AEB285D1818C9AC)
+---
+--- @return void
+--- @overload fun(): void
+function RestartScriptedConversation() end
+
+    
+--- ```
+--- For a full list, see here: pastebin.com/Kj9t38KF  
+--- ```
+---
+--- @hash [0xC69EDA28699D5107](https://docs.fivem.net/natives/?_0xC69EDA28699D5107)
+--- @param stationName string (char*)
+--- @return void
+--- @overload fun(stationName: string): void
+function SetRadioToStationName(stationName) end
+
+    
 --- SetRadioAutoUnfreeze
 ---
 --- @hash [0xC1AA9F53CE982990](https://docs.fivem.net/natives/?_0xC1AA9F53CE982990)
@@ -3683,49 +3449,38 @@ function N_0x044dbad7a7fa2be5(p0, p1) end
 function SetRadioAutoUnfreeze(toggle) end
 
     
---- SetRadioFrontendFadeTime
+--- ```
+---  Found in the b617d scripts, duplicates removed:
+---  AUDIO::_B4BBFD9CD8B3922B("V_CARSHOWROOM_PS_WINDOW_UNBROKEN");
+---  AUDIO::_B4BBFD9CD8B3922B("V_CIA_PS_WINDOW_UNBROKEN");
+---  AUDIO::_B4BBFD9CD8B3922B("V_DLC_HEIST_APARTMENT_DOOR_CLOSED");
+---  AUDIO::_B4BBFD9CD8B3922B("V_FINALEBANK_PS_VAULT_INTACT");
+---  AUDIO::_B4BBFD9CD8B3922B("V_MICHAEL_PS_BATHROOM_WITH_WINDOW");
+--- ```
 ---
---- @hash [0x2C96CDB04FCA358E](https://docs.fivem.net/natives/?_0x2C96CDB04FCA358E)
---- @param fadeTime number (float)
+--- @hash [0xB4BBFD9CD8B3922B](https://docs.fivem.net/natives/?_0xB4BBFD9CD8B3922B)
+--- @param p0 string (char*)
 --- @return void
---- @overload fun(fadeTime: number): void
-function SetRadioFrontendFadeTime(fadeTime) end
+--- @overload fun(p0: string): void
+function RemovePortalSettingsOverride(p0) end
 
     
---- # New Name: SetRadioFrontendFadeTime
---- SetRadioFrontendFadeTime
+--- # New Name: RemovePortalSettingsOverride
+--- ```
+---  Found in the b617d scripts, duplicates removed:
+---  AUDIO::_B4BBFD9CD8B3922B("V_CARSHOWROOM_PS_WINDOW_UNBROKEN");
+---  AUDIO::_B4BBFD9CD8B3922B("V_CIA_PS_WINDOW_UNBROKEN");
+---  AUDIO::_B4BBFD9CD8B3922B("V_DLC_HEIST_APARTMENT_DOOR_CLOSED");
+---  AUDIO::_B4BBFD9CD8B3922B("V_FINALEBANK_PS_VAULT_INTACT");
+---  AUDIO::_B4BBFD9CD8B3922B("V_MICHAEL_PS_BATHROOM_WITH_WINDOW");
+--- ```
 ---
---- @hash [0x2C96CDB04FCA358E](https://docs.fivem.net/natives/?_0x2C96CDB04FCA358E)
---- @param fadeTime number (float)
+--- @hash [0xB4BBFD9CD8B3922B](https://docs.fivem.net/natives/?_0xB4BBFD9CD8B3922B)
+--- @param p0 string (char*)
 --- @return void
---- @overload fun(fadeTime: number): void
+--- @overload fun(p0: string): void
 --- @deprecated
-function N_0x2c96cdb04fca358e(fadeTime) end
-
-    
---- Doesn't have an effect in Story Mode.
---- 
---- ```
---- NativeDB Introduced: v2372
---- ```
----
---- @hash [0x4CAFEBFA21EC188D](https://docs.fivem.net/natives/?_0x4CAFEBFA21EC188D)
---- @param radioStation string (char*)
---- @param toggle boolean
---- @return void
---- @overload fun(radioStation: string, toggle: boolean): void
-function SetRadioStationIsVisible(radioStation, toggle) end
-
-    
---- ```
---- Sets radio station by index.  
---- ```
----
---- @hash [0xA619B168B8A8570F](https://docs.fivem.net/natives/?_0xA619B168B8A8570F)
---- @param radioStation number (int)
---- @return void
---- @overload fun(radioStation: number): void
-function SetRadioToStationIndex(radioStation) end
+function N_0xb4bbfd9cd8b3922b(p0) end
 
     
 --- ```
@@ -3760,89 +3515,58 @@ function SetRadioStationMusicOnly(radioStation, toggle) end
 function N_0x774bd811f656a122(radioStation, toggle) end
 
     
---- ```
---- For a full list, see here: pastebin.com/Kj9t38KF  
---- ```
+--- SetRadioFrontendFadeTime
 ---
---- @hash [0xC69EDA28699D5107](https://docs.fivem.net/natives/?_0xC69EDA28699D5107)
---- @param stationName string (char*)
+--- @hash [0x2C96CDB04FCA358E](https://docs.fivem.net/natives/?_0x2C96CDB04FCA358E)
+--- @param fadeTime number (float)
 --- @return void
---- @overload fun(stationName: string): void
-function SetRadioToStationName(stationName) end
+--- @overload fun(fadeTime: number): void
+function SetRadioFrontendFadeTime(fadeTime) end
 
     
---- SetScriptUpdateDoorAudio
+--- # New Name: SetRadioFrontendFadeTime
+--- SetRadioFrontendFadeTime
 ---
---- @hash [0x06C0023BED16DD6B](https://docs.fivem.net/natives/?_0x06C0023BED16DD6B)
---- @param doorHash Hash
---- @param toggle boolean
+--- @hash [0x2C96CDB04FCA358E](https://docs.fivem.net/natives/?_0x2C96CDB04FCA358E)
+--- @param fadeTime number (float)
 --- @return void
---- @overload fun(doorHash: Hash, toggle: boolean): void
-function SetScriptUpdateDoorAudio(doorHash, toggle) end
-
-    
---- # New Name: SetScriptUpdateDoorAudio
---- SetScriptUpdateDoorAudio
----
---- @hash [0x06C0023BED16DD6B](https://docs.fivem.net/natives/?_0x06C0023BED16DD6B)
---- @param doorHash Hash
---- @param toggle boolean
---- @return void
---- @overload fun(doorHash: Hash, toggle: boolean): void
+--- @overload fun(fadeTime: number): void
 --- @deprecated
-function N_0x06c0023bed16dd6b(doorHash, toggle) end
+function N_0x2c96cdb04fca358e(fadeTime) end
+
+    
+--- SetAmbientZoneStatePersistent
+---
+--- @hash [0x1D6650420CEC9D3B](https://docs.fivem.net/natives/?_0x1D6650420CEC9D3B)
+--- @param ambientZone string (char*)
+--- @param p1 boolean
+--- @param p2 boolean
+--- @return void
+--- @overload fun(ambientZone: string, p1: boolean, p2: boolean): void
+function SetAmbientZoneStatePersistent(ambientZone, p1, p2) end
 
     
 --- ```
---- Only found this one in the decompiled scripts:  
---- AUDIO::SET_RADIO_TRACK("RADIO_03_HIPHOP_NEW", "ARM1_RADIO_STARTS");  
+--- Sets radio station by index.  
 --- ```
 ---
---- @hash [0xB39786F201FEE30B](https://docs.fivem.net/natives/?_0xB39786F201FEE30B)
---- @param radioStation string (char*)
---- @param radioTrack string (char*)
+--- @hash [0xA619B168B8A8570F](https://docs.fivem.net/natives/?_0xA619B168B8A8570F)
+--- @param radioStation number (int)
 --- @return void
---- @overload fun(radioStation: string, radioTrack: string): void
-function SetRadioTrack(radioStation, radioTrack) end
+--- @overload fun(radioStation: number): void
+function SetRadioToStationIndex(radioStation) end
 
     
 --- ```
---- NativeDB Introduced: v2372
+--- mood can be 0 or 1 (it's not a boolean value!). Effects audio of the animal.  
 --- ```
 ---
---- @hash [0xF584CF8529B51434](https://docs.fivem.net/natives/?_0xF584CF8529B51434)
---- @param vehicle Vehicle
---- @param toggle boolean
+--- @hash [0xCC97B29285B1DC3B](https://docs.fivem.net/natives/?_0xCC97B29285B1DC3B)
+--- @param animal Ped
+--- @param mood number (int)
 --- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function SetSirenKeepOn(vehicle, toggle) end
-
-    
---- # New Name: SetSirenKeepOn
---- ```
---- NativeDB Introduced: v2372
---- ```
----
---- @hash [0xF584CF8529B51434](https://docs.fivem.net/natives/?_0xF584CF8529B51434)
---- @param vehicle Vehicle
---- @param toggle boolean
---- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
---- @deprecated
-function N_0xf584cf8529b51434(vehicle, toggle) end
-
-    
---- ```
---- NativeDB Introduced: v1493
---- ```
----
---- @hash [0x2CB0075110BE1E56](https://docs.fivem.net/natives/?_0x2CB0075110BE1E56)
---- @param radioStationName string (char*)
---- @param mixName string (char*)
---- @param p2 number (int)
---- @return void
---- @overload fun(radioStationName: string, mixName: string, p2: number): void
-function SetRadioTrackMix(radioStationName, mixName, p2) end
+--- @overload fun(animal: Ped, mood: number): void
+function SetAnimalMood(animal, mood) end
 
     
 --- ```
@@ -3909,6 +3633,21 @@ function SetSynchronizedAudioEventPositionThisFrame(p0, p1) end
 function N_0x950a154b8dab6185(p0, p1) end
 
     
+--- ```
+--- Audio List  
+--- gtaforums.com/topic/795622-audio-for-mods/  
+--- All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/FTeAj4yZ  
+--- Yes  
+--- ```
+---
+--- @hash [0x6C8065A3B780185B](https://docs.fivem.net/natives/?_0x6C8065A3B780185B)
+--- @param ped Ped
+--- @param name string (char*)
+--- @return void
+--- @overload fun(ped: Ped, name: string): void
+function SetAmbientVoiceName(ped, name) end
+
+    
 --- SetSirenWithNoDriver
 ---
 --- @hash [0x1FEF0683B96EBCF2](https://docs.fivem.net/natives/?_0x1FEF0683B96EBCF2)
@@ -3919,78 +3658,26 @@ function N_0x950a154b8dab6185(p0, p1) end
 function SetSirenWithNoDriver(vehicle, toggle) end
 
     
---- ```
---- Example:
---- AUDIO::SET_STATIC_EMITTER_ENABLED((Any*)"LOS_SANTOS_VANILLA_UNICORN_01_STAGE", false);    AUDIO::SET_STATIC_EMITTER_ENABLED((Any*)"LOS_SANTOS_VANILLA_UNICORN_02_MAIN_ROOM", false);    AUDIO::SET_STATIC_EMITTER_ENABLED((Any*)"LOS_SANTOS_VANILLA_UNICORN_03_BACK_ROOM", false);
---- This turns off surrounding sounds not connected directly to peds.
---- ```
+--- Needs to be called every frame.
+--- Audio mode to apply this frame: https://alloc8or.re/gta5/doc/enums/audSpecialEffectMode.txt
 ---
---- @hash [0x399D2D3B33F1B8EB](https://docs.fivem.net/natives/?_0x399D2D3B33F1B8EB)
---- @param emitterName string (char*)
---- @param toggle boolean
+--- @hash [0x12561FCBB62D5B9C](https://docs.fivem.net/natives/?_0x12561FCBB62D5B9C)
+--- @param mode number (int)
 --- @return void
---- @overload fun(emitterName: string, toggle: boolean): void
-function SetStaticEmitterEnabled(emitterName, toggle) end
+--- @overload fun(mode: number): void
+function SetAudioSpecialEffectMode(mode) end
 
     
---- SetVariableOnSound
+--- # New Name: SetAudioSpecialEffectMode
+--- Needs to be called every frame.
+--- Audio mode to apply this frame: https://alloc8or.re/gta5/doc/enums/audSpecialEffectMode.txt
 ---
---- @hash [0xAD6B3148A78AE9B6](https://docs.fivem.net/natives/?_0xAD6B3148A78AE9B6)
---- @param soundId number (int)
---- @param variableName string (char*)
---- @param value number (float)
+--- @hash [0x12561FCBB62D5B9C](https://docs.fivem.net/natives/?_0x12561FCBB62D5B9C)
+--- @param mode number (int)
 --- @return void
---- @overload fun(soundId: number, variableName: string, value: number): void
-function SetVariableOnSound(soundId, variableName, value) end
-
-    
---- SetUserRadioControlEnabled
----
---- @hash [0x19F21E63AE6EAE4E](https://docs.fivem.net/natives/?_0x19F21E63AE6EAE4E)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function SetUserRadioControlEnabled(toggle) end
-
-    
---- ```
---- From the scripts, p0:  
---- "ArmWrestlingIntensity",  
---- "INOUT",  
---- "Monkey_Stream",  
---- "ZoomLevel"  
---- ```
----
---- @hash [0x2F9D3834AEB9EF79](https://docs.fivem.net/natives/?_0x2F9D3834AEB9EF79)
---- @param p0 string (char*)
---- @param p1 number (float)
---- @return void
---- @overload fun(p0: string, p1: number): void
-function SetVariableOnStream(p0, p1) end
-
-    
---- ```
---- NativeDB Introduced: v2372
---- ```
----
---- @hash [0x3E45765F3FBB582F](https://docs.fivem.net/natives/?_0x3E45765F3FBB582F)
---- @param vehicle Vehicle
---- @return void
---- @overload fun(vehicle: Vehicle): void
-function SetVehHasRadioOverride(vehicle) end
-
-    
---- # New Name: SetVehHasRadioOverride
---- ```
---- NativeDB Introduced: v2372
---- ```
----
---- @hash [0x3E45765F3FBB582F](https://docs.fivem.net/natives/?_0x3E45765F3FBB582F)
---- @param vehicle Vehicle
---- @return void
---- @overload fun(vehicle: Vehicle): void
+--- @overload fun(mode: number): void
 --- @deprecated
-function N_0x3e45765f3fbb582f(vehicle) end
+function N_0x12561fcbb62d5b9c(mode) end
 
     
 --- ```
@@ -4019,54 +3706,57 @@ function SetVariableOnCutsceneAudio(variableName, value) end
 function GetPlayerHeadsetSoundAlternate(variableName, value) end
 
     
---- Vehicle will make a 'rattling' noise when decelerating
+--- SetUserRadioControlEnabled
 ---
---- @hash [0x01BB4D577D38BD9E](https://docs.fivem.net/natives/?_0x01BB4D577D38BD9E)
---- @param vehicle Vehicle
---- @param intensity number (float)
+--- @hash [0x19F21E63AE6EAE4E](https://docs.fivem.net/natives/?_0x19F21E63AE6EAE4E)
+--- @param toggle boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, intensity: number): void
-function SetVehicleAudioBodyDamageFactor(vehicle, intensity) end
+--- @overload fun(toggle: boolean): void
+function SetUserRadioControlEnabled(toggle) end
 
     
---- # New Name: SetVehicleAudioBodyDamageFactor
---- Vehicle will make a 'rattling' noise when decelerating
+--- SetAmbientZoneState
 ---
---- @hash [0x01BB4D577D38BD9E](https://docs.fivem.net/natives/?_0x01BB4D577D38BD9E)
---- @param vehicle Vehicle
---- @param intensity number (float)
+--- @hash [0xBDA07E5950085E46](https://docs.fivem.net/natives/?_0xBDA07E5950085E46)
+--- @param zoneName string (char*)
+--- @param p1 boolean
+--- @param p2 boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, intensity: number): void
---- @deprecated
-function N_0x01bb4d577d38bd9e(vehicle, intensity) end
+--- @overload fun(zoneName: string, p1: boolean, p2: boolean): void
+function SetAmbientZoneState(zoneName, p1, p2) end
 
     
---- ```
---- AUDIO::SET_VARIABLE_ON_UNDER_WATER_STREAM("inTunnel", 1.0);
---- AUDIO::SET_VARIABLE_ON_UNDER_WATER_STREAM("inTunnel", 0.0);
---- ```
+--- SetVariableOnSound
 ---
---- @hash [0x733ADF241531E5C2](https://docs.fivem.net/natives/?_0x733ADF241531E5C2)
+--- @hash [0xAD6B3148A78AE9B6](https://docs.fivem.net/natives/?_0xAD6B3148A78AE9B6)
+--- @param soundId number (int)
 --- @param variableName string (char*)
 --- @param value number (float)
 --- @return void
---- @overload fun(variableName: string, value: number): void
-function SetVariableOnUnderWaterStream(variableName, value) end
+--- @overload fun(soundId: number, variableName: string, value: number): void
+function SetVariableOnSound(soundId, variableName, value) end
 
     
---- # New Name: SetVariableOnUnderWaterStream
 --- ```
---- AUDIO::SET_VARIABLE_ON_UNDER_WATER_STREAM("inTunnel", 1.0);
---- AUDIO::SET_VARIABLE_ON_UNDER_WATER_STREAM("inTunnel", 0.0);
+--- For a full list, see here: pastebin.com/Kj9t38KF  
 --- ```
 ---
---- @hash [0x733ADF241531E5C2](https://docs.fivem.net/natives/?_0x733ADF241531E5C2)
---- @param variableName string (char*)
---- @param value number (float)
+--- @hash [0x1B9C0099CB942AC6](https://docs.fivem.net/natives/?_0x1B9C0099CB942AC6)
+--- @param vehicle Vehicle
+--- @param radioStation string (char*)
 --- @return void
---- @overload fun(variableName: string, value: number): void
---- @deprecated
-function N_0x733adf241531e5c2(variableName, value) end
+--- @overload fun(vehicle: Vehicle, radioStation: string): void
+function SetVehRadioStation(vehicle, radioStation) end
+
+    
+--- SetHornEnabled
+---
+--- @hash [0x76D683C108594D0E](https://docs.fivem.net/natives/?_0x76D683C108594D0E)
+--- @param vehicle Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+function SetHornEnabled(vehicle, toggle) end
 
     
 --- SetVehicleAudioEngineDamageFactor
@@ -4089,6 +3779,81 @@ function SetVehicleAudioEngineDamageFactor(vehicle, damageFactor) end
 --- @overload fun(vehicle: Vehicle, damageFactor: number): void
 --- @deprecated
 function N_0x59e7b488451f4d3a(vehicle, damageFactor) end
+
+    
+--- SetGpsActive
+---
+--- @hash [0x3BD3F52BA9B1E4E8](https://docs.fivem.net/natives/?_0x3BD3F52BA9B1E4E8)
+--- @param active boolean
+--- @return void
+--- @overload fun(active: boolean): void
+function SetGpsActive(active) end
+
+    
+--- SetVehicleRadioLoud
+---
+--- @hash [0xBB6F1CAEC68B0BCE](https://docs.fivem.net/natives/?_0xBB6F1CAEC68B0BCE)
+--- @param vehicle Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+function SetVehicleRadioLoud(vehicle, toggle) end
+
+    
+--- SetEmitterRadioStation
+---
+--- @hash [0xACF57305B12AF907](https://docs.fivem.net/natives/?_0xACF57305B12AF907)
+--- @param emitterName string (char*)
+--- @param radioStation string (char*)
+--- @return void
+--- @overload fun(emitterName: string, radioStation: string): void
+function SetEmitterRadioStation(emitterName, radioStation) end
+
+    
+--- ```
+--- Enables/disables ped's "quiet" footstep sound.
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0x29DA3CA8D8B2692D](https://docs.fivem.net/natives/?_0x29DA3CA8D8B2692D)
+--- @param ped Ped
+--- @param toggle boolean
+--- @return void
+--- @overload fun(ped: Ped, toggle: boolean): void
+function SetPedAudioFootstepQuiet(ped, toggle) end
+
+    
+--- # New Name: SetPedAudioFootstepQuiet
+--- ```
+--- Enables/disables ped's "quiet" footstep sound.
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0x29DA3CA8D8B2692D](https://docs.fivem.net/natives/?_0x29DA3CA8D8B2692D)
+--- @param ped Ped
+--- @param toggle boolean
+--- @return void
+--- @overload fun(ped: Ped, toggle: boolean): void
+--- @deprecated
+function N_0x29da3ca8d8b2692d(ped, toggle) end
+
+    
+--- ```
+--- can't seem to enable radio on cop cars etc  
+--- ```
+---
+--- @hash [0x3B988190C0AA6C0B](https://docs.fivem.net/natives/?_0x3B988190C0AA6C0B)
+--- @param vehicle Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+function SetVehicleRadioEnabled(vehicle, toggle) end
 
     
 --- ```
@@ -4131,85 +3896,16 @@ function N_0x0350e7e17ba767d0(vehicle, value) end
 function N_0xcda42c4bb9bde779(vehicle, value) end
 
     
---- ```
---- For a full list, see here: pastebin.com/Kj9t38KF  
---- ```
+--- StartScriptConversation
 ---
---- @hash [0x1B9C0099CB942AC6](https://docs.fivem.net/natives/?_0x1B9C0099CB942AC6)
---- @param vehicle Vehicle
---- @param radioStation string (char*)
+--- @hash [0x6B17C62C9635D2DC](https://docs.fivem.net/natives/?_0x6B17C62C9635D2DC)
+--- @param p0 boolean
+--- @param p1 boolean
+--- @param p2 boolean
+--- @param p3 boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, radioStation: string): void
-function SetVehRadioStation(vehicle, radioStation) end
-
-    
---- ```
---- SET_VEHICLE_BOOST_ACTIVE(vehicle, 1, 0);  
---- SET_VEHICLE_BOOST_ACTIVE(vehicle, 0, 0);   
---- Will give a boost-soundeffect.  
---- ```
----
---- @hash [0x4A04DE7CAB2739A1](https://docs.fivem.net/natives/?_0x4A04DE7CAB2739A1)
---- @param vehicle Vehicle
---- @param toggle boolean
---- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function SetVehicleBoostActive(vehicle, toggle) end
-
-    
---- SetVehicleRadioLoud
----
---- @hash [0xBB6F1CAEC68B0BCE](https://docs.fivem.net/natives/?_0xBB6F1CAEC68B0BCE)
---- @param vehicle Vehicle
---- @param toggle boolean
---- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function SetVehicleRadioLoud(vehicle, toggle) end
-
-    
---- ```
---- can't seem to enable radio on cop cars etc  
---- ```
----
---- @hash [0x3B988190C0AA6C0B](https://docs.fivem.net/natives/?_0x3B988190C0AA6C0B)
---- @param vehicle Vehicle
---- @param toggle boolean
---- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function SetVehicleRadioEnabled(vehicle, toggle) end
-
-    
---- SkipRadioForward
----
---- @hash [0x6DDBBDD98E2E9C25](https://docs.fivem.net/natives/?_0x6DDBBDD98E2E9C25)
----
---- @return void
---- @overload fun(): void
-function SkipRadioForward() end
-
-    
---- ```
---- SET_*
---- ```
----
---- @hash [0x9C11908013EA4715](https://docs.fivem.net/natives/?_0x9C11908013EA4715)
---- @param vehicle Vehicle
---- @return void
---- @overload fun(vehicle: Vehicle): void
-function SoundVehicleHornThisFrame(vehicle) end
-
-    
---- # New Name: SoundVehicleHornThisFrame
---- ```
---- SET_*
---- ```
----
---- @hash [0x9C11908013EA4715](https://docs.fivem.net/natives/?_0x9C11908013EA4715)
---- @param vehicle Vehicle
---- @return void
---- @overload fun(vehicle: Vehicle): void
---- @deprecated
-function N_0x9c11908013ea4715(vehicle) end
+--- @overload fun(p0: boolean, p1: boolean, p2: boolean, p3: boolean): void
+function StartScriptConversation(p0, p1, p2, p3) end
 
     
 --- SkipToNextScriptedConversationLine
@@ -4219,6 +3915,487 @@ function N_0x9c11908013ea4715(vehicle) end
 --- @return void
 --- @overload fun(): void
 function SkipToNextScriptedConversationLine() end
+
+    
+--- SetPlayerAngry
+---
+--- @hash [0xEA241BB04110F091](https://docs.fivem.net/natives/?_0xEA241BB04110F091)
+--- @param ped Ped
+--- @param toggle boolean
+--- @return void
+--- @overload fun(ped: Ped, toggle: boolean): void
+function SetPlayerAngry(ped, toggle) end
+
+    
+--- SetInitialPlayerStation
+---
+--- @hash [0x88795F13FACDA88D](https://docs.fivem.net/natives/?_0x88795F13FACDA88D)
+--- @param radioStation string (char*)
+--- @return void
+--- @overload fun(radioStation: string): void
+function SetInitialPlayerStation(radioStation) end
+
+    
+--- ```
+--- From the scripts:
+--- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("PAIGE_PVG"));
+--- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("TALINA_PVG"));
+--- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("FEMALE_LOST_BLACK_PVG"));
+--- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("FEMALE_LOST_WHITE_PVG"));
+--- ```
+---
+--- @hash [0x7CDC8C3B89F661B3](https://docs.fivem.net/natives/?_0x7CDC8C3B89F661B3)
+--- @param ped Ped
+--- @param voiceGroupHash Hash
+--- @return void
+--- @overload fun(ped: Ped, voiceGroupHash: Hash): void
+function SetPedVoiceGroup(ped, voiceGroupHash) end
+
+    
+--- # New Name: SetPedVoiceGroup
+--- ```
+--- From the scripts:
+--- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("PAIGE_PVG"));
+--- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("TALINA_PVG"));
+--- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("FEMALE_LOST_BLACK_PVG"));
+--- AUDIO::_SET_PED_VOICE_GROUP(PLAYER::PLAYER_PED_ID(), MISC::GET_HASH_KEY("FEMALE_LOST_WHITE_PVG"));
+--- ```
+---
+--- @hash [0x7CDC8C3B89F661B3](https://docs.fivem.net/natives/?_0x7CDC8C3B89F661B3)
+--- @param ped Ped
+--- @param voiceGroupHash Hash
+--- @return void
+--- @overload fun(ped: Ped, voiceGroupHash: Hash): void
+--- @deprecated
+function N_0x7cdc8c3b89f661b3(ped, voiceGroupHash) end
+
+    
+--- StartPreloadedConversation
+---
+--- @hash [0x23641AFE870AF385](https://docs.fivem.net/natives/?_0x23641AFE870AF385)
+---
+--- @return void
+--- @overload fun(): void
+function StartPreloadedConversation() end
+
+    
+--- StartScriptPhoneConversation
+---
+--- @hash [0x252E5F915EABB675](https://docs.fivem.net/natives/?_0x252E5F915EABB675)
+--- @param p0 boolean
+--- @param p1 boolean
+--- @return void
+--- @overload fun(p0: boolean, p1: boolean): void
+function StartScriptPhoneConversation(p0, p1) end
+
+    
+--- ```
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0x2CB0075110BE1E56](https://docs.fivem.net/natives/?_0x2CB0075110BE1E56)
+--- @param radioStationName string (char*)
+--- @param mixName string (char*)
+--- @param p2 number (int)
+--- @return void
+--- @overload fun(radioStationName: string, mixName: string, p2: number): void
+function SetRadioTrackMix(radioStationName, mixName, p2) end
+
+    
+--- ```
+--- Assigns some ambient voice to the ped.  
+--- ```
+---
+--- @hash [0x40CF0D12D142A9E8](https://docs.fivem.net/natives/?_0x40CF0D12D142A9E8)
+--- @param ped Ped
+--- @return void
+--- @overload fun(ped: Ped): void
+function SetPedScream(ped) end
+
+    
+--- # New Name: SetPedScream
+--- ```
+--- Assigns some ambient voice to the ped.  
+--- ```
+---
+--- @hash [0x40CF0D12D142A9E8](https://docs.fivem.net/natives/?_0x40CF0D12D142A9E8)
+--- @param ped Ped
+--- @return void
+--- @overload fun(ped: Ped): void
+--- @deprecated
+function N_0x40cf0d12d142a9e8(ped) end
+
+    
+--- StopCurrentPlayingAmbientSpeech
+---
+--- @hash [0xB8BEC0CA6F0EDB0F](https://docs.fivem.net/natives/?_0xB8BEC0CA6F0EDB0F)
+--- @param ped Ped
+--- @return void
+--- @overload fun(ped: Ped): void
+function StopCurrentPlayingAmbientSpeech(ped) end
+
+    
+--- StopAudioScene
+---
+--- @hash [0xDFE8422B3B94E688](https://docs.fivem.net/natives/?_0xDFE8422B3B94E688)
+--- @param scene string (char*)
+--- @return void
+--- @overload fun(scene: string): void
+function StopAudioScene(scene) end
+
+    
+--- ```
+--- Example:  
+--- This will stop the alarm at Fort Zancudo.  
+--- AUDIO::STOP_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 1);  
+--- First parameter (char) is the name of the alarm.  
+--- Second parameter (bool) has to be true (1) to have any effect.  
+--- ```
+---
+--- @hash [0xA1CADDCD98415A41](https://docs.fivem.net/natives/?_0xA1CADDCD98415A41)
+--- @param alarmName string (char*)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(alarmName: string, toggle: boolean): void
+function StopAlarm(alarmName, toggle) end
+
+    
+--- ```
+--- ??  
+--- ```
+---
+--- @hash [0xBAC7FC81A75EC1A1](https://docs.fivem.net/natives/?_0xBAC7FC81A75EC1A1)
+---
+--- @return void
+--- @overload fun(): void
+function StopAudioScenes() end
+
+    
+--- StopCutsceneAudio
+---
+--- @hash [0x806058BBDC136E06](https://docs.fivem.net/natives/?_0x806058BBDC136E06)
+---
+--- @return void
+--- @overload fun(): void
+function StopCutsceneAudio() end
+
+    
+--- # New Name: StopCutsceneAudio
+--- StopCutsceneAudio
+---
+--- @hash [0x806058BBDC136E06](https://docs.fivem.net/natives/?_0x806058BBDC136E06)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function N_0x806058bbdc136e06() end
+
+    
+--- SetScriptUpdateDoorAudio
+---
+--- @hash [0x06C0023BED16DD6B](https://docs.fivem.net/natives/?_0x06C0023BED16DD6B)
+--- @param doorHash Hash
+--- @param toggle boolean
+--- @return void
+--- @overload fun(doorHash: Hash, toggle: boolean): void
+function SetScriptUpdateDoorAudio(doorHash, toggle) end
+
+    
+--- # New Name: SetScriptUpdateDoorAudio
+--- SetScriptUpdateDoorAudio
+---
+--- @hash [0x06C0023BED16DD6B](https://docs.fivem.net/natives/?_0x06C0023BED16DD6B)
+--- @param doorHash Hash
+--- @param toggle boolean
+--- @return void
+--- @overload fun(doorHash: Hash, toggle: boolean): void
+--- @deprecated
+function N_0x06c0023bed16dd6b(doorHash, toggle) end
+
+    
+--- Doesn't have an effect in Story Mode.
+--- 
+--- ```
+--- NativeDB Introduced: v2372
+--- ```
+---
+--- @hash [0x4CAFEBFA21EC188D](https://docs.fivem.net/natives/?_0x4CAFEBFA21EC188D)
+--- @param radioStation string (char*)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(radioStation: string, toggle: boolean): void
+function SetRadioStationIsVisible(radioStation, toggle) end
+
+    
+--- ```
+--- NativeDB Introduced: v2372
+--- ```
+---
+--- @hash [0xF584CF8529B51434](https://docs.fivem.net/natives/?_0xF584CF8529B51434)
+--- @param vehicle Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+function SetSirenKeepOn(vehicle, toggle) end
+
+    
+--- # New Name: SetSirenKeepOn
+--- ```
+--- NativeDB Introduced: v2372
+--- ```
+---
+--- @hash [0xF584CF8529B51434](https://docs.fivem.net/natives/?_0xF584CF8529B51434)
+--- @param vehicle Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+--- @deprecated
+function N_0xf584cf8529b51434(vehicle, toggle) end
+
+    
+--- StopSound
+---
+--- @hash [0xA3B0C41BA5CC0BB5](https://docs.fivem.net/natives/?_0xA3B0C41BA5CC0BB5)
+--- @param soundId number (int)
+--- @return void
+--- @overload fun(soundId: number): void
+function StopSound(soundId) end
+
+    
+--- StopSynchronizedAudioEvent
+---
+--- @hash [0x92D6A88E64A94430](https://docs.fivem.net/natives/?_0x92D6A88E64A94430)
+--- @param p0 any
+--- @return boolean
+--- @overload fun(p0: any): boolean
+function StopSynchronizedAudioEvent(p0) end
+
+    
+--- StopPedSpeaking
+---
+--- @hash [0x9D64D7405520E3D3](https://docs.fivem.net/natives/?_0x9D64D7405520E3D3)
+--- @param ped Ped
+--- @param shaking boolean
+--- @return void
+--- @overload fun(ped: Ped, shaking: boolean): void
+function StopPedSpeaking(ped, shaking) end
+
+    
+--- ```
+--- Only found this one in the decompiled scripts:  
+--- AUDIO::SET_RADIO_TRACK("RADIO_03_HIPHOP_NEW", "ARM1_RADIO_STARTS");  
+--- ```
+---
+--- @hash [0xB39786F201FEE30B](https://docs.fivem.net/natives/?_0xB39786F201FEE30B)
+--- @param radioStation string (char*)
+--- @param radioTrack string (char*)
+--- @return void
+--- @overload fun(radioStation: string, radioTrack: string): void
+function SetRadioTrack(radioStation, radioTrack) end
+
+    
+--- ```
+--- AUDIO::SET_VARIABLE_ON_UNDER_WATER_STREAM("inTunnel", 1.0);
+--- AUDIO::SET_VARIABLE_ON_UNDER_WATER_STREAM("inTunnel", 0.0);
+--- ```
+---
+--- @hash [0x733ADF241531E5C2](https://docs.fivem.net/natives/?_0x733ADF241531E5C2)
+--- @param variableName string (char*)
+--- @param value number (float)
+--- @return void
+--- @overload fun(variableName: string, value: number): void
+function SetVariableOnUnderWaterStream(variableName, value) end
+
+    
+--- # New Name: SetVariableOnUnderWaterStream
+--- ```
+--- AUDIO::SET_VARIABLE_ON_UNDER_WATER_STREAM("inTunnel", 1.0);
+--- AUDIO::SET_VARIABLE_ON_UNDER_WATER_STREAM("inTunnel", 0.0);
+--- ```
+---
+--- @hash [0x733ADF241531E5C2](https://docs.fivem.net/natives/?_0x733ADF241531E5C2)
+--- @param variableName string (char*)
+--- @param value number (float)
+--- @return void
+--- @overload fun(variableName: string, value: number): void
+--- @deprecated
+function N_0x733adf241531e5c2(variableName, value) end
+
+    
+--- ```
+--- List of all usable event names found in b617d used with this native. Sorted alphabetically and identical names removed: pastebin.com/RzDFmB1W  
+--- All music event names found in the b617d scripts: pastebin.com/GnYt0R3P  
+--- ```
+---
+--- @hash [0x706D57B0F50DA710](https://docs.fivem.net/natives/?_0x706D57B0F50DA710)
+--- @param eventName string (char*)
+--- @return boolean
+--- @overload fun(eventName: string): boolean
+function TriggerMusicEvent(eventName) end
+
+    
+--- UnfreezeRadioStation
+---
+--- @hash [0xFC00454CF60B91DD](https://docs.fivem.net/natives/?_0xFC00454CF60B91DD)
+--- @param radioStation string (char*)
+--- @return void
+--- @overload fun(radioStation: string): void
+function UnfreezeRadioStation(radioStation) end
+
+    
+--- **This native does absolutely nothing, just a nullsub**
+--- 
+--- ```
+--- On last-gen this just runs blr and this func is called by several other functions other then the native's table.  
+--- ```
+---
+--- @hash [0xA8638BE228D4751A](https://docs.fivem.net/natives/?_0xA8638BE228D4751A)
+---
+--- @return void
+--- @overload fun(): void
+function UnregisterScriptWithAudio() end
+
+    
+--- ```
+--- AUDIO::UNLOCK_RADIO_STATION_TRACK_LIST("RADIO_16_SILVERLAKE", "MIRRORPARK_LOCKED");
+--- ```
+---
+--- @hash [0x031ACB6ABA18C729](https://docs.fivem.net/natives/?_0x031ACB6ABA18C729)
+--- @param radioStation string (char*)
+--- @param trackListName string (char*)
+--- @return void
+--- @overload fun(radioStation: string, trackListName: string): void
+function UnlockRadioStationTrackList(radioStation, trackListName) end
+
+    
+--- # New Name: UnlockRadioStationTrackList
+--- ```
+--- AUDIO::UNLOCK_RADIO_STATION_TRACK_LIST("RADIO_16_SILVERLAKE", "MIRRORPARK_LOCKED");
+--- ```
+---
+--- @hash [0x031ACB6ABA18C729](https://docs.fivem.net/natives/?_0x031ACB6ABA18C729)
+--- @param radioStation string (char*)
+--- @param trackListName string (char*)
+--- @return void
+--- @overload fun(radioStation: string, trackListName: string): void
+--- @deprecated
+function N_0x031acb6aba18c729(radioStation, trackListName) end
+
+    
+--- ```
+--- From the scripts, p0:  
+--- "ArmWrestlingIntensity",  
+--- "INOUT",  
+--- "Monkey_Stream",  
+--- "ZoomLevel"  
+--- ```
+---
+--- @hash [0x2F9D3834AEB9EF79](https://docs.fivem.net/natives/?_0x2F9D3834AEB9EF79)
+--- @param p0 string (char*)
+--- @param p1 number (float)
+--- @return void
+--- @overload fun(p0: string, p1: number): void
+function SetVariableOnStream(p0, p1) end
+
+    
+--- UnlockMissionNewsStory
+---
+--- @hash [0xB165AB7C248B2DC1](https://docs.fivem.net/natives/?_0xB165AB7C248B2DC1)
+--- @param newsStory number (int)
+--- @return void
+--- @overload fun(newsStory: number): void
+function UnlockMissionNewsStory(newsStory) end
+
+    
+--- ```
+--- NativeDB Introduced: v2372
+--- ```
+---
+--- @hash [0x3E45765F3FBB582F](https://docs.fivem.net/natives/?_0x3E45765F3FBB582F)
+--- @param vehicle Vehicle
+--- @return void
+--- @overload fun(vehicle: Vehicle): void
+function SetVehHasRadioOverride(vehicle) end
+
+    
+--- # New Name: SetVehHasRadioOverride
+--- ```
+--- NativeDB Introduced: v2372
+--- ```
+---
+--- @hash [0x3E45765F3FBB582F](https://docs.fivem.net/natives/?_0x3E45765F3FBB582F)
+--- @param vehicle Vehicle
+--- @return void
+--- @overload fun(vehicle: Vehicle): void
+--- @deprecated
+function N_0x3e45765f3fbb582f(vehicle) end
+
+    
+--- ```
+--- Example:
+--- AUDIO::SET_STATIC_EMITTER_ENABLED((Any*)"LOS_SANTOS_VANILLA_UNICORN_01_STAGE", false);    AUDIO::SET_STATIC_EMITTER_ENABLED((Any*)"LOS_SANTOS_VANILLA_UNICORN_02_MAIN_ROOM", false);    AUDIO::SET_STATIC_EMITTER_ENABLED((Any*)"LOS_SANTOS_VANILLA_UNICORN_03_BACK_ROOM", false);
+--- This turns off surrounding sounds not connected directly to peds.
+--- ```
+---
+--- @hash [0x399D2D3B33F1B8EB](https://docs.fivem.net/natives/?_0x399D2D3B33F1B8EB)
+--- @param emitterName string (char*)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(emitterName: string, toggle: boolean): void
+function SetStaticEmitterEnabled(emitterName, toggle) end
+
+    
+--- UseSirenAsHorn
+---
+--- @hash [0xFA932DE350266EF8](https://docs.fivem.net/natives/?_0xFA932DE350266EF8)
+--- @param vehicle Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+function UseSirenAsHorn(vehicle, toggle) end
+
+    
+--- Vehicle will make a 'rattling' noise when decelerating
+---
+--- @hash [0x01BB4D577D38BD9E](https://docs.fivem.net/natives/?_0x01BB4D577D38BD9E)
+--- @param vehicle Vehicle
+--- @param intensity number (float)
+--- @return void
+--- @overload fun(vehicle: Vehicle, intensity: number): void
+function SetVehicleAudioBodyDamageFactor(vehicle, intensity) end
+
+    
+--- # New Name: SetVehicleAudioBodyDamageFactor
+--- Vehicle will make a 'rattling' noise when decelerating
+---
+--- @hash [0x01BB4D577D38BD9E](https://docs.fivem.net/natives/?_0x01BB4D577D38BD9E)
+--- @param vehicle Vehicle
+--- @param intensity number (float)
+--- @return void
+--- @overload fun(vehicle: Vehicle, intensity: number): void
+--- @deprecated
+function N_0x01bb4d577d38bd9e(vehicle, intensity) end
+
+    
+--- ```
+--- Used to prepare a scene where the surrounding sound is muted or a bit changed. This does not play any sound.  
+--- List of all usable scene names found in b617d. Sorted alphabetically and identical names removed: pastebin.com/MtM9N9CC  
+--- ```
+---
+--- @hash [0x013A80FC08F6E4F2](https://docs.fivem.net/natives/?_0x013A80FC08F6E4F2)
+--- @param scene string (char*)
+--- @return boolean
+--- @overload fun(scene: string): boolean
+function StartAudioScene(scene) end
+
+    
+--- SkipRadioForward
+---
+--- @hash [0x6DDBBDD98E2E9C25](https://docs.fivem.net/natives/?_0x6DDBBDD98E2E9C25)
+---
+--- @return void
+--- @overload fun(): void
+function SkipRadioForward() end
 
     
 --- ```
@@ -4255,120 +4432,50 @@ function StartAlarm(alarmName, p2) end
 
     
 --- ```
---- Used to prepare a scene where the surrounding sound is muted or a bit changed. This does not play any sound.  
---- List of all usable scene names found in b617d. Sorted alphabetically and identical names removed: pastebin.com/MtM9N9CC  
+--- SET_VEHICLE_BOOST_ACTIVE(vehicle, 1, 0);  
+--- SET_VEHICLE_BOOST_ACTIVE(vehicle, 0, 0);   
+--- Will give a boost-soundeffect.  
 --- ```
 ---
---- @hash [0x013A80FC08F6E4F2](https://docs.fivem.net/natives/?_0x013A80FC08F6E4F2)
---- @param scene string (char*)
---- @return boolean
---- @overload fun(scene: string): boolean
-function StartAudioScene(scene) end
-
-    
---- StartPreloadedConversation
----
---- @hash [0x23641AFE870AF385](https://docs.fivem.net/natives/?_0x23641AFE870AF385)
----
---- @return void
---- @overload fun(): void
-function StartPreloadedConversation() end
-
-    
---- StartScriptConversation
----
---- @hash [0x6B17C62C9635D2DC](https://docs.fivem.net/natives/?_0x6B17C62C9635D2DC)
---- @param p0 boolean
---- @param p1 boolean
---- @param p2 boolean
---- @param p3 boolean
---- @return void
---- @overload fun(p0: boolean, p1: boolean, p2: boolean, p3: boolean): void
-function StartScriptConversation(p0, p1, p2, p3) end
-
-    
---- StartScriptPhoneConversation
----
---- @hash [0x252E5F915EABB675](https://docs.fivem.net/natives/?_0x252E5F915EABB675)
---- @param p0 boolean
---- @param p1 boolean
---- @return void
---- @overload fun(p0: boolean, p1: boolean): void
-function StartScriptPhoneConversation(p0, p1) end
-
-    
---- ```
---- Example:  
---- This will stop the alarm at Fort Zancudo.  
---- AUDIO::STOP_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 1);  
---- First parameter (char) is the name of the alarm.  
---- Second parameter (bool) has to be true (1) to have any effect.  
---- ```
----
---- @hash [0xA1CADDCD98415A41](https://docs.fivem.net/natives/?_0xA1CADDCD98415A41)
---- @param alarmName string (char*)
+--- @hash [0x4A04DE7CAB2739A1](https://docs.fivem.net/natives/?_0x4A04DE7CAB2739A1)
+--- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
---- @overload fun(alarmName: string, toggle: boolean): void
-function StopAlarm(alarmName, toggle) end
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+function SetVehicleBoostActive(vehicle, toggle) end
 
     
---- StopAllAlarms
+--- StopScriptedConversation
 ---
---- @hash [0x2F794A877ADD4C92](https://docs.fivem.net/natives/?_0x2F794A877ADD4C92)
---- @param stop boolean
---- @return void
---- @overload fun(stop: boolean): void
-function StopAllAlarms(stop) end
-
-    
---- StopAudioScene
----
---- @hash [0xDFE8422B3B94E688](https://docs.fivem.net/natives/?_0xDFE8422B3B94E688)
---- @param scene string (char*)
---- @return void
---- @overload fun(scene: string): void
-function StopAudioScene(scene) end
+--- @hash [0xD79DEEFB53455EBA](https://docs.fivem.net/natives/?_0xD79DEEFB53455EBA)
+--- @param p0 boolean
+--- @return number
+--- @overload fun(p0: boolean): number
+function StopScriptedConversation(p0) end
 
     
 --- ```
---- ??  
+--- SET_*
 --- ```
 ---
---- @hash [0xBAC7FC81A75EC1A1](https://docs.fivem.net/natives/?_0xBAC7FC81A75EC1A1)
----
+--- @hash [0x9C11908013EA4715](https://docs.fivem.net/natives/?_0x9C11908013EA4715)
+--- @param vehicle Vehicle
 --- @return void
---- @overload fun(): void
-function StopAudioScenes() end
+--- @overload fun(vehicle: Vehicle): void
+function SoundVehicleHornThisFrame(vehicle) end
 
     
---- StopCurrentPlayingAmbientSpeech
+--- # New Name: SoundVehicleHornThisFrame
+--- ```
+--- SET_*
+--- ```
 ---
---- @hash [0xB8BEC0CA6F0EDB0F](https://docs.fivem.net/natives/?_0xB8BEC0CA6F0EDB0F)
---- @param ped Ped
+--- @hash [0x9C11908013EA4715](https://docs.fivem.net/natives/?_0x9C11908013EA4715)
+--- @param vehicle Vehicle
 --- @return void
---- @overload fun(ped: Ped): void
-function StopCurrentPlayingAmbientSpeech(ped) end
-
-    
---- StopCutsceneAudio
----
---- @hash [0x806058BBDC136E06](https://docs.fivem.net/natives/?_0x806058BBDC136E06)
----
---- @return void
---- @overload fun(): void
-function StopCutsceneAudio() end
-
-    
---- # New Name: StopCutsceneAudio
---- StopCutsceneAudio
----
---- @hash [0x806058BBDC136E06](https://docs.fivem.net/natives/?_0x806058BBDC136E06)
----
---- @return void
---- @overload fun(): void
+--- @overload fun(vehicle: Vehicle): void
 --- @deprecated
-function N_0x806058bbdc136e06() end
+function N_0x9c11908013ea4715(vehicle) end
 
     
 --- StopCurrentPlayingSpeech
@@ -4402,43 +4509,6 @@ function N_0x7a73d05a607734c7(ped) end
 function SetPedMute(ped) end
 
     
---- StopPedRingtone
----
---- @hash [0x6C5AE23EFA885092](https://docs.fivem.net/natives/?_0x6C5AE23EFA885092)
---- @param ped Ped
---- @return void
---- @overload fun(ped: Ped): void
-function StopPedRingtone(ped) end
-
-    
---- StopPedSpeaking
----
---- @hash [0x9D64D7405520E3D3](https://docs.fivem.net/natives/?_0x9D64D7405520E3D3)
---- @param ped Ped
---- @param shaking boolean
---- @return void
---- @overload fun(ped: Ped, shaking: boolean): void
-function StopPedSpeaking(ped, shaking) end
-
-    
---- StopSound
----
---- @hash [0xA3B0C41BA5CC0BB5](https://docs.fivem.net/natives/?_0xA3B0C41BA5CC0BB5)
---- @param soundId number (int)
---- @return void
---- @overload fun(soundId: number): void
-function StopSound(soundId) end
-
-    
---- StopScriptedConversation
----
---- @hash [0xD79DEEFB53455EBA](https://docs.fivem.net/natives/?_0xD79DEEFB53455EBA)
---- @param p0 boolean
---- @return number
---- @overload fun(p0: boolean): number
-function StopScriptedConversation(p0) end
-
-    
 --- StopStream
 ---
 --- @hash [0xA4718A1419D18151](https://docs.fivem.net/natives/?_0xA4718A1419D18151)
@@ -4448,34 +4518,33 @@ function StopScriptedConversation(p0) end
 function StopStream() end
 
     
---- StopSynchronizedAudioEvent
+--- StopAllAlarms
 ---
---- @hash [0x92D6A88E64A94430](https://docs.fivem.net/natives/?_0x92D6A88E64A94430)
---- @param p0 any
---- @return boolean
---- @overload fun(p0: any): boolean
-function StopSynchronizedAudioEvent(p0) end
-
-    
---- ```
---- List of all usable event names found in b617d used with this native. Sorted alphabetically and identical names removed: pastebin.com/RzDFmB1W  
---- All music event names found in the b617d scripts: pastebin.com/GnYt0R3P  
---- ```
----
---- @hash [0x706D57B0F50DA710](https://docs.fivem.net/natives/?_0x706D57B0F50DA710)
---- @param eventName string (char*)
---- @return boolean
---- @overload fun(eventName: string): boolean
-function TriggerMusicEvent(eventName) end
-
-    
---- UnlockMissionNewsStory
----
---- @hash [0xB165AB7C248B2DC1](https://docs.fivem.net/natives/?_0xB165AB7C248B2DC1)
---- @param newsStory number (int)
+--- @hash [0x2F794A877ADD4C92](https://docs.fivem.net/natives/?_0x2F794A877ADD4C92)
+--- @param stop boolean
 --- @return void
---- @overload fun(newsStory: number): void
-function UnlockMissionNewsStory(newsStory) end
+--- @overload fun(stop: boolean): void
+function StopAllAlarms(stop) end
+
+    
+--- StopPedRingtone
+---
+--- @hash [0x6C5AE23EFA885092](https://docs.fivem.net/natives/?_0x6C5AE23EFA885092)
+--- @param ped Ped
+--- @return void
+--- @overload fun(ped: Ped): void
+function StopPedRingtone(ped) end
+
+    
+--- ```
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0x47AED84213A47510](https://docs.fivem.net/natives/?_0x47AED84213A47510)
+--- @param enableMixes boolean
+--- @return void
+--- @overload fun(enableMixes: boolean): void
+function UpdateLsur(enableMixes) end
 
     
 --- ... When not in a vehicle
@@ -4504,74 +4573,5 @@ function TriggerSiren(vehicle) end
 --- @overload fun(vehicle: Vehicle): void
 --- @deprecated
 function N_0x66c3fb05206041ba(vehicle) end
-
-    
---- UnfreezeRadioStation
----
---- @hash [0xFC00454CF60B91DD](https://docs.fivem.net/natives/?_0xFC00454CF60B91DD)
---- @param radioStation string (char*)
---- @return void
---- @overload fun(radioStation: string): void
-function UnfreezeRadioStation(radioStation) end
-
-    
---- ```
---- NativeDB Introduced: v1493
---- ```
----
---- @hash [0x47AED84213A47510](https://docs.fivem.net/natives/?_0x47AED84213A47510)
---- @param enableMixes boolean
---- @return void
---- @overload fun(enableMixes: boolean): void
-function UpdateLsur(enableMixes) end
-
-    
---- ```
---- AUDIO::UNLOCK_RADIO_STATION_TRACK_LIST("RADIO_16_SILVERLAKE", "MIRRORPARK_LOCKED");
---- ```
----
---- @hash [0x031ACB6ABA18C729](https://docs.fivem.net/natives/?_0x031ACB6ABA18C729)
---- @param radioStation string (char*)
---- @param trackListName string (char*)
---- @return void
---- @overload fun(radioStation: string, trackListName: string): void
-function UnlockRadioStationTrackList(radioStation, trackListName) end
-
-    
---- # New Name: UnlockRadioStationTrackList
---- ```
---- AUDIO::UNLOCK_RADIO_STATION_TRACK_LIST("RADIO_16_SILVERLAKE", "MIRRORPARK_LOCKED");
---- ```
----
---- @hash [0x031ACB6ABA18C729](https://docs.fivem.net/natives/?_0x031ACB6ABA18C729)
---- @param radioStation string (char*)
---- @param trackListName string (char*)
---- @return void
---- @overload fun(radioStation: string, trackListName: string): void
---- @deprecated
-function N_0x031acb6aba18c729(radioStation, trackListName) end
-
-    
---- **This native does absolutely nothing, just a nullsub**
---- 
---- ```
---- On last-gen this just runs blr and this func is called by several other functions other then the native's table.  
---- ```
----
---- @hash [0xA8638BE228D4751A](https://docs.fivem.net/natives/?_0xA8638BE228D4751A)
----
---- @return void
---- @overload fun(): void
-function UnregisterScriptWithAudio() end
-
-    
---- UseSirenAsHorn
----
---- @hash [0xFA932DE350266EF8](https://docs.fivem.net/natives/?_0xFA932DE350266EF8)
---- @param vehicle Vehicle
---- @param toggle boolean
---- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function UseSirenAsHorn(vehicle, toggle) end
 
     

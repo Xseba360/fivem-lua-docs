@@ -1,31 +1,67 @@
 
---- GetExtraContentPackHasBeenInstalled
+--- N_0xf2e07819ef1a5289
 ---
---- @hash [0x8D30F648014A92B5](https://docs.fivem.net/natives/?_0x8D30F648014A92B5)
+--- @hash [0xF2E07819EF1A5289](https://docs.fivem.net/natives/?_0xF2E07819EF1A5289)
 ---
 --- @return boolean
 --- @overload fun(): boolean
-function GetExtraContentPackHasBeenInstalled() end
+function N_0xf2e07819ef1a5289() end
 
     
---- # New Name: GetExtraContentPackHasBeenInstalled
---- GetExtraContentPackHasBeenInstalled
+--- ```
+--- This loads the GTA:O dlc map parts (high end garages, apartments).
+--- Works in singleplayer.
+--- In order to use GTA:O heist IPL's you have to call this native with the following params: SET_INSTANCE_PRIORITY_MODE(1);
+--- ```
 ---
---- @hash [0x8D30F648014A92B5](https://docs.fivem.net/natives/?_0x8D30F648014A92B5)
+--- @hash [0x0888C3502DBBEEF5](https://docs.fivem.net/natives/?_0x0888C3502DBBEEF5)
 ---
---- @return boolean
---- @overload fun(): boolean
+--- @return void
+--- @overload fun(): void
+function OnEnterMp() end
+
+    
+--- # New Name: OnEnterMp
+--- ```
+--- This loads the GTA:O dlc map parts (high end garages, apartments).
+--- Works in singleplayer.
+--- In order to use GTA:O heist IPL's you have to call this native with the following params: SET_INSTANCE_PRIORITY_MODE(1);
+--- ```
+---
+--- @hash [0x0888C3502DBBEEF5](https://docs.fivem.net/natives/?_0x0888C3502DBBEEF5)
+---
+--- @return void
+--- @overload fun(): void
 --- @deprecated
-function N_0x8d30f648014a92b5() end
+function LoadMpDlcMaps() end
 
     
---- GetIsLoadingScreenActive
+--- ```
+--- Sets the value of the specified variable to 0.
+--- Always returns true.
+--- ```
 ---
---- @hash [0x10D0A8F259E93EC9](https://docs.fivem.net/natives/?_0x10D0A8F259E93EC9)
----
+--- @hash [0x46E2B844905BC5F0](https://docs.fivem.net/natives/?_0x46E2B844905BC5F0)
+--- @param variable boolean
+--- @param unused any
 --- @return boolean
---- @overload fun(): boolean
-function GetIsLoadingScreenActive() end
+--- @overload fun(unused: any): boolean, boolean
+function HasCloudRequestsFinished(variable, unused) end
+
+    
+--- # New Name: HasCloudRequestsFinished
+--- ```
+--- Sets the value of the specified variable to 0.
+--- Always returns true.
+--- ```
+---
+--- @hash [0x46E2B844905BC5F0](https://docs.fivem.net/natives/?_0x46E2B844905BC5F0)
+--- @param variable boolean
+--- @param unused any
+--- @return boolean
+--- @overload fun(unused: any): boolean, boolean
+--- @deprecated
+function Nullify(variable, unused) end
 
     
 --- ```
@@ -62,100 +98,33 @@ function IsDlcPresent(dlcHash) end
 function N_0x241fca5b1aa14f75() end
 
     
---- ```
---- Sets the value of the specified variable to 0.
---- Always returns true.
---- ```
+--- GetExtraContentPackHasBeenInstalled
 ---
---- @hash [0x46E2B844905BC5F0](https://docs.fivem.net/natives/?_0x46E2B844905BC5F0)
---- @param variable boolean
---- @param unused any
+--- @hash [0x8D30F648014A92B5](https://docs.fivem.net/natives/?_0x8D30F648014A92B5)
+---
 --- @return boolean
---- @overload fun(unused: any): boolean, boolean
-function HasCloudRequestsFinished(variable, unused) end
+--- @overload fun(): boolean
+function GetExtraContentPackHasBeenInstalled() end
 
     
---- # New Name: HasCloudRequestsFinished
---- ```
---- Sets the value of the specified variable to 0.
---- Always returns true.
---- ```
+--- # New Name: GetExtraContentPackHasBeenInstalled
+--- GetExtraContentPackHasBeenInstalled
 ---
---- @hash [0x46E2B844905BC5F0](https://docs.fivem.net/natives/?_0x46E2B844905BC5F0)
---- @param variable boolean
---- @param unused any
+--- @hash [0x8D30F648014A92B5](https://docs.fivem.net/natives/?_0x8D30F648014A92B5)
+---
 --- @return boolean
---- @overload fun(unused: any): boolean, boolean
+--- @overload fun(): boolean
 --- @deprecated
-function Nullify(variable, unused) end
+function N_0x8d30f648014a92b5() end
 
     
---- N_0xa213b11dff526300
+--- GetIsLoadingScreenActive
 ---
---- @hash [0xA213B11DFF526300](https://docs.fivem.net/natives/?_0xA213B11DFF526300)
+--- @hash [0x10D0A8F259E93EC9](https://docs.fivem.net/natives/?_0x10D0A8F259E93EC9)
 ---
 --- @return boolean
 --- @overload fun(): boolean
-function N_0xa213b11dff526300() end
-
-    
---- GET_IS_LOADING_\*
---- 
---- ```
---- NativeDB Introduced: v1734
---- ```
----
---- @hash [0xC4637A6D03C24CC3](https://docs.fivem.net/natives/?_0xC4637A6D03C24CC3)
----
---- @return boolean
---- @overload fun(): boolean
-function N_0xc4637a6d03c24cc3() end
-
-    
---- N_0x9489659372a81585
----
---- @hash [0x9489659372A81585](https://docs.fivem.net/natives/?_0x9489659372A81585)
----
---- @return boolean
---- @overload fun(): boolean
-function N_0x9489659372a81585() end
-
-    
---- ```
---- This loads the GTA:O dlc map parts (high end garages, apartments).
---- Works in singleplayer.
---- In order to use GTA:O heist IPL's you have to call this native with the following params: SET_INSTANCE_PRIORITY_MODE(1);
---- ```
----
---- @hash [0x0888C3502DBBEEF5](https://docs.fivem.net/natives/?_0x0888C3502DBBEEF5)
----
---- @return void
---- @overload fun(): void
-function OnEnterMp() end
-
-    
---- # New Name: OnEnterMp
---- ```
---- This loads the GTA:O dlc map parts (high end garages, apartments).
---- Works in singleplayer.
---- In order to use GTA:O heist IPL's you have to call this native with the following params: SET_INSTANCE_PRIORITY_MODE(1);
---- ```
----
---- @hash [0x0888C3502DBBEEF5](https://docs.fivem.net/natives/?_0x0888C3502DBBEEF5)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function LoadMpDlcMaps() end
-
-    
---- N_0xf2e07819ef1a5289
----
---- @hash [0xF2E07819EF1A5289](https://docs.fivem.net/natives/?_0xF2E07819EF1A5289)
----
---- @return boolean
---- @overload fun(): boolean
-function N_0xf2e07819ef1a5289() end
+function GetIsLoadingScreenActive() end
 
     
 --- ```
@@ -202,5 +171,36 @@ function N_0xd7c10c4a637992c9() end
 --- @overload fun(): void
 --- @deprecated
 function LoadSpDlcMaps() end
+
+    
+--- N_0x9489659372a81585
+---
+--- @hash [0x9489659372A81585](https://docs.fivem.net/natives/?_0x9489659372A81585)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function N_0x9489659372a81585() end
+
+    
+--- N_0xa213b11dff526300
+---
+--- @hash [0xA213B11DFF526300](https://docs.fivem.net/natives/?_0xA213B11DFF526300)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function N_0xa213b11dff526300() end
+
+    
+--- GET_IS_LOADING_\*
+--- 
+--- ```
+--- NativeDB Introduced: v1734
+--- ```
+---
+--- @hash [0xC4637A6D03C24CC3](https://docs.fivem.net/natives/?_0xC4637A6D03C24CC3)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function N_0xc4637a6d03c24cc3() end
 
     

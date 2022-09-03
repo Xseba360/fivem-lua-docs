@@ -1,30 +1,16 @@
 
---- AddCoverBlockingArea
+--- ```
+--- x, y, z: offset in world coords from some entity.  
+--- ```
 ---
---- @hash [0x45C597097DD7CB81](https://docs.fivem.net/natives/?_0x45C597097DD7CB81)
---- @param playerX number (float)
---- @param playerY number (float)
---- @param playerZ number (float)
---- @param radiusX number (float)
---- @param radiusY number (float)
---- @param radiusZ number (float)
---- @param p6 boolean
---- @param p7 boolean
---- @param p8 boolean
---- @param p9 boolean
+--- @hash [0x5CF0D8F9BBA0DD75](https://docs.fivem.net/natives/?_0x5CF0D8F9BBA0DD75)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
---- @overload fun(playerX: number, playerY: number, playerZ: number, radiusX: number, radiusY: number, radiusZ: number, p6: boolean, p7: boolean, p8: boolean, p9: boolean): void
-function AddCoverBlockingArea(playerX, playerY, playerZ, radiusX, radiusY, radiusZ, p6, p7, p8, p9) end
-
-    
---- AddPatrolRouteLink
----
---- @hash [0x23083260DEC3A551](https://docs.fivem.net/natives/?_0x23083260DEC3A551)
---- @param p0 any
---- @param p1 any
---- @return void
---- @overload fun(p0: any, p1: any): void
-function AddPatrolRouteLink(p0, p1) end
+--- @overload fun(ped: Ped, x: number, y: number, z: number): void
+function AddVehicleSubtaskAttackCoord(ped, x, y, z) end
 
     
 --- AddCoverPoint
@@ -43,18 +29,137 @@ function AddPatrolRouteLink(p0, p1) end
 function AddCoverPoint(p0, p1, p2, p3, p4, p5, p6, p7) end
 
     
+--- AddVehicleSubtaskAttackPed
+---
+--- @hash [0x85F462BADC7DA47F](https://docs.fivem.net/natives/?_0x85F462BADC7DA47F)
+--- @param ped Ped
+--- @param ped2 Ped
+--- @return void
+--- @overload fun(ped: Ped, ped2: Ped): void
+function AddVehicleSubtaskAttackPed(ped, ped2) end
+
+    
+--- AssistedMovementIsRouteLoaded
+---
+--- @hash [0x60F9A4393A21F741](https://docs.fivem.net/natives/?_0x60F9A4393A21F741)
+--- @param route string (char*)
+--- @return boolean
+--- @overload fun(route: string): boolean
+function AssistedMovementIsRouteLoaded(route) end
+
+    
+--- AddPatrolRouteLink
+---
+--- @hash [0x23083260DEC3A551](https://docs.fivem.net/natives/?_0x23083260DEC3A551)
+--- @param p0 any
+--- @param p1 any
+--- @return void
+--- @overload fun(p0: any, p1: any): void
+function AddPatrolRouteLink(p0, p1) end
+
+    
+--- AddCoverBlockingArea
+---
+--- @hash [0x45C597097DD7CB81](https://docs.fivem.net/natives/?_0x45C597097DD7CB81)
+--- @param playerX number (float)
+--- @param playerY number (float)
+--- @param playerZ number (float)
+--- @param radiusX number (float)
+--- @param radiusY number (float)
+--- @param radiusZ number (float)
+--- @param p6 boolean
+--- @param p7 boolean
+--- @param p8 boolean
+--- @param p9 boolean
+--- @return void
+--- @overload fun(playerX: number, playerY: number, playerZ: number, radiusX: number, radiusY: number, radiusZ: number, p6: boolean, p7: boolean, p8: boolean, p9: boolean): void
+function AddCoverBlockingArea(playerX, playerY, playerZ, radiusX, radiusY, radiusZ, p6, p7, p8, p9) end
+
+    
 --- ```
---- x, y, z: offset in world coords from some entity.  
+--- Routes: "1_FIBStairs", "2_FIBStairs", "3_FIBStairs", "4_FIBStairs", "5_FIBStairs", "5_TowardsFire", "6a_FIBStairs", "7_FIBStairs", "8_FIBStairs", "Aprtmnt_1", "AssAfterLift", "ATM_1", "coroner2", "coroner_stairs", "f5_jimmy1", "fame1", "family5b", "family5c", "Family5d", "family5d", "FIB_Glass1", "FIB_Glass2", "FIB_Glass3", "finaBroute1A", "finalb1st", "finalB1sta", "finalbround", "finalbroute2", "Hairdresser1", "jan_foyet_ft_door", "Jo_3", "Lemar1", "Lemar2", "mansion_1", "Mansion_1", "pols_1", "pols_2", "pols_3", "pols_4", "pols_5", "pols_6", "pols_7", "pols_8", "Pro_S1", "Pro_S1a", "Pro_S2", "Towards_case", "trev_steps", "tunrs1", "tunrs2", "tunrs3", "Wave01457s"  
 --- ```
 ---
---- @hash [0x5CF0D8F9BBA0DD75](https://docs.fivem.net/natives/?_0x5CF0D8F9BBA0DD75)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
+--- @hash [0x817268968605947A](https://docs.fivem.net/natives/?_0x817268968605947A)
+--- @param route string (char*)
 --- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number): void
-function AddVehicleSubtaskAttackCoord(ped, x, y, z) end
+--- @overload fun(route: string): void
+function AssistedMovementRequestRoute(route) end
+
+    
+--- ClearDrivebyTaskUnderneathDrivingTask
+---
+--- @hash [0xC35B5CDB2824CF69](https://docs.fivem.net/natives/?_0xC35B5CDB2824CF69)
+--- @param ped Ped
+--- @return void
+--- @overload fun(ped: Ped): void
+function ClearDrivebyTaskUnderneathDrivingTask(ped) end
+
+    
+--- AssistedMovementRemoveRoute
+---
+--- @hash [0x3548536485DD792B](https://docs.fivem.net/natives/?_0x3548536485DD792B)
+--- @param route string (char*)
+--- @return void
+--- @overload fun(route: string): void
+function AssistedMovementRemoveRoute(route) end
+
+    
+--- ClearPedTasks
+---
+--- @hash [0xE1EF3C1216AFF2CD](https://docs.fivem.net/natives/?_0xE1EF3C1216AFF2CD)
+--- @param ped Ped
+--- @return void
+--- @overload fun(ped: Ped): void
+function ClearPedTasks(ped) end
+
+    
+--- AssistedMovementOverrideLoadDistanceThisFrame
+---
+--- @hash [0x13945951E16EF912](https://docs.fivem.net/natives/?_0x13945951E16EF912)
+--- @param dist number (float)
+--- @return void
+--- @overload fun(dist: number): void
+function AssistedMovementOverrideLoadDistanceThisFrame(dist) end
+
+    
+--- ```
+--- Immediately stops the pedestrian from whatever it's doing. They stop fighting, animations, etc. they forget what they were doing.  
+--- ```
+---
+--- @hash [0xAAA34F8A7CB32098](https://docs.fivem.net/natives/?_0xAAA34F8A7CB32098)
+--- @param ped Ped
+--- @return void
+--- @overload fun(ped: Ped): void
+function ClearPedTasksImmediately(ped) end
+
+    
+--- ClearPedSecondaryTask
+---
+--- @hash [0x176CECF6F920D707](https://docs.fivem.net/natives/?_0x176CECF6F920D707)
+--- @param ped Ped
+--- @return void
+--- @overload fun(ped: Ped): void
+function ClearPedSecondaryTask(ped) end
+
+    
+--- AssistedMovementSetRouteProperties
+---
+--- @hash [0xD5002D78B7162E1B](https://docs.fivem.net/natives/?_0xD5002D78B7162E1B)
+--- @param route string (char*)
+--- @param props number (int)
+--- @return void
+--- @overload fun(route: string, props: number): void
+function AssistedMovementSetRouteProperties(route, props) end
+
+    
+--- ClearSequenceTask
+---
+--- @hash [0x3841422E9C488D8C](https://docs.fivem.net/natives/?_0x3841422E9C488D8C)
+--- @param taskSequenceId number (int*)
+--- @return void
+--- @overload fun(): number
+function ClearSequenceTask(taskSequenceId) end
 
     
 --- ```
@@ -85,91 +190,22 @@ function AddVehicleSubtaskAttackCoord(ped, x, y, z) end
 function AddPatrolRouteNode(p0, p1, x1, y1, z1, x2, y2, z2, p8) end
 
     
---- AssistedMovementIsRouteLoaded
+--- ClosePatrolRoute
 ---
---- @hash [0x60F9A4393A21F741](https://docs.fivem.net/natives/?_0x60F9A4393A21F741)
---- @param route string (char*)
---- @return boolean
---- @overload fun(route: string): boolean
-function AssistedMovementIsRouteLoaded(route) end
+--- @hash [0xB043ECA801B8CBC1](https://docs.fivem.net/natives/?_0xB043ECA801B8CBC1)
+---
+--- @return void
+--- @overload fun(): void
+function ClosePatrolRoute() end
 
     
---- AddVehicleSubtaskAttackPed
+--- CreatePatrolRoute
 ---
---- @hash [0x85F462BADC7DA47F](https://docs.fivem.net/natives/?_0x85F462BADC7DA47F)
---- @param ped Ped
---- @param ped2 Ped
---- @return void
---- @overload fun(ped: Ped, ped2: Ped): void
-function AddVehicleSubtaskAttackPed(ped, ped2) end
-
-    
---- AssistedMovementRemoveRoute
+--- @hash [0xAF8A443CCC8018DC](https://docs.fivem.net/natives/?_0xAF8A443CCC8018DC)
 ---
---- @hash [0x3548536485DD792B](https://docs.fivem.net/natives/?_0x3548536485DD792B)
---- @param route string (char*)
 --- @return void
---- @overload fun(route: string): void
-function AssistedMovementRemoveRoute(route) end
-
-    
---- AssistedMovementOverrideLoadDistanceThisFrame
----
---- @hash [0x13945951E16EF912](https://docs.fivem.net/natives/?_0x13945951E16EF912)
---- @param dist number (float)
---- @return void
---- @overload fun(dist: number): void
-function AssistedMovementOverrideLoadDistanceThisFrame(dist) end
-
-    
---- ClearDrivebyTaskUnderneathDrivingTask
----
---- @hash [0xC35B5CDB2824CF69](https://docs.fivem.net/natives/?_0xC35B5CDB2824CF69)
---- @param ped Ped
---- @return void
---- @overload fun(ped: Ped): void
-function ClearDrivebyTaskUnderneathDrivingTask(ped) end
-
-    
---- ```
---- Routes: "1_FIBStairs", "2_FIBStairs", "3_FIBStairs", "4_FIBStairs", "5_FIBStairs", "5_TowardsFire", "6a_FIBStairs", "7_FIBStairs", "8_FIBStairs", "Aprtmnt_1", "AssAfterLift", "ATM_1", "coroner2", "coroner_stairs", "f5_jimmy1", "fame1", "family5b", "family5c", "Family5d", "family5d", "FIB_Glass1", "FIB_Glass2", "FIB_Glass3", "finaBroute1A", "finalb1st", "finalB1sta", "finalbround", "finalbroute2", "Hairdresser1", "jan_foyet_ft_door", "Jo_3", "Lemar1", "Lemar2", "mansion_1", "Mansion_1", "pols_1", "pols_2", "pols_3", "pols_4", "pols_5", "pols_6", "pols_7", "pols_8", "Pro_S1", "Pro_S1a", "Pro_S2", "Towards_case", "trev_steps", "tunrs1", "tunrs2", "tunrs3", "Wave01457s"  
---- ```
----
---- @hash [0x817268968605947A](https://docs.fivem.net/natives/?_0x817268968605947A)
---- @param route string (char*)
---- @return void
---- @overload fun(route: string): void
-function AssistedMovementRequestRoute(route) end
-
-    
---- ClearPedTasks
----
---- @hash [0xE1EF3C1216AFF2CD](https://docs.fivem.net/natives/?_0xE1EF3C1216AFF2CD)
---- @param ped Ped
---- @return void
---- @overload fun(ped: Ped): void
-function ClearPedTasks(ped) end
-
-    
---- ```
---- Immediately stops the pedestrian from whatever it's doing. They stop fighting, animations, etc. they forget what they were doing.  
---- ```
----
---- @hash [0xAAA34F8A7CB32098](https://docs.fivem.net/natives/?_0xAAA34F8A7CB32098)
---- @param ped Ped
---- @return void
---- @overload fun(ped: Ped): void
-function ClearPedTasksImmediately(ped) end
-
-    
---- AssistedMovementSetRouteProperties
----
---- @hash [0xD5002D78B7162E1B](https://docs.fivem.net/natives/?_0xD5002D78B7162E1B)
---- @param route string (char*)
---- @param props number (int)
---- @return void
---- @overload fun(route: string, props: number): void
-function AssistedMovementSetRouteProperties(route, props) end
+--- @overload fun(): void
+function CreatePatrolRoute() end
 
     
 --- ```
@@ -200,13 +236,18 @@ function ClearVehicleTasks(vehicle) end
 function N_0xdbbc7a2432524127(vehicle) end
 
     
---- ClearPedSecondaryTask
+--- DoesScenarioOfTypeExistInArea
 ---
---- @hash [0x176CECF6F920D707](https://docs.fivem.net/natives/?_0x176CECF6F920D707)
---- @param ped Ped
---- @return void
---- @overload fun(ped: Ped): void
-function ClearPedSecondaryTask(ped) end
+--- @hash [0x0A9D0C2A3BBC86C1](https://docs.fivem.net/natives/?_0x0A9D0C2A3BBC86C1)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 any
+--- @param p4 number (float)
+--- @param p5 boolean
+--- @return boolean
+--- @overload fun(p0: number, p1: number, p2: number, p4: number, p5: boolean): boolean, any
+function DoesScenarioOfTypeExistInArea(p0, p1, p2, p3, p4, p5) end
 
     
 --- CloseSequenceTask
@@ -216,73 +257,6 @@ function ClearPedSecondaryTask(ped) end
 --- @return void
 --- @overload fun(taskSequenceId: number): void
 function CloseSequenceTask(taskSequenceId) end
-
-    
---- ClearSequenceTask
----
---- @hash [0x3841422E9C488D8C](https://docs.fivem.net/natives/?_0x3841422E9C488D8C)
---- @param taskSequenceId number (int*)
---- @return void
---- @overload fun(): number
-function ClearSequenceTask(taskSequenceId) end
-
-    
---- CreatePatrolRoute
----
---- @hash [0xAF8A443CCC8018DC](https://docs.fivem.net/natives/?_0xAF8A443CCC8018DC)
----
---- @return void
---- @overload fun(): void
-function CreatePatrolRoute() end
-
-    
---- ClosePatrolRoute
----
---- @hash [0xB043ECA801B8CBC1](https://docs.fivem.net/natives/?_0xB043ECA801B8CBC1)
----
---- @return void
---- @overload fun(): void
-function ClosePatrolRoute() end
-
-    
---- ```
---- Forces the ped to use the mounted weapon.  
---- Returns false if task is not possible.  
---- ```
----
---- @hash [0xDCFE42068FE0135A](https://docs.fivem.net/natives/?_0xDCFE42068FE0135A)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function ControlMountedWeapon(ped) end
-
-    
---- ```
---- From the b617d scripts:
---- TASK::DELETE_PATROL_ROUTE("miss_merc0");
---- TASK::DELETE_PATROL_ROUTE("miss_merc1");
---- TASK::DELETE_PATROL_ROUTE("miss_merc2");
---- TASK::DELETE_PATROL_ROUTE("miss_dock");
---- ```
----
---- @hash [0x7767DD9D65E91319](https://docs.fivem.net/natives/?_0x7767DD9D65E91319)
---- @param patrolRoute string (char*)
---- @return void
---- @overload fun(patrolRoute: string): void
-function DeletePatrolRoute(patrolRoute) end
-
-    
---- DoesScenarioExistInArea
----
---- @hash [0x5A59271FFADD33C1](https://docs.fivem.net/natives/?_0x5A59271FFADD33C1)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @param b boolean
---- @return boolean
---- @overload fun(x: number, y: number, z: number, radius: number, b: boolean): boolean
-function DoesScenarioExistInArea(x, y, z, radius, b) end
 
     
 --- ```
@@ -327,18 +301,19 @@ function DoesScenarioExistInArea(x, y, z, radius, b) end
 function DoesScenarioGroupExist(scenarioGroup) end
 
     
---- DoesScenarioOfTypeExistInArea
+--- ```
+--- From the b617d scripts:
+--- TASK::DELETE_PATROL_ROUTE("miss_merc0");
+--- TASK::DELETE_PATROL_ROUTE("miss_merc1");
+--- TASK::DELETE_PATROL_ROUTE("miss_merc2");
+--- TASK::DELETE_PATROL_ROUTE("miss_dock");
+--- ```
 ---
---- @hash [0x0A9D0C2A3BBC86C1](https://docs.fivem.net/natives/?_0x0A9D0C2A3BBC86C1)
---- @param p0 number (float)
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 any
---- @param p4 number (float)
---- @param p5 boolean
---- @return boolean
---- @overload fun(p0: number, p1: number, p2: number, p4: number, p5: boolean): boolean, any
-function DoesScenarioOfTypeExistInArea(p0, p1, p2, p3, p4, p5) end
+--- @hash [0x7767DD9D65E91319](https://docs.fivem.net/natives/?_0x7767DD9D65E91319)
+--- @param patrolRoute string (char*)
+--- @return void
+--- @overload fun(patrolRoute: string): void
+function DeletePatrolRoute(patrolRoute) end
 
     
 --- ```
@@ -352,6 +327,56 @@ function DoesScenarioOfTypeExistInArea(p0, p1, p2, p3, p4, p5) end
 --- @return boolean
 --- @overload fun(x: number, y: number, z: number): boolean
 function DoesScriptedCoverPointExistAtCoords(x, y, z) end
+
+    
+--- ```
+--- Looks like the last parameter returns true if the path has been calculated, while the first returns the remaining distance to the end of the path.
+--- Return value of native is the same as GET_NAVMESH_ROUTE_RESULT
+--- Looks like the native returns an int for the path's state:
+--- 1 - ???
+--- 2 - ???
+--- 3 - Finished Generating
+--- ```
+---
+--- @hash [0xC6F5C0BCDC74D62D](https://docs.fivem.net/natives/?_0xC6F5C0BCDC74D62D)
+--- @param ped Ped
+--- @return number, number, boolean
+--- @overload fun(ped: Ped): number, number, boolean
+function GetNavmeshRouteDistanceRemaining(ped) end
+
+    
+--- DoesScenarioExistInArea
+---
+--- @hash [0x5A59271FFADD33C1](https://docs.fivem.net/natives/?_0x5A59271FFADD33C1)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param b boolean
+--- @return boolean
+--- @overload fun(x: number, y: number, z: number, radius: number, b: boolean): boolean
+function DoesScenarioExistInArea(x, y, z, radius, b) end
+
+    
+--- ```
+--- Forces the ped to use the mounted weapon.  
+--- Returns false if task is not possible.  
+--- ```
+---
+--- @hash [0xDCFE42068FE0135A](https://docs.fivem.net/natives/?_0xDCFE42068FE0135A)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function ControlMountedWeapon(ped) end
+
+    
+--- GetPedWaypointDistance
+---
+--- @hash [0xE6A877C64CAF1BC5](https://docs.fivem.net/natives/?_0xE6A877C64CAF1BC5)
+--- @param p0 any
+--- @return number
+--- @overload fun(p0: any): number
+function GetPedWaypointDistance(p0) end
 
     
 --- ```
@@ -386,40 +411,6 @@ function GetIsTaskActive(ped, taskIndex) end
 function GetClipSetForScriptedGunTask(p0) end
 
     
---- ```
---- Looks like the last parameter returns true if the path has been calculated, while the first returns the remaining distance to the end of the path.
---- Return value of native is the same as GET_NAVMESH_ROUTE_RESULT
---- Looks like the native returns an int for the path's state:
---- 1 - ???
---- 2 - ???
---- 3 - Finished Generating
---- ```
----
---- @hash [0xC6F5C0BCDC74D62D](https://docs.fivem.net/natives/?_0xC6F5C0BCDC74D62D)
---- @param ped Ped
---- @return number, number, boolean
---- @overload fun(ped: Ped): number, number, boolean
-function GetNavmeshRouteDistanceRemaining(ped) end
-
-    
---- GetIsWaypointRecordingLoaded
----
---- @hash [0xCB4E8BE8A0063C5D](https://docs.fivem.net/natives/?_0xCB4E8BE8A0063C5D)
---- @param name string (char*)
---- @return boolean
---- @overload fun(name: string): boolean
-function GetIsWaypointRecordingLoaded(name) end
-
-    
---- GetPedWaypointDistance
----
---- @hash [0xE6A877C64CAF1BC5](https://docs.fivem.net/natives/?_0xE6A877C64CAF1BC5)
---- @param p0 any
---- @return number
---- @overload fun(p0: any): number
-function GetPedWaypointDistance(p0) end
-
-    
 --- See [`GET_NAVMESH_ROUTE_DISTANCE_REMAINING`](https://docs.fivem.net/natives/?_0xC6F5C0BCDC74D62D) for more details.
 ---
 --- @hash [0x632E831F382A0FA8](https://docs.fivem.net/natives/?_0x632E831F382A0FA8)
@@ -429,22 +420,13 @@ function GetPedWaypointDistance(p0) end
 function GetNavmeshRouteResult(ped) end
 
     
---- GetPhoneGestureAnimCurrentTime
+--- GetPhoneGestureAnimTotalTime
 ---
---- @hash [0x47619ABE8B268C60](https://docs.fivem.net/natives/?_0x47619ABE8B268C60)
+--- @hash [0x1EE0F68A7C25DEC6](https://docs.fivem.net/natives/?_0x1EE0F68A7C25DEC6)
 --- @param ped Ped
 --- @return number
 --- @overload fun(ped: Ped): number
-function GetPhoneGestureAnimCurrentTime(ped) end
-
-    
---- GetPedDesiredMoveBlendRatio
----
---- @hash [0x8517D4A6CA8513ED](https://docs.fivem.net/natives/?_0x8517D4A6CA8513ED)
---- @param ped Ped
---- @return number
---- @overload fun(ped: Ped): number
-function GetPedDesiredMoveBlendRatio(ped) end
+function GetPhoneGestureAnimTotalTime(ped) end
 
     
 --- ```
@@ -460,13 +442,22 @@ function GetPedDesiredMoveBlendRatio(ped) end
 function GetScriptTaskStatus(ped, taskHash) end
 
     
---- GetPedWaypointProgress
+--- GetPedDesiredMoveBlendRatio
 ---
---- @hash [0x2720AAA75001E094](https://docs.fivem.net/natives/?_0x2720AAA75001E094)
+--- @hash [0x8517D4A6CA8513ED](https://docs.fivem.net/natives/?_0x8517D4A6CA8513ED)
 --- @param ped Ped
 --- @return number
 --- @overload fun(ped: Ped): number
-function GetPedWaypointProgress(ped) end
+function GetPedDesiredMoveBlendRatio(ped) end
+
+    
+--- GetPhoneGestureAnimCurrentTime
+---
+--- @hash [0x47619ABE8B268C60](https://docs.fivem.net/natives/?_0x47619ABE8B268C60)
+--- @param ped Ped
+--- @return number
+--- @overload fun(ped: Ped): number
+function GetPhoneGestureAnimCurrentTime(ped) end
 
     
 --- ```
@@ -482,13 +473,13 @@ function GetPedWaypointProgress(ped) end
 function GetSequenceProgress(ped) end
 
     
---- GetPhoneGestureAnimTotalTime
+--- GetIsWaypointRecordingLoaded
 ---
---- @hash [0x1EE0F68A7C25DEC6](https://docs.fivem.net/natives/?_0x1EE0F68A7C25DEC6)
---- @param ped Ped
---- @return number
---- @overload fun(ped: Ped): number
-function GetPhoneGestureAnimTotalTime(ped) end
+--- @hash [0xCB4E8BE8A0063C5D](https://docs.fivem.net/natives/?_0xCB4E8BE8A0063C5D)
+--- @param name string (char*)
+--- @return boolean
+--- @overload fun(name: string): boolean
+function GetIsWaypointRecordingLoaded(name) end
 
     
 --- GetTaskMoveNetworkEvent
@@ -522,6 +513,24 @@ function N_0xb4f47213df45a64c(ped, eventName) end
 function GetScriptedCoverPointCoords(coverpoint) end
 
     
+--- GetPedWaypointProgress
+---
+--- @hash [0x2720AAA75001E094](https://docs.fivem.net/natives/?_0x2720AAA75001E094)
+--- @param ped Ped
+--- @return number
+--- @overload fun(ped: Ped): number
+function GetPedWaypointProgress(ped) end
+
+    
+--- GetVehicleWaypointTargetPoint
+---
+--- @hash [0x416B62AC8B9E5BBD](https://docs.fivem.net/natives/?_0x416B62AC8B9E5BBD)
+--- @param vehicle Vehicle
+--- @return number
+--- @overload fun(vehicle: Vehicle): number
+function GetVehicleWaypointTargetPoint(vehicle) end
+
+    
 --- ```
 --- NativeDB Introduced: v1493
 --- ```
@@ -534,26 +543,23 @@ function GetScriptedCoverPointCoords(coverpoint) end
 function GetTaskMoveNetworkSignalFloat(ped, signalName) end
 
     
---- GetTaskMoveNetworkSignalBool
+--- IsMountedWeaponTaskUnderneathDrivingTask
 ---
---- @hash [0xA7FFBA498E4AAF67](https://docs.fivem.net/natives/?_0xA7FFBA498E4AAF67)
+--- @hash [0xA320EF046186FA3B](https://docs.fivem.net/natives/?_0xA320EF046186FA3B)
 --- @param ped Ped
---- @param signalName string (char*)
 --- @return boolean
---- @overload fun(ped: Ped, signalName: string): boolean
-function GetTaskMoveNetworkSignalBool(ped, signalName) end
+--- @overload fun(ped: Ped): boolean
+function IsMountedWeaponTaskUnderneathDrivingTask(ped) end
 
     
---- # New Name: GetTaskMoveNetworkSignalBool
---- GetTaskMoveNetworkSignalBool
+--- GetWaypointDistanceAlongRoute
 ---
---- @hash [0xA7FFBA498E4AAF67](https://docs.fivem.net/natives/?_0xA7FFBA498E4AAF67)
---- @param ped Ped
---- @param signalName string (char*)
---- @return boolean
---- @overload fun(ped: Ped, signalName: string): boolean
---- @deprecated
-function N_0xa7ffba498e4aaf67(ped, signalName) end
+--- @hash [0xA5B769058763E497](https://docs.fivem.net/natives/?_0xA5B769058763E497)
+--- @param p0 string (char*)
+--- @param p1 number (int)
+--- @return number
+--- @overload fun(p0: string, p1: number): number
+function GetWaypointDistanceAlongRoute(p0, p1) end
 
     
 --- GetVehicleWaypointProgress
@@ -585,59 +591,26 @@ function GetTaskMoveNetworkState(ped) end
 function N_0x717e4d1f2048376d(ped) end
 
     
---- GetWaypointDistanceAlongRoute
+--- GetTaskMoveNetworkSignalBool
 ---
---- @hash [0xA5B769058763E497](https://docs.fivem.net/natives/?_0xA5B769058763E497)
---- @param p0 string (char*)
---- @param p1 number (int)
---- @return number
---- @overload fun(p0: string, p1: number): number
-function GetWaypointDistanceAlongRoute(p0, p1) end
-
-    
---- GetVehicleWaypointTargetPoint
----
---- @hash [0x416B62AC8B9E5BBD](https://docs.fivem.net/natives/?_0x416B62AC8B9E5BBD)
---- @param vehicle Vehicle
---- @return number
---- @overload fun(vehicle: Vehicle): number
-function GetVehicleWaypointTargetPoint(vehicle) end
-
-    
---- IsDrivebyTaskUnderneathDrivingTask
----
---- @hash [0x8785E6E40C7A8818](https://docs.fivem.net/natives/?_0x8785E6E40C7A8818)
+--- @hash [0xA7FFBA498E4AAF67](https://docs.fivem.net/natives/?_0xA7FFBA498E4AAF67)
 --- @param ped Ped
+--- @param signalName string (char*)
 --- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsDrivebyTaskUnderneathDrivingTask(ped) end
+--- @overload fun(ped: Ped, signalName: string): boolean
+function GetTaskMoveNetworkSignalBool(ped, signalName) end
 
     
---- IsMountedWeaponTaskUnderneathDrivingTask
+--- # New Name: GetTaskMoveNetworkSignalBool
+--- GetTaskMoveNetworkSignalBool
 ---
---- @hash [0xA320EF046186FA3B](https://docs.fivem.net/natives/?_0xA320EF046186FA3B)
+--- @hash [0xA7FFBA498E4AAF67](https://docs.fivem.net/natives/?_0xA7FFBA498E4AAF67)
 --- @param ped Ped
+--- @param signalName string (char*)
 --- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsMountedWeaponTaskUnderneathDrivingTask(ped) end
-
-    
---- IsMoveBlendRatioRunning
----
---- @hash [0xD4D8636C0199A939](https://docs.fivem.net/natives/?_0xD4D8636C0199A939)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsMoveBlendRatioRunning(ped) end
-
-    
---- IsMoveBlendRatioSprinting
----
---- @hash [0x24A2AD74FA9814E2](https://docs.fivem.net/natives/?_0x24A2AD74FA9814E2)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsMoveBlendRatioSprinting(ped) end
+--- @overload fun(ped: Ped, signalName: string): boolean
+--- @deprecated
+function N_0xa7ffba498e4aaf67(ped, signalName) end
 
     
 --- IsMoveBlendRatioStill
@@ -649,6 +622,24 @@ function IsMoveBlendRatioSprinting(ped) end
 function IsMoveBlendRatioStill(ped) end
 
     
+--- IsMoveBlendRatioRunning
+---
+--- @hash [0xD4D8636C0199A939](https://docs.fivem.net/natives/?_0xD4D8636C0199A939)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsMoveBlendRatioRunning(ped) end
+
+    
+--- IsDrivebyTaskUnderneathDrivingTask
+---
+--- @hash [0x8785E6E40C7A8818](https://docs.fivem.net/natives/?_0x8785E6E40C7A8818)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsDrivebyTaskUnderneathDrivingTask(ped) end
+
+    
 --- IsMoveBlendRatioWalking
 ---
 --- @hash [0xF133BBBE91E1691F](https://docs.fivem.net/natives/?_0xF133BBBE91E1691F)
@@ -656,53 +647,6 @@ function IsMoveBlendRatioStill(ped) end
 --- @return boolean
 --- @overload fun(ped: Ped): boolean
 function IsMoveBlendRatioWalking(ped) end
-
-    
---- When passing a ped parameter, the function returns true if the ped is currently in any scenario.
----
---- @hash [0xAA135F9482C82CC3](https://docs.fivem.net/natives/?_0xAA135F9482C82CC3)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsPedActiveInScenario(ped) end
-
-    
---- ```
---- This function is hard-coded to always return 0.  
---- ```
----
---- @hash [0x90A09F3A45FED688](https://docs.fivem.net/natives/?_0x90A09F3A45FED688)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsPedBeingArrested(ped) end
-
-    
---- IsPedCuffed
----
---- @hash [0x74E559B3BC910685](https://docs.fivem.net/natives/?_0x74E559B3BC910685)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsPedCuffed(ped) end
-
-    
---- IsPedGettingUp
----
---- @hash [0x2A74E1D5F2F00EEC](https://docs.fivem.net/natives/?_0x2A74E1D5F2F00EEC)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsPedGettingUp(ped) end
-
-    
---- This native checks if a ped is on the ground, in pain from a (gunshot) wound.
----
---- @hash [0xDEB6D52126E7D640](https://docs.fivem.net/natives/?_0xDEB6D52126E7D640)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsPedInWrithe(ped) end
 
     
 --- IsPedPlayingBaseClipInScenario
@@ -725,22 +669,51 @@ function IsPedPlayingBaseClipInScenario(ped) end
 function N_0x621c6e4729388e41(ped) end
 
     
---- IsPedRunning
+--- IsPedGettingUp
 ---
---- @hash [0xC5286FFC176F28A2](https://docs.fivem.net/natives/?_0xC5286FFC176F28A2)
+--- @hash [0x2A74E1D5F2F00EEC](https://docs.fivem.net/natives/?_0x2A74E1D5F2F00EEC)
 --- @param ped Ped
 --- @return boolean
 --- @overload fun(ped: Ped): boolean
-function IsPedRunning(ped) end
+function IsPedGettingUp(ped) end
 
     
---- IsPedRunningArrestTask
+--- IsPedCuffed
 ---
---- @hash [0x3DC52677769B4AE0](https://docs.fivem.net/natives/?_0x3DC52677769B4AE0)
+--- @hash [0x74E559B3BC910685](https://docs.fivem.net/natives/?_0x74E559B3BC910685)
 --- @param ped Ped
 --- @return boolean
 --- @overload fun(ped: Ped): boolean
-function IsPedRunningArrestTask(ped) end
+function IsPedCuffed(ped) end
+
+    
+--- ```
+--- This function is hard-coded to always return 0.  
+--- ```
+---
+--- @hash [0x90A09F3A45FED688](https://docs.fivem.net/natives/?_0x90A09F3A45FED688)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsPedBeingArrested(ped) end
+
+    
+--- When passing a ped parameter, the function returns true if the ped is currently in any scenario.
+---
+--- @hash [0xAA135F9482C82CC3](https://docs.fivem.net/natives/?_0xAA135F9482C82CC3)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsPedActiveInScenario(ped) end
+
+    
+--- IsMoveBlendRatioSprinting
+---
+--- @hash [0x24A2AD74FA9814E2](https://docs.fivem.net/natives/?_0x24A2AD74FA9814E2)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsMoveBlendRatioSprinting(ped) end
 
     
 --- IsPedSprinting
@@ -752,33 +725,50 @@ function IsPedRunningArrestTask(ped) end
 function IsPedSprinting(ped) end
 
     
---- IsPedStill
+--- IsPedRunningArrestTask
 ---
---- @hash [0xAC29253EEF8F0180](https://docs.fivem.net/natives/?_0xAC29253EEF8F0180)
+--- @hash [0x3DC52677769B4AE0](https://docs.fivem.net/natives/?_0x3DC52677769B4AE0)
 --- @param ped Ped
 --- @return boolean
 --- @overload fun(ped: Ped): boolean
-function IsPedStill(ped) end
+function IsPedRunningArrestTask(ped) end
+
+    
+--- IsPedRunning
+---
+--- @hash [0xC5286FFC176F28A2](https://docs.fivem.net/natives/?_0xC5286FFC176F28A2)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsPedRunning(ped) end
+
+    
+--- This native checks if a ped is on the ground, in pain from a (gunshot) wound.
+---
+--- @hash [0xDEB6D52126E7D640](https://docs.fivem.net/natives/?_0xDEB6D52126E7D640)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsPedInWrithe(ped) end
 
     
 --- ```
---- What's strafing?  
+--- Occurrences in the b617d scripts:
+--- "PROP_HUMAN_SEAT_CHAIR",
+--- "WORLD_HUMAN_DRINKING",
+--- "WORLD_HUMAN_HANG_OUT_STREET",
+--- "WORLD_HUMAN_SMOKING",
+--- "WORLD_MOUNTAIN_LION_WANDER",
+--- "WORLD_HUMAN_DRINKING"
+--- Sometimes used together with MISC::IS_STRING_NULL_OR_EMPTY in the scripts.
+--- scenarioType could be the same as scenarioName, used in for example TASK::TASK_START_SCENARIO_AT_POSITION.
 --- ```
 ---
---- @hash [0xE45B7F222DE47E09](https://docs.fivem.net/natives/?_0xE45B7F222DE47E09)
---- @param ped Ped
+--- @hash [0x3A815DB3EA088722](https://docs.fivem.net/natives/?_0x3A815DB3EA088722)
+--- @param scenarioType string (char*)
 --- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsPedStrafing(ped) end
-
-    
---- IsPedWalking
----
---- @hash [0xDE4C184B2B9B071A](https://docs.fivem.net/natives/?_0xDE4C184B2B9B071A)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function IsPedWalking(ped) end
+--- @overload fun(scenarioType: string): boolean
+function IsScenarioTypeEnabled(scenarioType) end
 
     
 --- ```
@@ -827,17 +817,33 @@ function IsScenarioGroupEnabled(scenarioGroup) end
 function IsPlayingPhoneGestureAnim(ped) end
 
     
---- IsScenarioOccupied
+--- IsPedWalking
 ---
---- @hash [0x788756D73AC2E07C](https://docs.fivem.net/natives/?_0x788756D73AC2E07C)
---- @param p0 number (float)
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 boolean
+--- @hash [0xDE4C184B2B9B071A](https://docs.fivem.net/natives/?_0xDE4C184B2B9B071A)
+--- @param ped Ped
 --- @return boolean
---- @overload fun(p0: number, p1: number, p2: number, p3: number, p4: boolean): boolean
-function IsScenarioOccupied(p0, p1, p2, p3, p4) end
+--- @overload fun(ped: Ped): boolean
+function IsPedWalking(ped) end
+
+    
+--- ```
+--- What's strafing?  
+--- ```
+---
+--- @hash [0xE45B7F222DE47E09](https://docs.fivem.net/natives/?_0xE45B7F222DE47E09)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsPedStrafing(ped) end
+
+    
+--- IsPedStill
+---
+--- @hash [0xAC29253EEF8F0180](https://docs.fivem.net/natives/?_0xAC29253EEF8F0180)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsPedStill(ped) end
 
     
 --- IsTaskMoveNetworkActive
@@ -861,31 +867,14 @@ function N_0x921ce12c489c4c41(ped) end
 
     
 --- ```
---- Occurrences in the b617d scripts:
---- "PROP_HUMAN_SEAT_CHAIR",
---- "WORLD_HUMAN_DRINKING",
---- "WORLD_HUMAN_HANG_OUT_STREET",
---- "WORLD_HUMAN_SMOKING",
---- "WORLD_MOUNTAIN_LION_WANDER",
---- "WORLD_HUMAN_DRINKING"
---- Sometimes used together with MISC::IS_STRING_NULL_OR_EMPTY in the scripts.
---- scenarioType could be the same as scenarioName, used in for example TASK::TASK_START_SCENARIO_AT_POSITION.
+--- NativeDB Introduced: v2189
 --- ```
 ---
---- @hash [0x3A815DB3EA088722](https://docs.fivem.net/natives/?_0x3A815DB3EA088722)
---- @param scenarioType string (char*)
---- @return boolean
---- @overload fun(scenarioType: string): boolean
-function IsScenarioTypeEnabled(scenarioType) end
-
-    
---- IsWaypointPlaybackGoingOnForPed
----
---- @hash [0xE03B3F2D3DC59B64](https://docs.fivem.net/natives/?_0xE03B3F2D3DC59B64)
+--- @hash [0x6100B3CEFD43452E](https://docs.fivem.net/natives/?_0x6100B3CEFD43452E)
 --- @param p0 any
---- @return boolean
---- @overload fun(p0: any): boolean
-function IsWaypointPlaybackGoingOnForPed(p0) end
+--- @return void
+--- @overload fun(p0: any): void
+function N_0x6100b3cefd43452e(p0) end
 
     
 --- IsTaskMoveNetworkReadyForTransition
@@ -906,6 +895,30 @@ function IsTaskMoveNetworkReadyForTransition(ped) end
 --- @overload fun(ped: Ped): boolean
 --- @deprecated
 function N_0x30ed88d5e0c56a37(ped) end
+
+    
+--- ```
+--- IS_*
+--- ```
+---
+--- @hash [0x3E38E28A1D80DDF6](https://docs.fivem.net/natives/?_0x3E38E28A1D80DDF6)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function N_0x3e38e28a1d80ddf6(ped) end
+
+    
+--- IsScenarioOccupied
+---
+--- @hash [0x788756D73AC2E07C](https://docs.fivem.net/natives/?_0x788756D73AC2E07C)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 boolean
+--- @return boolean
+--- @overload fun(p0: number, p1: number, p2: number, p3: number, p4: boolean): boolean
+function IsScenarioOccupied(p0, p1, p2, p3, p4) end
 
     
 --- Doesn't actually return anything.
@@ -949,39 +962,26 @@ function IsWaypointPlaybackGoingOnForVehicle(vehicle) end
 function N_0x1f351cf1c6475734(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
     
---- ```
---- NativeDB Introduced: v1868
---- ```
+--- IsWaypointPlaybackGoingOnForPed
 ---
---- @hash [0x29682E2CCF21E9B5](https://docs.fivem.net/natives/?_0x29682E2CCF21E9B5)
+--- @hash [0xE03B3F2D3DC59B64](https://docs.fivem.net/natives/?_0xE03B3F2D3DC59B64)
 --- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @param p4 any
---- @param p5 any
---- @param p6 any
---- @param p7 any
---- @param p8 any
---- @param p9 any
---- @param p10 any
---- @param p11 any
---- @param p12 any
---- @param p13 any
---- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any, p6: any, p7: any, p8: any, p9: any, p10: any, p11: any, p12: any, p13: any): void
-function N_0x29682e2ccf21e9b5(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13) end
+--- @return boolean
+--- @overload fun(p0: any): boolean
+function IsWaypointPlaybackGoingOnForPed(p0) end
 
     
 --- ```
---- IS_*
+--- NativeDB Introduced: v1493
 --- ```
 ---
---- @hash [0x3E38E28A1D80DDF6](https://docs.fivem.net/natives/?_0x3E38E28A1D80DDF6)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function N_0x3e38e28a1d80ddf6(ped) end
+--- @hash [0x8423541E8B3A1589](https://docs.fivem.net/natives/?_0x8423541E8B3A1589)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: any): void
+function N_0x8423541e8b3a1589(p0, p1, p2) end
 
     
 --- Related to [`_CLEAR_VEHICLE_TASKS`](https://docs.fivem.net/natives/?_0xDBBC7A2432524127) and requires more research (e.g., \_CLEAR_VEHICLE_SECONDARY_TASKS).
@@ -999,39 +999,24 @@ function N_0x3e38e28a1d80ddf6(ped) end
 function N_0x53ddc75bc3ac0a90(vehicle) end
 
     
---- ```
---- NativeDB Introduced: v1493
---- ```
+--- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
---- @hash [0x8423541E8B3A1589](https://docs.fivem.net/natives/?_0x8423541E8B3A1589)
---- @param p0 any
---- @param p1 any
---- @param p2 any
+--- @hash [0x748040460F8DF5DC](https://docs.fivem.net/natives/?_0x748040460F8DF5DC)
+--- @param ped Ped
+--- @param animDict string (char*)
+--- @param animName string (char*)
 --- @return void
---- @overload fun(p0: any, p1: any, p2: any): void
-function N_0x8423541e8b3a1589(p0, p1, p2) end
+--- @overload fun(ped: Ped, animDict: string, animName: string): void
+function PlayAnimOnRunningScenario(ped, animDict, animName) end
 
     
---- ```
---- NativeDB Introduced: v2189
---- ```
+--- OpenSequenceTask
 ---
---- @hash [0x6100B3CEFD43452E](https://docs.fivem.net/natives/?_0x6100B3CEFD43452E)
---- @param p0 any
+--- @hash [0xE8854A4326B9E12B](https://docs.fivem.net/natives/?_0xE8854A4326B9E12B)
+--- @param taskSequenceId number (int*)
 --- @return void
---- @overload fun(p0: any): void
-function N_0x6100b3cefd43452e(p0) end
-
-    
---- ```
---- NativeDB Introduced: v1868
---- ```
----
---- @hash [0x9D252648778160DF](https://docs.fivem.net/natives/?_0x9D252648778160DF)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function N_0x9d252648778160df(p0) end
+--- @overload fun(): number
+function OpenSequenceTask(taskSequenceId) end
 
     
 --- ```
@@ -1045,21 +1030,6 @@ function N_0x9d252648778160df(p0) end
 --- @return void
 --- @overload fun(ped: Ped, p1: string, value: number): void
 function N_0x8634cef2522d987b(ped, p1, value) end
-
-    
---- ```
---- REMOVE_*
---- 
---- NativeDB Introduced: v1493
---- ```
----
---- @hash [0xFA83CA6776038F64](https://docs.fivem.net/natives/?_0xFA83CA6776038F64)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @return void
---- @overload fun(x: number, y: number, z: number): void
-function N_0xfa83ca6776038f64(x, y, z) end
 
     
 --- ```
@@ -1078,13 +1048,19 @@ function N_0xfa83ca6776038f64(x, y, z) end
 function N_0xab13a5565480b6d9(ped, p1) end
 
     
---- PedHasUseScenarioTask
+--- ```
+--- REMOVE_*
+--- 
+--- NativeDB Introduced: v1493
+--- ```
 ---
---- @hash [0x295E3CCEC879CCD7](https://docs.fivem.net/natives/?_0x295E3CCEC879CCD7)
---- @param ped Ped
---- @return boolean
---- @overload fun(ped: Ped): boolean
-function PedHasUseScenarioTask(ped) end
+--- @hash [0xFA83CA6776038F64](https://docs.fivem.net/natives/?_0xFA83CA6776038F64)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return void
+--- @overload fun(x: number, y: number, z: number): void
+function N_0xfa83ca6776038f64(x, y, z) end
 
     
 --- ```
@@ -1118,24 +1094,48 @@ function PedHasUseScenarioTask(ped) end
 function OpenPatrolRoute(patrolRoute) end
 
     
---- OpenSequenceTask
+--- ```
+--- NativeDB Introduced: v1868
+--- ```
 ---
---- @hash [0xE8854A4326B9E12B](https://docs.fivem.net/natives/?_0xE8854A4326B9E12B)
---- @param taskSequenceId number (int*)
+--- @hash [0x29682E2CCF21E9B5](https://docs.fivem.net/natives/?_0x29682E2CCF21E9B5)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
+--- @param p7 any
+--- @param p8 any
+--- @param p9 any
+--- @param p10 any
+--- @param p11 any
+--- @param p12 any
+--- @param p13 any
 --- @return void
---- @overload fun(): number
-function OpenSequenceTask(taskSequenceId) end
+--- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any, p6: any, p7: any, p8: any, p9: any, p10: any, p11: any, p12: any, p13: any): void
+function N_0x29682e2ccf21e9b5(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13) end
 
     
---- [Animations list](https://alexguirre.github.io/animations-list/)
+--- ```
+--- NativeDB Introduced: v1868
+--- ```
 ---
---- @hash [0x748040460F8DF5DC](https://docs.fivem.net/natives/?_0x748040460F8DF5DC)
---- @param ped Ped
---- @param animDict string (char*)
---- @param animName string (char*)
+--- @hash [0x9D252648778160DF](https://docs.fivem.net/natives/?_0x9D252648778160DF)
+--- @param p0 any
+--- @return any
+--- @overload fun(p0: any): any
+function N_0x9d252648778160df(p0) end
+
+    
+--- RemoveCoverPoint
+---
+--- @hash [0xAE287C923D891715](https://docs.fivem.net/natives/?_0xAE287C923D891715)
+--- @param coverpoint ScrHandle
 --- @return void
---- @overload fun(ped: Ped, animDict: string, animName: string): void
-function PlayAnimOnRunningScenario(ped, animDict, animName) end
+--- @overload fun(coverpoint: ScrHandle): void
+function RemoveCoverPoint(coverpoint) end
 
     
 --- PlayEntityScriptedAnim
@@ -1149,15 +1149,6 @@ function PlayAnimOnRunningScenario(ped, animDict, animName) end
 function PlayEntityScriptedAnim(p0, p4, p5) end
 
     
---- RemoveCoverPoint
----
---- @hash [0xAE287C923D891715](https://docs.fivem.net/natives/?_0xAE287C923D891715)
---- @param coverpoint ScrHandle
---- @return void
---- @overload fun(coverpoint: ScrHandle): void
-function RemoveCoverPoint(coverpoint) end
-
-    
 --- RemoveAllCoverBlockingAreas
 ---
 --- @hash [0xDB6708C0B46F56D8](https://docs.fivem.net/natives/?_0xDB6708C0B46F56D8)
@@ -1167,44 +1158,13 @@ function RemoveCoverPoint(coverpoint) end
 function RemoveAllCoverBlockingAreas() end
 
     
---- RequestTaskMoveNetworkStateTransition
+--- ResetScenarioTypesEnabled
 ---
---- @hash [0xD01015C7316AE176](https://docs.fivem.net/natives/?_0xD01015C7316AE176)
---- @param ped Ped
---- @param name string (char*)
---- @return boolean
---- @overload fun(ped: Ped, name: string): boolean
-function RequestTaskMoveNetworkStateTransition(ped, name) end
-
-    
---- # New Name: RequestTaskMoveNetworkStateTransition
---- RequestTaskMoveNetworkStateTransition
----
---- @hash [0xD01015C7316AE176](https://docs.fivem.net/natives/?_0xD01015C7316AE176)
---- @param ped Ped
---- @param name string (char*)
---- @return boolean
---- @overload fun(ped: Ped, name: string): boolean
---- @deprecated
-function N_0xd01015c7316ae176(ped, name) end
-
-    
---- ResetScenarioGroupsEnabled
----
---- @hash [0xDD902D0349AFAD3A](https://docs.fivem.net/natives/?_0xDD902D0349AFAD3A)
+--- @hash [0x0D40EE2A7F2B2D6D](https://docs.fivem.net/natives/?_0x0D40EE2A7F2B2D6D)
 ---
 --- @return void
 --- @overload fun(): void
-function ResetScenarioGroupsEnabled() end
-
-    
---- RemoveWaypointRecording
----
---- @hash [0xFF1B8B4AA1C25DC8](https://docs.fivem.net/natives/?_0xFF1B8B4AA1C25DC8)
---- @param name string (char*)
---- @return void
---- @overload fun(name: string): void
-function RemoveWaypointRecording(name) end
+function ResetScenarioTypesEnabled() end
 
     
 --- SetAnimLooped
@@ -1240,6 +1200,62 @@ function RequestWaypointRecording(name) end
 function ResetExclusiveScenarioGroup() end
 
     
+--- PedHasUseScenarioTask
+---
+--- @hash [0x295E3CCEC879CCD7](https://docs.fivem.net/natives/?_0x295E3CCEC879CCD7)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function PedHasUseScenarioTask(ped) end
+
+    
+--- RemoveWaypointRecording
+---
+--- @hash [0xFF1B8B4AA1C25DC8](https://docs.fivem.net/natives/?_0xFF1B8B4AA1C25DC8)
+--- @param name string (char*)
+--- @return void
+--- @overload fun(name: string): void
+function RemoveWaypointRecording(name) end
+
+    
+--- RequestTaskMoveNetworkStateTransition
+---
+--- @hash [0xD01015C7316AE176](https://docs.fivem.net/natives/?_0xD01015C7316AE176)
+--- @param ped Ped
+--- @param name string (char*)
+--- @return boolean
+--- @overload fun(ped: Ped, name: string): boolean
+function RequestTaskMoveNetworkStateTransition(ped, name) end
+
+    
+--- # New Name: RequestTaskMoveNetworkStateTransition
+--- RequestTaskMoveNetworkStateTransition
+---
+--- @hash [0xD01015C7316AE176](https://docs.fivem.net/natives/?_0xD01015C7316AE176)
+--- @param ped Ped
+--- @param name string (char*)
+--- @return boolean
+--- @overload fun(ped: Ped, name: string): boolean
+--- @deprecated
+function N_0xd01015c7316ae176(ped, name) end
+
+    
+--- ```
+--- Groups found in the scripts used with this native:  
+--- "AMMUNATION",  
+--- "QUARRY",  
+--- "Triathlon_1",  
+--- "Triathlon_2",  
+--- "Triathlon_3"  
+--- ```
+---
+--- @hash [0x535E97E1F7FC0C6A](https://docs.fivem.net/natives/?_0x535E97E1F7FC0C6A)
+--- @param scenarioGroup string (char*)
+--- @return void
+--- @overload fun(scenarioGroup: string): void
+function SetExclusiveScenarioGroup(scenarioGroup) end
+
+    
 --- ```
 --- NativeDB Introduced: v2372
 --- ```
@@ -1270,13 +1286,42 @@ function SetAnimPlaybackTime(entity, p1, p2, p3) end
 function N_0xddf3cb5a0a4c0b49(entity, p1, p2, p3) end
 
     
---- ResetScenarioTypesEnabled
+--- ```
+--- For p1 & p2 (Ped, Vehicle). I could be wrong, as the only time this native is called in scripts is once and both are 0, but I assume this native will work like SET_MOUNTED_WEAPON_TARGET in which has the same exact amount of parameters and the 1st and last 3 parameters are right and the same for both natives.  
+--- ```
 ---
---- @hash [0x0D40EE2A7F2B2D6D](https://docs.fivem.net/natives/?_0x0D40EE2A7F2B2D6D)
----
+--- @hash [0xE5B302114D8162EE](https://docs.fivem.net/natives/?_0xE5B302114D8162EE)
+--- @param shootingPed Ped
+--- @param targetPed Ped
+--- @param targetVehicle Vehicle
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
---- @overload fun(): void
-function ResetScenarioTypesEnabled() end
+--- @overload fun(shootingPed: Ped, targetPed: Ped, targetVehicle: Vehicle, x: number, y: number, z: number): void
+function SetDrivebyTaskTarget(shootingPed, targetPed, targetVehicle, x, y, z) end
+
+    
+--- SetAnimRate
+---
+--- @hash [0x032D49C5E359C847](https://docs.fivem.net/natives/?_0x032D49C5E359C847)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 any
+--- @param p3 boolean
+--- @return void
+--- @overload fun(p0: any, p1: number, p2: any, p3: boolean): void
+function SetAnimRate(p0, p1, p2, p3) end
+
+    
+--- SetDriveTaskCruiseSpeed
+---
+--- @hash [0x5C9B84BD7D31D908](https://docs.fivem.net/natives/?_0x5C9B84BD7D31D908)
+--- @param driver Ped
+--- @param cruiseSpeed number (float)
+--- @return void
+--- @overload fun(driver: Ped, cruiseSpeed: number): void
+function SetDriveTaskCruiseSpeed(driver, cruiseSpeed) end
 
     
 --- SetAnimWeight
@@ -1292,16 +1337,23 @@ function ResetScenarioTypesEnabled() end
 function SetAnimWeight(p0, p1, p2, p3, p4) end
 
     
---- SetAnimRate
+--- SetDriveTaskMaxCruiseSpeed
 ---
---- @hash [0x032D49C5E359C847](https://docs.fivem.net/natives/?_0x032D49C5E359C847)
+--- @hash [0x404A5AA9B9F0B746](https://docs.fivem.net/natives/?_0x404A5AA9B9F0B746)
 --- @param p0 any
 --- @param p1 number (float)
---- @param p2 any
---- @param p3 boolean
 --- @return void
---- @overload fun(p0: any, p1: number, p2: any, p3: boolean): void
-function SetAnimRate(p0, p1, p2, p3) end
+--- @overload fun(p0: any, p1: number): void
+function SetDriveTaskMaxCruiseSpeed(p0, p1) end
+
+    
+--- ResetScenarioGroupsEnabled
+---
+--- @hash [0xDD902D0349AFAD3A](https://docs.fivem.net/natives/?_0xDD902D0349AFAD3A)
+---
+--- @return void
+--- @overload fun(): void
+function ResetScenarioGroupsEnabled() end
 
     
 --- ```
@@ -1319,81 +1371,6 @@ function SetAnimRate(p0, p1, p2, p3) end
 --- @return void
 --- @overload fun(ped: Ped, drivingStyle: number): void
 function SetDriveTaskDrivingStyle(ped, drivingStyle) end
-
-    
---- SetDriveTaskCruiseSpeed
----
---- @hash [0x5C9B84BD7D31D908](https://docs.fivem.net/natives/?_0x5C9B84BD7D31D908)
---- @param driver Ped
---- @param cruiseSpeed number (float)
---- @return void
---- @overload fun(driver: Ped, cruiseSpeed: number): void
-function SetDriveTaskCruiseSpeed(driver, cruiseSpeed) end
-
-    
---- SetDriveTaskMaxCruiseSpeed
----
---- @hash [0x404A5AA9B9F0B746](https://docs.fivem.net/natives/?_0x404A5AA9B9F0B746)
---- @param p0 any
---- @param p1 number (float)
---- @return void
---- @overload fun(p0: any, p1: number): void
-function SetDriveTaskMaxCruiseSpeed(p0, p1) end
-
-    
---- ```
---- For p1 & p2 (Ped, Vehicle). I could be wrong, as the only time this native is called in scripts is once and both are 0, but I assume this native will work like SET_MOUNTED_WEAPON_TARGET in which has the same exact amount of parameters and the 1st and last 3 parameters are right and the same for both natives.  
---- ```
----
---- @hash [0xE5B302114D8162EE](https://docs.fivem.net/natives/?_0xE5B302114D8162EE)
---- @param shootingPed Ped
---- @param targetPed Ped
---- @param targetVehicle Vehicle
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @return void
---- @overload fun(shootingPed: Ped, targetPed: Ped, targetVehicle: Vehicle, x: number, y: number, z: number): void
-function SetDrivebyTaskTarget(shootingPed, targetPed, targetVehicle, x, y, z) end
-
-    
---- ```
---- Groups found in the scripts used with this native:  
---- "AMMUNATION",  
---- "QUARRY",  
---- "Triathlon_1",  
---- "Triathlon_2",  
---- "Triathlon_3"  
---- ```
----
---- @hash [0x535E97E1F7FC0C6A](https://docs.fivem.net/natives/?_0x535E97E1F7FC0C6A)
---- @param scenarioGroup string (char*)
---- @return void
---- @overload fun(scenarioGroup: string): void
-function SetExclusiveScenarioGroup(scenarioGroup) end
-
-    
---- ```
---- Birds will try to reach the given height.  
---- ```
----
---- @hash [0x6C6B148586F934F7](https://docs.fivem.net/natives/?_0x6C6B148586F934F7)
---- @param height number (float)
---- @return void
---- @overload fun(height: number): void
-function SetGlobalMinBirdFlightHeight(height) end
-
-    
---- SetHighFallTask
----
---- @hash [0x8C825BDC7741D37C](https://docs.fivem.net/natives/?_0x8C825BDC7741D37C)
---- @param ped Ped
---- @param duration any
---- @param p2 any
---- @param p3 any
---- @return void
---- @overload fun(ped: Ped, duration: any, p2: any, p3: any): void
-function SetHighFallTask(ped, duration, p2, p3) end
 
     
 --- ```
@@ -1426,16 +1403,26 @@ function SetMountedWeaponTarget(shootingPed, targetPed, targetVehicle, x, y, z) 
 function SetNextDesiredMoveState(p0) end
 
     
---- SetParachuteTaskTarget
+--- SetPedPathCanDropFromHeight
 ---
---- @hash [0xC313379AF0FCEDA7](https://docs.fivem.net/natives/?_0xC313379AF0FCEDA7)
+--- @hash [0xE361C5C71C431A4F](https://docs.fivem.net/natives/?_0xE361C5C71C431A4F)
 --- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
+--- @param Toggle boolean
 --- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number): void
-function SetParachuteTaskTarget(ped, x, y, z) end
+--- @overload fun(ped: Ped, Toggle: boolean): void
+function SetPedPathCanDropFromHeight(ped, Toggle) end
+
+    
+--- SetHighFallTask
+---
+--- @hash [0x8C825BDC7741D37C](https://docs.fivem.net/natives/?_0x8C825BDC7741D37C)
+--- @param ped Ped
+--- @param duration any
+--- @param p2 any
+--- @param p3 any
+--- @return void
+--- @overload fun(ped: Ped, duration: any, p2: any, p3: any): void
+function SetHighFallTask(ped, duration, p2, p3) end
 
     
 --- SetPedDesiredMoveBlendRatio
@@ -1448,6 +1435,18 @@ function SetParachuteTaskTarget(ped, x, y, z) end
 function SetPedDesiredMoveBlendRatio(ped, p1) end
 
     
+--- SetParachuteTaskTarget
+---
+--- @hash [0xC313379AF0FCEDA7](https://docs.fivem.net/natives/?_0xC313379AF0FCEDA7)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number): void
+function SetParachuteTaskTarget(ped, x, y, z) end
+
+    
 --- SetParachuteTaskThrust
 ---
 --- @hash [0x0729BAC1B8C64317](https://docs.fivem.net/natives/?_0x0729BAC1B8C64317)
@@ -1458,14 +1457,25 @@ function SetPedDesiredMoveBlendRatio(ped, p1) end
 function SetParachuteTaskThrust(ped, thrust) end
 
     
---- SetPedPathCanDropFromHeight
+--- ```
+--- Birds will try to reach the given height.  
+--- ```
 ---
---- @hash [0xE361C5C71C431A4F](https://docs.fivem.net/natives/?_0xE361C5C71C431A4F)
---- @param ped Ped
---- @param Toggle boolean
+--- @hash [0x6C6B148586F934F7](https://docs.fivem.net/natives/?_0x6C6B148586F934F7)
+--- @param height number (float)
 --- @return void
---- @overload fun(ped: Ped, Toggle: boolean): void
-function SetPedPathCanDropFromHeight(ped, Toggle) end
+--- @overload fun(height: number): void
+function SetGlobalMinBirdFlightHeight(height) end
+
+    
+--- SetPedPathAvoidFire
+---
+--- @hash [0x4455517B28441E60](https://docs.fivem.net/natives/?_0x4455517B28441E60)
+--- @param ped Ped
+--- @param avoidFire boolean
+--- @return void
+--- @overload fun(ped: Ped, avoidFire: boolean): void
+function SetPedPathAvoidFire(ped, avoidFire) end
 
     
 --- ```
@@ -1502,16 +1512,6 @@ function SetPedCanPlayAmbientIdles(ped, p1, p2) end
 function N_0x8fd89a6240813fd0(ped, p1, p2) end
 
     
---- SetPedPathAvoidFire
----
---- @hash [0x4455517B28441E60](https://docs.fivem.net/natives/?_0x4455517B28441E60)
---- @param ped Ped
---- @param avoidFire boolean
---- @return void
---- @overload fun(ped: Ped, avoidFire: boolean): void
-function SetPedPathAvoidFire(ped, avoidFire) end
-
-    
 --- SetPedPathCanUseClimbovers
 ---
 --- @hash [0x8E06A6FE76C9EFF4](https://docs.fivem.net/natives/?_0x8E06A6FE76C9EFF4)
@@ -1522,14 +1522,16 @@ function SetPedPathAvoidFire(ped, avoidFire) end
 function SetPedPathCanUseClimbovers(ped, Toggle) end
 
     
---- SetPedPathCanUseLadders
+--- ```
+--- Occurrences in the b617d scripts: pastebin.com/Tvg2PRHU  
+--- ```
 ---
---- @hash [0x77A5B103C87F476E](https://docs.fivem.net/natives/?_0x77A5B103C87F476E)
---- @param ped Ped
---- @param Toggle boolean
+--- @hash [0x02C8E5B49848664E](https://docs.fivem.net/natives/?_0x02C8E5B49848664E)
+--- @param scenarioGroup string (char*)
+--- @param p1 boolean
 --- @return void
---- @overload fun(ped: Ped, Toggle: boolean): void
-function SetPedPathCanUseLadders(ped, Toggle) end
+--- @overload fun(scenarioGroup: string, p1: boolean): void
+function SetScenarioGroupEnabled(scenarioGroup, p1) end
 
     
 --- ```
@@ -1558,28 +1560,6 @@ function SetPedPathClimbCostModifier(ped, modifier) end
 function N_0x88e32db8c1a4aa4b(ped, modifier) end
 
     
---- SetPedPathMayEnterWater
----
---- @hash [0xF35425A4204367EC](https://docs.fivem.net/natives/?_0xF35425A4204367EC)
---- @param ped Ped
---- @param mayEnterWater boolean
---- @return void
---- @overload fun(ped: Ped, mayEnterWater: boolean): void
-function SetPedPathMayEnterWater(ped, mayEnterWater) end
-
-    
---- # New Name: SetPedPathMayEnterWater
---- SetPedPathMayEnterWater
----
---- @hash [0xF35425A4204367EC](https://docs.fivem.net/natives/?_0xF35425A4204367EC)
---- @param ped Ped
---- @param mayEnterWater boolean
---- @return void
---- @overload fun(ped: Ped, mayEnterWater: boolean): void
---- @deprecated
-function SetPedPathsWidthPlant(ped, mayEnterWater) end
-
-    
 --- SetPedPathPreferToAvoidWater
 ---
 --- @hash [0x38FE1EC73743793C](https://docs.fivem.net/natives/?_0x38FE1EC73743793C)
@@ -1602,26 +1582,26 @@ function SetPedPathPreferToAvoidWater(ped, avoidWater) end
 function SetPedWaypointRouteOffset(p0, p1, p2, p3) end
 
     
---- ```
---- Occurrences in the b617d scripts: pastebin.com/Tvg2PRHU  
---- ```
+--- SetPedPathMayEnterWater
 ---
---- @hash [0x02C8E5B49848664E](https://docs.fivem.net/natives/?_0x02C8E5B49848664E)
---- @param scenarioGroup string (char*)
---- @param p1 boolean
+--- @hash [0xF35425A4204367EC](https://docs.fivem.net/natives/?_0xF35425A4204367EC)
+--- @param ped Ped
+--- @param mayEnterWater boolean
 --- @return void
---- @overload fun(scenarioGroup: string, p1: boolean): void
-function SetScenarioGroupEnabled(scenarioGroup, p1) end
+--- @overload fun(ped: Ped, mayEnterWater: boolean): void
+function SetPedPathMayEnterWater(ped, mayEnterWater) end
 
     
---- SetSequenceToRepeat
+--- # New Name: SetPedPathMayEnterWater
+--- SetPedPathMayEnterWater
 ---
---- @hash [0x58C70CF3A41E4AE7](https://docs.fivem.net/natives/?_0x58C70CF3A41E4AE7)
---- @param taskSequenceId number (int)
---- @param repeat_ boolean
+--- @hash [0xF35425A4204367EC](https://docs.fivem.net/natives/?_0xF35425A4204367EC)
+--- @param ped Ped
+--- @param mayEnterWater boolean
 --- @return void
---- @overload fun(taskSequenceId: number, repeat_: boolean): void
-function SetSequenceToRepeat(taskSequenceId, repeat_) end
+--- @overload fun(ped: Ped, mayEnterWater: boolean): void
+--- @deprecated
+function SetPedPathsWidthPlant(ped, mayEnterWater) end
 
     
 --- ```
@@ -1666,6 +1646,26 @@ function SetSequenceToRepeat(taskSequenceId, repeat_) end
 function SetScenarioTypeEnabled(scenarioType, toggle) end
 
     
+--- SetPedPathCanUseLadders
+---
+--- @hash [0x77A5B103C87F476E](https://docs.fivem.net/natives/?_0x77A5B103C87F476E)
+--- @param ped Ped
+--- @param Toggle boolean
+--- @return void
+--- @overload fun(ped: Ped, Toggle: boolean): void
+function SetPedPathCanUseLadders(ped, Toggle) end
+
+    
+--- SetSequenceToRepeat
+---
+--- @hash [0x58C70CF3A41E4AE7](https://docs.fivem.net/natives/?_0x58C70CF3A41E4AE7)
+--- @param taskSequenceId number (int)
+--- @param repeat_ boolean
+--- @return void
+--- @overload fun(taskSequenceId: number, repeat_: boolean): void
+function SetSequenceToRepeat(taskSequenceId, repeat_) end
+
+    
 --- SetTaskMoveNetworkSignalBool
 ---
 --- @hash [0xB0A6CFD2C69C1088](https://docs.fivem.net/natives/?_0xB0A6CFD2C69C1088)
@@ -1701,19 +1701,6 @@ function N_0xb0a6cfd2c69c1088(ped, signalName, value) end
 --- @overload fun(ped: Ped, signalName: string, value: boolean): void
 --- @deprecated
 function SetTaskPropertyBool(ped, signalName, value) end
-
-    
---- ```
---- NativeDB Introduced: v1493
---- ```
----
---- @hash [0x373EF409B82697A3](https://docs.fivem.net/natives/?_0x373EF409B82697A3)
---- @param ped Ped
---- @param signalName string (char*)
---- @param value number (float)
---- @return void
---- @overload fun(ped: Ped, signalName: string, value: number): void
-function SetTaskMoveNetworkSignalFloat_2(ped, signalName, value) end
 
     
 --- ```
@@ -1772,6 +1759,83 @@ function SetTaskPropertyFloat(ped, signalName, value) end
 
     
 --- ```
+--- Looks like p1 may be a flag, still need to do some research, though.
+--- ```
+---
+--- @hash [0xEE08C992D238C5D1](https://docs.fivem.net/natives/?_0xEE08C992D238C5D1)
+--- @param ped Ped
+--- @param p1 number (int)
+--- @param p2 boolean
+--- @return void
+--- @overload fun(ped: Ped, p1: number, p2: boolean): void
+function StopAnimPlayback(ped, p1, p2) end
+
+    
+--- TaskAimGunAtCoord
+---
+--- @hash [0x6671F3EEC681BDA1](https://docs.fivem.net/natives/?_0x6671F3EEC681BDA1)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param time number (int)
+--- @param p5 boolean
+--- @param p6 boolean
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number, time: number, p5: boolean, p6: boolean): void
+function TaskAimGunAtCoord(ped, x, y, z, time, p5, p6) end
+
+    
+--- ```
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0x373EF409B82697A3](https://docs.fivem.net/natives/?_0x373EF409B82697A3)
+--- @param ped Ped
+--- @param signalName string (char*)
+--- @param value number (float)
+--- @return void
+--- @overload fun(ped: Ped, signalName: string, value: number): void
+function SetTaskMoveNetworkSignalFloat_2(ped, signalName, value) end
+
+    
+--- [Animations list](https://alexguirre.github.io/animations-list/)
+---
+--- @hash [0x97FF36A1D40EA00A](https://docs.fivem.net/natives/?_0x97FF36A1D40EA00A)
+--- @param ped Ped
+--- @param animDictionary string (char*)
+--- @param animationName string (char*)
+--- @param p3 number (float)
+--- @return void
+--- @overload fun(ped: Ped, animDictionary: string, animationName: string, p3: number): void
+function StopAnimTask(ped, animDictionary, animationName, p3) end
+
+    
+--- SetTaskVehicleChaseIdealPursuitDistance
+---
+--- @hash [0x639B642FACBE4EDD](https://docs.fivem.net/natives/?_0x639B642FACBE4EDD)
+--- @param ped Ped
+--- @param distance number (float)
+--- @return void
+--- @overload fun(ped: Ped, distance: number): void
+function SetTaskVehicleChaseIdealPursuitDistance(ped, distance) end
+
+    
+--- ```
+--- duration: the amount of time in milliseconds to do the task.  -1 will keep the task going until either another task is applied, or CLEAR_ALL_TASKS() is called with the ped  
+--- ```
+---
+--- @hash [0x9B53BB6E8943AF53](https://docs.fivem.net/natives/?_0x9B53BB6E8943AF53)
+--- @param ped Ped
+--- @param entity Entity
+--- @param duration number (int)
+--- @param p3 boolean
+--- @return void
+--- @overload fun(ped: Ped, entity: Entity, duration: number, p3: boolean): void
+function TaskAimGunAtEntity(ped, entity, duration, p3) end
+
+    
+--- ```
 --- * Flag 1: Aggressive ramming of suspect
 --- * Flag 2: Ram attempts
 --- * Flag 8: Medium-aggressive boxing tactic with a bit of PIT
@@ -1788,27 +1852,20 @@ function SetTaskPropertyFloat(ped, signalName, value) end
 function SetTaskVehicleChaseBehaviorFlag(ped, flag, set) end
 
     
---- ```
---- Looks like p1 may be a flag, still need to do some research, though.
---- ```
+--- TaskAimGunScriptedWithTarget
 ---
---- @hash [0xEE08C992D238C5D1](https://docs.fivem.net/natives/?_0xEE08C992D238C5D1)
---- @param ped Ped
---- @param p1 number (int)
---- @param p2 boolean
+--- @hash [0x8605AF0DE8B3A5AC](https://docs.fivem.net/natives/?_0x8605AF0DE8B3A5AC)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 any
+--- @param p6 boolean
+--- @param p7 boolean
 --- @return void
---- @overload fun(ped: Ped, p1: number, p2: boolean): void
-function StopAnimPlayback(ped, p1, p2) end
-
-    
---- SetTaskVehicleChaseIdealPursuitDistance
----
---- @hash [0x639B642FACBE4EDD](https://docs.fivem.net/natives/?_0x639B642FACBE4EDD)
---- @param ped Ped
---- @param distance number (float)
---- @return void
---- @overload fun(ped: Ped, distance: number): void
-function SetTaskVehicleChaseIdealPursuitDistance(ped, distance) end
+--- @overload fun(p0: any, p1: any, p2: number, p3: number, p4: number, p5: any, p6: boolean, p7: boolean): void
+function TaskAimGunScriptedWithTarget(p0, p1, p2, p3, p4, p5, p6, p7) end
 
     
 --- ```
@@ -1827,69 +1884,6 @@ function SetTaskVehicleChaseIdealPursuitDistance(ped, distance) end
 function TaskAchieveHeading(ped, heading, timeout) end
 
     
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash [0x97FF36A1D40EA00A](https://docs.fivem.net/natives/?_0x97FF36A1D40EA00A)
---- @param ped Ped
---- @param animDictionary string (char*)
---- @param animationName string (char*)
---- @param p3 number (float)
---- @return void
---- @overload fun(ped: Ped, animDictionary: string, animationName: string, p3: number): void
-function StopAnimTask(ped, animDictionary, animationName, p3) end
-
-    
---- TaskAimGunAtCoord
----
---- @hash [0x6671F3EEC681BDA1](https://docs.fivem.net/natives/?_0x6671F3EEC681BDA1)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param time number (int)
---- @param p5 boolean
---- @param p6 boolean
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, time: number, p5: boolean, p6: boolean): void
-function TaskAimGunAtCoord(ped, x, y, z, time, p5, p6) end
-
-    
---- TaskAgitatedAction
----
---- @hash [0x19D1B791CB3670FE](https://docs.fivem.net/natives/?_0x19D1B791CB3670FE)
---- @param ped Ped
---- @param ped2 Ped
---- @return void
---- @overload fun(ped: Ped, ped2: Ped): void
-function TaskAgitatedAction(ped, ped2) end
-
-    
---- # New Name: TaskAgitatedAction
---- TaskAgitatedAction
----
---- @hash [0x19D1B791CB3670FE](https://docs.fivem.net/natives/?_0x19D1B791CB3670FE)
---- @param ped Ped
---- @param ped2 Ped
---- @return void
---- @overload fun(ped: Ped, ped2: Ped): void
---- @deprecated
-function N_0x19d1b791cb3670fe(ped, ped2) end
-
-    
---- ```
---- duration: the amount of time in milliseconds to do the task.  -1 will keep the task going until either another task is applied, or CLEAR_ALL_TASKS() is called with the ped  
---- ```
----
---- @hash [0x9B53BB6E8943AF53](https://docs.fivem.net/natives/?_0x9B53BB6E8943AF53)
---- @param ped Ped
---- @param entity Entity
---- @param duration number (int)
---- @param p3 boolean
---- @return void
---- @overload fun(ped: Ped, entity: Entity, duration: number, p3: boolean): void
-function TaskAimGunAtEntity(ped, entity, duration, p3) end
-
-    
 --- TaskAimGunScripted
 ---
 --- @hash [0x7A192BE16D373D00](https://docs.fivem.net/natives/?_0x7A192BE16D373D00)
@@ -1902,20 +1896,14 @@ function TaskAimGunAtEntity(ped, entity, duration, p3) end
 function TaskAimGunScripted(ped, scriptTask, p2, p3) end
 
     
---- TaskAimGunScriptedWithTarget
+--- TaskClimbLadder
 ---
---- @hash [0x8605AF0DE8B3A5AC](https://docs.fivem.net/natives/?_0x8605AF0DE8B3A5AC)
---- @param p0 any
---- @param p1 any
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @param p5 any
---- @param p6 boolean
---- @param p7 boolean
+--- @hash [0xB6C987F9285A3814](https://docs.fivem.net/natives/?_0xB6C987F9285A3814)
+--- @param ped Ped
+--- @param p1 number (int)
 --- @return void
---- @overload fun(p0: any, p1: any, p2: number, p3: number, p4: number, p5: any, p6: boolean, p7: boolean): void
-function TaskAimGunScriptedWithTarget(p0, p1, p2, p3, p4, p5, p6, p7) end
+--- @overload fun(ped: Ped, p1: number): void
+function TaskClimbLadder(ped, p1) end
 
     
 --- ```
@@ -1964,6 +1952,37 @@ function TaskArrestPed(ped, target) end
 function TaskBoatMission(pedDriver, boat, p2, p3, x, y, z, p7, maxSpeed, drivingStyle, p10, p11) end
 
     
+--- TaskAgitatedAction
+---
+--- @hash [0x19D1B791CB3670FE](https://docs.fivem.net/natives/?_0x19D1B791CB3670FE)
+--- @param ped Ped
+--- @param ped2 Ped
+--- @return void
+--- @overload fun(ped: Ped, ped2: Ped): void
+function TaskAgitatedAction(ped, ped2) end
+
+    
+--- # New Name: TaskAgitatedAction
+--- TaskAgitatedAction
+---
+--- @hash [0x19D1B791CB3670FE](https://docs.fivem.net/natives/?_0x19D1B791CB3670FE)
+--- @param ped Ped
+--- @param ped2 Ped
+--- @return void
+--- @overload fun(ped: Ped, ped2: Ped): void
+--- @deprecated
+function N_0x19d1b791cb3670fe(ped, ped2) end
+
+    
+--- TaskClearDefensiveArea
+---
+--- @hash [0x95A6C46A31D1917D](https://docs.fivem.net/natives/?_0x95A6C46A31D1917D)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function TaskClearDefensiveArea(p0) end
+
+    
 --- ```
 --- p2 tend to be 16, 17 or 1  
 --- p3 to p7 tend to be 0.0  
@@ -1983,13 +2002,67 @@ function TaskBoatMission(pedDriver, boat, p2, p3, x, y, z, p7, maxSpeed, driving
 function TaskChatToPed(ped, target, p2, p3, p4, p5, p6, p7) end
 
     
---- TaskClearDefensiveArea
+--- TaskCombatHatedTargetsAroundPedTimed
 ---
---- @hash [0x95A6C46A31D1917D](https://docs.fivem.net/natives/?_0x95A6C46A31D1917D)
+--- @hash [0x2BBA30B854534A0C](https://docs.fivem.net/natives/?_0x2BBA30B854534A0C)
 --- @param p0 any
+--- @param p1 number (float)
+--- @param p2 any
+--- @param p3 any
 --- @return void
---- @overload fun(p0: any): void
-function TaskClearDefensiveArea(p0) end
+--- @overload fun(p0: any, p1: number, p2: any, p3: any): void
+function TaskCombatHatedTargetsAroundPedTimed(p0, p1, p2, p3) end
+
+    
+--- ```
+--- Despite its name, it only attacks ONE hated target. The one closest hated target.  
+--- p2 seems to be always 0  
+--- ```
+---
+--- @hash [0x7BF835BB9E2698C8](https://docs.fivem.net/natives/?_0x7BF835BB9E2698C8)
+--- @param ped Ped
+--- @param radius number (float)
+--- @param p2 number (int)
+--- @return void
+--- @overload fun(ped: Ped, radius: number, p2: number): void
+function TaskCombatHatedTargetsAroundPed(ped, radius, p2) end
+
+    
+--- ```
+--- Climbs or vaults the nearest thing.  
+--- ```
+---
+--- @hash [0x89D9FCC2435112F1](https://docs.fivem.net/natives/?_0x89D9FCC2435112F1)
+--- @param ped Ped
+--- @param unused boolean
+--- @return void
+--- @overload fun(ped: Ped, unused: boolean): void
+function TaskClimb(ped, unused) end
+
+    
+--- TaskEveryoneLeaveVehicle
+---
+--- @hash [0x7F93691AB4B92272](https://docs.fivem.net/natives/?_0x7F93691AB4B92272)
+--- @param vehicle Vehicle
+--- @return void
+--- @overload fun(vehicle: Vehicle): void
+function TaskEveryoneLeaveVehicle(vehicle) end
+
+    
+--- ```
+--- Despite its name, it only attacks ONE hated target. The one closest to the specified position.  
+--- ```
+---
+--- @hash [0x4CF5F55DAC3280A0](https://docs.fivem.net/natives/?_0x4CF5F55DAC3280A0)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param p5 any
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number, radius: number, p5: any): void
+function TaskCombatHatedTargetsInArea(ped, x, y, z, radius, p5) end
 
     
 --- ```
@@ -2013,70 +2086,6 @@ function TaskClearDefensiveArea(p0) end
 --- @return void
 --- @overload fun(ped: Ped): void
 function TaskClearLookAt(ped) end
-
-    
---- ```
---- Climbs or vaults the nearest thing.  
---- ```
----
---- @hash [0x89D9FCC2435112F1](https://docs.fivem.net/natives/?_0x89D9FCC2435112F1)
---- @param ped Ped
---- @param unused boolean
---- @return void
---- @overload fun(ped: Ped, unused: boolean): void
-function TaskClimb(ped, unused) end
-
-    
---- TaskClimbLadder
----
---- @hash [0xB6C987F9285A3814](https://docs.fivem.net/natives/?_0xB6C987F9285A3814)
---- @param ped Ped
---- @param p1 number (int)
---- @return void
---- @overload fun(ped: Ped, p1: number): void
-function TaskClimbLadder(ped, p1) end
-
-    
---- ```
---- Despite its name, it only attacks ONE hated target. The one closest hated target.  
---- p2 seems to be always 0  
---- ```
----
---- @hash [0x7BF835BB9E2698C8](https://docs.fivem.net/natives/?_0x7BF835BB9E2698C8)
---- @param ped Ped
---- @param radius number (float)
---- @param p2 number (int)
---- @return void
---- @overload fun(ped: Ped, radius: number, p2: number): void
-function TaskCombatHatedTargetsAroundPed(ped, radius, p2) end
-
-    
---- ```
---- Despite its name, it only attacks ONE hated target. The one closest to the specified position.  
---- ```
----
---- @hash [0x4CF5F55DAC3280A0](https://docs.fivem.net/natives/?_0x4CF5F55DAC3280A0)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @param p5 any
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, radius: number, p5: any): void
-function TaskCombatHatedTargetsInArea(ped, x, y, z, radius, p5) end
-
-    
---- TaskCombatHatedTargetsAroundPedTimed
----
---- @hash [0x2BBA30B854534A0C](https://docs.fivem.net/natives/?_0x2BBA30B854534A0C)
---- @param p0 any
---- @param p1 number (float)
---- @param p2 any
---- @param p3 any
---- @return void
---- @overload fun(p0: any, p1: number, p2: any, p3: any): void
-function TaskCombatHatedTargetsAroundPedTimed(p0, p1, p2, p3) end
 
     
 --- TaskCombatPedTimed
@@ -2107,23 +2116,13 @@ function TaskCombatPedTimed(p0, ped, p2, p3) end
 function TaskCombatPed(ped, targetPed, p2, p3) end
 
     
---- ```
---- speed 1.0 = walk, 2.0 = run  
---- p5 1 = normal, 3 = teleport to vehicle, 16 = teleport directly into vehicle  
---- p6 is always 0  
---- ```
+--- Clears the current point route. Call this before [TASK_EXTEND_ROUTE](https://docs.fivem.net/natives/?_0x1E7889778264843A) and [TASK_FOLLOW_POINT_ROUTE](https://docs.fivem.net/natives/?_0x595583281858626E).
 ---
---- @hash [0xC20E50AA46D09CA8](https://docs.fivem.net/natives/?_0xC20E50AA46D09CA8)
---- @param ped Ped
---- @param vehicle Vehicle
---- @param timeout number (int)
---- @param seatIndex number (int)
---- @param speed number (float)
---- @param flag number (int)
---- @param p6 any
+--- @hash [0x841142A1376E9006](https://docs.fivem.net/natives/?_0x841142A1376E9006)
+---
 --- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle, timeout: number, seatIndex: number, speed: number, flag: number, p6: any): void
-function TaskEnterVehicle(ped, vehicle, timeout, seatIndex, speed, flag, p6) end
+--- @overload fun(): void
+function TaskFlushRoute() end
 
     
 --- TaskCower
@@ -2147,6 +2146,67 @@ function TaskCower(ped, duration) end
 --- @return void
 --- @overload fun(p0: any, p1: any, p2: number, p3: number, p4: number): void
 function TaskExitCover(p0, p1, p2, p3, p4) end
+
+    
+--- TaskGetOffBoat
+---
+--- @hash [0x9C00E77AF14B2DFF](https://docs.fivem.net/natives/?_0x9C00E77AF14B2DFF)
+--- @param ped Ped
+--- @param boat Vehicle
+--- @return void
+--- @overload fun(ped: Ped, boat: Vehicle): void
+function TaskGetOffBoat(ped, boat) end
+
+    
+--- # New Name: TaskGetOffBoat
+--- TaskGetOffBoat
+---
+--- @hash [0x9C00E77AF14B2DFF](https://docs.fivem.net/natives/?_0x9C00E77AF14B2DFF)
+--- @param ped Ped
+--- @param boat Vehicle
+--- @return void
+--- @overload fun(ped: Ped, boat: Vehicle): void
+--- @deprecated
+function TaskGetOffBoat(ped, boat) end
+
+    
+--- ```
+--- speed 1.0 = walk, 2.0 = run  
+--- p5 1 = normal, 3 = teleport to vehicle, 16 = teleport directly into vehicle  
+--- p6 is always 0  
+--- ```
+---
+--- @hash [0xC20E50AA46D09CA8](https://docs.fivem.net/natives/?_0xC20E50AA46D09CA8)
+--- @param ped Ped
+--- @param vehicle Vehicle
+--- @param timeout number (int)
+--- @param seatIndex number (int)
+--- @param speed number (float)
+--- @param flag number (int)
+--- @param p6 any
+--- @return void
+--- @overload fun(ped: Ped, vehicle: Vehicle, timeout: number, seatIndex: number, speed: number, flag: number, p6: any): void
+function TaskEnterVehicle(ped, vehicle, timeout, seatIndex, speed, flag, p6) end
+
+    
+--- TaskFollowNavMeshToCoordAdvanced
+---
+--- @hash [0x17F58B88D085DBAC](https://docs.fivem.net/natives/?_0x17F58B88D085DBAC)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param timeout number (int)
+--- @param unkFloat number (float)
+--- @param unkInt number (int)
+--- @param unkX number (float)
+--- @param unkY number (float)
+--- @param unkZ number (float)
+--- @param unk_40000f number (float)
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number, speed: number, timeout: number, unkFloat: number, unkInt: number, unkX: number, unkY: number, unkZ: number, unk_40000f: number): void
+function TaskFollowNavMeshToCoordAdvanced(ped, x, y, z, speed, timeout, unkFloat, unkInt, unkX, unkY, unkZ, unk_40000f) end
 
     
 --- ```
@@ -2174,42 +2234,26 @@ function TaskExitCover(p0, p1, p2, p3, p4) end
 function TaskDriveBy(driverPed, targetPed, targetVehicle, targetX, targetY, targetZ, distanceToShoot, pedAccuracy, p8, firingPattern) end
 
     
---- TaskEveryoneLeaveVehicle
+--- ```
+--- MulleKD19: Makes the ped go on the created point route.
+--- ped: The ped to give the task to.
+--- speed: The speed to move at in m/s.
+--- int: Unknown. Can be 0, 1, 2 or 3.
+--- Example:
+--- TASK_FLUSH_ROUTE();
+--- TASK_EXTEND_ROUTE(0f, 0f, 70f);
+--- TASK_EXTEND_ROUTE(10f, 0f, 70f);
+--- TASK_EXTEND_ROUTE(10f, 10f, 70f);
+--- TASK_FOLLOW_POINT_ROUTE(GET_PLAYER_PED(), 1f, 0);
+--- ```
 ---
---- @hash [0x7F93691AB4B92272](https://docs.fivem.net/natives/?_0x7F93691AB4B92272)
---- @param vehicle Vehicle
---- @return void
---- @overload fun(vehicle: Vehicle): void
-function TaskEveryoneLeaveVehicle(vehicle) end
-
-    
---- Clears the current point route. Call this before [TASK_EXTEND_ROUTE](https://docs.fivem.net/natives/?_0x1E7889778264843A) and [TASK_FOLLOW_POINT_ROUTE](https://docs.fivem.net/natives/?_0x595583281858626E).
----
---- @hash [0x841142A1376E9006](https://docs.fivem.net/natives/?_0x841142A1376E9006)
----
---- @return void
---- @overload fun(): void
-function TaskFlushRoute() end
-
-    
---- TaskFollowNavMeshToCoordAdvanced
----
---- @hash [0x17F58B88D085DBAC](https://docs.fivem.net/natives/?_0x17F58B88D085DBAC)
+--- @hash [0x595583281858626E](https://docs.fivem.net/natives/?_0x595583281858626E)
 --- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
 --- @param speed number (float)
---- @param timeout number (int)
---- @param unkFloat number (float)
---- @param unkInt number (int)
---- @param unkX number (float)
---- @param unkY number (float)
---- @param unkZ number (float)
---- @param unk_40000f number (float)
+--- @param unknown number (int)
 --- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, speed: number, timeout: number, unkFloat: number, unkInt: number, unkX: number, unkY: number, unkZ: number, unk_40000f: number): void
-function TaskFollowNavMeshToCoordAdvanced(ped, x, y, z, speed, timeout, unkFloat, unkInt, unkX, unkY, unkZ, unk_40000f) end
+--- @overload fun(ped: Ped, speed: number, unknown: number): void
+function TaskFollowPointRoute(ped, speed, unknown) end
 
     
 --- Adds a new point to the current point route; a maximum of 8 points can be added.
@@ -2225,23 +2269,35 @@ function TaskFollowNavMeshToCoordAdvanced(ped, x, y, z, speed, timeout, unkFloat
 function TaskExtendRoute(x, y, z) end
 
     
---- ```
---- If no timeout, set timeout to -1.  
---- ```
+--- TaskGoStraightToCoord
 ---
---- @hash [0x15D3A79D4E44B913](https://docs.fivem.net/natives/?_0x15D3A79D4E44B913)
+--- @hash [0xD76B57B44F1E6F8B](https://docs.fivem.net/natives/?_0xD76B57B44F1E6F8B)
 --- @param ped Ped
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param speed number (float)
 --- @param timeout number (int)
---- @param stoppingRange number (float)
---- @param persistFollowing boolean
---- @param unk number (float)
+--- @param targetHeading number (float)
+--- @param distanceToSlide number (float)
 --- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, speed: number, timeout: number, stoppingRange: number, persistFollowing: boolean, unk: number): void
-function TaskFollowNavMeshToCoord(ped, x, y, z, speed, timeout, stoppingRange, persistFollowing, unk) end
+--- @overload fun(ped: Ped, x: number, y: number, z: number, speed: number, timeout: number, targetHeading: number, distanceToSlide: number): void
+function TaskGoStraightToCoord(ped, x, y, z, speed, timeout, targetHeading, distanceToSlide) end
+
+    
+--- TaskGoStraightToCoordRelativeToEntity
+---
+--- @hash [0x61E360B7E040D12E](https://docs.fivem.net/natives/?_0x61E360B7E040D12E)
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 any
+--- @return void
+--- @overload fun(entity1: Entity, entity2: Entity, p2: number, p3: number, p4: number, p5: number, p6: any): void
+function TaskGoStraightToCoordRelativeToEntity(entity1, entity2, p2, p3, p4, p5, p6) end
 
     
 --- ```
@@ -2265,55 +2321,6 @@ function TaskFollowNavMeshToCoord(ped, x, y, z, speed, timeout, stoppingRange, p
 function TaskFollowToOffsetOfEntity(ped, entity, offsetX, offsetY, offsetZ, movementSpeed, timeout, stoppingRange, persistFollowing) end
 
     
---- ```
---- MulleKD19: Makes the ped go on the created point route.
---- ped: The ped to give the task to.
---- speed: The speed to move at in m/s.
---- int: Unknown. Can be 0, 1, 2 or 3.
---- Example:
---- TASK_FLUSH_ROUTE();
---- TASK_EXTEND_ROUTE(0f, 0f, 70f);
---- TASK_EXTEND_ROUTE(10f, 0f, 70f);
---- TASK_EXTEND_ROUTE(10f, 10f, 70f);
---- TASK_FOLLOW_POINT_ROUTE(GET_PLAYER_PED(), 1f, 0);
---- ```
----
---- @hash [0x595583281858626E](https://docs.fivem.net/natives/?_0x595583281858626E)
---- @param ped Ped
---- @param speed number (float)
---- @param unknown number (int)
---- @return void
---- @overload fun(ped: Ped, speed: number, unknown: number): void
-function TaskFollowPointRoute(ped, speed, unknown) end
-
-    
---- See [`FORCE_PED_MOTION_STATE`](https://docs.fivem.net/natives/?_0xF28965D04F570DCA)
----
---- @hash [0x4F056E1AFFEF17AB](https://docs.fivem.net/natives/?_0x4F056E1AFFEF17AB)
---- @param ped Ped
---- @param state Hash
---- @param p2 boolean
---- @return void
---- @overload fun(ped: Ped, state: Hash, p2: boolean): void
-function TaskForceMotionState(ped, state, p2) end
-
-    
---- TaskGoStraightToCoord
----
---- @hash [0xD76B57B44F1E6F8B](https://docs.fivem.net/natives/?_0xD76B57B44F1E6F8B)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param speed number (float)
---- @param timeout number (int)
---- @param targetHeading number (float)
---- @param distanceToSlide number (float)
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, speed: number, timeout: number, targetHeading: number, distanceToSlide: number): void
-function TaskGoStraightToCoord(ped, x, y, z, speed, timeout, targetHeading, distanceToSlide) end
-
-    
 --- TaskFollowWaypointRecording
 ---
 --- @hash [0x0759591819534F7B](https://docs.fivem.net/natives/?_0x0759591819534F7B)
@@ -2327,41 +2334,95 @@ function TaskGoStraightToCoord(ped, x, y, z, speed, timeout, targetHeading, dist
 function TaskFollowWaypointRecording(p0, p1, p2, p3, p4) end
 
     
---- TaskGetOffBoat
+--- See [`FORCE_PED_MOTION_STATE`](https://docs.fivem.net/natives/?_0xF28965D04F570DCA)
 ---
---- @hash [0x9C00E77AF14B2DFF](https://docs.fivem.net/natives/?_0x9C00E77AF14B2DFF)
+--- @hash [0x4F056E1AFFEF17AB](https://docs.fivem.net/natives/?_0x4F056E1AFFEF17AB)
 --- @param ped Ped
---- @param boat Vehicle
+--- @param state Hash
+--- @param p2 boolean
 --- @return void
---- @overload fun(ped: Ped, boat: Vehicle): void
-function TaskGetOffBoat(ped, boat) end
+--- @overload fun(ped: Ped, state: Hash, p2: boolean): void
+function TaskForceMotionState(ped, state, p2) end
 
     
---- # New Name: TaskGetOffBoat
---- TaskGetOffBoat
+--- ```
+--- If no timeout, set timeout to -1.  
+--- ```
 ---
---- @hash [0x9C00E77AF14B2DFF](https://docs.fivem.net/natives/?_0x9C00E77AF14B2DFF)
+--- @hash [0x15D3A79D4E44B913](https://docs.fivem.net/natives/?_0x15D3A79D4E44B913)
 --- @param ped Ped
---- @param boat Vehicle
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param timeout number (int)
+--- @param stoppingRange number (float)
+--- @param persistFollowing boolean
+--- @param unk number (float)
 --- @return void
---- @overload fun(ped: Ped, boat: Vehicle): void
---- @deprecated
-function TaskGetOffBoat(ped, boat) end
+--- @overload fun(ped: Ped, x: number, y: number, z: number, speed: number, timeout: number, stoppingRange: number, persistFollowing: boolean, unk: number): void
+function TaskFollowNavMeshToCoord(ped, x, y, z, speed, timeout, stoppingRange, persistFollowing, unk) end
 
     
---- TaskGoStraightToCoordRelativeToEntity
+--- ```
+--- example from fm_mission_controller
+--- TASK::TASK_GO_TO_COORD_ANY_MEANS(l_649, sub_f7e86(-1, 0), 1.0, 0, 0, 786603, 0xbf800000);
+--- ```
 ---
---- @hash [0x61E360B7E040D12E](https://docs.fivem.net/natives/?_0x61E360B7E040D12E)
---- @param entity1 Entity
---- @param entity2 Entity
+--- @hash [0x5BC448CB78FA3E88](https://docs.fivem.net/natives/?_0x5BC448CB78FA3E88)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param p5 any
+--- @param p6 boolean
+--- @param walkingStyle number (int)
+--- @param p8 number (float)
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number, speed: number, p5: any, p6: boolean, walkingStyle: number, p8: number): void
+function TaskGoToCoordAnyMeans(ped, x, y, z, speed, p5, p6, walkingStyle, p8) end
+
+    
+--- TaskGoToCoordWhileAimingAtEntity
+---
+--- @hash [0xB2A16444EAD9AE47](https://docs.fivem.net/natives/?_0xB2A16444EAD9AE47)
+--- @param p0 any
+--- @param p1 number (float)
 --- @param p2 number (float)
 --- @param p3 number (float)
---- @param p4 number (float)
+--- @param p4 any
 --- @param p5 number (float)
---- @param p6 any
+--- @param p6 boolean
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @param p9 boolean
+--- @param p10 any
+--- @param p11 boolean
+--- @param p12 any
+--- @param p13 any
 --- @return void
---- @overload fun(entity1: Entity, entity2: Entity, p2: number, p3: number, p4: number, p5: number, p6: any): void
-function TaskGoStraightToCoordRelativeToEntity(entity1, entity2, p2, p3, p4, p5, p6) end
+--- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: any, p5: number, p6: boolean, p7: number, p8: number, p9: boolean, p10: any, p11: boolean, p12: any, p13: any): void
+function TaskGoToCoordWhileAimingAtEntity(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13) end
+
+    
+--- ```
+--- eg
+---  TASK::TASK_GOTO_ENTITY_AIMING(v_2, PLAYER::PLAYER_PED_ID(), 5.0, 25.0);
+--- ped = Ped you want to perform this task.
+--- target = the Entity they should aim at.
+--- distanceToStopAt = distance from the target, where the ped should stop to aim.
+--- StartAimingDist = distance where the ped should start to aim.
+--- ```
+---
+--- @hash [0xA9DA48FAB8A76C12](https://docs.fivem.net/natives/?_0xA9DA48FAB8A76C12)
+--- @param ped Ped
+--- @param target Entity
+--- @param distanceToStopAt number (float)
+--- @param StartAimingDist number (float)
+--- @return void
+--- @overload fun(ped: Ped, target: Entity, distanceToStopAt: number, StartAimingDist: number): void
+function TaskGotoEntityAiming(ped, target, distanceToStopAt, StartAimingDist) end
 
     
 --- ```
@@ -2412,11 +2473,10 @@ function TaskGoToCoordAndAimAtHatedEntitiesNearCoord(pedHandle, goToLocationX, g
 
     
 --- ```
---- example from fm_mission_controller
---- TASK::TASK_GO_TO_COORD_ANY_MEANS(l_649, sub_f7e86(-1, 0), 1.0, 0, 0, 786603, 0xbf800000);
+--- NativeDB Added Parameter 13: Any p12
 --- ```
 ---
---- @hash [0x5BC448CB78FA3E88](https://docs.fivem.net/natives/?_0x5BC448CB78FA3E88)
+--- @hash [0x1DD45F9ECFDB1BC9](https://docs.fivem.net/natives/?_0x1DD45F9ECFDB1BC9)
 --- @param ped Ped
 --- @param x number (float)
 --- @param y number (float)
@@ -2426,9 +2486,70 @@ function TaskGoToCoordAndAimAtHatedEntitiesNearCoord(pedHandle, goToLocationX, g
 --- @param p6 boolean
 --- @param walkingStyle number (int)
 --- @param p8 number (float)
+--- @param p9 any
+--- @param p10 any
+--- @param p11 any
 --- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, speed: number, p5: any, p6: boolean, walkingStyle: number, p8: number): void
-function TaskGoToCoordAnyMeans(ped, x, y, z, speed, p5, p6, walkingStyle, p8) end
+--- @overload fun(ped: Ped, x: number, y: number, z: number, speed: number, p5: any, p6: boolean, walkingStyle: number, p8: number, p9: any, p10: any, p11: any): void
+function TaskGoToCoordAnyMeansExtraParams(ped, x, y, z, speed, p5, p6, walkingStyle, p8, p9, p10, p11) end
+
+    
+--- TaskGotoEntityOffset
+---
+--- @hash [0xE39B4FF4FDEBDE27](https://docs.fivem.net/natives/?_0xE39B4FF4FDEBDE27)
+--- @param ped Ped
+--- @param p1 any
+--- @param p2 any
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param duration number (int)
+--- @return void
+--- @overload fun(ped: Ped, p1: any, p2: any, x: number, y: number, z: number, duration: number): void
+function TaskGotoEntityOffset(ped, p1, p2, x, y, z, duration) end
+
+    
+--- ```
+--- The entity will move towards the target until time is over (duration) or get in target's range (distance). p5 and p6 are unknown, but you could leave p5 = 1073741824 or 100 or even 0 (didn't see any difference but on the decompiled scripts, they use 1073741824 mostly) and p6 = 0
+--- Note: I've only tested it on entity -> ped and target -> vehicle. It could work differently on other entities, didn't try it yet.
+--- Example: TASK::TASK_GO_TO_ENTITY(pedHandle, vehicleHandle, 5000, 4.0, 100, 1073741824, 0)
+--- Ped will run towards the vehicle for 5 seconds and stop when time is over or when he gets 4 meters(?) around the vehicle (with duration = -1, the task duration will be ignored).
+--- ```
+---
+--- @hash [0x6A071245EB0D1882](https://docs.fivem.net/natives/?_0x6A071245EB0D1882)
+--- @param entity Entity
+--- @param target Entity
+--- @param duration number (int)
+--- @param distance number (float)
+--- @param speed number (float)
+--- @param p5 number (float)
+--- @param p6 number (int)
+--- @return void
+--- @overload fun(entity: Entity, target: Entity, duration: number, distance: number, speed: number, p5: number, p6: number): void
+function TaskGoToEntity(entity, target, duration, distance, speed, p5, p6) end
+
+    
+--- Will make the ped move to a coordinate while aiming (and optionally shooting) at given coordinates.
+---
+--- @hash [0x11315AB3385B8AC0](https://docs.fivem.net/natives/?_0x11315AB3385B8AC0)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param aimAtX number (float)
+--- @param aimAtY number (float)
+--- @param aimAtZ number (float)
+--- @param moveSpeed number (float)
+--- @param shoot boolean
+--- @param p9 number (float)
+--- @param p10 number (float)
+--- @param p11 boolean
+--- @param flags any
+--- @param p13 boolean
+--- @param firingPattern Hash
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number, aimAtX: number, aimAtY: number, aimAtZ: number, moveSpeed: number, shoot: boolean, p9: number, p10: number, p11: boolean, flags: any, p13: boolean, firingPattern: Hash): void
+function TaskGoToCoordWhileAimingAtCoord(ped, x, y, z, aimAtX, aimAtY, aimAtZ, moveSpeed, shoot, p9, p10, p11, flags, p13, firingPattern) end
 
     
 --- ```
@@ -2455,113 +2576,6 @@ function TaskGoToCoordAnyMeansExtraParamsWithCruiseSpeed(ped, x, y, z, speed, p5
 
     
 --- ```
---- NativeDB Added Parameter 13: Any p12
---- ```
----
---- @hash [0x1DD45F9ECFDB1BC9](https://docs.fivem.net/natives/?_0x1DD45F9ECFDB1BC9)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param speed number (float)
---- @param p5 any
---- @param p6 boolean
---- @param walkingStyle number (int)
---- @param p8 number (float)
---- @param p9 any
---- @param p10 any
---- @param p11 any
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, speed: number, p5: any, p6: boolean, walkingStyle: number, p8: number, p9: any, p10: any, p11: any): void
-function TaskGoToCoordAnyMeansExtraParams(ped, x, y, z, speed, p5, p6, walkingStyle, p8, p9, p10, p11) end
-
-    
---- TaskGoToCoordWhileAimingAtEntity
----
---- @hash [0xB2A16444EAD9AE47](https://docs.fivem.net/natives/?_0xB2A16444EAD9AE47)
---- @param p0 any
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 any
---- @param p5 number (float)
---- @param p6 boolean
---- @param p7 number (float)
---- @param p8 number (float)
---- @param p9 boolean
---- @param p10 any
---- @param p11 boolean
---- @param p12 any
---- @param p13 any
---- @return void
---- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: any, p5: number, p6: boolean, p7: number, p8: number, p9: boolean, p10: any, p11: boolean, p12: any, p13: any): void
-function TaskGoToCoordWhileAimingAtEntity(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13) end
-
-    
---- Will make the ped move to a coordinate while aiming (and optionally shooting) at given coordinates.
----
---- @hash [0x11315AB3385B8AC0](https://docs.fivem.net/natives/?_0x11315AB3385B8AC0)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param aimAtX number (float)
---- @param aimAtY number (float)
---- @param aimAtZ number (float)
---- @param moveSpeed number (float)
---- @param shoot boolean
---- @param p9 number (float)
---- @param p10 number (float)
---- @param p11 boolean
---- @param flags any
---- @param p13 boolean
---- @param firingPattern Hash
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, aimAtX: number, aimAtY: number, aimAtZ: number, moveSpeed: number, shoot: boolean, p9: number, p10: number, p11: boolean, flags: any, p13: boolean, firingPattern: Hash): void
-function TaskGoToCoordWhileAimingAtCoord(ped, x, y, z, aimAtX, aimAtY, aimAtZ, moveSpeed, shoot, p9, p10, p11, flags, p13, firingPattern) end
-
-    
---- TaskGoToEntityWhileAimingAtCoord
----
---- @hash [0x04701832B739DCE5](https://docs.fivem.net/natives/?_0x04701832B739DCE5)
---- @param p0 any
---- @param p1 any
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @param p5 number (float)
---- @param p6 boolean
---- @param p7 number (float)
---- @param p8 number (float)
---- @param p9 boolean
---- @param p10 boolean
---- @param p11 any
---- @return void
---- @overload fun(p0: any, p1: any, p2: number, p3: number, p4: number, p5: number, p6: boolean, p7: number, p8: number, p9: boolean, p10: boolean, p11: any): void
-function TaskGoToEntityWhileAimingAtCoord(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) end
-
-    
---- ```
---- The entity will move towards the target until time is over (duration) or get in target's range (distance). p5 and p6 are unknown, but you could leave p5 = 1073741824 or 100 or even 0 (didn't see any difference but on the decompiled scripts, they use 1073741824 mostly) and p6 = 0
---- Note: I've only tested it on entity -> ped and target -> vehicle. It could work differently on other entities, didn't try it yet.
---- Example: TASK::TASK_GO_TO_ENTITY(pedHandle, vehicleHandle, 5000, 4.0, 100, 1073741824, 0)
---- Ped will run towards the vehicle for 5 seconds and stop when time is over or when he gets 4 meters(?) around the vehicle (with duration = -1, the task duration will be ignored).
---- ```
----
---- @hash [0x6A071245EB0D1882](https://docs.fivem.net/natives/?_0x6A071245EB0D1882)
---- @param entity Entity
---- @param target Entity
---- @param duration number (int)
---- @param distance number (float)
---- @param speed number (float)
---- @param p5 number (float)
---- @param p6 number (int)
---- @return void
---- @overload fun(entity: Entity, target: Entity, duration: number, distance: number, speed: number, p5: number, p6: number): void
-function TaskGoToEntity(entity, target, duration, distance, speed, p5, p6) end
-
-    
---- ```
 --- shootatEntity:  
 --- If true, peds will shoot at Entity till it is dead.  
 --- If false, peds will just walk till they reach the entity and will cease shooting.  
@@ -2583,40 +2597,6 @@ function TaskGoToEntity(entity, target, duration, distance, speed, p5, p6) end
 function TaskGoToEntityWhileAimingAtEntity(ped, entityToWalkTo, entityToAimAt, speed, shootatEntity, p5, p6, p7, p8, firingPattern) end
 
     
---- ```
---- eg
----  TASK::TASK_GOTO_ENTITY_AIMING(v_2, PLAYER::PLAYER_PED_ID(), 5.0, 25.0);
---- ped = Ped you want to perform this task.
---- target = the Entity they should aim at.
---- distanceToStopAt = distance from the target, where the ped should stop to aim.
---- StartAimingDist = distance where the ped should start to aim.
---- ```
----
---- @hash [0xA9DA48FAB8A76C12](https://docs.fivem.net/natives/?_0xA9DA48FAB8A76C12)
---- @param ped Ped
---- @param target Entity
---- @param distanceToStopAt number (float)
---- @param StartAimingDist number (float)
---- @return void
---- @overload fun(ped: Ped, target: Entity, distanceToStopAt: number, StartAimingDist: number): void
-function TaskGotoEntityAiming(ped, target, distanceToStopAt, StartAimingDist) end
-
-    
---- TaskGotoEntityOffset
----
---- @hash [0xE39B4FF4FDEBDE27](https://docs.fivem.net/natives/?_0xE39B4FF4FDEBDE27)
---- @param ped Ped
---- @param p1 any
---- @param p2 any
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param duration number (int)
---- @return void
---- @overload fun(ped: Ped, p1: any, p2: any, x: number, y: number, z: number, duration: number): void
-function TaskGotoEntityOffset(ped, p1, p2, x, y, z, duration) end
-
-    
 --- TaskGotoEntityOffsetXy
 ---
 --- @hash [0x338E7EF52B6095A9](https://docs.fivem.net/natives/?_0x338E7EF52B6095A9)
@@ -2631,36 +2611,6 @@ function TaskGotoEntityOffset(ped, p1, p2, x, y, z, duration) end
 --- @return void
 --- @overload fun(ped: Ped, entity: Entity, duration: number, xOffset: number, yOffset: number, zOffset: number, moveBlendRatio: number, useNavmesh: boolean): void
 function TaskGotoEntityOffsetXy(ped, entity, duration, xOffset, yOffset, zOffset, moveBlendRatio, useNavmesh) end
-
-    
---- TaskGuardAssignedDefensiveArea
----
---- @hash [0xD2A207EEBDF9889B](https://docs.fivem.net/natives/?_0xD2A207EEBDF9889B)
---- @param p0 any
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @param p5 number (float)
---- @param p6 any
---- @return void
---- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: number, p5: number, p6: any): void
-function TaskGuardAssignedDefensiveArea(p0, p1, p2, p3, p4, p5, p6) end
-
-    
---- ```
---- From re_prisonvanbreak:
---- TASK::TASK_GUARD_CURRENT_POSITION(l_DD, 35.0, 35.0, 1);
---- ```
----
---- @hash [0x4A58A47A72E3FCB4](https://docs.fivem.net/natives/?_0x4A58A47A72E3FCB4)
---- @param p0 Ped
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 boolean
---- @return void
---- @overload fun(p0: Ped, p1: number, p2: number, p3: boolean): void
-function TaskGuardCurrentPosition(p0, p1, p2, p3) end
 
     
 --- ```
@@ -2707,58 +2657,30 @@ function TaskHandsUp(ped, duration, facingPed, p3, p4) end
 function TaskGuardSphereDefensiveArea(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
 
     
---- ```
---- Ped pilot should be in a heli.  
---- EntityToFollow can be a vehicle or Ped.  
---- x,y,z appear to be how close to the EntityToFollow the heli should be. Scripts use 0.0, 0.0, 80.0. Then the heli tries to position itself 80 units above the EntityToFollow. If you reduce it to -5.0, it tries to go below (if the EntityToFollow is a heli or plane)  
---- NOTE: If the pilot finds enemies, it will engage them, then remain there idle, not continuing to chase the Entity given.  
---- ```
+--- Flags are the same flags used in [`TASK_LEAVE_VEHICLE`](https://docs.fivem.net/natives/?_0xD3DBCE61A490BE02)
 ---
---- @hash [0xAC83B1DB38D0ADA0](https://docs.fivem.net/natives/?_0xAC83B1DB38D0ADA0)
---- @param pilot Ped
---- @param entityToFollow Entity
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
+--- @hash [0x504D54DF3F6F2247](https://docs.fivem.net/natives/?_0x504D54DF3F6F2247)
+--- @param ped Ped
+--- @param p1 number (int)
+--- @param flags number (int)
 --- @return void
---- @overload fun(pilot: Ped, entityToFollow: Entity, x: number, y: number, z: number): void
-function TaskHeliChase(pilot, entityToFollow, x, y, z) end
+--- @overload fun(ped: Ped, p1: number, flags: number): void
+function TaskLeaveAnyVehicle(ped, p1, flags) end
 
     
---- ```
---- NativeDB Introduced: v1290
---- ```
+--- TaskGuardAssignedDefensiveArea
 ---
---- @hash [0xB385523325077210](https://docs.fivem.net/natives/?_0xB385523325077210)
---- @param pilot Ped
---- @param heli1 Vehicle
---- @param heli2 Vehicle
+--- @hash [0xD2A207EEBDF9889B](https://docs.fivem.net/natives/?_0xD2A207EEBDF9889B)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
 --- @param p3 number (float)
 --- @param p4 number (float)
 --- @param p5 number (float)
+--- @param p6 any
 --- @return void
---- @overload fun(pilot: Ped, heli1: Vehicle, heli2: Vehicle, p3: number, p4: number, p5: number): void
-function TaskHeliEscortHeli(pilot, heli1, heli2, p3, p4, p5) end
-
-    
---- ```
---- Definition is wrong. This has 4 parameters (Not sure when they were added. v350 has 2, v678 has 4).  
---- v350: Ped ped, bool unused  
---- v678: Ped ped, bool unused, bool flag1, bool flag2  
---- flag1 = super jump, flag2 = do nothing if flag1 is false and doubles super jump height if flag1 is true.  
---- ```
---- 
---- ```
---- NativeDB Added Parameter 3: Any p2
---- NativeDB Added Parameter 4: Any p3
---- ```
----
---- @hash [0x0AE4086104E067B1](https://docs.fivem.net/natives/?_0x0AE4086104E067B1)
---- @param ped Ped
---- @param unused boolean
---- @return void
---- @overload fun(ped: Ped, unused: boolean): void
-function TaskJump(ped, unused) end
+--- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: number, p5: number, p6: any): void
+function TaskGuardAssignedDefensiveArea(p0, p1, p2, p3, p4, p5, p6) end
 
     
 --- ```
@@ -2802,68 +2724,111 @@ function TaskJump(ped, unused) end
 function TaskHeliMission(pilot, aircraft, targetVehicle, targetPed, destinationX, destinationY, destinationZ, missionFlag, maxSpeed, landingRadius, targetHeading, unk1, unk2, unk3, landingFlags) end
 
     
---- Flags are the same flags used in [`TASK_LEAVE_VEHICLE`](https://docs.fivem.net/natives/?_0xD3DBCE61A490BE02)
+--- ```
+--- From re_prisonvanbreak:
+--- TASK::TASK_GUARD_CURRENT_POSITION(l_DD, 35.0, 35.0, 1);
+--- ```
 ---
---- @hash [0x504D54DF3F6F2247](https://docs.fivem.net/natives/?_0x504D54DF3F6F2247)
---- @param ped Ped
---- @param p1 number (int)
---- @param flags number (int)
+--- @hash [0x4A58A47A72E3FCB4](https://docs.fivem.net/natives/?_0x4A58A47A72E3FCB4)
+--- @param p0 Ped
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 boolean
 --- @return void
---- @overload fun(ped: Ped, p1: number, flags: number): void
-function TaskLeaveAnyVehicle(ped, p1, flags) end
+--- @overload fun(p0: Ped, p1: number, p2: number, p3: boolean): void
+function TaskGuardCurrentPosition(p0, p1, p2, p3) end
+
+    
+--- TaskGoToEntityWhileAimingAtCoord
+---
+--- @hash [0x04701832B739DCE5](https://docs.fivem.net/natives/?_0x04701832B739DCE5)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 boolean
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @param p9 boolean
+--- @param p10 boolean
+--- @param p11 any
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: number, p3: number, p4: number, p5: number, p6: boolean, p7: number, p8: number, p9: boolean, p10: boolean, p11: any): void
+function TaskGoToEntityWhileAimingAtCoord(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) end
 
     
 --- ```
---- Flags from decompiled scripts:  
---- 0 = normal exit and closes door.  
---- 1 = normal exit and closes door.  
---- 16 = teleports outside, door kept closed.  
---- 64 = normal exit and closes door, maybe a bit slower animation than 0.  
---- 256 = normal exit but does not close the door.  
---- 4160 = ped is throwing himself out, even when the vehicle is still.  
---- 262144 = ped moves to passenger seat first, then exits normally  
---- Others to be tried out: 320, 512, 131072.  
+--- Definition is wrong. This has 4 parameters (Not sure when they were added. v350 has 2, v678 has 4).  
+--- v350: Ped ped, bool unused  
+--- v678: Ped ped, bool unused, bool flag1, bool flag2  
+--- flag1 = super jump, flag2 = do nothing if flag1 is false and doubles super jump height if flag1 is true.  
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 3: Any p2
+--- NativeDB Added Parameter 4: Any p3
 --- ```
 ---
---- @hash [0xD3DBCE61A490BE02](https://docs.fivem.net/natives/?_0xD3DBCE61A490BE02)
+--- @hash [0x0AE4086104E067B1](https://docs.fivem.net/natives/?_0x0AE4086104E067B1)
 --- @param ped Ped
---- @param vehicle Vehicle
---- @param flags number (int)
+--- @param unused boolean
 --- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle, flags: number): void
-function TaskLeaveVehicle(ped, vehicle, flags) end
+--- @overload fun(ped: Ped, unused: boolean): void
+function TaskJump(ped, unused) end
 
     
 --- ```
---- param3: duration in ms, use -1 to look forever  
---- param4: using 2048 is fine  
---- param5: using 3 is fine  
+--- Ped pilot should be in a heli.  
+--- EntityToFollow can be a vehicle or Ped.  
+--- x,y,z appear to be how close to the EntityToFollow the heli should be. Scripts use 0.0, 0.0, 80.0. Then the heli tries to position itself 80 units above the EntityToFollow. If you reduce it to -5.0, it tries to go below (if the EntityToFollow is a heli or plane)  
+--- NOTE: If the pilot finds enemies, it will engage them, then remain there idle, not continuing to chase the Entity given.  
 --- ```
 ---
---- @hash [0x69F4BE8C8CC4796C](https://docs.fivem.net/natives/?_0x69F4BE8C8CC4796C)
---- @param ped Ped
---- @param lookAt Entity
---- @param duration number (int)
---- @param unknown1 number (int)
---- @param unknown2 number (int)
---- @return void
---- @overload fun(ped: Ped, lookAt: Entity, duration: number, unknown1: number, unknown2: number): void
-function TaskLookAtEntity(ped, lookAt, duration, unknown1, unknown2) end
-
-    
---- TaskLookAtCoord
----
---- @hash [0x6FA46612594F7973](https://docs.fivem.net/natives/?_0x6FA46612594F7973)
---- @param entity Entity
+--- @hash [0xAC83B1DB38D0ADA0](https://docs.fivem.net/natives/?_0xAC83B1DB38D0ADA0)
+--- @param pilot Ped
+--- @param entityToFollow Entity
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param duration number (int)
---- @param p5 any
---- @param p6 any
 --- @return void
---- @overload fun(entity: Entity, x: number, y: number, z: number, duration: number, p5: any, p6: any): void
-function TaskLookAtCoord(entity, x, y, z, duration, p5, p6) end
+--- @overload fun(pilot: Ped, entityToFollow: Entity, x: number, y: number, z: number): void
+function TaskHeliChase(pilot, entityToFollow, x, y, z) end
+
+    
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0xB385523325077210](https://docs.fivem.net/natives/?_0xB385523325077210)
+--- @param pilot Ped
+--- @param heli1 Vehicle
+--- @param heli2 Vehicle
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @return void
+--- @overload fun(pilot: Ped, heli1: Vehicle, heli2: Vehicle, p3: number, p4: number, p5: number): void
+function TaskHeliEscortHeli(pilot, heli1, heli2, p3, p4, p5) end
+
+    
+--- ```
+--- This function has a third parameter as well (bool).  
+--- Second parameter is unused.  
+--- seconds parameter was for jetpack in the early stages of gta and the hard coded code is now removed  
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 3: BOOL p2
+--- ```
+---
+--- @hash [0xD2F1C53C97EE81AB](https://docs.fivem.net/natives/?_0xD2F1C53C97EE81AB)
+--- @param ped Ped
+--- @param p1 boolean
+--- @return void
+--- @overload fun(ped: Ped, p1: boolean): void
+function TaskParachute(ped, p1) end
 
     
 --- ```
@@ -2943,6 +2908,164 @@ function TaskMoveNetworkAdvanced(ped, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, a
 
     
 --- ```
+--- param3: duration in ms, use -1 to look forever  
+--- param4: using 2048 is fine  
+--- param5: using 3 is fine  
+--- ```
+---
+--- @hash [0x69F4BE8C8CC4796C](https://docs.fivem.net/natives/?_0x69F4BE8C8CC4796C)
+--- @param ped Ped
+--- @param lookAt Entity
+--- @param duration number (int)
+--- @param unknown1 number (int)
+--- @param unknown2 number (int)
+--- @return void
+--- @overload fun(ped: Ped, lookAt: Entity, duration: number, unknown1: number, unknown2: number): void
+function TaskLookAtEntity(ped, lookAt, duration, unknown1, unknown2) end
+
+    
+--- TaskLookAtCoord
+---
+--- @hash [0x6FA46612594F7973](https://docs.fivem.net/natives/?_0x6FA46612594F7973)
+--- @param entity Entity
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param duration number (int)
+--- @param p5 any
+--- @param p6 any
+--- @return void
+--- @overload fun(entity: Entity, x: number, y: number, z: number, duration: number, p5: any, p6: any): void
+function TaskLookAtCoord(entity, x, y, z, duration, p5, p6) end
+
+    
+--- ```
+--- Used only once in the scripts (am_mp_nightclub)
+--- ```
+--- 
+--- ```
+--- Used only once in the scripts (am_mp_nightclub)
+--- 
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0x3D45B0B355C5E0C9](https://docs.fivem.net/natives/?_0x3D45B0B355C5E0C9)
+--- @param ped Ped
+--- @param p1 string (char*)
+--- @param data any
+--- @param p3 number (float)
+--- @param p4 boolean
+--- @param animDict string (char*)
+--- @param flags number (int)
+--- @return void
+--- @overload fun(ped: Ped, p3: number, p4: boolean, flags: number): string): any): string
+function TaskMoveNetworkByNameWithInitParams(ped, p1, data, p3, p4, animDict, flags) end
+
+    
+--- # New Name: TaskMoveNetworkByNameWithInitParams
+--- ```
+--- Used only once in the scripts (am_mp_nightclub)
+--- ```
+--- 
+--- ```
+--- Used only once in the scripts (am_mp_nightclub)
+--- 
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0x3D45B0B355C5E0C9](https://docs.fivem.net/natives/?_0x3D45B0B355C5E0C9)
+--- @param ped Ped
+--- @param p1 string (char*)
+--- @param data any
+--- @param p3 number (float)
+--- @param p4 boolean
+--- @param animDict string (char*)
+--- @param flags number (int)
+--- @return void
+--- @overload fun(ped: Ped, p3: number, p4: boolean, flags: number): string): any): string
+--- @deprecated
+function TaskMoveNetworkScripted(ped, p1, data, p3, p4, animDict, flags) end
+
+    
+--- ```
+--- Flags from decompiled scripts:  
+--- 0 = normal exit and closes door.  
+--- 1 = normal exit and closes door.  
+--- 16 = teleports outside, door kept closed.  
+--- 64 = normal exit and closes door, maybe a bit slower animation than 0.  
+--- 256 = normal exit but does not close the door.  
+--- 4160 = ped is throwing himself out, even when the vehicle is still.  
+--- 262144 = ped moves to passenger seat first, then exits normally  
+--- Others to be tried out: 320, 512, 131072.  
+--- ```
+---
+--- @hash [0xD3DBCE61A490BE02](https://docs.fivem.net/natives/?_0xD3DBCE61A490BE02)
+--- @param ped Ped
+--- @param vehicle Vehicle
+--- @param flags number (int)
+--- @return void
+--- @overload fun(ped: Ped, vehicle: Vehicle, flags: number): void
+function TaskLeaveVehicle(ped, vehicle, flags) end
+
+    
+--- ```
+--- After looking at some scripts the second parameter seems to be an id of some kind. Here are some I found from some R* scripts:
+--- "miss_Tower_01" (this went from 01 - 10)
+--- "miss_Ass0" (0, 4, 6, 3)
+--- "MISS_PATROL_8"
+--- I think they're patrol routes, but I'm not sure. And I believe the 3rd parameter is a BOOL, but I can't confirm other than only seeing 0 and 1 being passed.
+--- As far as I can see the patrol routes names such as "miss_Ass0" have been defined earlier in the scripts. This leads me to believe we can defined our own new patrol routes by following the same approach.
+--- From the scripts
+---     TASK::OPEN_PATROL_ROUTE("miss_Ass0");
+---     TASK::ADD_PATROL_ROUTE_NODE(0, "WORLD_HUMAN_GUARD_STAND", l_738[0/*3*/], -139.4076690673828, -993.4732055664062, 26.2754, MISC::GET_RANDOM_INT_IN_RANGE(5000, 10000));
+---     TASK::ADD_PATROL_ROUTE_NODE(1, "WORLD_HUMAN_GUARD_STAND", l_738[1/*3*/], -116.1391830444336, -987.4984130859375, 26.38541030883789, MISC::GET_RANDOM_INT_IN_RANGE(5000, 10000));
+---     TASK::ADD_PATROL_ROUTE_NODE(2, "WORLD_HUMAN_GUARD_STAND", l_738[2/*3*/], -128.46847534179688, -979.0340576171875, 26.2754, MISC::GET_RANDOM_INT_IN_RANGE(5000, 10000));
+---     TASK::ADD_PATROL_ROUTE_LINK(0, 1);
+---     TASK::ADD_PATROL_ROUTE_LINK(1, 2);
+---     TASK::ADD_PATROL_ROUTE_LINK(2, 0);
+---     TASK::CLOSE_PATROL_ROUTE();
+---     TASK::CREATE_PATROL_ROUTE();
+--- ```
+---
+--- @hash [0xBDA5DF49D080FE4E](https://docs.fivem.net/natives/?_0xBDA5DF49D080FE4E)
+--- @param ped Ped
+--- @param p1 string (char*)
+--- @param p2 any
+--- @param p3 boolean
+--- @param p4 boolean
+--- @return void
+--- @overload fun(ped: Ped, p1: string, p2: any, p3: boolean, p4: boolean): void
+function TaskPatrol(ped, p1, p2, p3, p4) end
+
+    
+--- ```
+--- makes ped parachute to coords x y z. Works well with PATHFIND::GET_SAFE_COORD_FOR_PED  
+--- ```
+---
+--- @hash [0xB33E291AFA6BD03A](https://docs.fivem.net/natives/?_0xB33E291AFA6BD03A)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number): void
+function TaskParachuteToTarget(ped, x, y, z) end
+
+    
+--- TaskPlaneChase
+---
+--- @hash [0x2D2386F273FF7A25](https://docs.fivem.net/natives/?_0x2D2386F273FF7A25)
+--- @param pilot Ped
+--- @param entityToFollow Entity
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return void
+--- @overload fun(pilot: Ped, entityToFollow: Entity, x: number, y: number, z: number): void
+function TaskPlaneChase(pilot, entityToFollow, x, y, z) end
+
+    
+--- ```
 --- Example:
 --- TASK::TASK_MOVE_NETWORK_BY_NAME(PLAYER::PLAYER_PED_ID(), "arm_wrestling_sweep_paired_a_rev3", 0.0f, true, "mini@arm_wrestling", 0);
 --- ```
@@ -3012,125 +3135,14 @@ function TaskMoveNetwork(ped, task, multiplier, p3, animDict, flags) end
 function TaskOpenVehicleDoor(ped, vehicle, timeOut, seat, speed) end
 
     
---- ```
---- Used only once in the scripts (am_mp_nightclub)
---- ```
---- 
---- ```
---- Used only once in the scripts (am_mp_nightclub)
---- 
---- NativeDB Introduced: v1493
---- ```
+--- TaskPerformSequence
 ---
---- @hash [0x3D45B0B355C5E0C9](https://docs.fivem.net/natives/?_0x3D45B0B355C5E0C9)
+--- @hash [0x5ABA3986D90D8A3B](https://docs.fivem.net/natives/?_0x5ABA3986D90D8A3B)
 --- @param ped Ped
---- @param p1 string (char*)
---- @param data any
---- @param p3 number (float)
---- @param p4 boolean
---- @param animDict string (char*)
---- @param flags number (int)
+--- @param taskSequenceId number (int)
 --- @return void
---- @overload fun(ped: Ped, p3: number, p4: boolean, flags: number): string): any): string
-function TaskMoveNetworkByNameWithInitParams(ped, p1, data, p3, p4, animDict, flags) end
-
-    
---- # New Name: TaskMoveNetworkByNameWithInitParams
---- ```
---- Used only once in the scripts (am_mp_nightclub)
---- ```
---- 
---- ```
---- Used only once in the scripts (am_mp_nightclub)
---- 
---- NativeDB Introduced: v1493
---- ```
----
---- @hash [0x3D45B0B355C5E0C9](https://docs.fivem.net/natives/?_0x3D45B0B355C5E0C9)
---- @param ped Ped
---- @param p1 string (char*)
---- @param data any
---- @param p3 number (float)
---- @param p4 boolean
---- @param animDict string (char*)
---- @param flags number (int)
---- @return void
---- @overload fun(ped: Ped, p3: number, p4: boolean, flags: number): string): any): string
---- @deprecated
-function TaskMoveNetworkScripted(ped, p1, data, p3, p4, animDict, flags) end
-
-    
---- ```
---- This function has a third parameter as well (bool).  
---- Second parameter is unused.  
---- seconds parameter was for jetpack in the early stages of gta and the hard coded code is now removed  
---- ```
---- 
---- ```
---- NativeDB Added Parameter 3: BOOL p2
---- ```
----
---- @hash [0xD2F1C53C97EE81AB](https://docs.fivem.net/natives/?_0xD2F1C53C97EE81AB)
---- @param ped Ped
---- @param p1 boolean
---- @return void
---- @overload fun(ped: Ped, p1: boolean): void
-function TaskParachute(ped, p1) end
-
-    
---- ```
---- makes ped parachute to coords x y z. Works well with PATHFIND::GET_SAFE_COORD_FOR_PED  
---- ```
----
---- @hash [0xB33E291AFA6BD03A](https://docs.fivem.net/natives/?_0xB33E291AFA6BD03A)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number): void
-function TaskParachuteToTarget(ped, x, y, z) end
-
-    
---- This tasks the ped to do nothing for the specified amount of miliseconds.
---- This is useful if you want to add a delay between tasks when using a sequence task.
----
---- @hash [0xE73A266DB0CA9042](https://docs.fivem.net/natives/?_0xE73A266DB0CA9042)
---- @param ped Ped
---- @param ms number (int)
---- @return void
---- @overload fun(ped: Ped, ms: number): void
-function TaskPause(ped, ms) end
-
-    
---- ```
---- After looking at some scripts the second parameter seems to be an id of some kind. Here are some I found from some R* scripts:
---- "miss_Tower_01" (this went from 01 - 10)
---- "miss_Ass0" (0, 4, 6, 3)
---- "MISS_PATROL_8"
---- I think they're patrol routes, but I'm not sure. And I believe the 3rd parameter is a BOOL, but I can't confirm other than only seeing 0 and 1 being passed.
---- As far as I can see the patrol routes names such as "miss_Ass0" have been defined earlier in the scripts. This leads me to believe we can defined our own new patrol routes by following the same approach.
---- From the scripts
----     TASK::OPEN_PATROL_ROUTE("miss_Ass0");
----     TASK::ADD_PATROL_ROUTE_NODE(0, "WORLD_HUMAN_GUARD_STAND", l_738[0/*3*/], -139.4076690673828, -993.4732055664062, 26.2754, MISC::GET_RANDOM_INT_IN_RANGE(5000, 10000));
----     TASK::ADD_PATROL_ROUTE_NODE(1, "WORLD_HUMAN_GUARD_STAND", l_738[1/*3*/], -116.1391830444336, -987.4984130859375, 26.38541030883789, MISC::GET_RANDOM_INT_IN_RANGE(5000, 10000));
----     TASK::ADD_PATROL_ROUTE_NODE(2, "WORLD_HUMAN_GUARD_STAND", l_738[2/*3*/], -128.46847534179688, -979.0340576171875, 26.2754, MISC::GET_RANDOM_INT_IN_RANGE(5000, 10000));
----     TASK::ADD_PATROL_ROUTE_LINK(0, 1);
----     TASK::ADD_PATROL_ROUTE_LINK(1, 2);
----     TASK::ADD_PATROL_ROUTE_LINK(2, 0);
----     TASK::CLOSE_PATROL_ROUTE();
----     TASK::CREATE_PATROL_ROUTE();
---- ```
----
---- @hash [0xBDA5DF49D080FE4E](https://docs.fivem.net/natives/?_0xBDA5DF49D080FE4E)
---- @param ped Ped
---- @param p1 string (char*)
---- @param p2 any
---- @param p3 boolean
---- @param p4 boolean
---- @return void
---- @overload fun(ped: Ped, p1: string, p2: any, p3: boolean, p4: boolean): void
-function TaskPatrol(ped, p1, p2, p3, p4) end
+--- @overload fun(ped: Ped, taskSequenceId: number): void
+function TaskPerformSequence(ped, taskSequenceId) end
 
     
 --- TaskPedSlideToCoord
@@ -3145,94 +3157,6 @@ function TaskPatrol(ped, p1, p2, p3, p4) end
 --- @return void
 --- @overload fun(ped: Ped, x: number, y: number, z: number, heading: number, duration: number): void
 function TaskPedSlideToCoord(ped, x, y, z, heading, duration) end
-
-    
---- TaskPerformSequenceFromProgress
----
---- @hash [0x89221B16730234F0](https://docs.fivem.net/natives/?_0x89221B16730234F0)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any): void
-function TaskPerformSequenceFromProgress(p0, p1, p2, p3) end
-
-    
---- TaskPedSlideToCoordHdgRate
----
---- @hash [0x5A4A6A6D3DC64F52](https://docs.fivem.net/natives/?_0x5A4A6A6D3DC64F52)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param heading number (float)
---- @param p5 number (float)
---- @param p6 number (float)
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, heading: number, p5: number, p6: number): void
-function TaskPedSlideToCoordHdgRate(ped, x, y, z, heading, p5, p6) end
-
-    
---- TaskPerformSequence
----
---- @hash [0x5ABA3986D90D8A3B](https://docs.fivem.net/natives/?_0x5ABA3986D90D8A3B)
---- @param ped Ped
---- @param taskSequenceId number (int)
---- @return void
---- @overload fun(ped: Ped, taskSequenceId: number): void
-function TaskPerformSequence(ped, taskSequenceId) end
-
-    
---- TaskPlaneChase
----
---- @hash [0x2D2386F273FF7A25](https://docs.fivem.net/natives/?_0x2D2386F273FF7A25)
---- @param pilot Ped
---- @param entityToFollow Entity
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @return void
---- @overload fun(pilot: Ped, entityToFollow: Entity, x: number, y: number, z: number): void
-function TaskPlaneChase(pilot, entityToFollow, x, y, z) end
-
-    
---- TaskPerformSequenceLocally
----
---- @hash [0x8C33220C8D78CA0D](https://docs.fivem.net/natives/?_0x8C33220C8D78CA0D)
---- @param ped Ped
---- @param taskSequenceId number (int)
---- @return void
---- @overload fun(ped: Ped, taskSequenceId: number): void
-function TaskPerformSequenceLocally(ped, taskSequenceId) end
-
-    
---- # New Name: TaskPerformSequenceLocally
---- TaskPerformSequenceLocally
----
---- @hash [0x8C33220C8D78CA0D](https://docs.fivem.net/natives/?_0x8C33220C8D78CA0D)
---- @param ped Ped
---- @param taskSequenceId number (int)
---- @return void
---- @overload fun(ped: Ped, taskSequenceId: number): void
---- @deprecated
-function N_0x8c33220c8d78ca0d(ped, taskSequenceId) end
-
-    
---- TaskPlaneLand
----
---- @hash [0xBF19721FA34D32C0](https://docs.fivem.net/natives/?_0xBF19721FA34D32C0)
---- @param pilot Ped
---- @param plane Vehicle
---- @param runwayStartX number (float)
---- @param runwayStartY number (float)
---- @param runwayStartZ number (float)
---- @param runwayEndX number (float)
---- @param runwayEndY number (float)
---- @param runwayEndZ number (float)
---- @return void
---- @overload fun(pilot: Ped, plane: Vehicle, runwayStartX: number, runwayStartY: number, runwayStartZ: number, runwayEndX: number, runwayEndY: number, runwayEndZ: number): void
-function TaskPlaneLand(pilot, plane, runwayStartX, runwayStartY, runwayStartZ, runwayEndX, runwayEndY, runwayEndZ) end
 
     
 --- ```
@@ -3255,71 +3179,19 @@ function TaskPlaneLand(pilot, plane, runwayStartX, runwayStartY, runwayStartZ, r
 function TaskPlaneGotoPreciseVtol(ped, vehicle, p2, p3, p4, p5, p6, p7, p8, p9) end
 
     
---- ```
---- EDITED (7/13/2017)  
---- NOTE: If you want air combat, AI::TASK_COMBAT_PED (while your pilot is in an aircraft) also does the same thing as this native.  
---- DESCRIPTION:  
---- Ever wish your buddy could shoot down one of your enemies for you? Ever wanted an auto-pilot? Well look no further! This is the native for you! (Ped intelligence may vary)  
---- USAGE:  
---- -- REQUIRED --  
---- • pilot = The ped flying the aircraft.  
---- • aircraft = The aircraft the pilot is flying  
---- -- OPTIONAL -- [atleast 1 must be assigned]  
---- • targetVehicle = The vehicle the pilot will target.  
---- • targetPed = The ped the pilot will target.  
---- • destinationX, destinationY, destinationZ = The location the pilot will target.  
---- -- LOGIC --  
---- • missionFlag = The type of mission. pastebin.com/R8x73dbv  
---- • angularDrag = The higher the value, the slower the plane will rotate. Value ranges from 0 - Infinity.  
---- • unk = Set to 0, and you'll be fine.  
---- • targetHeading = The target angle (from world space north) that the pilot will try to acheive before executing an attack/landing.  
---- • maxZ = Maximum Z coordinate height for flying.  
---- • minZ = Minimum Z coordinate height for flying.  
---- Z: 2,700 is the default max height a pilot will be able to fly. Anything greater and he will fly downward until reaching 2,700 again.  
---- Mission Types (incase you don't like links..):  
---- 0 = None  
---- 1 = Unk  
---- 2 = CTaskVehicleRam  
---- 3 = CTaskVehicleBlock  
---- 4 = CTaskVehicleGoToPlane  
---- 5 = CTaskVehicleStop  
---- 6 = CTaskVehicleAttack  
---- 7 = CTaskVehicleFollow  
---- 8 = CTaskVehicleFleeAirborne  
---- 9 = CTaskVehicleCircle  
---- 10 = CTaskVehicleEscort  
---- 15 = CTaskVehicleFollowRecording  
---- 16 = CTaskVehiclePoliceBehaviour  
---- 17 = CTaskVehicleCrash  
---- Example C#:  
---- Function.Call(Hash.TASK_PLANE_MISSION, pilot, vehicle, 0, Game.Player.Character, 0, 0, 0, 6, 0f, 0f, 0f, 2500.0f, -1500f);  
---- Example C++  
---- AI::TASK_PLANE_MISSION(pilot, vehicle, 0, PLAYER::GET_PLAYER_PED(PLAYER::GET_PLAYER_INDEX()), 0, 0, 0, 6, 0.0, 0.0, 0.0, 2500.0, -1500.0);  
---- [DEPRECATED] EXAMPLE USAGE:  
---- pastebin.com/gx7Finsk  
---- ```
---- 
---- ```
---- NativeDB Added Parameter 14: Any p13
---- ```
+--- TaskPedSlideToCoordHdgRate
 ---
---- @hash [0x23703CD154E83B88](https://docs.fivem.net/natives/?_0x23703CD154E83B88)
---- @param pilot Ped
---- @param aircraft Vehicle
---- @param targetVehicle Vehicle
---- @param targetPed Ped
---- @param destinationX number (float)
---- @param destinationY number (float)
---- @param destinationZ number (float)
---- @param missionFlag number (int)
---- @param angularDrag number (float)
---- @param unk number (float)
---- @param targetHeading number (float)
---- @param maxZ number (float)
---- @param minZ number (float)
+--- @hash [0x5A4A6A6D3DC64F52](https://docs.fivem.net/natives/?_0x5A4A6A6D3DC64F52)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
+--- @param p5 number (float)
+--- @param p6 number (float)
 --- @return void
---- @overload fun(pilot: Ped, aircraft: Vehicle, targetVehicle: Vehicle, targetPed: Ped, destinationX: number, destinationY: number, destinationZ: number, missionFlag: number, angularDrag: number, unk: number, targetHeading: number, maxZ: number, minZ: number): void
-function TaskPlaneMission(pilot, aircraft, targetVehicle, targetPed, destinationX, destinationY, destinationZ, missionFlag, angularDrag, unk, targetHeading, maxZ, minZ) end
+--- @overload fun(ped: Ped, x: number, y: number, z: number, heading: number, p5: number, p6: number): void
+function TaskPedSlideToCoordHdgRate(ped, x, y, z, heading, p5, p6) end
 
     
 --- TaskPlaneTaxi
@@ -3421,81 +3293,124 @@ function N_0x92c360b5f15d2302(pilot, aircraft, p2, p3, p4, p5, p6) end
 function TaskPlayAnim(ped, animDictionary, animationName, blendInSpeed, blendOutSpeed, duration, flag, playbackRate, lockX, lockY, lockZ) end
 
     
---- It's similar to the one above, except the first 6 floats let you specify the initial position and rotation of the task. (Ped gets teleported to the position).
---- 
---- [Animations list](https://alexguirre.github.io/animations-list/)
+--- TaskPerformSequenceLocally
 ---
---- @hash [0x83CDB10EA29B370B](https://docs.fivem.net/natives/?_0x83CDB10EA29B370B)
+--- @hash [0x8C33220C8D78CA0D](https://docs.fivem.net/natives/?_0x8C33220C8D78CA0D)
 --- @param ped Ped
---- @param animDict string (char*)
---- @param animName string (char*)
---- @param posX number (float)
---- @param posY number (float)
---- @param posZ number (float)
---- @param rotX number (float)
---- @param rotY number (float)
---- @param rotZ number (float)
---- @param animEnterSpeed number (float)
---- @param animExitSpeed number (float)
---- @param duration number (int)
---- @param flag any
---- @param animTime number (float)
---- @param p14 any
---- @param p15 any
+--- @param taskSequenceId number (int)
 --- @return void
---- @overload fun(ped: Ped, animDict: string, animName: string, posX: number, posY: number, posZ: number, rotX: number, rotY: number, rotZ: number, animEnterSpeed: number, animExitSpeed: number, duration: number, flag: any, animTime: number, p14: any, p15: any): void
-function TaskPlayAnimAdvanced(ped, animDict, animName, posX, posY, posZ, rotX, rotY, rotZ, animEnterSpeed, animExitSpeed, duration, flag, animTime, p14, p15) end
+--- @overload fun(ped: Ped, taskSequenceId: number): void
+function TaskPerformSequenceLocally(ped, taskSequenceId) end
 
     
---- TaskPlantBomb
+--- # New Name: TaskPerformSequenceLocally
+--- TaskPerformSequenceLocally
 ---
---- @hash [0x965FEC691D55E9BF](https://docs.fivem.net/natives/?_0x965FEC691D55E9BF)
+--- @hash [0x8C33220C8D78CA0D](https://docs.fivem.net/natives/?_0x8C33220C8D78CA0D)
 --- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param heading number (float)
+--- @param taskSequenceId number (int)
 --- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, heading: number): void
-function TaskPlantBomb(ped, x, y, z, heading) end
+--- @overload fun(ped: Ped, taskSequenceId: number): void
+--- @deprecated
+function N_0x8c33220c8d78ca0d(ped, taskSequenceId) end
 
     
---- ```
---- from armenian3.c4
---- TASK::TASK_PUT_PED_DIRECTLY_INTO_MELEE(PlayerPed, armenianPed, 0.0, -1.0, 0.0, 0);
---- ```
+--- TaskPerformSequenceFromProgress
 ---
---- @hash [0x1C6CD14A876FFE39](https://docs.fivem.net/natives/?_0x1C6CD14A876FFE39)
---- @param ped Ped
---- @param meleeTarget Ped
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @param p5 boolean
---- @return void
---- @overload fun(ped: Ped, meleeTarget: Ped, p2: number, p3: number, p4: number, p5: boolean): void
-function TaskPutPedDirectlyIntoMelee(ped, meleeTarget, p2, p3, p4, p5) end
-
-    
---- ```
---- NativeDB Introduced: v1868
---- ```
----
---- @hash [0xEAF66ACDDC794793](https://docs.fivem.net/natives/?_0xEAF66ACDDC794793)
+--- @hash [0x89221B16730234F0](https://docs.fivem.net/natives/?_0x89221B16730234F0)
 --- @param p0 any
 --- @param p1 any
 --- @param p2 any
 --- @param p3 any
---- @param p4 any
---- @param p5 any
---- @param p6 any
---- @param p7 any
---- @param p8 any
---- @param p9 any
---- @param p10 any
 --- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any, p6: any, p7: any, p8: any, p9: any, p10: any): void
-function TaskRappelDownWall(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
+--- @overload fun(p0: any, p1: any, p2: any, p3: any): void
+function TaskPerformSequenceFromProgress(p0, p1, p2, p3) end
+
+    
+--- TaskPutPedDirectlyIntoCover
+---
+--- @hash [0x4172393E6BE1FECE](https://docs.fivem.net/natives/?_0x4172393E6BE1FECE)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param timeout any
+--- @param p5 boolean
+--- @param p6 number (float)
+--- @param p7 boolean
+--- @param p8 boolean
+--- @param p9 any
+--- @param p10 boolean
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number, timeout: any, p5: boolean, p6: number, p7: boolean, p8: boolean, p9: any, p10: boolean): void
+function TaskPutPedDirectlyIntoCover(ped, x, y, z, timeout, p5, p6, p7, p8, p9, p10) end
+
+    
+--- ```
+--- EDITED (7/13/2017)  
+--- NOTE: If you want air combat, AI::TASK_COMBAT_PED (while your pilot is in an aircraft) also does the same thing as this native.  
+--- DESCRIPTION:  
+--- Ever wish your buddy could shoot down one of your enemies for you? Ever wanted an auto-pilot? Well look no further! This is the native for you! (Ped intelligence may vary)  
+--- USAGE:  
+--- -- REQUIRED --  
+--- • pilot = The ped flying the aircraft.  
+--- • aircraft = The aircraft the pilot is flying  
+--- -- OPTIONAL -- [atleast 1 must be assigned]  
+--- • targetVehicle = The vehicle the pilot will target.  
+--- • targetPed = The ped the pilot will target.  
+--- • destinationX, destinationY, destinationZ = The location the pilot will target.  
+--- -- LOGIC --  
+--- • missionFlag = The type of mission. pastebin.com/R8x73dbv  
+--- • angularDrag = The higher the value, the slower the plane will rotate. Value ranges from 0 - Infinity.  
+--- • unk = Set to 0, and you'll be fine.  
+--- • targetHeading = The target angle (from world space north) that the pilot will try to acheive before executing an attack/landing.  
+--- • maxZ = Maximum Z coordinate height for flying.  
+--- • minZ = Minimum Z coordinate height for flying.  
+--- Z: 2,700 is the default max height a pilot will be able to fly. Anything greater and he will fly downward until reaching 2,700 again.  
+--- Mission Types (incase you don't like links..):  
+--- 0 = None  
+--- 1 = Unk  
+--- 2 = CTaskVehicleRam  
+--- 3 = CTaskVehicleBlock  
+--- 4 = CTaskVehicleGoToPlane  
+--- 5 = CTaskVehicleStop  
+--- 6 = CTaskVehicleAttack  
+--- 7 = CTaskVehicleFollow  
+--- 8 = CTaskVehicleFleeAirborne  
+--- 9 = CTaskVehicleCircle  
+--- 10 = CTaskVehicleEscort  
+--- 15 = CTaskVehicleFollowRecording  
+--- 16 = CTaskVehiclePoliceBehaviour  
+--- 17 = CTaskVehicleCrash  
+--- Example C#:  
+--- Function.Call(Hash.TASK_PLANE_MISSION, pilot, vehicle, 0, Game.Player.Character, 0, 0, 0, 6, 0f, 0f, 0f, 2500.0f, -1500f);  
+--- Example C++  
+--- AI::TASK_PLANE_MISSION(pilot, vehicle, 0, PLAYER::GET_PLAYER_PED(PLAYER::GET_PLAYER_INDEX()), 0, 0, 0, 6, 0.0, 0.0, 0.0, 2500.0, -1500.0);  
+--- [DEPRECATED] EXAMPLE USAGE:  
+--- pastebin.com/gx7Finsk  
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 14: Any p13
+--- ```
+---
+--- @hash [0x23703CD154E83B88](https://docs.fivem.net/natives/?_0x23703CD154E83B88)
+--- @param pilot Ped
+--- @param aircraft Vehicle
+--- @param targetVehicle Vehicle
+--- @param targetPed Ped
+--- @param destinationX number (float)
+--- @param destinationY number (float)
+--- @param destinationZ number (float)
+--- @param missionFlag number (int)
+--- @param angularDrag number (float)
+--- @param unk number (float)
+--- @param targetHeading number (float)
+--- @param maxZ number (float)
+--- @param minZ number (float)
+--- @return void
+--- @overload fun(pilot: Ped, aircraft: Vehicle, targetVehicle: Vehicle, targetPed: Ped, destinationX: number, destinationY: number, destinationZ: number, missionFlag: number, angularDrag: number, unk: number, targetHeading: number, maxZ: number, minZ: number): void
+function TaskPlaneMission(pilot, aircraft, targetVehicle, targetPed, destinationX, destinationY, destinationZ, missionFlag, angularDrag, unk, targetHeading, maxZ, minZ) end
 
     
 --- ```
@@ -3531,33 +3446,18 @@ function TaskRappelDownWall(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
 function TaskPlayPhoneGestureAnimation(ped, animDict, animation, boneMaskType, p4, p5, p6, p7) end
 
     
---- TaskReactAndFleePed
+--- ```
+--- Only appears twice in the scripts.
+--- TASK::TASK_RAPPEL_FROM_HELI(PLAYER::PLAYER_PED_ID(), 0x41200000);
+--- TASK::TASK_RAPPEL_FROM_HELI(a_0, 0x41200000);
+--- ```
 ---
---- @hash [0x72C896464915D1B1](https://docs.fivem.net/natives/?_0x72C896464915D1B1)
+--- @hash [0x09693B0312F91649](https://docs.fivem.net/natives/?_0x09693B0312F91649)
 --- @param ped Ped
---- @param fleeTarget Ped
+--- @param unused number (float)
 --- @return void
---- @overload fun(ped: Ped, fleeTarget: Ped): void
-function TaskReactAndFleePed(ped, fleeTarget) end
-
-    
---- TaskPutPedDirectlyIntoCover
----
---- @hash [0x4172393E6BE1FECE](https://docs.fivem.net/natives/?_0x4172393E6BE1FECE)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param timeout any
---- @param p5 boolean
---- @param p6 number (float)
---- @param p7 boolean
---- @param p8 boolean
---- @param p9 any
---- @param p10 boolean
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, timeout: any, p5: boolean, p6: number, p7: boolean, p8: boolean, p9: any, p10: boolean): void
-function TaskPutPedDirectlyIntoCover(ped, x, y, z, timeout, p5, p6, p7, p8, p9, p10) end
+--- @overload fun(ped: Ped, unused: number): void
+function TaskRappelFromHeli(ped, unused) end
 
     
 --- ```
@@ -3607,87 +3507,57 @@ function TaskScriptedAnimation(ped, p4, p5) end
 
     
 --- ```
---- Only appears twice in the scripts.
---- TASK::TASK_RAPPEL_FROM_HELI(PLAYER::PLAYER_PED_ID(), 0x41200000);
---- TASK::TASK_RAPPEL_FROM_HELI(a_0, 0x41200000);
+--- from armenian3.c4
+--- TASK::TASK_PUT_PED_DIRECTLY_INTO_MELEE(PlayerPed, armenianPed, 0.0, -1.0, 0.0, 0);
 --- ```
 ---
---- @hash [0x09693B0312F91649](https://docs.fivem.net/natives/?_0x09693B0312F91649)
+--- @hash [0x1C6CD14A876FFE39](https://docs.fivem.net/natives/?_0x1C6CD14A876FFE39)
 --- @param ped Ped
---- @param unused number (float)
---- @return void
---- @overload fun(ped: Ped, unused: number): void
-function TaskRappelFromHeli(ped, unused) end
-
-    
---- TaskSeekCoverFromPed
----
---- @hash [0x84D32B3BEC531324](https://docs.fivem.net/natives/?_0x84D32B3BEC531324)
---- @param ped Ped
---- @param target Ped
---- @param duration number (int)
---- @param p3 boolean
---- @return void
---- @overload fun(ped: Ped, target: Ped, duration: number, p3: boolean): void
-function TaskSeekCoverFromPed(ped, target, duration, p3) end
-
-    
---- ```
---- The 2nd param (unused) is not implemented.
---- -----------------------------------------------------------------------
---- The only occurrence I found in a R* script ("assassin_construction.ysc.c4"):
----             if (((v_3 < v_4) && (TASK::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), 0x6a67a5cc) != 1)) && (v_5 > v_3)) {
----                 TASK::TASK_RELOAD_WEAPON(PLAYER::PLAYER_PED_ID(), 1);
----             }
---- ```
----
---- @hash [0x62D2916F56B9CD2D](https://docs.fivem.net/natives/?_0x62D2916F56B9CD2D)
---- @param ped Ped
---- @param unused boolean
---- @return void
---- @overload fun(ped: Ped, unused: boolean): void
-function TaskReloadWeapon(ped, unused) end
-
-    
---- TaskSeekCoverToCoverPoint
----
---- @hash [0xD43D95C7A869447F](https://docs.fivem.net/natives/?_0xD43D95C7A869447F)
---- @param p0 any
---- @param p1 any
+--- @param meleeTarget Ped
 --- @param p2 number (float)
 --- @param p3 number (float)
 --- @param p4 number (float)
---- @param p5 any
---- @param p6 boolean
+--- @param p5 boolean
 --- @return void
---- @overload fun(p0: any, p1: any, p2: number, p3: number, p4: number, p5: any, p6: boolean): void
-function TaskSeekCoverToCoverPoint(p0, p1, p2, p3, p4, p5, p6) end
+--- @overload fun(ped: Ped, meleeTarget: Ped, p2: number, p3: number, p4: number, p5: boolean): void
+function TaskPutPedDirectlyIntoMelee(ped, meleeTarget, p2, p3, p4, p5) end
 
     
---- TaskSeekCoverFromPos
+--- TaskPlantBomb
 ---
---- @hash [0x75AC2B60386D89F2](https://docs.fivem.net/natives/?_0x75AC2B60386D89F2)
+--- @hash [0x965FEC691D55E9BF](https://docs.fivem.net/natives/?_0x965FEC691D55E9BF)
 --- @param ped Ped
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param duration number (int)
---- @param p5 boolean
+--- @param heading number (float)
 --- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, duration: number, p5: boolean): void
-function TaskSeekCoverFromPos(ped, x, y, z, duration, p5) end
+--- @overload fun(ped: Ped, x: number, y: number, z: number, heading: number): void
+function TaskPlantBomb(ped, x, y, z, heading) end
 
     
 --- ```
---- p1 is always GET_HASH_KEY("empty") in scripts, for the rare times this is used  
+--- I cant believe I have to define this, this is one of the best natives.  
+--- It makes the ped ignore basically all shocking events around it. Occasionally the ped may comment or gesture, but other than that they just continue their daily activities. This includes shooting and wounding the ped. And - most importantly - they do not flee.  
+--- Since it is a task, every time the native is called the ped will stop for a moment.  
 --- ```
 ---
---- @hash [0xEB8517DDA73720DA](https://docs.fivem.net/natives/?_0xEB8517DDA73720DA)
+--- @hash [0x90D2156198831D69](https://docs.fivem.net/natives/?_0x90D2156198831D69)
 --- @param ped Ped
---- @param p1 Hash
+--- @param toggle boolean
 --- @return void
---- @overload fun(ped: Ped, p1: Hash): void
-function TaskSetDecisionMaker(ped, p1) end
+--- @overload fun(ped: Ped, toggle: boolean): void
+function TaskSetBlockingOfNonTemporaryEvents(ped, toggle) end
+
+    
+--- TaskReactAndFleePed
+---
+--- @hash [0x72C896464915D1B1](https://docs.fivem.net/natives/?_0x72C896464915D1B1)
+--- @param ped Ped
+--- @param fleeTarget Ped
+--- @return void
+--- @overload fun(ped: Ped, fleeTarget: Ped): void
+function TaskReactAndFleePed(ped, fleeTarget) end
 
     
 --- ```
@@ -3714,46 +3584,321 @@ function TaskSeekCoverToCoords(ped, x1, y1, z1, x2, y2, z2, p7, p8) end
 
     
 --- ```
---- I cant believe I have to define this, this is one of the best natives.  
---- It makes the ped ignore basically all shocking events around it. Occasionally the ped may comment or gesture, but other than that they just continue their daily activities. This includes shooting and wounding the ped. And - most importantly - they do not flee.  
---- Since it is a task, every time the native is called the ped will stop for a moment.  
+--- NativeDB Added Parameter 2: BOOL p1
 --- ```
 ---
---- @hash [0x90D2156198831D69](https://docs.fivem.net/natives/?_0x90D2156198831D69)
+--- @hash [0x601736CFE536B0A0](https://docs.fivem.net/natives/?_0x601736CFE536B0A0)
 --- @param ped Ped
---- @param toggle boolean
 --- @return void
---- @overload fun(ped: Ped, toggle: boolean): void
-function TaskSetBlockingOfNonTemporaryEvents(ped, toggle) end
+--- @overload fun(ped: Ped): void
+function TaskSkyDive(ped) end
+
+    
+--- Used in am_vehicle_spawn.ysc and am_mp_submarine.ysc.
+--- p0 is always 0, p5 is always 1
+--- p1 is the vehicle handle of the submarine. Submarine must have a driver, but the ped handle is not passed to the native.
+--- Speed can be set by calling SET_DRIVE_TASK_CRUISE_SPEED after
+--- 
+--- ```
+--- NativeDB Introduced: v2189
+--- ```
+---
+--- @hash [0xC22B40579A498CA4](https://docs.fivem.net/natives/?_0xC22B40579A498CA4)
+--- @param p0 any
+--- @param submarine Vehicle
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p5 any
+--- @return void
+--- @overload fun(p0: any, submarine: Vehicle, x: number, y: number, z: number, p5: any): void
+function TaskSubmarineGotoAndStop(p0, submarine, x, y, z, p5) end
+
+    
+--- TaskSeekCoverFromPed
+---
+--- @hash [0x84D32B3BEC531324](https://docs.fivem.net/natives/?_0x84D32B3BEC531324)
+--- @param ped Ped
+--- @param target Ped
+--- @param duration number (int)
+--- @param p3 boolean
+--- @return void
+--- @overload fun(ped: Ped, target: Ped, duration: number, p3: boolean): void
+function TaskSeekCoverFromPed(ped, target, duration, p3) end
 
     
 --- ```
---- Firing Pattern Hash Information: https://pastebin.com/Px036isB
+--- Makes the specified ped shuffle to the next vehicle seat.  
+--- The ped MUST be in a vehicle and the vehicle parameter MUST be the ped's current vehicle.  
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 3: Any p2
 --- ```
 ---
---- @hash [0x46A6CC01E0826106](https://docs.fivem.net/natives/?_0x46A6CC01E0826106)
+--- @hash [0x7AA80209BDA643EB](https://docs.fivem.net/natives/?_0x7AA80209BDA643EB)
+--- @param ped Ped
+--- @param vehicle Vehicle
+--- @return void
+--- @overload fun(ped: Ped, vehicle: Vehicle): void
+function TaskShuffleToNextVehicleSeat(ped, vehicle) end
+
+    
+--- TaskSwapWeapon
+---
+--- @hash [0xA21C51255B205245](https://docs.fivem.net/natives/?_0xA21C51255B205245)
+--- @param ped Ped
+--- @param p1 boolean
+--- @return void
+--- @overload fun(ped: Ped, p1: boolean): void
+function TaskSwapWeapon(ped, p1) end
+
+    
+--- TaskVehicleAimAtCoord
+---
+--- @hash [0x447C1E9EF844BC0F](https://docs.fivem.net/natives/?_0x447C1E9EF844BC0F)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number): void
+function TaskVehicleAimAtCoord(ped, x, y, z) end
+
+    
+--- See [`TASK_VEHICLE_MISSION`](https://docs.fivem.net/natives/?_0x659427E0EF36BCDE).
+---
+--- @hash [0xF0AF20AA7731F8C3](https://docs.fivem.net/natives/?_0xF0AF20AA7731F8C3)
+--- @param ped Ped
+--- @param vehicle Vehicle
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p5 number (int)
+--- @param p6 number (int)
+--- @param p7 number (int)
+--- @param p8 number (float)
+--- @param p9 number (float)
+--- @param DriveAgainstTraffic boolean
+--- @return void
+--- @overload fun(ped: Ped, vehicle: Vehicle, x: number, y: number, z: number, p5: number, p6: number, p7: number, p8: number, p9: number, DriveAgainstTraffic: boolean): void
+function TaskVehicleMissionCoorsTarget(ped, vehicle, x, y, z, p5, p6, p7, p8, p9, DriveAgainstTraffic) end
+
+    
+--- TaskWanderInArea
+---
+--- @hash [0xE054346CA3A0F315](https://docs.fivem.net/natives/?_0xE054346CA3A0F315)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param minimalLength number (float)
+--- @param timeBetweenWalks number (float)
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number, radius: number, minimalLength: number, timeBetweenWalks: number): void
+function TaskWanderInArea(ped, x, y, z, radius, minimalLength, timeBetweenWalks) end
+
+    
+--- It's similar to the one above, except the first 6 floats let you specify the initial position and rotation of the task. (Ped gets teleported to the position).
+--- 
+--- [Animations list](https://alexguirre.github.io/animations-list/)
+---
+--- @hash [0x83CDB10EA29B370B](https://docs.fivem.net/natives/?_0x83CDB10EA29B370B)
+--- @param ped Ped
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param animEnterSpeed number (float)
+--- @param animExitSpeed number (float)
+--- @param duration number (int)
+--- @param flag any
+--- @param animTime number (float)
+--- @param p14 any
+--- @param p15 any
+--- @return void
+--- @overload fun(ped: Ped, animDict: string, animName: string, posX: number, posY: number, posZ: number, rotX: number, rotY: number, rotZ: number, animEnterSpeed: number, animExitSpeed: number, duration: number, flag: any, animTime: number, p14: any, p15: any): void
+function TaskPlayAnimAdvanced(ped, animDict, animName, posX, posY, posZ, rotX, rotY, rotZ, animEnterSpeed, animExitSpeed, duration, flag, animTime, p14, p15) end
+
+    
+--- TaskSeekCoverFromPos
+---
+--- @hash [0x75AC2B60386D89F2](https://docs.fivem.net/natives/?_0x75AC2B60386D89F2)
 --- @param ped Ped
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param duration number (int)
---- @param firingPattern Hash
+--- @param p5 boolean
 --- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, duration: number, firingPattern: Hash): void
-function TaskShootAtCoord(ped, x, y, z, duration, firingPattern) end
+--- @overload fun(ped: Ped, x: number, y: number, z: number, duration: number, p5: boolean): void
+function TaskSeekCoverFromPos(ped, x, y, z, duration, p5) end
 
     
---- TaskSetSphereDefensiveArea
+--- ```
+--- scenarioName example: "WORLD_HUMAN_GUARD_STAND"  
+--- ```
 ---
---- @hash [0x933C06518B52A9A4](https://docs.fivem.net/natives/?_0x933C06518B52A9A4)
---- @param p0 any
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
+--- @hash [0xAE032F8BBA959E90](https://docs.fivem.net/natives/?_0xAE032F8BBA959E90)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
+--- @param scenarioName string (char*)
 --- @return void
---- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: number): void
-function TaskSetSphereDefensiveArea(p0, p1, p2, p3, p4) end
+--- @overload fun(ped: Ped, x: number, y: number, z: number, heading: number, scenarioName: string): void
+function TaskStandGuard(ped, x, y, z, heading, scenarioName) end
+
+    
+--- ```
+--- This function is called on peds in vehicles.  
+--- anim: animation name  
+--- p2, p3, p4: "sweep_low", "sweep_med" or "sweep_high"  
+--- p5: no idea what it does but is usually -1  
+--- ```
+---
+--- @hash [0x2047C02158D6405A](https://docs.fivem.net/natives/?_0x2047C02158D6405A)
+--- @param ped Ped
+--- @param anim string (char*)
+--- @param p2 string (char*)
+--- @param p3 string (char*)
+--- @param p4 string (char*)
+--- @param p5 number (int)
+--- @param vehicle Vehicle
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @return void
+--- @overload fun(ped: Ped, anim: string, p2: string, p3: string, p4: string, p5: number, vehicle: Vehicle, p7: number, p8: number): void
+function TaskSweepAimEntity(ped, anim, p2, p3, p4, p5, vehicle, p7, p8) end
+
+    
+--- ```
+--- Updated variables
+--- An alternative to TASK::TASK_USE_NEAREST_SCENARIO_TO_COORD_WARP. Makes the ped walk to the scenario instead.
+--- ```
+---
+--- @hash [0x277F471BA9DB000B](https://docs.fivem.net/natives/?_0x277F471BA9DB000B)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param distance number (float)
+--- @param duration number (int)
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number, distance: number, duration: number): void
+function TaskUseNearestScenarioToCoord(ped, x, y, z, distance, duration) end
+
+    
+--- TaskShockingEventReact
+---
+--- @hash [0x452419CBD838065B](https://docs.fivem.net/natives/?_0x452419CBD838065B)
+--- @param ped Ped
+--- @param eventHandle number (int)
+--- @return void
+--- @overload fun(ped: Ped, eventHandle: number): void
+function TaskShockingEventReact(ped, eventHandle) end
+
+    
+--- ```
+--- Makes the specified ped stand still for (time) milliseconds.  
+--- ```
+---
+--- @hash [0x919BE13EED931959](https://docs.fivem.net/natives/?_0x919BE13EED931959)
+--- @param ped Ped
+--- @param time number (int)
+--- @return void
+--- @overload fun(ped: Ped, time: number): void
+function TaskStandStill(ped, time) end
+
+    
+--- ```
+---  TASK::TASK_SYNCHRONIZED_SCENE(ped, scene, "creatures@rottweiler@in_vehicle@std_car", "get_in", 1000.0, -8.0, 4, 0, 0x447a0000, 0);
+--- ```
+---
+--- @hash [0xEEA929141F699854](https://docs.fivem.net/natives/?_0xEEA929141F699854)
+--- @param ped Ped
+--- @param scene number (int)
+--- @param animDictionary string (char*)
+--- @param animationName string (char*)
+--- @param speed number (float)
+--- @param speedMultiplier number (float)
+--- @param duration number (int)
+--- @param flag number (int)
+--- @param playbackRate number (float)
+--- @param p9 any
+--- @return void
+--- @overload fun(ped: Ped, scene: number, animDictionary: string, animationName: string, speed: number, speedMultiplier: number, duration: number, flag: number, playbackRate: number, p9: any): void
+function TaskSynchronizedScene(ped, scene, animDictionary, animationName, speed, speedMultiplier, duration, flag, playbackRate, p9) end
+
+    
+--- ```
+--- info about driving modes: HTTP://gtaforums.com/topic/822314-guide-driving-styles/  
+--- ---------------------------------------------------------------  
+--- Passing P6 value as floating value didn't throw any errors, though unsure what is it exactly, looks like radius or something.  
+--- P10 though, it is mentioned as float, however, I used bool and set it to true, that too worked.  
+--- Here the e.g. code I used  
+--- Function.Call(Hash.TASK_VEHICLE_DRIVE_TO_COORD, Ped, Vehicle, Cor X, Cor Y, Cor Z, 30f, 1f, Vehicle.GetHashCode(), 16777216, 1f, true);  
+--- ```
+---
+--- @hash [0xE2A2AA2F659D77A7](https://docs.fivem.net/natives/?_0xE2A2AA2F659D77A7)
+--- @param ped Ped
+--- @param vehicle Vehicle
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param p6 any
+--- @param vehicleModel Hash
+--- @param drivingMode number (int)
+--- @param stopRange number (float)
+--- @param p10 number (float)
+--- @return void
+--- @overload fun(ped: Ped, vehicle: Vehicle, x: number, y: number, z: number, speed: number, p6: any, vehicleModel: Hash, drivingMode: number, stopRange: number, p10: number): void
+function TaskVehicleDriveToCoord(ped, vehicle, x, y, z, speed, p6, vehicleModel, drivingMode, stopRange, p10) end
+
+    
+--- ```
+--- pilot, vehicle and altitude are rather self-explanatory.  
+--- p4: is unused variable in the function.  
+--- entityToFollow: you can provide a Vehicle entity or a Ped entity, the heli will protect them.  
+--- 'targetSpeed':  The pilot will dip the nose AS MUCH AS POSSIBLE so as to reach this value AS FAST AS POSSIBLE.  As such, you'll want to modulate it as opposed to calling it via a hard-wired, constant #.  
+--- 'radius' isn't just "stop within radius of X of target" like with ground vehicles.  In this case, the pilot will fly an entire circle around 'radius' and continue to do so.  
+--- NOT CONFIRMED:  p7 appears to be a FlyingStyle enum.  Still investigating it as of this writing, but playing around with values here appears to result in different -behavior- as opposed to offsetting coordinates, altitude, target speed, etc.  
+--- NOTE: If the pilot finds enemies, it will engage them until it kills them, but will return to protect the ped/vehicle given shortly thereafter.  
+--- ```
+---
+--- @hash [0x1E09C32048FEFD1C](https://docs.fivem.net/natives/?_0x1E09C32048FEFD1C)
+--- @param pilot Ped
+--- @param vehicle Vehicle
+--- @param entityToFollow Entity
+--- @param targetSpeed number (float)
+--- @param p4 number (int)
+--- @param radius number (float)
+--- @param altitude number (int)
+--- @param p7 number (int)
+--- @return void
+--- @overload fun(pilot: Ped, vehicle: Vehicle, entityToFollow: Entity, targetSpeed: number, p4: number, radius: number, altitude: number, p7: number): void
+function TaskVehicleHeliProtect(pilot, vehicle, entityToFollow, targetSpeed, p4, radius, altitude, p7) end
+
+    
+--- ```
+--- NativeDB Introduced: v1868
+--- ```
+---
+--- @hash [0x6919A2F136426098](https://docs.fivem.net/natives/?_0x6919A2F136426098)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: any, p3: any): void
+function TaskWanderSpecific(p0, p1, p2, p3) end
 
     
 --- ```
@@ -3775,108 +3920,6 @@ function TaskSetSphereDefensiveArea(p0, p1, p2, p3, p4) end
 --- @return void
 --- @overload fun(entity: Entity, target: Entity, duration: number, firingPattern: Hash): void
 function TaskShootAtEntity(entity, target, duration, firingPattern) end
-
-    
---- TaskShockingEventReact
----
---- @hash [0x452419CBD838065B](https://docs.fivem.net/natives/?_0x452419CBD838065B)
---- @param ped Ped
---- @param eventHandle number (int)
---- @return void
---- @overload fun(ped: Ped, eventHandle: number): void
-function TaskShockingEventReact(ped, eventHandle) end
-
-    
---- ```
---- Makes the specified ped shuffle to the next vehicle seat.  
---- The ped MUST be in a vehicle and the vehicle parameter MUST be the ped's current vehicle.  
---- ```
---- 
---- ```
---- NativeDB Added Parameter 3: Any p2
---- ```
----
---- @hash [0x7AA80209BDA643EB](https://docs.fivem.net/natives/?_0x7AA80209BDA643EB)
---- @param ped Ped
---- @param vehicle Vehicle
---- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle): void
-function TaskShuffleToNextVehicleSeat(ped, vehicle) end
-
-    
---- ```
---- Makes the specified ped flee the specified distance from the specified position.  
---- ```
----
---- @hash [0x94587F17E9C365D5](https://docs.fivem.net/natives/?_0x94587F17E9C365D5)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param distance number (float)
---- @param time number (int)
---- @param p6 boolean
---- @param p7 boolean
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, distance: number, time: number, p6: boolean, p7: boolean): void
-function TaskSmartFleeCoord(ped, x, y, z, distance, time, p6, p7) end
-
-    
---- ```
---- NativeDB Added Parameter 2: BOOL p1
---- ```
----
---- @hash [0x601736CFE536B0A0](https://docs.fivem.net/natives/?_0x601736CFE536B0A0)
---- @param ped Ped
---- @return void
---- @overload fun(ped: Ped): void
-function TaskSkyDive(ped) end
-
-    
---- ```
---- Makes a ped run away from another ped (fleeTarget).  
---- distance = ped will flee this distance.  
---- fleeTime = ped will flee for this amount of time, set to "-1" to flee forever  
---- ```
----
---- @hash [0x22B0D0E37CCB840D](https://docs.fivem.net/natives/?_0x22B0D0E37CCB840D)
---- @param ped Ped
---- @param fleeTarget Ped
---- @param distance number (float)
---- @param fleeTime any
---- @param p4 boolean
---- @param p5 boolean
---- @return void
---- @overload fun(ped: Ped, fleeTarget: Ped, distance: number, fleeTime: any, p4: boolean, p5: boolean): void
-function TaskSmartFleePed(ped, fleeTarget, distance, fleeTime, p4, p5) end
-
-    
---- ```
---- scenarioName example: "WORLD_HUMAN_GUARD_STAND"  
---- ```
----
---- @hash [0xAE032F8BBA959E90](https://docs.fivem.net/natives/?_0xAE032F8BBA959E90)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param heading number (float)
---- @param scenarioName string (char*)
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, heading: number, scenarioName: string): void
-function TaskStandGuard(ped, x, y, z, heading, scenarioName) end
-
-    
---- ```
---- Makes the specified ped stand still for (time) milliseconds.  
---- ```
----
---- @hash [0x919BE13EED931959](https://docs.fivem.net/natives/?_0x919BE13EED931959)
---- @param ped Ped
---- @param time number (int)
---- @return void
---- @overload fun(ped: Ped, time: number): void
-function TaskStandStill(ped, time) end
 
     
 --- ```
@@ -3919,92 +3962,110 @@ function TaskStartScenarioInPlace(ped, scenarioName, unkDelay, playEnterAnim) en
 
     
 --- ```
---- Also a few more listed at TASK::TASK_START_SCENARIO_IN_PLACE just above.
---- ---------------
---- The first parameter in every scenario has always been a Ped of some sort. The second like TASK_START_SCENARIO_IN_PLACE is the name of the scenario.
---- The next 4 parameters were harder to decipher. After viewing "hairdo_shop_mp.ysc.c4", and being confused from seeing the case in other scripts, they passed the first three of the arguments as one array from a function, and it looked like it was obviously x, y, and z.
---- I haven't seen the sixth parameter go to or over 360, making me believe that it is rotation, but I really can't confirm anything.
---- I have no idea what the last 3 parameters are, but I'll try to find out.
---- -going on the last 3 parameters, they appear to always be "0, 0, 1"
---- p6 -1 also used in scrips
---- p7 used for sitting scenarios
---- p8 teleports ped to position
+--- used in sequence task  
+--- both parameters seems to be always 0  
 --- ```
 ---
---- @hash [0xFA4EFC79F69D4F07](https://docs.fivem.net/natives/?_0xFA4EFC79F69D4F07)
---- @param ped Ped
---- @param scenarioName string (char*)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param heading number (float)
---- @param duration number (int)
---- @param sittingScenario boolean
---- @param teleport boolean
+--- @hash [0xAC96609B9995EDF8](https://docs.fivem.net/natives/?_0xAC96609B9995EDF8)
+--- @param p0 boolean
+--- @param p1 boolean
 --- @return void
---- @overload fun(ped: Ped, scenarioName: string, x: number, y: number, z: number, heading: number, duration: number, sittingScenario: boolean, teleport: boolean): void
-function TaskStartScenarioAtPosition(ped, scenarioName, x, y, z, heading, duration, sittingScenario, teleport) end
+--- @overload fun(p0: boolean, p1: boolean): void
+function TaskToggleDuck(p0, p1) end
 
     
---- ```
---- Stealth kill action name hashes:  
---- stealth kills can be found here: Grand Theft Auto V\common.rpf\data\action\stealth_kills.meta  
---- ...  
---- {  
----     "ACT_stealth_kill_a",  
----     "ACT_stealth_kill_weapon",  
----     "ACT_stealth_kill_b",  
----     "ACT_stealth_kill_c",  
----     "ACT_stealth_kill_d",  
----     "ACT_stealth_kill_a_gardener"  
---- }  
---- Only known script using this native: fbi4_prep2  
---- EXAMPLE:  
---- ai::task_stealth_kill(iParam1, Local_252, gameplay::get_hash_key("AR_stealth_kill_a"), 1f, 0);ai::task_stealth_kill(iParam1, Local_252, gameplay::get_hash_key("AR_stealth_kill_knife"), 1f, 0);  
---- Also it may be important to note, that each time this task is called, it's followed by AI::CLEAR_PED_TASKS on the target  
---- ```
+--- TaskUseNearestScenarioChainToCoordWarp
 ---
---- @hash [0xAA5DC05579D60BD9](https://docs.fivem.net/natives/?_0xAA5DC05579D60BD9)
---- @param killer Ped
---- @param target Ped
---- @param actionType Hash
---- @param p3 number (float)
---- @param p4 any
---- @return void
---- @overload fun(killer: Ped, target: Ped, actionType: Hash, p3: number, p4: any): void
-function TaskStealthKill(killer, target, actionType, p3, p4) end
-
-    
---- ```
---- Makes the ped run to take cover  
---- ```
----
---- @hash [0xE5DA8615A6180789](https://docs.fivem.net/natives/?_0xE5DA8615A6180789)
---- @param ped Ped
---- @return void
---- @overload fun(ped: Ped): void
-function TaskStayInCover(ped) end
-
-    
---- Used in am_vehicle_spawn.ysc and am_mp_submarine.ysc.
---- p0 is always 0, p5 is always 1
---- p1 is the vehicle handle of the submarine. Submarine must have a driver, but the ped handle is not passed to the native.
---- Speed can be set by calling SET_DRIVE_TASK_CRUISE_SPEED after
---- 
---- ```
---- NativeDB Introduced: v2189
---- ```
----
---- @hash [0xC22B40579A498CA4](https://docs.fivem.net/natives/?_0xC22B40579A498CA4)
+--- @hash [0x97A28E63F0BA5631](https://docs.fivem.net/natives/?_0x97A28E63F0BA5631)
 --- @param p0 any
---- @param submarine Vehicle
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
 --- @param p5 any
 --- @return void
---- @overload fun(p0: any, submarine: Vehicle, x: number, y: number, z: number, p5: any): void
-function TaskSubmarineGotoAndStop(p0, submarine, x, y, z, p5) end
+--- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: number, p5: any): void
+function TaskUseNearestScenarioChainToCoordWarp(p0, p1, p2, p3, p4, p5) end
+
+    
+--- ```
+--- Differs from TASK_VEHICLE_DRIVE_TO_COORDS in that it will pick the shortest possible road route without taking one-way streets and other "road laws" into consideration.  
+--- WARNING:  
+--- A behaviorFlag value of 0 will result in a clunky, stupid driver!  
+--- Recommended settings:  
+--- speed = 30.0f,  
+--- behaviorFlag = 156,   
+--- stoppingRange = 5.0f;  
+--- If you simply want to have your driver move to a fixed location, call it only once, or, when necessary in the event of interruption.   
+--- If using this to continually follow a Ped who is on foot:  You will need to run this in a tick loop.  Call it in with the Ped's updated coordinates every 20 ticks or so and you will have one hell of a smart, fast-reacting NPC driver -- provided he doesn't get stuck.  If your update frequency is too fast, the Ped may not have enough time to figure his way out of being stuck, and thus, remain stuck.  One way around this would be to implement an "anti-stuck" mechanism, which allows the driver to realize he's stuck, temporarily pause the tick, unstuck, then resume the tick.  
+--- EDIT:  This is being discussed in more detail at http://gtaforums.com/topic/818504-any-idea-on-how-to-make-peds-clever-and-insanely-fast-c/  
+--- ```
+---
+--- @hash [0x195AEEB13CEFE2EE](https://docs.fivem.net/natives/?_0x195AEEB13CEFE2EE)
+--- @param ped Ped
+--- @param vehicle Vehicle
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param behaviorFlag number (int)
+--- @param stoppingRange number (float)
+--- @return void
+--- @overload fun(ped: Ped, vehicle: Vehicle, x: number, y: number, z: number, speed: number, behaviorFlag: number, stoppingRange: number): void
+function TaskVehicleGotoNavmesh(ped, vehicle, x, y, z, speed, behaviorFlag, stoppingRange) end
+
+    
+--- TaskWarpPedIntoVehicle
+---
+--- @hash [0x9A7D091411C5F684](https://docs.fivem.net/natives/?_0x9A7D091411C5F684)
+--- @param ped Ped
+--- @param vehicle Vehicle
+--- @param seatIndex number (int)
+--- @return void
+--- @overload fun(ped: Ped, vehicle: Vehicle, seatIndex: number): void
+function TaskWarpPedIntoVehicle(ped, vehicle, seatIndex) end
+
+    
+--- VehicleWaypointPlaybackUseDefaultSpeed
+---
+--- @hash [0x5CEB25A7D2848963](https://docs.fivem.net/natives/?_0x5CEB25A7D2848963)
+--- @param vehicle Vehicle
+--- @return void
+--- @overload fun(vehicle: Vehicle): void
+function VehicleWaypointPlaybackUseDefaultSpeed(vehicle) end
+
+    
+--- ```
+--- The 2nd param (unused) is not implemented.
+--- -----------------------------------------------------------------------
+--- The only occurrence I found in a R* script ("assassin_construction.ysc.c4"):
+---             if (((v_3 < v_4) && (TASK::GET_SCRIPT_TASK_STATUS(PLAYER::PLAYER_PED_ID(), 0x6a67a5cc) != 1)) && (v_5 > v_3)) {
+---                 TASK::TASK_RELOAD_WEAPON(PLAYER::PLAYER_PED_ID(), 1);
+---             }
+--- ```
+---
+--- @hash [0x62D2916F56B9CD2D](https://docs.fivem.net/natives/?_0x62D2916F56B9CD2D)
+--- @param ped Ped
+--- @param unused boolean
+--- @return void
+--- @overload fun(ped: Ped, unused: boolean): void
+function TaskReloadWeapon(ped, unused) end
+
+    
+--- ```
+--- Firing Pattern Hash Information: https://pastebin.com/Px036isB
+--- ```
+---
+--- @hash [0x46A6CC01E0826106](https://docs.fivem.net/natives/?_0x46A6CC01E0826106)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param duration number (int)
+--- @param firingPattern Hash
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number, duration: number, firingPattern: Hash): void
+function TaskShootAtCoord(ped, x, y, z, duration, firingPattern) end
 
     
 --- ```
@@ -4031,182 +4092,6 @@ function TaskStopPhoneGestureAnimation(ped) end
 function TaskStopPhoneGestureAnimation(ped) end
 
     
---- ```
---- This function is called on peds in vehicles.  
---- anim: animation name  
---- p2, p3, p4: "sweep_low", "sweep_med" or "sweep_high"  
---- p5: no idea what it does but is usually -1  
---- ```
----
---- @hash [0x2047C02158D6405A](https://docs.fivem.net/natives/?_0x2047C02158D6405A)
---- @param ped Ped
---- @param anim string (char*)
---- @param p2 string (char*)
---- @param p3 string (char*)
---- @param p4 string (char*)
---- @param p5 number (int)
---- @param vehicle Vehicle
---- @param p7 number (float)
---- @param p8 number (float)
---- @return void
---- @overload fun(ped: Ped, anim: string, p2: string, p3: string, p4: string, p5: number, vehicle: Vehicle, p7: number, p8: number): void
-function TaskSweepAimEntity(ped, anim, p2, p3, p4, p5, vehicle, p7, p8) end
-
-    
---- TaskSwapWeapon
----
---- @hash [0xA21C51255B205245](https://docs.fivem.net/natives/?_0xA21C51255B205245)
---- @param ped Ped
---- @param p1 boolean
---- @return void
---- @overload fun(ped: Ped, p1: boolean): void
-function TaskSwapWeapon(ped, p1) end
-
-    
---- TaskSweepAimPosition
----
---- @hash [0x7AFE8FDC10BC07D2](https://docs.fivem.net/natives/?_0x7AFE8FDC10BC07D2)
---- @param p0 any
---- @param p5 any
---- @param p6 number (float)
---- @param p7 number (float)
---- @param p8 number (float)
---- @param p9 number (float)
---- @param p10 number (float)
---- @return any, any, any, any
---- @overload fun(p0: any, p5: any, p6: number, p7: number, p8: number, p9: number, p10: number): any, any, any, any
-function TaskSweepAimPosition(p0, p5, p6, p7, p8, p9, p10) end
-
-    
---- ```
----  TASK::TASK_SYNCHRONIZED_SCENE(ped, scene, "creatures@rottweiler@in_vehicle@std_car", "get_in", 1000.0, -8.0, 4, 0, 0x447a0000, 0);
---- ```
----
---- @hash [0xEEA929141F699854](https://docs.fivem.net/natives/?_0xEEA929141F699854)
---- @param ped Ped
---- @param scene number (int)
---- @param animDictionary string (char*)
---- @param animationName string (char*)
---- @param speed number (float)
---- @param speedMultiplier number (float)
---- @param duration number (int)
---- @param flag number (int)
---- @param playbackRate number (float)
---- @param p9 any
---- @return void
---- @overload fun(ped: Ped, scene: number, animDictionary: string, animationName: string, speed: number, speedMultiplier: number, duration: number, flag: number, playbackRate: number, p9: any): void
-function TaskSynchronizedScene(ped, scene, animDictionary, animationName, speed, speedMultiplier, duration, flag, playbackRate, p9) end
-
-    
---- ```
---- In every case of this native, I've only seen the first parameter passed as 0, although I believe it's a Ped after seeing tasks around it using 0. That's because it's used in a Sequence Task.  
---- The last 3 parameters are definitely coordinates after seeing them passed in other scripts, and even being used straight from the player's coordinates.  
---- ---  
---- It seems that - in the decompiled scripts - this native was used on a ped who was in a vehicle to throw a projectile out the window at the player. This is something any ped will naturally do if they have a throwable and they are doing driveby-combat (although not very accurately).  
---- It is possible, however, that this is how SWAT throws smoke grenades at the player when in cover.  
---- ----------------------------------------------------  
---- The first comment is right it definately is the ped as if you look in script finale_heist2b.c line 59628 in Xbox Scripts atleast you will see task_throw_projectile and the first param is Local_559[2 <14>] if you look above it a little bit line 59622 give_weapon_to_ped uses the same exact param Local_559[2 <14>] and we all know the first param of that native is ped. So it guaranteed has to be ped. 0 just may mean to use your ped by default for some reason.  
---- ```
---- 
---- ```
---- NativeDB Added Parameter 5: Any p4
---- NativeDB Added Parameter 6: Any p5
---- ```
----
---- @hash [0x7285951DBF6B5A51](https://docs.fivem.net/natives/?_0x7285951DBF6B5A51)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number): void
-function TaskThrowProjectile(ped, x, y, z) end
-
-    
---- ```
---- duration in milliseconds  
---- ```
----
---- @hash [0x1DDA930A0AC38571](https://docs.fivem.net/natives/?_0x1DDA930A0AC38571)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param duration number (int)
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, duration: number): void
-function TaskTurnPedToFaceCoord(ped, x, y, z, duration) end
-
-    
---- ```
---- used in sequence task  
---- both parameters seems to be always 0  
---- ```
----
---- @hash [0xAC96609B9995EDF8](https://docs.fivem.net/natives/?_0xAC96609B9995EDF8)
---- @param p0 boolean
---- @param p1 boolean
---- @return void
---- @overload fun(p0: boolean, p1: boolean): void
-function TaskToggleDuck(p0, p1) end
-
-    
---- ```
---- Actually has 3 params, not 2.  
---- p0: Ped  
---- p1: int (or bool?)  
---- p2: int  
---- ```
---- 
---- ```
---- NativeDB Added Parameter 3: Any p2
---- ```
----
---- @hash [0xBD2A8EC3AF4DE7DB](https://docs.fivem.net/natives/?_0xBD2A8EC3AF4DE7DB)
---- @param ped Ped
---- @param p1 number (int)
---- @return void
---- @overload fun(ped: Ped, p1: number): void
-function TaskUseMobilePhone(ped, p1) end
-
-    
---- ```
---- duration: the amount of time in milliseconds to do the task. -1 will keep the task going until either another task is applied, or CLEAR_ALL_TASKS() is called with the ped  
---- ```
----
---- @hash [0x5AD23D40115353AC](https://docs.fivem.net/natives/?_0x5AD23D40115353AC)
---- @param ped Ped
---- @param entity Entity
---- @param duration number (int)
---- @return void
---- @overload fun(ped: Ped, entity: Entity, duration: number): void
-function TaskTurnPedToFaceEntity(ped, entity, duration) end
-
-    
---- TaskUseMobilePhoneTimed
----
---- @hash [0x5EE02954A14C69DB](https://docs.fivem.net/natives/?_0x5EE02954A14C69DB)
---- @param ped Ped
---- @param duration number (int)
---- @return void
---- @overload fun(ped: Ped, duration: number): void
-function TaskUseMobilePhoneTimed(ped, duration) end
-
-    
---- TaskUseNearestScenarioChainToCoordWarp
----
---- @hash [0x97A28E63F0BA5631](https://docs.fivem.net/natives/?_0x97A28E63F0BA5631)
---- @param p0 any
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @param p5 any
---- @return void
---- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: number, p5: any): void
-function TaskUseNearestScenarioChainToCoordWarp(p0, p1, p2, p3, p4, p5) end
-
-    
 --- TaskUseNearestScenarioChainToCoord
 ---
 --- @hash [0x9FDA1B3D7E7028B3](https://docs.fivem.net/natives/?_0x9FDA1B3D7E7028B3)
@@ -4219,156 +4104,6 @@ function TaskUseNearestScenarioChainToCoordWarp(p0, p1, p2, p3, p4, p5) end
 --- @return void
 --- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: number, p5: any): void
 function TaskUseNearestScenarioChainToCoord(p0, p1, p2, p3, p4, p5) end
-
-    
---- TaskUseNearestScenarioToCoordWarp
----
---- @hash [0x58E2E0F23F6B76C3](https://docs.fivem.net/natives/?_0x58E2E0F23F6B76C3)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @param p5 any
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, radius: number, p5: any): void
-function TaskUseNearestScenarioToCoordWarp(ped, x, y, z, radius, p5) end
-
-    
---- TaskVehicleAimAtCoord
----
---- @hash [0x447C1E9EF844BC0F](https://docs.fivem.net/natives/?_0x447C1E9EF844BC0F)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number): void
-function TaskVehicleAimAtCoord(ped, x, y, z) end
-
-    
---- ```
---- chases targetEnt fast and aggressively  
---- --  
---- Makes ped (needs to be in vehicle) chase targetEnt.  
---- ```
----
---- @hash [0x3C08A8E30363B353](https://docs.fivem.net/natives/?_0x3C08A8E30363B353)
---- @param driver Ped
---- @param targetEnt Entity
---- @return void
---- @overload fun(driver: Ped, targetEnt: Entity): void
-function TaskVehicleChase(driver, targetEnt) end
-
-    
---- ```
---- Updated variables
---- An alternative to TASK::TASK_USE_NEAREST_SCENARIO_TO_COORD_WARP. Makes the ped walk to the scenario instead.
---- ```
----
---- @hash [0x277F471BA9DB000B](https://docs.fivem.net/natives/?_0x277F471BA9DB000B)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param distance number (float)
---- @param duration number (int)
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, distance: number, duration: number): void
-function TaskUseNearestScenarioToCoord(ped, x, y, z, distance, duration) end
-
-    
---- TaskVehicleAimAtPed
----
---- @hash [0xE41885592B08B097](https://docs.fivem.net/natives/?_0xE41885592B08B097)
---- @param ped Ped
---- @param target Ped
---- @return void
---- @overload fun(ped: Ped, target: Ped): void
-function TaskVehicleAimAtPed(ped, target) end
-
-    
---- TaskVehicleDriveToCoordLongrange
----
---- @hash [0x158BB33F920D360C](https://docs.fivem.net/natives/?_0x158BB33F920D360C)
---- @param ped Ped
---- @param vehicle Vehicle
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param speed number (float)
---- @param driveMode number (int)
---- @param stopRange number (float)
---- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle, x: number, y: number, z: number, speed: number, driveMode: number, stopRange: number): void
-function TaskVehicleDriveToCoordLongrange(ped, vehicle, x, y, z, speed, driveMode, stopRange) end
-
-    
---- ```
---- info about driving modes: HTTP://gtaforums.com/topic/822314-guide-driving-styles/  
---- ---------------------------------------------------------------  
---- Passing P6 value as floating value didn't throw any errors, though unsure what is it exactly, looks like radius or something.  
---- P10 though, it is mentioned as float, however, I used bool and set it to true, that too worked.  
---- Here the e.g. code I used  
---- Function.Call(Hash.TASK_VEHICLE_DRIVE_TO_COORD, Ped, Vehicle, Cor X, Cor Y, Cor Z, 30f, 1f, Vehicle.GetHashCode(), 16777216, 1f, true);  
---- ```
----
---- @hash [0xE2A2AA2F659D77A7](https://docs.fivem.net/natives/?_0xE2A2AA2F659D77A7)
---- @param ped Ped
---- @param vehicle Vehicle
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param speed number (float)
---- @param p6 any
---- @param vehicleModel Hash
---- @param drivingMode number (int)
---- @param stopRange number (float)
---- @param p10 number (float)
---- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle, x: number, y: number, z: number, speed: number, p6: any, vehicleModel: Hash, drivingMode: number, stopRange: number, p10: number): void
-function TaskVehicleDriveToCoord(ped, vehicle, x, y, z, speed, p6, vehicleModel, drivingMode, stopRange, p10) end
-
-    
---- ```
---- Makes a ped follow the targetVehicle with <minDistance> in between.  
---- note: minDistance is ignored if drivingstyle is avoiding traffic, but Rushed is fine.  
---- Mode: The mode defines the relative position to the targetVehicle. The ped will try to position its vehicle there.  
---- -1 = behind  
---- 0 = ahead  
---- 1 = left  
---- 2 = right  
---- 3 = back left  
---- 4 = back right  
---- if the target is closer than noRoadsDistance, the driver will ignore pathing/roads and follow you directly.  
---- Driving Styles guide: gtaforums.com/topic/822314-guide-driving-styles/  
---- ```
----
---- @hash [0x0FA6E4B75F302400](https://docs.fivem.net/natives/?_0x0FA6E4B75F302400)
---- @param ped Ped
---- @param vehicle Vehicle
---- @param targetVehicle Vehicle
---- @param mode number (int)
---- @param speed number (float)
---- @param drivingStyle number (int)
---- @param minDistance number (float)
---- @param p7 number (int)
---- @param noRoadsDistance number (float)
---- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle, targetVehicle: Vehicle, mode: number, speed: number, drivingStyle: number, minDistance: number, p7: number, noRoadsDistance: number): void
-function TaskVehicleEscort(ped, vehicle, targetVehicle, mode, speed, drivingStyle, minDistance, p7, noRoadsDistance) end
-
-    
---- TaskVehicleDriveWander
----
---- @hash [0x480142959D337D00](https://docs.fivem.net/natives/?_0x480142959D337D00)
---- @param ped Ped
---- @param vehicle Vehicle
---- @param speed number (float)
---- @param drivingStyle number (int)
---- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle, speed: number, drivingStyle: number): void
-function TaskVehicleDriveWander(ped, vehicle, speed, drivingStyle) end
 
     
 --- ```
@@ -4408,6 +4143,387 @@ function TaskVehicleFollow(driver, vehicle, targetEntity, speed, drivingStyle, m
 
     
 --- ```
+--- Also a few more listed at TASK::TASK_START_SCENARIO_IN_PLACE just above.
+--- ---------------
+--- The first parameter in every scenario has always been a Ped of some sort. The second like TASK_START_SCENARIO_IN_PLACE is the name of the scenario.
+--- The next 4 parameters were harder to decipher. After viewing "hairdo_shop_mp.ysc.c4", and being confused from seeing the case in other scripts, they passed the first three of the arguments as one array from a function, and it looked like it was obviously x, y, and z.
+--- I haven't seen the sixth parameter go to or over 360, making me believe that it is rotation, but I really can't confirm anything.
+--- I have no idea what the last 3 parameters are, but I'll try to find out.
+--- -going on the last 3 parameters, they appear to always be "0, 0, 1"
+--- p6 -1 also used in scrips
+--- p7 used for sitting scenarios
+--- p8 teleports ped to position
+--- ```
+---
+--- @hash [0xFA4EFC79F69D4F07](https://docs.fivem.net/natives/?_0xFA4EFC79F69D4F07)
+--- @param ped Ped
+--- @param scenarioName string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
+--- @param duration number (int)
+--- @param sittingScenario boolean
+--- @param teleport boolean
+--- @return void
+--- @overload fun(ped: Ped, scenarioName: string, x: number, y: number, z: number, heading: number, duration: number, sittingScenario: boolean, teleport: boolean): void
+function TaskStartScenarioAtPosition(ped, scenarioName, x, y, z, heading, duration, sittingScenario, teleport) end
+
+    
+--- ```
+--- In every case of this native, I've only seen the first parameter passed as 0, although I believe it's a Ped after seeing tasks around it using 0. That's because it's used in a Sequence Task.  
+--- The last 3 parameters are definitely coordinates after seeing them passed in other scripts, and even being used straight from the player's coordinates.  
+--- ---  
+--- It seems that - in the decompiled scripts - this native was used on a ped who was in a vehicle to throw a projectile out the window at the player. This is something any ped will naturally do if they have a throwable and they are doing driveby-combat (although not very accurately).  
+--- It is possible, however, that this is how SWAT throws smoke grenades at the player when in cover.  
+--- ----------------------------------------------------  
+--- The first comment is right it definately is the ped as if you look in script finale_heist2b.c line 59628 in Xbox Scripts atleast you will see task_throw_projectile and the first param is Local_559[2 <14>] if you look above it a little bit line 59622 give_weapon_to_ped uses the same exact param Local_559[2 <14>] and we all know the first param of that native is ped. So it guaranteed has to be ped. 0 just may mean to use your ped by default for some reason.  
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 5: Any p4
+--- NativeDB Added Parameter 6: Any p5
+--- ```
+---
+--- @hash [0x7285951DBF6B5A51](https://docs.fivem.net/natives/?_0x7285951DBF6B5A51)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number): void
+function TaskThrowProjectile(ped, x, y, z) end
+
+    
+--- TaskUseMobilePhoneTimed
+---
+--- @hash [0x5EE02954A14C69DB](https://docs.fivem.net/natives/?_0x5EE02954A14C69DB)
+--- @param ped Ped
+--- @param duration number (int)
+--- @return void
+--- @overload fun(ped: Ped, duration: number): void
+function TaskUseMobilePhoneTimed(ped, duration) end
+
+    
+--- TaskVehicleDriveToCoordLongrange
+---
+--- @hash [0x158BB33F920D360C](https://docs.fivem.net/natives/?_0x158BB33F920D360C)
+--- @param ped Ped
+--- @param vehicle Vehicle
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param speed number (float)
+--- @param driveMode number (int)
+--- @param stopRange number (float)
+--- @return void
+--- @overload fun(ped: Ped, vehicle: Vehicle, x: number, y: number, z: number, speed: number, driveMode: number, stopRange: number): void
+function TaskVehicleDriveToCoordLongrange(ped, vehicle, x, y, z, speed, driveMode, stopRange) end
+
+    
+--- See [`TASK_VEHICLE_MISSION`](https://docs.fivem.net/natives/?_0x659427E0EF36BCDE).
+---
+--- @hash [0x9454528DF15D657A](https://docs.fivem.net/natives/?_0x9454528DF15D657A)
+--- @param ped Ped
+--- @param vehicle Vehicle
+--- @param pedTarget Ped
+--- @param missionType number (int)
+--- @param maxSpeed number (float)
+--- @param drivingStyle number (int)
+--- @param minDistance number (float)
+--- @param p7 number (float)
+--- @param DriveAgainstTraffic boolean
+--- @return void
+--- @overload fun(ped: Ped, vehicle: Vehicle, pedTarget: Ped, missionType: number, maxSpeed: number, drivingStyle: number, minDistance: number, p7: number, DriveAgainstTraffic: boolean): void
+function TaskVehicleMissionPedTarget(ped, vehicle, pedTarget, missionType, maxSpeed, drivingStyle, minDistance, p7, DriveAgainstTraffic) end
+
+    
+--- ```
+--- NativeDB Added Parameter 5: Any p4
+--- NativeDB Added Parameter 6: Any p5
+--- ```
+---
+--- @hash [0xCDDC2B77CE54AC6E](https://docs.fivem.net/natives/?_0xCDDC2B77CE54AC6E)
+--- @param ped Ped
+--- @param target Ped
+--- @param time number (int)
+--- @param p3 number (int)
+--- @return void
+--- @overload fun(ped: Ped, target: Ped, time: number, p3: number): void
+function TaskWrithe(ped, target, time, p3) end
+
+    
+--- TaskSeekCoverToCoverPoint
+---
+--- @hash [0xD43D95C7A869447F](https://docs.fivem.net/natives/?_0xD43D95C7A869447F)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 any
+--- @param p6 boolean
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: number, p3: number, p4: number, p5: any, p6: boolean): void
+function TaskSeekCoverToCoverPoint(p0, p1, p2, p3, p4, p5, p6) end
+
+    
+--- ```
+--- Makes the specified ped flee the specified distance from the specified position.  
+--- ```
+---
+--- @hash [0x94587F17E9C365D5](https://docs.fivem.net/natives/?_0x94587F17E9C365D5)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param distance number (float)
+--- @param time number (int)
+--- @param p6 boolean
+--- @param p7 boolean
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number, distance: number, time: number, p6: boolean, p7: boolean): void
+function TaskSmartFleeCoord(ped, x, y, z, distance, time, p6, p7) end
+
+    
+--- ```
+--- Stealth kill action name hashes:  
+--- stealth kills can be found here: Grand Theft Auto V\common.rpf\data\action\stealth_kills.meta  
+--- ...  
+--- {  
+---     "ACT_stealth_kill_a",  
+---     "ACT_stealth_kill_weapon",  
+---     "ACT_stealth_kill_b",  
+---     "ACT_stealth_kill_c",  
+---     "ACT_stealth_kill_d",  
+---     "ACT_stealth_kill_a_gardener"  
+--- }  
+--- Only known script using this native: fbi4_prep2  
+--- EXAMPLE:  
+--- ai::task_stealth_kill(iParam1, Local_252, gameplay::get_hash_key("AR_stealth_kill_a"), 1f, 0);ai::task_stealth_kill(iParam1, Local_252, gameplay::get_hash_key("AR_stealth_kill_knife"), 1f, 0);  
+--- Also it may be important to note, that each time this task is called, it's followed by AI::CLEAR_PED_TASKS on the target  
+--- ```
+---
+--- @hash [0xAA5DC05579D60BD9](https://docs.fivem.net/natives/?_0xAA5DC05579D60BD9)
+--- @param killer Ped
+--- @param target Ped
+--- @param actionType Hash
+--- @param p3 number (float)
+--- @param p4 any
+--- @return void
+--- @overload fun(killer: Ped, target: Ped, actionType: Hash, p3: number, p4: any): void
+function TaskStealthKill(killer, target, actionType, p3, p4) end
+
+    
+--- ```
+--- duration: the amount of time in milliseconds to do the task. -1 will keep the task going until either another task is applied, or CLEAR_ALL_TASKS() is called with the ped  
+--- ```
+---
+--- @hash [0x5AD23D40115353AC](https://docs.fivem.net/natives/?_0x5AD23D40115353AC)
+--- @param ped Ped
+--- @param entity Entity
+--- @param duration number (int)
+--- @return void
+--- @overload fun(ped: Ped, entity: Entity, duration: number): void
+function TaskTurnPedToFaceEntity(ped, entity, duration) end
+
+    
+--- TaskVehicleDriveWander
+---
+--- @hash [0x480142959D337D00](https://docs.fivem.net/natives/?_0x480142959D337D00)
+--- @param ped Ped
+--- @param vehicle Vehicle
+--- @param speed number (float)
+--- @param drivingStyle number (int)
+--- @return void
+--- @overload fun(ped: Ped, vehicle: Vehicle, speed: number, drivingStyle: number): void
+function TaskVehicleDriveWander(ped, vehicle, speed, drivingStyle) end
+
+    
+--- ```
+--- p1 is always GET_HASH_KEY("empty") in scripts, for the rare times this is used  
+--- ```
+---
+--- @hash [0xEB8517DDA73720DA](https://docs.fivem.net/natives/?_0xEB8517DDA73720DA)
+--- @param ped Ped
+--- @param p1 Hash
+--- @return void
+--- @overload fun(ped: Ped, p1: Hash): void
+function TaskSetDecisionMaker(ped, p1) end
+
+    
+--- ```
+--- Makes a ped run away from another ped (fleeTarget).  
+--- distance = ped will flee this distance.  
+--- fleeTime = ped will flee for this amount of time, set to "-1" to flee forever  
+--- ```
+---
+--- @hash [0x22B0D0E37CCB840D](https://docs.fivem.net/natives/?_0x22B0D0E37CCB840D)
+--- @param ped Ped
+--- @param fleeTarget Ped
+--- @param distance number (float)
+--- @param fleeTime any
+--- @param p4 boolean
+--- @param p5 boolean
+--- @return void
+--- @overload fun(ped: Ped, fleeTarget: Ped, distance: number, fleeTime: any, p4: boolean, p5: boolean): void
+function TaskSmartFleePed(ped, fleeTarget, distance, fleeTime, p4, p5) end
+
+    
+--- ```
+--- duration in milliseconds  
+--- ```
+---
+--- @hash [0x1DDA930A0AC38571](https://docs.fivem.net/natives/?_0x1DDA930A0AC38571)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param duration number (int)
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number, duration: number): void
+function TaskTurnPedToFaceCoord(ped, x, y, z, duration) end
+
+    
+--- ```
+--- chases targetEnt fast and aggressively  
+--- --  
+--- Makes ped (needs to be in vehicle) chase targetEnt.  
+--- ```
+---
+--- @hash [0x3C08A8E30363B353](https://docs.fivem.net/natives/?_0x3C08A8E30363B353)
+--- @param driver Ped
+--- @param targetEnt Entity
+--- @return void
+--- @overload fun(driver: Ped, targetEnt: Entity): void
+function TaskVehicleChase(driver, targetEnt) end
+
+    
+--- ```
+--- missionType: https://alloc8or.re/gta5/doc/enums/eVehicleMissionType.txt
+--- ```
+---
+--- @hash [0x659427E0EF36BCDE](https://docs.fivem.net/natives/?_0x659427E0EF36BCDE)
+--- @param driver Ped
+--- @param vehicle Vehicle
+--- @param vehicleTarget Vehicle
+--- @param missionType number (int)
+--- @param p4 number (float)
+--- @param p5 any
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param DriveAgainstTraffic boolean
+--- @return void
+--- @overload fun(driver: Ped, vehicle: Vehicle, vehicleTarget: Vehicle, missionType: number, p4: number, p5: any, p6: number, p7: number, DriveAgainstTraffic: boolean): void
+function TaskVehicleMission(driver, vehicle, vehicleTarget, missionType, p4, p5, p6, p7, DriveAgainstTraffic) end
+
+    
+--- ```
+--- Actually has 3 params, not 2.  
+--- p0: Ped  
+--- p1: int (or bool?)  
+--- p2: int  
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 3: Any p2
+--- ```
+---
+--- @hash [0xBD2A8EC3AF4DE7DB](https://docs.fivem.net/natives/?_0xBD2A8EC3AF4DE7DB)
+--- @param ped Ped
+--- @param p1 number (int)
+--- @return void
+--- @overload fun(ped: Ped, p1: number): void
+function TaskUseMobilePhone(ped, p1) end
+
+    
+--- TaskVehicleAimAtPed
+---
+--- @hash [0xE41885592B08B097](https://docs.fivem.net/natives/?_0xE41885592B08B097)
+--- @param ped Ped
+--- @param target Ped
+--- @return void
+--- @overload fun(ped: Ped, target: Ped): void
+function TaskVehicleAimAtPed(ped, target) end
+
+    
+--- ```
+--- Modes:  
+--- 0 - ignore heading  
+--- 1 - park forward  
+--- 2 - park backwards  
+--- Depending on the angle of approach, the vehicle can park at the specified heading or at its exact opposite (-180) angle.  
+--- Radius seems to define how close the vehicle has to be -after parking- to the position for this task considered completed. If the value is too small, the vehicle will try to park again until it's exactly where it should be. 20.0 Works well but lower values don't, like the radius is measured in centimeters or something.  
+--- ```
+---
+--- @hash [0x0F3E34E968EA374E](https://docs.fivem.net/natives/?_0x0F3E34E968EA374E)
+--- @param ped Ped
+--- @param vehicle Vehicle
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
+--- @param mode number (int)
+--- @param radius number (float)
+--- @param keepEngineOn boolean
+--- @return void
+--- @overload fun(ped: Ped, vehicle: Vehicle, x: number, y: number, z: number, heading: number, mode: number, radius: number, keepEngineOn: boolean): void
+function TaskVehiclePark(ped, vehicle, x, y, z, heading, mode, radius, keepEngineOn) end
+
+    
+--- UncuffPed
+---
+--- @hash [0x67406F2C8F87FC4F](https://docs.fivem.net/natives/?_0x67406F2C8F87FC4F)
+--- @param ped Ped
+--- @return void
+--- @overload fun(ped: Ped): void
+function UncuffPed(ped) end
+
+    
+--- UpdateTaskSweepAimEntity
+---
+--- @hash [0xE4973DBDBE6E44B3](https://docs.fivem.net/natives/?_0xE4973DBDBE6E44B3)
+--- @param ped Ped
+--- @param entity Entity
+--- @return void
+--- @overload fun(ped: Ped, entity: Entity): void
+function UpdateTaskSweepAimEntity(ped, entity) end
+
+    
+--- WaypointPlaybackPause
+---
+--- @hash [0x0F342546AA06FED5](https://docs.fivem.net/natives/?_0x0F342546AA06FED5)
+--- @param p0 any
+--- @param p1 boolean
+--- @param p2 boolean
+--- @return void
+--- @overload fun(p0: any, p1: boolean, p2: boolean): void
+function WaypointPlaybackPause(p0, p1, p2) end
+
+    
+--- VehicleWaypointPlaybackPause
+---
+--- @hash [0x8A4E6AC373666BC5](https://docs.fivem.net/natives/?_0x8A4E6AC373666BC5)
+--- @param vehicle Vehicle
+--- @return void
+--- @overload fun(vehicle: Vehicle): void
+function VehicleWaypointPlaybackPause(vehicle) end
+
+    
+--- WaypointPlaybackStartAimingAtCoord
+---
+--- @hash [0x8968400D900ED8B3](https://docs.fivem.net/natives/?_0x8968400D900ED8B3)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 boolean
+--- @return void
+--- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: boolean): void
+function WaypointPlaybackStartAimingAtCoord(p0, p1, p2, p3, p4) end
+
+    
+--- ```
 --- task_vehicle_follow_waypoint_recording(Ped p0, Vehicle p1, string p2, int p3, int p4, int p5, int p6, float.x p7, float.Y p8, float.Z p9, bool p10, int p11)
 --- p2 = Waypoint recording string (found in update\update.rpf\x64\levels\gta5\waypointrec.rpf
 --- p3 = 786468
@@ -4436,134 +4552,51 @@ function TaskVehicleFollow(driver, vehicle, targetEntity, speed, drivingStyle, m
 function TaskVehicleFollowWaypointRecording(ped, vehicle, WPRecording, p3, p4, p5, p6, p7, p8, p9) end
 
     
---- ```
---- pilot, vehicle and altitude are rather self-explanatory.  
---- p4: is unused variable in the function.  
---- entityToFollow: you can provide a Vehicle entity or a Ped entity, the heli will protect them.  
---- 'targetSpeed':  The pilot will dip the nose AS MUCH AS POSSIBLE so as to reach this value AS FAST AS POSSIBLE.  As such, you'll want to modulate it as opposed to calling it via a hard-wired, constant #.  
---- 'radius' isn't just "stop within radius of X of target" like with ground vehicles.  In this case, the pilot will fly an entire circle around 'radius' and continue to do so.  
---- NOT CONFIRMED:  p7 appears to be a FlyingStyle enum.  Still investigating it as of this writing, but playing around with values here appears to result in different -behavior- as opposed to offsetting coordinates, altitude, target speed, etc.  
---- NOTE: If the pilot finds enemies, it will engage them until it kills them, but will return to protect the ped/vehicle given shortly thereafter.  
---- ```
+--- WaypointPlaybackGetIsPaused
 ---
---- @hash [0x1E09C32048FEFD1C](https://docs.fivem.net/natives/?_0x1E09C32048FEFD1C)
---- @param pilot Ped
---- @param vehicle Vehicle
---- @param entityToFollow Entity
---- @param targetSpeed number (float)
---- @param p4 number (int)
---- @param radius number (float)
---- @param altitude number (int)
---- @param p7 number (int)
---- @return void
---- @overload fun(pilot: Ped, vehicle: Vehicle, entityToFollow: Entity, targetSpeed: number, p4: number, radius: number, altitude: number, p7: number): void
-function TaskVehicleHeliProtect(pilot, vehicle, entityToFollow, targetSpeed, p4, radius, altitude, p7) end
+--- @hash [0x701375A7D43F01CB](https://docs.fivem.net/natives/?_0x701375A7D43F01CB)
+--- @param p0 any
+--- @return boolean
+--- @overload fun(p0: any): boolean
+function WaypointPlaybackGetIsPaused(p0) end
 
     
---- ```
---- Differs from TASK_VEHICLE_DRIVE_TO_COORDS in that it will pick the shortest possible road route without taking one-way streets and other "road laws" into consideration.  
---- WARNING:  
---- A behaviorFlag value of 0 will result in a clunky, stupid driver!  
---- Recommended settings:  
---- speed = 30.0f,  
---- behaviorFlag = 156,   
---- stoppingRange = 5.0f;  
---- If you simply want to have your driver move to a fixed location, call it only once, or, when necessary in the event of interruption.   
---- If using this to continually follow a Ped who is on foot:  You will need to run this in a tick loop.  Call it in with the Ped's updated coordinates every 20 ticks or so and you will have one hell of a smart, fast-reacting NPC driver -- provided he doesn't get stuck.  If your update frequency is too fast, the Ped may not have enough time to figure his way out of being stuck, and thus, remain stuck.  One way around this would be to implement an "anti-stuck" mechanism, which allows the driver to realize he's stuck, temporarily pause the tick, unstuck, then resume the tick.  
---- EDIT:  This is being discussed in more detail at http://gtaforums.com/topic/818504-any-idea-on-how-to-make-peds-clever-and-insanely-fast-c/  
---- ```
+--- WaypointPlaybackStartAimingAtPed
 ---
---- @hash [0x195AEEB13CEFE2EE](https://docs.fivem.net/natives/?_0x195AEEB13CEFE2EE)
+--- @hash [0x20E330937C399D29](https://docs.fivem.net/natives/?_0x20E330937C399D29)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 boolean
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: boolean): void
+function WaypointPlaybackStartAimingAtPed(p0, p1, p2) end
+
+    
+--- TaskVehicleShootAtCoord
+---
+--- @hash [0x5190796ED39C9B6D](https://docs.fivem.net/natives/?_0x5190796ED39C9B6D)
 --- @param ped Ped
---- @param vehicle Vehicle
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param speed number (float)
---- @param behaviorFlag number (int)
---- @param stoppingRange number (float)
---- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle, x: number, y: number, z: number, speed: number, behaviorFlag: number, stoppingRange: number): void
-function TaskVehicleGotoNavmesh(ped, vehicle, x, y, z, speed, behaviorFlag, stoppingRange) end
-
-    
---- ```
---- missionType: https://alloc8or.re/gta5/doc/enums/eVehicleMissionType.txt
---- ```
----
---- @hash [0x659427E0EF36BCDE](https://docs.fivem.net/natives/?_0x659427E0EF36BCDE)
---- @param driver Ped
---- @param vehicle Vehicle
---- @param vehicleTarget Vehicle
---- @param missionType number (int)
 --- @param p4 number (float)
---- @param p5 any
---- @param p6 number (float)
---- @param p7 number (float)
---- @param DriveAgainstTraffic boolean
 --- @return void
---- @overload fun(driver: Ped, vehicle: Vehicle, vehicleTarget: Vehicle, missionType: number, p4: number, p5: any, p6: number, p7: number, DriveAgainstTraffic: boolean): void
-function TaskVehicleMission(driver, vehicle, vehicleTarget, missionType, p4, p5, p6, p7, DriveAgainstTraffic) end
-
-    
---- See [`TASK_VEHICLE_MISSION`](https://docs.fivem.net/natives/?_0x659427E0EF36BCDE).
----
---- @hash [0x9454528DF15D657A](https://docs.fivem.net/natives/?_0x9454528DF15D657A)
---- @param ped Ped
---- @param vehicle Vehicle
---- @param pedTarget Ped
---- @param missionType number (int)
---- @param maxSpeed number (float)
---- @param drivingStyle number (int)
---- @param minDistance number (float)
---- @param p7 number (float)
---- @param DriveAgainstTraffic boolean
---- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle, pedTarget: Ped, missionType: number, maxSpeed: number, drivingStyle: number, minDistance: number, p7: number, DriveAgainstTraffic: boolean): void
-function TaskVehicleMissionPedTarget(ped, vehicle, pedTarget, missionType, maxSpeed, drivingStyle, minDistance, p7, DriveAgainstTraffic) end
-
-    
---- See [`TASK_VEHICLE_MISSION`](https://docs.fivem.net/natives/?_0x659427E0EF36BCDE).
----
---- @hash [0xF0AF20AA7731F8C3](https://docs.fivem.net/natives/?_0xF0AF20AA7731F8C3)
---- @param ped Ped
---- @param vehicle Vehicle
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param p5 number (int)
---- @param p6 number (int)
---- @param p7 number (int)
---- @param p8 number (float)
---- @param p9 number (float)
---- @param DriveAgainstTraffic boolean
---- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle, x: number, y: number, z: number, p5: number, p6: number, p7: number, p8: number, p9: number, DriveAgainstTraffic: boolean): void
-function TaskVehicleMissionCoorsTarget(ped, vehicle, x, y, z, p5, p6, p7, p8, p9, DriveAgainstTraffic) end
+--- @overload fun(ped: Ped, x: number, y: number, z: number, p4: number): void
+function TaskVehicleShootAtCoord(ped, x, y, z, p4) end
 
     
 --- ```
---- Modes:  
---- 0 - ignore heading  
---- 1 - park forward  
---- 2 - park backwards  
---- Depending on the angle of approach, the vehicle can park at the specified heading or at its exact opposite (-180) angle.  
---- Radius seems to define how close the vehicle has to be -after parking- to the position for this task considered completed. If the value is too small, the vehicle will try to park again until it's exactly where it should be. 20.0 Works well but lower values don't, like the radius is measured in centimeters or something.  
+--- Makes ped walk around the area.  
+--- set p1 to 10.0f and p2 to 10 if you want the ped to walk anywhere without a duration.  
 --- ```
 ---
---- @hash [0x0F3E34E968EA374E](https://docs.fivem.net/natives/?_0x0F3E34E968EA374E)
+--- @hash [0xBB9CE077274F6A1B](https://docs.fivem.net/natives/?_0xBB9CE077274F6A1B)
 --- @param ped Ped
---- @param vehicle Vehicle
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param heading number (float)
---- @param mode number (int)
---- @param radius number (float)
---- @param keepEngineOn boolean
+--- @param p1 number (float)
+--- @param p2 number (int)
 --- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle, x: number, y: number, z: number, heading: number, mode: number, radius: number, keepEngineOn: boolean): void
-function TaskVehiclePark(ped, vehicle, x, y, z, heading, mode, radius, keepEngineOn) end
+--- @overload fun(ped: Ped, p1: number, p2: number): void
+function TaskWanderStandard(ped, p1, p2) end
 
     
 --- ```
@@ -4583,17 +4616,64 @@ function TaskVehiclePark(ped, vehicle, x, y, z, heading, mode, radius, keepEngin
 function TaskVehiclePlayAnim(vehicle, animationSet, animationName) end
 
     
---- TaskVehicleShootAtCoord
+--- WaypointPlaybackOverrideSpeed
 ---
---- @hash [0x5190796ED39C9B6D](https://docs.fivem.net/natives/?_0x5190796ED39C9B6D)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param p4 number (float)
+--- @hash [0x7D7D2B47FA788E85](https://docs.fivem.net/natives/?_0x7D7D2B47FA788E85)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 boolean
 --- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, p4: number): void
-function TaskVehicleShootAtCoord(ped, x, y, z, p4) end
+--- @overload fun(p0: any, p1: number, p2: boolean): void
+function WaypointPlaybackOverrideSpeed(p0, p1, p2) end
+
+    
+--- WaypointPlaybackUseDefaultSpeed
+---
+--- @hash [0x6599D834B12D0800](https://docs.fivem.net/natives/?_0x6599D834B12D0800)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function WaypointPlaybackUseDefaultSpeed(p0) end
+
+    
+--- WaypointPlaybackStartShootingAtCoord
+---
+--- @hash [0x057A25CFCC9DB671](https://docs.fivem.net/natives/?_0x057A25CFCC9DB671)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 boolean
+--- @param p5 any
+--- @return void
+--- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: boolean, p5: any): void
+function WaypointPlaybackStartShootingAtCoord(p0, p1, p2, p3, p4, p5) end
+
+    
+--- WaypointPlaybackStartShootingAtPed
+---
+--- @hash [0xE70BA7B90F8390DC](https://docs.fivem.net/natives/?_0xE70BA7B90F8390DC)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 boolean
+--- @param p3 any
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: boolean, p3: any): void
+function WaypointPlaybackStartShootingAtPed(p0, p1, p2, p3) end
+
+    
+--- # New Name: WaypointPlaybackStartShootingAtPed
+--- WaypointPlaybackStartShootingAtPed
+---
+--- @hash [0xE70BA7B90F8390DC](https://docs.fivem.net/natives/?_0xE70BA7B90F8390DC)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 boolean
+--- @param p3 any
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: boolean, p3: any): void
+--- @deprecated
+function N_0xe70ba7b90f8390dc(p0, p1, p2, p3) end
 
     
 --- ```
@@ -4639,148 +4719,35 @@ function TaskVehicleShootAtCoord(ped, x, y, z, p4) end
 function TaskVehicleTempAction(driver, vehicle, action, time) end
 
     
---- TaskWanderInArea
+--- VehicleWaypointPlaybackOverrideSpeed
 ---
---- @hash [0xE054346CA3A0F315](https://docs.fivem.net/natives/?_0xE054346CA3A0F315)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @param minimalLength number (float)
---- @param timeBetweenWalks number (float)
+--- @hash [0x121F0593E0A431D7](https://docs.fivem.net/natives/?_0x121F0593E0A431D7)
+--- @param vehicle Vehicle
+--- @param speed number (float)
 --- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, radius: number, minimalLength: number, timeBetweenWalks: number): void
-function TaskWanderInArea(ped, x, y, z, radius, minimalLength, timeBetweenWalks) end
+--- @overload fun(vehicle: Vehicle, speed: number): void
+function VehicleWaypointPlaybackOverrideSpeed(vehicle, speed) end
 
     
---- TaskVehicleShootAtPed
+--- WaypointPlaybackStopAimingOrShooting
 ---
---- @hash [0x10AB107B887214D8](https://docs.fivem.net/natives/?_0x10AB107B887214D8)
---- @param ped Ped
---- @param target Ped
---- @param p2 number (float)
---- @return void
---- @overload fun(ped: Ped, target: Ped, p2: number): void
-function TaskVehicleShootAtPed(ped, target, p2) end
-
-    
---- ```
---- NativeDB Introduced: v1868
---- ```
----
---- @hash [0x6919A2F136426098](https://docs.fivem.net/natives/?_0x6919A2F136426098)
+--- @hash [0x47EFA040EBB8E2EA](https://docs.fivem.net/natives/?_0x47EFA040EBB8E2EA)
 --- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
 --- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any): void
-function TaskWanderSpecific(p0, p1, p2, p3) end
+--- @overload fun(p0: any): void
+function WaypointPlaybackStopAimingOrShooting(p0) end
 
     
 --- ```
---- Makes ped walk around the area.  
---- set p1 to 10.0f and p2 to 10 if you want the ped to walk anywhere without a duration.  
+--- For a full list of the points, see here: goo.gl/wIH0vn
 --- ```
 ---
---- @hash [0xBB9CE077274F6A1B](https://docs.fivem.net/natives/?_0xBB9CE077274F6A1B)
---- @param ped Ped
---- @param p1 number (float)
---- @param p2 number (int)
---- @return void
---- @overload fun(ped: Ped, p1: number, p2: number): void
-function TaskWanderStandard(ped, p1, p2) end
-
-    
---- ```
---- NativeDB Added Parameter 5: Any p4
---- NativeDB Added Parameter 6: Any p5
---- ```
----
---- @hash [0xCDDC2B77CE54AC6E](https://docs.fivem.net/natives/?_0xCDDC2B77CE54AC6E)
---- @param ped Ped
---- @param target Ped
---- @param time number (int)
---- @param p3 number (int)
---- @return void
---- @overload fun(ped: Ped, target: Ped, time: number, p3: number): void
-function TaskWrithe(ped, target, time, p3) end
-
-    
---- TaskWarpPedIntoVehicle
----
---- @hash [0x9A7D091411C5F684](https://docs.fivem.net/natives/?_0x9A7D091411C5F684)
---- @param ped Ped
---- @param vehicle Vehicle
---- @param seatIndex number (int)
---- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle, seatIndex: number): void
-function TaskWarpPedIntoVehicle(ped, vehicle, seatIndex) end
-
-    
---- UpdateTaskAimGunScriptedTarget
----
---- @hash [0x9724FB59A3E72AD0](https://docs.fivem.net/natives/?_0x9724FB59A3E72AD0)
---- @param p0 Ped
---- @param p1 Ped
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @param p5 boolean
---- @return void
---- @overload fun(p0: Ped, p1: Ped, p2: number, p3: number, p4: number, p5: boolean): void
-function UpdateTaskAimGunScriptedTarget(p0, p1, p2, p3, p4, p5) end
-
-    
---- UncuffPed
----
---- @hash [0x67406F2C8F87FC4F](https://docs.fivem.net/natives/?_0x67406F2C8F87FC4F)
---- @param ped Ped
---- @return void
---- @overload fun(ped: Ped): void
-function UncuffPed(ped) end
-
-    
---- UpdateTaskHandsUpDuration
----
---- @hash [0xA98FCAFD7893C834](https://docs.fivem.net/natives/?_0xA98FCAFD7893C834)
---- @param ped Ped
---- @param duration number (int)
---- @return void
---- @overload fun(ped: Ped, duration: number): void
-function UpdateTaskHandsUpDuration(ped, duration) end
-
-    
---- UseWaypointRecordingAsAssistedMovementRoute
----
---- @hash [0x5A353B8E6B1095B5](https://docs.fivem.net/natives/?_0x5A353B8E6B1095B5)
+--- @hash [0x5343532C01A07234](https://docs.fivem.net/natives/?_0x5343532C01A07234)
 --- @param name string (char*)
---- @param p1 boolean
---- @param p2 number (float)
---- @param p3 number (float)
---- @return void
---- @overload fun(name: string, p1: boolean, p2: number, p3: number): void
-function UseWaypointRecordingAsAssistedMovementRoute(name, p1, p2, p3) end
-
-    
---- UpdateTaskSweepAimEntity
----
---- @hash [0xE4973DBDBE6E44B3](https://docs.fivem.net/natives/?_0xE4973DBDBE6E44B3)
---- @param ped Ped
---- @param entity Entity
---- @return void
---- @overload fun(ped: Ped, entity: Entity): void
-function UpdateTaskSweepAimEntity(ped, entity) end
-
-    
---- VehicleWaypointPlaybackPause
----
---- @hash [0x8A4E6AC373666BC5](https://docs.fivem.net/natives/?_0x8A4E6AC373666BC5)
---- @param vehicle Vehicle
---- @return void
---- @overload fun(vehicle: Vehicle): void
-function VehicleWaypointPlaybackPause(vehicle) end
+--- @param points number (int*)
+--- @return boolean
+--- @overload fun(): boolean, string): boolean, number
+function WaypointRecordingGetNumPoints(name, points) end
 
     
 --- UpdateTaskSweepAimPosition
@@ -4795,65 +4762,6 @@ function VehicleWaypointPlaybackPause(vehicle) end
 function UpdateTaskSweepAimPosition(p0, p1, p2, p3) end
 
     
---- VehicleWaypointPlaybackResume
----
---- @hash [0xDC04FCAA7839D492](https://docs.fivem.net/natives/?_0xDC04FCAA7839D492)
---- @param vehicle Vehicle
---- @return void
---- @overload fun(vehicle: Vehicle): void
-function VehicleWaypointPlaybackResume(vehicle) end
-
-    
---- VehicleWaypointPlaybackOverrideSpeed
----
---- @hash [0x121F0593E0A431D7](https://docs.fivem.net/natives/?_0x121F0593E0A431D7)
---- @param vehicle Vehicle
---- @param speed number (float)
---- @return void
---- @overload fun(vehicle: Vehicle, speed: number): void
-function VehicleWaypointPlaybackOverrideSpeed(vehicle, speed) end
-
-    
---- VehicleWaypointPlaybackUseDefaultSpeed
----
---- @hash [0x5CEB25A7D2848963](https://docs.fivem.net/natives/?_0x5CEB25A7D2848963)
---- @param vehicle Vehicle
---- @return void
---- @overload fun(vehicle: Vehicle): void
-function VehicleWaypointPlaybackUseDefaultSpeed(vehicle) end
-
-    
---- WaypointPlaybackOverrideSpeed
----
---- @hash [0x7D7D2B47FA788E85](https://docs.fivem.net/natives/?_0x7D7D2B47FA788E85)
---- @param p0 any
---- @param p1 number (float)
---- @param p2 boolean
---- @return void
---- @overload fun(p0: any, p1: number, p2: boolean): void
-function WaypointPlaybackOverrideSpeed(p0, p1, p2) end
-
-    
---- WaypointPlaybackGetIsPaused
----
---- @hash [0x701375A7D43F01CB](https://docs.fivem.net/natives/?_0x701375A7D43F01CB)
---- @param p0 any
---- @return boolean
---- @overload fun(p0: any): boolean
-function WaypointPlaybackGetIsPaused(p0) end
-
-    
---- WaypointPlaybackPause
----
---- @hash [0x0F342546AA06FED5](https://docs.fivem.net/natives/?_0x0F342546AA06FED5)
---- @param p0 any
---- @param p1 boolean
---- @param p2 boolean
---- @return void
---- @overload fun(p0: any, p1: boolean, p2: boolean): void
-function WaypointPlaybackPause(p0, p1, p2) end
-
-    
 --- WaypointPlaybackResume
 ---
 --- @hash [0x244F70C84C547D2D](https://docs.fivem.net/natives/?_0x244F70C84C547D2D)
@@ -4866,86 +4774,26 @@ function WaypointPlaybackPause(p0, p1, p2) end
 function WaypointPlaybackResume(p0, p1, p2, p3) end
 
     
---- WaypointPlaybackStartAimingAtCoord
+--- WaypointRecordingGetSpeedAtPoint
 ---
---- @hash [0x8968400D900ED8B3](https://docs.fivem.net/natives/?_0x8968400D900ED8B3)
---- @param p0 any
---- @param p1 number (float)
+--- @hash [0x005622AEBC33ACA9](https://docs.fivem.net/natives/?_0x005622AEBC33ACA9)
+--- @param name string (char*)
+--- @param point number (int)
+--- @return number
+--- @overload fun(name: string, point: number): number
+function WaypointRecordingGetSpeedAtPoint(name, point) end
+
+    
+--- UseWaypointRecordingAsAssistedMovementRoute
+---
+--- @hash [0x5A353B8E6B1095B5](https://docs.fivem.net/natives/?_0x5A353B8E6B1095B5)
+--- @param name string (char*)
+--- @param p1 boolean
 --- @param p2 number (float)
 --- @param p3 number (float)
---- @param p4 boolean
 --- @return void
---- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: boolean): void
-function WaypointPlaybackStartAimingAtCoord(p0, p1, p2, p3, p4) end
-
-    
---- WaypointPlaybackStartAimingAtPed
----
---- @hash [0x20E330937C399D29](https://docs.fivem.net/natives/?_0x20E330937C399D29)
---- @param p0 any
---- @param p1 any
---- @param p2 boolean
---- @return void
---- @overload fun(p0: any, p1: any, p2: boolean): void
-function WaypointPlaybackStartAimingAtPed(p0, p1, p2) end
-
-    
---- WaypointPlaybackStartShootingAtCoord
----
---- @hash [0x057A25CFCC9DB671](https://docs.fivem.net/natives/?_0x057A25CFCC9DB671)
---- @param p0 any
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 boolean
---- @param p5 any
---- @return void
---- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: boolean, p5: any): void
-function WaypointPlaybackStartShootingAtCoord(p0, p1, p2, p3, p4, p5) end
-
-    
---- WaypointPlaybackStartShootingAtPed
----
---- @hash [0xE70BA7B90F8390DC](https://docs.fivem.net/natives/?_0xE70BA7B90F8390DC)
---- @param p0 any
---- @param p1 any
---- @param p2 boolean
---- @param p3 any
---- @return void
---- @overload fun(p0: any, p1: any, p2: boolean, p3: any): void
-function WaypointPlaybackStartShootingAtPed(p0, p1, p2, p3) end
-
-    
---- # New Name: WaypointPlaybackStartShootingAtPed
---- WaypointPlaybackStartShootingAtPed
----
---- @hash [0xE70BA7B90F8390DC](https://docs.fivem.net/natives/?_0xE70BA7B90F8390DC)
---- @param p0 any
---- @param p1 any
---- @param p2 boolean
---- @param p3 any
---- @return void
---- @overload fun(p0: any, p1: any, p2: boolean, p3: any): void
---- @deprecated
-function N_0xe70ba7b90f8390dc(p0, p1, p2, p3) end
-
-    
---- WaypointPlaybackStopAimingOrShooting
----
---- @hash [0x47EFA040EBB8E2EA](https://docs.fivem.net/natives/?_0x47EFA040EBB8E2EA)
---- @param p0 any
---- @return void
---- @overload fun(p0: any): void
-function WaypointPlaybackStopAimingOrShooting(p0) end
-
-    
---- WaypointPlaybackUseDefaultSpeed
----
---- @hash [0x6599D834B12D0800](https://docs.fivem.net/natives/?_0x6599D834B12D0800)
---- @param p0 any
---- @return void
---- @overload fun(p0: any): void
-function WaypointPlaybackUseDefaultSpeed(p0) end
+--- @overload fun(name: string, p1: boolean, p2: number, p3: number): void
+function UseWaypointRecordingAsAssistedMovementRoute(name, p1, p2, p3) end
 
     
 --- ```
@@ -4963,6 +4811,25 @@ function WaypointPlaybackUseDefaultSpeed(p0) end
 function WaypointRecordingGetClosestWaypoint(name, x, y, z, point) end
 
     
+--- UpdateTaskHandsUpDuration
+---
+--- @hash [0xA98FCAFD7893C834](https://docs.fivem.net/natives/?_0xA98FCAFD7893C834)
+--- @param ped Ped
+--- @param duration number (int)
+--- @return void
+--- @overload fun(ped: Ped, duration: number): void
+function UpdateTaskHandsUpDuration(ped, duration) end
+
+    
+--- VehicleWaypointPlaybackResume
+---
+--- @hash [0xDC04FCAA7839D492](https://docs.fivem.net/natives/?_0xDC04FCAA7839D492)
+--- @param vehicle Vehicle
+--- @return void
+--- @overload fun(vehicle: Vehicle): void
+function VehicleWaypointPlaybackResume(vehicle) end
+
+    
 --- ```
 --- For a full list of the points, see here: goo.gl/wIH0vn
 --- ```
@@ -4976,25 +4843,158 @@ function WaypointRecordingGetClosestWaypoint(name, x, y, z, point) end
 function WaypointRecordingGetCoord(name, point, coord) end
 
     
---- WaypointRecordingGetSpeedAtPoint
+--- UpdateTaskAimGunScriptedTarget
 ---
---- @hash [0x005622AEBC33ACA9](https://docs.fivem.net/natives/?_0x005622AEBC33ACA9)
---- @param name string (char*)
---- @param point number (int)
---- @return number
---- @overload fun(name: string, point: number): number
-function WaypointRecordingGetSpeedAtPoint(name, point) end
+--- @hash [0x9724FB59A3E72AD0](https://docs.fivem.net/natives/?_0x9724FB59A3E72AD0)
+--- @param p0 Ped
+--- @param p1 Ped
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 boolean
+--- @return void
+--- @overload fun(p0: Ped, p1: Ped, p2: number, p3: number, p4: number, p5: boolean): void
+function UpdateTaskAimGunScriptedTarget(p0, p1, p2, p3, p4, p5) end
+
+    
+--- TaskVehicleShootAtPed
+---
+--- @hash [0x10AB107B887214D8](https://docs.fivem.net/natives/?_0x10AB107B887214D8)
+--- @param ped Ped
+--- @param target Ped
+--- @param p2 number (float)
+--- @return void
+--- @overload fun(ped: Ped, target: Ped, p2: number): void
+function TaskVehicleShootAtPed(ped, target, p2) end
+
+    
+--- TaskUseNearestScenarioToCoordWarp
+---
+--- @hash [0x58E2E0F23F6B76C3](https://docs.fivem.net/natives/?_0x58E2E0F23F6B76C3)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param p5 any
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number, radius: number, p5: any): void
+function TaskUseNearestScenarioToCoordWarp(ped, x, y, z, radius, p5) end
 
     
 --- ```
---- For a full list of the points, see here: goo.gl/wIH0vn
+--- Makes the ped run to take cover  
 --- ```
 ---
---- @hash [0x5343532C01A07234](https://docs.fivem.net/natives/?_0x5343532C01A07234)
---- @param name string (char*)
---- @param points number (int*)
---- @return boolean
---- @overload fun(): boolean, string): boolean, number
-function WaypointRecordingGetNumPoints(name, points) end
+--- @hash [0xE5DA8615A6180789](https://docs.fivem.net/natives/?_0xE5DA8615A6180789)
+--- @param ped Ped
+--- @return void
+--- @overload fun(ped: Ped): void
+function TaskStayInCover(ped) end
+
+    
+--- ```
+--- NativeDB Introduced: v1868
+--- ```
+---
+--- @hash [0xEAF66ACDDC794793](https://docs.fivem.net/natives/?_0xEAF66ACDDC794793)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @param p6 any
+--- @param p7 any
+--- @param p8 any
+--- @param p9 any
+--- @param p10 any
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any, p6: any, p7: any, p8: any, p9: any, p10: any): void
+function TaskRappelDownWall(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
+
+    
+--- ```
+--- Makes a ped follow the targetVehicle with <minDistance> in between.  
+--- note: minDistance is ignored if drivingstyle is avoiding traffic, but Rushed is fine.  
+--- Mode: The mode defines the relative position to the targetVehicle. The ped will try to position its vehicle there.  
+--- -1 = behind  
+--- 0 = ahead  
+--- 1 = left  
+--- 2 = right  
+--- 3 = back left  
+--- 4 = back right  
+--- if the target is closer than noRoadsDistance, the driver will ignore pathing/roads and follow you directly.  
+--- Driving Styles guide: gtaforums.com/topic/822314-guide-driving-styles/  
+--- ```
+---
+--- @hash [0x0FA6E4B75F302400](https://docs.fivem.net/natives/?_0x0FA6E4B75F302400)
+--- @param ped Ped
+--- @param vehicle Vehicle
+--- @param targetVehicle Vehicle
+--- @param mode number (int)
+--- @param speed number (float)
+--- @param drivingStyle number (int)
+--- @param minDistance number (float)
+--- @param p7 number (int)
+--- @param noRoadsDistance number (float)
+--- @return void
+--- @overload fun(ped: Ped, vehicle: Vehicle, targetVehicle: Vehicle, mode: number, speed: number, drivingStyle: number, minDistance: number, p7: number, noRoadsDistance: number): void
+function TaskVehicleEscort(ped, vehicle, targetVehicle, mode, speed, drivingStyle, minDistance, p7, noRoadsDistance) end
+
+    
+--- TaskPlaneLand
+---
+--- @hash [0xBF19721FA34D32C0](https://docs.fivem.net/natives/?_0xBF19721FA34D32C0)
+--- @param pilot Ped
+--- @param plane Vehicle
+--- @param runwayStartX number (float)
+--- @param runwayStartY number (float)
+--- @param runwayStartZ number (float)
+--- @param runwayEndX number (float)
+--- @param runwayEndY number (float)
+--- @param runwayEndZ number (float)
+--- @return void
+--- @overload fun(pilot: Ped, plane: Vehicle, runwayStartX: number, runwayStartY: number, runwayStartZ: number, runwayEndX: number, runwayEndY: number, runwayEndZ: number): void
+function TaskPlaneLand(pilot, plane, runwayStartX, runwayStartY, runwayStartZ, runwayEndX, runwayEndY, runwayEndZ) end
+
+    
+--- TaskSweepAimPosition
+---
+--- @hash [0x7AFE8FDC10BC07D2](https://docs.fivem.net/natives/?_0x7AFE8FDC10BC07D2)
+--- @param p0 any
+--- @param p5 any
+--- @param p6 number (float)
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @param p9 number (float)
+--- @param p10 number (float)
+--- @return any, any, any, any
+--- @overload fun(p0: any, p5: any, p6: number, p7: number, p8: number, p9: number, p10: number): any, any, any, any
+function TaskSweepAimPosition(p0, p5, p6, p7, p8, p9, p10) end
+
+    
+--- This tasks the ped to do nothing for the specified amount of miliseconds.
+--- This is useful if you want to add a delay between tasks when using a sequence task.
+---
+--- @hash [0xE73A266DB0CA9042](https://docs.fivem.net/natives/?_0xE73A266DB0CA9042)
+--- @param ped Ped
+--- @param ms number (int)
+--- @return void
+--- @overload fun(ped: Ped, ms: number): void
+function TaskPause(ped, ms) end
+
+    
+--- TaskSetSphereDefensiveArea
+---
+--- @hash [0x933C06518B52A9A4](https://docs.fivem.net/natives/?_0x933C06518B52A9A4)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @return void
+--- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: number): void
+function TaskSetSphereDefensiveArea(p0, p1, p2, p3, p4) end
 
     

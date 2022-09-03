@@ -1,24 +1,13 @@
 
---- AddToClockTime
+--- ```
+--- Gets the current ingame hour, expressed without zeros. (09:34 will be represented as 9)  
+--- ```
 ---
---- @hash [0xD716F30D8C8980E2](https://docs.fivem.net/natives/?_0xD716F30D8C8980E2)
---- @param hours number (int)
---- @param minutes number (int)
---- @param seconds number (int)
---- @return void
---- @overload fun(hours: number, minutes: number, seconds: number): void
-function AddToClockTime(hours, minutes, seconds) end
-
-    
---- AdvanceClockTimeTo
+--- @hash [0x25223CA6B4D20B7F](https://docs.fivem.net/natives/?_0x25223CA6B4D20B7F)
 ---
---- @hash [0xC8CA9670B9D83B3B](https://docs.fivem.net/natives/?_0xC8CA9670B9D83B3B)
---- @param hour number (int)
---- @param minute number (int)
---- @param second number (int)
---- @return void
---- @overload fun(hour: number, minute: number, second: number): void
-function AdvanceClockTimeTo(hour, minute, second) end
+--- @return number
+--- @overload fun(): number
+function GetClockHours() end
 
     
 --- ```
@@ -39,63 +28,15 @@ function AdvanceClockTimeTo(hour, minute, second) end
 function GetClockDayOfWeek() end
 
     
---- ```
---- Gets the current ingame hour, expressed without zeros. (09:34 will be represented as 9)  
---- ```
+--- AdvanceClockTimeTo
 ---
---- @hash [0x25223CA6B4D20B7F](https://docs.fivem.net/natives/?_0x25223CA6B4D20B7F)
----
---- @return number
---- @overload fun(): number
-function GetClockHours() end
-
-    
---- GetClockDayOfMonth
----
---- @hash [0x3D10BC92A4DB1D35](https://docs.fivem.net/natives/?_0x3D10BC92A4DB1D35)
----
---- @return number
---- @overload fun(): number
-function GetClockDayOfMonth() end
-
-    
---- GetClockMonth
----
---- @hash [0xBBC72712E80257A1](https://docs.fivem.net/natives/?_0xBBC72712E80257A1)
----
---- @return number
---- @overload fun(): number
-function GetClockMonth() end
-
-    
---- GetClockYear
----
---- @hash [0x961777E64BDAF717](https://docs.fivem.net/natives/?_0x961777E64BDAF717)
----
---- @return number
---- @overload fun(): number
-function GetClockYear() end
-
-    
---- ```
---- Gets the current ingame clock minute.  
---- ```
----
---- @hash [0x13D2B8ADD79640F2](https://docs.fivem.net/natives/?_0x13D2B8ADD79640F2)
----
---- @return number
---- @overload fun(): number
-function GetClockMinutes() end
-
-    
---- Returns how many real ms are equal to one game minute.
---- A getter for [`SetMillisecondsPerGameMinute`](https://docs.fivem.net/natives/?_0x36CA2554).
----
---- @hash [0x2F8B4D1C595B11DB](https://docs.fivem.net/natives/?_0x2F8B4D1C595B11DB)
----
---- @return number
---- @overload fun(): number
-function GetMillisecondsPerGameMinute() end
+--- @hash [0xC8CA9670B9D83B3B](https://docs.fivem.net/natives/?_0xC8CA9670B9D83B3B)
+--- @param hour number (int)
+--- @param minute number (int)
+--- @param second number (int)
+--- @return void
+--- @overload fun(hour: number, minute: number, second: number): void
+function AdvanceClockTimeTo(hour, minute, second) end
 
     
 --- ```
@@ -107,6 +48,15 @@ function GetMillisecondsPerGameMinute() end
 --- @return number
 --- @overload fun(): number
 function GetClockSeconds() end
+
+    
+--- GetClockMonth
+---
+--- @hash [0xBBC72712E80257A1](https://docs.fivem.net/natives/?_0xBBC72712E80257A1)
+---
+--- @return number
+--- @overload fun(): number
+function GetClockMonth() end
 
     
 --- ```
@@ -128,6 +78,16 @@ function GetClockSeconds() end
 function GetPosixTime() end
 
     
+--- Returns how many real ms are equal to one game minute.
+--- A getter for [`SetMillisecondsPerGameMinute`](https://docs.fivem.net/natives/?_0x36CA2554).
+---
+--- @hash [0x2F8B4D1C595B11DB](https://docs.fivem.net/natives/?_0x2F8B4D1C595B11DB)
+---
+--- @return number
+--- @overload fun(): number
+function GetMillisecondsPerGameMinute() end
+
+    
 --- ```
 --- Gets local system time as year, month, day, hour, minute and second.  
 --- Example usage:  
@@ -146,6 +106,59 @@ function GetPosixTime() end
 --- @return number, number, number, number, number, number
 --- @overload fun(): number, number, number, number, number, number
 function GetLocalTime() end
+
+    
+--- ```
+--- SET_CLOCK_TIME(12, 34, 56);  
+--- ```
+---
+--- @hash [0x47C3B5848C3E45D8](https://docs.fivem.net/natives/?_0x47C3B5848C3E45D8)
+--- @param hour number (int)
+--- @param minute number (int)
+--- @param second number (int)
+--- @return void
+--- @overload fun(hour: number, minute: number, second: number): void
+function SetClockTime(hour, minute, second) end
+
+    
+--- GetClockDayOfMonth
+---
+--- @hash [0x3D10BC92A4DB1D35](https://docs.fivem.net/natives/?_0x3D10BC92A4DB1D35)
+---
+--- @return number
+--- @overload fun(): number
+function GetClockDayOfMonth() end
+
+    
+--- AddToClockTime
+---
+--- @hash [0xD716F30D8C8980E2](https://docs.fivem.net/natives/?_0xD716F30D8C8980E2)
+--- @param hours number (int)
+--- @param minutes number (int)
+--- @param seconds number (int)
+--- @return void
+--- @overload fun(hours: number, minutes: number, seconds: number): void
+function AddToClockTime(hours, minutes, seconds) end
+
+    
+--- ```
+--- Gets the current ingame clock minute.  
+--- ```
+---
+--- @hash [0x13D2B8ADD79640F2](https://docs.fivem.net/natives/?_0x13D2B8ADD79640F2)
+---
+--- @return number
+--- @overload fun(): number
+function GetClockMinutes() end
+
+    
+--- GetClockYear
+---
+--- @hash [0x961777E64BDAF717](https://docs.fivem.net/natives/?_0x961777E64BDAF717)
+---
+--- @return number
+--- @overload fun(): number
+function GetClockYear() end
 
     
 --- ```
@@ -203,18 +216,5 @@ function SetClockDate(day, month, year) end
 --- @return void
 --- @overload fun(toggle: boolean): void
 function PauseClock(toggle) end
-
-    
---- ```
---- SET_CLOCK_TIME(12, 34, 56);  
---- ```
----
---- @hash [0x47C3B5848C3E45D8](https://docs.fivem.net/natives/?_0x47C3B5848C3E45D8)
---- @param hour number (int)
---- @param minute number (int)
---- @param second number (int)
---- @return void
---- @overload fun(hour: number, minute: number, second: number): void
-function SetClockTime(hour, minute, second) end
 
     

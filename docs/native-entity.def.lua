@@ -1,4 +1,132 @@
 
+--- ClearEntityLastDamageEntity
+---
+--- @hash [0xA72CD9CA74A5ECBA](https://docs.fivem.net/natives/?_0xA72CD9CA74A5ECBA)
+--- @param entity Entity
+--- @return void
+--- @overload fun(entity: Entity): void
+function ClearEntityLastDamageEntity(entity) end
+
+    
+--- ```
+--- breakForce is the amount of force required to break the bond.
+--- p14 - is always 1 in scripts
+--- p15 - is 1 or 0 in scripts - unknown what it does
+--- p16 - controls collision between the two entities (FALSE disables collision).
+--- p17 - do not teleport entity to be attached to the position of the bone Index of the target entity (if 1, entity will not be teleported to target bone)
+--- p18 - is always 2 in scripts.
+--- ```
+---
+--- @hash [0xC3675780C92F90F9](https://docs.fivem.net/natives/?_0xC3675780C92F90F9)
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @param boneIndex1 number (int)
+--- @param boneIndex2 number (int)
+--- @param xPos1 number (float)
+--- @param yPos1 number (float)
+--- @param zPos1 number (float)
+--- @param xPos2 number (float)
+--- @param yPos2 number (float)
+--- @param zPos2 number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param breakForce number (float)
+--- @param fixedRot boolean
+--- @param p15 boolean
+--- @param collision boolean
+--- @param teleport boolean
+--- @param p18 number (int)
+--- @return void
+--- @overload fun(entity1: Entity, entity2: Entity, boneIndex1: number, boneIndex2: number, xPos1: number, yPos1: number, zPos1: number, xPos2: number, yPos2: number, zPos2: number, xRot: number, yRot: number, zRot: number, breakForce: number, fixedRot: boolean, p15: boolean, collision: boolean, teleport: boolean, p18: number): void
+function AttachEntityToEntityPhysically(entity1, entity2, boneIndex1, boneIndex2, xPos1, yPos1, zPos1, xPos2, yPos2, zPos2, xRot, yRot, zRot, breakForce, fixedRot, p15, collision, teleport, p18) end
+
+    
+--- AttachEntityBoneToEntityBone
+---
+--- @hash [0x5C48B75732C8456C](https://docs.fivem.net/natives/?_0x5C48B75732C8456C)
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @param entityBone number (int)
+--- @param entityBone2 number (int)
+--- @param p4 boolean
+--- @param p5 boolean
+--- @return void
+--- @overload fun(entity1: Entity, entity2: Entity, entityBone: number, entityBone2: number, p4: boolean, p5: boolean): void
+function AttachEntityBoneToEntityBone(entity1, entity2, entityBone, entityBone2, p4, p5) end
+
+    
+--- # New Name: AttachEntityBoneToEntityBone
+--- AttachEntityBoneToEntityBone
+---
+--- @hash [0x5C48B75732C8456C](https://docs.fivem.net/natives/?_0x5C48B75732C8456C)
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @param entityBone number (int)
+--- @param entityBone2 number (int)
+--- @param p4 boolean
+--- @param p5 boolean
+--- @return void
+--- @overload fun(entity1: Entity, entity2: Entity, entityBone: number, entityBone2: number, p4: boolean, p5: boolean): void
+--- @deprecated
+function N_0x5c48b75732c8456c(entity1, entity2, entityBone, entityBone2, p4, p5) end
+
+    
+--- ```
+--- Attaches entity1 to bone (boneIndex) of entity2.
+--- boneIndex - this is different to boneID, use GET_PED_BONE_INDEX to get the index from the ID. use the index for attaching to specific bones. entity1 will be attached to entity2's centre if bone index given doesn't correspond to bone indexes for that entity type.
+--- useSoftPinning - if set to false attached entity will not detach when fixed
+--- collision - controls collision between the two entities (FALSE disables collision).
+--- isPed - pitch doesnt work when false and roll will only work on negative numbers (only peds)
+--- vertexIndex - position of vertex
+--- fixedRot - if false it ignores entity vector
+--- ```
+---
+--- @hash [0x6B9BBD38AB0796DF](https://docs.fivem.net/natives/?_0x6B9BBD38AB0796DF)
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @param boneIndex number (int)
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param zPos number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param p9 boolean
+--- @param useSoftPinning boolean
+--- @param collision boolean
+--- @param isPed boolean
+--- @param rotationOrder number (int)
+--- @param fixedRot boolean
+--- @return void
+--- @overload fun(entity1: Entity, entity2: Entity, boneIndex: number, xPos: number, yPos: number, zPos: number, xRot: number, yRot: number, zRot: number, p9: boolean, useSoftPinning: boolean, collision: boolean, isPed: boolean, rotationOrder: number, fixedRot: boolean): void
+function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRot, yRot, zRot, p9, useSoftPinning, collision, isPed, rotationOrder, fixedRot) end
+
+    
+--- ```
+--- ENABLE_*
+--- ```
+---
+--- @hash [0x6CE177D014502E8A](https://docs.fivem.net/natives/?_0x6CE177D014502E8A)
+--- @param entity Entity
+--- @return void
+--- @overload fun(entity: Entity): void
+function EnableEntityUnk(entity) end
+
+    
+--- # New Name: EnableEntityUnk
+--- ```
+--- ENABLE_*
+--- ```
+---
+--- @hash [0x6CE177D014502E8A](https://docs.fivem.net/natives/?_0x6CE177D014502E8A)
+--- @param entity Entity
+--- @return void
+--- @overload fun(entity: Entity): void
+--- @deprecated
+function N_0x6ce177d014502e8a(entity) end
+
+    
 --- ```
 --- Applies a force to the specified entity.
 --- **List of force types (p1)**:
@@ -29,6 +157,50 @@
 --- @return void
 --- @overload fun(entity: Entity, forceType: number, x: number, y: number, z: number, p5: boolean, isDirectionRel: boolean, isForceRel: boolean, p8: boolean): void
 function ApplyForceToEntityCenterOfMass(entity, forceType, x, y, z, p5, isDirectionRel, isForceRel, p8) end
+
+    
+--- AttachEntityBoneToEntityBonePhysically
+---
+--- @hash [0xFD1695C5D3B05439](https://docs.fivem.net/natives/?_0xFD1695C5D3B05439)
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @param entityBone number (int)
+--- @param entityBone2 number (int)
+--- @param p4 boolean
+--- @param p5 boolean
+--- @return void
+--- @overload fun(entity1: Entity, entity2: Entity, entityBone: number, entityBone2: number, p4: boolean, p5: boolean): void
+function AttachEntityBoneToEntityBonePhysically(entity1, entity2, entityBone, entityBone2, p4, p5) end
+
+    
+--- # New Name: AttachEntityBoneToEntityBonePhysically
+--- AttachEntityBoneToEntityBonePhysically
+---
+--- @hash [0xFD1695C5D3B05439](https://docs.fivem.net/natives/?_0xFD1695C5D3B05439)
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @param entityBone number (int)
+--- @param entityBone2 number (int)
+--- @param p4 boolean
+--- @param p5 boolean
+--- @return void
+--- @overload fun(entity1: Entity, entity2: Entity, entityBone: number, entityBone2: number, p4: boolean, p5: boolean): void
+--- @deprecated
+function N_0xfd1695c5d3b05439(entity1, entity2, entityBone, entityBone2, p4, p5) end
+
+    
+--- CreateForcedObject
+---
+--- @hash [0x150E808B375A385A](https://docs.fivem.net/natives/?_0x150E808B375A385A)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 any
+--- @param modelHash Hash
+--- @param p5 boolean
+--- @return void
+--- @overload fun(x: number, y: number, z: number, p3: any, modelHash: Hash, p5: boolean): void
+function CreateForcedObject(x, y, z, p3, modelHash, p5) end
 
     
 --- Applies a force to the specified entity.
@@ -101,143 +273,27 @@ function ApplyForceToEntityCenterOfMass(entity, forceType, x, y, z, p5, isDirect
 function ApplyForceToEntity(entity, forceType, x, y, z, offX, offY, offZ, boneIndex, isDirectionRel, ignoreUpVec, isForceRel, p12, p13) end
 
     
---- AttachEntityBoneToEntityBone
+--- CreateModelHideExcludingScriptObjects
 ---
---- @hash [0x5C48B75732C8456C](https://docs.fivem.net/natives/?_0x5C48B75732C8456C)
---- @param entity1 Entity
---- @param entity2 Entity
---- @param entityBone number (int)
---- @param entityBone2 number (int)
---- @param p4 boolean
---- @param p5 boolean
---- @return void
---- @overload fun(entity1: Entity, entity2: Entity, entityBone: number, entityBone2: number, p4: boolean, p5: boolean): void
-function AttachEntityBoneToEntityBone(entity1, entity2, entityBone, entityBone2, p4, p5) end
-
-    
---- # New Name: AttachEntityBoneToEntityBone
---- AttachEntityBoneToEntityBone
----
---- @hash [0x5C48B75732C8456C](https://docs.fivem.net/natives/?_0x5C48B75732C8456C)
---- @param entity1 Entity
---- @param entity2 Entity
---- @param entityBone number (int)
---- @param entityBone2 number (int)
---- @param p4 boolean
---- @param p5 boolean
---- @return void
---- @overload fun(entity1: Entity, entity2: Entity, entityBone: number, entityBone2: number, p4: boolean, p5: boolean): void
---- @deprecated
-function N_0x5c48b75732c8456c(entity1, entity2, entityBone, entityBone2, p4, p5) end
-
-    
---- ```
---- Attaches entity1 to bone (boneIndex) of entity2.
---- boneIndex - this is different to boneID, use GET_PED_BONE_INDEX to get the index from the ID. use the index for attaching to specific bones. entity1 will be attached to entity2's centre if bone index given doesn't correspond to bone indexes for that entity type.
---- useSoftPinning - if set to false attached entity will not detach when fixed
---- collision - controls collision between the two entities (FALSE disables collision).
---- isPed - pitch doesnt work when false and roll will only work on negative numbers (only peds)
---- vertexIndex - position of vertex
---- fixedRot - if false it ignores entity vector
---- ```
----
---- @hash [0x6B9BBD38AB0796DF](https://docs.fivem.net/natives/?_0x6B9BBD38AB0796DF)
---- @param entity1 Entity
---- @param entity2 Entity
---- @param boneIndex number (int)
---- @param xPos number (float)
---- @param yPos number (float)
---- @param zPos number (float)
---- @param xRot number (float)
---- @param yRot number (float)
---- @param zRot number (float)
---- @param p9 boolean
---- @param useSoftPinning boolean
---- @param collision boolean
---- @param isPed boolean
---- @param rotationOrder number (int)
---- @param fixedRot boolean
---- @return void
---- @overload fun(entity1: Entity, entity2: Entity, boneIndex: number, xPos: number, yPos: number, zPos: number, xRot: number, yRot: number, zRot: number, p9: boolean, useSoftPinning: boolean, collision: boolean, isPed: boolean, rotationOrder: number, fixedRot: boolean): void
-function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRot, yRot, zRot, p9, useSoftPinning, collision, isPed, rotationOrder, fixedRot) end
-
-    
---- AttachEntityBoneToEntityBonePhysically
----
---- @hash [0xFD1695C5D3B05439](https://docs.fivem.net/natives/?_0xFD1695C5D3B05439)
---- @param entity1 Entity
---- @param entity2 Entity
---- @param entityBone number (int)
---- @param entityBone2 number (int)
---- @param p4 boolean
---- @param p5 boolean
---- @return void
---- @overload fun(entity1: Entity, entity2: Entity, entityBone: number, entityBone2: number, p4: boolean, p5: boolean): void
-function AttachEntityBoneToEntityBonePhysically(entity1, entity2, entityBone, entityBone2, p4, p5) end
-
-    
---- # New Name: AttachEntityBoneToEntityBonePhysically
---- AttachEntityBoneToEntityBonePhysically
----
---- @hash [0xFD1695C5D3B05439](https://docs.fivem.net/natives/?_0xFD1695C5D3B05439)
---- @param entity1 Entity
---- @param entity2 Entity
---- @param entityBone number (int)
---- @param entityBone2 number (int)
---- @param p4 boolean
---- @param p5 boolean
---- @return void
---- @overload fun(entity1: Entity, entity2: Entity, entityBone: number, entityBone2: number, p4: boolean, p5: boolean): void
---- @deprecated
-function N_0xfd1695c5d3b05439(entity1, entity2, entityBone, entityBone2, p4, p5) end
-
-    
---- CreateForcedObject
----
---- @hash [0x150E808B375A385A](https://docs.fivem.net/natives/?_0x150E808B375A385A)
+--- @hash [0x3A52AE588830BF7F](https://docs.fivem.net/natives/?_0x3A52AE588830BF7F)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param p3 any
---- @param modelHash Hash
+--- @param radius number (float)
+--- @param model Hash
 --- @param p5 boolean
 --- @return void
---- @overload fun(x: number, y: number, z: number, p3: any, modelHash: Hash, p5: boolean): void
-function CreateForcedObject(x, y, z, p3, modelHash, p5) end
+--- @overload fun(x: number, y: number, z: number, radius: number, model: Hash, p5: boolean): void
+function CreateModelHideExcludingScriptObjects(x, y, z, radius, model, p5) end
 
     
---- ```
---- breakForce is the amount of force required to break the bond.
---- p14 - is always 1 in scripts
---- p15 - is 1 or 0 in scripts - unknown what it does
---- p16 - controls collision between the two entities (FALSE disables collision).
---- p17 - do not teleport entity to be attached to the position of the bone Index of the target entity (if 1, entity will not be teleported to target bone)
---- p18 - is always 2 in scripts.
---- ```
+--- DoesEntityHaveDrawable
 ---
---- @hash [0xC3675780C92F90F9](https://docs.fivem.net/natives/?_0xC3675780C92F90F9)
---- @param entity1 Entity
---- @param entity2 Entity
---- @param boneIndex1 number (int)
---- @param boneIndex2 number (int)
---- @param xPos1 number (float)
---- @param yPos1 number (float)
---- @param zPos1 number (float)
---- @param xPos2 number (float)
---- @param yPos2 number (float)
---- @param zPos2 number (float)
---- @param xRot number (float)
---- @param yRot number (float)
---- @param zRot number (float)
---- @param breakForce number (float)
---- @param fixedRot boolean
---- @param p15 boolean
---- @param collision boolean
---- @param teleport boolean
---- @param p18 number (int)
---- @return void
---- @overload fun(entity1: Entity, entity2: Entity, boneIndex1: number, boneIndex2: number, xPos1: number, yPos1: number, zPos1: number, xPos2: number, yPos2: number, zPos2: number, xRot: number, yRot: number, zRot: number, breakForce: number, fixedRot: boolean, p15: boolean, collision: boolean, teleport: boolean, p18: number): void
-function AttachEntityToEntityPhysically(entity1, entity2, boneIndex1, boneIndex2, xPos1, yPos1, zPos1, xPos2, yPos2, zPos2, xRot, yRot, zRot, breakForce, fixedRot, p15, collision, teleport, p18) end
+--- @hash [0x060D6E96F8B8E48D](https://docs.fivem.net/natives/?_0x060D6E96F8B8E48D)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function DoesEntityHaveDrawable(entity) end
 
     
 --- ```
@@ -258,13 +314,56 @@ function AttachEntityToEntityPhysically(entity1, entity2, boneIndex1, boneIndex2
 function CreateModelHide(x, y, z, radius, model, p5) end
 
     
---- ClearEntityLastDamageEntity
+--- GetEntityAttachedTo
 ---
---- @hash [0xA72CD9CA74A5ECBA](https://docs.fivem.net/natives/?_0xA72CD9CA74A5ECBA)
+--- @hash [0x48C2BED9180FE123](https://docs.fivem.net/natives/?_0x48C2BED9180FE123)
 --- @param entity Entity
+--- @return Entity
+--- @overload fun(entity: Entity): Entity
+function GetEntityAttachedTo(entity) end
+
+    
+--- DetachEntity
+---
+--- @hash [0x961AC54BF0613F5D](https://docs.fivem.net/natives/?_0x961AC54BF0613F5D)
+--- @param entity Entity
+--- @param dynamic boolean
+--- @param collision boolean
 --- @return void
---- @overload fun(entity: Entity): void
-function ClearEntityLastDamageEntity(entity) end
+--- @overload fun(entity: Entity, dynamic: boolean, collision: boolean): void
+function DetachEntity(entity, dynamic, collision) end
+
+    
+--- DoesEntityHavePhysics
+---
+--- @hash [0xDA95EA3317CC5064](https://docs.fivem.net/natives/?_0xDA95EA3317CC5064)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function DoesEntityHavePhysics(entity) end
+
+    
+--- Checks whether an entity exists in the game world.
+--- @usage local currentVehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- 
+--- if DoesEntityExist(currentVehicle) then
+---     DeleteEntity(currentVehicle)
+--- en
+--- @hash [0x7239B21A38F536BA](https://docs.fivem.net/natives/?_0x7239B21A38F536BA)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function DoesEntityExist(entity) end
+
+    
+--- DoesEntityBelongToThisScript
+---
+--- @hash [0xDDE6DF5AE89981D2](https://docs.fivem.net/natives/?_0xDDE6DF5AE89981D2)
+--- @param entity Entity
+--- @param p2 boolean
+--- @return boolean
+--- @overload fun(entity: Entity, p2: boolean): boolean
+function DoesEntityBelongToThisScript(entity, p2) end
 
     
 --- ```
@@ -285,20 +384,6 @@ function ClearEntityLastDamageEntity(entity) end
 function CreateModelSwap(x, y, z, radius, originalModel, newModel, p6) end
 
     
---- CreateModelHideExcludingScriptObjects
----
---- @hash [0x3A52AE588830BF7F](https://docs.fivem.net/natives/?_0x3A52AE588830BF7F)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @param model Hash
---- @param p5 boolean
---- @return void
---- @overload fun(x: number, y: number, z: number, radius: number, model: Hash, p5: boolean): void
-function CreateModelHideExcludingScriptObjects(x, y, z, radius, model, p5) end
-
-    
 --- ```
 --- Deletes the specified entity, then sets the handle pointed to by the pointer to NULL.
 --- ```
@@ -310,82 +395,6 @@ function CreateModelHideExcludingScriptObjects(x, y, z, radius, model, p5) end
 function DeleteEntity(entity) end
 
     
---- DetachEntity
----
---- @hash [0x961AC54BF0613F5D](https://docs.fivem.net/natives/?_0x961AC54BF0613F5D)
---- @param entity Entity
---- @param dynamic boolean
---- @param collision boolean
---- @return void
---- @overload fun(entity: Entity, dynamic: boolean, collision: boolean): void
-function DetachEntity(entity, dynamic, collision) end
-
-    
---- DoesEntityBelongToThisScript
----
---- @hash [0xDDE6DF5AE89981D2](https://docs.fivem.net/natives/?_0xDDE6DF5AE89981D2)
---- @param entity Entity
---- @param p2 boolean
---- @return boolean
---- @overload fun(entity: Entity, p2: boolean): boolean
-function DoesEntityBelongToThisScript(entity, p2) end
-
-    
---- Checks whether an entity exists in the game world.
---- @usage local currentVehicle = GetVehiclePedIsIn(PlayerPedId(), false)
---- 
---- if DoesEntityExist(currentVehicle) then
----     DeleteEntity(currentVehicle)
---- en
---- @hash [0x7239B21A38F536BA](https://docs.fivem.net/natives/?_0x7239B21A38F536BA)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function DoesEntityExist(entity) end
-
-    
---- DoesEntityHaveDrawable
----
---- @hash [0x060D6E96F8B8E48D](https://docs.fivem.net/natives/?_0x060D6E96F8B8E48D)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function DoesEntityHaveDrawable(entity) end
-
-    
---- ```
---- ENABLE_*
---- ```
----
---- @hash [0x6CE177D014502E8A](https://docs.fivem.net/natives/?_0x6CE177D014502E8A)
---- @param entity Entity
---- @return void
---- @overload fun(entity: Entity): void
-function EnableEntityUnk(entity) end
-
-    
---- # New Name: EnableEntityUnk
---- ```
---- ENABLE_*
---- ```
----
---- @hash [0x6CE177D014502E8A](https://docs.fivem.net/natives/?_0x6CE177D014502E8A)
---- @param entity Entity
---- @return void
---- @overload fun(entity: Entity): void
---- @deprecated
-function N_0x6ce177d014502e8a(entity) end
-
-    
---- DoesEntityHavePhysics
----
---- @hash [0xDA95EA3317CC5064](https://docs.fivem.net/natives/?_0xDA95EA3317CC5064)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function DoesEntityHavePhysics(entity) end
-
-    
 --- ```
 --- Based on carmod_shop script decompile this takes a vehicle parameter. It is called when repair is done on initial enter.  
 --- ```
@@ -395,6 +404,65 @@ function DoesEntityHavePhysics(entity) end
 --- @return void
 --- @overload fun(entity: Entity): void
 function ForceEntityAiAndAnimationUpdate(entity) end
+
+    
+--- ```
+--- Returns a float value representing animation's current playtime with respect to its total playtime. This value increasing in a range from [0 to 1] and wrap back to 0 when it reach 1.  
+--- Example:  
+--- 0.000000 - mark the starting of animation.  
+--- 0.500000 - mark the midpoint of the animation.  
+--- 1.000000 - mark the end of animation.  
+--- ```
+--- 
+--- [Animations list](https://alexguirre.github.io/animations-list/)
+---
+--- @hash [0x346D81500D088F42](https://docs.fivem.net/natives/?_0x346D81500D088F42)
+--- @param entity Entity
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @return number
+--- @overload fun(entity: Entity, animDict: string, animName: string): number
+function GetEntityAnimCurrentTime(entity, animDict, animName) end
+
+    
+--- GetEntityCollisionDisabled
+---
+--- @hash [0xCCF1E97BEFDAE480](https://docs.fivem.net/natives/?_0xCCF1E97BEFDAE480)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function GetEntityCollisionDisabled(entity) end
+
+    
+--- # New Name: GetEntityCollisionDisabled
+--- GetEntityCollisionDisabled
+---
+--- @hash [0xCCF1E97BEFDAE480](https://docs.fivem.net/natives/?_0xCCF1E97BEFDAE480)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+--- @deprecated
+function N_0xccf1e97befdae480(entity) end
+
+    
+--- # New Name: GetEntityCollisionDisabled
+--- GetEntityCollisionDisabled
+---
+--- @hash [0xCCF1E97BEFDAE480](https://docs.fivem.net/natives/?_0xCCF1E97BEFDAE480)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+--- @deprecated
+function GetEntityCollisonDisabled(entity) end
+
+    
+--- GetEntityAlpha
+---
+--- @hash [0x5A47B3B5E63E94C6](https://docs.fivem.net/natives/?_0x5A47B3B5E63E94C6)
+--- @param entity Entity
+--- @return number
+--- @overload fun(entity: Entity): number
+function GetEntityAlpha(entity) end
 
     
 --- ```
@@ -420,16 +488,6 @@ function ForceEntityAiAndAnimationUpdate(entity) end
 function FindAnimEventPhase(animDictionary, animName, p2) end
 
     
---- Freezes or unfreezes an entity preventing its coordinates to change by the player if set to `true`. You can still change the entity position using SET_ENTITY_COORDS.
---- @usage FreezeEntityPosition(PlayerPedId(), true
---- @hash [0x428CA6DBD1094446](https://docs.fivem.net/natives/?_0x428CA6DBD1094446)
---- @param entity Entity
---- @param toggle boolean
---- @return void
---- @overload fun(entity: Entity, toggle: boolean): void
-function FreezeEntityPosition(entity, toggle) end
-
-    
 --- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
 --- @hash [0xFEDDF04D62B8D790](https://docs.fivem.net/natives/?_0xFEDDF04D62B8D790)
@@ -452,61 +510,6 @@ function GetAnimDuration(animDict, animName) end
 function GetAnimDuration(animDict, animName) end
 
     
---- GetCollisionNormalOfLastHitForEntity
----
---- @hash [0xE465D4AB7CA6AE72](https://docs.fivem.net/natives/?_0xE465D4AB7CA6AE72)
---- @param entity Entity
---- @return Vector3
---- @overload fun(entity: Entity): Vector3
-function GetCollisionNormalOfLastHitForEntity(entity) end
-
-    
---- GetEntityAlpha
----
---- @hash [0x5A47B3B5E63E94C6](https://docs.fivem.net/natives/?_0x5A47B3B5E63E94C6)
---- @param entity Entity
---- @return number
---- @overload fun(entity: Entity): number
-function GetEntityAlpha(entity) end
-
-    
---- ```
---- Returns a float value representing animation's total playtime in milliseconds.  
---- Example:  
---- GET_ENTITY_ANIM_TOTAL_TIME(PLAYER_ID(),"amb@world_human_yoga@female@base","base_b")   
---- return 20800.000000  
---- ```
---- 
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash [0x50BD2730B191E360](https://docs.fivem.net/natives/?_0x50BD2730B191E360)
---- @param entity Entity
---- @param animDict string (char*)
---- @param animName string (char*)
---- @return number
---- @overload fun(entity: Entity, animDict: string, animName: string): number
-function GetEntityAnimTotalTime(entity, animDict, animName) end
-
-    
---- ```
---- Returns a float value representing animation's current playtime with respect to its total playtime. This value increasing in a range from [0 to 1] and wrap back to 0 when it reach 1.  
---- Example:  
---- 0.000000 - mark the starting of animation.  
---- 0.500000 - mark the midpoint of the animation.  
---- 1.000000 - mark the end of animation.  
---- ```
---- 
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash [0x346D81500D088F42](https://docs.fivem.net/natives/?_0x346D81500D088F42)
---- @param entity Entity
---- @param animDict string (char*)
---- @param animName string (char*)
---- @return number
---- @overload fun(entity: Entity, animDict: string, animName: string): number
-function GetEntityAnimCurrentTime(entity, animDict, animName) end
-
-    
 --- GetEntityBoneCount
 ---
 --- @hash [0xB328DCC3A3AA401B](https://docs.fivem.net/natives/?_0xB328DCC3A3AA401B)
@@ -527,13 +530,32 @@ function GetEntityBoneCount(entity) end
 function N_0xb328dcc3a3aa401b(entity) end
 
     
---- GetEntityAttachedTo
+--- ```
+--- Returns a float value representing animation's total playtime in milliseconds.  
+--- Example:  
+--- GET_ENTITY_ANIM_TOTAL_TIME(PLAYER_ID(),"amb@world_human_yoga@female@base","base_b")   
+--- return 20800.000000  
+--- ```
+--- 
+--- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
---- @hash [0x48C2BED9180FE123](https://docs.fivem.net/natives/?_0x48C2BED9180FE123)
+--- @hash [0x50BD2730B191E360](https://docs.fivem.net/natives/?_0x50BD2730B191E360)
 --- @param entity Entity
---- @return Entity
---- @overload fun(entity: Entity): Entity
-function GetEntityAttachedTo(entity) end
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @return number
+--- @overload fun(entity: Entity, animDict: string, animName: string): number
+function GetEntityAnimTotalTime(entity, animDict, animName) end
+
+    
+--- Freezes or unfreezes an entity preventing its coordinates to change by the player if set to `true`. You can still change the entity position using SET_ENTITY_COORDS.
+--- @usage FreezeEntityPosition(PlayerPedId(), true
+--- @hash [0x428CA6DBD1094446](https://docs.fivem.net/natives/?_0x428CA6DBD1094446)
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+function FreezeEntityPosition(entity, toggle) end
 
     
 --- ```
@@ -577,6 +599,51 @@ function N_0x46f8696933a63c9b(entity, boneIndex) end
 --- @overload fun(entity: Entity, boneIndex: number): Vector3
 --- @deprecated
 function GetWorldPositionOfEntityBone_2(entity, boneIndex) end
+
+    
+--- GetCollisionNormalOfLastHitForEntity
+---
+--- @hash [0xE465D4AB7CA6AE72](https://docs.fivem.net/natives/?_0xE465D4AB7CA6AE72)
+--- @param entity Entity
+--- @return Vector3
+--- @overload fun(entity: Entity): Vector3
+function GetCollisionNormalOfLastHitForEntity(entity) end
+
+    
+--- ```
+--- Returns the LOD distance of an entity.  
+--- ```
+---
+--- @hash [0x4159C2762B5791D6](https://docs.fivem.net/natives/?_0x4159C2762B5791D6)
+--- @param entity Entity
+--- @return number
+--- @overload fun(entity: Entity): number
+function GetEntityLodDist(entity) end
+
+    
+--- Gets the local rotation of the specified bone of the specified entity.
+--- 
+--- ```
+--- NativeDB Introduced: v1734
+--- ```
+---
+--- @hash [0xBD8D32550E5CEBFE](https://docs.fivem.net/natives/?_0xBD8D32550E5CEBFE)
+--- @param entity Entity
+--- @param boneIndex number (int)
+--- @return Vector3
+--- @overload fun(entity: Entity, boneIndex: number): Vector3
+function GetEntityBoneRotationLocal(entity, boneIndex) end
+
+    
+--- ```
+--- Gets the Y-component of the entity's forward vector.  
+--- ```
+---
+--- @hash [0x866A4A5FAE349510](https://docs.fivem.net/natives/?_0x866A4A5FAE349510)
+--- @param entity Entity
+--- @return number
+--- @overload fun(entity: Entity): number
+function GetEntityForwardY(entity) end
 
     
 --- ```
@@ -635,18 +702,58 @@ function GetWorldPositionOfEntityBone_2(entity, boneIndex) end
 function GetEntityBoneIndexByName(entity, boneName) end
 
     
---- Gets the local rotation of the specified bone of the specified entity.
---- 
 --- ```
---- NativeDB Introduced: v1734
+--- Returns the heading of the entity in degrees. Also know as the "Yaw" of an entity.
+--- ```
+--- @usage local heading = GetEntityHeading(PlayerPedId())
+--- print(heading
+--- @hash [0xE83D4F9BA2A38914](https://docs.fivem.net/natives/?_0xE83D4F9BA2A38914)
+--- @param entity Entity
+--- @return number
+--- @overload fun(entity: Entity): number
+function GetEntityHeading(entity) end
+
+    
+--- ```
+--- Gets the entity's forward vector.
 --- ```
 ---
---- @hash [0xBD8D32550E5CEBFE](https://docs.fivem.net/natives/?_0xBD8D32550E5CEBFE)
+--- @hash [0x0A794A5A57F8DF91](https://docs.fivem.net/natives/?_0x0A794A5A57F8DF91)
 --- @param entity Entity
---- @param boneIndex number (int)
 --- @return Vector3
---- @overload fun(entity: Entity, boneIndex: number): Vector3
-function GetEntityBoneRotationLocal(entity, boneIndex) end
+--- @overload fun(entity: Entity): Vector3
+function GetEntityForwardVector(entity) end
+
+    
+--- ```
+--- Gets the X-component of the entity's forward vector.  
+--- ```
+---
+--- @hash [0x8BB4EF4214E0E6D5](https://docs.fivem.net/natives/?_0x8BB4EF4214E0E6D5)
+--- @param entity Entity
+--- @return number
+--- @overload fun(entity: Entity): number
+function GetEntityForwardX(entity) end
+
+    
+--- GetEntityCanBeDamaged
+---
+--- @hash [0xD95CC5D2AB15A09F](https://docs.fivem.net/natives/?_0xD95CC5D2AB15A09F)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function GetEntityCanBeDamaged(entity) end
+
+    
+--- # New Name: GetEntityCanBeDamaged
+--- GetEntityCanBeDamaged
+---
+--- @hash [0xD95CC5D2AB15A09F](https://docs.fivem.net/natives/?_0xD95CC5D2AB15A09F)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+--- @deprecated
+function N_0xd95cc5d2ab15a09f(entity) end
 
     
 --- ```
@@ -689,168 +796,31 @@ function N_0xce6294a232d03786(entity, boneIndex) end
 function GetWorldRotationOfEntityBone(entity, boneIndex) end
 
     
---- GetEntityCanBeDamaged
----
---- @hash [0xD95CC5D2AB15A09F](https://docs.fivem.net/natives/?_0xD95CC5D2AB15A09F)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function GetEntityCanBeDamaged(entity) end
-
-    
---- # New Name: GetEntityCanBeDamaged
---- GetEntityCanBeDamaged
----
---- @hash [0xD95CC5D2AB15A09F](https://docs.fivem.net/natives/?_0xD95CC5D2AB15A09F)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
---- @deprecated
-function N_0xd95cc5d2ab15a09f(entity) end
-
-    
---- GetEntityCollisionDisabled
----
---- @hash [0xCCF1E97BEFDAE480](https://docs.fivem.net/natives/?_0xCCF1E97BEFDAE480)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function GetEntityCollisionDisabled(entity) end
-
-    
---- # New Name: GetEntityCollisionDisabled
---- GetEntityCollisionDisabled
----
---- @hash [0xCCF1E97BEFDAE480](https://docs.fivem.net/natives/?_0xCCF1E97BEFDAE480)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
---- @deprecated
-function N_0xccf1e97befdae480(entity) end
-
-    
---- # New Name: GetEntityCollisionDisabled
---- GetEntityCollisionDisabled
----
---- @hash [0xCCF1E97BEFDAE480](https://docs.fivem.net/natives/?_0xCCF1E97BEFDAE480)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
---- @deprecated
-function GetEntityCollisonDisabled(entity) end
-
-    
 --- ```
---- Gets the entity's forward vector.
+--- rotationOrder refers to the order yaw pitch roll is applied; value ranges from 0 to 5 and is usually *2* in scripts.
+--- 
+--- What you use for rotationOrder when getting must be the same as rotationOrder when setting the rotation.
+--- 
+--- What it returns is the yaw on the z part of the vector, which makes sense considering R* considers z as vertical. Here's a picture for those of you who don't understand pitch, yaw, and roll:
+--- www.allstar.fiu.edu/aero/images/pic5-1.gif
 --- ```
----
---- @hash [0x0A794A5A57F8DF91](https://docs.fivem.net/natives/?_0x0A794A5A57F8DF91)
+--- 
+--- ### Rotation Orders
+--- 
+--- *   **0**: ZYX - Rotate around the z-axis, then the y-axis and finally the x-axis.
+--- *   **1**: YZX - Rotate around the y-axis, then the z-axis and finally the x-axis.
+--- *   **2**: ZXY - Rotate around the z-axis, then the x-axis and finally the y-axis.
+--- *   **3**: XZY - Rotate around the x-axis, then the z-axis and finally the y-axis.
+--- *   **4**: YXZ - Rotate around the y-axis, then the x-axis and finally the z-axis.
+--- *   **5**: XYZ - Rotate around the x-axis, then the y-axis and finally the z-axis.
+--- @usage local playerRotation = GetEntityRotation(PlayerPedId(), 2)
+--- print(playerRotation
+--- @hash [0xAFBD61CC738D9EB9](https://docs.fivem.net/natives/?_0xAFBD61CC738D9EB9)
 --- @param entity Entity
+--- @param rotationOrder number (int)
 --- @return Vector3
 --- @overload fun(entity: Entity): Vector3
-function GetEntityForwardVector(entity) end
-
-    
---- ```
---- Gets the X-component of the entity's forward vector.  
---- ```
----
---- @hash [0x8BB4EF4214E0E6D5](https://docs.fivem.net/natives/?_0x8BB4EF4214E0E6D5)
---- @param entity Entity
---- @return number
---- @overload fun(entity: Entity): number
-function GetEntityForwardX(entity) end
-
-    
---- ```
---- Gets the Y-component of the entity's forward vector.  
---- ```
----
---- @hash [0x866A4A5FAE349510](https://docs.fivem.net/natives/?_0x866A4A5FAE349510)
---- @param entity Entity
---- @return number
---- @overload fun(entity: Entity): number
-function GetEntityForwardY(entity) end
-
-    
---- ```
---- Returns the heading of the entity in degrees. Also know as the "Yaw" of an entity.
---- ```
---- @usage local heading = GetEntityHeading(PlayerPedId())
---- print(heading
---- @hash [0xE83D4F9BA2A38914](https://docs.fivem.net/natives/?_0xE83D4F9BA2A38914)
---- @param entity Entity
---- @return number
---- @overload fun(entity: Entity): number
-function GetEntityHeading(entity) end
-
-    
---- GetEntityHeight
----
---- @hash [0x5A504562485944DD](https://docs.fivem.net/natives/?_0x5A504562485944DD)
---- @param entity Entity
---- @param X number (float)
---- @param Y number (float)
---- @param Z number (float)
---- @param atTop boolean
---- @param inWorldCoords boolean
---- @return number
---- @overload fun(entity: Entity, X: number, Y: number, Z: number, atTop: boolean, inWorldCoords: boolean): number
-function GetEntityHeight(entity, X, Y, Z, atTop, inWorldCoords) end
-
-    
---- ```
---- Returns an integer value of entity's current health.
---- Example of range for ped:
---- - Player [0 to 200]
---- - Ped [100 to 200]
---- - Vehicle [0 to 1000]
---- - Object [0 to 1000]
---- Health is actually a float value but this native casts it to int.
---- In order to get the actual value, do:
---- float health = *(float *)(entityAddress + 0x280);
---- ```
---- @usage local health = GetEntityHealth(PlayerPedId())
---- print(health
---- @hash [0xEEF059FAD016D209](https://docs.fivem.net/natives/?_0xEEF059FAD016D209)
---- @param entity Entity
---- @return number
---- @overload fun(entity: Entity): number
-function GetEntityHealth(entity) end
-
-    
---- ```
---- Return height (z-dimension) above ground.   
---- Example: The pilot in a titan plane is 1.844176 above ground.  
---- How can i convert it to meters?  
---- Everything seems to be in meters, probably this too.  
---- ```
----
---- @hash [0x1DD55701034110E5](https://docs.fivem.net/natives/?_0x1DD55701034110E5)
---- @param entity Entity
---- @return number
---- @overload fun(entity: Entity): number
-function GetEntityHeightAboveGround(entity) end
-
-    
---- ```
---- Returns the LOD distance of an entity.  
---- ```
----
---- @hash [0x4159C2762B5791D6](https://docs.fivem.net/natives/?_0x4159C2762B5791D6)
---- @param entity Entity
---- @return number
---- @overload fun(entity: Entity): number
-function GetEntityLodDist(entity) end
-
-    
---- GetEntityMatrix
----
---- @hash [0xECB2FC7235A7D137](https://docs.fivem.net/natives/?_0xECB2FC7235A7D137)
---- @param entity Entity
---- @return Vector3, Vector3, Vector3, Vector3
---- @overload fun(entity: Entity): Vector3, Vector3, Vector3, Vector3
-function GetEntityMatrix(entity) end
+function GetEntityRotation(entity, rotationOrder) end
 
     
 --- ```
@@ -866,19 +836,18 @@ function GetEntityMatrix(entity) end
 function GetEntityMaxHealth(entity) end
 
     
---- ```
---- Returns the model hash from the entity
---- ```
---- @usage local hash = GetEntityModel(PlayerPedId())
---- 
---- if hash == `mp_m_freemode_01` then
----     print("This player is using the male freemode model.")
---- en
---- @hash [0x9F47B058362C84B5](https://docs.fivem.net/natives/?_0x9F47B058362C84B5)
+--- GetEntityHeight
+---
+--- @hash [0x5A504562485944DD](https://docs.fivem.net/natives/?_0x5A504562485944DD)
 --- @param entity Entity
---- @return Hash
---- @overload fun(entity: Entity): Hash
-function GetEntityModel(entity) end
+--- @param X number (float)
+--- @param Y number (float)
+--- @param Z number (float)
+--- @param atTop boolean
+--- @param inWorldCoords boolean
+--- @return number
+--- @overload fun(entity: Entity, X: number, Y: number, Z: number, atTop: boolean, inWorldCoords: boolean): number
+function GetEntityHeight(entity, X, Y, Z, atTop, inWorldCoords) end
 
     
 --- ```
@@ -908,6 +877,59 @@ function N_0x846bf6291198a71e(entity) end
 
     
 --- ```
+--- Returns an integer value of entity's current health.
+--- Example of range for ped:
+--- - Player [0 to 200]
+--- - Ped [100 to 200]
+--- - Vehicle [0 to 1000]
+--- - Object [0 to 1000]
+--- Health is actually a float value but this native casts it to int.
+--- In order to get the actual value, do:
+--- float health = *(float *)(entityAddress + 0x280);
+--- ```
+--- @usage local health = GetEntityHealth(PlayerPedId())
+--- print(health
+--- @hash [0xEEF059FAD016D209](https://docs.fivem.net/natives/?_0xEEF059FAD016D209)
+--- @param entity Entity
+--- @return number
+--- @overload fun(entity: Entity): number
+function GetEntityHealth(entity) end
+
+    
+--- ```
+--- Returns the model hash from the entity
+--- ```
+--- @usage local hash = GetEntityModel(PlayerPedId())
+--- 
+--- if hash == `mp_m_freemode_01` then
+---     print("This player is using the male freemode model.")
+--- en
+--- @hash [0x9F47B058362C84B5](https://docs.fivem.net/natives/?_0x9F47B058362C84B5)
+--- @param entity Entity
+--- @return Hash
+--- @overload fun(entity: Entity): Hash
+function GetEntityModel(entity) end
+
+    
+--- GetEntityPitch
+---
+--- @hash [0xD45DC2893621E1FE](https://docs.fivem.net/natives/?_0xD45DC2893621E1FE)
+--- @param entity Entity
+--- @return number
+--- @overload fun(entity: Entity): number
+function GetEntityPitch(entity) end
+
+    
+--- GetEntityMatrix
+---
+--- @hash [0xECB2FC7235A7D137](https://docs.fivem.net/natives/?_0xECB2FC7235A7D137)
+--- @param entity Entity
+--- @return Vector3, Vector3, Vector3, Vector3
+--- @overload fun(entity: Entity): Vector3, Vector3, Vector3, Vector3
+function GetEntityMatrix(entity) end
+
+    
+--- ```
 --- GET_ENTITY_*
 --- 
 --- Seems to return the handle of the entity's portable pickup.
@@ -923,44 +945,27 @@ function N_0x846bf6291198a71e(entity) end
 function GetEntityPickup(entity, modelHash) end
 
     
---- GetEntityPitch
+--- GetEntityUprightValue
 ---
---- @hash [0xD45DC2893621E1FE](https://docs.fivem.net/natives/?_0xD45DC2893621E1FE)
+--- @hash [0x95EED5A694951F9F](https://docs.fivem.net/natives/?_0x95EED5A694951F9F)
 --- @param entity Entity
 --- @return number
 --- @overload fun(entity: Entity): number
-function GetEntityPitch(entity) end
+function GetEntityUprightValue(entity) end
 
     
---- A population type, from the following enum: https://alloc8or.re/gta5/doc/enums/ePopulationType.txt
+--- ```
+--- Return height (z-dimension) above ground.   
+--- Example: The pilot in a titan plane is 1.844176 above ground.  
+--- How can i convert it to meters?  
+--- Everything seems to be in meters, probably this too.  
+--- ```
 ---
---- @hash [0xF6F5161F4534EDFF](https://docs.fivem.net/natives/?_0xF6F5161F4534EDFF)
+--- @hash [0x1DD55701034110E5](https://docs.fivem.net/natives/?_0x1DD55701034110E5)
 --- @param entity Entity
 --- @return number
 --- @overload fun(entity: Entity): number
-function GetEntityPopulationType(entity) end
-
-    
---- ```
---- NativeDB Introduced: v1604
---- ```
----
---- @hash [0xBE8CD9BE829BBEBF](https://docs.fivem.net/natives/?_0xBE8CD9BE829BBEBF)
---- @param entity Entity
---- @return boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean
---- @overload fun(entity: Entity): boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean
-function GetEntityProofs(entity) end
-
-    
---- ```
---- w is the correct parameter name!  
---- ```
----
---- @hash [0x7B3703D2D32DFA18](https://docs.fivem.net/natives/?_0x7B3703D2D32DFA18)
---- @param entity Entity
---- @return number, number, number, number
---- @overload fun(entity: Entity): number, number, number, number
-function GetEntityQuaternion(entity) end
+function GetEntityHeightAboveGround(entity) end
 
     
 --- ```
@@ -975,40 +980,33 @@ function GetEntityQuaternion(entity) end
 function GetEntityRoll(entity) end
 
     
---- GetEntityRotationVelocity
+--- A population type, from the following enum: https://alloc8or.re/gta5/doc/enums/ePopulationType.txt
 ---
---- @hash [0x213B91045D09B983](https://docs.fivem.net/natives/?_0x213B91045D09B983)
+--- @hash [0xF6F5161F4534EDFF](https://docs.fivem.net/natives/?_0xF6F5161F4534EDFF)
+--- @param entity Entity
+--- @return number
+--- @overload fun(entity: Entity): number
+function GetEntityPopulationType(entity) end
+
+    
+--- GetEntityVelocity
+---
+--- @hash [0x4805D2B1D8CF94A9](https://docs.fivem.net/natives/?_0x4805D2B1D8CF94A9)
 --- @param entity Entity
 --- @return Vector3
 --- @overload fun(entity: Entity): Vector3
-function GetEntityRotationVelocity(entity) end
+function GetEntityVelocity(entity) end
 
     
 --- ```
---- rotationOrder refers to the order yaw pitch roll is applied; value ranges from 0 to 5 and is usually *2* in scripts.
---- 
---- What you use for rotationOrder when getting must be the same as rotationOrder when setting the rotation.
---- 
---- What it returns is the yaw on the z part of the vector, which makes sense considering R* considers z as vertical. Here's a picture for those of you who don't understand pitch, yaw, and roll:
---- www.allstar.fiu.edu/aero/images/pic5-1.gif
+--- w is the correct parameter name!  
 --- ```
---- 
---- ### Rotation Orders
---- 
---- *   **0**: ZYX - Rotate around the z-axis, then the y-axis and finally the x-axis.
---- *   **1**: YZX - Rotate around the y-axis, then the z-axis and finally the x-axis.
---- *   **2**: ZXY - Rotate around the z-axis, then the x-axis and finally the y-axis.
---- *   **3**: XZY - Rotate around the x-axis, then the z-axis and finally the y-axis.
---- *   **4**: YXZ - Rotate around the y-axis, then the x-axis and finally the z-axis.
---- *   **5**: XYZ - Rotate around the x-axis, then the y-axis and finally the z-axis.
---- @usage local playerRotation = GetEntityRotation(PlayerPedId(), 2)
---- print(playerRotation
---- @hash [0xAFBD61CC738D9EB9](https://docs.fivem.net/natives/?_0xAFBD61CC738D9EB9)
+---
+--- @hash [0x7B3703D2D32DFA18](https://docs.fivem.net/natives/?_0x7B3703D2D32DFA18)
 --- @param entity Entity
---- @param rotationOrder number (int)
---- @return Vector3
---- @overload fun(entity: Entity): Vector3
-function GetEntityRotation(entity, rotationOrder) end
+--- @return number, number, number, number
+--- @overload fun(entity: Entity): number, number, number, number
+function GetEntityQuaternion(entity) end
 
     
 --- ```
@@ -1027,27 +1025,13 @@ function GetEntityRotation(entity, rotationOrder) end
 function GetEntitySpeed(entity) end
 
     
---- ```
---- Get how much of the entity is submerged.  1.0f is whole entity.  
---- ```
+--- GetEntityRotationVelocity
 ---
---- @hash [0xE81AFC1BC4CC41CE](https://docs.fivem.net/natives/?_0xE81AFC1BC4CC41CE)
+--- @hash [0x213B91045D09B983](https://docs.fivem.net/natives/?_0x213B91045D09B983)
 --- @param entity Entity
---- @return number
---- @overload fun(entity: Entity): number
-function GetEntitySubmergedLevel(entity) end
-
-    
---- ```
---- All ambient entities in-world seem to have the same value for the second argument (Any *script), depending on when the scripthook was activated/re-activated. I've seen numbers from ~5 to almost 70 when the value was translated with to_string. The function return value seems to always be 0.  
---- ```
----
---- @hash [0xA6E9C38DB51D7748](https://docs.fivem.net/natives/?_0xA6E9C38DB51D7748)
---- @param entity Entity
---- @param script ScrHandle (ScrHandle*)
---- @return string
---- @overload fun(entity: Entity): string, ScrHandle
-function GetEntityScript(entity, script) end
+--- @return Vector3
+--- @overload fun(entity: Entity): Vector3
+function GetEntityRotationVelocity(entity) end
 
     
 --- ```
@@ -1062,65 +1046,27 @@ function GetEntityScript(entity, script) end
 function GetEntitySpeedVector(entity, relative) end
 
     
---- GetEntityUprightValue
+--- ```
+--- Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
+--- ```
 ---
---- @hash [0x95EED5A694951F9F](https://docs.fivem.net/natives/?_0x95EED5A694951F9F)
+--- @hash [0x4B53F92932ADFAC0](https://docs.fivem.net/natives/?_0x4B53F92932ADFAC0)
 --- @param entity Entity
---- @return number
---- @overload fun(entity: Entity): number
-function GetEntityUprightValue(entity) end
+--- @return Vehicle
+--- @overload fun(entity: Entity): Vehicle
+function GetVehicleIndexFromEntityIndex(entity) end
 
     
 --- ```
---- Returns:
---- 0 = no entity
---- 1 = ped
---- 2 = vehicle
---- 3 = object
+--- All ambient entities in-world seem to have the same value for the second argument (Any *script), depending on when the scripthook was activated/re-activated. I've seen numbers from ~5 to almost 70 when the value was translated with to_string. The function return value seems to always be 0.  
 --- ```
 ---
---- @hash [0x8ACD366038D14505](https://docs.fivem.net/natives/?_0x8ACD366038D14505)
+--- @hash [0xA6E9C38DB51D7748](https://docs.fivem.net/natives/?_0xA6E9C38DB51D7748)
 --- @param entity Entity
---- @return number
---- @overload fun(entity: Entity): number
-function GetEntityType(entity) end
-
-    
---- GetLastMaterialHitByEntity
----
---- @hash [0x5C3D0A935F535C4C](https://docs.fivem.net/natives/?_0x5C3D0A935F535C4C)
---- @param entity Entity
---- @return Hash
---- @overload fun(entity: Entity): Hash
-function GetLastMaterialHitByEntity(entity) end
-
-    
---- GetEntityVelocity
----
---- @hash [0x4805D2B1D8CF94A9](https://docs.fivem.net/natives/?_0x4805D2B1D8CF94A9)
---- @param entity Entity
---- @return Vector3
---- @overload fun(entity: Entity): Vector3
-function GetEntityVelocity(entity) end
-
-    
---- GetNearestPlayerToEntity
----
---- @hash [0x7196842CB375CDB3](https://docs.fivem.net/natives/?_0x7196842CB375CDB3)
---- @param entity Entity
---- @return Player
---- @overload fun(entity: Entity): Player
-function GetNearestPlayerToEntity(entity) end
-
-    
---- GetNearestPlayerToEntityOnTeam
----
---- @hash [0x4DC9A62F844D9337](https://docs.fivem.net/natives/?_0x4DC9A62F844D9337)
---- @param entity Entity
---- @param team number (int)
---- @return Player
---- @overload fun(entity: Entity, team: number): Player
-function GetNearestPlayerToEntityOnTeam(entity, team) end
+--- @param script ScrHandle (ScrHandle*)
+--- @return string
+--- @overload fun(entity: Entity): string, ScrHandle
+function GetEntityScript(entity, script) end
 
     
 --- ```
@@ -1147,11 +1093,37 @@ function GetOffsetFromEntityGivenWorldCoords(entity, posX, posY, posZ) end
 --- Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
 --- ```
 ---
---- @hash [0xD7E3B9735C0F89D6](https://docs.fivem.net/natives/?_0xD7E3B9735C0F89D6)
+--- @hash [0x04A2A40C73395041](https://docs.fivem.net/natives/?_0x04A2A40C73395041)
 --- @param entity Entity
---- @return Object
---- @overload fun(entity: Entity): Object
-function GetObjectIndexFromEntityIndex(entity) end
+--- @return Ped
+--- @overload fun(entity: Entity): Ped
+function GetPedIndexFromEntityIndex(entity) end
+
+    
+--- ```
+--- Get how much of the entity is submerged.  1.0f is whole entity.  
+--- ```
+---
+--- @hash [0xE81AFC1BC4CC41CE](https://docs.fivem.net/natives/?_0xE81AFC1BC4CC41CE)
+--- @param entity Entity
+--- @return number
+--- @overload fun(entity: Entity): number
+function GetEntitySubmergedLevel(entity) end
+
+    
+--- ```
+--- Returns:
+--- 0 = no entity
+--- 1 = ped
+--- 2 = vehicle
+--- 3 = object
+--- ```
+---
+--- @hash [0x8ACD366038D14505](https://docs.fivem.net/natives/?_0x8ACD366038D14505)
+--- @param entity Entity
+--- @return number
+--- @overload fun(entity: Entity): number
+function GetEntityType(entity) end
 
     
 --- ```
@@ -1172,37 +1144,66 @@ function GetOffsetFromEntityInWorldCoords(entity, offsetX, offsetY, offsetZ) end
 
     
 --- ```
---- Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
+--- NativeDB Introduced: v1604
 --- ```
 ---
---- @hash [0x04A2A40C73395041](https://docs.fivem.net/natives/?_0x04A2A40C73395041)
+--- @hash [0xBE8CD9BE829BBEBF](https://docs.fivem.net/natives/?_0xBE8CD9BE829BBEBF)
 --- @param entity Entity
---- @return Ped
---- @overload fun(entity: Entity): Ped
-function GetPedIndexFromEntityIndex(entity) end
+--- @return boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean
+--- @overload fun(entity: Entity): boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean
+function GetEntityProofs(entity) end
+
+    
+--- GetNearestPlayerToEntity
+---
+--- @hash [0x7196842CB375CDB3](https://docs.fivem.net/natives/?_0x7196842CB375CDB3)
+--- @param entity Entity
+--- @return Player
+--- @overload fun(entity: Entity): Player
+function GetNearestPlayerToEntity(entity) end
 
     
 --- ```
 --- Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
 --- ```
 ---
---- @hash [0x4B53F92932ADFAC0](https://docs.fivem.net/natives/?_0x4B53F92932ADFAC0)
+--- @hash [0xD7E3B9735C0F89D6](https://docs.fivem.net/natives/?_0xD7E3B9735C0F89D6)
 --- @param entity Entity
---- @return Vehicle
---- @overload fun(entity: Entity): Vehicle
-function GetVehicleIndexFromEntityIndex(entity) end
+--- @return Object
+--- @overload fun(entity: Entity): Object
+function GetObjectIndexFromEntityIndex(entity) end
 
     
---- ```
---- Returns the coordinates of an entity-bone.  
---- ```
+--- Checks if entity1 has a clear line of sight to entity2. So a simple raycast which if it collides with any of the given colliderTypes returns false.
+--- 
+--- The direction of the check matters with for example bushes, so checking from inside to outside a bush with traceType 256 returns true, but the other way around returns false.
 ---
---- @hash [0x44A8FCB8ED227738](https://docs.fivem.net/natives/?_0x44A8FCB8ED227738)
+--- @hash [0xFCDFF7B72D23A1AC](https://docs.fivem.net/natives/?_0xFCDFF7B72D23A1AC)
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @param flags number (int)
+--- @return boolean
+--- @overload fun(entity1: Entity, entity2: Entity, flags: number): boolean
+function HasEntityClearLosToEntity(entity1, entity2, flags) end
+
+    
+--- GetNearestPlayerToEntityOnTeam
+---
+--- @hash [0x4DC9A62F844D9337](https://docs.fivem.net/natives/?_0x4DC9A62F844D9337)
 --- @param entity Entity
---- @param boneIndex number (int)
---- @return Vector3
---- @overload fun(entity: Entity, boneIndex: number): Vector3
-function GetWorldPositionOfEntityBone(entity, boneIndex) end
+--- @param team number (int)
+--- @return Player
+--- @overload fun(entity: Entity, team: number): Player
+function GetNearestPlayerToEntityOnTeam(entity, team) end
+
+    
+--- HasEntityBeenDamagedByAnyPed
+---
+--- @hash [0x605F5A140F202491](https://docs.fivem.net/natives/?_0x605F5A140F202491)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function HasEntityBeenDamagedByAnyPed(entity) end
 
     
 --- ```
@@ -1224,33 +1225,6 @@ function HasAnimEventFired(entity, actionHash) end
 --- @return boolean
 --- @overload fun(entity: Entity): boolean
 function HasEntityBeenDamagedByAnyObject(entity) end
-
-    
---- HasCollisionLoadedAroundEntity
----
---- @hash [0xE9676F61BC0B3321](https://docs.fivem.net/natives/?_0xE9676F61BC0B3321)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function HasCollisionLoadedAroundEntity(entity) end
-
-    
---- HasEntityBeenDamagedByAnyPed
----
---- @hash [0x605F5A140F202491](https://docs.fivem.net/natives/?_0x605F5A140F202491)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function HasEntityBeenDamagedByAnyPed(entity) end
-
-    
---- HasEntityBeenDamagedByAnyVehicle
----
---- @hash [0xDFD5033FDBA0A9C8](https://docs.fivem.net/natives/?_0xDFD5033FDBA0A9C8)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function HasEntityBeenDamagedByAnyVehicle(entity) end
 
     
 --- ```
@@ -1297,32 +1271,34 @@ function HasEntityClearLosToEntity_2(entity1, entity2, traceType) end
 function N_0x394bde2a7bba031e(entity1, entity2, traceType) end
 
     
---- ```
---- Entity 1 = Victim  
---- Entity 2 = Attacker  
---- p2 seems to always be 1  
---- ```
+--- HasCollisionLoadedAroundEntity
 ---
---- @hash [0xC86D67D52A707CF8](https://docs.fivem.net/natives/?_0xC86D67D52A707CF8)
---- @param entity1 Entity
---- @param entity2 Entity
---- @param p2 boolean
+--- @hash [0xE9676F61BC0B3321](https://docs.fivem.net/natives/?_0xE9676F61BC0B3321)
+--- @param entity Entity
 --- @return boolean
---- @overload fun(entity1: Entity, entity2: Entity, p2: boolean): boolean
-function HasEntityBeenDamagedByEntity(entity1, entity2, p2) end
+--- @overload fun(entity: Entity): boolean
+function HasCollisionLoadedAroundEntity(entity) end
 
     
---- Checks if entity1 has a clear line of sight to entity2. So a simple raycast which if it collides with any of the given colliderTypes returns false.
---- 
---- The direction of the check matters with for example bushes, so checking from inside to outside a bush with traceType 256 returns true, but the other way around returns false.
+--- GetLastMaterialHitByEntity
 ---
---- @hash [0xFCDFF7B72D23A1AC](https://docs.fivem.net/natives/?_0xFCDFF7B72D23A1AC)
---- @param entity1 Entity
---- @param entity2 Entity
---- @param flags number (int)
---- @return boolean
---- @overload fun(entity1: Entity, entity2: Entity, flags: number): boolean
-function HasEntityClearLosToEntity(entity1, entity2, flags) end
+--- @hash [0x5C3D0A935F535C4C](https://docs.fivem.net/natives/?_0x5C3D0A935F535C4C)
+--- @param entity Entity
+--- @return Hash
+--- @overload fun(entity: Entity): Hash
+function GetLastMaterialHitByEntity(entity) end
+
+    
+--- ```
+--- Returns the coordinates of an entity-bone.  
+--- ```
+---
+--- @hash [0x44A8FCB8ED227738](https://docs.fivem.net/natives/?_0x44A8FCB8ED227738)
+--- @param entity Entity
+--- @param boneIndex number (int)
+--- @return Vector3
+--- @overload fun(entity: Entity, boneIndex: number): Vector3
+function GetWorldPositionOfEntityBone(entity, boneIndex) end
 
     
 --- ```
@@ -1338,53 +1314,17 @@ function HasEntityClearLosToEntity(entity1, entity2, flags) end
 function HasEntityCollidedWithAnything(entity) end
 
     
---- IsEntityAMissionEntity
----
---- @hash [0x0A7B270912999B3C](https://docs.fivem.net/natives/?_0x0A7B270912999B3C)
+--- IsEntityAttached
+--- @usage local ped = PlayerPedId()
+--- 
+--- if IsEntityAttached(ped) then
+---     DetachEntity(ped, true, true)
+--- en
+--- @hash [0xB346476EF1A64897](https://docs.fivem.net/natives/?_0xB346476EF1A64897)
 --- @param entity Entity
 --- @return boolean
 --- @overload fun(entity: Entity): boolean
-function IsEntityAMissionEntity(entity) end
-
-    
---- ```
---- Has the entity1 got a clear line of sight to the other entity2 from the direction entity1 is facing.  
---- This is one of the most CPU demanding BOOL natives in the game; avoid calling this in things like nested for-loops  
---- ```
----
---- @hash [0x0267D00AF114F17A](https://docs.fivem.net/natives/?_0x0267D00AF114F17A)
---- @param entity1 Entity
---- @param entity2 Entity
---- @return boolean
---- @overload fun(entity1: Entity, entity2: Entity): boolean
-function HasEntityClearLosToEntityInFront(entity1, entity2) end
-
-    
---- IsEntityAPed
----
---- @hash [0x524AC5ECEA15343E](https://docs.fivem.net/natives/?_0x524AC5ECEA15343E)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function IsEntityAPed(entity) end
-
-    
---- IsAnEntity
----
---- @hash [0x731EC8A916BD11A1](https://docs.fivem.net/natives/?_0x731EC8A916BD11A1)
---- @param handle number (int)
---- @return boolean
---- @overload fun(handle: number): boolean
-function IsAnEntity(handle) end
-
-    
---- IsEntityAVehicle
----
---- @hash [0x6AC7003FA6E5575E](https://docs.fivem.net/natives/?_0x6AC7003FA6E5575E)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function IsEntityAVehicle(entity) end
+function IsEntityAttached(entity) end
 
     
 --- ```
@@ -1406,6 +1346,52 @@ function IsEntityAVehicle(entity) end
 function IsEntityAtEntity(entity1, entity2, xSize, ySize, zSize, p5, p6, p7) end
 
     
+--- ```
+--- Entity 1 = Victim  
+--- Entity 2 = Attacker  
+--- p2 seems to always be 1  
+--- ```
+---
+--- @hash [0xC86D67D52A707CF8](https://docs.fivem.net/natives/?_0xC86D67D52A707CF8)
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @param p2 boolean
+--- @return boolean
+--- @overload fun(entity1: Entity, entity2: Entity, p2: boolean): boolean
+function HasEntityBeenDamagedByEntity(entity1, entity2, p2) end
+
+    
+--- ```
+--- Has the entity1 got a clear line of sight to the other entity2 from the direction entity1 is facing.  
+--- This is one of the most CPU demanding BOOL natives in the game; avoid calling this in things like nested for-loops  
+--- ```
+---
+--- @hash [0x0267D00AF114F17A](https://docs.fivem.net/natives/?_0x0267D00AF114F17A)
+--- @param entity1 Entity
+--- @param entity2 Entity
+--- @return boolean
+--- @overload fun(entity1: Entity, entity2: Entity): boolean
+function HasEntityClearLosToEntityInFront(entity1, entity2) end
+
+    
+--- IsEntityAttachedToAnyVehicle
+---
+--- @hash [0x26AA915AD89BFB4B](https://docs.fivem.net/natives/?_0x26AA915AD89BFB4B)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function IsEntityAttachedToAnyVehicle(entity) end
+
+    
+--- IsEntityAMissionEntity
+---
+--- @hash [0x0A7B270912999B3C](https://docs.fivem.net/natives/?_0x0A7B270912999B3C)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function IsEntityAMissionEntity(entity) end
+
+    
 --- IsEntityAnObject
 ---
 --- @hash [0x8D68C8FD0FACA94E](https://docs.fivem.net/natives/?_0x8D68C8FD0FACA94E)
@@ -1415,13 +1401,31 @@ function IsEntityAtEntity(entity1, entity2, xSize, ySize, zSize, p5, p6, p7) end
 function IsEntityAnObject(entity) end
 
     
---- IsEntityAttachedToAnyObject
+--- HasEntityBeenDamagedByAnyVehicle
 ---
---- @hash [0xCF511840CEEDE0CC](https://docs.fivem.net/natives/?_0xCF511840CEEDE0CC)
+--- @hash [0xDFD5033FDBA0A9C8](https://docs.fivem.net/natives/?_0xDFD5033FDBA0A9C8)
 --- @param entity Entity
 --- @return boolean
 --- @overload fun(entity: Entity): boolean
-function IsEntityAttachedToAnyObject(entity) end
+function HasEntityBeenDamagedByAnyVehicle(entity) end
+
+    
+--- IsAnEntity
+---
+--- @hash [0x731EC8A916BD11A1](https://docs.fivem.net/natives/?_0x731EC8A916BD11A1)
+--- @param handle number (int)
+--- @return boolean
+--- @overload fun(handle: number): boolean
+function IsAnEntity(handle) end
+
+    
+--- IsEntityInWater
+---
+--- @hash [0xCFB0A0D8EDD145A3](https://docs.fivem.net/natives/?_0xCFB0A0D8EDD145A3)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function IsEntityInWater(entity) end
 
     
 --- ```
@@ -1445,17 +1449,14 @@ function IsEntityAttachedToAnyObject(entity) end
 function IsEntityAtCoord(entity, xPos, yPos, zPos, xSize, ySize, zSize, p7, p8, p9) end
 
     
---- IsEntityAttached
---- @usage local ped = PlayerPedId()
---- 
---- if IsEntityAttached(ped) then
----     DetachEntity(ped, true, true)
---- en
---- @hash [0xB346476EF1A64897](https://docs.fivem.net/natives/?_0xB346476EF1A64897)
+--- IsEntityInZone
+---
+--- @hash [0xB6463CF6AF527071](https://docs.fivem.net/natives/?_0xB6463CF6AF527071)
 --- @param entity Entity
+--- @param zone string (char*)
 --- @return boolean
---- @overload fun(entity: Entity): boolean
-function IsEntityAttached(entity) end
+--- @overload fun(entity: Entity, zone: string): boolean
+function IsEntityInZone(entity, zone) end
 
     
 --- IsEntityAttachedToAnyPed
@@ -1467,13 +1468,42 @@ function IsEntityAttached(entity) end
 function IsEntityAttachedToAnyPed(entity) end
 
     
---- IsEntityAttachedToAnyVehicle
+--- IsEntityAttachedToAnyObject
 ---
---- @hash [0x26AA915AD89BFB4B](https://docs.fivem.net/natives/?_0x26AA915AD89BFB4B)
+--- @hash [0xCF511840CEEDE0CC](https://docs.fivem.net/natives/?_0xCF511840CEEDE0CC)
 --- @param entity Entity
 --- @return boolean
 --- @overload fun(entity: Entity): boolean
-function IsEntityAttachedToAnyVehicle(entity) end
+function IsEntityAttachedToAnyObject(entity) end
+
+    
+--- IsEntityOccluded
+---
+--- @hash [0xE31C2C72B8692B64](https://docs.fivem.net/natives/?_0xE31C2C72B8692B64)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function IsEntityOccluded(entity) end
+
+    
+--- IsEntityAVehicle
+---
+--- @hash [0x6AC7003FA6E5575E](https://docs.fivem.net/natives/?_0x6AC7003FA6E5575E)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function IsEntityAVehicle(entity) end
+
+    
+--- ```
+--- NativeDB Added Parameter 2: BOOL p1
+--- ```
+---
+--- @hash [0x5F9532F3B5CC2551](https://docs.fivem.net/natives/?_0x5F9532F3B5CC2551)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function IsEntityDead(entity) end
 
     
 --- IsEntityAttachedToEntity
@@ -1486,15 +1516,87 @@ function IsEntityAttachedToAnyVehicle(entity) end
 function IsEntityAttachedToEntity(from, to) end
 
     
---- ```
---- NativeDB Added Parameter 2: BOOL p1
---- ```
+--- IsEntityAPed
 ---
---- @hash [0x5F9532F3B5CC2551](https://docs.fivem.net/natives/?_0x5F9532F3B5CC2551)
+--- @hash [0x524AC5ECEA15343E](https://docs.fivem.net/natives/?_0x524AC5ECEA15343E)
 --- @param entity Entity
 --- @return boolean
 --- @overload fun(entity: Entity): boolean
-function IsEntityDead(entity) end
+function IsEntityAPed(entity) end
+
+    
+--- IsEntityUpsidedown
+---
+--- @hash [0x1DBD58820FA61D71](https://docs.fivem.net/natives/?_0x1DBD58820FA61D71)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function IsEntityUpsidedown(entity) end
+
+    
+--- ```
+--- Returns true if the entity is in between the minimum and maximum values for the 2d screen coords.   
+--- This means that it will return true even if the entity is behind a wall for example, as long as you're looking at their location.   
+--- Chipping  
+--- ```
+---
+--- @hash [0xE659E47AF827484B](https://docs.fivem.net/natives/?_0xE659E47AF827484B)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function IsEntityOnScreen(entity) end
+
+    
+--- ```
+--- A static ped will not react to natives like "APPLY_FORCE_TO_ENTITY" or "SET_ENTITY_VELOCITY" and oftentimes will not react to task-natives like "AI::TASK_COMBAT_PED". The only way I know of to make one of these peds react is to ragdoll them (or sometimes to use CLEAR_PED_TASKS_IMMEDIATELY(). Static peds include almost all far-away peds, beach-combers, peds in certain scenarios, peds crossing a crosswalk, peds walking to get back into their cars, and others. If anyone knows how to make a ped non-static without ragdolling them, please edit this with the solution.  
+--- ^ Attach a phCollider to the ped.  
+--- ```
+---
+--- @hash [0x1218E6886D3D8327](https://docs.fivem.net/natives/?_0x1218E6886D3D8327)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function IsEntityStatic(entity) end
+
+    
+--- IsEntityTouchingModel
+---
+--- @hash [0x0F42323798A58C8C](https://docs.fivem.net/natives/?_0x0F42323798A58C8C)
+--- @param entity Entity
+--- @param modelHash Hash
+--- @return boolean
+--- @overload fun(entity: Entity, modelHash: Hash): boolean
+function IsEntityTouchingModel(entity, modelHash) end
+
+    
+--- IsEntityWaitingForWorldCollision
+---
+--- @hash [0xD05BFF0C0A12C68F](https://docs.fivem.net/natives/?_0xD05BFF0C0A12C68F)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function IsEntityWaitingForWorldCollision(entity) end
+
+    
+--- See also [`IS_SCRIPTED_SCENARIO_PED_USING_CONDITIONAL_ANIM`](https://docs.fivem.net/natives/?_0x6EC47A344923E1ED)
+--- 
+--- ```
+--- Taken from ENTITY::IS_ENTITY_PLAYING_ANIM(PLAYER::PLAYER_PED_ID(), "creatures@shark@move", "attack_player", 3)  
+--- p4 is always 3 in the scripts.  
+--- taskFlag:  
+--- 2 - Check synchronized scene  
+--- ```
+--- 
+--- [Animations list](https://alexguirre.github.io/animations-list/)
+---
+--- @hash [0x1F0B79228E461EC9](https://docs.fivem.net/natives/?_0x1F0B79228E461EC9)
+--- @param entity Entity
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @param taskFlag number (int)
+--- @return boolean
+--- @overload fun(entity: Entity, animDict: string, animName: string, taskFlag: number): boolean
+function IsEntityPlayingAnim(entity, animDict, animName, taskFlag) end
 
     
 --- p10 is some entity flag check, also used in [`IS_ENTITY_AT_ENTITY`](https://docs.fivem.net/natives/?_0x751B70C3D034E187), [`IS_ENTITY_IN_AREA`](https://docs.fivem.net/natives/?_0x54736AA40E271165) and [`IS_ENTITY_AT_COORD`](https://docs.fivem.net/natives/?_0x20B60995556D004F).
@@ -1527,46 +1629,6 @@ function IsEntityInAngledArea(entity, x1, y1, z1, x2, y2, z2, width, debug, incl
 function IsEntityInAir(entity) end
 
     
---- IsEntityInWater
----
---- @hash [0xCFB0A0D8EDD145A3](https://docs.fivem.net/natives/?_0xCFB0A0D8EDD145A3)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function IsEntityInWater(entity) end
-
-    
---- IsEntityInZone
----
---- @hash [0xB6463CF6AF527071](https://docs.fivem.net/natives/?_0xB6463CF6AF527071)
---- @param entity Entity
---- @param zone string (char*)
---- @return boolean
---- @overload fun(entity: Entity, zone: string): boolean
-function IsEntityInZone(entity, zone) end
-
-    
---- See also [`IS_SCRIPTED_SCENARIO_PED_USING_CONDITIONAL_ANIM`](https://docs.fivem.net/natives/?_0x6EC47A344923E1ED)
---- 
---- ```
---- Taken from ENTITY::IS_ENTITY_PLAYING_ANIM(PLAYER::PLAYER_PED_ID(), "creatures@shark@move", "attack_player", 3)  
---- p4 is always 3 in the scripts.  
---- taskFlag:  
---- 2 - Check synchronized scene  
---- ```
---- 
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash [0x1F0B79228E461EC9](https://docs.fivem.net/natives/?_0x1F0B79228E461EC9)
---- @param entity Entity
---- @param animDict string (char*)
---- @param animName string (char*)
---- @param taskFlag number (int)
---- @return boolean
---- @overload fun(entity: Entity, animDict: string, animName: string, taskFlag: number): boolean
-function IsEntityPlayingAnim(entity, animDict, animName, taskFlag) end
-
-    
 --- IsEntityInArea
 ---
 --- @hash [0x54736AA40E271165](https://docs.fivem.net/natives/?_0x54736AA40E271165)
@@ -1585,45 +1647,25 @@ function IsEntityPlayingAnim(entity, animDict, animName, taskFlag) end
 function IsEntityInArea(entity, x1, y1, z1, x2, y2, z2, p7, p8, p9) end
 
     
---- IsEntityOccluded
+--- IsEntityVisible
 ---
---- @hash [0xE31C2C72B8692B64](https://docs.fivem.net/natives/?_0xE31C2C72B8692B64)
+--- @hash [0x47D6F43D77935C75](https://docs.fivem.net/natives/?_0x47D6F43D77935C75)
 --- @param entity Entity
 --- @return boolean
 --- @overload fun(entity: Entity): boolean
-function IsEntityOccluded(entity) end
-
-    
---- IsEntityTouchingEntity
----
---- @hash [0x17FFC1B2BA35A494](https://docs.fivem.net/natives/?_0x17FFC1B2BA35A494)
---- @param entity Entity
---- @param targetEntity Entity
---- @return boolean
---- @overload fun(entity: Entity, targetEntity: Entity): boolean
-function IsEntityTouchingEntity(entity, targetEntity) end
+function IsEntityVisible(entity) end
 
     
 --- ```
---- Returns true if the entity is in between the minimum and maximum values for the 2d screen coords.   
---- This means that it will return true even if the entity is behind a wall for example, as long as you're looking at their location.   
---- Chipping  
+--- Related to cutscene entities. Unsure about the use.
+--- SET_ENTITY_*
 --- ```
 ---
---- @hash [0xE659E47AF827484B](https://docs.fivem.net/natives/?_0xE659E47AF827484B)
+--- @hash [0x78E8E3A640178255](https://docs.fivem.net/natives/?_0x78E8E3A640178255)
 --- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function IsEntityOnScreen(entity) end
-
-    
---- IsEntityUpsidedown
----
---- @hash [0x1DBD58820FA61D71](https://docs.fivem.net/natives/?_0x1DBD58820FA61D71)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function IsEntityUpsidedown(entity) end
+--- @return void
+--- @overload fun(entity: Entity): void
+function N_0x78e8e3a640178255(entity) end
 
     
 --- IsEntityVisibleToScript
@@ -1635,35 +1677,61 @@ function IsEntityUpsidedown(entity) end
 function IsEntityVisibleToScript(entity) end
 
     
---- ```
---- A static ped will not react to natives like "APPLY_FORCE_TO_ENTITY" or "SET_ENTITY_VELOCITY" and oftentimes will not react to task-natives like "AI::TASK_COMBAT_PED". The only way I know of to make one of these peds react is to ragdoll them (or sometimes to use CLEAR_PED_TASKS_IMMEDIATELY(). Static peds include almost all far-away peds, beach-combers, peds in certain scenarios, peds crossing a crosswalk, peds walking to get back into their cars, and others. If anyone knows how to make a ped non-static without ragdolling them, please edit this with the solution.  
---- ^ Attach a phCollider to the ped.  
---- ```
+--- N_0x352e2b5cf420bf3b
 ---
---- @hash [0x1218E6886D3D8327](https://docs.fivem.net/natives/?_0x1218E6886D3D8327)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function IsEntityStatic(entity) end
+--- @hash [0x352E2B5CF420BF3B](https://docs.fivem.net/natives/?_0x352E2B5CF420BF3B)
+--- @param p0 any
+--- @param p1 any
+--- @return void
+--- @overload fun(p0: any, p1: any): void
+function N_0x352e2b5cf420bf3b(p0, p1) end
 
     
---- IsEntityWaitingForWorldCollision
+--- ```
+--- Only called once in the scripts.  
+--- Related to weapon objects.  
+--- ```
 ---
---- @hash [0xD05BFF0C0A12C68F](https://docs.fivem.net/natives/?_0xD05BFF0C0A12C68F)
+--- @hash [0x5C3B791D580E0BC2](https://docs.fivem.net/natives/?_0x5C3B791D580E0BC2)
 --- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function IsEntityWaitingForWorldCollision(entity) end
+--- @param p1 number (float)
+--- @return void
+--- @overload fun(entity: Entity, p1: number): void
+function N_0x5c3b791d580e0bc2(entity, p1) end
 
     
---- IsEntityTouchingModel
+--- ```
+--- SET_ENTITY_*
+--- ```
 ---
---- @hash [0x0F42323798A58C8C](https://docs.fivem.net/natives/?_0x0F42323798A58C8C)
+--- @hash [0xC34BC448DA29F5E9](https://docs.fivem.net/natives/?_0xC34BC448DA29F5E9)
 --- @param entity Entity
---- @param modelHash Hash
---- @return boolean
---- @overload fun(entity: Entity, modelHash: Hash): boolean
-function IsEntityTouchingModel(entity, modelHash) end
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+function N_0xc34bc448da29f5e9(entity, toggle) end
+
+    
+--- ```
+--- Does nothing (essentially a nullsub).
+--- ```
+---
+--- @hash [0x490861B88F4FD846](https://docs.fivem.net/natives/?_0x490861B88F4FD846)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function N_0x490861b88f4fd846(p0) end
+
+    
+--- ```
+--- Called to update entity attachments.
+--- ```
+---
+--- @hash [0xF4080490ADC51C6F](https://docs.fivem.net/natives/?_0xF4080490ADC51C6F)
+--- @param entity Entity
+--- @return void
+--- @overload fun(entity: Entity): void
+function ProcessEntityAttachments(entity) end
 
     
 --- ```
@@ -1688,103 +1756,14 @@ function N_0x1a092bb0c3808b96(entity, p1) end
 function IsEntityUpright(entity, angle) end
 
     
---- N_0x36f32de87082343e
+--- IsEntityTouchingEntity
 ---
---- @hash [0x36F32DE87082343E](https://docs.fivem.net/natives/?_0x36F32DE87082343E)
---- @param p0 any
---- @param p1 any
---- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0x36f32de87082343e(p0, p1) end
-
-    
---- ```
---- Only called once in the scripts.  
---- Related to weapon objects.  
---- ```
----
---- @hash [0x5C3B791D580E0BC2](https://docs.fivem.net/natives/?_0x5C3B791D580E0BC2)
+--- @hash [0x17FFC1B2BA35A494](https://docs.fivem.net/natives/?_0x17FFC1B2BA35A494)
 --- @param entity Entity
---- @param p1 number (float)
---- @return void
---- @overload fun(entity: Entity, p1: number): void
-function N_0x5c3b791d580e0bc2(entity, p1) end
-
-    
---- IsEntityVisible
----
---- @hash [0x47D6F43D77935C75](https://docs.fivem.net/natives/?_0x47D6F43D77935C75)
---- @param entity Entity
+--- @param targetEntity Entity
 --- @return boolean
---- @overload fun(entity: Entity): boolean
-function IsEntityVisible(entity) end
-
-    
---- ```
---- SET_ENTITY_R*
---- ```
----
---- @hash [0x694E00132F2823ED](https://docs.fivem.net/natives/?_0x694E00132F2823ED)
---- @param entity Entity
---- @param toggle boolean
---- @return void
---- @overload fun(entity: Entity, toggle: boolean): void
-function N_0x694e00132f2823ed(entity, toggle) end
-
-    
---- ```
---- Related to cutscene entities. Unsure about the use.
---- SET_ENTITY_*
---- ```
----
---- @hash [0x78E8E3A640178255](https://docs.fivem.net/natives/?_0x78E8E3A640178255)
---- @param entity Entity
---- @return void
---- @overload fun(entity: Entity): void
-function N_0x78e8e3a640178255(entity) end
-
-    
---- N_0xb17bc6453f6cf5ac
----
---- @hash [0xB17BC6453F6CF5AC](https://docs.fivem.net/natives/?_0xB17BC6453F6CF5AC)
---- @param p0 any
---- @param p1 any
---- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0xb17bc6453f6cf5ac(p0, p1) end
-
-    
---- N_0x352e2b5cf420bf3b
----
---- @hash [0x352E2B5CF420BF3B](https://docs.fivem.net/natives/?_0x352E2B5CF420BF3B)
---- @param p0 any
---- @param p1 any
---- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0x352e2b5cf420bf3b(p0, p1) end
-
-    
---- ```
---- NativeDB Introduced: v1180
---- ```
----
---- @hash [0xD7B80E7C3BEFC396](https://docs.fivem.net/natives/?_0xD7B80E7C3BEFC396)
---- @param p0 any
---- @param p1 any
---- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0xd7b80e7c3befc396(p0, p1) end
-
-    
---- ```
---- Does nothing (essentially a nullsub).
---- ```
----
---- @hash [0x490861B88F4FD846](https://docs.fivem.net/natives/?_0x490861B88F4FD846)
---- @param p0 any
---- @return void
---- @overload fun(p0: any): void
-function N_0x490861b88f4fd846(p0) end
+--- @overload fun(entity: Entity, targetEntity: Entity): boolean
+function IsEntityTouchingEntity(entity, targetEntity) end
 
     
 --- ```
@@ -1799,62 +1778,16 @@ function N_0x490861b88f4fd846(p0) end
 function N_0x68b562e124cc0aef(p0, p1) end
 
     
---- SET_ENTITY_M\*
---- 
 --- ```
---- NativeDB Introduced: v1734
+--- NativeDB Introduced: v1180
 --- ```
 ---
---- @hash [0xE66377CDDADA4810](https://docs.fivem.net/natives/?_0xE66377CDDADA4810)
---- @param entity Entity
---- @param p1 boolean
---- @return void
---- @overload fun(entity: Entity, p1: boolean): void
-function N_0xe66377cddada4810(entity, p1) end
-
-    
---- ```
---- SET_ENTITY_*
---- ```
----
---- @hash [0xC34BC448DA29F5E9](https://docs.fivem.net/natives/?_0xC34BC448DA29F5E9)
---- @param entity Entity
---- @param toggle boolean
---- @return void
---- @overload fun(entity: Entity, toggle: boolean): void
-function N_0xc34bc448da29f5e9(entity, toggle) end
-
-    
---- N_0xcea7c8e1b48ff68c
----
---- @hash [0xCEA7C8E1B48FF68C](https://docs.fivem.net/natives/?_0xCEA7C8E1B48FF68C)
+--- @hash [0xD7B80E7C3BEFC396](https://docs.fivem.net/natives/?_0xD7B80E7C3BEFC396)
 --- @param p0 any
 --- @param p1 any
 --- @return void
 --- @overload fun(p0: any, p1: any): void
-function N_0xcea7c8e1b48ff68c(p0, p1) end
-
-    
---- ```
---- delta and bitset are guessed fields. They are based on the fact that most of the calls have 0 or nil field types passed in.  
---- The only time bitset has a value is 0x4000 and the only time delta has a value is during stealth with usually <1.0f values.  
---- ```
---- 
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash [0x7FB218262B810701](https://docs.fivem.net/natives/?_0x7FB218262B810701)
---- @param entity Entity
---- @param animName string (char*)
---- @param animDict string (char*)
---- @param p3 number (float)
---- @param loop boolean
---- @param stayInAnim boolean
---- @param p6 boolean
---- @param delta number (float)
---- @param bitset any
---- @return boolean
---- @overload fun(entity: Entity, animName: string, animDict: string, p3: number, loop: boolean, stayInAnim: boolean, p6: boolean, delta: number, bitset: any): boolean
-function PlayEntityAnim(entity, animName, animDict, p3, loop, stayInAnim, p6, delta, bitset) end
+function N_0xd7b80e7c3befc396(p0, p1) end
 
     
 --- ```
@@ -1871,6 +1804,16 @@ function PlayEntityAnim(entity, animName, animDict, p3, loop, stayInAnim, p6, de
 --- @return void
 --- @overload fun(entity: Entity, toggle: boolean): void
 function N_0xdc6f8601faf2e893(entity, toggle) end
+
+    
+--- N_0xcea7c8e1b48ff68c
+---
+--- @hash [0xCEA7C8E1B48FF68C](https://docs.fivem.net/natives/?_0xCEA7C8E1B48FF68C)
+--- @param p0 any
+--- @param p1 any
+--- @return void
+--- @overload fun(p0: any, p1: any): void
+function N_0xcea7c8e1b48ff68c(p0, p1) end
 
     
 --- [Animations list](https://alexguirre.github.io/animations-list/)
@@ -1891,6 +1834,96 @@ function N_0xdc6f8601faf2e893(entity, toggle) end
 function PlaySynchronizedMapEntityAnim(p0, p1, p2, p3, p4, p5, p8, p9, p10, p11) end
 
     
+--- SetCanClimbOnEntity
+---
+--- @hash [0xA80AE305E0A3044F](https://docs.fivem.net/natives/?_0xA80AE305E0A3044F)
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+function SetCanClimbOnEntity(entity, toggle) end
+
+    
+--- # New Name: SetCanClimbOnEntity
+--- SetCanClimbOnEntity
+---
+--- @hash [0xA80AE305E0A3044F](https://docs.fivem.net/natives/?_0xA80AE305E0A3044F)
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+--- @deprecated
+function N_0xa80ae305e0a3044f(entity, toggle) end
+
+    
+--- N_0xb17bc6453f6cf5ac
+---
+--- @hash [0xB17BC6453F6CF5AC](https://docs.fivem.net/natives/?_0xB17BC6453F6CF5AC)
+--- @param p0 any
+--- @param p1 any
+--- @return void
+--- @overload fun(p0: any, p1: any): void
+function N_0xb17bc6453f6cf5ac(p0, p1) end
+
+    
+--- ```
+--- SET_ENTITY_R*
+--- ```
+---
+--- @hash [0x694E00132F2823ED](https://docs.fivem.net/natives/?_0x694E00132F2823ED)
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+function N_0x694e00132f2823ed(entity, toggle) end
+
+    
+--- SET_ENTITY_M\*
+--- 
+--- ```
+--- NativeDB Introduced: v1734
+--- ```
+---
+--- @hash [0xE66377CDDADA4810](https://docs.fivem.net/natives/?_0xE66377CDDADA4810)
+--- @param entity Entity
+--- @param p1 boolean
+--- @return void
+--- @overload fun(entity: Entity, p1: boolean): void
+function N_0xe66377cddada4810(entity, p1) end
+
+    
+--- N_0x36f32de87082343e
+---
+--- @hash [0x36F32DE87082343E](https://docs.fivem.net/natives/?_0x36F32DE87082343E)
+--- @param p0 any
+--- @param p1 any
+--- @return void
+--- @overload fun(p0: any, p1: any): void
+function N_0x36f32de87082343e(p0, p1) end
+
+    
+--- SetCanAutoVaultOnEntity
+---
+--- @hash [0xE12ABE5E3A389A6C](https://docs.fivem.net/natives/?_0xE12ABE5E3A389A6C)
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+function SetCanAutoVaultOnEntity(entity, toggle) end
+
+    
+--- # New Name: SetCanAutoVaultOnEntity
+--- SetCanAutoVaultOnEntity
+---
+--- @hash [0xE12ABE5E3A389A6C](https://docs.fivem.net/natives/?_0xE12ABE5E3A389A6C)
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+--- @deprecated
+function N_0xe12abe5e3a389a6c(entity, toggle) end
+
+    
 --- RemoveForcedObject
 ---
 --- @hash [0x61B6775E83C0DB6F](https://docs.fivem.net/natives/?_0x61B6775E83C0DB6F)
@@ -1902,52 +1935,6 @@ function PlaySynchronizedMapEntityAnim(p0, p1, p2, p3, p4, p5, p8, p9, p10, p11)
 --- @return void
 --- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any): void
 function RemoveForcedObject(p0, p1, p2, p3, p4) end
-
-    
---- ```
---- p4 and p7 are usually 1000.0f.  
---- ```
---- 
---- [Animations list](https://alexguirre.github.io/animations-list/)
----
---- @hash [0xC77720A12FE14A86](https://docs.fivem.net/natives/?_0xC77720A12FE14A86)
---- @param entity Entity
---- @param syncedScene number (int)
---- @param animation string (char*)
---- @param propName string (char*)
---- @param p4 number (float)
---- @param p5 number (float)
---- @param p6 any
---- @param p7 number (float)
---- @return boolean
---- @overload fun(entity: Entity, syncedScene: number, animation: string, propName: string, p4: number, p5: number, p6: any, p7: number): boolean
-function PlaySynchronizedEntityAnim(entity, syncedScene, animation, propName, p4, p5, p6, p7) end
-
-    
---- RemoveModelSwap
----
---- @hash [0x033C0F9A64E229AE](https://docs.fivem.net/natives/?_0x033C0F9A64E229AE)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @param originalModel Hash
---- @param newModel Hash
---- @param p6 boolean
---- @return void
---- @overload fun(x: number, y: number, z: number, radius: number, originalModel: Hash, newModel: Hash, p6: boolean): void
-function RemoveModelSwap(x, y, z, radius, originalModel, newModel, p6) end
-
-    
---- ```
---- Called to update entity attachments.
---- ```
----
---- @hash [0xF4080490ADC51C6F](https://docs.fivem.net/natives/?_0xF4080490ADC51C6F)
---- @param entity Entity
---- @return void
---- @overload fun(entity: Entity): void
-function ProcessEntityAttachments(entity) end
 
     
 --- ResetEntityAlpha
@@ -1984,59 +1971,25 @@ function ResetEntityAlpha(entity) end
 function RemoveModelHide(x, y, z, radius, model, p5) end
 
     
---- SetCanAutoVaultOnEntity
+--- SetEntityCanBeDamagedByRelationshipGroup
 ---
---- @hash [0xE12ABE5E3A389A6C](https://docs.fivem.net/natives/?_0xE12ABE5E3A389A6C)
+--- @hash [0xE22D8FDE858B8119](https://docs.fivem.net/natives/?_0xE22D8FDE858B8119)
+--- @param entity Entity
+--- @param bCanBeDamaged boolean
+--- @param relGroup number (int)
+--- @return void
+--- @overload fun(entity: Entity, bCanBeDamaged: boolean, relGroup: number): void
+function SetEntityCanBeDamagedByRelationshipGroup(entity, bCanBeDamaged, relGroup) end
+
+    
+--- SetEntityAlwaysPrerender
+---
+--- @hash [0xACAD101E1FB66689](https://docs.fivem.net/natives/?_0xACAD101E1FB66689)
 --- @param entity Entity
 --- @param toggle boolean
 --- @return void
 --- @overload fun(entity: Entity, toggle: boolean): void
-function SetCanAutoVaultOnEntity(entity, toggle) end
-
-    
---- # New Name: SetCanAutoVaultOnEntity
---- SetCanAutoVaultOnEntity
----
---- @hash [0xE12ABE5E3A389A6C](https://docs.fivem.net/natives/?_0xE12ABE5E3A389A6C)
---- @param entity Entity
---- @param toggle boolean
---- @return void
---- @overload fun(entity: Entity, toggle: boolean): void
---- @deprecated
-function N_0xe12abe5e3a389a6c(entity, toggle) end
-
-    
---- SetCanClimbOnEntity
----
---- @hash [0xA80AE305E0A3044F](https://docs.fivem.net/natives/?_0xA80AE305E0A3044F)
---- @param entity Entity
---- @param toggle boolean
---- @return void
---- @overload fun(entity: Entity, toggle: boolean): void
-function SetCanClimbOnEntity(entity, toggle) end
-
-    
---- # New Name: SetCanClimbOnEntity
---- SetCanClimbOnEntity
----
---- @hash [0xA80AE305E0A3044F](https://docs.fivem.net/natives/?_0xA80AE305E0A3044F)
---- @param entity Entity
---- @param toggle boolean
---- @return void
---- @overload fun(entity: Entity, toggle: boolean): void
---- @deprecated
-function N_0xa80ae305e0a3044f(entity, toggle) end
-
-    
---- This native sets the entity's alpha level.
---- @usage SetEntityAlpha(PlayerPedId(), 51, false
---- @hash [0x44A0870B7E92D7C0](https://docs.fivem.net/natives/?_0x44A0870B7E92D7C0)
---- @param entity Entity
---- @param alphaLevel number (int)
---- @param skin boolean
---- @return void
---- @overload fun(entity: Entity, alphaLevel: number, skin: boolean): void
-function SetEntityAlpha(entity, alphaLevel, skin) end
+function SetEntityAlwaysPrerender(entity, toggle) end
 
     
 --- ```
@@ -2069,14 +2022,36 @@ function SetEntityAngularVelocity(entity, x, y, z) end
 function N_0x8339643499d1222e(entity, x, y, z) end
 
     
---- SetEntityAlwaysPrerender
+--- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
---- @hash [0xACAD101E1FB66689](https://docs.fivem.net/natives/?_0xACAD101E1FB66689)
+--- @hash [0x4487C259F0F70977](https://docs.fivem.net/natives/?_0x4487C259F0F70977)
 --- @param entity Entity
---- @param toggle boolean
+--- @param animDictionary string (char*)
+--- @param animName string (char*)
+--- @param time number (float)
 --- @return void
---- @overload fun(entity: Entity, toggle: boolean): void
-function SetEntityAlwaysPrerender(entity, toggle) end
+--- @overload fun(entity: Entity, animDictionary: string, animName: string, time: number): void
+function SetEntityAnimCurrentTime(entity, animDictionary, animName, time) end
+
+    
+--- ```
+--- p4 and p7 are usually 1000.0f.  
+--- ```
+--- 
+--- [Animations list](https://alexguirre.github.io/animations-list/)
+---
+--- @hash [0xC77720A12FE14A86](https://docs.fivem.net/natives/?_0xC77720A12FE14A86)
+--- @param entity Entity
+--- @param syncedScene number (int)
+--- @param animation string (char*)
+--- @param propName string (char*)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param p6 any
+--- @param p7 number (float)
+--- @return boolean
+--- @overload fun(entity: Entity, syncedScene: number, animation: string, propName: string, p4: number, p5: number, p6: any, p7: number): boolean
+function PlaySynchronizedEntityAnim(entity, syncedScene, animation, propName, p4, p5, p6, p7) end
 
     
 --- SetEntityAnimSpeed
@@ -2091,43 +2066,41 @@ function SetEntityAlwaysPrerender(entity, toggle) end
 function SetEntityAnimSpeed(entity, animDictionary, animName, speedMultiplier) end
 
     
+--- RemoveModelSwap
+---
+--- @hash [0x033C0F9A64E229AE](https://docs.fivem.net/natives/?_0x033C0F9A64E229AE)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param originalModel Hash
+--- @param newModel Hash
+--- @param p6 boolean
+--- @return void
+--- @overload fun(x: number, y: number, z: number, radius: number, originalModel: Hash, newModel: Hash, p6: boolean): void
+function RemoveModelSwap(x, y, z, radius, originalModel, newModel, p6) end
+
+    
+--- ```
+--- delta and bitset are guessed fields. They are based on the fact that most of the calls have 0 or nil field types passed in.  
+--- The only time bitset has a value is 0x4000 and the only time delta has a value is during stealth with usually <1.0f values.  
+--- ```
+--- 
 --- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
---- @hash [0x4487C259F0F70977](https://docs.fivem.net/natives/?_0x4487C259F0F70977)
+--- @hash [0x7FB218262B810701](https://docs.fivem.net/natives/?_0x7FB218262B810701)
 --- @param entity Entity
---- @param animDictionary string (char*)
 --- @param animName string (char*)
---- @param time number (float)
---- @return void
---- @overload fun(entity: Entity, animDictionary: string, animName: string, time: number): void
-function SetEntityAnimCurrentTime(entity, animDictionary, animName, time) end
-
-    
---- ```
---- Makes the specified entity (ped, vehicle or object) persistent. Persistent entities will not automatically be removed by the engine.  
---- p1 has no effect when either its on or off   
---- maybe a quick disassembly will tell us what it does  
---- p2 has no effect when either its on or off   
---- maybe a quick disassembly will tell us what it does  
---- ```
----
---- @hash [0xAD738C3085FE7E11](https://docs.fivem.net/natives/?_0xAD738C3085FE7E11)
---- @param entity Entity
---- @param p1 boolean
---- @param p2 boolean
---- @return void
---- @overload fun(entity: Entity, p1: boolean, p2: boolean): void
-function SetEntityAsMissionEntity(entity, p1, p2) end
-
-    
---- SetEntityCanBeDamaged
----
---- @hash [0x1760FFA8AB074D66](https://docs.fivem.net/natives/?_0x1760FFA8AB074D66)
---- @param entity Entity
---- @param toggle boolean
---- @return void
---- @overload fun(entity: Entity, toggle: boolean): void
-function SetEntityCanBeDamaged(entity, toggle) end
+--- @param animDict string (char*)
+--- @param p3 number (float)
+--- @param loop boolean
+--- @param stayInAnim boolean
+--- @param p6 boolean
+--- @param delta number (float)
+--- @param bitset any
+--- @return boolean
+--- @overload fun(entity: Entity, animName: string, animDict: string, p3: number, loop: boolean, stayInAnim: boolean, p6: boolean, delta: number, bitset: any): boolean
+function PlayEntityAnim(entity, animName, animDict, p3, loop, stayInAnim, p6, delta, bitset) end
 
     
 --- ```
@@ -2142,15 +2115,35 @@ function SetEntityCanBeDamaged(entity, toggle) end
 function SetEntityAsNoLongerNeeded(entity) end
 
     
---- SetEntityCanBeDamagedByRelationshipGroup
+--- SetEntityCanBeDamaged
 ---
---- @hash [0xE22D8FDE858B8119](https://docs.fivem.net/natives/?_0xE22D8FDE858B8119)
+--- @hash [0x1760FFA8AB074D66](https://docs.fivem.net/natives/?_0x1760FFA8AB074D66)
 --- @param entity Entity
---- @param bCanBeDamaged boolean
---- @param relGroup number (int)
+--- @param toggle boolean
 --- @return void
---- @overload fun(entity: Entity, bCanBeDamaged: boolean, relGroup: number): void
-function SetEntityCanBeDamagedByRelationshipGroup(entity, bCanBeDamaged, relGroup) end
+--- @overload fun(entity: Entity, toggle: boolean): void
+function SetEntityCanBeDamaged(entity, toggle) end
+
+    
+--- SetEntityHasGravity
+---
+--- @hash [0x4A4722448F18EEF5](https://docs.fivem.net/natives/?_0x4A4722448F18EEF5)
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+function SetEntityHasGravity(entity, toggle) end
+
+    
+--- SetEntityCollision
+---
+--- @hash [0x1A9205C1B9EE827F](https://docs.fivem.net/natives/?_0x1A9205C1B9EE827F)
+--- @param entity Entity
+--- @param toggle boolean
+--- @param keepPhysics boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean, keepPhysics: boolean): void
+function SetEntityCollision(entity, toggle, keepPhysics) end
 
     
 --- ```
@@ -2165,15 +2158,67 @@ function SetEntityCanBeDamagedByRelationshipGroup(entity, bCanBeDamaged, relGrou
 function SetEntityCanBeTargetedWithoutLos(entity, toggle) end
 
     
---- SetEntityCollision
+--- SetEntityCompletelyDisableCollision
 ---
---- @hash [0x1A9205C1B9EE827F](https://docs.fivem.net/natives/?_0x1A9205C1B9EE827F)
+--- @hash [0x9EBC85ED0FFFE51C](https://docs.fivem.net/natives/?_0x9EBC85ED0FFFE51C)
 --- @param entity Entity
 --- @param toggle boolean
 --- @param keepPhysics boolean
 --- @return void
 --- @overload fun(entity: Entity, toggle: boolean, keepPhysics: boolean): void
-function SetEntityCollision(entity, toggle, keepPhysics) end
+function SetEntityCompletelyDisableCollision(entity, toggle, keepPhysics) end
+
+    
+--- # New Name: SetEntityCompletelyDisableCollision
+--- SetEntityCompletelyDisableCollision
+---
+--- @hash [0x9EBC85ED0FFFE51C](https://docs.fivem.net/natives/?_0x9EBC85ED0FFFE51C)
+--- @param entity Entity
+--- @param toggle boolean
+--- @param keepPhysics boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean, keepPhysics: boolean): void
+--- @deprecated
+function N_0x9ebc85ed0fffe51c(entity, toggle, keepPhysics) end
+
+    
+--- # New Name: SetEntityCompletelyDisableCollision
+--- SetEntityCompletelyDisableCollision
+---
+--- @hash [0x9EBC85ED0FFFE51C](https://docs.fivem.net/natives/?_0x9EBC85ED0FFFE51C)
+--- @param entity Entity
+--- @param toggle boolean
+--- @param keepPhysics boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean, keepPhysics: boolean): void
+--- @deprecated
+function SetEntityCollision_2(entity, toggle, keepPhysics) end
+
+    
+--- Sets the coordinates (world position) for a specified entity.
+---
+--- @hash [0x239A3351AC1DA385](https://docs.fivem.net/natives/?_0x239A3351AC1DA385)
+--- @param entity Entity
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param zPos number (float)
+--- @param alive boolean
+--- @param deadFlag boolean
+--- @param ragdollFlag boolean
+--- @return void
+--- @overload fun(entity: Entity, xPos: number, yPos: number, zPos: number, alive: boolean, deadFlag: boolean, ragdollFlag: boolean): void
+function SetEntityCoordsNoOffset(entity, xPos, yPos, zPos, alive, deadFlag, ragdollFlag) end
+
+    
+--- This native sets the entity's alpha level.
+--- @usage SetEntityAlpha(PlayerPedId(), 51, false
+--- @hash [0x44A0870B7E92D7C0](https://docs.fivem.net/natives/?_0x44A0870B7E92D7C0)
+--- @param entity Entity
+--- @param alphaLevel number (int)
+--- @param skin boolean
+--- @return void
+--- @overload fun(entity: Entity, alphaLevel: number, skin: boolean): void
+function SetEntityAlpha(entity, alphaLevel, skin) end
 
     
 --- ```
@@ -2230,41 +2275,31 @@ function SetEntityRegister(entity, toggle) end
 function SetEntitySomething(entity, toggle) end
 
     
---- SetEntityCompletelyDisableCollision
+--- ```
+--- Makes the specified entity (ped, vehicle or object) persistent. Persistent entities will not automatically be removed by the engine.  
+--- p1 has no effect when either its on or off   
+--- maybe a quick disassembly will tell us what it does  
+--- p2 has no effect when either its on or off   
+--- maybe a quick disassembly will tell us what it does  
+--- ```
 ---
---- @hash [0x9EBC85ED0FFFE51C](https://docs.fivem.net/natives/?_0x9EBC85ED0FFFE51C)
+--- @hash [0xAD738C3085FE7E11](https://docs.fivem.net/natives/?_0xAD738C3085FE7E11)
 --- @param entity Entity
---- @param toggle boolean
---- @param keepPhysics boolean
+--- @param p1 boolean
+--- @param p2 boolean
 --- @return void
---- @overload fun(entity: Entity, toggle: boolean, keepPhysics: boolean): void
-function SetEntityCompletelyDisableCollision(entity, toggle, keepPhysics) end
+--- @overload fun(entity: Entity, p1: boolean, p2: boolean): void
+function SetEntityAsMissionEntity(entity, p1, p2) end
 
     
---- # New Name: SetEntityCompletelyDisableCollision
---- SetEntityCompletelyDisableCollision
+--- SetEntityDynamic
 ---
---- @hash [0x9EBC85ED0FFFE51C](https://docs.fivem.net/natives/?_0x9EBC85ED0FFFE51C)
+--- @hash [0x1718DE8E3F2823CA](https://docs.fivem.net/natives/?_0x1718DE8E3F2823CA)
 --- @param entity Entity
 --- @param toggle boolean
---- @param keepPhysics boolean
 --- @return void
---- @overload fun(entity: Entity, toggle: boolean, keepPhysics: boolean): void
---- @deprecated
-function N_0x9ebc85ed0fffe51c(entity, toggle, keepPhysics) end
-
-    
---- # New Name: SetEntityCompletelyDisableCollision
---- SetEntityCompletelyDisableCollision
----
---- @hash [0x9EBC85ED0FFFE51C](https://docs.fivem.net/natives/?_0x9EBC85ED0FFFE51C)
---- @param entity Entity
---- @param toggle boolean
---- @param keepPhysics boolean
---- @return void
---- @overload fun(entity: Entity, toggle: boolean, keepPhysics: boolean): void
---- @deprecated
-function SetEntityCollision_2(entity, toggle, keepPhysics) end
+--- @overload fun(entity: Entity, toggle: boolean): void
+function SetEntityDynamic(entity, toggle) end
 
     
 --- ```
@@ -2293,6 +2328,104 @@ function SetEntityDecalsDisabled(entity, p1) end
 function N_0x2c2e3dc128f44309(entity, p1) end
 
     
+--- ```
+--- For instance: ENTITY::SET_ENTITY_MAX_HEALTH(PLAYER::PLAYER_PED_ID(), 200); // director_mode.c4: 67849  
+--- ```
+---
+--- @hash [0x166E7CF68597D8B5](https://docs.fivem.net/natives/?_0x166E7CF68597D8B5)
+--- @param entity Entity
+--- @param value number (int)
+--- @return void
+--- @overload fun(entity: Entity, value: number): void
+function SetEntityMaxHealth(entity, value) end
+
+    
+--- SetEntityIsTargetPriority
+---
+--- @hash [0xEA02E132F5C68722](https://docs.fivem.net/natives/?_0xEA02E132F5C68722)
+--- @param entity Entity
+--- @param p1 boolean
+--- @param p2 number (float)
+--- @return void
+--- @overload fun(entity: Entity, p1: boolean, p2: number): void
+function SetEntityIsTargetPriority(entity, p1, p2) end
+
+    
+--- ```
+--- LOD distance can be 0 to 0xFFFF (higher values will result in 0xFFFF) as it is actually stored as a 16-bit value (aka uint16_t).  
+--- ```
+---
+--- @hash [0x5927F96A78577363](https://docs.fivem.net/natives/?_0x5927F96A78577363)
+--- @param entity Entity
+--- @param value number (int)
+--- @return void
+--- @overload fun(entity: Entity, value: number): void
+function SetEntityLodDist(entity, value) end
+
+    
+--- health >= 0
+--- 
+--- male ped ~= 100 - 200
+--- 
+--- female ped ~= 0 - 100
+--- 
+--- ```
+--- NativeDB Added Parameter 3: int p2
+--- ```
+---
+--- @hash [0x6B76DC1F3AE6E6A3](https://docs.fivem.net/natives/?_0x6B76DC1F3AE6E6A3)
+--- @param entity Entity
+--- @param health number (int)
+--- @return void
+--- @overload fun(entity: Entity, health: number): void
+function SetEntityHealth(entity, health) end
+
+    
+--- ```
+--- Sets a ped or an object totally invincible. It doesn't take any kind of damage. Peds will not ragdoll on explosions and the tazer animation won't apply either.  
+--- If you use this for a ped and you want Ragdoll to stay enabled, then do:  
+--- *(DWORD *)(pedAddress + 0x188) |= (1 << 9);  
+--- Use this if you want to get the invincibility status:  
+--- 	bool IsPedInvincible(Ped ped)  
+--- 	{  
+--- auto addr = getScriptHandleBaseAddress(ped);	  
+--- if (addr)  
+--- {  
+--- 	DWORD flag = *(DWORD *)(addr + 0x188);  
+--- 	return ((flag & (1 << 8)) != 0) || ((flag & (1 << 9)) != 0);  
+--- }  
+--- return false;  
+--- 	}  
+--- ```
+---
+--- @hash [0x3882114BDE571AD4](https://docs.fivem.net/natives/?_0x3882114BDE571AD4)
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+function SetEntityInvincible(entity, toggle) end
+
+    
+--- Set the heading of an entity in degrees also known as "Yaw".
+--- @usage SetEntityHeading(PlayerPedId(), 40.0
+--- @hash [0x8E2530AA8ADA980E](https://docs.fivem.net/natives/?_0x8E2530AA8ADA980E)
+--- @param entity Entity
+--- @param heading number (float)
+--- @return void
+--- @overload fun(entity: Entity, heading: number): void
+function SetEntityHeading(entity, heading) end
+
+    
+--- SetEntityMaxSpeed
+---
+--- @hash [0x0E46A3FCBDE2A1B1](https://docs.fivem.net/natives/?_0x0E46A3FCBDE2A1B1)
+--- @param entity Entity
+--- @param speed number (float)
+--- @return void
+--- @overload fun(entity: Entity, speed: number): void
+function SetEntityMaxSpeed(entity, speed) end
+
+    
 --- Sets the coordinates (world position) for a specified entity, offset by the radius of the entity on the Z axis.
 --- @usage local ped = PlayerPedId()
 --- local currentPos = GetEntityCoords(ped)
@@ -2316,39 +2449,24 @@ function N_0x2c2e3dc128f44309(entity, p1) end
 function SetEntityCoords(entity, xPos, yPos, zPos, alive, deadFlag, ragdollFlag, clearArea) end
 
     
---- Sets the coordinates (world position) for a specified entity.
+--- SetEntityLights
 ---
---- @hash [0x239A3351AC1DA385](https://docs.fivem.net/natives/?_0x239A3351AC1DA385)
---- @param entity Entity
---- @param xPos number (float)
---- @param yPos number (float)
---- @param zPos number (float)
---- @param alive boolean
---- @param deadFlag boolean
---- @param ragdollFlag boolean
---- @return void
---- @overload fun(entity: Entity, xPos: number, yPos: number, zPos: number, alive: boolean, deadFlag: boolean, ragdollFlag: boolean): void
-function SetEntityCoordsNoOffset(entity, xPos, yPos, zPos, alive, deadFlag, ragdollFlag) end
-
-    
---- SetEntityDynamic
----
---- @hash [0x1718DE8E3F2823CA](https://docs.fivem.net/natives/?_0x1718DE8E3F2823CA)
+--- @hash [0x7CFBA6A80BDF3874](https://docs.fivem.net/natives/?_0x7CFBA6A80BDF3874)
 --- @param entity Entity
 --- @param toggle boolean
 --- @return void
 --- @overload fun(entity: Entity, toggle: boolean): void
-function SetEntityDynamic(entity, toggle) end
+function SetEntityLights(entity, toggle) end
 
     
---- SetEntityHasGravity
+--- SetEntityRecordsCollisions
 ---
---- @hash [0x4A4722448F18EEF5](https://docs.fivem.net/natives/?_0x4A4722448F18EEF5)
+--- @hash [0x0A50A1EEDAD01E65](https://docs.fivem.net/natives/?_0x0A50A1EEDAD01E65)
 --- @param entity Entity
 --- @param toggle boolean
 --- @return void
 --- @overload fun(entity: Entity, toggle: boolean): void
-function SetEntityHasGravity(entity, toggle) end
+function SetEntityRecordsCollisions(entity, toggle) end
 
     
 --- SetEntityCoordsWithoutPlantsReset
@@ -2385,149 +2503,14 @@ function SetEntityCoordsWithoutPlantsReset(entity, xPos, yPos, zPos, alive, dead
 function SetEntityCoords_2(entity, xPos, yPos, zPos, alive, deadFlag, ragdollFlag, clearArea) end
 
     
---- Set the heading of an entity in degrees also known as "Yaw".
---- @usage SetEntityHeading(PlayerPedId(), 40.0
---- @hash [0x8E2530AA8ADA980E](https://docs.fivem.net/natives/?_0x8E2530AA8ADA980E)
---- @param entity Entity
---- @param heading number (float)
---- @return void
---- @overload fun(entity: Entity, heading: number): void
-function SetEntityHeading(entity, heading) end
-
-    
---- ```
---- Sets a ped or an object totally invincible. It doesn't take any kind of damage. Peds will not ragdoll on explosions and the tazer animation won't apply either.  
---- If you use this for a ped and you want Ragdoll to stay enabled, then do:  
---- *(DWORD *)(pedAddress + 0x188) |= (1 << 9);  
---- Use this if you want to get the invincibility status:  
---- 	bool IsPedInvincible(Ped ped)  
---- 	{  
---- auto addr = getScriptHandleBaseAddress(ped);	  
---- if (addr)  
---- {  
---- 	DWORD flag = *(DWORD *)(addr + 0x188);  
---- 	return ((flag & (1 << 8)) != 0) || ((flag & (1 << 9)) != 0);  
---- }  
---- return false;  
---- 	}  
---- ```
+--- SetEntityRenderScorched
 ---
---- @hash [0x3882114BDE571AD4](https://docs.fivem.net/natives/?_0x3882114BDE571AD4)
+--- @hash [0x730F5F8D3F0F2050](https://docs.fivem.net/natives/?_0x730F5F8D3F0F2050)
 --- @param entity Entity
 --- @param toggle boolean
 --- @return void
 --- @overload fun(entity: Entity, toggle: boolean): void
-function SetEntityInvincible(entity, toggle) end
-
-    
---- health >= 0
---- 
---- male ped ~= 100 - 200
---- 
---- female ped ~= 0 - 100
---- 
---- ```
---- NativeDB Added Parameter 3: int p2
---- ```
----
---- @hash [0x6B76DC1F3AE6E6A3](https://docs.fivem.net/natives/?_0x6B76DC1F3AE6E6A3)
---- @param entity Entity
---- @param health number (int)
---- @return void
---- @overload fun(entity: Entity, health: number): void
-function SetEntityHealth(entity, health) end
-
-    
---- SetEntityIsTargetPriority
----
---- @hash [0xEA02E132F5C68722](https://docs.fivem.net/natives/?_0xEA02E132F5C68722)
---- @param entity Entity
---- @param p1 boolean
---- @param p2 number (float)
---- @return void
---- @overload fun(entity: Entity, p1: boolean, p2: number): void
-function SetEntityIsTargetPriority(entity, p1, p2) end
-
-    
---- SetEntityLights
----
---- @hash [0x7CFBA6A80BDF3874](https://docs.fivem.net/natives/?_0x7CFBA6A80BDF3874)
---- @param entity Entity
---- @param toggle boolean
---- @return void
---- @overload fun(entity: Entity, toggle: boolean): void
-function SetEntityLights(entity, toggle) end
-
-    
---- Loads collision grid for an entity spawned outside of a player's loaded area. This allows peds to execute tasks rather than sit dormant because of a lack of a physics grid.
---- 
---- Certainly not the main usage of this native but when set to true for a Vehicle, it will prevent the vehicle to explode if it is spawned far away from the player.
---- 
---- ```
---- NativeDB Added Parameter 3: Any p2
---- ```
----
---- @hash [0x0DC7CABAB1E9B67E](https://docs.fivem.net/natives/?_0x0DC7CABAB1E9B67E)
---- @param entity Entity
---- @param toggle boolean
---- @return void
---- @overload fun(entity: Entity, toggle: boolean): void
-function SetEntityLoadCollisionFlag(entity, toggle) end
-
-    
---- ```
---- LOD distance can be 0 to 0xFFFF (higher values will result in 0xFFFF) as it is actually stored as a 16-bit value (aka uint16_t).  
---- ```
----
---- @hash [0x5927F96A78577363](https://docs.fivem.net/natives/?_0x5927F96A78577363)
---- @param entity Entity
---- @param value number (int)
---- @return void
---- @overload fun(entity: Entity, value: number): void
-function SetEntityLodDist(entity, value) end
-
-    
---- ```
---- For instance: ENTITY::SET_ENTITY_MAX_HEALTH(PLAYER::PLAYER_PED_ID(), 200); // director_mode.c4: 67849  
---- ```
----
---- @hash [0x166E7CF68597D8B5](https://docs.fivem.net/natives/?_0x166E7CF68597D8B5)
---- @param entity Entity
---- @param value number (int)
---- @return void
---- @overload fun(entity: Entity, value: number): void
-function SetEntityMaxHealth(entity, value) end
-
-    
---- SetEntityMaxSpeed
----
---- @hash [0x0E46A3FCBDE2A1B1](https://docs.fivem.net/natives/?_0x0E46A3FCBDE2A1B1)
---- @param entity Entity
---- @param speed number (float)
---- @return void
---- @overload fun(entity: Entity, speed: number): void
-function SetEntityMaxSpeed(entity, speed) end
-
-    
---- SetEntityMotionBlur
----
---- @hash [0x295D82A8559F9150](https://docs.fivem.net/natives/?_0x295D82A8559F9150)
---- @param entity Entity
---- @param toggle boolean
---- @return void
---- @overload fun(entity: Entity, toggle: boolean): void
-function SetEntityMotionBlur(entity, toggle) end
-
-    
---- SetEntityOnlyDamagedByRelationshipGroup
----
---- @hash [0x7022BD828FA0B082](https://docs.fivem.net/natives/?_0x7022BD828FA0B082)
---- @param entity Entity
---- @param p1 boolean
---- @param relationshipHash Hash
---- @return void
---- @overload fun(entity: Entity, p1: boolean, relationshipHash: Hash): void
-function SetEntityOnlyDamagedByRelationshipGroup(entity, p1, relationshipHash) end
+function SetEntityRenderScorched(entity, toggle) end
 
     
 --- ```
@@ -2543,6 +2526,58 @@ function SetEntityOnlyDamagedByRelationshipGroup(entity, p1, relationshipHash) e
 --- @return void
 --- @overload fun(entity1: Entity, entity2: Entity, thisFrameOnly: boolean): void
 function SetEntityNoCollisionEntity(entity1, entity2, thisFrameOnly) end
+
+    
+--- SetEntityOnlyDamagedByRelationshipGroup
+---
+--- @hash [0x7022BD828FA0B082](https://docs.fivem.net/natives/?_0x7022BD828FA0B082)
+--- @param entity Entity
+--- @param p1 boolean
+--- @param relationshipHash Hash
+--- @return void
+--- @overload fun(entity: Entity, p1: boolean, relationshipHash: Hash): void
+function SetEntityOnlyDamagedByRelationshipGroup(entity, p1, relationshipHash) end
+
+    
+--- SetEntityMotionBlur
+---
+--- @hash [0x295D82A8559F9150](https://docs.fivem.net/natives/?_0x295D82A8559F9150)
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+function SetEntityMotionBlur(entity, toggle) end
+
+    
+--- ```
+--- Example here: www.gtaforums.com/topic/830463-help-with-turning-lights-green-and-causing-peds-to-crash-into-each-other/#entry1068211340
+--- 0 = green
+--- 1 = red
+--- 2 = yellow
+--- 3 = reset changes
+--- changing lights may not change the behavior of vehicles
+--- ```
+---
+--- @hash [0x57C5DB656185EAC4](https://docs.fivem.net/natives/?_0x57C5DB656185EAC4)
+--- @param entity Entity
+--- @param state number (int)
+--- @return void
+--- @overload fun(entity: Entity, state: number): void
+function SetEntityTrafficlightOverride(entity, state) end
+
+    
+--- SetEntityRotation
+---
+--- @hash [0x8524A8B0171D5E07](https://docs.fivem.net/natives/?_0x8524A8B0171D5E07)
+--- @param entity Entity
+--- @param pitch number (float)
+--- @param roll number (float)
+--- @param yaw number (float)
+--- @param rotationOrder number (int)
+--- @param p5 boolean
+--- @return void
+--- @overload fun(entity: Entity, pitch: number, roll: number, yaw: number, rotationOrder: number, p5: boolean): void
+function SetEntityRotation(entity, pitch, roll, yaw, rotationOrder, p5) end
 
     
 --- ```
@@ -2576,84 +2611,58 @@ function SetEntityProofs(entity, bulletProof, fireProof, explosionProof, collisi
 function SetEntityOnlyDamagedByPlayer(entity, toggle) end
 
     
+--- Loads collision grid for an entity spawned outside of a player's loaded area. This allows peds to execute tasks rather than sit dormant because of a lack of a physics grid.
+--- 
+--- Certainly not the main usage of this native but when set to true for a Vehicle, it will prevent the vehicle to explode if it is spawned far away from the player.
+--- 
 --- ```
---- w is the correct parameter name!  
+--- NativeDB Added Parameter 3: Any p2
 --- ```
 ---
---- @hash [0x77B21BE7AC540F07](https://docs.fivem.net/natives/?_0x77B21BE7AC540F07)
---- @param entity Entity
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param w number (float)
---- @return void
---- @overload fun(entity: Entity, x: number, y: number, z: number, w: number): void
-function SetEntityQuaternion(entity, x, y, z, w) end
-
-    
---- SetEntityRecordsCollisions
----
---- @hash [0x0A50A1EEDAD01E65](https://docs.fivem.net/natives/?_0x0A50A1EEDAD01E65)
+--- @hash [0x0DC7CABAB1E9B67E](https://docs.fivem.net/natives/?_0x0DC7CABAB1E9B67E)
 --- @param entity Entity
 --- @param toggle boolean
 --- @return void
 --- @overload fun(entity: Entity, toggle: boolean): void
-function SetEntityRecordsCollisions(entity, toggle) end
+function SetEntityLoadCollisionFlag(entity, toggle) end
 
     
---- SetEntityRotation
+--- StopSynchronizedMapEntityAnim
 ---
---- @hash [0x8524A8B0171D5E07](https://docs.fivem.net/natives/?_0x8524A8B0171D5E07)
---- @param entity Entity
---- @param pitch number (float)
---- @param roll number (float)
---- @param yaw number (float)
---- @param rotationOrder number (int)
---- @param p5 boolean
---- @return void
---- @overload fun(entity: Entity, pitch: number, roll: number, yaw: number, rotationOrder: number, p5: boolean): void
-function SetEntityRotation(entity, pitch, roll, yaw, rotationOrder, p5) end
-
-    
---- SetEntityRenderScorched
----
---- @hash [0x730F5F8D3F0F2050](https://docs.fivem.net/natives/?_0x730F5F8D3F0F2050)
---- @param entity Entity
---- @param toggle boolean
---- @return void
---- @overload fun(entity: Entity, toggle: boolean): void
-function SetEntityRenderScorched(entity, toggle) end
+--- @hash [0x11E79CAB7183B6F5](https://docs.fivem.net/natives/?_0x11E79CAB7183B6F5)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 any
+--- @param p5 number (float)
+--- @return boolean
+--- @overload fun(p0: number, p1: number, p2: number, p3: number, p4: any, p5: number): boolean
+function StopSynchronizedMapEntityAnim(p0, p1, p2, p3, p4, p5) end
 
     
 --- ```
---- Note that the third parameter(denoted as z) is "up and down" with positive numbers encouraging upwards movement.
+--- This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.  
 --- ```
 ---
---- @hash [0x1C99BB7B6E96D16F](https://docs.fivem.net/natives/?_0x1C99BB7B6E96D16F)
---- @param entity Entity
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
+--- @hash [0x629BFA74418D6239](https://docs.fivem.net/natives/?_0x629BFA74418D6239)
+--- @param vehicle Vehicle (Vehicle*)
 --- @return void
---- @overload fun(entity: Entity, x: number, y: number, z: number): void
-function SetEntityVelocity(entity, x, y, z) end
+--- @overload fun(): Vehicle
+function SetVehicleAsNoLongerNeeded(vehicle) end
 
     
 --- ```
---- Example here: www.gtaforums.com/topic/830463-help-with-turning-lights-green-and-causing-peds-to-crash-into-each-other/#entry1068211340
---- 0 = green
---- 1 = red
---- 2 = yellow
---- 3 = reset changes
---- changing lights may not change the behavior of vehicles
+--- p1 sync task id?  
 --- ```
 ---
---- @hash [0x57C5DB656185EAC4](https://docs.fivem.net/natives/?_0x57C5DB656185EAC4)
+--- @hash [0x43D3807C077261E3](https://docs.fivem.net/natives/?_0x43D3807C077261E3)
 --- @param entity Entity
---- @param state number (int)
---- @return void
---- @overload fun(entity: Entity, state: number): void
-function SetEntityTrafficlightOverride(entity, state) end
+--- @param p1 number (float)
+--- @param p2 boolean
+--- @return boolean
+--- @overload fun(entity: Entity, p1: number, p2: boolean): boolean
+function StopSynchronizedEntityAnim(entity, p1, p2) end
 
     
 --- Toggle the visibility of a given entity.
@@ -2671,33 +2680,22 @@ function SetEntityVisible(entity, toggle, unk) end
 --- This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.  
 --- ```
 ---
---- @hash [0x2595DD4236549CE3](https://docs.fivem.net/natives/?_0x2595DD4236549CE3)
---- @param ped Ped (Ped*)
---- @return void
---- @overload fun(): Ped
-function SetPedAsNoLongerNeeded(ped) end
-
-    
---- ```
---- This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.  
---- ```
----
---- @hash [0x629BFA74418D6239](https://docs.fivem.net/natives/?_0x629BFA74418D6239)
---- @param vehicle Vehicle (Vehicle*)
---- @return void
---- @overload fun(): Vehicle
-function SetVehicleAsNoLongerNeeded(vehicle) end
-
-    
---- ```
---- This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.  
---- ```
----
 --- @hash [0x3AE22DEB5BA5A3E6](https://docs.fivem.net/natives/?_0x3AE22DEB5BA5A3E6)
 --- @param object Object (Object*)
 --- @return void
 --- @overload fun(): Object
 function SetObjectAsNoLongerNeeded(object) end
+
+    
+--- ```
+--- This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.  
+--- ```
+---
+--- @hash [0x2595DD4236549CE3](https://docs.fivem.net/natives/?_0x2595DD4236549CE3)
+--- @param ped Ped (Ped*)
+--- @return void
+--- @overload fun(): Ped
+function SetPedAsNoLongerNeeded(ped) end
 
     
 --- ```
@@ -2715,30 +2713,32 @@ function StopEntityAnim(entity, animation, animGroup, p3) end
 
     
 --- ```
---- p1 sync task id?  
+--- Note that the third parameter(denoted as z) is "up and down" with positive numbers encouraging upwards movement.
 --- ```
 ---
---- @hash [0x43D3807C077261E3](https://docs.fivem.net/natives/?_0x43D3807C077261E3)
+--- @hash [0x1C99BB7B6E96D16F](https://docs.fivem.net/natives/?_0x1C99BB7B6E96D16F)
 --- @param entity Entity
---- @param p1 number (float)
---- @param p2 boolean
---- @return boolean
---- @overload fun(entity: Entity, p1: number, p2: boolean): boolean
-function StopSynchronizedEntityAnim(entity, p1, p2) end
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return void
+--- @overload fun(entity: Entity, x: number, y: number, z: number): void
+function SetEntityVelocity(entity, x, y, z) end
 
     
---- StopSynchronizedMapEntityAnim
+--- ```
+--- w is the correct parameter name!  
+--- ```
 ---
---- @hash [0x11E79CAB7183B6F5](https://docs.fivem.net/natives/?_0x11E79CAB7183B6F5)
---- @param p0 number (float)
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 any
---- @param p5 number (float)
---- @return boolean
---- @overload fun(p0: number, p1: number, p2: number, p3: number, p4: any, p5: number): boolean
-function StopSynchronizedMapEntityAnim(p0, p1, p2, p3, p4, p5) end
+--- @hash [0x77B21BE7AC540F07](https://docs.fivem.net/natives/?_0x77B21BE7AC540F07)
+--- @param entity Entity
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param w number (float)
+--- @return void
+--- @overload fun(entity: Entity, x: number, y: number, z: number, w: number): void
+function SetEntityQuaternion(entity, x, y, z, w) end
 
     
 --- WouldEntityBeOccluded

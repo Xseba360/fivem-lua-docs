@@ -1,4 +1,96 @@
 
+--- ```
+--- Returns TRUE if it found something. FALSE if not.  
+--- ```
+---
+--- @hash [0x352A9F6BCF90081F](https://docs.fivem.net/natives/?_0x352A9F6BCF90081F)
+--- @param outPosition Vector3 (Vector3*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return boolean
+--- @overload fun(x: number, y: number, z: number): boolean, Vector3
+function GetClosestFirePos(outPosition, x, y, z) end
+
+    
+--- See [`IS_POINT_IN_ANGLED_AREA`](https://docs.fivem.net/natives/?_0x2A70BAE8883E4C81) for the definition of an angled area.
+---
+--- @hash [0xA079A6C51525DC4B](https://docs.fivem.net/natives/?_0xA079A6C51525DC4B)
+--- @param explosionType number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param width number (float)
+--- @return boolean
+--- @overload fun(explosionType: number, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, width: number): boolean
+function IsExplosionInAngledArea(explosionType, x1, y1, z1, x2, y2, z2, width) end
+
+    
+--- AddOwnedExplosion
+---
+--- @hash [0x172AA1B624FA1013](https://docs.fivem.net/natives/?_0x172AA1B624FA1013)
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param explosionType number (int)
+--- @param damageScale number (float)
+--- @param isAudible boolean
+--- @param isInvisible boolean
+--- @param cameraShake number (float)
+--- @return void
+--- @overload fun(ped: Ped, x: number, y: number, z: number, explosionType: number, damageScale: number, isAudible: boolean, isInvisible: boolean, cameraShake: number): void
+function AddOwnedExplosion(ped, x, y, z, explosionType, damageScale, isAudible, isInvisible, cameraShake) end
+
+    
+--- IsExplosionActiveInArea
+---
+--- @hash [0x6070104B699B2EF4](https://docs.fivem.net/natives/?_0x6070104B699B2EF4)
+--- @param explosionType number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @return boolean
+--- @overload fun(explosionType: number, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number): boolean
+function IsExplosionActiveInArea(explosionType, x1, y1, z1, x2, y2, z2) end
+
+    
+--- # New Name: IsExplosionActiveInArea
+--- IsExplosionActiveInArea
+---
+--- @hash [0x6070104B699B2EF4](https://docs.fivem.net/natives/?_0x6070104B699B2EF4)
+--- @param explosionType number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @return boolean
+--- @overload fun(explosionType: number, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number): boolean
+--- @deprecated
+function N_0x6070104b699b2ef4(explosionType, x1, y1, z1, x2, y2, z2) end
+
+    
+--- SET_FIRE_\*
+--- 
+--- ```
+--- NativeDB Introduced: v1734
+--- ```
+---
+--- @hash [0x8F390AC4155099BA](https://docs.fivem.net/natives/?_0x8F390AC4155099BA)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+function SetFireSpreadRate(p0) end
+
+    
 --- AddExplosionWithUserVfx
 ---
 --- @hash [0x36DD3FE58B5E5212](https://docs.fivem.net/natives/?_0x36DD3FE58B5E5212)
@@ -33,6 +125,77 @@ function AddExplosionWithUserVfx(x, y, z, explosionType, explosionFx, damageScal
 --- @overload fun(x: number, y: number, z: number, explosionType: number, explosionFx: Hash, damageScale: number, isAudible: boolean, isInvisible: boolean, cameraShake: number): void
 --- @deprecated
 function AddSpecfxExplosion(x, y, z, explosionType, explosionFx, damageScale, isAudible, isInvisible, cameraShake) end
+
+    
+--- RemoveScriptFire
+---
+--- @hash [0x7FF548385680673F](https://docs.fivem.net/natives/?_0x7FF548385680673F)
+--- @param fireHandle FireId
+--- @return void
+--- @overload fun(fireHandle: FireId): void
+function RemoveScriptFire(fireHandle) end
+
+    
+--- ```
+--- Returns a handle to the first entity within the a circle spawned inside the 2 points from a radius.
+--- ```
+---
+--- @hash [0x14BA4BA137AF6CEC](https://docs.fivem.net/natives/?_0x14BA4BA137AF6CEC)
+--- @param explosionType number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param radius number (float)
+--- @return Entity
+--- @overload fun(explosionType: number, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, radius: number): Entity
+function GetEntityInsideExplosionArea(explosionType, x1, y1, z1, x2, y2, z2, radius) end
+
+    
+--- # New Name: GetEntityInsideExplosionArea
+--- ```
+--- Returns a handle to the first entity within the a circle spawned inside the 2 points from a radius.
+--- ```
+---
+--- @hash [0x14BA4BA137AF6CEC](https://docs.fivem.net/natives/?_0x14BA4BA137AF6CEC)
+--- @param explosionType number (int)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param radius number (float)
+--- @return Entity
+--- @overload fun(explosionType: number, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, radius: number): Entity
+--- @deprecated
+function GetPedInsideExplosionArea(explosionType, x1, y1, z1, x2, y2, z2, radius) end
+
+    
+--- IsEntityOnFire
+---
+--- @hash [0x28D3FED7190D3A0B](https://docs.fivem.net/natives/?_0x28D3FED7190D3A0B)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function IsEntityOnFire(entity) end
+
+    
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0xB3CD51E3DB86F176](https://docs.fivem.net/natives/?_0xB3CD51E3DB86F176)
+--- @param explosionType number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @return Entity
+--- @overload fun(explosionType: number, x: number, y: number, z: number, radius: number): Entity
+function GetEntityInsideExplosionSphere(explosionType, x, y, z, radius) end
 
     
 --- ```
@@ -149,75 +312,6 @@ function AddSpecfxExplosion(x, y, z, explosionType, explosionFx, damageScale, is
 function AddExplosion(x, y, z, explosionType, damageScale, isAudible, isInvisible, cameraShake) end
 
     
---- AddOwnedExplosion
----
---- @hash [0x172AA1B624FA1013](https://docs.fivem.net/natives/?_0x172AA1B624FA1013)
---- @param ped Ped
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param explosionType number (int)
---- @param damageScale number (float)
---- @param isAudible boolean
---- @param isInvisible boolean
---- @param cameraShake number (float)
---- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, explosionType: number, damageScale: number, isAudible: boolean, isInvisible: boolean, cameraShake: number): void
-function AddOwnedExplosion(ped, x, y, z, explosionType, damageScale, isAudible, isInvisible, cameraShake) end
-
-    
---- ```
---- Returns a handle to the first entity within the a circle spawned inside the 2 points from a radius.
---- ```
----
---- @hash [0x14BA4BA137AF6CEC](https://docs.fivem.net/natives/?_0x14BA4BA137AF6CEC)
---- @param explosionType number (int)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param radius number (float)
---- @return Entity
---- @overload fun(explosionType: number, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, radius: number): Entity
-function GetEntityInsideExplosionArea(explosionType, x1, y1, z1, x2, y2, z2, radius) end
-
-    
---- # New Name: GetEntityInsideExplosionArea
---- ```
---- Returns a handle to the first entity within the a circle spawned inside the 2 points from a radius.
---- ```
----
---- @hash [0x14BA4BA137AF6CEC](https://docs.fivem.net/natives/?_0x14BA4BA137AF6CEC)
---- @param explosionType number (int)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param radius number (float)
---- @return Entity
---- @overload fun(explosionType: number, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, radius: number): Entity
---- @deprecated
-function GetPedInsideExplosionArea(explosionType, x1, y1, z1, x2, y2, z2, radius) end
-
-    
---- ```
---- Returns TRUE if it found something. FALSE if not.  
---- ```
----
---- @hash [0x352A9F6BCF90081F](https://docs.fivem.net/natives/?_0x352A9F6BCF90081F)
---- @param outPosition Vector3 (Vector3*)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @return boolean
---- @overload fun(x: number, y: number, z: number): boolean, Vector3
-function GetClosestFirePos(outPosition, x, y, z) end
-
-    
 --- GetNumberOfFiresInRange
 ---
 --- @hash [0x50CAD495A460B305](https://docs.fivem.net/natives/?_0x50CAD495A460B305)
@@ -228,100 +322,6 @@ function GetClosestFirePos(outPosition, x, y, z) end
 --- @return number
 --- @overload fun(x: number, y: number, z: number, radius: number): number
 function GetNumberOfFiresInRange(x, y, z, radius) end
-
-    
---- ```
---- NativeDB Introduced: v1290
---- ```
----
---- @hash [0xB3CD51E3DB86F176](https://docs.fivem.net/natives/?_0xB3CD51E3DB86F176)
---- @param explosionType number (int)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @return Entity
---- @overload fun(explosionType: number, x: number, y: number, z: number, radius: number): Entity
-function GetEntityInsideExplosionSphere(explosionType, x, y, z, radius) end
-
-    
---- IsExplosionActiveInArea
----
---- @hash [0x6070104B699B2EF4](https://docs.fivem.net/natives/?_0x6070104B699B2EF4)
---- @param explosionType number (int)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @return boolean
---- @overload fun(explosionType: number, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number): boolean
-function IsExplosionActiveInArea(explosionType, x1, y1, z1, x2, y2, z2) end
-
-    
---- # New Name: IsExplosionActiveInArea
---- IsExplosionActiveInArea
----
---- @hash [0x6070104B699B2EF4](https://docs.fivem.net/natives/?_0x6070104B699B2EF4)
---- @param explosionType number (int)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @return boolean
---- @overload fun(explosionType: number, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number): boolean
---- @deprecated
-function N_0x6070104b699b2ef4(explosionType, x1, y1, z1, x2, y2, z2) end
-
-    
---- IsEntityOnFire
----
---- @hash [0x28D3FED7190D3A0B](https://docs.fivem.net/natives/?_0x28D3FED7190D3A0B)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function IsEntityOnFire(entity) end
-
-    
---- IsExplosionInSphere
----
---- @hash [0xAB0F816885B0E483](https://docs.fivem.net/natives/?_0xAB0F816885B0E483)
---- @param explosionType number (int)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @return boolean
---- @overload fun(explosionType: number, x: number, y: number, z: number, radius: number): boolean
-function IsExplosionInSphere(explosionType, x, y, z, radius) end
-
-    
---- See [`IS_POINT_IN_ANGLED_AREA`](https://docs.fivem.net/natives/?_0x2A70BAE8883E4C81) for the definition of an angled area.
----
---- @hash [0xA079A6C51525DC4B](https://docs.fivem.net/natives/?_0xA079A6C51525DC4B)
---- @param explosionType number (int)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param width number (float)
---- @return boolean
---- @overload fun(explosionType: number, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, width: number): boolean
-function IsExplosionInAngledArea(explosionType, x1, y1, z1, x2, y2, z2, width) end
-
-    
---- RemoveScriptFire
----
---- @hash [0x7FF548385680673F](https://docs.fivem.net/natives/?_0x7FF548385680673F)
---- @param fireHandle FireId
---- @return void
---- @overload fun(fireHandle: FireId): void
-function RemoveScriptFire(fireHandle) end
 
     
 --- IsExplosionInArea
@@ -339,26 +339,25 @@ function RemoveScriptFire(fireHandle) end
 function IsExplosionInArea(explosionType, x1, y1, z1, x2, y2, z2) end
 
     
---- StartEntityFire
+--- StopEntityFire
 ---
---- @hash [0xF6A9D9708F6F23DF](https://docs.fivem.net/natives/?_0xF6A9D9708F6F23DF)
+--- @hash [0x7F0DD2EBBB651AFF](https://docs.fivem.net/natives/?_0x7F0DD2EBBB651AFF)
 --- @param entity Entity
---- @return FireId
---- @overload fun(entity: Entity): FireId
-function StartEntityFire(entity) end
+--- @return void
+--- @overload fun(entity: Entity): void
+function StopEntityFire(entity) end
 
     
---- SET_FIRE_\*
---- 
---- ```
---- NativeDB Introduced: v1734
---- ```
+--- StopFireInRange
 ---
---- @hash [0x8F390AC4155099BA](https://docs.fivem.net/natives/?_0x8F390AC4155099BA)
---- @param p0 number (float)
+--- @hash [0x056A8A219B8E829F](https://docs.fivem.net/natives/?_0x056A8A219B8E829F)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
 --- @return void
---- @overload fun(p0: number): void
-function SetFireSpreadRate(p0) end
+--- @overload fun(x: number, y: number, z: number, radius: number): void
+function StopFireInRange(x, y, z, radius) end
 
     
 --- ```
@@ -379,24 +378,25 @@ function SetFireSpreadRate(p0) end
 function StartScriptFire(X, Y, Z, maxChildren, isGasFire) end
 
     
---- StopFireInRange
+--- IsExplosionInSphere
 ---
---- @hash [0x056A8A219B8E829F](https://docs.fivem.net/natives/?_0x056A8A219B8E829F)
+--- @hash [0xAB0F816885B0E483](https://docs.fivem.net/natives/?_0xAB0F816885B0E483)
+--- @param explosionType number (int)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @return void
---- @overload fun(x: number, y: number, z: number, radius: number): void
-function StopFireInRange(x, y, z, radius) end
+--- @return boolean
+--- @overload fun(explosionType: number, x: number, y: number, z: number, radius: number): boolean
+function IsExplosionInSphere(explosionType, x, y, z, radius) end
 
     
---- StopEntityFire
+--- StartEntityFire
 ---
---- @hash [0x7F0DD2EBBB651AFF](https://docs.fivem.net/natives/?_0x7F0DD2EBBB651AFF)
+--- @hash [0xF6A9D9708F6F23DF](https://docs.fivem.net/natives/?_0xF6A9D9708F6F23DF)
 --- @param entity Entity
---- @return void
---- @overload fun(entity: Entity): void
-function StopEntityFire(entity) end
+--- @return FireId
+--- @overload fun(entity: Entity): FireId
+function StartEntityFire(entity) end
 
     

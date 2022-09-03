@@ -8,6 +8,16 @@
 function CanPlayerStartCommerceSession(playerSrc) end
 
     
+--- DropPlayer
+---
+--- @hash [0xBA0613E1](https://docs.fivem.net/natives/?_0xBA0613E1)
+--- @param playerSrc string (char*)
+--- @param reason string (char*)
+--- @return void
+--- @overload fun(playerSrc: string, reason: string): void
+function DropPlayer(playerSrc, reason) end
+
+    
 --- Nonsynchronous [DELETE_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x7389B5DF) operation; see [FLUSH_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x5240DA5A).
 ---
 --- @hash [0x4152C90](https://docs.fivem.net/natives/?_0x4152C90)
@@ -17,14 +27,13 @@ function CanPlayerStartCommerceSession(playerSrc) end
 function DeleteResourceKvpNoSync(key) end
 
     
---- Requests whether or not the player owns the specified SKU.
+--- EnableEnhancedHostSupport
 ---
---- @hash [0x167ABA27](https://docs.fivem.net/natives/?_0x167ABA27)
---- @param playerSrc string (char*)
---- @param skuId number (int)
---- @return boolean
---- @overload fun(playerSrc: string, skuId: number): boolean
-function DoesPlayerOwnSku(playerSrc, skuId) end
+--- @hash [0xF97B1C93](https://docs.fivem.net/natives/?_0xF97B1C93)
+--- @param enabled boolean
+--- @return void
+--- @overload fun(enabled: boolean): void
+function EnableEnhancedHostSupport(enabled) end
 
     
 --- Requests whether or not the player owns the specified package.
@@ -37,32 +46,14 @@ function DoesPlayerOwnSku(playerSrc, skuId) end
 function DoesPlayerOwnSkuExt(playerSrc, skuId) end
 
     
---- DropPlayer
+--- Requests whether or not the player owns the specified SKU.
 ---
---- @hash [0xBA0613E1](https://docs.fivem.net/natives/?_0xBA0613E1)
+--- @hash [0x167ABA27](https://docs.fivem.net/natives/?_0x167ABA27)
 --- @param playerSrc string (char*)
---- @param reason string (char*)
---- @return void
---- @overload fun(playerSrc: string, reason: string): void
-function DropPlayer(playerSrc, reason) end
-
-    
---- FlagServerAsPrivate
----
---- @hash [0x13B6855D](https://docs.fivem.net/natives/?_0x13B6855D)
---- @param private_ boolean
---- @return void
---- @overload fun(private_: boolean): void
-function FlagServerAsPrivate(private_) end
-
-    
---- GetAirDragMultiplierForPlayersVehicle
----
---- @hash [0x62FC38D0](https://docs.fivem.net/natives/?_0x62FC38D0)
---- @param playerSrc string (char*)
---- @return number
---- @overload fun(playerSrc: string): number
-function GetAirDragMultiplierForPlayersVehicle(playerSrc) end
+--- @param skuId number (int)
+--- @return boolean
+--- @overload fun(playerSrc: string, skuId: number): boolean
+function DoesPlayerOwnSku(playerSrc, skuId) end
 
     
 --- Nonsynchronous operations will not wait for a disk/filesystem flush before returning from a write or delete call. They will be much faster than their synchronous counterparts (e.g., bulk operations), however, a system crash may lose the data to some recent operations.
@@ -84,27 +75,56 @@ function GetAirDragMultiplierForPlayersVehicle(playerSrc) end
 function FlushResourceKvp() end
 
     
---- EnableEnhancedHostSupport
----
---- @hash [0xF97B1C93](https://docs.fivem.net/natives/?_0xF97B1C93)
---- @param enabled boolean
---- @return void
---- @overload fun(enabled: boolean): void
-function EnableEnhancedHostSupport(enabled) end
-
-    
---- Returns all object handles known to the server.
+--- Returns all vehicle handles known to the server.
 --- The data returned adheres to the following layout:
 --- 
 --- ```
 --- [127, 42, 13, 37]
 --- ```
 ---
---- @hash [0x6886C3FE](https://docs.fivem.net/natives/?_0x6886C3FE)
+--- @hash [0x332169F5](https://docs.fivem.net/natives/?_0x332169F5)
 ---
---- @return Object[]
---- @overload fun(): Object[]
-function GetAllObjects() end
+--- @return Vehicle[]
+--- @overload fun(): Vehicle[]
+function GetAllVehicles() end
+
+    
+--- GetAirDragMultiplierForPlayersVehicle
+---
+--- @hash [0x62FC38D0](https://docs.fivem.net/natives/?_0x62FC38D0)
+--- @param playerSrc string (char*)
+--- @return number
+--- @overload fun(playerSrc: string): number
+function GetAirDragMultiplierForPlayersVehicle(playerSrc) end
+
+    
+--- Gets the routing bucket for the specified entity.
+--- 
+--- Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
+---
+--- @hash [0xED4B0486](https://docs.fivem.net/natives/?_0xED4B0486)
+--- @param entity Entity
+--- @return number
+--- @overload fun(entity: Entity): number
+function GetEntityRoutingBucket(entity) end
+
+    
+--- GetHostId
+---
+--- @hash [0x5F70F5A3](https://docs.fivem.net/natives/?_0x5F70F5A3)
+---
+--- @return string
+--- @overload fun(): string
+function GetHostId() end
+
+    
+--- FlagServerAsPrivate
+---
+--- @hash [0x13B6855D](https://docs.fivem.net/natives/?_0x13B6855D)
+--- @param private_ boolean
+--- @return void
+--- @overload fun(private_: boolean): void
+function FlagServerAsPrivate(private_) end
 
     
 --- Returns all peds handles known to the server.
@@ -121,42 +141,18 @@ function GetAllObjects() end
 function GetAllPeds() end
 
     
---- Gets the current camera rotation for a specified player. This native is used server side when using OneSync.
----
---- @hash [0x433C765D](https://docs.fivem.net/natives/?_0x433C765D)
---- @param playerSrc string (char*)
---- @return Vector3
---- @overload fun(playerSrc: string): Vector3
-function GetPlayerCameraRotation(playerSrc) end
-
-    
---- GetPlayerEndpoint
----
---- @hash [0xFEE404F9](https://docs.fivem.net/natives/?_0xFEE404F9)
---- @param playerSrc string (char*)
---- @return string
---- @overload fun(playerSrc: string): string
-function GetPlayerEndpoint(playerSrc) end
-
-    
---- Gets the routing bucket for the specified entity.
+--- Returns all object handles known to the server.
+--- The data returned adheres to the following layout:
 --- 
---- Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
+--- ```
+--- [127, 42, 13, 37]
+--- ```
 ---
---- @hash [0xED4B0486](https://docs.fivem.net/natives/?_0xED4B0486)
---- @param entity Entity
---- @return number
---- @overload fun(entity: Entity): number
-function GetEntityRoutingBucket(entity) end
-
-    
---- Gets the stage of the peds scripted task.
+--- @hash [0x6886C3FE](https://docs.fivem.net/natives/?_0x6886C3FE)
 ---
---- @hash [0x44B0E5E2](https://docs.fivem.net/natives/?_0x44B0E5E2)
---- @param ped Ped
---- @return number
---- @overload fun(ped: Ped): number
-function GetPedScriptTaskStage(ped) end
+--- @return Object[]
+--- @overload fun(): Object[]
+function GetAllObjects() end
 
     
 --- Returns the current console output buffer.
@@ -168,18 +164,31 @@ function GetPedScriptTaskStage(ped) end
 function GetConsoleBuffer() end
 
     
---- Returns all vehicle handles known to the server.
---- The data returned adheres to the following layout:
---- 
---- ```
---- [127, 42, 13, 37]
---- ```
+--- GetNumPlayerIndices
 ---
---- @hash [0x332169F5](https://docs.fivem.net/natives/?_0x332169F5)
+--- @hash [0x63D13184](https://docs.fivem.net/natives/?_0x63D13184)
 ---
---- @return Vehicle[]
---- @overload fun(): Vehicle[]
-function GetAllVehicles() end
+--- @return number
+--- @overload fun(): number
+function GetNumPlayerIndices() end
+
+    
+--- GetNumPlayerTokens
+---
+--- @hash [0x619E4A3D](https://docs.fivem.net/natives/?_0x619E4A3D)
+--- @param playerSrc string (char*)
+--- @return number
+--- @overload fun(playerSrc: string): number
+function GetNumPlayerTokens(playerSrc) end
+
+    
+--- GetPasswordHash
+---
+--- @hash [0x23473EA4](https://docs.fivem.net/natives/?_0x23473EA4)
+--- @param password string (char*)
+--- @return string
+--- @overload fun(password: string): string
+function GetPasswordHash(password) end
 
     
 --- Gets the script task command currently assigned to the ped.
@@ -202,6 +211,61 @@ function GetPedScriptTaskCommand(ped) end
 function GetPedSpecificTaskType(ped, index) end
 
     
+--- Gets the stage of the peds scripted task.
+---
+--- @hash [0x44B0E5E2](https://docs.fivem.net/natives/?_0x44B0E5E2)
+--- @param ped Ped
+--- @return number
+--- @overload fun(ped: Ped): number
+function GetPedScriptTaskStage(ped) end
+
+    
+--- GetPlayerGuid
+---
+--- @hash [0xE52D9680](https://docs.fivem.net/natives/?_0xE52D9680)
+--- @param playerSrc string (char*)
+--- @return string
+--- @overload fun(playerSrc: string): string
+function GetPlayerGuid(playerSrc) end
+
+    
+--- GetPlayerIdentifier
+---
+--- @hash [0x7302DBCF](https://docs.fivem.net/natives/?_0x7302DBCF)
+--- @param playerSrc string (char*)
+--- @param identifier number (int)
+--- @return string
+--- @overload fun(playerSrc: string, identifier: number): string
+function GetPlayerIdentifier(playerSrc, identifier) end
+
+    
+--- GetPlayerEndpoint
+---
+--- @hash [0xFEE404F9](https://docs.fivem.net/natives/?_0xFEE404F9)
+--- @param playerSrc string (char*)
+--- @return string
+--- @overload fun(playerSrc: string): string
+function GetPlayerEndpoint(playerSrc) end
+
+    
+--- GetPlayerMaxHealth
+---
+--- @hash [0x8154E470](https://docs.fivem.net/natives/?_0x8154E470)
+--- @param playerSrc string (char*)
+--- @return number
+--- @overload fun(playerSrc: string): number
+function GetPlayerMaxHealth(playerSrc) end
+
+    
+--- GetPlayerPing
+---
+--- @hash [0xFF1290D4](https://docs.fivem.net/natives/?_0xFF1290D4)
+--- @param playerSrc string (char*)
+--- @return number
+--- @overload fun(playerSrc: string): number
+function GetPlayerPing(playerSrc) end
+
+    
 --- GetNumPlayerIdentifiers
 ---
 --- @hash [0xFF7F66AB](https://docs.fivem.net/natives/?_0xFF7F66AB)
@@ -211,31 +275,13 @@ function GetPedSpecificTaskType(ped, index) end
 function GetNumPlayerIdentifiers(playerSrc) end
 
     
---- GetHostId
+--- GetPedDesiredHeading
 ---
---- @hash [0x5F70F5A3](https://docs.fivem.net/natives/?_0x5F70F5A3)
----
---- @return string
---- @overload fun(): string
-function GetHostId() end
-
-    
---- Get the last entity that damaged the ped. This native is used server side when using OneSync.
----
---- @hash [0x535DB43F](https://docs.fivem.net/natives/?_0x535DB43F)
+--- @hash [0xC182F76E](https://docs.fivem.net/natives/?_0xC182F76E)
 --- @param ped Ped
---- @return Entity
---- @overload fun(ped: Ped): Entity
-function GetPedSourceOfDamage(ped) end
-
-    
---- GetNumPlayerIndices
----
---- @hash [0x63D13184](https://docs.fivem.net/natives/?_0x63D13184)
----
 --- @return number
---- @overload fun(): number
-function GetNumPlayerIndices() end
+--- @overload fun(ped: Ped): number
+function GetPedDesiredHeading(ped) end
 
     
 --- GetPlayerFromIndex
@@ -247,41 +293,31 @@ function GetNumPlayerIndices() end
 function GetPlayerFromIndex(index) end
 
     
---- GetNumPlayerTokens
+--- Gets the current camera rotation for a specified player. This native is used server side when using OneSync.
 ---
---- @hash [0x619E4A3D](https://docs.fivem.net/natives/?_0x619E4A3D)
+--- @hash [0x433C765D](https://docs.fivem.net/natives/?_0x433C765D)
 --- @param playerSrc string (char*)
+--- @return Vector3
+--- @overload fun(playerSrc: string): Vector3
+function GetPlayerCameraRotation(playerSrc) end
+
+    
+--- Get the last entity that damaged the ped. This native is used server side when using OneSync.
+---
+--- @hash [0x535DB43F](https://docs.fivem.net/natives/?_0x535DB43F)
+--- @param ped Ped
+--- @return Entity
+--- @overload fun(ped: Ped): Entity
+function GetPedSourceOfDamage(ped) end
+
+    
+--- GetTrainCarriageIndex
+---
+--- @hash [0x4B8285CF](https://docs.fivem.net/natives/?_0x4B8285CF)
+--- @param train Vehicle
 --- @return number
---- @overload fun(playerSrc: string): number
-function GetNumPlayerTokens(playerSrc) end
-
-    
---- GetPasswordHash
----
---- @hash [0x23473EA4](https://docs.fivem.net/natives/?_0x23473EA4)
---- @param password string (char*)
---- @return string
---- @overload fun(password: string): string
-function GetPasswordHash(password) end
-
-    
---- GetPlayerLastMsg
----
---- @hash [0x427E8E6A](https://docs.fivem.net/natives/?_0x427E8E6A)
---- @param playerSrc string (char*)
---- @return number
---- @overload fun(playerSrc: string): number
-function GetPlayerLastMsg(playerSrc) end
-
-    
---- GetPlayerIdentifier
----
---- @hash [0x7302DBCF](https://docs.fivem.net/natives/?_0x7302DBCF)
---- @param playerSrc string (char*)
---- @param identifier number (int)
---- @return string
---- @overload fun(playerSrc: string, identifier: number): string
-function GetPlayerIdentifier(playerSrc, identifier) end
+--- @overload fun(train: Vehicle): number
+function GetTrainCarriageIndex(train) end
 
     
 --- Gets the routing bucket for the specified player.
@@ -295,59 +331,13 @@ function GetPlayerIdentifier(playerSrc, identifier) end
 function GetPlayerRoutingBucket(playerSrc) end
 
     
---- GetPlayerMaxHealth
+--- GetPlayerLastMsg
 ---
---- @hash [0x8154E470](https://docs.fivem.net/natives/?_0x8154E470)
+--- @hash [0x427E8E6A](https://docs.fivem.net/natives/?_0x427E8E6A)
 --- @param playerSrc string (char*)
 --- @return number
 --- @overload fun(playerSrc: string): number
-function GetPlayerMaxHealth(playerSrc) end
-
-    
---- GetPlayerGuid
----
---- @hash [0xE52D9680](https://docs.fivem.net/natives/?_0xE52D9680)
---- @param playerSrc string (char*)
---- @return string
---- @overload fun(playerSrc: string): string
-function GetPlayerGuid(playerSrc) end
-
-    
---- Returns the physical on-disk path of the specified resource.
----
---- @hash [0x61DCF017](https://docs.fivem.net/natives/?_0x61DCF017)
---- @param resourceName string (char*)
---- @return string
---- @overload fun(resourceName: string): string
-function GetResourcePath(resourceName) end
-
-    
---- GetVehicleDashboardColour
----
---- @hash [0xA0DBD08D](https://docs.fivem.net/natives/?_0xA0DBD08D)
---- @param vehicle Vehicle
---- @param color number (int*)
---- @return void
---- @overload fun(vehicle: Vehicle): number
-function GetVehicleDashboardColour(vehicle, color) end
-
-    
---- GetPlayerPing
----
---- @hash [0xFF1290D4](https://docs.fivem.net/natives/?_0xFF1290D4)
---- @param playerSrc string (char*)
---- @return number
---- @overload fun(playerSrc: string): number
-function GetPlayerPing(playerSrc) end
-
-    
---- GetVehicleRadioStationIndex
----
---- @hash [0x57037960](https://docs.fivem.net/natives/?_0x57037960)
---- @param vehicle Vehicle
---- @return number
---- @overload fun(vehicle: Vehicle): number
-function GetVehicleRadioStationIndex(vehicle) end
+function GetPlayerLastMsg(playerSrc) end
 
     
 --- ```
@@ -364,13 +354,14 @@ function GetVehicleRadioStationIndex(vehicle) end
 function GetPlayerTimeInPursuit(playerSrc, lastPursuit) end
 
     
---- GetPedDesiredHeading
+--- Gets a player's token. Tokens can be used to enhance banning logic, however are specific to a server.
 ---
---- @hash [0xC182F76E](https://docs.fivem.net/natives/?_0xC182F76E)
---- @param ped Ped
---- @return number
---- @overload fun(ped: Ped): number
-function GetPedDesiredHeading(ped) end
+--- @hash [0x54C06897](https://docs.fivem.net/natives/?_0x54C06897)
+--- @param playerSrc string (char*)
+--- @param index number (int)
+--- @return string
+--- @overload fun(playerSrc: string, index: number): string
+function GetPlayerToken(playerSrc, index) end
 
     
 --- GetVehicleDoorStatus
@@ -382,13 +373,31 @@ function GetPedDesiredHeading(ped) end
 function GetVehicleDoorStatus(vehicle) end
 
     
---- GetTrainCarriageIndex
+--- Returns the physical on-disk path of the specified resource.
 ---
---- @hash [0x4B8285CF](https://docs.fivem.net/natives/?_0x4B8285CF)
+--- @hash [0x61DCF017](https://docs.fivem.net/natives/?_0x61DCF017)
+--- @param resourceName string (char*)
+--- @return string
+--- @overload fun(resourceName: string): string
+function GetResourcePath(resourceName) end
+
+    
+--- GetVehicleHeadlightsColour
+---
+--- @hash [0xD7147656](https://docs.fivem.net/natives/?_0xD7147656)
+--- @param vehicle Vehicle
+--- @return number
+--- @overload fun(vehicle: Vehicle): number
+function GetVehicleHeadlightsColour(vehicle) end
+
+    
+--- GetTrainCarriageEngine
+---
+--- @hash [0x95070FA](https://docs.fivem.net/natives/?_0x95070FA)
 --- @param train Vehicle
 --- @return number
 --- @overload fun(train: Vehicle): number
-function GetTrainCarriageIndex(train) end
+function GetTrainCarriageEngine(train) end
 
     
 --- Returns the type of the passed vehicle.
@@ -411,41 +420,14 @@ function GetTrainCarriageIndex(train) end
 function GetVehicleType(vehicle) end
 
     
---- GetTrainCarriageEngine
+--- GetVehicleDashboardColour
 ---
---- @hash [0x95070FA](https://docs.fivem.net/natives/?_0x95070FA)
---- @param train Vehicle
---- @return number
---- @overload fun(train: Vehicle): number
-function GetTrainCarriageEngine(train) end
-
-    
---- HasVehicleBeenOwnedByPlayer
----
---- @hash [0xE4E83A5B](https://docs.fivem.net/natives/?_0xE4E83A5B)
+--- @hash [0xA0DBD08D](https://docs.fivem.net/natives/?_0xA0DBD08D)
 --- @param vehicle Vehicle
---- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
-function HasVehicleBeenOwnedByPlayer(vehicle) end
-
-    
---- Gets a player's token. Tokens can be used to enhance banning logic, however are specific to a server.
----
---- @hash [0x54C06897](https://docs.fivem.net/natives/?_0x54C06897)
---- @param playerSrc string (char*)
---- @param index number (int)
---- @return string
---- @overload fun(playerSrc: string, index: number): string
-function GetPlayerToken(playerSrc, index) end
-
-    
---- GetVehicleHeadlightsColour
----
---- @hash [0xD7147656](https://docs.fivem.net/natives/?_0xD7147656)
---- @param vehicle Vehicle
---- @return number
+--- @param color number (int*)
+--- @return void
 --- @overload fun(vehicle: Vehicle): number
-function GetVehicleHeadlightsColour(vehicle) end
+function GetVehicleDashboardColour(vehicle, color) end
 
     
 --- GetVehicleInteriorColour
@@ -458,78 +440,22 @@ function GetVehicleHeadlightsColour(vehicle) end
 function GetVehicleInteriorColour(vehicle, color) end
 
     
---- HasEntityBeenMarkedAsNoLongerNeeded
+--- HasVehicleBeenOwnedByPlayer
 ---
---- @hash [0x9C9A3BE0](https://docs.fivem.net/natives/?_0x9C9A3BE0)
+--- @hash [0xE4E83A5B](https://docs.fivem.net/natives/?_0xE4E83A5B)
 --- @param vehicle Vehicle
 --- @return boolean
 --- @overload fun(vehicle: Vehicle): boolean
-function HasEntityBeenMarkedAsNoLongerNeeded(vehicle) end
+function HasVehicleBeenOwnedByPlayer(vehicle) end
 
     
---- Requests the commerce data for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
+--- GetVehicleRadioStationIndex
 ---
---- @hash [0xA8F63EAB](https://docs.fivem.net/natives/?_0xA8F63EAB)
---- @param playerSrc string (char*)
---- @return void
---- @overload fun(playerSrc: string): void
-function LoadPlayerCommerceData(playerSrc) end
-
-    
---- Requests the commerce data from Tebex for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
----
---- @hash [0x7995539E](https://docs.fivem.net/natives/?_0x7995539E)
---- @param playerSrc string (char*)
---- @return void
---- @overload fun(playerSrc: string): void
-function LoadPlayerCommerceDataExt(playerSrc) end
-
-    
---- IsPlayerAceAllowed
----
---- @hash [0xDEDAE23D](https://docs.fivem.net/natives/?_0xDEDAE23D)
---- @param playerSrc string (char*)
---- @param object string (char*)
---- @return boolean
---- @overload fun(playerSrc: string, object: string): boolean
-function IsPlayerAceAllowed(playerSrc, object) end
-
-    
---- PerformHttpRequestInternalEx
----
---- @hash [0x6B171E87](https://docs.fivem.net/natives/?_0x6B171E87)
---- @param requestData table (object)
+--- @hash [0x57037960](https://docs.fivem.net/natives/?_0x57037960)
+--- @param vehicle Vehicle
 --- @return number
---- @overload fun(requestData: table): number
-function PerformHttpRequestInternalEx(requestData) end
-
-    
---- Requests whether or not the commerce data for the specified player has loaded from Tebex.
----
---- @hash [0x1D14F4FE](https://docs.fivem.net/natives/?_0x1D14F4FE)
---- @param playerSrc string (char*)
---- @return boolean
---- @overload fun(playerSrc: string): boolean
-function IsPlayerCommerceInfoLoadedExt(playerSrc) end
-
-    
---- PerformHttpRequestInternal
----
---- @hash [0x8E8CC653](https://docs.fivem.net/natives/?_0x8E8CC653)
---- @param requestData string (char*)
---- @param requestDataLength number (int)
---- @return number
---- @overload fun(requestData: string, requestDataLength: number): number
-function PerformHttpRequestInternal(requestData, requestDataLength) end
-
-    
---- Create a permanent voice channel.
----
---- @hash [0x262663C5](https://docs.fivem.net/natives/?_0x262663C5)
---- @param id number (int)
---- @return void
---- @overload fun(id: number): void
-function MumbleCreateChannel(id) end
+--- @overload fun(vehicle: Vehicle): number
+function GetVehicleRadioStationIndex(vehicle) end
 
     
 --- ```
@@ -546,6 +472,62 @@ function MumbleCreateChannel(id) end
 function IsPlayerEvadingWantedLevel(playerSrc) end
 
     
+--- IsPlayerAceAllowed
+---
+--- @hash [0xDEDAE23D](https://docs.fivem.net/natives/?_0xDEDAE23D)
+--- @param playerSrc string (char*)
+--- @param object string (char*)
+--- @return boolean
+--- @overload fun(playerSrc: string, object: string): boolean
+function IsPlayerAceAllowed(playerSrc, object) end
+
+    
+--- Requests whether or not the commerce data for the specified player has loaded from Tebex.
+---
+--- @hash [0x1D14F4FE](https://docs.fivem.net/natives/?_0x1D14F4FE)
+--- @param playerSrc string (char*)
+--- @return boolean
+--- @overload fun(playerSrc: string): boolean
+function IsPlayerCommerceInfoLoadedExt(playerSrc) end
+
+    
+--- IsPlayerUsingSuperJump
+---
+--- @hash [0xC7D2C20C](https://docs.fivem.net/natives/?_0xC7D2C20C)
+--- @param playerSrc string (char*)
+--- @return boolean
+--- @overload fun(playerSrc: string): boolean
+function IsPlayerUsingSuperJump(playerSrc) end
+
+    
+--- Create a permanent voice channel.
+---
+--- @hash [0x262663C5](https://docs.fivem.net/natives/?_0x262663C5)
+--- @param id number (int)
+--- @return void
+--- @overload fun(id: number): void
+function MumbleCreateChannel(id) end
+
+    
+--- HasEntityBeenMarkedAsNoLongerNeeded
+---
+--- @hash [0x9C9A3BE0](https://docs.fivem.net/natives/?_0x9C9A3BE0)
+--- @param vehicle Vehicle
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+function HasEntityBeenMarkedAsNoLongerNeeded(vehicle) end
+
+    
+--- Mutes or unmutes the specified player
+---
+--- @hash [0xCC6C2EB1](https://docs.fivem.net/natives/?_0xCC6C2EB1)
+--- @param playerSrc number (int)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(playerSrc: number, toggle: boolean): void
+function MumbleSetPlayerMuted(playerSrc, toggle) end
+
+    
 --- Requests whether or not the commerce data for the specified player has loaded.
 ---
 --- @hash [0xBEFE93F4](https://docs.fivem.net/natives/?_0xBEFE93F4)
@@ -553,6 +535,42 @@ function IsPlayerEvadingWantedLevel(playerSrc) end
 --- @return boolean
 --- @overload fun(playerSrc: string): boolean
 function IsPlayerCommerceInfoLoaded(playerSrc) end
+
+    
+--- NetworkGetVoiceProximityOverride
+---
+--- @hash [0x7A6462F4](https://docs.fivem.net/natives/?_0x7A6462F4)
+--- @param playerSrc string (char*)
+--- @return Vector3
+--- @overload fun(playerSrc: string): Vector3
+function NetworkGetVoiceProximityOverride(playerSrc) end
+
+    
+--- Requests the commerce data from Tebex for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
+---
+--- @hash [0x7995539E](https://docs.fivem.net/natives/?_0x7995539E)
+--- @param playerSrc string (char*)
+--- @return void
+--- @overload fun(playerSrc: string): void
+function LoadPlayerCommerceDataExt(playerSrc) end
+
+    
+--- Requests the commerce data for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
+---
+--- @hash [0xA8F63EAB](https://docs.fivem.net/natives/?_0xA8F63EAB)
+--- @param playerSrc string (char*)
+--- @return void
+--- @overload fun(playerSrc: string): void
+function LoadPlayerCommerceData(playerSrc) end
+
+    
+--- Registers a listener for console output messages.
+---
+--- @hash [0x281B5448](https://docs.fivem.net/natives/?_0x281B5448)
+--- @param listener fun
+--- @return void
+--- @overload fun(listener: fun): void
+function RegisterConsoleListener(listener) end
 
     
 --- Registers a build task factory for resources.
@@ -577,35 +595,13 @@ function IsPlayerCommerceInfoLoaded(playerSrc) end
 function RegisterResourceBuildTaskFactory(factoryId, factoryFn) end
 
     
---- Registers a listener for console output messages.
+--- Checks if the player is currently muted
 ---
---- @hash [0x281B5448](https://docs.fivem.net/natives/?_0x281B5448)
---- @param listener fun
---- @return void
---- @overload fun(listener: fun): void
-function RegisterConsoleListener(listener) end
-
-    
---- IsPlayerUsingSuperJump
----
---- @hash [0xC7D2C20C](https://docs.fivem.net/natives/?_0xC7D2C20C)
---- @param playerSrc string (char*)
+--- @hash [0x1D5D50C2](https://docs.fivem.net/natives/?_0x1D5D50C2)
+--- @param playerSrc number (int)
 --- @return boolean
---- @overload fun(playerSrc: string): boolean
-function IsPlayerUsingSuperJump(playerSrc) end
-
-    
---- Writes the specified data to a file in the specified resource.
---- Using a length of `-1` will automatically detect the length assuming the data is a C string.
----
---- @hash [0xA09E7E7B](https://docs.fivem.net/natives/?_0xA09E7E7B)
---- @param resourceName string (char*)
---- @param fileName string (char*)
---- @param data string (char*)
---- @param dataLength number (int)
---- @return boolean
---- @overload fun(resourceName: string, fileName: string, data: string, dataLength: number): boolean
-function SaveResourceFile(resourceName, fileName, data, dataLength) end
+--- @overload fun(playerSrc: number): boolean
+function MumbleIsPlayerMuted(playerSrc) end
 
     
 --- Requests the specified player to buy the passed SKU. This'll pop up a prompt on the client, which upon acceptance
@@ -617,34 +613,6 @@ function SaveResourceFile(resourceName, fileName, data, dataLength) end
 --- @return void
 --- @overload fun(playerSrc: string, skuId: number): void
 function RequestPlayerCommerceSession(playerSrc, skuId) end
-
-    
---- Schedules the specified resource to run a tick as soon as possible, bypassing the server's fixed tick rate.
----
---- @hash [0xB88A73AD](https://docs.fivem.net/natives/?_0xB88A73AD)
---- @param resourceName string (char*)
---- @return void
---- @overload fun(resourceName: string): void
-function ScheduleResourceTick(resourceName) end
-
-    
---- SetConvar
----
---- @hash [0x341B16D2](https://docs.fivem.net/natives/?_0x341B16D2)
---- @param varName string (char*)
---- @param value string (char*)
---- @return void
---- @overload fun(varName: string, value: string): void
-function SetConvar(varName, value) end
-
-    
---- Returns the first owner ID of the specified entity.
----
---- @hash [0x1E546224](https://docs.fivem.net/natives/?_0x1E546224)
---- @param entity Entity
---- @return number
---- @overload fun(entity: Entity): number
-function NetworkGetFirstEntityOwner(entity) end
 
     
 --- SetConvarReplicated
@@ -667,16 +635,43 @@ function SetConvarReplicated(varName, value) end
 function SetConvarServerInfo(varName, value) end
 
     
---- Sets the routing bucket for the specified entity.
---- 
---- Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
+--- PerformHttpRequestInternal
 ---
---- @hash [0x635E5289](https://docs.fivem.net/natives/?_0x635E5289)
+--- @hash [0x8E8CC653](https://docs.fivem.net/natives/?_0x8E8CC653)
+--- @param requestData string (char*)
+--- @param requestDataLength number (int)
+--- @return number
+--- @overload fun(requestData: string, requestDataLength: number): number
+function PerformHttpRequestInternal(requestData, requestDataLength) end
+
+    
+--- Returns the first owner ID of the specified entity.
+---
+--- @hash [0x1E546224](https://docs.fivem.net/natives/?_0x1E546224)
 --- @param entity Entity
---- @param bucket number (int)
+--- @return number
+--- @overload fun(entity: Entity): number
+function NetworkGetFirstEntityOwner(entity) end
+
+    
+--- PerformHttpRequestInternalEx
+---
+--- @hash [0x6B171E87](https://docs.fivem.net/natives/?_0x6B171E87)
+--- @param requestData table (object)
+--- @return number
+--- @overload fun(requestData: table): number
+function PerformHttpRequestInternalEx(requestData) end
+
+    
+--- It overrides the default distance culling radius of an entity. Set to `0.0` to reset.
+--- If you want to interact with an entity outside of your players' scopes set the radius to a huge number.
+---
+--- @hash [0xD3A183A3](https://docs.fivem.net/natives/?_0xD3A183A3)
+--- @param entity Entity
+--- @param radius number (float)
 --- @return void
---- @overload fun(entity: Entity, bucket: number): void
-function SetEntityRoutingBucket(entity, bucket) end
+--- @overload fun(entity: Entity, radius: number): void
+function SetEntityDistanceCullingRadius(entity, radius) end
 
     
 --- SetGameType
@@ -688,13 +683,13 @@ function SetEntityRoutingBucket(entity, bucket) end
 function SetGameType(gametypeName) end
 
     
---- NetworkGetVoiceProximityOverride
+--- SetHttpHandler
 ---
---- @hash [0x7A6462F4](https://docs.fivem.net/natives/?_0x7A6462F4)
---- @param playerSrc string (char*)
---- @return Vector3
---- @overload fun(playerSrc: string): Vector3
-function NetworkGetVoiceProximityOverride(playerSrc) end
+--- @hash [0xF5C6330C](https://docs.fivem.net/natives/?_0xF5C6330C)
+--- @param handler fun
+--- @return void
+--- @overload fun(handler: fun): void
+function SetHttpHandler(handler) end
 
     
 --- **Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
@@ -709,39 +704,6 @@ function NetworkGetVoiceProximityOverride(playerSrc) end
 function RegisterResourceAsset(resourceName, fileName) end
 
     
---- It overrides the default distance culling radius of an entity. Set to `0.0` to reset.
---- If you want to interact with an entity outside of your players' scopes set the radius to a huge number.
----
---- @hash [0xD3A183A3](https://docs.fivem.net/natives/?_0xD3A183A3)
---- @param entity Entity
---- @param radius number (float)
---- @return void
---- @overload fun(entity: Entity, radius: number): void
-function SetEntityDistanceCullingRadius(entity, radius) end
-
-    
---- Sets the routing bucket for the specified player.
---- 
---- Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
----
---- @hash [0x6504EB38](https://docs.fivem.net/natives/?_0x6504EB38)
---- @param playerSrc string (char*)
---- @param bucket number (int)
---- @return void
---- @overload fun(playerSrc: string, bucket: number): void
-function SetPlayerRoutingBucket(playerSrc, bucket) end
-
-    
---- Nonsynchronous [SET_RESOURCE_KVP_FLOAT](https://docs.fivem.net/natives/?_0x9ADD2938) operation; see [FLUSH_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x5240DA5A).
----
---- @hash [0x3517BFBE](https://docs.fivem.net/natives/?_0x3517BFBE)
---- @param key string (char*)
---- @param value number (float)
---- @return void
---- @overload fun(key: string, value: number): void
-function SetResourceKvpFloatNoSync(key, value) end
-
-    
 --- SetMapName
 ---
 --- @hash [0xB7BA82DC](https://docs.fivem.net/natives/?_0xB7BA82DC)
@@ -749,6 +711,28 @@ function SetResourceKvpFloatNoSync(key, value) end
 --- @return void
 --- @overload fun(mapName: string): void
 function SetMapName(mapName) end
+
+    
+--- Schedules the specified resource to run a tick as soon as possible, bypassing the server's fixed tick rate.
+---
+--- @hash [0xB88A73AD](https://docs.fivem.net/natives/?_0xB88A73AD)
+--- @param resourceName string (char*)
+--- @return void
+--- @overload fun(resourceName: string): void
+function ScheduleResourceTick(resourceName) end
+
+    
+--- Writes the specified data to a file in the specified resource.
+--- Using a length of `-1` will automatically detect the length assuming the data is a C string.
+---
+--- @hash [0xA09E7E7B](https://docs.fivem.net/natives/?_0xA09E7E7B)
+--- @param resourceName string (char*)
+--- @param fileName string (char*)
+--- @param data string (char*)
+--- @param dataLength number (int)
+--- @return boolean
+--- @overload fun(resourceName: string, fileName: string, data: string, dataLength: number): boolean
+function SaveResourceFile(resourceName, fileName, data, dataLength) end
 
     
 --- Sets the culling radius for the specified player.
@@ -762,33 +746,24 @@ function SetMapName(mapName) end
 function SetPlayerCullingRadius(playerSrc, radius) end
 
     
---- SetHttpHandler
+--- SetConvar
 ---
---- @hash [0xF5C6330C](https://docs.fivem.net/natives/?_0xF5C6330C)
---- @param handler fun
+--- @hash [0x341B16D2](https://docs.fivem.net/natives/?_0x341B16D2)
+--- @param varName string (char*)
+--- @param value string (char*)
 --- @return void
---- @overload fun(handler: fun): void
-function SetHttpHandler(handler) end
+--- @overload fun(varName: string, value: string): void
+function SetConvar(varName, value) end
 
     
---- Sets whether or not the specified routing bucket has automatically-created population enabled.
+--- Nonsynchronous [SET_RESOURCE_KVP_FLOAT](https://docs.fivem.net/natives/?_0x9ADD2938) operation; see [FLUSH_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x5240DA5A).
 ---
---- @hash [0xCE51AC2C](https://docs.fivem.net/natives/?_0xCE51AC2C)
---- @param bucketId number (int)
---- @param mode boolean
---- @return void
---- @overload fun(bucketId: number, mode: boolean): void
-function SetRoutingBucketPopulationEnabled(bucketId, mode) end
-
-    
---- Nonsynchronous [SET_RESOURCE_KVP_INT](https://docs.fivem.net/natives/?_0x6A2B1E8) operation; see [FLUSH_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x5240DA5A).
----
---- @hash [0x26AEB707](https://docs.fivem.net/natives/?_0x26AEB707)
+--- @hash [0x3517BFBE](https://docs.fivem.net/natives/?_0x3517BFBE)
 --- @param key string (char*)
---- @param value number (int)
+--- @param value number (float)
 --- @return void
 --- @overload fun(key: string, value: number): void
-function SetResourceKvpIntNoSync(key, value) end
+function SetResourceKvpFloatNoSync(key, value) end
 
     
 --- Nonsynchronous [SET_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x21C7A35B) operation; see [FLUSH_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x5240DA5A).
@@ -799,6 +774,18 @@ function SetResourceKvpIntNoSync(key, value) end
 --- @return void
 --- @overload fun(key: string, value: string): void
 function SetResourceKvpNoSync(key, value) end
+
+    
+--- Sets the routing bucket for the specified entity.
+--- 
+--- Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
+---
+--- @hash [0x635E5289](https://docs.fivem.net/natives/?_0x635E5289)
+--- @param entity Entity
+--- @param bucket number (int)
+--- @return void
+--- @overload fun(entity: Entity, bucket: number): void
+function SetEntityRoutingBucket(entity, bucket) end
 
     
 --- Sets the entity lockdown mode for a specific routing bucket.
@@ -819,26 +806,26 @@ function SetResourceKvpNoSync(key, value) end
 function SetRoutingBucketEntityLockdownMode(bucketId, mode) end
 
     
---- TempBanPlayer
+--- Sets the routing bucket for the specified player.
+--- 
+--- Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
 ---
---- @hash [0x1E35DBBA](https://docs.fivem.net/natives/?_0x1E35DBBA)
+--- @hash [0x6504EB38](https://docs.fivem.net/natives/?_0x6504EB38)
 --- @param playerSrc string (char*)
---- @param reason string (char*)
+--- @param bucket number (int)
 --- @return void
---- @overload fun(playerSrc: string, reason: string): void
-function TempBanPlayer(playerSrc, reason) end
+--- @overload fun(playerSrc: string, bucket: number): void
+function SetPlayerRoutingBucket(playerSrc, bucket) end
 
     
---- The backing function for TriggerClientEvent.
+--- Nonsynchronous [SET_RESOURCE_KVP_INT](https://docs.fivem.net/natives/?_0x6A2B1E8) operation; see [FLUSH_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x5240DA5A).
 ---
---- @hash [0x2F7A49E6](https://docs.fivem.net/natives/?_0x2F7A49E6)
---- @param eventName string (char*)
---- @param eventTarget string (char*)
---- @param eventPayload string (char*)
---- @param payloadLength number (int)
+--- @hash [0x26AEB707](https://docs.fivem.net/natives/?_0x26AEB707)
+--- @param key string (char*)
+--- @param value number (int)
 --- @return void
---- @overload fun(eventName: string, eventTarget: string, eventPayload: string, payloadLength: number): void
-function TriggerClientEventInternal(eventName, eventTarget, eventPayload, payloadLength) end
+--- @overload fun(key: string, value: number): void
+function SetResourceKvpIntNoSync(key, value) end
 
     
 --- StartResource
@@ -859,6 +846,26 @@ function StartResource(resourceName) end
 function StopResource(resourceName) end
 
     
+--- Sets whether or not the specified routing bucket has automatically-created population enabled.
+---
+--- @hash [0xCE51AC2C](https://docs.fivem.net/natives/?_0xCE51AC2C)
+--- @param bucketId number (int)
+--- @param mode boolean
+--- @return void
+--- @overload fun(bucketId: number, mode: boolean): void
+function SetRoutingBucketPopulationEnabled(bucketId, mode) end
+
+    
+--- TempBanPlayer
+---
+--- @hash [0x1E35DBBA](https://docs.fivem.net/natives/?_0x1E35DBBA)
+--- @param playerSrc string (char*)
+--- @param reason string (char*)
+--- @return void
+--- @overload fun(playerSrc: string, reason: string): void
+function TempBanPlayer(playerSrc, reason) end
+
+    
 --- VerifyPasswordHash
 ---
 --- @hash [0x2E310ACD](https://docs.fivem.net/natives/?_0x2E310ACD)
@@ -867,6 +874,28 @@ function StopResource(resourceName) end
 --- @return boolean
 --- @overload fun(password: string, hash: string): boolean
 function VerifyPasswordHash(password, hash) end
+
+    
+--- The backing function for TriggerClientEvent.
+---
+--- @hash [0x2F7A49E6](https://docs.fivem.net/natives/?_0x2F7A49E6)
+--- @param eventName string (char*)
+--- @param eventTarget string (char*)
+--- @param eventPayload string (char*)
+--- @param payloadLength number (int)
+--- @return void
+--- @overload fun(eventName: string, eventTarget: string, eventPayload: string, payloadLength: number): void
+function TriggerClientEventInternal(eventName, eventTarget, eventPayload, payloadLength) end
+
+    
+--- Prints 'structured trace' data to the server `file descriptor 3` channel. This is not generally useful outside of
+--- server monitoring utilities.
+---
+--- @hash [0x90892DED](https://docs.fivem.net/natives/?_0x90892DED)
+--- @param jsonString string (char*)
+--- @return void
+--- @overload fun(jsonString: string): void
+function PrintStructuredTrace(jsonString) end
 
     
 --- The backing function for TriggerLatentClientEvent.
@@ -880,15 +909,5 @@ function VerifyPasswordHash(password, hash) end
 --- @return void
 --- @overload fun(eventName: string, eventTarget: string, eventPayload: string, payloadLength: number, bps: number): void
 function TriggerLatentClientEventInternal(eventName, eventTarget, eventPayload, payloadLength, bps) end
-
-    
---- Prints 'structured trace' data to the server `file descriptor 3` channel. This is not generally useful outside of
---- server monitoring utilities.
----
---- @hash [0x90892DED](https://docs.fivem.net/natives/?_0x90892DED)
---- @param jsonString string (char*)
---- @return void
---- @overload fun(jsonString: string): void
-function PrintStructuredTrace(jsonString) end
 
     

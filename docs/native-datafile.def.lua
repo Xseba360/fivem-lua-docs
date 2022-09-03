@@ -1,24 +1,44 @@
 
---- DataarrayAddBool
+--- DatafileHasLoadedFileData
 ---
---- @hash [0xF8B0F5A43E928C76](https://docs.fivem.net/natives/?_0xF8B0F5A43E928C76)
---- @param arrayData any
---- @param value boolean
---- @return void
---- @overload fun(value: boolean): any
-function DataarrayAddBool(arrayData, value) end
+--- @hash [0x15FF52B809DB2353](https://docs.fivem.net/natives/?_0x15FF52B809DB2353)
+--- @param p0 any
+--- @return boolean
+--- @overload fun(p0: any): boolean
+function DatafileHasLoadedFileData(p0) end
 
     
---- # New Name: DataarrayAddBool
---- DataarrayAddBool
+--- # New Name: DatafileHasLoadedFileData
+--- DatafileHasLoadedFileData
 ---
---- @hash [0xF8B0F5A43E928C76](https://docs.fivem.net/natives/?_0xF8B0F5A43E928C76)
---- @param arrayData any
---- @param value boolean
---- @return void
---- @overload fun(value: boolean): any
+--- @hash [0x15FF52B809DB2353](https://docs.fivem.net/natives/?_0x15FF52B809DB2353)
+--- @param p0 any
+--- @return boolean
+--- @overload fun(p0: any): boolean
 --- @deprecated
-function ArrayValueAddBoolean(arrayData, value) end
+function N_0x15ff52b809db2353(p0) end
+
+    
+--- DatadictGetString
+---
+--- @hash [0x3D2FD9E763B24472](https://docs.fivem.net/natives/?_0x3D2FD9E763B24472)
+--- @param objectData any
+--- @param key string (char*)
+--- @return string
+--- @overload fun(): string, any): string, string
+function DatadictGetString(objectData, key) end
+
+    
+--- # New Name: DatadictGetString
+--- DatadictGetString
+---
+--- @hash [0x3D2FD9E763B24472](https://docs.fivem.net/natives/?_0x3D2FD9E763B24472)
+--- @param objectData any
+--- @param key string (char*)
+--- @return string
+--- @overload fun(): string, any): string, string
+--- @deprecated
+function ObjectValueGetString(objectData, key) end
 
     
 --- DataarrayAddDict
@@ -41,48 +61,70 @@ function DataarrayAddDict(arrayData) end
 function ArrayValueAddObject(arrayData) end
 
     
---- DataarrayAddInt
+--- DataarrayAddBool
 ---
---- @hash [0xCABDB751D86FE93B](https://docs.fivem.net/natives/?_0xCABDB751D86FE93B)
+--- @hash [0xF8B0F5A43E928C76](https://docs.fivem.net/natives/?_0xF8B0F5A43E928C76)
 --- @param arrayData any
---- @param value number (int)
+--- @param value boolean
 --- @return void
---- @overload fun(value: number): any
-function DataarrayAddInt(arrayData, value) end
+--- @overload fun(value: boolean): any
+function DataarrayAddBool(arrayData, value) end
 
     
---- # New Name: DataarrayAddInt
---- DataarrayAddInt
+--- # New Name: DataarrayAddBool
+--- DataarrayAddBool
 ---
---- @hash [0xCABDB751D86FE93B](https://docs.fivem.net/natives/?_0xCABDB751D86FE93B)
+--- @hash [0xF8B0F5A43E928C76](https://docs.fivem.net/natives/?_0xF8B0F5A43E928C76)
 --- @param arrayData any
---- @param value number (int)
+--- @param value boolean
 --- @return void
---- @overload fun(value: number): any
+--- @overload fun(value: boolean): any
 --- @deprecated
-function ArrayValueAddInteger(arrayData, value) end
+function ArrayValueAddBoolean(arrayData, value) end
 
     
---- DataarrayAddFloat
+--- DataarrayAddString
 ---
---- @hash [0x57A995FD75D37F56](https://docs.fivem.net/natives/?_0x57A995FD75D37F56)
+--- @hash [0x2F0661C155AEEEAA](https://docs.fivem.net/natives/?_0x2F0661C155AEEEAA)
 --- @param arrayData any
---- @param value number (float)
+--- @param value string (char*)
 --- @return void
---- @overload fun(value: number): any
-function DataarrayAddFloat(arrayData, value) end
+--- @overload fun(): any): string
+function DataarrayAddString(arrayData, value) end
 
     
---- # New Name: DataarrayAddFloat
---- DataarrayAddFloat
+--- # New Name: DataarrayAddString
+--- DataarrayAddString
 ---
---- @hash [0x57A995FD75D37F56](https://docs.fivem.net/natives/?_0x57A995FD75D37F56)
+--- @hash [0x2F0661C155AEEEAA](https://docs.fivem.net/natives/?_0x2F0661C155AEEEAA)
 --- @param arrayData any
---- @param value number (float)
+--- @param value string (char*)
 --- @return void
---- @overload fun(value: number): any
+--- @overload fun(): any): string
 --- @deprecated
-function ArrayValueAddFloat(arrayData, value) end
+function ArrayValueAddString(arrayData, value) end
+
+    
+--- DataarrayGetDict
+---
+--- @hash [0x8B5FADCC4E3A145F](https://docs.fivem.net/natives/?_0x8B5FADCC4E3A145F)
+--- @param arrayData any
+--- @param arrayIndex number (int)
+--- @return any
+--- @overload fun(arrayIndex: number): any, any
+function DataarrayGetDict(arrayData, arrayIndex) end
+
+    
+--- # New Name: DataarrayGetDict
+--- DataarrayGetDict
+---
+--- @hash [0x8B5FADCC4E3A145F](https://docs.fivem.net/natives/?_0x8B5FADCC4E3A145F)
+--- @param arrayData any
+--- @param arrayIndex number (int)
+--- @return any
+--- @overload fun(arrayIndex: number): any, any
+--- @deprecated
+function ArrayValueGetObject(arrayData, arrayIndex) end
 
     
 --- DataarrayAddVector
@@ -111,48 +153,6 @@ function DataarrayAddVector(arrayData, valueX, valueY, valueZ) end
 function ArrayValueAddVector3(arrayData, valueX, valueY, valueZ) end
 
     
---- DataarrayAddString
----
---- @hash [0x2F0661C155AEEEAA](https://docs.fivem.net/natives/?_0x2F0661C155AEEEAA)
---- @param arrayData any
---- @param value string (char*)
---- @return void
---- @overload fun(): any): string
-function DataarrayAddString(arrayData, value) end
-
-    
---- # New Name: DataarrayAddString
---- DataarrayAddString
----
---- @hash [0x2F0661C155AEEEAA](https://docs.fivem.net/natives/?_0x2F0661C155AEEEAA)
---- @param arrayData any
---- @param value string (char*)
---- @return void
---- @overload fun(): any): string
---- @deprecated
-function ArrayValueAddString(arrayData, value) end
-
-    
---- DataarrayGetCount
----
---- @hash [0x065DB281590CEA2D](https://docs.fivem.net/natives/?_0x065DB281590CEA2D)
---- @param arrayData any
---- @return number
---- @overload fun(): number, any
-function DataarrayGetCount(arrayData) end
-
-    
---- # New Name: DataarrayGetCount
---- DataarrayGetCount
----
---- @hash [0x065DB281590CEA2D](https://docs.fivem.net/natives/?_0x065DB281590CEA2D)
---- @param arrayData any
---- @return number
---- @overload fun(): number, any
---- @deprecated
-function ArrayValueGetSize(arrayData) end
-
-    
 --- DataarrayGetBool
 ---
 --- @hash [0x50C1B2874E50C114](https://docs.fivem.net/natives/?_0x50C1B2874E50C114)
@@ -175,48 +175,46 @@ function DataarrayGetBool(arrayData, arrayIndex) end
 function ArrayValueGetBoolean(arrayData, arrayIndex) end
 
     
---- DataarrayGetDict
+--- DataarrayAddInt
 ---
---- @hash [0x8B5FADCC4E3A145F](https://docs.fivem.net/natives/?_0x8B5FADCC4E3A145F)
+--- @hash [0xCABDB751D86FE93B](https://docs.fivem.net/natives/?_0xCABDB751D86FE93B)
 --- @param arrayData any
---- @param arrayIndex number (int)
---- @return any
---- @overload fun(arrayIndex: number): any, any
-function DataarrayGetDict(arrayData, arrayIndex) end
+--- @param value number (int)
+--- @return void
+--- @overload fun(value: number): any
+function DataarrayAddInt(arrayData, value) end
 
     
---- # New Name: DataarrayGetDict
---- DataarrayGetDict
+--- # New Name: DataarrayAddInt
+--- DataarrayAddInt
 ---
---- @hash [0x8B5FADCC4E3A145F](https://docs.fivem.net/natives/?_0x8B5FADCC4E3A145F)
+--- @hash [0xCABDB751D86FE93B](https://docs.fivem.net/natives/?_0xCABDB751D86FE93B)
 --- @param arrayData any
---- @param arrayIndex number (int)
---- @return any
---- @overload fun(arrayIndex: number): any, any
+--- @param value number (int)
+--- @return void
+--- @overload fun(value: number): any
 --- @deprecated
-function ArrayValueGetObject(arrayData, arrayIndex) end
+function ArrayValueAddInteger(arrayData, value) end
 
     
---- DataarrayGetFloat
+--- DataarrayGetCount
 ---
---- @hash [0xC0C527B525D7CFB5](https://docs.fivem.net/natives/?_0xC0C527B525D7CFB5)
+--- @hash [0x065DB281590CEA2D](https://docs.fivem.net/natives/?_0x065DB281590CEA2D)
 --- @param arrayData any
---- @param arrayIndex number (int)
 --- @return number
---- @overload fun(arrayIndex: number): number, any
-function DataarrayGetFloat(arrayData, arrayIndex) end
+--- @overload fun(): number, any
+function DataarrayGetCount(arrayData) end
 
     
---- # New Name: DataarrayGetFloat
---- DataarrayGetFloat
+--- # New Name: DataarrayGetCount
+--- DataarrayGetCount
 ---
---- @hash [0xC0C527B525D7CFB5](https://docs.fivem.net/natives/?_0xC0C527B525D7CFB5)
+--- @hash [0x065DB281590CEA2D](https://docs.fivem.net/natives/?_0x065DB281590CEA2D)
 --- @param arrayData any
---- @param arrayIndex number (int)
 --- @return number
---- @overload fun(arrayIndex: number): number, any
+--- @overload fun(): number, any
 --- @deprecated
-function ArrayValueGetFloat(arrayData, arrayIndex) end
+function ArrayValueGetSize(arrayData) end
 
     
 --- DataarrayGetVector
@@ -241,48 +239,48 @@ function DataarrayGetVector(arrayData, arrayIndex) end
 function ArrayValueGetVector3(arrayData, arrayIndex) end
 
     
---- DataarrayGetInt
+--- DatadictGetBool
 ---
---- @hash [0x3E5AE19425CD74BE](https://docs.fivem.net/natives/?_0x3E5AE19425CD74BE)
---- @param arrayData any
---- @param arrayIndex number (int)
---- @return number
---- @overload fun(arrayIndex: number): number, any
-function DataarrayGetInt(arrayData, arrayIndex) end
+--- @hash [0x1186940ED72FFEEC](https://docs.fivem.net/natives/?_0x1186940ED72FFEEC)
+--- @param objectData any
+--- @param key string (char*)
+--- @return boolean
+--- @overload fun(): boolean, any): boolean, string
+function DatadictGetBool(objectData, key) end
 
     
---- # New Name: DataarrayGetInt
---- DataarrayGetInt
+--- # New Name: DatadictGetBool
+--- DatadictGetBool
 ---
---- @hash [0x3E5AE19425CD74BE](https://docs.fivem.net/natives/?_0x3E5AE19425CD74BE)
---- @param arrayData any
---- @param arrayIndex number (int)
---- @return number
---- @overload fun(arrayIndex: number): number, any
+--- @hash [0x1186940ED72FFEEC](https://docs.fivem.net/natives/?_0x1186940ED72FFEEC)
+--- @param objectData any
+--- @param key string (char*)
+--- @return boolean
+--- @overload fun(): boolean, any): boolean, string
 --- @deprecated
-function ArrayValueGetInteger(arrayData, arrayIndex) end
+function ObjectValueGetBoolean(objectData, key) end
 
     
---- DataarrayGetString
+--- DataarrayAddFloat
 ---
---- @hash [0xD3F2FFEB8D836F52](https://docs.fivem.net/natives/?_0xD3F2FFEB8D836F52)
+--- @hash [0x57A995FD75D37F56](https://docs.fivem.net/natives/?_0x57A995FD75D37F56)
 --- @param arrayData any
---- @param arrayIndex number (int)
---- @return string
---- @overload fun(arrayIndex: number): string, any
-function DataarrayGetString(arrayData, arrayIndex) end
+--- @param value number (float)
+--- @return void
+--- @overload fun(value: number): any
+function DataarrayAddFloat(arrayData, value) end
 
     
---- # New Name: DataarrayGetString
---- DataarrayGetString
+--- # New Name: DataarrayAddFloat
+--- DataarrayAddFloat
 ---
---- @hash [0xD3F2FFEB8D836F52](https://docs.fivem.net/natives/?_0xD3F2FFEB8D836F52)
+--- @hash [0x57A995FD75D37F56](https://docs.fivem.net/natives/?_0x57A995FD75D37F56)
 --- @param arrayData any
---- @param arrayIndex number (int)
---- @return string
---- @overload fun(arrayIndex: number): string, any
+--- @param value number (float)
+--- @return void
+--- @overload fun(value: number): any
 --- @deprecated
-function ArrayValueGetString(arrayData, arrayIndex) end
+function ArrayValueAddFloat(arrayData, value) end
 
     
 --- DatadictCreateArray
@@ -307,26 +305,116 @@ function DatadictCreateArray(objectData, key) end
 function ObjectValueAddArray(objectData, key) end
 
     
---- DatadictCreateDict
+--- DatadictGetArray
 ---
---- @hash [0xA358F56F10732EE1](https://docs.fivem.net/natives/?_0xA358F56F10732EE1)
+--- @hash [0x7A983AA9DA2659ED](https://docs.fivem.net/natives/?_0x7A983AA9DA2659ED)
 --- @param objectData any
 --- @param key string (char*)
 --- @return any
 --- @overload fun(): any, any): any, string
-function DatadictCreateDict(objectData, key) end
+function DatadictGetArray(objectData, key) end
 
     
---- # New Name: DatadictCreateDict
---- DatadictCreateDict
+--- # New Name: DatadictGetArray
+--- DatadictGetArray
 ---
---- @hash [0xA358F56F10732EE1](https://docs.fivem.net/natives/?_0xA358F56F10732EE1)
+--- @hash [0x7A983AA9DA2659ED](https://docs.fivem.net/natives/?_0x7A983AA9DA2659ED)
 --- @param objectData any
 --- @param key string (char*)
 --- @return any
 --- @overload fun(): any, any): any, string
 --- @deprecated
-function ObjectValueAddObject(objectData, key) end
+function ObjectValueGetArray(objectData, key) end
+
+    
+--- DataarrayGetInt
+---
+--- @hash [0x3E5AE19425CD74BE](https://docs.fivem.net/natives/?_0x3E5AE19425CD74BE)
+--- @param arrayData any
+--- @param arrayIndex number (int)
+--- @return number
+--- @overload fun(arrayIndex: number): number, any
+function DataarrayGetInt(arrayData, arrayIndex) end
+
+    
+--- # New Name: DataarrayGetInt
+--- DataarrayGetInt
+---
+--- @hash [0x3E5AE19425CD74BE](https://docs.fivem.net/natives/?_0x3E5AE19425CD74BE)
+--- @param arrayData any
+--- @param arrayIndex number (int)
+--- @return number
+--- @overload fun(arrayIndex: number): number, any
+--- @deprecated
+function ArrayValueGetInteger(arrayData, arrayIndex) end
+
+    
+--- DatadictGetFloat
+---
+--- @hash [0x06610343E73B9727](https://docs.fivem.net/natives/?_0x06610343E73B9727)
+--- @param objectData any
+--- @param key string (char*)
+--- @return number
+--- @overload fun(): number, any): number, string
+function DatadictGetFloat(objectData, key) end
+
+    
+--- # New Name: DatadictGetFloat
+--- DatadictGetFloat
+---
+--- @hash [0x06610343E73B9727](https://docs.fivem.net/natives/?_0x06610343E73B9727)
+--- @param objectData any
+--- @param key string (char*)
+--- @return number
+--- @overload fun(): number, any): number, string
+--- @deprecated
+function ObjectValueGetFloat(objectData, key) end
+
+    
+--- DatadictGetDict
+---
+--- @hash [0xB6B9DDC412FCEEE2](https://docs.fivem.net/natives/?_0xB6B9DDC412FCEEE2)
+--- @param objectData any
+--- @param key string (char*)
+--- @return any
+--- @overload fun(): any, any): any, string
+function DatadictGetDict(objectData, key) end
+
+    
+--- # New Name: DatadictGetDict
+--- DatadictGetDict
+---
+--- @hash [0xB6B9DDC412FCEEE2](https://docs.fivem.net/natives/?_0xB6B9DDC412FCEEE2)
+--- @param objectData any
+--- @param key string (char*)
+--- @return any
+--- @overload fun(): any, any): any, string
+--- @deprecated
+function ObjectValueGetObject(objectData, key) end
+
+    
+--- DatadictSetString
+---
+--- @hash [0x8FF3847DADD8E30C](https://docs.fivem.net/natives/?_0x8FF3847DADD8E30C)
+--- @param objectData any
+--- @param key string (char*)
+--- @param value string (char*)
+--- @return void
+--- @overload fun(): any): string): string
+function DatadictSetString(objectData, key, value) end
+
+    
+--- # New Name: DatadictSetString
+--- DatadictSetString
+---
+--- @hash [0x8FF3847DADD8E30C](https://docs.fivem.net/natives/?_0x8FF3847DADD8E30C)
+--- @param objectData any
+--- @param key string (char*)
+--- @param value string (char*)
+--- @return void
+--- @overload fun(): any): string): string
+--- @deprecated
+function ObjectValueAddString(objectData, key, value) end
 
     
 --- ```
@@ -369,136 +457,48 @@ function DataarrayGetType(arrayData, arrayIndex) end
 function ArrayValueGetType(arrayData, arrayIndex) end
 
     
---- DatadictGetArray
+--- DatadictCreateDict
 ---
---- @hash [0x7A983AA9DA2659ED](https://docs.fivem.net/natives/?_0x7A983AA9DA2659ED)
+--- @hash [0xA358F56F10732EE1](https://docs.fivem.net/natives/?_0xA358F56F10732EE1)
 --- @param objectData any
 --- @param key string (char*)
 --- @return any
 --- @overload fun(): any, any): any, string
-function DatadictGetArray(objectData, key) end
+function DatadictCreateDict(objectData, key) end
 
     
---- # New Name: DatadictGetArray
---- DatadictGetArray
+--- # New Name: DatadictCreateDict
+--- DatadictCreateDict
 ---
---- @hash [0x7A983AA9DA2659ED](https://docs.fivem.net/natives/?_0x7A983AA9DA2659ED)
---- @param objectData any
---- @param key string (char*)
---- @return any
---- @overload fun(): any, any): any, string
---- @deprecated
-function ObjectValueGetArray(objectData, key) end
-
-    
---- DatadictGetDict
----
---- @hash [0xB6B9DDC412FCEEE2](https://docs.fivem.net/natives/?_0xB6B9DDC412FCEEE2)
---- @param objectData any
---- @param key string (char*)
---- @return any
---- @overload fun(): any, any): any, string
-function DatadictGetDict(objectData, key) end
-
-    
---- # New Name: DatadictGetDict
---- DatadictGetDict
----
---- @hash [0xB6B9DDC412FCEEE2](https://docs.fivem.net/natives/?_0xB6B9DDC412FCEEE2)
+--- @hash [0xA358F56F10732EE1](https://docs.fivem.net/natives/?_0xA358F56F10732EE1)
 --- @param objectData any
 --- @param key string (char*)
 --- @return any
 --- @overload fun(): any, any): any, string
 --- @deprecated
-function ObjectValueGetObject(objectData, key) end
+function ObjectValueAddObject(objectData, key) end
 
     
---- DatadictGetBool
+--- DatadictGetVector
 ---
---- @hash [0x1186940ED72FFEEC](https://docs.fivem.net/natives/?_0x1186940ED72FFEEC)
+--- @hash [0x46CD3CB66E0825CC](https://docs.fivem.net/natives/?_0x46CD3CB66E0825CC)
 --- @param objectData any
 --- @param key string (char*)
---- @return boolean
---- @overload fun(): boolean, any): boolean, string
-function DatadictGetBool(objectData, key) end
+--- @return Vector3
+--- @overload fun(): Vector3, any): Vector3, string
+function DatadictGetVector(objectData, key) end
 
     
---- # New Name: DatadictGetBool
---- DatadictGetBool
+--- # New Name: DatadictGetVector
+--- DatadictGetVector
 ---
---- @hash [0x1186940ED72FFEEC](https://docs.fivem.net/natives/?_0x1186940ED72FFEEC)
+--- @hash [0x46CD3CB66E0825CC](https://docs.fivem.net/natives/?_0x46CD3CB66E0825CC)
 --- @param objectData any
 --- @param key string (char*)
---- @return boolean
---- @overload fun(): boolean, any): boolean, string
+--- @return Vector3
+--- @overload fun(): Vector3, any): Vector3, string
 --- @deprecated
-function ObjectValueGetBoolean(objectData, key) end
-
-    
---- DatadictGetFloat
----
---- @hash [0x06610343E73B9727](https://docs.fivem.net/natives/?_0x06610343E73B9727)
---- @param objectData any
---- @param key string (char*)
---- @return number
---- @overload fun(): number, any): number, string
-function DatadictGetFloat(objectData, key) end
-
-    
---- # New Name: DatadictGetFloat
---- DatadictGetFloat
----
---- @hash [0x06610343E73B9727](https://docs.fivem.net/natives/?_0x06610343E73B9727)
---- @param objectData any
---- @param key string (char*)
---- @return number
---- @overload fun(): number, any): number, string
---- @deprecated
-function ObjectValueGetFloat(objectData, key) end
-
-    
---- DatadictGetInt
----
---- @hash [0x78F06F6B1FB5A80C](https://docs.fivem.net/natives/?_0x78F06F6B1FB5A80C)
---- @param objectData any
---- @param key string (char*)
---- @return number
---- @overload fun(): number, any): number, string
-function DatadictGetInt(objectData, key) end
-
-    
---- # New Name: DatadictGetInt
---- DatadictGetInt
----
---- @hash [0x78F06F6B1FB5A80C](https://docs.fivem.net/natives/?_0x78F06F6B1FB5A80C)
---- @param objectData any
---- @param key string (char*)
---- @return number
---- @overload fun(): number, any): number, string
---- @deprecated
-function ObjectValueGetInteger(objectData, key) end
-
-    
---- DatadictGetString
----
---- @hash [0x3D2FD9E763B24472](https://docs.fivem.net/natives/?_0x3D2FD9E763B24472)
---- @param objectData any
---- @param key string (char*)
---- @return string
---- @overload fun(): string, any): string, string
-function DatadictGetString(objectData, key) end
-
-    
---- # New Name: DatadictGetString
---- DatadictGetString
----
---- @hash [0x3D2FD9E763B24472](https://docs.fivem.net/natives/?_0x3D2FD9E763B24472)
---- @param objectData any
---- @param key string (char*)
---- @return string
---- @overload fun(): string, any): string, string
---- @deprecated
-function ObjectValueGetString(objectData, key) end
+function ObjectValueGetVector3(objectData, key) end
 
     
 --- ```
@@ -541,50 +541,79 @@ function DatadictGetType(objectData, key) end
 function ObjectValueGetType(objectData, key) end
 
     
---- DatadictGetVector
+--- DataarrayGetString
 ---
---- @hash [0x46CD3CB66E0825CC](https://docs.fivem.net/natives/?_0x46CD3CB66E0825CC)
---- @param objectData any
---- @param key string (char*)
---- @return Vector3
---- @overload fun(): Vector3, any): Vector3, string
-function DatadictGetVector(objectData, key) end
+--- @hash [0xD3F2FFEB8D836F52](https://docs.fivem.net/natives/?_0xD3F2FFEB8D836F52)
+--- @param arrayData any
+--- @param arrayIndex number (int)
+--- @return string
+--- @overload fun(arrayIndex: number): string, any
+function DataarrayGetString(arrayData, arrayIndex) end
 
     
---- # New Name: DatadictGetVector
---- DatadictGetVector
+--- # New Name: DataarrayGetString
+--- DataarrayGetString
 ---
---- @hash [0x46CD3CB66E0825CC](https://docs.fivem.net/natives/?_0x46CD3CB66E0825CC)
---- @param objectData any
---- @param key string (char*)
---- @return Vector3
---- @overload fun(): Vector3, any): Vector3, string
+--- @hash [0xD3F2FFEB8D836F52](https://docs.fivem.net/natives/?_0xD3F2FFEB8D836F52)
+--- @param arrayData any
+--- @param arrayIndex number (int)
+--- @return string
+--- @overload fun(arrayIndex: number): string, any
 --- @deprecated
-function ObjectValueGetVector3(objectData, key) end
+function ArrayValueGetString(arrayData, arrayIndex) end
 
     
---- DatadictSetBool
+--- DatafileClearWatchList
 ---
---- @hash [0x35124302A556A325](https://docs.fivem.net/natives/?_0x35124302A556A325)
---- @param objectData any
---- @param key string (char*)
---- @param value boolean
+--- @hash [0x6CC86E78358D5119](https://docs.fivem.net/natives/?_0x6CC86E78358D5119)
+---
 --- @return void
---- @overload fun(value: boolean): any): string
-function DatadictSetBool(objectData, key, value) end
+--- @overload fun(): void
+function DatafileClearWatchList() end
 
     
---- # New Name: DatadictSetBool
---- DatadictSetBool
+--- # New Name: DatafileClearWatchList
+--- DatafileClearWatchList
 ---
---- @hash [0x35124302A556A325](https://docs.fivem.net/natives/?_0x35124302A556A325)
---- @param objectData any
---- @param key string (char*)
---- @param value boolean
+--- @hash [0x6CC86E78358D5119](https://docs.fivem.net/natives/?_0x6CC86E78358D5119)
+---
 --- @return void
---- @overload fun(value: boolean): any): string
+--- @overload fun(): void
 --- @deprecated
-function ObjectValueAddBoolean(objectData, key, value) end
+function N_0x6cc86e78358d5119() end
+
+    
+--- DatadictGetInt
+---
+--- @hash [0x78F06F6B1FB5A80C](https://docs.fivem.net/natives/?_0x78F06F6B1FB5A80C)
+--- @param objectData any
+--- @param key string (char*)
+--- @return number
+--- @overload fun(): number, any): number, string
+function DatadictGetInt(objectData, key) end
+
+    
+--- # New Name: DatadictGetInt
+--- DatadictGetInt
+---
+--- @hash [0x78F06F6B1FB5A80C](https://docs.fivem.net/natives/?_0x78F06F6B1FB5A80C)
+--- @param objectData any
+--- @param key string (char*)
+--- @return number
+--- @overload fun(): number, any): number, string
+--- @deprecated
+function ObjectValueGetInteger(objectData, key) end
+
+    
+--- ```
+--- NativeDB Introduced: v2189
+--- ```
+---
+--- @hash [0x6AD0BD5E087866CB](https://docs.fivem.net/natives/?_0x6AD0BD5E087866CB)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function N_0x6ad0bd5e087866cb(p0) end
 
     
 --- DatadictSetFloat
@@ -611,52 +640,15 @@ function DatadictSetFloat(objectData, key, value) end
 function ObjectValueAddFloat(objectData, key, value) end
 
     
---- DatadictSetInt
+--- ```
+--- NativeDB Added Parameter 1: int p0
+--- ```
 ---
---- @hash [0xE7E035450A7948D5](https://docs.fivem.net/natives/?_0xE7E035450A7948D5)
---- @param objectData any
---- @param key string (char*)
---- @param value number (int)
---- @return void
---- @overload fun(value: number): any): string
-function DatadictSetInt(objectData, key, value) end
-
-    
---- # New Name: DatadictSetInt
---- DatadictSetInt
+--- @hash [0x9AB9C1CFC8862DFB](https://docs.fivem.net/natives/?_0x9AB9C1CFC8862DFB)
 ---
---- @hash [0xE7E035450A7948D5](https://docs.fivem.net/natives/?_0xE7E035450A7948D5)
---- @param objectData any
---- @param key string (char*)
---- @param value number (int)
 --- @return void
---- @overload fun(value: number): any): string
---- @deprecated
-function ObjectValueAddInteger(objectData, key, value) end
-
-    
---- DatadictSetString
----
---- @hash [0x8FF3847DADD8E30C](https://docs.fivem.net/natives/?_0x8FF3847DADD8E30C)
---- @param objectData any
---- @param key string (char*)
---- @param value string (char*)
---- @return void
---- @overload fun(): any): string): string
-function DatadictSetString(objectData, key, value) end
-
-    
---- # New Name: DatadictSetString
---- DatadictSetString
----
---- @hash [0x8FF3847DADD8E30C](https://docs.fivem.net/natives/?_0x8FF3847DADD8E30C)
---- @param objectData any
---- @param key string (char*)
---- @param value string (char*)
---- @return void
---- @overload fun(): any): string): string
---- @deprecated
-function ObjectValueAddString(objectData, key, value) end
+--- @overload fun(): void
+function DatafileDelete() end
 
     
 --- DatadictSetVector
@@ -687,24 +679,28 @@ function DatadictSetVector(objectData, key, valueX, valueY, valueZ) end
 function ObjectValueAddVector3(objectData, key, valueX, valueY, valueZ) end
 
     
---- DatafileClearWatchList
+--- DatadictSetInt
 ---
---- @hash [0x6CC86E78358D5119](https://docs.fivem.net/natives/?_0x6CC86E78358D5119)
----
+--- @hash [0xE7E035450A7948D5](https://docs.fivem.net/natives/?_0xE7E035450A7948D5)
+--- @param objectData any
+--- @param key string (char*)
+--- @param value number (int)
 --- @return void
---- @overload fun(): void
-function DatafileClearWatchList() end
+--- @overload fun(value: number): any): string
+function DatadictSetInt(objectData, key, value) end
 
     
---- # New Name: DatafileClearWatchList
---- DatafileClearWatchList
+--- # New Name: DatadictSetInt
+--- DatadictSetInt
 ---
---- @hash [0x6CC86E78358D5119](https://docs.fivem.net/natives/?_0x6CC86E78358D5119)
----
+--- @hash [0xE7E035450A7948D5](https://docs.fivem.net/natives/?_0xE7E035450A7948D5)
+--- @param objectData any
+--- @param key string (char*)
+--- @param value number (int)
 --- @return void
---- @overload fun(): void
+--- @overload fun(value: number): any): string
 --- @deprecated
-function N_0x6cc86e78358d5119() end
+function ObjectValueAddInteger(objectData, key, value) end
 
     
 --- ```
@@ -716,17 +712,6 @@ function N_0x6cc86e78358d5119() end
 --- @return void
 --- @overload fun(): void
 function DatafileCreate() end
-
-    
---- ```
---- NativeDB Added Parameter 1: int p0
---- ```
----
---- @hash [0x9AB9C1CFC8862DFB](https://docs.fivem.net/natives/?_0x9AB9C1CFC8862DFB)
----
---- @return void
---- @overload fun(): void
-function DatafileDelete() end
 
     
 --- DatafileDeleteRequestedFile
@@ -749,24 +734,42 @@ function DatafileDeleteRequestedFile(p0) end
 function N_0x8f5ea1c01d65a100(p0) end
 
     
---- DatafileFlushMissionHeader
+--- ```
+--- Loads a User-Generated Content (UGC) file. These files can be found in "[GTA5]\data\ugc" and "[GTA5]\common\patch\ugc". They seem to follow a naming convention, most likely of "[name]_[part].ugc". See example below for usage.
+--- Returns whether or not the file was successfully loaded.
+--- Example:
+--- DATAFILE::_LOAD_UGC_FILE("RockstarPlaylists") // loads "rockstarplaylists_00.ugc"
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 2: Any p1
+--- ```
 ---
---- @hash [0xC55854C7D7274882](https://docs.fivem.net/natives/?_0xC55854C7D7274882)
----
---- @return void
---- @overload fun(): void
-function DatafileFlushMissionHeader() end
+--- @hash [0xC5238C011AF405E4](https://docs.fivem.net/natives/?_0xC5238C011AF405E4)
+--- @param filename string (char*)
+--- @return boolean
+--- @overload fun(filename: string): boolean
+function DatafileLoadOfflineUgc(filename) end
 
     
---- # New Name: DatafileFlushMissionHeader
---- DatafileFlushMissionHeader
+--- # New Name: DatafileLoadOfflineUgc
+--- ```
+--- Loads a User-Generated Content (UGC) file. These files can be found in "[GTA5]\data\ugc" and "[GTA5]\common\patch\ugc". They seem to follow a naming convention, most likely of "[name]_[part].ugc". See example below for usage.
+--- Returns whether or not the file was successfully loaded.
+--- Example:
+--- DATAFILE::_LOAD_UGC_FILE("RockstarPlaylists") // loads "rockstarplaylists_00.ugc"
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 2: Any p1
+--- ```
 ---
---- @hash [0xC55854C7D7274882](https://docs.fivem.net/natives/?_0xC55854C7D7274882)
----
---- @return void
---- @overload fun(): void
+--- @hash [0xC5238C011AF405E4](https://docs.fivem.net/natives/?_0xC5238C011AF405E4)
+--- @param filename string (char*)
+--- @return boolean
+--- @overload fun(filename: string): boolean
 --- @deprecated
-function N_0xc55854c7d7274882() end
+function LoadUgcFile(filename) end
 
     
 --- ```
@@ -793,24 +796,39 @@ function DatafileGetFileDict() end
 function N_0x906b778ca1dc72b6() end
 
     
---- DatafileHasLoadedFileData
+--- ```
+--- NativeDB Introduced: v2189
+--- ```
 ---
---- @hash [0x15FF52B809DB2353](https://docs.fivem.net/natives/?_0x15FF52B809DB2353)
+--- @hash [0xDBF860CF1DB8E599](https://docs.fivem.net/natives/?_0xDBF860CF1DB8E599)
 --- @param p0 any
---- @return boolean
---- @overload fun(p0: any): boolean
-function DatafileHasLoadedFileData(p0) end
+--- @return any
+--- @overload fun(p0: any): any
+function N_0xdbf860cf1db8e599(p0) end
 
     
---- # New Name: DatafileHasLoadedFileData
---- DatafileHasLoadedFileData
+--- DatadictSetBool
 ---
---- @hash [0x15FF52B809DB2353](https://docs.fivem.net/natives/?_0x15FF52B809DB2353)
---- @param p0 any
---- @return boolean
---- @overload fun(p0: any): boolean
+--- @hash [0x35124302A556A325](https://docs.fivem.net/natives/?_0x35124302A556A325)
+--- @param objectData any
+--- @param key string (char*)
+--- @param value boolean
+--- @return void
+--- @overload fun(value: boolean): any): string
+function DatadictSetBool(objectData, key, value) end
+
+    
+--- # New Name: DatadictSetBool
+--- DatadictSetBool
+---
+--- @hash [0x35124302A556A325](https://docs.fivem.net/natives/?_0x35124302A556A325)
+--- @param objectData any
+--- @param key string (char*)
+--- @param value boolean
+--- @return void
+--- @overload fun(value: boolean): any): string
 --- @deprecated
-function N_0x15ff52b809db2353(p0) end
+function ObjectValueAddBoolean(objectData, key, value) end
 
     
 --- DatafileHasValidFileData
@@ -831,6 +849,174 @@ function DatafileHasValidFileData(p0) end
 --- @overload fun(p0: any): boolean
 --- @deprecated
 function N_0xf8cc1ebe0b62e29f(p0) end
+
+    
+--- ```
+--- NativeDB Added Parameter 2: Any p1
+--- ```
+---
+--- @hash [0xA69AC4ADE82B57A4](https://docs.fivem.net/natives/?_0xA69AC4ADE82B57A4)
+--- @param p0 number (int)
+--- @return boolean
+--- @overload fun(p0: number): boolean
+function DatafileSelectUgcData(p0) end
+
+    
+--- # New Name: DatafileSelectUgcData
+--- ```
+--- NativeDB Added Parameter 2: Any p1
+--- ```
+---
+--- @hash [0xA69AC4ADE82B57A4](https://docs.fivem.net/natives/?_0xA69AC4ADE82B57A4)
+--- @param p0 number (int)
+--- @return boolean
+--- @overload fun(p0: number): boolean
+--- @deprecated
+function N_0xa69ac4ade82b57a4(p0) end
+
+    
+--- DatafileFlushMissionHeader
+---
+--- @hash [0xC55854C7D7274882](https://docs.fivem.net/natives/?_0xC55854C7D7274882)
+---
+--- @return void
+--- @overload fun(): void
+function DatafileFlushMissionHeader() end
+
+    
+--- # New Name: DatafileFlushMissionHeader
+--- DatafileFlushMissionHeader
+---
+--- @hash [0xC55854C7D7274882](https://docs.fivem.net/natives/?_0xC55854C7D7274882)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function N_0xc55854c7d7274882() end
+
+    
+--- DatafileIsValidRequestId
+---
+--- @hash [0xFCCAE5B92A830878](https://docs.fivem.net/natives/?_0xFCCAE5B92A830878)
+--- @param index number (int)
+--- @return boolean
+--- @overload fun(index: number): boolean
+function DatafileIsValidRequestId(index) end
+
+    
+--- # New Name: DatafileIsValidRequestId
+--- DatafileIsValidRequestId
+---
+--- @hash [0xFCCAE5B92A830878](https://docs.fivem.net/natives/?_0xFCCAE5B92A830878)
+--- @param index number (int)
+--- @return boolean
+--- @overload fun(index: number): boolean
+--- @deprecated
+function N_0xfccae5b92a830878(index) end
+
+    
+--- ```
+--- NativeDB Added Parameter 2: Any p1
+--- ```
+---
+--- @hash [0x01095C95CD46B624](https://docs.fivem.net/natives/?_0x01095C95CD46B624)
+--- @param p0 number (int)
+--- @return boolean
+--- @overload fun(p0: number): boolean
+function DatafileSelectCreatorStats(p0) end
+
+    
+--- # New Name: DatafileSelectCreatorStats
+--- ```
+--- NativeDB Added Parameter 2: Any p1
+--- ```
+---
+--- @hash [0x01095C95CD46B624](https://docs.fivem.net/natives/?_0x01095C95CD46B624)
+--- @param p0 number (int)
+--- @return boolean
+--- @overload fun(p0: number): boolean
+--- @deprecated
+function N_0x01095c95cd46b624(p0) end
+
+    
+--- ```
+--- NativeDB Added Parameter 2: Any p1
+--- ```
+---
+--- @hash [0x83BCCE3224735F05](https://docs.fivem.net/natives/?_0x83BCCE3224735F05)
+--- @param filename string (char*)
+--- @return boolean
+--- @overload fun(filename: string): boolean
+function DatafileStartSaveToCloud(filename) end
+
+    
+--- # New Name: DatafileStartSaveToCloud
+--- ```
+--- NativeDB Added Parameter 2: Any p1
+--- ```
+---
+--- @hash [0x83BCCE3224735F05](https://docs.fivem.net/natives/?_0x83BCCE3224735F05)
+--- @param filename string (char*)
+--- @return boolean
+--- @overload fun(filename: string): boolean
+--- @deprecated
+function N_0x83bcce3224735f05(filename) end
+
+    
+--- ```
+--- NativeDB Added Parameter 2: Any p1
+--- ```
+---
+--- @hash [0x22DA66936E0FFF37](https://docs.fivem.net/natives/?_0x22DA66936E0FFF37)
+--- @param p0 any
+--- @return boolean
+--- @overload fun(p0: any): boolean
+function DatafileSelectActiveFile(p0) end
+
+    
+--- # New Name: DatafileSelectActiveFile
+--- ```
+--- NativeDB Added Parameter 2: Any p1
+--- ```
+---
+--- @hash [0x22DA66936E0FFF37](https://docs.fivem.net/natives/?_0x22DA66936E0FFF37)
+--- @param p0 any
+--- @return boolean
+--- @overload fun(p0: any): boolean
+--- @deprecated
+function N_0x22da66936e0fff37(p0) end
+
+    
+--- ```
+--- NativeDB Added Parameter 6: Any p5
+--- ```
+---
+--- @hash [0xA5EFC3E847D60507](https://docs.fivem.net/natives/?_0xA5EFC3E847D60507)
+--- @param contentName string (char*)
+--- @param description string (char*)
+--- @param tagsCsv string (char*)
+--- @param contentTypeName string (char*)
+--- @param publish boolean
+--- @return boolean
+--- @overload fun(contentName: string, description: string, tagsCsv: string, contentTypeName: string, publish: boolean): boolean
+function UgcCreateMission(contentName, description, tagsCsv, contentTypeName, publish) end
+
+    
+--- # New Name: UgcCreateMission
+--- ```
+--- NativeDB Added Parameter 6: Any p5
+--- ```
+---
+--- @hash [0xA5EFC3E847D60507](https://docs.fivem.net/natives/?_0xA5EFC3E847D60507)
+--- @param contentName string (char*)
+--- @param description string (char*)
+--- @param tagsCsv string (char*)
+--- @param contentTypeName string (char*)
+--- @param publish boolean
+--- @return boolean
+--- @overload fun(contentName: string, description: string, tagsCsv: string, contentTypeName: string, publish: boolean): boolean
+--- @deprecated
+function N_0xa5efc3e847d60507(contentName, description, tagsCsv, contentTypeName, publish) end
 
     
 --- ```
@@ -891,134 +1077,28 @@ function DatafileIsSavePending() end
 function N_0xbedb96a7584aa8cf() end
 
     
---- DatafileIsValidRequestId
----
---- @hash [0xFCCAE5B92A830878](https://docs.fivem.net/natives/?_0xFCCAE5B92A830878)
---- @param index number (int)
---- @return boolean
---- @overload fun(index: number): boolean
-function DatafileIsValidRequestId(index) end
-
-    
---- # New Name: DatafileIsValidRequestId
---- DatafileIsValidRequestId
----
---- @hash [0xFCCAE5B92A830878](https://docs.fivem.net/natives/?_0xFCCAE5B92A830878)
---- @param index number (int)
---- @return boolean
---- @overload fun(index: number): boolean
---- @deprecated
-function N_0xfccae5b92a830878(index) end
-
-    
 --- ```
 --- NativeDB Added Parameter 2: Any p1
 --- ```
 ---
---- @hash [0x22DA66936E0FFF37](https://docs.fivem.net/natives/?_0x22DA66936E0FFF37)
---- @param p0 any
---- @return boolean
---- @overload fun(p0: any): boolean
-function DatafileSelectActiveFile(p0) end
-
-    
---- # New Name: DatafileSelectActiveFile
---- ```
---- NativeDB Added Parameter 2: Any p1
---- ```
----
---- @hash [0x22DA66936E0FFF37](https://docs.fivem.net/natives/?_0x22DA66936E0FFF37)
---- @param p0 any
---- @return boolean
---- @overload fun(p0: any): boolean
---- @deprecated
-function N_0x22da66936e0fff37(p0) end
-
-    
---- ```
---- Loads a User-Generated Content (UGC) file. These files can be found in "[GTA5]\data\ugc" and "[GTA5]\common\patch\ugc". They seem to follow a naming convention, most likely of "[name]_[part].ugc". See example below for usage.
---- Returns whether or not the file was successfully loaded.
---- Example:
---- DATAFILE::_LOAD_UGC_FILE("RockstarPlaylists") // loads "rockstarplaylists_00.ugc"
---- ```
---- 
---- ```
---- NativeDB Added Parameter 2: Any p1
---- ```
----
---- @hash [0xC5238C011AF405E4](https://docs.fivem.net/natives/?_0xC5238C011AF405E4)
---- @param filename string (char*)
---- @return boolean
---- @overload fun(filename: string): boolean
-function DatafileLoadOfflineUgc(filename) end
-
-    
---- # New Name: DatafileLoadOfflineUgc
---- ```
---- Loads a User-Generated Content (UGC) file. These files can be found in "[GTA5]\data\ugc" and "[GTA5]\common\patch\ugc". They seem to follow a naming convention, most likely of "[name]_[part].ugc". See example below for usage.
---- Returns whether or not the file was successfully loaded.
---- Example:
---- DATAFILE::_LOAD_UGC_FILE("RockstarPlaylists") // loads "rockstarplaylists_00.ugc"
---- ```
---- 
---- ```
---- NativeDB Added Parameter 2: Any p1
---- ```
----
---- @hash [0xC5238C011AF405E4](https://docs.fivem.net/natives/?_0xC5238C011AF405E4)
---- @param filename string (char*)
---- @return boolean
---- @overload fun(filename: string): boolean
---- @deprecated
-function LoadUgcFile(filename) end
-
-    
---- ```
---- NativeDB Added Parameter 2: Any p1
---- ```
----
---- @hash [0x01095C95CD46B624](https://docs.fivem.net/natives/?_0x01095C95CD46B624)
+--- @hash [0x52818819057F2B40](https://docs.fivem.net/natives/?_0x52818819057F2B40)
 --- @param p0 number (int)
 --- @return boolean
 --- @overload fun(p0: number): boolean
-function DatafileSelectCreatorStats(p0) end
+function DatafileSelectUgcPlayerData(p0) end
 
     
---- # New Name: DatafileSelectCreatorStats
+--- # New Name: DatafileSelectUgcPlayerData
 --- ```
 --- NativeDB Added Parameter 2: Any p1
 --- ```
 ---
---- @hash [0x01095C95CD46B624](https://docs.fivem.net/natives/?_0x01095C95CD46B624)
+--- @hash [0x52818819057F2B40](https://docs.fivem.net/natives/?_0x52818819057F2B40)
 --- @param p0 number (int)
 --- @return boolean
 --- @overload fun(p0: number): boolean
 --- @deprecated
-function N_0x01095c95cd46b624(p0) end
-
-    
---- ```
---- NativeDB Added Parameter 2: Any p1
---- ```
----
---- @hash [0xA69AC4ADE82B57A4](https://docs.fivem.net/natives/?_0xA69AC4ADE82B57A4)
---- @param p0 number (int)
---- @return boolean
---- @overload fun(p0: number): boolean
-function DatafileSelectUgcData(p0) end
-
-    
---- # New Name: DatafileSelectUgcData
---- ```
---- NativeDB Added Parameter 2: Any p1
---- ```
----
---- @hash [0xA69AC4ADE82B57A4](https://docs.fivem.net/natives/?_0xA69AC4ADE82B57A4)
---- @param p0 number (int)
---- @return boolean
---- @overload fun(p0: number): boolean
---- @deprecated
-function N_0xa69ac4ade82b57a4(p0) end
+function N_0x52818819057f2b40(p0) end
 
     
 --- ```
@@ -1048,54 +1128,6 @@ function N_0x9cb0bfa7a9342c3d(p0, p1) end
 
     
 --- ```
---- NativeDB Added Parameter 2: Any p1
---- ```
----
---- @hash [0x52818819057F2B40](https://docs.fivem.net/natives/?_0x52818819057F2B40)
---- @param p0 number (int)
---- @return boolean
---- @overload fun(p0: number): boolean
-function DatafileSelectUgcPlayerData(p0) end
-
-    
---- # New Name: DatafileSelectUgcPlayerData
---- ```
---- NativeDB Added Parameter 2: Any p1
---- ```
----
---- @hash [0x52818819057F2B40](https://docs.fivem.net/natives/?_0x52818819057F2B40)
---- @param p0 number (int)
---- @return boolean
---- @overload fun(p0: number): boolean
---- @deprecated
-function N_0x52818819057f2b40(p0) end
-
-    
---- ```
---- NativeDB Added Parameter 2: Any p1
---- ```
----
---- @hash [0x83BCCE3224735F05](https://docs.fivem.net/natives/?_0x83BCCE3224735F05)
---- @param filename string (char*)
---- @return boolean
---- @overload fun(filename: string): boolean
-function DatafileStartSaveToCloud(filename) end
-
-    
---- # New Name: DatafileStartSaveToCloud
---- ```
---- NativeDB Added Parameter 2: Any p1
---- ```
----
---- @hash [0x83BCCE3224735F05](https://docs.fivem.net/natives/?_0x83BCCE3224735F05)
---- @param filename string (char*)
---- @return boolean
---- @overload fun(filename: string): boolean
---- @deprecated
-function N_0x83bcce3224735f05(filename) end
-
-    
---- ```
 --- NativeDB Added Parameter 1: int p0
 --- ```
 ---
@@ -1117,26 +1149,6 @@ function DatafileStoreMissionHeader() end
 --- @overload fun(): void
 --- @deprecated
 function N_0x2ed61456317b8178() end
-
-    
---- DatafileUpdateSaveToCloud
----
---- @hash [0x4DFDD9EB705F8140](https://docs.fivem.net/natives/?_0x4DFDD9EB705F8140)
---- @param p0 boolean
---- @return boolean
---- @overload fun(): boolean, boolean
-function DatafileUpdateSaveToCloud(p0) end
-
-    
---- # New Name: DatafileUpdateSaveToCloud
---- DatafileUpdateSaveToCloud
----
---- @hash [0x4DFDD9EB705F8140](https://docs.fivem.net/natives/?_0x4DFDD9EB705F8140)
---- @param p0 boolean
---- @return boolean
---- @overload fun(): boolean, boolean
---- @deprecated
-function N_0x4dfdd9eb705f8140(p0) end
 
     
 --- ```
@@ -1163,26 +1175,26 @@ function DatafileWatchRequestId(id) end
 function N_0xad6875bbc0fc899c(id) end
 
     
---- ```
---- NativeDB Introduced: v2189
---- ```
+--- DataarrayGetFloat
 ---
---- @hash [0x6AD0BD5E087866CB](https://docs.fivem.net/natives/?_0x6AD0BD5E087866CB)
---- @param p0 any
---- @return void
---- @overload fun(p0: any): void
-function N_0x6ad0bd5e087866cb(p0) end
+--- @hash [0xC0C527B525D7CFB5](https://docs.fivem.net/natives/?_0xC0C527B525D7CFB5)
+--- @param arrayData any
+--- @param arrayIndex number (int)
+--- @return number
+--- @overload fun(arrayIndex: number): number, any
+function DataarrayGetFloat(arrayData, arrayIndex) end
 
     
---- ```
---- NativeDB Introduced: v2189
---- ```
+--- # New Name: DataarrayGetFloat
+--- DataarrayGetFloat
 ---
---- @hash [0xDBF860CF1DB8E599](https://docs.fivem.net/natives/?_0xDBF860CF1DB8E599)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function N_0xdbf860cf1db8e599(p0) end
+--- @hash [0xC0C527B525D7CFB5](https://docs.fivem.net/natives/?_0xC0C527B525D7CFB5)
+--- @param arrayData any
+--- @param arrayIndex number (int)
+--- @return number
+--- @overload fun(arrayIndex: number): number, any
+--- @deprecated
+function ArrayValueGetFloat(arrayData, arrayIndex) end
 
     
 --- ```
@@ -1195,102 +1207,6 @@ function N_0xdbf860cf1db8e599(p0) end
 --- @return any
 --- @overload fun(p0: any, p1: any): any
 function N_0xa6eef01087181edd(p0, p1) end
-
-    
---- ```
---- NativeDB Added Parameter 8: Any p7
---- ```
----
---- @hash [0xC84527E235FCA219](https://docs.fivem.net/natives/?_0xC84527E235FCA219)
---- @param data string (char*)
---- @param dataCount number (int)
---- @param contentName string (char*)
---- @param description string (char*)
---- @param tagsCsv string (char*)
---- @param contentTypeName string (char*)
---- @param publish boolean
---- @return boolean
---- @overload fun(data: string, dataCount: number, contentName: string, description: string, tagsCsv: string, contentTypeName: string, publish: boolean): boolean
-function UgcCreateContent(data, dataCount, contentName, description, tagsCsv, contentTypeName, publish) end
-
-    
---- # New Name: UgcCreateContent
---- ```
---- NativeDB Added Parameter 8: Any p7
---- ```
----
---- @hash [0xC84527E235FCA219](https://docs.fivem.net/natives/?_0xC84527E235FCA219)
---- @param data string (char*)
---- @param dataCount number (int)
---- @param contentName string (char*)
---- @param description string (char*)
---- @param tagsCsv string (char*)
---- @param contentTypeName string (char*)
---- @param publish boolean
---- @return boolean
---- @overload fun(data: string, dataCount: number, contentName: string, description: string, tagsCsv: string, contentTypeName: string, publish: boolean): boolean
---- @deprecated
-function N_0xc84527e235fca219(data, dataCount, contentName, description, tagsCsv, contentTypeName, publish) end
-
-    
---- ```
---- NativeDB Added Parameter 6: Any p5
---- ```
----
---- @hash [0xA5EFC3E847D60507](https://docs.fivem.net/natives/?_0xA5EFC3E847D60507)
---- @param contentName string (char*)
---- @param description string (char*)
---- @param tagsCsv string (char*)
---- @param contentTypeName string (char*)
---- @param publish boolean
---- @return boolean
---- @overload fun(contentName: string, description: string, tagsCsv: string, contentTypeName: string, publish: boolean): boolean
-function UgcCreateMission(contentName, description, tagsCsv, contentTypeName, publish) end
-
-    
---- # New Name: UgcCreateMission
---- ```
---- NativeDB Added Parameter 6: Any p5
---- ```
----
---- @hash [0xA5EFC3E847D60507](https://docs.fivem.net/natives/?_0xA5EFC3E847D60507)
---- @param contentName string (char*)
---- @param description string (char*)
---- @param tagsCsv string (char*)
---- @param contentTypeName string (char*)
---- @param publish boolean
---- @return boolean
---- @overload fun(contentName: string, description: string, tagsCsv: string, contentTypeName: string, publish: boolean): boolean
---- @deprecated
-function N_0xa5efc3e847d60507(contentName, description, tagsCsv, contentTypeName, publish) end
-
-    
---- ```
---- NativeDB Added Parameter 4: Any p3
---- ```
----
---- @hash [0x692D808C34A82143](https://docs.fivem.net/natives/?_0x692D808C34A82143)
---- @param contentId string (char*)
---- @param rating number (float)
---- @param contentTypeName string (char*)
---- @return boolean
---- @overload fun(contentId: string, rating: number, contentTypeName: string): boolean
-function UgcSetPlayerData(contentId, rating, contentTypeName) end
-
-    
---- # New Name: UgcSetPlayerData
---- ```
---- NativeDB Added Parameter 4: Any p3
---- ```
----
---- @hash [0x692D808C34A82143](https://docs.fivem.net/natives/?_0x692D808C34A82143)
---- @param contentId string (char*)
---- @param rating number (float)
---- @param contentTypeName string (char*)
---- @return boolean
---- @overload fun(contentId: string, rating: number, contentTypeName: string): boolean
---- @deprecated
-function N_0x692d808c34a82143(contentId, rating, contentTypeName) end
 
     
 --- ```
@@ -1327,6 +1243,90 @@ function UgcUpdateContent(contentId, data, dataCount, contentName, description, 
 --- @overload fun(dataCount: number): boolean, string): boolean, any): boolean, string): boolean, string): boolean, string): boolean, string
 --- @deprecated
 function N_0x648e7a5434af7969(contentId, data, dataCount, contentName, description, tagsCsv, contentTypeName) end
+
+    
+--- DatafileUpdateSaveToCloud
+---
+--- @hash [0x4DFDD9EB705F8140](https://docs.fivem.net/natives/?_0x4DFDD9EB705F8140)
+--- @param p0 boolean
+--- @return boolean
+--- @overload fun(): boolean, boolean
+function DatafileUpdateSaveToCloud(p0) end
+
+    
+--- # New Name: DatafileUpdateSaveToCloud
+--- DatafileUpdateSaveToCloud
+---
+--- @hash [0x4DFDD9EB705F8140](https://docs.fivem.net/natives/?_0x4DFDD9EB705F8140)
+--- @param p0 boolean
+--- @return boolean
+--- @overload fun(): boolean, boolean
+--- @deprecated
+function N_0x4dfdd9eb705f8140(p0) end
+
+    
+--- ```
+--- NativeDB Added Parameter 4: Any p3
+--- ```
+---
+--- @hash [0x692D808C34A82143](https://docs.fivem.net/natives/?_0x692D808C34A82143)
+--- @param contentId string (char*)
+--- @param rating number (float)
+--- @param contentTypeName string (char*)
+--- @return boolean
+--- @overload fun(contentId: string, rating: number, contentTypeName: string): boolean
+function UgcSetPlayerData(contentId, rating, contentTypeName) end
+
+    
+--- # New Name: UgcSetPlayerData
+--- ```
+--- NativeDB Added Parameter 4: Any p3
+--- ```
+---
+--- @hash [0x692D808C34A82143](https://docs.fivem.net/natives/?_0x692D808C34A82143)
+--- @param contentId string (char*)
+--- @param rating number (float)
+--- @param contentTypeName string (char*)
+--- @return boolean
+--- @overload fun(contentId: string, rating: number, contentTypeName: string): boolean
+--- @deprecated
+function N_0x692d808c34a82143(contentId, rating, contentTypeName) end
+
+    
+--- ```
+--- NativeDB Added Parameter 8: Any p7
+--- ```
+---
+--- @hash [0xC84527E235FCA219](https://docs.fivem.net/natives/?_0xC84527E235FCA219)
+--- @param data string (char*)
+--- @param dataCount number (int)
+--- @param contentName string (char*)
+--- @param description string (char*)
+--- @param tagsCsv string (char*)
+--- @param contentTypeName string (char*)
+--- @param publish boolean
+--- @return boolean
+--- @overload fun(data: string, dataCount: number, contentName: string, description: string, tagsCsv: string, contentTypeName: string, publish: boolean): boolean
+function UgcCreateContent(data, dataCount, contentName, description, tagsCsv, contentTypeName, publish) end
+
+    
+--- # New Name: UgcCreateContent
+--- ```
+--- NativeDB Added Parameter 8: Any p7
+--- ```
+---
+--- @hash [0xC84527E235FCA219](https://docs.fivem.net/natives/?_0xC84527E235FCA219)
+--- @param data string (char*)
+--- @param dataCount number (int)
+--- @param contentName string (char*)
+--- @param description string (char*)
+--- @param tagsCsv string (char*)
+--- @param contentTypeName string (char*)
+--- @param publish boolean
+--- @return boolean
+--- @overload fun(data: string, dataCount: number, contentName: string, description: string, tagsCsv: string, contentTypeName: string, publish: boolean): boolean
+--- @deprecated
+function N_0xc84527e235fca219(data, dataCount, contentName, description, tagsCsv, contentTypeName, publish) end
 
     
 --- ```

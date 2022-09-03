@@ -1,13 +1,4 @@
 
---- AppClearBlock
----
---- @hash [0x5FE1DF3342DB7DBA](https://docs.fivem.net/natives/?_0x5FE1DF3342DB7DBA)
----
---- @return void
---- @overload fun(): void
-function AppClearBlock() end
-
-    
 --- AppCloseApp
 ---
 --- @hash [0xE41C65E07A5F05FC](https://docs.fivem.net/natives/?_0xE41C65E07A5F05FC)
@@ -15,15 +6,6 @@ function AppClearBlock() end
 --- @return void
 --- @overload fun(): void
 function AppCloseApp() end
-
-    
---- AppCloseBlock
----
---- @hash [0xE8E3FCF72EAC0EF8](https://docs.fivem.net/natives/?_0xE8E3FCF72EAC0EF8)
----
---- @return void
---- @overload fun(): void
-function AppCloseBlock() end
 
     
 --- AppDataValid
@@ -35,22 +17,13 @@ function AppCloseBlock() end
 function AppDataValid() end
 
     
---- AppDeleteAppData
+--- AppGetString
 ---
---- @hash [0x44151AEA95C8A003](https://docs.fivem.net/natives/?_0x44151AEA95C8A003)
---- @param appName string (char*)
---- @return boolean
---- @overload fun(appName: string): boolean
-function AppDeleteAppData(appName) end
-
-    
---- AppGetDeletedFileStatus
----
---- @hash [0xC9853A2BE3DED1A6](https://docs.fivem.net/natives/?_0xC9853A2BE3DED1A6)
----
---- @return number
---- @overload fun(): number
-function AppGetDeletedFileStatus() end
+--- @hash [0x749B023950D2311C](https://docs.fivem.net/natives/?_0x749B023950D2311C)
+--- @param property string (char*)
+--- @return string
+--- @overload fun(property: string): string
+function AppGetString(property) end
 
     
 --- AppGetFloat
@@ -62,22 +35,13 @@ function AppGetDeletedFileStatus() end
 function AppGetFloat(property) end
 
     
---- AppGetInt
+--- AppDeleteAppData
 ---
---- @hash [0xD3A58A12C77D9D4B](https://docs.fivem.net/natives/?_0xD3A58A12C77D9D4B)
---- @param property string (char*)
---- @return number
---- @overload fun(property: string): number
-function AppGetInt(property) end
-
-    
---- AppGetString
----
---- @hash [0x749B023950D2311C](https://docs.fivem.net/natives/?_0x749B023950D2311C)
---- @param property string (char*)
---- @return string
---- @overload fun(property: string): string
-function AppGetString(property) end
+--- @hash [0x44151AEA95C8A003](https://docs.fivem.net/natives/?_0x44151AEA95C8A003)
+--- @param appName string (char*)
+--- @return boolean
+--- @overload fun(appName: string): boolean
+function AppDeleteAppData(appName) end
 
     
 --- AppHasLinkedSocialClubAccount
@@ -89,6 +53,15 @@ function AppGetString(property) end
 function AppHasLinkedSocialClubAccount() end
 
     
+--- AppGetDeletedFileStatus
+---
+--- @hash [0xC9853A2BE3DED1A6](https://docs.fivem.net/natives/?_0xC9853A2BE3DED1A6)
+---
+--- @return number
+--- @overload fun(): number
+function AppGetDeletedFileStatus() end
+
+    
 --- AppSaveData
 ---
 --- @hash [0x95C5D356CDA6E85F](https://docs.fivem.net/natives/?_0x95C5D356CDA6E85F)
@@ -98,22 +71,23 @@ function AppHasLinkedSocialClubAccount() end
 function AppSaveData() end
 
     
---- AppHasSyncedData
+--- AppSetFloat
 ---
---- @hash [0xCA52279A7271517F](https://docs.fivem.net/natives/?_0xCA52279A7271517F)
---- @param appName string (char*)
---- @return boolean
---- @overload fun(appName: string): boolean
-function AppHasSyncedData(appName) end
+--- @hash [0x25D7687C68E0DAA4](https://docs.fivem.net/natives/?_0x25D7687C68E0DAA4)
+--- @param property string (char*)
+--- @param value number (float)
+--- @return void
+--- @overload fun(property: string, value: number): void
+function AppSetFloat(property, value) end
 
     
---- AppSetBlock
+--- AppClearBlock
 ---
---- @hash [0x262AB456A3D21F93](https://docs.fivem.net/natives/?_0x262AB456A3D21F93)
---- @param blockName string (char*)
+--- @hash [0x5FE1DF3342DB7DBA](https://docs.fivem.net/natives/?_0x5FE1DF3342DB7DBA)
+---
 --- @return void
---- @overload fun(blockName: string): void
-function AppSetBlock(blockName) end
+--- @overload fun(): void
+function AppClearBlock() end
 
     
 --- AppSetInt
@@ -124,6 +98,24 @@ function AppSetBlock(blockName) end
 --- @return void
 --- @overload fun(property: string, value: number): void
 function AppSetInt(property, value) end
+
+    
+--- AppGetInt
+---
+--- @hash [0xD3A58A12C77D9D4B](https://docs.fivem.net/natives/?_0xD3A58A12C77D9D4B)
+--- @param property string (char*)
+--- @return number
+--- @overload fun(property: string): number
+function AppGetInt(property) end
+
+    
+--- AppCloseBlock
+---
+--- @hash [0xE8E3FCF72EAC0EF8](https://docs.fivem.net/natives/?_0xE8E3FCF72EAC0EF8)
+---
+--- @return void
+--- @overload fun(): void
+function AppCloseBlock() end
 
     
 --- ```
@@ -139,14 +131,13 @@ function AppSetInt(property, value) end
 function AppSetApp(appName) end
 
     
---- AppSetFloat
+--- AppHasSyncedData
 ---
---- @hash [0x25D7687C68E0DAA4](https://docs.fivem.net/natives/?_0x25D7687C68E0DAA4)
---- @param property string (char*)
---- @param value number (float)
---- @return void
---- @overload fun(property: string, value: number): void
-function AppSetFloat(property, value) end
+--- @hash [0xCA52279A7271517F](https://docs.fivem.net/natives/?_0xCA52279A7271517F)
+--- @param appName string (char*)
+--- @return boolean
+--- @overload fun(appName: string): boolean
+function AppHasSyncedData(appName) end
 
     
 --- AppSetString
@@ -157,5 +148,14 @@ function AppSetFloat(property, value) end
 --- @return void
 --- @overload fun(property: string, value: string): void
 function AppSetString(property, value) end
+
+    
+--- AppSetBlock
+---
+--- @hash [0x262AB456A3D21F93](https://docs.fivem.net/natives/?_0x262AB456A3D21F93)
+--- @param blockName string (char*)
+--- @return void
+--- @overload fun(blockName: string): void
+function AppSetBlock(blockName) end
 
     

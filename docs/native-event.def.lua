@@ -1,4 +1,13 @@
 
+--- SuppressAgitationEventsNextFrame
+---
+--- @hash [0x5F3B7749C112D552](https://docs.fivem.net/natives/?_0x5F3B7749C112D552)
+---
+--- @return void
+--- @overload fun(): void
+function SuppressAgitationEventsNextFrame() end
+
+    
 --- ```
 --- eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
 --- ```
@@ -14,30 +23,13 @@
 function AddShockingEventAtPosition(eventType, x, y, z, duration) end
 
     
---- ```
---- eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
---- This is limited to 4 blocked events at a time.
---- ```
+--- RemoveAllShockingEvents
 ---
---- @hash [0xE42FCDFD0E4196F7](https://docs.fivem.net/natives/?_0xE42FCDFD0E4196F7)
---- @param name Hash
---- @param eventType number (int)
+--- @hash [0xEAABE8FDFA21274C](https://docs.fivem.net/natives/?_0xEAABE8FDFA21274C)
+--- @param p0 boolean
 --- @return void
---- @overload fun(name: Hash, eventType: number): void
-function BlockDecisionMakerEvent(name, eventType) end
-
-    
---- ```
---- eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
---- ```
----
---- @hash [0x7FD8F3BE76F89422](https://docs.fivem.net/natives/?_0x7FD8F3BE76F89422)
---- @param eventType number (int)
---- @param entity Entity
---- @param duration number (float)
---- @return ScrHandle
---- @overload fun(eventType: number, entity: Entity, duration: number): ScrHandle
-function AddShockingEventForEntity(eventType, entity, duration) end
+--- @overload fun(p0: boolean): void
+function RemoveAllShockingEvents(p0) end
 
     
 --- ```
@@ -53,6 +45,50 @@ function AddShockingEventForEntity(eventType, entity, duration) end
 --- @return boolean
 --- @overload fun(eventType: number, x: number, y: number, z: number, radius: number): boolean
 function IsShockingEventInSphere(eventType, x, y, z, radius) end
+
+    
+--- ```
+--- eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
+--- ```
+---
+--- @hash [0x7FD8F3BE76F89422](https://docs.fivem.net/natives/?_0x7FD8F3BE76F89422)
+--- @param eventType number (int)
+--- @param entity Entity
+--- @param duration number (float)
+--- @return ScrHandle
+--- @overload fun(eventType: number, entity: Entity, duration: number): ScrHandle
+function AddShockingEventForEntity(eventType, entity, duration) end
+
+    
+--- RemoveShockingEventSpawnBlockingAreas
+---
+--- @hash [0x340F1415B68AEADE](https://docs.fivem.net/natives/?_0x340F1415B68AEADE)
+---
+--- @return void
+--- @overload fun(): void
+function RemoveShockingEventSpawnBlockingAreas() end
+
+    
+--- ```
+--- eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
+--- This is limited to 4 blocked events at a time.
+--- ```
+---
+--- @hash [0xE42FCDFD0E4196F7](https://docs.fivem.net/natives/?_0xE42FCDFD0E4196F7)
+--- @param name Hash
+--- @param eventType number (int)
+--- @return void
+--- @overload fun(name: Hash, eventType: number): void
+function BlockDecisionMakerEvent(name, eventType) end
+
+    
+--- SuppressShockingEventsNextFrame
+---
+--- @hash [0x2F9A292AD0A3BD89](https://docs.fivem.net/natives/?_0x2F9A292AD0A3BD89)
+---
+--- @return void
+--- @overload fun(): void
+function SuppressShockingEventsNextFrame() end
 
     
 --- RemoveShockingEvent
@@ -76,15 +112,6 @@ function RemoveShockingEvent(event) end
 function ClearDecisionMakerEventResponse(name, eventType) end
 
     
---- RemoveAllShockingEvents
----
---- @hash [0xEAABE8FDFA21274C](https://docs.fivem.net/natives/?_0xEAABE8FDFA21274C)
---- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
-function RemoveAllShockingEvents(p0) end
-
-    
 --- ```
 --- eventType: https://alloc8or.re/gta5/doc/enums/eEventType.txt
 --- ```
@@ -94,43 +121,6 @@ function RemoveAllShockingEvents(p0) end
 --- @return void
 --- @overload fun(eventType: number): void
 function SuppressShockingEventTypeNextFrame(eventType) end
-
-    
---- RemoveShockingEventSpawnBlockingAreas
----
---- @hash [0x340F1415B68AEADE](https://docs.fivem.net/natives/?_0x340F1415B68AEADE)
----
---- @return void
---- @overload fun(): void
-function RemoveShockingEventSpawnBlockingAreas() end
-
-    
---- SetDecisionMaker
----
---- @hash [0xB604A2942ADED0EE](https://docs.fivem.net/natives/?_0xB604A2942ADED0EE)
---- @param ped Ped
---- @param name Hash
---- @return void
---- @overload fun(ped: Ped, name: Hash): void
-function SetDecisionMaker(ped, name) end
-
-    
---- SuppressShockingEventsNextFrame
----
---- @hash [0x2F9A292AD0A3BD89](https://docs.fivem.net/natives/?_0x2F9A292AD0A3BD89)
----
---- @return void
---- @overload fun(): void
-function SuppressShockingEventsNextFrame() end
-
-    
---- SuppressAgitationEventsNextFrame
----
---- @hash [0x5F3B7749C112D552](https://docs.fivem.net/natives/?_0x5F3B7749C112D552)
----
---- @return void
---- @overload fun(): void
-function SuppressAgitationEventsNextFrame() end
 
     
 --- ```
@@ -143,5 +133,15 @@ function SuppressAgitationEventsNextFrame() end
 --- @return void
 --- @overload fun(name: Hash, eventType: number): void
 function UnblockDecisionMakerEvent(name, eventType) end
+
+    
+--- SetDecisionMaker
+---
+--- @hash [0xB604A2942ADED0EE](https://docs.fivem.net/natives/?_0xB604A2942ADED0EE)
+--- @param ped Ped
+--- @param name Hash
+--- @return void
+--- @overload fun(ped: Ped, name: Hash): void
+function SetDecisionMaker(ped, name) end
 
     

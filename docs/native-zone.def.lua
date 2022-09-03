@@ -17,6 +17,25 @@ function ClearPopscheduleOverrideVehicleModel(scheduleId) end
 
     
 --- ```
+--- Returns a hash representing which part of the map the given coords are located.  
+--- Possible return values:  
+--- (Hash of) city -> -289320599  
+--- (Hash of) countryside -> 2072609373  
+--- C# Example :  
+--- Ped player = Game.Player.Character;  
+--- Hash h = Function.Call<Hash>(Hash.GET_HASH_OF_MAP_AREA_AT_COORDS, player.Position.X, player.Position.Y, player.Position.Z);  
+--- ```
+---
+--- @hash [0x7EE64D51E8498728](https://docs.fivem.net/natives/?_0x7EE64D51E8498728)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return Hash
+--- @overload fun(x: number, y: number, z: number): Hash
+function GetHashOfMapAreaAtCoords(x, y, z) end
+
+    
+--- ```
 --- AIRP = Los Santos International Airport  
 --- ALAMO = Alamo Sea  
 --- ALTA = Alta  
@@ -120,6 +139,54 @@ function GetNameOfZone(x, y, z) end
 
     
 --- ```
+--- Only used once in the decompiled scripts. Seems to be related to scripted vehicle generators.  
+--- Modified example from "am_imp_exp.c4", line 6406:  
+--- /* popSchedules[0] = ZONE::GET_ZONE_POPSCHEDULE(ZONE::GET_ZONE_AT_COORDS(891.3, 807.9, 188.1));  
+--- etc.  
+--- */  
+--- ZONE::OVERRIDE_POPSCHEDULE_VEHICLE_MODEL(popSchedules[index], vehicleHash);  
+--- STREAMING::REQUEST_MODEL(vehicleHash);  
+--- ```
+---
+--- @hash [0x5F7D596BAC2E7777](https://docs.fivem.net/natives/?_0x5F7D596BAC2E7777)
+--- @param scheduleId number (int)
+--- @param vehicleHash Hash
+--- @return void
+--- @overload fun(scheduleId: number, vehicleHash: Hash): void
+function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
+
+    
+--- GetZoneAtCoords
+---
+--- @hash [0x27040C25DE6CB2F4](https://docs.fivem.net/natives/?_0x27040C25DE6CB2F4)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return number
+--- @overload fun(x: number, y: number, z: number): number
+function GetZoneAtCoords(x, y, z) end
+
+    
+--- SetZoneEnabled
+---
+--- @hash [0xBA5ECEEA120E5611](https://docs.fivem.net/natives/?_0xBA5ECEEA120E5611)
+--- @param zoneId number (int)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(zoneId: number, toggle: boolean): void
+function SetZoneEnabled(zoneId, toggle) end
+
+    
+--- GetZonePopschedule
+---
+--- @hash [0x4334BC40AA0CB4BB](https://docs.fivem.net/natives/?_0x4334BC40AA0CB4BB)
+--- @param zoneId number (int)
+--- @return number
+--- @overload fun(zoneId: number): number
+function GetZonePopschedule(zoneId) end
+
+    
+--- ```
 --- 'zoneName' corresponds to an entry in 'popzone.ipl'.  
 --- AIRP = Los Santos International Airport  
 --- ALAMO = Alamo Sea  
@@ -220,36 +287,6 @@ function GetZoneFromNameId(zoneName) end
 
     
 --- ```
---- Returns a hash representing which part of the map the given coords are located.  
---- Possible return values:  
---- (Hash of) city -> -289320599  
---- (Hash of) countryside -> 2072609373  
---- C# Example :  
---- Ped player = Game.Player.Character;  
---- Hash h = Function.Call<Hash>(Hash.GET_HASH_OF_MAP_AREA_AT_COORDS, player.Position.X, player.Position.Y, player.Position.Z);  
---- ```
----
---- @hash [0x7EE64D51E8498728](https://docs.fivem.net/natives/?_0x7EE64D51E8498728)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @return Hash
---- @overload fun(x: number, y: number, z: number): Hash
-function GetHashOfMapAreaAtCoords(x, y, z) end
-
-    
---- GetZoneAtCoords
----
---- @hash [0x27040C25DE6CB2F4](https://docs.fivem.net/natives/?_0x27040C25DE6CB2F4)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @return number
---- @overload fun(x: number, y: number, z: number): number
-function GetZoneAtCoords(x, y, z) end
-
-    
---- ```
 --- cellphone range 1- 5 used for signal bar in iFruit phone  
 --- ```
 ---
@@ -258,42 +295,5 @@ function GetZoneAtCoords(x, y, z) end
 --- @return number
 --- @overload fun(zoneId: number): number
 function GetZoneScumminess(zoneId) end
-
-    
---- GetZonePopschedule
----
---- @hash [0x4334BC40AA0CB4BB](https://docs.fivem.net/natives/?_0x4334BC40AA0CB4BB)
---- @param zoneId number (int)
---- @return number
---- @overload fun(zoneId: number): number
-function GetZonePopschedule(zoneId) end
-
-    
---- SetZoneEnabled
----
---- @hash [0xBA5ECEEA120E5611](https://docs.fivem.net/natives/?_0xBA5ECEEA120E5611)
---- @param zoneId number (int)
---- @param toggle boolean
---- @return void
---- @overload fun(zoneId: number, toggle: boolean): void
-function SetZoneEnabled(zoneId, toggle) end
-
-    
---- ```
---- Only used once in the decompiled scripts. Seems to be related to scripted vehicle generators.  
---- Modified example from "am_imp_exp.c4", line 6406:  
---- /* popSchedules[0] = ZONE::GET_ZONE_POPSCHEDULE(ZONE::GET_ZONE_AT_COORDS(891.3, 807.9, 188.1));  
---- etc.  
---- */  
---- ZONE::OVERRIDE_POPSCHEDULE_VEHICLE_MODEL(popSchedules[index], vehicleHash);  
---- STREAMING::REQUEST_MODEL(vehicleHash);  
---- ```
----
---- @hash [0x5F7D596BAC2E7777](https://docs.fivem.net/natives/?_0x5F7D596BAC2E7777)
---- @param scheduleId number (int)
---- @param vehicleHash Hash
---- @return void
---- @overload fun(scheduleId: number, vehicleHash: Hash): void
-function OverridePopscheduleVehicleModel(scheduleId, vehicleHash) end
 
     

@@ -1,4 +1,107 @@
 
+--- AddPetrolDecal
+---
+--- @hash [0x4F5212C7AD880DF8](https://docs.fivem.net/natives/?_0x4F5212C7AD880DF8)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param groundLvl number (float)
+--- @param width number (float)
+--- @param transparency number (float)
+--- @return number
+--- @overload fun(x: number, y: number, z: number, groundLvl: number, width: number, transparency: number): number
+function AddPetrolDecal(x, y, z, groundLvl, width, transparency) end
+
+    
+--- Stops the effect and sets a value (bool) in its data (+0x199) to false; See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724).
+---
+--- @hash [0xD2209BE128B5418C](https://docs.fivem.net/natives/?_0xD2209BE128B5418C)
+--- @param effectName string (char*)
+--- @return void
+--- @overload fun(effectName: string): void
+function AnimpostfxStopAndDoUnk(effectName) end
+
+    
+--- # New Name: AnimpostfxStopAndDoUnk
+--- Stops the effect and sets a value (bool) in its data (+0x199) to false; See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724).
+---
+--- @hash [0xD2209BE128B5418C](https://docs.fivem.net/natives/?_0xD2209BE128B5418C)
+--- @param effectName string (char*)
+--- @return void
+--- @overload fun(effectName: string): void
+--- @deprecated
+function N_0xd2209be128b5418c(effectName) end
+
+    
+--- ```
+--- Might be more appropriate in AUDIO?  
+--- ```
+---
+--- @hash [0x845BAD77CC770633](https://docs.fivem.net/natives/?_0x845BAD77CC770633)
+--- @param entity Entity
+--- @return void
+--- @overload fun(entity: Entity): void
+function AttachTvAudioToEntity(entity) end
+
+    
+--- ```
+--- NOTE: Debugging functions are not present in the retail version of the game.  
+--- ```
+---
+--- @hash [0xD8B9A8AC5608FF94](https://docs.fivem.net/natives/?_0xD8B9A8AC5608FF94)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param r1 number (int)
+--- @param g1 number (int)
+--- @param b1 number (int)
+--- @param r2 number (int)
+--- @param g2 number (int)
+--- @param b2 number (int)
+--- @param alpha1 number (int)
+--- @param alpha2 number (int)
+--- @return void
+--- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, r1: number, g1: number, b1: number, r2: number, g2: number, b2: number, alpha1: number, alpha2: number): void
+function DrawDebugLineWithTwoColours(x1, y1, z1, x2, y2, z2, r1, g1, b1, r2, g2, b2, alpha1, alpha2) end
+
+    
+--- ```
+--- Example:  
+--- GRAPHICS::ADD_ENTITY_ICON(a_0, "MP_Arrow");  
+--- I tried this and nothing happened...  
+--- ```
+---
+--- @hash [0x9CD43EEE12BF4DD0](https://docs.fivem.net/natives/?_0x9CD43EEE12BF4DD0)
+--- @param entity Entity
+--- @param icon string (char*)
+--- @return any
+--- @overload fun(entity: Entity, icon: string): any
+function AddEntityIcon(entity, icon) end
+
+    
+--- See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724).
+---
+--- @hash [0x068E835A1D0DC0E3](https://docs.fivem.net/natives/?_0x068E835A1D0DC0E3)
+--- @param effectName string (char*)
+--- @return void
+--- @overload fun(effectName: string): void
+function AnimpostfxStop(effectName) end
+
+    
+--- # New Name: AnimpostfxStop
+--- See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724).
+---
+--- @hash [0x068E835A1D0DC0E3](https://docs.fivem.net/natives/?_0x068E835A1D0DC0E3)
+--- @param effectName string (char*)
+--- @return void
+--- @overload fun(effectName: string): void
+--- @deprecated
+function StopScreenEffect(effectName) end
+
+    
 --- ```
 --- decal types:  
 --- public enum DecalTypes  
@@ -66,9 +169,9 @@
 --- @param p4 number (float)
 --- @param p5 number (float)
 --- @param p6 number (float)
---- @param scaleH number (float)
---- @param scale number (float)
---- @param rotation number (float)
+--- @param p7 number (float)
+--- @param p8 number (float)
+--- @param p9 number (float)
 --- @param width number (float)
 --- @param height number (float)
 --- @param rCoef number (float)
@@ -81,601 +184,7 @@
 --- @param p19 boolean
 --- @return number
 --- @overload fun(decalType: number, posX: number, posY: number, posZ: number, p4: number, p5: number, p6: number, p7: number, p8: number, p9: number, width: number, height: number, rCoef: number, gCoef: number, bCoef: number, opacity: number, timeout: number, p17: boolean, p18: boolean, p19: boolean): number
-function AddDecal(decalType, posX, posY, posZ, p4, p5, p6, scaleH, scale, rotation, width, height, rCoef, gCoef, bCoef, opacity, timeout, p17, p18, p19) end
-
-    
---- AddPetrolDecal
----
---- @hash [0x4F5212C7AD880DF8](https://docs.fivem.net/natives/?_0x4F5212C7AD880DF8)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param groundLvl number (float)
---- @param width number (float)
---- @param transparency number (float)
---- @return number
---- @overload fun(x: number, y: number, z: number, groundLvl: number, width: number, transparency: number): number
-function AddPetrolDecal(x, y, z, groundLvl, width, transparency) end
-
-    
---- AddPetrolTrailDecalInfo
----
---- @hash [0x967278682CB6967A](https://docs.fivem.net/natives/?_0x967278682CB6967A)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param p3 number (float)
---- @return void
---- @overload fun(x: number, y: number, z: number, p3: number): void
-function AddPetrolTrailDecalInfo(x, y, z, p3) end
-
-    
---- # New Name: AddPetrolTrailDecalInfo
---- AddPetrolTrailDecalInfo
----
---- @hash [0x967278682CB6967A](https://docs.fivem.net/natives/?_0x967278682CB6967A)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param p3 number (float)
---- @return void
---- @overload fun(x: number, y: number, z: number, p3: number): void
---- @deprecated
-function N_0x967278682cb6967a(x, y, z, p3) end
-
-    
---- ```
---- Example:  
---- GRAPHICS::ADD_ENTITY_ICON(a_0, "MP_Arrow");  
---- I tried this and nothing happened...  
---- ```
----
---- @hash [0x9CD43EEE12BF4DD0](https://docs.fivem.net/natives/?_0x9CD43EEE12BF4DD0)
---- @param entity Entity
---- @param icon string (char*)
---- @return any
---- @overload fun(entity: Entity, icon: string): any
-function AddEntityIcon(entity, icon) end
-
-    
---- See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724)
----
---- @hash [0xE35B38A27E8E7179](https://docs.fivem.net/natives/?_0xE35B38A27E8E7179)
---- @param effectName string (char*)
---- @return number
---- @overload fun(effectName: string): number
-function AnimpostfxGetUnk(effectName) end
-
-    
---- # New Name: AnimpostfxGetUnk
---- See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724)
----
---- @hash [0xE35B38A27E8E7179](https://docs.fivem.net/natives/?_0xE35B38A27E8E7179)
---- @param effectName string (char*)
---- @return number
---- @overload fun(effectName: string): number
---- @deprecated
-function N_0xe35b38a27e8e7179(effectName) end
-
-    
---- AddTcmodifierOverride
----
---- @hash [0x1A8E2C8B9CF4549C](https://docs.fivem.net/natives/?_0x1A8E2C8B9CF4549C)
---- @param modifierName1 string (char*)
---- @param modifierName2 string (char*)
---- @return void
---- @overload fun(modifierName1: string, modifierName2: string): void
-function AddTcmodifierOverride(modifierName1, modifierName2) end
-
-    
---- # New Name: AddTcmodifierOverride
---- AddTcmodifierOverride
----
---- @hash [0x1A8E2C8B9CF4549C](https://docs.fivem.net/natives/?_0x1A8E2C8B9CF4549C)
---- @param modifierName1 string (char*)
---- @param modifierName2 string (char*)
---- @return void
---- @overload fun(modifierName1: string, modifierName2: string): void
---- @deprecated
-function N_0x1a8e2c8b9cf4549c(modifierName1, modifierName2) end
-
-    
---- ```
---- duration - is how long to play the effect for in milliseconds. If 0, it plays the default length
---- if loop is true, the effect won't stop until you call ANIMPOSTFX_STOP on it. (only loopable effects)
---- ```
----
---- @hash [0x2206BF9A37B7F724](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724)
---- @param effectName string (char*)
---- @param duration number (int)
---- @param looped boolean
---- @return void
---- @overload fun(effectName: string, duration: number, looped: boolean): void
-function AnimpostfxPlay(effectName, duration, looped) end
-
-    
---- # New Name: AnimpostfxPlay
---- ```
---- duration - is how long to play the effect for in milliseconds. If 0, it plays the default length
---- if loop is true, the effect won't stop until you call ANIMPOSTFX_STOP on it. (only loopable effects)
---- ```
----
---- @hash [0x2206BF9A37B7F724](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724)
---- @param effectName string (char*)
---- @param duration number (int)
---- @param looped boolean
---- @return void
---- @overload fun(effectName: string, duration: number, looped: boolean): void
---- @deprecated
-function StartScreenEffect(effectName, duration, looped) end
-
-    
---- See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724).
----
---- @hash [0x068E835A1D0DC0E3](https://docs.fivem.net/natives/?_0x068E835A1D0DC0E3)
---- @param effectName string (char*)
---- @return void
---- @overload fun(effectName: string): void
-function AnimpostfxStop(effectName) end
-
-    
---- # New Name: AnimpostfxStop
---- See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724).
----
---- @hash [0x068E835A1D0DC0E3](https://docs.fivem.net/natives/?_0x068E835A1D0DC0E3)
---- @param effectName string (char*)
---- @return void
---- @overload fun(effectName: string): void
---- @deprecated
-function StopScreenEffect(effectName) end
-
-    
---- ```
---- boneIndex is always chassis_dummy in the scripts. The x/y/z params are location relative to the chassis bone.
---- ```
----
---- @hash [0x428BDCB9DA58DA53](https://docs.fivem.net/natives/?_0x428BDCB9DA58DA53)
---- @param vehicle Vehicle
---- @param ped Ped
---- @param boneIndex number (int)
---- @param x1 number (float)
---- @param x2 number (float)
---- @param x3 number (float)
---- @param y1 number (float)
---- @param y2 number (float)
---- @param y3 number (float)
---- @param z1 number (float)
---- @param z2 number (float)
---- @param z3 number (float)
---- @param scale number (float)
---- @param p13 any
---- @param alpha number (int)
---- @return boolean
---- @overload fun(vehicle: Vehicle, ped: Ped, boneIndex: number, x1: number, x2: number, x3: number, y1: number, y2: number, y3: number, z1: number, z2: number, z3: number, scale: number, p13: any, alpha: number): boolean
-function AddVehicleCrewEmblem(vehicle, ped, boneIndex, x1, x2, x3, y1, y2, y3, z1, z2, z3, scale, p13, alpha) end
-
-    
---- # New Name: AddVehicleCrewEmblem
---- ```
---- boneIndex is always chassis_dummy in the scripts. The x/y/z params are location relative to the chassis bone.
---- ```
----
---- @hash [0x428BDCB9DA58DA53](https://docs.fivem.net/natives/?_0x428BDCB9DA58DA53)
---- @param vehicle Vehicle
---- @param ped Ped
---- @param boneIndex number (int)
---- @param x1 number (float)
---- @param x2 number (float)
---- @param x3 number (float)
---- @param y1 number (float)
---- @param y2 number (float)
---- @param y3 number (float)
---- @param z1 number (float)
---- @param z2 number (float)
---- @param z3 number (float)
---- @param scale number (float)
---- @param p13 any
---- @param alpha number (int)
---- @return boolean
---- @overload fun(vehicle: Vehicle, ped: Ped, boneIndex: number, x1: number, x2: number, x3: number, y1: number, y2: number, y3: number, z1: number, z2: number, z3: number, scale: number, p13: any, alpha: number): boolean
---- @deprecated
-function AddClanDecalToVehicle(vehicle, ped, boneIndex, x1, x2, x3, y1, y2, y3, z1, z2, z3, scale, p13, alpha) end
-
-    
---- ```
---- Might be more appropriate in AUDIO?  
---- ```
----
---- @hash [0x845BAD77CC770633](https://docs.fivem.net/natives/?_0x845BAD77CC770633)
---- @param entity Entity
---- @return void
---- @overload fun(entity: Entity): void
-function AttachTvAudioToEntity(entity) end
-
-    
---- See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724).
----
---- @hash [0x36AD3E690DA5ACEB](https://docs.fivem.net/natives/?_0x36AD3E690DA5ACEB)
---- @param effectName string (char*)
---- @return boolean
---- @overload fun(effectName: string): boolean
-function AnimpostfxIsRunning(effectName) end
-
-    
---- # New Name: AnimpostfxIsRunning
---- See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724).
----
---- @hash [0x36AD3E690DA5ACEB](https://docs.fivem.net/natives/?_0x36AD3E690DA5ACEB)
---- @param effectName string (char*)
---- @return boolean
---- @overload fun(effectName: string): boolean
---- @deprecated
-function GetScreenEffectIsActive(effectName) end
-
-    
---- AnimpostfxStopAll
----
---- @hash [0xB4EDDC19532BFB85](https://docs.fivem.net/natives/?_0xB4EDDC19532BFB85)
----
---- @return void
---- @overload fun(): void
-function AnimpostfxStopAll() end
-
-    
---- # New Name: AnimpostfxStopAll
---- AnimpostfxStopAll
----
---- @hash [0xB4EDDC19532BFB85](https://docs.fivem.net/natives/?_0xB4EDDC19532BFB85)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function StopAllScreenEffects() end
-
-    
---- Stops the effect and sets a value (bool) in its data (+0x199) to false; See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724).
----
---- @hash [0xD2209BE128B5418C](https://docs.fivem.net/natives/?_0xD2209BE128B5418C)
---- @param effectName string (char*)
---- @return void
---- @overload fun(effectName: string): void
-function AnimpostfxStopAndDoUnk(effectName) end
-
-    
---- # New Name: AnimpostfxStopAndDoUnk
---- Stops the effect and sets a value (bool) in its data (+0x199) to false; See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724).
----
---- @hash [0xD2209BE128B5418C](https://docs.fivem.net/natives/?_0xD2209BE128B5418C)
---- @param effectName string (char*)
---- @return void
---- @overload fun(effectName: string): void
---- @deprecated
-function N_0xd2209be128b5418c(effectName) end
-
-    
---- ```
---- Push a function from the Scaleform onto the stack  
---- ```
----
---- @hash [0xF6E48914C7A8694E](https://docs.fivem.net/natives/?_0xF6E48914C7A8694E)
---- @param scaleform number (int)
---- @param methodName string (char*)
---- @return boolean
---- @overload fun(scaleform: number, methodName: string): boolean
-function BeginScaleformMovieMethod(scaleform, methodName) end
-
-    
---- # New Name: BeginScaleformMovieMethod
---- ```
---- Push a function from the Scaleform onto the stack  
---- ```
----
---- @hash [0xF6E48914C7A8694E](https://docs.fivem.net/natives/?_0xF6E48914C7A8694E)
---- @param scaleform number (int)
---- @param methodName string (char*)
---- @return boolean
---- @overload fun(scaleform: number, methodName: string): boolean
---- @deprecated
-function PushScaleformMovieFunction(scaleform, methodName) end
-
-    
---- Starts frontend (pause menu) scaleform movie methods.
---- This can be used when you want to make custom frontend menus, and customize things like images or text in the menus etc.
---- 
---- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND_HEADER`](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C) for header scaleform functions.
----
---- @hash [0xAB58C27C2E6123C6](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6)
---- @param functionName string (char*)
---- @return boolean
---- @overload fun(functionName: string): boolean
-function BeginScaleformMovieMethodOnFrontend(functionName) end
-
-    
---- # New Name: BeginScaleformMovieMethodOnFrontend
---- Starts frontend (pause menu) scaleform movie methods.
---- This can be used when you want to make custom frontend menus, and customize things like images or text in the menus etc.
---- 
---- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND_HEADER`](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C) for header scaleform functions.
----
---- @hash [0xAB58C27C2E6123C6](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6)
---- @param functionName string (char*)
---- @return boolean
---- @overload fun(functionName: string): boolean
---- @deprecated
-function N_0xab58c27c2e6123c6(functionName) end
-
-    
---- # New Name: BeginScaleformMovieMethodOnFrontend
---- Starts frontend (pause menu) scaleform movie methods.
---- This can be used when you want to make custom frontend menus, and customize things like images or text in the menus etc.
---- 
---- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND_HEADER`](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C) for header scaleform functions.
----
---- @hash [0xAB58C27C2E6123C6](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6)
---- @param functionName string (char*)
---- @return boolean
---- @overload fun(functionName: string): boolean
---- @deprecated
-function PushScaleformMovieFunctionN(functionName) end
-
-    
---- # New Name: BeginScaleformMovieMethodOnFrontend
---- Starts frontend (pause menu) scaleform movie methods.
---- This can be used when you want to make custom frontend menus, and customize things like images or text in the menus etc.
---- 
---- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND_HEADER`](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C) for header scaleform functions.
----
---- @hash [0xAB58C27C2E6123C6](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6)
---- @param functionName string (char*)
---- @return boolean
---- @overload fun(functionName: string): boolean
---- @deprecated
-function BeginScaleformMovieMethodN(functionName) end
-
-    
---- Starts frontend (pause menu) scaleform movie methods for header options.
---- 
---- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND`](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6) to customize the content inside the frontend menus.
----
---- @hash [0xB9449845F73F5E9C](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C)
---- @param functionName string (char*)
---- @return boolean
---- @overload fun(functionName: string): boolean
-function BeginScaleformMovieMethodOnFrontendHeader(functionName) end
-
-    
---- # New Name: BeginScaleformMovieMethodOnFrontendHeader
---- Starts frontend (pause menu) scaleform movie methods for header options.
---- 
---- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND`](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6) to customize the content inside the frontend menus.
----
---- @hash [0xB9449845F73F5E9C](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C)
---- @param functionName string (char*)
---- @return boolean
---- @overload fun(functionName: string): boolean
---- @deprecated
-function N_0xb9449845f73f5e9c(functionName) end
-
-    
---- # New Name: BeginScaleformMovieMethodOnFrontendHeader
---- Starts frontend (pause menu) scaleform movie methods for header options.
---- 
---- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND`](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6) to customize the content inside the frontend menus.
----
---- @hash [0xB9449845F73F5E9C](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C)
---- @param functionName string (char*)
---- @return boolean
---- @overload fun(functionName: string): boolean
---- @deprecated
-function BeginScaleformMovieMethodV(functionName) end
-
-    
---- BeginTakeHighQualityPhoto
----
---- @hash [0xA67C35C56EB1BD9D](https://docs.fivem.net/natives/?_0xA67C35C56EB1BD9D)
----
---- @return boolean
---- @overload fun(): boolean
-function BeginTakeHighQualityPhoto() end
-
-    
---- # New Name: BeginTakeHighQualityPhoto
---- BeginTakeHighQualityPhoto
----
---- @hash [0xA67C35C56EB1BD9D](https://docs.fivem.net/natives/?_0xA67C35C56EB1BD9D)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function N_0xa67c35c56eb1bd9d() end
-
-    
---- ```
---- Pushes a function from the Hud component Scaleform onto the stack. Same behavior as GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD, just a hud component id instead of a Scaleform.
---- Known components:
---- 19 - MP_RANK_BAR
---- 20 - HUD_DIRECTOR_MODE
---- This native requires more research - all information can be found inside of 'hud.gfx'. Using a decompiler, the different components are located under "scripts\__Packages\com\rockstargames\gtav\hud\hudComponents" and "scripts\__Packages\com\rockstargames\gtav\Multiplayer".
---- ```
----
---- @hash [0x98C494FD5BDFBFD5](https://docs.fivem.net/natives/?_0x98C494FD5BDFBFD5)
---- @param hudComponent number (int)
---- @param methodName string (char*)
---- @return boolean
---- @overload fun(hudComponent: number, methodName: string): boolean
-function BeginScaleformScriptHudMovieMethod(hudComponent, methodName) end
-
-    
---- # New Name: BeginScaleformScriptHudMovieMethod
---- ```
---- Pushes a function from the Hud component Scaleform onto the stack. Same behavior as GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD, just a hud component id instead of a Scaleform.
---- Known components:
---- 19 - MP_RANK_BAR
---- 20 - HUD_DIRECTOR_MODE
---- This native requires more research - all information can be found inside of 'hud.gfx'. Using a decompiler, the different components are located under "scripts\__Packages\com\rockstargames\gtav\hud\hudComponents" and "scripts\__Packages\com\rockstargames\gtav\Multiplayer".
---- ```
----
---- @hash [0x98C494FD5BDFBFD5](https://docs.fivem.net/natives/?_0x98C494FD5BDFBFD5)
---- @param hudComponent number (int)
---- @param methodName string (char*)
---- @return boolean
---- @overload fun(hudComponent: number, methodName: string): boolean
---- @deprecated
-function PushScaleformMovieFunctionFromHudComponent(hudComponent, methodName) end
-
-    
---- # New Name: BeginScaleformScriptHudMovieMethod
---- ```
---- Pushes a function from the Hud component Scaleform onto the stack. Same behavior as GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD, just a hud component id instead of a Scaleform.
---- Known components:
---- 19 - MP_RANK_BAR
---- 20 - HUD_DIRECTOR_MODE
---- This native requires more research - all information can be found inside of 'hud.gfx'. Using a decompiler, the different components are located under "scripts\__Packages\com\rockstargames\gtav\hud\hudComponents" and "scripts\__Packages\com\rockstargames\gtav\Multiplayer".
---- ```
----
---- @hash [0x98C494FD5BDFBFD5](https://docs.fivem.net/natives/?_0x98C494FD5BDFBFD5)
---- @param hudComponent number (int)
---- @param methodName string (char*)
---- @return boolean
---- @overload fun(hudComponent: number, methodName: string): boolean
---- @deprecated
-function BeginScaleformMovieMethodHudComponent(hudComponent, methodName) end
-
-    
---- ```
---- Called prior to adding a text component to the UI. After doing so, GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING is called.
---- Examples:
---- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("NUMBER");
---- HUD::ADD_TEXT_COMPONENT_INTEGER(MISC::ABSI(a_1));
---- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
---- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRING");
---- HUD::_ADD_TEXT_COMPONENT_STRING(a_2);
---- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
---- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRTNM2");
---- HUD::_0x17299B63C7683A2B(v_3);
---- HUD::_0x17299B63C7683A2B(v_4);
---- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
---- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRTNM1");
---- HUD::_0x17299B63C7683A2B(v_3);
---- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
---- ```
----
---- @hash [0x80338406F3475E55](https://docs.fivem.net/natives/?_0x80338406F3475E55)
---- @param componentType string (char*)
---- @return void
---- @overload fun(componentType: string): void
-function BeginTextCommandScaleformString(componentType) end
-
-    
---- # New Name: BeginTextCommandScaleformString
---- ```
---- Called prior to adding a text component to the UI. After doing so, GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING is called.
---- Examples:
---- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("NUMBER");
---- HUD::ADD_TEXT_COMPONENT_INTEGER(MISC::ABSI(a_1));
---- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
---- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRING");
---- HUD::_ADD_TEXT_COMPONENT_STRING(a_2);
---- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
---- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRTNM2");
---- HUD::_0x17299B63C7683A2B(v_3);
---- HUD::_0x17299B63C7683A2B(v_4);
---- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
---- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRTNM1");
---- HUD::_0x17299B63C7683A2B(v_3);
---- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
---- ```
----
---- @hash [0x80338406F3475E55](https://docs.fivem.net/natives/?_0x80338406F3475E55)
---- @param componentType string (char*)
---- @return void
---- @overload fun(componentType: string): void
---- @deprecated
-function BeginTextComponent(componentType) end
-
-    
---- BeginTakeMissionCreatorPhoto
----
---- @hash [0x1DD2139A9A20DCE8](https://docs.fivem.net/natives/?_0x1DD2139A9A20DCE8)
----
---- @return boolean
---- @overload fun(): boolean
-function BeginTakeMissionCreatorPhoto() end
-
-    
---- # New Name: BeginTakeMissionCreatorPhoto
---- BeginTakeMissionCreatorPhoto
----
---- @hash [0x1DD2139A9A20DCE8](https://docs.fivem.net/natives/?_0x1DD2139A9A20DCE8)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function N_0x1dd2139a9a20dce8() end
-
-    
---- ```
---- Calls the Scaleform function and passes the parameters as floats.  
---- The number of parameters passed to the function varies, so the end of the parameter list is represented by -1.0.  
---- ```
----
---- @hash [0xD0837058AE2E4BEE](https://docs.fivem.net/natives/?_0xD0837058AE2E4BEE)
---- @param scaleform number (int)
---- @param methodName string (char*)
---- @param param1 number (float)
---- @param param2 number (float)
---- @param param3 number (float)
---- @param param4 number (float)
---- @param param5 number (float)
---- @return void
---- @overload fun(scaleform: number, methodName: string, param1: number, param2: number, param3: number, param4: number, param5: number): void
-function CallScaleformMovieMethodWithNumber(scaleform, methodName, param1, param2, param3, param4, param5) end
-
-    
---- # New Name: CallScaleformMovieMethodWithNumber
---- ```
---- Calls the Scaleform function and passes the parameters as floats.  
---- The number of parameters passed to the function varies, so the end of the parameter list is represented by -1.0.  
---- ```
----
---- @hash [0xD0837058AE2E4BEE](https://docs.fivem.net/natives/?_0xD0837058AE2E4BEE)
---- @param scaleform number (int)
---- @param methodName string (char*)
---- @param param1 number (float)
---- @param param2 number (float)
---- @param param3 number (float)
---- @param param4 number (float)
---- @param param5 number (float)
---- @return void
---- @overload fun(scaleform: number, methodName: string, param1: number, param2: number, param3: number, param4: number, param5: number): void
---- @deprecated
-function CallScaleformMovieFunctionFloatParams(scaleform, methodName, param1, param2, param3, param4, param5) end
-
-    
---- ```
---- Calls the Scaleform function.  
---- ```
----
---- @hash [0xFBD96D87AC96D533](https://docs.fivem.net/natives/?_0xFBD96D87AC96D533)
---- @param scaleform number (int)
---- @param method string (char*)
---- @return void
---- @overload fun(scaleform: number, method: string): void
-function CallScaleformMovieMethod(scaleform, method) end
-
-    
---- # New Name: CallScaleformMovieMethod
---- ```
---- Calls the Scaleform function.  
---- ```
----
---- @hash [0xFBD96D87AC96D533](https://docs.fivem.net/natives/?_0xFBD96D87AC96D533)
---- @param scaleform number (int)
---- @param method string (char*)
---- @return void
---- @overload fun(scaleform: number, method: string): void
---- @deprecated
-function CallScaleformMovieFunctionVoid(scaleform, method) end
+function AddDecal(decalType, posX, posY, posZ, p4, p5, p6, p7, p8, p9, width, height, rCoef, gCoef, bCoef, opacity, timeout, p17, p18, p19) end
 
     
 --- ```
@@ -738,6 +247,32 @@ function CallScaleformMovieMethodWithNumberAndString(scaleform, methodName, floa
 function CallScaleformMovieFunctionMixedParams(scaleform, methodName, floatParam1, floatParam2, floatParam3, floatParam4, floatParam5, stringParam1, stringParam2, stringParam3, stringParam4, stringParam5) end
 
     
+--- AddPetrolTrailDecalInfo
+---
+--- @hash [0x967278682CB6967A](https://docs.fivem.net/natives/?_0x967278682CB6967A)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 number (float)
+--- @return void
+--- @overload fun(x: number, y: number, z: number, p3: number): void
+function AddPetrolTrailDecalInfo(x, y, z, p3) end
+
+    
+--- # New Name: AddPetrolTrailDecalInfo
+--- AddPetrolTrailDecalInfo
+---
+--- @hash [0x967278682CB6967A](https://docs.fivem.net/natives/?_0x967278682CB6967A)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 number (float)
+--- @return void
+--- @overload fun(x: number, y: number, z: number, p3: number): void
+--- @deprecated
+function N_0x967278682cb6967a(x, y, z, p3) end
+
+    
 --- ```
 --- Calls the Scaleform function and passes the parameters as strings.  
 --- The number of parameters passed to the function varies, so the end of the parameter list is represented by 0 (NULL).  
@@ -776,35 +311,428 @@ function CallScaleformMovieMethodWithString(scaleform, methodName, param1, param
 function CallScaleformMovieFunctionStringParams(scaleform, methodName, param1, param2, param3, param4, param5) end
 
     
---- CascadeShadowsClearShadowSampleType
+--- DisableScreenblurFade
 ---
---- @hash [0x27CB772218215325](https://docs.fivem.net/natives/?_0x27CB772218215325)
+--- @hash [0xDE81239437E8C5A8](https://docs.fivem.net/natives/?_0xDE81239437E8C5A8)
 ---
 --- @return void
 --- @overload fun(): void
-function CascadeShadowsClearShadowSampleType() end
+function DisableScreenblurFade() end
 
     
---- # New Name: CascadeShadowsClearShadowSampleType
---- CascadeShadowsClearShadowSampleType
+--- # New Name: DisableScreenblurFade
+--- DisableScreenblurFade
 ---
---- @hash [0x27CB772218215325](https://docs.fivem.net/natives/?_0x27CB772218215325)
+--- @hash [0xDE81239437E8C5A8](https://docs.fivem.net/natives/?_0xDE81239437E8C5A8)
 ---
 --- @return void
 --- @overload fun(): void
 --- @deprecated
-function N_0x27cb772218215325() end
+function N_0xde81239437e8c5a8() end
 
     
---- # New Name: CascadeShadowsClearShadowSampleType
---- CascadeShadowsClearShadowSampleType
+--- # New Name: DisableScreenblurFade
+--- DisableScreenblurFade
 ---
---- @hash [0x27CB772218215325](https://docs.fivem.net/natives/?_0x27CB772218215325)
+--- @hash [0xDE81239437E8C5A8](https://docs.fivem.net/natives/?_0xDE81239437E8C5A8)
 ---
 --- @return void
 --- @overload fun(): void
 --- @deprecated
-function CascadeshadowsResetType() end
+function PausedScreenblurLoaded() end
+
+    
+--- CascadeShadowsSetCascadeBoundsScale
+---
+--- @hash [0x5F0F3F56635809EF](https://docs.fivem.net/natives/?_0x5F0F3F56635809EF)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+function CascadeShadowsSetCascadeBoundsScale(p0) end
+
+    
+--- # New Name: CascadeShadowsSetCascadeBoundsScale
+--- CascadeShadowsSetCascadeBoundsScale
+---
+--- @hash [0x5F0F3F56635809EF](https://docs.fivem.net/natives/?_0x5F0F3F56635809EF)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+--- @deprecated
+function N_0x5f0f3f56635809ef(p0) end
+
+    
+--- AddTcmodifierOverride
+---
+--- @hash [0x1A8E2C8B9CF4549C](https://docs.fivem.net/natives/?_0x1A8E2C8B9CF4549C)
+--- @param modifierName1 string (char*)
+--- @param modifierName2 string (char*)
+--- @return void
+--- @overload fun(modifierName1: string, modifierName2: string): void
+function AddTcmodifierOverride(modifierName1, modifierName2) end
+
+    
+--- # New Name: AddTcmodifierOverride
+--- AddTcmodifierOverride
+---
+--- @hash [0x1A8E2C8B9CF4549C](https://docs.fivem.net/natives/?_0x1A8E2C8B9CF4549C)
+--- @param modifierName1 string (char*)
+--- @param modifierName2 string (char*)
+--- @return void
+--- @overload fun(modifierName1: string, modifierName2: string): void
+--- @deprecated
+function N_0x1a8e2c8b9cf4549c(modifierName1, modifierName2) end
+
+    
+--- ```
+--- Pushes a function from the Hud component Scaleform onto the stack. Same behavior as GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD, just a hud component id instead of a Scaleform.
+--- Known components:
+--- 19 - MP_RANK_BAR
+--- 20 - HUD_DIRECTOR_MODE
+--- This native requires more research - all information can be found inside of 'hud.gfx'. Using a decompiler, the different components are located under "scripts\__Packages\com\rockstargames\gtav\hud\hudComponents" and "scripts\__Packages\com\rockstargames\gtav\Multiplayer".
+--- ```
+---
+--- @hash [0x98C494FD5BDFBFD5](https://docs.fivem.net/natives/?_0x98C494FD5BDFBFD5)
+--- @param hudComponent number (int)
+--- @param methodName string (char*)
+--- @return boolean
+--- @overload fun(hudComponent: number, methodName: string): boolean
+function BeginScaleformScriptHudMovieMethod(hudComponent, methodName) end
+
+    
+--- # New Name: BeginScaleformScriptHudMovieMethod
+--- ```
+--- Pushes a function from the Hud component Scaleform onto the stack. Same behavior as GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD, just a hud component id instead of a Scaleform.
+--- Known components:
+--- 19 - MP_RANK_BAR
+--- 20 - HUD_DIRECTOR_MODE
+--- This native requires more research - all information can be found inside of 'hud.gfx'. Using a decompiler, the different components are located under "scripts\__Packages\com\rockstargames\gtav\hud\hudComponents" and "scripts\__Packages\com\rockstargames\gtav\Multiplayer".
+--- ```
+---
+--- @hash [0x98C494FD5BDFBFD5](https://docs.fivem.net/natives/?_0x98C494FD5BDFBFD5)
+--- @param hudComponent number (int)
+--- @param methodName string (char*)
+--- @return boolean
+--- @overload fun(hudComponent: number, methodName: string): boolean
+--- @deprecated
+function PushScaleformMovieFunctionFromHudComponent(hudComponent, methodName) end
+
+    
+--- # New Name: BeginScaleformScriptHudMovieMethod
+--- ```
+--- Pushes a function from the Hud component Scaleform onto the stack. Same behavior as GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD, just a hud component id instead of a Scaleform.
+--- Known components:
+--- 19 - MP_RANK_BAR
+--- 20 - HUD_DIRECTOR_MODE
+--- This native requires more research - all information can be found inside of 'hud.gfx'. Using a decompiler, the different components are located under "scripts\__Packages\com\rockstargames\gtav\hud\hudComponents" and "scripts\__Packages\com\rockstargames\gtav\Multiplayer".
+--- ```
+---
+--- @hash [0x98C494FD5BDFBFD5](https://docs.fivem.net/natives/?_0x98C494FD5BDFBFD5)
+--- @param hudComponent number (int)
+--- @param methodName string (char*)
+--- @return boolean
+--- @overload fun(hudComponent: number, methodName: string): boolean
+--- @deprecated
+function BeginScaleformMovieMethodHudComponent(hudComponent, methodName) end
+
+    
+--- ```
+--- duration - is how long to play the effect for in milliseconds. If 0, it plays the default length
+--- if loop is true, the effect won't stop until you call ANIMPOSTFX_STOP on it. (only loopable effects)
+--- ```
+---
+--- @hash [0x2206BF9A37B7F724](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724)
+--- @param effectName string (char*)
+--- @param duration number (int)
+--- @param looped boolean
+--- @return void
+--- @overload fun(effectName: string, duration: number, looped: boolean): void
+function AnimpostfxPlay(effectName, duration, looped) end
+
+    
+--- # New Name: AnimpostfxPlay
+--- ```
+--- duration - is how long to play the effect for in milliseconds. If 0, it plays the default length
+--- if loop is true, the effect won't stop until you call ANIMPOSTFX_STOP on it. (only loopable effects)
+--- ```
+---
+--- @hash [0x2206BF9A37B7F724](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724)
+--- @param effectName string (char*)
+--- @param duration number (int)
+--- @param looped boolean
+--- @return void
+--- @overload fun(effectName: string, duration: number, looped: boolean): void
+--- @deprecated
+function StartScreenEffect(effectName, duration, looped) end
+
+    
+--- See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724).
+---
+--- @hash [0x36AD3E690DA5ACEB](https://docs.fivem.net/natives/?_0x36AD3E690DA5ACEB)
+--- @param effectName string (char*)
+--- @return boolean
+--- @overload fun(effectName: string): boolean
+function AnimpostfxIsRunning(effectName) end
+
+    
+--- # New Name: AnimpostfxIsRunning
+--- See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724).
+---
+--- @hash [0x36AD3E690DA5ACEB](https://docs.fivem.net/natives/?_0x36AD3E690DA5ACEB)
+--- @param effectName string (char*)
+--- @return boolean
+--- @overload fun(effectName: string): boolean
+--- @deprecated
+function GetScreenEffectIsActive(effectName) end
+
+    
+--- ```
+--- boneIndex is always chassis_dummy in the scripts. The x/y/z params are location relative to the chassis bone.
+--- ```
+---
+--- @hash [0x428BDCB9DA58DA53](https://docs.fivem.net/natives/?_0x428BDCB9DA58DA53)
+--- @param vehicle Vehicle
+--- @param ped Ped
+--- @param boneIndex number (int)
+--- @param x1 number (float)
+--- @param x2 number (float)
+--- @param x3 number (float)
+--- @param y1 number (float)
+--- @param y2 number (float)
+--- @param y3 number (float)
+--- @param z1 number (float)
+--- @param z2 number (float)
+--- @param z3 number (float)
+--- @param scale number (float)
+--- @param p13 any
+--- @param alpha number (int)
+--- @return boolean
+--- @overload fun(vehicle: Vehicle, ped: Ped, boneIndex: number, x1: number, x2: number, x3: number, y1: number, y2: number, y3: number, z1: number, z2: number, z3: number, scale: number, p13: any, alpha: number): boolean
+function AddVehicleCrewEmblem(vehicle, ped, boneIndex, x1, x2, x3, y1, y2, y3, z1, z2, z3, scale, p13, alpha) end
+
+    
+--- # New Name: AddVehicleCrewEmblem
+--- ```
+--- boneIndex is always chassis_dummy in the scripts. The x/y/z params are location relative to the chassis bone.
+--- ```
+---
+--- @hash [0x428BDCB9DA58DA53](https://docs.fivem.net/natives/?_0x428BDCB9DA58DA53)
+--- @param vehicle Vehicle
+--- @param ped Ped
+--- @param boneIndex number (int)
+--- @param x1 number (float)
+--- @param x2 number (float)
+--- @param x3 number (float)
+--- @param y1 number (float)
+--- @param y2 number (float)
+--- @param y3 number (float)
+--- @param z1 number (float)
+--- @param z2 number (float)
+--- @param z3 number (float)
+--- @param scale number (float)
+--- @param p13 any
+--- @param alpha number (int)
+--- @return boolean
+--- @overload fun(vehicle: Vehicle, ped: Ped, boneIndex: number, x1: number, x2: number, x3: number, y1: number, y2: number, y3: number, z1: number, z2: number, z3: number, scale: number, p13: any, alpha: number): boolean
+--- @deprecated
+function AddClanDecalToVehicle(vehicle, ped, boneIndex, x1, x2, x3, y1, y2, y3, z1, z2, z3, scale, p13, alpha) end
+
+    
+--- AnimpostfxStopAll
+---
+--- @hash [0xB4EDDC19532BFB85](https://docs.fivem.net/natives/?_0xB4EDDC19532BFB85)
+---
+--- @return void
+--- @overload fun(): void
+function AnimpostfxStopAll() end
+
+    
+--- # New Name: AnimpostfxStopAll
+--- AnimpostfxStopAll
+---
+--- @hash [0xB4EDDC19532BFB85](https://docs.fivem.net/natives/?_0xB4EDDC19532BFB85)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function StopAllScreenEffects() end
+
+    
+--- CascadeShadowsSetDynamicDepthValue
+---
+--- @hash [0x02AC28F3A01FA04A](https://docs.fivem.net/natives/?_0x02AC28F3A01FA04A)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+function CascadeShadowsSetDynamicDepthValue(p0) end
+
+    
+--- # New Name: CascadeShadowsSetDynamicDepthValue
+--- CascadeShadowsSetDynamicDepthValue
+---
+--- @hash [0x02AC28F3A01FA04A](https://docs.fivem.net/natives/?_0x02AC28F3A01FA04A)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+--- @deprecated
+function N_0x02ac28f3a01fa04a(p0) end
+
+    
+--- Starts frontend (pause menu) scaleform movie methods.
+--- This can be used when you want to make custom frontend menus, and customize things like images or text in the menus etc.
+--- 
+--- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND_HEADER`](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C) for header scaleform functions.
+---
+--- @hash [0xAB58C27C2E6123C6](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6)
+--- @param functionName string (char*)
+--- @return boolean
+--- @overload fun(functionName: string): boolean
+function BeginScaleformMovieMethodOnFrontend(functionName) end
+
+    
+--- # New Name: BeginScaleformMovieMethodOnFrontend
+--- Starts frontend (pause menu) scaleform movie methods.
+--- This can be used when you want to make custom frontend menus, and customize things like images or text in the menus etc.
+--- 
+--- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND_HEADER`](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C) for header scaleform functions.
+---
+--- @hash [0xAB58C27C2E6123C6](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6)
+--- @param functionName string (char*)
+--- @return boolean
+--- @overload fun(functionName: string): boolean
+--- @deprecated
+function N_0xab58c27c2e6123c6(functionName) end
+
+    
+--- # New Name: BeginScaleformMovieMethodOnFrontend
+--- Starts frontend (pause menu) scaleform movie methods.
+--- This can be used when you want to make custom frontend menus, and customize things like images or text in the menus etc.
+--- 
+--- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND_HEADER`](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C) for header scaleform functions.
+---
+--- @hash [0xAB58C27C2E6123C6](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6)
+--- @param functionName string (char*)
+--- @return boolean
+--- @overload fun(functionName: string): boolean
+--- @deprecated
+function PushScaleformMovieFunctionN(functionName) end
+
+    
+--- # New Name: BeginScaleformMovieMethodOnFrontend
+--- Starts frontend (pause menu) scaleform movie methods.
+--- This can be used when you want to make custom frontend menus, and customize things like images or text in the menus etc.
+--- 
+--- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND_HEADER`](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C) for header scaleform functions.
+---
+--- @hash [0xAB58C27C2E6123C6](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6)
+--- @param functionName string (char*)
+--- @return boolean
+--- @overload fun(functionName: string): boolean
+--- @deprecated
+function BeginScaleformMovieMethodN(functionName) end
+
+    
+--- ClearTvChannelPlaylist
+---
+--- @hash [0xBEB3D46BB7F043C0](https://docs.fivem.net/natives/?_0xBEB3D46BB7F043C0)
+--- @param tvChannel number (int)
+--- @return void
+--- @overload fun(tvChannel: number): void
+function ClearTvChannelPlaylist(tvChannel) end
+
+    
+--- # New Name: ClearTvChannelPlaylist
+--- ClearTvChannelPlaylist
+---
+--- @hash [0xBEB3D46BB7F043C0](https://docs.fivem.net/natives/?_0xBEB3D46BB7F043C0)
+--- @param tvChannel number (int)
+--- @return void
+--- @overload fun(tvChannel: number): void
+--- @deprecated
+function N_0xbeb3d46bb7f043c0(tvChannel) end
+
+    
+--- Starts frontend (pause menu) scaleform movie methods for header options.
+--- 
+--- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND`](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6) to customize the content inside the frontend menus.
+---
+--- @hash [0xB9449845F73F5E9C](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C)
+--- @param functionName string (char*)
+--- @return boolean
+--- @overload fun(functionName: string): boolean
+function BeginScaleformMovieMethodOnFrontendHeader(functionName) end
+
+    
+--- # New Name: BeginScaleformMovieMethodOnFrontendHeader
+--- Starts frontend (pause menu) scaleform movie methods for header options.
+--- 
+--- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND`](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6) to customize the content inside the frontend menus.
+---
+--- @hash [0xB9449845F73F5E9C](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C)
+--- @param functionName string (char*)
+--- @return boolean
+--- @overload fun(functionName: string): boolean
+--- @deprecated
+function N_0xb9449845f73f5e9c(functionName) end
+
+    
+--- # New Name: BeginScaleformMovieMethodOnFrontendHeader
+--- Starts frontend (pause menu) scaleform movie methods for header options.
+--- 
+--- Use [`BEGIN_SCALEFORM_MOVIE_METHOD_ON_FRONTEND`](https://docs.fivem.net/natives/?_0xAB58C27C2E6123C6) to customize the content inside the frontend menus.
+---
+--- @hash [0xB9449845F73F5E9C](https://docs.fivem.net/natives/?_0xB9449845F73F5E9C)
+--- @param functionName string (char*)
+--- @return boolean
+--- @overload fun(functionName: string): boolean
+--- @deprecated
+function BeginScaleformMovieMethodV(functionName) end
+
+    
+--- ```
+--- Push a function from the Scaleform onto the stack  
+--- ```
+---
+--- @hash [0xF6E48914C7A8694E](https://docs.fivem.net/natives/?_0xF6E48914C7A8694E)
+--- @param scaleform number (int)
+--- @param methodName string (char*)
+--- @return boolean
+--- @overload fun(scaleform: number, methodName: string): boolean
+function BeginScaleformMovieMethod(scaleform, methodName) end
+
+    
+--- # New Name: BeginScaleformMovieMethod
+--- ```
+--- Push a function from the Scaleform onto the stack  
+--- ```
+---
+--- @hash [0xF6E48914C7A8694E](https://docs.fivem.net/natives/?_0xF6E48914C7A8694E)
+--- @param scaleform number (int)
+--- @param methodName string (char*)
+--- @return boolean
+--- @overload fun(scaleform: number, methodName: string): boolean
+--- @deprecated
+function PushScaleformMovieFunction(scaleform, methodName) end
+
+    
+--- BeginTakeMissionCreatorPhoto
+---
+--- @hash [0x1DD2139A9A20DCE8](https://docs.fivem.net/natives/?_0x1DD2139A9A20DCE8)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function BeginTakeMissionCreatorPhoto() end
+
+    
+--- # New Name: BeginTakeMissionCreatorPhoto
+--- BeginTakeMissionCreatorPhoto
+---
+--- @hash [0x1DD2139A9A20DCE8](https://docs.fivem.net/natives/?_0x1DD2139A9A20DCE8)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0x1dd2139a9a20dce8() end
 
     
 --- ```
@@ -833,6 +761,85 @@ function CascadeShadowsEnableEntityTracker(toggle) end
 function SetFarShadowsSuppressed(toggle) end
 
     
+--- BeginTakeHighQualityPhoto
+---
+--- @hash [0xA67C35C56EB1BD9D](https://docs.fivem.net/natives/?_0xA67C35C56EB1BD9D)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function BeginTakeHighQualityPhoto() end
+
+    
+--- # New Name: BeginTakeHighQualityPhoto
+--- BeginTakeHighQualityPhoto
+---
+--- @hash [0xA67C35C56EB1BD9D](https://docs.fivem.net/natives/?_0xA67C35C56EB1BD9D)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0xa67c35c56eb1bd9d() end
+
+    
+--- DisableOcclusionThisFrame
+---
+--- @hash [0x3669F1B198DCAA4F](https://docs.fivem.net/natives/?_0x3669F1B198DCAA4F)
+---
+--- @return void
+--- @overload fun(): void
+function DisableOcclusionThisFrame() end
+
+    
+--- # New Name: DisableOcclusionThisFrame
+--- DisableOcclusionThisFrame
+---
+--- @hash [0x3669F1B198DCAA4F](https://docs.fivem.net/natives/?_0x3669F1B198DCAA4F)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function N_0x3669f1b198dcaa4f() end
+
+    
+--- Creates a tracked point: useful for checking the visibility of a 3D point on screen.
+--- 
+--- Tracked points must be manually managed and will not be destroyed on resource stop (they are not an instance of CScriptResource). See [`DESTROY_TRACKED_POINT`](https://docs.fivem.net/natives/?_0xB25DC90BAD56CA42) and [onResourceStop](https://docs.fivem.net/docs/scripting-reference/events/list/onResourceStop/).
+--- 
+--- Only 64 points may be tracked at a given time.
+---
+--- @hash [0xE2C9439ED45DEA60](https://docs.fivem.net/natives/?_0xE2C9439ED45DEA60)
+---
+--- @return number
+--- @overload fun(): number
+function CreateTrackedPoint() end
+
+    
+--- ```
+--- Calls the Scaleform function.  
+--- ```
+---
+--- @hash [0xFBD96D87AC96D533](https://docs.fivem.net/natives/?_0xFBD96D87AC96D533)
+--- @param scaleform number (int)
+--- @param method string (char*)
+--- @return void
+--- @overload fun(scaleform: number, method: string): void
+function CallScaleformMovieMethod(scaleform, method) end
+
+    
+--- # New Name: CallScaleformMovieMethod
+--- ```
+--- Calls the Scaleform function.  
+--- ```
+---
+--- @hash [0xFBD96D87AC96D533](https://docs.fivem.net/natives/?_0xFBD96D87AC96D533)
+--- @param scaleform number (int)
+--- @param method string (char*)
+--- @return void
+--- @overload fun(scaleform: number, method: string): void
+--- @deprecated
+function CallScaleformMovieFunctionVoid(scaleform, method) end
+
+    
 --- CascadeShadowsInitSession
 ---
 --- @hash [0x03FC694AE06C5A20](https://docs.fivem.net/natives/?_0x03FC694AE06C5A20)
@@ -851,6 +858,116 @@ function CascadeShadowsInitSession() end
 --- @overload fun(): void
 --- @deprecated
 function N_0x03fc694ae06c5a20() end
+
+    
+--- See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724)
+---
+--- @hash [0xE35B38A27E8E7179](https://docs.fivem.net/natives/?_0xE35B38A27E8E7179)
+--- @param effectName string (char*)
+--- @return number
+--- @overload fun(effectName: string): number
+function AnimpostfxGetUnk(effectName) end
+
+    
+--- # New Name: AnimpostfxGetUnk
+--- See [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724)
+---
+--- @hash [0xE35B38A27E8E7179](https://docs.fivem.net/natives/?_0xE35B38A27E8E7179)
+--- @param effectName string (char*)
+--- @return number
+--- @overload fun(effectName: string): number
+--- @deprecated
+function N_0xe35b38a27e8e7179(effectName) end
+
+    
+--- ```
+--- Calls the Scaleform function and passes the parameters as floats.  
+--- The number of parameters passed to the function varies, so the end of the parameter list is represented by -1.0.  
+--- ```
+---
+--- @hash [0xD0837058AE2E4BEE](https://docs.fivem.net/natives/?_0xD0837058AE2E4BEE)
+--- @param scaleform number (int)
+--- @param methodName string (char*)
+--- @param param1 number (float)
+--- @param param2 number (float)
+--- @param param3 number (float)
+--- @param param4 number (float)
+--- @param param5 number (float)
+--- @return void
+--- @overload fun(scaleform: number, methodName: string, param1: number, param2: number, param3: number, param4: number, param5: number): void
+function CallScaleformMovieMethodWithNumber(scaleform, methodName, param1, param2, param3, param4, param5) end
+
+    
+--- # New Name: CallScaleformMovieMethodWithNumber
+--- ```
+--- Calls the Scaleform function and passes the parameters as floats.  
+--- The number of parameters passed to the function varies, so the end of the parameter list is represented by -1.0.  
+--- ```
+---
+--- @hash [0xD0837058AE2E4BEE](https://docs.fivem.net/natives/?_0xD0837058AE2E4BEE)
+--- @param scaleform number (int)
+--- @param methodName string (char*)
+--- @param param1 number (float)
+--- @param param2 number (float)
+--- @param param3 number (float)
+--- @param param4 number (float)
+--- @param param5 number (float)
+--- @return void
+--- @overload fun(scaleform: number, methodName: string, param1: number, param2: number, param3: number, param4: number, param5: number): void
+--- @deprecated
+function CallScaleformMovieFunctionFloatParams(scaleform, methodName, param1, param2, param3, param4, param5) end
+
+    
+--- ```
+--- Called prior to adding a text component to the UI. After doing so, GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING is called.
+--- Examples:
+--- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("NUMBER");
+--- HUD::ADD_TEXT_COMPONENT_INTEGER(MISC::ABSI(a_1));
+--- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
+--- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRING");
+--- HUD::_ADD_TEXT_COMPONENT_STRING(a_2);
+--- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
+--- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRTNM2");
+--- HUD::_0x17299B63C7683A2B(v_3);
+--- HUD::_0x17299B63C7683A2B(v_4);
+--- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
+--- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRTNM1");
+--- HUD::_0x17299B63C7683A2B(v_3);
+--- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
+--- ```
+---
+--- @hash [0x80338406F3475E55](https://docs.fivem.net/natives/?_0x80338406F3475E55)
+--- @param componentType string (char*)
+--- @return void
+--- @overload fun(componentType: string): void
+function BeginTextCommandScaleformString(componentType) end
+
+    
+--- # New Name: BeginTextCommandScaleformString
+--- ```
+--- Called prior to adding a text component to the UI. After doing so, GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING is called.
+--- Examples:
+--- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("NUMBER");
+--- HUD::ADD_TEXT_COMPONENT_INTEGER(MISC::ABSI(a_1));
+--- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
+--- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRING");
+--- HUD::_ADD_TEXT_COMPONENT_STRING(a_2);
+--- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
+--- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRTNM2");
+--- HUD::_0x17299B63C7683A2B(v_3);
+--- HUD::_0x17299B63C7683A2B(v_4);
+--- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
+--- GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING("STRTNM1");
+--- HUD::_0x17299B63C7683A2B(v_3);
+--- GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
+--- ```
+---
+--- @hash [0x80338406F3475E55](https://docs.fivem.net/natives/?_0x80338406F3475E55)
+--- @param componentType string (char*)
+--- @return void
+--- @overload fun(componentType: string): void
+--- @deprecated
+function BeginTextComponent(componentType) end
 
     
 --- CascadeShadowsSetCascadeBounds
@@ -887,24 +1004,82 @@ function CascadeShadowsSetCascadeBounds(p0, p1, p2, p3, p4, p5, p6, p7) end
 function N_0xd2936cab8b58fcbd(p0, p1, p2, p3, p4, p5, p6, p7) end
 
     
---- CascadeShadowsSetAircraftMode
+--- CascadeShadowsClearShadowSampleType
 ---
---- @hash [0x6DDBF9DFFC4AC080](https://docs.fivem.net/natives/?_0x6DDBF9DFFC4AC080)
---- @param p0 boolean
+--- @hash [0x27CB772218215325](https://docs.fivem.net/natives/?_0x27CB772218215325)
+---
 --- @return void
---- @overload fun(p0: boolean): void
-function CascadeShadowsSetAircraftMode(p0) end
+--- @overload fun(): void
+function CascadeShadowsClearShadowSampleType() end
 
     
---- # New Name: CascadeShadowsSetAircraftMode
---- CascadeShadowsSetAircraftMode
+--- # New Name: CascadeShadowsClearShadowSampleType
+--- CascadeShadowsClearShadowSampleType
 ---
---- @hash [0x6DDBF9DFFC4AC080](https://docs.fivem.net/natives/?_0x6DDBF9DFFC4AC080)
---- @param p0 boolean
+--- @hash [0x27CB772218215325](https://docs.fivem.net/natives/?_0x27CB772218215325)
+---
 --- @return void
---- @overload fun(p0: boolean): void
+--- @overload fun(): void
 --- @deprecated
-function N_0x6ddbf9dffc4ac080(p0) end
+function N_0x27cb772218215325() end
+
+    
+--- # New Name: CascadeShadowsClearShadowSampleType
+--- CascadeShadowsClearShadowSampleType
+---
+--- @hash [0x27CB772218215325](https://docs.fivem.net/natives/?_0x27CB772218215325)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function CascadeshadowsResetType() end
+
+    
+--- ```
+--- NOTE: Debugging functions are not present in the retail version of the game.  
+--- ```
+---
+--- @hash [0x73B1189623049839](https://docs.fivem.net/natives/?_0x73B1189623049839)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param size number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @return void
+--- @overload fun(x: number, y: number, z: number, size: number, red: number, green: number, blue: number, alpha: number): void
+function DrawDebugCross(x, y, z, size, red, green, blue, alpha) end
+
+    
+--- ```
+--- NOTE: Debugging functions are not present in the retail version of the game.  
+--- ```
+---
+--- @hash [0x083A2CA4F2E573BD](https://docs.fivem.net/natives/?_0x083A2CA4F2E573BD)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param a number (int)
+--- @return void
+--- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, r: number, g: number, b: number, a: number): void
+function DrawDebugBox(x1, y1, z1, x2, y2, z2, r, g, b, a) end
+
+    
+--- ClearTimecycleModifier
+---
+--- @hash [0x0F07E7745A236711](https://docs.fivem.net/natives/?_0x0F07E7745A236711)
+---
+--- @return void
+--- @overload fun(): void
+function ClearTimecycleModifier() end
 
     
 --- CascadeShadowsSetDynamicDepthMode
@@ -927,64 +1102,62 @@ function CascadeShadowsSetDynamicDepthMode(p0) end
 function N_0xd39d13c9febf0511(p0) end
 
     
---- CascadeShadowsSetDynamicDepthValue
+--- ```
+--- Creates a checkpoint. Returns the handle of the checkpoint.  
+--- 20/03/17 : Attention, checkpoints are already handled by the game itself, so you must not loop it like markers.
+--- Parameters:  
+--- * type - The type of checkpoint to create. See below for a list of checkpoint types.  
+--- * pos1 - The position of the checkpoint.  
+--- * pos2 - The position of the next checkpoint to point to.  
+--- * diameter - The diameter of the checkpoint.
+--- * color - The color of the checkpoint.  
+--- * reserved - Special parameter, see below for details. Usually set to 0 in the scripts.  
+--- Checkpoint types (prior to game build 2189):  
+--- 0-4---------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker  
+--- 5-9---------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker  
+--- 10-14-------Ring: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker  
+--- 15-19-------1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker        
+--- 20-24-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker   
+--- 25-29-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker      
+--- 30-34-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker   
+--- 35-38-------Ring: Airplane Up, Left, Right, UpsideDown  
+--- 39----------?  
+--- 40----------Ring: just a ring  
+--- 41----------?  
+--- 42-44-------Cylinder w/ number (uses 'reserved' parameter)  
+--- 45-47-------Cylinder no arrow or number  
+--- If using type 42-44, reserved sets number / number and shape to display  
+--- 0-99------------Just numbers (0-99)  
+--- 100-109-----------------Arrow (0-9)  
+--- 110-119------------Two arrows (0-9)  
+--- 120-129----------Three arrows (0-9)  
+--- 130-139----------------Circle (0-9)  
+--- 140-149------------CycleArrow (0-9)  
+--- 150-159----------------Circle (0-9)  
+--- 160-169----Circle  w/ pointer (0-9)  
+--- 170-179-------Perforated ring (0-9)  
+--- 180-189----------------Sphere (0-9)  
+--- ```
+--- 
+--- [Checkpoint Types](https://docs.fivem.net/docs/game-references/checkpoints/) as of game build 2189
 ---
---- @hash [0x02AC28F3A01FA04A](https://docs.fivem.net/natives/?_0x02AC28F3A01FA04A)
---- @param p0 number (float)
---- @return void
---- @overload fun(p0: number): void
-function CascadeShadowsSetDynamicDepthValue(p0) end
-
-    
---- # New Name: CascadeShadowsSetDynamicDepthValue
---- CascadeShadowsSetDynamicDepthValue
----
---- @hash [0x02AC28F3A01FA04A](https://docs.fivem.net/natives/?_0x02AC28F3A01FA04A)
---- @param p0 number (float)
---- @return void
---- @overload fun(p0: number): void
---- @deprecated
-function N_0x02ac28f3a01fa04a(p0) end
-
-    
---- CascadeShadowsSetCascadeBoundsScale
----
---- @hash [0x5F0F3F56635809EF](https://docs.fivem.net/natives/?_0x5F0F3F56635809EF)
---- @param p0 number (float)
---- @return void
---- @overload fun(p0: number): void
-function CascadeShadowsSetCascadeBoundsScale(p0) end
-
-    
---- # New Name: CascadeShadowsSetCascadeBoundsScale
---- CascadeShadowsSetCascadeBoundsScale
----
---- @hash [0x5F0F3F56635809EF](https://docs.fivem.net/natives/?_0x5F0F3F56635809EF)
---- @param p0 number (float)
---- @return void
---- @overload fun(p0: number): void
---- @deprecated
-function N_0x5f0f3f56635809ef(p0) end
-
-    
---- CascadeShadowsSetEntityTrackerScale
----
---- @hash [0x5E9DAF5A20F15908](https://docs.fivem.net/natives/?_0x5E9DAF5A20F15908)
---- @param p0 number (float)
---- @return void
---- @overload fun(p0: number): void
-function CascadeShadowsSetEntityTrackerScale(p0) end
-
-    
---- # New Name: CascadeShadowsSetEntityTrackerScale
---- CascadeShadowsSetEntityTrackerScale
----
---- @hash [0x5E9DAF5A20F15908](https://docs.fivem.net/natives/?_0x5E9DAF5A20F15908)
---- @param p0 number (float)
---- @return void
---- @overload fun(p0: number): void
---- @deprecated
-function N_0x5e9daf5a20f15908(p0) end
+--- @hash [0x0134F0835AB6BFCB](https://docs.fivem.net/natives/?_0x0134F0835AB6BFCB)
+--- @param type number (int)
+--- @param posX1 number (float)
+--- @param posY1 number (float)
+--- @param posZ1 number (float)
+--- @param posX2 number (float)
+--- @param posY2 number (float)
+--- @param posZ2 number (float)
+--- @param diameter number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @param reserved number (int)
+--- @return number
+--- @overload fun(type: number, posX1: number, posY1: number, posZ1: number, posX2: number, posY2: number, posZ2: number, diameter: number, red: number, green: number, blue: number, alpha: number, reserved: number): number
+function CreateCheckpoint(type, posX1, posY1, posZ1, posX2, posY2, posZ2, diameter, red, green, blue, alpha, reserved) end
 
     
 --- ```
@@ -1099,6 +1272,15 @@ function CascadeshadowsSetType(type) end
 function ClearDrawOrigin() end
 
     
+--- DeleteCheckpoint
+---
+--- @hash [0xF5ED37F54CD4D52E](https://docs.fivem.net/natives/?_0xF5ED37F54CD4D52E)
+--- @param checkpoint number (int)
+--- @return void
+--- @overload fun(checkpoint: number): void
+function DeleteCheckpoint(checkpoint) end
+
+    
 --- Clears the secondary timecycle modifier usually set with [`SetExtraTimecycleModifier`](https://docs.fivem.net/natives/?_0x5096FD9CCB49056D)
 ---
 --- @hash [0x92CCC17A7A2285DA](https://docs.fivem.net/natives/?_0x92CCC17A7A2285DA)
@@ -1117,525 +1299,6 @@ function ClearExtraTimecycleModifier() end
 --- @overload fun(): void
 --- @deprecated
 function N_0x92ccc17a7a2285da() end
-
-    
---- ```
---- Creates a checkpoint. Returns the handle of the checkpoint.  
---- 20/03/17 : Attention, checkpoints are already handled by the game itself, so you must not loop it like markers.
---- Parameters:  
---- * type - The type of checkpoint to create. See below for a list of checkpoint types.  
---- * pos1 - The position of the checkpoint.  
---- * pos2 - The position of the next checkpoint to point to.  
---- * diameter - The diameter of the checkpoint.
---- * color - The color of the checkpoint.  
---- * reserved - Special parameter, see below for details. Usually set to 0 in the scripts.  
---- Checkpoint types (prior to game build 2189):  
---- 0-4---------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker  
---- 5-9---------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker  
---- 10-14-------Ring: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker  
---- 15-19-------1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker        
---- 20-24-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker   
---- 25-29-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker      
---- 30-34-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker   
---- 35-38-------Ring: Airplane Up, Left, Right, UpsideDown  
---- 39----------?  
---- 40----------Ring: just a ring  
---- 41----------?  
---- 42-44-------Cylinder w/ number (uses 'reserved' parameter)  
---- 45-47-------Cylinder no arrow or number  
---- If using type 42-44, reserved sets number / number and shape to display  
---- 0-99------------Just numbers (0-99)  
---- 100-109-----------------Arrow (0-9)  
---- 110-119------------Two arrows (0-9)  
---- 120-129----------Three arrows (0-9)  
---- 130-139----------------Circle (0-9)  
---- 140-149------------CycleArrow (0-9)  
---- 150-159----------------Circle (0-9)  
---- 160-169----Circle  w/ pointer (0-9)  
---- 170-179-------Perforated ring (0-9)  
---- 180-189----------------Sphere (0-9)  
---- ```
---- 
---- [Checkpoint Types](https://docs.fivem.net/docs/game-references/checkpoints/) as of game build 2189
----
---- @hash [0x0134F0835AB6BFCB](https://docs.fivem.net/natives/?_0x0134F0835AB6BFCB)
---- @param type number (int)
---- @param posX1 number (float)
---- @param posY1 number (float)
---- @param posZ1 number (float)
---- @param posX2 number (float)
---- @param posY2 number (float)
---- @param posZ2 number (float)
---- @param diameter number (float)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @param reserved number (int)
---- @return number
---- @overload fun(type: number, posX1: number, posY1: number, posZ1: number, posX2: number, posY2: number, posZ2: number, diameter: number, red: number, green: number, blue: number, alpha: number, reserved: number): number
-function CreateCheckpoint(type, posX1, posY1, posZ1, posX2, posY2, posZ2, diameter, red, green, blue, alpha, reserved) end
-
-    
---- ClearTimecycleModifier
----
---- @hash [0x0F07E7745A236711](https://docs.fivem.net/natives/?_0x0F07E7745A236711)
----
---- @return void
---- @overload fun(): void
-function ClearTimecycleModifier() end
-
-    
---- DeleteCheckpoint
----
---- @hash [0xF5ED37F54CD4D52E](https://docs.fivem.net/natives/?_0xF5ED37F54CD4D52E)
---- @param checkpoint number (int)
---- @return void
---- @overload fun(checkpoint: number): void
-function DeleteCheckpoint(checkpoint) end
-
-    
---- Creates a tracked point: useful for checking the visibility of a 3D point on screen.
---- 
---- Tracked points must be manually managed and will not be destroyed on resource stop (they are not an instance of CScriptResource). See [`DESTROY_TRACKED_POINT`](https://docs.fivem.net/natives/?_0xB25DC90BAD56CA42) and [onResourceStop](https://docs.fivem.net/docs/scripting-reference/events/list/onResourceStop/).
---- 
---- Only 64 points may be tracked at a given time.
----
---- @hash [0xE2C9439ED45DEA60](https://docs.fivem.net/natives/?_0xE2C9439ED45DEA60)
----
---- @return number
---- @overload fun(): number
-function CreateTrackedPoint() end
-
-    
---- DestroyTrackedPoint
----
---- @hash [0xB25DC90BAD56CA42](https://docs.fivem.net/natives/?_0xB25DC90BAD56CA42)
---- @param point number (int)
---- @return void
---- @overload fun(point: number): void
-function DestroyTrackedPoint(point) end
-
-    
---- ClearTvChannelPlaylist
----
---- @hash [0xBEB3D46BB7F043C0](https://docs.fivem.net/natives/?_0xBEB3D46BB7F043C0)
---- @param tvChannel number (int)
---- @return void
---- @overload fun(tvChannel: number): void
-function ClearTvChannelPlaylist(tvChannel) end
-
-    
---- # New Name: ClearTvChannelPlaylist
---- ClearTvChannelPlaylist
----
---- @hash [0xBEB3D46BB7F043C0](https://docs.fivem.net/natives/?_0xBEB3D46BB7F043C0)
---- @param tvChannel number (int)
---- @return void
---- @overload fun(tvChannel: number): void
---- @deprecated
-function N_0xbeb3d46bb7f043c0(tvChannel) end
-
-    
---- DisableScreenblurFade
----
---- @hash [0xDE81239437E8C5A8](https://docs.fivem.net/natives/?_0xDE81239437E8C5A8)
----
---- @return void
---- @overload fun(): void
-function DisableScreenblurFade() end
-
-    
---- # New Name: DisableScreenblurFade
---- DisableScreenblurFade
----
---- @hash [0xDE81239437E8C5A8](https://docs.fivem.net/natives/?_0xDE81239437E8C5A8)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function N_0xde81239437e8c5a8() end
-
-    
---- # New Name: DisableScreenblurFade
---- DisableScreenblurFade
----
---- @hash [0xDE81239437E8C5A8](https://docs.fivem.net/natives/?_0xDE81239437E8C5A8)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function PausedScreenblurLoaded() end
-
-    
---- DisableOcclusionThisFrame
----
---- @hash [0x3669F1B198DCAA4F](https://docs.fivem.net/natives/?_0x3669F1B198DCAA4F)
----
---- @return void
---- @overload fun(): void
-function DisableOcclusionThisFrame() end
-
-    
---- # New Name: DisableOcclusionThisFrame
---- DisableOcclusionThisFrame
----
---- @hash [0x3669F1B198DCAA4F](https://docs.fivem.net/natives/?_0x3669F1B198DCAA4F)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function N_0x3669f1b198dcaa4f() end
-
-    
---- DisableScriptAmbientEffects
----
---- @hash [0xEFD97FF47B745B8D](https://docs.fivem.net/natives/?_0xEFD97FF47B745B8D)
---- @param p0 any
---- @return void
---- @overload fun(p0: any): void
-function DisableScriptAmbientEffects(p0) end
-
-    
---- # New Name: DisableScriptAmbientEffects
---- DisableScriptAmbientEffects
----
---- @hash [0xEFD97FF47B745B8D](https://docs.fivem.net/natives/?_0xEFD97FF47B745B8D)
---- @param p0 any
---- @return void
---- @overload fun(p0: any): void
---- @deprecated
-function N_0xefd97ff47b745b8d(p0) end
-
-    
---- DisableVehicleDistantlights
----
---- @hash [0xC9F98AC1884E73A2](https://docs.fivem.net/natives/?_0xC9F98AC1884E73A2)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function DisableVehicleDistantlights(toggle) end
-
-    
---- DoesParticleFxLoopedExist
----
---- @hash [0x74AFEF0D2E1E409B](https://docs.fivem.net/natives/?_0x74AFEF0D2E1E409B)
---- @param ptfxHandle number (int)
---- @return boolean
---- @overload fun(ptfxHandle: number): boolean
-function DoesParticleFxLoopedExist(ptfxHandle) end
-
-    
---- DoesVehicleHaveCrewEmblem
----
---- @hash [0x060D935D3981A275](https://docs.fivem.net/natives/?_0x060D935D3981A275)
---- @param vehicle Vehicle
---- @param p1 number (int)
---- @return boolean
---- @overload fun(vehicle: Vehicle, p1: number): boolean
-function DoesVehicleHaveCrewEmblem(vehicle, p1) end
-
-    
---- # New Name: DoesVehicleHaveCrewEmblem
---- DoesVehicleHaveCrewEmblem
----
---- @hash [0x060D935D3981A275](https://docs.fivem.net/natives/?_0x060D935D3981A275)
---- @param vehicle Vehicle
---- @param p1 number (int)
---- @return boolean
---- @overload fun(vehicle: Vehicle, p1: number): boolean
---- @deprecated
-function HasVehicleGotDecal(vehicle, p1) end
-
-    
---- # New Name: DoesVehicleHaveCrewEmblem
---- DoesVehicleHaveCrewEmblem
----
---- @hash [0x060D935D3981A275](https://docs.fivem.net/natives/?_0x060D935D3981A275)
---- @param vehicle Vehicle
---- @param p1 number (int)
---- @return boolean
---- @overload fun(vehicle: Vehicle, p1: number): boolean
---- @deprecated
-function DoesVehicleHaveDecal(vehicle, p1) end
-
-    
---- DontRenderInGameUi
----
---- @hash [0x22A249A53034450A](https://docs.fivem.net/natives/?_0x22A249A53034450A)
---- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
-function DontRenderInGameUi(p0) end
-
-    
---- # New Name: DontRenderInGameUi
---- DontRenderInGameUi
----
---- @hash [0x22A249A53034450A](https://docs.fivem.net/natives/?_0x22A249A53034450A)
---- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
---- @deprecated
-function N_0x22a249a53034450a(p0) end
-
-    
---- ```
---- NativeDB Introduced: v1290
---- ```
----
---- @hash [0x7118E83EEB9F7238](https://docs.fivem.net/natives/?_0x7118E83EEB9F7238)
---- @param binkMovie number (int)
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @param p5 number (float)
---- @param r number (int)
---- @param g number (int)
---- @param b number (int)
---- @param a number (int)
---- @return void
---- @overload fun(binkMovie: number, p1: number, p2: number, p3: number, p4: number, p5: number, r: number, g: number, b: number, a: number): void
-function DrawBinkMovie(binkMovie, p1, p2, p3, p4, p5, r, g, b, a) end
-
-    
---- ```
---- NOTE: Debugging functions are not present in the retail version of the game.  
---- ```
----
---- @hash [0x083A2CA4F2E573BD](https://docs.fivem.net/natives/?_0x083A2CA4F2E573BD)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param r number (int)
---- @param g number (int)
---- @param b number (int)
---- @param a number (int)
---- @return void
---- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, r: number, g: number, b: number, a: number): void
-function DrawDebugBox(x1, y1, z1, x2, y2, z2, r, g, b, a) end
-
-    
---- ```
---- x,y,z = start pos  
---- x2,y2,z2 = end pos  
---- Draw's a 3D Box between the two x,y,z coords.  
---- --------------  
---- Keep in mind that the edges of the box do only align to the worlds base-vectors. Therefore something like rotation cannot be applied. That means this function is pretty much useless, unless you want a static unicolor box somewhere.  
---- I recommend using a predefined function to call this.  
---- [VB.NET]  
---- Public Sub DrawBox(a As Vector3, b As Vector3, col As Color)  
----     [Function].Call(Hash.DRAW_BOX,a.X, a.Y, a.Z,b.X, b.Y, b.Z,col.R, col.G, col.B, col.A)  
---- End Sub  
---- [C#]  
---- public void DrawBox(Vector3 a, Vector3 b, Color col)  
---- {  
----     Function.Call(Hash.DRAW_BOX,a.X, a.Y, a.Z,b.X, b.Y, b.Z,col.R, col.G, col.B, col.A);  
---- }  
---- ```
----
---- @hash [0xD3A9971CADAC7252](https://docs.fivem.net/natives/?_0xD3A9971CADAC7252)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @return void
---- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, red: number, green: number, blue: number, alpha: number): void
-function DrawBox(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
-
-    
---- ```
---- NOTE: Debugging functions are not present in the retail version of the game.  
---- ```
----
---- @hash [0x73B1189623049839](https://docs.fivem.net/natives/?_0x73B1189623049839)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param size number (float)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @return void
---- @overload fun(x: number, y: number, z: number, size: number, red: number, green: number, blue: number, alpha: number): void
-function DrawDebugCross(x, y, z, size, red, green, blue, alpha) end
-
-    
---- ```
---- NOTE: Debugging functions are not present in the retail version of the game.  
---- ```
----
---- @hash [0x7FDFADE676AA3CB0](https://docs.fivem.net/natives/?_0x7FDFADE676AA3CB0)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param r number (int)
---- @param g number (int)
---- @param b number (int)
---- @param a number (int)
---- @return void
---- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, r: number, g: number, b: number, a: number): void
-function DrawDebugLine(x1, y1, z1, x2, y2, z2, r, g, b, a) end
-
-    
---- ```
---- NOTE: Debugging functions are not present in the retail version of the game.  
---- ```
----
---- @hash [0xD8B9A8AC5608FF94](https://docs.fivem.net/natives/?_0xD8B9A8AC5608FF94)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param r1 number (int)
---- @param g1 number (int)
---- @param b1 number (int)
---- @param r2 number (int)
---- @param g2 number (int)
---- @param b2 number (int)
---- @param alpha1 number (int)
---- @param alpha2 number (int)
---- @return void
---- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, r1: number, g1: number, b1: number, r2: number, g2: number, b2: number, alpha1: number, alpha2: number): void
-function DrawDebugLineWithTwoColours(x1, y1, z1, x2, y2, z2, r1, g1, b1, r2, g2, b2, alpha1, alpha2) end
-
-    
---- ```
---- NOTE: Debugging functions are not present in the retail version of the game.  
---- ```
----
---- @hash [0xAAD68E1AB39DA632](https://docs.fivem.net/natives/?_0xAAD68E1AB39DA632)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @return void
---- @overload fun(x: number, y: number, z: number, radius: number, red: number, green: number, blue: number, alpha: number): void
-function DrawDebugSphere(x, y, z, radius, red, green, blue, alpha) end
-
-    
---- ```
---- NOTE: Debugging functions are not present in the retail version of the game.  
---- ```
----
---- @hash [0x3903E216620488E8](https://docs.fivem.net/natives/?_0x3903E216620488E8)
---- @param text string (char*)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @return void
---- @overload fun(text: string, x: number, y: number, z: number, red: number, green: number, blue: number, alpha: number): void
-function DrawDebugText(text, x, y, z, red, green, blue, alpha) end
-
-    
---- ```
---- NOTE: Debugging functions are not present in the retail version of the game.  
---- ```
----
---- @hash [0xA3BB2E9555C05A8F](https://docs.fivem.net/natives/?_0xA3BB2E9555C05A8F)
---- @param text string (char*)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @return void
---- @overload fun(text: string, x: number, y: number, z: number, red: number, green: number, blue: number, alpha: number): void
-function DrawDebugText_2d(text, x, y, z, red, green, blue, alpha) end
-
-    
---- Similar to [\_DRAW_SPRITE](https://docs.fivem.net/natives/?_0xE7FFAE5EBF23D890), but seems to be some kind of "interactive" sprite, at least used by render targets.
---- These seem to be the only dicts ever requested by this native:
---- 
---- ```
---- prop_screen_biker_laptop
---- Prop_Screen_GR_Disruption
---- Prop_Screen_TaleOfUs
---- prop_screen_nightclub
---- Prop_Screen_IE_Adhawk
---- prop_screen_sm_free_trade_shipping
---- prop_screen_hacker_truck
---- MPDesktop
---- Prop_Screen_Nightclub
---- And a few others
---- ```
----
---- @hash [0x2BC54A8188768488](https://docs.fivem.net/natives/?_0x2BC54A8188768488)
---- @param textureDict string (char*)
---- @param textureName string (char*)
---- @param screenX number (float)
---- @param screenY number (float)
---- @param width number (float)
---- @param height number (float)
---- @param heading number (float)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @return void
---- @overload fun(textureDict: string, textureName: string, screenX: number, screenY: number, width: number, height: number, heading: number, red: number, green: number, blue: number, alpha: number): void
-function DrawInteractiveSprite(textureDict, textureName, screenX, screenY, width, height, heading, red, green, blue, alpha) end
-
-    
---- # New Name: DrawInteractiveSprite
---- Similar to [\_DRAW_SPRITE](https://docs.fivem.net/natives/?_0xE7FFAE5EBF23D890), but seems to be some kind of "interactive" sprite, at least used by render targets.
---- These seem to be the only dicts ever requested by this native:
---- 
---- ```
---- prop_screen_biker_laptop
---- Prop_Screen_GR_Disruption
---- Prop_Screen_TaleOfUs
---- prop_screen_nightclub
---- Prop_Screen_IE_Adhawk
---- prop_screen_sm_free_trade_shipping
---- prop_screen_hacker_truck
---- MPDesktop
---- Prop_Screen_Nightclub
---- And a few others
---- ```
----
---- @hash [0x2BC54A8188768488](https://docs.fivem.net/natives/?_0x2BC54A8188768488)
---- @param textureDict string (char*)
---- @param textureName string (char*)
---- @param screenX number (float)
---- @param screenY number (float)
---- @param width number (float)
---- @param height number (float)
---- @param heading number (float)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @return void
---- @overload fun(textureDict: string, textureName: string, screenX: number, screenY: number, width: number, height: number, heading: number, red: number, green: number, blue: number, alpha: number): void
---- @deprecated
-function N_0x2bc54a8188768488(textureDict, textureName, screenX, screenY, width, height, heading, red, green, blue, alpha) end
 
     
 --- DrawLightWithRangeAndShadow
@@ -1674,44 +1337,6 @@ function DrawLightWithRangeAndShadow(x, y, z, r, g, b, range, intensity, shadow)
 function DrawLightWithRangeWithShadow(x, y, z, r, g, b, range, intensity, shadow) end
 
     
---- DrawLightWithRange
----
---- @hash [0xF2A1B2771A01DBD4](https://docs.fivem.net/natives/?_0xF2A1B2771A01DBD4)
---- @param posX number (float)
---- @param posY number (float)
---- @param posZ number (float)
---- @param colorR number (int)
---- @param colorG number (int)
---- @param colorB number (int)
---- @param range number (float)
---- @param intensity number (float)
---- @return void
---- @overload fun(posX: number, posY: number, posZ: number, colorR: number, colorG: number, colorB: number, range: number, intensity: number): void
-function DrawLightWithRange(posX, posY, posZ, colorR, colorG, colorB, range, intensity) end
-
-    
---- DrawLowQualityPhotoToPhone
----
---- @hash [0x1072F115DAB0717E](https://docs.fivem.net/natives/?_0x1072F115DAB0717E)
---- @param p0 boolean
---- @param p1 boolean
---- @return void
---- @overload fun(p0: boolean, p1: boolean): void
-function DrawLowQualityPhotoToPhone(p0, p1) end
-
-    
---- # New Name: DrawLowQualityPhotoToPhone
---- DrawLowQualityPhotoToPhone
----
---- @hash [0x1072F115DAB0717E](https://docs.fivem.net/natives/?_0x1072F115DAB0717E)
---- @param p0 boolean
---- @param p1 boolean
---- @return void
---- @overload fun(p0: boolean, p1: boolean): void
---- @deprecated
-function N_0x1072f115dab0717e(p0, p1) end
-
-    
 --- ```
 --- Draws a depth-tested line from one point to another.
 --- ----------------
@@ -1744,6 +1369,87 @@ function N_0x1072f115dab0717e(p0, p1) end
 --- @return void
 --- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, red: number, green: number, blue: number, alpha: number): void
 function DrawLine(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
+
+    
+--- DestroyTrackedPoint
+---
+--- @hash [0xB25DC90BAD56CA42](https://docs.fivem.net/natives/?_0xB25DC90BAD56CA42)
+--- @param point number (int)
+--- @return void
+--- @overload fun(point: number): void
+function DestroyTrackedPoint(point) end
+
+    
+--- DoesParticleFxLoopedExist
+---
+--- @hash [0x74AFEF0D2E1E409B](https://docs.fivem.net/natives/?_0x74AFEF0D2E1E409B)
+--- @param ptfxHandle number (int)
+--- @return boolean
+--- @overload fun(ptfxHandle: number): boolean
+function DoesParticleFxLoopedExist(ptfxHandle) end
+
+    
+--- DisableScriptAmbientEffects
+---
+--- @hash [0xEFD97FF47B745B8D](https://docs.fivem.net/natives/?_0xEFD97FF47B745B8D)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function DisableScriptAmbientEffects(p0) end
+
+    
+--- # New Name: DisableScriptAmbientEffects
+--- DisableScriptAmbientEffects
+---
+--- @hash [0xEFD97FF47B745B8D](https://docs.fivem.net/natives/?_0xEFD97FF47B745B8D)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+--- @deprecated
+function N_0xefd97ff47b745b8d(p0) end
+
+    
+--- DoesVehicleHaveCrewEmblem
+---
+--- @hash [0x060D935D3981A275](https://docs.fivem.net/natives/?_0x060D935D3981A275)
+--- @param vehicle Vehicle
+--- @param p1 number (int)
+--- @return boolean
+--- @overload fun(vehicle: Vehicle, p1: number): boolean
+function DoesVehicleHaveCrewEmblem(vehicle, p1) end
+
+    
+--- # New Name: DoesVehicleHaveCrewEmblem
+--- DoesVehicleHaveCrewEmblem
+---
+--- @hash [0x060D935D3981A275](https://docs.fivem.net/natives/?_0x060D935D3981A275)
+--- @param vehicle Vehicle
+--- @param p1 number (int)
+--- @return boolean
+--- @overload fun(vehicle: Vehicle, p1: number): boolean
+--- @deprecated
+function HasVehicleGotDecal(vehicle, p1) end
+
+    
+--- # New Name: DoesVehicleHaveCrewEmblem
+--- DoesVehicleHaveCrewEmblem
+---
+--- @hash [0x060D935D3981A275](https://docs.fivem.net/natives/?_0x060D935D3981A275)
+--- @param vehicle Vehicle
+--- @param p1 number (int)
+--- @return boolean
+--- @overload fun(vehicle: Vehicle, p1: number): boolean
+--- @deprecated
+function DoesVehicleHaveDecal(vehicle, p1) end
+
+    
+--- DisableVehicleDistantlights
+---
+--- @hash [0xC9F98AC1884E73A2](https://docs.fivem.net/natives/?_0xC9F98AC1884E73A2)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function DisableVehicleDistantlights(toggle) end
 
     
 --- ```
@@ -1787,150 +1493,130 @@ function DrawLine(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
 function DrawPoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha) end
 
     
---- Draws a marker with the specified appearance at the target location. This has to be called every frame, e.g. in a `Wait(0)` loop.
---- 
---- There's a [list of markers](https://docs.fivem.net/game-references/markers/) on the FiveM documentation site.
---- @usage CreateThread(function()
---- 	while true do
---- 		-- draw every frame
---- 		Wait(0)
---- 
---- 		local pedCoords = GetEntityCoords(PlayerPedId())
---- 		DrawMarker(2, pedCoords.x, pedCoords.y, pedCoords.z + 2, 0.0, 0.0, 0.0, 0.0, 180.0, 0.0, 2.0, 2.0, 2.0, 255, 128, 0, 50, false, true, 2, nil, nil, false)
---- 	end
---- end
---- @hash [0x28477EC23D892089](https://docs.fivem.net/natives/?_0x28477EC23D892089)
---- @param type number (int)
---- @param posX number (float)
---- @param posY number (float)
---- @param posZ number (float)
---- @param dirX number (float)
---- @param dirY number (float)
---- @param dirZ number (float)
---- @param rotX number (float)
---- @param rotY number (float)
---- @param rotZ number (float)
---- @param scaleX number (float)
---- @param scaleY number (float)
---- @param scaleZ number (float)
+--- ```
+--- x,y,z = start pos  
+--- x2,y2,z2 = end pos  
+--- Draw's a 3D Box between the two x,y,z coords.  
+--- --------------  
+--- Keep in mind that the edges of the box do only align to the worlds base-vectors. Therefore something like rotation cannot be applied. That means this function is pretty much useless, unless you want a static unicolor box somewhere.  
+--- I recommend using a predefined function to call this.  
+--- [VB.NET]  
+--- Public Sub DrawBox(a As Vector3, b As Vector3, col As Color)  
+---     [Function].Call(Hash.DRAW_BOX,a.X, a.Y, a.Z,b.X, b.Y, b.Z,col.R, col.G, col.B, col.A)  
+--- End Sub  
+--- [C#]  
+--- public void DrawBox(Vector3 a, Vector3 b, Color col)  
+--- {  
+---     Function.Call(Hash.DRAW_BOX,a.X, a.Y, a.Z,b.X, b.Y, b.Z,col.R, col.G, col.B, col.A);  
+--- }  
+--- ```
+---
+--- @hash [0xD3A9971CADAC7252](https://docs.fivem.net/natives/?_0xD3A9971CADAC7252)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
 --- @param red number (int)
 --- @param green number (int)
 --- @param blue number (int)
 --- @param alpha number (int)
---- @param bobUpAndDown boolean
---- @param faceCamera boolean
---- @param p19 number (int)
---- @param rotate boolean
---- @param textureDict string (char*)
---- @param textureName string (char*)
---- @param drawOnEnts boolean
 --- @return void
---- @overload fun(type: number, posX: number, posY: number, posZ: number, dirX: number, dirY: number, dirZ: number, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, red: number, green: number, blue: number, alpha: number, bobUpAndDown: boolean, faceCamera: boolean, p19: number, rotate: boolean): void
-function DrawMarker(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown, faceCamera, p19, rotate, textureDict, textureName, drawOnEnts) end
+--- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, red: number, green: number, blue: number, alpha: number): void
+function DrawBox(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
 
     
---- DrawScaleformMovie
+--- ```
+--- unk is not used so no need  
+--- ```
 ---
---- @hash [0x54972ADAF0294A93](https://docs.fivem.net/natives/?_0x54972ADAF0294A93)
---- @param scaleformHandle number (int)
---- @param x number (float)
---- @param y number (float)
---- @param width number (float)
---- @param height number (float)
+--- @hash [0x0DF606929C105BE1](https://docs.fivem.net/natives/?_0x0DF606929C105BE1)
+--- @param scaleform number (int)
 --- @param red number (int)
 --- @param green number (int)
 --- @param blue number (int)
 --- @param alpha number (int)
 --- @param unk number (int)
 --- @return void
---- @overload fun(scaleformHandle: number, x: number, y: number, width: number, height: number, red: number, green: number, blue: number, alpha: number, unk: number): void
-function DrawScaleformMovie(scaleformHandle, x, y, width, height, red, green, blue, alpha, unk) end
+--- @overload fun(scaleform: number, red: number, green: number, blue: number, alpha: number, unk: number): void
+function DrawScaleformMovieFullscreen(scaleform, red, green, blue, alpha, unk) end
 
     
---- DrawScaleformMovieFullscreenMasked
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
 ---
---- @hash [0xCF537FDE4FBD4CE5](https://docs.fivem.net/natives/?_0xCF537FDE4FBD4CE5)
---- @param scaleform1 number (int)
---- @param scaleform2 number (int)
+--- @hash [0x7118E83EEB9F7238](https://docs.fivem.net/natives/?_0x7118E83EEB9F7238)
+--- @param binkMovie number (int)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param a number (int)
+--- @return void
+--- @overload fun(binkMovie: number, p1: number, p2: number, p3: number, p4: number, p5: number, r: number, g: number, b: number, a: number): void
+function DrawBinkMovie(binkMovie, p1, p2, p3, p4, p5, r, g, b, a) end
+
+    
+--- ```
+--- NOTE: Debugging functions are not present in the retail version of the game.  
+--- ```
+---
+--- @hash [0xA3BB2E9555C05A8F](https://docs.fivem.net/natives/?_0xA3BB2E9555C05A8F)
+--- @param text string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @param red number (int)
 --- @param green number (int)
 --- @param blue number (int)
 --- @param alpha number (int)
 --- @return void
---- @overload fun(scaleform1: number, scaleform2: number, red: number, green: number, blue: number, alpha: number): void
-function DrawScaleformMovieFullscreenMasked(scaleform1, scaleform2, red, green, blue, alpha) end
+--- @overload fun(text: string, x: number, y: number, z: number, red: number, green: number, blue: number, alpha: number): void
+function DrawDebugText_2d(text, x, y, z, red, green, blue, alpha) end
 
     
 --- ```
---- NativeDB Added Parameter 26: BOOL p25
+--- NOTE: Debugging functions are not present in the retail version of the game.  
 --- ```
 ---
---- @hash [0xE82728F0DE75D13A](https://docs.fivem.net/natives/?_0xE82728F0DE75D13A)
---- @param type number (int)
---- @param posX number (float)
---- @param posY number (float)
---- @param posZ number (float)
---- @param dirX number (float)
---- @param dirY number (float)
---- @param dirZ number (float)
---- @param rotX number (float)
---- @param rotY number (float)
---- @param rotZ number (float)
---- @param scaleX number (float)
---- @param scaleY number (float)
---- @param scaleZ number (float)
+--- @hash [0xAAD68E1AB39DA632](https://docs.fivem.net/natives/?_0xAAD68E1AB39DA632)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
 --- @param red number (int)
 --- @param green number (int)
 --- @param blue number (int)
 --- @param alpha number (int)
---- @param bobUpAndDown boolean
---- @param faceCamera boolean
---- @param p19 number (int)
---- @param rotate boolean
---- @param textureDict string (char*)
---- @param textureName string (char*)
---- @param drawOnEnts boolean
---- @param p24 boolean
 --- @return void
---- @overload fun(type: number, posX: number, posY: number, posZ: number, dirX: number, dirY: number, dirZ: number, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, red: number, green: number, blue: number, alpha: number, bobUpAndDown: boolean, faceCamera: boolean, p19: number, rotate: boolean, textureDict: string, textureName: string, drawOnEnts: boolean, p24: boolean): void
-function DrawMarker_2(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown, faceCamera, p19, rotate, textureDict, textureName, drawOnEnts, p24) end
+--- @overload fun(x: number, y: number, z: number, radius: number, red: number, green: number, blue: number, alpha: number): void
+function DrawDebugSphere(x, y, z, radius, red, green, blue, alpha) end
 
     
---- # New Name: DrawMarker_2
 --- ```
---- NativeDB Added Parameter 26: BOOL p25
+--- NOTE: Debugging functions are not present in the retail version of the game.  
 --- ```
 ---
---- @hash [0xE82728F0DE75D13A](https://docs.fivem.net/natives/?_0xE82728F0DE75D13A)
---- @param type number (int)
---- @param posX number (float)
---- @param posY number (float)
---- @param posZ number (float)
---- @param dirX number (float)
---- @param dirY number (float)
---- @param dirZ number (float)
---- @param rotX number (float)
---- @param rotY number (float)
---- @param rotZ number (float)
---- @param scaleX number (float)
---- @param scaleY number (float)
---- @param scaleZ number (float)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @param bobUpAndDown boolean
---- @param faceCamera boolean
---- @param p19 number (int)
---- @param rotate boolean
---- @param textureDict string (char*)
---- @param textureName string (char*)
---- @param drawOnEnts boolean
---- @param p24 boolean
+--- @hash [0x7FDFADE676AA3CB0](https://docs.fivem.net/natives/?_0x7FDFADE676AA3CB0)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param a number (int)
 --- @return void
---- @overload fun(type: number, posX: number, posY: number, posZ: number, dirX: number, dirY: number, dirZ: number, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, red: number, green: number, blue: number, alpha: number, bobUpAndDown: boolean, faceCamera: boolean, p19: number, rotate: boolean, textureDict: string, textureName: string, drawOnEnts: boolean, p24: boolean): void
---- @deprecated
-function N_0xe82728f0de75d13a(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown, faceCamera, p19, rotate, textureDict, textureName, drawOnEnts, p24) end
+--- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, r: number, g: number, b: number, a: number): void
+function DrawDebugLine(x1, y1, z1, x2, y2, z2, r, g, b, a) end
 
     
 --- DrawScaleformMovie_3dSolid
@@ -2035,19 +1721,275 @@ function DrawRect(x, y, width, height, r, g, b, a) end
 
     
 --- ```
---- unk is not used so no need  
+--- NOTE: Debugging functions are not present in the retail version of the game.  
 --- ```
 ---
---- @hash [0x0DF606929C105BE1](https://docs.fivem.net/natives/?_0x0DF606929C105BE1)
---- @param scaleform number (int)
+--- @hash [0x3903E216620488E8](https://docs.fivem.net/natives/?_0x3903E216620488E8)
+--- @param text string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @return void
+--- @overload fun(text: string, x: number, y: number, z: number, red: number, green: number, blue: number, alpha: number): void
+function DrawDebugText(text, x, y, z, red, green, blue, alpha) end
+
+    
+--- Similar to [\_DRAW_SPRITE](https://docs.fivem.net/natives/?_0xE7FFAE5EBF23D890), but seems to be some kind of "interactive" sprite, at least used by render targets.
+--- These seem to be the only dicts ever requested by this native:
+--- 
+--- ```
+--- prop_screen_biker_laptop
+--- Prop_Screen_GR_Disruption
+--- Prop_Screen_TaleOfUs
+--- prop_screen_nightclub
+--- Prop_Screen_IE_Adhawk
+--- prop_screen_sm_free_trade_shipping
+--- prop_screen_hacker_truck
+--- MPDesktop
+--- Prop_Screen_Nightclub
+--- And a few others
+--- ```
+---
+--- @hash [0x2BC54A8188768488](https://docs.fivem.net/natives/?_0x2BC54A8188768488)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param screenX number (float)
+--- @param screenY number (float)
+--- @param width number (float)
+--- @param height number (float)
+--- @param heading number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @return void
+--- @overload fun(textureDict: string, textureName: string, screenX: number, screenY: number, width: number, height: number, heading: number, red: number, green: number, blue: number, alpha: number): void
+function DrawInteractiveSprite(textureDict, textureName, screenX, screenY, width, height, heading, red, green, blue, alpha) end
+
+    
+--- # New Name: DrawInteractiveSprite
+--- Similar to [\_DRAW_SPRITE](https://docs.fivem.net/natives/?_0xE7FFAE5EBF23D890), but seems to be some kind of "interactive" sprite, at least used by render targets.
+--- These seem to be the only dicts ever requested by this native:
+--- 
+--- ```
+--- prop_screen_biker_laptop
+--- Prop_Screen_GR_Disruption
+--- Prop_Screen_TaleOfUs
+--- prop_screen_nightclub
+--- Prop_Screen_IE_Adhawk
+--- prop_screen_sm_free_trade_shipping
+--- prop_screen_hacker_truck
+--- MPDesktop
+--- Prop_Screen_Nightclub
+--- And a few others
+--- ```
+---
+--- @hash [0x2BC54A8188768488](https://docs.fivem.net/natives/?_0x2BC54A8188768488)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param screenX number (float)
+--- @param screenY number (float)
+--- @param width number (float)
+--- @param height number (float)
+--- @param heading number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @return void
+--- @overload fun(textureDict: string, textureName: string, screenX: number, screenY: number, width: number, height: number, heading: number, red: number, green: number, blue: number, alpha: number): void
+--- @deprecated
+function N_0x2bc54a8188768488(textureDict, textureName, screenX, screenY, width, height, heading, red, green, blue, alpha) end
+
+    
+--- DrawSpotLightWithShadow
+---
+--- @hash [0x5BCA583A583194DB](https://docs.fivem.net/natives/?_0x5BCA583A583194DB)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param dirX number (float)
+--- @param dirY number (float)
+--- @param dirZ number (float)
+--- @param colorR number (int)
+--- @param colorG number (int)
+--- @param colorB number (int)
+--- @param distance number (float)
+--- @param brightness number (float)
+--- @param roundness number (float)
+--- @param radius number (float)
+--- @param falloff number (float)
+--- @param shadowId number (int)
+--- @return void
+--- @overload fun(posX: number, posY: number, posZ: number, dirX: number, dirY: number, dirZ: number, colorR: number, colorG: number, colorB: number, distance: number, brightness: number, roundness: number, radius: number, falloff: number, shadowId: number): void
+function DrawSpotLightWithShadow(posX, posY, posZ, dirX, dirY, dirZ, colorR, colorG, colorB, distance, brightness, roundness, radius, falloff, shadowId) end
+
+    
+--- CascadeShadowsSetAircraftMode
+---
+--- @hash [0x6DDBF9DFFC4AC080](https://docs.fivem.net/natives/?_0x6DDBF9DFFC4AC080)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function CascadeShadowsSetAircraftMode(p0) end
+
+    
+--- # New Name: CascadeShadowsSetAircraftMode
+--- CascadeShadowsSetAircraftMode
+---
+--- @hash [0x6DDBF9DFFC4AC080](https://docs.fivem.net/natives/?_0x6DDBF9DFFC4AC080)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+--- @deprecated
+function N_0x6ddbf9dffc4ac080(p0) end
+
+    
+--- DrawLowQualityPhotoToPhone
+---
+--- @hash [0x1072F115DAB0717E](https://docs.fivem.net/natives/?_0x1072F115DAB0717E)
+--- @param p0 boolean
+--- @param p1 boolean
+--- @return void
+--- @overload fun(p0: boolean, p1: boolean): void
+function DrawLowQualityPhotoToPhone(p0, p1) end
+
+    
+--- # New Name: DrawLowQualityPhotoToPhone
+--- DrawLowQualityPhotoToPhone
+---
+--- @hash [0x1072F115DAB0717E](https://docs.fivem.net/natives/?_0x1072F115DAB0717E)
+--- @param p0 boolean
+--- @param p1 boolean
+--- @return void
+--- @overload fun(p0: boolean, p1: boolean): void
+--- @deprecated
+function N_0x1072f115dab0717e(p0, p1) end
+
+    
+--- CascadeShadowsSetEntityTrackerScale
+---
+--- @hash [0x5E9DAF5A20F15908](https://docs.fivem.net/natives/?_0x5E9DAF5A20F15908)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+function CascadeShadowsSetEntityTrackerScale(p0) end
+
+    
+--- # New Name: CascadeShadowsSetEntityTrackerScale
+--- CascadeShadowsSetEntityTrackerScale
+---
+--- @hash [0x5E9DAF5A20F15908](https://docs.fivem.net/natives/?_0x5E9DAF5A20F15908)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+--- @deprecated
+function N_0x5e9daf5a20f15908(p0) end
+
+    
+--- ```
+--- All calls to this native are preceded by calls to GRAPHICS::_0x61BB1D9B3A95D802 and GRAPHICS::_0xC6372ECD45D73BCD, respectively.
+--- "act_cinema.ysc", line 1483:
+--- HUD::SET_HUD_COMPONENT_POSITION(15, 0.0, -0.0375);
+--- HUD::SET_TEXT_RENDER_ID(l_AE);
+--- GRAPHICS::_0x61BB1D9B3A95D802(4);
+--- GRAPHICS::_0xC6372ECD45D73BCD(1);
+--- if (GRAPHICS::_0x0AD973CA1E077B60(${movie_arthouse})) {
+---     GRAPHICS::DRAW_TV_CHANNEL(0.5, 0.5, 0.7375, 1.0, 0.0, 255, 255, 255, 255);
+--- } else {
+---     GRAPHICS::DRAW_TV_CHANNEL(0.5, 0.5, 1.0, 1.0, 0.0, 255, 255, 255, 255);
+--- }
+--- "am_mp_property_int.ysc", line 102545:
+--- if (ENTITY::DOES_ENTITY_EXIST(a_2._f3)) {
+---     if (HUD::IS_NAMED_RENDERTARGET_LINKED(ENTITY::GET_ENTITY_MODEL(a_2._f3))) {
+---         HUD::SET_TEXT_RENDER_ID(a_2._f1);
+---         GRAPHICS::_0x61BB1D9B3A95D802(4);
+---         GRAPHICS::_0xC6372ECD45D73BCD(1);
+---         GRAPHICS::DRAW_TV_CHANNEL(0.5, 0.5, 1.0, 1.0, 0.0, 255, 255, 255, 255);
+---         if (GRAPHICS::GET_TV_CHANNEL() == -1) {
+---             sub_a8fa5(a_2, 1);
+---         } else {
+---             sub_a8fa5(a_2, 1);
+---             GRAPHICS::ATTACH_TV_AUDIO_TO_ENTITY(a_2._f3);
+---         }
+---         HUD::SET_TEXT_RENDER_ID(HUD::GET_DEFAULT_SCRIPT_RENDERTARGET_RENDER_ID());
+---     }
+--- }
+--- ```
+---
+--- @hash [0xFDDC2B4ED3C69DF0](https://docs.fivem.net/natives/?_0xFDDC2B4ED3C69DF0)
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param xScale number (float)
+--- @param yScale number (float)
+--- @param rotation number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @return void
+--- @overload fun(xPos: number, yPos: number, xScale: number, yScale: number, rotation: number, red: number, green: number, blue: number, alpha: number): void
+function DrawTvChannel(xPos, yPos, xScale, yScale, rotation, red, green, blue, alpha) end
+
+    
+--- DrawScaleformMovie
+---
+--- @hash [0x54972ADAF0294A93](https://docs.fivem.net/natives/?_0x54972ADAF0294A93)
+--- @param scaleformHandle number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param width number (float)
+--- @param height number (float)
 --- @param red number (int)
 --- @param green number (int)
 --- @param blue number (int)
 --- @param alpha number (int)
 --- @param unk number (int)
 --- @return void
---- @overload fun(scaleform: number, red: number, green: number, blue: number, alpha: number, unk: number): void
-function DrawScaleformMovieFullscreen(scaleform, red, green, blue, alpha, unk) end
+--- @overload fun(scaleformHandle: number, x: number, y: number, width: number, height: number, red: number, green: number, blue: number, alpha: number, unk: number): void
+function DrawScaleformMovie(scaleformHandle, x, y, width, height, red, green, blue, alpha, unk) end
+
+    
+--- DrawScaleformMovieFullscreenMasked
+---
+--- @hash [0xCF537FDE4FBD4CE5](https://docs.fivem.net/natives/?_0xCF537FDE4FBD4CE5)
+--- @param scaleform1 number (int)
+--- @param scaleform2 number (int)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @return void
+--- @overload fun(scaleform1: number, scaleform2: number, red: number, green: number, blue: number, alpha: number): void
+function DrawScaleformMovieFullscreenMasked(scaleform1, scaleform2, red, green, blue, alpha) end
+
+    
+--- ```
+--- Creates cartoon effect when Michel smokes the weed  
+--- ```
+---
+--- @hash [0xD821490579791273](https://docs.fivem.net/natives/?_0xD821490579791273)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function EnableClownBloodVfx(toggle) end
+
+    
+--- # New Name: EnableClownBloodVfx
+--- ```
+--- Creates cartoon effect when Michel smokes the weed  
+--- ```
+---
+--- @hash [0xD821490579791273](https://docs.fivem.net/natives/?_0xD821490579791273)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function SetCameraEndtime(toggle) end
 
     
 --- ```
@@ -2179,6 +2121,150 @@ function N_0x87d51d72255d4e78(scaleform, posX, posY, posZ, rotX, rotY, rotZ, p7,
 
     
 --- ```
+--- Draws a 2D sprite on the screen.  
+--- Parameters:  
+--- textureDict - Name of texture dictionary to load texture from (e.g. "CommonMenu", "MPWeaponsCommon", etc.)  
+--- textureName - Name of texture to load from texture dictionary (e.g. "last_team_standing_icon", "tennis_icon", etc.)  
+--- screenX/Y - Screen offset (0.5 = center)  
+--- scaleX/Y - Texture scaling. Negative values can be used to flip the texture on that axis. (0.5 = half)  
+--- heading - Texture rotation in degrees (default = 0.0) positive is clockwise, measured in degrees  
+--- red,green,blue - Sprite color (default = 255/255/255)  
+--- alpha - opacity level  
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 12: BOOL p11
+--- ```
+---
+--- @hash [0xE7FFAE5EBF23D890](https://docs.fivem.net/natives/?_0xE7FFAE5EBF23D890)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param screenX number (float)
+--- @param screenY number (float)
+--- @param width number (float)
+--- @param height number (float)
+--- @param heading number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @return void
+--- @overload fun(textureDict: string, textureName: string, screenX: number, screenY: number, width: number, height: number, heading: number, red: number, green: number, blue: number, alpha: number): void
+function DrawSprite(textureDict, textureName, screenX, screenY, width, height, heading, red, green, blue, alpha) end
+
+    
+--- EndTextCommandScaleformString
+---
+--- @hash [0x362E2D3FE93A9959](https://docs.fivem.net/natives/?_0x362E2D3FE93A9959)
+---
+--- @return void
+--- @overload fun(): void
+function EndTextCommandScaleformString() end
+
+    
+--- # New Name: EndTextCommandScaleformString
+--- EndTextCommandScaleformString
+---
+--- @hash [0x362E2D3FE93A9959](https://docs.fivem.net/natives/?_0x362E2D3FE93A9959)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function EndTextComponent() end
+
+    
+--- Draws a marker with the specified appearance at the target location. This has to be called every frame, e.g. in a `Wait(0)` loop.
+--- 
+--- There's a [list of markers](https://docs.fivem.net/game-references/markers/) on the FiveM documentation site.
+--- @usage CreateThread(function()
+--- 	while true do
+--- 		-- draw every frame
+--- 		Wait(0)
+--- 
+--- 		local pedCoords = GetEntityCoords(PlayerPedId())
+--- 		DrawMarker(2, pedCoords.x, pedCoords.y, pedCoords.z + 2, 0.0, 0.0, 0.0, 0.0, 180.0, 0.0, 2.0, 2.0, 2.0, 255, 128, 0, 50, false, true, 2, nil, nil, false)
+--- 	end
+--- end
+--- @hash [0x28477EC23D892089](https://docs.fivem.net/natives/?_0x28477EC23D892089)
+--- @param type number (int)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param dirX number (float)
+--- @param dirY number (float)
+--- @param dirZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param scaleX number (float)
+--- @param scaleY number (float)
+--- @param scaleZ number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @param bobUpAndDown boolean
+--- @param faceCamera boolean
+--- @param p19 number (int)
+--- @param rotate boolean
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param drawOnEnts boolean
+--- @return void
+--- @overload fun(type: number, posX: number, posY: number, posZ: number, dirX: number, dirY: number, dirZ: number, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, red: number, green: number, blue: number, alpha: number, bobUpAndDown: boolean, faceCamera: boolean, p19: number, rotate: boolean): void
+function DrawMarker(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown, faceCamera, p19, rotate, textureDict, textureName, drawOnEnts) end
+
+    
+--- FadeUpPedLight
+---
+--- @hash [0xC9B18B4619F48F7B](https://docs.fivem.net/natives/?_0xC9B18B4619F48F7B)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+function FadeUpPedLight(p0) end
+
+    
+--- # New Name: FadeUpPedLight
+--- FadeUpPedLight
+---
+--- @hash [0xC9B18B4619F48F7B](https://docs.fivem.net/natives/?_0xC9B18B4619F48F7B)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+--- @deprecated
+function N_0xc9b18b4619f48f7b(p0) end
+
+    
+--- EnableMovieSubtitles
+---
+--- @hash [0x873FA65C778AD970](https://docs.fivem.net/natives/?_0x873FA65C778AD970)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function EnableMovieSubtitles(toggle) end
+
+    
+--- EnableMovieKeyframeWait
+---
+--- @hash [0x74C180030FDE4B69](https://docs.fivem.net/natives/?_0x74C180030FDE4B69)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function EnableMovieKeyframeWait(toggle) end
+
+    
+--- # New Name: EnableMovieKeyframeWait
+--- EnableMovieKeyframeWait
+---
+--- @hash [0x74C180030FDE4B69](https://docs.fivem.net/natives/?_0x74C180030FDE4B69)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function N_0x74c180030fde4b69(toggle) end
+
+    
+--- ```
 --- Parameters:  
 --- * pos - coordinate where the spotlight is located  
 --- * dir - the direction vector the spotlight should aim at from its current position  
@@ -2217,130 +2303,109 @@ function N_0x87d51d72255d4e78(scaleform, posX, posY, posZ, rotX, rotY, rotZ, p7,
 function DrawSpotLight(posX, posY, posZ, dirX, dirY, dirZ, colorR, colorG, colorB, distance, brightness, hardness, radius, falloff) end
 
     
---- ```
---- Draws a 2D sprite on the screen.  
---- Parameters:  
---- textureDict - Name of texture dictionary to load texture from (e.g. "CommonMenu", "MPWeaponsCommon", etc.)  
---- textureName - Name of texture to load from texture dictionary (e.g. "last_team_standing_icon", "tennis_icon", etc.)  
---- screenX/Y - Screen offset (0.5 = center)  
---- scaleX/Y - Texture scaling. Negative values can be used to flip the texture on that axis. (0.5 = half)  
---- heading - Texture rotation in degrees (default = 0.0) positive is clockwise, measured in degrees  
---- red,green,blue - Sprite color (default = 255/255/255)  
---- alpha - opacity level  
---- ```
---- 
---- ```
---- NativeDB Added Parameter 12: BOOL p11
---- ```
+--- EndScaleformMovieMethodReturnValue
 ---
---- @hash [0xE7FFAE5EBF23D890](https://docs.fivem.net/natives/?_0xE7FFAE5EBF23D890)
---- @param textureDict string (char*)
---- @param textureName string (char*)
---- @param screenX number (float)
---- @param screenY number (float)
---- @param width number (float)
---- @param height number (float)
---- @param heading number (float)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @return void
---- @overload fun(textureDict: string, textureName: string, screenX: number, screenY: number, width: number, height: number, heading: number, red: number, green: number, blue: number, alpha: number): void
-function DrawSprite(textureDict, textureName, screenX, screenY, width, height, heading, red, green, blue, alpha) end
+--- @hash [0xC50AA39A577AF886](https://docs.fivem.net/natives/?_0xC50AA39A577AF886)
+---
+--- @return number
+--- @overload fun(): number
+function EndScaleformMovieMethodReturnValue() end
 
     
---- DrawSpotLightWithShadow
+--- # New Name: EndScaleformMovieMethodReturnValue
+--- EndScaleformMovieMethodReturnValue
 ---
---- @hash [0x5BCA583A583194DB](https://docs.fivem.net/natives/?_0x5BCA583A583194DB)
---- @param posX number (float)
---- @param posY number (float)
---- @param posZ number (float)
---- @param dirX number (float)
---- @param dirY number (float)
---- @param dirZ number (float)
---- @param colorR number (int)
---- @param colorG number (int)
---- @param colorB number (int)
---- @param distance number (float)
---- @param brightness number (float)
---- @param roundness number (float)
---- @param radius number (float)
---- @param falloff number (float)
---- @param shadowId number (int)
---- @return void
---- @overload fun(posX: number, posY: number, posZ: number, dirX: number, dirY: number, dirZ: number, colorR: number, colorG: number, colorB: number, distance: number, brightness: number, roundness: number, radius: number, falloff: number, shadowId: number): void
-function DrawSpotLightWithShadow(posX, posY, posZ, dirX, dirY, dirZ, colorR, colorG, colorB, distance, brightness, roundness, radius, falloff, shadowId) end
-
-    
---- Used for drawling Deadline trailing lights, see deadline.ytd
---- 
---- For UVW mapping (u,v,w parameters), reference your favourite internet resource for more details.
+--- @hash [0xC50AA39A577AF886](https://docs.fivem.net/natives/?_0xC50AA39A577AF886)
 ---
---- @hash [0x29280002282F1928](https://docs.fivem.net/natives/?_0x29280002282F1928)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param x3 number (float)
---- @param y3 number (float)
---- @param z3 number (float)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @param textureDict string (char*)
---- @param textureName string (char*)
---- @param u1 number (float)
---- @param v1 number (float)
---- @param w1 number (float)
---- @param u2 number (float)
---- @param v2 number (float)
---- @param w2 number (float)
---- @param u3 number (float)
---- @param v3 number (float)
---- @param w3 number (float)
---- @return void
---- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, x3: number, y3: number, z3: number, red: number, green: number, blue: number, alpha: number, textureDict: string, textureName: string, u1: number, v1: number, w1: number, u2: number, v2: number, w2: number, u3: number, v3: number, w3: number): void
-function DrawSpritePoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha, textureDict, textureName, u1, v1, w1, u2, v2, w2, u3, v3, w3) end
-
-    
---- # New Name: DrawSpritePoly
---- Used for drawling Deadline trailing lights, see deadline.ytd
---- 
---- For UVW mapping (u,v,w parameters), reference your favourite internet resource for more details.
----
---- @hash [0x29280002282F1928](https://docs.fivem.net/natives/?_0x29280002282F1928)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param x3 number (float)
---- @param y3 number (float)
---- @param z3 number (float)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @param textureDict string (char*)
---- @param textureName string (char*)
---- @param u1 number (float)
---- @param v1 number (float)
---- @param w1 number (float)
---- @param u2 number (float)
---- @param v2 number (float)
---- @param w2 number (float)
---- @param u3 number (float)
---- @param v3 number (float)
---- @param w3 number (float)
---- @return void
---- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, x3: number, y3: number, z3: number, red: number, green: number, blue: number, alpha: number, textureDict: string, textureName: string, u1: number, v1: number, w1: number, u2: number, v2: number, w2: number, u3: number, v3: number, w3: number): void
+--- @return number
+--- @overload fun(): number
 --- @deprecated
-function N_0x29280002282f1928(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha, textureDict, textureName, u1, v1, w1, u2, v2, w2, u3, v3, w3) end
+function PopScaleformMovieFunction() end
+
+    
+--- # New Name: EndScaleformMovieMethodReturnValue
+--- EndScaleformMovieMethodReturnValue
+---
+--- @hash [0xC50AA39A577AF886](https://docs.fivem.net/natives/?_0xC50AA39A577AF886)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
+function EndScaleformMovieMethodReturn() end
+
+    
+--- Creates a motion-blur sort of effect, this native does not seem to work, however by using the [`START_SCREEN_EFFECT`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724) native with `"DrugsMichaelAliensFight"` as the effect parameter, you should be able to get the effect.
+--- 
+--- This native does not seem to work, however by using the [START_SCREEN_EFFECT](https://runtime.fivem.net/doc/natives/#\_0x2206BF9A37B7F724) native with "DrugsMichaelAliensFight" as the effect parameter, you should be able to get the effect.
+---
+--- @hash [0x9DCE1F0F78260875](https://docs.fivem.net/natives/?_0x9DCE1F0F78260875)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function EnableAlienBloodVfx(toggle) end
+
+    
+--- # New Name: EnableAlienBloodVfx
+--- Creates a motion-blur sort of effect, this native does not seem to work, however by using the [`START_SCREEN_EFFECT`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724) native with `"DrugsMichaelAliensFight"` as the effect parameter, you should be able to get the effect.
+--- 
+--- This native does not seem to work, however by using the [START_SCREEN_EFFECT](https://runtime.fivem.net/doc/natives/#\_0x2206BF9A37B7F724) native with "DrugsMichaelAliensFight" as the effect parameter, you should be able to get the effect.
+---
+--- @hash [0x9DCE1F0F78260875](https://docs.fivem.net/natives/?_0x9DCE1F0F78260875)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function N_0x9dce1f0f78260875(toggle) end
+
+    
+--- ```
+--- Returns current screen resolution.  
+--- ```
+---
+--- @hash [0x873C9F3104101DD3](https://docs.fivem.net/natives/?_0x873C9F3104101DD3)
+---
+--- @return number, number
+--- @overload fun(): number, number
+function GetActiveScreenResolution() end
+
+    
+--- # New Name: GetActiveScreenResolution
+--- ```
+--- Returns current screen resolution.  
+--- ```
+---
+--- @hash [0x873C9F3104101DD3](https://docs.fivem.net/natives/?_0x873C9F3104101DD3)
+---
+--- @return number, number
+--- @overload fun(): number, number
+--- @deprecated
+function GetScreenActiveResolution() end
+
+    
+--- GetIsPetrolDecalInRange
+---
+--- @hash [0x2F09F7976C512404](https://docs.fivem.net/natives/?_0x2F09F7976C512404)
+--- @param xCoord number (float)
+--- @param yCoord number (float)
+--- @param zCoord number (float)
+--- @param radius number (float)
+--- @return boolean
+--- @overload fun(xCoord: number, yCoord: number, zCoord: number, radius: number): boolean
+function GetIsPetrolDecalInRange(xCoord, yCoord, zCoord, radius) end
+
+    
+--- # New Name: GetIsPetrolDecalInRange
+--- GetIsPetrolDecalInRange
+---
+--- @hash [0x2F09F7976C512404](https://docs.fivem.net/natives/?_0x2F09F7976C512404)
+--- @param xCoord number (float)
+--- @param yCoord number (float)
+--- @param zCoord number (float)
+--- @param radius number (float)
+--- @return boolean
+--- @overload fun(xCoord: number, yCoord: number, zCoord: number, radius: number): boolean
+--- @deprecated
+function N_0x2f09f7976c512404(xCoord, yCoord, zCoord, radius) end
 
     
 --- Used for drawling Deadline trailing lights, see deadline.ytd
@@ -2433,84 +2498,6 @@ function DrawSpritePoly_2(x1, y1, z1, x2, y2, z2, x3, y3, z3, red1, green1, blue
 function N_0x736d7aa1b750856b(x1, y1, z1, x2, y2, z2, x3, y3, z3, red1, green1, blue1, alpha1, red2, green2, blue2, alpha2, red3, green3, blue3, alpha3, textureDict, textureName, u1, v1, w1, u2, v2, w2, u3, v3, w3) end
 
     
---- ```
---- All calls to this native are preceded by calls to GRAPHICS::_0x61BB1D9B3A95D802 and GRAPHICS::_0xC6372ECD45D73BCD, respectively.
---- "act_cinema.ysc", line 1483:
---- HUD::SET_HUD_COMPONENT_POSITION(15, 0.0, -0.0375);
---- HUD::SET_TEXT_RENDER_ID(l_AE);
---- GRAPHICS::_0x61BB1D9B3A95D802(4);
---- GRAPHICS::_0xC6372ECD45D73BCD(1);
---- if (GRAPHICS::_0x0AD973CA1E077B60(${movie_arthouse})) {
----     GRAPHICS::DRAW_TV_CHANNEL(0.5, 0.5, 0.7375, 1.0, 0.0, 255, 255, 255, 255);
---- } else {
----     GRAPHICS::DRAW_TV_CHANNEL(0.5, 0.5, 1.0, 1.0, 0.0, 255, 255, 255, 255);
---- }
---- "am_mp_property_int.ysc", line 102545:
---- if (ENTITY::DOES_ENTITY_EXIST(a_2._f3)) {
----     if (HUD::IS_NAMED_RENDERTARGET_LINKED(ENTITY::GET_ENTITY_MODEL(a_2._f3))) {
----         HUD::SET_TEXT_RENDER_ID(a_2._f1);
----         GRAPHICS::_0x61BB1D9B3A95D802(4);
----         GRAPHICS::_0xC6372ECD45D73BCD(1);
----         GRAPHICS::DRAW_TV_CHANNEL(0.5, 0.5, 1.0, 1.0, 0.0, 255, 255, 255, 255);
----         if (GRAPHICS::GET_TV_CHANNEL() == -1) {
----             sub_a8fa5(a_2, 1);
----         } else {
----             sub_a8fa5(a_2, 1);
----             GRAPHICS::ATTACH_TV_AUDIO_TO_ENTITY(a_2._f3);
----         }
----         HUD::SET_TEXT_RENDER_ID(HUD::GET_DEFAULT_SCRIPT_RENDERTARGET_RENDER_ID());
----     }
---- }
---- ```
----
---- @hash [0xFDDC2B4ED3C69DF0](https://docs.fivem.net/natives/?_0xFDDC2B4ED3C69DF0)
---- @param xPos number (float)
---- @param yPos number (float)
---- @param xScale number (float)
---- @param yScale number (float)
---- @param rotation number (float)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @return void
---- @overload fun(xPos: number, yPos: number, xScale: number, yScale: number, rotation: number, red: number, green: number, blue: number, alpha: number): void
-function DrawTvChannel(xPos, yPos, xScale, yScale, rotation, red, green, blue, alpha) end
-
-    
---- ```
---- Creates cartoon effect when Michel smokes the weed  
---- ```
----
---- @hash [0xD821490579791273](https://docs.fivem.net/natives/?_0xD821490579791273)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function EnableClownBloodVfx(toggle) end
-
-    
---- # New Name: EnableClownBloodVfx
---- ```
---- Creates cartoon effect when Michel smokes the weed  
---- ```
----
---- @hash [0xD821490579791273](https://docs.fivem.net/natives/?_0xD821490579791273)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
---- @deprecated
-function SetCameraEndtime(toggle) end
-
-    
---- EnableMovieSubtitles
----
---- @hash [0x873FA65C778AD970](https://docs.fivem.net/natives/?_0x873FA65C778AD970)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function EnableMovieSubtitles(toggle) end
-
-    
 --- Similar to DRAW_SPRITE, but allows to specify the texture coordinates used to draw the sprite.
 --- u1, v1 - texture coordinates for the top-left corner
 --- u2, v2 - texture coordinates for the bottom-right corner
@@ -2540,216 +2527,24 @@ function EnableMovieSubtitles(toggle) end
 function DrawSpriteUv(textureDict, textureName, x, y, width, height, u1, v1, u2, v2, heading, red, green, blue, alpha) end
 
     
---- EndScaleformMovieMethodReturnValue
+--- FreeMemoryForMissionCreatorPhoto
 ---
---- @hash [0xC50AA39A577AF886](https://docs.fivem.net/natives/?_0xC50AA39A577AF886)
----
---- @return number
---- @overload fun(): number
-function EndScaleformMovieMethodReturnValue() end
-
-    
---- # New Name: EndScaleformMovieMethodReturnValue
---- EndScaleformMovieMethodReturnValue
----
---- @hash [0xC50AA39A577AF886](https://docs.fivem.net/natives/?_0xC50AA39A577AF886)
----
---- @return number
---- @overload fun(): number
---- @deprecated
-function PopScaleformMovieFunction() end
-
-    
---- # New Name: EndScaleformMovieMethodReturnValue
---- EndScaleformMovieMethodReturnValue
----
---- @hash [0xC50AA39A577AF886](https://docs.fivem.net/natives/?_0xC50AA39A577AF886)
----
---- @return number
---- @overload fun(): number
---- @deprecated
-function EndScaleformMovieMethodReturn() end
-
-    
---- Creates a motion-blur sort of effect, this native does not seem to work, however by using the [`START_SCREEN_EFFECT`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724) native with `"DrugsMichaelAliensFight"` as the effect parameter, you should be able to get the effect.
---- 
---- This native does not seem to work, however by using the [START_SCREEN_EFFECT](https://runtime.fivem.net/doc/natives/#\_0x2206BF9A37B7F724) native with "DrugsMichaelAliensFight" as the effect parameter, you should be able to get the effect.
----
---- @hash [0x9DCE1F0F78260875](https://docs.fivem.net/natives/?_0x9DCE1F0F78260875)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function EnableAlienBloodVfx(toggle) end
-
-    
---- # New Name: EnableAlienBloodVfx
---- Creates a motion-blur sort of effect, this native does not seem to work, however by using the [`START_SCREEN_EFFECT`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724) native with `"DrugsMichaelAliensFight"` as the effect parameter, you should be able to get the effect.
---- 
---- This native does not seem to work, however by using the [START_SCREEN_EFFECT](https://runtime.fivem.net/doc/natives/#\_0x2206BF9A37B7F724) native with "DrugsMichaelAliensFight" as the effect parameter, you should be able to get the effect.
----
---- @hash [0x9DCE1F0F78260875](https://docs.fivem.net/natives/?_0x9DCE1F0F78260875)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
---- @deprecated
-function N_0x9dce1f0f78260875(toggle) end
-
-    
---- FadeDecalsInRange
----
---- @hash [0xD77EDADB0420E6E0](https://docs.fivem.net/natives/?_0xD77EDADB0420E6E0)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @param duration number (float)
---- @return void
---- @overload fun(x: number, y: number, z: number, radius: number, duration: number): void
-function FadeDecalsInRange(x, y, z, radius, duration) end
-
-    
---- EnableMovieKeyframeWait
----
---- @hash [0x74C180030FDE4B69](https://docs.fivem.net/natives/?_0x74C180030FDE4B69)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function EnableMovieKeyframeWait(toggle) end
-
-    
---- # New Name: EnableMovieKeyframeWait
---- EnableMovieKeyframeWait
----
---- @hash [0x74C180030FDE4B69](https://docs.fivem.net/natives/?_0x74C180030FDE4B69)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
---- @deprecated
-function N_0x74c180030fde4b69(toggle) end
-
-    
---- FadeUpPedLight
----
---- @hash [0xC9B18B4619F48F7B](https://docs.fivem.net/natives/?_0xC9B18B4619F48F7B)
---- @param p0 number (float)
---- @return void
---- @overload fun(p0: number): void
-function FadeUpPedLight(p0) end
-
-    
---- # New Name: FadeUpPedLight
---- FadeUpPedLight
----
---- @hash [0xC9B18B4619F48F7B](https://docs.fivem.net/natives/?_0xC9B18B4619F48F7B)
---- @param p0 number (float)
---- @return void
---- @overload fun(p0: number): void
---- @deprecated
-function N_0xc9b18b4619f48f7b(p0) end
-
-    
---- EndPetrolTrailDecals
----
---- @hash [0x0A123435A26C36CD](https://docs.fivem.net/natives/?_0x0A123435A26C36CD)
+--- @hash [0x0A46AF8A78DC5E0A](https://docs.fivem.net/natives/?_0x0A46AF8A78DC5E0A)
 ---
 --- @return void
 --- @overload fun(): void
-function EndPetrolTrailDecals() end
+function FreeMemoryForMissionCreatorPhoto() end
 
     
---- # New Name: EndPetrolTrailDecals
---- EndPetrolTrailDecals
+--- # New Name: FreeMemoryForMissionCreatorPhoto
+--- FreeMemoryForMissionCreatorPhoto
 ---
---- @hash [0x0A123435A26C36CD](https://docs.fivem.net/natives/?_0x0A123435A26C36CD)
+--- @hash [0x0A46AF8A78DC5E0A](https://docs.fivem.net/natives/?_0x0A46AF8A78DC5E0A)
 ---
 --- @return void
 --- @overload fun(): void
 --- @deprecated
-function N_0x0a123435a26c36cd() end
-
-    
---- FreeMemoryForHighQualityPhoto
----
---- @hash [0xD801CC02177FA3F1](https://docs.fivem.net/natives/?_0xD801CC02177FA3F1)
----
---- @return void
---- @overload fun(): void
-function FreeMemoryForHighQualityPhoto() end
-
-    
---- # New Name: FreeMemoryForHighQualityPhoto
---- FreeMemoryForHighQualityPhoto
----
---- @hash [0xD801CC02177FA3F1](https://docs.fivem.net/natives/?_0xD801CC02177FA3F1)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function N_0xd801cc02177fa3f1() end
-
-    
---- ```
---- Pops and calls the Scaleform function on the stack  
---- ```
----
---- @hash [0xC6796A8FFA375E53](https://docs.fivem.net/natives/?_0xC6796A8FFA375E53)
----
---- @return void
---- @overload fun(): void
-function EndScaleformMovieMethod() end
-
-    
---- # New Name: EndScaleformMovieMethod
---- ```
---- Pops and calls the Scaleform function on the stack  
---- ```
----
---- @hash [0xC6796A8FFA375E53](https://docs.fivem.net/natives/?_0xC6796A8FFA375E53)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function PopScaleformMovieFunctionVoid() end
-
-    
---- EndTextCommandScaleformString
----
---- @hash [0x362E2D3FE93A9959](https://docs.fivem.net/natives/?_0x362E2D3FE93A9959)
----
---- @return void
---- @overload fun(): void
-function EndTextCommandScaleformString() end
-
-    
---- # New Name: EndTextCommandScaleformString
---- EndTextCommandScaleformString
----
---- @hash [0x362E2D3FE93A9959](https://docs.fivem.net/natives/?_0x362E2D3FE93A9959)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function EndTextComponent() end
-
-    
---- FreeMemoryForLowQualityPhoto
----
---- @hash [0x6A12D88881435DCA](https://docs.fivem.net/natives/?_0x6A12D88881435DCA)
----
---- @return void
---- @overload fun(): void
-function FreeMemoryForLowQualityPhoto() end
-
-    
---- # New Name: FreeMemoryForLowQualityPhoto
---- FreeMemoryForLowQualityPhoto
----
---- @hash [0x6A12D88881435DCA](https://docs.fivem.net/natives/?_0x6A12D88881435DCA)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function N_0x6a12d88881435dca() end
+function N_0x0a46af8a78dc5e0a() end
 
     
 --- ```
@@ -2777,27 +2572,60 @@ function N_0xae4e8157d9ecf087() end
 
     
 --- ```
---- Returns current screen resolution.  
+--- This function is hard-coded to always return 96.
 --- ```
 ---
---- @hash [0x873C9F3104101DD3](https://docs.fivem.net/natives/?_0x873C9F3104101DD3)
+--- @hash [0xDC54A7AF8B3A14EF](https://docs.fivem.net/natives/?_0xDC54A7AF8B3A14EF)
 ---
---- @return number, number
---- @overload fun(): number, number
-function GetActiveScreenResolution() end
+--- @return number
+--- @overload fun(): number
+function GetMaximumNumberOfCloudPhotos() end
 
     
---- # New Name: GetActiveScreenResolution
+--- # New Name: GetMaximumNumberOfCloudPhotos
 --- ```
---- Returns current screen resolution.  
+--- This function is hard-coded to always return 96.
 --- ```
 ---
---- @hash [0x873C9F3104101DD3](https://docs.fivem.net/natives/?_0x873C9F3104101DD3)
+--- @hash [0xDC54A7AF8B3A14EF](https://docs.fivem.net/natives/?_0xDC54A7AF8B3A14EF)
 ---
---- @return number, number
---- @overload fun(): number, number
+--- @return number
+--- @overload fun(): number
 --- @deprecated
-function GetScreenActiveResolution() end
+function N_0xdc54a7af8b3a14ef() end
+
+    
+--- # New Name: GetMaximumNumberOfCloudPhotos
+--- ```
+--- This function is hard-coded to always return 96.
+--- ```
+---
+--- @hash [0xDC54A7AF8B3A14EF](https://docs.fivem.net/natives/?_0xDC54A7AF8B3A14EF)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
+function GetMaximumNumberOfPhotos_2() end
+
+    
+--- FreeMemoryForHighQualityPhoto
+---
+--- @hash [0xD801CC02177FA3F1](https://docs.fivem.net/natives/?_0xD801CC02177FA3F1)
+---
+--- @return void
+--- @overload fun(): void
+function FreeMemoryForHighQualityPhoto() end
+
+    
+--- # New Name: FreeMemoryForHighQualityPhoto
+--- FreeMemoryForHighQualityPhoto
+---
+--- @hash [0xD801CC02177FA3F1](https://docs.fivem.net/natives/?_0xD801CC02177FA3F1)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function N_0xd801cc02177fa3f1() end
 
     
 --- ForceRenderInGameUi
@@ -2820,24 +2648,114 @@ function ForceRenderInGameUi(toggle) end
 function N_0xdc459cfa0cce245b(toggle) end
 
     
---- GetAspectRatio
+--- In percentage: 0.0 - 100.0
+--- 
+--- ```
+--- NativeDB Introduced: v1734
+--- ```
 ---
---- @hash [0xF1307EF624A80D87](https://docs.fivem.net/natives/?_0xF1307EF624A80D87)
---- @param b boolean
+--- @hash [0x8E17DDD6B9D5BF29](https://docs.fivem.net/natives/?_0x8E17DDD6B9D5BF29)
+--- @param binkMovie number (int)
 --- @return number
---- @overload fun(b: boolean): number
-function GetAspectRatio(b) end
+--- @overload fun(binkMovie: number): number
+function GetBinkMovieTime(binkMovie) end
 
     
---- # New Name: GetAspectRatio
---- GetAspectRatio
+--- ```
+--- methodReturn: The return value of this native: END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE
+--- ```
 ---
---- @hash [0xF1307EF624A80D87](https://docs.fivem.net/natives/?_0xF1307EF624A80D87)
---- @param b boolean
---- @return number
---- @overload fun(b: boolean): number
+--- @hash [0xD80A80346A45D761](https://docs.fivem.net/natives/?_0xD80A80346A45D761)
+--- @param methodReturn number (int)
+--- @return boolean
+--- @overload fun(methodReturn: number): boolean
+function GetScaleformMovieMethodReturnValueBool(methodReturn) end
+
+    
+--- # New Name: GetScaleformMovieMethodReturnValueBool
+--- ```
+--- methodReturn: The return value of this native: END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE
+--- ```
+---
+--- @hash [0xD80A80346A45D761](https://docs.fivem.net/natives/?_0xD80A80346A45D761)
+--- @param methodReturn number (int)
+--- @return boolean
+--- @overload fun(methodReturn: number): boolean
 --- @deprecated
-function GetScreenAspectRatio(b) end
+function N_0xd80a80346a45d761(methodReturn) end
+
+    
+--- ```
+--- Setting Aspect Ratio Manually in game will return:  
+--- false - for Narrow format Aspect Ratios (3:2, 4:3, 5:4, etc. )  
+--- true - for Wide format Aspect Ratios (5:3, 16:9, 16:10, etc. )  
+--- Setting Aspect Ratio to "Auto" in game will return "false" or "true" based on the actual set Resolution Ratio.  
+--- ```
+---
+--- @hash [0x30CF4BDA4FCB1905](https://docs.fivem.net/natives/?_0x30CF4BDA4FCB1905)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function GetIsWidescreen() end
+
+    
+--- ```
+--- Pops and calls the Scaleform function on the stack  
+--- ```
+---
+--- @hash [0xC6796A8FFA375E53](https://docs.fivem.net/natives/?_0xC6796A8FFA375E53)
+---
+--- @return void
+--- @overload fun(): void
+function EndScaleformMovieMethod() end
+
+    
+--- # New Name: EndScaleformMovieMethod
+--- ```
+--- Pops and calls the Scaleform function on the stack  
+--- ```
+---
+--- @hash [0xC6796A8FFA375E53](https://docs.fivem.net/natives/?_0xC6796A8FFA375E53)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function PopScaleformMovieFunctionVoid() end
+
+    
+--- ```
+--- This function is hard-coded to always return 0.
+--- ```
+---
+--- @hash [0x34D23450F028B0BF](https://docs.fivem.net/natives/?_0x34D23450F028B0BF)
+---
+--- @return number
+--- @overload fun(): number
+function GetMaximumNumberOfPhotos() end
+
+    
+--- Calculates the effective X/Y fractions when applying the values set by `SET_SCRIPT_GFX_ALIGN` and
+--- `SET_SCRIPT_GFX_ALIGN_PARAMS`.
+--- @usage local calcX, calcX = GetScriptGfxPosition(0.2, 0.2
+--- @hash [0x6DD8F5AA635EB4B2](https://docs.fivem.net/natives/?_0x6DD8F5AA635EB4B2)
+--- @param x number (float)
+--- @param y number (float)
+--- @return number, number
+--- @overload fun(x: number, y: number): number, number
+function GetScriptGfxPosition(x, y) end
+
+    
+--- # New Name: GetScriptGfxPosition
+--- Calculates the effective X/Y fractions when applying the values set by `SET_SCRIPT_GFX_ALIGN` and
+--- `SET_SCRIPT_GFX_ALIGN_PARAMS`.
+--- @usage local calcX, calcX = GetScriptGfxPosition(0.2, 0.2
+--- @hash [0x6DD8F5AA635EB4B2](https://docs.fivem.net/natives/?_0x6DD8F5AA635EB4B2)
+--- @param x number (float)
+--- @param y number (float)
+--- @return number, number
+--- @overload fun(x: number, y: number): number, number
+--- @deprecated
+function N_0x6dd8f5aa635eb4b2(x, y) end
 
     
 --- GetCurrentNumberOfCloudPhotos
@@ -2882,68 +2800,6 @@ function GetNumberOfPhotos() end
 function GetCurrentNumberOfPhotos() end
 
     
---- FreeMemoryForMissionCreatorPhoto
----
---- @hash [0x0A46AF8A78DC5E0A](https://docs.fivem.net/natives/?_0x0A46AF8A78DC5E0A)
----
---- @return void
---- @overload fun(): void
-function FreeMemoryForMissionCreatorPhoto() end
-
-    
---- # New Name: FreeMemoryForMissionCreatorPhoto
---- FreeMemoryForMissionCreatorPhoto
----
---- @hash [0x0A46AF8A78DC5E0A](https://docs.fivem.net/natives/?_0x0A46AF8A78DC5E0A)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function N_0x0a46af8a78dc5e0a() end
-
-    
---- GetDecalWashLevel
----
---- @hash [0x323F647679A09103](https://docs.fivem.net/natives/?_0x323F647679A09103)
---- @param decal number (int)
---- @return number
---- @overload fun(decal: number): number
-function GetDecalWashLevel(decal) end
-
-    
---- In percentage: 0.0 - 100.0
---- 
---- ```
---- NativeDB Introduced: v1734
---- ```
----
---- @hash [0x8E17DDD6B9D5BF29](https://docs.fivem.net/natives/?_0x8E17DDD6B9D5BF29)
---- @param binkMovie number (int)
---- @return number
---- @overload fun(binkMovie: number): number
-function GetBinkMovieTime(binkMovie) end
-
-    
---- See [`GET_TIMECYCLE_MODIFIER_INDEX`](https://docs.fivem.net/natives/?_0xFDF3D97C674AFB66) for use, works the same just for the secondary timecycle modifier.
----
---- @hash [0xBB0527EC6341496D](https://docs.fivem.net/natives/?_0xBB0527EC6341496D)
----
---- @return number
---- @overload fun(): number
-function GetExtraTimecycleModifierIndex() end
-
-    
---- # New Name: GetExtraTimecycleModifierIndex
---- See [`GET_TIMECYCLE_MODIFIER_INDEX`](https://docs.fivem.net/natives/?_0xFDF3D97C674AFB66) for use, works the same just for the secondary timecycle modifier.
----
---- @hash [0xBB0527EC6341496D](https://docs.fivem.net/natives/?_0xBB0527EC6341496D)
----
---- @return number
---- @overload fun(): number
---- @deprecated
-function N_0xbb0527ec6341496d() end
-
-    
 --- ```
 --- false = Any resolution < 1280x720  
 --- true = Any resolution >= 1280x720  
@@ -2956,92 +2812,134 @@ function N_0xbb0527ec6341496d() end
 function GetIsHidef() end
 
     
---- GetIsPetrolDecalInRange
+--- FadeDecalsInRange
 ---
---- @hash [0x2F09F7976C512404](https://docs.fivem.net/natives/?_0x2F09F7976C512404)
---- @param xCoord number (float)
---- @param yCoord number (float)
---- @param zCoord number (float)
+--- @hash [0xD77EDADB0420E6E0](https://docs.fivem.net/natives/?_0xD77EDADB0420E6E0)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @param radius number (float)
---- @return boolean
---- @overload fun(xCoord: number, yCoord: number, zCoord: number, radius: number): boolean
-function GetIsPetrolDecalInRange(xCoord, yCoord, zCoord, radius) end
+--- @param duration number (float)
+--- @return void
+--- @overload fun(x: number, y: number, z: number, radius: number, duration: number): void
+function FadeDecalsInRange(x, y, z, radius, duration) end
 
     
---- # New Name: GetIsPetrolDecalInRange
---- GetIsPetrolDecalInRange
+--- ```
+--- Gets the scale of safe zone. if the safe zone size scale is max, it will return 1.0.  
+--- ```
 ---
---- @hash [0x2F09F7976C512404](https://docs.fivem.net/natives/?_0x2F09F7976C512404)
---- @param xCoord number (float)
---- @param yCoord number (float)
---- @param zCoord number (float)
---- @param radius number (float)
---- @return boolean
---- @overload fun(xCoord: number, yCoord: number, zCoord: number, radius: number): boolean
+--- @hash [0xBAF107B6BB2C97F0](https://docs.fivem.net/natives/?_0xBAF107B6BB2C97F0)
+---
+--- @return number
+--- @overload fun(): number
+function GetSafeZoneSize() end
+
+    
+--- Hardcoded to always return 1280x720. Use [`_GET_ACTIVE_SCREEN_RESOLUTION`](?\_0x873C9F3104101DD3) to retrieve the correct screen resolution.
+---
+--- @hash [0x888D57E407E63624](https://docs.fivem.net/natives/?_0x888D57E407E63624)
+---
+--- @return number, number
+--- @overload fun(): number, number
+function GetScreenResolution() end
+
+    
+--- GetStatusOfLoadMissionCreatorPhoto
+---
+--- @hash [0x1670F8D05056F257](https://docs.fivem.net/natives/?_0x1670F8D05056F257)
+--- @param p0 string (char*)
+--- @return number
+--- @overload fun(p0: string): number
+function GetStatusOfLoadMissionCreatorPhoto(p0) end
+
+    
+--- # New Name: GetStatusOfLoadMissionCreatorPhoto
+--- GetStatusOfLoadMissionCreatorPhoto
+---
+--- @hash [0x1670F8D05056F257](https://docs.fivem.net/natives/?_0x1670F8D05056F257)
+--- @param p0 string (char*)
+--- @return number
+--- @overload fun(p0: string): number
 --- @deprecated
-function N_0x2f09f7976c512404(xCoord, yCoord, zCoord, radius) end
+function N_0x1670f8d05056f257(p0) end
 
     
 --- ```
---- Setting Aspect Ratio Manually in game will return:  
---- false - for Narrow format Aspect Ratios (3:2, 4:3, 5:4, etc. )  
---- true - for Wide format Aspect Ratios (5:3, 16:9, 16:10, etc. )  
---- Setting Aspect Ratio to "Auto" in game will return "false" or "true" based on the actual set Resolution Ratio.  
+--- Convert a world coordinate into its relative screen coordinate.  (WorldToScreen)
+--- Returns a boolean; whether or not the operation was successful. It will return false if the coordinates given are not visible to the rendering camera.
+--- For .NET users...
+--- VB:
+--- Public Shared Function World3DToScreen2d(pos as vector3) As Vector2
+---         Dim x2dp, y2dp As New Native.OutputArgument
+---         Native.Function.Call(Of Boolean)(Native.Hash.GET_SCREEN_COORD_FROM_WORLD_COORD , pos.x, pos.y, pos.z, x2dp, y2dp)
+---         Return New Vector2(x2dp.GetResult(Of Single), y2dp.GetResult(Of Single))
+--- 
+---     End Function
+--- C#:
+--- Vector2 World3DToScreen2d(Vector3 pos)
+---     {
+---         var x2dp = new OutputArgument();
+---         var y2dp = new OutputArgument();
+---         Function.Call<bool>(Hash.GET_SCREEN_COORD_FROM_WORLD_COORD , pos.X, pos.Y, pos.Z, x2dp, y2dp);
+---         return new Vector2(x2dp.GetResult<float>(), y2dp.GetResult<float>());
+---     }
+--- //USE VERY SMALL VALUES FOR THE SCALE OF RECTS/TEXT because it is dramatically larger on screen than in 3D, e.g '0.05' small.
+--- Used to be called _WORLD3D_TO_SCREEN2D
+--- I thought we lost you from the scene forever. It does seem however that calling SET_DRAW_ORIGIN then your natives, then ending it. Seems to work better for certain things such as keeping boxes around people for a predator missile e.g.
 --- ```
 ---
---- @hash [0x30CF4BDA4FCB1905](https://docs.fivem.net/natives/?_0x30CF4BDA4FCB1905)
----
---- @return boolean
---- @overload fun(): boolean
-function GetIsWidescreen() end
+--- @hash [0x34E82F05DF2974F5](https://docs.fivem.net/natives/?_0x34E82F05DF2974F5)
+--- @param worldX number (float)
+--- @param worldY number (float)
+--- @param worldZ number (float)
+--- @return boolean, number, number
+--- @overload fun(worldX: number, worldY: number, worldZ: number): boolean, number, number
+function GetScreenCoordFromWorldCoord(worldX, worldY, worldZ) end
 
     
+--- # New Name: GetScreenCoordFromWorldCoord
 --- ```
---- This function is hard-coded to always return 96.
+--- Convert a world coordinate into its relative screen coordinate.  (WorldToScreen)
+--- Returns a boolean; whether or not the operation was successful. It will return false if the coordinates given are not visible to the rendering camera.
+--- For .NET users...
+--- VB:
+--- Public Shared Function World3DToScreen2d(pos as vector3) As Vector2
+---         Dim x2dp, y2dp As New Native.OutputArgument
+---         Native.Function.Call(Of Boolean)(Native.Hash.GET_SCREEN_COORD_FROM_WORLD_COORD , pos.x, pos.y, pos.z, x2dp, y2dp)
+---         Return New Vector2(x2dp.GetResult(Of Single), y2dp.GetResult(Of Single))
+--- 
+---     End Function
+--- C#:
+--- Vector2 World3DToScreen2d(Vector3 pos)
+---     {
+---         var x2dp = new OutputArgument();
+---         var y2dp = new OutputArgument();
+---         Function.Call<bool>(Hash.GET_SCREEN_COORD_FROM_WORLD_COORD , pos.X, pos.Y, pos.Z, x2dp, y2dp);
+---         return new Vector2(x2dp.GetResult<float>(), y2dp.GetResult<float>());
+---     }
+--- //USE VERY SMALL VALUES FOR THE SCALE OF RECTS/TEXT because it is dramatically larger on screen than in 3D, e.g '0.05' small.
+--- Used to be called _WORLD3D_TO_SCREEN2D
+--- I thought we lost you from the scene forever. It does seem however that calling SET_DRAW_ORIGIN then your natives, then ending it. Seems to work better for certain things such as keeping boxes around people for a predator missile e.g.
 --- ```
 ---
---- @hash [0xDC54A7AF8B3A14EF](https://docs.fivem.net/natives/?_0xDC54A7AF8B3A14EF)
----
---- @return number
---- @overload fun(): number
-function GetMaximumNumberOfCloudPhotos() end
-
-    
---- # New Name: GetMaximumNumberOfCloudPhotos
---- ```
---- This function is hard-coded to always return 96.
---- ```
----
---- @hash [0xDC54A7AF8B3A14EF](https://docs.fivem.net/natives/?_0xDC54A7AF8B3A14EF)
----
---- @return number
---- @overload fun(): number
+--- @hash [0x34E82F05DF2974F5](https://docs.fivem.net/natives/?_0x34E82F05DF2974F5)
+--- @param worldX number (float)
+--- @param worldY number (float)
+--- @param worldZ number (float)
+--- @return boolean, number, number
+--- @overload fun(worldX: number, worldY: number, worldZ: number): boolean, number, number
 --- @deprecated
-function N_0xdc54a7af8b3a14ef() end
+function World3dToScreen2d(worldX, worldY, worldZ) end
 
     
---- # New Name: GetMaximumNumberOfCloudPhotos
---- ```
---- This function is hard-coded to always return 96.
---- ```
+--- GetDecalWashLevel
 ---
---- @hash [0xDC54A7AF8B3A14EF](https://docs.fivem.net/natives/?_0xDC54A7AF8B3A14EF)
----
+--- @hash [0x323F647679A09103](https://docs.fivem.net/natives/?_0x323F647679A09103)
+--- @param decal number (int)
 --- @return number
---- @overload fun(): number
---- @deprecated
-function GetMaximumNumberOfPhotos_2() end
-
-    
---- ```
---- This function is hard-coded to always return 0.
---- ```
----
---- @hash [0x34D23450F028B0BF](https://docs.fivem.net/natives/?_0x34D23450F028B0BF)
----
---- @return number
---- @overload fun(): number
-function GetMaximumNumberOfPhotos() end
+--- @overload fun(decal: number): number
+function GetDecalWashLevel(decal) end
 
     
 --- GetRequestingnightvision
@@ -3062,41 +2960,6 @@ function GetRequestingnightvision() end
 --- @overload fun(): boolean
 --- @deprecated
 function N_0x35fb78dc42b7bd21() end
-
-    
---- ```
---- Gets the scale of safe zone. if the safe zone size scale is max, it will return 1.0.  
---- ```
----
---- @hash [0xBAF107B6BB2C97F0](https://docs.fivem.net/natives/?_0xBAF107B6BB2C97F0)
----
---- @return number
---- @overload fun(): number
-function GetSafeZoneSize() end
-
-    
---- ```
---- methodReturn: The return value of this native: END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE
---- ```
----
---- @hash [0xD80A80346A45D761](https://docs.fivem.net/natives/?_0xD80A80346A45D761)
---- @param methodReturn number (int)
---- @return boolean
---- @overload fun(methodReturn: number): boolean
-function GetScaleformMovieMethodReturnValueBool(methodReturn) end
-
-    
---- # New Name: GetScaleformMovieMethodReturnValueBool
---- ```
---- methodReturn: The return value of this native: END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE
---- ```
----
---- @hash [0xD80A80346A45D761](https://docs.fivem.net/natives/?_0xD80A80346A45D761)
---- @param methodReturn number (int)
---- @return boolean
---- @overload fun(methodReturn: number): boolean
---- @deprecated
-function N_0xd80a80346a45d761(methodReturn) end
 
     
 --- Used to get a return value from a scaleform function. Returns an int in the same way GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_STRING returns a string.
@@ -3128,6 +2991,110 @@ function N_0x2de7efa66b906036(method_return) end
 --- @overload fun(method_return: number): number
 --- @deprecated
 function GetScaleformMovieFunctionReturnInt(method_return) end
+
+    
+--- GetTogglePausedRenderphasesStatus
+---
+--- @hash [0xEB3DAC2C86001E5E](https://docs.fivem.net/natives/?_0xEB3DAC2C86001E5E)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function GetTogglePausedRenderphasesStatus() end
+
+    
+--- # New Name: GetTogglePausedRenderphasesStatus
+--- GetTogglePausedRenderphasesStatus
+---
+--- @hash [0xEB3DAC2C86001E5E](https://docs.fivem.net/natives/?_0xEB3DAC2C86001E5E)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0xeb3dac2c86001e5e() end
+
+    
+--- GetStatusOfTakeHighQualityPhoto
+---
+--- @hash [0x0D6CA79EEEBD8CA3](https://docs.fivem.net/natives/?_0x0D6CA79EEEBD8CA3)
+---
+--- @return number
+--- @overload fun(): number
+function GetStatusOfTakeHighQualityPhoto() end
+
+    
+--- # New Name: GetStatusOfTakeHighQualityPhoto
+--- GetStatusOfTakeHighQualityPhoto
+---
+--- @hash [0x0D6CA79EEEBD8CA3](https://docs.fivem.net/natives/?_0x0D6CA79EEEBD8CA3)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
+function N_0x0d6ca79eeebd8ca3() end
+
+    
+--- GetAspectRatio
+---
+--- @hash [0xF1307EF624A80D87](https://docs.fivem.net/natives/?_0xF1307EF624A80D87)
+--- @param b boolean
+--- @return number
+--- @overload fun(b: boolean): number
+function GetAspectRatio(b) end
+
+    
+--- # New Name: GetAspectRatio
+--- GetAspectRatio
+---
+--- @hash [0xF1307EF624A80D87](https://docs.fivem.net/natives/?_0xF1307EF624A80D87)
+--- @param b boolean
+--- @return number
+--- @overload fun(b: boolean): number
+--- @deprecated
+function GetScreenAspectRatio(b) end
+
+    
+--- GetTvChannel
+---
+--- @hash [0xFC1E275A90D39995](https://docs.fivem.net/natives/?_0xFC1E275A90D39995)
+---
+--- @return number
+--- @overload fun(): number
+function GetTvChannel() end
+
+    
+--- ```
+--- Only use for this in the PC scripts is:
+--- if (GRAPHICS::GET_TIMECYCLE_MODIFIER_INDEX() != -1)
+--- For a full list, see here: pastebin.com/cnk7FTF2
+--- ```
+---
+--- @hash [0xFDF3D97C674AFB66](https://docs.fivem.net/natives/?_0xFDF3D97C674AFB66)
+---
+--- @return number
+--- @overload fun(): number
+function GetTimecycleModifierIndex() end
+
+    
+--- GetVehicleCrewEmblemRequestState
+---
+--- @hash [0xFE26117A5841B2FF](https://docs.fivem.net/natives/?_0xFE26117A5841B2FF)
+--- @param vehicle Vehicle
+--- @param p1 number (int)
+--- @return number
+--- @overload fun(vehicle: Vehicle, p1: number): number
+function GetVehicleCrewEmblemRequestState(vehicle, p1) end
+
+    
+--- # New Name: GetVehicleCrewEmblemRequestState
+--- GetVehicleCrewEmblemRequestState
+---
+--- @hash [0xFE26117A5841B2FF](https://docs.fivem.net/natives/?_0xFE26117A5841B2FF)
+--- @param vehicle Vehicle
+--- @param p1 number (int)
+--- @return number
+--- @overload fun(vehicle: Vehicle, p1: number): number
+--- @deprecated
+function N_0xfe26117a5841b2ff(vehicle, p1) end
 
     
 --- Used to get a return value from a scaleform function. Returns a string in the same way GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_INT returns an int.
@@ -3203,226 +3170,6 @@ function SittingTv(method_return) end
 function GetScaleformMovieFunctionReturnString(method_return) end
 
     
---- ```
---- Convert a world coordinate into its relative screen coordinate.  (WorldToScreen)
---- Returns a boolean; whether or not the operation was successful. It will return false if the coordinates given are not visible to the rendering camera.
---- For .NET users...
---- VB:
---- Public Shared Function World3DToScreen2d(pos as vector3) As Vector2
----         Dim x2dp, y2dp As New Native.OutputArgument
----         Native.Function.Call(Of Boolean)(Native.Hash.GET_SCREEN_COORD_FROM_WORLD_COORD , pos.x, pos.y, pos.z, x2dp, y2dp)
----         Return New Vector2(x2dp.GetResult(Of Single), y2dp.GetResult(Of Single))
---- 
----     End Function
---- C#:
---- Vector2 World3DToScreen2d(Vector3 pos)
----     {
----         var x2dp = new OutputArgument();
----         var y2dp = new OutputArgument();
----         Function.Call<bool>(Hash.GET_SCREEN_COORD_FROM_WORLD_COORD , pos.X, pos.Y, pos.Z, x2dp, y2dp);
----         return new Vector2(x2dp.GetResult<float>(), y2dp.GetResult<float>());
----     }
---- //USE VERY SMALL VALUES FOR THE SCALE OF RECTS/TEXT because it is dramatically larger on screen than in 3D, e.g '0.05' small.
---- Used to be called _WORLD3D_TO_SCREEN2D
---- I thought we lost you from the scene forever. It does seem however that calling SET_DRAW_ORIGIN then your natives, then ending it. Seems to work better for certain things such as keeping boxes around people for a predator missile e.g.
---- ```
----
---- @hash [0x34E82F05DF2974F5](https://docs.fivem.net/natives/?_0x34E82F05DF2974F5)
---- @param worldX number (float)
---- @param worldY number (float)
---- @param worldZ number (float)
---- @return boolean, number, number
---- @overload fun(worldX: number, worldY: number, worldZ: number): boolean, number, number
-function GetScreenCoordFromWorldCoord(worldX, worldY, worldZ) end
-
-    
---- # New Name: GetScreenCoordFromWorldCoord
---- ```
---- Convert a world coordinate into its relative screen coordinate.  (WorldToScreen)
---- Returns a boolean; whether or not the operation was successful. It will return false if the coordinates given are not visible to the rendering camera.
---- For .NET users...
---- VB:
---- Public Shared Function World3DToScreen2d(pos as vector3) As Vector2
----         Dim x2dp, y2dp As New Native.OutputArgument
----         Native.Function.Call(Of Boolean)(Native.Hash.GET_SCREEN_COORD_FROM_WORLD_COORD , pos.x, pos.y, pos.z, x2dp, y2dp)
----         Return New Vector2(x2dp.GetResult(Of Single), y2dp.GetResult(Of Single))
---- 
----     End Function
---- C#:
---- Vector2 World3DToScreen2d(Vector3 pos)
----     {
----         var x2dp = new OutputArgument();
----         var y2dp = new OutputArgument();
----         Function.Call<bool>(Hash.GET_SCREEN_COORD_FROM_WORLD_COORD , pos.X, pos.Y, pos.Z, x2dp, y2dp);
----         return new Vector2(x2dp.GetResult<float>(), y2dp.GetResult<float>());
----     }
---- //USE VERY SMALL VALUES FOR THE SCALE OF RECTS/TEXT because it is dramatically larger on screen than in 3D, e.g '0.05' small.
---- Used to be called _WORLD3D_TO_SCREEN2D
---- I thought we lost you from the scene forever. It does seem however that calling SET_DRAW_ORIGIN then your natives, then ending it. Seems to work better for certain things such as keeping boxes around people for a predator missile e.g.
---- ```
----
---- @hash [0x34E82F05DF2974F5](https://docs.fivem.net/natives/?_0x34E82F05DF2974F5)
---- @param worldX number (float)
---- @param worldY number (float)
---- @param worldZ number (float)
---- @return boolean, number, number
---- @overload fun(worldX: number, worldY: number, worldZ: number): boolean, number, number
---- @deprecated
-function World3dToScreen2d(worldX, worldY, worldZ) end
-
-    
---- Hardcoded to always return 1280x720. Use [`_GET_ACTIVE_SCREEN_RESOLUTION`](?\_0x873C9F3104101DD3) to retrieve the correct screen resolution.
----
---- @hash [0x888D57E407E63624](https://docs.fivem.net/natives/?_0x888D57E407E63624)
----
---- @return number, number
---- @overload fun(): number, number
-function GetScreenResolution() end
-
-    
---- GetScreenblurFadeCurrentTime
----
---- @hash [0x5CCABFFCA31DDE33](https://docs.fivem.net/natives/?_0x5CCABFFCA31DDE33)
----
---- @return number
---- @overload fun(): number
-function GetScreenblurFadeCurrentTime() end
-
-    
---- # New Name: GetScreenblurFadeCurrentTime
---- GetScreenblurFadeCurrentTime
----
---- @hash [0x5CCABFFCA31DDE33](https://docs.fivem.net/natives/?_0x5CCABFFCA31DDE33)
----
---- @return number
---- @overload fun(): number
---- @deprecated
-function IsParticleFxDelayedBlink() end
-
-    
---- Calculates the effective X/Y fractions when applying the values set by `SET_SCRIPT_GFX_ALIGN` and
---- `SET_SCRIPT_GFX_ALIGN_PARAMS`.
---- @usage local calcX, calcX = GetScriptGfxPosition(0.2, 0.2
---- @hash [0x6DD8F5AA635EB4B2](https://docs.fivem.net/natives/?_0x6DD8F5AA635EB4B2)
---- @param x number (float)
---- @param y number (float)
---- @return number, number
---- @overload fun(x: number, y: number): number, number
-function GetScriptGfxPosition(x, y) end
-
-    
---- # New Name: GetScriptGfxPosition
---- Calculates the effective X/Y fractions when applying the values set by `SET_SCRIPT_GFX_ALIGN` and
---- `SET_SCRIPT_GFX_ALIGN_PARAMS`.
---- @usage local calcX, calcX = GetScriptGfxPosition(0.2, 0.2
---- @hash [0x6DD8F5AA635EB4B2](https://docs.fivem.net/natives/?_0x6DD8F5AA635EB4B2)
---- @param x number (float)
---- @param y number (float)
---- @return number, number
---- @overload fun(x: number, y: number): number, number
---- @deprecated
-function N_0x6dd8f5aa635eb4b2(x, y) end
-
-    
---- GetStatusOfLoadMissionCreatorPhoto
----
---- @hash [0x1670F8D05056F257](https://docs.fivem.net/natives/?_0x1670F8D05056F257)
---- @param p0 string (char*)
---- @return number
---- @overload fun(p0: string): number
-function GetStatusOfLoadMissionCreatorPhoto(p0) end
-
-    
---- # New Name: GetStatusOfLoadMissionCreatorPhoto
---- GetStatusOfLoadMissionCreatorPhoto
----
---- @hash [0x1670F8D05056F257](https://docs.fivem.net/natives/?_0x1670F8D05056F257)
---- @param p0 string (char*)
---- @return number
---- @overload fun(p0: string): number
---- @deprecated
-function N_0x1670f8d05056f257(p0) end
-
-    
---- GetStatusOfSaveHighQualityPhoto
----
---- @hash [0x0C0C4E81E1AC60A0](https://docs.fivem.net/natives/?_0x0C0C4E81E1AC60A0)
----
---- @return number
---- @overload fun(): number
-function GetStatusOfSaveHighQualityPhoto() end
-
-    
---- # New Name: GetStatusOfSaveHighQualityPhoto
---- GetStatusOfSaveHighQualityPhoto
----
---- @hash [0x0C0C4E81E1AC60A0](https://docs.fivem.net/natives/?_0x0C0C4E81E1AC60A0)
----
---- @return number
---- @overload fun(): number
---- @deprecated
-function N_0x0c0c4e81e1ac60a0() end
-
-    
---- GetStatusOfTakeHighQualityPhoto
----
---- @hash [0x0D6CA79EEEBD8CA3](https://docs.fivem.net/natives/?_0x0D6CA79EEEBD8CA3)
----
---- @return number
---- @overload fun(): number
-function GetStatusOfTakeHighQualityPhoto() end
-
-    
---- # New Name: GetStatusOfTakeHighQualityPhoto
---- GetStatusOfTakeHighQualityPhoto
----
---- @hash [0x0D6CA79EEEBD8CA3](https://docs.fivem.net/natives/?_0x0D6CA79EEEBD8CA3)
----
---- @return number
---- @overload fun(): number
---- @deprecated
-function N_0x0d6ca79eeebd8ca3() end
-
-    
---- ```
---- 3 matches across 3 scripts. First 2 were 0, 3rd was 1. Possibly a bool.
---- appcamera, appmedia, and cellphone_controller.
---- ```
----
---- @hash [0xF5BED327CEA362B1](https://docs.fivem.net/natives/?_0xF5BED327CEA362B1)
---- @param p0 boolean
---- @return number
---- @overload fun(p0: boolean): number
-function GetStatusOfSortedListOperation(p0) end
-
-    
---- # New Name: GetStatusOfSortedListOperation
---- ```
---- 3 matches across 3 scripts. First 2 were 0, 3rd was 1. Possibly a bool.
---- appcamera, appmedia, and cellphone_controller.
---- ```
----
---- @hash [0xF5BED327CEA362B1](https://docs.fivem.net/natives/?_0xF5BED327CEA362B1)
---- @param p0 boolean
---- @return number
---- @overload fun(p0: boolean): number
---- @deprecated
-function N_0xf5bed327cea362b1(p0) end
-
-    
---- ```
---- Returns the texture resolution of the passed texture dict+name.  
---- Note: Most texture resolutions are doubled compared to the console version of the game.  
---- ```
----
---- @hash [0x35736EE65BD00C11](https://docs.fivem.net/natives/?_0x35736EE65BD00C11)
---- @param textureDict string (char*)
---- @param textureName string (char*)
---- @return Vector3
---- @overload fun(textureDict: string, textureName: string): Vector3
-function GetTextureResolution(textureDict, textureName) end
-
-    
 --- GetStatusOfTakeMissionCreatorPhoto
 ---
 --- @hash [0x90A78ECAA4E78453](https://docs.fivem.net/natives/?_0x90A78ECAA4E78453)
@@ -3441,130 +3188,6 @@ function GetStatusOfTakeMissionCreatorPhoto() end
 --- @overload fun(): number
 --- @deprecated
 function N_0x90a78ecaa4e78453() end
-
-    
---- GetTimecycleTransitionModifierIndex
----
---- @hash [0x459FD2C8D0AB78BC](https://docs.fivem.net/natives/?_0x459FD2C8D0AB78BC)
----
---- @return number
---- @overload fun(): number
-function GetTimecycleTransitionModifierIndex() end
-
-    
---- # New Name: GetTimecycleTransitionModifierIndex
---- GetTimecycleTransitionModifierIndex
----
---- @hash [0x459FD2C8D0AB78BC](https://docs.fivem.net/natives/?_0x459FD2C8D0AB78BC)
----
---- @return number
---- @overload fun(): number
---- @deprecated
-function N_0x459fd2c8d0ab78bc() end
-
-    
---- ```
---- Only use for this in the PC scripts is:
---- if (GRAPHICS::GET_TIMECYCLE_MODIFIER_INDEX() != -1)
---- For a full list, see here: pastebin.com/cnk7FTF2
---- ```
----
---- @hash [0xFDF3D97C674AFB66](https://docs.fivem.net/natives/?_0xFDF3D97C674AFB66)
----
---- @return number
---- @overload fun(): number
-function GetTimecycleModifierIndex() end
-
-    
---- GetTvChannel
----
---- @hash [0xFC1E275A90D39995](https://docs.fivem.net/natives/?_0xFC1E275A90D39995)
----
---- @return number
---- @overload fun(): number
-function GetTvChannel() end
-
-    
---- GetTogglePausedRenderphasesStatus
----
---- @hash [0xEB3DAC2C86001E5E](https://docs.fivem.net/natives/?_0xEB3DAC2C86001E5E)
----
---- @return boolean
---- @overload fun(): boolean
-function GetTogglePausedRenderphasesStatus() end
-
-    
---- # New Name: GetTogglePausedRenderphasesStatus
---- GetTogglePausedRenderphasesStatus
----
---- @hash [0xEB3DAC2C86001E5E](https://docs.fivem.net/natives/?_0xEB3DAC2C86001E5E)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function N_0xeb3dac2c86001e5e() end
-
-    
---- GetUsingnightvision
----
---- @hash [0x2202A3F42C8E5F79](https://docs.fivem.net/natives/?_0x2202A3F42C8E5F79)
----
---- @return boolean
---- @overload fun(): boolean
-function GetUsingnightvision() end
-
-    
---- # New Name: GetUsingnightvision
---- GetUsingnightvision
----
---- @hash [0x2202A3F42C8E5F79](https://docs.fivem.net/natives/?_0x2202A3F42C8E5F79)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function IsNightvisionInactive() end
-
-    
---- # New Name: GetUsingnightvision
---- GetUsingnightvision
----
---- @hash [0x2202A3F42C8E5F79](https://docs.fivem.net/natives/?_0x2202A3F42C8E5F79)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function IsNightvisionActive() end
-
-    
---- GetVehicleCrewEmblemRequestState
----
---- @hash [0xFE26117A5841B2FF](https://docs.fivem.net/natives/?_0xFE26117A5841B2FF)
---- @param vehicle Vehicle
---- @param p1 number (int)
---- @return number
---- @overload fun(vehicle: Vehicle, p1: number): number
-function GetVehicleCrewEmblemRequestState(vehicle, p1) end
-
-    
---- # New Name: GetVehicleCrewEmblemRequestState
---- GetVehicleCrewEmblemRequestState
----
---- @hash [0xFE26117A5841B2FF](https://docs.fivem.net/natives/?_0xFE26117A5841B2FF)
---- @param vehicle Vehicle
---- @param p1 number (int)
---- @return number
---- @overload fun(vehicle: Vehicle, p1: number): number
---- @deprecated
-function N_0xfe26117a5841b2ff(vehicle, p1) end
-
-    
---- GetTvVolume
----
---- @hash [0x2170813D3DD8661B](https://docs.fivem.net/natives/?_0x2170813D3DD8661B)
----
---- @return number
---- @overload fun(): number
-function GetTvVolume() end
 
     
 --- GetUsingseethrough
@@ -3587,24 +3210,84 @@ function GetUsingseethrough() end
 function IsSeethroughActive() end
 
     
---- GolfTrailGetMaxHeight
+--- GetTimecycleTransitionModifierIndex
 ---
---- @hash [0xA4819F5E23E2FFAD](https://docs.fivem.net/natives/?_0xA4819F5E23E2FFAD)
+--- @hash [0x459FD2C8D0AB78BC](https://docs.fivem.net/natives/?_0x459FD2C8D0AB78BC)
 ---
 --- @return number
 --- @overload fun(): number
-function GolfTrailGetMaxHeight() end
+function GetTimecycleTransitionModifierIndex() end
 
     
---- # New Name: GolfTrailGetMaxHeight
---- GolfTrailGetMaxHeight
+--- # New Name: GetTimecycleTransitionModifierIndex
+--- GetTimecycleTransitionModifierIndex
 ---
---- @hash [0xA4819F5E23E2FFAD](https://docs.fivem.net/natives/?_0xA4819F5E23E2FFAD)
+--- @hash [0x459FD2C8D0AB78BC](https://docs.fivem.net/natives/?_0x459FD2C8D0AB78BC)
 ---
 --- @return number
 --- @overload fun(): number
 --- @deprecated
-function N_0xa4819f5e23e2ffad() end
+function N_0x459fd2c8d0ab78bc() end
+
+    
+--- GolfTrailSetFacing
+---
+--- @hash [0x06F761EA47C1D3ED](https://docs.fivem.net/natives/?_0x06F761EA47C1D3ED)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function GolfTrailSetFacing(p0) end
+
+    
+--- # New Name: GolfTrailSetFacing
+--- GolfTrailSetFacing
+---
+--- @hash [0x06F761EA47C1D3ED](https://docs.fivem.net/natives/?_0x06F761EA47C1D3ED)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+--- @deprecated
+function N_0x06f761ea47c1d3ed(p0) end
+
+    
+--- GetScreenblurFadeCurrentTime
+---
+--- @hash [0x5CCABFFCA31DDE33](https://docs.fivem.net/natives/?_0x5CCABFFCA31DDE33)
+---
+--- @return number
+--- @overload fun(): number
+function GetScreenblurFadeCurrentTime() end
+
+    
+--- # New Name: GetScreenblurFadeCurrentTime
+--- GetScreenblurFadeCurrentTime
+---
+--- @hash [0x5CCABFFCA31DDE33](https://docs.fivem.net/natives/?_0x5CCABFFCA31DDE33)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
+function IsParticleFxDelayedBlink() end
+
+    
+--- GolfTrailGetVisualControlPoint
+---
+--- @hash [0xA4664972A9B8F8BA](https://docs.fivem.net/natives/?_0xA4664972A9B8F8BA)
+--- @param p0 number (int)
+--- @return Vector3
+--- @overload fun(p0: number): Vector3
+function GolfTrailGetVisualControlPoint(p0) end
+
+    
+--- # New Name: GolfTrailGetVisualControlPoint
+--- GolfTrailGetVisualControlPoint
+---
+--- @hash [0xA4664972A9B8F8BA](https://docs.fivem.net/natives/?_0xA4664972A9B8F8BA)
+--- @param p0 number (int)
+--- @return Vector3
+--- @overload fun(p0: number): Vector3
+--- @deprecated
+function N_0xa4664972a9b8f8ba(p0) end
 
     
 --- GolfTrailSetColour
@@ -3649,64 +3332,30 @@ function GolfTrailSetColour(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) en
 function N_0x12995f2e53ffa601(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11) end
 
     
---- GolfTrailGetVisualControlPoint
+--- ```
+--- 3 matches across 3 scripts. First 2 were 0, 3rd was 1. Possibly a bool.
+--- appcamera, appmedia, and cellphone_controller.
+--- ```
 ---
---- @hash [0xA4664972A9B8F8BA](https://docs.fivem.net/natives/?_0xA4664972A9B8F8BA)
---- @param p0 number (int)
---- @return Vector3
---- @overload fun(p0: number): Vector3
-function GolfTrailGetVisualControlPoint(p0) end
-
-    
---- # New Name: GolfTrailGetVisualControlPoint
---- GolfTrailGetVisualControlPoint
----
---- @hash [0xA4664972A9B8F8BA](https://docs.fivem.net/natives/?_0xA4664972A9B8F8BA)
---- @param p0 number (int)
---- @return Vector3
---- @overload fun(p0: number): Vector3
---- @deprecated
-function N_0xa4664972a9b8f8ba(p0) end
-
-    
---- GolfTrailSetFacing
----
---- @hash [0x06F761EA47C1D3ED](https://docs.fivem.net/natives/?_0x06F761EA47C1D3ED)
+--- @hash [0xF5BED327CEA362B1](https://docs.fivem.net/natives/?_0xF5BED327CEA362B1)
 --- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
-function GolfTrailSetFacing(p0) end
+--- @return number
+--- @overload fun(p0: boolean): number
+function GetStatusOfSortedListOperation(p0) end
 
     
---- # New Name: GolfTrailSetFacing
---- GolfTrailSetFacing
+--- # New Name: GetStatusOfSortedListOperation
+--- ```
+--- 3 matches across 3 scripts. First 2 were 0, 3rd was 1. Possibly a bool.
+--- appcamera, appmedia, and cellphone_controller.
+--- ```
 ---
---- @hash [0x06F761EA47C1D3ED](https://docs.fivem.net/natives/?_0x06F761EA47C1D3ED)
+--- @hash [0xF5BED327CEA362B1](https://docs.fivem.net/natives/?_0xF5BED327CEA362B1)
 --- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
+--- @return number
+--- @overload fun(p0: boolean): number
 --- @deprecated
-function N_0x06f761ea47c1d3ed(p0) end
-
-    
---- GolfTrailSetEnabled
----
---- @hash [0xA51C4B86B71652AE](https://docs.fivem.net/natives/?_0xA51C4B86B71652AE)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function GolfTrailSetEnabled(toggle) end
-
-    
---- # New Name: GolfTrailSetEnabled
---- GolfTrailSetEnabled
----
---- @hash [0xA51C4B86B71652AE](https://docs.fivem.net/natives/?_0xA51C4B86B71652AE)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
---- @deprecated
-function N_0xa51c4b86b71652ae(toggle) end
+function N_0xf5bed327cea362b1(p0) end
 
     
 --- ```
@@ -3747,6 +3396,74 @@ function GolfTrailSetPath(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 --- @overload fun(p0: number, p1: number, p2: number, p3: number, p4: number, p5: number, p6: number, p7: number, p8: boolean): void
 --- @deprecated
 function N_0x312342e1a4874f3f(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
+
+    
+--- GolfTrailSetTessellation
+---
+--- @hash [0xDBAA5EC848BA2D46](https://docs.fivem.net/natives/?_0xDBAA5EC848BA2D46)
+--- @param p0 number (int)
+--- @param p1 number (int)
+--- @return void
+--- @overload fun(p0: number, p1: number): void
+function GolfTrailSetTessellation(p0, p1) end
+
+    
+--- # New Name: GolfTrailSetTessellation
+--- GolfTrailSetTessellation
+---
+--- @hash [0xDBAA5EC848BA2D46](https://docs.fivem.net/natives/?_0xDBAA5EC848BA2D46)
+--- @param p0 number (int)
+--- @param p1 number (int)
+--- @return void
+--- @overload fun(p0: number, p1: number): void
+--- @deprecated
+function N_0xdbaa5ec848ba2d46(p0, p1) end
+
+    
+--- HasScaleformMovieLoaded
+---
+--- @hash [0x85F01B8D5B90570E](https://docs.fivem.net/natives/?_0x85F01B8D5B90570E)
+--- @param scaleformHandle number (int)
+--- @return boolean
+--- @overload fun(scaleformHandle: number): boolean
+function HasScaleformMovieLoaded(scaleformHandle) end
+
+    
+--- GolfTrailSetRadius
+---
+--- @hash [0x2485D34E50A22E84](https://docs.fivem.net/natives/?_0x2485D34E50A22E84)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @return void
+--- @overload fun(p0: number, p1: number, p2: number): void
+function GolfTrailSetRadius(p0, p1, p2) end
+
+    
+--- # New Name: GolfTrailSetRadius
+--- GolfTrailSetRadius
+---
+--- @hash [0x2485D34E50A22E84](https://docs.fivem.net/natives/?_0x2485D34E50A22E84)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @return void
+--- @overload fun(p0: number, p1: number, p2: number): void
+--- @deprecated
+function N_0x2485d34e50a22e84(p0, p1, p2) end
+
+    
+--- ```
+--- Returns the texture resolution of the passed texture dict+name.  
+--- Note: Most texture resolutions are doubled compared to the console version of the game.  
+--- ```
+---
+--- @hash [0x35736EE65BD00C11](https://docs.fivem.net/natives/?_0x35736EE65BD00C11)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @return Vector3
+--- @overload fun(textureDict: string, textureName: string): Vector3
+function GetTextureResolution(textureDict, textureName) end
 
     
 --- ```
@@ -3797,82 +3514,197 @@ function GolfTrailSetFixedControlPoint(type, xPos, yPos, zPos, p4, red, green, b
 function N_0xb1bb03742917a5d6(type, xPos, yPos, zPos, p4, red, green, blue, alpha) end
 
     
---- GolfTrailSetRadius
+--- HasScaleformContainerMovieLoadedIntoParent
 ---
---- @hash [0x2485D34E50A22E84](https://docs.fivem.net/natives/?_0x2485D34E50A22E84)
---- @param p0 number (float)
---- @param p1 number (float)
---- @param p2 number (float)
---- @return void
---- @overload fun(p0: number, p1: number, p2: number): void
-function GolfTrailSetRadius(p0, p1, p2) end
+--- @hash [0x8217150E1217EBFD](https://docs.fivem.net/natives/?_0x8217150E1217EBFD)
+--- @param scaleformHandle number (int)
+--- @return boolean
+--- @overload fun(scaleformHandle: number): boolean
+function HasScaleformContainerMovieLoadedIntoParent(scaleformHandle) end
 
     
---- # New Name: GolfTrailSetRadius
---- GolfTrailSetRadius
+--- ```
+--- Only values used in the scripts are:
+--- "heist_mp"
+--- "heistmap_mp"
+--- "instructional_buttons"
+--- "heist_pre"
+--- ```
 ---
---- @hash [0x2485D34E50A22E84](https://docs.fivem.net/natives/?_0x2485D34E50A22E84)
---- @param p0 number (float)
---- @param p1 number (float)
---- @param p2 number (float)
---- @return void
---- @overload fun(p0: number, p1: number, p2: number): void
+--- @hash [0x0C1C5D756FB5F337](https://docs.fivem.net/natives/?_0x0C1C5D756FB5F337)
+--- @param scaleformName string (char*)
+--- @return boolean
+--- @overload fun(scaleformName: string): boolean
+function HasScaleformMovieFilenameLoaded(scaleformName) end
+
+    
+--- # New Name: HasScaleformMovieFilenameLoaded
+--- ```
+--- Only values used in the scripts are:
+--- "heist_mp"
+--- "heistmap_mp"
+--- "instructional_buttons"
+--- "heist_pre"
+--- ```
+---
+--- @hash [0x0C1C5D756FB5F337](https://docs.fivem.net/natives/?_0x0C1C5D756FB5F337)
+--- @param scaleformName string (char*)
+--- @return boolean
+--- @overload fun(scaleformName: string): boolean
 --- @deprecated
-function N_0x2485d34e50a22e84(p0, p1, p2) end
+function N_0x0c1c5d756fb5f337(scaleformName) end
 
     
---- GolfTrailSetTessellation
+--- # New Name: HasScaleformMovieFilenameLoaded
+--- ```
+--- Only values used in the scripts are:
+--- "heist_mp"
+--- "heistmap_mp"
+--- "instructional_buttons"
+--- "heist_pre"
+--- ```
 ---
---- @hash [0xDBAA5EC848BA2D46](https://docs.fivem.net/natives/?_0xDBAA5EC848BA2D46)
---- @param p0 number (int)
---- @param p1 number (int)
---- @return void
---- @overload fun(p0: number, p1: number): void
-function GolfTrailSetTessellation(p0, p1) end
-
-    
---- # New Name: GolfTrailSetTessellation
---- GolfTrailSetTessellation
----
---- @hash [0xDBAA5EC848BA2D46](https://docs.fivem.net/natives/?_0xDBAA5EC848BA2D46)
---- @param p0 number (int)
---- @param p1 number (int)
---- @return void
---- @overload fun(p0: number, p1: number): void
+--- @hash [0x0C1C5D756FB5F337](https://docs.fivem.net/natives/?_0x0C1C5D756FB5F337)
+--- @param scaleformName string (char*)
+--- @return boolean
+--- @overload fun(scaleformName: string): boolean
 --- @deprecated
-function N_0xdbaa5ec848ba2d46(p0, p1) end
+function HasNamedScaleformMovieLoaded(scaleformName) end
 
     
---- ```
---- Only appeared in Golf & Golf_mp. Parameters were all ptrs  
---- ```
+--- LoadMissionCreatorPhoto
 ---
---- @hash [0x9CFDD90B2B844BF7](https://docs.fivem.net/natives/?_0x9CFDD90B2B844BF7)
---- @param p0 number (float)
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @return void
---- @overload fun(p0: number, p1: number, p2: number, p3: number, p4: number): void
-function GolfTrailSetShaderParams(p0, p1, p2, p3, p4) end
+--- @hash [0x4862437A486F91B0](https://docs.fivem.net/natives/?_0x4862437A486F91B0)
+--- @param p0 string (char*)
+--- @param p3 boolean
+--- @return boolean, any, any
+--- @overload fun(p0: string, p3: boolean): boolean, any, any
+function LoadMissionCreatorPhoto(p0, p3) end
 
     
---- # New Name: GolfTrailSetShaderParams
---- ```
---- Only appeared in Golf & Golf_mp. Parameters were all ptrs  
---- ```
+--- # New Name: LoadMissionCreatorPhoto
+--- LoadMissionCreatorPhoto
 ---
---- @hash [0x9CFDD90B2B844BF7](https://docs.fivem.net/natives/?_0x9CFDD90B2B844BF7)
---- @param p0 number (float)
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @return void
---- @overload fun(p0: number, p1: number, p2: number, p3: number, p4: number): void
+--- @hash [0x4862437A486F91B0](https://docs.fivem.net/natives/?_0x4862437A486F91B0)
+--- @param p0 string (char*)
+--- @param p3 boolean
+--- @return boolean, any, any
+--- @overload fun(p0: string, p3: boolean): boolean, any, any
 --- @deprecated
-function N_0x9cfdd90b2b844bf7(p0, p1, p2, p3, p4) end
+function N_0x4862437a486f91b0(p0, p3) end
+
+    
+--- GetUsingnightvision
+---
+--- @hash [0x2202A3F42C8E5F79](https://docs.fivem.net/natives/?_0x2202A3F42C8E5F79)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function GetUsingnightvision() end
+
+    
+--- # New Name: GetUsingnightvision
+--- GetUsingnightvision
+---
+--- @hash [0x2202A3F42C8E5F79](https://docs.fivem.net/natives/?_0x2202A3F42C8E5F79)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function IsNightvisionInactive() end
+
+    
+--- # New Name: GetUsingnightvision
+--- GetUsingnightvision
+---
+--- @hash [0x2202A3F42C8E5F79](https://docs.fivem.net/natives/?_0x2202A3F42C8E5F79)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function IsNightvisionActive() end
+
+    
+--- HasStreamedTextureDictLoaded
+---
+--- @hash [0x0145F696AAAAD2E4](https://docs.fivem.net/natives/?_0x0145F696AAAAD2E4)
+--- @param textureDict string (char*)
+--- @return boolean
+--- @overload fun(textureDict: string): boolean
+function HasStreamedTextureDictLoaded(textureDict) end
+
+    
+--- IsDecalAlive
+---
+--- @hash [0xC694D74949CAFD0C](https://docs.fivem.net/natives/?_0xC694D74949CAFD0C)
+--- @param decal number (int)
+--- @return boolean
+--- @overload fun(decal: number): boolean
+function IsDecalAlive(decal) end
+
+    
+--- ```
+--- Returns whether screen transition to blur/from blur is running.
+--- ```
+---
+--- @hash [0x7B226C785A52A0A9](https://docs.fivem.net/natives/?_0x7B226C785A52A0A9)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function IsScreenblurFadeRunning() end
+
+    
+--- # New Name: IsScreenblurFadeRunning
+--- ```
+--- Returns whether screen transition to blur/from blur is running.
+--- ```
+---
+--- @hash [0x7B226C785A52A0A9](https://docs.fivem.net/natives/?_0x7B226C785A52A0A9)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function N_0x7b226c785a52a0a9() end
+
+    
+--- HasScaleformScriptHudMovieLoaded
+---
+--- @hash [0xDF6E5987D2B4D140](https://docs.fivem.net/natives/?_0xDF6E5987D2B4D140)
+--- @param hudComponent number (int)
+--- @return boolean
+--- @overload fun(hudComponent: number): boolean
+function HasScaleformScriptHudMovieLoaded(hudComponent) end
+
+    
+--- # New Name: HasScaleformScriptHudMovieLoaded
+--- HasScaleformScriptHudMovieLoaded
+---
+--- @hash [0xDF6E5987D2B4D140](https://docs.fivem.net/natives/?_0xDF6E5987D2B4D140)
+--- @param hudComponent number (int)
+--- @return boolean
+--- @overload fun(hudComponent: number): boolean
+--- @deprecated
+function HasHudScaleformLoaded(hudComponent) end
+
+    
+--- GolfTrailGetMaxHeight
+---
+--- @hash [0xA4819F5E23E2FFAD](https://docs.fivem.net/natives/?_0xA4819F5E23E2FFAD)
+---
+--- @return number
+--- @overload fun(): number
+function GolfTrailGetMaxHeight() end
+
+    
+--- # New Name: GolfTrailGetMaxHeight
+--- GolfTrailGetMaxHeight
+---
+--- @hash [0xA4819F5E23E2FFAD](https://docs.fivem.net/natives/?_0xA4819F5E23E2FFAD)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
+function N_0xa4819f5e23e2ffad() end
 
     
 --- ```
@@ -3931,93 +3763,6 @@ function GrassLodResetScriptAreas() end
 function N_0x302c91ab2d477f7e() end
 
     
---- HasScaleformMovieLoaded
----
---- @hash [0x85F01B8D5B90570E](https://docs.fivem.net/natives/?_0x85F01B8D5B90570E)
---- @param scaleformHandle number (int)
---- @return boolean
---- @overload fun(scaleformHandle: number): boolean
-function HasScaleformMovieLoaded(scaleformHandle) end
-
-    
---- HasScaleformContainerMovieLoadedIntoParent
----
---- @hash [0x8217150E1217EBFD](https://docs.fivem.net/natives/?_0x8217150E1217EBFD)
---- @param scaleformHandle number (int)
---- @return boolean
---- @overload fun(scaleformHandle: number): boolean
-function HasScaleformContainerMovieLoadedIntoParent(scaleformHandle) end
-
-    
---- HasScaleformScriptHudMovieLoaded
----
---- @hash [0xDF6E5987D2B4D140](https://docs.fivem.net/natives/?_0xDF6E5987D2B4D140)
---- @param hudComponent number (int)
---- @return boolean
---- @overload fun(hudComponent: number): boolean
-function HasScaleformScriptHudMovieLoaded(hudComponent) end
-
-    
---- # New Name: HasScaleformScriptHudMovieLoaded
---- HasScaleformScriptHudMovieLoaded
----
---- @hash [0xDF6E5987D2B4D140](https://docs.fivem.net/natives/?_0xDF6E5987D2B4D140)
---- @param hudComponent number (int)
---- @return boolean
---- @overload fun(hudComponent: number): boolean
---- @deprecated
-function HasHudScaleformLoaded(hudComponent) end
-
-    
---- ```
---- Only values used in the scripts are:
---- "heist_mp"
---- "heistmap_mp"
---- "instructional_buttons"
---- "heist_pre"
---- ```
----
---- @hash [0x0C1C5D756FB5F337](https://docs.fivem.net/natives/?_0x0C1C5D756FB5F337)
---- @param scaleformName string (char*)
---- @return boolean
---- @overload fun(scaleformName: string): boolean
-function HasScaleformMovieFilenameLoaded(scaleformName) end
-
-    
---- # New Name: HasScaleformMovieFilenameLoaded
---- ```
---- Only values used in the scripts are:
---- "heist_mp"
---- "heistmap_mp"
---- "instructional_buttons"
---- "heist_pre"
---- ```
----
---- @hash [0x0C1C5D756FB5F337](https://docs.fivem.net/natives/?_0x0C1C5D756FB5F337)
---- @param scaleformName string (char*)
---- @return boolean
---- @overload fun(scaleformName: string): boolean
---- @deprecated
-function N_0x0c1c5d756fb5f337(scaleformName) end
-
-    
---- # New Name: HasScaleformMovieFilenameLoaded
---- ```
---- Only values used in the scripts are:
---- "heist_mp"
---- "heistmap_mp"
---- "instructional_buttons"
---- "heist_pre"
---- ```
----
---- @hash [0x0C1C5D756FB5F337](https://docs.fivem.net/natives/?_0x0C1C5D756FB5F337)
---- @param scaleformName string (char*)
---- @return boolean
---- @overload fun(scaleformName: string): boolean
---- @deprecated
-function HasNamedScaleformMovieLoaded(scaleformName) end
-
-    
 --- ```
 --- NativeDB Introduced: v1604
 --- ```
@@ -4030,80 +3775,102 @@ function HasNamedScaleformMovieLoaded(scaleformName) end
 function IsPlaylistUnk(tvChannel, p1) end
 
     
---- HasStreamedTextureDictLoaded
+--- N_0x0218ba067d249dea
 ---
---- @hash [0x0145F696AAAAD2E4](https://docs.fivem.net/natives/?_0x0145F696AAAAD2E4)
---- @param textureDict string (char*)
---- @return boolean
---- @overload fun(textureDict: string): boolean
-function HasStreamedTextureDictLoaded(textureDict) end
+--- @hash [0x0218BA067D249DEA](https://docs.fivem.net/natives/?_0x0218BA067D249DEA)
+---
+--- @return void
+--- @overload fun(): void
+function N_0x0218ba067d249dea() end
 
     
---- methodReturn: The return value of this native: END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE
---- Returns true if the return value of a scaleform function is ready to be collected (using GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_STRING or GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_INT).
+--- N_0x03300b57fcac6ddb
 ---
---- @hash [0x768FF8961BA904D6](https://docs.fivem.net/natives/?_0x768FF8961BA904D6)
---- @param method_return number (int)
---- @return boolean
---- @overload fun(method_return: number): boolean
-function IsScaleformMovieMethodReturnValueReady(method_return) end
+--- @hash [0x03300B57FCAC6DDB](https://docs.fivem.net/natives/?_0x03300B57FCAC6DDB)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function N_0x03300b57fcac6ddb(p0) end
 
     
---- # New Name: IsScaleformMovieMethodReturnValueReady
---- methodReturn: The return value of this native: END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE
---- Returns true if the return value of a scaleform function is ready to be collected (using GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_STRING or GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_INT).
+--- LoadMovieMeshSet
 ---
---- @hash [0x768FF8961BA904D6](https://docs.fivem.net/natives/?_0x768FF8961BA904D6)
---- @param method_return number (int)
+--- @hash [0xB66064452270E8F1](https://docs.fivem.net/natives/?_0xB66064452270E8F1)
+--- @param movieMeshSetName string (char*)
+--- @return number
+--- @overload fun(movieMeshSetName: string): number
+function LoadMovieMeshSet(movieMeshSetName) end
+
+    
+--- MoveVehicleDecals
+---
+--- @hash [0x84C8D7C2D30D3280](https://docs.fivem.net/natives/?_0x84C8D7C2D30D3280)
+--- @param p0 any
+--- @param p1 any
+--- @return void
+--- @overload fun(p0: any, p1: any): void
+function MoveVehicleDecals(p0, p1) end
+
+    
+--- N_0x14fc5833464340a8
+---
+--- @hash [0x14FC5833464340A8](https://docs.fivem.net/natives/?_0x14FC5833464340A8)
+---
+--- @return void
+--- @overload fun(): void
+function N_0x14fc5833464340a8() end
+
+    
+--- IsTrackedPointVisible
+---
+--- @hash [0xC45CCDAAC9221CA8](https://docs.fivem.net/natives/?_0xC45CCDAAC9221CA8)
+--- @param point number (int)
 --- @return boolean
---- @overload fun(method_return: number): boolean
+--- @overload fun(point: number): boolean
+function IsTrackedPointVisible(point) end
+
+    
+--- ```
+--- Only appeared in Golf & Golf_mp. Parameters were all ptrs  
+--- ```
+---
+--- @hash [0x9CFDD90B2B844BF7](https://docs.fivem.net/natives/?_0x9CFDD90B2B844BF7)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @return void
+--- @overload fun(p0: number, p1: number, p2: number, p3: number, p4: number): void
+function GolfTrailSetShaderParams(p0, p1, p2, p3, p4) end
+
+    
+--- # New Name: GolfTrailSetShaderParams
+--- ```
+--- Only appeared in Golf & Golf_mp. Parameters were all ptrs  
+--- ```
+---
+--- @hash [0x9CFDD90B2B844BF7](https://docs.fivem.net/natives/?_0x9CFDD90B2B844BF7)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @return void
+--- @overload fun(p0: number, p1: number, p2: number, p3: number, p4: number): void
 --- @deprecated
-function N_0x768ff8961ba904d6(method_return) end
-
-    
---- # New Name: IsScaleformMovieMethodReturnValueReady
---- methodReturn: The return value of this native: END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE
---- Returns true if the return value of a scaleform function is ready to be collected (using GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_STRING or GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_INT).
----
---- @hash [0x768FF8961BA904D6](https://docs.fivem.net/natives/?_0x768FF8961BA904D6)
---- @param method_return number (int)
---- @return boolean
---- @overload fun(method_return: number): boolean
---- @deprecated
-function GetScaleformMovieFunctionReturnBool(method_return) end
-
-    
---- IsDecalAlive
----
---- @hash [0xC694D74949CAFD0C](https://docs.fivem.net/natives/?_0xC694D74949CAFD0C)
---- @param decal number (int)
---- @return boolean
---- @overload fun(decal: number): boolean
-function IsDecalAlive(decal) end
+function N_0x9cfdd90b2b844bf7(p0, p1, p2, p3, p4) end
 
     
 --- ```
---- Returns whether screen transition to blur/from blur is running.
+--- DISABLE_S*
 --- ```
 ---
---- @hash [0x7B226C785A52A0A9](https://docs.fivem.net/natives/?_0x7B226C785A52A0A9)
----
---- @return boolean
---- @overload fun(): boolean
-function IsScreenblurFadeRunning() end
-
-    
---- # New Name: IsScreenblurFadeRunning
---- ```
---- Returns whether screen transition to blur/from blur is running.
---- ```
----
---- @hash [0x7B226C785A52A0A9](https://docs.fivem.net/natives/?_0x7B226C785A52A0A9)
----
---- @return boolean
---- @overload fun(): boolean
---- @deprecated
-function N_0x7b226c785a52a0a9() end
+--- @hash [0x02369D5C8A51FDCF](https://docs.fivem.net/natives/?_0x02369D5C8A51FDCF)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function N_0x02369d5c8a51fdcf(toggle) end
 
     
 --- ```
@@ -4143,139 +3910,13 @@ function N_0x0ad973ca1e077b60(videoCliphash) end
 function LoadTvChannel(videoCliphash) end
 
     
---- IsTrackedPointVisible
+--- N_0x259ba6d4e6f808f1
 ---
---- @hash [0xC45CCDAAC9221CA8](https://docs.fivem.net/natives/?_0xC45CCDAAC9221CA8)
---- @param point number (int)
---- @return boolean
---- @overload fun(point: number): boolean
-function IsTrackedPointVisible(point) end
-
-    
---- LoadMovieMeshSet
----
---- @hash [0xB66064452270E8F1](https://docs.fivem.net/natives/?_0xB66064452270E8F1)
---- @param movieMeshSetName string (char*)
---- @return number
---- @overload fun(movieMeshSetName: string): number
-function LoadMovieMeshSet(movieMeshSetName) end
-
-    
---- LoadMissionCreatorPhoto
----
---- @hash [0x4862437A486F91B0](https://docs.fivem.net/natives/?_0x4862437A486F91B0)
---- @param p0 string (char*)
---- @param p3 boolean
---- @return boolean, any, any
---- @overload fun(p0: string, p3: boolean): boolean, any, any
-function LoadMissionCreatorPhoto(p0, p3) end
-
-    
---- # New Name: LoadMissionCreatorPhoto
---- LoadMissionCreatorPhoto
----
---- @hash [0x4862437A486F91B0](https://docs.fivem.net/natives/?_0x4862437A486F91B0)
---- @param p0 string (char*)
---- @param p3 boolean
---- @return boolean, any, any
---- @overload fun(p0: string, p3: boolean): boolean, any, any
---- @deprecated
-function N_0x4862437a486f91b0(p0, p3) end
-
-    
---- N_0x0218ba067d249dea
----
---- @hash [0x0218BA067D249DEA](https://docs.fivem.net/natives/?_0x0218BA067D249DEA)
----
---- @return void
---- @overload fun(): void
-function N_0x0218ba067d249dea() end
-
-    
---- MoveVehicleDecals
----
---- @hash [0x84C8D7C2D30D3280](https://docs.fivem.net/natives/?_0x84C8D7C2D30D3280)
+--- @hash [0x259BA6D4E6F808F1](https://docs.fivem.net/natives/?_0x259BA6D4E6F808F1)
 --- @param p0 any
---- @param p1 any
 --- @return void
---- @overload fun(p0: any, p1: any): void
-function MoveVehicleDecals(p0, p1) end
-
-    
---- ```
---- DISABLE_S*
---- ```
----
---- @hash [0x02369D5C8A51FDCF](https://docs.fivem.net/natives/?_0x02369D5C8A51FDCF)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function N_0x02369d5c8a51fdcf(toggle) end
-
-    
---- N_0x03300b57fcac6ddb
----
---- @hash [0x03300B57FCAC6DDB](https://docs.fivem.net/natives/?_0x03300B57FCAC6DDB)
---- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
-function N_0x03300b57fcac6ddb(p0) end
-
-    
---- N_0x0ae73d8df3a762b2
----
---- @hash [0x0AE73D8DF3A762B2](https://docs.fivem.net/natives/?_0x0AE73D8DF3A762B2)
---- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
-function N_0x0ae73d8df3a762b2(p0) end
-
-    
---- N_0x0e4299c549f0d1f1
----
---- @hash [0x0E4299C549F0D1F1](https://docs.fivem.net/natives/?_0x0E4299C549F0D1F1)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function N_0x0e4299c549f0d1f1(toggle) end
-
-    
---- ```
---- UI3DSCENE_*
---- ```
----
---- @hash [0x108BE26959A9D9BB](https://docs.fivem.net/natives/?_0x108BE26959A9D9BB)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function N_0x108be26959a9d9bb(toggle) end
-
-    
---- N_0x14fc5833464340a8
----
---- @hash [0x14FC5833464340A8](https://docs.fivem.net/natives/?_0x14FC5833464340A8)
----
---- @return void
---- @overload fun(): void
-function N_0x14fc5833464340a8() end
-
-    
---- N_0x1612c45f9e3e0d44
----
---- @hash [0x1612C45F9E3E0D44](https://docs.fivem.net/natives/?_0x1612C45F9E3E0D44)
----
---- @return void
---- @overload fun(): void
-function N_0x1612c45f9e3e0d44() end
-
-    
---- N_0x1bbc135a4d25edde
----
---- @hash [0x1BBC135A4D25EDDE](https://docs.fivem.net/natives/?_0x1BBC135A4D25EDDE)
---- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
-function N_0x1bbc135a4d25edde(p0) end
+--- @overload fun(p0: any): void
+function N_0x259ba6d4e6f808f1(p0) end
 
     
 --- ```
@@ -4289,22 +3930,13 @@ function N_0x1bbc135a4d25edde(p0) end
 function N_0x1cba05ae7bd7ee05(p0) end
 
     
---- N_0x25fc3e33a31ad0c9
+--- N_0x1612c45f9e3e0d44
 ---
---- @hash [0x25FC3E33A31AD0C9](https://docs.fivem.net/natives/?_0x25FC3E33A31AD0C9)
---- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
-function N_0x25fc3e33a31ad0c9(p0) end
-
-    
---- N_0x259ba6d4e6f808f1
+--- @hash [0x1612C45F9E3E0D44](https://docs.fivem.net/natives/?_0x1612C45F9E3E0D44)
 ---
---- @hash [0x259BA6D4E6F808F1](https://docs.fivem.net/natives/?_0x259BA6D4E6F808F1)
---- @param p0 any
 --- @return void
---- @overload fun(p0: any): void
-function N_0x259ba6d4e6f808f1(p0) end
+--- @overload fun(): void
+function N_0x1612c45f9e3e0d44() end
 
     
 --- N_0x27feb5254759cde3
@@ -4317,24 +3949,74 @@ function N_0x259ba6d4e6f808f1(p0) end
 function N_0x27feb5254759cde3(textureDict, p1) end
 
     
---- N_0x27cfb1b1e078cb2d
+--- N_0x1bbc135a4d25edde
 ---
---- @hash [0x27CFB1B1E078CB2D](https://docs.fivem.net/natives/?_0x27CFB1B1E078CB2D)
----
+--- @hash [0x1BBC135A4D25EDDE](https://docs.fivem.net/natives/?_0x1BBC135A4D25EDDE)
+--- @param p0 boolean
 --- @return void
---- @overload fun(): void
-function N_0x27cfb1b1e078cb2d() end
+--- @overload fun(p0: boolean): void
+function N_0x1bbc135a4d25edde(p0) end
 
     
---- ```
---- NativeDB Introduced: v323
---- ```
+--- N_0x0e4299c549f0d1f1
 ---
---- @hash [0x2A251AA48B2B46DB](https://docs.fivem.net/natives/?_0x2A251AA48B2B46DB)
----
+--- @hash [0x0E4299C549F0D1F1](https://docs.fivem.net/natives/?_0x0E4299C549F0D1F1)
+--- @param toggle boolean
 --- @return void
---- @overload fun(): void
-function N_0x2a251aa48b2b46db() end
+--- @overload fun(toggle: boolean): void
+function N_0x0e4299c549f0d1f1(toggle) end
+
+    
+--- N_0x0ae73d8df3a762b2
+---
+--- @hash [0x0AE73D8DF3A762B2](https://docs.fivem.net/natives/?_0x0AE73D8DF3A762B2)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function N_0x0ae73d8df3a762b2(p0) end
+
+    
+--- N_0x25fc3e33a31ad0c9
+---
+--- @hash [0x25FC3E33A31AD0C9](https://docs.fivem.net/natives/?_0x25FC3E33A31AD0C9)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function N_0x25fc3e33a31ad0c9(p0) end
+
+    
+--- methodReturn: The return value of this native: END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE
+--- Returns true if the return value of a scaleform function is ready to be collected (using GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_STRING or GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_INT).
+---
+--- @hash [0x768FF8961BA904D6](https://docs.fivem.net/natives/?_0x768FF8961BA904D6)
+--- @param method_return number (int)
+--- @return boolean
+--- @overload fun(method_return: number): boolean
+function IsScaleformMovieMethodReturnValueReady(method_return) end
+
+    
+--- # New Name: IsScaleformMovieMethodReturnValueReady
+--- methodReturn: The return value of this native: END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE
+--- Returns true if the return value of a scaleform function is ready to be collected (using GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_STRING or GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_INT).
+---
+--- @hash [0x768FF8961BA904D6](https://docs.fivem.net/natives/?_0x768FF8961BA904D6)
+--- @param method_return number (int)
+--- @return boolean
+--- @overload fun(method_return: number): boolean
+--- @deprecated
+function N_0x768ff8961ba904d6(method_return) end
+
+    
+--- # New Name: IsScaleformMovieMethodReturnValueReady
+--- methodReturn: The return value of this native: END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE
+--- Returns true if the return value of a scaleform function is ready to be collected (using GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_STRING or GET_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_INT).
+---
+--- @hash [0x768FF8961BA904D6](https://docs.fivem.net/natives/?_0x768FF8961BA904D6)
+--- @param method_return number (int)
+--- @return boolean
+--- @overload fun(method_return: number): boolean
+--- @deprecated
+function GetScaleformMovieFunctionReturnBool(method_return) end
 
     
 --- N_0x2a893980e96b659a
@@ -4344,24 +4026,6 @@ function N_0x2a251aa48b2b46db() end
 --- @return boolean
 --- @overload fun(p0: boolean): boolean
 function N_0x2a893980e96b659a(p0) end
-
-    
---- N_0x2b40a97646381508
----
---- @hash [0x2B40A97646381508](https://docs.fivem.net/natives/?_0x2B40A97646381508)
---- @param p0 any
---- @return void
---- @overload fun(p0: any): void
-function N_0x2b40a97646381508(p0) end
-
-    
---- N_0x2c42340f916c5930
----
---- @hash [0x2C42340F916C5930](https://docs.fivem.net/natives/?_0x2C42340F916C5930)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function N_0x2c42340f916c5930(p0) end
 
     
 --- ```
@@ -4396,15 +4060,32 @@ function N_0x2c42340f916c5930(p0) end
 function N_0x2d3b147afad49de0(textureDict, textureName, x, y, width, height, p6, red, green, blue, alpha, p11) end
 
     
---- ```
---- NativeDB Introduced: v1290
---- ```
+--- N_0x32f34ff7f617643b
 ---
---- @hash [0x2FCB133CA50A49EB](https://docs.fivem.net/natives/?_0x2FCB133CA50A49EB)
+--- @hash [0x32F34FF7F617643B](https://docs.fivem.net/natives/?_0x32F34FF7F617643B)
+--- @param p0 any
+--- @param p1 any
+--- @return void
+--- @overload fun(p0: any, p1: any): void
+function N_0x32f34ff7f617643b(p0, p1) end
+
+    
+--- N_0x27cfb1b1e078cb2d
+---
+--- @hash [0x27CFB1B1E078CB2D](https://docs.fivem.net/natives/?_0x27CFB1B1E078CB2D)
+---
+--- @return void
+--- @overload fun(): void
+function N_0x27cfb1b1e078cb2d() end
+
+    
+--- N_0x2c42340f916c5930
+---
+--- @hash [0x2C42340F916C5930](https://docs.fivem.net/natives/?_0x2C42340F916C5930)
 --- @param p0 any
 --- @return any
 --- @overload fun(p0: any): any
-function N_0x2fcb133ca50a49eb(p0) end
+function N_0x2c42340f916c5930(p0) end
 
     
 --- ```
@@ -4420,14 +4101,22 @@ function N_0x2fcb133ca50a49eb(p0) end
 function N_0x30432a0118736e00() end
 
     
---- N_0x32f34ff7f617643b
+--- N_0x2b40a97646381508
 ---
---- @hash [0x32F34FF7F617643B](https://docs.fivem.net/natives/?_0x32F34FF7F617643B)
+--- @hash [0x2B40A97646381508](https://docs.fivem.net/natives/?_0x2B40A97646381508)
 --- @param p0 any
---- @param p1 any
 --- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0x32f34ff7f617643b(p0, p1) end
+--- @overload fun(p0: any): void
+function N_0x2b40a97646381508(p0) end
+
+    
+--- N_0x46d1a61a21f566fc
+---
+--- @hash [0x46D1A61A21F566FC](https://docs.fivem.net/natives/?_0x46D1A61A21F566FC)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+function N_0x46d1a61a21f566fc(p0) end
 
     
 --- N_0x36f6626459d91457
@@ -4449,26 +4138,34 @@ function N_0x346ef3ecaaab149e() end
 
     
 --- ```
---- NativeDB Introduced: v1180
+--- UI3DSCENE_*
 --- ```
 ---
---- @hash [0x3C788E7F6438754D](https://docs.fivem.net/natives/?_0x3C788E7F6438754D)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
+--- @hash [0x108BE26959A9D9BB](https://docs.fivem.net/natives/?_0x108BE26959A9D9BB)
+--- @param toggle boolean
 --- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any): void
-function N_0x3c788e7f6438754d(p0, p1, p2, p3) end
+--- @overload fun(toggle: boolean): void
+function N_0x108be26959a9d9bb(toggle) end
 
     
---- N_0x46d1a61a21f566fc
+--- N_0x4af92acd3141d96c
 ---
---- @hash [0x46D1A61A21F566FC](https://docs.fivem.net/natives/?_0x46D1A61A21F566FC)
---- @param p0 number (float)
+--- @hash [0x4AF92ACD3141D96C](https://docs.fivem.net/natives/?_0x4AF92ACD3141D96C)
+---
 --- @return void
---- @overload fun(p0: number): void
-function N_0x46d1a61a21f566fc(p0) end
+--- @overload fun(): void
+function N_0x4af92acd3141d96c() end
+
+    
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0x2FCB133CA50A49EB](https://docs.fivem.net/natives/?_0x2FCB133CA50A49EB)
+--- @param p0 any
+--- @return any
+--- @overload fun(p0: any): any
+function N_0x2fcb133ca50a49eb(p0) end
 
     
 --- N_0x393bd2275ceb7793
@@ -4480,22 +4177,24 @@ function N_0x46d1a61a21f566fc(p0) end
 function N_0x393bd2275ceb7793() end
 
     
---- N_0x54e22ea2c1956a8d
+--- N_0x5debd9c4dc995692
 ---
---- @hash [0x54E22EA2C1956A8D](https://docs.fivem.net/natives/?_0x54E22EA2C1956A8D)
---- @param p0 number (float)
+--- @hash [0x5DEBD9C4DC995692](https://docs.fivem.net/natives/?_0x5DEBD9C4DC995692)
+---
 --- @return void
---- @overload fun(p0: number): void
-function N_0x54e22ea2c1956a8d(p0) end
+--- @overload fun(): void
+function N_0x5debd9c4dc995692() end
 
     
---- N_0x5b0316762afd4a64
+--- ```
+--- NativeDB Introduced: v323
+--- ```
 ---
---- @hash [0x5B0316762AFD4A64](https://docs.fivem.net/natives/?_0x5B0316762AFD4A64)
+--- @hash [0x2A251AA48B2B46DB](https://docs.fivem.net/natives/?_0x2A251AA48B2B46DB)
 ---
---- @return number
---- @overload fun(): number
-function N_0x5b0316762afd4a64() end
+--- @return void
+--- @overload fun(): void
+function N_0x2a251aa48b2b46db() end
 
     
 --- ```
@@ -4509,40 +4208,36 @@ function N_0x5b0316762afd4a64() end
 function N_0x43fa7cbe20dab219(p0) end
 
     
---- N_0x5debd9c4dc995692
+--- N_0x54e22ea2c1956a8d
 ---
---- @hash [0x5DEBD9C4DC995692](https://docs.fivem.net/natives/?_0x5DEBD9C4DC995692)
----
+--- @hash [0x54E22EA2C1956A8D](https://docs.fivem.net/natives/?_0x54E22EA2C1956A8D)
+--- @param p0 number (float)
 --- @return void
---- @overload fun(): void
-function N_0x5debd9c4dc995692() end
+--- @overload fun(p0: number): void
+function N_0x54e22ea2c1956a8d(p0) end
 
     
---- N_0x4af92acd3141d96c
+--- ```
+--- NativeDB Introduced: v1180
+--- ```
 ---
---- @hash [0x4AF92ACD3141D96C](https://docs.fivem.net/natives/?_0x4AF92ACD3141D96C)
----
+--- @hash [0x3C788E7F6438754D](https://docs.fivem.net/natives/?_0x3C788E7F6438754D)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
 --- @return void
---- @overload fun(): void
-function N_0x4af92acd3141d96c() end
+--- @overload fun(p0: any, p1: any, p2: any, p3: any): void
+function N_0x3c788e7f6438754d(p0, p1, p2, p3) end
 
     
---- N_0x5dbf05db5926d089
+--- N_0x649c97d52332341a
 ---
---- @hash [0x5DBF05DB5926D089](https://docs.fivem.net/natives/?_0x5DBF05DB5926D089)
+--- @hash [0x649C97D52332341A](https://docs.fivem.net/natives/?_0x649C97D52332341A)
 --- @param p0 any
 --- @return void
 --- @overload fun(p0: any): void
-function N_0x5dbf05db5926d089(p0) end
-
-    
---- **This native does absolutely nothing, just a nullsub**
----
---- @hash [0x61F95E5BB3E0A8C6](https://docs.fivem.net/natives/?_0x61F95E5BB3E0A8C6)
---- @param p0 any
---- @return void
---- @overload fun(p0: any): void
-function N_0x61f95e5bb3e0a8c6(p0) end
+function N_0x649c97d52332341a(p0) end
 
     
 --- ```
@@ -4554,17 +4249,6 @@ function N_0x61f95e5bb3e0a8c6(p0) end
 --- @return boolean
 --- @overload fun(p0: number): boolean
 function N_0x5e657ef1099edd65(p0) end
-
-    
---- ```
---- SET_F*
---- ```
----
---- @hash [0x6A51F78772175A51](https://docs.fivem.net/natives/?_0x6A51F78772175A51)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function N_0x6a51f78772175a51(toggle) end
 
     
 --- ```
@@ -4591,6 +4275,15 @@ function N_0x5f6df3d92271e8a1(toggle) end
 function SetParticleFxBloodScale(toggle) end
 
     
+--- N_0x5dbf05db5926d089
+---
+--- @hash [0x5DBF05DB5926D089](https://docs.fivem.net/natives/?_0x5DBF05DB5926D089)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function N_0x5dbf05db5926d089(p0) end
+
+    
 --- ```
 --- UI3DSCENE_*
 --- ```
@@ -4602,13 +4295,22 @@ function SetParticleFxBloodScale(toggle) end
 function N_0x7a42b2e236e71415() end
 
     
---- N_0x7ac24eab6d74118d
+--- N_0x851cd923176eba7c
 ---
---- @hash [0x7AC24EAB6D74118D](https://docs.fivem.net/natives/?_0x7AC24EAB6D74118D)
---- @param p0 boolean
---- @return boolean
---- @overload fun(p0: boolean): boolean
-function N_0x7ac24eab6d74118d(p0) end
+--- @hash [0x851CD923176EBA7C](https://docs.fivem.net/natives/?_0x851CD923176EBA7C)
+---
+--- @return void
+--- @overload fun(): void
+function N_0x851cd923176eba7c() end
+
+    
+--- **This native does absolutely nothing, just a nullsub**
+---
+--- @hash [0x61F95E5BB3E0A8C6](https://docs.fivem.net/natives/?_0x61F95E5BB3E0A8C6)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function N_0x61f95e5bb3e0a8c6(p0) end
 
     
 --- ```
@@ -4622,13 +4324,33 @@ function N_0x7ac24eab6d74118d(p0) end
 function N_0x615d3925e87a3b26(checkpoint) end
 
     
---- N_0x649c97d52332341a
+--- N_0x759650634f07b6b4
 ---
---- @hash [0x649C97D52332341A](https://docs.fivem.net/natives/?_0x649C97D52332341A)
---- @param p0 any
+--- @hash [0x759650634F07B6B4](https://docs.fivem.net/natives/?_0x759650634F07B6B4)
+--- @param p0 number (int)
+--- @return boolean
+--- @overload fun(p0: number): boolean
+function N_0x759650634f07b6b4(p0) end
+
+    
+--- ```
+--- SET_F*
+--- ```
+---
+--- @hash [0x6A51F78772175A51](https://docs.fivem.net/natives/?_0x6A51F78772175A51)
+--- @param toggle boolean
 --- @return void
---- @overload fun(p0: any): void
-function N_0x649c97d52332341a(p0) end
+--- @overload fun(toggle: boolean): void
+function N_0x6a51f78772175a51(toggle) end
+
+    
+--- N_0x5b0316762afd4a64
+---
+--- @hash [0x5B0316762AFD4A64](https://docs.fivem.net/natives/?_0x5B0316762AFD4A64)
+---
+--- @return number
+--- @overload fun(): number
+function N_0x5b0316762afd4a64() end
 
     
 --- N_0x7fa5d82b8f58ec06
@@ -4640,31 +4362,24 @@ function N_0x649c97d52332341a(p0) end
 function N_0x7fa5d82b8f58ec06() end
 
     
---- N_0x759650634f07b6b4
+--- ```
+--- FORCE_*
+--- ```
 ---
---- @hash [0x759650634F07B6B4](https://docs.fivem.net/natives/?_0x759650634F07B6B4)
---- @param p0 number (int)
---- @return boolean
---- @overload fun(p0: number): boolean
-function N_0x759650634f07b6b4(p0) end
-
-    
---- N_0x82acc484ffa3b05f
----
---- @hash [0x82ACC484FFA3B05F](https://docs.fivem.net/natives/?_0x82ACC484FFA3B05F)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function N_0x82acc484ffa3b05f(p0) end
-
-    
---- N_0x851cd923176eba7c
----
---- @hash [0x851CD923176EBA7C](https://docs.fivem.net/natives/?_0x851CD923176EBA7C)
----
+--- @hash [0x9B079E5221D984D3](https://docs.fivem.net/natives/?_0x9B079E5221D984D3)
+--- @param p0 boolean
 --- @return void
---- @overload fun(): void
-function N_0x851cd923176eba7c() end
+--- @overload fun(p0: boolean): void
+function N_0x9b079e5221d984d3(p0) end
+
+    
+--- N_0x7ac24eab6d74118d
+---
+--- @hash [0x7AC24EAB6D74118D](https://docs.fivem.net/natives/?_0x7AC24EAB6D74118D)
+--- @param p0 boolean
+--- @return boolean
+--- @overload fun(p0: boolean): boolean
+function N_0x7ac24eab6d74118d(p0) end
 
     
 --- N_0x814af7dcaacc597b
@@ -4690,17 +4405,6 @@ function N_0x8cde909a0370bb3a(toggle) end
 
     
 --- ```
---- NativeDB Introduced: v1290
---- ```
----
---- @hash [0x86255B1FC929E33E](https://docs.fivem.net/natives/?_0x86255B1FC929E33E)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function N_0x86255b1fc929e33e(p0) end
-
-    
---- ```
 --- NativeDB Introduced: v323
 --- ```
 ---
@@ -4709,66 +4413,6 @@ function N_0x86255b1fc929e33e(p0) end
 --- @return void
 --- @overload fun(p0: any): void
 function N_0x908311265d42a820(p0) end
-
-    
---- N_0x949f397a288b28b3
----
---- @hash [0x949F397A288B28B3](https://docs.fivem.net/natives/?_0x949F397A288B28B3)
---- @param p0 number (float)
---- @return void
---- @overload fun(p0: number): void
-function N_0x949f397a288b28b3(p0) end
-
-    
---- ```
---- NativeDB Introduced: v1493
---- ```
----
---- @hash [0x98D18905BF723B99](https://docs.fivem.net/natives/?_0x98D18905BF723B99)
----
---- @return any
---- @overload fun(): any
-function N_0x98d18905bf723b99() end
-
-    
---- N_0x9641588dab93b4b5
----
---- @hash [0x9641588DAB93B4B5](https://docs.fivem.net/natives/?_0x9641588DAB93B4B5)
---- @param p0 any
---- @return void
---- @overload fun(p0: any): void
-function N_0x9641588dab93b4b5(p0) end
-
-    
---- ```
---- REQUEST_*
---- ```
----
---- @hash [0x98EDF76A7271E4F2](https://docs.fivem.net/natives/?_0x98EDF76A7271E4F2)
----
---- @return void
---- @overload fun(): void
-function N_0x98edf76a7271e4f2() end
-
-    
---- ```
---- FORCE_*
---- ```
----
---- @hash [0x9B079E5221D984D3](https://docs.fivem.net/natives/?_0x9B079E5221D984D3)
---- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
-function N_0x9b079e5221d984d3(p0) end
-
-    
---- N_0xa46b73faa3460ae1
----
---- @hash [0xA46B73FAA3460AE1](https://docs.fivem.net/natives/?_0xA46B73FAA3460AE1)
---- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
-function N_0xa46b73faa3460ae1(p0) end
 
     
 --- ```
@@ -4789,28 +4433,75 @@ function N_0xa46b73faa3460ae1(p0) end
 function N_0xaae9be70ec7c69ab(p0, p1, p2, p3, p4, p5, p6, p7) end
 
     
---- ```
---- NativeDB Introduced: v2189
---- ```
+--- N_0x82acc484ffa3b05f
 ---
---- @hash [0xADD6627C4D325458](https://docs.fivem.net/natives/?_0xADD6627C4D325458)
+--- @hash [0x82ACC484FFA3B05F](https://docs.fivem.net/natives/?_0x82ACC484FFA3B05F)
 --- @param p0 any
---- @return void
---- @overload fun(p0: any): void
-function N_0xadd6627c4d325458(p0) end
+--- @return any
+--- @overload fun(p0: any): any
+function N_0x82acc484ffa3b05f(p0) end
 
     
---- N_0xae51bc858f32ba66
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
 ---
---- @hash [0xAE51BC858F32BA66](https://docs.fivem.net/natives/?_0xAE51BC858F32BA66)
+--- @hash [0x86255B1FC929E33E](https://docs.fivem.net/natives/?_0x86255B1FC929E33E)
 --- @param p0 any
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
+--- @return any
+--- @overload fun(p0: any): any
+function N_0x86255b1fc929e33e(p0) end
+
+    
+--- GolfTrailSetEnabled
+---
+--- @hash [0xA51C4B86B71652AE](https://docs.fivem.net/natives/?_0xA51C4B86B71652AE)
+--- @param toggle boolean
 --- @return void
---- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: number): void
-function N_0xae51bc858f32ba66(p0, p1, p2, p3, p4) end
+--- @overload fun(toggle: boolean): void
+function GolfTrailSetEnabled(toggle) end
+
+    
+--- # New Name: GolfTrailSetEnabled
+--- GolfTrailSetEnabled
+---
+--- @hash [0xA51C4B86B71652AE](https://docs.fivem.net/natives/?_0xA51C4B86B71652AE)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function N_0xa51c4b86b71652ae(toggle) end
+
+    
+--- N_0x949f397a288b28b3
+---
+--- @hash [0x949F397A288B28B3](https://docs.fivem.net/natives/?_0x949F397A288B28B3)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+function N_0x949f397a288b28b3(p0) end
+
+    
+--- ```
+--- REQUEST_*
+--- ```
+---
+--- @hash [0x98EDF76A7271E4F2](https://docs.fivem.net/natives/?_0x98EDF76A7271E4F2)
+---
+--- @return void
+--- @overload fun(): void
+function N_0x98edf76a7271e4f2() end
+
+    
+--- ```
+--- SET_PARTICLE_FX_*
+--- ```
+---
+--- @hash [0xBA3D194057C79A7B](https://docs.fivem.net/natives/?_0xBA3D194057C79A7B)
+--- @param p0 string (char*)
+--- @return void
+--- @overload fun(p0: string): void
+function N_0xba3d194057c79a7b(p0) end
 
     
 --- ```
@@ -4826,6 +4517,64 @@ function N_0xae51bc858f32ba66(p0, p1, p2, p3, p4) end
 function N_0xb3c641f3630bf6da(p0) end
 
     
+--- N_0x9641588dab93b4b5
+---
+--- @hash [0x9641588DAB93B4B5](https://docs.fivem.net/natives/?_0x9641588DAB93B4B5)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function N_0x9641588dab93b4b5(p0) end
+
+    
+--- ```
+--- NativeDB Introduced: v2189
+--- ```
+---
+--- @hash [0xADD6627C4D325458](https://docs.fivem.net/natives/?_0xADD6627C4D325458)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function N_0xadd6627c4d325458(p0) end
+
+    
+--- ```
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0x98D18905BF723B99](https://docs.fivem.net/natives/?_0x98D18905BF723B99)
+---
+--- @return any
+--- @overload fun(): any
+function N_0x98d18905bf723b99() end
+
+    
+--- GetTvVolume
+---
+--- @hash [0x2170813D3DD8661B](https://docs.fivem.net/natives/?_0x2170813D3DD8661B)
+---
+--- @return number
+--- @overload fun(): number
+function GetTvVolume() end
+
+    
+--- N_0xbb90e12cac1dab25
+---
+--- @hash [0xBB90E12CAC1DAB25](https://docs.fivem.net/natives/?_0xBB90E12CAC1DAB25)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+function N_0xbb90e12cac1dab25(p0) end
+
+    
+--- N_0xa46b73faa3460ae1
+---
+--- @hash [0xA46B73FAA3460AE1](https://docs.fivem.net/natives/?_0xA46B73FAA3460AE1)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function N_0xa46b73faa3460ae1(p0) end
+
+    
 --- N_0xb2ebe8cbc58b90e9
 ---
 --- @hash [0xB2EBE8CBC58B90E9](https://docs.fivem.net/natives/?_0xB2EBE8CBC58B90E9)
@@ -4835,13 +4584,13 @@ function N_0xb3c641f3630bf6da(p0) end
 function N_0xb2ebe8cbc58b90e9() end
 
     
---- N_0xb569f41f3e7e83a4
+--- N_0xca465d9cc0d231ba
 ---
---- @hash [0xB569F41F3E7E83A4](https://docs.fivem.net/natives/?_0xB569F41F3E7E83A4)
+--- @hash [0xCA465D9CC0D231BA](https://docs.fivem.net/natives/?_0xCA465D9CC0D231BA)
 --- @param p0 any
 --- @return void
 --- @overload fun(p0: any): void
-function N_0xb569f41f3e7e83a4(p0) end
+function N_0xca465d9cc0d231ba(p0) end
 
     
 --- N_0xba0127da25fd54c9
@@ -4854,24 +4603,37 @@ function N_0xb569f41f3e7e83a4(p0) end
 function N_0xba0127da25fd54c9(p0, p1) end
 
     
---- ```
---- SET_PARTICLE_FX_*
---- ```
+--- N_0xae51bc858f32ba66
 ---
---- @hash [0xBA3D194057C79A7B](https://docs.fivem.net/natives/?_0xBA3D194057C79A7B)
---- @param p0 string (char*)
+--- @hash [0xAE51BC858F32BA66](https://docs.fivem.net/natives/?_0xAE51BC858F32BA66)
+--- @param p0 any
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
 --- @return void
---- @overload fun(p0: string): void
-function N_0xba3d194057c79a7b(p0) end
+--- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: number): void
+function N_0xae51bc858f32ba66(p0, p1, p2, p3, p4) end
 
     
---- N_0xbb90e12cac1dab25
+--- FreeMemoryForLowQualityPhoto
 ---
---- @hash [0xBB90E12CAC1DAB25](https://docs.fivem.net/natives/?_0xBB90E12CAC1DAB25)
---- @param p0 number (float)
+--- @hash [0x6A12D88881435DCA](https://docs.fivem.net/natives/?_0x6A12D88881435DCA)
+---
 --- @return void
---- @overload fun(p0: number): void
-function N_0xbb90e12cac1dab25(p0) end
+--- @overload fun(): void
+function FreeMemoryForLowQualityPhoto() end
+
+    
+--- # New Name: FreeMemoryForLowQualityPhoto
+--- FreeMemoryForLowQualityPhoto
+---
+--- @hash [0x6A12D88881435DCA](https://docs.fivem.net/natives/?_0x6A12D88881435DCA)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function N_0x6a12d88881435dca() end
 
     
 --- N_0xbcedb009461da156
@@ -4892,6 +4654,66 @@ function N_0xbcedb009461da156() end
 --- @return void
 --- @overload fun(p0: boolean): void
 function N_0xc0416b061f2b7e5e(p0) end
+
+    
+--- N_0xb569f41f3e7e83a4
+---
+--- @hash [0xB569F41F3E7E83A4](https://docs.fivem.net/natives/?_0xB569F41F3E7E83A4)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function N_0xb569f41f3e7e83a4(p0) end
+
+    
+--- N_0xcb82a0bf0e3e3265
+---
+--- @hash [0xCB82A0BF0E3E3265](https://docs.fivem.net/natives/?_0xCB82A0BF0E3E3265)
+--- @param p0 number (int)
+--- @return number
+--- @overload fun(p0: number): number
+function N_0xcb82a0bf0e3e3265(p0) end
+
+    
+--- N_0xca4ae345a153d573
+---
+--- @hash [0xCA4AE345A153D573](https://docs.fivem.net/natives/?_0xCA4AE345A153D573)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function N_0xca4ae345a153d573(p0) end
+
+    
+--- ```
+--- Getter for 0xB3C641F3630BF6DA
+--- 
+--- GET_M*
+--- ```
+---
+--- @hash [0xE59343E9E96529E7](https://docs.fivem.net/natives/?_0xE59343E9E96529E7)
+---
+--- @return number
+--- @overload fun(): number
+function N_0xe59343e9e96529e7() end
+
+    
+--- EndPetrolTrailDecals
+---
+--- @hash [0x0A123435A26C36CD](https://docs.fivem.net/natives/?_0x0A123435A26C36CD)
+---
+--- @return void
+--- @overload fun(): void
+function EndPetrolTrailDecals() end
+
+    
+--- # New Name: EndPetrolTrailDecals
+--- EndPetrolTrailDecals
+---
+--- @hash [0x0A123435A26C36CD](https://docs.fivem.net/natives/?_0x0A123435A26C36CD)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function N_0x0a123435a26c36cd() end
 
     
 --- ```
@@ -4917,42 +4739,6 @@ function N_0xbe197eaa669238f4(p0, p1, p2, p3) end
 function N_0xc35a6d07c93802b2() end
 
     
---- N_0xc5c8f970d4edff71
----
---- @hash [0xC5C8F970D4EDFF71](https://docs.fivem.net/natives/?_0xC5C8F970D4EDFF71)
---- @param p0 any
---- @return void
---- @overload fun(p0: any): void
-function N_0xc5c8f970d4edff71(p0) end
-
-    
---- N_0xca465d9cc0d231ba
----
---- @hash [0xCA465D9CC0D231BA](https://docs.fivem.net/natives/?_0xCA465D9CC0D231BA)
---- @param p0 any
---- @return void
---- @overload fun(p0: any): void
-function N_0xca465d9cc0d231ba(p0) end
-
-    
---- N_0xcb82a0bf0e3e3265
----
---- @hash [0xCB82A0BF0E3E3265](https://docs.fivem.net/natives/?_0xCB82A0BF0E3E3265)
---- @param p0 number (int)
---- @return number
---- @overload fun(p0: number): number
-function N_0xcb82a0bf0e3e3265(p0) end
-
-    
---- N_0xca4ae345a153d573
----
---- @hash [0xCA4AE345A153D573](https://docs.fivem.net/natives/?_0xCA4AE345A153D573)
---- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
-function N_0xca4ae345a153d573(p0) end
-
-    
 --- ```
 --- NativeDB Introduced: v2060
 --- ```
@@ -4964,15 +4750,13 @@ function N_0xca4ae345a153d573(p0) end
 function N_0xcfd16f0db5a3535c(toggle) end
 
     
---- ```
---- SET_TV_???  
---- ```
+--- N_0xd9454b5752c857dc
 ---
---- @hash [0xD1C55B110E4DF534](https://docs.fivem.net/natives/?_0xD1C55B110E4DF534)
---- @param p0 any
+--- @hash [0xD9454B5752C857DC](https://docs.fivem.net/natives/?_0xD9454B5752C857DC)
+---
 --- @return void
---- @overload fun(p0: any): void
-function N_0xd1c55b110e4df534(p0) end
+--- @overload fun(): void
+function N_0xd9454b5752c857dc() end
 
     
 --- N_0xd1c7cb175e012964
@@ -4984,110 +4768,24 @@ function N_0xd1c55b110e4df534(p0) end
 function N_0xd1c7cb175e012964(scaleformHandle) end
 
     
---- ```
---- NativeDB Introduced: v1180
---- ```
+--- N_0xc5c8f970d4edff71
 ---
---- @hash [0xDB1EA9411C8911EC](https://docs.fivem.net/natives/?_0xDB1EA9411C8911EC)
+--- @hash [0xC5C8F970D4EDFF71](https://docs.fivem.net/natives/?_0xC5C8F970D4EDFF71)
 --- @param p0 any
 --- @return void
 --- @overload fun(p0: any): void
-function N_0xdb1ea9411c8911ec(p0) end
-
-    
---- N_0xd9454b5752c857dc
----
---- @hash [0xD9454B5752C857DC](https://docs.fivem.net/natives/?_0xD9454B5752C857DC)
----
---- @return void
---- @overload fun(): void
-function N_0xd9454b5752c857dc() end
+function N_0xc5c8f970d4edff71(p0) end
 
     
 --- ```
---- Sets an unknown value related to timecycles.  
+--- SET_TV_???  
 --- ```
 ---
---- @hash [0xE3E2C1B4C59DBC77](https://docs.fivem.net/natives/?_0xE3E2C1B4C59DBC77)
---- @param unk number (int)
---- @return void
---- @overload fun(unk: number): void
-function N_0xe3e2c1b4c59dbc77(unk) end
-
-    
---- N_0xe2892e7e55d7073a
----
---- @hash [0xE2892E7E55D7073A](https://docs.fivem.net/natives/?_0xE2892E7E55D7073A)
---- @param p0 number (float)
---- @return void
---- @overload fun(p0: number): void
-function N_0xe2892e7e55d7073a(p0) end
-
-    
---- ```
---- TOGGLE_*
---- ```
----
---- @hash [0xE63D7C6EECECB66B](https://docs.fivem.net/natives/?_0xE63D7C6EECECB66B)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function N_0xe63d7c6eececb66b(toggle) end
-
-    
---- ```
---- Getter for 0xB3C641F3630BF6DA
---- 
---- GET_M*
---- ```
----
---- @hash [0xE59343E9E96529E7](https://docs.fivem.net/natives/?_0xE59343E9E96529E7)
----
---- @return number
---- @overload fun(): number
-function N_0xe59343e9e96529e7() end
-
-    
---- ```
---- This function is hard-coded to always return 0.  
---- ```
----
---- @hash [0xEC72C258667BE5EA](https://docs.fivem.net/natives/?_0xEC72C258667BE5EA)
+--- @hash [0xD1C55B110E4DF534](https://docs.fivem.net/natives/?_0xD1C55B110E4DF534)
 --- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function N_0xec72c258667be5ea(p0) end
-
-    
---- ```
---- This function is hard-coded to always return 0.  
---- ```
----
---- @hash [0xE791DF1F73ED2C8B](https://docs.fivem.net/natives/?_0xE791DF1F73ED2C8B)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function N_0xe791df1f73ed2c8b(p0) end
-
-    
---- N_0xef398beee4ef45f9
----
---- @hash [0xEF398BEEE4EF45F9](https://docs.fivem.net/natives/?_0xEF398BEEE4EF45F9)
---- @param p0 boolean
 --- @return void
---- @overload fun(p0: boolean): void
-function N_0xef398beee4ef45f9(p0) end
-
-    
---- ```
---- AD*
---- ```
----
---- @hash [0xEFABC7722293DA7C](https://docs.fivem.net/natives/?_0xEFABC7722293DA7C)
----
---- @return void
---- @overload fun(): void
-function N_0xefabc7722293da7c() end
+--- @overload fun(p0: any): void
+function N_0xd1c55b110e4df534(p0) end
 
     
 --- N_0xf51d36185993515d
@@ -5106,15 +4804,72 @@ function N_0xf51d36185993515d(checkpoint, posX, posY, posZ, unkX, unkY, unkZ) en
 
     
 --- ```
---- NativeDB Introduced: v1604
+--- Sets an unknown value related to timecycles.  
 --- ```
 ---
---- @hash [0xF3F776ADA161E47D](https://docs.fivem.net/natives/?_0xF3F776ADA161E47D)
---- @param p0 any
---- @param p1 any
+--- @hash [0xE3E2C1B4C59DBC77](https://docs.fivem.net/natives/?_0xE3E2C1B4C59DBC77)
+--- @param unk number (int)
 --- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0xf3f776ada161e47d(p0, p1) end
+--- @overload fun(unk: number): void
+function N_0xe3e2c1b4c59dbc77(unk) end
+
+    
+--- ```
+--- NativeDB Introduced: v1180
+--- ```
+---
+--- @hash [0xDB1EA9411C8911EC](https://docs.fivem.net/natives/?_0xDB1EA9411C8911EC)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function N_0xdb1ea9411c8911ec(p0) end
+
+    
+--- DrawLightWithRange
+---
+--- @hash [0xF2A1B2771A01DBD4](https://docs.fivem.net/natives/?_0xF2A1B2771A01DBD4)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param colorR number (int)
+--- @param colorG number (int)
+--- @param colorB number (int)
+--- @param range number (float)
+--- @param intensity number (float)
+--- @return void
+--- @overload fun(posX: number, posY: number, posZ: number, colorR: number, colorG: number, colorB: number, range: number, intensity: number): void
+function DrawLightWithRange(posX, posY, posZ, colorR, colorG, colorB, range, intensity) end
+
+    
+--- N_0xe2892e7e55d7073a
+---
+--- @hash [0xE2892E7E55D7073A](https://docs.fivem.net/natives/?_0xE2892E7E55D7073A)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+function N_0xe2892e7e55d7073a(p0) end
+
+    
+--- ```
+--- AD*
+--- ```
+---
+--- @hash [0xEFABC7722293DA7C](https://docs.fivem.net/natives/?_0xEFABC7722293DA7C)
+---
+--- @return void
+--- @overload fun(): void
+function N_0xefabc7722293da7c() end
+
+    
+--- ```
+--- This function is hard-coded to always return 0.  
+--- ```
+---
+--- @hash [0xEC72C258667BE5EA](https://docs.fivem.net/natives/?_0xEC72C258667BE5EA)
+--- @param p0 any
+--- @return any
+--- @overload fun(p0: any): any
+function N_0xec72c258667be5ea(p0) end
 
     
 --- SET_CHECKPOINT_\*
@@ -5130,101 +4885,26 @@ function N_0xf3f776ada161e47d(p0, p1) end
 function N_0xfcf6788fc4860cd4(checkpoint) end
 
     
---- N_0xf78b803082d4386f
+--- ```
+--- This function is hard-coded to always return 0.  
+--- ```
 ---
---- @hash [0xF78B803082D4386F](https://docs.fivem.net/natives/?_0xF78B803082D4386F)
---- @param p0 number (float)
---- @return void
---- @overload fun(p0: number): void
-function N_0xf78b803082d4386f(p0) end
-
-    
---- OverrideInteriorSmokeEnd
----
---- @hash [0xEFB55E7C25D3B3BE](https://docs.fivem.net/natives/?_0xEFB55E7C25D3B3BE)
----
---- @return void
---- @overload fun(): void
-function OverrideInteriorSmokeEnd() end
-
-    
---- # New Name: OverrideInteriorSmokeEnd
---- OverrideInteriorSmokeEnd
----
---- @hash [0xEFB55E7C25D3B3BE](https://docs.fivem.net/natives/?_0xEFB55E7C25D3B3BE)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function N_0xefb55e7c25d3b3be() end
-
-    
---- OverrideInteriorSmokeLevel
----
---- @hash [0x1600FD8CF72EBC12](https://docs.fivem.net/natives/?_0x1600FD8CF72EBC12)
---- @param level number (float)
---- @return void
---- @overload fun(level: number): void
-function OverrideInteriorSmokeLevel(level) end
-
-    
---- # New Name: OverrideInteriorSmokeLevel
---- OverrideInteriorSmokeLevel
----
---- @hash [0x1600FD8CF72EBC12](https://docs.fivem.net/natives/?_0x1600FD8CF72EBC12)
---- @param level number (float)
---- @return void
---- @overload fun(level: number): void
---- @deprecated
-function N_0x1600fd8cf72ebc12(level) end
-
-    
---- OverrideInteriorSmokeName
----
---- @hash [0x2A2A52824DB96700](https://docs.fivem.net/natives/?_0x2A2A52824DB96700)
---- @param name string (char*)
---- @return void
---- @overload fun(name: string): void
-function OverrideInteriorSmokeName(name) end
-
-    
---- # New Name: OverrideInteriorSmokeName
---- OverrideInteriorSmokeName
----
---- @hash [0x2A2A52824DB96700](https://docs.fivem.net/natives/?_0x2A2A52824DB96700)
---- @param name string (char*)
---- @return void
---- @overload fun(name: string): void
---- @deprecated
-function N_0x2a2a52824db96700(name) end
+--- @hash [0xE791DF1F73ED2C8B](https://docs.fivem.net/natives/?_0xE791DF1F73ED2C8B)
+--- @param p0 any
+--- @return any
+--- @overload fun(p0: any): any
+function N_0xe791df1f73ed2c8b(p0) end
 
     
 --- ```
---- Overriding ped badge texture to a passed texture. It's synced between players (even custom textures!), don't forget to request used dict on *all* clients to make it sync properly. Can be removed by passing empty strings.
+--- TOGGLE_*
 --- ```
 ---
---- @hash [0x95EB5E34F821BABE](https://docs.fivem.net/natives/?_0x95EB5E34F821BABE)
---- @param ped Ped
---- @param txd string (char*)
---- @param txn string (char*)
---- @return boolean
---- @overload fun(ped: Ped, txd: string, txn: string): boolean
-function OverridePedBadgeTexture(ped, txd, txn) end
-
-    
---- # New Name: OverridePedBadgeTexture
---- ```
---- Overriding ped badge texture to a passed texture. It's synced between players (even custom textures!), don't forget to request used dict on *all* clients to make it sync properly. Can be removed by passing empty strings.
---- ```
----
---- @hash [0x95EB5E34F821BABE](https://docs.fivem.net/natives/?_0x95EB5E34F821BABE)
---- @param ped Ped
---- @param txd string (char*)
---- @param txn string (char*)
---- @return boolean
---- @overload fun(ped: Ped, txd: string, txn: string): boolean
---- @deprecated
-function N_0x95eb5e34f821babe(ped, txd, txn) end
+--- @hash [0xE63D7C6EECECB66B](https://docs.fivem.net/natives/?_0xE63D7C6EECECB66B)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function N_0xe63d7c6eececb66b(toggle) end
 
     
 --- ```
@@ -5293,6 +4973,65 @@ function AddDecalToMarker(decalType, textureDict, textureName) end
 function OverrideDecalTexture(decalType, textureDict, textureName) end
 
     
+--- N_0xf78b803082d4386f
+---
+--- @hash [0xF78B803082D4386F](https://docs.fivem.net/natives/?_0xF78B803082D4386F)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+function N_0xf78b803082d4386f(p0) end
+
+    
+--- DontRenderInGameUi
+---
+--- @hash [0x22A249A53034450A](https://docs.fivem.net/natives/?_0x22A249A53034450A)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function DontRenderInGameUi(p0) end
+
+    
+--- # New Name: DontRenderInGameUi
+--- DontRenderInGameUi
+---
+--- @hash [0x22A249A53034450A](https://docs.fivem.net/natives/?_0x22A249A53034450A)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+--- @deprecated
+function N_0x22a249a53034450a(p0) end
+
+    
+--- ```
+--- NativeDB Introduced: v1604
+--- ```
+---
+--- @hash [0xF3F776ADA161E47D](https://docs.fivem.net/natives/?_0xF3F776ADA161E47D)
+--- @param p0 any
+--- @param p1 any
+--- @return void
+--- @overload fun(p0: any, p1: any): void
+function N_0xf3f776ada161e47d(p0, p1) end
+
+    
+--- N_0xef398beee4ef45f9
+---
+--- @hash [0xEF398BEEE4EF45F9](https://docs.fivem.net/natives/?_0xEF398BEEE4EF45F9)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function N_0xef398beee4ef45f9(p0) end
+
+    
+--- PushTimecycleModifier
+---
+--- @hash [0x58F735290861E6B4](https://docs.fivem.net/natives/?_0x58F735290861E6B4)
+---
+--- @return void
+--- @overload fun(): void
+function PushTimecycleModifier() end
+
+    
 --- ```
 --- NativeDB Introduced: v1290
 --- ```
@@ -5302,6 +5041,95 @@ function OverrideDecalTexture(decalType, textureDict, textureName) end
 --- @return void
 --- @overload fun(binkMovie: number): void
 function PlayBinkMovie(binkMovie) end
+
+    
+--- OverrideInteriorSmokeLevel
+---
+--- @hash [0x1600FD8CF72EBC12](https://docs.fivem.net/natives/?_0x1600FD8CF72EBC12)
+--- @param level number (float)
+--- @return void
+--- @overload fun(level: number): void
+function OverrideInteriorSmokeLevel(level) end
+
+    
+--- # New Name: OverrideInteriorSmokeLevel
+--- OverrideInteriorSmokeLevel
+---
+--- @hash [0x1600FD8CF72EBC12](https://docs.fivem.net/natives/?_0x1600FD8CF72EBC12)
+--- @param level number (float)
+--- @return void
+--- @overload fun(level: number): void
+--- @deprecated
+function N_0x1600fd8cf72ebc12(level) end
+
+    
+--- OverrideInteriorSmokeName
+---
+--- @hash [0x2A2A52824DB96700](https://docs.fivem.net/natives/?_0x2A2A52824DB96700)
+--- @param name string (char*)
+--- @return void
+--- @overload fun(name: string): void
+function OverrideInteriorSmokeName(name) end
+
+    
+--- # New Name: OverrideInteriorSmokeName
+--- OverrideInteriorSmokeName
+---
+--- @hash [0x2A2A52824DB96700](https://docs.fivem.net/natives/?_0x2A2A52824DB96700)
+--- @param name string (char*)
+--- @return void
+--- @overload fun(name: string): void
+--- @deprecated
+function N_0x2a2a52824db96700(name) end
+
+    
+--- OverrideInteriorSmokeEnd
+---
+--- @hash [0xEFB55E7C25D3B3BE](https://docs.fivem.net/natives/?_0xEFB55E7C25D3B3BE)
+---
+--- @return void
+--- @overload fun(): void
+function OverrideInteriorSmokeEnd() end
+
+    
+--- # New Name: OverrideInteriorSmokeEnd
+--- OverrideInteriorSmokeEnd
+---
+--- @hash [0xEFB55E7C25D3B3BE](https://docs.fivem.net/natives/?_0xEFB55E7C25D3B3BE)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function N_0xefb55e7c25d3b3be() end
+
+    
+--- RemoveScaleformScriptHudMovie
+---
+--- @hash [0xF44A5456AC3F4F97](https://docs.fivem.net/natives/?_0xF44A5456AC3F4F97)
+--- @param hudComponent number (int)
+--- @return void
+--- @overload fun(hudComponent: number): void
+function RemoveScaleformScriptHudMovie(hudComponent) end
+
+    
+--- # New Name: RemoveScaleformScriptHudMovie
+--- RemoveScaleformScriptHudMovie
+---
+--- @hash [0xF44A5456AC3F4F97](https://docs.fivem.net/natives/?_0xF44A5456AC3F4F97)
+--- @param hudComponent number (int)
+--- @return void
+--- @overload fun(hudComponent: number): void
+--- @deprecated
+function N_0xf44a5456ac3f4f97(hudComponent) end
+
+    
+--- RemoveDecalsFromObject
+---
+--- @hash [0xCCF71CBDDF5B6CB9](https://docs.fivem.net/natives/?_0xCCF71CBDDF5B6CB9)
+--- @param obj Object
+--- @return void
+--- @overload fun(obj: Object): void
+function RemoveDecalsFromObject(obj) end
 
     
 --- ```
@@ -5364,33 +5192,32 @@ function QueryMovieMeshSetState(p0) end
 function N_0x9b6e70c5ceef4eeb(p0) end
 
     
---- PopTimecycleModifier
----
---- @hash [0x3C8938D7D872211E](https://docs.fivem.net/natives/?_0x3C8938D7D872211E)
----
---- @return void
---- @overload fun(): void
-function PopTimecycleModifier() end
-
-    
 --- ```
---- NativeDB Introduced: v1290
+--- Overriding ped badge texture to a passed texture. It's synced between players (even custom textures!), don't forget to request used dict on *all* clients to make it sync properly. Can be removed by passing empty strings.
 --- ```
 ---
---- @hash [0x04D950EEFA4EED8C](https://docs.fivem.net/natives/?_0x04D950EEFA4EED8C)
---- @param binkMovie number (int)
---- @return void
---- @overload fun(binkMovie: number): void
-function ReleaseBinkMovie(binkMovie) end
+--- @hash [0x95EB5E34F821BABE](https://docs.fivem.net/natives/?_0x95EB5E34F821BABE)
+--- @param ped Ped
+--- @param txd string (char*)
+--- @param txn string (char*)
+--- @return boolean
+--- @overload fun(ped: Ped, txd: string, txn: string): boolean
+function OverridePedBadgeTexture(ped, txd, txn) end
 
     
---- PushTimecycleModifier
+--- # New Name: OverridePedBadgeTexture
+--- ```
+--- Overriding ped badge texture to a passed texture. It's synced between players (even custom textures!), don't forget to request used dict on *all* clients to make it sync properly. Can be removed by passing empty strings.
+--- ```
 ---
---- @hash [0x58F735290861E6B4](https://docs.fivem.net/natives/?_0x58F735290861E6B4)
----
---- @return void
---- @overload fun(): void
-function PushTimecycleModifier() end
+--- @hash [0x95EB5E34F821BABE](https://docs.fivem.net/natives/?_0x95EB5E34F821BABE)
+--- @param ped Ped
+--- @param txd string (char*)
+--- @param txn string (char*)
+--- @return boolean
+--- @overload fun(ped: Ped, txd: string, txn: string): boolean
+--- @deprecated
+function N_0x95eb5e34f821babe(ped, txd, txn) end
 
     
 --- Used with 'NG_filmnoir_BW{01,02}' timecycles and the "NOIR_FILTER_SOUNDS" audioref.
@@ -5413,33 +5240,6 @@ function RegisterNoirScreenEffectThisFrame() end
 function N_0xa44ff770dfbc5dae() end
 
     
---- RemoveDecal
----
---- @hash [0xED3F346429CCD659](https://docs.fivem.net/natives/?_0xED3F346429CCD659)
---- @param decal number (int)
---- @return void
---- @overload fun(decal: number): void
-function RemoveDecal(decal) end
-
-    
---- RemoveDecalsFromObject
----
---- @hash [0xCCF71CBDDF5B6CB9](https://docs.fivem.net/natives/?_0xCCF71CBDDF5B6CB9)
---- @param obj Object
---- @return void
---- @overload fun(obj: Object): void
-function RemoveDecalsFromObject(obj) end
-
-    
---- ReleaseMovieMeshSet
----
---- @hash [0xEB119AA014E89183](https://docs.fivem.net/natives/?_0xEB119AA014E89183)
---- @param movieMeshSet number (int)
---- @return void
---- @overload fun(movieMeshSet: number): void
-function ReleaseMovieMeshSet(movieMeshSet) end
-
-    
 --- RemoveDecalsFromObjectFacing
 ---
 --- @hash [0xA6F6F70FDC6D144C](https://docs.fivem.net/natives/?_0xA6F6F70FDC6D144C)
@@ -5450,6 +5250,84 @@ function ReleaseMovieMeshSet(movieMeshSet) end
 --- @return void
 --- @overload fun(obj: Object, x: number, y: number, z: number): void
 function RemoveDecalsFromObjectFacing(obj, x, y, z) end
+
+    
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0x04D950EEFA4EED8C](https://docs.fivem.net/natives/?_0x04D950EEFA4EED8C)
+--- @param binkMovie number (int)
+--- @return void
+--- @overload fun(binkMovie: number): void
+function ReleaseBinkMovie(binkMovie) end
+
+    
+--- RemoveDecal
+---
+--- @hash [0xED3F346429CCD659](https://docs.fivem.net/natives/?_0xED3F346429CCD659)
+--- @param decal number (int)
+--- @return void
+--- @overload fun(decal: number): void
+function RemoveDecal(decal) end
+
+    
+--- PopTimecycleModifier
+---
+--- @hash [0x3C8938D7D872211E](https://docs.fivem.net/natives/?_0x3C8938D7D872211E)
+---
+--- @return void
+--- @overload fun(): void
+function PopTimecycleModifier() end
+
+    
+--- RemoveTcmodifierOverride
+---
+--- @hash [0x15E33297C3E8DC60](https://docs.fivem.net/natives/?_0x15E33297C3E8DC60)
+--- @param p0 string (char*)
+--- @return void
+--- @overload fun(p0: string): void
+function RemoveTcmodifierOverride(p0) end
+
+    
+--- # New Name: RemoveTcmodifierOverride
+--- RemoveTcmodifierOverride
+---
+--- @hash [0x15E33297C3E8DC60](https://docs.fivem.net/natives/?_0x15E33297C3E8DC60)
+--- @param p0 string (char*)
+--- @return void
+--- @overload fun(p0: string): void
+--- @deprecated
+function N_0x15e33297c3e8dc60(p0) end
+
+    
+--- GetStatusOfSaveHighQualityPhoto
+---
+--- @hash [0x0C0C4E81E1AC60A0](https://docs.fivem.net/natives/?_0x0C0C4E81E1AC60A0)
+---
+--- @return number
+--- @overload fun(): number
+function GetStatusOfSaveHighQualityPhoto() end
+
+    
+--- # New Name: GetStatusOfSaveHighQualityPhoto
+--- GetStatusOfSaveHighQualityPhoto
+---
+--- @hash [0x0C0C4E81E1AC60A0](https://docs.fivem.net/natives/?_0x0C0C4E81E1AC60A0)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
+function N_0x0c0c4e81e1ac60a0() end
+
+    
+--- ReleaseMovieMeshSet
+---
+--- @hash [0xEB119AA014E89183](https://docs.fivem.net/natives/?_0xEB119AA014E89183)
+--- @param movieMeshSet number (int)
+--- @return void
+--- @overload fun(movieMeshSet: number): void
+function ReleaseMovieMeshSet(movieMeshSet) end
 
     
 --- RemoveDecalsFromVehicle
@@ -5475,25 +5353,6 @@ function RemoveDecalsFromVehicle(vehicle) end
 function RemoveDecalsInRange(x, y, z, range) end
 
     
---- RemoveParticleFxFromEntity
----
---- @hash [0xB8FEAEEBCC127425](https://docs.fivem.net/natives/?_0xB8FEAEEBCC127425)
---- @param entity Entity
---- @return void
---- @overload fun(entity: Entity): void
-function RemoveParticleFxFromEntity(entity) end
-
-    
---- RemoveParticleFx
----
---- @hash [0xC401503DFE8D53CF](https://docs.fivem.net/natives/?_0xC401503DFE8D53CF)
---- @param ptfxHandle number (int)
---- @param p1 boolean
---- @return void
---- @overload fun(ptfxHandle: number, p1: boolean): void
-function RemoveParticleFx(ptfxHandle, p1) end
-
-    
 --- RemoveParticleFxInRange
 ---
 --- @hash [0xDD19FA1C6D657305](https://docs.fivem.net/natives/?_0xDD19FA1C6D657305)
@@ -5506,44 +5365,104 @@ function RemoveParticleFx(ptfxHandle, p1) end
 function RemoveParticleFxInRange(X, Y, Z, radius) end
 
     
---- RemoveTcmodifierOverride
+--- Used for drawling Deadline trailing lights, see deadline.ytd
+--- 
+--- For UVW mapping (u,v,w parameters), reference your favourite internet resource for more details.
 ---
---- @hash [0x15E33297C3E8DC60](https://docs.fivem.net/natives/?_0x15E33297C3E8DC60)
---- @param p0 string (char*)
+--- @hash [0x29280002282F1928](https://docs.fivem.net/natives/?_0x29280002282F1928)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param x3 number (float)
+--- @param y3 number (float)
+--- @param z3 number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param u1 number (float)
+--- @param v1 number (float)
+--- @param w1 number (float)
+--- @param u2 number (float)
+--- @param v2 number (float)
+--- @param w2 number (float)
+--- @param u3 number (float)
+--- @param v3 number (float)
+--- @param w3 number (float)
 --- @return void
---- @overload fun(p0: string): void
-function RemoveTcmodifierOverride(p0) end
+--- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, x3: number, y3: number, z3: number, red: number, green: number, blue: number, alpha: number, textureDict: string, textureName: string, u1: number, v1: number, w1: number, u2: number, v2: number, w2: number, u3: number, v3: number, w3: number): void
+function DrawSpritePoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha, textureDict, textureName, u1, v1, w1, u2, v2, w2, u3, v3, w3) end
 
     
---- # New Name: RemoveTcmodifierOverride
---- RemoveTcmodifierOverride
+--- # New Name: DrawSpritePoly
+--- Used for drawling Deadline trailing lights, see deadline.ytd
+--- 
+--- For UVW mapping (u,v,w parameters), reference your favourite internet resource for more details.
 ---
---- @hash [0x15E33297C3E8DC60](https://docs.fivem.net/natives/?_0x15E33297C3E8DC60)
---- @param p0 string (char*)
+--- @hash [0x29280002282F1928](https://docs.fivem.net/natives/?_0x29280002282F1928)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param x3 number (float)
+--- @param y3 number (float)
+--- @param z3 number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param u1 number (float)
+--- @param v1 number (float)
+--- @param w1 number (float)
+--- @param u2 number (float)
+--- @param v2 number (float)
+--- @param w2 number (float)
+--- @param u3 number (float)
+--- @param v3 number (float)
+--- @param w3 number (float)
 --- @return void
---- @overload fun(p0: string): void
+--- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, x3: number, y3: number, z3: number, red: number, green: number, blue: number, alpha: number, textureDict: string, textureName: string, u1: number, v1: number, w1: number, u2: number, v2: number, w2: number, u3: number, v3: number, w3: number): void
 --- @deprecated
-function N_0x15e33297c3e8dc60(p0) end
+function N_0x29280002282f1928(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha, textureDict, textureName, u1, v1, w1, u2, v2, w2, u3, v3, w3) end
 
     
---- RemoveScaleformScriptHudMovie
+--- See [`GET_TIMECYCLE_MODIFIER_INDEX`](https://docs.fivem.net/natives/?_0xFDF3D97C674AFB66) for use, works the same just for the secondary timecycle modifier.
 ---
---- @hash [0xF44A5456AC3F4F97](https://docs.fivem.net/natives/?_0xF44A5456AC3F4F97)
---- @param hudComponent number (int)
---- @return void
---- @overload fun(hudComponent: number): void
-function RemoveScaleformScriptHudMovie(hudComponent) end
+--- @hash [0xBB0527EC6341496D](https://docs.fivem.net/natives/?_0xBB0527EC6341496D)
+---
+--- @return number
+--- @overload fun(): number
+function GetExtraTimecycleModifierIndex() end
 
     
---- # New Name: RemoveScaleformScriptHudMovie
---- RemoveScaleformScriptHudMovie
+--- # New Name: GetExtraTimecycleModifierIndex
+--- See [`GET_TIMECYCLE_MODIFIER_INDEX`](https://docs.fivem.net/natives/?_0xFDF3D97C674AFB66) for use, works the same just for the secondary timecycle modifier.
 ---
---- @hash [0xF44A5456AC3F4F97](https://docs.fivem.net/natives/?_0xF44A5456AC3F4F97)
---- @param hudComponent number (int)
---- @return void
---- @overload fun(hudComponent: number): void
+--- @hash [0xBB0527EC6341496D](https://docs.fivem.net/natives/?_0xBB0527EC6341496D)
+---
+--- @return number
+--- @overload fun(): number
 --- @deprecated
-function N_0xf44a5456ac3f4f97(hudComponent) end
+function N_0xbb0527ec6341496d() end
+
+    
+--- RemoveParticleFx
+---
+--- @hash [0xC401503DFE8D53CF](https://docs.fivem.net/natives/?_0xC401503DFE8D53CF)
+--- @param ptfxHandle number (int)
+--- @param p1 boolean
+--- @return void
+--- @overload fun(ptfxHandle: number, p1: boolean): void
+function RemoveParticleFx(ptfxHandle, p1) end
 
     
 --- RemoveVehicleCrewEmblem
@@ -5568,53 +5487,13 @@ function RemoveVehicleCrewEmblem(vehicle, p1) end
 function N_0xd2300034310557e4(vehicle, p1) end
 
     
---- RequestScaleformMovie
+--- RemoveParticleFxFromEntity
 ---
---- @hash [0x11FE353CF9733E6F](https://docs.fivem.net/natives/?_0x11FE353CF9733E6F)
---- @param scaleformName string (char*)
---- @return number
---- @overload fun(scaleformName: string): number
-function RequestScaleformMovie(scaleformName) end
-
-    
---- RequestScaleformMovieInstance
----
---- @hash [0xC514489CFB8AF806](https://docs.fivem.net/natives/?_0xC514489CFB8AF806)
---- @param scaleformName string (char*)
---- @return number
---- @overload fun(scaleformName: string): number
-function RequestScaleformMovieInstance(scaleformName) end
-
-    
---- RequestScaleformScriptHudMovie
----
---- @hash [0x9304881D6F6537EA](https://docs.fivem.net/natives/?_0x9304881D6F6537EA)
---- @param hudComponent number (int)
+--- @hash [0xB8FEAEEBCC127425](https://docs.fivem.net/natives/?_0xB8FEAEEBCC127425)
+--- @param entity Entity
 --- @return void
---- @overload fun(hudComponent: number): void
-function RequestScaleformScriptHudMovie(hudComponent) end
-
-    
---- # New Name: RequestScaleformScriptHudMovie
---- RequestScaleformScriptHudMovie
----
---- @hash [0x9304881D6F6537EA](https://docs.fivem.net/natives/?_0x9304881D6F6537EA)
---- @param hudComponent number (int)
---- @return void
---- @overload fun(hudComponent: number): void
---- @deprecated
-function N_0x9304881d6f6537ea(hudComponent) end
-
-    
---- # New Name: RequestScaleformScriptHudMovie
---- RequestScaleformScriptHudMovie
----
---- @hash [0x9304881D6F6537EA](https://docs.fivem.net/natives/?_0x9304881D6F6537EA)
---- @param hudComponent number (int)
---- @return void
---- @overload fun(hudComponent: number): void
---- @deprecated
-function RequestHudScaleform(hudComponent) end
+--- @overload fun(entity: Entity): void
+function RemoveParticleFxFromEntity(entity) end
 
     
 --- ```
@@ -5655,6 +5534,43 @@ function RequestScaleformMovieInteractive(scaleformName) end
 function RequestScaleformMovie3(scaleformName) end
 
     
+--- This function resets the alignment set using `SET_SCRIPT_GFX_ALIGN` and `SET_SCRIPT_GFX_ALIGN_PARAMS` to the default
+--- values ('I', 'I'; 0, 0, 0, 0). This should be used after having used the aforementioned functions in order to not affect
+--- any other scripts attempting to draw.
+---
+--- @hash [0xE3A3DB414A373DAB](https://docs.fivem.net/natives/?_0xE3A3DB414A373DAB)
+---
+--- @return void
+--- @overload fun(): void
+function ResetScriptGfxAlign() end
+
+    
+--- # New Name: ResetScriptGfxAlign
+--- This function resets the alignment set using `SET_SCRIPT_GFX_ALIGN` and `SET_SCRIPT_GFX_ALIGN_PARAMS` to the default
+--- values ('I', 'I'; 0, 0, 0, 0). This should be used after having used the aforementioned functions in order to not affect
+--- any other scripts attempting to draw.
+---
+--- @hash [0xE3A3DB414A373DAB](https://docs.fivem.net/natives/?_0xE3A3DB414A373DAB)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function N_0xe3a3db414a373dab() end
+
+    
+--- # New Name: ResetScriptGfxAlign
+--- This function resets the alignment set using `SET_SCRIPT_GFX_ALIGN` and `SET_SCRIPT_GFX_ALIGN_PARAMS` to the default
+--- values ('I', 'I'; 0, 0, 0, 0). This should be used after having used the aforementioned functions in order to not affect
+--- any other scripts attempting to draw.
+---
+--- @hash [0xE3A3DB414A373DAB](https://docs.fivem.net/natives/?_0xE3A3DB414A373DAB)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function ScreenDrawPositionEnd() end
+
+    
 --- Another [REQUEST_SCALEFORM_MOVIE](https://docs.fivem.net/natives/?_0x11FE353CF9733E6F) equivalent.
 ---
 --- @hash [0x65E7E78842E74CDB](https://docs.fivem.net/natives/?_0x65E7E78842E74CDB)
@@ -5673,6 +5589,32 @@ function RequestScaleformMovie_2(scaleformName) end
 --- @overload fun(scaleformName: string): number
 --- @deprecated
 function N_0x65e7e78842e74cdb(scaleformName) end
+
+    
+--- ```
+--- This function can requests texture dictonaries from following RPFs:
+--- scaleform_generic.rpf
+--- scaleform_minigames.rpf
+--- scaleform_minimap.rpf
+--- scaleform_web.rpf
+--- last param isnt a toggle
+--- ```
+---
+--- @hash [0xDFA2EF8E04127DD5](https://docs.fivem.net/natives/?_0xDFA2EF8E04127DD5)
+--- @param textureDict string (char*)
+--- @param p1 boolean
+--- @return void
+--- @overload fun(textureDict: string, p1: boolean): void
+function RequestStreamedTextureDict(textureDict, p1) end
+
+    
+--- RequestScaleformMovie
+---
+--- @hash [0x11FE353CF9733E6F](https://docs.fivem.net/natives/?_0x11FE353CF9733E6F)
+--- @param scaleformName string (char*)
+--- @return number
+--- @overload fun(scaleformName: string): number
+function RequestScaleformMovie(scaleformName) end
 
     
 --- Resets the extra timecycle modifier strength normally set with [`SetExtraTimecycleModifierStrength`](https://docs.fivem.net/natives/?_0x2C328AF17210F009)
@@ -5696,20 +5638,115 @@ function N_0x2bf72ad5b41aa739() end
 
     
 --- ```
---- This function can requests texture dictonaries from following RPFs:
---- scaleform_generic.rpf
---- scaleform_minigames.rpf
---- scaleform_minimap.rpf
---- scaleform_web.rpf
---- last param isnt a toggle
+--- NativeDB Added Parameter 26: BOOL p25
 --- ```
 ---
---- @hash [0xDFA2EF8E04127DD5](https://docs.fivem.net/natives/?_0xDFA2EF8E04127DD5)
+--- @hash [0xE82728F0DE75D13A](https://docs.fivem.net/natives/?_0xE82728F0DE75D13A)
+--- @param type number (int)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param dirX number (float)
+--- @param dirY number (float)
+--- @param dirZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param scaleX number (float)
+--- @param scaleY number (float)
+--- @param scaleZ number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @param bobUpAndDown boolean
+--- @param faceCamera boolean
+--- @param p19 number (int)
+--- @param rotate boolean
 --- @param textureDict string (char*)
---- @param p1 boolean
+--- @param textureName string (char*)
+--- @param drawOnEnts boolean
+--- @param p24 boolean
 --- @return void
---- @overload fun(textureDict: string, p1: boolean): void
-function RequestStreamedTextureDict(textureDict, p1) end
+--- @overload fun(type: number, posX: number, posY: number, posZ: number, dirX: number, dirY: number, dirZ: number, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, red: number, green: number, blue: number, alpha: number, bobUpAndDown: boolean, faceCamera: boolean, p19: number, rotate: boolean, textureDict: string, textureName: string, drawOnEnts: boolean, p24: boolean): void
+function DrawMarker_2(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown, faceCamera, p19, rotate, textureDict, textureName, drawOnEnts, p24) end
+
+    
+--- # New Name: DrawMarker_2
+--- ```
+--- NativeDB Added Parameter 26: BOOL p25
+--- ```
+---
+--- @hash [0xE82728F0DE75D13A](https://docs.fivem.net/natives/?_0xE82728F0DE75D13A)
+--- @param type number (int)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param dirX number (float)
+--- @param dirY number (float)
+--- @param dirZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param scaleX number (float)
+--- @param scaleY number (float)
+--- @param scaleZ number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @param bobUpAndDown boolean
+--- @param faceCamera boolean
+--- @param p19 number (int)
+--- @param rotate boolean
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param drawOnEnts boolean
+--- @param p24 boolean
+--- @return void
+--- @overload fun(type: number, posX: number, posY: number, posZ: number, dirX: number, dirY: number, dirZ: number, rotX: number, rotY: number, rotZ: number, scaleX: number, scaleY: number, scaleZ: number, red: number, green: number, blue: number, alpha: number, bobUpAndDown: boolean, faceCamera: boolean, p19: number, rotate: boolean, textureDict: string, textureName: string, drawOnEnts: boolean, p24: boolean): void
+--- @deprecated
+function N_0xe82728f0de75d13a(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown, faceCamera, p19, rotate, textureDict, textureName, drawOnEnts, p24) end
+
+    
+--- RequestScaleformScriptHudMovie
+---
+--- @hash [0x9304881D6F6537EA](https://docs.fivem.net/natives/?_0x9304881D6F6537EA)
+--- @param hudComponent number (int)
+--- @return void
+--- @overload fun(hudComponent: number): void
+function RequestScaleformScriptHudMovie(hudComponent) end
+
+    
+--- # New Name: RequestScaleformScriptHudMovie
+--- RequestScaleformScriptHudMovie
+---
+--- @hash [0x9304881D6F6537EA](https://docs.fivem.net/natives/?_0x9304881D6F6537EA)
+--- @param hudComponent number (int)
+--- @return void
+--- @overload fun(hudComponent: number): void
+--- @deprecated
+function N_0x9304881d6f6537ea(hudComponent) end
+
+    
+--- # New Name: RequestScaleformScriptHudMovie
+--- RequestScaleformScriptHudMovie
+---
+--- @hash [0x9304881D6F6537EA](https://docs.fivem.net/natives/?_0x9304881D6F6537EA)
+--- @param hudComponent number (int)
+--- @return void
+--- @overload fun(hudComponent: number): void
+--- @deprecated
+function RequestHudScaleform(hudComponent) end
+
+    
+--- RequestScaleformMovieInstance
+---
+--- @hash [0xC514489CFB8AF806](https://docs.fivem.net/natives/?_0xC514489CFB8AF806)
+--- @param scaleformName string (char*)
+--- @return number
+--- @overload fun(scaleformName: string): number
+function RequestScaleformMovieInstance(scaleformName) end
 
     
 --- ```
@@ -5749,6 +5786,37 @@ function N_0x89c8553dd3274aae(name) end
 function ResetParticleFxAssetOldToNew(name) end
 
     
+--- ScaleformMovieMethodAddParamLatestBriefString
+---
+--- @hash [0xEC52C631A1831C03](https://docs.fivem.net/natives/?_0xEC52C631A1831C03)
+--- @param value number (int)
+--- @return void
+--- @overload fun(value: number): void
+function ScaleformMovieMethodAddParamLatestBriefString(value) end
+
+    
+--- # New Name: ScaleformMovieMethodAddParamLatestBriefString
+--- ScaleformMovieMethodAddParamLatestBriefString
+---
+--- @hash [0xEC52C631A1831C03](https://docs.fivem.net/natives/?_0xEC52C631A1831C03)
+--- @param value number (int)
+--- @return void
+--- @overload fun(value: number): void
+--- @deprecated
+function N_0xec52c631a1831c03(value) end
+
+    
+--- # New Name: ScaleformMovieMethodAddParamLatestBriefString
+--- ScaleformMovieMethodAddParamLatestBriefString
+---
+--- @hash [0xEC52C631A1831C03](https://docs.fivem.net/natives/?_0xEC52C631A1831C03)
+--- @param value number (int)
+--- @return void
+--- @overload fun(value: number): void
+--- @deprecated
+function ScaleformMovieMethodAddParamIntString(value) end
+
+    
 --- ResetPausedRenderphases
 ---
 --- @hash [0xE1C8709406F2C41C](https://docs.fivem.net/natives/?_0xE1C8709406F2C41C)
@@ -5767,120 +5835,6 @@ function ResetPausedRenderphases() end
 --- @overload fun(): void
 --- @deprecated
 function N_0xe1c8709406f2c41c() end
-
-    
---- ReturnTwo
----
---- @hash [0x40AFB081F8ADD4EE](https://docs.fivem.net/natives/?_0x40AFB081F8ADD4EE)
---- @param p0 number (int)
---- @return number
---- @overload fun(p0: number): number
-function ReturnTwo(p0) end
-
-    
---- # New Name: ReturnTwo
---- ReturnTwo
----
---- @hash [0x40AFB081F8ADD4EE](https://docs.fivem.net/natives/?_0x40AFB081F8ADD4EE)
---- @param p0 number (int)
---- @return number
---- @overload fun(p0: number): number
---- @deprecated
-function N_0x40afb081f8add4ee(p0) end
-
-    
---- This function resets the alignment set using `SET_SCRIPT_GFX_ALIGN` and `SET_SCRIPT_GFX_ALIGN_PARAMS` to the default
---- values ('I', 'I'; 0, 0, 0, 0). This should be used after having used the aforementioned functions in order to not affect
---- any other scripts attempting to draw.
----
---- @hash [0xE3A3DB414A373DAB](https://docs.fivem.net/natives/?_0xE3A3DB414A373DAB)
----
---- @return void
---- @overload fun(): void
-function ResetScriptGfxAlign() end
-
-    
---- # New Name: ResetScriptGfxAlign
---- This function resets the alignment set using `SET_SCRIPT_GFX_ALIGN` and `SET_SCRIPT_GFX_ALIGN_PARAMS` to the default
---- values ('I', 'I'; 0, 0, 0, 0). This should be used after having used the aforementioned functions in order to not affect
---- any other scripts attempting to draw.
----
---- @hash [0xE3A3DB414A373DAB](https://docs.fivem.net/natives/?_0xE3A3DB414A373DAB)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function N_0xe3a3db414a373dab() end
-
-    
---- # New Name: ResetScriptGfxAlign
---- This function resets the alignment set using `SET_SCRIPT_GFX_ALIGN` and `SET_SCRIPT_GFX_ALIGN_PARAMS` to the default
---- values ('I', 'I'; 0, 0, 0, 0). This should be used after having used the aforementioned functions in order to not affect
---- any other scripts attempting to draw.
----
---- @hash [0xE3A3DB414A373DAB](https://docs.fivem.net/natives/?_0xE3A3DB414A373DAB)
----
---- @return void
---- @overload fun(): void
---- @deprecated
-function ScreenDrawPositionEnd() end
-
-    
---- SaveHighQualityPhoto
----
---- @hash [0x3DEC726C25A11BAC](https://docs.fivem.net/natives/?_0x3DEC726C25A11BAC)
---- @param unused number (int)
---- @return boolean
---- @overload fun(unused: number): boolean
-function SaveHighQualityPhoto(unused) end
-
-    
---- # New Name: SaveHighQualityPhoto
---- SaveHighQualityPhoto
----
---- @hash [0x3DEC726C25A11BAC](https://docs.fivem.net/natives/?_0x3DEC726C25A11BAC)
---- @param unused number (int)
---- @return boolean
---- @overload fun(unused: number): boolean
---- @deprecated
-function N_0x3dec726c25a11bac(unused) end
-
-    
---- ```
---- Pushes a boolean for the Scaleform function onto the stack.  
---- ```
----
---- @hash [0xC58424BA936EB458](https://docs.fivem.net/natives/?_0xC58424BA936EB458)
---- @param value boolean
---- @return void
---- @overload fun(value: boolean): void
-function ScaleformMovieMethodAddParamBool(value) end
-
-    
---- # New Name: ScaleformMovieMethodAddParamBool
---- ```
---- Pushes a boolean for the Scaleform function onto the stack.  
---- ```
----
---- @hash [0xC58424BA936EB458](https://docs.fivem.net/natives/?_0xC58424BA936EB458)
---- @param value boolean
---- @return void
---- @overload fun(value: boolean): void
---- @deprecated
-function PushScaleformMovieFunctionParameterBool(value) end
-
-    
---- # New Name: ScaleformMovieMethodAddParamBool
---- ```
---- Pushes a boolean for the Scaleform function onto the stack.  
---- ```
----
---- @hash [0xC58424BA936EB458](https://docs.fivem.net/natives/?_0xC58424BA936EB458)
---- @param value boolean
---- @return void
---- @overload fun(value: boolean): void
---- @deprecated
-function PushScaleformMovieMethodParameterBool(value) end
 
     
 --- ```
@@ -5918,74 +5872,6 @@ function PushScaleformMovieFunctionParameterFloat(value) end
 --- @overload fun(value: number): void
 --- @deprecated
 function PushScaleformMovieMethodParameterFloat(value) end
-
-    
---- ```
---- Pushes an integer for the Scaleform function onto the stack.  
---- ```
----
---- @hash [0xC3D0841A0CC546A6](https://docs.fivem.net/natives/?_0xC3D0841A0CC546A6)
---- @param value number (int)
---- @return void
---- @overload fun(value: number): void
-function ScaleformMovieMethodAddParamInt(value) end
-
-    
---- # New Name: ScaleformMovieMethodAddParamInt
---- ```
---- Pushes an integer for the Scaleform function onto the stack.  
---- ```
----
---- @hash [0xC3D0841A0CC546A6](https://docs.fivem.net/natives/?_0xC3D0841A0CC546A6)
---- @param value number (int)
---- @return void
---- @overload fun(value: number): void
---- @deprecated
-function PushScaleformMovieFunctionParameterInt(value) end
-
-    
---- # New Name: ScaleformMovieMethodAddParamInt
---- ```
---- Pushes an integer for the Scaleform function onto the stack.  
---- ```
----
---- @hash [0xC3D0841A0CC546A6](https://docs.fivem.net/natives/?_0xC3D0841A0CC546A6)
---- @param value number (int)
---- @return void
---- @overload fun(value: number): void
---- @deprecated
-function PushScaleformMovieMethodParameterInt(value) end
-
-    
---- ScaleformMovieMethodAddParamLatestBriefString
----
---- @hash [0xEC52C631A1831C03](https://docs.fivem.net/natives/?_0xEC52C631A1831C03)
---- @param value number (int)
---- @return void
---- @overload fun(value: number): void
-function ScaleformMovieMethodAddParamLatestBriefString(value) end
-
-    
---- # New Name: ScaleformMovieMethodAddParamLatestBriefString
---- ScaleformMovieMethodAddParamLatestBriefString
----
---- @hash [0xEC52C631A1831C03](https://docs.fivem.net/natives/?_0xEC52C631A1831C03)
---- @param value number (int)
---- @return void
---- @overload fun(value: number): void
---- @deprecated
-function N_0xec52c631a1831c03(value) end
-
-    
---- # New Name: ScaleformMovieMethodAddParamLatestBriefString
---- ScaleformMovieMethodAddParamLatestBriefString
----
---- @hash [0xEC52C631A1831C03](https://docs.fivem.net/natives/?_0xEC52C631A1831C03)
---- @param value number (int)
---- @return void
---- @overload fun(value: number): void
---- @deprecated
-function ScaleformMovieMethodAddParamIntString(value) end
 
     
 --- ```
@@ -6028,35 +5914,129 @@ function N_0xe83a3e3557a56640(string) end
 function PushScaleformMovieMethodParameterButtonName(string) end
 
     
---- ScaleformMovieMethodAddParamTextureNameString
+--- ```
+--- Pushes a boolean for the Scaleform function onto the stack.  
+--- ```
 ---
---- @hash [0xBA7148484BD90365](https://docs.fivem.net/natives/?_0xBA7148484BD90365)
---- @param string string (char*)
+--- @hash [0xC58424BA936EB458](https://docs.fivem.net/natives/?_0xC58424BA936EB458)
+--- @param value boolean
 --- @return void
---- @overload fun(string: string): void
-function ScaleformMovieMethodAddParamTextureNameString(string) end
+--- @overload fun(value: boolean): void
+function ScaleformMovieMethodAddParamBool(value) end
 
     
---- # New Name: ScaleformMovieMethodAddParamTextureNameString
---- ScaleformMovieMethodAddParamTextureNameString
+--- # New Name: ScaleformMovieMethodAddParamBool
+--- ```
+--- Pushes a boolean for the Scaleform function onto the stack.  
+--- ```
 ---
---- @hash [0xBA7148484BD90365](https://docs.fivem.net/natives/?_0xBA7148484BD90365)
---- @param string string (char*)
+--- @hash [0xC58424BA936EB458](https://docs.fivem.net/natives/?_0xC58424BA936EB458)
+--- @param value boolean
 --- @return void
---- @overload fun(string: string): void
+--- @overload fun(value: boolean): void
 --- @deprecated
-function PushScaleformMovieFunctionParameterString(string) end
+function PushScaleformMovieFunctionParameterBool(value) end
 
     
---- # New Name: ScaleformMovieMethodAddParamTextureNameString
---- ScaleformMovieMethodAddParamTextureNameString
+--- # New Name: ScaleformMovieMethodAddParamBool
+--- ```
+--- Pushes a boolean for the Scaleform function onto the stack.  
+--- ```
 ---
---- @hash [0xBA7148484BD90365](https://docs.fivem.net/natives/?_0xBA7148484BD90365)
---- @param string string (char*)
+--- @hash [0xC58424BA936EB458](https://docs.fivem.net/natives/?_0xC58424BA936EB458)
+--- @param value boolean
 --- @return void
---- @overload fun(string: string): void
+--- @overload fun(value: boolean): void
 --- @deprecated
-function PushScaleformMovieMethodParameterString(string) end
+function PushScaleformMovieMethodParameterBool(value) end
+
+    
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0x43DBAE39626CE83F](https://docs.fivem.net/natives/?_0x43DBAE39626CE83F)
+---
+--- @return number
+--- @overload fun(): number
+function SeethroughGetMaxThickness() end
+
+    
+--- SeethroughSetMaxThickness
+---
+--- @hash [0x0C8FAC83902A62DF](https://docs.fivem.net/natives/?_0x0C8FAC83902A62DF)
+--- @param thickness number (float)
+--- @return void
+--- @overload fun(thickness: number): void
+function SeethroughSetMaxThickness(thickness) end
+
+    
+--- # New Name: SeethroughSetMaxThickness
+--- SeethroughSetMaxThickness
+---
+--- @hash [0x0C8FAC83902A62DF](https://docs.fivem.net/natives/?_0x0C8FAC83902A62DF)
+--- @param thickness number (float)
+--- @return void
+--- @overload fun(thickness: number): void
+--- @deprecated
+function N_0x0c8fac83902a62df(thickness) end
+
+    
+--- ```
+--- Pushes an integer for the Scaleform function onto the stack.  
+--- ```
+---
+--- @hash [0xC3D0841A0CC546A6](https://docs.fivem.net/natives/?_0xC3D0841A0CC546A6)
+--- @param value number (int)
+--- @return void
+--- @overload fun(value: number): void
+function ScaleformMovieMethodAddParamInt(value) end
+
+    
+--- # New Name: ScaleformMovieMethodAddParamInt
+--- ```
+--- Pushes an integer for the Scaleform function onto the stack.  
+--- ```
+---
+--- @hash [0xC3D0841A0CC546A6](https://docs.fivem.net/natives/?_0xC3D0841A0CC546A6)
+--- @param value number (int)
+--- @return void
+--- @overload fun(value: number): void
+--- @deprecated
+function PushScaleformMovieFunctionParameterInt(value) end
+
+    
+--- # New Name: ScaleformMovieMethodAddParamInt
+--- ```
+--- Pushes an integer for the Scaleform function onto the stack.  
+--- ```
+---
+--- @hash [0xC3D0841A0CC546A6](https://docs.fivem.net/natives/?_0xC3D0841A0CC546A6)
+--- @param value number (int)
+--- @return void
+--- @overload fun(value: number): void
+--- @deprecated
+function PushScaleformMovieMethodParameterInt(value) end
+
+    
+--- ReturnTwo
+---
+--- @hash [0x40AFB081F8ADD4EE](https://docs.fivem.net/natives/?_0x40AFB081F8ADD4EE)
+--- @param p0 number (int)
+--- @return number
+--- @overload fun(p0: number): number
+function ReturnTwo(p0) end
+
+    
+--- # New Name: ReturnTwo
+--- ReturnTwo
+---
+--- @hash [0x40AFB081F8ADD4EE](https://docs.fivem.net/natives/?_0x40AFB081F8ADD4EE)
+--- @param p0 number (int)
+--- @return number
+--- @overload fun(p0: number): number
+--- @deprecated
+function N_0x40afb081f8add4ee(p0) end
 
     
 --- GRAPHICS::\_0x77FE3402004CD1B0(HUD::\_GET_LABEL_TEXT("YACHT_GSY"));
@@ -6099,26 +6079,24 @@ function N_0x77fe3402004cd1b0(string) end
 function PushScaleformMovieMethodParameterString_2(string) end
 
     
---- ```
---- NativeDB Introduced: v1290
---- ```
+--- SeethroughSetHiLightNoise
 ---
---- @hash [0x43DBAE39626CE83F](https://docs.fivem.net/natives/?_0x43DBAE39626CE83F)
----
---- @return number
---- @overload fun(): number
-function SeethroughGetMaxThickness() end
+--- @hash [0x1636D7FC127B10D2](https://docs.fivem.net/natives/?_0x1636D7FC127B10D2)
+--- @param noise number (float)
+--- @return void
+--- @overload fun(noise: number): void
+function SeethroughSetHiLightNoise(noise) end
 
     
---- ```
---- NativeDB Introduced: v323
---- ```
+--- # New Name: SeethroughSetHiLightNoise
+--- SeethroughSetHiLightNoise
 ---
---- @hash [0x70A64C0234EF522C](https://docs.fivem.net/natives/?_0x70A64C0234EF522C)
----
+--- @hash [0x1636D7FC127B10D2](https://docs.fivem.net/natives/?_0x1636D7FC127B10D2)
+--- @param noise number (float)
 --- @return void
---- @overload fun(): void
-function SeethroughReset() end
+--- @overload fun(noise: number): void
+--- @deprecated
+function N_0x1636d7fc127b10d2(noise) end
 
     
 --- SeethroughSetColorNear
@@ -6145,86 +6123,46 @@ function SeethroughSetColorNear(red, green, blue) end
 function N_0x1086127b3a63505e(red, green, blue) end
 
     
---- SeethroughSetFadeStartDistance
+--- ScaleformMovieMethodAddParamTextureNameString
 ---
---- @hash [0xA78DE25577300BA1](https://docs.fivem.net/natives/?_0xA78DE25577300BA1)
---- @param distance number (float)
+--- @hash [0xBA7148484BD90365](https://docs.fivem.net/natives/?_0xBA7148484BD90365)
+--- @param string string (char*)
 --- @return void
---- @overload fun(distance: number): void
-function SeethroughSetFadeStartDistance(distance) end
+--- @overload fun(string: string): void
+function ScaleformMovieMethodAddParamTextureNameString(string) end
 
     
---- # New Name: SeethroughSetFadeStartDistance
---- SeethroughSetFadeStartDistance
+--- # New Name: ScaleformMovieMethodAddParamTextureNameString
+--- ScaleformMovieMethodAddParamTextureNameString
 ---
---- @hash [0xA78DE25577300BA1](https://docs.fivem.net/natives/?_0xA78DE25577300BA1)
---- @param distance number (float)
+--- @hash [0xBA7148484BD90365](https://docs.fivem.net/natives/?_0xBA7148484BD90365)
+--- @param string string (char*)
 --- @return void
---- @overload fun(distance: number): void
+--- @overload fun(string: string): void
 --- @deprecated
-function N_0xa78de25577300ba1(distance) end
+function PushScaleformMovieFunctionParameterString(string) end
 
     
---- SeethroughSetFadeEndDistance
+--- # New Name: ScaleformMovieMethodAddParamTextureNameString
+--- ScaleformMovieMethodAddParamTextureNameString
 ---
---- @hash [0x9D75795B9DC6EBBF](https://docs.fivem.net/natives/?_0x9D75795B9DC6EBBF)
---- @param distance number (float)
+--- @hash [0xBA7148484BD90365](https://docs.fivem.net/natives/?_0xBA7148484BD90365)
+--- @param string string (char*)
 --- @return void
---- @overload fun(distance: number): void
-function SeethroughSetFadeEndDistance(distance) end
-
-    
---- # New Name: SeethroughSetFadeEndDistance
---- SeethroughSetFadeEndDistance
----
---- @hash [0x9D75795B9DC6EBBF](https://docs.fivem.net/natives/?_0x9D75795B9DC6EBBF)
---- @param distance number (float)
---- @return void
---- @overload fun(distance: number): void
+--- @overload fun(string: string): void
 --- @deprecated
-function N_0x9d75795b9dc6ebbf(distance) end
+function PushScaleformMovieMethodParameterString(string) end
 
     
---- SeethroughSetHeatscale
+--- ```
+--- NativeDB Introduced: v323
+--- ```
 ---
---- @hash [0xD7D0B00177485411](https://docs.fivem.net/natives/?_0xD7D0B00177485411)
---- @param index number (int)
---- @param heatScale number (float)
---- @return void
---- @overload fun(index: number, heatScale: number): void
-function SeethroughSetHeatscale(index, heatScale) end
-
-    
---- # New Name: SeethroughSetHeatscale
---- SeethroughSetHeatscale
+--- @hash [0x70A64C0234EF522C](https://docs.fivem.net/natives/?_0x70A64C0234EF522C)
 ---
---- @hash [0xD7D0B00177485411](https://docs.fivem.net/natives/?_0xD7D0B00177485411)
---- @param index number (int)
---- @param heatScale number (float)
 --- @return void
---- @overload fun(index: number, heatScale: number): void
---- @deprecated
-function N_0xd7d0b00177485411(index, heatScale) end
-
-    
---- SeethroughSetHiLightNoise
----
---- @hash [0x1636D7FC127B10D2](https://docs.fivem.net/natives/?_0x1636D7FC127B10D2)
---- @param noise number (float)
---- @return void
---- @overload fun(noise: number): void
-function SeethroughSetHiLightNoise(noise) end
-
-    
---- # New Name: SeethroughSetHiLightNoise
---- SeethroughSetHiLightNoise
----
---- @hash [0x1636D7FC127B10D2](https://docs.fivem.net/natives/?_0x1636D7FC127B10D2)
---- @param noise number (float)
---- @return void
---- @overload fun(noise: number): void
---- @deprecated
-function N_0x1636d7fc127b10d2(noise) end
+--- @overload fun(): void
+function SeethroughReset() end
 
     
 --- SeethroughSetHiLightIntensity
@@ -6247,24 +6185,98 @@ function SeethroughSetHiLightIntensity(intensity) end
 function N_0x19e50eb6e33e1d28(intensity) end
 
     
---- SeethroughSetMaxThickness
+--- SeethroughSetFadeEndDistance
 ---
---- @hash [0x0C8FAC83902A62DF](https://docs.fivem.net/natives/?_0x0C8FAC83902A62DF)
---- @param thickness number (float)
+--- @hash [0x9D75795B9DC6EBBF](https://docs.fivem.net/natives/?_0x9D75795B9DC6EBBF)
+--- @param distance number (float)
 --- @return void
---- @overload fun(thickness: number): void
-function SeethroughSetMaxThickness(thickness) end
+--- @overload fun(distance: number): void
+function SeethroughSetFadeEndDistance(distance) end
 
     
---- # New Name: SeethroughSetMaxThickness
---- SeethroughSetMaxThickness
+--- # New Name: SeethroughSetFadeEndDistance
+--- SeethroughSetFadeEndDistance
 ---
---- @hash [0x0C8FAC83902A62DF](https://docs.fivem.net/natives/?_0x0C8FAC83902A62DF)
---- @param thickness number (float)
+--- @hash [0x9D75795B9DC6EBBF](https://docs.fivem.net/natives/?_0x9D75795B9DC6EBBF)
+--- @param distance number (float)
 --- @return void
---- @overload fun(thickness: number): void
+--- @overload fun(distance: number): void
 --- @deprecated
-function N_0x0c8fac83902a62df(thickness) end
+function N_0x9d75795b9dc6ebbf(distance) end
+
+    
+--- ```
+--- binkMovie: Is return value from _SET_BINK_MOVIE. Has something to do with bink volume? (audRequestedSettings::SetVolumeCurveScale)
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0xAFF33B1178172223](https://docs.fivem.net/natives/?_0xAFF33B1178172223)
+--- @param binkMovie number (int)
+--- @param value number (float)
+--- @return void
+--- @overload fun(binkMovie: number, value: number): void
+function SetBinkMovieVolume(binkMovie, value) end
+
+    
+--- # New Name: SetBinkMovieVolume
+--- ```
+--- binkMovie: Is return value from _SET_BINK_MOVIE. Has something to do with bink volume? (audRequestedSettings::SetVolumeCurveScale)
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0xAFF33B1178172223](https://docs.fivem.net/natives/?_0xAFF33B1178172223)
+--- @param binkMovie number (int)
+--- @param value number (float)
+--- @return void
+--- @overload fun(binkMovie: number, value: number): void
+--- @deprecated
+function SetBinkMovieUnk(binkMovie, value) end
+
+    
+--- SeethroughSetFadeStartDistance
+---
+--- @hash [0xA78DE25577300BA1](https://docs.fivem.net/natives/?_0xA78DE25577300BA1)
+--- @param distance number (float)
+--- @return void
+--- @overload fun(distance: number): void
+function SeethroughSetFadeStartDistance(distance) end
+
+    
+--- # New Name: SeethroughSetFadeStartDistance
+--- SeethroughSetFadeStartDistance
+---
+--- @hash [0xA78DE25577300BA1](https://docs.fivem.net/natives/?_0xA78DE25577300BA1)
+--- @param distance number (float)
+--- @return void
+--- @overload fun(distance: number): void
+--- @deprecated
+function N_0xa78de25577300ba1(distance) end
+
+    
+--- SaveHighQualityPhoto
+---
+--- @hash [0x3DEC726C25A11BAC](https://docs.fivem.net/natives/?_0x3DEC726C25A11BAC)
+--- @param unused number (int)
+--- @return boolean
+--- @overload fun(unused: number): boolean
+function SaveHighQualityPhoto(unused) end
+
+    
+--- # New Name: SaveHighQualityPhoto
+--- SaveHighQualityPhoto
+---
+--- @hash [0x3DEC726C25A11BAC](https://docs.fivem.net/natives/?_0x3DEC726C25A11BAC)
+--- @param unused number (int)
+--- @return boolean
+--- @overload fun(unused: number): boolean
+--- @deprecated
+function N_0x3dec726c25a11bac(unused) end
 
     
 --- SeethroughSetNoiseAmountMax
@@ -6307,6 +6319,32 @@ function SeethroughSetNoiseAmountMin(amount) end
 function N_0xff5992e1c9e65d05(amount) end
 
     
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0x6805D58CAA427B72](https://docs.fivem.net/natives/?_0x6805D58CAA427B72)
+--- @param binkMovie number (int)
+--- @param shouldSkip boolean
+--- @return void
+--- @overload fun(binkMovie: number, shouldSkip: boolean): void
+function SetBinkShouldSkip(binkMovie, shouldSkip) end
+
+    
+--- # New Name: SetBinkShouldSkip
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0x6805D58CAA427B72](https://docs.fivem.net/natives/?_0x6805D58CAA427B72)
+--- @param binkMovie number (int)
+--- @param shouldSkip boolean
+--- @return void
+--- @overload fun(binkMovie: number, shouldSkip: boolean): void
+--- @deprecated
+function N_0x6805d58caa427b72(binkMovie, shouldSkip) end
+
+    
 --- Does not affect weapons, particles, fire/explosions, flashlights or the sun.
 --- 
 --- When set to true, all emissive textures (including ped components that have light effects), street lights, building lights, vehicle lights, etc will all be turned off.
@@ -6343,75 +6381,6 @@ function SetArtificialLightsState(state) end
 function SetBlackout(state) end
 
     
---- If "blackout" is enabled, this native allows you to ignore "blackout" for vehicles.
---- 
---- ```
---- NativeDB Introduced: v2060
---- ```
----
---- @hash [0xE2B187C0939B3D32](https://docs.fivem.net/natives/?_0xE2B187C0939B3D32)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function SetArtificialLightsStateAffectsVehicles(toggle) end
-
-    
---- ```
---- NativeDB Introduced: v1290
---- ```
----
---- @hash [0x338D9F609FD632DB](https://docs.fivem.net/natives/?_0x338D9F609FD632DB)
---- @param name string (char*)
---- @return number
---- @overload fun(name: string): number
-function SetBinkMovie(name) end
-
-    
---- # New Name: SetBinkMovie
---- ```
---- NativeDB Introduced: v1290
---- ```
----
---- @hash [0x338D9F609FD632DB](https://docs.fivem.net/natives/?_0x338D9F609FD632DB)
---- @param name string (char*)
---- @return number
---- @overload fun(name: string): number
---- @deprecated
-function SetBinkMovieRequested(name) end
-
-    
---- SetBackfaceculling
----
---- @hash [0x23BA6B0C2AD7B0D3](https://docs.fivem.net/natives/?_0x23BA6B0C2AD7B0D3)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function SetBackfaceculling(toggle) end
-
-    
---- # New Name: SetBackfaceculling
---- SetBackfaceculling
----
---- @hash [0x23BA6B0C2AD7B0D3](https://docs.fivem.net/natives/?_0x23BA6B0C2AD7B0D3)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
---- @deprecated
-function N_0x23ba6b0c2ad7b0d3(toggle) end
-
-    
---- ```
---- NativeDB Introduced: v1868
---- ```
----
---- @hash [0xF816F2933752322D](https://docs.fivem.net/natives/?_0xF816F2933752322D)
---- @param binkMovie number (int)
---- @param p1 boolean
---- @return void
---- @overload fun(binkMovie: number, p1: boolean): void
-function SetBinkMovieUnk_2(binkMovie, p1) end
-
-    
 --- ```
 --- In percentage: 0.0 - 100.0
 --- 
@@ -6443,96 +6412,94 @@ function SetBinkMovieProgress(binkMovie, progress) end
 
     
 --- ```
---- Sets the cylinder height of the checkpoint.  
---- Parameters:  
---- * nearHeight - The height of the checkpoint when inside of the radius.  
---- * farHeight - The height of the checkpoint when outside of the radius.  
---- * radius - The radius of the checkpoint.  
+--- NativeDB Introduced: v1290
 --- ```
 ---
---- @hash [0x2707AAE9D9297D89](https://docs.fivem.net/natives/?_0x2707AAE9D9297D89)
---- @param checkpoint number (int)
---- @param nearHeight number (float)
---- @param farHeight number (float)
---- @param radius number (float)
---- @return void
---- @overload fun(checkpoint: number, nearHeight: number, farHeight: number, radius: number): void
-function SetCheckpointCylinderHeight(checkpoint, nearHeight, farHeight, radius) end
+--- @hash [0x338D9F609FD632DB](https://docs.fivem.net/natives/?_0x338D9F609FD632DB)
+--- @param name string (char*)
+--- @return number
+--- @overload fun(name: string): number
+function SetBinkMovie(name) end
 
     
+--- # New Name: SetBinkMovie
 --- ```
---- binkMovie: Is return value from _SET_BINK_MOVIE. Has something to do with bink volume? (audRequestedSettings::SetVolumeCurveScale)
+--- NativeDB Introduced: v1290
 --- ```
+---
+--- @hash [0x338D9F609FD632DB](https://docs.fivem.net/natives/?_0x338D9F609FD632DB)
+--- @param name string (char*)
+--- @return number
+--- @overload fun(name: string): number
+--- @deprecated
+function SetBinkMovieRequested(name) end
+
+    
+--- SetCurrentPlayerTcmodifier
+---
+--- @hash [0xBBF327DED94E4DEB](https://docs.fivem.net/natives/?_0xBBF327DED94E4DEB)
+--- @param modifierName string (char*)
+--- @return void
+--- @overload fun(modifierName: string): void
+function SetCurrentPlayerTcmodifier(modifierName) end
+
+    
+--- # New Name: SetCurrentPlayerTcmodifier
+--- SetCurrentPlayerTcmodifier
+---
+--- @hash [0xBBF327DED94E4DEB](https://docs.fivem.net/natives/?_0xBBF327DED94E4DEB)
+--- @param modifierName string (char*)
+--- @return void
+--- @overload fun(modifierName: string): void
+--- @deprecated
+function N_0xbbf327ded94e4deb(modifierName) end
+
+    
+--- If "blackout" is enabled, this native allows you to ignore "blackout" for vehicles.
 --- 
 --- ```
---- NativeDB Introduced: v1290
+--- NativeDB Introduced: v2060
 --- ```
 ---
---- @hash [0xAFF33B1178172223](https://docs.fivem.net/natives/?_0xAFF33B1178172223)
---- @param binkMovie number (int)
---- @param value number (float)
+--- @hash [0xE2B187C0939B3D32](https://docs.fivem.net/natives/?_0xE2B187C0939B3D32)
+--- @param toggle boolean
 --- @return void
---- @overload fun(binkMovie: number, value: number): void
-function SetBinkMovieVolume(binkMovie, value) end
+--- @overload fun(toggle: boolean): void
+function SetArtificialLightsStateAffectsVehicles(toggle) end
 
     
---- # New Name: SetBinkMovieVolume
---- ```
---- binkMovie: Is return value from _SET_BINK_MOVIE. Has something to do with bink volume? (audRequestedSettings::SetVolumeCurveScale)
---- ```
---- 
---- ```
---- NativeDB Introduced: v1290
---- ```
+--- SeethroughSetHeatscale
 ---
---- @hash [0xAFF33B1178172223](https://docs.fivem.net/natives/?_0xAFF33B1178172223)
---- @param binkMovie number (int)
---- @param value number (float)
+--- @hash [0xD7D0B00177485411](https://docs.fivem.net/natives/?_0xD7D0B00177485411)
+--- @param index number (int)
+--- @param heatScale number (float)
 --- @return void
---- @overload fun(binkMovie: number, value: number): void
+--- @overload fun(index: number, heatScale: number): void
+function SeethroughSetHeatscale(index, heatScale) end
+
+    
+--- # New Name: SeethroughSetHeatscale
+--- SeethroughSetHeatscale
+---
+--- @hash [0xD7D0B00177485411](https://docs.fivem.net/natives/?_0xD7D0B00177485411)
+--- @param index number (int)
+--- @param heatScale number (float)
+--- @return void
+--- @overload fun(index: number, heatScale: number): void
 --- @deprecated
-function SetBinkMovieUnk(binkMovie, value) end
+function N_0xd7d0b00177485411(index, heatScale) end
 
     
 --- ```
---- NativeDB Introduced: v1290
+--- NativeDB Introduced: v1868
 --- ```
 ---
---- @hash [0x6805D58CAA427B72](https://docs.fivem.net/natives/?_0x6805D58CAA427B72)
+--- @hash [0xF816F2933752322D](https://docs.fivem.net/natives/?_0xF816F2933752322D)
 --- @param binkMovie number (int)
---- @param shouldSkip boolean
+--- @param p1 boolean
 --- @return void
---- @overload fun(binkMovie: number, shouldSkip: boolean): void
-function SetBinkShouldSkip(binkMovie, shouldSkip) end
-
-    
---- # New Name: SetBinkShouldSkip
---- ```
---- NativeDB Introduced: v1290
---- ```
----
---- @hash [0x6805D58CAA427B72](https://docs.fivem.net/natives/?_0x6805D58CAA427B72)
---- @param binkMovie number (int)
---- @param shouldSkip boolean
---- @return void
---- @overload fun(binkMovie: number, shouldSkip: boolean): void
---- @deprecated
-function N_0x6805d58caa427b72(binkMovie, shouldSkip) end
-
-    
---- ```
---- Sets the checkpoint color.  
---- ```
----
---- @hash [0x7167371E8AD747F7](https://docs.fivem.net/natives/?_0x7167371E8AD747F7)
---- @param checkpoint number (int)
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @return void
---- @overload fun(checkpoint: number, red: number, green: number, blue: number, alpha: number): void
-function SetCheckpointRgba(checkpoint, red, green, blue, alpha) end
+--- @overload fun(binkMovie: number, p1: boolean): void
+function SetBinkMovieUnk_2(binkMovie, p1) end
 
     
 --- SetCheckpointIconScale
@@ -6555,6 +6522,82 @@ function SetCheckpointIconScale(checkpoint, scale) end
 --- @overload fun(checkpoint: number, scale: number): void
 --- @deprecated
 function N_0x44621483ff966526(checkpoint, scale) end
+
+    
+--- SetDisableDecalRenderingThisFrame
+---
+--- @hash [0x4B5CFC83122DF602](https://docs.fivem.net/natives/?_0x4B5CFC83122DF602)
+---
+--- @return void
+--- @overload fun(): void
+function SetDisableDecalRenderingThisFrame() end
+
+    
+--- # New Name: SetDisableDecalRenderingThisFrame
+--- SetDisableDecalRenderingThisFrame
+---
+--- @hash [0x4B5CFC83122DF602](https://docs.fivem.net/natives/?_0x4B5CFC83122DF602)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function N_0x4b5cfc83122df602() end
+
+    
+--- ```
+--- Sets the cylinder height of the checkpoint.  
+--- Parameters:  
+--- * nearHeight - The height of the checkpoint when inside of the radius.  
+--- * farHeight - The height of the checkpoint when outside of the radius.  
+--- * radius - The radius of the checkpoint.  
+--- ```
+---
+--- @hash [0x2707AAE9D9297D89](https://docs.fivem.net/natives/?_0x2707AAE9D9297D89)
+--- @param checkpoint number (int)
+--- @param nearHeight number (float)
+--- @param farHeight number (float)
+--- @param radius number (float)
+--- @return void
+--- @overload fun(checkpoint: number, nearHeight: number, farHeight: number, radius: number): void
+function SetCheckpointCylinderHeight(checkpoint, nearHeight, farHeight, radius) end
+
+    
+--- ```
+--- Sets the checkpoint color.  
+--- ```
+---
+--- @hash [0x7167371E8AD747F7](https://docs.fivem.net/natives/?_0x7167371E8AD747F7)
+--- @param checkpoint number (int)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @return void
+--- @overload fun(checkpoint: number, red: number, green: number, blue: number, alpha: number): void
+function SetCheckpointRgba(checkpoint, red, green, blue, alpha) end
+
+    
+--- SetExtraTimecycleModifier
+---
+--- @hash [0x5096FD9CCB49056D](https://docs.fivem.net/natives/?_0x5096FD9CCB49056D)
+--- @param modifierName string (char*)
+--- @return void
+--- @overload fun(modifierName: string): void
+function SetExtraTimecycleModifier(modifierName) end
+
+    
+--- Sets the on-screen drawing origin for draw-functions in world coordinates.
+--- 
+--- The effect can be reset by calling [`CLEAR_DRAW_ORIGIN`](https://docs.fivem.net/natives/?_0xFF0B610F6BE0D7AF) and is limited to 32 different origins each frame.
+---
+--- @hash [0xAA0008F3BBB8F416](https://docs.fivem.net/natives/?_0xAA0008F3BBB8F416)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param p3 any
+--- @return void
+--- @overload fun(x: number, y: number, z: number, p3: any): void
+function SetDrawOrigin(x, y, z, p3) end
 
     
 --- ```
@@ -6595,6 +6638,39 @@ function SetCheckpointScale(checkpoint, p0) end
 function N_0x4b5b4da5d79f1943(checkpoint, p0) end
 
     
+--- SetEntityIconColor
+---
+--- @hash [0x1D5F595CCAE2E238](https://docs.fivem.net/natives/?_0x1D5F595CCAE2E238)
+--- @param entity Entity
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @return void
+--- @overload fun(entity: Entity, red: number, green: number, blue: number, alpha: number): void
+function SetEntityIconColor(entity, red, green, blue, alpha) end
+
+    
+--- SetBackfaceculling
+---
+--- @hash [0x23BA6B0C2AD7B0D3](https://docs.fivem.net/natives/?_0x23BA6B0C2AD7B0D3)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function SetBackfaceculling(toggle) end
+
+    
+--- # New Name: SetBackfaceculling
+--- SetBackfaceculling
+---
+--- @hash [0x23BA6B0C2AD7B0D3](https://docs.fivem.net/natives/?_0x23BA6B0C2AD7B0D3)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function N_0x23ba6b0c2ad7b0d3(toggle) end
+
+    
 --- ```
 --- NOTE: Debugging functions are not present in the retail version of the game.  
 --- ```
@@ -6604,6 +6680,111 @@ function N_0x4b5b4da5d79f1943(checkpoint, p0) end
 --- @return void
 --- @overload fun(enabled: boolean): void
 function SetDebugLinesAndSpheresDrawingActive(enabled) end
+
+    
+--- SetEntityIconVisibility
+---
+--- @hash [0xE0E8BEECCA96BA31](https://docs.fivem.net/natives/?_0xE0E8BEECCA96BA31)
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+function SetEntityIconVisibility(entity, toggle) end
+
+    
+--- ```
+--- Enables Night Vision.  
+--- Example:  
+--- C#: Function.Call(Hash.SET_NIGHTVISION, true);  
+--- C++: GRAPHICS::SET_NIGHTVISION(true);  
+--- BOOL toggle:  
+--- true = turns night vision on for your player.  
+--- false = turns night vision off for your player.  
+--- ```
+---
+--- @hash [0x18F621F7A5B1F85D](https://docs.fivem.net/natives/?_0x18F621F7A5B1F85D)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function SetNightvision(toggle) end
+
+    
+--- SetParticleFxLoopedAlpha
+---
+--- @hash [0x726845132380142E](https://docs.fivem.net/natives/?_0x726845132380142E)
+--- @param ptfxHandle number (int)
+--- @param alpha number (float)
+--- @return void
+--- @overload fun(ptfxHandle: number, alpha: number): void
+function SetParticleFxLoopedAlpha(ptfxHandle, alpha) end
+
+    
+--- ```
+--- Purpose of p0 and p1 unknown.  
+--- ```
+---
+--- @hash [0x0AB84296FED9CFC6](https://docs.fivem.net/natives/?_0x0AB84296FED9CFC6)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param fadeIn number (float)
+--- @param duration number (float)
+--- @param fadeOut number (float)
+--- @return void
+--- @overload fun(p0: number, p1: number, fadeIn: number, duration: number, fadeOut: number): void
+function SetFlash(p0, p1, fadeIn, duration, fadeOut) end
+
+    
+--- ```
+--- Forces footstep tracks on all surfaces.
+--- USE_/USING_*
+--- ```
+---
+--- @hash [0xAEEDAD1420C65CC0](https://docs.fivem.net/natives/?_0xAEEDAD1420C65CC0)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function SetForcePedFootstepsTracks(toggle) end
+
+    
+--- The same as [`SetTimecycleModifierStrength`](https://docs.fivem.net/natives/?_0x82E7FFCD5B2326B3) but for the secondary tiemcycle modifier.
+---
+--- @hash [0x2C328AF17210F009](https://docs.fivem.net/natives/?_0x2C328AF17210F009)
+--- @param strength number (float)
+--- @return void
+--- @overload fun(strength: number): void
+function SetExtraTimecycleModifierStrength(strength) end
+
+    
+--- # New Name: SetExtraTimecycleModifierStrength
+--- The same as [`SetTimecycleModifierStrength`](https://docs.fivem.net/natives/?_0x82E7FFCD5B2326B3) but for the secondary tiemcycle modifier.
+---
+--- @hash [0x2C328AF17210F009](https://docs.fivem.net/natives/?_0x2C328AF17210F009)
+--- @param strength number (float)
+--- @return void
+--- @overload fun(strength: number): void
+--- @deprecated
+function N_0x2c328af17210f009(strength) end
+
+    
+--- SetNoiseoveride
+---
+--- @hash [0xE787BF1C5CF823C9](https://docs.fivem.net/natives/?_0xE787BF1C5CF823C9)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function SetNoiseoveride(toggle) end
+
+    
+--- ```
+--- Forces vehicle trails on all surfaces.
+--- USE_/USING_*
+--- ```
+---
+--- @hash [0x4CC7F0FEA5283FE0](https://docs.fivem.net/natives/?_0x4CC7F0FEA5283FE0)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function SetForceVehicleTrails(toggle) end
 
     
 --- ```
@@ -6638,137 +6819,147 @@ function SetCheckpointRgba2(checkpoint, red, green, blue, alpha) end
 function SetCheckpointIconRgba(checkpoint, red, green, blue, alpha) end
 
     
---- SetCurrentPlayerTcmodifier
+--- SetNextPlayerTcmodifier
 ---
---- @hash [0xBBF327DED94E4DEB](https://docs.fivem.net/natives/?_0xBBF327DED94E4DEB)
+--- @hash [0xBF59707B3E5ED531](https://docs.fivem.net/natives/?_0xBF59707B3E5ED531)
 --- @param modifierName string (char*)
 --- @return void
 --- @overload fun(modifierName: string): void
-function SetCurrentPlayerTcmodifier(modifierName) end
+function SetNextPlayerTcmodifier(modifierName) end
 
     
---- # New Name: SetCurrentPlayerTcmodifier
---- SetCurrentPlayerTcmodifier
+--- # New Name: SetNextPlayerTcmodifier
+--- SetNextPlayerTcmodifier
 ---
---- @hash [0xBBF327DED94E4DEB](https://docs.fivem.net/natives/?_0xBBF327DED94E4DEB)
+--- @hash [0xBF59707B3E5ED531](https://docs.fivem.net/natives/?_0xBF59707B3E5ED531)
 --- @param modifierName string (char*)
 --- @return void
 --- @overload fun(modifierName: string): void
 --- @deprecated
-function N_0xbbf327ded94e4deb(modifierName) end
+function N_0xbf59707b3e5ed531(modifierName) end
 
     
---- SetDisableDecalRenderingThisFrame
+--- SetNoisinessoveride
 ---
---- @hash [0x4B5CFC83122DF602](https://docs.fivem.net/natives/?_0x4B5CFC83122DF602)
----
+--- @hash [0xCB6A7C3BB17A0C67](https://docs.fivem.net/natives/?_0xCB6A7C3BB17A0C67)
+--- @param value number (float)
 --- @return void
---- @overload fun(): void
-function SetDisableDecalRenderingThisFrame() end
+--- @overload fun(value: number): void
+function SetNoisinessoveride(value) end
 
     
---- # New Name: SetDisableDecalRenderingThisFrame
---- SetDisableDecalRenderingThisFrame
+--- SetParticleFxBulletImpactScale
 ---
---- @hash [0x4B5CFC83122DF602](https://docs.fivem.net/natives/?_0x4B5CFC83122DF602)
----
+--- @hash [0x27E32866E9A5C416](https://docs.fivem.net/natives/?_0x27E32866E9A5C416)
+--- @param scale number (float)
 --- @return void
---- @overload fun(): void
+--- @overload fun(scale: number): void
+function SetParticleFxBulletImpactScale(scale) end
+
+    
+--- # New Name: SetParticleFxBulletImpactScale
+--- SetParticleFxBulletImpactScale
+---
+--- @hash [0x27E32866E9A5C416](https://docs.fivem.net/natives/?_0x27E32866E9A5C416)
+--- @param scale number (float)
+--- @return void
+--- @overload fun(scale: number): void
 --- @deprecated
-function N_0x4b5cfc83122df602() end
+function N_0x27e32866e9a5c416(scale) end
 
     
---- Sets the on-screen drawing origin for draw-functions in world coordinates.
---- 
---- The effect can be reset by calling [`CLEAR_DRAW_ORIGIN`](https://docs.fivem.net/natives/?_0xFF0B610F6BE0D7AF) and is limited to 32 different origins each frame.
+--- SetParticleFxLoopedEvolution
 ---
---- @hash [0xAA0008F3BBB8F416](https://docs.fivem.net/natives/?_0xAA0008F3BBB8F416)
+--- @hash [0x5F0C4B5B1C393BE2](https://docs.fivem.net/natives/?_0x5F0C4B5B1C393BE2)
+--- @param ptfxHandle number (int)
+--- @param propertyName string (char*)
+--- @param amount number (float)
+--- @param noNetwork boolean
+--- @return void
+--- @overload fun(ptfxHandle: number, propertyName: string, amount: number, noNetwork: boolean): void
+function SetParticleFxLoopedEvolution(ptfxHandle, propertyName, amount, noNetwork) end
+
+    
+--- SetParticleFxShootoutBoat
+---
+--- @hash [0x96EF97DAEB89BEF5](https://docs.fivem.net/natives/?_0x96EF97DAEB89BEF5)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function SetParticleFxShootoutBoat(p0) end
+
+    
+--- ```
+--- only works on some fx's  
+--- p4 = 0  
+--- ```
+---
+--- @hash [0x7F8F65877F88783B](https://docs.fivem.net/natives/?_0x7F8F65877F88783B)
+--- @param ptfxHandle number (int)
+--- @param r number (float)
+--- @param g number (float)
+--- @param b number (float)
+--- @param p4 boolean
+--- @return void
+--- @overload fun(ptfxHandle: number, r: number, g: number, b: number, p4: boolean): void
+function SetParticleFxLoopedColour(ptfxHandle, r, g, b, p4) end
+
+    
+--- SetParticleFxCamInsideNonplayerVehicle
+---
+--- @hash [0xACEE6F360FC1F6B6](https://docs.fivem.net/natives/?_0xACEE6F360FC1F6B6)
+--- @param vehicle Vehicle
+--- @param p1 boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, p1: boolean): void
+function SetParticleFxCamInsideNonplayerVehicle(vehicle, p1) end
+
+    
+--- ```
+--- Usage example for C#:  
+--- Function.Call(Hash.SET_PARTICLE_FX_NON_LOOPED_ALPHA, new InputArgument[] { 0.1f });  
+--- 		Note: the argument alpha ranges from 0.0f-1.0f !  
+--- ```
+---
+--- @hash [0x77168D722C58B2FC](https://docs.fivem.net/natives/?_0x77168D722C58B2FC)
+--- @param alpha number (float)
+--- @return void
+--- @overload fun(alpha: number): void
+function SetParticleFxNonLoopedAlpha(alpha) end
+
+    
+--- SetParticleFxCamInsideVehicle
+---
+--- @hash [0xEEC4047028426510](https://docs.fivem.net/natives/?_0xEEC4047028426510)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function SetParticleFxCamInsideVehicle(p0) end
+
+    
+--- SetParticleFxLoopedScale
+---
+--- @hash [0xB44250AAA456492D](https://docs.fivem.net/natives/?_0xB44250AAA456492D)
+--- @param ptfxHandle number (int)
+--- @param scale number (float)
+--- @return void
+--- @overload fun(ptfxHandle: number, scale: number): void
+function SetParticleFxLoopedScale(ptfxHandle, scale) end
+
+    
+--- SetParticleFxLoopedOffsets
+---
+--- @hash [0xF7DDEBEC43483C43](https://docs.fivem.net/natives/?_0xF7DDEBEC43483C43)
+--- @param ptfxHandle number (int)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param p3 any
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
 --- @return void
---- @overload fun(x: number, y: number, z: number, p3: any): void
-function SetDrawOrigin(x, y, z, p3) end
-
-    
---- SetEntityIconVisibility
----
---- @hash [0xE0E8BEECCA96BA31](https://docs.fivem.net/natives/?_0xE0E8BEECCA96BA31)
---- @param entity Entity
---- @param toggle boolean
---- @return void
---- @overload fun(entity: Entity, toggle: boolean): void
-function SetEntityIconVisibility(entity, toggle) end
-
-    
---- SetEntityIconColor
----
---- @hash [0x1D5F595CCAE2E238](https://docs.fivem.net/natives/?_0x1D5F595CCAE2E238)
---- @param entity Entity
---- @param red number (int)
---- @param green number (int)
---- @param blue number (int)
---- @param alpha number (int)
---- @return void
---- @overload fun(entity: Entity, red: number, green: number, blue: number, alpha: number): void
-function SetEntityIconColor(entity, red, green, blue, alpha) end
-
-    
---- The same as [`SetTimecycleModifierStrength`](https://docs.fivem.net/natives/?_0x82E7FFCD5B2326B3) but for the secondary tiemcycle modifier.
----
---- @hash [0x2C328AF17210F009](https://docs.fivem.net/natives/?_0x2C328AF17210F009)
---- @param strength number (float)
---- @return void
---- @overload fun(strength: number): void
-function SetExtraTimecycleModifierStrength(strength) end
-
-    
---- # New Name: SetExtraTimecycleModifierStrength
---- The same as [`SetTimecycleModifierStrength`](https://docs.fivem.net/natives/?_0x82E7FFCD5B2326B3) but for the secondary tiemcycle modifier.
----
---- @hash [0x2C328AF17210F009](https://docs.fivem.net/natives/?_0x2C328AF17210F009)
---- @param strength number (float)
---- @return void
---- @overload fun(strength: number): void
---- @deprecated
-function N_0x2c328af17210f009(strength) end
-
-    
---- SetExtraTimecycleModifier
----
---- @hash [0x5096FD9CCB49056D](https://docs.fivem.net/natives/?_0x5096FD9CCB49056D)
---- @param modifierName string (char*)
---- @return void
---- @overload fun(modifierName: string): void
-function SetExtraTimecycleModifier(modifierName) end
-
-    
---- ```
---- Purpose of p0 and p1 unknown.  
---- ```
----
---- @hash [0x0AB84296FED9CFC6](https://docs.fivem.net/natives/?_0x0AB84296FED9CFC6)
---- @param p0 number (float)
---- @param p1 number (float)
---- @param fadeIn number (float)
---- @param duration number (float)
---- @param fadeOut number (float)
---- @return void
---- @overload fun(p0: number, p1: number, fadeIn: number, duration: number, fadeOut: number): void
-function SetFlash(p0, p1, fadeIn, duration, fadeOut) end
-
-    
---- ```
---- Forces footstep tracks on all surfaces.
---- USE_/USING_*
---- ```
----
---- @hash [0xAEEDAD1420C65CC0](https://docs.fivem.net/natives/?_0xAEEDAD1420C65CC0)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function SetForcePedFootstepsTracks(toggle) end
+--- @overload fun(ptfxHandle: number, x: number, y: number, z: number, rotX: number, rotY: number, rotZ: number): void
+function SetParticleFxLoopedOffsets(ptfxHandle, x, y, z, rotX, rotY, rotZ) end
 
     
 --- SetHidofOverride
@@ -6817,221 +7008,6 @@ function N_0xba3d65906822bed5(p0, p1, nearplaneOut, nearplaneIn, farplaneOut, fa
 function SetHidofEnvBlurParams(p0, p1, nearplaneOut, nearplaneIn, farplaneOut, farplaneIn) end
 
     
---- ```
---- Forces vehicle trails on all surfaces.
---- USE_/USING_*
---- ```
----
---- @hash [0x4CC7F0FEA5283FE0](https://docs.fivem.net/natives/?_0x4CC7F0FEA5283FE0)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function SetForceVehicleTrails(toggle) end
-
-    
---- SetNextPlayerTcmodifier
----
---- @hash [0xBF59707B3E5ED531](https://docs.fivem.net/natives/?_0xBF59707B3E5ED531)
---- @param modifierName string (char*)
---- @return void
---- @overload fun(modifierName: string): void
-function SetNextPlayerTcmodifier(modifierName) end
-
-    
---- # New Name: SetNextPlayerTcmodifier
---- SetNextPlayerTcmodifier
----
---- @hash [0xBF59707B3E5ED531](https://docs.fivem.net/natives/?_0xBF59707B3E5ED531)
---- @param modifierName string (char*)
---- @return void
---- @overload fun(modifierName: string): void
---- @deprecated
-function N_0xbf59707b3e5ed531(modifierName) end
-
-    
---- ```
---- Enables Night Vision.  
---- Example:  
---- C#: Function.Call(Hash.SET_NIGHTVISION, true);  
---- C++: GRAPHICS::SET_NIGHTVISION(true);  
---- BOOL toggle:  
---- true = turns night vision on for your player.  
---- false = turns night vision off for your player.  
---- ```
----
---- @hash [0x18F621F7A5B1F85D](https://docs.fivem.net/natives/?_0x18F621F7A5B1F85D)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function SetNightvision(toggle) end
-
-    
---- SetNoiseoveride
----
---- @hash [0xE787BF1C5CF823C9](https://docs.fivem.net/natives/?_0xE787BF1C5CF823C9)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function SetNoiseoveride(toggle) end
-
-    
---- SetNoisinessoveride
----
---- @hash [0xCB6A7C3BB17A0C67](https://docs.fivem.net/natives/?_0xCB6A7C3BB17A0C67)
---- @param value number (float)
---- @return void
---- @overload fun(value: number): void
-function SetNoisinessoveride(value) end
-
-    
---- SetParticleFxBulletImpactScale
----
---- @hash [0x27E32866E9A5C416](https://docs.fivem.net/natives/?_0x27E32866E9A5C416)
---- @param scale number (float)
---- @return void
---- @overload fun(scale: number): void
-function SetParticleFxBulletImpactScale(scale) end
-
-    
---- # New Name: SetParticleFxBulletImpactScale
---- SetParticleFxBulletImpactScale
----
---- @hash [0x27E32866E9A5C416](https://docs.fivem.net/natives/?_0x27E32866E9A5C416)
---- @param scale number (float)
---- @return void
---- @overload fun(scale: number): void
---- @deprecated
-function N_0x27e32866e9a5c416(scale) end
-
-    
---- SetParticleFxCamInsideNonplayerVehicle
----
---- @hash [0xACEE6F360FC1F6B6](https://docs.fivem.net/natives/?_0xACEE6F360FC1F6B6)
---- @param vehicle Vehicle
---- @param p1 boolean
---- @return void
---- @overload fun(vehicle: Vehicle, p1: boolean): void
-function SetParticleFxCamInsideNonplayerVehicle(vehicle, p1) end
-
-    
---- SetParticleFxCamInsideVehicle
----
---- @hash [0xEEC4047028426510](https://docs.fivem.net/natives/?_0xEEC4047028426510)
---- @param p0 boolean
---- @return void
---- @overload fun(p0: boolean): void
-function SetParticleFxCamInsideVehicle(p0) end
-
-    
---- ```
---- only works on some fx's  
---- p4 = 0  
---- ```
----
---- @hash [0x7F8F65877F88783B](https://docs.fivem.net/natives/?_0x7F8F65877F88783B)
---- @param ptfxHandle number (int)
---- @param r number (float)
---- @param g number (float)
---- @param b number (float)
---- @param p4 boolean
---- @return void
---- @overload fun(ptfxHandle: number, r: number, g: number, b: number, p4: boolean): void
-function SetParticleFxLoopedColour(ptfxHandle, r, g, b, p4) end
-
-    
---- SetParticleFxLoopedAlpha
----
---- @hash [0x726845132380142E](https://docs.fivem.net/natives/?_0x726845132380142E)
---- @param ptfxHandle number (int)
---- @param alpha number (float)
---- @return void
---- @overload fun(ptfxHandle: number, alpha: number): void
-function SetParticleFxLoopedAlpha(ptfxHandle, alpha) end
-
-    
---- SetParticleFxLoopedFarClipDist
----
---- @hash [0xDCB194B85EF7B541](https://docs.fivem.net/natives/?_0xDCB194B85EF7B541)
---- @param ptfxHandle number (int)
---- @param range number (float)
---- @return void
---- @overload fun(ptfxHandle: number, range: number): void
-function SetParticleFxLoopedFarClipDist(ptfxHandle, range) end
-
-    
---- # New Name: SetParticleFxLoopedFarClipDist
---- SetParticleFxLoopedFarClipDist
----
---- @hash [0xDCB194B85EF7B541](https://docs.fivem.net/natives/?_0xDCB194B85EF7B541)
---- @param ptfxHandle number (int)
---- @param range number (float)
---- @return void
---- @overload fun(ptfxHandle: number, range: number): void
---- @deprecated
-function SetParticleFxLoopedRange(ptfxHandle, range) end
-
-    
---- SetParticleFxLoopedEvolution
----
---- @hash [0x5F0C4B5B1C393BE2](https://docs.fivem.net/natives/?_0x5F0C4B5B1C393BE2)
---- @param ptfxHandle number (int)
---- @param propertyName string (char*)
---- @param amount number (float)
---- @param noNetwork boolean
---- @return void
---- @overload fun(ptfxHandle: number, propertyName: string, amount: number, noNetwork: boolean): void
-function SetParticleFxLoopedEvolution(ptfxHandle, propertyName, amount, noNetwork) end
-
-    
---- SetParticleFxLoopedOffsets
----
---- @hash [0xF7DDEBEC43483C43](https://docs.fivem.net/natives/?_0xF7DDEBEC43483C43)
---- @param ptfxHandle number (int)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param rotX number (float)
---- @param rotY number (float)
---- @param rotZ number (float)
---- @return void
---- @overload fun(ptfxHandle: number, x: number, y: number, z: number, rotX: number, rotY: number, rotZ: number): void
-function SetParticleFxLoopedOffsets(ptfxHandle, x, y, z, rotX, rotY, rotZ) end
-
-    
---- ```
---- Usage example for C#:  
---- Function.Call(Hash.SET_PARTICLE_FX_NON_LOOPED_ALPHA, new InputArgument[] { 0.1f });  
---- 		Note: the argument alpha ranges from 0.0f-1.0f !  
---- ```
----
---- @hash [0x77168D722C58B2FC](https://docs.fivem.net/natives/?_0x77168D722C58B2FC)
---- @param alpha number (float)
---- @return void
---- @overload fun(alpha: number): void
-function SetParticleFxNonLoopedAlpha(alpha) end
-
-    
---- SetParticleFxLoopedScale
----
---- @hash [0xB44250AAA456492D](https://docs.fivem.net/natives/?_0xB44250AAA456492D)
---- @param ptfxHandle number (int)
---- @param scale number (float)
---- @return void
---- @overload fun(ptfxHandle: number, scale: number): void
-function SetParticleFxLoopedScale(ptfxHandle, scale) end
-
-    
---- only works on some fx's, not networked
----
---- @hash [0x26143A59EF48B262](https://docs.fivem.net/natives/?_0x26143A59EF48B262)
---- @param r number (float)
---- @param g number (float)
---- @param b number (float)
---- @return void
---- @overload fun(r: number, g: number, b: number): void
-function SetParticleFxNonLoopedColour(r, g, b) end
-
-    
 --- SetParticleFxOverride
 ---
 --- @hash [0xEA1E2D93F6F75ED9](https://docs.fivem.net/natives/?_0xEA1E2D93F6F75ED9)
@@ -7066,42 +7042,24 @@ function SetPtfxAssetOld_2New(oldAsset, newAsset) end
 function SetParticleFxAssetOldToNew(oldAsset, newAsset) end
 
     
---- SetParticleFxShootoutBoat
+--- Sets a flag defining whether or not script draw commands should continue being drawn behind the pause menu. This is usually used for TV channels and other draw commands that are used with a world render target.
 ---
---- @hash [0x96EF97DAEB89BEF5](https://docs.fivem.net/natives/?_0x96EF97DAEB89BEF5)
---- @param p0 any
+--- @hash [0xC6372ECD45D73BCD](https://docs.fivem.net/natives/?_0xC6372ECD45D73BCD)
+--- @param flag boolean
 --- @return void
---- @overload fun(p0: any): void
-function SetParticleFxShootoutBoat(p0) end
+--- @overload fun(flag: boolean): void
+function SetScriptGfxDrawBehindPausemenu(flag) end
 
     
---- SetPlayerTcmodifierTransition
+--- # New Name: SetScriptGfxDrawBehindPausemenu
+--- Sets a flag defining whether or not script draw commands should continue being drawn behind the pause menu. This is usually used for TV channels and other draw commands that are used with a world render target.
 ---
---- @hash [0xBDEB86F4D5809204](https://docs.fivem.net/natives/?_0xBDEB86F4D5809204)
---- @param value number (float)
+--- @hash [0xC6372ECD45D73BCD](https://docs.fivem.net/natives/?_0xC6372ECD45D73BCD)
+--- @param flag boolean
 --- @return void
---- @overload fun(value: number): void
-function SetPlayerTcmodifierTransition(value) end
-
-    
---- # New Name: SetPlayerTcmodifierTransition
---- SetPlayerTcmodifierTransition
----
---- @hash [0xBDEB86F4D5809204](https://docs.fivem.net/natives/?_0xBDEB86F4D5809204)
---- @param value number (float)
---- @return void
---- @overload fun(value: number): void
+--- @overload fun(flag: boolean): void
 --- @deprecated
-function N_0xbdeb86f4d5809204(value) end
-
-    
---- SetScaleformMovieAsNoLongerNeeded
----
---- @hash [0x1D132D614DD86811](https://docs.fivem.net/natives/?_0x1D132D614DD86811)
---- @param scaleformHandle number (int*)
---- @return void
---- @overload fun(): number
-function SetScaleformMovieAsNoLongerNeeded(scaleformHandle) end
+function N_0xc6372ecd45d73bcd(flag) end
 
     
 --- This native is used in some casino scripts to fit the scaleform in the rendertarget.
@@ -7126,14 +7084,33 @@ function SetScaleformFitRendertarget(scaleformHandle, toggle) end
 function N_0xe6a9f00d4240b519(scaleformHandle, toggle) end
 
     
---- SetScaleformMovieToUseSystemTime
+--- SetScaleformMovieAsNoLongerNeeded
 ---
---- @hash [0x6D8EB211944DCE08](https://docs.fivem.net/natives/?_0x6D8EB211944DCE08)
---- @param scaleform number (int)
---- @param toggle boolean
+--- @hash [0x1D132D614DD86811](https://docs.fivem.net/natives/?_0x1D132D614DD86811)
+--- @param scaleformHandle number (int*)
 --- @return void
---- @overload fun(scaleform: number, toggle: boolean): void
-function SetScaleformMovieToUseSystemTime(scaleform, toggle) end
+--- @overload fun(): number
+function SetScaleformMovieAsNoLongerNeeded(scaleformHandle) end
+
+    
+--- SetPlayerTcmodifierTransition
+---
+--- @hash [0xBDEB86F4D5809204](https://docs.fivem.net/natives/?_0xBDEB86F4D5809204)
+--- @param value number (float)
+--- @return void
+--- @overload fun(value: number): void
+function SetPlayerTcmodifierTransition(value) end
+
+    
+--- # New Name: SetPlayerTcmodifierTransition
+--- SetPlayerTcmodifierTransition
+---
+--- @hash [0xBDEB86F4D5809204](https://docs.fivem.net/natives/?_0xBDEB86F4D5809204)
+--- @param value number (float)
+--- @return void
+--- @overload fun(value: number): void
+--- @deprecated
+function N_0xbdeb86f4d5809204(value) end
 
     
 --- This function anchors script draws to a side of the safe zone. This needs to be called to make the interface
@@ -7281,81 +7258,15 @@ function SetScreenDrawPosition(horizontalAlign, verticalAlign) end
 function ScreenDrawPositionBegin(horizontalAlign, verticalAlign) end
 
     
---- Sets the draw offset/calculated size for `SET_SCRIPT_GFX_ALIGN`. If using any alignment other than left/top, the game
---- expects the width/height to be configured using this native in order to get a proper starting position for the draw
---- command.
+--- only works on some fx's, not networked
 ---
---- @hash [0xF5A2C681787E579D](https://docs.fivem.net/natives/?_0xF5A2C681787E579D)
---- @param x number (float)
---- @param y number (float)
---- @param w number (float)
---- @param h number (float)
+--- @hash [0x26143A59EF48B262](https://docs.fivem.net/natives/?_0x26143A59EF48B262)
+--- @param r number (float)
+--- @param g number (float)
+--- @param b number (float)
 --- @return void
---- @overload fun(x: number, y: number, w: number, h: number): void
-function SetScriptGfxAlignParams(x, y, w, h) end
-
-    
---- # New Name: SetScriptGfxAlignParams
---- Sets the draw offset/calculated size for `SET_SCRIPT_GFX_ALIGN`. If using any alignment other than left/top, the game
---- expects the width/height to be configured using this native in order to get a proper starting position for the draw
---- command.
----
---- @hash [0xF5A2C681787E579D](https://docs.fivem.net/natives/?_0xF5A2C681787E579D)
---- @param x number (float)
---- @param y number (float)
---- @param w number (float)
---- @param h number (float)
---- @return void
---- @overload fun(x: number, y: number, w: number, h: number): void
---- @deprecated
-function N_0xf5a2c681787e579d(x, y, w, h) end
-
-    
---- # New Name: SetScriptGfxAlignParams
---- Sets the draw offset/calculated size for `SET_SCRIPT_GFX_ALIGN`. If using any alignment other than left/top, the game
---- expects the width/height to be configured using this native in order to get a proper starting position for the draw
---- command.
----
---- @hash [0xF5A2C681787E579D](https://docs.fivem.net/natives/?_0xF5A2C681787E579D)
---- @param x number (float)
---- @param y number (float)
---- @param w number (float)
---- @param h number (float)
---- @return void
---- @overload fun(x: number, y: number, w: number, h: number): void
---- @deprecated
-function ScreenDrawPositionRatio(x, y, w, h) end
-
-    
---- Sets a flag defining whether or not script draw commands should continue being drawn behind the pause menu. This is usually used for TV channels and other draw commands that are used with a world render target.
----
---- @hash [0xC6372ECD45D73BCD](https://docs.fivem.net/natives/?_0xC6372ECD45D73BCD)
---- @param flag boolean
---- @return void
---- @overload fun(flag: boolean): void
-function SetScriptGfxDrawBehindPausemenu(flag) end
-
-    
---- # New Name: SetScriptGfxDrawBehindPausemenu
---- Sets a flag defining whether or not script draw commands should continue being drawn behind the pause menu. This is usually used for TV channels and other draw commands that are used with a world render target.
----
---- @hash [0xC6372ECD45D73BCD](https://docs.fivem.net/natives/?_0xC6372ECD45D73BCD)
---- @param flag boolean
---- @return void
---- @overload fun(flag: boolean): void
---- @deprecated
-function N_0xc6372ecd45d73bcd(flag) end
-
-    
---- ```
---- Toggles Heatvision on/off.  
---- ```
----
---- @hash [0x7E08924259E08CE0](https://docs.fivem.net/natives/?_0x7E08924259E08CE0)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function SetSeethrough(toggle) end
+--- @overload fun(r: number, g: number, b: number): void
+function SetParticleFxNonLoopedColour(r, g, b) end
 
     
 --- Sets the draw order for script draw commands.
@@ -7420,187 +7331,26 @@ function Set_2dLayer(order) end
 function SetUiLayer(order) end
 
     
---- ```
---- Loads the specified timecycle modifier. Modifiers are defined separately in another file (e.g. "timecycle_mods_1.xml")
---- Parameters:
---- modifierName - The modifier to load (e.g. "V_FIB_IT3", "scanline_cam", etc.)
---- ```
+--- SetParticleFxLoopedFarClipDist
 ---
---- @hash [0x2C933ABF17A1DF41](https://docs.fivem.net/natives/?_0x2C933ABF17A1DF41)
---- @param modifierName string (char*)
+--- @hash [0xDCB194B85EF7B541](https://docs.fivem.net/natives/?_0xDCB194B85EF7B541)
+--- @param ptfxHandle number (int)
+--- @param range number (float)
 --- @return void
---- @overload fun(modifierName: string): void
-function SetTimecycleModifier(modifierName) end
+--- @overload fun(ptfxHandle: number, range: number): void
+function SetParticleFxLoopedFarClipDist(ptfxHandle, range) end
 
     
---- SetStreamedTextureDictAsNoLongerNeeded
+--- # New Name: SetParticleFxLoopedFarClipDist
+--- SetParticleFxLoopedFarClipDist
 ---
---- @hash [0xBE2CACCF5A8AA805](https://docs.fivem.net/natives/?_0xBE2CACCF5A8AA805)
---- @param textureDict string (char*)
+--- @hash [0xDCB194B85EF7B541](https://docs.fivem.net/natives/?_0xDCB194B85EF7B541)
+--- @param ptfxHandle number (int)
+--- @param range number (float)
 --- @return void
---- @overload fun(textureDict: string): void
-function SetStreamedTextureDictAsNoLongerNeeded(textureDict) end
-
-    
---- SetTransitionTimecycleModifier
----
---- @hash [0x3BCF567485E1971C](https://docs.fivem.net/natives/?_0x3BCF567485E1971C)
---- @param modifierName string (char*)
---- @param transition number (float)
---- @return void
---- @overload fun(modifierName: string, transition: number): void
-function SetTransitionTimecycleModifier(modifierName, transition) end
-
-    
---- SetTimecycleModifierStrength
----
---- @hash [0x82E7FFCD5B2326B3](https://docs.fivem.net/natives/?_0x82E7FFCD5B2326B3)
---- @param strength number (float)
---- @return void
---- @overload fun(strength: number): void
-function SetTimecycleModifierStrength(strength) end
-
-    
---- SetTrackedPointInfo
----
---- @hash [0x164ECBB3CF750CB0](https://docs.fivem.net/natives/?_0x164ECBB3CF750CB0)
---- @param point number (int)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param radius number (float)
---- @return void
---- @overload fun(point: number, x: number, y: number, z: number, radius: number): void
-function SetTrackedPointInfo(point, x, y, z, radius) end
-
-    
---- ```
---- Probably changes tvs from being a 3d audio to being "global" audio
---- ```
----
---- @hash [0x113D2C5DC57E1774](https://docs.fivem.net/natives/?_0x113D2C5DC57E1774)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
-function SetTvAudioFrontend(toggle) end
-
-    
---- SetTvChannel
----
---- @hash [0xBAABBB23EB6E484E](https://docs.fivem.net/natives/?_0xBAABBB23EB6E484E)
---- @param channel number (int)
---- @return void
---- @overload fun(channel: number): void
-function SetTvChannel(channel) end
-
-    
---- Loads specified video sequence into the TV Channel
---- TV_Channel ranges from 0-2
---- VideoSequence can be any of the following:
---- "PL_STD_CNT" CNT Standard Channel
---- "PL_STD_WZL" Weazel Standard Channel
---- "PL_LO_CNT"
---- "PL_LO_WZL"
---- "PL_SP_WORKOUT"
---- "PL_SP_INV" - Jay Norris Assassination Mission Fail
---- "PL_SP_INV_EXP" - Jay Norris Assassination Mission Success
---- "PL_LO_RS" - Righteous Slaughter Ad
---- "PL_LO_RS_CUTSCENE" - Righteous Slaughter Cut-scene
---- "PL_SP_PLSH1\_INTRO"
---- "PL_LES1\_FAME_OR_SHAME"
---- "PL_STD_WZL_FOS_EP2"
---- "PL_MP_WEAZEL" - Weazel Logo on loop
---- "PL_MP_CCTV" - Generic CCTV loop
---- Restart:
---- 0=video sequence continues as normal
---- 1=sequence restarts from beginning every time that channel is selected
---- The above playlists work as intended, and are commonly used, but there are many more playlists, as seen in `tvplaylists.xml`. A pastebin below outlines all playlists, they will be surronded by the name tag I.E. (<Name>PL_STD_CNT</Name> = PL_STD_CNT).
---- https://pastebin.com/zUzGB6h7
----
---- @hash [0xF7B38B8305F1FE8B](https://docs.fivem.net/natives/?_0xF7B38B8305F1FE8B)
---- @param tvChannel number (int)
---- @param playlistName string (char*)
---- @param restart boolean
---- @return void
---- @overload fun(tvChannel: number, playlistName: string, restart: boolean): void
-function SetTvChannelPlaylist(tvChannel, playlistName, restart) end
-
-    
---- # New Name: SetTvChannelPlaylist
---- Loads specified video sequence into the TV Channel
---- TV_Channel ranges from 0-2
---- VideoSequence can be any of the following:
---- "PL_STD_CNT" CNT Standard Channel
---- "PL_STD_WZL" Weazel Standard Channel
---- "PL_LO_CNT"
---- "PL_LO_WZL"
---- "PL_SP_WORKOUT"
---- "PL_SP_INV" - Jay Norris Assassination Mission Fail
---- "PL_SP_INV_EXP" - Jay Norris Assassination Mission Success
---- "PL_LO_RS" - Righteous Slaughter Ad
---- "PL_LO_RS_CUTSCENE" - Righteous Slaughter Cut-scene
---- "PL_SP_PLSH1\_INTRO"
---- "PL_LES1\_FAME_OR_SHAME"
---- "PL_STD_WZL_FOS_EP2"
---- "PL_MP_WEAZEL" - Weazel Logo on loop
---- "PL_MP_CCTV" - Generic CCTV loop
---- Restart:
---- 0=video sequence continues as normal
---- 1=sequence restarts from beginning every time that channel is selected
---- The above playlists work as intended, and are commonly used, but there are many more playlists, as seen in `tvplaylists.xml`. A pastebin below outlines all playlists, they will be surronded by the name tag I.E. (<Name>PL_STD_CNT</Name> = PL_STD_CNT).
---- https://pastebin.com/zUzGB6h7
----
---- @hash [0xF7B38B8305F1FE8B](https://docs.fivem.net/natives/?_0xF7B38B8305F1FE8B)
---- @param tvChannel number (int)
---- @param playlistName string (char*)
---- @param restart boolean
---- @return void
---- @overload fun(tvChannel: number, playlistName: string, restart: boolean): void
+--- @overload fun(ptfxHandle: number, range: number): void
 --- @deprecated
-function N_0xf7b38b8305f1fe8b(tvChannel, playlistName, restart) end
-
-    
---- # New Name: SetTvChannelPlaylist
---- Loads specified video sequence into the TV Channel
---- TV_Channel ranges from 0-2
---- VideoSequence can be any of the following:
---- "PL_STD_CNT" CNT Standard Channel
---- "PL_STD_WZL" Weazel Standard Channel
---- "PL_LO_CNT"
---- "PL_LO_WZL"
---- "PL_SP_WORKOUT"
---- "PL_SP_INV" - Jay Norris Assassination Mission Fail
---- "PL_SP_INV_EXP" - Jay Norris Assassination Mission Success
---- "PL_LO_RS" - Righteous Slaughter Ad
---- "PL_LO_RS_CUTSCENE" - Righteous Slaughter Cut-scene
---- "PL_SP_PLSH1\_INTRO"
---- "PL_LES1\_FAME_OR_SHAME"
---- "PL_STD_WZL_FOS_EP2"
---- "PL_MP_WEAZEL" - Weazel Logo on loop
---- "PL_MP_CCTV" - Generic CCTV loop
---- Restart:
---- 0=video sequence continues as normal
---- 1=sequence restarts from beginning every time that channel is selected
---- The above playlists work as intended, and are commonly used, but there are many more playlists, as seen in `tvplaylists.xml`. A pastebin below outlines all playlists, they will be surronded by the name tag I.E. (<Name>PL_STD_CNT</Name> = PL_STD_CNT).
---- https://pastebin.com/zUzGB6h7
----
---- @hash [0xF7B38B8305F1FE8B](https://docs.fivem.net/natives/?_0xF7B38B8305F1FE8B)
---- @param tvChannel number (int)
---- @param playlistName string (char*)
---- @param restart boolean
---- @return void
---- @overload fun(tvChannel: number, playlistName: string, restart: boolean): void
---- @deprecated
-function LoadTvChannelSequence(tvChannel, playlistName, restart) end
-
-    
---- SetTvVolume
----
---- @hash [0x2982BF73F66E9DDC](https://docs.fivem.net/natives/?_0x2982BF73F66E9DDC)
---- @param volume number (float)
---- @return void
---- @overload fun(volume: number): void
-function SetTvVolume(volume) end
+function SetParticleFxLoopedRange(ptfxHandle, range) end
 
     
 --- SetTvChannelPlaylistAtHour
@@ -7627,147 +7377,136 @@ function SetTvChannelPlaylistAtHour(tvChannel, playlistName, hour) end
 function N_0x2201c576facaebe8(tvChannel, playlistName, hour) end
 
     
---- ```
---- network fx  
---- ```
---- 
---- ```
---- NativeDB Added Parameter 13: Any p12
---- NativeDB Added Parameter 14: Any p13
---- NativeDB Added Parameter 15: Any p14
---- NativeDB Added Parameter 16: Any p15
---- ```
+--- Sets the draw offset/calculated size for `SET_SCRIPT_GFX_ALIGN`. If using any alignment other than left/top, the game
+--- expects the width/height to be configured using this native in order to get a proper starting position for the draw
+--- command.
 ---
---- @hash [0x6F60E89A7B64EE1D](https://docs.fivem.net/natives/?_0x6F60E89A7B64EE1D)
---- @param effectName string (char*)
---- @param entity Entity
---- @param xOffset number (float)
---- @param yOffset number (float)
---- @param zOffset number (float)
---- @param xRot number (float)
---- @param yRot number (float)
---- @param zRot number (float)
---- @param scale number (float)
---- @param xAxis boolean
---- @param yAxis boolean
---- @param zAxis boolean
---- @return number
---- @overload fun(effectName: string, entity: Entity, xOffset: number, yOffset: number, zOffset: number, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): number
-function StartNetworkedParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
+--- @hash [0xF5A2C681787E579D](https://docs.fivem.net/natives/?_0xF5A2C681787E579D)
+--- @param x number (float)
+--- @param y number (float)
+--- @param w number (float)
+--- @param h number (float)
+--- @return void
+--- @overload fun(x: number, y: number, w: number, h: number): void
+function SetScriptGfxAlignParams(x, y, w, h) end
 
     
---- # New Name: StartNetworkedParticleFxLoopedOnEntity
---- ```
---- network fx  
---- ```
---- 
---- ```
---- NativeDB Added Parameter 13: Any p12
---- NativeDB Added Parameter 14: Any p13
---- NativeDB Added Parameter 15: Any p14
---- NativeDB Added Parameter 16: Any p15
---- ```
+--- # New Name: SetScriptGfxAlignParams
+--- Sets the draw offset/calculated size for `SET_SCRIPT_GFX_ALIGN`. If using any alignment other than left/top, the game
+--- expects the width/height to be configured using this native in order to get a proper starting position for the draw
+--- command.
 ---
---- @hash [0x6F60E89A7B64EE1D](https://docs.fivem.net/natives/?_0x6F60E89A7B64EE1D)
---- @param effectName string (char*)
---- @param entity Entity
---- @param xOffset number (float)
---- @param yOffset number (float)
---- @param zOffset number (float)
---- @param xRot number (float)
---- @param yRot number (float)
---- @param zRot number (float)
---- @param scale number (float)
---- @param xAxis boolean
---- @param yAxis boolean
---- @param zAxis boolean
---- @return number
---- @overload fun(effectName: string, entity: Entity, xOffset: number, yOffset: number, zOffset: number, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): number
+--- @hash [0xF5A2C681787E579D](https://docs.fivem.net/natives/?_0xF5A2C681787E579D)
+--- @param x number (float)
+--- @param y number (float)
+--- @param w number (float)
+--- @param h number (float)
+--- @return void
+--- @overload fun(x: number, y: number, w: number, h: number): void
 --- @deprecated
-function N_0x6f60e89a7b64ee1d(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
+function N_0xf5a2c681787e579d(x, y, w, h) end
 
     
---- # New Name: StartNetworkedParticleFxLoopedOnEntity
---- ```
---- network fx  
---- ```
---- 
---- ```
---- NativeDB Added Parameter 13: Any p12
---- NativeDB Added Parameter 14: Any p13
---- NativeDB Added Parameter 15: Any p14
---- NativeDB Added Parameter 16: Any p15
---- ```
+--- # New Name: SetScriptGfxAlignParams
+--- Sets the draw offset/calculated size for `SET_SCRIPT_GFX_ALIGN`. If using any alignment other than left/top, the game
+--- expects the width/height to be configured using this native in order to get a proper starting position for the draw
+--- command.
 ---
---- @hash [0x6F60E89A7B64EE1D](https://docs.fivem.net/natives/?_0x6F60E89A7B64EE1D)
---- @param effectName string (char*)
---- @param entity Entity
---- @param xOffset number (float)
---- @param yOffset number (float)
---- @param zOffset number (float)
---- @param xRot number (float)
---- @param yRot number (float)
---- @param zRot number (float)
---- @param scale number (float)
---- @param xAxis boolean
---- @param yAxis boolean
---- @param zAxis boolean
---- @return number
---- @overload fun(effectName: string, entity: Entity, xOffset: number, yOffset: number, zOffset: number, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): number
+--- @hash [0xF5A2C681787E579D](https://docs.fivem.net/natives/?_0xF5A2C681787E579D)
+--- @param x number (float)
+--- @param y number (float)
+--- @param w number (float)
+--- @param h number (float)
+--- @return void
+--- @overload fun(x: number, y: number, w: number, h: number): void
 --- @deprecated
-function StartParticleFxLoopedOnEntity_2(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
+function ScreenDrawPositionRatio(x, y, w, h) end
+
+    
+--- SetTimecycleModifierStrength
+---
+--- @hash [0x82E7FFCD5B2326B3](https://docs.fivem.net/natives/?_0x82E7FFCD5B2326B3)
+--- @param strength number (float)
+--- @return void
+--- @overload fun(strength: number): void
+function SetTimecycleModifierStrength(strength) end
 
     
 --- ```
---- network fx  
---- ```
---- 
---- ```
---- NativeDB Added Parameter 12: BOOL p11
+--- Loads the specified timecycle modifier. Modifiers are defined separately in another file (e.g. "timecycle_mods_1.xml")
+--- Parameters:
+--- modifierName - The modifier to load (e.g. "V_FIB_IT3", "scanline_cam", etc.)
 --- ```
 ---
---- @hash [0xF56B8137DF10135D](https://docs.fivem.net/natives/?_0xF56B8137DF10135D)
---- @param effectName string (char*)
---- @param xPos number (float)
---- @param yPos number (float)
---- @param zPos number (float)
---- @param xRot number (float)
---- @param yRot number (float)
---- @param zRot number (float)
---- @param scale number (float)
---- @param xAxis boolean
---- @param yAxis boolean
---- @param zAxis boolean
---- @return boolean
---- @overload fun(effectName: string, xPos: number, yPos: number, zPos: number, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): boolean
-function StartNetworkedParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
+--- @hash [0x2C933ABF17A1DF41](https://docs.fivem.net/natives/?_0x2C933ABF17A1DF41)
+--- @param modifierName string (char*)
+--- @return void
+--- @overload fun(modifierName: string): void
+function SetTimecycleModifier(modifierName) end
 
     
---- # New Name: StartNetworkedParticleFxNonLoopedAtCoord
+--- SetStreamedTextureDictAsNoLongerNeeded
+---
+--- @hash [0xBE2CACCF5A8AA805](https://docs.fivem.net/natives/?_0xBE2CACCF5A8AA805)
+--- @param textureDict string (char*)
+--- @return void
+--- @overload fun(textureDict: string): void
+function SetStreamedTextureDictAsNoLongerNeeded(textureDict) end
+
+    
+--- SetTrackedPointInfo
+---
+--- @hash [0x164ECBB3CF750CB0](https://docs.fivem.net/natives/?_0x164ECBB3CF750CB0)
+--- @param point number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @return void
+--- @overload fun(point: number, x: number, y: number, z: number, radius: number): void
+function SetTrackedPointInfo(point, x, y, z, radius) end
+
+    
 --- ```
---- network fx  
---- ```
---- 
---- ```
---- NativeDB Added Parameter 12: BOOL p11
+--- Probably changes tvs from being a 3d audio to being "global" audio
 --- ```
 ---
---- @hash [0xF56B8137DF10135D](https://docs.fivem.net/natives/?_0xF56B8137DF10135D)
---- @param effectName string (char*)
---- @param xPos number (float)
---- @param yPos number (float)
---- @param zPos number (float)
---- @param xRot number (float)
---- @param yRot number (float)
---- @param zRot number (float)
---- @param scale number (float)
---- @param xAxis boolean
---- @param yAxis boolean
---- @param zAxis boolean
---- @return boolean
---- @overload fun(effectName: string, xPos: number, yPos: number, zPos: number, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): boolean
---- @deprecated
-function StartParticleFxNonLoopedAtCoord_2(effectName, xPos, yPos, zPos, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
+--- @hash [0x113D2C5DC57E1774](https://docs.fivem.net/natives/?_0x113D2C5DC57E1774)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function SetTvAudioFrontend(toggle) end
+
+    
+--- ```
+--- Toggles Heatvision on/off.  
+--- ```
+---
+--- @hash [0x7E08924259E08CE0](https://docs.fivem.net/natives/?_0x7E08924259E08CE0)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function SetSeethrough(toggle) end
+
+    
+--- SetScaleformMovieToUseSystemTime
+---
+--- @hash [0x6D8EB211944DCE08](https://docs.fivem.net/natives/?_0x6D8EB211944DCE08)
+--- @param scaleform number (int)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(scaleform: number, toggle: boolean): void
+function SetScaleformMovieToUseSystemTime(scaleform, toggle) end
+
+    
+--- SetTransitionTimecycleModifier
+---
+--- @hash [0x3BCF567485E1971C](https://docs.fivem.net/natives/?_0x3BCF567485E1971C)
+--- @param modifierName string (char*)
+--- @param transition number (float)
+--- @return void
+--- @overload fun(modifierName: string, transition: number): void
+function SetTransitionTimecycleModifier(modifierName, transition) end
 
     
 --- ```
@@ -7887,71 +7626,6 @@ function N_0xdde23f30cc5a0f03(effectName, entity, xOffset, yOffset, zOffset, xRo
 function StartParticleFxLoopedOnEntityBone_2(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, boneIndex, scale, xAxis, yAxis, zAxis) end
 
     
---- ```
---- GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_fbi_falling_debris", 93.7743f, -749.4572f, 70.86904f, 0f, 0f, 0f, 0x3F800000, 0, 0, 0, 0)  
---- p11 seems to be always 0  
---- ```
----
---- @hash [0xE184F4F0DC5910E7](https://docs.fivem.net/natives/?_0xE184F4F0DC5910E7)
---- @param effectName string (char*)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param xRot number (float)
---- @param yRot number (float)
---- @param zRot number (float)
---- @param scale number (float)
---- @param xAxis boolean
---- @param yAxis boolean
---- @param zAxis boolean
---- @param p11 boolean
---- @return number
---- @overload fun(effectName: string, x: number, y: number, z: number, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean, p11: boolean): number
-function StartParticleFxLoopedAtCoord(effectName, x, y, z, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis, p11) end
-
-    
---- StartNetworkedParticleFxNonLoopedOnEntity
----
---- @hash [0xC95EB1DB6E92113D](https://docs.fivem.net/natives/?_0xC95EB1DB6E92113D)
---- @param effectName string (char*)
---- @param entity Entity
---- @param offsetX number (float)
---- @param offsetY number (float)
---- @param offsetZ number (float)
---- @param rotX number (float)
---- @param rotY number (float)
---- @param rotZ number (float)
---- @param scale number (float)
---- @param axisX boolean
---- @param axisY boolean
---- @param axisZ boolean
---- @return boolean
---- @overload fun(effectName: string, entity: Entity, offsetX: number, offsetY: number, offsetZ: number, rotX: number, rotY: number, rotZ: number, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
-function StartNetworkedParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, scale, axisX, axisY, axisZ) end
-
-    
---- # New Name: StartNetworkedParticleFxNonLoopedOnEntity
---- StartNetworkedParticleFxNonLoopedOnEntity
----
---- @hash [0xC95EB1DB6E92113D](https://docs.fivem.net/natives/?_0xC95EB1DB6E92113D)
---- @param effectName string (char*)
---- @param entity Entity
---- @param offsetX number (float)
---- @param offsetY number (float)
---- @param offsetZ number (float)
---- @param rotX number (float)
---- @param rotY number (float)
---- @param rotZ number (float)
---- @param scale number (float)
---- @param axisX boolean
---- @param axisY boolean
---- @param axisZ boolean
---- @return boolean
---- @overload fun(effectName: string, entity: Entity, offsetX: number, offsetY: number, offsetZ: number, rotX: number, rotY: number, rotZ: number, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
---- @deprecated
-function StartParticleFxNonLoopedOnEntity_2(effectName, entity, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, scale, axisX, axisY, axisZ) end
-
-    
 --- StartParticleFxLoopedOnEntity
 ---
 --- @hash [0x1AE42C1660FD6517](https://docs.fivem.net/natives/?_0x1AE42C1660FD6517)
@@ -7970,6 +7644,176 @@ function StartParticleFxNonLoopedOnEntity_2(effectName, entity, offsetX, offsetY
 --- @return number
 --- @overload fun(effectName: string, entity: Entity, xOffset: number, yOffset: number, zOffset: number, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): number
 function StartParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
+
+    
+--- Loads specified video sequence into the TV Channel
+--- TV_Channel ranges from 0-2
+--- VideoSequence can be any of the following:
+--- "PL_STD_CNT" CNT Standard Channel
+--- "PL_STD_WZL" Weazel Standard Channel
+--- "PL_LO_CNT"
+--- "PL_LO_WZL"
+--- "PL_SP_WORKOUT"
+--- "PL_SP_INV" - Jay Norris Assassination Mission Fail
+--- "PL_SP_INV_EXP" - Jay Norris Assassination Mission Success
+--- "PL_LO_RS" - Righteous Slaughter Ad
+--- "PL_LO_RS_CUTSCENE" - Righteous Slaughter Cut-scene
+--- "PL_SP_PLSH1\_INTRO"
+--- "PL_LES1\_FAME_OR_SHAME"
+--- "PL_STD_WZL_FOS_EP2"
+--- "PL_MP_WEAZEL" - Weazel Logo on loop
+--- "PL_MP_CCTV" - Generic CCTV loop
+--- Restart:
+--- 0=video sequence continues as normal
+--- 1=sequence restarts from beginning every time that channel is selected
+--- The above playlists work as intended, and are commonly used, but there are many more playlists, as seen in `tvplaylists.xml`. A pastebin below outlines all playlists, they will be surronded by the name tag I.E. (<Name>PL_STD_CNT</Name> = PL_STD_CNT).
+--- https://pastebin.com/zUzGB6h7
+---
+--- @hash [0xF7B38B8305F1FE8B](https://docs.fivem.net/natives/?_0xF7B38B8305F1FE8B)
+--- @param tvChannel number (int)
+--- @param playlistName string (char*)
+--- @param restart boolean
+--- @return void
+--- @overload fun(tvChannel: number, playlistName: string, restart: boolean): void
+function SetTvChannelPlaylist(tvChannel, playlistName, restart) end
+
+    
+--- # New Name: SetTvChannelPlaylist
+--- Loads specified video sequence into the TV Channel
+--- TV_Channel ranges from 0-2
+--- VideoSequence can be any of the following:
+--- "PL_STD_CNT" CNT Standard Channel
+--- "PL_STD_WZL" Weazel Standard Channel
+--- "PL_LO_CNT"
+--- "PL_LO_WZL"
+--- "PL_SP_WORKOUT"
+--- "PL_SP_INV" - Jay Norris Assassination Mission Fail
+--- "PL_SP_INV_EXP" - Jay Norris Assassination Mission Success
+--- "PL_LO_RS" - Righteous Slaughter Ad
+--- "PL_LO_RS_CUTSCENE" - Righteous Slaughter Cut-scene
+--- "PL_SP_PLSH1\_INTRO"
+--- "PL_LES1\_FAME_OR_SHAME"
+--- "PL_STD_WZL_FOS_EP2"
+--- "PL_MP_WEAZEL" - Weazel Logo on loop
+--- "PL_MP_CCTV" - Generic CCTV loop
+--- Restart:
+--- 0=video sequence continues as normal
+--- 1=sequence restarts from beginning every time that channel is selected
+--- The above playlists work as intended, and are commonly used, but there are many more playlists, as seen in `tvplaylists.xml`. A pastebin below outlines all playlists, they will be surronded by the name tag I.E. (<Name>PL_STD_CNT</Name> = PL_STD_CNT).
+--- https://pastebin.com/zUzGB6h7
+---
+--- @hash [0xF7B38B8305F1FE8B](https://docs.fivem.net/natives/?_0xF7B38B8305F1FE8B)
+--- @param tvChannel number (int)
+--- @param playlistName string (char*)
+--- @param restart boolean
+--- @return void
+--- @overload fun(tvChannel: number, playlistName: string, restart: boolean): void
+--- @deprecated
+function N_0xf7b38b8305f1fe8b(tvChannel, playlistName, restart) end
+
+    
+--- # New Name: SetTvChannelPlaylist
+--- Loads specified video sequence into the TV Channel
+--- TV_Channel ranges from 0-2
+--- VideoSequence can be any of the following:
+--- "PL_STD_CNT" CNT Standard Channel
+--- "PL_STD_WZL" Weazel Standard Channel
+--- "PL_LO_CNT"
+--- "PL_LO_WZL"
+--- "PL_SP_WORKOUT"
+--- "PL_SP_INV" - Jay Norris Assassination Mission Fail
+--- "PL_SP_INV_EXP" - Jay Norris Assassination Mission Success
+--- "PL_LO_RS" - Righteous Slaughter Ad
+--- "PL_LO_RS_CUTSCENE" - Righteous Slaughter Cut-scene
+--- "PL_SP_PLSH1\_INTRO"
+--- "PL_LES1\_FAME_OR_SHAME"
+--- "PL_STD_WZL_FOS_EP2"
+--- "PL_MP_WEAZEL" - Weazel Logo on loop
+--- "PL_MP_CCTV" - Generic CCTV loop
+--- Restart:
+--- 0=video sequence continues as normal
+--- 1=sequence restarts from beginning every time that channel is selected
+--- The above playlists work as intended, and are commonly used, but there are many more playlists, as seen in `tvplaylists.xml`. A pastebin below outlines all playlists, they will be surronded by the name tag I.E. (<Name>PL_STD_CNT</Name> = PL_STD_CNT).
+--- https://pastebin.com/zUzGB6h7
+---
+--- @hash [0xF7B38B8305F1FE8B](https://docs.fivem.net/natives/?_0xF7B38B8305F1FE8B)
+--- @param tvChannel number (int)
+--- @param playlistName string (char*)
+--- @param restart boolean
+--- @return void
+--- @overload fun(tvChannel: number, playlistName: string, restart: boolean): void
+--- @deprecated
+function LoadTvChannelSequence(tvChannel, playlistName, restart) end
+
+    
+--- ```
+--- network fx  
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 12: BOOL p11
+--- ```
+---
+--- @hash [0xF56B8137DF10135D](https://docs.fivem.net/natives/?_0xF56B8137DF10135D)
+--- @param effectName string (char*)
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param zPos number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param scale number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
+--- @return boolean
+--- @overload fun(effectName: string, xPos: number, yPos: number, zPos: number, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): boolean
+function StartNetworkedParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
+
+    
+--- # New Name: StartNetworkedParticleFxNonLoopedAtCoord
+--- ```
+--- network fx  
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 12: BOOL p11
+--- ```
+---
+--- @hash [0xF56B8137DF10135D](https://docs.fivem.net/natives/?_0xF56B8137DF10135D)
+--- @param effectName string (char*)
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param zPos number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param scale number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
+--- @return boolean
+--- @overload fun(effectName: string, xPos: number, yPos: number, zPos: number, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): boolean
+--- @deprecated
+function StartParticleFxNonLoopedAtCoord_2(effectName, xPos, yPos, zPos, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
+
+    
+--- SetTvVolume
+---
+--- @hash [0x2982BF73F66E9DDC](https://docs.fivem.net/natives/?_0x2982BF73F66E9DDC)
+--- @param volume number (float)
+--- @return void
+--- @overload fun(volume: number): void
+function SetTvVolume(volume) end
+
+    
+--- SetTvChannel
+---
+--- @hash [0xBAABBB23EB6E484E](https://docs.fivem.net/natives/?_0xBAABBB23EB6E484E)
+--- @param channel number (int)
+--- @return void
+--- @overload fun(channel: number): void
+function SetTvChannel(channel) end
 
     
 --- StartNetworkedParticleFxNonLoopedOnPedBone
@@ -8016,9 +7860,18 @@ function StartNetworkedParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, of
 function StartParticleFxNonLoopedOnPedBone_2(effectName, ped, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, boneIndex, scale, axisX, axisY, axisZ) end
 
     
---- StartParticleFxLoopedOnEntityBone
+--- ```
+--- network fx  
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 13: Any p12
+--- NativeDB Added Parameter 14: Any p13
+--- NativeDB Added Parameter 15: Any p14
+--- NativeDB Added Parameter 16: Any p15
+--- ```
 ---
---- @hash [0xC6EB449E33977F0B](https://docs.fivem.net/natives/?_0xC6EB449E33977F0B)
+--- @hash [0x6F60E89A7B64EE1D](https://docs.fivem.net/natives/?_0x6F60E89A7B64EE1D)
 --- @param effectName string (char*)
 --- @param entity Entity
 --- @param xOffset number (float)
@@ -8027,14 +7880,86 @@ function StartParticleFxNonLoopedOnPedBone_2(effectName, ped, offsetX, offsetY, 
 --- @param xRot number (float)
 --- @param yRot number (float)
 --- @param zRot number (float)
---- @param boneIndex number (int)
 --- @param scale number (float)
 --- @param xAxis boolean
 --- @param yAxis boolean
 --- @param zAxis boolean
 --- @return number
---- @overload fun(effectName: string, entity: Entity, xOffset: number, yOffset: number, zOffset: number, xRot: number, yRot: number, zRot: number, boneIndex: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): number
-function StartParticleFxLoopedOnEntityBone(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, boneIndex, scale, xAxis, yAxis, zAxis) end
+--- @overload fun(effectName: string, entity: Entity, xOffset: number, yOffset: number, zOffset: number, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): number
+function StartNetworkedParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
+
+    
+--- # New Name: StartNetworkedParticleFxLoopedOnEntity
+--- ```
+--- network fx  
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 13: Any p12
+--- NativeDB Added Parameter 14: Any p13
+--- NativeDB Added Parameter 15: Any p14
+--- NativeDB Added Parameter 16: Any p15
+--- ```
+---
+--- @hash [0x6F60E89A7B64EE1D](https://docs.fivem.net/natives/?_0x6F60E89A7B64EE1D)
+--- @param effectName string (char*)
+--- @param entity Entity
+--- @param xOffset number (float)
+--- @param yOffset number (float)
+--- @param zOffset number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param scale number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
+--- @return number
+--- @overload fun(effectName: string, entity: Entity, xOffset: number, yOffset: number, zOffset: number, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): number
+--- @deprecated
+function N_0x6f60e89a7b64ee1d(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
+
+    
+--- # New Name: StartNetworkedParticleFxLoopedOnEntity
+--- ```
+--- network fx  
+--- ```
+--- 
+--- ```
+--- NativeDB Added Parameter 13: Any p12
+--- NativeDB Added Parameter 14: Any p13
+--- NativeDB Added Parameter 15: Any p14
+--- NativeDB Added Parameter 16: Any p15
+--- ```
+---
+--- @hash [0x6F60E89A7B64EE1D](https://docs.fivem.net/natives/?_0x6F60E89A7B64EE1D)
+--- @param effectName string (char*)
+--- @param entity Entity
+--- @param xOffset number (float)
+--- @param yOffset number (float)
+--- @param zOffset number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param scale number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
+--- @return number
+--- @overload fun(effectName: string, entity: Entity, xOffset: number, yOffset: number, zOffset: number, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): number
+--- @deprecated
+function StartParticleFxLoopedOnEntity_2(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
+
+    
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0x63606A61DE68898A](https://docs.fivem.net/natives/?_0x63606A61DE68898A)
+--- @param binkMovie number (int)
+--- @return void
+--- @overload fun(binkMovie: number): void
+function StopBinkMovie(binkMovie) end
 
     
 --- ```
@@ -8070,6 +7995,112 @@ function StartParticleFxLoopedOnEntityBone(effectName, entity, xOffset, yOffset,
 function StartParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
 
     
+--- StartPetrolTrailDecals
+---
+--- @hash [0x99AC7F0D8B9C893D](https://docs.fivem.net/natives/?_0x99AC7F0D8B9C893D)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+function StartPetrolTrailDecals(p0) end
+
+    
+--- # New Name: StartPetrolTrailDecals
+--- StartPetrolTrailDecals
+---
+--- @hash [0x99AC7F0D8B9C893D](https://docs.fivem.net/natives/?_0x99AC7F0D8B9C893D)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+--- @deprecated
+function N_0x99ac7f0d8b9c893d(p0) end
+
+    
+--- StartNetworkedParticleFxNonLoopedOnEntity
+---
+--- @hash [0xC95EB1DB6E92113D](https://docs.fivem.net/natives/?_0xC95EB1DB6E92113D)
+--- @param effectName string (char*)
+--- @param entity Entity
+--- @param offsetX number (float)
+--- @param offsetY number (float)
+--- @param offsetZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param scale number (float)
+--- @param axisX boolean
+--- @param axisY boolean
+--- @param axisZ boolean
+--- @return boolean
+--- @overload fun(effectName: string, entity: Entity, offsetX: number, offsetY: number, offsetZ: number, rotX: number, rotY: number, rotZ: number, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+function StartNetworkedParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, scale, axisX, axisY, axisZ) end
+
+    
+--- # New Name: StartNetworkedParticleFxNonLoopedOnEntity
+--- StartNetworkedParticleFxNonLoopedOnEntity
+---
+--- @hash [0xC95EB1DB6E92113D](https://docs.fivem.net/natives/?_0xC95EB1DB6E92113D)
+--- @param effectName string (char*)
+--- @param entity Entity
+--- @param offsetX number (float)
+--- @param offsetY number (float)
+--- @param offsetZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param scale number (float)
+--- @param axisX boolean
+--- @param axisY boolean
+--- @param axisZ boolean
+--- @return boolean
+--- @overload fun(effectName: string, entity: Entity, offsetX: number, offsetY: number, offsetZ: number, rotX: number, rotY: number, rotZ: number, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+--- @deprecated
+function StartParticleFxNonLoopedOnEntity_2(effectName, entity, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, scale, axisX, axisY, axisZ) end
+
+    
+--- ```
+--- GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_fbi_falling_debris", 93.7743f, -749.4572f, 70.86904f, 0f, 0f, 0f, 0x3F800000, 0, 0, 0, 0)  
+--- p11 seems to be always 0  
+--- ```
+---
+--- @hash [0xE184F4F0DC5910E7](https://docs.fivem.net/natives/?_0xE184F4F0DC5910E7)
+--- @param effectName string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param scale number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
+--- @param p11 boolean
+--- @return number
+--- @overload fun(effectName: string, x: number, y: number, z: number, xRot: number, yRot: number, zRot: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean, p11: boolean): number
+function StartParticleFxLoopedAtCoord(effectName, x, y, z, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis, p11) end
+
+    
+--- StartParticleFxLoopedOnEntityBone
+---
+--- @hash [0xC6EB449E33977F0B](https://docs.fivem.net/natives/?_0xC6EB449E33977F0B)
+--- @param effectName string (char*)
+--- @param entity Entity
+--- @param xOffset number (float)
+--- @param yOffset number (float)
+--- @param zOffset number (float)
+--- @param xRot number (float)
+--- @param yRot number (float)
+--- @param zRot number (float)
+--- @param boneIndex number (int)
+--- @param scale number (float)
+--- @param xAxis boolean
+--- @param yAxis boolean
+--- @param zAxis boolean
+--- @return number
+--- @overload fun(effectName: string, entity: Entity, xOffset: number, yOffset: number, zOffset: number, xRot: number, yRot: number, zRot: number, boneIndex: number, scale: number, xAxis: boolean, yAxis: boolean, zAxis: boolean): number
+function StartParticleFxLoopedOnEntityBone(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, boneIndex, scale, xAxis, yAxis, zAxis) end
+
+    
 --- StartParticleFxLoopedOnPedBone
 ---
 --- @hash [0xF28DA9F38CD1787C](https://docs.fivem.net/natives/?_0xF28DA9F38CD1787C)
@@ -8092,59 +8123,6 @@ function StartParticleFxLoopedOnPedBone(effectName, ped, xOffset, yOffset, zOffs
 
     
 --- ```
---- GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_bong_smoke", PLAYER::PLAYER_PED_ID(), -0.025f, 0.13f, 0f, 0f, 0f, 0f, 31086, 0x3F800000, 0, 0, 0);  
---- Axis - Invert Axis Flags  
---- list: pastebin.com/N9unUFWY  
---- ```
----
---- @hash [0x0E7E72961BA18619](https://docs.fivem.net/natives/?_0x0E7E72961BA18619)
---- @param effectName string (char*)
---- @param ped Ped
---- @param offsetX number (float)
---- @param offsetY number (float)
---- @param offsetZ number (float)
---- @param rotX number (float)
---- @param rotY number (float)
---- @param rotZ number (float)
---- @param boneIndex number (int)
---- @param scale number (float)
---- @param axisX boolean
---- @param axisY boolean
---- @param axisZ boolean
---- @return boolean
---- @overload fun(effectName: string, ped: Ped, offsetX: number, offsetY: number, offsetZ: number, rotX: number, rotY: number, rotZ: number, boneIndex: number, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
-function StartParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, boneIndex, scale, axisX, axisY, axisZ) end
-
-    
---- ```
---- Starts a particle effect on an entity for example your player.  
---- List: pastebin.com/N9unUFWY  
---- Example:  
---- C#:  
---- Function.Call(Hash.REQUEST_NAMED_PTFX_ASSET, "scr_rcbarry2");                     Function.Call(Hash._SET_PTFX_ASSET_NEXT_CALL, "scr_rcbarry2");                             Function.Call(Hash.START_PARTICLE_FX_NON_LOOPED_ON_ENTITY, "scr_clown_appears", Game.Player.Character, 0.0, 0.0, -0.5, 0.0, 0.0, 0.0, 1.0, false, false, false);  
---- Internally this calls the same function as GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE  
---- however it uses -1 for the specified bone index, so it should be possible to start a non looped fx on an entity bone using that native  
---- ```
----
---- @hash [0x0D53A3B8DA0809D2](https://docs.fivem.net/natives/?_0x0D53A3B8DA0809D2)
---- @param effectName string (char*)
---- @param entity Entity
---- @param offsetX number (float)
---- @param offsetY number (float)
---- @param offsetZ number (float)
---- @param rotX number (float)
---- @param rotY number (float)
---- @param rotZ number (float)
---- @param scale number (float)
---- @param axisX boolean
---- @param axisY boolean
---- @param axisZ boolean
---- @return boolean
---- @overload fun(effectName: string, entity: Entity, offsetX: number, offsetY: number, offsetZ: number, rotX: number, rotY: number, rotZ: number, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
-function StartParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, scale, axisX, axisY, axisZ) end
-
-    
---- ```
 --- p1 is always 0 in the native scripts  
 --- ```
 ---
@@ -8156,57 +8134,35 @@ function StartParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, 
 function StopParticleFxLooped(ptfxHandle, p1) end
 
     
---- StartPetrolTrailDecals
+--- UpdateLightsOnEntity
 ---
---- @hash [0x99AC7F0D8B9C893D](https://docs.fivem.net/natives/?_0x99AC7F0D8B9C893D)
---- @param p0 number (float)
+--- @hash [0xDEADC0DEDEADC0DE](https://docs.fivem.net/natives/?_0xDEADC0DEDEADC0DE)
+--- @param entity Entity
 --- @return void
---- @overload fun(p0: number): void
-function StartPetrolTrailDecals(p0) end
+--- @overload fun(entity: Entity): void
+function UpdateLightsOnEntity(entity) end
 
     
---- # New Name: StartPetrolTrailDecals
---- StartPetrolTrailDecals
+--- # New Name: UpdateLightsOnEntity
+--- UpdateLightsOnEntity
 ---
---- @hash [0x99AC7F0D8B9C893D](https://docs.fivem.net/natives/?_0x99AC7F0D8B9C893D)
---- @param p0 number (float)
+--- @hash [0xDEADC0DEDEADC0DE](https://docs.fivem.net/natives/?_0xDEADC0DEDEADC0DE)
+--- @param entity Entity
 --- @return void
---- @overload fun(p0: number): void
+--- @overload fun(entity: Entity): void
 --- @deprecated
-function N_0x99ac7f0d8b9c893d(p0) end
+function N_0xdeadc0dedeadc0de(entity) end
 
     
---- This native enables/disables the gold putting grid display (https://i.imgur.com/TC6cku6.png).
---- This requires these two natives to be called as well to configure the grid: [`0x1c4fc5752bcd8e48`](https://runtime.fivem.net/doc/reference.html#\_0x1C4FC5752BCD8E48) and [`0x5ce62918f8d703c7`](https://runtime.fivem.net/doc/reference.html#\_0x5CE62918F8D703C7).
+--- # New Name: UpdateLightsOnEntity
+--- UpdateLightsOnEntity
 ---
---- @hash [0xA356990E161C9E65](https://docs.fivem.net/natives/?_0xA356990E161C9E65)
---- @param toggle boolean
+--- @hash [0xDEADC0DEDEADC0DE](https://docs.fivem.net/natives/?_0xDEADC0DEDEADC0DE)
+--- @param entity Entity
 --- @return void
---- @overload fun(toggle: boolean): void
-function TerraingridActivate(toggle) end
-
-    
---- # New Name: TerraingridActivate
---- This native enables/disables the gold putting grid display (https://i.imgur.com/TC6cku6.png).
---- This requires these two natives to be called as well to configure the grid: [`0x1c4fc5752bcd8e48`](https://runtime.fivem.net/doc/reference.html#\_0x1C4FC5752BCD8E48) and [`0x5ce62918f8d703c7`](https://runtime.fivem.net/doc/reference.html#\_0x5CE62918F8D703C7).
----
---- @hash [0xA356990E161C9E65](https://docs.fivem.net/natives/?_0xA356990E161C9E65)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
+--- @overload fun(entity: Entity): void
 --- @deprecated
-function N_0xa356990e161c9e65(toggle) end
-
-    
---- ```
---- NativeDB Introduced: v1290
---- ```
----
---- @hash [0x63606A61DE68898A](https://docs.fivem.net/natives/?_0x63606A61DE68898A)
---- @param binkMovie number (int)
---- @return void
---- @overload fun(binkMovie: number): void
-function StopBinkMovie(binkMovie) end
+function EntityDescriptionText(entity) end
 
     
 --- This native is used along with these two natives: [`0xa356990e161c9e65`](https://runtime.fivem.net/doc/reference.html#\_0xA356990E161C9E65) and [`0x5ce62918f8d703c7`](https://runtime.fivem.net/doc/reference.html#\_0x5CE62918F8D703C7).
@@ -8259,6 +8215,172 @@ function TerraingridSetParams(x, y, z, p3, rotation, p5, width, height, p8, scal
 --- @overload fun(x: number, y: number, z: number, p3: number, rotation: number, p5: number, width: number, height: number, p8: number, scale: number, glowIntensity: number, normalHeight: number, heightDiff: number): void
 --- @deprecated
 function N_0x1c4fc5752bcd8e48(x, y, z, p3, rotation, p5, width, height, p8, scale, glowIntensity, normalHeight, heightDiff) end
+
+    
+--- ```
+--- GRAPHICS::UNPATCH_DECAL_DIFFUSE_MAP(9123);  
+--- GRAPHICS::SET_STREAMED_TEXTURE_DICT_AS_NO_LONGER_NEEDED("MPMissMarkers256");  
+--- ```
+---
+--- @hash [0xB7ED70C49521A61D](https://docs.fivem.net/natives/?_0xB7ED70C49521A61D)
+--- @param decalType number (int)
+--- @return void
+--- @overload fun(decalType: number): void
+function UnpatchDecalDiffuseMap(decalType) end
+
+    
+--- # New Name: UnpatchDecalDiffuseMap
+--- ```
+--- GRAPHICS::UNPATCH_DECAL_DIFFUSE_MAP(9123);  
+--- GRAPHICS::SET_STREAMED_TEXTURE_DICT_AS_NO_LONGER_NEEDED("MPMissMarkers256");  
+--- ```
+---
+--- @hash [0xB7ED70C49521A61D](https://docs.fivem.net/natives/?_0xB7ED70C49521A61D)
+--- @param decalType number (int)
+--- @return void
+--- @overload fun(decalType: number): void
+--- @deprecated
+function N_0xb7ed70c49521a61d(decalType) end
+
+    
+--- # New Name: UnpatchDecalDiffuseMap
+--- ```
+--- GRAPHICS::UNPATCH_DECAL_DIFFUSE_MAP(9123);  
+--- GRAPHICS::SET_STREAMED_TEXTURE_DICT_AS_NO_LONGER_NEEDED("MPMissMarkers256");  
+--- ```
+---
+--- @hash [0xB7ED70C49521A61D](https://docs.fivem.net/natives/?_0xB7ED70C49521A61D)
+--- @param decalType number (int)
+--- @return void
+--- @overload fun(decalType: number): void
+--- @deprecated
+function UndoDecalTextureOverride(decalType) end
+
+    
+--- ```
+--- GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_bong_smoke", PLAYER::PLAYER_PED_ID(), -0.025f, 0.13f, 0f, 0f, 0f, 0f, 31086, 0x3F800000, 0, 0, 0);  
+--- Axis - Invert Axis Flags  
+--- list: pastebin.com/N9unUFWY  
+--- ```
+---
+--- @hash [0x0E7E72961BA18619](https://docs.fivem.net/natives/?_0x0E7E72961BA18619)
+--- @param effectName string (char*)
+--- @param ped Ped
+--- @param offsetX number (float)
+--- @param offsetY number (float)
+--- @param offsetZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param boneIndex number (int)
+--- @param scale number (float)
+--- @param axisX boolean
+--- @param axisY boolean
+--- @param axisZ boolean
+--- @return boolean
+--- @overload fun(effectName: string, ped: Ped, offsetX: number, offsetY: number, offsetZ: number, rotX: number, rotY: number, rotZ: number, boneIndex: number, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+function StartParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, boneIndex, scale, axisX, axisY, axisZ) end
+
+    
+--- This native enables/disables the gold putting grid display (https://i.imgur.com/TC6cku6.png).
+--- This requires these two natives to be called as well to configure the grid: [`0x1c4fc5752bcd8e48`](https://runtime.fivem.net/doc/reference.html#\_0x1C4FC5752BCD8E48) and [`0x5ce62918f8d703c7`](https://runtime.fivem.net/doc/reference.html#\_0x5CE62918F8D703C7).
+---
+--- @hash [0xA356990E161C9E65](https://docs.fivem.net/natives/?_0xA356990E161C9E65)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function TerraingridActivate(toggle) end
+
+    
+--- # New Name: TerraingridActivate
+--- This native enables/disables the gold putting grid display (https://i.imgur.com/TC6cku6.png).
+--- This requires these two natives to be called as well to configure the grid: [`0x1c4fc5752bcd8e48`](https://runtime.fivem.net/doc/reference.html#\_0x1C4FC5752BCD8E48) and [`0x5ce62918f8d703c7`](https://runtime.fivem.net/doc/reference.html#\_0x5CE62918F8D703C7).
+---
+--- @hash [0xA356990E161C9E65](https://docs.fivem.net/natives/?_0xA356990E161C9E65)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function N_0xa356990e161c9e65(toggle) end
+
+    
+--- TriggerScreenblurFadeIn
+---
+--- @hash [0xA328A24AAA6B7FDC](https://docs.fivem.net/natives/?_0xA328A24AAA6B7FDC)
+--- @param transitionTime number (float)
+--- @return boolean
+--- @overload fun(transitionTime: number): boolean
+function TriggerScreenblurFadeIn(transitionTime) end
+
+    
+--- # New Name: TriggerScreenblurFadeIn
+--- TriggerScreenblurFadeIn
+---
+--- @hash [0xA328A24AAA6B7FDC](https://docs.fivem.net/natives/?_0xA328A24AAA6B7FDC)
+--- @param transitionTime number (float)
+--- @return boolean
+--- @overload fun(transitionTime: number): boolean
+--- @deprecated
+function TransitionToBlurred(transitionTime) end
+
+    
+--- TogglePausedRenderphases
+---
+--- @hash [0xDFC252D8A3E15AB7](https://docs.fivem.net/natives/?_0xDFC252D8A3E15AB7)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function TogglePausedRenderphases(toggle) end
+
+    
+--- # New Name: TogglePausedRenderphases
+--- TogglePausedRenderphases
+---
+--- @hash [0xDFC252D8A3E15AB7](https://docs.fivem.net/natives/?_0xDFC252D8A3E15AB7)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function EnableGameplayCam(toggle) end
+
+    
+--- # New Name: TogglePausedRenderphases
+--- TogglePausedRenderphases
+---
+--- @hash [0xDFC252D8A3E15AB7](https://docs.fivem.net/natives/?_0xDFC252D8A3E15AB7)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function SetFrozenRenderingDisabled(toggle) end
+
+    
+--- ```
+--- Starts a particle effect on an entity for example your player.  
+--- List: pastebin.com/N9unUFWY  
+--- Example:  
+--- C#:  
+--- Function.Call(Hash.REQUEST_NAMED_PTFX_ASSET, "scr_rcbarry2");                     Function.Call(Hash._SET_PTFX_ASSET_NEXT_CALL, "scr_rcbarry2");                             Function.Call(Hash.START_PARTICLE_FX_NON_LOOPED_ON_ENTITY, "scr_clown_appears", Game.Player.Character, 0.0, 0.0, -0.5, 0.0, 0.0, 0.0, 1.0, false, false, false);  
+--- Internally this calls the same function as GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE  
+--- however it uses -1 for the specified bone index, so it should be possible to start a non looped fx on an entity bone using that native  
+--- ```
+---
+--- @hash [0x0D53A3B8DA0809D2](https://docs.fivem.net/natives/?_0x0D53A3B8DA0809D2)
+--- @param effectName string (char*)
+--- @param entity Entity
+--- @param offsetX number (float)
+--- @param offsetY number (float)
+--- @param offsetZ number (float)
+--- @param rotX number (float)
+--- @param rotY number (float)
+--- @param rotZ number (float)
+--- @param scale number (float)
+--- @param axisX boolean
+--- @param axisY boolean
+--- @param axisZ boolean
+--- @return boolean
+--- @overload fun(effectName: string, entity: Entity, offsetX: number, offsetY: number, offsetZ: number, rotX: number, rotY: number, rotZ: number, scale: number, axisX: boolean, axisY: boolean, axisZ: boolean): boolean
+function StartParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, scale, axisX, axisY, axisZ) end
 
     
 --- This native is used along with these two natives: [`0xa356990e161c9e65`](https://runtime.fivem.net/doc/reference.html#\_0xA356990E161C9E65) and [`0x1c4fc5752bcd8e48`](https://runtime.fivem.net/doc/reference.html#\_0x1C4FC5752BCD8E48).
@@ -8317,75 +8439,27 @@ function TerraingridSetColours(lowR, lowG, lowB, lowAlpha, R, G, B, Alpha, highR
 function N_0x5ce62918f8d703c7(lowR, lowG, lowB, lowAlpha, R, G, B, Alpha, highR, highG, highB, highAlpha) end
 
     
---- TogglePausedRenderphases
+--- WashDecalsFromVehicle
 ---
---- @hash [0xDFC252D8A3E15AB7](https://docs.fivem.net/natives/?_0xDFC252D8A3E15AB7)
---- @param toggle boolean
+--- @hash [0x5B712761429DBC14](https://docs.fivem.net/natives/?_0x5B712761429DBC14)
+--- @param vehicle Vehicle
+--- @param p1 number (float)
 --- @return void
---- @overload fun(toggle: boolean): void
-function TogglePausedRenderphases(toggle) end
+--- @overload fun(vehicle: Vehicle, p1: number): void
+function WashDecalsFromVehicle(vehicle, p1) end
 
     
---- # New Name: TogglePausedRenderphases
---- TogglePausedRenderphases
+--- WashDecalsInRange
 ---
---- @hash [0xDFC252D8A3E15AB7](https://docs.fivem.net/natives/?_0xDFC252D8A3E15AB7)
---- @param toggle boolean
+--- @hash [0x9C30613D50A6ADEF](https://docs.fivem.net/natives/?_0x9C30613D50A6ADEF)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
 --- @return void
---- @overload fun(toggle: boolean): void
---- @deprecated
-function EnableGameplayCam(toggle) end
-
-    
---- # New Name: TogglePausedRenderphases
---- TogglePausedRenderphases
----
---- @hash [0xDFC252D8A3E15AB7](https://docs.fivem.net/natives/?_0xDFC252D8A3E15AB7)
---- @param toggle boolean
---- @return void
---- @overload fun(toggle: boolean): void
---- @deprecated
-function SetFrozenRenderingDisabled(toggle) end
-
-    
---- TriggerScreenblurFadeOut
----
---- @hash [0xEFACC8AEF94430D5](https://docs.fivem.net/natives/?_0xEFACC8AEF94430D5)
---- @param transitionTime number (float)
---- @return boolean
---- @overload fun(transitionTime: number): boolean
-function TriggerScreenblurFadeOut(transitionTime) end
-
-    
---- # New Name: TriggerScreenblurFadeOut
---- TriggerScreenblurFadeOut
----
---- @hash [0xEFACC8AEF94430D5](https://docs.fivem.net/natives/?_0xEFACC8AEF94430D5)
---- @param transitionTime number (float)
---- @return boolean
---- @overload fun(transitionTime: number): boolean
---- @deprecated
-function TransitionFromBlurred(transitionTime) end
-
-    
---- TriggerScreenblurFadeIn
----
---- @hash [0xA328A24AAA6B7FDC](https://docs.fivem.net/natives/?_0xA328A24AAA6B7FDC)
---- @param transitionTime number (float)
---- @return boolean
---- @overload fun(transitionTime: number): boolean
-function TriggerScreenblurFadeIn(transitionTime) end
-
-    
---- # New Name: TriggerScreenblurFadeIn
---- TriggerScreenblurFadeIn
----
---- @hash [0xA328A24AAA6B7FDC](https://docs.fivem.net/natives/?_0xA328A24AAA6B7FDC)
---- @param transitionTime number (float)
---- @return boolean
---- @overload fun(transitionTime: number): boolean
---- @deprecated
-function TransitionToBlurred(transitionTime) end
+--- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any): void
+function WashDecalsInRange(p0, p1, p2, p3, p4) end
 
     
 --- Ui3dsceneIsAvailable
@@ -8430,87 +8504,6 @@ function Ui3dscenePushPreset(presetName) end
 --- @overload fun(presetName: string): boolean
 --- @deprecated
 function N_0xf1cea8a4198d8e9a(presetName) end
-
-    
---- UpdateLightsOnEntity
----
---- @hash [0xDEADC0DEDEADC0DE](https://docs.fivem.net/natives/?_0xDEADC0DEDEADC0DE)
---- @param entity Entity
---- @return void
---- @overload fun(entity: Entity): void
-function UpdateLightsOnEntity(entity) end
-
-    
---- # New Name: UpdateLightsOnEntity
---- UpdateLightsOnEntity
----
---- @hash [0xDEADC0DEDEADC0DE](https://docs.fivem.net/natives/?_0xDEADC0DEDEADC0DE)
---- @param entity Entity
---- @return void
---- @overload fun(entity: Entity): void
---- @deprecated
-function N_0xdeadc0dedeadc0de(entity) end
-
-    
---- # New Name: UpdateLightsOnEntity
---- UpdateLightsOnEntity
----
---- @hash [0xDEADC0DEDEADC0DE](https://docs.fivem.net/natives/?_0xDEADC0DEDEADC0DE)
---- @param entity Entity
---- @return void
---- @overload fun(entity: Entity): void
---- @deprecated
-function EntityDescriptionText(entity) end
-
-    
---- ```
---- GRAPHICS::UNPATCH_DECAL_DIFFUSE_MAP(9123);  
---- GRAPHICS::SET_STREAMED_TEXTURE_DICT_AS_NO_LONGER_NEEDED("MPMissMarkers256");  
---- ```
----
---- @hash [0xB7ED70C49521A61D](https://docs.fivem.net/natives/?_0xB7ED70C49521A61D)
---- @param decalType number (int)
---- @return void
---- @overload fun(decalType: number): void
-function UnpatchDecalDiffuseMap(decalType) end
-
-    
---- # New Name: UnpatchDecalDiffuseMap
---- ```
---- GRAPHICS::UNPATCH_DECAL_DIFFUSE_MAP(9123);  
---- GRAPHICS::SET_STREAMED_TEXTURE_DICT_AS_NO_LONGER_NEEDED("MPMissMarkers256");  
---- ```
----
---- @hash [0xB7ED70C49521A61D](https://docs.fivem.net/natives/?_0xB7ED70C49521A61D)
---- @param decalType number (int)
---- @return void
---- @overload fun(decalType: number): void
---- @deprecated
-function N_0xb7ed70c49521a61d(decalType) end
-
-    
---- # New Name: UnpatchDecalDiffuseMap
---- ```
---- GRAPHICS::UNPATCH_DECAL_DIFFUSE_MAP(9123);  
---- GRAPHICS::SET_STREAMED_TEXTURE_DICT_AS_NO_LONGER_NEEDED("MPMissMarkers256");  
---- ```
----
---- @hash [0xB7ED70C49521A61D](https://docs.fivem.net/natives/?_0xB7ED70C49521A61D)
---- @param decalType number (int)
---- @return void
---- @overload fun(decalType: number): void
---- @deprecated
-function UndoDecalTextureOverride(decalType) end
-
-    
---- WashDecalsFromVehicle
----
---- @hash [0x5B712761429DBC14](https://docs.fivem.net/natives/?_0x5B712761429DBC14)
---- @param vehicle Vehicle
---- @param p1 number (float)
---- @return void
---- @overload fun(vehicle: Vehicle, p1: number): void
-function WashDecalsFromVehicle(vehicle, p1) end
 
     
 --- ```
@@ -8571,16 +8564,23 @@ function SetPtfxAssetNextCall(name) end
 function UseParticleFxAssetNextCall(name) end
 
     
---- WashDecalsInRange
+--- TriggerScreenblurFadeOut
 ---
---- @hash [0x9C30613D50A6ADEF](https://docs.fivem.net/natives/?_0x9C30613D50A6ADEF)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @param p4 any
---- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any): void
-function WashDecalsInRange(p0, p1, p2, p3, p4) end
+--- @hash [0xEFACC8AEF94430D5](https://docs.fivem.net/natives/?_0xEFACC8AEF94430D5)
+--- @param transitionTime number (float)
+--- @return boolean
+--- @overload fun(transitionTime: number): boolean
+function TriggerScreenblurFadeOut(transitionTime) end
+
+    
+--- # New Name: TriggerScreenblurFadeOut
+--- TriggerScreenblurFadeOut
+---
+--- @hash [0xEFACC8AEF94430D5](https://docs.fivem.net/natives/?_0xEFACC8AEF94430D5)
+--- @param transitionTime number (float)
+--- @return boolean
+--- @overload fun(transitionTime: number): boolean
+--- @deprecated
+function TransitionFromBlurred(transitionTime) end
 
     
