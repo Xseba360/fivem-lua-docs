@@ -48,21 +48,43 @@ function N_0x015c49a93e3e086e(toggle) end
 function DisablePhoneThisFrame(toggle) end
 
     
---- N_0x15e69e2802c24b8d
+--- CellCamSetRoll
 ---
 --- @hash [0x15E69E2802C24B8D](https://docs.fivem.net/natives/?_0x15E69E2802C24B8D)
 --- @param p0 number (float)
 --- @return void
 --- @overload fun(p0: number): void
+function CellCamSetRoll(p0) end
+
+    
+--- # New Name: CellCamSetRoll
+--- CellCamSetRoll
+---
+--- @hash [0x15E69E2802C24B8D](https://docs.fivem.net/natives/?_0x15E69E2802C24B8D)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+--- @deprecated
 function N_0x15e69e2802c24b8d(p0) end
 
     
---- N_0x1b0b4aeed5b9b41c
+--- CellCamSetHorizontalOffset
 ---
 --- @hash [0x1B0B4AEED5B9B41C](https://docs.fivem.net/natives/?_0x1B0B4AEED5B9B41C)
 --- @param p0 number (float)
 --- @return void
 --- @overload fun(p0: number): void
+function CellCamSetHorizontalOffset(p0) end
+
+    
+--- # New Name: CellCamSetHorizontalOffset
+--- CellCamSetHorizontalOffset
+---
+--- @hash [0x1B0B4AEED5B9B41C](https://docs.fivem.net/natives/?_0x1B0B4AEED5B9B41C)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+--- @deprecated
 function N_0x1b0b4aeed5b9b41c(p0) end
 
     
@@ -76,12 +98,23 @@ function N_0x1b0b4aeed5b9b41c(p0) end
 function GetMobilePhoneRotation(rotation, p1) end
 
     
---- N_0x3117d84efa60f77b
+--- CellCamSetVerticalOffset
 ---
 --- @hash [0x3117D84EFA60F77B](https://docs.fivem.net/natives/?_0x3117D84EFA60F77B)
 --- @param p0 number (float)
 --- @return void
 --- @overload fun(p0: number): void
+function CellCamSetVerticalOffset(p0) end
+
+    
+--- # New Name: CellCamSetVerticalOffset
+--- CellCamSetVerticalOffset
+---
+--- @hash [0x3117D84EFA60F77B](https://docs.fivem.net/natives/?_0x3117D84EFA60F77B)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+--- @deprecated
 function N_0x3117d84efa60f77b(p0) end
 
     
@@ -151,21 +184,43 @@ function CellCamSetLean(toggle) end
 function SetPhoneLean(toggle) end
 
     
---- N_0x466da42c89865553
+--- CellCamSetHeadHeight
 ---
 --- @hash [0x466DA42C89865553](https://docs.fivem.net/natives/?_0x466DA42C89865553)
 --- @param p0 number (float)
 --- @return void
 --- @overload fun(p0: number): void
+function CellCamSetHeadHeight(p0) end
+
+    
+--- # New Name: CellCamSetHeadHeight
+--- CellCamSetHeadHeight
+---
+--- @hash [0x466DA42C89865553](https://docs.fivem.net/natives/?_0x466DA42C89865553)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+--- @deprecated
 function N_0x466da42c89865553(p0) end
 
     
---- N_0x53f4892d18ec90a4
+--- CellCamSetDistance
 ---
 --- @hash [0x53F4892D18EC90A4](https://docs.fivem.net/natives/?_0x53F4892D18EC90A4)
 --- @param p0 number (float)
 --- @return void
 --- @overload fun(p0: number): void
+function CellCamSetDistance(p0) end
+
+    
+--- # New Name: CellCamSetDistance
+--- CellCamSetDistance
+---
+--- @hash [0x53F4892D18EC90A4](https://docs.fivem.net/natives/?_0x53F4892D18EC90A4)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+--- @deprecated
 function N_0x53f4892d18ec90a4(p0) end
 
     
@@ -306,21 +361,43 @@ function CanPhoneBeSeenOnScreen() end
 function SetMobilePhoneScale(scale) end
 
     
---- N_0xd6ade981781fca09
+--- CellCamSetHeadPitch
 ---
 --- @hash [0xD6ADE981781FCA09](https://docs.fivem.net/natives/?_0xD6ADE981781FCA09)
 --- @param p0 number (float)
 --- @return void
 --- @overload fun(p0: number): void
+function CellCamSetHeadPitch(p0) end
+
+    
+--- # New Name: CellCamSetHeadPitch
+--- CellCamSetHeadPitch
+---
+--- @hash [0xD6ADE981781FCA09](https://docs.fivem.net/natives/?_0xD6ADE981781FCA09)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+--- @deprecated
 function N_0xd6ade981781fca09(p0) end
 
     
---- N_0xf1e22dc13f5eebad
+--- CellCamSetHeadRoll
 ---
 --- @hash [0xF1E22DC13F5EEBAD](https://docs.fivem.net/natives/?_0xF1E22DC13F5EEBAD)
 --- @param p0 number (float)
 --- @return void
 --- @overload fun(p0: number): void
+function CellCamSetHeadRoll(p0) end
+
+    
+--- # New Name: CellCamSetHeadRoll
+--- CellCamSetHeadRoll
+---
+--- @hash [0xF1E22DC13F5EEBAD](https://docs.fivem.net/natives/?_0xF1E22DC13F5EEBAD)
+--- @param p0 number (float)
+--- @return void
+--- @overload fun(p0: number): void
+--- @deprecated
 function N_0xf1e22dc13f5eebad(p0) end
 
     

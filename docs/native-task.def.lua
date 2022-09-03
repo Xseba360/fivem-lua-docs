@@ -144,11 +144,11 @@ function TaskRappelFromHeli(ped, unused) end
 --- @param p0 number (float)
 --- @param p1 number (float)
 --- @param p2 number (float)
---- @param p3 any
+--- @param p3 string (char*)
 --- @param p4 number (float)
 --- @param p5 boolean
 --- @return boolean
---- @overload fun(p0: number, p1: number, p2: number, p4: number, p5: boolean): boolean, any
+--- @overload fun(p0: number, p1: number, p2: number, p3: string, p4: number, p5: boolean): boolean
 function DoesScenarioOfTypeExistInArea(p0, p1, p2, p3, p4, p5) end
 
     
@@ -420,7 +420,7 @@ function AssistedMovementOverrideLoadDistanceThisFrame(dist) end
 function TaskStartScenarioInPlace(ped, scenarioName, unkDelay, playEnterAnim) end
 
     
---- TaskVehicleDriveToCoordLongrange
+--- You can let your character drive to the destination at the speed and driving style you set. You can use map marks to set the destination.
 ---
 --- @hash [0x158BB33F920D360C](https://docs.fivem.net/natives/?_0x158BB33F920D360C)
 --- @param ped Ped
@@ -1351,7 +1351,7 @@ function IsPedRunningArrestTask(ped) end
 function N_0x3e38e28a1d80ddf6(ped) end
 
     
---- TaskCower
+--- The ped will act like NPC's involved in a gunfight. The ped will squat down with their heads held in place and look around.
 ---
 --- @hash [0x3EB1FE9E8E908E15](https://docs.fivem.net/natives/?_0x3EB1FE9E8E908E15)
 --- @param ped Ped
@@ -1528,7 +1528,7 @@ function GetPhoneGestureAnimCurrentTime(ped) end
 function WaypointPlaybackStopAimingOrShooting(p0) end
 
     
---- TaskVehicleDriveWander
+--- Drive randomly with no destination set.
 ---
 --- @hash [0x480142959D337D00](https://docs.fivem.net/natives/?_0x480142959D337D00)
 --- @param ped Ped
@@ -3096,6 +3096,8 @@ function IsMountedWeaponTaskUnderneathDrivingTask(ped) end
 
     
 --- ```
+--- The patrol route name must starts with "miss_" to be properly created. 
+--- 
 ---  patrolRoutes found in the b617d scripts:
 ---  "miss_Ass0",
 ---  "miss_Ass1",
@@ -3285,9 +3287,7 @@ function IsPedActiveInScenario(ped) end
 function TaskStealthKill(killer, target, actionType, p3, p4) end
 
     
---- ```
---- Immediately stops the pedestrian from whatever it's doing. They stop fighting, animations, etc. they forget what they were doing.  
---- ```
+--- Immediately stops the pedestrian from whatever it's doing. The difference between this and [CLEAR_PED_TASKS](https://docs.fivem.net/natives/?_0xE1EF3C1216AFF2CD) is that this one teleports the ped but does not change the position of the ped.
 ---
 --- @hash [0xAAA34F8A7CB32098](https://docs.fivem.net/natives/?_0xAAA34F8A7CB32098)
 --- @param ped Ped
@@ -3668,7 +3668,7 @@ function TaskPlaneLand(pilot, plane, runwayStartX, runwayStartY, runwayStartZ, r
     
 --- ```
 --- speed 1.0 = walk, 2.0 = run  
---- p5 1 = normal, 3 = teleport to vehicle, 16 = teleport directly into vehicle  
+--- p5 1 = normal, 3 = teleport to vehicle, 8 = normal/carjack ped from seat, 16 = teleport directly into vehicle  
 --- p6 is always 0  
 --- ```
 ---
@@ -3957,7 +3957,7 @@ function TaskParachute(ped, p1) end
 --- Flags from decompiled scripts:  
 --- 0 = normal exit and closes door.  
 --- 1 = normal exit and closes door.  
---- 16 = teleports outside, door kept closed.  
+--- 16 = teleports outside, door kept closed.  (This flag does not seem to work for the front seats in buses, NPCs continue to exit normally)
 --- 64 = normal exit and closes door, maybe a bit slower animation than 0.  
 --- 256 = normal exit but does not close the door.  
 --- 4160 = ped is throwing himself out, even when the vehicle is still.  
@@ -4307,10 +4307,10 @@ function ResetScenarioGroupsEnabled() end
 --- @param p3 boolean
 --- @return void
 --- @overload fun(entity: Entity, p1: number, p2: any, p3: boolean): void
-function SetAnimPlaybackTime(entity, p1, p2, p3) end
+function SetAnimPhase(entity, p1, p2, p3) end
 
     
---- # New Name: SetAnimPlaybackTime
+--- # New Name: SetAnimPhase
 --- ```
 --- NativeDB Introduced: v2372
 --- ```
@@ -4324,6 +4324,22 @@ function SetAnimPlaybackTime(entity, p1, p2, p3) end
 --- @overload fun(entity: Entity, p1: number, p2: any, p3: boolean): void
 --- @deprecated
 function N_0xddf3cb5a0a4c0b49(entity, p1, p2, p3) end
+
+    
+--- # New Name: SetAnimPhase
+--- ```
+--- NativeDB Introduced: v2372
+--- ```
+---
+--- @hash [0xDDF3CB5A0A4C0B49](https://docs.fivem.net/natives/?_0xDDF3CB5A0A4C0B49)
+--- @param entity Entity
+--- @param p1 number (float)
+--- @param p2 any
+--- @param p3 boolean
+--- @return void
+--- @overload fun(entity: Entity, p1: number, p2: any, p3: boolean): void
+--- @deprecated
+function SetAnimPlaybackTime(entity, p1, p2, p3) end
 
     
 --- IsPedWalking
@@ -4353,22 +4369,46 @@ function IsPedInWrithe(ped) end
 function IsWaypointPlaybackGoingOnForPed(p0) end
 
     
---- TaskWanderInArea
----
+--- Makes a ped wander/patrol around the specified area.
+--- 
+--- The ped will continue to wander after getting distracted, but only if this additional task is temporary, ie. killing a target, after killing the target it will continue to wander around.
+--- 
+--- Use `GetIsTaskActive(ped, 222)` to check if the ped is still wandering the area.
+--- @usage -- Load model for panther
+--- local model = `a_c_panther`
+--- RequestModel(model)
+--- while not HasModelLoaded(model) do
+---   Citizen.Wait(0)
+--- end
+--- 
+--- -- Spawn a panther at current coordinates
+--- local coords = GetEntityCoords(PlayerPedId())
+--- local ped = CreatePed(0, model, coords.x, coords.y, coords.z, 0.0, true)
+--- 
+--- -- Make sure the ped doesn't flee or gets distracted
+--- SetBlockingOfNonTemporaryEvents(ped, true)
+--- 
+--- -- Make ped wander in spawned area with radius of 100 meters, will wander at least 2 meters and wait for around 10 seconds between patrols
+--- TaskWanderInArea(ped, coords.x, coords.y, coords.z, 100.0, 2, 10.0)
+--- 
+--- -- Check if the ped is wandering
+--- -- Tasks don't trigger instantly, so wait a bit before checking
+--- Citizen.Wait(1000)
+--- print(GetIsTaskActive(ped, 222)) -- 
 --- @hash [0xE054346CA3A0F315](https://docs.fivem.net/natives/?_0xE054346CA3A0F315)
 --- @param ped Ped
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @param minimalLength number (float)
+--- @param minimalLength number (int)
 --- @param timeBetweenWalks number (float)
 --- @return void
 --- @overload fun(ped: Ped, x: number, y: number, z: number, radius: number, minimalLength: number, timeBetweenWalks: number): void
 function TaskWanderInArea(ped, x, y, z, radius, minimalLength, timeBetweenWalks) end
 
     
---- ClearPedTasks
+--- Clear a ped's tasks. Stop animations and other tasks created by scripts.
 ---
 --- @hash [0xE1EF3C1216AFF2CD](https://docs.fivem.net/natives/?_0xE1EF3C1216AFF2CD)
 --- @param ped Ped
@@ -4608,25 +4648,64 @@ function OpenSequenceTask(taskSequenceId) end
 function TaskPlayAnim(ped, animDictionary, animationName, blendInSpeed, blendOutSpeed, duration, flag, playbackRate, lockX, lockY, lockZ) end
 
     
---- ```
+--- Attaches a ped to a rope and allows player control to rappel down a wall.
+--- Disables all collisions while on the rope.
+--- 
 --- NativeDB Introduced: v1868
---- ```
----
+--- @usage local coords = vector3(258.68, -3311.5, 45.72)
+--- RopeLoadTextures()
+--- SetEntityCoords(PlayerPedId(), coords - vector3(0, 0, 10.0))
+--- local ropeId = AddRope(coords, -90.0, 90.0, -90.0, 78.0, 7, 78.0, 78.0, 1.2, false, false, true, 10.0, false, 0)
+--- TaskRappelDownWall(PlayerPedId(), coords, coords, -130.0, ropeId, "clipset@anim_heist@hs3f@ig1_rappel@male", 1)
+--- N_0xa1ae736541b0fca3(ropeId, true)
+--- PinRopeVertex(ropeId, (GetRopeVertexCount(ropeId) - 1), coords + vector3(0, 0, 1.0))
+--- RopeSetUpdateOrder(ropeId, 0
 --- @hash [0xEAF66ACDDC794793](https://docs.fivem.net/natives/?_0xEAF66ACDDC794793)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @param p4 any
---- @param p5 any
---- @param p6 any
---- @param p7 any
---- @param p8 any
---- @param p9 any
+--- @param ped Ped
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param minZ number (float)
+--- @param ropeId number (int)
+--- @param clipset string (char*)
 --- @param p10 any
 --- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any, p6: any, p7: any, p8: any, p9: any, p10: any): void
-function TaskRappelDownWall(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
+--- @overload fun(ped: Ped, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, minZ: number, ropeId: number, clipset: string, p10: any): void
+function TaskRappelDownWall(ped, x1, y1, z1, x2, y2, z2, minZ, ropeId, clipset, p10) end
+
+    
+--- # New Name: TaskRappelDownWall
+--- Attaches a ped to a rope and allows player control to rappel down a wall.
+--- Disables all collisions while on the rope.
+--- 
+--- NativeDB Introduced: v1868
+--- @usage local coords = vector3(258.68, -3311.5, 45.72)
+--- RopeLoadTextures()
+--- SetEntityCoords(PlayerPedId(), coords - vector3(0, 0, 10.0))
+--- local ropeId = AddRope(coords, -90.0, 90.0, -90.0, 78.0, 7, 78.0, 78.0, 1.2, false, false, true, 10.0, false, 0)
+--- TaskRappelDownWall(PlayerPedId(), coords, coords, -130.0, ropeId, "clipset@anim_heist@hs3f@ig1_rappel@male", 1)
+--- N_0xa1ae736541b0fca3(ropeId, true)
+--- PinRopeVertex(ropeId, (GetRopeVertexCount(ropeId) - 1), coords + vector3(0, 0, 1.0))
+--- RopeSetUpdateOrder(ropeId, 0
+--- @hash [0xEAF66ACDDC794793](https://docs.fivem.net/natives/?_0xEAF66ACDDC794793)
+--- @param ped Ped
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param minZ number (float)
+--- @param ropeId number (int)
+--- @param clipset string (char*)
+--- @param p10 any
+--- @return void
+--- @overload fun(ped: Ped, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, minZ: number, ropeId: number, clipset: string, p10: any): void
+--- @deprecated
+function N_0xeaf66acddc794793(ped, x1, y1, z1, x2, y2, z2, minZ, ropeId, clipset, p10) end
 
     
 --- ```

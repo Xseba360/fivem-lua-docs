@@ -223,17 +223,13 @@ function GetDlcWeaponDataSp(dlcWeaponIndex, outData) end
 function GetDlcWeaponComponentDataSp(dlcWeaponIndex, dlcWeapCompIndex, ComponentDataPtr) end
 
     
---- ```
---- dlcVehicleIndex takes a number from 0 - GET_NUM_DLC_VEHICLES() - 1.  
---- outData is a struct of 3 8-byte items.  
---- The Second item in the struct *(Hash *)(outData + 1) is the vehicle hash.  
---- ```
+--- The Second item in the struct `*(Hash *)(outData + 1)` is the vehicle hash.
 ---
 --- @hash [0x33468EDC08E371F6](https://docs.fivem.net/natives/?_0x33468EDC08E371F6)
 --- @param dlcVehicleIndex number (int)
---- @param outData number (int*)
+--- @param outData any
 --- @return boolean
---- @overload fun(dlcVehicleIndex: number): boolean, number
+--- @overload fun(dlcVehicleIndex: number): boolean, any
 function GetDlcVehicleData(dlcVehicleIndex, outData) end
 
     
@@ -572,7 +568,7 @@ function SetupShopPedApparelQueryTu(character, p1, p2, p3, p4, componentId) end
 function GetNumPropsFromOutfit(character, p1, p2, p3, p4, componentId) end
 
     
---- GetNumDlcVehicles
+--- Returns the total number of DLC vehicles.
 ---
 --- @hash [0xA7A866D21CD2329B](https://docs.fivem.net/natives/?_0xA7A866D21CD2329B)
 ---

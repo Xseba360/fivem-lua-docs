@@ -413,12 +413,23 @@ function TriggerScriptEvent_2(eventGroup, eventData, eventDataSize, playerBits) 
 function N_0xa40cc53df8e50837(eventGroup, eventData, eventDataSize, playerBits) end
 
     
---- N_0xb1577667c3708f9b
+--- Updates the display of the MP/SP loading buttons, and locks the state so that other options are not displayed or changed. This can only be done once.
 ---
 --- @hash [0xB1577667C3708F9B](https://docs.fivem.net/natives/?_0xB1577667C3708F9B)
 ---
 --- @return void
 --- @overload fun(): void
+function LockLoadingScreenButtons() end
+
+    
+--- # New Name: LockLoadingScreenButtons
+--- Updates the display of the MP/SP loading buttons, and locks the state so that other options are not displayed or changed. This can only be done once.
+---
+--- @hash [0xB1577667C3708F9B](https://docs.fivem.net/natives/?_0xB1577667C3708F9B)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
 function N_0xb1577667c3708f9b() end
 
     

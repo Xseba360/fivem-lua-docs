@@ -352,7 +352,7 @@ function N_0x1187cb58d7f3bed7(p0, p1, p2, p3) end
 function StatGetBool(statHash, outValue, p2) end
 
     
---- UpdateStatInt
+--- PresenceEventUpdatestatInt
 ---
 --- @hash [0x11FF1C80276097ED](https://docs.fivem.net/natives/?_0x11FF1C80276097ED)
 --- @param statHash Hash
@@ -360,11 +360,11 @@ function StatGetBool(statHash, outValue, p2) end
 --- @param p2 number (int)
 --- @return void
 --- @overload fun(statHash: Hash, value: number, p2: number): void
-function UpdateStatInt(statHash, value, p2) end
+function PresenceEventUpdatestatInt(statHash, value, p2) end
 
     
---- # New Name: UpdateStatInt
---- UpdateStatInt
+--- # New Name: PresenceEventUpdatestatInt
+--- PresenceEventUpdatestatInt
 ---
 --- @hash [0x11FF1C80276097ED](https://docs.fivem.net/natives/?_0x11FF1C80276097ED)
 --- @param statHash Hash
@@ -374,6 +374,19 @@ function UpdateStatInt(statHash, value, p2) end
 --- @overload fun(statHash: Hash, value: number, p2: number): void
 --- @deprecated
 function N_0x11ff1c80276097ed(statHash, value, p2) end
+
+    
+--- # New Name: PresenceEventUpdatestatInt
+--- PresenceEventUpdatestatInt
+---
+--- @hash [0x11FF1C80276097ED](https://docs.fivem.net/natives/?_0x11FF1C80276097ED)
+--- @param statHash Hash
+--- @param value number (int)
+--- @param p2 number (int)
+--- @return void
+--- @overload fun(statHash: Hash, value: number, p2: number): void
+--- @deprecated
+function UpdateStatInt(statHash, value, p2) end
 
     
 --- PlaystatsRosBet
@@ -1002,7 +1015,7 @@ function N_0x2fa3173480008493(p0, p1, p2, p3, p4) end
 function LeaderboardsReadSuccessful(p0, p1, p2) end
 
     
---- UpdateStatFloat
+--- PresenceEventUpdatestatFloat
 ---
 --- @hash [0x30A6614C1F7799B8](https://docs.fivem.net/natives/?_0x30A6614C1F7799B8)
 --- @param statHash Hash
@@ -1010,11 +1023,11 @@ function LeaderboardsReadSuccessful(p0, p1, p2) end
 --- @param p2 number (int)
 --- @return void
 --- @overload fun(statHash: Hash, value: number, p2: number): void
-function UpdateStatFloat(statHash, value, p2) end
+function PresenceEventUpdatestatFloat(statHash, value, p2) end
 
     
---- # New Name: UpdateStatFloat
---- UpdateStatFloat
+--- # New Name: PresenceEventUpdatestatFloat
+--- PresenceEventUpdatestatFloat
 ---
 --- @hash [0x30A6614C1F7799B8](https://docs.fivem.net/natives/?_0x30A6614C1F7799B8)
 --- @param statHash Hash
@@ -1024,6 +1037,19 @@ function UpdateStatFloat(statHash, value, p2) end
 --- @overload fun(statHash: Hash, value: number, p2: number): void
 --- @deprecated
 function N_0x30a6614c1f7799b8(statHash, value, p2) end
+
+    
+--- # New Name: PresenceEventUpdatestatFloat
+--- PresenceEventUpdatestatFloat
+---
+--- @hash [0x30A6614C1F7799B8](https://docs.fivem.net/natives/?_0x30A6614C1F7799B8)
+--- @param statHash Hash
+--- @param value number (float)
+--- @param p2 number (int)
+--- @return void
+--- @overload fun(statHash: Hash, value: number, p2: number): void
+--- @deprecated
+function UpdateStatFloat(statHash, value, p2) end
 
     
 --- ```
@@ -2157,6 +2183,24 @@ function PlaystatsAcquiredHiddenPackage(p0) end
 function N_0x79ab33f0fbfac40c(p0) end
 
     
+--- ```
+--- Sets profile setting 940 and 941
+--- 
+--- _SET_F* - _SET_G*
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x79D310A861697CC9](https://docs.fivem.net/natives/?_0x79D310A861697CC9)
+--- @param profileSetting number (int)
+--- @param settingValue number (int)
+--- @return void
+--- @overload fun(profileSetting: number, settingValue: number): void
+function N_0x79d310a861697cc9(profileSetting, settingValue) end
+
+    
 --- N_0x7b18da61f6bae9d5
 ---
 --- @hash [0x7B18DA61F6BAE9D5](https://docs.fivem.net/natives/?_0x7B18DA61F6BAE9D5)
@@ -2424,6 +2468,17 @@ function StatGetSaveMigrationStatus(data) end
 --- @overload fun(): number, any
 --- @deprecated
 function N_0x886913bbeaca68c1(data) end
+
+    
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x887DAD63CF5B7908](https://docs.fivem.net/natives/?_0x887DAD63CF5B7908)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function PlaystatsInventory(p0) end
 
     
 --- N_0x8989cbd7b4e82534
@@ -3058,7 +3113,7 @@ function PlaystatsRaceToPoint(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 function Leaderboards2WriteData(p0) end
 
     
---- PlaystatsCrateCreatedMissionDone
+--- PlaystatsCrateCreated
 ---
 --- @hash [0xAFC7E5E075A96F46](https://docs.fivem.net/natives/?_0xAFC7E5E075A96F46)
 --- @param p0 number (float)
@@ -3066,11 +3121,11 @@ function Leaderboards2WriteData(p0) end
 --- @param p2 number (float)
 --- @return void
 --- @overload fun(p0: number, p1: number, p2: number): void
-function PlaystatsCrateCreatedMissionDone(p0, p1, p2) end
+function PlaystatsCrateCreated(p0, p1, p2) end
 
     
---- # New Name: PlaystatsCrateCreatedMissionDone
---- PlaystatsCrateCreatedMissionDone
+--- # New Name: PlaystatsCrateCreated
+--- PlaystatsCrateCreated
 ---
 --- @hash [0xAFC7E5E075A96F46](https://docs.fivem.net/natives/?_0xAFC7E5E075A96F46)
 --- @param p0 number (float)
@@ -3082,8 +3137,8 @@ function PlaystatsCrateCreatedMissionDone(p0, p1, p2) end
 function N_0xafc7e5e075a96f46(p0, p1, p2) end
 
     
---- # New Name: PlaystatsCrateCreatedMissionDone
---- PlaystatsCrateCreatedMissionDone
+--- # New Name: PlaystatsCrateCreated
+--- PlaystatsCrateCreated
 ---
 --- @hash [0xAFC7E5E075A96F46](https://docs.fivem.net/natives/?_0xAFC7E5E075A96F46)
 --- @param p0 number (float)
@@ -3095,8 +3150,8 @@ function N_0xafc7e5e075a96f46(p0, p1, p2) end
 function PlaystatsAmbientMissionCrateCreated(p0, p1, p2) end
 
     
---- # New Name: PlaystatsCrateCreatedMissionDone
---- PlaystatsCrateCreatedMissionDone
+--- # New Name: PlaystatsCrateCreated
+--- PlaystatsCrateCreated
 ---
 --- @hash [0xAFC7E5E075A96F46](https://docs.fivem.net/natives/?_0xAFC7E5E075A96F46)
 --- @param p0 number (float)
@@ -3106,6 +3161,19 @@ function PlaystatsAmbientMissionCrateCreated(p0, p1, p2) end
 --- @overload fun(p0: number, p1: number, p2: number): void
 --- @deprecated
 function PlaystatsCrateCreated(p0, p1, p2) end
+
+    
+--- # New Name: PlaystatsCrateCreated
+--- PlaystatsCrateCreated
+---
+--- @hash [0xAFC7E5E075A96F46](https://docs.fivem.net/natives/?_0xAFC7E5E075A96F46)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @return void
+--- @overload fun(p0: number, p1: number, p2: number): void
+--- @deprecated
+function PlaystatsCrateCreatedMissionDone(p0, p1, p2) end
 
     
 --- N_0xaff47709f1d5dcce
@@ -3138,11 +3206,16 @@ function N_0xb1d2bb1e1631f5b1() end
 function N_0xb26f670685631727(p0) end
 
     
---- ```
---- Example:
----  STATS::STAT_SET_INT(MISC::GET_HASH_KEY("MPPLY_KILLS_PLAYERS"), 1337, true);
---- ```
----
+--- StatSetInt
+--- @usage StatSetInt(`MPPLY_KILLS_PLAYERS`, 1337, true)
+--- StatSetInt(`MP0_SHOOTING_ABILITY`, 100, true)
+--- StatSetInt(`MP0_SHOOTING_ABILITY`, 100, true)
+--- StatSetInt(`MP0_STEALTH_ABILITY`, 10, true)
+--- StatSetInt(`MP0_FLYING_ABILITY`, 5, true)
+--- StatSetInt(`MP0_WHEELIE_ABILITY`, 25, true)
+--- StatSetInt(`MP0_LUNG_CAPACITY`, 35, true)
+--- StatSetInt(`MP0_STRENGTH`, 15, true)
+--- StatSetInt(`MP0_STAMINA`, 25, true
 --- @hash [0xB3271D7AB655B441](https://docs.fivem.net/natives/?_0xB3271D7AB655B441)
 --- @param statName Hash
 --- @param value number (int)
@@ -3910,15 +3983,24 @@ function OrderedBossVehicle(p0, p1, vehicleHash) end
 function N_0xcea553e35c2246e1(p0, p1, vehicleHash) end
 
     
---- ```
---- PLAYSTATS_S*
---- ```
+--- Sets a byte that is then used in session_host and session_join metrics when hosting or joining a session
 ---
 --- @hash [0xD1032E482629049E](https://docs.fivem.net/natives/?_0xD1032E482629049E)
---- @param p0 number (int)
+--- @param joinType number (int)
 --- @return void
---- @overload fun(p0: number): void
-function N_0xd1032e482629049e(p0) end
+--- @overload fun(joinType: number): void
+function PlaystatsSetJoinType(joinType) end
+
+    
+--- # New Name: PlaystatsSetJoinType
+--- Sets a byte that is then used in session_host and session_join metrics when hosting or joining a session
+---
+--- @hash [0xD1032E482629049E](https://docs.fivem.net/natives/?_0xD1032E482629049E)
+--- @param joinType number (int)
+--- @return void
+--- @overload fun(joinType: number): void
+--- @deprecated
+function N_0xd1032e482629049e(joinType) end
 
     
 --- GetPackedTuIntStatKey
@@ -4508,6 +4590,18 @@ function PlaystatsHeistSaveCheat(hash, p1) end
 function N_0xf4ff020a08bc8863(hash, p1) end
 
     
+--- # New Name: PlaystatsHeistSaveCheat
+--- PlaystatsHeistSaveCheat
+---
+--- @hash [0xF4FF020A08BC8863](https://docs.fivem.net/natives/?_0xF4FF020A08BC8863)
+--- @param hash Hash
+--- @param p1 number (int)
+--- @return void
+--- @overload fun(hash: Hash, p1: number): void
+--- @deprecated
+function PlaystatsHeistSaveCheat(hash, p1) end
+
+    
 --- N_0xf534d94dfa2ead26
 ---
 --- @hash [0xF534D94DFA2EAD26](https://docs.fivem.net/natives/?_0xF534D94DFA2EAD26)
@@ -4521,12 +4615,23 @@ function N_0xf4ff020a08bc8863(hash, p1) end
 function N_0xf534d94dfa2ead26(p0, p1, p2, p3, p4) end
 
     
---- N_0xf5bb8dac426a52c0
+--- PlaystatsJobBend
 ---
 --- @hash [0xF5BB8DAC426A52C0](https://docs.fivem.net/natives/?_0xF5BB8DAC426A52C0)
 ---
 --- @return any, any, any, any
 --- @overload fun(): any, any, any, any
+function PlaystatsJobBend() end
+
+    
+--- # New Name: PlaystatsJobBend
+--- PlaystatsJobBend
+---
+--- @hash [0xF5BB8DAC426A52C0](https://docs.fivem.net/natives/?_0xF5BB8DAC426A52C0)
+---
+--- @return any, any, any, any
+--- @overload fun(): any, any, any, any
+--- @deprecated
 function N_0xf5bb8dac426a52c0() end
 
     

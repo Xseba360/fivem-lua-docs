@@ -55,11 +55,11 @@ function GetCurrentIntensity() end
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param p3 any
+--- @param flag number (int)
 --- @param height number (float*)
 --- @return boolean
---- @overload fun(x: number, y: number, z: number, p3: any): boolean, number
-function TestVerticalProbeAgainstAllWater(x, y, z, p3, height) end
+--- @overload fun(x: number, y: number, z: number, flag: number): boolean, number
+function TestVerticalProbeAgainstAllWater(x, y, z, flag, height) end
 
     
 --- N_0x547237aa71ab44de
@@ -121,20 +121,20 @@ function ResetWavesIntensity() end
 function ResetCurrentIntensity() end
 
     
---- TestProbeAgainstAllWater
+--- Flags are identical to START_SHAPE_TEST\*, however, 128 is automatically set.
 ---
 --- @hash [0x8974647ED222EA5F](https://docs.fivem.net/natives/?_0x8974647ED222EA5F)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @param p4 any
---- @param p5 any
---- @param p6 any
---- @param p7 any
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param flag number (int)
+--- @param result Vector3 (Vector3*)
 --- @return boolean
---- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any, p6: any, p7: any): boolean
-function TestProbeAgainstAllWater(p0, p1, p2, p3, p4, p5, p6, p7) end
+--- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, flag: number): boolean, Vector3
+function TestProbeAgainstAllWater(x1, y1, z1, x2, y2, z2, flag, result) end
 
     
 --- GetWaterHeightNoWaves
@@ -234,11 +234,11 @@ function SetCurrentIntensity(intensity) end
 --- @hash [0xC443FD757C3BA637](https://docs.fivem.net/natives/?_0xC443FD757C3BA637)
 --- @param x number (float)
 --- @param y number (float)
---- @param radius number (float)
 --- @param height number (float)
+--- @param radius number (float)
 --- @return void
---- @overload fun(x: number, y: number, radius: number, height: number): void
-function ModifyWater(x, y, radius, height) end
+--- @overload fun(x: number, y: number, height: number, radius: number): void
+function ModifyWater(x, y, height, radius) end
 
     
 --- ```
@@ -257,9 +257,8 @@ function ModifyWater(x, y, radius, height) end
 function GetWaterHeight(x, y, z, height) end
 
     
---- ```
---- Most likely ADD_CURRENT_*
---- ```
+--- Only 8 current rises can exist. If rises need to be changed, use REMOVE_EXTRA_CALMING_QUAD and then ADD_EXTRA_CALMING_QUAD again.
+--- After removing a rise, you will be able to add a rise again.
 ---
 --- @hash [0xFDBF4CDBC07E1706](https://docs.fivem.net/natives/?_0xFDBF4CDBC07E1706)
 --- @param xLow number (float)
@@ -269,13 +268,12 @@ function GetWaterHeight(x, y, z, height) end
 --- @param height number (float)
 --- @return number
 --- @overload fun(xLow: number, yLow: number, xHigh: number, yHigh: number, height: number): number
-function AddCurrentRise(xLow, yLow, xHigh, yHigh, height) end
+function AddExtraCalmingQuad(xLow, yLow, xHigh, yHigh, height) end
 
     
---- # New Name: AddCurrentRise
---- ```
---- Most likely ADD_CURRENT_*
---- ```
+--- # New Name: AddExtraCalmingQuad
+--- Only 8 current rises can exist. If rises need to be changed, use REMOVE_EXTRA_CALMING_QUAD and then ADD_EXTRA_CALMING_QUAD again.
+--- After removing a rise, you will be able to add a rise again.
 ---
 --- @hash [0xFDBF4CDBC07E1706](https://docs.fivem.net/natives/?_0xFDBF4CDBC07E1706)
 --- @param xLow number (float)
@@ -287,6 +285,22 @@ function AddCurrentRise(xLow, yLow, xHigh, yHigh, height) end
 --- @overload fun(xLow: number, yLow: number, xHigh: number, yHigh: number, height: number): number
 --- @deprecated
 function N_0xfdbf4cdbc07e1706(xLow, yLow, xHigh, yHigh, height) end
+
+    
+--- # New Name: AddExtraCalmingQuad
+--- Only 8 current rises can exist. If rises need to be changed, use REMOVE_EXTRA_CALMING_QUAD and then ADD_EXTRA_CALMING_QUAD again.
+--- After removing a rise, you will be able to add a rise again.
+---
+--- @hash [0xFDBF4CDBC07E1706](https://docs.fivem.net/natives/?_0xFDBF4CDBC07E1706)
+--- @param xLow number (float)
+--- @param yLow number (float)
+--- @param xHigh number (float)
+--- @param yHigh number (float)
+--- @param height number (float)
+--- @return number
+--- @overload fun(xLow: number, yLow: number, xHigh: number, yHigh: number, height: number): number
+--- @deprecated
+function AddCurrentRise(xLow, yLow, xHigh, yHigh, height) end
 
     
 --- TestProbeAgainstWater

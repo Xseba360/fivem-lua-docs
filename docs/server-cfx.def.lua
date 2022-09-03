@@ -847,8 +847,8 @@ function GetConsoleBuffer() end
 function GetEntityRoutingBucket(entity) end
 
     
---- SetConvarReplicated
----
+--- Used to replicate a server variable onto clients.
+--- @usage SetConvarReplicated('voice_useNativeAudio', 'true'
 --- @hash [0xF292858C](https://docs.fivem.net/natives/?_0xF292858C)
 --- @param varName string (char*)
 --- @param value string (char*)

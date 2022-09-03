@@ -703,6 +703,22 @@ function SetArtificialLightsState(state) end
 function SetBlackout(state) end
 
     
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x126D7F89FE859A5E](https://docs.fivem.net/natives/?_0x126D7F89FE859A5E)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param groundLvl number (float)
+--- @param width number (float)
+--- @param transparency number (float)
+--- @return number
+--- @overload fun(x: number, y: number, z: number, groundLvl: number, width: number, transparency: number): number
+function AddOilDecal(x, y, z, groundLvl, width, transparency) end
+
+    
 --- GolfTrailSetColour
 ---
 --- @hash [0x12995F2E53FFA601](https://docs.fivem.net/natives/?_0x12995F2E53FFA601)
@@ -1131,6 +1147,19 @@ function N_0x1dd2139a9a20dce8() end
 
     
 --- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x1E2E01C00837D26E](https://docs.fivem.net/natives/?_0x1E2E01C00837D26E)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param scale number (float)
+--- @return void
+--- @overload fun(p0: number, p1: number, scale: number): void
+function SetParticleFxNonLoopedEmitterScale(p0, p1, scale) end
+
+    
+--- ```
 --- NativeDB Introduced: v1604
 --- ```
 ---
@@ -1351,7 +1380,10 @@ function N_0x259ba6d4e6f808f1(p0) end
 function N_0x25fc3e33a31ad0c9(p0) end
 
     
---- only works on some fx's, not networked
+--- Only works on some fx's, while on others it might SEEM to work "properly", but the colors can be "strange" or even completly different from what you've expected. Reason for this is that those fx's might already have colors "baked into them" which then start to act as a "mixing palette", resulting in a different color than expected. A hypothetical example of this would be if the fx itself is already full (bright) red (RGB: 1.0, 0.0, 0.0) and you then set the color to (bright) green (RGB: 0.0, 1.0, 0.0), that it MIGHT result in Yellow (RGB: 1.0, 1.0, 0.0).
+--- 
+--- This doc previously stated that the set color is **NOT** networked, however it does actually turns out to be networked. Tested with all fireworks effects and several other FX effects resulted in colored fx effects on all clients when used in combination with [START_NETWORKED_PARTICLE_FX_NON_LOOPED_AT_COORD](https://docs.fivem.net/natives/?_0xF56B8137DF10135D).
+--- This might however not be the case for all types of particle fx's, so it's recommended to test this thoroughly with multiple clients before releasing your script for example.
 ---
 --- @hash [0x26143A59EF48B262](https://docs.fivem.net/natives/?_0x26143A59EF48B262)
 --- @param r number (float)
@@ -2228,7 +2260,7 @@ function N_0x393bd2275ceb7793() end
 function DrawRect(x, y, width, height, r, g, b, a) end
 
     
---- SetTransitionTimecycleModifier
+--- This native doesn't work like [`SetWeatherTypeTransition`](https://docs.fivem.net/natives/?_0x578C752848ECFA0C).
 ---
 --- @hash [0x3BCF567485E1971C](https://docs.fivem.net/natives/?_0x3BCF567485E1971C)
 --- @param modifierName string (char*)
@@ -2241,15 +2273,17 @@ function SetTransitionTimecycleModifier(modifierName, transition) end
 --- ```
 --- NativeDB Introduced: v1180
 --- ```
+--- 
+--- Sets the given checkpoint target to the new coords
 ---
 --- @hash [0x3C788E7F6438754D](https://docs.fivem.net/natives/?_0x3C788E7F6438754D)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
+--- @param checkpointHandle number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any): void
-function N_0x3c788e7f6438754d(p0, p1, p2, p3) end
+--- @overload fun(checkpointHandle: number, x: number, y: number, z: number): void
+function N_0x3c788e7f6438754d(checkpointHandle, x, y, z) end
 
     
 --- PopTimecycleModifier
@@ -2519,42 +2553,41 @@ function N_0x4862437a486f91b0(p0, p3) end
 function N_0x4af92acd3141d96c() end
 
     
---- ```
---- p0 - Scale? Looks to be a normalized value (0.0 - 1.0)
---- offroad_races.c4, line ~67407:
---- a_3._f7 = GRAPHICS::CREATE_CHECKPOINT(v_D, v_A, a_4, a_7, v_E, v_F, v_10, sub_62b2(v_A, 220, 255), 0);
---- HUD::GET_HUD_COLOUR(134, &v_E, &v_F, &v_10, &v_11);
---- GRAPHICS::_SET_CHECKPOINT_ICON_RGBA(a_3._f7, v_E, v_F, v_10, sub_62b2(v_A, 70, 210));
---- GRAPHICS::_4B5B4DA5D79F1943(a_3._f7, 0.95);
---- GRAPHICS::SET_CHECKPOINT_CYLINDER_HEIGHT(a_3._f7, 4.0, 4.0, 100.0);
---- ```
----
+--- This multiplies the height of the icon inside a checkpoint with the default height of about 2 units above the checkpoint's coordinates.
+--- @usage local checkpoint = CreateCheckpoint(...)
+--- SetCheckpointIconHeight(checkpoint, 2.0) -- places the icon two times as high as the default
 --- @hash [0x4B5B4DA5D79F1943](https://docs.fivem.net/natives/?_0x4B5B4DA5D79F1943)
 --- @param checkpoint number (int)
---- @param p0 number (float)
+--- @param height_multiplier number (float)
 --- @return void
---- @overload fun(checkpoint: number, p0: number): void
-function SetCheckpointScale(checkpoint, p0) end
+--- @overload fun(checkpoint: number, height_multiplier: number): void
+function SetCheckpointIconHeight(checkpoint, height_multiplier) end
 
     
---- # New Name: SetCheckpointScale
---- ```
---- p0 - Scale? Looks to be a normalized value (0.0 - 1.0)
---- offroad_races.c4, line ~67407:
---- a_3._f7 = GRAPHICS::CREATE_CHECKPOINT(v_D, v_A, a_4, a_7, v_E, v_F, v_10, sub_62b2(v_A, 220, 255), 0);
---- HUD::GET_HUD_COLOUR(134, &v_E, &v_F, &v_10, &v_11);
---- GRAPHICS::_SET_CHECKPOINT_ICON_RGBA(a_3._f7, v_E, v_F, v_10, sub_62b2(v_A, 70, 210));
---- GRAPHICS::_4B5B4DA5D79F1943(a_3._f7, 0.95);
---- GRAPHICS::SET_CHECKPOINT_CYLINDER_HEIGHT(a_3._f7, 4.0, 4.0, 100.0);
---- ```
----
+--- # New Name: SetCheckpointIconHeight
+--- This multiplies the height of the icon inside a checkpoint with the default height of about 2 units above the checkpoint's coordinates.
+--- @usage local checkpoint = CreateCheckpoint(...)
+--- SetCheckpointIconHeight(checkpoint, 2.0) -- places the icon two times as high as the default
 --- @hash [0x4B5B4DA5D79F1943](https://docs.fivem.net/natives/?_0x4B5B4DA5D79F1943)
 --- @param checkpoint number (int)
---- @param p0 number (float)
+--- @param height_multiplier number (float)
 --- @return void
---- @overload fun(checkpoint: number, p0: number): void
+--- @overload fun(checkpoint: number, height_multiplier: number): void
 --- @deprecated
-function N_0x4b5b4da5d79f1943(checkpoint, p0) end
+function N_0x4b5b4da5d79f1943(checkpoint, height_multiplier) end
+
+    
+--- # New Name: SetCheckpointIconHeight
+--- This multiplies the height of the icon inside a checkpoint with the default height of about 2 units above the checkpoint's coordinates.
+--- @usage local checkpoint = CreateCheckpoint(...)
+--- SetCheckpointIconHeight(checkpoint, 2.0) -- places the icon two times as high as the default
+--- @hash [0x4B5B4DA5D79F1943](https://docs.fivem.net/natives/?_0x4B5B4DA5D79F1943)
+--- @param checkpoint number (int)
+--- @param height_multiplier number (float)
+--- @return void
+--- @overload fun(checkpoint: number, height_multiplier: number): void
+--- @deprecated
+function SetCheckpointScale(checkpoint, height_multiplier) end
 
     
 --- SetDisableDecalRenderingThisFrame
@@ -2836,15 +2869,32 @@ function N_0x5dbf05db5926d089(p0) end
 function N_0x5debd9c4dc995692() end
 
     
---- ```
---- DOES_*
---- ```
+--- Used in pi_menu.c. Checks if there is a brief entry for specified value.
+--- Values:
+--- 0 - Dialogue brief
+--- 1 - Help text brief
+--- 2 - Mission Objective brief
 ---
 --- @hash [0x5E657EF1099EDD65](https://docs.fivem.net/natives/?_0x5E657EF1099EDD65)
---- @param p0 number (int)
+--- @param briefValue number (int)
 --- @return boolean
---- @overload fun(p0: number): boolean
-function N_0x5e657ef1099edd65(p0) end
+--- @overload fun(briefValue: number): boolean
+function DoesLatestBriefStringExist(briefValue) end
+
+    
+--- # New Name: DoesLatestBriefStringExist
+--- Used in pi_menu.c. Checks if there is a brief entry for specified value.
+--- Values:
+--- 0 - Dialogue brief
+--- 1 - Help text brief
+--- 2 - Mission Objective brief
+---
+--- @hash [0x5E657EF1099EDD65](https://docs.fivem.net/natives/?_0x5E657EF1099EDD65)
+--- @param briefValue number (int)
+--- @return boolean
+--- @overload fun(briefValue: number): boolean
+--- @deprecated
+function N_0x5e657ef1099edd65(briefValue) end
 
     
 --- CascadeShadowsSetEntityTrackerScale
@@ -3840,10 +3890,10 @@ function DrawDebugLine(x1, y1, z1, x2, y2, z2, r, g, b, a) end
 --- ```
 ---
 --- @hash [0x80338406F3475E55](https://docs.fivem.net/natives/?_0x80338406F3475E55)
---- @param componentType string (char*)
+--- @param textLabel string (char*)
 --- @return void
---- @overload fun(componentType: string): void
-function BeginTextCommandScaleformString(componentType) end
+--- @overload fun(textLabel: string): void
+function BeginTextCommandScaleformString(textLabel) end
 
     
 --- # New Name: BeginTextCommandScaleformString
@@ -3866,11 +3916,11 @@ function BeginTextCommandScaleformString(componentType) end
 --- ```
 ---
 --- @hash [0x80338406F3475E55](https://docs.fivem.net/natives/?_0x80338406F3475E55)
---- @param componentType string (char*)
+--- @param textLabel string (char*)
 --- @return void
---- @overload fun(componentType: string): void
+--- @overload fun(textLabel: string): void
 --- @deprecated
-function BeginTextComponent(componentType) end
+function BeginTextComponent(textLabel) end
 
     
 --- ```
@@ -6158,7 +6208,7 @@ function PopScaleformMovieFunction() end
 function EndScaleformMovieMethodReturn() end
 
     
---- RequestScaleformMovieInstance
+--- Same as [REQUEST_SCALEFORM_MOVIE](https://docs.fivem.net/natives/?_0x11FE353CF9733E6F), except it seems to fix stretched scaleforms on ultrawide.
 ---
 --- @hash [0xC514489CFB8AF806](https://docs.fivem.net/natives/?_0xC514489CFB8AF806)
 --- @param scaleformName string (char*)
@@ -6891,12 +6941,14 @@ function N_0xd9454b5752c857dc() end
 --- ```
 --- NativeDB Introduced: v1180
 --- ```
+--- 
+--- This native is used for the "larger" circular checkpoints, and sets the circle/ring around the checkpoint to point in the same direction as the inner arrow
 ---
 --- @hash [0xDB1EA9411C8911EC](https://docs.fivem.net/natives/?_0xDB1EA9411C8911EC)
---- @param p0 any
+--- @param checkpointHandle number (int)
 --- @return void
---- @overload fun(p0: any): void
-function N_0xdb1ea9411c8911ec(p0) end
+--- @overload fun(checkpointHandle: number): void
+function N_0xdb1ea9411c8911ec(checkpointHandle) end
 
     
 --- GolfTrailSetTessellation
@@ -7748,7 +7800,10 @@ function GetTogglePausedRenderphasesStatus() end
 function N_0xeb3dac2c86001e5e() end
 
     
---- ScaleformMovieMethodAddParamLatestBriefString
+--- Values:
+--- 0 - Dialogue Brief
+--- 1 - Help Text Brief
+--- 2 - Mission Objective Brief
 ---
 --- @hash [0xEC52C631A1831C03](https://docs.fivem.net/natives/?_0xEC52C631A1831C03)
 --- @param value number (int)
@@ -7758,7 +7813,10 @@ function ScaleformMovieMethodAddParamLatestBriefString(value) end
 
     
 --- # New Name: ScaleformMovieMethodAddParamLatestBriefString
---- ScaleformMovieMethodAddParamLatestBriefString
+--- Values:
+--- 0 - Dialogue Brief
+--- 1 - Help Text Brief
+--- 2 - Mission Objective Brief
 ---
 --- @hash [0xEC52C631A1831C03](https://docs.fivem.net/natives/?_0xEC52C631A1831C03)
 --- @param value number (int)
@@ -7769,7 +7827,10 @@ function N_0xec52c631a1831c03(value) end
 
     
 --- # New Name: ScaleformMovieMethodAddParamLatestBriefString
---- ScaleformMovieMethodAddParamLatestBriefString
+--- Values:
+--- 0 - Dialogue Brief
+--- 1 - Help Text Brief
+--- 2 - Mission Objective Brief
 ---
 --- @hash [0xEC52C631A1831C03](https://docs.fivem.net/natives/?_0xEC52C631A1831C03)
 --- @param value number (int)
@@ -8112,14 +8173,30 @@ function DrawLightWithRangeWithShadow(x, y, z, r, g, b, range, intensity, shadow
 function N_0xf51d36185993515d(checkpoint, posX, posY, posZ, unkX, unkY, unkZ) end
 
     
---- ```
---- network fx  
---- ```
+--- NOTE: the [USE_PARTICLE_FX_ASSET](https://docs.fivem.net/natives/?_0x6C38AF3693A69A91) needs to be called before EVERY StartNetworkedParticleFxNonLoopedAtCoord(....) call!
+--- 
+--- List with lots of particle effects: https://vespura.com/fivem/particle-list/
+--- 
+--- Note: Not all particles on this list are for non looped and vice versa, neither are all of them suited/meant to have SetParticleFxNonLoopedColour(....) called on them.
 --- 
 --- ```
 --- NativeDB Added Parameter 12: BOOL p11
 --- ```
----
+--- @usage -- If the PtfxAsset hasn't been loaded yet, you'll need to load it first
+--- if not HasNamedPtfxAssetLoaded("scr_indep_fireworks") then
+--- 	RequestNamedPtfxAsset("scr_indep_fireworks")
+--- 	while not HasNamedPtfxAssetLoaded("scr_indep_fireworks") do
+--- 		Wait(10)
+--- 	end
+--- end
+--- 
+--- local CurrentPlayerCoords = GetEntityCoords(GetPlayerPed(-1))
+--- 
+--- UseParticleFxAssetNextCall("scr_indep_fireworks") -- Prepare the Particle FX for the next upcomming Particle FX call
+--- SetParticleFxNonLoopedColour(1.0, 0.0, 0.0) -- Setting the color to Red (R, G, B)
+--- StartNetworkedParticleFxNonLoopedAtCoord("scr_indep_firework_burst_spawn", CurrentPlayerCoords, 0.0, 0.0, 0.0, 1.0, false, false, false, false) -- Start the animation itself
+--- 
+--- RemoveNamedPtfxAsset("scr_indep_fireworks") -- Clean u
 --- @hash [0xF56B8137DF10135D](https://docs.fivem.net/natives/?_0xF56B8137DF10135D)
 --- @param effectName string (char*)
 --- @param xPos number (float)
@@ -8138,14 +8215,30 @@ function StartNetworkedParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, 
 
     
 --- # New Name: StartNetworkedParticleFxNonLoopedAtCoord
---- ```
---- network fx  
---- ```
+--- NOTE: the [USE_PARTICLE_FX_ASSET](https://docs.fivem.net/natives/?_0x6C38AF3693A69A91) needs to be called before EVERY StartNetworkedParticleFxNonLoopedAtCoord(....) call!
+--- 
+--- List with lots of particle effects: https://vespura.com/fivem/particle-list/
+--- 
+--- Note: Not all particles on this list are for non looped and vice versa, neither are all of them suited/meant to have SetParticleFxNonLoopedColour(....) called on them.
 --- 
 --- ```
 --- NativeDB Added Parameter 12: BOOL p11
 --- ```
----
+--- @usage -- If the PtfxAsset hasn't been loaded yet, you'll need to load it first
+--- if not HasNamedPtfxAssetLoaded("scr_indep_fireworks") then
+--- 	RequestNamedPtfxAsset("scr_indep_fireworks")
+--- 	while not HasNamedPtfxAssetLoaded("scr_indep_fireworks") do
+--- 		Wait(10)
+--- 	end
+--- end
+--- 
+--- local CurrentPlayerCoords = GetEntityCoords(GetPlayerPed(-1))
+--- 
+--- UseParticleFxAssetNextCall("scr_indep_fireworks") -- Prepare the Particle FX for the next upcomming Particle FX call
+--- SetParticleFxNonLoopedColour(1.0, 0.0, 0.0) -- Setting the color to Red (R, G, B)
+--- StartNetworkedParticleFxNonLoopedAtCoord("scr_indep_firework_burst_spawn", CurrentPlayerCoords, 0.0, 0.0, 0.0, 1.0, false, false, false, false) -- Start the animation itself
+--- 
+--- RemoveNamedPtfxAsset("scr_indep_fireworks") -- Clean u
 --- @hash [0xF56B8137DF10135D](https://docs.fivem.net/natives/?_0xF56B8137DF10135D)
 --- @param effectName string (char*)
 --- @param xPos number (float)

@@ -52,13 +52,24 @@ function ScInboxGetEmails(offset, limit) end
 function N_0x040addcbafa1018a(offset, limit) end
 
     
---- N_0x07c61676e5bb52cd
+--- Returns true if the add license plate text request is still pending.
 ---
 --- @hash [0x07C61676E5BB52CD](https://docs.fivem.net/natives/?_0x07C61676E5BB52CD)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function N_0x07c61676e5bb52cd(p0) end
+--- @param token number (int)
+--- @return boolean
+--- @overload fun(token: number): boolean
+function ScLicenseplateGetAddIsPending(token) end
+
+    
+--- # New Name: ScLicenseplateGetAddIsPending
+--- Returns true if the add license plate text request is still pending.
+---
+--- @hash [0x07C61676E5BB52CD](https://docs.fivem.net/natives/?_0x07C61676E5BB52CD)
+--- @param token number (int)
+--- @return boolean
+--- @overload fun(token: number): boolean
+--- @deprecated
+function N_0x07c61676e5bb52cd(token) end
 
     
 --- N_0x07dbd622d9533857
@@ -70,13 +81,26 @@ function N_0x07c61676e5bb52cd(p0) end
 function N_0x07dbd622d9533857(p0) end
 
     
---- N_0x0f73393bac7e6730
+--- SC native to start a request for if license plate text is valid
 ---
 --- @hash [0x0F73393BAC7E6730](https://docs.fivem.net/natives/?_0x0F73393BAC7E6730)
+--- @param plateText string (char*)
+--- @param tokenOut number (int*)
+--- @return boolean
+--- @overload fun(): boolean, string): boolean, number
+function ScLicenseplateIsvalid(plateText, tokenOut) end
+
+    
+--- # New Name: ScLicenseplateIsvalid
+--- SC native to start a request for if license plate text is valid
 ---
---- @return boolean, any, number
---- @overload fun(): boolean, any, number
-function N_0x0f73393bac7e6730() end
+--- @hash [0x0F73393BAC7E6730](https://docs.fivem.net/natives/?_0x0F73393BAC7E6730)
+--- @param plateText string (char*)
+--- @param tokenOut number (int*)
+--- @return boolean
+--- @overload fun(): boolean, string): boolean, number
+--- @deprecated
+function N_0x0f73393bac7e6730(plateText, tokenOut) end
 
     
 --- N_0x116fb94dc4b79f17
@@ -138,13 +162,28 @@ function ScHasCheckStringTaskCompleted(token) end
 function N_0x19853b5b17d77bca(p0, p1) end
 
     
---- N_0x1989c6e6f67e76a8
+--- Social Club native to add license plate for the user
 ---
 --- @hash [0x1989C6E6F67E76A8](https://docs.fivem.net/natives/?_0x1989C6E6F67E76A8)
+--- @param plateText string (char*)
+--- @param plateData string (char*)
+--- @param tokenOut number (int*)
+--- @return boolean
+--- @overload fun(): boolean, string): boolean, string): boolean, number
+function ScLicenseplateAdd(plateText, plateData, tokenOut) end
+
+    
+--- # New Name: ScLicenseplateAdd
+--- Social Club native to add license plate for the user
 ---
---- @return boolean, any, any, any
---- @overload fun(): boolean, any, any, any
-function N_0x1989c6e6f67e76a8() end
+--- @hash [0x1989C6E6F67E76A8](https://docs.fivem.net/natives/?_0x1989C6E6F67E76A8)
+--- @param plateText string (char*)
+--- @param plateData string (char*)
+--- @param tokenOut number (int*)
+--- @return boolean
+--- @overload fun(): boolean, string): boolean, string): boolean, number
+--- @deprecated
+function N_0x1989c6e6f67e76a8(plateText, plateData, tokenOut) end
 
     
 --- ```
@@ -172,14 +211,14 @@ function ScGetNickname() end
 function N_0x1d12a56fc95be92e() end
 
     
---- N_0x1d4446a62d35b0d0
+--- Gets license plate text related to the get license plate info request
 ---
 --- @hash [0x1D4446A62D35B0D0](https://docs.fivem.net/natives/?_0x1D4446A62D35B0D0)
---- @param p0 any
---- @param p1 any
---- @return any
---- @overload fun(p0: any, p1: any): any
-function N_0x1d4446a62d35b0d0(p0, p1) end
+--- @param token number (int)
+--- @param plateIndex number (int)
+--- @return string
+--- @overload fun(token: number, plateIndex: number): string
+function ScLicenseplateGetPlate(token, plateIndex) end
 
     
 --- ScPresenceAttrSetInt
@@ -289,14 +328,26 @@ function N_0x2c015348cf19ca1d(p0) end
 function N_0x2d874d4ae612a65f() end
 
     
---- N_0x2e89990ddff670c3
+--- Gets license plate data related to the get license plate info request
 ---
 --- @hash [0x2E89990DDFF670C3](https://docs.fivem.net/natives/?_0x2E89990DDFF670C3)
---- @param p0 any
---- @param p1 any
---- @return any
---- @overload fun(p0: any, p1: any): any
-function N_0x2e89990ddff670c3(p0, p1) end
+--- @param token number (int)
+--- @param plateIndex number (int)
+--- @return string
+--- @overload fun(token: number, plateIndex: number): string
+function ScLicenseplateGetPlateData(token, plateIndex) end
+
+    
+--- # New Name: ScLicenseplateGetPlateData
+--- Gets license plate data related to the get license plate info request
+---
+--- @hash [0x2E89990DDFF670C3](https://docs.fivem.net/natives/?_0x2E89990DDFF670C3)
+--- @param token number (int)
+--- @param plateIndex number (int)
+--- @return string
+--- @overload fun(token: number, plateIndex: number): string
+--- @deprecated
+function N_0x2e89990ddff670c3(token, plateIndex) end
 
     
 --- N_0x3001bef2feca3680
@@ -440,13 +491,24 @@ function ScEmailMessageClearRecipList() end
 function N_0x55df6db45179236e() end
 
     
---- N_0x5c4ebffa98bdb41c
+--- Gets the status of the is valid license plate request
 ---
 --- @hash [0x5C4EBFFA98BDB41C](https://docs.fivem.net/natives/?_0x5C4EBFFA98BDB41C)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function N_0x5c4ebffa98bdb41c(p0) end
+--- @param token number (int)
+--- @return number
+--- @overload fun(token: number): number
+function ScLicenseplateGetIsvalidStatus(token) end
+
+    
+--- # New Name: ScLicenseplateGetIsvalidStatus
+--- Gets the status of the is valid license plate request
+---
+--- @hash [0x5C4EBFFA98BDB41C](https://docs.fivem.net/natives/?_0x5C4EBFFA98BDB41C)
+--- @param token number (int)
+--- @return number
+--- @overload fun(token: number): number
+--- @deprecated
+function N_0x5c4ebffa98bdb41c(token) end
 
     
 --- N_0x675721c9f644d161
@@ -508,13 +570,26 @@ function N_0x6afd2cd753feef83(data) end
 function N_0x6bfb12ce158e3dd4(p0) end
 
     
---- N_0x700569dba175a77c
+--- Gets number of plates in the response of the get license plates request.
+--- Range: \[0, count) can be used as second argument to \_0x1D4446A62D35B0D0 and \_0x2E89990DDFF670C3
 ---
 --- @hash [0x700569DBA175A77C](https://docs.fivem.net/natives/?_0x700569DBA175A77C)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function N_0x700569dba175a77c(p0) end
+--- @param token number (int)
+--- @return number
+--- @overload fun(token: number): number
+function ScLicenseplateGetCount(token) end
+
+    
+--- # New Name: ScLicenseplateGetCount
+--- Gets number of plates in the response of the get license plates request.
+--- Range: \[0, count) can be used as second argument to \_0x1D4446A62D35B0D0 and \_0x2E89990DDFF670C3
+---
+--- @hash [0x700569DBA175A77C](https://docs.fivem.net/natives/?_0x700569DBA175A77C)
+--- @param token number (int)
+--- @return number
+--- @overload fun(token: number): number
+--- @deprecated
+function N_0x700569dba175a77c(token) end
 
     
 --- ```
@@ -601,13 +676,24 @@ function N_0x7db18ca8cad5b098() end
 function N_0x7ffcbfee44ecfabf() end
 
     
---- N_0x8147fff6a718e1ad
+--- Returns a status for adding the license plate
 ---
 --- @hash [0x8147FFF6A718E1AD](https://docs.fivem.net/natives/?_0x8147FFF6A718E1AD)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function N_0x8147fff6a718e1ad(p0) end
+--- @param token number (int)
+--- @return number
+--- @overload fun(token: number): number
+function ScLicenseplateGetAddStatus(token) end
+
+    
+--- # New Name: ScLicenseplateGetAddStatus
+--- Returns a status for adding the license plate
+---
+--- @hash [0x8147FFF6A718E1AD](https://docs.fivem.net/natives/?_0x8147FFF6A718E1AD)
+--- @param token number (int)
+--- @return number
+--- @overload fun(token: number): number
+--- @deprecated
+function N_0x8147fff6a718e1ad(token) end
 
     
 --- ScProfanityGetCheckIsPending
@@ -651,10 +737,10 @@ function ScGetCheckStringStatus(token) end
 --- @param name string (char*)
 --- @return boolean
 --- @overload fun(name: string): boolean
-function ScGetIsProfileAttributeSet(name) end
+function ScGamerdataGetBool(name) end
 
     
---- # New Name: ScGetIsProfileAttributeSet
+--- # New Name: ScGamerdataGetBool
 --- ```
 --- sfink: from scripts:
 --- func_720(socialclub::_0x8416FE4E4629D7D7("bIgnoreCheaterOverride"));
@@ -667,6 +753,21 @@ function ScGetIsProfileAttributeSet(name) end
 --- @overload fun(name: string): boolean
 --- @deprecated
 function N_0x8416fe4e4629d7d7(name) end
+
+    
+--- # New Name: ScGamerdataGetBool
+--- ```
+--- sfink: from scripts:
+--- func_720(socialclub::_0x8416FE4E4629D7D7("bIgnoreCheaterOverride"));
+--- func_719(socialclub::_0x8416FE4E4629D7D7("bIgnoreBadSportOverride"));
+--- ```
+---
+--- @hash [0x8416FE4E4629D7D7](https://docs.fivem.net/natives/?_0x8416FE4E4629D7D7)
+--- @param name string (char*)
+--- @return boolean
+--- @overload fun(name: string): boolean
+--- @deprecated
+function ScGetIsProfileAttributeSet(name) end
 
     
 --- ScProfanityGetStringPassed
@@ -895,10 +996,25 @@ function N_0xa68d3d229f4f3b06(data) end
 --- ```
 ---
 --- @hash [0xA770C8EEC6FB2AC5](https://docs.fivem.net/natives/?_0xA770C8EEC6FB2AC5)
+--- @param name string (char*)
+--- @param outValue number (float*)
+--- @return boolean
+--- @overload fun(): boolean, string): boolean, number
+function ScGamerdataGetFloat(name, outValue) end
+
+    
+--- # New Name: ScGamerdataGetFloat
+--- ```
+--- NativeDB Introduced: v323
+--- ```
 ---
---- @return any
---- @overload fun(): any
-function N_0xa770c8eec6fb2ac5() end
+--- @hash [0xA770C8EEC6FB2AC5](https://docs.fivem.net/natives/?_0xA770C8EEC6FB2AC5)
+--- @param name string (char*)
+--- @param outValue number (float*)
+--- @return boolean
+--- @overload fun(): boolean, string): boolean, number
+--- @deprecated
+function N_0xa770c8eec6fb2ac5(name, outValue) end
 
     
 --- ScInboxGetMessageTypeAtIndex
@@ -1031,28 +1147,69 @@ function N_0xc5a35c73b68f3c49() end
 --- ```
 ---
 --- @hash [0xC85A7127E7AD02AA](https://docs.fivem.net/natives/?_0xC85A7127E7AD02AA)
----
---- @return any
---- @overload fun(): any
-function N_0xc85a7127e7ad02aa() end
+--- @param name string (char*)
+--- @param outValue number (int*)
+--- @return boolean
+--- @overload fun(): boolean, string): boolean, number
+function ScGamerdataGetInt(name, outValue) end
 
     
---- N_0xd0ee05fe193646ea
+--- # New Name: ScGamerdataGetInt
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+---
+--- @hash [0xC85A7127E7AD02AA](https://docs.fivem.net/natives/?_0xC85A7127E7AD02AA)
+--- @param name string (char*)
+--- @param outValue number (int*)
+--- @return boolean
+--- @overload fun(): boolean, string): boolean, number
+--- @deprecated
+function N_0xc85a7127e7ad02aa(name, outValue) end
+
+    
+--- Changes the license plate for the user (no insert).
 ---
 --- @hash [0xD0EE05FE193646EA](https://docs.fivem.net/natives/?_0xD0EE05FE193646EA)
----
---- @return boolean, any, any, any
---- @overload fun(): boolean, any, any, any
-function N_0xd0ee05fe193646ea() end
+--- @param oldPlateText string (char*)
+--- @param newPlateText string (char*)
+--- @param plateData string (char*)
+--- @return boolean
+--- @overload fun(oldPlateText: string, newPlateText: string, plateData: string): boolean
+function ScLicenseplateSetPlateData(oldPlateText, newPlateText, plateData) end
 
     
---- N_0xd302e99edf0449cf
+--- # New Name: ScLicenseplateSetPlateData
+--- Changes the license plate for the user (no insert).
+---
+--- @hash [0xD0EE05FE193646EA](https://docs.fivem.net/natives/?_0xD0EE05FE193646EA)
+--- @param oldPlateText string (char*)
+--- @param newPlateText string (char*)
+--- @param plateData string (char*)
+--- @return boolean
+--- @overload fun(oldPlateText: string, newPlateText: string, plateData: string): boolean
+--- @deprecated
+function N_0xd0ee05fe193646ea(oldPlateText, newPlateText, plateData) end
+
+    
+--- Checks if the "is valid license plate" request is still pending.
 ---
 --- @hash [0xD302E99EDF0449CF](https://docs.fivem.net/natives/?_0xD302E99EDF0449CF)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function N_0xd302e99edf0449cf(p0) end
+--- @param token number (int)
+--- @return boolean
+--- @overload fun(token: number): boolean
+function ScLicenseplateGetIsvalidIsPending(token) end
+
+    
+--- # New Name: ScLicenseplateGetIsvalidIsPending
+--- Checks if the "is valid license plate" request is still pending.
+---
+--- @hash [0xD302E99EDF0449CF](https://docs.fivem.net/natives/?_0xD302E99EDF0449CF)
+--- @param token number (int)
+--- @return boolean
+--- @overload fun(token: number): boolean
+--- @deprecated
+function N_0xd302e99edf0449cf(token) end
 
     
 --- N_0xd8122c407663b995

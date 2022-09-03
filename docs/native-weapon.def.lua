@@ -520,19 +520,21 @@ function N_0x44f1012b69313374(zoneId, x, y, z) end
 function IsPedArmed(ped, typeFlags) end
 
     
---- Changes the weapon damage output by the given multiplier value. Must be run every frame.
----
+--- Changes the weapon damage output by the given multiplier value.
+--- Does NOT need to be called every frame.
+--- @usage SetWeaponDamageModifier(`WEAPON_CARBINERIFLE`, 0.8
 --- @hash [0x4757F00BC6323CFE](https://docs.fivem.net/natives/?_0x4757F00BC6323CFE)
 --- @param weaponHash Hash
 --- @param damageMultiplier number (float)
 --- @return void
 --- @overload fun(weaponHash: Hash, damageMultiplier: number): void
-function SetWeaponDamageModifierThisFrame(weaponHash, damageMultiplier) end
+function SetWeaponDamageModifier(weaponHash, damageMultiplier) end
 
     
---- # New Name: SetWeaponDamageModifierThisFrame
---- Changes the weapon damage output by the given multiplier value. Must be run every frame.
----
+--- # New Name: SetWeaponDamageModifier
+--- Changes the weapon damage output by the given multiplier value.
+--- Does NOT need to be called every frame.
+--- @usage SetWeaponDamageModifier(`WEAPON_CARBINERIFLE`, 0.8
 --- @hash [0x4757F00BC6323CFE](https://docs.fivem.net/natives/?_0x4757F00BC6323CFE)
 --- @param weaponHash Hash
 --- @param damageMultiplier number (float)
@@ -542,16 +544,17 @@ function SetWeaponDamageModifierThisFrame(weaponHash, damageMultiplier) end
 function N_0x4757f00bc6323cfe(weaponHash, damageMultiplier) end
 
     
---- # New Name: SetWeaponDamageModifierThisFrame
---- Changes the weapon damage output by the given multiplier value. Must be run every frame.
----
+--- # New Name: SetWeaponDamageModifier
+--- Changes the weapon damage output by the given multiplier value.
+--- Does NOT need to be called every frame.
+--- @usage SetWeaponDamageModifier(`WEAPON_CARBINERIFLE`, 0.8
 --- @hash [0x4757F00BC6323CFE](https://docs.fivem.net/natives/?_0x4757F00BC6323CFE)
 --- @param weaponHash Hash
 --- @param damageMultiplier number (float)
 --- @return void
 --- @overload fun(weaponHash: Hash, damageMultiplier: number): void
 --- @deprecated
-function SetWeaponDamageModifier(weaponHash, damageMultiplier) end
+function SetWeaponDamageModifierThisFrame(weaponHash, damageMultiplier) end
 
     
 --- SetPedDropsWeaponsWhenDead
@@ -646,6 +649,8 @@ function GetWeaponComponentVariantExtraComponentModel(componentHash, extraCompon
 function N_0x4d1cb8dc40208a17(componentHash, extraComponentIndex) end
 
     
+--- Related to the ped's weapon - flag used when disabling ped vehicle weapon
+--- 
 --- SET_PED_\*
 --- 
 --- ```
@@ -660,15 +665,50 @@ function N_0x50276ef8172f5f12(ped) end
 
     
 --- ```
---- tintIndex can be the following:
---- 0 - Normal
---- 1 - Green
---- 2 - Gold
---- 3 - Pink
---- 4 - Army
---- 5 - LSPD
---- 6 - Orange
---- 7 - Platinum
+--- tintIndex can be the following:  
+--- 0 : Default/Black
+--- 1 : Green
+--- 2 : Gold
+--- 3 : Pink
+--- 4 : Army
+--- 5 : LSPD
+--- 6 : Orange
+--- 7 : Platinum
+--- 
+--- tintIndex for MK2 weapons :
+--- 0 : Classic Black
+--- 1 : Classic Gray
+--- 2 : Classic Two-Tone
+--- 3 : Classic White
+--- 4 : Classic Beige
+--- 5 : Classic Green
+--- 6 : Classic Blue
+--- 7 : Classic Earth
+--- 8 : Classic Brown & Black
+--- 9 : Red Contrast
+--- 10 : Blue Contrast
+--- 11 : Yellow Contrast
+--- 12 : Orange Contrast
+--- 13 : Bold Pink
+--- 14 : Bold Purple & Yellow
+--- 15 : Bold Orange
+--- 16 : Bold Green & Purple
+--- 17 : Bold Red Features
+--- 18 : Bold Green Features
+--- 19 : Bold Cyan Features
+--- 20 : Bold Yellow Features
+--- 21 : Bold Red & White
+--- 22 : Bold Blue & White
+--- 23 : Metallic Gold
+--- 24 : Metallic Platinum
+--- 25 : Metallic Gray & Lilac
+--- 26 : Metallic Purple & Lime
+--- 27 : Metallic Red
+--- 28 : Metallic Green
+--- 29 : Metallic Blue
+--- 30 : Metallic White & Aqua
+--- 31 : Metallic Orange & Yellow
+--- 32 : Mettalic Red and Yellow
 --- ```
 ---
 --- @hash [0x50969B9B89ED5738](https://docs.fivem.net/natives/?_0x50969B9B89ED5738)
@@ -1772,9 +1812,8 @@ function GetPedWeaponLiveryColor(ped, weaponHash, camoComponentHash) end
 function N_0xf0a60040be558f2d(ped, weaponHash, camoComponentHash) end
 
     
---- ```
---- setting the last params to false it does that same so I would suggest its not a toggle  
---- ```
+--- Parameter `p1` does not seem to be used or referenced in game binaries.\
+--- **Note:** When called for networked entities, a `CRemoveAllWeaponsEvent` will be created per request.
 ---
 --- @hash [0xF25DF915FA38C5F3](https://docs.fivem.net/natives/?_0xF25DF915FA38C5F3)
 --- @param ped Ped

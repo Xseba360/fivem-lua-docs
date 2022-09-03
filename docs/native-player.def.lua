@@ -13,7 +13,15 @@ function N_0x0032a6dba562c518() end
     
 --- Set the model for a specific Player. Be aware that this will destroy the current Ped for the Player and create a new one, any reference to the old ped should be reset
 --- Make sure to request the model first and wait until it has loaded.
----
+--- @usage local model = 'a_f_m_beach_01'
+--- if IsModelInCdimage(model) and IsModelValid(model) then
+---   RequestModel(model)
+---   while not HasModelLoaded(model) do
+---     Citizen.Wait(0)
+---   end
+---   SetPlayerModel(PlayerId(), model)
+---   SetModelAsNoLongerNeeded(model)
+--- en
 --- @hash [0x00A1CADD00108836](https://docs.fivem.net/natives/?_0x00A1CADD00108836)
 --- @param player Player
 --- @param model Hash
@@ -821,24 +829,20 @@ function N_0x4669b3ed80f24b4e(player) end
 function SetAllRandomPedsFleeThisFrame(player) end
 
     
---- ```
---- This is to make the player walk without accepting input from INPUT.  
---- gaitType is in increments of 100s. 2000, 500, 300, 200, etc.  
---- p4 is always 1 and p5 is always 0.  
---- C# Example :  
---- Function.Call(Hash.SIMULATE_PLAYER_INPUT_GAIT, Game.Player, 1.0f, 100, 1.0f, 1, 0); //Player will go forward for 100ms  
---- ```
+--- This is to make the player walk without accepting input.
+--- 
+--- Call this native every frame so you can control the direction of your ped.
 ---
 --- @hash [0x477D5D63E63ECA5D](https://docs.fivem.net/natives/?_0x477D5D63E63ECA5D)
 --- @param player Player
 --- @param amount number (float)
 --- @param gaitType number (int)
---- @param speed number (float)
+--- @param rotationSpeed number (float)
 --- @param p4 boolean
 --- @param p5 boolean
 --- @return void
---- @overload fun(player: Player, amount: number, gaitType: number, speed: number, p4: boolean, p5: boolean): void
-function SimulatePlayerInputGait(player, amount, gaitType, speed, p4, p5) end
+--- @overload fun(player: Player, amount: number, gaitType: number, rotationSpeed: number, p4: boolean, p5: boolean): void
+function SimulatePlayerInputGait(player, amount, gaitType, rotationSpeed, p4, p5) end
 
     
 --- ```
@@ -1127,12 +1131,10 @@ function SetIgnoreLowPriorityShockingEvents(player, toggle) end
 
     
 --- ```
---- Example from fm_mission_controler.ysc.c4:  
---- PLAYER::SET_PLAYER_LOCKON(PLAYER::PLAYER_ID(), 1);  
---- All other decompiled scripts using this seem to be using the player id as the first parameter, so I feel the need to confirm it as so.  
---- No need to confirm it says PLAYER_ID() so it uses PLAYER_ID() lol.  
+--- Used to toggle the square up aim.
 --- ```
----
+--- @usage local plyId = PlayerId()
+--- SetPlayerLockon(plyId, false
 --- @hash [0x5C8B2F450EE4328E](https://docs.fivem.net/natives/?_0x5C8B2F450EE4328E)
 --- @param player Player
 --- @param toggle boolean
@@ -1962,26 +1964,34 @@ function SpecialAbilityChargeNormalized(player, normalizedValue, p2) end
 function ResetSpecialAbilityControlsCinematic(player, normalizedValue, p2) end
 
     
---- SetPlayerUnderwaterTimeRemaining
+--- Seems to lock the underwater timer of the specified player. Set `percentage` to `50.0` will reduce the value of [GET_PLAYER_UNDERWATER_TIME_REMAINING](https://docs.fivem.net/natives/?_0xA1FCF8E6AF40B731) to 5.0.
+--- 
+--- If you want to increase the underwater time for ped, use [SET_PED_MAX_TIME_UNDERWATER](https://docs.fivem.net/natives/?_0x6BA428C528D9E522) instead.
+--- 
+--- Using this native after [SET_PED_MAX_TIME_UNDERWATER](https://docs.fivem.net/natives/?_0x6BA428C528D9E522) **WILL NOT** get what you want. For example, if you set the max time underwater to `100.0` seconds using [SET_PED_MAX_TIME_UNDERWATER](https://docs.fivem.net/natives/?_0x6BA428C528D9E522) and then call this native and set the `percentage` to 50.0, you will not get `50.0`, instead `2.0`.
 ---
 --- @hash [0xA0D3E4F7AAFB7E78](https://docs.fivem.net/natives/?_0xA0D3E4F7AAFB7E78)
 --- @param player Player
---- @param time number (float)
+--- @param percentage number (float)
 --- @return any
---- @overload fun(player: Player, time: number): any
-function SetPlayerUnderwaterTimeRemaining(player, time) end
+--- @overload fun(player: Player, percentage: number): any
+function SetPlayerUnderwaterTimeRemaining(player, percentage) end
 
     
 --- # New Name: SetPlayerUnderwaterTimeRemaining
---- SetPlayerUnderwaterTimeRemaining
+--- Seems to lock the underwater timer of the specified player. Set `percentage` to `50.0` will reduce the value of [GET_PLAYER_UNDERWATER_TIME_REMAINING](https://docs.fivem.net/natives/?_0xA1FCF8E6AF40B731) to 5.0.
+--- 
+--- If you want to increase the underwater time for ped, use [SET_PED_MAX_TIME_UNDERWATER](https://docs.fivem.net/natives/?_0x6BA428C528D9E522) instead.
+--- 
+--- Using this native after [SET_PED_MAX_TIME_UNDERWATER](https://docs.fivem.net/natives/?_0x6BA428C528D9E522) **WILL NOT** get what you want. For example, if you set the max time underwater to `100.0` seconds using [SET_PED_MAX_TIME_UNDERWATER](https://docs.fivem.net/natives/?_0x6BA428C528D9E522) and then call this native and set the `percentage` to 50.0, you will not get `50.0`, instead `2.0`.
 ---
 --- @hash [0xA0D3E4F7AAFB7E78](https://docs.fivem.net/natives/?_0xA0D3E4F7AAFB7E78)
 --- @param player Player
---- @param time number (float)
+--- @param percentage number (float)
 --- @return any
---- @overload fun(player: Player, time: number): any
+--- @overload fun(player: Player, percentage: number): any
 --- @deprecated
-function N_0xa0d3e4f7aafb7e78(player, time) end
+function N_0xa0d3e4f7aafb7e78(player, percentage) end
 
     
 --- GetPlayerUnderwaterTimeRemaining
@@ -2119,8 +2129,22 @@ function SetSwimMultiplierForPlayer(player, multiplier) end
 function SetMaxWantedLevel(maxWantedLevel) end
 
     
---- StartPlayerTeleport
----
+--- Teleports the player to the given coordinates.
+--- 
+--- If findCollisionLand is true it will try to find the Z value for you, this however has a timeout of 100 frames.
+--- 
+--- When trying to find the Z value the native will take longer the higher the difference from the given Z to the ground, this combined with the timeout can cause the teleport to just teleport to the given Z value, so try to estimate the z value, so don't just pass in 1000.0.
+--- 
+--- Also if you're in a vehicle and teleportWithVehicle is true it will not find the Z value for you.
+--- @usage local coords = vector3(100.0, 100.0, 50.0)
+--- StartPlayerTeleport(PlayerId(), coords.x, coords.y, coords.z, 0.0, false, true, true)
+--- 
+--- while IsPlayerTeleportActive() do
+---   Citizen.Wait(0)
+--- end
+--- 
+--- --- If you would want to make 100% sure the ped is on the ground here you would have to do some additional checks here
+--- --- Easiest would be a simple: GetEntityHeightAboveGround(PlayerPedId()
 --- @hash [0xAD15F075A4DA0FDE](https://docs.fivem.net/natives/?_0xAD15F075A4DA0FDE)
 --- @param player Player
 --- @param x number (float)
@@ -2379,32 +2403,28 @@ function N_0xb9cf1f793a9f1bf1() end
 function ResetWantedLevelDifficulty(player) end
 
     
---- ```
---- var num3 = PLAYER::GET_PLAYER_PED(l_2171); // proof l_2171 is a player
---- var num17 = PLAYER::0x9DF75B2A(l_2171, 100, 0); // l_2171
---- .ysc:
----     if (PLAYER::GET_PLAYER_WANTED_LEVEL(l_6EF) < v_4) { // l_6EF is a player
----         PLAYER::SET_PLAYER_WANTED_LEVEL(l_6EF, v_4, 0); // l_6EF
----         PLAYER::SET_PLAYER_WANTED_LEVEL_NOW(l_6EF, 0); // l_6EF
----     } else {
----         PLAYER::_4669B3ED80F24B4E(l_6EF); // l_6EF
----         HUD::_BA8D65C1C65702E5(1);
----         a_0 = 1;
----     }
----         if (l_4B24[l_6F2/*156*/]._f8C != PLAYER::_BC0753C9CA14B506(l_6EF, 100, 0)) { // l_6EF
----             l_4B24[l_6F2/*156*/]._f8C = PLAYER::_BC0753C9CA14B506(l_6EF, 100, 0); // l_6EF
----         }
---- Both was taken from fm_mission_controller
---- GET_PLAYER_*
---- ```
+--- HasPlayerBeenShotByCop
 ---
 --- @hash [0xBC0753C9CA14B506](https://docs.fivem.net/natives/?_0xBC0753C9CA14B506)
 --- @param player Player
---- @param p1 number (int)
+--- @param ms number (int)
 --- @param p2 boolean
 --- @return boolean
---- @overload fun(player: Player, p1: number, p2: boolean): boolean
-function N_0xbc0753c9ca14b506(player, p1, p2) end
+--- @overload fun(player: Player, ms: number, p2: boolean): boolean
+function HasPlayerBeenShotByCop(player, ms, p2) end
+
+    
+--- # New Name: HasPlayerBeenShotByCop
+--- HasPlayerBeenShotByCop
+---
+--- @hash [0xBC0753C9CA14B506](https://docs.fivem.net/natives/?_0xBC0753C9CA14B506)
+--- @param player Player
+--- @param ms number (int)
+--- @param p2 boolean
+--- @return boolean
+--- @overload fun(player: Player, ms: number, p2: boolean): boolean
+--- @deprecated
+function N_0xbc0753c9ca14b506(player, ms, p2) end
 
     
 --- ```

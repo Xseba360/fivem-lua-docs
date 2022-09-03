@@ -46,6 +46,21 @@ function NetworkEarnFromRockstar(amount) end
 
     
 --- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x02D24A35A9CC3503](https://docs.fivem.net/natives/?_0x02D24A35A9CC3503)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any): void
+function NetworkSpentVehicleRequested(p0, p1, p2, p3, p4) end
+
+    
+--- ```
 --- NativeDB Introduced: v1604
 --- ```
 ---
@@ -847,6 +862,32 @@ function N_0x2b171e6b2f64d8df(p0, p1, p2) end
 
     
 --- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x2C5809EB9DF57257](https://docs.fivem.net/natives/?_0x2C5809EB9DF57257)
+--- @param p0 any
+--- @param p1 any
+--- @return void
+--- @overload fun(p0: any, p1: any): void
+function NetworkEarnFromBikeShopBusiness(p0, p1) end
+
+    
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x2CEB0E0BC2A77C05](https://docs.fivem.net/natives/?_0x2CEB0E0BC2A77C05)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: any, p3: any): void
+function NetworkSpentGunrunningContactService(p0, p1, p2, p3) end
+
+    
+--- ```
 --- NativeDB Introduced: v1290
 --- ```
 ---
@@ -1259,6 +1300,20 @@ function N_0x4337511fa8221d36(amount) end
 function NetworkSpentArcadeGeneric(p0, p1, p2, p3, p4) end
 
     
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x45087AE480B233AC](https://docs.fivem.net/natives/?_0x45087AE480B233AC)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: any, p3: any): void
+function NetworkEarnFromSightseeing(p0, p1, p2, p3) end
+
+    
 --- NetworkEarnFromHoldups
 ---
 --- @hash [0x45B8154E077D9E4D](https://docs.fivem.net/natives/?_0x45B8154E077D9E4D)
@@ -1497,6 +1552,20 @@ function NetworkEarnFromCasinoMissionReward(amount) end
 --- @return void
 --- @overload fun(value: number): number
 function NetworkReceivePlayerJobshareCash(value, networkHandle) end
+
+    
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x59498BC8B1C8B15C](https://docs.fivem.net/natives/?_0x59498BC8B1C8B15C)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: any, p3: any): void
+function NetworkEarnFromBusinessHubSource(p0, p1, p2, p3) end
 
     
 --- ```
@@ -2039,6 +2108,17 @@ function NetworkSpentArenaSpectatorBox(amount, p1, p2, p3) end
 
     
 --- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x71BEC32FA466E105](https://docs.fivem.net/natives/?_0x71BEC32FA466E105)
+--- @param p0 any
+--- @return void
+--- @overload fun(p0: any): void
+function NetworkEarnFromBikerIncome(p0) end
+
+    
+--- ```
 --- NativeDB Introduced: v1868
 --- ```
 ---
@@ -2228,6 +2308,17 @@ function NetworkSpentPlayerHealthcare(p0, p1, p2, p3) end
 --- @overload fun(p0: number, p1: number, p2: boolean, p3: boolean): void
 --- @deprecated
 function N_0x7c99101f7fce2ee5(p0, p1, p2, p3) end
+
+    
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x7E2F4E8F44CAF4E0](https://docs.fivem.net/natives/?_0x7E2F4E8F44CAF4E0)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+function NetworkSpentSalesDisplay(p0) end
 
     
 --- NetworkSpentTelescope
@@ -2586,6 +2677,20 @@ function N_0x8e243837643d9583(p0, p1, p2, p3) end
 function N_0x90cd7c6871fbf1b4(p0, p1, p2, p3) end
 
     
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x923AEA8E78F8DF0B](https://docs.fivem.net/natives/?_0x923AEA8E78F8DF0B)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: any, p3: any): void
+function NetworkSpentBikeShopModify(p0, p1, p2, p3) end
+
+    
 --- NetworkEarnFromSellBunker
 ---
 --- @hash [0x9251B6ABF2D0A5B4](https://docs.fivem.net/natives/?_0x9251B6ABF2D0A5B4)
@@ -2692,6 +2797,22 @@ function NetworkSpentImAbility(p0, p1, p2, p3) end
 --- @overload fun(p0: any, p1: any, p2: any, p3: any): void
 --- @deprecated
 function N_0x93aa4165cb67e925(p0, p1, p2, p3) end
+
+    
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x948705F6F9C50824](https://docs.fivem.net/natives/?_0x948705F6F9C50824)
+--- @param p0 any
+--- @param p1 any
+--- @param p2 any
+--- @param p3 any
+--- @param p4 any
+--- @param p5 any
+--- @return void
+--- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any): void
+function NetworkSpentCargoSourcing(p0, p1, p2, p3, p4, p5) end
 
     
 --- ```

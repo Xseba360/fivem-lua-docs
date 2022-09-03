@@ -114,19 +114,6 @@ function GetUtcTime() end
 --- @return number, number, number, number, number, number
 --- @overload fun(): number, number, number, number, number, number
 --- @deprecated
-function GetLocalTime() end
-
-    
---- # New Name: GetUtcTime
---- ```
---- Gets current UTC time
---- ```
----
---- @hash [0x8117E09A19EEF4D3](https://docs.fivem.net/natives/?_0x8117E09A19EEF4D3)
----
---- @return number, number, number, number, number, number
---- @overload fun(): number, number, number, number, number, number
---- @deprecated
 function GetUtcTime() end
 
     

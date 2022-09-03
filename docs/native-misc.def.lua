@@ -450,8 +450,17 @@ function HasAsyncInstallFinished() end
 function N_0x14832bf2aba53fc5() end
 
     
---- GetFrameTime
----
+--- Gets the high precision frame time of the last frame in seconds.
+--- 
+--- *note: the example above is way less precise.*
+--- @usage local time1 = GetGameTimer()
+--- Citizen.Wait(0)
+--- 
+--- -- Prints for example 0.01253530010581 at around 90 FPS
+--- print(GetFrameTime())
+--- 
+--- -- This would print about the same as above, but is less accurate, ie: 0.012
+--- print((GetGameTimer() - time1) / 1000
 --- @hash [0x15C40837039FFAF7](https://docs.fivem.net/natives/?_0x15C40837039FFAF7)
 ---
 --- @return number
@@ -914,9 +923,7 @@ function GetGlobalCharBuffer() end
 function N_0x24da7d7667fd7b09() end
 
     
---- ```
---- Activates (usused?) riot mode. All NPCs are being hostile to each other (including player). Also the game will give weapons (pistols, smgs) to random NPCs.
---- ```
+--- Activates riot mode. All NPCs are being hostile to each other (including player). Also the game will give weapons (pistols, smgs) to random NPCs.
 ---
 --- @hash [0x2587A48BC88DFADF](https://docs.fivem.net/natives/?_0x2587A48BC88DFADF)
 --- @param toggle boolean
@@ -926,9 +933,7 @@ function SetRiotModeEnabled(toggle) end
 
     
 --- # New Name: SetRiotModeEnabled
---- ```
---- Activates (usused?) riot mode. All NPCs are being hostile to each other (including player). Also the game will give weapons (pistols, smgs) to random NPCs.
---- ```
+--- Activates riot mode. All NPCs are being hostile to each other (including player). Also the game will give weapons (pistols, smgs) to random NPCs.
 ---
 --- @hash [0x2587A48BC88DFADF](https://docs.fivem.net/natives/?_0x2587A48BC88DFADF)
 --- @param toggle boolean
@@ -2624,7 +2629,7 @@ function N_0x82fde6a57ee4ee44(ped, weaponHash, distance, ownedByPlayer) end
 function GetOnscreenKeyboardResult() end
 
     
---- ShootSingleBulletBetweenCoords
+--- Shoots a bullet from the first vector to the second vector. The weapon used as weaponHash should already be loaded via REQUEST_WEAPON_ASSET, otherwise the bullet may fail to materialise.
 ---
 --- @hash [0x867654CBC7606F2C](https://docs.fivem.net/natives/?_0x867654CBC7606F2C)
 --- @param x1 number (float)
@@ -2634,15 +2639,15 @@ function GetOnscreenKeyboardResult() end
 --- @param y2 number (float)
 --- @param z2 number (float)
 --- @param damage number (int)
---- @param p7 boolean
+--- @param pureAccuracy boolean
 --- @param weaponHash Hash
 --- @param ownerPed Ped
 --- @param isAudible boolean
 --- @param isInvisible boolean
 --- @param speed number (float)
 --- @return void
---- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, damage: number, p7: boolean, weaponHash: Hash, ownerPed: Ped, isAudible: boolean, isInvisible: boolean, speed: number): void
-function ShootSingleBulletBetweenCoords(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed) end
+--- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, damage: number, pureAccuracy: boolean, weaponHash: Hash, ownerPed: Ped, isAudible: boolean, isInvisible: boolean, speed: number): void
+function ShootSingleBulletBetweenCoords(x1, y1, z1, x2, y2, z2, damage, pureAccuracy, weaponHash, ownerPed, isAudible, isInvisible, speed) end
 
     
 --- Atan2
@@ -4778,9 +4783,33 @@ function N_0xd9f692d349249528() end
 function SetFadeInAfterDeathArrest(toggle) end
 
     
+--- Enables or disables the specified 'dispatch service' type. 'Dispatch services' are used for spawning AI response peds/vehicles for events such as a fire in the street (type 3 - DT_FireDepartment), or gunfire in a gang area (type 11 - DT_Gangs).
+--- 
+--- List of dispatch services:
+--- 
+--- ```cpp
+--- enum DispatchType
+--- {
+--- 	DT_Invalid = 0,
+--- 	DT_PoliceAutomobile,
+--- 	DT_PoliceHelicopter,
+--- 	DT_FireDepartment,
+--- 	DT_SwatAutomobile,
+--- 	DT_AmbulanceDepartment,
+--- 	DT_PoliceRiders,
+--- 	DT_PoliceVehicleRequest,
+--- 	DT_PoliceRoadBlock,
+--- 	DT_PoliceAutomobileWaitPulledOver,
+--- 	DT_PoliceAutomobileWaitCruising,
+--- 	DT_Gangs,
+--- 	DT_SwatHelicopter,
+--- 	DT_PoliceBoat,
+--- 	DT_ArmyVehicle,
+--- 	DT_BikerBackup = 15
+--- };
 --- ```
---- https://alloc8or.re/gta5/doc/enums/DispatchType.txt
---- ```
+--- 
+--- Note that 'dispatch service' has nothing to do with the police scanner (audio), to toggle that, use [SET_AUDIO_FLAG](https://docs.fivem.net/natives/?_0xB9EFD5C25018725A) with `'PoliceScannerDisabled'`.
 ---
 --- @hash [0xDC0F817884CDD856](https://docs.fivem.net/natives/?_0xDC0F817884CDD856)
 --- @param dispatchService number (int)
@@ -4791,9 +4820,33 @@ function EnableDispatchService(dispatchService, toggle) end
 
     
 --- # New Name: EnableDispatchService
+--- Enables or disables the specified 'dispatch service' type. 'Dispatch services' are used for spawning AI response peds/vehicles for events such as a fire in the street (type 3 - DT_FireDepartment), or gunfire in a gang area (type 11 - DT_Gangs).
+--- 
+--- List of dispatch services:
+--- 
+--- ```cpp
+--- enum DispatchType
+--- {
+--- 	DT_Invalid = 0,
+--- 	DT_PoliceAutomobile,
+--- 	DT_PoliceHelicopter,
+--- 	DT_FireDepartment,
+--- 	DT_SwatAutomobile,
+--- 	DT_AmbulanceDepartment,
+--- 	DT_PoliceRiders,
+--- 	DT_PoliceVehicleRequest,
+--- 	DT_PoliceRoadBlock,
+--- 	DT_PoliceAutomobileWaitPulledOver,
+--- 	DT_PoliceAutomobileWaitCruising,
+--- 	DT_Gangs,
+--- 	DT_SwatHelicopter,
+--- 	DT_PoliceBoat,
+--- 	DT_ArmyVehicle,
+--- 	DT_BikerBackup = 15
+--- };
 --- ```
---- https://alloc8or.re/gta5/doc/enums/DispatchType.txt
---- ```
+--- 
+--- Note that 'dispatch service' has nothing to do with the police scanner (audio), to toggle that, use [SET_AUDIO_FLAG](https://docs.fivem.net/natives/?_0xB9EFD5C25018725A) with `'PoliceScannerDisabled'`.
 ---
 --- @hash [0xDC0F817884CDD856](https://docs.fivem.net/natives/?_0xDC0F817884CDD856)
 --- @param dispatchService number (int)
@@ -5365,7 +5418,7 @@ function ForceSocialClubUpdate() end
 function N_0xebd3205a207939ed(p0) end
 
     
---- Refer to [`SET_WEATHER_TYPE_NOW_PERSIST`](https://docs.fivem.net/natives/?_0xED712CA327900C8A) for weather types.
+--- Refer to [`SET_WEATHER_TYPE_NOW`](#0x29B487C359E19889) for weather types.
 ---
 --- @hash [0xED712CA327900C8A](https://docs.fivem.net/natives/?_0xED712CA327900C8A)
 --- @param weatherType string (char*)

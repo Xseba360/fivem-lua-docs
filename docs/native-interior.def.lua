@@ -67,8 +67,6 @@ function N_0x23b59d8912f94246() end
 
     
 --- ```
---- GET_INTERIOR_*
---- 
 --- NativeDB Introduced: v1290
 --- ```
 ---
@@ -76,6 +74,32 @@ function N_0x23b59d8912f94246() end
 --- @param interior number (int)
 --- @return Vector3, Hash
 --- @overload fun(interior: number): Vector3, Hash
+function GetInteriorLocationAndNamehash(interior) end
+
+    
+--- # New Name: GetInteriorLocationAndNamehash
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0x252BDC06B73FA6EA](https://docs.fivem.net/natives/?_0x252BDC06B73FA6EA)
+--- @param interior number (int)
+--- @return Vector3, Hash
+--- @overload fun(interior: number): Vector3, Hash
+--- @deprecated
+function N_0x252bdc06b73fa6ea(interior) end
+
+    
+--- # New Name: GetInteriorLocationAndNamehash
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0x252BDC06B73FA6EA](https://docs.fivem.net/natives/?_0x252BDC06B73FA6EA)
+--- @param interior number (int)
+--- @return Vector3, Hash
+--- @overload fun(interior: number): Vector3, Hash
+--- @deprecated
 function GetInteriorInfo(interior) end
 
     
@@ -657,10 +681,10 @@ function GetInteriorGroupId(interior) end
 ---
 --- @return number
 --- @overload fun(): number
-function GetInteriorFromGameplayCam() end
+function GetInteriorFromPrimaryView() end
 
     
---- # New Name: GetInteriorFromGameplayCam
+--- # New Name: GetInteriorFromPrimaryView
 --- ```
 --- NativeDB Introduced: v1604
 --- ```
@@ -671,6 +695,19 @@ function GetInteriorFromGameplayCam() end
 --- @overload fun(): number
 --- @deprecated
 function N_0xe7d267ec6ca966c3() end
+
+    
+--- # New Name: GetInteriorFromPrimaryView
+--- ```
+--- NativeDB Introduced: v1604
+--- ```
+---
+--- @hash [0xE7D267EC6CA966C3](https://docs.fivem.net/natives/?_0xE7D267EC6CA966C3)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
+function GetInteriorFromGameplayCam() end
 
     
 --- GetInteriorFromCollision

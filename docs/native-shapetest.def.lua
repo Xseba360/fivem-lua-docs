@@ -1,5 +1,5 @@
 
---- StartShapeTestBoundingBox
+--- See [`START_SHAPE_TEST_LOS_PROBE`](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E) for flags.
 ---
 --- @hash [0x052837721A854EC7](https://docs.fivem.net/natives/?_0x052837721A854EC7)
 --- @param entity Entity
@@ -11,7 +11,7 @@ function StartShapeTestBoundingBox(entity, flags1, flags2) end
 
     
 --- # New Name: StartShapeTestBoundingBox
---- StartShapeTestBoundingBox
+--- See [`START_SHAPE_TEST_LOS_PROBE`](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E) for flags.
 ---
 --- @hash [0x052837721A854EC7](https://docs.fivem.net/natives/?_0x052837721A854EC7)
 --- @param entity Entity
@@ -23,15 +23,7 @@ function StartShapeTestBoundingBox(entity, flags1, flags2) end
 function N_0x052837721a854ec7(entity, flags1, flags2) end
 
     
---- ```
---- Raycast from point to point, where the ray has a radius.   
---- flags:  
---- vehicles=10  
---- peds =12  
---- Iterating through flags yields many ped / vehicle/ object combinations  
---- p9 = 7, but no idea what it does  
---- Entity is an entity to ignore  
---- ```
+--- Raycast from point to point, where the ray has a radius.
 ---
 --- @hash [0x28579D1B8F8AAC80](https://docs.fivem.net/natives/?_0x28579D1B8F8AAC80)
 --- @param x1 number (float)
@@ -50,15 +42,7 @@ function StartShapeTestCapsule(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9
 
     
 --- # New Name: StartShapeTestCapsule
---- ```
---- Raycast from point to point, where the ray has a radius.   
---- flags:  
---- vehicles=10  
---- peds =12  
---- Iterating through flags yields many ped / vehicle/ object combinations  
---- p9 = 7, but no idea what it does  
---- Entity is an entity to ignore  
---- ```
+--- Raycast from point to point, where the ray has a radius.
 ---
 --- @hash [0x28579D1B8F8AAC80](https://docs.fivem.net/natives/?_0x28579D1B8F8AAC80)
 --- @param x1 number (float)
@@ -111,7 +95,7 @@ function N_0x2b3334bca57cd799(entity) end
 function ShapeTestResultEntity(entity) end
 
     
---- StartShapeTestBound
+--- See [`START_SHAPE_TEST_LOS_PROBE`](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E) for flags.
 ---
 --- @hash [0x37181417CE7C8900](https://docs.fivem.net/natives/?_0x37181417CE7C8900)
 --- @param entity Entity
@@ -123,7 +107,7 @@ function StartShapeTestBound(entity, flags1, flags2) end
 
     
 --- # New Name: StartShapeTestBound
---- StartShapeTestBound
+--- See [`START_SHAPE_TEST_LOS_PROBE`](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E) for flags.
 ---
 --- @hash [0x37181417CE7C8900](https://docs.fivem.net/natives/?_0x37181417CE7C8900)
 --- @param entity Entity
@@ -138,24 +122,6 @@ function N_0x37181417ce7c8900(entity, flags1, flags2) end
 --- Does the same as [START_SHAPE_TEST_LOS_PROBE](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E), except blocking until the shape test completes.
 --- 
 --- Use [START_SHAPE_TEST_LOS_PROBE](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E) instead. Literally. Rockstar named this correctly: it's expensive, and it's synchronous.
---- 
---- ```
---- This function casts a ray from Point1 to Point2 and returns it's ray handle.  A simple ray cast will 'shoot' a line from point A to point B, and return whether or not the ray reached it's destination or if it hit anything and if it did hit anything, will return the handle of what it hit (entity handle) and coordinates of where the ray reached.  
---- You can use _GET_RAYCAST_RESULT to get the result of the raycast  
---- Entity is an entity to ignore, such as the player.  
---- Flags are intersection bit flags.  They tell the ray what to care about and what not to care about when casting. Passing -1 will intersect with everything, presumably.  
---- Flags:  
---- 1: Intersect with map  
---- 2: Intersect with vehicles (used to be mission entities?) (includes train)  
---- 4: Intersect with peds? (same as 8)  
---- 8: Intersect with peds? (same as 4)  
---- 16: Intersect with objects  
---- 32: Water?  
---- 64: Unknown  
---- 128: Unknown  
---- 256: Intersect with vegetation (plants, coral. trees not included)  
---- NOTE: Raycasts that intersect with mission_entites (flag = 2) has limited range and will not register for far away entites. The range seems to be about 30 metres.  
---- ```
 ---
 --- @hash [0x377906D8A31E5586](https://docs.fivem.net/natives/?_0x377906D8A31E5586)
 --- @param x1 number (float)
@@ -176,24 +142,6 @@ function StartExpensiveSynchronousShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flag
 --- Does the same as [START_SHAPE_TEST_LOS_PROBE](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E), except blocking until the shape test completes.
 --- 
 --- Use [START_SHAPE_TEST_LOS_PROBE](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E) instead. Literally. Rockstar named this correctly: it's expensive, and it's synchronous.
---- 
---- ```
---- This function casts a ray from Point1 to Point2 and returns it's ray handle.  A simple ray cast will 'shoot' a line from point A to point B, and return whether or not the ray reached it's destination or if it hit anything and if it did hit anything, will return the handle of what it hit (entity handle) and coordinates of where the ray reached.  
---- You can use _GET_RAYCAST_RESULT to get the result of the raycast  
---- Entity is an entity to ignore, such as the player.  
---- Flags are intersection bit flags.  They tell the ray what to care about and what not to care about when casting. Passing -1 will intersect with everything, presumably.  
---- Flags:  
---- 1: Intersect with map  
---- 2: Intersect with vehicles (used to be mission entities?) (includes train)  
---- 4: Intersect with peds? (same as 8)  
---- 8: Intersect with peds? (same as 4)  
---- 16: Intersect with objects  
---- 32: Water?  
---- 64: Unknown  
---- 128: Unknown  
---- 256: Intersect with vegetation (plants, coral. trees not included)  
---- NOTE: Raycasts that intersect with mission_entites (flag = 2) has limited range and will not register for far away entites. The range seems to be about 30 metres.  
---- ```
 ---
 --- @hash [0x377906D8A31E5586](https://docs.fivem.net/natives/?_0x377906D8A31E5586)
 --- @param x1 number (float)
@@ -215,24 +163,6 @@ function CastRayPointToPoint(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 --- Does the same as [START_SHAPE_TEST_LOS_PROBE](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E), except blocking until the shape test completes.
 --- 
 --- Use [START_SHAPE_TEST_LOS_PROBE](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E) instead. Literally. Rockstar named this correctly: it's expensive, and it's synchronous.
---- 
---- ```
---- This function casts a ray from Point1 to Point2 and returns it's ray handle.  A simple ray cast will 'shoot' a line from point A to point B, and return whether or not the ray reached it's destination or if it hit anything and if it did hit anything, will return the handle of what it hit (entity handle) and coordinates of where the ray reached.  
---- You can use _GET_RAYCAST_RESULT to get the result of the raycast  
---- Entity is an entity to ignore, such as the player.  
---- Flags are intersection bit flags.  They tell the ray what to care about and what not to care about when casting. Passing -1 will intersect with everything, presumably.  
---- Flags:  
---- 1: Intersect with map  
---- 2: Intersect with vehicles (used to be mission entities?) (includes train)  
---- 4: Intersect with peds? (same as 8)  
---- 8: Intersect with peds? (same as 4)  
---- 16: Intersect with objects  
---- 32: Water?  
---- 64: Unknown  
---- 128: Unknown  
---- 256: Intersect with vegetation (plants, coral. trees not included)  
---- NOTE: Raycasts that intersect with mission_entites (flag = 2) has limited range and will not register for far away entites. The range seems to be about 30 metres.  
---- ```
 ---
 --- @hash [0x377906D8A31E5586](https://docs.fivem.net/natives/?_0x377906D8A31E5586)
 --- @param x1 number (float)
@@ -323,6 +253,24 @@ function GetShapeTestResultEx(shapeTestHandle) end
     
 --- Asynchronously starts a line-of-sight (raycast) world probe shape test.
 --- 
+--- ```cpp
+--- enum TraceFlags
+--- {
+---   None = 0,
+---   IntersectWorld = 1,
+---   IntersectVehicles = 2,
+---   IntersectPedsSimpleCollision = 4,
+---   IntersectPeds = 8,
+---   IntersectObjects = 16,
+---   IntersectWater = 32,
+---   Unknown = 128,
+---   IntersectFoliage = 256,
+---   IntersectEverything = 4294967295
+--- }
+--- ```
+--- 
+--- NOTE: Raycasts that intersect with mission_entites (flag = 2) has limited range and will not register for far away entites. The range seems to be about 30 metres.
+--- 
 --- Use the handle with [GET_SHAPE_TEST_RESULT](https://docs.fivem.net/natives/?_0x3D87450E15D98694) or [GET_SHAPE_TEST_RESULT_INCLUDING_MATERIAL](https://docs.fivem.net/natives/?_0x65287525D951F6BE) until it returns 0 or 2.
 ---
 --- @hash [0x7EE9F5D83DD4F90E](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E)
@@ -343,6 +291,24 @@ function StartShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 --- # New Name: StartShapeTestLosProbe
 --- Asynchronously starts a line-of-sight (raycast) world probe shape test.
 --- 
+--- ```cpp
+--- enum TraceFlags
+--- {
+---   None = 0,
+---   IntersectWorld = 1,
+---   IntersectVehicles = 2,
+---   IntersectPedsSimpleCollision = 4,
+---   IntersectPeds = 8,
+---   IntersectObjects = 16,
+---   IntersectWater = 32,
+---   Unknown = 128,
+---   IntersectFoliage = 256,
+---   IntersectEverything = 4294967295
+--- }
+--- ```
+--- 
+--- NOTE: Raycasts that intersect with mission_entites (flag = 2) has limited range and will not register for far away entites. The range seems to be about 30 metres.
+--- 
 --- Use the handle with [GET_SHAPE_TEST_RESULT](https://docs.fivem.net/natives/?_0x3D87450E15D98694) or [GET_SHAPE_TEST_RESULT_INCLUDING_MATERIAL](https://docs.fivem.net/natives/?_0x65287525D951F6BE) until it returns 0 or 2.
 ---
 --- @hash [0x7EE9F5D83DD4F90E](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E)
@@ -361,9 +327,7 @@ function StartShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 function N_0x7ee9f5d83dd4f90e(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 
     
---- ```
---- Performs the same type of trace as START_SHAPE_TEST_CAPSULE, but with some different hardcoded parameters.  
---- ```
+--- Performs the same type of trace as START_SHAPE_TEST_CAPSULE, but with some different hardcoded parameters.
 ---
 --- @hash [0xE6AC6C45FBE83004](https://docs.fivem.net/natives/?_0xE6AC6C45FBE83004)
 --- @param x1 number (float)
@@ -375,16 +339,14 @@ function N_0x7ee9f5d83dd4f90e(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 --- @param radius number (float)
 --- @param flags number (int)
 --- @param entity Entity
---- @param p9 any
+--- @param p9 number (int)
 --- @return number
---- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, radius: number, flags: number, entity: Entity, p9: any): number
+--- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, radius: number, flags: number, entity: Entity, p9: number): number
 function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
 
     
 --- # New Name: StartShapeTestSweptSphere
---- ```
---- Performs the same type of trace as START_SHAPE_TEST_CAPSULE, but with some different hardcoded parameters.  
---- ```
+--- Performs the same type of trace as START_SHAPE_TEST_CAPSULE, but with some different hardcoded parameters.
 ---
 --- @hash [0xE6AC6C45FBE83004](https://docs.fivem.net/natives/?_0xE6AC6C45FBE83004)
 --- @param x1 number (float)
@@ -396,17 +358,15 @@ function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity
 --- @param radius number (float)
 --- @param flags number (int)
 --- @param entity Entity
---- @param p9 any
+--- @param p9 number (int)
 --- @return number
---- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, radius: number, flags: number, entity: Entity, p9: any): number
+--- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, radius: number, flags: number, entity: Entity, p9: number): number
 --- @deprecated
 function N_0xe6ac6c45fbe83004(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
 
     
 --- # New Name: StartShapeTestSweptSphere
---- ```
---- Performs the same type of trace as START_SHAPE_TEST_CAPSULE, but with some different hardcoded parameters.  
---- ```
+--- Performs the same type of trace as START_SHAPE_TEST_CAPSULE, but with some different hardcoded parameters.
 ---
 --- @hash [0xE6AC6C45FBE83004](https://docs.fivem.net/natives/?_0xE6AC6C45FBE83004)
 --- @param x1 number (float)
@@ -418,9 +378,9 @@ function N_0xe6ac6c45fbe83004(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9)
 --- @param radius number (float)
 --- @param flags number (int)
 --- @param entity Entity
---- @param p9 any
+--- @param p9 number (int)
 --- @return number
---- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, radius: number, flags: number, entity: Entity, p9: any): number
+--- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, radius: number, flags: number, entity: Entity, p9: number): number
 --- @deprecated
 function StartShapeTestCapsule_2(x1, y1, z1, x2, y2, z2, radius, flags, entity, p9) end
 
@@ -432,18 +392,18 @@ function StartShapeTestCapsule_2(x1, y1, z1, x2, y2, z2, radius, flags, entity, 
 --- @param y number (float)
 --- @param z number (float)
 --- @param x1 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
 --- @param rotX number (float)
 --- @param rotY number (float)
 --- @param rotZ number (float)
---- @param p9 any
+--- @param p9 number (int)
 --- @param flags number (int)
 --- @param entity Entity
---- @param p12 any
+--- @param p12 number (int)
 --- @return number
---- @overload fun(x: number, y: number, z: number, x1: number, y2: number, z2: number, rotX: number, rotY: number, rotZ: number, p9: any, flags: number, entity: Entity, p12: any): number
-function StartShapeTestBox(x, y, z, x1, y2, z2, rotX, rotY, rotZ, p9, flags, entity, p12) end
+--- @overload fun(x: number, y: number, z: number, x1: number, y1: number, z1: number, rotX: number, rotY: number, rotZ: number, p9: number, flags: number, entity: Entity, p12: number): number
+function StartShapeTestBox(x, y, z, x1, y1, z1, rotX, rotY, rotZ, p9, flags, entity, p12) end
 
     
 --- # New Name: StartShapeTestBox
@@ -454,19 +414,19 @@ function StartShapeTestBox(x, y, z, x1, y2, z2, rotX, rotY, rotZ, p9, flags, ent
 --- @param y number (float)
 --- @param z number (float)
 --- @param x1 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
 --- @param rotX number (float)
 --- @param rotY number (float)
 --- @param rotZ number (float)
---- @param p9 any
+--- @param p9 number (int)
 --- @param flags number (int)
 --- @param entity Entity
---- @param p12 any
+--- @param p12 number (int)
 --- @return number
---- @overload fun(x: number, y: number, z: number, x1: number, y2: number, z2: number, rotX: number, rotY: number, rotZ: number, p9: any, flags: number, entity: Entity, p12: any): number
+--- @overload fun(x: number, y: number, z: number, x1: number, y1: number, z1: number, rotX: number, rotY: number, rotZ: number, p9: number, flags: number, entity: Entity, p12: number): number
 --- @deprecated
-function N_0xfe466162c4401d18(x, y, z, x1, y2, z2, rotX, rotY, rotZ, p9, flags, entity, p12) end
+function N_0xfe466162c4401d18(x, y, z, x1, y1, z1, rotX, rotY, rotZ, p9, flags, entity, p12) end
 
     
 --- Since it is only used in the PC version, likely some mouse-friendly shape test. Uses **in** vector arguments.
@@ -477,6 +437,8 @@ function N_0xfe466162c4401d18(x, y, z, x1, y2, z2, rotX, rotY, rotZ, p9, flags, 
 --- it returns a ShapeTest handle that can be used with GET_SHAPE_TEST_RESULT.  
 --- In its only usage in game scripts its called with flag set to 511, entity to player_ped_id and flag2 set to 7  
 --- ```
+--- 
+--- See [`START_SHAPE_TEST_LOS_PROBE`](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E) for flags.
 ---
 --- @hash [0xFF6BE494C7987F34](https://docs.fivem.net/natives/?_0xFF6BE494C7987F34)
 --- @param flag number (int)
@@ -496,6 +458,8 @@ function StartShapeTestSurroundingCoords(flag, entity, flag2) end
 --- it returns a ShapeTest handle that can be used with GET_SHAPE_TEST_RESULT.  
 --- In its only usage in game scripts its called with flag set to 511, entity to player_ped_id and flag2 set to 7  
 --- ```
+--- 
+--- See [`START_SHAPE_TEST_LOS_PROBE`](https://docs.fivem.net/natives/?_0x7EE9F5D83DD4F90E) for flags.
 ---
 --- @hash [0xFF6BE494C7987F34](https://docs.fivem.net/natives/?_0xFF6BE494C7987F34)
 --- @param flag number (int)

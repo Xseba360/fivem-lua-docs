@@ -8,6 +8,23 @@
 function RemoveVehicleHighDetailModel(vehicle) end
 
     
+--- ```
+--- mpsum2_g9ec
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x00834EAC4A96E010](https://docs.fivem.net/natives/?_0x00834EAC4A96E010)
+--- @param vehicle Vehicle
+--- @param modType number (int)
+--- @param modIndex number (int)
+--- @return boolean
+--- @overload fun(vehicle: Vehicle, modType: number, modIndex: number): boolean
+function IsVehicleModHswExclusive(vehicle, modType, modIndex) end
+
+    
 --- GetVehicleClassEstimatedMaxSpeed
 ---
 --- @hash [0x00C09F246ABEDD82](https://docs.fivem.net/natives/?_0x00C09F246ABEDD82)
@@ -2077,10 +2094,10 @@ function ToggleVehicleMod(vehicle, modType, toggle) end
 --- @param instantly boolean
 --- @return void
 --- @overload fun(vehicle: Vehicle, instantly: boolean): void
-function TransformSubmarineToVehicle(vehicle, instantly) end
+function TransformToCar(vehicle, instantly) end
 
     
---- # New Name: TransformSubmarineToVehicle
+--- # New Name: TransformToCar
 --- Transforms the `stormberg` to its "road vehicle" variant. If the vehicle is already in that state then the vehicle transformation audio will still play, but the vehicle won't change at all.
 ---
 --- @hash [0x2A69FFD1B42BFF9E](https://docs.fivem.net/natives/?_0x2A69FFD1B42BFF9E)
@@ -2092,7 +2109,7 @@ function TransformSubmarineToVehicle(vehicle, instantly) end
 function N_0x2a69ffd1b42bff9e(vehicle, instantly) end
 
     
---- # New Name: TransformSubmarineToVehicle
+--- # New Name: TransformToCar
 --- Transforms the `stormberg` to its "road vehicle" variant. If the vehicle is already in that state then the vehicle transformation audio will still play, but the vehicle won't change at all.
 ---
 --- @hash [0x2A69FFD1B42BFF9E](https://docs.fivem.net/natives/?_0x2A69FFD1B42BFF9E)
@@ -2102,6 +2119,18 @@ function N_0x2a69ffd1b42bff9e(vehicle, instantly) end
 --- @overload fun(vehicle: Vehicle, instantly: boolean): void
 --- @deprecated
 function TransformStormbergToRoadVehicle(vehicle, instantly) end
+
+    
+--- # New Name: TransformToCar
+--- Transforms the `stormberg` to its "road vehicle" variant. If the vehicle is already in that state then the vehicle transformation audio will still play, but the vehicle won't change at all.
+---
+--- @hash [0x2A69FFD1B42BFF9E](https://docs.fivem.net/natives/?_0x2A69FFD1B42BFF9E)
+--- @param vehicle Vehicle
+--- @param instantly boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, instantly: boolean): void
+--- @deprecated
+function TransformSubmarineToVehicle(vehicle, instantly) end
 
     
 --- ```
@@ -4209,13 +4238,25 @@ function DoesVehicleAllowRappel(vehicle) end
 function N_0x4e417c547182c84d(vehicle) end
 
     
---- N_0x4e74e62e0a97e901
+--- Sets flag on vehicle that changes behaviour in relation to when player gets wanted level
 ---
 --- @hash [0x4E74E62E0A97E901](https://docs.fivem.net/natives/?_0x4E74E62E0A97E901)
 --- @param vehicle Vehicle
 --- @param p1 boolean
 --- @return void
 --- @overload fun(vehicle: Vehicle, p1: boolean): void
+function SetPoliceFocusWillTrackVehicle(vehicle, p1) end
+
+    
+--- # New Name: SetPoliceFocusWillTrackVehicle
+--- Sets flag on vehicle that changes behaviour in relation to when player gets wanted level
+---
+--- @hash [0x4E74E62E0A97E901](https://docs.fivem.net/natives/?_0x4E74E62E0A97E901)
+--- @param vehicle Vehicle
+--- @param p1 boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, p1: boolean): void
+--- @deprecated
 function N_0x4e74e62e0a97e901(vehicle, p1) end
 
     
@@ -4745,22 +4786,18 @@ function N_0x56b94c6d7127dfba(vehicle, position, p2) end
 function N_0x56eb5e94318d3fb6(vehicle, p1) end
 
     
---- ```
---- Stops cargobob from beeing able to detach the attached vehicle.
---- ```
+--- Stops cargobob from being able to detach the attached vehicle.
 ---
 --- @hash [0x571FEB383F629926](https://docs.fivem.net/natives/?_0x571FEB383F629926)
 --- @param cargobob Vehicle
 --- @param toggle boolean
 --- @return void
 --- @overload fun(cargobob: Vehicle, toggle: boolean): void
-function SetCargobobHookCanDetach(cargobob, toggle) end
+function SetCargobobForceDontDetachVehicle(cargobob, toggle) end
 
     
---- # New Name: SetCargobobHookCanDetach
---- ```
---- Stops cargobob from beeing able to detach the attached vehicle.
---- ```
+--- # New Name: SetCargobobForceDontDetachVehicle
+--- Stops cargobob from being able to detach the attached vehicle.
 ---
 --- @hash [0x571FEB383F629926](https://docs.fivem.net/natives/?_0x571FEB383F629926)
 --- @param cargobob Vehicle
@@ -4769,6 +4806,18 @@ function SetCargobobHookCanDetach(cargobob, toggle) end
 --- @overload fun(cargobob: Vehicle, toggle: boolean): void
 --- @deprecated
 function N_0x571feb383f629926(cargobob, toggle) end
+
+    
+--- # New Name: SetCargobobForceDontDetachVehicle
+--- Stops cargobob from being able to detach the attached vehicle.
+---
+--- @hash [0x571FEB383F629926](https://docs.fivem.net/natives/?_0x571FEB383F629926)
+--- @param cargobob Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(cargobob: Vehicle, toggle: boolean): void
+--- @deprecated
+function SetCargobobHookCanDetach(cargobob, toggle) end
 
     
 --- ```
@@ -4874,19 +4923,19 @@ function N_0x5845066d8a1ea7f7(vehicle, x, y, z, p4) end
 
     
 --- ```
---- Returns `nMonetaryValue` from handling.meta for specific model.
+--- Returns `nMonetaryValue` from handling.meta for specific model, which is the vehicle's monetary value.
 --- ```
 ---
 --- @hash [0x5873C14A52D74236](https://docs.fivem.net/natives/?_0x5873C14A52D74236)
 --- @param vehicleModel Hash
 --- @return number
 --- @overload fun(vehicleModel: Hash): number
-function GetVehicleModelMonetaryValue(vehicleModel) end
+function GetVehicleModelValue(vehicleModel) end
 
     
---- # New Name: GetVehicleModelMonetaryValue
+--- # New Name: GetVehicleModelValue
 --- ```
---- Returns `nMonetaryValue` from handling.meta for specific model.
+--- Returns `nMonetaryValue` from handling.meta for specific model, which is the vehicle's monetary value.
 --- ```
 ---
 --- @hash [0x5873C14A52D74236](https://docs.fivem.net/natives/?_0x5873C14A52D74236)
@@ -4895,6 +4944,19 @@ function GetVehicleModelMonetaryValue(vehicleModel) end
 --- @overload fun(vehicleModel: Hash): number
 --- @deprecated
 function N_0x5873c14a52d74236(vehicleModel) end
+
+    
+--- # New Name: GetVehicleModelValue
+--- ```
+--- Returns `nMonetaryValue` from handling.meta for specific model, which is the vehicle's monetary value.
+--- ```
+---
+--- @hash [0x5873C14A52D74236](https://docs.fivem.net/natives/?_0x5873C14A52D74236)
+--- @param vehicleModel Hash
+--- @return number
+--- @overload fun(vehicleModel: Hash): number
+--- @deprecated
+function GetVehicleModelMonetaryValue(vehicleModel) end
 
     
 --- SetMissionTrainCoords
@@ -8305,7 +8367,19 @@ function N_0x9becd4b9fef3f8a6(vehicle, p1) end
 function StartVehicleHorn(vehicle, duration, mode, forever) end
 
     
---- GetVehiclePlateType
+--- Returns the plates a vehicle has.
+--- 
+--- ```
+--- enum eVehiclePlateType
+--- {
+--- 	VPT_FRONT_AND_BACK_PLATES = 0,
+--- 	VPT_FRONT_PLATES = 1,
+--- 	VPT_BACK_PLATES = 2,
+--- 	VPT_NONE = 3,
+--- };
+--- ```
+--- 
+--- Motorcycles with no visible plates will sometimes return a 2 for unknown reasons.
 ---
 --- @hash [0x9CCC9525BF2408E0](https://docs.fivem.net/natives/?_0x9CCC9525BF2408E0)
 --- @param vehicle Vehicle
@@ -8463,14 +8537,15 @@ function IsBigVehicle(vehicle) end
 function N_0x9f3f689b814f2599(vehicle, p1) end
 
     
---- N_0xa01bc64dd4bfbbac
+--- Gets hash related to task happening with seat index
+--- Native name: GET_I\*
 ---
 --- @hash [0xA01BC64DD4BFBBAC](https://docs.fivem.net/natives/?_0xA01BC64DD4BFBBAC)
 --- @param vehicle Vehicle
---- @param p1 number (int)
---- @return any
---- @overload fun(vehicle: Vehicle, p1: number): any
-function N_0xa01bc64dd4bfbbac(vehicle, p1) end
+--- @param seatIndex number (int)
+--- @return Hash
+--- @overload fun(vehicle: Vehicle, seatIndex: number): Hash
+function N_0xa01bc64dd4bfbbac(vehicle, seatIndex) end
 
     
 --- IsThisModelAPlane
@@ -8605,6 +8680,22 @@ function AttachEntityToCargobob(vehicle, entity, p2, x, y, z) end
 --- @overload fun(vehicle: Vehicle, entity: Entity, p2: number, x: number, y: number, z: number): void
 --- @deprecated
 function N_0xa1dd82f3ccf9a01e(vehicle, entity, p2, x, y, z) end
+
+    
+--- # New Name: AttachEntityToCargobob
+--- AttachEntityToCargobob
+---
+--- @hash [0xA1DD82F3CCF9A01E](https://docs.fivem.net/natives/?_0xA1DD82F3CCF9A01E)
+--- @param vehicle Vehicle
+--- @param entity Entity
+--- @param p2 number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return void
+--- @overload fun(vehicle: Vehicle, entity: Entity, p2: number, x: number, y: number, z: number): void
+--- @deprecated
+function AttachEntityToCargobob(vehicle, entity, p2, x, y, z) end
 
     
 --- ```
@@ -8853,6 +8944,19 @@ function SetVehicleParachuteTextureVariatiion(vehicle, textureVariation) end
 --- @param vehicle Vehicle
 --- @return boolean
 --- @overload fun(vehicle: Vehicle): boolean
+function IsVehicleInSubmarineMode(vehicle) end
+
+    
+--- # New Name: IsVehicleInSubmarineMode
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0xA77DC70BD689A1E5](https://docs.fivem.net/natives/?_0xA77DC70BD689A1E5)
+--- @param vehicle Vehicle
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+--- @deprecated
 function GetIsSubmarineVehicleTransformed(vehicle) end
 
     
@@ -10031,6 +10135,24 @@ function IsVehicleDoorDamaged(veh, doorID) end
 --- @param vehicle Vehicle
 --- @return number
 --- @overload fun(vehicle: Vehicle): number
+function GetVehicleHealthPercentage(vehicle) end
+
+    
+--- # New Name: GetVehicleHealthPercentage
+--- ```
+--- NativeDB Added Parameter 2: float maxEngineHealth
+--- NativeDB Added Parameter 3: float maxPetrolTankHealth
+--- NativeDB Added Parameter 4: float maxBodyHealth
+--- NativeDB Added Parameter 5: float maxMainRotorHealth
+--- NativeDB Added Parameter 6: float maxTailRotorHealth
+--- NativeDB Added Parameter 7: float maxUnkHealth
+--- ```
+---
+--- @hash [0xB8EF61207C2393A9](https://docs.fivem.net/natives/?_0xB8EF61207C2393A9)
+--- @param vehicle Vehicle
+--- @return number
+--- @overload fun(vehicle: Vehicle): number
+--- @deprecated
 function GetVehicleBodyHealth_2(vehicle) end
 
     
@@ -10373,10 +10495,10 @@ function SetBoatSinking(vehicle) end
 --- @param instantly boolean
 --- @return void
 --- @overload fun(vehicle: Vehicle, instantly: boolean): void
-function TransformVehicleToSubmarine(vehicle, instantly) end
+function TransformToSubmarine(vehicle, instantly) end
 
     
---- # New Name: TransformVehicleToSubmarine
+--- # New Name: TransformToSubmarine
 --- Transforms the `stormberg` to its "water vehicle" variant. If the vehicle is already in that state then the vehicle transformation audio will still play, but the vehicle won't change at all.
 ---
 --- @hash [0xBE4C854FFDB6EEBE](https://docs.fivem.net/natives/?_0xBE4C854FFDB6EEBE)
@@ -10388,7 +10510,7 @@ function TransformVehicleToSubmarine(vehicle, instantly) end
 function N_0xbe4c854ffdb6eebe(vehicle, instantly) end
 
     
---- # New Name: TransformVehicleToSubmarine
+--- # New Name: TransformToSubmarine
 --- Transforms the `stormberg` to its "water vehicle" variant. If the vehicle is already in that state then the vehicle transformation audio will still play, but the vehicle won't change at all.
 ---
 --- @hash [0xBE4C854FFDB6EEBE](https://docs.fivem.net/natives/?_0xBE4C854FFDB6EEBE)
@@ -10398,6 +10520,18 @@ function N_0xbe4c854ffdb6eebe(vehicle, instantly) end
 --- @overload fun(vehicle: Vehicle, instantly: boolean): void
 --- @deprecated
 function TransformStormbergToWaterVehicle(vehicle, instantly) end
+
+    
+--- # New Name: TransformToSubmarine
+--- Transforms the `stormberg` to its "water vehicle" variant. If the vehicle is already in that state then the vehicle transformation audio will still play, but the vehicle won't change at all.
+---
+--- @hash [0xBE4C854FFDB6EEBE](https://docs.fivem.net/natives/?_0xBE4C854FFDB6EEBE)
+--- @param vehicle Vehicle
+--- @param instantly boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, instantly: boolean): void
+--- @deprecated
+function TransformVehicleToSubmarine(vehicle, instantly) end
 
     
 --- N_0xbe5c1255a1830ff5
@@ -10623,7 +10757,8 @@ function N_0xc24075310a8b9cd1(vehicle, wheelId, state, value, p4) end
 function DetachVehicleFromTowTruck(towTruck, vehicle) end
 
     
---- N_0xc361aa040d6637a8
+--- Vehicle must be a plane.
+--- Native name is between SET_VEHICLE_BRAKE_LIGHTS and SET_VEHICLE_BULLDOZER_ARM_POSITION alphabetically.
 ---
 --- @hash [0xC361AA040D6637A8](https://docs.fivem.net/natives/?_0xC361AA040D6637A8)
 --- @param vehicle Vehicle
@@ -11000,9 +11135,7 @@ function SetVehicleUsesLargeRearRamp(vehicle, toggle) end
 function N_0xcac66558b944da67(vehicle, toggle) end
 
     
---- ```
---- Gets the position of the cargobob hook, in world coords.  
---- ```
+--- Gets the position of the cargobob hook, in world coords.
 ---
 --- @hash [0xCBDB9B923CACC92D](https://docs.fivem.net/natives/?_0xCBDB9B923CACC92D)
 --- @param cargobob Vehicle
@@ -11012,9 +11145,7 @@ function GetCargobobHookPosition(cargobob) end
 
     
 --- # New Name: GetCargobobHookPosition
---- ```
---- Gets the position of the cargobob hook, in world coords.  
---- ```
+--- Gets the position of the cargobob hook, in world coords.
 ---
 --- @hash [0xCBDB9B923CACC92D](https://docs.fivem.net/natives/?_0xCBDB9B923CACC92D)
 --- @param cargobob Vehicle
@@ -11326,7 +11457,7 @@ function SetSomethingMultiplierThisFrame(toggle) end
     
 --- ```
 --- Only used like this:  
---- if (VEHICLE::_D4C4642CB7F50B5D(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(v_3))) {                                                        sub_157e9c(g_40001._f1868, 0);  
+--- if (VEHICLE::GET_VEHICLE_IS_MERCENARY(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(v_3))) {                                                        sub_157e9c(g_40001._f1868, 0);  
 --- }  
 --- ```
 ---
@@ -11334,6 +11465,21 @@ function SetSomethingMultiplierThisFrame(toggle) end
 --- @param vehicle Vehicle
 --- @return boolean
 --- @overload fun(vehicle: Vehicle): boolean
+function GetVehicleIsMercenary(vehicle) end
+
+    
+--- # New Name: GetVehicleIsMercenary
+--- ```
+--- Only used like this:  
+--- if (VEHICLE::GET_VEHICLE_IS_MERCENARY(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(v_3))) {                                                        sub_157e9c(g_40001._f1868, 0);  
+--- }  
+--- ```
+---
+--- @hash [0xD4C4642CB7F50B5D](https://docs.fivem.net/natives/?_0xD4C4642CB7F50B5D)
+--- @param vehicle Vehicle
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+--- @deprecated
 function N_0xd4c4642cb7f50b5d(vehicle) end
 
     
@@ -11812,14 +11958,26 @@ function N_0xe023e8ac4ef7c117(p0, p1, p2, p3) end
 function N_0xe05dd0e9707003a3(p0, p1) end
 
     
---- N_0xe16142b94664defd
+--- SetPlaneResistToExplosion
 ---
 --- @hash [0xE16142B94664DEFD](https://docs.fivem.net/natives/?_0xE16142B94664DEFD)
 --- @param vehicle Vehicle
---- @param p1 boolean
+--- @param toggle boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, p1: boolean): void
-function N_0xe16142b94664defd(vehicle, p1) end
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+function SetPlaneResistToExplosion(vehicle, toggle) end
+
+    
+--- # New Name: SetPlaneResistToExplosion
+--- SetPlaneResistToExplosion
+---
+--- @hash [0xE16142B94664DEFD](https://docs.fivem.net/natives/?_0xE16142B94664DEFD)
+--- @param vehicle Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+--- @deprecated
+function N_0xe16142b94664defd(vehicle, toggle) end
 
     
 --- ```
@@ -12622,6 +12780,22 @@ function N_0xef49cf0270307cbe() end
 function RequestVehiclePhoneExplosion() end
 
     
+--- ```
+--- Only used in R* Script fm_content_cargo
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0xEF9D388F8D377F44](https://docs.fivem.net/natives/?_0xEF9D388F8D377F44)
+--- @param vehicle Vehicle
+--- @param p1 boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, p1: boolean): void
+function N_0xef9d388f8d377f44(vehicle, p1) end
+
+    
 --- SetVehicleRampLaunchModifier
 ---
 --- @hash [0xEFC13B1CE30D755D](https://docs.fivem.net/natives/?_0xEFC13B1CE30D755D)
@@ -13291,18 +13465,17 @@ function N_0xf8b49f5ba7f850e7(vehicle, p1) end
 
     
 --- ```
---- 0 -> up  
---- 1 -> lowering down  
---- 2 -> down  
---- 3 -> raising up  
---- enum RoofState  
---- {  
----      ROOFSTATE_UP = 0;  
----      ROOFSTATE_LOWERING,  
----      ROOFSTATE_DOWN,  
----      ROOFSTATE_RAISING  
---- };  
+--- enum RoofState
+--- {
+---      ROOFSTATE_UP = 0;
+---      ROOFSTATE_LOWERING,
+---      ROOFSTATE_DOWN,
+---      ROOFSTATE_RAISING
+--- };
 --- ```
+--- 
+--- Got a "6" return value but not sure about what the value means
+--- 6 -> unknown (Stopped but not fully open ?)
 ---
 --- @hash [0xF8C397922FC03F41](https://docs.fivem.net/natives/?_0xF8C397922FC03F41)
 --- @param vehicle Vehicle

@@ -897,7 +897,7 @@ function GetMeleeTargetForPed(ped) end
 --- 	_0xB60EA2BA = 245,
 --- 	_0x536B0950 = 246,
 --- 	_0x0C754ACA = 247,
---- 	_0x69D28F3E = 248,
+--- 	CPED_CONFIG_FLAG_DisableVehicleSeatRandomAnimations = 248,
 --- 	_0x12659168 = 249,
 --- 	_0x1BDF2F04 = 250,
 --- 	_0x7728FAA3 = 251,
@@ -1800,10 +1800,11 @@ function RequestPedVehicleVisibilityTracking(ped, p1) end
 function GetPedFloodInvincibility(ped, p1) end
 
     
---- ```
---- Forces the ped to fall back and kills it.  
---- It doesn't really explode the ped's head but it kills the ped  
---- ```
+--- Applies lethal damage (FLT_MAX) to the `SKEL_Head` bone of the specified ped using the weapon passed, leading to the
+--- ped's untimely demise.
+--- 
+--- The naming of the native is a legacy leftover (formerly EXPLODE_CHAR_HEAD in GTA3) as in the early 3D GTA games, lethal
+--- damage to a ped head would 'explode' it.
 ---
 --- @hash [0x2D05CED3A38D0F3A](https://docs.fivem.net/natives/?_0x2D05CED3A38D0F3A)
 --- @param ped Ped
@@ -2418,7 +2419,367 @@ function N_0x3e9679c1dfcf422c(p0, p1) end
 
     
 --- ```
---- Bone ID enum: pastebin.com/3pz17QGd  
+--- enum ePedBoneId : uint16_t
+--- {
+---     SKEL_ROOT = 0x0,
+---     SKEL_Pelvis = 0x2E28,
+---     SKEL_L_Thigh = 0xE39F,
+---     SKEL_L_Calf = 0xF9BB,
+---     SKEL_L_Foot = 0x3779,
+---     SKEL_L_Toe0 = 0x83C,
+---     EO_L_Foot = 0x84C5,
+---     EO_L_Toe = 0x68BD,
+---     IK_L_Foot = 0xFEDD,
+---     PH_L_Foot = 0xE175,
+---     MH_L_Knee = 0xB3FE,
+---     SKEL_R_Thigh = 0xCA72,
+---     SKEL_R_Calf = 0x9000,
+---     SKEL_R_Foot = 0xCC4D,
+---     SKEL_R_Toe0 = 0x512D,
+---     EO_R_Foot = 0x1096,
+---     EO_R_Toe = 0x7163,
+---     IK_R_Foot = 0x8AAE,
+---     PH_R_Foot = 0x60E6,
+---     MH_R_Knee = 0x3FCF,
+---     RB_L_ThighRoll = 0x5C57,
+---     RB_R_ThighRoll = 0x192A,
+---     SKEL_Spine_Root = 0xE0FD,
+---     SKEL_Spine0 = 0x5C01,
+---     SKEL_Spine1 = 0x60F0,
+---     SKEL_Spine2 = 0x60F1,
+---     SKEL_Spine3 = 0x60F2,
+---     SKEL_L_Clavicle = 0xFCD9,
+---     SKEL_L_UpperArm = 0xB1C5,
+---     SKEL_L_Forearm = 0xEEEB,
+---     SKEL_L_Hand = 0x49D9,
+---     SKEL_L_Finger00 = 0x67F2,
+---     SKEL_L_Finger01 = 0xFF9,
+---     SKEL_L_Finger02 = 0xFFA,
+---     SKEL_L_Finger10 = 0x67F3,
+---     SKEL_L_Finger11 = 0x1049,
+---     SKEL_L_Finger12 = 0x104A,
+---     SKEL_L_Finger20 = 0x67F4,
+---     SKEL_L_Finger21 = 0x1059,
+---     SKEL_L_Finger22 = 0x105A,
+---     SKEL_L_Finger30 = 0x67F5,
+---     SKEL_L_Finger31 = 0x1029,
+---     SKEL_L_Finger32 = 0x102A,
+---     SKEL_L_Finger40 = 0x67F6,
+---     SKEL_L_Finger41 = 0x1039,
+---     SKEL_L_Finger42 = 0x103A,
+---     PH_L_Hand = 0xEB95,
+---     IK_L_Hand = 0x8CBD,
+---     RB_L_ForeArmRoll = 0xEE4F,
+---     RB_L_ArmRoll = 0x1470,
+---     MH_L_Elbow = 0x58B7,
+---     SKEL_R_Clavicle = 0x29D2,
+---     SKEL_R_UpperArm = 0x9D4D,
+---     SKEL_R_Forearm = 0x6E5C,
+---     SKEL_R_Hand = 0xDEAD,
+---     SKEL_R_Finger00 = 0xE5F2,
+---     SKEL_R_Finger01 = 0xFA10,
+---     SKEL_R_Finger02 = 0xFA11,
+---     SKEL_R_Finger10 = 0xE5F3,
+---     SKEL_R_Finger11 = 0xFA60,
+---     SKEL_R_Finger12 = 0xFA61,
+---     SKEL_R_Finger20 = 0xE5F4,
+---     SKEL_R_Finger21 = 0xFA70,
+---     SKEL_R_Finger22 = 0xFA71,
+---     SKEL_R_Finger30 = 0xE5F5,
+---     SKEL_R_Finger31 = 0xFA40,
+---     SKEL_R_Finger32 = 0xFA41,
+---     SKEL_R_Finger40 = 0xE5F6,
+---     SKEL_R_Finger41 = 0xFA50,
+---     SKEL_R_Finger42 = 0xFA51,
+---     PH_R_Hand = 0x6F06,
+---     IK_R_Hand = 0x188E,
+---     RB_R_ForeArmRoll = 0xAB22,
+---     RB_R_ArmRoll = 0x90FF,
+---     MH_R_Elbow = 0xBB0,
+---     SKEL_Neck_1 = 0x9995,
+---     SKEL_Head = 0x796E,
+---     IK_Head = 0x322C,
+---     FACIAL_facialRoot = 0xFE2C,
+---     FB_L_Brow_Out_000 = 0xE3DB,
+---     FB_L_Lid_Upper_000 = 0xB2B6,
+---     FB_L_Eye_000 = 0x62AC,
+---     FB_L_CheekBone_000 = 0x542E,
+---     FB_L_Lip_Corner_000 = 0x74AC,
+---     FB_R_Lid_Upper_000 = 0xAA10,
+---     FB_R_Eye_000 = 0x6B52,
+---     FB_R_CheekBone_000 = 0x4B88,
+---     FB_R_Brow_Out_000 = 0x54C,
+---     FB_R_Lip_Corner_000 = 0x2BA6,
+---     FB_Brow_Centre_000 = 0x9149,
+---     FB_UpperLipRoot_000 = 0x4ED2,
+---     FB_UpperLip_000 = 0xF18F,
+---     FB_L_Lip_Top_000 = 0x4F37,
+---     FB_R_Lip_Top_000 = 0x4537,
+---     FB_Jaw_000 = 0xB4A0,
+---     FB_LowerLipRoot_000 = 0x4324,
+---     FB_LowerLip_000 = 0x508F,
+---     FB_L_Lip_Bot_000 = 0xB93B,
+---     FB_R_Lip_Bot_000 = 0xC33B,
+---     FB_Tongue_000 = 0xB987,
+---     RB_Neck_1 = 0x8B93,
+---     SPR_L_Breast = 0xFC8E,
+---     SPR_R_Breast = 0x885F,
+---     IK_Root = 0xDD1C,
+---     SKEL_Neck_2 = 0x5FD4,
+---     SKEL_Pelvis1 = 0xD003,
+---     SKEL_PelvisRoot = 0x45FC,
+---     SKEL_SADDLE = 0x9524,
+---     MH_L_CalfBack = 0x1013,
+---     MH_L_ThighBack = 0x600D,
+---     SM_L_Skirt = 0xC419,
+---     MH_R_CalfBack = 0xB013,
+---     MH_R_ThighBack = 0x51A3,
+---     SM_R_Skirt = 0x7712,
+---     SM_M_BackSkirtRoll = 0xDBB,
+---     SM_L_BackSkirtRoll = 0x40B2,
+---     SM_R_BackSkirtRoll = 0xC141,
+---     SM_M_FrontSkirtRoll = 0xCDBB,
+---     SM_L_FrontSkirtRoll = 0x9B69,
+---     SM_R_FrontSkirtRoll = 0x86F1,
+---     SM_CockNBalls_ROOT = 0xC67D,
+---     SM_CockNBalls = 0x9D34,
+---     MH_L_Finger00 = 0x8C63,
+---     MH_L_FingerBulge00 = 0x5FB8,
+---     MH_L_Finger10 = 0x8C53,
+---     MH_L_FingerTop00 = 0xA244,
+---     MH_L_HandSide = 0xC78A,
+---     MH_Watch = 0x2738,
+---     MH_L_Sleeve = 0x933C,
+---     MH_R_Finger00 = 0x2C63,
+---     MH_R_FingerBulge00 = 0x69B8,
+---     MH_R_Finger10 = 0x2C53,
+---     MH_R_FingerTop00 = 0xEF4B,
+---     MH_R_HandSide = 0x68FB,
+---     MH_R_Sleeve = 0x92DC,
+---     FACIAL_jaw = 0xB21,
+---     FACIAL_underChin = 0x8A95,
+---     FACIAL_L_underChin = 0x234E,
+---     FACIAL_chin = 0xB578,
+---     FACIAL_chinSkinBottom = 0x98BC,
+---     FACIAL_L_chinSkinBottom = 0x3E8F,
+---     FACIAL_R_chinSkinBottom = 0x9E8F,
+---     FACIAL_tongueA = 0x4A7C,
+---     FACIAL_tongueB = 0x4A7D,
+---     FACIAL_tongueC = 0x4A7E,
+---     FACIAL_tongueD = 0x4A7F,
+---     FACIAL_tongueE = 0x4A80,
+---     FACIAL_L_tongueE = 0x35F2,
+---     FACIAL_R_tongueE = 0x2FF2,
+---     FACIAL_L_tongueD = 0x35F1,
+---     FACIAL_R_tongueD = 0x2FF1,
+---     FACIAL_L_tongueC = 0x35F0,
+---     FACIAL_R_tongueC = 0x2FF0,
+---     FACIAL_L_tongueB = 0x35EF,
+---     FACIAL_R_tongueB = 0x2FEF,
+---     FACIAL_L_tongueA = 0x35EE,
+---     FACIAL_R_tongueA = 0x2FEE,
+---     FACIAL_chinSkinTop = 0x7226,
+---     FACIAL_L_chinSkinTop = 0x3EB3,
+---     FACIAL_chinSkinMid = 0x899A,
+---     FACIAL_L_chinSkinMid = 0x4427,
+---     FACIAL_L_chinSide = 0x4A5E,
+---     FACIAL_R_chinSkinMid = 0xF5AF,
+---     FACIAL_R_chinSkinTop = 0xF03B,
+---     FACIAL_R_chinSide = 0xAA5E,
+---     FACIAL_R_underChin = 0x2BF4,
+---     FACIAL_L_lipLowerSDK = 0xB9E1,
+---     FACIAL_L_lipLowerAnalog = 0x244A,
+---     FACIAL_L_lipLowerThicknessV = 0xC749,
+---     FACIAL_L_lipLowerThicknessH = 0xC67B,
+---     FACIAL_lipLowerSDK = 0x7285,
+---     FACIAL_lipLowerAnalog = 0xD97B,
+---     FACIAL_lipLowerThicknessV = 0xC5BB,
+---     FACIAL_lipLowerThicknessH = 0xC5ED,
+---     FACIAL_R_lipLowerSDK = 0xA034,
+---     FACIAL_R_lipLowerAnalog = 0xC2D9,
+---     FACIAL_R_lipLowerThicknessV = 0xC6E9,
+---     FACIAL_R_lipLowerThicknessH = 0xC6DB,
+---     FACIAL_nose = 0x20F1,
+---     FACIAL_L_nostril = 0x7322,
+---     FACIAL_L_nostrilThickness = 0xC15F,
+---     FACIAL_noseLower = 0xE05A,
+---     FACIAL_L_noseLowerThickness = 0x79D5,
+---     FACIAL_R_noseLowerThickness = 0x7975,
+---     FACIAL_noseTip = 0x6A60,
+---     FACIAL_R_nostril = 0x7922,
+---     FACIAL_R_nostrilThickness = 0x36FF,
+---     FACIAL_noseUpper = 0xA04F,
+---     FACIAL_L_noseUpper = 0x1FB8,
+---     FACIAL_noseBridge = 0x9BA3,
+---     FACIAL_L_nasolabialFurrow = 0x5ACA,
+---     FACIAL_L_nasolabialBulge = 0xCD78,
+---     FACIAL_L_cheekLower = 0x6907,
+---     FACIAL_L_cheekLowerBulge1 = 0xE3FB,
+---     FACIAL_L_cheekLowerBulge2 = 0xE3FC,
+---     FACIAL_L_cheekInner = 0xE7AB,
+---     FACIAL_L_cheekOuter = 0x8161,
+---     FACIAL_L_eyesackLower = 0x771B,
+---     FACIAL_L_eyeball = 0x1744,
+---     FACIAL_L_eyelidLower = 0x998C,
+---     FACIAL_L_eyelidLowerOuterSDK = 0xFE4C,
+---     FACIAL_L_eyelidLowerOuterAnalog = 0xB9AA,
+---     FACIAL_L_eyelashLowerOuter = 0xD7F6,
+---     FACIAL_L_eyelidLowerInnerSDK = 0xF151,
+---     FACIAL_L_eyelidLowerInnerAnalog = 0x8242,
+---     FACIAL_L_eyelashLowerInner = 0x4CCF,
+---     FACIAL_L_eyelidUpper = 0x97C1,
+---     FACIAL_L_eyelidUpperOuterSDK = 0xAF15,
+---     FACIAL_L_eyelidUpperOuterAnalog = 0x67FA,
+---     FACIAL_L_eyelashUpperOuter = 0x27B7,
+---     FACIAL_L_eyelidUpperInnerSDK = 0xD341,
+---     FACIAL_L_eyelidUpperInnerAnalog = 0xF092,
+---     FACIAL_L_eyelashUpperInner = 0x9B1F,
+---     FACIAL_L_eyesackUpperOuterBulge = 0xA559,
+---     FACIAL_L_eyesackUpperInnerBulge = 0x2F2A,
+---     FACIAL_L_eyesackUpperOuterFurrow = 0xC597,
+---     FACIAL_L_eyesackUpperInnerFurrow = 0x52A7,
+---     FACIAL_forehead = 0x9218,
+---     FACIAL_L_foreheadInner = 0x843,
+---     FACIAL_L_foreheadInnerBulge = 0x767C,
+---     FACIAL_L_foreheadOuter = 0x8DCB,
+---     FACIAL_skull = 0x4221,
+---     FACIAL_foreheadUpper = 0xF7D6,
+---     FACIAL_L_foreheadUpperInner = 0xCF13,
+---     FACIAL_L_foreheadUpperOuter = 0x509B,
+---     FACIAL_R_foreheadUpperInner = 0xCEF3,
+---     FACIAL_R_foreheadUpperOuter = 0x507B,
+---     FACIAL_L_temple = 0xAF79,
+---     FACIAL_L_ear = 0x19DD,
+---     FACIAL_L_earLower = 0x6031,
+---     FACIAL_L_masseter = 0x2810,
+---     FACIAL_L_jawRecess = 0x9C7A,
+---     FACIAL_L_cheekOuterSkin = 0x14A5,
+---     FACIAL_R_cheekLower = 0xF367,
+---     FACIAL_R_cheekLowerBulge1 = 0x599B,
+---     FACIAL_R_cheekLowerBulge2 = 0x599C,
+---     FACIAL_R_masseter = 0x810,
+---     FACIAL_R_jawRecess = 0x93D4,
+---     FACIAL_R_ear = 0x1137,
+---     FACIAL_R_earLower = 0x8031,
+---     FACIAL_R_eyesackLower = 0x777B,
+---     FACIAL_R_nasolabialBulge = 0xD61E,
+---     FACIAL_R_cheekOuter = 0xD32,
+---     FACIAL_R_cheekInner = 0x737C,
+---     FACIAL_R_noseUpper = 0x1CD6,
+---     FACIAL_R_foreheadInner = 0xE43,
+---     FACIAL_R_foreheadInnerBulge = 0x769C,
+---     FACIAL_R_foreheadOuter = 0x8FCB,
+---     FACIAL_R_cheekOuterSkin = 0xB334,
+---     FACIAL_R_eyesackUpperInnerFurrow = 0x9FAE,
+---     FACIAL_R_eyesackUpperOuterFurrow = 0x140F,
+---     FACIAL_R_eyesackUpperInnerBulge = 0xA359,
+---     FACIAL_R_eyesackUpperOuterBulge = 0x1AF9,
+---     FACIAL_R_nasolabialFurrow = 0x2CAA,
+---     FACIAL_R_temple = 0xAF19,
+---     FACIAL_R_eyeball = 0x1944,
+---     FACIAL_R_eyelidUpper = 0x7E14,
+---     FACIAL_R_eyelidUpperOuterSDK = 0xB115,
+---     FACIAL_R_eyelidUpperOuterAnalog = 0xF25A,
+---     FACIAL_R_eyelashUpperOuter = 0xE0A,
+---     FACIAL_R_eyelidUpperInnerSDK = 0xD541,
+---     FACIAL_R_eyelidUpperInnerAnalog = 0x7C63,
+---     FACIAL_R_eyelashUpperInner = 0x8172,
+---     FACIAL_R_eyelidLower = 0x7FDF,
+---     FACIAL_R_eyelidLowerOuterSDK = 0x1BD,
+---     FACIAL_R_eyelidLowerOuterAnalog = 0x457B,
+---     FACIAL_R_eyelashLowerOuter = 0xBE49,
+---     FACIAL_R_eyelidLowerInnerSDK = 0xF351,
+---     FACIAL_R_eyelidLowerInnerAnalog = 0xE13,
+---     FACIAL_R_eyelashLowerInner = 0x3322,
+---     FACIAL_L_lipUpperSDK = 0x8F30,
+---     FACIAL_L_lipUpperAnalog = 0xB1CF,
+---     FACIAL_L_lipUpperThicknessH = 0x37CE,
+---     FACIAL_L_lipUpperThicknessV = 0x38BC,
+---     FACIAL_lipUpperSDK = 0x1774,
+---     FACIAL_lipUpperAnalog = 0xE064,
+---     FACIAL_lipUpperThicknessH = 0x7993,
+---     FACIAL_lipUpperThicknessV = 0x7981,
+---     FACIAL_L_lipCornerSDK = 0xB1C,
+---     FACIAL_L_lipCornerAnalog = 0xE568,
+---     FACIAL_L_lipCornerThicknessUpper = 0x7BC,
+---     FACIAL_L_lipCornerThicknessLower = 0xDD42,
+---     FACIAL_R_lipUpperSDK = 0x7583,
+---     FACIAL_R_lipUpperAnalog = 0x51CF,
+---     FACIAL_R_lipUpperThicknessH = 0x382E,
+---     FACIAL_R_lipUpperThicknessV = 0x385C,
+---     FACIAL_R_lipCornerSDK = 0xB3C,
+---     FACIAL_R_lipCornerAnalog = 0xEE0E,
+---     FACIAL_R_lipCornerThicknessUpper = 0x54C3,
+---     FACIAL_R_lipCornerThicknessLower = 0x2BBA,
+---     MH_MulletRoot = 0x3E73,
+---     MH_MulletScaler = 0xA1C2,
+---     MH_Hair_Scale = 0xC664,
+---     MH_Hair_Crown = 0x1675,
+---     SM_Torch = 0x8D6,
+---     FX_Light = 0x8959,
+---     FX_Light_Scale = 0x5038,
+---     FX_Light_Switch = 0xE18E,
+---     BagRoot = 0xAD09,
+---     BagPivotROOT = 0xB836,
+---     BagPivot = 0x4D11,
+---     BagBody = 0xAB6D,
+---     BagBone_R = 0x937,
+---     BagBone_L = 0x991,
+---     SM_LifeSaver_Front = 0x9420,
+---     SM_R_Pouches_ROOT = 0x2962,
+---     SM_R_Pouches = 0x4141,
+---     SM_L_Pouches_ROOT = 0x2A02,
+---     SM_L_Pouches = 0x4B41,
+---     SM_Suit_Back_Flapper = 0xDA2D,
+---     SPR_CopRadio = 0x8245,
+---     SM_LifeSaver_Back = 0x2127,
+---     MH_BlushSlider = 0xA0CE,
+---     SKEL_Tail_01 = 0x347,
+---     SKEL_Tail_02 = 0x348,
+---     MH_L_Concertina_B = 0xC988,
+---     MH_L_Concertina_A = 0xC987,
+---     MH_R_Concertina_B = 0xC8E8,
+---     MH_R_Concertina_A = 0xC8E7,
+---     MH_L_ShoulderBladeRoot = 0x8711,
+---     MH_L_ShoulderBlade = 0x4EAF,
+---     MH_R_ShoulderBladeRoot = 0x3A0A,
+---     MH_R_ShoulderBlade = 0x54AF,
+---     FB_R_Ear_000 = 0x6CDF,
+---     SPR_R_Ear = 0x63B6,
+---     FB_L_Ear_000 = 0x6439,
+---     SPR_L_Ear = 0x5B10,
+---     FB_TongueA_000 = 0x4206,
+---     FB_TongueB_000 = 0x4207,
+---     FB_TongueC_000 = 0x4208,
+---     SKEL_L_Toe1 = 0x1D6B,
+---     SKEL_R_Toe1 = 0xB23F,
+---     SKEL_Tail_03 = 0x349,
+---     SKEL_Tail_04 = 0x34A,
+---     SKEL_Tail_05 = 0x34B,
+---     SPR_Gonads_ROOT = 0xBFDE,
+---     SPR_Gonads = 0x1C00,
+---     FB_L_Brow_Out_001 = 0xE3DB,
+---     FB_L_Lid_Upper_001 = 0xB2B6,
+---     FB_L_Eye_001 = 0x62AC,
+---     FB_L_CheekBone_001 = 0x542E,
+---     FB_L_Lip_Corner_001 = 0x74AC,
+---     FB_R_Lid_Upper_001 = 0xAA10,
+---     FB_R_Eye_001 = 0x6B52,
+---     FB_R_CheekBone_001 = 0x4B88,
+---     FB_R_Brow_Out_001 = 0x54C,
+---     FB_R_Lip_Corner_001 = 0x2BA6,
+---     FB_Brow_Centre_001 = 0x9149,
+---     FB_UpperLipRoot_001 = 0x4ED2,
+---     FB_UpperLip_001 = 0xF18F,
+---     FB_L_Lip_Top_001 = 0x4F37,
+---     FB_R_Lip_Top_001 = 0x4537,
+---     FB_Jaw_001 = 0xB4A0,
+---     FB_LowerLipRoot_001 = 0x4324,
+---     FB_LowerLip_001 = 0x508F,
+---     FB_L_Lip_Bot_001 = 0xB93B,
+---     FB_R_Lip_Bot_001 = 0xC33B,
+---     FB_Tongue_001 = 0xB987
+--- }; 
 --- ```
 ---
 --- @hash [0x3F428D08BE5AAE31](https://docs.fivem.net/natives/?_0x3F428D08BE5AAE31)
@@ -2904,6 +3265,10 @@ function IsPedInCombat(ped, target) end
 --- 11              Body Blemishes        0 - 11, 255  
 --- 12              Add Body Blemishes    0 - 1, 255  
 --- ```
+--- 
+--- **Note:**
+--- 
+--- You may need to call [`SetPedHeadBlendData`](#0x9414E18B9434C2FE) prior to calling this native in order for it to work.
 ---
 --- @hash [0x48F44967FA05CC1E](https://docs.fivem.net/natives/?_0x48F44967FA05CC1E)
 --- @param ped Ped
@@ -2916,10 +3281,13 @@ function SetPedHeadOverlay(ped, overlayID, index, opacity) end
 
     
 --- ```
---- Used for freemode (online) characters.  
---- ColorType is 1 for eyebrows, beards, and chest hair; 2 for blush and lipstick; and 0 otherwise, though not called in those cases.  
+--- Used for freemode (online) characters. 
 --- Called after SET_PED_HEAD_OVERLAY().  
 --- ```
+--- 
+--- **Note:**
+--- 
+--- You may need to call [`SetPedHeadBlendData`](#0x9414E18B9434C2FE) prior to calling this native in order for it to work.
 ---
 --- @hash [0x497BF74A7B9CB952](https://docs.fivem.net/natives/?_0x497BF74A7B9CB952)
 --- @param ped Ped
@@ -4271,6 +4639,17 @@ function SetPedCanBeTargetted(ped, toggle) end
 function HasPedHeadBlendFinished(ped) end
 
     
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x65671A4FB8218930](https://docs.fivem.net/natives/?_0x65671A4FB8218930)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function GetPedDiesInWater(ped) end
+
+    
 --- ClearPedEnvDirt
 ---
 --- @hash [0x6585D955A68452A5](https://docs.fivem.net/natives/?_0x6585D955A68452A5)
@@ -4613,7 +4992,7 @@ function N_0x6b0e6172c9a4d902(p0) end
 function SetPedCanEvasiveDive(ped, toggle) end
 
     
---- SetPedMaxTimeUnderwater
+--- Set the maximum time a ped can stay underwater. Maximum seems to be 50 seconds.
 ---
 --- @hash [0x6BA428C528D9E522](https://docs.fivem.net/natives/?_0x6BA428C528D9E522)
 --- @param ped Ped
@@ -4798,33 +5177,36 @@ function SetPedFleeAttributes(ped, attributeFlags, enable) end
 function N_0x711794453cfd692b(p0, p1) end
 
     
---- ```
---- Sets the various freemode face features, e.g. nose length, chin shape. Scale ranges from -1.0 to 1.0.
---- Index can be 0 - 19
---- SET_PED_M*
---- Here is the list of names. It starts at 0 and runs in sequence
---- Face_Feature
---- Nose_Width
---- Nose_Peak_Hight
---- Nose_Peak_Lenght
---- Nose_Bone_High
---- Nose_Peak_Lowering
---- Nose_Bone_Twist
---- EyeBrown_High
---- EyeBrown_Forward
---- Cheeks_Bone_High
---- Cheeks_Bone_Width
---- Cheeks_Width
---- Eyes_Openning
---- Lips_Thickness
---- Jaw_Bone_Width: Bone size to sides
---- Jaw_Bone_Back_Lenght: Bone size to back
---- Chimp_Bone_Lowering: Go Down
---- Chimp_Bone_Lenght: Go forward
---- Chimp_Bone_Width
---- Chimp_Hole
---- Neck_Thikness
---- ```
+--- Sets the various freemode face features, e.g. nose length, chin shape.
+--- 
+--- **Indexes (From 0 to 19):**
+--- 
+--- Parentheses indicate morph scale/direction as in (-1.0 to 1.0)
+--- 
+--- *   **0**: Nose Width (Thin/Wide)
+--- *   **1**: Nose Peak (Up/Down)
+--- *   **2**: Nose Length (Long/Short)
+--- *   **3**: Nose Bone Curveness (Crooked/Curved)
+--- *   **4**: Nose Tip (Up/Down)
+--- *   **5**: Nose Bone Twist (Left/Right)
+--- *   **6**: Eyebrow (Up/Down)
+--- *   **7**: Eyebrow (In/Out)
+--- *   **8**: Cheek Bones (Up/Down)
+--- *   **9**: Cheek Sideways Bone Size (In/Out)
+--- *   **10**: Cheek Bones Width (Puffed/Gaunt)
+--- *   **11**: Eye Opening (Both) (Wide/Squinted)
+--- *   **12**: Lip Thickness (Both) (Fat/Thin)
+--- *   **13**: Jaw Bone Width (Narrow/Wide)
+--- *   **14**: Jaw Bone Shape (Round/Square)
+--- *   **15**: Chin Bone (Up/Down)
+--- *   **16**: Chin Bone Length (In/Out or Backward/Forward)
+--- *   **17**: Chin Bone Shape (Pointed/Square)
+--- *   **18**: Chin Hole (Chin Bum)
+--- *   **19**: Neck Thickness (Thin/Thick)
+--- 
+--- **Note:**
+--- 
+--- You may need to call [`SetPedHeadBlendData`](#0x9414E18B9434C2FE) prior to calling this native in order for it to work.
 ---
 --- @hash [0x71A5C1DBA060049E](https://docs.fivem.net/natives/?_0x71A5C1DBA060049E)
 --- @param ped Ped
@@ -5786,7 +6168,7 @@ function ClearPedLastDamageBone(ped) end
 function GetNumberOfPedTextureVariations(ped, componentId, drawableId) end
 
     
---- ClearPedBloodDamage
+--- Clears the blood on a ped.
 ---
 --- @hash [0x8FE22675A5A45817](https://docs.fivem.net/natives/?_0x8FE22675A5A45817)
 --- @param ped Ped
@@ -5888,7 +6270,7 @@ function RegisterHatedTargetsAroundPed(ped, radius) end
 --- [GET_NUMBER_OF_PED_PROP_DRAWABLE_VARIATIONS](https://docs.fivem.net/natives/?_0x5FAF9754E789FB47)\
 --- [GET_NUMBER_OF_PED_PROP_TEXTURE_VARIATIONS](https://docs.fivem.net/natives/?_0xA6E7F1CEB523E171)
 --- 
---- [List of component/props ID](gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html) of player_two with examples
+--- [List of component/props ID](https://gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html) of player_two with examples
 ---
 --- @hash [0x93376B65A266EB5F](https://docs.fivem.net/natives/?_0x93376B65A266EB5F)
 --- @param ped Ped
@@ -5927,19 +6309,21 @@ function GetPedSourceOfDeath(ped) end
 function GetPedKiller(ped) end
 
     
---- ```
---- The "shape" parameters control the shape of the ped's face. The "skin" parameters control the skin tone. ShapeMix and skinMix control how much the first and second IDs contribute,(typically mother and father.) ThirdMix overrides the others in favor of the third IDs. IsParent is set for "children" of the player character's grandparents during old-gen character creation. It has unknown effect otherwise.  
---- The IDs start at zero and go Male Non-DLC, Female Non-DLC, Male DLC, and Female DLC.  
---- !!!Can someone add working example for this???  
---- try this:  
---- headBlendData headData;  
---- _GET_PED_HEAD_BLEND_DATA(PLAYER_PED_ID(), &headData);  
---- SET_PED_HEAD_BLEND_DATA(PLAYER_PED_ID(), headData.shapeFirst, headData.shapeSecond, headData.shapeThird, headData.skinFirst, headData.skinSecond  
---- 	, headData.skinThird, headData.shapeMix, headData.skinMix, headData.skinThird, 0);  
---- For more info please refer to this topic.   
---- gtaforums.com/topic/858970-all-gtao-face-ids-pedset-ped-head-blend-data-explained  
---- ```
----
+--- For more info please refer to [this](https://gtaforums.com/topic/858970-all-gtao-face-ids-pedset-ped-head-blend-data-explained) topic.
+--- 
+--- **Other information:**
+--- 
+--- IDs start at zero and go Male Non-DLC, Female Non-DLC, Male DLC, and Female DLC.</br>
+--- 
+--- This native function is often called prior to calling natives such as:
+--- 
+--- *   [`SetPedHairColor`](#0xBB43F090)
+--- *   [`SetPedHeadOverlayColor`](#0x78935A27)
+--- *   [`SetPedHeadOverlay`](#0xD28DBA90)
+--- *   [`SetPedFaceFeature`](#0x6C8D4458)
+--- @usage -- Unfortunately, there's no clear way of getting the head blend data in lua out of the box, but there are wrappers:
+--- -- https://forum.cfx.re/t/small-c-export-event-wrapper-for-getpedheadblenddata/214611
+--- SetPedHeadBlendData(PlayerPedId(), 0, 0, 0, 0, 0, 0, 0, 0, 0, false
 --- @hash [0x9414E18B9434C2FE](https://docs.fivem.net/natives/?_0x9414E18B9434C2FE)
 --- @param ped Ped
 --- @param shapeFirstID number (int)
@@ -6464,28 +6848,31 @@ function SetPedAsGroupMember(ped, groupId) end
 function IsPedGoingIntoCover(ped) end
 
     
+--- These combat attributes seem to be the same as the BehaviourFlags from combatbehaviour.meta.
+--- So far, these are the equivalents found:
+--- 
 --- ```
---- These combat attributes seem to be the same as the BehaviourFlags from combatbehaviour.meta.  
---- So far, these are the equivalents found:  
 --- enum CombatAttributes  
---- {  
---- 	BF_CanUseCover = 0,  
---- 	BF_CanUseVehicles = 1,  
---- 	BF_CanDoDrivebys = 2,  
---- 	BF_CanLeaveVehicle = 3,  
---- 	BF_CanFightArmedPedsWhenNotArmed = 5,  
---- 	BF_CanTauntInVehicle = 20,  
---- 	BF_AlwaysFight = 46,  
---- 	BF_IgnoreTrafficWhenDriving = 52,  
+--- {
+--- 	BF_CanUseCover = 0,
+--- 	BF_CanUseVehicles = 1,
+--- 	BF_CanDoDrivebys = 2,
+--- 	BF_CanLeaveVehicle = 3,
+--- 	BF_CanFightArmedPedsWhenNotArmed = 5,
+--- 	BF_CanTauntInVehicle = 20,
+--- 	BF_AlwaysFight = 46,
+--- 	BF_IgnoreTrafficWhenDriving = 52,
+--- 	BF_FleesFromInvincibleOpponents = 63,
 ---         BF_FreezeMovement = 292,  
 ---         BF_PlayerCanUseFiringWeapons = 1424  
---- };  
---- 8 = ?  
---- 9 = ?  
---- 13 = ?  
---- 14 ?  
---- Research thread: gtaforums.com/topic/833391-researchguide-combat-behaviour-flags/  
+--- };
 --- ```
+--- 
+--- 8 = ?\
+--- 9 = ?\
+--- 13 = ?\
+--- 14 ?\
+--- Research thread: gtaforums.com/topic/833391-researchguide-combat-behaviour-flags/
 ---
 --- @hash [0x9F7794730795E019](https://docs.fivem.net/natives/?_0x9F7794730795E019)
 --- @param ped Ped
@@ -7146,6 +7533,23 @@ function N_0xb2aff10216defa2f(x, y, z, p3, p4, p5, p6, interiorFlags, scale, dur
 --- @return boolean
 --- @overload fun(ped: Ped): boolean
 function IsPedDoingDriveby(ped) end
+
+    
+--- ```
+--- _SET_PED_HEAD_* - _SET_PED_HEARING_*
+--- 
+--- _SET_PED_HEALTH_...
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0xB3352E018D6F89DF](https://docs.fivem.net/natives/?_0xB3352E018D6F89DF)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function N_0xb3352e018d6f89df(toggle) end
 
     
 --- ```
@@ -9973,8 +10377,42 @@ function SpawnpointsCancelSearch() end
 function N_0xfee4a5459472a9f8() end
 
     
---- ```
---- https://alloc8or.re/gta5/doc/enums/ePedType.txt
+--- Ped types:
+--- 
+--- ```cpp
+--- enum ePedType
+--- {
+--- 	PED_TYPE_PLAYER_0,
+--- 	PED_TYPE_PLAYER_1,
+--- 	PED_TYPE_NETWORK_PLAYER,
+--- 	PED_TYPE_PLAYER_2,
+--- 	PED_TYPE_CIVMALE,
+--- 	PED_TYPE_CIVFEMALE,
+--- 	PED_TYPE_COP,
+--- 	PED_TYPE_GANG_ALBANIAN,
+--- 	PED_TYPE_GANG_BIKER_1,
+--- 	PED_TYPE_GANG_BIKER_2,
+--- 	PED_TYPE_GANG_ITALIAN,
+--- 	PED_TYPE_GANG_RUSSIAN,
+--- 	PED_TYPE_GANG_RUSSIAN_2,
+--- 	PED_TYPE_GANG_IRISH,
+--- 	PED_TYPE_GANG_JAMAICAN,
+--- 	PED_TYPE_GANG_AFRICAN_AMERICAN,
+--- 	PED_TYPE_GANG_KOREAN,
+--- 	PED_TYPE_GANG_CHINESE_JAPANESE,
+--- 	PED_TYPE_GANG_PUERTO_RICAN,
+--- 	PED_TYPE_DEALER,
+--- 	PED_TYPE_MEDIC,
+--- 	PED_TYPE_FIREMAN,
+--- 	PED_TYPE_CRIMINAL,
+--- 	PED_TYPE_BUM,
+--- 	PED_TYPE_PROSTITUTE,
+--- 	PED_TYPE_SPECIAL,
+--- 	PED_TYPE_MISSION,
+--- 	PED_TYPE_SWAT,
+--- 	PED_TYPE_ANIMAL,
+--- 	PED_TYPE_ARMY
+--- };
 --- ```
 ---
 --- @hash [0xFF059E1E4C01E63C](https://docs.fivem.net/natives/?_0xFF059E1E4C01E63C)

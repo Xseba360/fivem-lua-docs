@@ -447,6 +447,17 @@ function GetEntityRotationVelocity(entity) end
 
     
 --- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x2158E81A6AF65EA9](https://docs.fivem.net/natives/?_0x2158E81A6AF65EA9)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function DoesEntityHaveAnimDirector(entity) end
+
+    
+--- ```
 --- Converts world coords (posX - Z) to coords relative to the entity  
 --- Example:  
 --- posX = 50  
@@ -1235,15 +1246,7 @@ function IsEntityAVehicle(entity) end
 function SetEntityHealth(entity, health) end
 
     
---- ```
---- Attaches entity1 to bone (boneIndex) of entity2.
---- boneIndex - this is different to boneID, use GET_PED_BONE_INDEX to get the index from the ID. use the index for attaching to specific bones. entity1 will be attached to entity2's centre if bone index given doesn't correspond to bone indexes for that entity type.
---- useSoftPinning - if set to false attached entity will not detach when fixed
---- collision - controls collision between the two entities (FALSE disables collision).
---- isPed - pitch doesnt work when false and roll will only work on negative numbers (only peds)
---- vertexIndex - position of vertex
---- fixedRot - if false it ignores entity vector
---- ```
+--- Attach an entity to the specified entity.
 ---
 --- @hash [0x6B9BBD38AB0796DF](https://docs.fivem.net/natives/?_0x6B9BBD38AB0796DF)
 --- @param entity1 Entity
@@ -1359,6 +1362,17 @@ function IsAnEntity(handle) end
 --- @return boolean
 --- @overload fun(entity1: Entity, entity2: Entity, xSize: number, ySize: number, zSize: number, p5: boolean, p6: boolean, p7: number): boolean
 function IsEntityAtEntity(entity1, entity2, xSize, ySize, zSize, p5, p6, p7) end
+
+    
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x764EB96874EFFDC1](https://docs.fivem.net/natives/?_0x764EB96874EFFDC1)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function DoesEntityHaveSkeletonData(entity) end
 
     
 --- ```
@@ -1766,7 +1780,7 @@ function SetEntityNoCollisionEntity(entity1, entity2, thisFrameOnly) end
 function GetEntityScript(entity, script) end
 
     
---- ClearEntityLastDamageEntity
+--- This native **could affect** the arguments of the `CEventNetworkEntityDamage` game event, by clearing the damaging entity before the event is fired.
 ---
 --- @hash [0xA72CD9CA74A5ECBA](https://docs.fivem.net/natives/?_0xA72CD9CA74A5ECBA)
 --- @param entity Entity
@@ -2259,14 +2273,7 @@ function SetEntityCanBeTargetedWithoutLos(entity, toggle) end
 function GetEntityPitch(entity) end
 
     
---- ```
---- result is in meters per second  
---- ------------------------------------------------------------  
---- So would the conversion to mph and km/h, be along the lines of this.  
---- float speed = GET_ENTITY_SPEED(veh);  
---- float kmh = (speed * 3.6);  
---- float mph = (speed * 2.236936);  
---- ```
+--- Get the speed of a entity.
 ---
 --- @hash [0xD5037BA82E12416F](https://docs.fivem.net/natives/?_0xD5037BA82E12416F)
 --- @param entity Entity

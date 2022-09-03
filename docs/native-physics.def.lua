@@ -86,7 +86,7 @@ function N_0x15f944730c832252(entity, toggle) end
 function GetRopeLastVertexCoord(ropeId) end
 
     
---- DoesRopeBelongToThisScript
+--- Return if the rope was generated or not by the script where the native is called.
 ---
 --- @hash [0x271C9D3ACA5D6409](https://docs.fivem.net/natives/?_0x271C9D3ACA5D6409)
 --- @param ropeId number (int)
@@ -96,7 +96,7 @@ function DoesRopeBelongToThisScript(ropeId) end
 
     
 --- # New Name: DoesRopeBelongToThisScript
---- DoesRopeBelongToThisScript
+--- Return if the rope was generated or not by the script where the native is called.
 ---
 --- @hash [0x271C9D3ACA5D6409](https://docs.fivem.net/natives/?_0x271C9D3ACA5D6409)
 --- @param ropeId number (int)

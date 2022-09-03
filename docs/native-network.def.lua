@@ -41,6 +41,17 @@ function NetworkHasControlOfEntity(entity) end
 
     
 --- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x023782EFC70585EE](https://docs.fivem.net/natives/?_0x023782EFC70585EE)
+---
+--- @return void
+--- @overload fun(): void
+function NetworkBailTransitionQuickmatch() end
+
+    
+--- ```
 --- NativeDB Introduced: v1493
 --- ```
 ---
@@ -146,14 +157,38 @@ function NetworkConvertSynchronisedSceneToSynchronizedScene(netId) end
 function NetworkIsPlayerTalking(player) end
 
     
---- N_0x0379daf89ba09aa5
+--- Sets whether or not an object (created using `CREATE_OBJECT`, or similar) should have its position/rotation synchronized,
+--- even if it is a 'static' object (for example, having flag 32 - Static - set in its archetype definition).
+--- 
+--- This has to be called during the same frame the object is created/registered for network, as otherwise it may already
+--- have a remote clone created.
+--- 
+--- Once a remote clone is created, changing this value will not have any effect on said clone.
 ---
 --- @hash [0x0379DAF89BA09AA5](https://docs.fivem.net/natives/?_0x0379DAF89BA09AA5)
---- @param p0 any
---- @param p1 any
+--- @param object Object
+--- @param enabled boolean
 --- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0x0379daf89ba09aa5(p0, p1) end
+--- @overload fun(object: Object, enabled: boolean): void
+function NetworkSetObjectForceStaticBlend(object, enabled) end
+
+    
+--- # New Name: NetworkSetObjectForceStaticBlend
+--- Sets whether or not an object (created using `CREATE_OBJECT`, or similar) should have its position/rotation synchronized,
+--- even if it is a 'static' object (for example, having flag 32 - Static - set in its archetype definition).
+--- 
+--- This has to be called during the same frame the object is created/registered for network, as otherwise it may already
+--- have a remote clone created.
+--- 
+--- Once a remote clone is created, changing this value will not have any effect on said clone.
+---
+--- @hash [0x0379DAF89BA09AA5](https://docs.fivem.net/natives/?_0x0379DAF89BA09AA5)
+--- @param object Object
+--- @param enabled boolean
+--- @return void
+--- @overload fun(object: Object, enabled: boolean): void
+--- @deprecated
+function N_0x0379daf89ba09aa5(object, enabled) end
 
     
 --- N_0x041c7f2a6c9894e6
@@ -642,13 +677,24 @@ function NetworkGetAverageLatencyForPlayer_2(player) end
 function N_0x0e3a041ed6ac2b45(player) end
 
     
---- N_0x0e4f77f7b9d74d84
+--- NetworkSetActivityPlayerMax
 ---
 --- @hash [0x0E4F77F7B9D74D84](https://docs.fivem.net/natives/?_0x0E4F77F7B9D74D84)
---- @param p0 any
+--- @param playerCount number (int)
 --- @return void
---- @overload fun(p0: any): void
-function N_0x0e4f77f7b9d74d84(p0) end
+--- @overload fun(playerCount: number): void
+function NetworkSetActivityPlayerMax(playerCount) end
+
+    
+--- # New Name: NetworkSetActivityPlayerMax
+--- NetworkSetActivityPlayerMax
+---
+--- @hash [0x0E4F77F7B9D74D84](https://docs.fivem.net/natives/?_0x0E4F77F7B9D74D84)
+--- @param playerCount number (int)
+--- @return void
+--- @overload fun(playerCount: number): void
+--- @deprecated
+function N_0x0e4f77f7b9d74d84(playerCount) end
 
     
 --- N_0x0ede326d47cd0f3e
@@ -1315,12 +1361,23 @@ function N_0x187382f8a3e0a6c3(contentHash) end
 function GetTunablesContentModifierId(contentHash) end
 
     
---- N_0x1888694923ef4591
+--- NetworkClearGroupActivity
 ---
 --- @hash [0x1888694923EF4591](https://docs.fivem.net/natives/?_0x1888694923EF4591)
 ---
 --- @return void
 --- @overload fun(): void
+function NetworkClearGroupActivity() end
+
+    
+--- # New Name: NetworkClearGroupActivity
+--- NetworkClearGroupActivity
+---
+--- @hash [0x1888694923EF4591](https://docs.fivem.net/natives/?_0x1888694923EF4591)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
 function N_0x1888694923ef4591() end
 
     
@@ -1976,24 +2033,24 @@ function NetworkAllowLocalEntityAttachment(entity, toggle) end
 function N_0x267c78c60e806b9a(entity, toggle) end
 
     
---- NetworkGetPresenceInviteSessionId
+--- The Native returns a hash of the session id as string from the specific invite index!
 ---
 --- @hash [0x26E1CD96B0903D60](https://docs.fivem.net/natives/?_0x26E1CD96B0903D60)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function NetworkGetPresenceInviteSessionId(p0) end
+--- @param inviteIndex number (int)
+--- @return Hash
+--- @overload fun(inviteIndex: number): Hash
+function NetworkGetPresenceInviteSessionId(inviteIndex) end
 
     
 --- # New Name: NetworkGetPresenceInviteSessionId
---- NetworkGetPresenceInviteSessionId
+--- The Native returns a hash of the session id as string from the specific invite index!
 ---
 --- @hash [0x26E1CD96B0903D60](https://docs.fivem.net/natives/?_0x26E1CD96B0903D60)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
+--- @param inviteIndex number (int)
+--- @return Hash
+--- @overload fun(inviteIndex: number): Hash
 --- @deprecated
-function N_0x26e1cd96b0903d60(p0) end
+function N_0x26e1cd96b0903d60(inviteIndex) end
 
     
 --- N_0x26f07dd83a5f7f98
@@ -2128,16 +2185,30 @@ function UgcHasModifyFinished() end
 function N_0x299ef3c576773506() end
 
     
---- N_0x2a5e0621dd815a9a
+--- NetworkExplodeHeli
 ---
 --- @hash [0x2A5E0621DD815A9A](https://docs.fivem.net/natives/?_0x2A5E0621DD815A9A)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
+--- @param heli Vehicle
+--- @param isAudible boolean
+--- @param isInvisible boolean
+--- @param netScriptEntityId number (int)
 --- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any): void
-function N_0x2a5e0621dd815a9a(p0, p1, p2, p3) end
+--- @overload fun(heli: Vehicle, isAudible: boolean, isInvisible: boolean, netScriptEntityId: number): void
+function NetworkExplodeHeli(heli, isAudible, isInvisible, netScriptEntityId) end
+
+    
+--- # New Name: NetworkExplodeHeli
+--- NetworkExplodeHeli
+---
+--- @hash [0x2A5E0621DD815A9A](https://docs.fivem.net/natives/?_0x2A5E0621DD815A9A)
+--- @param heli Vehicle
+--- @param isAudible boolean
+--- @param isInvisible boolean
+--- @param netScriptEntityId number (int)
+--- @return void
+--- @overload fun(heli: Vehicle, isAudible: boolean, isInvisible: boolean, netScriptEntityId: number): void
+--- @deprecated
+function N_0x2a5e0621dd815a9a(heli, isAudible, isInvisible, netScriptEntityId) end
 
     
 --- GetCommerceItemNumCats
@@ -2252,6 +2323,17 @@ function N_0x2b51edbefc301339(p0, p1) end
 --- @return any
 --- @overload fun(): any
 function N_0x2bf66d2e7414f686() end
+
+    
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x2C863ACDCD12B3DB](https://docs.fivem.net/natives/?_0x2C863ACDCD12B3DB)
+--- @param missionId string (char*)
+--- @return void
+--- @overload fun(missionId: string): void
+function NetworkSetCurrentMissionId(missionId) end
 
     
 --- ```
@@ -3329,15 +3411,24 @@ function NetworkSessionSetMatchmakingPropertyId(p0) end
 function N_0x3f52e880aaf6c8ca(p0) end
 
     
---- ```
---- NETWORK_HAS_*
---- ```
+--- NetworkHasTransitionInviteBeenAcked
 ---
 --- @hash [0x3F9990BF5F22759C](https://docs.fivem.net/natives/?_0x3F9990BF5F22759C)
---- @param p0 any
+--- @param networkHandle number (int*)
 --- @return boolean
---- @overload fun(): boolean, any
-function N_0x3f9990bf5f22759c(p0) end
+--- @overload fun(): boolean, number
+function NetworkHasTransitionInviteBeenAcked(networkHandle) end
+
+    
+--- # New Name: NetworkHasTransitionInviteBeenAcked
+--- NetworkHasTransitionInviteBeenAcked
+---
+--- @hash [0x3F9990BF5F22759C](https://docs.fivem.net/natives/?_0x3F9990BF5F22759C)
+--- @param networkHandle number (int*)
+--- @return boolean
+--- @overload fun(): boolean, number
+--- @deprecated
+function N_0x3f9990bf5f22759c(networkHandle) end
 
     
 --- N_0x3fa36981311fa4ff
@@ -3459,17 +3550,6 @@ function NetworkAccessTunableIntHash(tunableContext, tunableName, value) end
 --- @return string
 --- @overload fun(friendIndex: number): string
 function NetworkGetFriendNameFromIndex(friendIndex) end
-
-    
---- # New Name: NetworkGetFriendNameFromIndex
---- NetworkGetFriendNameFromIndex
----
---- @hash [0x4164F227D052E293](https://docs.fivem.net/natives/?_0x4164F227D052E293)
---- @param friendIndex number (int)
---- @return string
---- @overload fun(friendIndex: number): string
---- @deprecated
-function NetworkGetFriendName(friendIndex) end
 
     
 --- ```
@@ -3747,26 +3827,26 @@ function N_0x43f4dba69710e01e() end
 function N_0x444c4525ece0a4b9() end
 
     
---- NetworkCheckDataManagerSucceededForHandle
+--- Checks if the friendDataIndex in the friend data manager contains the data for the specified networkHandle
 ---
 --- @hash [0x44B37CDCAE765AAE](https://docs.fivem.net/natives/?_0x44B37CDCAE765AAE)
---- @param p0 any
---- @param p1 any
+--- @param friendDataIndex number (int)
+--- @param networkHandle number (int*)
 --- @return boolean
---- @overload fun(p0: any): boolean, any
-function NetworkCheckDataManagerSucceededForHandle(p0, p1) end
+--- @overload fun(friendDataIndex: number): boolean, number
+function NetworkCheckDataManagerSucceededForHandle(friendDataIndex, networkHandle) end
 
     
 --- # New Name: NetworkCheckDataManagerSucceededForHandle
---- NetworkCheckDataManagerSucceededForHandle
+--- Checks if the friendDataIndex in the friend data manager contains the data for the specified networkHandle
 ---
 --- @hash [0x44B37CDCAE765AAE](https://docs.fivem.net/natives/?_0x44B37CDCAE765AAE)
---- @param p0 any
---- @param p1 any
+--- @param friendDataIndex number (int)
+--- @param networkHandle number (int*)
 --- @return boolean
---- @overload fun(p0: any): boolean, any
+--- @overload fun(friendDataIndex: number): boolean, number
 --- @deprecated
-function N_0x44b37cdcae765aae(p0, p1) end
+function N_0x44b37cdcae765aae(friendDataIndex, networkHandle) end
 
     
 --- N_0x45a83257ed02d9bc
@@ -4002,24 +4082,24 @@ function NetworkPlayerGetUserId(player, userID) end
 function NetworkAddEntityArea(p0, p1, p2, p3, p4, p5) end
 
     
---- NetworkGetPresenceInviteInviter
+--- Returns the Name of the inviter of the specific selected Invite.
 ---
 --- @hash [0x4962CC4AA2F345B7](https://docs.fivem.net/natives/?_0x4962CC4AA2F345B7)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function NetworkGetPresenceInviteInviter(p0) end
+--- @param inviteIndex number (int)
+--- @return string
+--- @overload fun(inviteIndex: number): string
+function NetworkGetPresenceInviteInviter(inviteIndex) end
 
     
 --- # New Name: NetworkGetPresenceInviteInviter
---- NetworkGetPresenceInviteInviter
+--- Returns the Name of the inviter of the specific selected Invite.
 ---
 --- @hash [0x4962CC4AA2F345B7](https://docs.fivem.net/natives/?_0x4962CC4AA2F345B7)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
+--- @param inviteIndex number (int)
+--- @return string
+--- @overload fun(inviteIndex: number): string
 --- @deprecated
-function N_0x4962cc4aa2f345b7(p0) end
+function N_0x4962cc4aa2f345b7(inviteIndex) end
 
     
 --- NetworkSessionSetMatchmakingGroup
@@ -4490,6 +4570,23 @@ function NetworkPlayerIsRockstarDev(player) end
 --- @return void
 --- @overload fun(p0: boolean): void
 function N_0x5539c3ebf104a53a(p0) end
+
+    
+--- ```
+--- _NETWORK_CAN_VIEW_* - _NETWORK_CAN_SESSION*
+--- 
+--- NETWORK_CAN_PLAY_GAMER_USER_CONTENT?
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x559EBF901A8C68E0](https://docs.fivem.net/natives/?_0x559EBF901A8C68E0)
+--- @param gamerHandle any
+--- @return boolean
+--- @overload fun(): boolean, any
+function N_0x559ebf901a8c68e0(gamerHandle) end
 
     
 --- ```
@@ -5853,24 +5950,39 @@ function NetworkGetRosPrivilege_9() end
 function N_0x66b59cffd78467af() end
 
     
+--- ```
+--- Getter for SET_NETWORK_CUTSCENE_ENTITIES.
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x66D6A5E9C511214A](https://docs.fivem.net/natives/?_0x66D6A5E9C511214A)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function NetworkAreCutsceneEntities() end
+
+    
 --- NetworkSetInviteOnCallForInviteMenu
 ---
 --- @hash [0x66F010A4B031A331](https://docs.fivem.net/natives/?_0x66F010A4B031A331)
---- @param p0 any
+--- @param networkHandle number (int*)
 --- @return void
---- @overload fun(): any
-function NetworkSetInviteOnCallForInviteMenu(p0) end
+--- @overload fun(): number
+function NetworkSetInviteOnCallForInviteMenu(networkHandle) end
 
     
 --- # New Name: NetworkSetInviteOnCallForInviteMenu
 --- NetworkSetInviteOnCallForInviteMenu
 ---
 --- @hash [0x66F010A4B031A331](https://docs.fivem.net/natives/?_0x66F010A4B031A331)
---- @param p0 any
+--- @param networkHandle number (int*)
 --- @return void
---- @overload fun(): any
+--- @overload fun(): number
 --- @deprecated
-function N_0x66f010a4b031a331(p0) end
+function N_0x66f010a4b031a331(networkHandle) end
 
     
 --- ```
@@ -6435,14 +6547,23 @@ function FilloutPmPlayerListWithNames(p2, p3) end
 function NetworkIsGamerTalking(networkHandle) end
 
     
---- ```
---- NETWORK_HAS_*
---- ```
+--- NetworkHasInviteBeenAcked
 ---
 --- @hash [0x71DC455F5CD1C2B1](https://docs.fivem.net/natives/?_0x71DC455F5CD1C2B1)
---- @param networkHandle any
+--- @param networkHandle number (int*)
 --- @return boolean
---- @overload fun(): boolean, any
+--- @overload fun(): boolean, number
+function NetworkHasInviteBeenAcked(networkHandle) end
+
+    
+--- # New Name: NetworkHasInviteBeenAcked
+--- NetworkHasInviteBeenAcked
+---
+--- @hash [0x71DC455F5CD1C2B1](https://docs.fivem.net/natives/?_0x71DC455F5CD1C2B1)
+--- @param networkHandle number (int*)
+--- @return boolean
+--- @overload fun(): boolean, number
+--- @deprecated
 function N_0x71dc455f5cd1c2b1(networkHandle) end
 
     
@@ -7212,13 +7333,14 @@ function N_0x7d395ea61622e116(p0) end
 function N_0x7db53b37a2f211a0() end
 
     
---- NetworkIsInactiveProfile
+--- Checks if the networkHandle is the same as any other user that is signed in on the local machine.
+--- For example, if your console has two or more users signed in (on different controllers), the profile that is not controlling the game would be "inactive".
 ---
 --- @hash [0x7E58745504313A2E](https://docs.fivem.net/natives/?_0x7E58745504313A2E)
---- @param p0 any
+--- @param networkHandle number (int*)
 --- @return boolean
---- @overload fun(): boolean, any
-function NetworkIsInactiveProfile(p0) end
+--- @overload fun(): boolean, number
+function NetworkIsInactiveProfile(networkHandle) end
 
     
 --- NetworkCanEnterMultiplayer
@@ -8011,6 +8133,21 @@ function NetworkAccessTunableInt(tunableContext, tunableName, value) end
 --- @overload fun(): boolean, string): boolean, string): boolean, number
 --- @deprecated
 function N_0x8be1146dfd5d4468(tunableContext, tunableName, value) end
+
+    
+--- ```
+--- Used by Metric VEHICLE_DIST_DRIVEN
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x8C70252FC40F320B](https://docs.fivem.net/natives/?_0x8C70252FC40F320B)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function NetworkSetVehicleTestDrive(toggle) end
 
     
 --- NetworkIsPlayerMutedByMe
@@ -9175,8 +9312,15 @@ function N_0xa0fa4ec6a05da44e() end
 function NetworkHandleFromMemberId(memberId, networkHandle, bufferSize) end
 
     
---- NetworkGetNetworkIdFromEntity
----
+--- Get the network id of the given entity
+--- 
+--- An entity network id represents a given entity for other clients, it's a handle shared between clients, can be reconverted to a client entity handle.\
+--- These (entity network IDs) can and will be reused, the network id will not change.
+--- If you need to refer to an entity across machines (clients, or the server), you should use its network id.
+--- 
+--- Read more at [Network and local IDs](https://docs.fivem.net/docs/scripting-manual/networking/ids/)
+--- @usage local obj = CreateObject(`prop_weed_01`, vector3(0.0, 0.0, 0.0), true)
+--- local netId = NetworkGetNetworkIdFromEntity(obj
 --- @hash [0xA11700682F3AD45C](https://docs.fivem.net/natives/?_0xA11700682F3AD45C)
 --- @param entity Entity
 --- @return number
@@ -9797,6 +9941,46 @@ function NetworkAccessTunableBool(tunableContext, tunableName) end
 --- @overload fun(tunableContext: string, tunableName: string): boolean
 --- @deprecated
 function N_0xaa6a47a573abb75a(tunableContext, tunableName) end
+
+    
+--- ```
+--- mpSettingSpawn:
+--- 
+--- enum eMpSettingSpawn
+--- {
+--- 	MP_SETTING_SPAWN_NULL,
+--- 	MP_SETTING_SPAWN_PROPERTY,
+--- 	MP_SETTING_SPAWN_LAST_POSITION,
+--- 	MP_SETTING_SPAWN_GARAGE,
+--- 	MP_SETTING_SPAWN_RANDOM,
+--- 	MP_SETTING_SPAWN_PRIVATE_YACHT,
+--- 	MP_SETTING_SPAWN_OFFICE,
+--- 	MP_SETTING_SPAWN_CLUBHOUSE,
+--- 	MP_SETTING_SPAWN_IE_WAREHOUSE,
+--- 	MP_SETTING_SPAWN_BUNKER,
+--- 	MP_SETTING_SPAWN_HANGAR,
+--- 	MP_SETTING_SPAWN_DEFUNCT_BASE,
+--- 	MP_SETTING_SPAWN_NIGHTCLUB,
+--- 	MP_SETTING_SPAWN_ARENA_GARAGE,
+--- 	MP_SETTING_SPAWN_CASINO_APARTMENT,
+--- 	MP_SETTING_SPAWN_ARCADE,
+--- 	MP_SETTING_SPAWN_SUBMARINE,
+--- 	MP_SETTING_SPAWN_CAR_MEET,
+--- 	MP_SETTING_SPAWN_AUTO_SHOP,
+--- 	MP_SETTING_SPAWN_FIXER_HQ,
+--- 	MP_SETTING_SPAWN_MAX,
+--- };
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0xAA6D5451DC3448B6](https://docs.fivem.net/natives/?_0xAA6D5451DC3448B6)
+--- @param mpSettingSpawn Hash
+--- @return void
+--- @overload fun(mpSettingSpawn: Hash): void
+function NetworkSetCurrentSpawnSetting(mpSettingSpawn) end
 
     
 --- ```
@@ -11358,40 +11542,16 @@ function NetworkActionFollowInvite() end
 function N_0xc88156ebb786f8d5() end
 
     
---- ```
---- BOOL DEBUG_MEMBRESHIP(int Param)  
---- {  
---- 	int membership;  
---- 	networkHandleMgr handle;  
---- 	NETWORK_HANDLE_FROM_PLAYER(iSelectedPlayer, &handle.netHandle, 13);  
---- 	if (!_NETWORK_IS_CLAN_MEMBERSHIP_FINISHED_DOWNLOADING())  
---- 	{  
---- 		if (NETWORK_CLAN_REMOTE_MEMBERSHIPS_ARE_IN_CACHE(&Param))  
---- 		{  
---- if (NETWORK_CLAN_GET_MEMBERSHIP_COUNT(&Param) > 0)  
---- {  
---- 	if (NETWORK_CLAN_GET_MEMBERSHIP_VALID(&Param, 0))  
---- 	{  
---- 		if (NETWORK_CLAN_GET_MEMBERSHIP(&Param, &membership, -1))  
---- 		{  
---- _0xF633805A(&membership, 35, &handle.netHandle);  
---- 		}  
---- 	}  
---- }  
---- 		}  
---- 	}  
---- 	else  
---- 	{  
---- 		NETWORK_CLAN_DOWNLOAD_MEMBERSHIP(&handle.netHandle);  
---- 	}  
---- }  
---- ```
+--- Retrieves a membership for a player, from the cache (i.e. downloaded via NETWORK_CLAN_DOWNLOAD_MEMBERSHIP).
+--- 
+--- Test C++ code:
+--- https://pastebin.com/CD8wni4C
 ---
 --- @hash [0xC8BC2011F67B3411](https://docs.fivem.net/natives/?_0xC8BC2011F67B3411)
---- @param p2 number (int)
+--- @param membershipIndex number (int)
 --- @return boolean, number, number
---- @overload fun(p2: number): boolean, number, number
-function NetworkClanGetMembership(p2) end
+--- @overload fun(membershipIndex: number): boolean, number, number
+function NetworkClanGetMembership(membershipIndex) end
 
     
 --- NetworkCanSetWaypoint
@@ -11403,13 +11563,24 @@ function NetworkClanGetMembership(p2) end
 function NetworkCanSetWaypoint() end
 
     
---- N_0xc9b43a33d09cada7
+--- NetworkForceLocalUseOfSyncedSceneCamera
 ---
 --- @hash [0xC9B43A33D09CADA7](https://docs.fivem.net/natives/?_0xC9B43A33D09CADA7)
---- @param p0 any
+--- @param sceneId number (int)
 --- @return void
---- @overload fun(p0: any): void
-function N_0xc9b43a33d09cada7(p0) end
+--- @overload fun(sceneId: number): void
+function NetworkForceLocalUseOfSyncedSceneCamera(sceneId) end
+
+    
+--- # New Name: NetworkForceLocalUseOfSyncedSceneCamera
+--- NetworkForceLocalUseOfSyncedSceneCamera
+---
+--- @hash [0xC9B43A33D09CADA7](https://docs.fivem.net/natives/?_0xC9B43A33D09CADA7)
+--- @param sceneId number (int)
+--- @return void
+--- @overload fun(sceneId: number): void
+--- @deprecated
+function N_0xc9b43a33d09cada7(sceneId) end
 
     
 --- NetworkSetGamerInvitedToTransition
@@ -11649,8 +11820,10 @@ function NetworkUseLogarithmicBlendingThisFrame(entity) end
 function N_0xcd71a4ecab22709e(entity) end
 
     
---- NetworkGetEntityFromNetworkId
----
+--- Get the local entity handle of the given network id
+--- 
+--- Through this native you can get back the entity that you previously converted to netid with [NetworkGetNetworkIdFromEntity](https://docs.fivem.net/natives/?_0x9E35DAB6) or with the `ToNet` natives
+--- @usage local entity = NetworkGetEntityFromNetworkId(netId
 --- @hash [0xCE4E5D9B0A4FF560](https://docs.fivem.net/natives/?_0xCE4E5D9B0A4FF560)
 --- @param netId number (int)
 --- @return Entity
@@ -11785,19 +11958,6 @@ function NetworkAddSynchronisedSceneCamera(netScene, animDict, animName) end
 function N_0xcf8bd3b0bd6d42d7(netScene, animDict, animName) end
 
     
---- # New Name: NetworkAddSynchronisedSceneCamera
---- NetworkAddSynchronisedSceneCamera
----
---- @hash [0xCF8BD3B0BD6D42D7](https://docs.fivem.net/natives/?_0xCF8BD3B0BD6D42D7)
---- @param netScene number (int)
---- @param animDict string (char*)
---- @param animName string (char*)
---- @return void
---- @overload fun(netScene: number, animDict: string, animName: string): void
---- @deprecated
-function NetworkForceLocalUseOfSyncedSceneCamera(netScene, animDict, animName) end
-
-    
 --- UgcGetContentUpdatedDate
 ---
 --- @hash [0xCFD115B373C0DF63](https://docs.fivem.net/natives/?_0xCFD115B373C0DF63)
@@ -11829,13 +11989,35 @@ function N_0xcfd115b373c0df63(p0, p1) end
 function N_0xcfeb46dcd7d8d5eb(p0) end
 
     
---- N_0xcfeb8af24fc1d0bb
+--- NetworkBlockJoinQueueInvites
 ---
 --- @hash [0xCFEB8AF24FC1D0BB](https://docs.fivem.net/natives/?_0xCFEB8AF24FC1D0BB)
---- @param p0 boolean
+--- @param toggle boolean
 --- @return void
---- @overload fun(p0: boolean): void
-function N_0xcfeb8af24fc1d0bb(p0) end
+--- @overload fun(toggle: boolean): void
+function NetworkBlockJoinQueueInvites(toggle) end
+
+    
+--- # New Name: NetworkBlockJoinQueueInvites
+--- NetworkBlockJoinQueueInvites
+---
+--- @hash [0xCFEB8AF24FC1D0BB](https://docs.fivem.net/natives/?_0xCFEB8AF24FC1D0BB)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function N_0xcfeb8af24fc1d0bb(toggle) end
+
+    
+--- # New Name: NetworkBlockJoinQueueInvites
+--- NetworkBlockJoinQueueInvites
+---
+--- @hash [0xCFEB8AF24FC1D0BB](https://docs.fivem.net/natives/?_0xCFEB8AF24FC1D0BB)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function NetworkBlockInvites_2(toggle) end
 
     
 --- UgcSetDeleted

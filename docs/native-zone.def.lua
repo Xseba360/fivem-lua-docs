@@ -36,8 +36,18 @@ function GetZonePopschedule(zoneId) end
 function ClearPopscheduleOverrideVehicleModel(scheduleId) end
 
     
---- ```
---- cellphone range 1- 5 used for signal bar in iFruit phone  
+--- Gets the zone scumminess level, used to calculate the cellphone signal strength.
+--- 
+--- ```cpp
+--- enum eZoneScumminess
+--- {
+---     SCUMMINESS_POSH = 0,
+---     SCUMMINESS_NICE = 1,
+---     SCUMMINESS_ABOVE_AVERAGE = 2,
+---     SCUMMINESS_BELOW_AVERAGE = 3,
+---     SCUMMINESS_CRAP = 4,
+---     SCUMMINESS_SCUM = 5
+--- }
 --- ```
 ---
 --- @hash [0x5F7B268D15BA0739](https://docs.fivem.net/natives/?_0x5F7B268D15BA0739)

@@ -332,6 +332,22 @@ function N_0x0b568201dd99f0eb(p0) end
 
     
 --- ```
+--- Dat151RelType == 29
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x0BABC1345ABBFB16](https://docs.fivem.net/natives/?_0x0BABC1345ABBFB16)
+--- @param ped Ped
+--- @param voiceGroupHash Hash
+--- @return void
+--- @overload fun(ped: Ped, voiceGroupHash: Hash): void
+function SetPedVoiceGroupRace(ped, voiceGroupHash) end
+
+    
+--- ```
 --- IS_VEHICLE_*
 --- ```
 --- @usage local radioEnabled = IsVehicleRadioEnabled(GetVehiclePedIsIn(PlayerPedId(), false))
@@ -811,6 +827,17 @@ function N_0x29da3ca8d8b2692d(ped, toggle) end
 --- @return void
 --- @overload fun(p0: string): void
 function N_0x2acabed337622df2(p0) end
+
+    
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x2B1784DB08AFEA79](https://docs.fivem.net/natives/?_0x2B1784DB08AFEA79)
+--- @param radioStation string (char*)
+--- @return boolean
+--- @overload fun(radioStation: string): boolean
+function IsRadioStationVisible(radioStation) end
 
     
 --- Sets whether the vehicle passed has exhaust pops.
@@ -3501,22 +3528,62 @@ function StopAudioScenes() end
 function SetVehicleRadioLoud(vehicle, toggle) end
 
     
---- ```
---- Needs another parameter [int p2]. The signature is PED::PLAY_PAIN(Ped ped, int painID, int p1, int p2);  
---- Last 2 parameters always seem to be 0.  
---- EX: Function.Call(Hash.PLAY_PAIN, TestPed, 6, 0, 0);  
---- Known Pain IDs  
---- ________________________  
---- 1 - Doesn't seem to do anything. Does NOT crash the game like previously said. (Latest patch)  
---- 6 - Scream (Short)  
---- 7 - Scared Scream (Kinda Long)  
---- 8 - On Fire  
---- ```
+--- **Warning**:
 --- 
---- ```
---- NativeDB Added Parameter 4: Any p3
---- ```
----
+--- Parameters are wrong after painID. To preserve C-Sharp backwards compatibility, we can't add or remove parameters.
+--- 
+--- Correct parameters should be:\
+--- `PLAY_PAIN(Ped ped, int painID, float p3, bool createNetEvent)`
+--- 
+--- Check the *examples* section for the correct usage of this native.
+--- 
+--- **Description:**
+--- 
+--- Plays a pain sound. A maximum of 33 pain IDs are allowed.\
+--- `createNetEvent` creates a `CPedPlayPainEvent` when set to true.
+--- 
+--- Below is a list of all the pain IDs (Asterisks indicate that sounds can play in a Low, Medium or High fashion), for example: `PAIN_LOW_GENERIC`. The corresponding pain strings belong to the game exe.
+--- 
+--- **Pain IDs:**
+--- 
+--- *   0: PAIN_\*\_GENERIC (Low, Medium, High)
+--- *   1: UNUSED
+--- *   2: UNUSED
+--- *   3: SCREAM_PANIC (Nothing can be heard)
+--- *   4: SCREAM_PANIC_SHORT
+--- *   5: SCREAM_SCARED
+--- *   6: SCREAM_SHOCKED
+--- *   7: SCREAM_TERROR
+--- *   8: ON_FIRE
+--- *   9: UNUSED
+--- *   10: UNUSED
+--- *   11: INHALE (Nothing can be heard)
+--- *   12: EXHALE (Nothing can be heard)
+--- *   13: DEATH_HIGH_SHORT
+--- *   14: UNUSED
+--- *   15: PAIN_HIGH_GENERIC
+--- *   16: PAIN_\*\_GENERIC (Low, Medium, High)
+--- *   17: PAIN_SHOVE
+--- *   18: PAIN_WHEEZE
+--- *   19: COUGH
+--- *   20: PAIN_TAZER
+--- *   21: UNUSED
+--- *   22: CLIMB_LARGE (Nothing can be heard)
+--- *   23: CLIMB_SMALL (Nothing can be heard)
+--- *   24: JUMP (Nothing can be heard)
+--- *   25: COWER
+--- *   26: WHIMPER
+--- *   27: DYING_MOAN
+--- *   28: EXHALE_CYCLING (Nothing can be heard)
+--- *   29: PAIN_RAPIDS (Nothing can be heard)
+--- *   30: SNEEZE
+--- *   31: MELEE_SMALL_GRUNT (Nothing can be heard)
+--- *   32: MELEE_LARGE_GRUNT (Nothing can be heard)
+--- *   33: PAIN_\*\_GENERIC (Low, Medium, High)
+--- @usage -- Play ON_FIRE (8) for all nearby peds, don't create an event (last parameter set to false)
+--- for _, ped in ipairs(GetGamePool('CPed')) do
+---     PlayPain(ped, 8, 0.0, false)
+--- en
 --- @hash [0xBC9AE166038A5CEC](https://docs.fivem.net/natives/?_0xBC9AE166038A5CEC)
 --- @param ped Ped
 --- @param painID number (int)
@@ -3699,8 +3766,8 @@ function AddLineToConversation(index, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p
 ---
 --- @hash [0xC64A06D939F826F5](https://docs.fivem.net/natives/?_0xC64A06D939F826F5)
 ---
---- @return boolean, number, any, number
---- @overload fun(): boolean, number, any, number
+--- @return boolean, number, number, number
+--- @overload fun(): boolean, number, number, number
 function N_0xc64a06d939f826f5() end
 
     
@@ -4336,10 +4403,13 @@ function GetNumUnlockedRadioStations() end
 function MaxRadioStationIndex() end
 
     
---- ```
---- 2 calls found in the b617d scripts:  
---- AUDIO::_F1F8157B8C3F171C(l_A42, "Franklin_Bike_Rev", "BIG_SCORE_3A_SOUNDS");  
---- AUDIO::_F1F8157B8C3F171C(l_166, "Trevor_Revs_Off", "PALETO_SCORE_SETUP_SOUNDS");  
+--- Overrides the vehicle's startup engine rev sound.
+--- 
+--- 2 calls found in the b617d scripts:
+--- 
+--- ```cpp
+--- AUDIO::SET_VEHICLE_STARTUP_REV_SOUND(l_A42, "Franklin_Bike_Rev", "BIG_SCORE_3A_SOUNDS");  
+--- AUDIO::SET_VEHICLE_STARTUP_REV_SOUND(l_166, "Trevor_Revs_Off", "PALETO_SCORE_SETUP_SOUNDS");
 --- ```
 ---
 --- @hash [0xF1F8157B8C3F171C](https://docs.fivem.net/natives/?_0xF1F8157B8C3F171C)
@@ -4348,6 +4418,26 @@ function MaxRadioStationIndex() end
 --- @param p2 string (char*)
 --- @return void
 --- @overload fun(vehicle: Vehicle, p1: string, p2: string): void
+function SetVehicleStartupRevSound(vehicle, p1, p2) end
+
+    
+--- # New Name: SetVehicleStartupRevSound
+--- Overrides the vehicle's startup engine rev sound.
+--- 
+--- 2 calls found in the b617d scripts:
+--- 
+--- ```cpp
+--- AUDIO::SET_VEHICLE_STARTUP_REV_SOUND(l_A42, "Franklin_Bike_Rev", "BIG_SCORE_3A_SOUNDS");  
+--- AUDIO::SET_VEHICLE_STARTUP_REV_SOUND(l_166, "Trevor_Revs_Off", "PALETO_SCORE_SETUP_SOUNDS");
+--- ```
+---
+--- @hash [0xF1F8157B8C3F171C](https://docs.fivem.net/natives/?_0xF1F8157B8C3F171C)
+--- @param vehicle Vehicle
+--- @param p1 string (char*)
+--- @param p2 string (char*)
+--- @return void
+--- @overload fun(vehicle: Vehicle, p1: string, p2: string): void
+--- @deprecated
 function N_0xf1f8157b8c3f171c(vehicle, p1, p2) end
 
     

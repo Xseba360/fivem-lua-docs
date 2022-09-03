@@ -1,4 +1,13 @@
 
+--- GetVehicleSteeringAngle
+---
+--- @hash [0x1382FCEA](https://docs.fivem.net/natives/?_0x1382FCEA)
+--- @param vehicle Vehicle
+--- @return number
+--- @overload fun(vehicle: Vehicle): number
+function GetVehicleSteeringAngle(vehicle) end
+
+    
 --- DeleteFunctionReference
 ---
 --- @hash [0x1E86F206](https://docs.fivem.net/natives/?_0x1E86F206)
@@ -28,8 +37,8 @@ function GetPlayerWeaponDamageModifier(playerId) end
 
     
 --- A getter for [SET_RESOURCE_KVP_FLOAT](https://docs.fivem.net/natives/?_0x9ADD2938).
---- @usage local kvpValue = GetResourceKvpInt('mollis') 
---- if kvpValue then
+--- @usage local kvpValue = GetResourceKvpFloat('mollis')
+--- if kvpValue ~= 0.0 then
 --- 	-- do something!
 --- en
 --- @hash [0x35BDCEEA](https://docs.fivem.net/natives/?_0x35BDCEEA)
@@ -124,7 +133,7 @@ function NetworkGetEntityOwner(entity) end
     
 --- A getter for [SET_RESOURCE_KVP_INT](https://docs.fivem.net/natives/?_0x6A2B1E8).
 --- @usage local kvpValue = GetResourceKvpInt('bananabread') 
---- if kvpValue then
+--- if kvpValue ~= 0 then
 --- 	-- do something!
 --- en
 --- @hash [0x557B586A](https://docs.fivem.net/natives/?_0x557B586A)
@@ -237,8 +246,10 @@ function GetStateBagValue(bagName, key) end
 function SetResourceKvpInt(key, value) end
 
     
---- GetConvar
----
+--- Can be used to get a console variable of type `char*`, for example a string.
+--- @usage if GetConvar('voice_useNativeAudio', 'false') == 'true' then
+---     Citizen.Trace('Native Audio is enabled.')
+--- en
 --- @hash [0x6CCD2564](https://docs.fivem.net/natives/?_0x6CCD2564)
 --- @param varName string (char*)
 --- @param default_ string (char*)
@@ -297,6 +308,9 @@ function IsAceAllowed(object) end
 ---     *   2060
 ---     *   2189
 ---     *   2372
+---     *   2545
+---     *   2612
+---     *   2699
 --- *   RedM
 ---     *   1311
 ---     *   1355
@@ -355,8 +369,10 @@ function SetStateBagValue(bagName, keyName, valueData, valueLength, replicated) 
 function TriggerEventInternal(eventName, eventPayload, payloadLength) end
 
     
---- GetConvarInt
----
+--- Can be used to get a console variable casted back to `int` (an integer value).
+--- @usage if GetConvarInt('remainingRounds', 0) < 900 then
+---     Citizen.Trace("Less than 900 rounds remaining...")
+--- en
 --- @hash [0x935C0AB2](https://docs.fivem.net/natives/?_0x935C0AB2)
 --- @param varName string (char*)
 --- @param default_ number (int)
@@ -387,8 +403,8 @@ function GetPlayerWeaponDefenseModifier_2(playerId) end
 
     
 --- A setter for [GET_RESOURCE_KVP_FLOAT](https://docs.fivem.net/natives/?_0x35BDCEEA).
---- @usage local lickMy = 42
---- SetResourceKvp('bananabread', lickMy
+--- @usage local lickMy = 42.5
+--- SetResourceKvpFloat('bananabread', lickMy
 --- @hash [0x9ADD2938](https://docs.fivem.net/natives/?_0x9ADD2938)
 --- @param key string (char*)
 --- @param value number (float)

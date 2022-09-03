@@ -59,6 +59,17 @@ function IsCamInterpolating(cam) end
 
     
 --- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x06D153C0B99B6128](https://docs.fivem.net/natives/?_0x06D153C0B99B6128)
+--- @param cam Cam
+--- @return number
+--- @overload fun(cam: Cam): number
+function GetCamDofStrength(cam) end
+
+    
+--- ```
 --- ease - smooth transition between the camera's positions  
 --- easeTime - Time in milliseconds for the transition to happen  
 --- If you have created a script (rendering) camera, and want to go back to the   
@@ -156,30 +167,30 @@ function SetFirstPersonCamNearClip(distance) end
 function StopGameplayCamShaking(p0) end
 
     
---- AddCamSplineNodeUsingCamera
+--- Takes a camera and uses the information from it as a camera spline node.
 ---
 --- @hash [0x0FB82563989CF4FB](https://docs.fivem.net/natives/?_0x0FB82563989CF4FB)
 --- @param cam Cam
 --- @param cam2 Cam
---- @param p2 number (int)
+--- @param length number (int)
 --- @param p3 number (int)
 --- @return void
---- @overload fun(cam: Cam, cam2: Cam, p2: number, p3: number): void
-function AddCamSplineNodeUsingCamera(cam, cam2, p2, p3) end
+--- @overload fun(cam: Cam, cam2: Cam, length: number, p3: number): void
+function AddCamSplineNodeUsingCamera(cam, cam2, length, p3) end
 
     
 --- # New Name: AddCamSplineNodeUsingCamera
---- AddCamSplineNodeUsingCamera
+--- Takes a camera and uses the information from it as a camera spline node.
 ---
 --- @hash [0x0FB82563989CF4FB](https://docs.fivem.net/natives/?_0x0FB82563989CF4FB)
 --- @param cam Cam
 --- @param cam2 Cam
---- @param p2 number (int)
+--- @param length number (int)
 --- @param p3 number (int)
 --- @return void
---- @overload fun(cam: Cam, cam2: Cam, p2: number, p3: number): void
+--- @overload fun(cam: Cam, cam2: Cam, length: number, p3: number): void
 --- @deprecated
-function N_0x0fb82563989cf4fb(cam, cam2, p2, p3) end
+function N_0x0fb82563989cf4fb(cam, cam2, length, p3) end
 
     
 --- ```
@@ -314,8 +325,8 @@ function SetCamUseShallowDofMode(cam, toggle) end
 ---
 --- @hash [0x17FCA7199A530203](https://docs.fivem.net/natives/?_0x17FCA7199A530203)
 ---
---- @return any
---- @overload fun(): any
+--- @return void
+--- @overload fun(): void
 function N_0x17fca7199a530203() end
 
     
@@ -1311,10 +1322,10 @@ function IsFirstPersonAimCamActive() end
 ---
 --- @hash [0x5E3CF89C6BCCA67D](https://docs.fivem.net/natives/?_0x5E3CF89C6BCCA67D)
 --- @param camHash Hash
---- @param p1 boolean
+--- @param active boolean
 --- @return Cam
---- @overload fun(camHash: Hash, p1: boolean): Cam
-function CreateCamera(camHash, p1) end
+--- @overload fun(camHash: Hash, active: boolean): Cam
+function CreateCamera(camHash, active) end
 
     
 --- SetCamDofStrength
@@ -1495,13 +1506,10 @@ function IsAimCamActive() end
 function ShakeCam(cam, type, amplitude) end
 
     
---- ```
---- CAM::_GET_GAMEPLAY_CAM_COORDS can be used instead of posX,Y,Z  
---- CAM::_GET_GAMEPLAY_CAM_ROT can be used instead of rotX,Y,Z  
---- CAM::_80EC114669DAEFF4() can be used instead of p7 (Possible p7 is FOV parameter. )  
---- p8 ???  
---- p9 uses 2 by default  
---- ```
+--- CAM::\_GET_GAMEPLAY_CAM_COORDS can be used instead of posX,Y,Z\
+--- CAM::\_GET_GAMEPLAY_CAM_ROT can be used instead of rotX,Y,Z\
+--- CAM::\_80EC114669DAEFF4() can be used instead of p7 (Possible p7 is FOV parameter. )\
+--- rotationOrder is 2 usually
 ---
 --- @hash [0x6ABFA3E16460F22D](https://docs.fivem.net/natives/?_0x6ABFA3E16460F22D)
 --- @param camHash Hash
@@ -1512,11 +1520,11 @@ function ShakeCam(cam, type, amplitude) end
 --- @param rotY number (float)
 --- @param rotZ number (float)
 --- @param fov number (float)
---- @param p8 boolean
---- @param p9 any
+--- @param active boolean
+--- @param rotationOrder number (int)
 --- @return Cam
---- @overload fun(camHash: Hash, posX: number, posY: number, posZ: number, rotX: number, rotY: number, rotZ: number, fov: number, p8: boolean, p9: any): Cam
-function CreateCameraWithParams(camHash, posX, posY, posZ, rotX, rotY, rotZ, fov, p8, p9) end
+--- @overload fun(camHash: Hash, posX: number, posY: number, posZ: number, rotX: number, rotY: number, rotZ: number, fov: number, active: boolean, rotationOrder: number): Cam
+function CreateCameraWithParams(camHash, posX, posY, posZ, rotX, rotY, rotZ, fov, active, rotationOrder) end
 
     
 --- IsCamShaking
@@ -1584,6 +1592,38 @@ function N_0x70894bd0915c5bca(zoomFactor) end
 --- @return boolean
 --- @overload fun(): boolean
 function IsGameplayCamLookingBehind() end
+
+    
+--- ```
+--- _RESET_*
+--- 
+--- _RESET_GAMEPLAY_CAM_RELATIVE_ORBIT_HOLD_TIME?
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x7295C203DD659DFE](https://docs.fivem.net/natives/?_0x7295C203DD659DFE)
+---
+--- @return void
+--- @overload fun(): void
+function N_0x7295c203dd659dfe() end
+
+    
+--- ```
+--- Only used in R* Script fm_mission_controller_2020
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0x731A880555DA3647](https://docs.fivem.net/natives/?_0x731A880555DA3647)
+---
+--- @return void
+--- @overload fun(): void
+function SetUseHiDofInCutscene() end
 
     
 --- CreateCinematicShot
@@ -2609,18 +2649,17 @@ function GetCamSplineNodeIndex(cam) end
 function SetGameplayCamRelativeHeading(heading) end
 
     
+--- Create a camera with the specified cam name/type, You can use `SET_CAM_` natives to manipulate the camera.
+--- 
+--- Camera names found in the b617d scripts:
+--- 
 --- ```
---- camName is always set to "DEFAULT_SCRIPTED_CAMERA" in Rockstar's scripts.  
---- ------------  
---- Camera names found in the b617d scripts:  
 --- "DEFAULT_ANIMATED_CAMERA"  
 --- "DEFAULT_SCRIPTED_CAMERA"  
 --- "DEFAULT_SCRIPTED_FLY_CAMERA"  
---- "DEFAULT_SPLINE_CAMERA"  
---- ------------  
---- Side Note: It seems p8 is basically to represent what would be the bool p1 within CREATE_CAM native. As well as the p9 since it's always 2 in scripts seems to represent what would be the last param within SET_CAM_ROT native which normally would be 2.  
+--- "DEFAULT_SPLINE_CAMERA" 
 --- ```
----
+--- @usage local cam = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", 561.3, 301.3, 63.0, 0.0, 0.0, 0.0, 90.0
 --- @hash [0xB51194800B257161](https://docs.fivem.net/natives/?_0xB51194800B257161)
 --- @param camName string (char*)
 --- @param posX number (float)
@@ -2630,11 +2669,11 @@ function SetGameplayCamRelativeHeading(heading) end
 --- @param rotY number (float)
 --- @param rotZ number (float)
 --- @param fov number (float)
---- @param p8 boolean
---- @param p9 number (int)
+--- @param active boolean
+--- @param rotationOrder number (int)
 --- @return Cam
---- @overload fun(camName: string, posX: number, posY: number, posZ: number, rotX: number, rotY: number, rotZ: number, fov: number, p8: boolean, p9: number): Cam
-function CreateCamWithParams(camName, posX, posY, posZ, rotX, rotY, rotZ, fov, p8, p9) end
+--- @overload fun(camName: string, posX: number, posY: number, posZ: number, rotX: number, rotY: number, rotZ: number, fov: number, active: boolean, rotationOrder: number): Cam
+function CreateCamWithParams(camName, posX, posY, posZ, rotX, rotY, rotZ, fov, active, rotationOrder) end
 
     
 --- ```
@@ -2742,6 +2781,17 @@ function SetCamParams(cam, posX, posY, posZ, rotX, rotY, rotZ, fieldOfView, tran
 
     
 --- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0xC2612D223D915A1C](https://docs.fivem.net/natives/?_0xC2612D223D915A1C)
+--- @param cam Cam
+--- @return number
+--- @overload fun(cam: Cam): number
+function GetCamNearDof(cam) end
+
+    
+--- ```
 --- CAM::ANIMATED_SHAKE_SCRIPT_GLOBAL("SHAKE_CAM_medium", "medium", "", 0.5f);
 --- ```
 ---
@@ -2806,20 +2856,26 @@ function SetCamDofMaxNearInFocusDistance(camera, p1) end
 function N_0xc3654a441402562d(camera, p1) end
 
     
---- ```
---- "DEFAULT_SCRIPTED_CAMERA"  
---- "DEFAULT_ANIMATED_CAMERA"  
---- "DEFAULT_SPLINE_CAMERA"  
---- "DEFAULT_SCRIPTED_FLY_CAMERA"  
---- "TIMED_SPLINE_CAMERA"  
---- ```
----
+--- Creates a camera with the specified cam name, You can use `SET_CAM_` natives to manipulate the camera.\
+--- Make sure to call [RENDER_SCRIPT_CAMS](https://docs.fivem.net/natives/?_0x07E5B515DB0636FC) once the camera is created, or this won't have any visible effect.
+--- 
+--- ### Camera names:
+--- 
+--- *   DEFAULT_SCRIPTED_CAMERA
+--- *   DEFAULT_ANIMATED_CAMERA
+--- *   DEFAULT_SPLINE_CAMERA
+--- *   DEFAULT_SCRIPTED_FLY_CAMERA
+--- *   TIMED_SPLINE_CAMERA
+--- *   CUSTOM_TIMED_SPLINE_CAMERA
+--- *   ROUNDED_SPLINE_CAMERA
+--- *   SMOOTHED_SPLINE_CAMERA
+--- @usage local cam = CreateCam("DEFAULT_SCRIPTED_CAMERA", true
 --- @hash [0xC3981DCE61D9E13F](https://docs.fivem.net/natives/?_0xC3981DCE61D9E13F)
 --- @param camName string (char*)
---- @param p1 boolean
+--- @param active boolean
 --- @return Cam
---- @overload fun(camName: string, p1: boolean): Cam
-function CreateCam(camName, p1) end
+--- @overload fun(camName: string, active: boolean): Cam
+function CreateCam(camName, active) end
 
     
 --- GetCamNearClip
@@ -3133,7 +3189,53 @@ function N_0xd0082607100d7193() end
 function GetGameplayCamNearClip() end
 
     
---- SetCamSplineSmoothingStyle
+--- Sets the smoothing style for a DEFAULT_SPLINE_CAMERA
+--- Ranges from 0 to 3 in rockstar scripts although there are actually 26
+--- 
+--- ```
+--- 0: No lead-in or lead-out smoothing
+--- 1: Smooth lead-in
+--- 2: Smooth lead-out
+--- 3: Both lead-in and lead-out are smoothed
+--- 4-6: Longer speed up, lead-in, lead-out, and both in order as above. 
+--- 6: see above, but missed a node in testing(?)
+--- 7: Smoothed lead-in, longer smoothed lead-out
+--- 8: Longer lead-in and lead-out than 6, didn't drop node
+--- 9: Constant acceleration
+--- 10: Constant deceleration. Dropped 2 nodes in testing.
+--- 11: Same as 0
+--- 12: 10 but slower lead-in, reaches end node less early
+--- 13: Extremely close to 3, slightly longer lead-in/lead-out
+--- 14: Constant acceleration, dropped last 2 nodes in testing and halted (?)
+--- 15: Very similar to 10, did not drop any nodes.
+--- 16: Long lead-in, dropped 2 nodes in testing, very long leadout.
+--- 17: Constant acceleration, slower speed-up than 9
+--- 18: Same as 17 is to 9, slightly longer lead-out, lingers at end node
+--- 19: Very long lead in and out
+--- 20: Very long, gradual lead-in acceleration at start, gets extremely fast
+--- 21: Same as 20 but for constant deceleration
+--- 22: 20 and 21 combined, long linger at end node. Dropped 2 nodes in testing
+--- 23: Constant acceleration, doesn't complete path before it stops
+--- 24: Same as 23 but with constant deceleration, but completes path
+--- 25: 23 and 24 combined, insanely fast at middle.
+--- 26: No noticable lead-in, misses last 2 nodes in testing
+--- 27+: Alternates between 0 and 26
+--- ```
+--- 
+--- The above is documented and graphed at [Spline Cam Interp Graphs](https://docs.google.com/spreadsheets/d/1ejyiMcEYrhhQOL0mLe8664UN-vU4Oh-SBqQnVcKlFIk/edit?usp=sharing)
+--- 
+--- ```
+--- 
+--- Using 1-3 will result in misalignment from the passed durations for the spline nodes, the overall duration will remain but other nodes will be shortened if smoothing anything.
+--- 
+--- Graph below demonstrates interpolation between 0-1000 and back 10 times.
+--- 
+--- ![](https://i.imgur.com/cixWh7m.png)
+--- 
+--- ## Parameters
+--- * **cam**: The DEFAULT_SPLINE_CAMERA to apply the smoothing to
+--- * **smoothingStyle**: 0 to 3, 0 no additional smoothing, 1 smooth lead-in, 2 smooth lead-out, 3 smooth lead-in & lead-out
+--- ```
 ---
 --- @hash [0xD1B0F412F109EA5D](https://docs.fivem.net/natives/?_0xD1B0F412F109EA5D)
 --- @param cam Cam
@@ -3144,7 +3246,53 @@ function SetCamSplineSmoothingStyle(cam, smoothingStyle) end
 
     
 --- # New Name: SetCamSplineSmoothingStyle
---- SetCamSplineSmoothingStyle
+--- Sets the smoothing style for a DEFAULT_SPLINE_CAMERA
+--- Ranges from 0 to 3 in rockstar scripts although there are actually 26
+--- 
+--- ```
+--- 0: No lead-in or lead-out smoothing
+--- 1: Smooth lead-in
+--- 2: Smooth lead-out
+--- 3: Both lead-in and lead-out are smoothed
+--- 4-6: Longer speed up, lead-in, lead-out, and both in order as above. 
+--- 6: see above, but missed a node in testing(?)
+--- 7: Smoothed lead-in, longer smoothed lead-out
+--- 8: Longer lead-in and lead-out than 6, didn't drop node
+--- 9: Constant acceleration
+--- 10: Constant deceleration. Dropped 2 nodes in testing.
+--- 11: Same as 0
+--- 12: 10 but slower lead-in, reaches end node less early
+--- 13: Extremely close to 3, slightly longer lead-in/lead-out
+--- 14: Constant acceleration, dropped last 2 nodes in testing and halted (?)
+--- 15: Very similar to 10, did not drop any nodes.
+--- 16: Long lead-in, dropped 2 nodes in testing, very long leadout.
+--- 17: Constant acceleration, slower speed-up than 9
+--- 18: Same as 17 is to 9, slightly longer lead-out, lingers at end node
+--- 19: Very long lead in and out
+--- 20: Very long, gradual lead-in acceleration at start, gets extremely fast
+--- 21: Same as 20 but for constant deceleration
+--- 22: 20 and 21 combined, long linger at end node. Dropped 2 nodes in testing
+--- 23: Constant acceleration, doesn't complete path before it stops
+--- 24: Same as 23 but with constant deceleration, but completes path
+--- 25: 23 and 24 combined, insanely fast at middle.
+--- 26: No noticable lead-in, misses last 2 nodes in testing
+--- 27+: Alternates between 0 and 26
+--- ```
+--- 
+--- The above is documented and graphed at [Spline Cam Interp Graphs](https://docs.google.com/spreadsheets/d/1ejyiMcEYrhhQOL0mLe8664UN-vU4Oh-SBqQnVcKlFIk/edit?usp=sharing)
+--- 
+--- ```
+--- 
+--- Using 1-3 will result in misalignment from the passed durations for the spline nodes, the overall duration will remain but other nodes will be shortened if smoothing anything.
+--- 
+--- Graph below demonstrates interpolation between 0-1000 and back 10 times.
+--- 
+--- ![](https://i.imgur.com/cixWh7m.png)
+--- 
+--- ## Parameters
+--- * **cam**: The DEFAULT_SPLINE_CAMERA to apply the smoothing to
+--- * **smoothingStyle**: 0 to 3, 0 no additional smoothing, 1 smooth lead-in, 2 smooth lead-out, 3 smooth lead-in & lead-out
+--- ```
 ---
 --- @hash [0xD1B0F412F109EA5D](https://docs.fivem.net/natives/?_0xD1B0F412F109EA5D)
 --- @param cam Cam
@@ -3213,12 +3361,23 @@ function DoScreenFadeIn(duration) end
 function SetGameplayCoordHint(x, y, z, duration, blendOutDuration, blendInDuration, unk) end
 
     
---- N_0xd7360051c885628b
+--- IsBonnetCinematicCamRendering
 ---
 --- @hash [0xD7360051C885628B](https://docs.fivem.net/natives/?_0xD7360051C885628B)
 ---
---- @return any
---- @overload fun(): any
+--- @return boolean
+--- @overload fun(): boolean
+function IsBonnetCinematicCamRendering() end
+
+    
+--- # New Name: IsBonnetCinematicCamRendering
+--- IsBonnetCinematicCamRendering
+---
+--- @hash [0xD7360051C885628B](https://docs.fivem.net/natives/?_0xD7360051C885628B)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
 function N_0xd7360051c885628b() end
 
     
@@ -3261,12 +3420,23 @@ function StopCutsceneCamShaking() end
 function N_0xdb90c6cca48940f1(p0) end
 
     
---- N_0xdc9da9e8789f5246
+--- SetCinematicNewsChannelActiveThisUpdate
 ---
 --- @hash [0xDC9DA9E8789F5246](https://docs.fivem.net/natives/?_0xDC9DA9E8789F5246)
 ---
 --- @return void
 --- @overload fun(): void
+function SetCinematicNewsChannelActiveThisUpdate() end
+
+    
+--- # New Name: SetCinematicNewsChannelActiveThisUpdate
+--- SetCinematicNewsChannelActiveThisUpdate
+---
+--- @hash [0xDC9DA9E8789F5246](https://docs.fivem.net/natives/?_0xDC9DA9E8789F5246)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
 function N_0xdc9da9e8789f5246() end
 
     
@@ -3670,10 +3840,10 @@ function N_0xf55e4046f6f831dc(p0, p1) end
 ---
 --- @return boolean
 --- @overload fun(): boolean
-function IsCinematicCamActive() end
+function IsCinematicCamInputActive() end
 
     
---- # New Name: IsCinematicCamActive
+--- # New Name: IsCinematicCamInputActive
 --- ```
 --- NativeDB Introduced: v1493
 --- ```
@@ -3684,6 +3854,19 @@ function IsCinematicCamActive() end
 --- @overload fun(): boolean
 --- @deprecated
 function N_0xf5f1e89a970b7796() end
+
+    
+--- # New Name: IsCinematicCamInputActive
+--- ```
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0xF5F1E89A970B7796](https://docs.fivem.net/natives/?_0xF5F1E89A970B7796)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function IsCinematicCamActive() end
 
     
 --- PointCamAtCoord

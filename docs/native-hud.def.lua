@@ -166,10 +166,10 @@ function N_0x06a320535f5f0248(maximumValue) end
 --- @param bank number (int)
 --- @return void
 --- @overload fun(cash: number, bank: number): void
-function SetPlayerCashChange(cash, bank) end
+function ChangeFakeMpCash(cash, bank) end
 
     
---- # New Name: SetPlayerCashChange
+--- # New Name: ChangeFakeMpCash
 --- ```
 --- Displays cash change notifications on HUD.  
 --- ```
@@ -181,6 +181,20 @@ function SetPlayerCashChange(cash, bank) end
 --- @overload fun(cash: number, bank: number): void
 --- @deprecated
 function SetSingleplayerHudCash(cash, bank) end
+
+    
+--- # New Name: ChangeFakeMpCash
+--- ```
+--- Displays cash change notifications on HUD.  
+--- ```
+---
+--- @hash [0x0772DF77852C2E30](https://docs.fivem.net/natives/?_0x0772DF77852C2E30)
+--- @param cash number (int)
+--- @param bank number (int)
+--- @return void
+--- @overload fun(cash: number, bank: number): void
+--- @deprecated
+function SetPlayerCashChange(cash, bank) end
 
     
 --- ```
@@ -824,12 +838,23 @@ function NotificationSendClanInvite(crewTypeIsPrivate, crewTagContainsRockstar, 
 function DrawNotificationClanInvite(crewTypeIsPrivate, crewTagContainsRockstar, crewTag, rank, isLeader, isImportant, clanHandle, gamerStr, r, g, b) end
 
     
---- N_0x13c4b962653a5280
+--- If mouse is hovering on a slot, it returns uniqueid of that slot, else it returns -1.
 ---
 --- @hash [0x13C4B962653A5280](https://docs.fivem.net/natives/?_0x13C4B962653A5280)
 ---
---- @return any
---- @overload fun(): any
+--- @return number
+--- @overload fun(): number
+function PauseMenuGetUniqueIdOfMouseHoveredSlot() end
+
+    
+--- # New Name: PauseMenuGetUniqueIdOfMouseHoveredSlot
+--- If mouse is hovering on a slot, it returns uniqueid of that slot, else it returns -1.
+---
+--- @hash [0x13C4B962653A5280](https://docs.fivem.net/natives/?_0x13C4B962653A5280)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
 function N_0x13c4b962653a5280() end
 
     
@@ -902,32 +927,44 @@ function N_0x14c9fdcc41f81f63(toggle) end
 function GetNextBlipInfoId(blipSprite) end
 
     
---- ```
---- NativeDB Introduced: v1365
---- ```
+--- Manually sets the player health value for a gamer tag, using the maximum health to calculate what percentage of the bar should be filled.
+--- Has no effect unless [\_SET_MP_GAMER_TAG_DISABLE_PLAYER_HEALTH_SYNC](https://docs.fivem.net/natives/?_0xD29EC58C2F6B5014) has been called prior to disable synchronisation with the attached ped.
 ---
 --- @hash [0x1563FE35E9928E67](https://docs.fivem.net/natives/?_0x1563FE35E9928E67)
 --- @param gamerTagId number (int)
---- @param value number (int)
---- @param maximumValue number (int)
+--- @param health number (int)
+--- @param maximumHealth number (int)
 --- @return void
---- @overload fun(gamerTagId: number, value: number, maximumValue: number): void
-function SetMpGamerHealthBarMax(gamerTagId, value, maximumValue) end
+--- @overload fun(gamerTagId: number, health: number, maximumHealth: number): void
+function SetMpGamerTagOverridePlayerHealth(gamerTagId, health, maximumHealth) end
 
     
---- # New Name: SetMpGamerHealthBarMax
---- ```
---- NativeDB Introduced: v1365
---- ```
+--- # New Name: SetMpGamerTagOverridePlayerHealth
+--- Manually sets the player health value for a gamer tag, using the maximum health to calculate what percentage of the bar should be filled.
+--- Has no effect unless [\_SET_MP_GAMER_TAG_DISABLE_PLAYER_HEALTH_SYNC](https://docs.fivem.net/natives/?_0xD29EC58C2F6B5014) has been called prior to disable synchronisation with the attached ped.
 ---
 --- @hash [0x1563FE35E9928E67](https://docs.fivem.net/natives/?_0x1563FE35E9928E67)
 --- @param gamerTagId number (int)
---- @param value number (int)
---- @param maximumValue number (int)
+--- @param health number (int)
+--- @param maximumHealth number (int)
 --- @return void
---- @overload fun(gamerTagId: number, value: number, maximumValue: number): void
+--- @overload fun(gamerTagId: number, health: number, maximumHealth: number): void
 --- @deprecated
-function N_0x1563fe35e9928e67(gamerTagId, value, maximumValue) end
+function N_0x1563fe35e9928e67(gamerTagId, health, maximumHealth) end
+
+    
+--- # New Name: SetMpGamerTagOverridePlayerHealth
+--- Manually sets the player health value for a gamer tag, using the maximum health to calculate what percentage of the bar should be filled.
+--- Has no effect unless [\_SET_MP_GAMER_TAG_DISABLE_PLAYER_HEALTH_SYNC](https://docs.fivem.net/natives/?_0xD29EC58C2F6B5014) has been called prior to disable synchronisation with the attached ped.
+---
+--- @hash [0x1563FE35E9928E67](https://docs.fivem.net/natives/?_0x1563FE35E9928E67)
+--- @param gamerTagId number (int)
+--- @param health number (int)
+--- @param maximumHealth number (int)
+--- @return void
+--- @overload fun(gamerTagId: number, health: number, maximumHealth: number): void
+--- @deprecated
+function SetMpGamerHealthBarMax(gamerTagId, health, maximumHealth) end
 
     
 --- IsRadarHidden
@@ -1259,13 +1296,27 @@ function N_0x16a304e6cb2bfab9(r, g, b, a) end
     
 --- ```
 --- Related to displaying cash on the HUD
---- Always called before HUD::_SET_SINGLEPLAYER_HUD_CASH in decompiled scripts
+--- Always called before HUD::CHANGE_FAKE_MP_CASH in decompiled scripts
 --- ```
 ---
 --- @hash [0x170F541E1CADD1DE](https://docs.fivem.net/natives/?_0x170F541E1CADD1DE)
 --- @param p0 boolean
 --- @return void
 --- @overload fun(p0: boolean): void
+function UseFakeMpCash(p0) end
+
+    
+--- # New Name: UseFakeMpCash
+--- ```
+--- Related to displaying cash on the HUD
+--- Always called before HUD::CHANGE_FAKE_MP_CASH in decompiled scripts
+--- ```
+---
+--- @hash [0x170F541E1CADD1DE](https://docs.fivem.net/natives/?_0x170F541E1CADD1DE)
+--- @param p0 boolean
+--- @return void
+--- @overload fun(p0: boolean): void
+--- @deprecated
 function N_0x170f541e1cadd1de(p0) end
 
     
@@ -1647,15 +1698,24 @@ function EndTextCommandThefeedPostMessagetext(textureDict, textureName, flash, i
 function SetNotificationMessage(textureDict, textureName, flash, iconType, sender, subject) end
 
     
---- ```
---- Sets an unknown boolean value in the text chat.  
---- ```
+--- If true is passed, the player won't be able to open the multiplayer chat
 ---
 --- @hash [0x1DB21A44B09E8BA3](https://docs.fivem.net/natives/?_0x1DB21A44B09E8BA3)
---- @param p0 boolean
+--- @param disable boolean
 --- @return void
---- @overload fun(p0: boolean): void
-function SetTextChatUnk(p0) end
+--- @overload fun(disable: boolean): void
+function DisableMultiplayerChat(disable) end
+
+    
+--- # New Name: DisableMultiplayerChat
+--- If true is passed, the player won't be able to open the multiplayer chat
+---
+--- @hash [0x1DB21A44B09E8BA3](https://docs.fivem.net/natives/?_0x1DB21A44B09E8BA3)
+--- @param disable boolean
+--- @return void
+--- @overload fun(disable: boolean): void
+--- @deprecated
+function SetTextChatUnk(disable) end
 
     
 --- IsWaypointActive
@@ -2052,68 +2112,40 @@ function SetRadarBigmapEnabled(toggleBigMap, showFullMap) end
 function SetBlipCategory(blip, index) end
 
     
---- ```
---- -----------  
---- p3 (duration in MS) was previously mentioned as "shape", but with some more testing it seems that it's more likely to be a duration in MS. (Tested this when not calling it every tick, but instead only once and let it display for the specified duration).   
---- -1 seems to be default delay (around 3 seconds), 5000 (ms) seems to be the max. Anything > 5000 will still result in 5 seconds of display time.  
---- Old p3 (shape) description: "shape goes from -1 to 50 (may be more)."  
---- --------------  
---- p0 is always 0.  
---- Example:  
---- void FloatingHelpText(char* text)  
---- {  
---- 	BEGIN_TEXT_COMMAND_DISPLAY_HELP("STRING");  
---- 	ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
---- 	END_TEXT_COMMAND_DISPLAY_HELP (0, 0, 1, -1);  
---- }  
---- Image:  
---- - imgbin.org/images/26209.jpg  
---- more inputs/icons:  
---- - pastebin.com/nqNYWMSB  
---- Used to be known as _DISPLAY_HELP_TEXT_FROM_STRING_LABEL  
---- ```
+--- EndTextCommandDisplayHelp
+--- @usage -- Help texts support text formatting, check out https://docs.fivem.net/docs/game-references/text-formatting/
+--- AddTextEntry('HelpMsg', 'Press ~INPUT_CONTEXT~ to do something.')
+--- 
+--- BeginTextCommandDisplayHelp('HelpMsg')
+--- EndTextCommandDisplayHelp(0, false, true, -1)
 ---
 --- @hash [0x238FFE5C7B0498A6](https://docs.fivem.net/natives/?_0x238FFE5C7B0498A6)
---- @param p0 number (int)
+--- @param shape number (int)
 --- @param loop boolean
 --- @param beep boolean
---- @param shape number (int)
+--- @param duration number (int)
 --- @return void
---- @overload fun(p0: number, loop: boolean, beep: boolean, shape: number): void
-function EndTextCommandDisplayHelp(p0, loop, beep, shape) end
+--- @overload fun(shape: number, loop: boolean, beep: boolean, duration: number): void
+function EndTextCommandDisplayHelp(shape, loop, beep, duration) end
 
     
 --- # New Name: EndTextCommandDisplayHelp
---- ```
---- -----------  
---- p3 (duration in MS) was previously mentioned as "shape", but with some more testing it seems that it's more likely to be a duration in MS. (Tested this when not calling it every tick, but instead only once and let it display for the specified duration).   
---- -1 seems to be default delay (around 3 seconds), 5000 (ms) seems to be the max. Anything > 5000 will still result in 5 seconds of display time.  
---- Old p3 (shape) description: "shape goes from -1 to 50 (may be more)."  
---- --------------  
---- p0 is always 0.  
---- Example:  
---- void FloatingHelpText(char* text)  
---- {  
---- 	BEGIN_TEXT_COMMAND_DISPLAY_HELP("STRING");  
---- 	ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
---- 	END_TEXT_COMMAND_DISPLAY_HELP (0, 0, 1, -1);  
---- }  
---- Image:  
---- - imgbin.org/images/26209.jpg  
---- more inputs/icons:  
---- - pastebin.com/nqNYWMSB  
---- Used to be known as _DISPLAY_HELP_TEXT_FROM_STRING_LABEL  
---- ```
+--- EndTextCommandDisplayHelp
+--- @usage -- Help texts support text formatting, check out https://docs.fivem.net/docs/game-references/text-formatting/
+--- AddTextEntry('HelpMsg', 'Press ~INPUT_CONTEXT~ to do something.')
+--- 
+--- BeginTextCommandDisplayHelp('HelpMsg')
+--- EndTextCommandDisplayHelp(0, false, true, -1)
 ---
 --- @hash [0x238FFE5C7B0498A6](https://docs.fivem.net/natives/?_0x238FFE5C7B0498A6)
---- @param p0 number (int)
+--- @param shape number (int)
 --- @param loop boolean
 --- @param beep boolean
---- @param shape number (int)
+--- @param duration number (int)
 --- @return void
---- @overload fun(p0: number, loop: boolean, beep: boolean, shape: number): void
+--- @overload fun(shape: number, loop: boolean, beep: boolean, duration: number): void
 --- @deprecated
-function DisplayHelpTextFromStringLabel(p0, loop, beep, shape) end
+function DisplayHelpTextFromStringLabel(shape, loop, beep, duration) end
 
     
 --- Highlights a blip by a half cyan circle on the right side of the blip. ![](https://i.imgur.com/FrV9M4e.png) Indicating that that player is a friend (in GTA:O). This color can not be changed.
@@ -2674,14 +2706,14 @@ function SetNotificationMessage_2(statTitle, iconEnum, stepVal, barValue, isImpo
 function N_0x2c173ae2bdb9385e(blip) end
 
     
---- N_0x2c9f302398e13141
+--- Correct native name lies between SET_BLIP_SPRITE and SET_RADIUS_BLIP_EDGE alphabetically.
 ---
 --- @hash [0x2C9F302398E13141](https://docs.fivem.net/natives/?_0x2C9F302398E13141)
---- @param p0 any
+--- @param blip Blip
 --- @param p1 any
 --- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0x2c9f302398e13141(p0, p1) end
+--- @overload fun(blip: Blip, p1: any): void
+function N_0x2c9f302398e13141(blip, p1) end
 
     
 --- ClearSmallPrints
@@ -2835,7 +2867,7 @@ function N_0x3158c77a7e888ab4(gamerTagId, hudColorIndex) end
 function SetMpGamerTagHealthBarColor(gamerTagId, hudColorIndex) end
 
     
---- RemoveMpGamerTag
+--- Removes the gamer tag associated with the provided ID. This does not happen instantly. Use [IS_MP_GAMER_TAG_FREE](https://docs.fivem.net/natives/?_0x595B5178E412E199) to determine when the ID is free for reuse.
 ---
 --- @hash [0x31698AA80E0223F8](https://docs.fivem.net/natives/?_0x31698AA80E0223F8)
 --- @param gamerTagId number (int)
@@ -2845,7 +2877,7 @@ function RemoveMpGamerTag(gamerTagId) end
 
     
 --- # New Name: RemoveMpGamerTag
---- RemoveMpGamerTag
+--- Removes the gamer tag associated with the provided ID. This does not happen instantly. Use [IS_MP_GAMER_TAG_FREE](https://docs.fivem.net/natives/?_0x595B5178E412E199) to determine when the ID is free for reuse.
 ---
 --- @hash [0x31698AA80E0223F8](https://docs.fivem.net/natives/?_0x31698AA80E0223F8)
 --- @param gamerTagId number (int)
@@ -2868,10 +2900,10 @@ function N_0x31698aa80e0223f8(gamerTagId) end
 --- @param txnString2 string (char*)
 --- @return void
 --- @overload fun(txdString1: string, txnString1: string, txdString2: string, txnString2: string): void
-function ThefeedAddTxdRef(txdString1, txnString1, txdString2, txnString2) end
+function ThefeedUpdateItemTexture(txdString1, txnString1, txdString2, txnString2) end
 
     
---- # New Name: ThefeedAddTxdRef
+--- # New Name: ThefeedUpdateItemTexture
 --- ```
 --- Used in the native scripts to reference "GET_PEDHEADSHOT_TXD_STRING" and "CHAR_DEFAULT".
 --- 
@@ -2887,6 +2919,24 @@ function ThefeedAddTxdRef(txdString1, txnString1, txdString2, txnString2) end
 --- @overload fun(txdString1: string, txnString1: string, txdString2: string, txnString2: string): void
 --- @deprecated
 function N_0x317eba71d7543f52(txdString1, txnString1, txdString2, txnString2) end
+
+    
+--- # New Name: ThefeedUpdateItemTexture
+--- ```
+--- Used in the native scripts to reference "GET_PEDHEADSHOT_TXD_STRING" and "CHAR_DEFAULT".
+--- 
+--- NativeDB Introduced: v323
+--- ```
+---
+--- @hash [0x317EBA71D7543F52](https://docs.fivem.net/natives/?_0x317EBA71D7543F52)
+--- @param txdString1 string (char*)
+--- @param txnString1 string (char*)
+--- @param txdString2 string (char*)
+--- @param txnString2 string (char*)
+--- @return void
+--- @overload fun(txdString1: string, txnString1: string, txdString2: string, txnString2: string): void
+--- @deprecated
+function ThefeedAddTxdRef(txdString1, txnString1, txdString2, txnString2) end
 
     
 --- SetGpsFlashes
@@ -2962,12 +3012,23 @@ function EndTextCommandThefeedPostUnlock(chTitle, iconType, chSubtitle) end
 function N_0x33ee12743ccd6343(chTitle, iconType, chSubtitle) end
 
     
---- N_0x359af31a4b52f5ed
+--- If mouse is hovering on a slot, it returns the slot's index, else it returns -1.
 ---
 --- @hash [0x359AF31A4B52F5ED](https://docs.fivem.net/natives/?_0x359AF31A4B52F5ED)
 ---
---- @return any
---- @overload fun(): any
+--- @return number
+--- @overload fun(): number
+function PauseMenuGetIndexOfMouseHoveredSlot() end
+
+    
+--- # New Name: PauseMenuGetIndexOfMouseHoveredSlot
+--- If mouse is hovering on a slot, it returns the slot's index, else it returns -1.
+---
+--- @hash [0x359AF31A4B52F5ED](https://docs.fivem.net/natives/?_0x359AF31A4B52F5ED)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
 function N_0x359af31a4b52f5ed() end
 
     
@@ -3214,12 +3275,25 @@ function StartGpsMultiRoute(hudColor, routeFromPlayer, displayOnFoot) end
 function N_0x3d3d15af7bcaaf83(hudColor, routeFromPlayer, displayOnFoot) end
 
     
---- N_0x3d9acb1eb139e702
+--- Returns true if the cursor is hovering above instructional buttons.
+--- Note: The buttons need to support mouse (with the TOGGLE_MOUSE_SUPPORT scaleform movie method) for it to return true.
 ---
 --- @hash [0x3D9ACB1EB139E702](https://docs.fivem.net/natives/?_0x3D9ACB1EB139E702)
 ---
---- @return any
---- @overload fun(): any
+--- @return boolean
+--- @overload fun(): boolean
+function IsMouseCursorAboveInstructionalButtons() end
+
+    
+--- # New Name: IsMouseCursorAboveInstructionalButtons
+--- Returns true if the cursor is hovering above instructional buttons.
+--- Note: The buttons need to support mouse (with the TOGGLE_MOUSE_SUPPORT scaleform movie method) for it to return true.
+---
+--- @hash [0x3D9ACB1EB139E702](https://docs.fivem.net/natives/?_0x3D9ACB1EB139E702)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
 function N_0x3d9acb1eb139e702() end
 
     
@@ -3492,8 +3566,15 @@ function SetBlipAlpha(blip, alpha) end
 function SetTextDropshadow(distance, r, g, b, a) end
 
     
---- AddBlipForRadius
----
+--- Create a blip with a radius for the specified coordinates (it doesnt create the blip sprite, so you need to use [AddBlipCoords](https://docs.fivem.net/natives/?_0xC6F43D0E))
+--- 
+--- Example image:
+--- ![example](https://i.imgur.com/9hQl3DB.png)
+--- @usage local coords = vector3(0.0, 0.0, 0.0)
+--- 
+--- local blip = AddBlipForRadius(coords, 100.0) -- need to have .0
+--- SetBlipColour(blip, 1)
+--- SetBlipAlpha(blip, 128
 --- @hash [0x46818D79B1F7499A](https://docs.fivem.net/natives/?_0x46818D79B1F7499A)
 --- @param posX number (float)
 --- @param posY number (float)
@@ -3524,17 +3605,17 @@ function HudDisplayLoadingScreenTips() end
 function N_0x488043841bbe156f() end
 
     
---- N_0x4895bdea16e7c080
+--- Updates instructional buttons in Pause Menu after menu contexts have been toggled. p0 purpose is currently unknown, only 0 is used in scripts.
 ---
 --- @hash [0x4895BDEA16E7C080](https://docs.fivem.net/natives/?_0x4895BDEA16E7C080)
 --- @param p0 number (int)
 --- @return void
 --- @overload fun(p0: number): void
-function N_0x4895bdea16e7c080(p0) end
+function PauseMenuRedrawInstructionalButtons(p0) end
 
     
---- # New Name: N_0x4895bdea16e7c080
---- N_0x4895bdea16e7c080
+--- # New Name: PauseMenuRedrawInstructionalButtons
+--- Updates instructional buttons in Pause Menu after menu contexts have been toggled. p0 purpose is currently unknown, only 0 is used in scripts.
 ---
 --- @hash [0x4895BDEA16E7C080](https://docs.fivem.net/natives/?_0x4895BDEA16E7C080)
 --- @param p0 number (int)
@@ -3542,6 +3623,17 @@ function N_0x4895bdea16e7c080(p0) end
 --- @overload fun(p0: number): void
 --- @deprecated
 function EnableDeathbloodSeethrough(p0) end
+
+    
+--- # New Name: PauseMenuRedrawInstructionalButtons
+--- Updates instructional buttons in Pause Menu after menu contexts have been toggled. p0 purpose is currently unknown, only 0 is used in scripts.
+---
+--- @hash [0x4895BDEA16E7C080](https://docs.fivem.net/natives/?_0x4895BDEA16E7C080)
+--- @param p0 number (int)
+--- @return void
+--- @overload fun(p0: number): void
+--- @deprecated
+function N_0x4895bdea16e7c080(p0) end
 
     
 --- ```
@@ -4444,14 +4536,14 @@ function EndTextCommandThefeedPostMessagetextWithCrewTag(picTxd, picTxn, flash, 
 function SetNotificationMessageClanTag(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, duration, crewPackedStr) end
 
     
---- ```
---- Returns red ( default ) blip attached to entity.
---- Example:
---- Blip blip; //Put this outside your case or option
---- blip = HUD::ADD_BLIP_FOR_ENTITY(YourPedOrBodyguardName);
---- HUD::SET_BLIP_AS_FRIENDLY(blip, true);
---- ```
----
+--- Create a blip that by default is red (enemy), you can use [SET_BLIP_AS_FRIENDLY](https://docs.fivem.net/natives/?_0xC6F43D0E) to make it blue (friend).\
+--- Can be used for objects, vehicles and peds.
+--- 
+--- Example of enemy:
+--- ![enemy](https://i.imgur.com/fl78svv.png)
+--- Example of friend:
+--- ![friend](https://i.imgur.com/Q16ho5d.png)
+--- @usage local blip = AddBlipForEntity(PlayerPedId()) -- This adds an enemy blip to yoursel
 --- @hash [0x5CDE92C702A8FCE7](https://docs.fivem.net/natives/?_0x5CDE92C702A8FCE7)
 --- @param entity Entity
 --- @return Blip
@@ -4732,12 +4824,71 @@ function N_0x62e849b7eb28e770(p0) end
 function SetTextWrap(start, end_) end
 
     
---- N_0x632b2940c67f4ea9
----
+--- Gets mouse selection data from scaleforms with mouse support. Must be checked every frame.
+--- Returns item index if using the COLOUR_SWITCHER\_02 scaleform.
+--- Selection types, found in MOUSE_EVENTS.as:
+--- MOUSE_DRAG_OUT = 0;
+--- MOUSE_DRAG_OVER = 1;
+--- MOUSE_DOWN = 2;
+--- MOUSE_MOVE = 3;
+--- MOUSE_UP = 4;
+--- MOUSE_PRESS = 5;
+--- MOUSE_RELEASE = 6;
+--- MOUSE_RELEASE_OUTSIDE = 7;
+--- MOUSE_ROLL_OUT = 8;
+--- MOUSE_ROLL_OVER = 9;
+--- MOUSE_WHEEL_UP = 10;
+--- MOUSE_WHEEL_DOWN = 11;
+--- 
+--- Scaleforms that this works with:
+--- 
+--- *   COLOUR_SWITCHER\_02
+--- *   MP_RESULTS_PANEL
+--- *   MP_NEXT_JOB_SELECTION
+--- *   SC_LEADERBOARD
+---     Probably works with other scaleforms, needs more research.
+---     In order to use this Native you MUST have controls 239, 240, 237, 238 enabled!
+---     This native, due to its erroneous redundancy of the returned boolean value, works differently in C#: shifting the parameters (where `received` becomes `selectionType` and so on making the fourth parameter unused and always 0).
+--- @usage local success, _eventType, _context, _itemId = GetScaleformMovieCursorSelection(scaleform
 --- @hash [0x632B2940C67F4EA9](https://docs.fivem.net/natives/?_0x632B2940C67F4EA9)
 --- @param scaleformHandle number (int)
---- @return boolean, any, any, any
---- @overload fun(scaleformHandle: number): boolean, any, any, any
+--- @return boolean, boolean, number, number, number
+--- @overload fun(scaleformHandle: number): boolean, boolean, number, number, number
+function GetScaleformMovieCursorSelection(scaleformHandle) end
+
+    
+--- # New Name: GetScaleformMovieCursorSelection
+--- Gets mouse selection data from scaleforms with mouse support. Must be checked every frame.
+--- Returns item index if using the COLOUR_SWITCHER\_02 scaleform.
+--- Selection types, found in MOUSE_EVENTS.as:
+--- MOUSE_DRAG_OUT = 0;
+--- MOUSE_DRAG_OVER = 1;
+--- MOUSE_DOWN = 2;
+--- MOUSE_MOVE = 3;
+--- MOUSE_UP = 4;
+--- MOUSE_PRESS = 5;
+--- MOUSE_RELEASE = 6;
+--- MOUSE_RELEASE_OUTSIDE = 7;
+--- MOUSE_ROLL_OUT = 8;
+--- MOUSE_ROLL_OVER = 9;
+--- MOUSE_WHEEL_UP = 10;
+--- MOUSE_WHEEL_DOWN = 11;
+--- 
+--- Scaleforms that this works with:
+--- 
+--- *   COLOUR_SWITCHER\_02
+--- *   MP_RESULTS_PANEL
+--- *   MP_NEXT_JOB_SELECTION
+--- *   SC_LEADERBOARD
+---     Probably works with other scaleforms, needs more research.
+---     In order to use this Native you MUST have controls 239, 240, 237, 238 enabled!
+---     This native, due to its erroneous redundancy of the returned boolean value, works differently in C#: shifting the parameters (where `received` becomes `selectionType` and so on making the fourth parameter unused and always 0).
+--- @usage local success, _eventType, _context, _itemId = GetScaleformMovieCursorSelection(scaleform
+--- @hash [0x632B2940C67F4EA9](https://docs.fivem.net/natives/?_0x632B2940C67F4EA9)
+--- @param scaleformHandle number (int)
+--- @return boolean, boolean, number, number, number
+--- @overload fun(scaleformHandle: number): boolean, boolean, number, number, number
+--- @deprecated
 function N_0x632b2940c67f4ea9(scaleformHandle) end
 
     
@@ -5022,13 +5173,42 @@ function AddTextComponentSubstringPlayerName(text) end
 function AddTextComponentString(text) end
 
     
---- N_0x6cdd58146a436083
+--- Sets a global mode which makes the pause menu map show 'Destination' instead of 'Waypoint' in the key legend on the
+--- bottom of the screen.
+--- 
+--- <!--
+--- 
+--- Name guess:
+--- 
+---   - alphabetical function order, below [SET_USER_RADIO_CONTROL_ENABLED, SET_USE_HI_DOF], above SET_VARIABLE_ON_SOUND.
+--- 
+--- -->
 ---
 --- @hash [0x6CDD58146A436083](https://docs.fivem.net/natives/?_0x6CDD58146A436083)
---- @param p0 any
+--- @param toggle boolean
 --- @return void
---- @overload fun(p0: any): void
-function N_0x6cdd58146a436083(p0) end
+--- @overload fun(toggle: boolean): void
+function SetUseWaypointAsDestination(toggle) end
+
+    
+--- # New Name: SetUseWaypointAsDestination
+--- Sets a global mode which makes the pause menu map show 'Destination' instead of 'Waypoint' in the key legend on the
+--- bottom of the screen.
+--- 
+--- <!--
+--- 
+--- Name guess:
+--- 
+---   - alphabetical function order, below [SET_USER_RADIO_CONTROL_ENABLED, SET_USE_HI_DOF], above SET_VARIABLE_ON_SOUND.
+--- 
+--- -->
+---
+--- @hash [0x6CDD58146A436083](https://docs.fivem.net/natives/?_0x6CDD58146A436083)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function N_0x6cdd58146a436083(toggle) end
 
     
 --- ```
@@ -5064,107 +5244,197 @@ function CenterPlayerOnRadarThisFrame() end
 function DisableFrontendThisFrame() end
 
     
---- ```
---- clanFlag: takes a number 0-5
---- ```
----
+--- Creates a gamer tag for the specified local player ID, automatically attached to the player's current ped.
+--- The created gamer tag will have the same ID as the player. You can use [IS_MP_GAMER_TAG_ACTIVE](https://docs.fivem.net/natives/?_0x4E929E7A5796FD26) to check if a gamer tag already exists for a player.
+--- After the gamer tag is created, all components will be set as invisible. Use [SET_MP_GAMER_TAG_VISIBILITY](https://docs.fivem.net/natives/?_0x63BB75ABEDC1F6A0) to change the visibility of individual components or [\_SET_MP_GAMER_TAG_VISIBILITY_ALL](https://docs.fivem.net/natives/?_0xEE76FF7E6A0166B0) to set all of them at once.
+--- 
+--- To create a gamer tag for a ped that is not a player, see [CREATE_FAKE_MP_GAMER_TAG](https://docs.fivem.net/natives/?_0xBFEFE3321A3F5015).
+--- @usage local playerId = PlayerId() -- you can use any local player ID here
+--- 
+--- -- clear any already existing gamer tag associated with this player
+--- if IsMpGamerTagActive(playerId) then
+--- 	RemoveMpGamerTag(playerId)
+--- 
+--- 	-- wait until the gamer tag actually becomes free
+--- 	repeat Wait(0) until IsMpGamerTagFree(playerId)
+--- end
+--- 
+--- -- create the gamer tag
+--- CreateMpGamerTagWithCrewColor(playerId, "jaymoo", false, true, "RSG", 0, 200, 0, 200)
+--- 
+--- -- set the name, crew and typing indicator components as visible
+--- SetMpGamerTagVisibility(playerId, 0, true)
+--- SetMpGamerTagVisibility(playerId, 1, true)
+--- SetMpGamerTagVisibility(playerId, 16, true
 --- @hash [0x6DD05E9D83EFA4C9](https://docs.fivem.net/natives/?_0x6DD05E9D83EFA4C9)
 --- @param player Player
 --- @param username string (char*)
---- @param pointedClanTag boolean
---- @param isRockstarClan boolean
---- @param clanTag string (char*)
---- @param clanFlag number (int)
---- @param r number (int)
---- @param g number (int)
---- @param b number (int)
+--- @param crewIsPrivate boolean
+--- @param crewIsRockstar boolean
+--- @param crewName string (char*)
+--- @param crewRank number (int)
+--- @param crewR number (int)
+--- @param crewG number (int)
+--- @param crewB number (int)
 --- @return void
---- @overload fun(player: Player, username: string, pointedClanTag: boolean, isRockstarClan: boolean, clanTag: string, clanFlag: number, r: number, g: number, b: number): void
-function CreateMpGamerTagWithCrewColor(player, username, pointedClanTag, isRockstarClan, clanTag, clanFlag, r, g, b) end
+--- @overload fun(player: Player, username: string, crewIsPrivate: boolean, crewIsRockstar: boolean, crewName: string, crewRank: number, crewR: number, crewG: number, crewB: number): void
+function CreateMpGamerTagWithCrewColor(player, username, crewIsPrivate, crewIsRockstar, crewName, crewRank, crewR, crewG, crewB) end
 
     
 --- # New Name: CreateMpGamerTagWithCrewColor
---- ```
---- clanFlag: takes a number 0-5
---- ```
----
+--- Creates a gamer tag for the specified local player ID, automatically attached to the player's current ped.
+--- The created gamer tag will have the same ID as the player. You can use [IS_MP_GAMER_TAG_ACTIVE](https://docs.fivem.net/natives/?_0x4E929E7A5796FD26) to check if a gamer tag already exists for a player.
+--- After the gamer tag is created, all components will be set as invisible. Use [SET_MP_GAMER_TAG_VISIBILITY](https://docs.fivem.net/natives/?_0x63BB75ABEDC1F6A0) to change the visibility of individual components or [\_SET_MP_GAMER_TAG_VISIBILITY_ALL](https://docs.fivem.net/natives/?_0xEE76FF7E6A0166B0) to set all of them at once.
+--- 
+--- To create a gamer tag for a ped that is not a player, see [CREATE_FAKE_MP_GAMER_TAG](https://docs.fivem.net/natives/?_0xBFEFE3321A3F5015).
+--- @usage local playerId = PlayerId() -- you can use any local player ID here
+--- 
+--- -- clear any already existing gamer tag associated with this player
+--- if IsMpGamerTagActive(playerId) then
+--- 	RemoveMpGamerTag(playerId)
+--- 
+--- 	-- wait until the gamer tag actually becomes free
+--- 	repeat Wait(0) until IsMpGamerTagFree(playerId)
+--- end
+--- 
+--- -- create the gamer tag
+--- CreateMpGamerTagWithCrewColor(playerId, "jaymoo", false, true, "RSG", 0, 200, 0, 200)
+--- 
+--- -- set the name, crew and typing indicator components as visible
+--- SetMpGamerTagVisibility(playerId, 0, true)
+--- SetMpGamerTagVisibility(playerId, 1, true)
+--- SetMpGamerTagVisibility(playerId, 16, true
 --- @hash [0x6DD05E9D83EFA4C9](https://docs.fivem.net/natives/?_0x6DD05E9D83EFA4C9)
 --- @param player Player
 --- @param username string (char*)
---- @param pointedClanTag boolean
---- @param isRockstarClan boolean
---- @param clanTag string (char*)
---- @param clanFlag number (int)
---- @param r number (int)
---- @param g number (int)
---- @param b number (int)
+--- @param crewIsPrivate boolean
+--- @param crewIsRockstar boolean
+--- @param crewName string (char*)
+--- @param crewRank number (int)
+--- @param crewR number (int)
+--- @param crewG number (int)
+--- @param crewB number (int)
 --- @return void
---- @overload fun(player: Player, username: string, pointedClanTag: boolean, isRockstarClan: boolean, clanTag: string, clanFlag: number, r: number, g: number, b: number): void
+--- @overload fun(player: Player, username: string, crewIsPrivate: boolean, crewIsRockstar: boolean, crewName: string, crewRank: number, crewR: number, crewG: number, crewB: number): void
 --- @deprecated
-function N_0x6dd05e9d83efa4c9(player, username, pointedClanTag, isRockstarClan, clanTag, clanFlag, r, g, b) end
+function N_0x6dd05e9d83efa4c9(player, username, crewIsPrivate, crewIsRockstar, crewName, crewRank, crewR, crewG, crewB) end
 
     
 --- # New Name: CreateMpGamerTagWithCrewColor
---- ```
---- clanFlag: takes a number 0-5
---- ```
----
+--- Creates a gamer tag for the specified local player ID, automatically attached to the player's current ped.
+--- The created gamer tag will have the same ID as the player. You can use [IS_MP_GAMER_TAG_ACTIVE](https://docs.fivem.net/natives/?_0x4E929E7A5796FD26) to check if a gamer tag already exists for a player.
+--- After the gamer tag is created, all components will be set as invisible. Use [SET_MP_GAMER_TAG_VISIBILITY](https://docs.fivem.net/natives/?_0x63BB75ABEDC1F6A0) to change the visibility of individual components or [\_SET_MP_GAMER_TAG_VISIBILITY_ALL](https://docs.fivem.net/natives/?_0xEE76FF7E6A0166B0) to set all of them at once.
+--- 
+--- To create a gamer tag for a ped that is not a player, see [CREATE_FAKE_MP_GAMER_TAG](https://docs.fivem.net/natives/?_0xBFEFE3321A3F5015).
+--- @usage local playerId = PlayerId() -- you can use any local player ID here
+--- 
+--- -- clear any already existing gamer tag associated with this player
+--- if IsMpGamerTagActive(playerId) then
+--- 	RemoveMpGamerTag(playerId)
+--- 
+--- 	-- wait until the gamer tag actually becomes free
+--- 	repeat Wait(0) until IsMpGamerTagFree(playerId)
+--- end
+--- 
+--- -- create the gamer tag
+--- CreateMpGamerTagWithCrewColor(playerId, "jaymoo", false, true, "RSG", 0, 200, 0, 200)
+--- 
+--- -- set the name, crew and typing indicator components as visible
+--- SetMpGamerTagVisibility(playerId, 0, true)
+--- SetMpGamerTagVisibility(playerId, 1, true)
+--- SetMpGamerTagVisibility(playerId, 16, true
 --- @hash [0x6DD05E9D83EFA4C9](https://docs.fivem.net/natives/?_0x6DD05E9D83EFA4C9)
 --- @param player Player
 --- @param username string (char*)
---- @param pointedClanTag boolean
---- @param isRockstarClan boolean
---- @param clanTag string (char*)
---- @param clanFlag number (int)
---- @param r number (int)
---- @param g number (int)
---- @param b number (int)
+--- @param crewIsPrivate boolean
+--- @param crewIsRockstar boolean
+--- @param crewName string (char*)
+--- @param crewRank number (int)
+--- @param crewR number (int)
+--- @param crewG number (int)
+--- @param crewB number (int)
 --- @return void
---- @overload fun(player: Player, username: string, pointedClanTag: boolean, isRockstarClan: boolean, clanTag: string, clanFlag: number, r: number, g: number, b: number): void
+--- @overload fun(player: Player, username: string, crewIsPrivate: boolean, crewIsRockstar: boolean, crewName: string, crewRank: number, crewR: number, crewG: number, crewB: number): void
 --- @deprecated
-function CreateMpGamerTagColor(player, username, pointedClanTag, isRockstarClan, clanTag, clanFlag, r, g, b) end
+function CreateMpGamerTagColor(player, username, crewIsPrivate, crewIsRockstar, crewName, crewRank, crewR, crewG, crewB) end
 
     
 --- # New Name: CreateMpGamerTagWithCrewColor
---- ```
---- clanFlag: takes a number 0-5
---- ```
----
+--- Creates a gamer tag for the specified local player ID, automatically attached to the player's current ped.
+--- The created gamer tag will have the same ID as the player. You can use [IS_MP_GAMER_TAG_ACTIVE](https://docs.fivem.net/natives/?_0x4E929E7A5796FD26) to check if a gamer tag already exists for a player.
+--- After the gamer tag is created, all components will be set as invisible. Use [SET_MP_GAMER_TAG_VISIBILITY](https://docs.fivem.net/natives/?_0x63BB75ABEDC1F6A0) to change the visibility of individual components or [\_SET_MP_GAMER_TAG_VISIBILITY_ALL](https://docs.fivem.net/natives/?_0xEE76FF7E6A0166B0) to set all of them at once.
+--- 
+--- To create a gamer tag for a ped that is not a player, see [CREATE_FAKE_MP_GAMER_TAG](https://docs.fivem.net/natives/?_0xBFEFE3321A3F5015).
+--- @usage local playerId = PlayerId() -- you can use any local player ID here
+--- 
+--- -- clear any already existing gamer tag associated with this player
+--- if IsMpGamerTagActive(playerId) then
+--- 	RemoveMpGamerTag(playerId)
+--- 
+--- 	-- wait until the gamer tag actually becomes free
+--- 	repeat Wait(0) until IsMpGamerTagFree(playerId)
+--- end
+--- 
+--- -- create the gamer tag
+--- CreateMpGamerTagWithCrewColor(playerId, "jaymoo", false, true, "RSG", 0, 200, 0, 200)
+--- 
+--- -- set the name, crew and typing indicator components as visible
+--- SetMpGamerTagVisibility(playerId, 0, true)
+--- SetMpGamerTagVisibility(playerId, 1, true)
+--- SetMpGamerTagVisibility(playerId, 16, true
 --- @hash [0x6DD05E9D83EFA4C9](https://docs.fivem.net/natives/?_0x6DD05E9D83EFA4C9)
 --- @param player Player
 --- @param username string (char*)
---- @param pointedClanTag boolean
---- @param isRockstarClan boolean
---- @param clanTag string (char*)
---- @param clanFlag number (int)
---- @param r number (int)
---- @param g number (int)
---- @param b number (int)
+--- @param crewIsPrivate boolean
+--- @param crewIsRockstar boolean
+--- @param crewName string (char*)
+--- @param crewRank number (int)
+--- @param crewR number (int)
+--- @param crewG number (int)
+--- @param crewB number (int)
 --- @return void
---- @overload fun(player: Player, username: string, pointedClanTag: boolean, isRockstarClan: boolean, clanTag: string, clanFlag: number, r: number, g: number, b: number): void
+--- @overload fun(player: Player, username: string, crewIsPrivate: boolean, crewIsRockstar: boolean, crewName: string, crewRank: number, crewR: number, crewG: number, crewB: number): void
 --- @deprecated
-function SetMpGamerTagColor(player, username, pointedClanTag, isRockstarClan, clanTag, clanFlag, r, g, b) end
+function SetMpGamerTagColor(player, username, crewIsPrivate, crewIsRockstar, crewName, crewRank, crewR, crewG, crewB) end
 
     
 --- # New Name: CreateMpGamerTagWithCrewColor
---- ```
---- clanFlag: takes a number 0-5
---- ```
----
+--- Creates a gamer tag for the specified local player ID, automatically attached to the player's current ped.
+--- The created gamer tag will have the same ID as the player. You can use [IS_MP_GAMER_TAG_ACTIVE](https://docs.fivem.net/natives/?_0x4E929E7A5796FD26) to check if a gamer tag already exists for a player.
+--- After the gamer tag is created, all components will be set as invisible. Use [SET_MP_GAMER_TAG_VISIBILITY](https://docs.fivem.net/natives/?_0x63BB75ABEDC1F6A0) to change the visibility of individual components or [\_SET_MP_GAMER_TAG_VISIBILITY_ALL](https://docs.fivem.net/natives/?_0xEE76FF7E6A0166B0) to set all of them at once.
+--- 
+--- To create a gamer tag for a ped that is not a player, see [CREATE_FAKE_MP_GAMER_TAG](https://docs.fivem.net/natives/?_0xBFEFE3321A3F5015).
+--- @usage local playerId = PlayerId() -- you can use any local player ID here
+--- 
+--- -- clear any already existing gamer tag associated with this player
+--- if IsMpGamerTagActive(playerId) then
+--- 	RemoveMpGamerTag(playerId)
+--- 
+--- 	-- wait until the gamer tag actually becomes free
+--- 	repeat Wait(0) until IsMpGamerTagFree(playerId)
+--- end
+--- 
+--- -- create the gamer tag
+--- CreateMpGamerTagWithCrewColor(playerId, "jaymoo", false, true, "RSG", 0, 200, 0, 200)
+--- 
+--- -- set the name, crew and typing indicator components as visible
+--- SetMpGamerTagVisibility(playerId, 0, true)
+--- SetMpGamerTagVisibility(playerId, 1, true)
+--- SetMpGamerTagVisibility(playerId, 16, true
 --- @hash [0x6DD05E9D83EFA4C9](https://docs.fivem.net/natives/?_0x6DD05E9D83EFA4C9)
 --- @param player Player
 --- @param username string (char*)
---- @param pointedClanTag boolean
---- @param isRockstarClan boolean
---- @param clanTag string (char*)
---- @param clanFlag number (int)
---- @param r number (int)
---- @param g number (int)
---- @param b number (int)
+--- @param crewIsPrivate boolean
+--- @param crewIsRockstar boolean
+--- @param crewName string (char*)
+--- @param crewRank number (int)
+--- @param crewR number (int)
+--- @param crewG number (int)
+--- @param crewB number (int)
 --- @return void
---- @overload fun(player: Player, username: string, pointedClanTag: boolean, isRockstarClan: boolean, clanTag: string, clanFlag: number, r: number, g: number, b: number): void
+--- @overload fun(player: Player, username: string, crewIsPrivate: boolean, crewIsRockstar: boolean, crewName: string, crewRank: number, crewR: number, crewG: number, crewB: number): void
 --- @deprecated
-function CreateMpGamerTagForNetPlayer(player, username, pointedClanTag, isRockstarClan, clanTag, clanFlag, r, g, b) end
+function CreateMpGamerTagForNetPlayer(player, username, crewIsPrivate, crewIsRockstar, crewName, crewRank, crewR, crewG, crewB) end
 
     
 --- IsMpGamerTagMovieActive
@@ -5275,10 +5545,7 @@ function ThefeedOnlyShowTooltips(toggle) end
 function N_0x6f1554b0cc2089fa(toggle) end
 
     
---- ```
---- false for enemy  
---- true for friendly  
---- ```
+--- Allows the user to set a blip as friendly or enemy based on the toggle.
 ---
 --- @hash [0x6F6F290102C02AB4](https://docs.fivem.net/natives/?_0x6F6F290102C02AB4)
 --- @param blip Blip
@@ -5742,13 +6009,26 @@ function N_0x7792424aa0eac32e() end
 function SetPlayerBlipPositionThisFrame(x, y) end
 
     
---- N_0x77f16b447824da6c
+--- Sets current pause menu page/component to the specified value.
+--- Available page IDs: https://pastebin.com/qxuhwjPT
 ---
 --- @hash [0x77F16B447824DA6C](https://docs.fivem.net/natives/?_0x77F16B447824DA6C)
---- @param p0 any
+--- @param pageId number (int)
 --- @return void
---- @overload fun(p0: any): void
-function N_0x77f16b447824da6c(p0) end
+--- @overload fun(pageId: number): void
+function PauseMenuceptionGoDeeper(pageId) end
+
+    
+--- # New Name: PauseMenuceptionGoDeeper
+--- Sets current pause menu page/component to the specified value.
+--- Available page IDs: https://pastebin.com/qxuhwjPT
+---
+--- @hash [0x77F16B447824DA6C](https://docs.fivem.net/natives/?_0x77F16B447824DA6C)
+--- @param pageId number (int)
+--- @return void
+--- @overload fun(pageId: number): void
+--- @deprecated
+function N_0x77f16b447824da6c(pageId) end
 
     
 --- SetFloatingHelpTextWorldPosition
@@ -6550,28 +6830,13 @@ function EndTextCommandGetWidth(p0) end
 function GetTextScreenWidth(p0) end
 
     
---- ```
---- In the C++ SDK, this seems not to work-- the blip isn't removed immediately. I use it for saving cars.
---- E.g.:
---- Ped pped = PLAYER::PLAYER_PED_ID();
---- Vehicle v = PED::GET_VEHICLE_PED_IS_USING(pped);
---- Blip b = HUD::ADD_BLIP_FOR_ENTITY(v);
---- works fine.
---- But later attempting to delete it with:
---- Blip b = HUD::GET_BLIP_FROM_ENTITY(v);
---- if (HUD::DOES_BLIP_EXIST(b)) HUD::REMOVE_BLIP(&b);
---- doesn't work. And yes, doesn't work without the DOES_BLIP_EXIST check either. Also, if you attach multiple blips to the same thing (say, a vehicle), and that thing disappears, the blips randomly attach to other things (in my case, a vehicle).
---- Thus for me, HUD::REMOVE_BLIP(&b) only works if there's one blip, (in my case) the vehicle is marked as no longer needed, you drive away from it and it eventually despawns, AND there is only one blip attached to it. I never intentionally attach multiple blips but if the user saves the car, this adds a blip. Then if they delete it, it is supposed to remove the blip, but it doesn't. Then they can immediately save it again, causing another blip to re-appear.
---- -------------
---- Passing the address of the variable instead of the value works for me.
---- e.g.
---- int blip = HUD::ADD_BLIP_FOR_ENTITY(ped);
---- HUD::REMOVE_BLIP(&blip);
---- Remove blip will currently crash your game, just artificially remove the blip by setting the sprite to a id that is 'invisible'.
---- --
---- It crashes my game.
---- ```
----
+--- Removes the blip from your map.
+--- @usage -- Create the blip
+--- local coords = vector3(200.0, 200.0, 5.0)
+--- local blip = AddBlipForCoord(coords)
+--- 
+--- -- When you want to remove it
+--- RemoveBlip(blip
 --- @hash [0x86A652570E5F25DD](https://docs.fivem.net/natives/?_0x86A652570E5F25DD)
 --- @param blip Blip (Blip*)
 --- @return void
@@ -7016,15 +7281,24 @@ function IsReportugcMenuOpen() end
 function N_0x9135584d09a3437e() end
 
     
---- ```
---- DISABLE_*
---- ```
+--- Disables the loading spinner in Pause Menu when switching from one header tab to another.
 ---
 --- @hash [0x9245E81072704B8A](https://docs.fivem.net/natives/?_0x9245E81072704B8A)
---- @param p0 boolean
+--- @param toggle boolean
 --- @return void
---- @overload fun(p0: boolean): void
-function N_0x9245e81072704b8a(p0) end
+--- @overload fun(toggle: boolean): void
+function PauseMenuDisableBusyspinner(toggle) end
+
+    
+--- # New Name: PauseMenuDisableBusyspinner
+--- Disables the loading spinner in Pause Menu when switching from one header tab to another.
+---
+--- @hash [0x9245E81072704B8A](https://docs.fivem.net/natives/?_0x9245E81072704B8A)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function N_0x9245e81072704b8a(toggle) end
 
     
 --- ```
@@ -7900,22 +8174,20 @@ function DisplayAmmoThisFrame(display) end
 function DisplayHud(toggle) end
 
     
---- ```
---- Displays a bunch of icons above the players name, and level, and their name twice  
---- ```
+--- Sets the health bar of a gamer tag to show the health of the last (or current) vehicle of the ped the gamer tag is attached to.
+--- The vehicle health value is stored separate from the player health and using it won't clear any player health overrides.
 ---
 --- @hash [0xA67F9C46D612B6F1](https://docs.fivem.net/natives/?_0xA67F9C46D612B6F1)
 --- @param gamerTagId number (int)
 --- @param toggle boolean
 --- @return void
 --- @overload fun(gamerTagId: number, toggle: boolean): void
-function SetMpGamerTagIcons(gamerTagId, toggle) end
+function SetMpGamerTagUseVehicleHealth(gamerTagId, toggle) end
 
     
---- # New Name: SetMpGamerTagIcons
---- ```
---- Displays a bunch of icons above the players name, and level, and their name twice  
---- ```
+--- # New Name: SetMpGamerTagUseVehicleHealth
+--- Sets the health bar of a gamer tag to show the health of the last (or current) vehicle of the ped the gamer tag is attached to.
+--- The vehicle health value is stored separate from the player health and using it won't clear any player health overrides.
 ---
 --- @hash [0xA67F9C46D612B6F1](https://docs.fivem.net/natives/?_0xA67F9C46D612B6F1)
 --- @param gamerTagId number (int)
@@ -7924,6 +8196,19 @@ function SetMpGamerTagIcons(gamerTagId, toggle) end
 --- @overload fun(gamerTagId: number, toggle: boolean): void
 --- @deprecated
 function N_0xa67f9c46d612b6f1(gamerTagId, toggle) end
+
+    
+--- # New Name: SetMpGamerTagUseVehicleHealth
+--- Sets the health bar of a gamer tag to show the health of the last (or current) vehicle of the ped the gamer tag is attached to.
+--- The vehicle health value is stored separate from the player health and using it won't clear any player health overrides.
+---
+--- @hash [0xA67F9C46D612B6F1](https://docs.fivem.net/natives/?_0xA67F9C46D612B6F1)
+--- @param gamerTagId number (int)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(gamerTagId: number, toggle: boolean): void
+--- @deprecated
+function SetMpGamerTagIcons(gamerTagId, toggle) end
 
     
 --- DoesBlipExist
@@ -7963,32 +8248,32 @@ function IsHudHidden() end
 --- EndTextCommandOverrideButtonText
 ---
 --- @hash [0xA86911979638106F](https://docs.fivem.net/natives/?_0xA86911979638106F)
---- @param p0 number (int)
+--- @param buttonIndex number (int)
 --- @return void
---- @overload fun(p0: number): void
-function EndTextCommandOverrideButtonText(p0) end
+--- @overload fun(buttonIndex: number): void
+function EndTextCommandOverrideButtonText(buttonIndex) end
 
     
 --- # New Name: EndTextCommandOverrideButtonText
 --- EndTextCommandOverrideButtonText
 ---
 --- @hash [0xA86911979638106F](https://docs.fivem.net/natives/?_0xA86911979638106F)
---- @param p0 number (int)
+--- @param buttonIndex number (int)
 --- @return void
---- @overload fun(p0: number): void
+--- @overload fun(buttonIndex: number): void
 --- @deprecated
-function N_0xa86911979638106f(p0) end
+function N_0xa86911979638106f(buttonIndex) end
 
     
 --- # New Name: EndTextCommandOverrideButtonText
 --- EndTextCommandOverrideButtonText
 ---
 --- @hash [0xA86911979638106F](https://docs.fivem.net/natives/?_0xA86911979638106F)
---- @param p0 number (int)
+--- @param buttonIndex number (int)
 --- @return void
---- @overload fun(p0: number): void
+--- @overload fun(buttonIndex: number): void
 --- @deprecated
-function EndTextCommandTimer(p0) end
+function EndTextCommandTimer(buttonIndex) end
 
     
 --- ```
@@ -9328,56 +9613,59 @@ function GetBlipInfoIdType(blip) end
 function N_0xbf4f34a85ca2970c() end
 
     
---- ```
---- clanFlag: takes a number 0-5
---- ```
+--- As per the name, this native creates a "fake" gamer tag that is attached to a specific ped.
+--- Unlike "real" gamer tags, you cannot set the crew colour of these gamer tags.
+--- 
+--- To create gamer tags for actual players and for more gamer tag information, see [CREATE_MP_GAMER_TAG_WITH_CREW_COLOR](https://docs.fivem.net/natives/?_0x6DD05E9D83EFA4C9).
 ---
 --- @hash [0xBFEFE3321A3F5015](https://docs.fivem.net/natives/?_0xBFEFE3321A3F5015)
 --- @param ped Ped
 --- @param username string (char*)
---- @param pointedClanTag boolean
---- @param isRockstarClan boolean
---- @param clanTag string (char*)
---- @param clanFlag number (int)
+--- @param crewIsPrivate boolean
+--- @param crewIsRockstar boolean
+--- @param crewName string (char*)
+--- @param crewRank number (int)
 --- @return number
---- @overload fun(ped: Ped, username: string, pointedClanTag: boolean, isRockstarClan: boolean, clanTag: string, clanFlag: number): number
-function CreateFakeMpGamerTag(ped, username, pointedClanTag, isRockstarClan, clanTag, clanFlag) end
+--- @overload fun(ped: Ped, username: string, crewIsPrivate: boolean, crewIsRockstar: boolean, crewName: string, crewRank: number): number
+function CreateFakeMpGamerTag(ped, username, crewIsPrivate, crewIsRockstar, crewName, crewRank) end
 
     
 --- # New Name: CreateFakeMpGamerTag
---- ```
---- clanFlag: takes a number 0-5
---- ```
+--- As per the name, this native creates a "fake" gamer tag that is attached to a specific ped.
+--- Unlike "real" gamer tags, you cannot set the crew colour of these gamer tags.
+--- 
+--- To create gamer tags for actual players and for more gamer tag information, see [CREATE_MP_GAMER_TAG_WITH_CREW_COLOR](https://docs.fivem.net/natives/?_0x6DD05E9D83EFA4C9).
 ---
 --- @hash [0xBFEFE3321A3F5015](https://docs.fivem.net/natives/?_0xBFEFE3321A3F5015)
 --- @param ped Ped
 --- @param username string (char*)
---- @param pointedClanTag boolean
---- @param isRockstarClan boolean
---- @param clanTag string (char*)
---- @param clanFlag number (int)
+--- @param crewIsPrivate boolean
+--- @param crewIsRockstar boolean
+--- @param crewName string (char*)
+--- @param crewRank number (int)
 --- @return number
---- @overload fun(ped: Ped, username: string, pointedClanTag: boolean, isRockstarClan: boolean, clanTag: string, clanFlag: number): number
+--- @overload fun(ped: Ped, username: string, crewIsPrivate: boolean, crewIsRockstar: boolean, crewName: string, crewRank: number): number
 --- @deprecated
-function N_0xbfefe3321a3f5015(ped, username, pointedClanTag, isRockstarClan, clanTag, clanFlag) end
+function N_0xbfefe3321a3f5015(ped, username, crewIsPrivate, crewIsRockstar, crewName, crewRank) end
 
     
 --- # New Name: CreateFakeMpGamerTag
---- ```
---- clanFlag: takes a number 0-5
---- ```
+--- As per the name, this native creates a "fake" gamer tag that is attached to a specific ped.
+--- Unlike "real" gamer tags, you cannot set the crew colour of these gamer tags.
+--- 
+--- To create gamer tags for actual players and for more gamer tag information, see [CREATE_MP_GAMER_TAG_WITH_CREW_COLOR](https://docs.fivem.net/natives/?_0x6DD05E9D83EFA4C9).
 ---
 --- @hash [0xBFEFE3321A3F5015](https://docs.fivem.net/natives/?_0xBFEFE3321A3F5015)
 --- @param ped Ped
 --- @param username string (char*)
---- @param pointedClanTag boolean
---- @param isRockstarClan boolean
---- @param clanTag string (char*)
---- @param clanFlag number (int)
+--- @param crewIsPrivate boolean
+--- @param crewIsRockstar boolean
+--- @param crewName string (char*)
+--- @param crewRank number (int)
 --- @return number
---- @overload fun(ped: Ped, username: string, pointedClanTag: boolean, isRockstarClan: boolean, clanTag: string, clanFlag: number): number
+--- @overload fun(ped: Ped, username: string, crewIsPrivate: boolean, crewIsRockstar: boolean, crewName: string, crewRank: number): number
 --- @deprecated
-function CreateMpGamerTag(ped, username, pointedClanTag, isRockstarClan, clanTag, clanFlag) end
+function CreateMpGamerTag(ped, username, crewIsPrivate, crewIsRockstar, crewName, crewRank) end
 
     
 --- SetTextCentre
@@ -9687,6 +9975,23 @@ function N_0xc8f3aaf93d0600bf(chTitle, iconType, chSubtitle, isImportant) end
 function N_0xca6b2f7ce32ab653(p0, p1, p2) end
 
     
+--- ```
+--- Adds a orange checkmark on top of a given blip handle: https://imgur.com/a/aw5OTMF
+--- _SHOW_FRIEND_INDICATOR_ON_BLIP* - _SHOW_HEADING_INDICATOR_ON_BLIP*
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v2699
+--- ```
+---
+--- @hash [0xCAC2031EBF79B1A8](https://docs.fivem.net/natives/?_0xCAC2031EBF79B1A8)
+--- @param blip Blip
+--- @param toggle boolean
+--- @return void
+--- @overload fun(blip: Blip, toggle: boolean): void
+function ShowHasCompletedIndicatorOnBlip(blip, toggle) end
+
+    
 --- SetRadarZoomToDistance
 ---
 --- @hash [0xCB7CC0D58405AD41](https://docs.fivem.net/natives/?_0xCB7CC0D58405AD41)
@@ -9808,12 +10113,23 @@ function SetBlipScaleTransformation(blip, xScale, yScale) end
 function N_0xcd74233600c4ea6b(toggle) end
 
     
---- N_0xcdca26e80faecb8f
+--- Forces the Pause Menu to back out of unique pages such as Awards, Unlocks, Key Bindings etc
 ---
 --- @hash [0xCDCA26E80FAECB8F](https://docs.fivem.net/natives/?_0xCDCA26E80FAECB8F)
 ---
 --- @return void
 --- @overload fun(): void
+function PauseMenuceptionTheKick() end
+
+    
+--- # New Name: PauseMenuceptionTheKick
+--- Forces the Pause Menu to back out of unique pages such as Awards, Unlocks, Key Bindings etc
+---
+--- @hash [0xCDCA26E80FAECB8F](https://docs.fivem.net/natives/?_0xCDCA26E80FAECB8F)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
 function N_0xcdca26e80faecb8f() end
 
     
@@ -10113,22 +10429,20 @@ function DrawNotificationWithIcon(eType, iIcon, sTitle) end
 function N_0xd2049635deb9c375() end
 
     
---- ```
---- NativeDB Introduced: v1365
---- ```
+--- By default, the player health value shown by a gamer tag's health bar is synchronised with the health of the ped it is attached to.
+--- This native disables that behaviour, allowing [`_SET_MP_GAMER_TAG_OVERRIDE_PLAYER_HEALTH`](https://docs.fivem.net/natives/?_0x1563FE35E9928E67) to have an effect.
 ---
 --- @hash [0xD29EC58C2F6B5014](https://docs.fivem.net/natives/?_0xD29EC58C2F6B5014)
 --- @param gamerTagId number (int)
 --- @param toggle boolean
 --- @return void
 --- @overload fun(gamerTagId: number, toggle: boolean): void
-function SetMpGamerHealthBarDisplay(gamerTagId, toggle) end
+function SetMpGamerTagDisablePlayerHealthSync(gamerTagId, toggle) end
 
     
---- # New Name: SetMpGamerHealthBarDisplay
---- ```
---- NativeDB Introduced: v1365
---- ```
+--- # New Name: SetMpGamerTagDisablePlayerHealthSync
+--- By default, the player health value shown by a gamer tag's health bar is synchronised with the health of the ped it is attached to.
+--- This native disables that behaviour, allowing [`_SET_MP_GAMER_TAG_OVERRIDE_PLAYER_HEALTH`](https://docs.fivem.net/natives/?_0x1563FE35E9928E67) to have an effect.
 ---
 --- @hash [0xD29EC58C2F6B5014](https://docs.fivem.net/natives/?_0xD29EC58C2F6B5014)
 --- @param gamerTagId number (int)
@@ -10137,6 +10451,19 @@ function SetMpGamerHealthBarDisplay(gamerTagId, toggle) end
 --- @overload fun(gamerTagId: number, toggle: boolean): void
 --- @deprecated
 function N_0xd29ec58c2f6b5014(gamerTagId, toggle) end
+
+    
+--- # New Name: SetMpGamerTagDisablePlayerHealthSync
+--- By default, the player health value shown by a gamer tag's health bar is synchronised with the health of the ped it is attached to.
+--- This native disables that behaviour, allowing [`_SET_MP_GAMER_TAG_OVERRIDE_PLAYER_HEALTH`](https://docs.fivem.net/natives/?_0x1563FE35E9928E67) to have an effect.
+---
+--- @hash [0xD29EC58C2F6B5014](https://docs.fivem.net/natives/?_0xD29EC58C2F6B5014)
+--- @param gamerTagId number (int)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(gamerTagId: number, toggle: boolean): void
+--- @deprecated
+function SetMpGamerHealthBarDisplay(gamerTagId, toggle) end
 
     
 --- CloseSocialClubMenu
@@ -11055,7 +11382,7 @@ function BeginTextCommandClearPrint(text) end
 function N_0xe124fa80a759019c(text) end
 
     
---- IsWarningMessageActive
+--- Returns true if a Warning Message or ReportUGC menu is active.
 ---
 --- @hash [0xE18B138FABC53103](https://docs.fivem.net/natives/?_0xE18B138FABC53103)
 ---
@@ -11065,7 +11392,7 @@ function IsWarningMessageActive() end
 
     
 --- # New Name: IsWarningMessageActive
---- IsWarningMessageActive
+--- Returns true if a Warning Message or ReportUGC menu is active.
 ---
 --- @hash [0xE18B138FABC53103](https://docs.fivem.net/natives/?_0xE18B138FABC53103)
 ---
@@ -11471,18 +11798,18 @@ function ForceCloseReportugcMenu() end
 function N_0xee4c0e6dbc6f2c6f() end
 
     
---- SetMpGamerTagEnabled
+--- Sets the visibility of all components of the gamer tag to the specified value.
 ---
 --- @hash [0xEE76FF7E6A0166B0](https://docs.fivem.net/natives/?_0xEE76FF7E6A0166B0)
 --- @param gamerTagId number (int)
 --- @param toggle boolean
 --- @return void
 --- @overload fun(gamerTagId: number, toggle: boolean): void
-function SetMpGamerTagEnabled(gamerTagId, toggle) end
+function SetMpGamerTagVisibilityAll(gamerTagId, toggle) end
 
     
---- # New Name: SetMpGamerTagEnabled
---- SetMpGamerTagEnabled
+--- # New Name: SetMpGamerTagVisibilityAll
+--- Sets the visibility of all components of the gamer tag to the specified value.
 ---
 --- @hash [0xEE76FF7E6A0166B0](https://docs.fivem.net/natives/?_0xEE76FF7E6A0166B0)
 --- @param gamerTagId number (int)
@@ -11493,8 +11820,8 @@ function SetMpGamerTagEnabled(gamerTagId, toggle) end
 function N_0xee76ff7e6a0166b0(gamerTagId, toggle) end
 
     
---- # New Name: SetMpGamerTagEnabled
---- SetMpGamerTagEnabled
+--- # New Name: SetMpGamerTagVisibilityAll
+--- Sets the visibility of all components of the gamer tag to the specified value.
 ---
 --- @hash [0xEE76FF7E6A0166B0](https://docs.fivem.net/natives/?_0xEE76FF7E6A0166B0)
 --- @param gamerTagId number (int)
@@ -11505,8 +11832,8 @@ function N_0xee76ff7e6a0166b0(gamerTagId, toggle) end
 function SetMpGamerTag_(gamerTagId, toggle) end
 
     
---- # New Name: SetMpGamerTagEnabled
---- SetMpGamerTagEnabled
+--- # New Name: SetMpGamerTagVisibilityAll
+--- Sets the visibility of all components of the gamer tag to the specified value.
 ---
 --- @hash [0xEE76FF7E6A0166B0](https://docs.fivem.net/natives/?_0xEE76FF7E6A0166B0)
 --- @param gamerTagId number (int)
@@ -11515,6 +11842,18 @@ function SetMpGamerTag_(gamerTagId, toggle) end
 --- @overload fun(gamerTagId: number, toggle: boolean): void
 --- @deprecated
 function SetMpGamerTag(gamerTagId, toggle) end
+
+    
+--- # New Name: SetMpGamerTagVisibilityAll
+--- Sets the visibility of all components of the gamer tag to the specified value.
+---
+--- @hash [0xEE76FF7E6A0166B0](https://docs.fivem.net/natives/?_0xEE76FF7E6A0166B0)
+--- @param gamerTagId number (int)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(gamerTagId: number, toggle: boolean): void
+--- @deprecated
+function SetMpGamerTagEnabled(gamerTagId, toggle) end
 
     
 --- Does stuff like this:\
@@ -11633,13 +11972,24 @@ function DrawNotification_4(blink, bHasTokens) end
 function GetLengthOfLiteralString(string) end
 
     
---- N_0xf06ebb91a81e09e3
+--- Shows this warning message when trying to switch pause menu header tabs: https://i.imgur.com/8qmfztu.png
 ---
 --- @hash [0xF06EBB91A81E09E3](https://docs.fivem.net/natives/?_0xF06EBB91A81E09E3)
---- @param p0 boolean
+--- @param setWarn boolean
 --- @return void
---- @overload fun(p0: boolean): void
-function N_0xf06ebb91a81e09e3(p0) end
+--- @overload fun(setWarn: boolean): void
+function PauseMenuSetWarnOnTabChange(setWarn) end
+
+    
+--- # New Name: PauseMenuSetWarnOnTabChange
+--- Shows this warning message when trying to switch pause menu header tabs: https://i.imgur.com/8qmfztu.png
+---
+--- @hash [0xF06EBB91A81E09E3](https://docs.fivem.net/natives/?_0xF06EBB91A81E09E3)
+--- @param setWarn boolean
+--- @return void
+--- @overload fun(setWarn: boolean): void
+--- @deprecated
+function N_0xf06ebb91a81e09e3(setWarn) end
 
     
 --- N_0xf13fe2a80c05c561

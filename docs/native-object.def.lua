@@ -36,17 +36,21 @@ function IsPlayerEntirelyInsideGarage(garageHash, player, p2, p3) end
 function N_0x024a60deb0ea69f0(garageHash, player, p2, p3) end
 
     
---- IsObjectAPickup
+--- ```
+--- NativeDB Introduced: v1365
+--- ```
 ---
 --- @hash [0x0378C08504160D0D](https://docs.fivem.net/natives/?_0x0378C08504160D0D)
 --- @param object Object
 --- @return boolean
 --- @overload fun(object: Object): boolean
-function IsObjectAPickup(object) end
+function IsObjectAPortablePickup(object) end
 
     
---- # New Name: IsObjectAPickup
---- IsObjectAPickup
+--- # New Name: IsObjectAPortablePickup
+--- ```
+--- NativeDB Introduced: v1365
+--- ```
 ---
 --- @hash [0x0378C08504160D0D](https://docs.fivem.net/natives/?_0x0378C08504160D0D)
 --- @param object Object
@@ -1074,7 +1078,19 @@ function N_0x5099bc55630b25ae(pickup) end
     
 --- Creates an object (prop) with the specified model at the specified position, offset on the Z axis by the radius of the object's model.
 --- This object will initially be owned by the creating script as a mission entity, and the model should be loaded already (e.g. using REQUEST_MODEL).
----
+--- @usage local modelHash = `prop_weed_01` -- The ` return the jenkins hash of a string. see more at: https://cookbook.fivem.net/2019/06/23/lua-support-for-compile-time-jenkins-hashes/
+--- 
+--- if not HasModelLoaded(modelHash) then
+---     -- If the model isnt loaded we request the loading of the model and wait that the model is loaded
+---     RequestModel(modelHash)
+--- 
+---     while not HasModelLoaded(modelHash) do
+---         Citizen.Wait(1)
+---     end
+--- end
+--- 
+--- -- At this moment the model its loaded, so now we can create the object
+--- local obj = CreateObject(modelHash, vector3(0.0, 0.0, 0.0), true
 --- @hash [0x509D5878EB39E842](https://docs.fivem.net/natives/?_0x509D5878EB39E842)
 --- @param modelHash Hash
 --- @param x number (float)
@@ -1614,26 +1630,41 @@ function HasClosestObjectOfTypeBeenBroken(p0, p1, p2, p3, modelHash, p5) end
 function N_0x762db2d380b48d04(p0) end
 
     
---- SetObjectSomething
+--- Overrides a flag on the object which determines if the object should be avoided by a vehicle in task: CTaskVehicleGoToPointWithAvoidanceAutomobile.
+--- Tested on vehicles that were created by the vehicle generators.
 ---
 --- @hash [0x77F33F2CCF64B3AA](https://docs.fivem.net/natives/?_0x77F33F2CCF64B3AA)
 --- @param object Object
---- @param p1 boolean
+--- @param toggle boolean
 --- @return void
---- @overload fun(object: Object, p1: boolean): void
-function SetObjectSomething(object, p1) end
+--- @overload fun(object: Object, toggle: boolean): void
+function SetObjectForceVehiclesToAvoid(object, toggle) end
 
     
---- # New Name: SetObjectSomething
---- SetObjectSomething
+--- # New Name: SetObjectForceVehiclesToAvoid
+--- Overrides a flag on the object which determines if the object should be avoided by a vehicle in task: CTaskVehicleGoToPointWithAvoidanceAutomobile.
+--- Tested on vehicles that were created by the vehicle generators.
 ---
 --- @hash [0x77F33F2CCF64B3AA](https://docs.fivem.net/natives/?_0x77F33F2CCF64B3AA)
 --- @param object Object
---- @param p1 boolean
+--- @param toggle boolean
 --- @return void
---- @overload fun(object: Object, p1: boolean): void
+--- @overload fun(object: Object, toggle: boolean): void
 --- @deprecated
-function N_0x77f33f2ccf64b3aa(object, p1) end
+function N_0x77f33f2ccf64b3aa(object, toggle) end
+
+    
+--- # New Name: SetObjectForceVehiclesToAvoid
+--- Overrides a flag on the object which determines if the object should be avoided by a vehicle in task: CTaskVehicleGoToPointWithAvoidanceAutomobile.
+--- Tested on vehicles that were created by the vehicle generators.
+---
+--- @hash [0x77F33F2CCF64B3AA](https://docs.fivem.net/natives/?_0x77F33F2CCF64B3AA)
+--- @param object Object
+--- @param toggle boolean
+--- @return void
+--- @overload fun(object: Object, toggle: boolean): void
+--- @deprecated
+function SetObjectSomething(object, toggle) end
 
     
 --- SetPickupRegenerationTime
@@ -1748,18 +1779,18 @@ function AreEntitiesEntirelyInsideGarage(garageHash, p1, p2, p3, p4) end
 function N_0x85b6c850546fdde2(garageHash, p1, p2, p3, p4) end
 
     
---- HidePickup
+--- HidePortablePickupWhenDetached
 ---
 --- @hash [0x867458251D47CCB2](https://docs.fivem.net/natives/?_0x867458251D47CCB2)
 --- @param pickup Pickup
 --- @param toggle boolean
 --- @return void
 --- @overload fun(pickup: Pickup, toggle: boolean): void
-function HidePickup(pickup, toggle) end
+function HidePortablePickupWhenDetached(pickup, toggle) end
 
     
---- # New Name: HidePickup
---- HidePickup
+--- # New Name: HidePortablePickupWhenDetached
+--- HidePortablePickupWhenDetached
 ---
 --- @hash [0x867458251D47CCB2](https://docs.fivem.net/natives/?_0x867458251D47CCB2)
 --- @param pickup Pickup
@@ -1768,6 +1799,18 @@ function HidePickup(pickup, toggle) end
 --- @overload fun(pickup: Pickup, toggle: boolean): void
 --- @deprecated
 function N_0x867458251d47ccb2(pickup, toggle) end
+
+    
+--- # New Name: HidePortablePickupWhenDetached
+--- HidePortablePickupWhenDetached
+---
+--- @hash [0x867458251D47CCB2](https://docs.fivem.net/natives/?_0x867458251D47CCB2)
+--- @param pickup Pickup
+--- @param toggle boolean
+--- @return void
+--- @overload fun(pickup: Pickup, toggle: boolean): void
+--- @deprecated
+function HidePickup(pickup, toggle) end
 
     
 --- ```
@@ -2040,26 +2083,50 @@ function PreventCollectionOfPortablePickup(object, p1, p2) end
 function N_0x92aefb5f6e294023(object, p1, p2) end
 
     
---- SetObjectStuntPropSpeedup
+--- Sets the intensity of Speed Boost and Slow Down props.
+--- 
+--- The corresponding values for Speed Boosts in the Creator are:\
+--- Weak: `15`\
+--- Normal: `25`\
+--- Strong: `35`\
+--- Extra Strong: `45`\
+--- Ultra Strong: `100`
+--- 
+--- For Slow Downs:\
+--- Weak: `44`\
+--- Normal: `30`\
+--- Strong: `16`
 ---
 --- @hash [0x96EE0EBA0163DF80](https://docs.fivem.net/natives/?_0x96EE0EBA0163DF80)
 --- @param object Object
---- @param p1 any
+--- @param intensity number (int)
 --- @return void
---- @overload fun(object: Object, p1: any): void
-function SetObjectStuntPropSpeedup(object, p1) end
+--- @overload fun(object: Object, intensity: number): void
+function SetObjectStuntPropSpeedup(object, intensity) end
 
     
 --- # New Name: SetObjectStuntPropSpeedup
---- SetObjectStuntPropSpeedup
+--- Sets the intensity of Speed Boost and Slow Down props.
+--- 
+--- The corresponding values for Speed Boosts in the Creator are:\
+--- Weak: `15`\
+--- Normal: `25`\
+--- Strong: `35`\
+--- Extra Strong: `45`\
+--- Ultra Strong: `100`
+--- 
+--- For Slow Downs:\
+--- Weak: `44`\
+--- Normal: `30`\
+--- Strong: `16`
 ---
 --- @hash [0x96EE0EBA0163DF80](https://docs.fivem.net/natives/?_0x96EE0EBA0163DF80)
 --- @param object Object
---- @param p1 any
+--- @param intensity number (int)
 --- @return void
---- @overload fun(object: Object, p1: any): void
+--- @overload fun(object: Object, intensity: number): void
 --- @deprecated
-function N_0x96ee0eba0163df80(object, p1) end
+function N_0x96ee0eba0163df80(object, intensity) end
 
     
 --- ```
@@ -3231,21 +3298,17 @@ function IsPickupWithinRadius(pickupHash, x, y, z, radius) end
 function CreatePickup(pickupHash, posX, posY, posZ, p4, value, p6, modelHash) end
 
     
---- ```
---- NativeDB Introduced: v1365
---- ```
+--- IsObjectAPickup
 ---
 --- @hash [0xFC481C641EBBD27D](https://docs.fivem.net/natives/?_0xFC481C641EBBD27D)
 --- @param object Object
 --- @return boolean
 --- @overload fun(object: Object): boolean
-function IsObjectAPortablePickup(object) end
+function IsObjectAPickup(object) end
 
     
---- # New Name: IsObjectAPortablePickup
---- ```
---- NativeDB Introduced: v1365
---- ```
+--- # New Name: IsObjectAPickup
+--- IsObjectAPickup
 ---
 --- @hash [0xFC481C641EBBD27D](https://docs.fivem.net/natives/?_0xFC481C641EBBD27D)
 --- @param object Object

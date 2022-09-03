@@ -20,7 +20,7 @@
 function SetRoadsBackToOriginalInAngledArea(x1, y1, z1, x2, y2, z2, width) end
 
     
---- N_0x01708e8dd3ff8c65
+--- GetNumNavmeshesExistingInArea
 ---
 --- @hash [0x01708E8DD3FF8C65](https://docs.fivem.net/natives/?_0x01708E8DD3FF8C65)
 --- @param p0 number (float)
@@ -29,8 +29,24 @@ function SetRoadsBackToOriginalInAngledArea(x1, y1, z1, x2, y2, z2, width) end
 --- @param p3 number (float)
 --- @param p4 number (float)
 --- @param p5 number (float)
---- @return any
---- @overload fun(p0: number, p1: number, p2: number, p3: number, p4: number, p5: number): any
+--- @return number
+--- @overload fun(p0: number, p1: number, p2: number, p3: number, p4: number, p5: number): number
+function GetNumNavmeshesExistingInArea(p0, p1, p2, p3, p4, p5) end
+
+    
+--- # New Name: GetNumNavmeshesExistingInArea
+--- GetNumNavmeshesExistingInArea
+---
+--- @hash [0x01708E8DD3FF8C65](https://docs.fivem.net/natives/?_0x01708E8DD3FF8C65)
+--- @param p0 number (float)
+--- @param p1 number (float)
+--- @param p2 number (float)
+--- @param p3 number (float)
+--- @param p4 number (float)
+--- @param p5 number (float)
+--- @return number
+--- @overload fun(p0: number, p1: number, p2: number, p3: number, p4: number, p5: number): number
+--- @deprecated
 function N_0x01708e8dd3ff8c65(p0, p1, p2, p3, p4, p5) end
 
     
@@ -774,7 +790,7 @@ function RemoveNavmeshRequiredRegions() end
 function GetRandomVehicleNode(x, y, z, radius, p4, p5, p6) end
 
     
---- GetRoadSidePointWithHeading
+--- GetRoadBoundaryUsingHeading
 ---
 --- @hash [0xA0F8A7517A273C05](https://docs.fivem.net/natives/?_0xA0F8A7517A273C05)
 --- @param x number (float)
@@ -784,11 +800,11 @@ function GetRandomVehicleNode(x, y, z, radius, p4, p5, p6) end
 --- @param outPosition Vector3 (Vector3*)
 --- @return boolean
 --- @overload fun(x: number, y: number, z: number, heading: number): boolean, Vector3
-function GetRoadSidePointWithHeading(x, y, z, heading, outPosition) end
+function GetRoadBoundaryUsingHeading(x, y, z, heading, outPosition) end
 
     
---- # New Name: GetRoadSidePointWithHeading
---- GetRoadSidePointWithHeading
+--- # New Name: GetRoadBoundaryUsingHeading
+--- GetRoadBoundaryUsingHeading
 ---
 --- @hash [0xA0F8A7517A273C05](https://docs.fivem.net/natives/?_0xA0F8A7517A273C05)
 --- @param x number (float)
@@ -800,6 +816,21 @@ function GetRoadSidePointWithHeading(x, y, z, heading, outPosition) end
 --- @overload fun(x: number, y: number, z: number, heading: number): boolean, Vector3
 --- @deprecated
 function N_0xa0f8a7517a273c05(x, y, z, heading, outPosition) end
+
+    
+--- # New Name: GetRoadBoundaryUsingHeading
+--- GetRoadBoundaryUsingHeading
+---
+--- @hash [0xA0F8A7517A273C05](https://docs.fivem.net/natives/?_0xA0F8A7517A273C05)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
+--- @param outPosition Vector3 (Vector3*)
+--- @return boolean
+--- @overload fun(x: number, y: number, z: number, heading: number): boolean, Vector3
+--- @deprecated
+function GetRoadSidePointWithHeading(x, y, z, heading, outPosition) end
 
     
 --- ```
@@ -1066,16 +1097,30 @@ function SetPedPathsBackToOriginal(p0, p1, p2, p3, p4, p5) end
 function GetNthClosestVehicleNode(x, y, z, nthClosest, outPosition, unknown1, unknown2, unknown3) end
 
     
---- N_0xf3162836c28f9da5
+--- p3 can be 0, 1 or 2.
 ---
 --- @hash [0xF3162836C28F9DA5](https://docs.fivem.net/natives/?_0xF3162836C28F9DA5)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @return any
---- @overload fun(p0: any, p1: any, p2: any, p3: any): any
-function N_0xf3162836c28f9da5(p0, p1, p2, p3) end
+--- @param result Vector3 (Vector3*)
+--- @param p1 boolean
+--- @param p2 number (float)
+--- @param p3 number (int)
+--- @return boolean
+--- @overload fun(p1: boolean, p2: number, p3: number): boolean, Vector3
+function GetGpsWaypointRouteEnd(result, p1, p2, p3) end
+
+    
+--- # New Name: GetGpsWaypointRouteEnd
+--- p3 can be 0, 1 or 2.
+---
+--- @hash [0xF3162836C28F9DA5](https://docs.fivem.net/natives/?_0xF3162836C28F9DA5)
+--- @param result Vector3 (Vector3*)
+--- @param p1 boolean
+--- @param p2 number (float)
+--- @param p3 number (int)
+--- @return boolean
+--- @overload fun(p1: boolean, p2: number, p3: number): boolean, Vector3
+--- @deprecated
+function N_0xf3162836c28f9da5(result, p1, p2, p3) end
 
     
 --- Activates Cayo Perico path nodes if passed `1`. GPS navigation will start working, maybe more stuff will change, not sure. It seems if you try to unload (pass `0`) when close to the island, your game might crash.

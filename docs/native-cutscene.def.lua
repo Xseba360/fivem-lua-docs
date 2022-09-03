@@ -14,44 +14,64 @@
 function N_0x011883f41211432a(x1, y1, z1, x2, y2, z2, p6) end
 
     
+--- Returns the time of the cutscene's end accounting for [`REQUEST_CUTSCENE_WITH_PLAYBACK_LIST`](\_0xC23DE0E91C30B58C)
+--- 
+--- If a cutscene is laid out with 10 second sections, and section 0 and 1 are enabled then it would be 20000ms.
+--- 
 --- ```
---- Thanks R*! ;)
---- if ((l_161 == 0) || (l_161 == 2)) {
----     sub_2ea27("Trying to set Jimmy prop variation");
----     CUTSCENE::_0546524ADE2E9723("Jimmy_Boston", 1, 0, 0, 0);
---- }
+--- NativeDB Introduced: v1734
 --- ```
+---
+--- @hash [0x011883f41211432a](https://docs.fivem.net/natives/?_0x011883f41211432a)
+---
+--- @return number
+--- @overload fun(): number
+function GetCutsceneEndTime() end
+
+    
+--- # New Name: GetCutsceneEndTime
+--- Returns the time of the cutscene's end accounting for [`REQUEST_CUTSCENE_WITH_PLAYBACK_LIST`](\_0xC23DE0E91C30B58C)
+--- 
+--- If a cutscene is laid out with 10 second sections, and section 0 and 1 are enabled then it would be 20000ms.
+--- 
+--- ```
+--- NativeDB Introduced: v1734
+--- ```
+---
+--- @hash [0x011883f41211432a](https://docs.fivem.net/natives/?_0x011883f41211432a)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
+function N_0x971d7b15bcdbef99() end
+
+    
+--- See [`SET_PED_PROP_INDEX`](\_0x93376B65A266EB5F)
 ---
 --- @hash [0x0546524ADE2E9723](https://docs.fivem.net/natives/?_0x0546524ADE2E9723)
 --- @param cutsceneEntName string (char*)
---- @param p1 number (int)
---- @param p2 number (int)
---- @param p3 number (int)
+--- @param componentId number (int)
+--- @param drawableId number (int)
+--- @param textureId number (int)
 --- @param modelHash Hash
 --- @return void
---- @overload fun(cutsceneEntName: string, p1: number, p2: number, p3: number, modelHash: Hash): void
-function SetCutscenePedPropVariation(cutsceneEntName, p1, p2, p3, modelHash) end
+--- @overload fun(cutsceneEntName: string, componentId: number, drawableId: number, textureId: number, modelHash: Hash): void
+function SetCutscenePedPropVariation(cutsceneEntName, componentId, drawableId, textureId, modelHash) end
 
     
 --- # New Name: SetCutscenePedPropVariation
---- ```
---- Thanks R*! ;)
---- if ((l_161 == 0) || (l_161 == 2)) {
----     sub_2ea27("Trying to set Jimmy prop variation");
----     CUTSCENE::_0546524ADE2E9723("Jimmy_Boston", 1, 0, 0, 0);
---- }
---- ```
+--- See [`SET_PED_PROP_INDEX`](\_0x93376B65A266EB5F)
 ---
 --- @hash [0x0546524ADE2E9723](https://docs.fivem.net/natives/?_0x0546524ADE2E9723)
 --- @param cutsceneEntName string (char*)
---- @param p1 number (int)
---- @param p2 number (int)
---- @param p3 number (int)
+--- @param componentId number (int)
+--- @param drawableId number (int)
+--- @param textureId number (int)
 --- @param modelHash Hash
 --- @return void
---- @overload fun(cutsceneEntName: string, p1: number, p2: number, p3: number, modelHash: Hash): void
+--- @overload fun(cutsceneEntName: string, componentId: number, drawableId: number, textureId: number, modelHash: Hash): void
 --- @deprecated
-function N_0x0546524ade2e9723(cutsceneEntName, p1, p2, p3, modelHash) end
+function N_0x0546524ade2e9723(cutsceneEntName, componentId, drawableId, textureId, modelHash) end
 
     
 --- ```
@@ -87,7 +107,7 @@ function N_0x06a3524161c502ba(cutsceneName) end
 function N_0x06ee9048fd080382(p0) end
 
     
---- GetEntityIndexOfCutsceneEntity
+--- Returns the handle of a cutscene entity, can be ped
 ---
 --- @hash [0x0A2E9FDB9A8C62F6](https://docs.fivem.net/natives/?_0x0A2E9FDB9A8C62F6)
 --- @param cutsceneEntName string (char*)
@@ -97,9 +117,7 @@ function N_0x06ee9048fd080382(p0) end
 function GetEntityIndexOfCutsceneEntity(cutsceneEntName, modelHash) end
 
     
---- ```
---- Jenkins hash probably is 0xFD8B1AC2
---- ```
+--- GetCutFileNumSections
 ---
 --- @hash [0x0ABC54DE641DC0FC](https://docs.fivem.net/natives/?_0x0ABC54DE641DC0FC)
 --- @param cutsceneName string (char*)
@@ -109,9 +127,7 @@ function GetCutFileNumSections(cutsceneName) end
 
     
 --- # New Name: GetCutFileNumSections
---- ```
---- Jenkins hash probably is 0xFD8B1AC2
---- ```
+--- GetCutFileNumSections
 ---
 --- @hash [0x0ABC54DE641DC0FC](https://docs.fivem.net/natives/?_0x0ABC54DE641DC0FC)
 --- @param cutsceneName string (char*)
@@ -132,9 +148,7 @@ function N_0x0abc54de641dc0fc(cutsceneName) end
 function StartCutscene(flags) end
 
     
---- ```
---- flags: Usually 0.
---- ```
+--- Similar to [`SET_CUTSCENE_ORIGIN`](\_0xB812B3FD1C01CF27) but without heading and doesn't need [`START_CUTSCENE`](\_0x186D5CB5E7B0FF7B)
 ---
 --- @hash [0x1C9ADDA3244A1FBF](https://docs.fivem.net/natives/?_0x1C9ADDA3244A1FBF)
 --- @param x number (float)
@@ -158,7 +172,7 @@ function StartCutsceneAtCoords(x, y, z, flags) end
 function N_0x20746f7b1032a3c7(p0, p1, p2, p3) end
 
     
---- RegisterSynchronisedScriptSpeech
+--- Only used twice in armenian1.c
 ---
 --- @hash [0x2131046957F31B04](https://docs.fivem.net/natives/?_0x2131046957F31B04)
 ---
@@ -176,7 +190,9 @@ function RegisterSynchronisedScriptSpeech() end
 function HasThisCutsceneLoaded(cutsceneName) end
 
     
---- SetCutscenePedComponentVariationFromPed
+--- Sets the components for a cutscene ped, this will take precendence over the cutscene's component overrides. This does not require the entity be registered.
+--- 
+--- See
 ---
 --- @hash [0x2A56C06EBEF2B0D9](https://docs.fivem.net/natives/?_0x2A56C06EBEF2B0D9)
 --- @param cutsceneEntName string (char*)
@@ -188,7 +204,9 @@ function SetCutscenePedComponentVariationFromPed(cutsceneEntName, ped, modelHash
 
     
 --- # New Name: SetCutscenePedComponentVariationFromPed
---- SetCutscenePedComponentVariationFromPed
+--- Sets the components for a cutscene ped, this will take precendence over the cutscene's component overrides. This does not require the entity be registered.
+--- 
+--- See
 ---
 --- @hash [0x2A56C06EBEF2B0D9](https://docs.fivem.net/natives/?_0x2A56C06EBEF2B0D9)
 --- @param cutsceneEntName string (char*)
@@ -266,7 +284,7 @@ function GetCutsceneSectionPlaying() end
 function DoesCutsceneEntityExist(cutsceneEntName, modelHash) end
 
     
---- SetCutsceneEntityStreamingFlags
+--- Only used in networked environment with MP cutscenes
 ---
 --- @hash [0x4C61C75BEE8184C2](https://docs.fivem.net/natives/?_0x4C61C75BEE8184C2)
 --- @param cutsceneEntName string (char*)
@@ -278,7 +296,7 @@ function SetCutsceneEntityStreamingFlags(cutsceneEntName, p1, p2) end
 
     
 --- # New Name: SetCutsceneEntityStreamingFlags
---- SetCutsceneEntityStreamingFlags
+--- Only used in networked environment with MP cutscenes
 ---
 --- @hash [0x4C61C75BEE8184C2](https://docs.fivem.net/natives/?_0x4C61C75BEE8184C2)
 --- @param cutsceneEntName string (char*)
@@ -290,7 +308,10 @@ function SetCutsceneEntityStreamingFlags(cutsceneEntName, p1, p2) end
 function N_0x4c61c75bee8184c2(cutsceneEntName, p1, p2) end
 
     
---- CanSetExitStateForRegisteredEntity
+--- Returns if the script can begin interacting with the registered entity. Primarly used for lead-outs of cutscenes.
+--- Returns on frame after cutscene ends, so you cannot get is while using IsCutsceneActive()
+--- 
+--- Whether it is safe to start doing scripted actions on the entity, like simulating walking out of a cutscene.
 ---
 --- @hash [0x4C6A6451C79E4662](https://docs.fivem.net/natives/?_0x4C6A6451C79E4662)
 --- @param cutsceneEntName string (char*)
@@ -392,9 +413,7 @@ function IsCutscenePlaybackFlagSet(flag) end
 function N_0x71b74d2ae19338d0(flag) end
 
     
---- ```
---- flags: Usually 8
---- ```
+--- RequestCutscene
 ---
 --- @hash [0x7A86743F475D9E09](https://docs.fivem.net/natives/?_0x7A86743F475D9E09)
 --- @param cutsceneName string (char*)
@@ -446,19 +465,6 @@ function SetCutsceneFadeValues(p0, p1, p2, p3) end
 --- @return void
 --- @overload fun(threadId: number): void
 function N_0x8d9df6eca8768583(threadId) end
-
-    
---- GET_CUTSCENE_\*
---- 
---- ```
---- NativeDB Introduced: v1734
---- ```
----
---- @hash [0x971D7B15BCDBEF99](https://docs.fivem.net/natives/?_0x971D7B15BCDBEF99)
----
---- @return number
---- @overload fun(): number
-function N_0x971d7b15bcdbef99() end
 
     
 --- ```
@@ -519,7 +525,8 @@ function HasCutFileLoaded(cutsceneName) end
 function N_0xa1c996c2a744262e(cutsceneName) end
 
     
---- CanSetExitStateForCamera
+--- Whether or not it is safe to run functions on the camera,
+--- as the camera is now no longer being used by the cutscene.
 ---
 --- @hash [0xB2CBCD0930DFB420](https://docs.fivem.net/natives/?_0xB2CBCD0930DFB420)
 --- @param p0 boolean
@@ -528,7 +535,13 @@ function N_0xa1c996c2a744262e(cutsceneName) end
 function CanSetExitStateForCamera(p0) end
 
     
---- CanRequestAssetsForCutsceneEntity
+--- Returns when it is safe to start applying changes to cutscene entities.
+--- 
+--- Should always be used for applying components.
+--- 
+--- See [`SET_CUTSCENE_PED_COMPONENT_VARIATION_FROM_PED`](https://docs.fivem.net/natives/?_0x2A56C06EBEF2B0D9) and [`REGISTER_ENTITY_FOR_CUTSCENE`](https://docs.fivem.net/natives/?_0xE40C1C56DF95C2E8) for an example.
+--- 
+--- This will be true before the cutscene is considered loaded
 ---
 --- @hash [0xB56BBBCC2955D9CB](https://docs.fivem.net/natives/?_0xB56BBBCC2955D9CB)
 ---
@@ -538,7 +551,13 @@ function CanRequestAssetsForCutsceneEntity() end
 
     
 --- # New Name: CanRequestAssetsForCutsceneEntity
---- CanRequestAssetsForCutsceneEntity
+--- Returns when it is safe to start applying changes to cutscene entities.
+--- 
+--- Should always be used for applying components.
+--- 
+--- See [`SET_CUTSCENE_PED_COMPONENT_VARIATION_FROM_PED`](https://docs.fivem.net/natives/?_0x2A56C06EBEF2B0D9) and [`REGISTER_ENTITY_FOR_CUTSCENE`](https://docs.fivem.net/natives/?_0xE40C1C56DF95C2E8) for an example.
+--- 
+--- This will be true before the cutscene is considered loaded
 ---
 --- @hash [0xB56BBBCC2955D9CB](https://docs.fivem.net/natives/?_0xB56BBBCC2955D9CB)
 ---
@@ -548,32 +567,30 @@ function CanRequestAssetsForCutsceneEntity() end
 function N_0xb56bbbcc2955d9cb() end
 
     
---- ```
---- p3 could be heading. Needs more research.  
---- ```
+--- Sets cutscene location, used for multiplayer apartments/businesses.
 ---
 --- @hash [0xB812B3FD1C01CF27](https://docs.fivem.net/natives/?_0xB812B3FD1C01CF27)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param p3 number (float)
+--- @param heading number (float)
 --- @param p4 number (int)
 --- @return void
---- @overload fun(x: number, y: number, z: number, p3: number, p4: number): void
-function SetCutsceneOrigin(x, y, z, p3, p4) end
+--- @overload fun(x: number, y: number, z: number, heading: number, p4: number): void
+function SetCutsceneOrigin(x, y, z, heading, p4) end
 
     
---- SetCutscenePedComponentVariation
+--- See [`SET_PED_COMPONENT_VARIATION`](https://docs.fivem.net/natives/?_0x262B14F48D29DE80)
 ---
 --- @hash [0xBA01E7B6DEEFBBC9](https://docs.fivem.net/natives/?_0xBA01E7B6DEEFBBC9)
 --- @param cutsceneEntName string (char*)
---- @param p1 number (int)
---- @param p2 number (int)
---- @param p3 number (int)
+--- @param componentId number (int)
+--- @param drawableId number (int)
+--- @param textureId number (int)
 --- @param modelHash Hash
 --- @return void
---- @overload fun(cutsceneEntName: string, p1: number, p2: number, p3: number, modelHash: Hash): void
-function SetCutscenePedComponentVariation(cutsceneEntName, p1, p2, p3, modelHash) end
+--- @overload fun(cutsceneEntName: string, componentId: number, drawableId: number, textureId: number, modelHash: Hash): void
+function SetCutscenePedComponentVariation(cutsceneEntName, componentId, drawableId, textureId, modelHash) end
 
     
 --- GetEntityIndexOfRegisteredEntity
@@ -587,7 +604,6 @@ function GetEntityIndexOfRegisteredEntity(cutsceneEntName, modelHash) end
 
     
 --- ```
---- flags: Usually 8
 --- playbackFlags: Which scenes should be played.
 --- Example: 0x105 (bit 0, 2 and 8 set) will enable scene 1, 3 and 9.
 --- ```
@@ -603,7 +619,6 @@ function RequestCutsceneWithPlaybackList(cutsceneName, playbackFlags, flags) end
     
 --- # New Name: RequestCutsceneWithPlaybackList
 --- ```
---- flags: Usually 8
 --- playbackFlags: Which scenes should be played.
 --- Example: 0x105 (bit 0, 2 and 8 set) will enable scene 1, 3 and 9.
 --- ```
@@ -620,7 +635,6 @@ function N_0xc23de0e91c30b58c(cutsceneName, playbackFlags, flags) end
     
 --- # New Name: RequestCutsceneWithPlaybackList
 --- ```
---- flags: Usually 8
 --- playbackFlags: Which scenes should be played.
 --- Example: 0x105 (bit 0, 2 and 8 set) will enable scene 1, 3 and 9.
 --- ```
@@ -689,7 +703,7 @@ function RemoveCutFile(cutsceneName) end
 function N_0xd00d76a7dfc9d852(cutsceneName) end
 
     
---- StopCutsceneImmediately
+--- Stop cutscene instantly, will dump registered entities right where they were when ran.
 ---
 --- @hash [0xD220BDD222AC4A1E](https://docs.fivem.net/natives/?_0xD220BDD222AC4A1E)
 ---
@@ -716,20 +730,27 @@ function IsCutscenePlaying() end
 function N_0xe36a98d8ab3d3c66(p0) end
 
     
---- RegisterEntityForCutscene
----
+--- This can only be run once [`CAN_REQUEST_ASSETS_FOR_CUTSCENE_ENTITY`](https://docs.fivem.net/natives/?_0xB56BBBCC2955D9CB) is true, but can be run before [`HAS_CUTSCENE_LOADED`](https://docs.fivem.net/natives/?_0xC59F528E9AB9F339)
+--- @usage     -- An example that allows for registering non player_zero peds in place, i.e MP peds.
+---     RequestCutscene("family_5_mcs_5_p5", 8)
+---     repeat Wait(0) until CanRequestAssetsForCutsceneEntity()
+---     SetCutscenePedComponentVariationFromPed("Michael", PlayerPedId(), 0)
+---     -- Registering can occur at any point past here before starting the cutscene.
+---     RegisterEntityForCutscene(PlayerPedId(), "Michael", 0, 0, 64)
+---     repeat Wait(0) until HasCutsceneLoaded()
+---     StartCutscene(0
 --- @hash [0xE40C1C56DF95C2E8](https://docs.fivem.net/natives/?_0xE40C1C56DF95C2E8)
---- @param cutscenePed Ped
+--- @param cutsceneEntity Entity
 --- @param cutsceneEntName string (char*)
 --- @param p2 number (int)
 --- @param modelHash Hash
 --- @param p4 number (int)
 --- @return void
---- @overload fun(cutscenePed: Ped, cutsceneEntName: string, p2: number, modelHash: Hash, p4: number): void
-function RegisterEntityForCutscene(cutscenePed, cutsceneEntName, p2, modelHash, p4) end
+--- @overload fun(cutsceneEntity: Entity, cutsceneEntName: string, p2: number, modelHash: Hash, p4: number): void
+function RegisterEntityForCutscene(cutsceneEntity, cutsceneEntName, p2, modelHash, p4) end
 
     
---- GetCutsceneTime
+--- Gets the elapsed time of the current cutscene in
 ---
 --- @hash [0xE625BEABBAFFDAB9](https://docs.fivem.net/natives/?_0xE625BEABBAFFDAB9)
 ---
@@ -738,7 +759,8 @@ function RegisterEntityForCutscene(cutscenePed, cutsceneEntName, p2, modelHash, 
 function GetCutsceneTime() end
 
     
---- GetCutsceneTotalDuration
+--- Gets the total length of the cutscene irrespective of playback list in milliseconds
+--- To account for sections, see [`_GET_CUTSCENE_END_TIME`]()
 ---
 --- @hash [0xEE53B14A19E480D4](https://docs.fivem.net/natives/?_0xEE53B14A19E480D4)
 ---

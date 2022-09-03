@@ -103,15 +103,6 @@ function GetMapZoomDataLevel(index) end
 function GetVehicleWheelieState(vehicle) end
 
     
---- GetVehicleSteeringAngle
----
---- @hash [0x1382FCEA](https://docs.fivem.net/natives/?_0x1382FCEA)
---- @param vehicle Vehicle
---- @return number
---- @overload fun(vehicle: Vehicle): number
-function GetVehicleSteeringAngle(vehicle) end
-
-    
 --- **Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
 --- 
 --- Registers a KVP value as an asset with the GTA streaming module system. This function currently won't work.
@@ -150,6 +141,25 @@ function FindFirstVehicle(outEntity) end
 --- @return string
 --- @overload fun(duiObject: number): string
 function GetDuiHandle(duiObject) end
+
+    
+--- Sets custom vehicle xenon lights color, allowing to use RGB palette. The game will ignore lights color set by [\_SET_VEHICLE_XENON_LIGHTS_COLOR](https://docs.fivem.net/natives/?_0xE41033B25D003A07) when custom color is active. This native is not synced between players. Requires xenon lights mod to be set on vehicle.
+--- @usage local vehicle = GetVehiclePedIsUsing(PlayerPedId())
+--- if DoesEntityExist(vehicle) then
+---   -- Toggle xenon lights mod.
+---   ToggleVehicleMod(vehicle, 22, true)
+--- 
+---   -- Set pink lights color.
+---   SetVehicleXenonLightsCustomColor(vehicle, 244, 5, 82)
+--- en
+--- @hash [0x1683E7F0](https://docs.fivem.net/natives/?_0x1683E7F0)
+--- @param vehicle Vehicle
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @return void
+--- @overload fun(vehicle: Vehicle, red: number, green: number, blue: number): void
+function SetVehicleXenonLightsCustomColor(vehicle, red, green, blue) end
 
     
 --- Sets whether or not `SHUTDOWN_LOADING_SCREEN` automatically shuts down the NUI frame for the loading screen. If this is enabled,
@@ -359,6 +369,15 @@ function GetVehicleHandlingInt(vehicle, class_, fieldName) end
 function GetPlayerMeleeWeaponDefenseModifier(playerId) end
 
     
+--- Removes vehicle xenon lights custom RGB color.
+---
+--- @hash [0x2867ED8C](https://docs.fivem.net/natives/?_0x2867ED8C)
+--- @param vehicle Vehicle
+--- @return void
+--- @overload fun(vehicle: Vehicle): void
+function ClearVehicleXenonLightsCustomColor(vehicle) end
+
+    
 --- AddTextEntryByHash
 ---
 --- @hash [0x289DA860](https://docs.fivem.net/natives/?_0x289DA860)
@@ -428,27 +447,33 @@ function GetRopeUpdateOrder(rope) end
 function GetVehicleWheelSuspensionCompression(vehicle, wheelIndex) end
 
     
---- Returns all pool handles for the given pool name; the data returned adheres to the following layout:
+--- Returns a list of entity handles (script GUID) for all entities in the specified pool - the data returned is an array as
+--- follows:
 --- 
---- ```
+--- ```json
 --- [ 770, 1026, 1282, 1538, 1794, 2050, 2306, 2562, 2818, 3074, 3330, 3586, 3842, 4098, 4354, 4610, ...]
 --- ```
 --- 
---- ### Supported Pools
+--- ### Supported pools
 --- 
---- **1**: CPed\
---- **2**: CObject\
---- **3**: CVehicle\
---- **4**: CPickup
----
+--- *   `CPed`: Peds (including animals) and players.
+--- *   `CObject`: Objects (props), doors, and projectiles.
+--- *   `CVehicle`: Vehicles.
+--- *   `CPickup`: Pickups.
+--- @usage local vehiclePool = GetGamePool('CVehicle') -- Get the list of vehicles (entities) from the pool
+--- for i = 1, #vehiclePool do -- loop through each vehicle (entity)
+---     if GetPedInVehicleSeat(vehiclePool[i], -1) == 0 then
+---         DeleteEntity(vehiclePool[i]) -- Delete vehicles (entities) that don't have a driver
+---     end
+--- en
 --- @hash [0x2B9D4F50](https://docs.fivem.net/natives/?_0x2B9D4F50)
---- @param poolname string (char*)
+--- @param poolName string (char*)
 --- @return (Ped|Object|Vehicle|Pickup)[]
 --- @overload fun(poolname: 'CPed'): Ped[]
 --- @overload fun(poolname: 'CObject'): Object[]
 --- @overload fun(poolname: 'CVehicle'): Vehicle[]
 --- @overload fun(poolname: 'CPickup'): Pickup[]
-function GetGamePool(poolname) end
+function GetGamePool(poolName) end
 
     
 --- Sets a handling override for a specific vehicle. Certain handling flags can only be set globally using `SET_HANDLING_FIELD`, this might require some experimentation.
@@ -535,6 +560,15 @@ function GetVehicleWheelXrot(vehicle, wheelIndex) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, clutch: number): void
 function SetVehicleClutch(vehicle, clutch) end
+
+    
+--- A getter for `CWeaponFallOffModifier` range modifier value in a weapon component.
+---
+--- @hash [0x2FD0BC1B](https://docs.fivem.net/natives/?_0x2FD0BC1B)
+--- @param componentHash Hash
+--- @return number
+--- @overload fun(componentHash: Hash): number
+function GetWeaponComponentRangeModifier(componentHash) end
 
     
 --- Retrieves the map data entity handle.
@@ -956,6 +990,15 @@ function SetVehicleWheelTireColliderWidth(vehicle, wheelIndex, value) end
 function SetVehicleHandlingFloat(vehicle, class_, fieldName, value) end
 
     
+--- A getter for `CWeaponDamageModifier` in a weapon component.
+---
+--- @hash [0x4A0E3855](https://docs.fivem.net/natives/?_0x4A0E3855)
+--- @param componentHash Hash
+--- @return number
+--- @overload fun(componentHash: Hash): number
+function GetWeaponComponentDamageModifier(componentHash) end
+
+    
 --- Loads a minimap overlay from a GFx file in the current resource.
 ---
 --- @hash [0x4AFD2499](https://docs.fivem.net/natives/?_0x4AFD2499)
@@ -1252,6 +1295,15 @@ function MumbleSetVolumeOverride(player, volume) end
 --- @return void
 --- @overload fun(intentHash: Hash): void
 function MumbleSetAudioInputIntent(intentHash) end
+
+    
+--- A getter for [SET_WEAPON_ANIMATION_OVERRIDE](\_0x1055AC3A667F09D9).
+--- @usage local weaponAnimation = GetWeaponAnimationOverride(PlayerPedId()
+--- @hash [0x63ED2E7](https://docs.fivem.net/natives/?_0x63ED2E7)
+--- @param ped Ped
+--- @return Hash
+--- @overload fun(ped: Ped): Hash
+function GetWeaponAnimationOverride(ped) end
 
     
 --- Returns the effective handling data of a vehicle as a floating-point value.
@@ -1742,6 +1794,28 @@ function GetVehicleIndicatorLights(vehicle) end
 function GetPlayerVehicleDefenseModifier(playerId) end
 
     
+--- SetInteriorPortalEntityFlag
+--- @usage local playerPed = PlayerPedId()
+--- local interiorId = GetInteriorFromEntity(playerPed)
+--- local portalIndex = 0
+--- 
+--- if interiorId ~= 0 then
+---   local count = GetInteriorPortalEntityCount(interiorId, portalIndex)
+---   for i=0, count-1 do
+---     SetInteriorPortalEntityFlag(interiorId, portalIndex, i, 0)
+---   end
+---   RefreshInterior(interiorId)
+--- en
+--- @hash [0x8349CD76](https://docs.fivem.net/natives/?_0x8349CD76)
+--- @param interiorId number (int)
+--- @param portalIndex number (int)
+--- @param entityIndex number (int)
+--- @param flag number (int)
+--- @return void
+--- @overload fun(interiorId: number, portalIndex: number, entityIndex: number, flag: number): void
+function SetInteriorPortalEntityFlag(interiorId, portalIndex, entityIndex, flag) end
+
+    
 --- MumbleGetTalkerProximity
 ---
 --- @hash [0x84E02A32](https://docs.fivem.net/natives/?_0x84E02A32)
@@ -2044,6 +2118,27 @@ function GetVehicleTopSpeedModifier(vehicle) end
 function GetTrainDoorCount(train) end
 
     
+--- GetInteriorPortalEntityArchetype
+--- @usage local playerPed = PlayerPedId()
+--- local interiorId = GetInteriorFromEntity(playerPed)
+--- local portalIndex = 0
+--- 
+--- if interiorId ~= 0 then
+---   local count = GetInteriorPortalEntityCount(interiorId, portalIndex)
+---   for i=0, count-1 do
+---     local archetype = GetInteriorPortalEntityArchetype(interiorId, portalIndex, i)
+---     print("portal " .. portalIndex .." entity " .. i .. " archetype is: " .. archetype)
+---   end
+--- en
+--- @hash [0x9A0E1700](https://docs.fivem.net/natives/?_0x9A0E1700)
+--- @param interiorId number (int)
+--- @param portalIndex number (int)
+--- @param entityIndex number (int)
+--- @return number
+--- @overload fun(interiorId: number, portalIndex: number, entityIndex: number): number
+function GetInteriorPortalEntityArchetype(interiorId, portalIndex, entityIndex) end
+
+    
 --- Sets a floating-point parameter for a submix effect.
 ---
 --- @hash [0x9A209B3C](https://docs.fivem.net/natives/?_0x9A209B3C)
@@ -2065,6 +2160,27 @@ function SetAudioSubmixEffectParamFloat(submixId, effectSlot, paramIndex, paramV
 function GetVehicleDashboardSpeed(vehicle) end
 
     
+--- GetInteriorPortalEntityPosition
+--- @usage local playerPed = PlayerPedId()
+--- local interiorId = GetInteriorFromEntity(playerPed)
+--- local portalIndex = 0
+--- 
+--- if interiorId ~= 0 then
+---   local count = GetInteriorPortalEntityCount(interiorId, portalIndex)
+---   for i=0, count-1 do
+---     local x, y, z = GetInteriorPortalEntityPosition(interiorId, portalIndex, i)
+---     print("portal " .. portalIndex .." entity " .. i .. " position is: " .. vec3(x, y, z))
+---   end
+--- en
+--- @hash [0x9B7AB83C](https://docs.fivem.net/natives/?_0x9B7AB83C)
+--- @param interiorId number (int)
+--- @param portalIndex number (int)
+--- @param entityIndex number (int)
+--- @return number, number, number
+--- @overload fun(interiorId: number, portalIndex: number, entityIndex: number): number, number, number
+function GetInteriorPortalEntityPosition(interiorId, portalIndex, entityIndex) end
+
+    
 --- Returns vehicle's wheels' width (width is the same for all the wheels, cannot get/set specific wheel of vehicle).
 --- Only works on non-default wheels (returns 0 in case of default wheels).
 ---
@@ -2082,6 +2198,48 @@ function GetVehicleWheelWidth(vehicle) end
 --- @return string
 --- @overload fun(entity: Entity): string
 function ExperimentalSaveCloneCreate(entity) end
+
+    
+--- GetInteriorPortalEntityFlag
+--- @usage local playerPed = PlayerPedId()
+--- local interiorId = GetInteriorFromEntity(playerPed)
+--- local portalIndex = 0
+--- 
+--- if interiorId ~= 0 then
+---   local count = GetInteriorPortalEntityCount(interiorId, portalIndex)
+---   for i=0, count-1 do
+---     local flag = GetInteriorPortalEntityFlag(interiorId, portalIndex, i)
+---     print("portal " .. portalIndex .." entity " .. i .. " flag is: " .. flag)
+---   end
+--- en
+--- @hash [0x9DA2E811](https://docs.fivem.net/natives/?_0x9DA2E811)
+--- @param interiorId number (int)
+--- @param portalIndex number (int)
+--- @param entityIndex number (int)
+--- @return number
+--- @overload fun(interiorId: number, portalIndex: number, entityIndex: number): number
+function GetInteriorPortalEntityFlag(interiorId, portalIndex, entityIndex) end
+
+    
+--- GetInteriorPortalEntityRotation
+--- @usage local playerPed = PlayerPedId()
+--- local interiorId = GetInteriorFromEntity(playerPed)
+--- local portalIndex = 0
+--- 
+--- if interiorId ~= 0 then
+---   local count = GetInteriorPortalEntityCount(interiorId, portalIndex)
+---   for i=0, count-1 do
+---     local x, y, z, w = GetInteriorPortalEntityRotation(interiorId, portalIndex, i)
+---     print("portal " .. portalIndex .." entity " .. i .. " rotation is: " .. vec4(x, y, z, w))
+---   end
+--- en
+--- @hash [0x9F9CEB63](https://docs.fivem.net/natives/?_0x9F9CEB63)
+--- @param interiorId number (int)
+--- @param portalIndex number (int)
+--- @param entityIndex number (int)
+--- @return number, number, number, number
+--- @overload fun(interiorId: number, portalIndex: number, entityIndex: number): number, number, number, number
+function GetInteriorPortalEntityRotation(interiorId, portalIndex, entityIndex) end
 
     
 --- Destroys a DUI browser.
@@ -2342,6 +2500,15 @@ function AddAudioSubmixOutput(submixId, outputSubmixId) end
 --- @return string
 --- @overload fun(): string
 function GetCurrentGameName() end
+
+    
+--- A getter for `CameraHash` in a weapon scope component.
+---
+--- @hash [0xACB7E68F](https://docs.fivem.net/natives/?_0xACB7E68F)
+--- @param componentHash Hash
+--- @return number
+--- @overload fun(componentHash: Hash): number
+function GetWeaponComponentCameraHash(componentHash) end
 
     
 --- Registers a specified font name for use with text draw commands.
@@ -2659,6 +2826,32 @@ function SetVehicleWheelPower(vehicle, wheelIndex, power) end
 function GetVehicleAlarmTimeLeft(vehicle) end
 
     
+--- GetInteriorPortalEntityCount
+--- @usage local playerPed = PlayerPedId()
+--- local interiorId = GetInteriorFromEntity(playerPed)
+--- local portalIndex = 0
+--- 
+--- if interiorId ~= 0 then
+---   local count = GetInteriorPortalEntityCount(interiorId, portalIndex)
+---   print("portal " .. portalIndex .." entity count is: " .. count)
+--- en
+--- @hash [0xC68021B](https://docs.fivem.net/natives/?_0xC68021B)
+--- @param interiorId number (int)
+--- @param portalIndex number (int)
+--- @return number
+--- @overload fun(interiorId: number, portalIndex: number): number
+function GetInteriorPortalEntityCount(interiorId, portalIndex) end
+
+    
+--- A getter for `CWeaponAccuracyModifier` in a weapon component.
+---
+--- @hash [0xC693E278](https://docs.fivem.net/natives/?_0xC693E278)
+--- @param componentHash Hash
+--- @return number
+--- @overload fun(componentHash: Hash): number
+function GetWeaponComponentAccuracyModifier(componentHash) end
+
+    
 --- SetVehicleWheelYRotation
 ---
 --- @hash [0xC6C2171F](https://docs.fivem.net/natives/?_0xC6C2171F)
@@ -2694,6 +2887,15 @@ function SetVehicleWheelXrot(vehicle, wheelIndex, value) end
 function GetVehicleWheelFlags(vehicle, wheelIndex) end
 
     
+--- Returns vehicle xenon lights custom RGB color values. Do note this native doesn't return non-RGB colors that was set with [\_SET_VEHICLE_XENON_LIGHTS_COLOR](https://docs.fivem.net/natives/?_0xE41033B25D003A07).
+---
+--- @hash [0xC715F730](https://docs.fivem.net/natives/?_0xC715F730)
+--- @param vehicle Vehicle
+--- @return boolean, number, number, number
+--- @overload fun(vehicle: Vehicle): boolean, number, number, number
+function GetVehicleXenonLightsCustomColor(vehicle) end
+
+    
 --- GetInteriorPortalFlag
 --- @usage local playerPed = PlayerPedId()
 --- local interiorId = GetInteriorFromEntity(playerPed)
@@ -2717,6 +2919,31 @@ function GetInteriorPortalFlag(interiorId, portalIndex) end
 --- @return void
 --- @overload fun(channel: number): void
 function MumbleAddVoiceChannelListen(channel) end
+
+    
+--- Converts a screen coordinate into its relative world coordinate.
+--- @usage CreateThread(function()
+---   while true do
+---     local screenX = GetDisabledControlNormal(0, 239)
+---     local screenY = GetDisabledControlNormal(0, 240)
+--- 
+---     local world, normal = GetWorldCoordFromScreenCoord(screenX, screenY)
+--- 
+---     local depth = 10
+--- 
+---     local target = world + normal * depth
+--- 
+---     DrawSphere(target.x, target.y, target.z, 0.5, 255, 0, 0, 0.5)
+--- 
+---     Wait(0)
+---   end
+--- end
+--- @hash [0xC81D0659](https://docs.fivem.net/natives/?_0xC81D0659)
+--- @param screenX number (float)
+--- @param screenY number (float)
+--- @return Vector3, Vector3
+--- @overload fun(screenX: number, screenY: number): Vector3, Vector3
+function GetWorldCoordFromScreenCoord(screenX, screenY) end
 
     
 --- Gets the width of the specified runtime texture.
@@ -2940,6 +3167,30 @@ function SetTrainsForceDoorsOpen(forceOpen) end
 function SetMpGamerTagsVisibleDistance(distance) end
 
     
+--- Returns all registered vehicle model names, including non-dlc vehicles and custom vehicles in no particular order.
+--- 
+--- **Example output**
+--- 
+--- ```
+--- 	["dubsta", "dubsta2", "dubsta3", "myverycoolcar", "sultan", "sultanrs", ...]
+--- ```
+--- 
+--- This native will not return vehicles that are unregistered (i.e from a resource being stopped) during runtime.
+--- @usage RegisterCommand("spawnrandomcar", function()
+--- 	local vehicles = GetAllVehicleModels()
+--- 	local veh = vehicles[math.random(1, #vehicles)]
+--- 	RequestModel(veh)
+--- 	repeat Wait(0) until HasModelLoaded(veh)
+--- 	local veh = CreateVehicle(veh, GetEntityCoords(PlayerPedId()), GetEntityHeading(PlayerPedId()), true, false)
+--- 	SetPedIntoVehicle(PlayerPedId(), veh, -1)
+--- end
+--- @hash [0xD7531645](https://docs.fivem.net/natives/?_0xD7531645)
+---
+--- @return table
+--- @overload fun(): table
+function GetAllVehicleModels() end
+
+    
 --- Registers a key mapping for the current resource.
 --- 
 --- See the related [cookbook post](https://cookbook.fivem.net/2020/01/06/using-the-new-console-key-bindings/) for more information.
@@ -3079,6 +3330,24 @@ function GetVehicleWheelTireColliderSize(vehicle, wheelIndex) end
 --- @return number
 --- @overload fun(interiorId: number, roomHash: number): number
 function GetInteriorRoomIndexByHash(interiorId, roomHash) end
+
+    
+--- A getter for `CWeaponFallOffModifier` damage modifier value in a weapon component.
+---
+--- @hash [0xE134FB8D](https://docs.fivem.net/natives/?_0xE134FB8D)
+--- @param componentHash Hash
+--- @return number
+--- @overload fun(componentHash: Hash): number
+function GetWeaponComponentRangeDamageModifier(componentHash) end
+
+    
+--- A getter for `ClipSize` in a weapon component.
+---
+--- @hash [0xE14CF665](https://docs.fivem.net/natives/?_0xE14CF665)
+--- @param componentHash Hash
+--- @return number
+--- @overload fun(componentHash: Hash): number
+function GetWeaponComponentClipSize(componentHash) end
 
     
 --- GetPlayerStamina
@@ -3234,6 +3503,15 @@ function DrawGizmo(matrixPtr, id) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, scale: number): void
 function SetVehicleSteeringScale(vehicle, scale) end
+
+    
+--- A getter for [FREEZE_ENTITY_POSITION](https://docs.fivem.net/natives/?_0x428CA6DBD1094446).
+--- @usage local isFrozen = IsEntityPositionFrozen(PlayerPedId()
+--- @hash [0xEDBE6ADD](https://docs.fivem.net/natives/?_0xEDBE6ADD)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function IsEntityPositionFrozen(entity) end
 
     
 --- GetVehicleNumberOfWheels
@@ -3434,6 +3712,15 @@ function IsVehiclePreviouslyOwnedByPlayer(vehicle) end
 --- @return boolean
 --- @overload fun(vehicle: Vehicle): boolean
 function IsVehicleNeedsToBeHotwired(vehicle) end
+
+    
+--- A getter for `ReticuleHash` in a weapon scope component.
+---
+--- @hash [0xF9AB9297](https://docs.fivem.net/natives/?_0xF9AB9297)
+--- @param componentHash Hash
+--- @return number
+--- @overload fun(componentHash: Hash): number
+function GetWeaponComponentReticuleHash(componentHash) end
 
     
 --- GetInteriorRoomExtents

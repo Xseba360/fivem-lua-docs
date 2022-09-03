@@ -695,15 +695,24 @@ function IsSwitchSkippingDescent() end
 function DestroyPlayerInPauseMenu() end
 
     
---- ```
---- SET_PLAYER_*
---- ```
+--- SetPlayerShortSwitchStyle
 ---
 --- @hash [0x5F2013F8BC24EE69](https://docs.fivem.net/natives/?_0x5F2013F8BC24EE69)
---- @param p0 number (int)
+--- @param style number (int)
 --- @return void
---- @overload fun(p0: number): void
-function N_0x5f2013f8bc24ee69(p0) end
+--- @overload fun(style: number): void
+function SetPlayerShortSwitchStyle(style) end
+
+    
+--- # New Name: SetPlayerShortSwitchStyle
+--- SetPlayerShortSwitchStyle
+---
+--- @hash [0x5F2013F8BC24EE69](https://docs.fivem.net/natives/?_0x5F2013F8BC24EE69)
+--- @param style number (int)
+--- @return void
+--- @overload fun(style: number): void
+--- @deprecated
+function N_0x5f2013f8bc24ee69(style) end
 
     
 --- RemoveNamedPtfxAsset
