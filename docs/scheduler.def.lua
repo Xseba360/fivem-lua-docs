@@ -156,14 +156,14 @@ end
 
 --- TriggerClientEvent
 --- @param eventName string
---- @param playerId Player
+--- @param playerId -1|Player
 --- @vararg any
 function TriggerClientEvent(eventName, playerId, ...)
 end
 
 --- TriggerClientEvent
 --- @param eventName string
---- @param playerId Player
+--- @param playerId -1|Player
 --- @param bps number
 --- @vararg any
 function TriggerLatentClientEvent(eventName, playerId, bps, ...)
