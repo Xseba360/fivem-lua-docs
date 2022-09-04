@@ -180,6 +180,7 @@ export class Types {
       case '{name: string}[]':
       case '{doorHash: Hash, doorHandle: number}[]':
       case 'number[]':
+      case 'string[]':
       case 'RegisteredCommandInfo[]':
         // don't touch these values and just return them
         lType = type

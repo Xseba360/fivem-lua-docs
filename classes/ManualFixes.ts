@@ -57,6 +57,10 @@ export class ManualFixes {
         // GetAllVehicles() should only be used on server, on client GetGamePool() should be used.
         return false
 
+      case `0xD7531645`:
+        methodObj.results = 'string[]'
+        break
+
       case '0x760A2D67':
         methodObj.results = 'number[]'
         break
