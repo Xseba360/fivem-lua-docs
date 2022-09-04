@@ -7390,7 +7390,6 @@ function GetVehicleLockOnTarget(vehicle, entity) end
 --- @param entity Entity (Entity*)
 --- @return boolean
 --- @overload fun(vehicle: Vehicle): Vehicle
---- @overload fun(vehicle: Vehicle): boolean, Entityfun(vehicle: Vehicle): Vehicle
 --- @overload fun(vehicle: Vehicle): boolean, Entity
 --- @deprecated
 function GetVehicleOwner(vehicle, entity) end
