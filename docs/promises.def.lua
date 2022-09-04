@@ -37,10 +37,7 @@ local function p ()
     return self
 end
 
----@class PromiseFactory
+---@class promiseFactory
+---@field new fun():promise<any>
 promise = {
-    --- @return promise<any>
-    new = function()
-        return p()
-    end
 }
