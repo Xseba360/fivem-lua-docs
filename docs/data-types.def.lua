@@ -74,13 +74,10 @@ local Vector4
 --- @field public w number
 local Quat
 
+
 --- @shape EventHandlerData
 --- @field key number
 --- @field name string
 
-
 --- @shape RegisteredCommandInfo
 --- @field name string
-
-
-

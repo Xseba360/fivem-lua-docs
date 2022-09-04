@@ -19,6 +19,22 @@ declare const enum PrimitiveTypes {
   TABLE = 'table',
 }
 
+declare const enum DocTypes {
+  ARRAY = '[]',
+  CAM = 'Cam',
+  ENTITY = 'Entity',
+  PLAYER = 'Player',
+  VEHICLE = 'Vehicle',
+  PED = 'Ped',
+  OBJECT = 'Object',
+  PICKUP = 'Pickup',
+  FIRE_ID = 'FireId',
+  BLIP = 'Blip',
+  HASH = 'Hash',
+  SCR_HANDLE = 'ScrHandle',
+  FUNCTION = 'fun',
+}
+
 
 declare type FoundName = {
   overload: string

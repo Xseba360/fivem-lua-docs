@@ -52,7 +52,7 @@ jobs:
           Changes in this Release
           - build date  ${{ env.NOW }}
           - based on 
-          - * https://runtime.fivem.net/doc/natives_cfx.json
-          - * https://runtime.fivem.net/doc/natives.json
+            * https://runtime.fivem.net/doc/natives_cfx.json
+            * https://runtime.fivem.net/doc/natives.json
         draft: false
         prerelease: false 
