@@ -58,6 +58,7 @@ local Vector3
 --- @field public x number
 --- @field public y number
 --- @field public z number
+--- @field public w number
 --- @field public xy Vector2
 --- @field public xz Vector2
 --- @field public yx Vector2
