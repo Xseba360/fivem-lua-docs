@@ -1,82 +1,86 @@
----@class Cam
-local Cam = {};
+---This is temporary until Luanalysis decides to support Lua5.4's undef.
+---See here for more info: http://lua-users.org/lists/lua-l/2018-03/msg00155.html
+---@type nil
+undef = nil
 
----@class Entity
-local Entity = {};
+--- @class Cam
+local Cam = {}
 
----@class Player : Entity
-local Player = {};
+--- @class Entity
+local Entity = {}
 
----@class Vehicle : Entity
-local Vehicle = {};
+--- @class Player : Entity
+local Player = {}
 
----@class Ped : Entity
-local Ped = {};
+--- @class Vehicle : Entity
+local Vehicle = {}
 
----@class Object : Entity
-local Object = {};
+--- @class Ped : Entity
+local Ped = {}
 
----@class Pickup : Entity
-local Pickup = {};
+--- @class Object : Entity
+local Object = {}
 
----@class FireId : Entity
-local FireId = {};
+--- @class Pickup : Entity
+local Pickup = {}
 
----@class Blip
-local Blip = {};
+--- @class FireId : Entity
+local FireId = {}
 
----@class Hash
-local Hash = {};
+--- @class Blip
+local Blip = {}
 
----@class ScrHandle
-local ScrHandle = {};
+--- @class Hash
+local Hash = {}
 
----@class Vector2
----@field public x number
----@field public y number
----@field public xy Vector2
+--- @class ScrHandle
+local ScrHandle = {}
+
+--- @class Vector2
+--- @field public x number
+--- @field public y number
+--- @field public xy Vector2
 local Vector2
 
-
----@class Vector3
----@field public x number
----@field public y number
----@field public z number
----@field public xy Vector2
----@field public xz Vector2
----@field public yx Vector2
----@field public yz Vector2
----@field public zx Vector2
----@field public zy Vector2
+--- @class Vector3
+--- @field public x number
+--- @field public y number
+--- @field public z number
+--- @field public xy Vector2
+--- @field public xz Vector2
+--- @field public yx Vector2
+--- @field public yz Vector2
+--- @field public zx Vector2
+--- @field public zy Vector2
 local Vector3
 
----@class Vector4
----@field public x number
----@field public y number
----@field public z number
----@field public xy Vector2
----@field public xz Vector2
----@field public yx Vector2
----@field public yz Vector2
----@field public zx Vector2
----@field public zy Vector2
----@field public xyz Vector3
+--- @class Vector4
+--- @field public x number
+--- @field public y number
+--- @field public z number
+--- @field public xy Vector2
+--- @field public xz Vector2
+--- @field public yx Vector2
+--- @field public yz Vector2
+--- @field public zx Vector2
+--- @field public zy Vector2
+--- @field public xyz Vector3
 local Vector4
 
----@class Quat
----@field public x number
----@field public y number
----@field public z number
----@field public w number
+--- @class Quat
+--- @field public x number
+--- @field public y number
+--- @field public z number
+--- @field public w number
 local Quat
 
----@shape EventHandlerData
----@field key number
----@field name string
+--- @shape EventHandlerData
+--- @field key number
+--- @field name string
 
 
----@shape RegisteredCommandInfo
----@field name string
+--- @shape RegisteredCommandInfo
+--- @field name string
 
 
 

@@ -5,7 +5,8 @@ process.env.FORCE_COLOR = String(true)
 
 const fs = require('fs')
 
-const nativeUrl = 'https://docs.fivem.net/natives/?_'
+const OUTPUT_DIR = 'docs-gen/'
+const NATIVE_URL = 'https://docs.fivem.net/natives/?_'
 
 // Grav provided args.
 const [, , ...args] = process.argv
@@ -202,7 +203,7 @@ function parseType (type: string, isReturn: boolean, hash: string): string {
       lType = type = 'fun'
       break
     case 'object':
-      console.info(`\x1b[46m\x1b[30mINFO:\x1b[0m \x1b[36mFound a generic object type ${type} in hash ${hash}\x1b[0m -> ${nativeUrl}${hash}`)
+      console.info(`\x1b[46m\x1b[30mINFO:\x1b[0m \x1b[36mFound a generic object type ${type} in hash ${hash}\x1b[0m -> ${NATIVE_URL}${hash}`)
       lType = PrimitiveTypes.TABLE
       break
 
@@ -380,7 +381,7 @@ function parseExamples (examples: NativeDeclarationExample[]): string {
   let result = ''
   examples.forEach(example => {
     if (example.lang === 'lua') {
-      example.code = example.code.replaceAll('](#\\_0x', `](${nativeUrl}0x`)
+      example.code = example.code.replaceAll('](#\\_0x', `](${NATIVE_URL}0x`)
       result += '--- @usage ' + example.code.replace(/\n/g, '\n--- ')
     }
   })
@@ -388,7 +389,7 @@ function parseExamples (examples: NativeDeclarationExample[]): string {
 }
 
 function parseDescription (name: string, desc: string) {
-  desc = desc.replaceAll('](#\\_0x', `](${nativeUrl}0x`)
+  desc = desc.replaceAll('](#\\_0x', `](${NATIVE_URL}0x`)
   return '--- ' + (desc.length > 0 ? desc.replace(/\n/g, '\n--- ') : name)
 }
 
@@ -544,7 +545,7 @@ function parseMethod (methodObj: NativeDeclaration): ParsedMethod[]|null {
     content: `
 ${description}
 ${examples}
---- @hash [${hash}](${nativeUrl}${hash})
+--- @hash [${hash}](${NATIVE_URL}${hash})
 ${params}
 --- @return ${results}
 --- @overload ${overload}
@@ -561,7 +562,7 @@ function ${name}(${paramsMethod}) end
 --- # New Name: ${name}
 ${description}
 ${examples}
---- @hash [${hash}](${nativeUrl}${hash})
+--- @hash [${hash}](${NATIVE_URL}${hash})
 ${params}
 --- @return ${results}
 --- @overload ${overload}${manualOverload}
@@ -589,15 +590,15 @@ function parse (key: string, methodObj: NativeDeclaration) {
     }
   }
 }
+const savedFileNames = new Set<string>()
 
 function write (fileName: string, contents) {
-  fs.writeFile('docs-gen/' + fileName + '.def.lua', contents, (err) => {
-    // throws an error, you could also catch it here
-    if (err) throw err
+  const fileNameExt = fileName + '.def.lua'
+  fs.writeFileSync(OUTPUT_DIR + fileNameExt, contents)
 
-    // success case, the file was saved
-    console.log(fileName + ' saved!')
-  })
+  // success case, the file was saved
+  console.log(fileName + ' saved!')
+  savedFileNames.add(fileNameExt)
 }
 
 args.forEach(file => {
@@ -617,5 +618,11 @@ for (const api in files) {
     write(api + '-' + namespace, files[api][namespace])
   }
 }
-
-
+fs.readdirSync(OUTPUT_DIR).forEach(file => {
+  if (!savedFileNames.has(file)) {
+    if (file.split('.').filter(Boolean).slice(1).join('.') == 'def.lua') {
+      fs.unlinkSync(OUTPUT_DIR+file)
+      console.info(`\x1b[46m\x1b[30mINFO:\x1b[0m \x1b[36m${file} is no longer needed, removing!`)
+    }
+  }
+});

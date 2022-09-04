@@ -46,8 +46,8 @@ function shared_scripts (shared_scripts) end
 ---@param export string
 function export (export) end
 
-
---[[---@param exports string[]
+--[[todo: conflicts with the function for calling the resource exports, find a way around this
+---@param exports string[]
 function exports (exports) end]]
 
 ---@param server_export string

@@ -4,10 +4,11 @@
 --- @param z number
 --- @param w number
 --- @return Vector4
----@overload fun(x: number): number
----@overload fun(x: number, y: number): Vector2
----@overload fun(x: number, y: number, z: number): Vector3
-function vec(x, y, z, w) end
+--- @overload fun(x: number): number
+--- @overload fun(x: number, y: number): Vector2
+--- @overload fun(x: number, y: number, z: number): Vector3
+function vec(x, y, z, w)
+end
 
 --- Creates a new vector2 value.
 --- In FiveM's Lua runtime, vectors are real data types, just like numbers, booleans and strings are. This means that type(vector2(1, 2)) will return vector2. More about this in the Lua runtime manual.
@@ -88,9 +89,8 @@ function vec(x, y, z, w) end
 --- @param x number
 --- @param y number
 --- @return Vector2
-function vector2(x, y) end
-
-
+function vector2(x, y)
+end
 
 --- Creates a new vector3 value.
 --- In FiveM's Lua runtime, vectors are real data types, just like numbers, booleans and strings are. This means that type(vector3(1, 2, 3)) will return vector3. More about this in the Lua runtime manual.
@@ -184,7 +184,8 @@ function vector2(x, y) end
 --- @param y number
 --- @param z number
 --- @return Vector3
-function vector3(x, y, z) end
+function vector3(x, y, z)
+end
 
 --- Creates a new vector4 value.
 --- In FiveM's Lua runtime, vectors are real data types, just like numbers, booleans and strings are. This means that type(vector4(1, 2, 3, 4)) will return vector4. More about this in the Lua runtime manual.
@@ -267,9 +268,8 @@ function vector3(x, y, z) end
 --- @param z number
 --- @param w number
 --- @return Vector4
-function vec(x, y, z, w) end
-
-
+function vec(x, y, z, w)
+end
 
 --- Creates a new vector4 value.
 --- In FiveM's Lua runtime, vectors are real data types, just like numbers, booleans and strings are. This means that type(vector4(1, 2, 3, 4)) will return vector4. More about this in the Lua runtime manual.
@@ -352,28 +352,27 @@ function vec(x, y, z, w) end
 --- @param z number
 --- @param w number
 --- @return Vector4
-function vector4(x, y, z, w) end
+function vector4(x, y, z, w)
+end
 
-
----Normalize a vector
+--- Normalize a vector
 ---
----@param vector Vector2
----@return Vector2
----@overload fun(vector: Vector3):Vector3
----@overload fun(vector: Vector4):Vector4
+--- @param vector Vector2
+--- @return Vector2
+--- @overload fun(vector: Vector3):Vector3
+--- @overload fun(vector: Vector4):Vector4
 function norm(vector)
 end
 
-
----Creates a new quaternion. Quaternions are incredibly useful to represent and calculate rotations in 3D world space. Unlike the more common euler angles, quaternions are immune to gimbal lock and are therefore much more suitable for transforming rotations.
----In FiveM's Lua runtime, quaternions are real data types, just like numbers, booleans and strings are. This means that type(quat(1, 0, 0, 0)) will return quat. More about this in the Lua runtime manual.
----If you're looking for a good way to visualize quaternions, try https://quaternions.online.
----@param w number
----@param x number
----@param y number
----@param z number
----@return Quat
----@overload fun(w: number, vec: Vector3):Quat
----@overload fun(vec1: Vector3, vec2: Vector3):Quat
-function quat(w, x, y, z) end
-
+--- Creates a new quaternion. Quaternions are incredibly useful to represent and calculate rotations in 3D world space. Unlike the more common euler angles, quaternions are immune to gimbal lock and are therefore much more suitable for transforming rotations.
+--- In FiveM's Lua runtime, quaternions are real data types, just like numbers, booleans and strings are. This means that type(quat(1, 0, 0, 0)) will return quat. More about this in the Lua runtime manual.
+--- If you're looking for a good way to visualize quaternions, try https://quaternions.online.
+--- @param w number
+--- @param x number
+--- @param y number
+--- @param z number
+--- @return Quat
+--- @overload fun(w: number, vec: Vector3):Quat
+--- @overload fun(vec1: Vector3, vec2: Vector3):Quat
+function quat(w, x, y, z)
+end

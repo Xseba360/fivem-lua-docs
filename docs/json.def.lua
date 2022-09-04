@@ -1,3 +1,12 @@
+--[[ Example Usage with the JsonString generic
+
+-- Will be: JsonString<Ped[]>
+local pedListString = json.encode(GetGamePool('CPed'))
+
+-- Will be: Ped[]
+local pedList = json.decode(pedListString)
+]]
+
 ---@shape JsonEncodeOptions
 ---@field indent boolean|nil
 

@@ -12196,7 +12196,7 @@ function SetMinimapRevealed(toggle) end
 --- @usage -- creates a blip called 'Food for me!' at 0.0, 0.0, 0.0
 --- AddTextEntry('MYBLIP', 'Food for ~a~!')
 --- 
---- local blip = AddBlipForCoords(0.0, 0.0, 0.0)
+--- local blip = AddBlipForCoord(0.0, 0.0, 0.0)
 --- BeginTextCommandSetBlipName('MYBLIP')
 --- AddTextComponentSubstringPlayerName('me')
 --- EndTextCommandSetBlipName(blip

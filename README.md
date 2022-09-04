@@ -1,5 +1,10 @@
 # fivem-lua-docs
 
+![Build Status](https://github.com/Xseba360/fivem-lua-docs/actions/workflows/create-docs-and-release.yml/badge.svg)
+![GitHub last commit](https://img.shields.io/github/last-commit/Xseba360/fivem-lua-docs)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/Xseba360/fivem-lua-docs)
+![GitHub](https://img.shields.io/github/license/Xseba360/fivem-lua-docs)
+
 Originally created by [SnakeSVx](https://github.com/SnakeSVx/fivem-lua-docs).
 
 Lua file reference for use with [Luanalysis](https://github.com/Benjamin-Dobell/IntelliJ-Luanalysis), a plugin for

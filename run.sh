@@ -3,7 +3,7 @@
 wget https://runtime.fivem.net/doc/natives_cfx.json
 wget https://runtime.fivem.net/doc/natives.json
 
-mkdir docs
+mkdir -p docs-gen
 
 node cli.js natives.json natives_cfx.json
 
