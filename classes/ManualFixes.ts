@@ -19,6 +19,9 @@ export class ManualFixes {
       case 'NetworkFadeInEntity':
         overload = 'fun(entity: Entity, state: boolean, slow: boolean): void'
         break
+      case 'GetInteriorRoomIndexByHash':
+        overload = 'fun(interiorId: number, roomHash: Hash): number'
+        break
       case 'SetResourceKvp':
         overload = 'fun(key: string, value: string|JsonString<any>): void'
         break
