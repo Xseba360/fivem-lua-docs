@@ -3186,8 +3186,8 @@ function SetMpGamerTagsVisibleDistance(distance) end
 --- end
 --- @hash [0xD7531645](https://docs.fivem.net/natives/?_0xD7531645)
 ---
---- @return table
---- @overload fun(): table
+--- @return string[]
+--- @overload fun(): string[]
 function GetAllVehicleModels() end
 
     
@@ -3328,7 +3328,7 @@ function GetVehicleWheelTireColliderSize(vehicle, wheelIndex) end
 --- @param interiorId number (int)
 --- @param roomHash number (int)
 --- @return number
---- @overload fun(interiorId: number, roomHash: number): number
+--- @overload fun(interiorId: number, roomHash: Hash): number
 function GetInteriorRoomIndexByHash(interiorId, roomHash) end
 
     

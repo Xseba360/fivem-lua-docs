@@ -9,5 +9,4 @@
 --- @overload fun(entity: Entity): Vector3
 function GetEntityCoords(entity, alive) end
 
-
-
+    
