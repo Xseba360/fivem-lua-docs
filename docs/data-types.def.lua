@@ -1,8 +1,3 @@
----This is temporary until Luanalysis decides to support Lua5.4's undef.
----See here for more info: http://lua-users.org/lists/lua-l/2018-03/msg00155.html
----@type nil
-undef = nil
-
 --- @class Cam
 local Cam = {}
 
@@ -30,8 +25,7 @@ local FireId = {}
 --- @class Blip
 local Blip = {}
 
---- @class Hash
-local Hash = {}
+--- @alias Hash number
 
 --- @class ScrHandle
 local ScrHandle = {}
@@ -75,6 +69,59 @@ local Vector4
 --- @field public w number
 local Quat
 
+--- @shape Matrix2x2
+--- @field public [1] Vector2
+--- @field public [2] Vector2
+local Matrix2x2
+
+--- @shape Matrix3x2
+--- @field public [1] Vector2
+--- @field public [2] Vector2
+--- @field public [3] Vector2
+local Matrix3x2
+
+--- @shape Matrix4x2
+--- @field public [1] Vector2
+--- @field public [2] Vector2
+--- @field public [3] Vector2
+--- @field public [4] Vector2
+local Matrix4x2
+
+--- @shape Matrix2x3
+--- @field public [1] Vector3
+--- @field public [2] Vector3
+local Matrix2x3
+
+--- @shape Matrix3x3
+--- @field public [1] Vector3
+--- @field public [2] Vector3
+--- @field public [3] Vector3
+local Matrix3x3
+
+--- @shape Matrix4x3
+--- @field public [1] Vector3
+--- @field public [2] Vector3
+--- @field public [3] Vector3
+--- @field public [4] Vector3
+local Matrix4x3
+
+--- @shape Matrix2x4
+--- @field public [1] Vector4
+--- @field public [2] Vector4
+local Matrix2x4
+
+--- @shape Matrix3x4
+--- @field public [1] Vector4
+--- @field public [2] Vector4
+--- @field public [3] Vector4
+local Matrix3x4
+
+--- @shape Matrix4x4
+--- @field public [1] Vector4
+--- @field public [2] Vector4
+--- @field public [3] Vector4
+--- @field public [4] Vector4
+local Matrix4x4
 
 --- @shape EventHandlerData
 --- @field key number
