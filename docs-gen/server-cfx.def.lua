@@ -364,6 +364,24 @@ function SetPlayerRoutingBucket(playerSrc, bucket) end
 function GetAllObjects() end
 
     
+--- Equivalent to CREATE_VEHICLE, but it uses 'server setter' logic (like the former CREATE_AUTOMOBILE) as a workaround for
+--- reliability concerns regarding entity creation RPC.
+--- 
+--- Unlike CREATE_AUTOMOBILE, this supports other vehicle types as well.
+--- @usage local heli = CreateVehicleServerSetter(`seasparrow`, 'heli', GetEntityCoords(GetPlayerPed(GetPlayers()[1])) + vector3(0, 0, 15), 0.0)
+--- print(GetEntityCoords(heli)) -- should return correct coordinate
+--- @hash [0x6AE51D4B](https://docs.fivem.net/natives/?_0x6AE51D4B)
+--- @param modelHash Hash
+--- @param type string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param heading number (float)
+--- @return Vehicle
+--- @overload fun(modelHash: Hash, type: string, x: number, y: number, z: number, heading: number): Vehicle
+function CreateVehicleServerSetter(modelHash, type, x, y, z, heading) end
+
+    
 --- PerformHttpRequestInternalEx
 ---
 --- @hash [0x6B171E87](https://docs.fivem.net/natives/?_0x6B171E87)

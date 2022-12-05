@@ -172,6 +172,15 @@ function SetVehicleXenonLightsCustomColor(vehicle, red, green, blue) end
 function SetManualShutdownLoadingScreenNui(manualShutdown) end
 
     
+--- GetVehicleDashboardFuel
+---
+--- @hash [0x19B0B2CE](https://docs.fivem.net/natives/?_0x19B0B2CE)
+---
+--- @return number
+--- @overload fun(): number
+function GetVehicleDashboardFuel() end
+
+    
 --- Commits the backing pixels to the specified runtime texture.
 ---
 --- @hash [0x19D81F4E](https://docs.fivem.net/natives/?_0x19D81F4E)
@@ -241,6 +250,15 @@ function GetVehicleClutch(vehicle) end
 --- @return number
 --- @overload fun(name: string): number
 function CreateRuntimeTxd(name) end
+
+    
+--- GetVehicleDashboardOilTemp
+---
+--- @hash [0x1F5996AA](https://docs.fivem.net/natives/?_0x1F5996AA)
+---
+--- @return number
+--- @overload fun(): number
+function GetVehicleDashboardOilTemp() end
 
     
 --- SetVehicleHighGear
@@ -715,6 +733,15 @@ function SetVehicleWheelRotationSpeed(vehicle, wheelIndex, speed) end
 function SetMillisecondsPerGameMinute(value) end
 
     
+--- GetVehicleDashboardOilPressure
+---
+--- @hash [0x3856D767](https://docs.fivem.net/natives/?_0x3856D767)
+---
+--- @return number
+--- @overload fun(): number
+function GetVehicleDashboardOilPressure() end
+
+    
 --- This native is not implemented.
 ---
 --- @hash [0x38D19210](https://docs.fivem.net/natives/?_0x38D19210)
@@ -1093,6 +1120,25 @@ function FindNextObject(findHandle, outEntity) end
 function SetInteriorRoomExtents(interiorId, roomIndex, bbMinX, bbMinY, bbMinZ, bbMaxX, bbMaxY, bbMaxZ) end
 
     
+--- Gets the state of the player vehicle's dashboard lights as a bit set
+--- indicator_left = 1
+--- indicator_right = 2
+--- handbrakeLight = 4
+--- engineLight = 8
+--- ABSLight = 16
+--- gasLight = 32
+--- oilLight = 64
+--- headlights = 128
+--- highBeam = 256
+--- batteryLight = 512
+---
+--- @hash [0x500FFE9D](https://docs.fivem.net/natives/?_0x500FFE9D)
+---
+--- @return number
+--- @overload fun(): number
+function GetVehicleDashboardLights() end
+
+    
 --- Sets variant of shader that will be used to draw entity outline.
 --- 
 --- Variants are:
@@ -1219,6 +1265,15 @@ function SetNuiFocus(hasFocus, hasCursor) end
 --- @return void
 --- @overload fun(duiObject: number, button: string): void
 function SendDuiMouseDown(duiObject, button) end
+
+    
+--- A getter for the recoil shake amplitude of a weapon.
+---
+--- @hash [0x5E1AF5F](https://docs.fivem.net/natives/?_0x5E1AF5F)
+--- @param weaponHash Hash
+--- @return number
+--- @overload fun(weaponHash: Hash): number
+function GetWeaponRecoilShakeAmplitude(weaponHash) end
 
     
 --- Clears channels from the target list for the specified Mumble voice target ID.
@@ -1388,6 +1443,15 @@ function IsBigmapFull() end
 function SetRopeLengthChangeRate(rope, lengthChangeRate) end
 
     
+--- GetPedMovementClipset
+---
+--- @hash [0x69E81E3D](https://docs.fivem.net/natives/?_0x69E81E3D)
+--- @param ped Ped
+--- @return number
+--- @overload fun(ped: Ped): number
+function GetPedMovementClipset(ped) end
+
+    
 --- This native sets the app id for the discord rich presence implementation.
 ---
 --- @hash [0x6A02254D](https://docs.fivem.net/natives/?_0x6A02254D)
@@ -1409,6 +1473,15 @@ function SetDiscordAppId(appId) end
 --- @return void
 --- @overload fun(miniMap: number, x: number, y: number, xScale: number, yScale: number, alpha: number): void
 function SetMinimapOverlayDisplay(miniMap, x, y, xScale, yScale, alpha) end
+
+    
+--- GetVehicleDashboardTemp
+---
+--- @hash [0x6B6ADAFA](https://docs.fivem.net/natives/?_0x6B6ADAFA)
+---
+--- @return number
+--- @overload fun(): number
+function GetVehicleDashboardTemp() end
 
     
 --- GetInteriorRoomFlag
@@ -1575,7 +1648,7 @@ function EnterCursorMode() end
 function SendNuiMessage(jsonString) end
 
     
---- Creates a runtime texture from the specified file in the current resource.
+--- Creates a runtime texture from the specified file in the current resource or a base64 data URL.
 ---
 --- @hash [0x786D8BC3](https://docs.fivem.net/natives/?_0x786D8BC3)
 --- @param txd number (long)
@@ -1651,6 +1724,16 @@ function IsDuiAvailable(duiObject) end
 function GetRandomVehicleDensityMultiplier() end
 
     
+--- Removes a dry volume from the game session.
+--- See CREATE_DRY_VOLUME for more info
+---
+--- @hash [0x7BCAA6E7](https://docs.fivem.net/natives/?_0x7BCAA6E7)
+--- @param handle number (int)
+--- @return void
+--- @overload fun(handle: number): void
+function RemoveDryVolume(handle) end
+
+    
 --- Sets the player's rich presence detail state for social platform providers to a specified string.
 ---
 --- @hash [0x7BDCBD45](https://docs.fivem.net/natives/?_0x7BDCBD45)
@@ -1658,6 +1741,23 @@ function GetRandomVehicleDensityMultiplier() end
 --- @return void
 --- @overload fun(presenceState: string): void
 function SetRichPresence(presenceState) end
+
+    
+--- Returns a list of decorations applied to a ped.
+--- 
+--- The data returned adheres to the following layout:
+--- 
+--- ```
+--- [ [ collectionHash1, overlayHash1 ], ..., [c ollectionHashN, overlayHashN ] ]
+--- ```
+--- 
+--- This command will return undefined data if invoked on a remote player ped.
+---
+--- @hash [0x7CCE1163](https://docs.fivem.net/natives/?_0x7CCE1163)
+--- @param ped Ped
+--- @return table
+--- @overload fun(ped: Ped): table
+function GetPedDecorations(ped) end
 
     
 --- GetVehicleLightMultiplier
@@ -1945,6 +2045,15 @@ function SetHandlingInt(vehicle, class_, fieldName, value) end
 function SendLoadingScreenMessage(jsonString) end
 
     
+--- GetVehicleDashboardWaterTemp
+---
+--- @hash [0x8E3B3E42](https://docs.fivem.net/natives/?_0x8E3B3E42)
+---
+--- @return number
+--- @overload fun(): number
+function GetVehicleDashboardWaterTemp() end
+
+    
 --- Equivalent of [START_FIND_KVP](https://docs.fivem.net/natives/?_0xDD379006), but for another resource than the current one.
 --- @usage local kvpHandle = StartFindExternalKvp('drugs', 'mollis:')
 --- 
@@ -2098,6 +2207,16 @@ function SetTextChatEnabled(enabled) end
 --- @return boolean
 --- @overload fun(): boolean
 function IsNuiFocused() end
+
+    
+--- A setter for the recoil shake amplitude of a weapon.
+---
+--- @hash [0x9864312F](https://docs.fivem.net/natives/?_0x9864312F)
+--- @param weaponHash Hash
+--- @param amplitude number (float)
+--- @return void
+--- @overload fun(weaponHash: Hash, amplitude: number): void
+function SetWeaponRecoilShakeAmplitude(weaponHash, amplitude) end
 
     
 --- A getter for [MODIFY_VEHICLE_TOP_SPEED](https://docs.fivem.net/natives/?_0x93A3996368C94158). Returns -1.0 if a modifier is not set.
@@ -3287,6 +3406,15 @@ function EndFindObject(findHandle) end
 function ResetVehiclePedsCanStandOnTopFlag(vehicle) end
 
     
+--- GetVehicleDashboardBoost
+---
+--- @hash [0xDFFABA2A](https://docs.fivem.net/natives/?_0xDFFABA2A)
+---
+--- @return number
+--- @overload fun(): number
+function GetVehicleDashboardBoost() end
+
+    
 --- GetTrainCurrentTrackNode
 ---
 --- @hash [0xE015E854](https://docs.fivem.net/natives/?_0xE015E854)
@@ -3473,6 +3601,23 @@ function GetVehicleWheelRotationSpeed(vehicle, wheelIndex) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, state: number): void
 function SetVehicleWheelieState(vehicle, state) end
+
+    
+--- Creates a volume where water effects do not apply.
+--- Useful for preventing water collisions from flooding areas underneath them.
+--- This has no effect on waterquads, only water created from drawables and collisions.
+--- Don't create volumes when your local ped is swimming (e.g. use IS_PED_SWIMMING in your scripts before you call this)
+---
+--- @hash [0xEB1C6DD](https://docs.fivem.net/natives/?_0xEB1C6DD)
+--- @param xMin number (float)
+--- @param yMin number (float)
+--- @param zMin number (float)
+--- @param xMax number (float)
+--- @param yMax number (float)
+--- @param zMax number (float)
+--- @return number
+--- @overload fun(xMin: number, yMin: number, zMin: number, xMax: number, yMax: number, zMax: number): number
+function CreateDryVolume(xMin, yMin, zMin, xMax, yMax, zMax) end
 
     
 --- Draws a gizmo. This function supports SDK infrastructure and is not intended to be used directly from your code.
@@ -3705,6 +3850,15 @@ function GetInteriorPortalCornerPosition(interiorId, portalIndex, cornerIndex) e
 function IsVehiclePreviouslyOwnedByPlayer(vehicle) end
 
     
+--- GetVehicleDashboardRpm
+---
+--- @hash [0xF9716A11](https://docs.fivem.net/natives/?_0xF9716A11)
+---
+--- @return number
+--- @overload fun(): number
+function GetVehicleDashboardRpm() end
+
+    
 --- IsVehicleNeedsToBeHotwired
 ---
 --- @hash [0xF9933BF4](https://docs.fivem.net/natives/?_0xF9933BF4)
@@ -3748,6 +3902,15 @@ function GetInteriorRoomExtents(interiorId, roomIndex) end
 --- @return number
 --- @overload fun(): number, Entity
 function FindFirstObject(outEntity) end
+
+    
+--- GetVehicleDashboardVacuum
+---
+--- @hash [0xFABE67A9](https://docs.fivem.net/natives/?_0xFABE67A9)
+---
+--- @return number
+--- @overload fun(): number
+function GetVehicleDashboardVacuum() end
 
     
 --- FindFirstPed
