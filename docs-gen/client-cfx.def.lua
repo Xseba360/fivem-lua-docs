@@ -3268,6 +3268,23 @@ function SetVehicleWheelFlags(vehicle, wheelIndex, flags) end
 function ExperimentalLoadCloneCreate(data, objectId, tree) end
 
     
+--- Replaces the `popgroups` (CPopGroupList) meta file with the file in the specified path.
+--- @usage -- fxmanifest.lua:
+--- file 'popgroups_dlc.xml'
+--- 
+--- -- client.lua:
+--- OverridePopGroups('popgroups_dlc.xml')
+--- 
+--- -- restore the original after five minutes
+--- Wait(1000 * 60 * 5)
+--- OverridePopGroups(nil
+--- @hash [0xD3BC438F](https://docs.fivem.net/natives/?_0xD3BC438F)
+--- @param path string (char*)
+--- @return void
+--- @overload fun(path: string): void
+function OverridePopGroups(path) end
+
+    
 --- Enables or disables whether train doors should be forced open whilst a player is inside the train. This is enabled by default in multiplayer.
 ---
 --- @hash [0xD4D1BA63](https://docs.fivem.net/natives/?_0xD4D1BA63)

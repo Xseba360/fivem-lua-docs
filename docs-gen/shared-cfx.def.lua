@@ -101,6 +101,28 @@ function GetResourceState(resourceName) end
 function GetVehicleHandbrake(vehicle) end
 
     
+--- Returns the entity handle for the specified state bag name. For use with [ADD_STATE_BAG_CHANGE_HANDLER](?\_0x5BA35AAF).
+--- @usage AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value) 
+---     local entity = GetEntityFromStateBagName(bagName)
+---     -- Whoops, we don't have a valid entity!
+---     if entity === 0 then return end
+---     -- We don't want to freeze the entity position if the entity collision hasn't loaded yet
+---     while not HasCollisionLoadedAroundEntity(entity) do
+---         -- The entity went out of our scope before the collision loaded
+---         if not DoesEntityExist(entity) then return end
+---         Wait(250)
+---     end
+---     SetEntityInvincible(entity, value)
+---     FreezeEntityPosition(entity, value)
+---     TaskSetBlockingOfNonTemporaryEvents(entity, value)
+--- end
+--- @hash [0x4BDF1867](https://docs.fivem.net/natives/?_0x4BDF1867)
+--- @param bagName string (char*)
+--- @return Entity
+--- @overload fun(bagName: string): Entity
+function GetEntityFromStateBagName(bagName) end
+
+    
 --- GetInvokingResource
 ---
 --- @hash [0x4D52FE5B](https://docs.fivem.net/natives/?_0x4D52FE5B)
@@ -177,7 +199,23 @@ function WasEventCanceled() end
 --- *   **replicated**: Whether the set is meant to be replicated.
 --- 
 --- At this time, the change handler can't opt to reject changes.
----
+--- 
+--- If bagName refers to an entity, use [GET_ENTITY_FROM_STATE_BAG_NAME](?\_0x4BDF1868) to get the entity handle
+--- If bagName refers to a player, use [GET_PLAYER_FROM_STATE_BAG_NAME](?\_0xA56135E0) to get the player handle
+--- @usage AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value) 
+---     local entity = GetEntityFromStateBagName(bagName)
+---     -- Whoops, we don't have a valid entity!
+---     if entity === 0 then return end
+---     -- We don't want to freeze the entity position if the entity collision hasn't loaded yet
+---     while not HasCollisionLoadedAroundEntity(entity) do
+---         -- The entity went out of our scope before the collision loaded
+---         if not DoesEntityExist(entity) then return end
+---         Wait(250)
+---     end
+---     SetEntityInvincible(entity, value)
+---     FreezeEntityPosition(entity, value)
+---     TaskSetBlockingOfNonTemporaryEvents(entity, value)
+--- end
 --- @hash [0x5BA35AAF](https://docs.fivem.net/natives/?_0x5BA35AAF)
 --- @param keyFilter string (char*)
 --- @param bagFilter string (char*)
@@ -421,6 +459,20 @@ function SetResourceKvpFloat(key, value) end
 --- @return number
 --- @overload fun(): number
 function GetInstanceId() end
+
+    
+--- On the server this will return the players source, on the client it will return the player handle.
+--- @usage AddStateBagChangeHandler("isDead", nil, function(bagName, key, value) 
+---     local ply = GetPlayerFromStateBagName(bagName)
+---     -- The player doesn't exist!
+---     if ply == 0 then return end
+---     print("Player: " .. GetPlayerName(ply) .. value and 'died!' or 'is alive!')
+--- end
+--- @hash [0xA56135E0](https://docs.fivem.net/natives/?_0xA56135E0)
+--- @param bagName string (char*)
+--- @return number
+--- @overload fun(bagName: string): number
+function GetPlayerFromStateBagName(bagName) end
 
     
 --- EndFindKvp
