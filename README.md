@@ -1,9 +1,9 @@
 # fivem-lua-docs
 
-![Build Status](https://github.com/Xseba360/fivem-lua-docs/actions/workflows/create-docs-and-release.yml/badge.svg)
-![GitHub last commit](https://img.shields.io/github/last-commit/Xseba360/fivem-lua-docs)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/Xseba360/fivem-lua-docs)
-![GitHub](https://img.shields.io/github/license/Xseba360/fivem-lua-docs)
+[![Build Status](https://github.com/Xseba360/fivem-lua-docs/actions/workflows/create-docs-and-release.yml/badge.svg)](https://github.com/Xseba360/fivem-lua-docs/actions)
+[![GitHub last commit](https://img.shields.io/github/last-commit/Xseba360/fivem-lua-docs)](https://github.com/Xseba360/fivem-lua-docs/commits/master)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Xseba360/fivem-lua-docs)](https://github.com/Xseba360/fivem-lua-docs/releases/latest)
+[![GitHub](https://img.shields.io/github/license/Xseba360/fivem-lua-docs)](LICENSE)
 
 Originally created by [SnakeSVx](https://github.com/SnakeSVx/fivem-lua-docs).
 
