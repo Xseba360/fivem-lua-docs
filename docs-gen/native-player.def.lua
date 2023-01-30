@@ -11,13 +11,14 @@
 function N_0x0032a6dba562c518() end
 
     
---- Set the model for a specific Player. Be aware that this will destroy the current Ped for the Player and create a new one, any reference to the old ped should be reset
---- Make sure to request the model first and wait until it has loaded.
---- @usage local model = 'a_f_m_beach_01'
+--- Set the model for a specific Player. Note that this will destroy the current Ped for the Player and create a new one, any reference to the old ped will be invalid after calling this.
+--- 
+--- As per usual, make sure to request the model first and wait until it has loaded.
+--- @usage local model = `a_f_m_beach_01`
 --- if IsModelInCdimage(model) and IsModelValid(model) then
 ---   RequestModel(model)
 ---   while not HasModelLoaded(model) do
----     Citizen.Wait(0)
+---     Wait(0)
 ---   end
 ---   SetPlayerModel(PlayerId(), model)
 ---   SetModelAsNoLongerNeeded(model)
@@ -952,10 +953,7 @@ function SetPlayerStealthPerceptionModifier(player, value) end
 function IsPlayerRidingTrain(player) end
 
     
---- ```
---- This returns YOUR 'identity' as a Player type.  
---- Always returns 0 in story mode.  
---- ```
+--- Returns the player index for the local player.
 ---
 --- @hash [0x4F8644AF03D0E0D6](https://docs.fivem.net/natives/?_0x4F8644AF03D0E0D6)
 ---
@@ -2834,9 +2832,7 @@ function SpecialAbilityDeactivate(player) end
 function HasPlayerBeenSpottedInStolenVehicle(player) end
 
     
---- ```
---- Returns current player ped  
---- ```
+--- Returns the entity handle for the local player ped. Note that this entity handle will change after using commands such as SET_PLAYER_MODEL.
 ---
 --- @hash [0xD80958FC74E988A6](https://docs.fivem.net/natives/?_0xD80958FC74E988A6)
 ---

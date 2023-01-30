@@ -9414,8 +9414,8 @@ function N_0xaf03011701811146(vehicle, entity) end
 --- @usage local ModelHash = `adder` -- Use Compile-time hashes to get the hash of this model
 --- if not IsModelInCdimage(ModelHash) then return end
 --- RequestModel(ModelHash) -- Request the model
---- while not HasModelLoaded(ModelHash) do -- Waits for the model to load with a check so it does not get stuck in an infinite loop
----   Citizen.Wait(10)
+--- while not HasModelLoaded(ModelHash) do -- Waits for the model to load
+---   Wait(0)
 --- end
 --- local MyPed = PlayerPedId()
 --- local Vehicle = CreateVehicle(ModelHash, GetEntityCoords(MyPed), GetEntityHeading(MyPed), true, false) -- Spawns a networked vehicle on your current coords
@@ -9562,14 +9562,7 @@ function N_0xb0ad1238a709b1a2(vehicle) end
 function IsVehicleOnAllWheels(vehicle) end
 
     
---- ```
---- Returns model name of vehicle in all caps. Needs to be displayed through localizing text natives to get proper display name.
---- -----------------------------------------------------------------------------------------------------------------------------------------
---- While often the case, this does not simply return the model name of the vehicle (which could be hashed to return the model hash). Variations of the same vehicle may also use the same display name.
---- -----------------------------------------------------------------------------------------------------------------------------------------
---- Returns "CARNOTFOUND" if the hash doesn't match a vehicle hash.
---- Using HUD::_GET_LABEL_TEXT, you can get the localized name.
---- ```
+--- Returns the display name/text label (`gameName` in `vehicles.meta`) for the specified vehicle model.
 ---
 --- @hash [0xB215AAC32D25D019](https://docs.fivem.net/natives/?_0xB215AAC32D25D019)
 --- @param modelHash Hash

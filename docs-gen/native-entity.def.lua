@@ -1738,9 +1738,7 @@ function N_0x9ebc85ed0fffe51c(entity, toggle, keepPhysics) end
 function SetEntityCollision_2(entity, toggle, keepPhysics) end
 
     
---- ```
---- Returns the model hash from the entity
---- ```
+--- Returns the model hash from an entity.
 --- @usage local hash = GetEntityModel(PlayerPedId())
 --- 
 --- if hash == `mp_m_freemode_01` then
@@ -1821,13 +1819,9 @@ function N_0xa80ae305e0a3044f(entity, toggle) end
 function SetEntityAlwaysPrerender(entity, toggle) end
 
     
---- ```
---- Makes the specified entity (ped, vehicle or object) persistent. Persistent entities will not automatically be removed by the engine.  
---- p1 has no effect when either its on or off   
---- maybe a quick disassembly will tell us what it does  
---- p2 has no effect when either its on or off   
---- maybe a quick disassembly will tell us what it does  
---- ```
+--- Assigns an existing entity to be owned by the current script. If the entity was not owned by a script yet, this also means the entity will remain persistent until released.
+--- 
+--- Note that this is not needed right after creating an entity as a script-created entity will automatically be assigned.
 ---
 --- @hash [0xAD738C3085FE7E11](https://docs.fivem.net/natives/?_0xAD738C3085FE7E11)
 --- @param entity Entity
@@ -1838,9 +1832,7 @@ function SetEntityAlwaysPrerender(entity, toggle) end
 function SetEntityAsMissionEntity(entity, p1, p2) end
 
     
---- ```
---- Deletes the specified entity, then sets the handle pointed to by the pointer to NULL.
---- ```
+--- Deletes the specified entity, and invalidates the passed handle (i.e. in/out argument).
 ---
 --- @hash [0xAE3CBE5BF394C9C9](https://docs.fivem.net/natives/?_0xAE3CBE5BF394C9C9)
 --- @param entity Entity (Entity*)

@@ -1052,10 +1052,17 @@ function N_0x95a7dabddbb78ae7(iplName1, iplName2) end
 function StopPlayerSwitch() end
 
     
---- ```
---- Request a model to be loaded into memory.
---- ```
----
+--- Request a model (archetype) to be loaded for use by the current script. Use SET_MODEL_AS_NO_LONGER_NEEDED when done using the model in script.
+--- @usage local modelHash = `adder`
+--- RequestModel(modelHash)
+--- while not HasModelLoaded(modelHash) do
+---   Wait(0)
+--- end
+--- 
+--- -- omitted: creating a vehicle
+--- 
+--- -- when done using the model
+--- SetModelAsNoLongerNeeded(modelHash
 --- @hash [0x963D27A58DF860AC](https://docs.fivem.net/natives/?_0x963D27A58DF860AC)
 --- @param model Hash
 --- @return void
@@ -1063,9 +1070,9 @@ function StopPlayerSwitch() end
 function RequestModel(model) end
 
     
---- ```
---- Checks if the specified model has loaded into memory.  
---- ```
+--- Returns whether the specified model (archetype) is currently loaded.
+--- 
+--- Note that this will return 'true' even if the model has been requested and loaded by something other than the current script, if you're intending to actually use the model in a later frame, you should call REQUEST_MODEL anyway.
 ---
 --- @hash [0x98A4EB5D89A0C952](https://docs.fivem.net/natives/?_0x98A4EB5D89A0C952)
 --- @param model Hash
@@ -1779,9 +1786,7 @@ function N_0xdfa80cb25d0a19b3() end
 function SetInteriorActive(interiorID, toggle) end
 
     
---- ```
---- Unloads model from memory  
---- ```
+--- Releases the script ownership assigned by REQUEST_MODEL. This command should be used when done using a specific model hash in script.
 ---
 --- @hash [0xE532F5D78798DAAB](https://docs.fivem.net/natives/?_0xE532F5D78798DAAB)
 --- @param model Hash
