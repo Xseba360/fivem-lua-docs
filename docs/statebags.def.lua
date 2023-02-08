@@ -1,7 +1,9 @@
 
 GlobalState = --[[---@type StateBag]] {}
 
---- @alias StateBagSetter (fun(obj: self, key: string, value: any):void)|(fun(obj: self, key: string, value: any, replicated: boolean):void)
+--- @shape StateBagSetter
+--- @overload fun(obj: self, key: string, value: any):void
+--- @overload fun(obj: self, key: string, value: any, replicated: boolean):void
 
 --- @shape StateBag
 --- @field set StateBagSetter
