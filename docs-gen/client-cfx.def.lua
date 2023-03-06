@@ -406,6 +406,20 @@ function ClearVehicleXenonLightsCustomColor(vehicle) end
 function AddTextEntryByHash(entryKey, entryText) end
 
     
+--- Replaces the pixel data in a runtime texture with the image data from a file in the current resource, or a data URL.
+--- 
+--- If the bitmap is a different size compared to the existing texture, it will be resampled.
+--- 
+--- This command may end up executed asynchronously, and only update the texture data at a later time.
+---
+--- @hash [0x28FC4ECB](https://docs.fivem.net/natives/?_0x28FC4ECB)
+--- @param tex number (long)
+--- @param fileName string (char*)
+--- @return boolean
+--- @overload fun(tex: number, fileName: string): boolean
+function SetRuntimeTextureImage(tex, fileName) end
+
+    
 --- SetInteriorPortalRoomFrom
 --- @usage local playerPed = PlayerPedId()
 --- local interiorId = GetInteriorFromEntity(playerPed)
@@ -1696,6 +1710,15 @@ function GetPlayerVehicleDamageModifier(playerId) end
 function SetDefaultVehicleNumberPlateTextPattern(plateIndex, pattern) end
 
     
+--- Restores an overridden ped model personality type to the default value.
+---
+--- @hash [0x79A12861](https://docs.fivem.net/natives/?_0x79A12861)
+--- @param modelHash Hash
+--- @return void
+--- @overload fun(modelHash: Hash): void
+function ResetPedModelPersonality(modelHash) end
+
+    
 --- Sets whether all tags should group (normal game behavior) or should remain independent and above each ped's respective head when in a vehicle.
 ---
 --- @hash [0x7A27BC93](https://docs.fivem.net/natives/?_0x7A27BC93)
@@ -1932,6 +1955,15 @@ function MumbleGetTalkerProximity() end
 --- @return void
 --- @overload fun(targetId: number): void
 function MumbleClearVoiceTarget(targetId) end
+
+    
+--- Sets whether or not ownership checks should be performed while trying to stow a carriable on a hunting wagon.
+---
+--- @hash [0x85A10FFD](https://docs.fivem.net/natives/?_0x85A10FFD)
+--- @param ignore boolean
+--- @return void
+--- @overload fun(ignore: boolean): void
+function SetIgnoreVehicleOwnershipForStowing(ignore) end
 
     
 --- Sets the traction vector length of a wheel.
@@ -2518,6 +2550,16 @@ function RemoveReplaceTexture(origTxd, origTxn) end
 function RegisterRawNuiCallback(callbackType, callback) end
 
     
+--- Disables the game's world horizon lods rendering (see `farlods.#dd`).
+--- Using the island hopper natives might also affect this state.
+---
+--- @hash [0xA9C92CDC](https://docs.fivem.net/natives/?_0xA9C92CDC)
+--- @param state boolean
+--- @return void
+--- @overload fun(state: boolean): void
+function DisableWorldhorizonRendering(state) end
+
+    
 --- SetPlayerStamina
 ---
 --- @hash [0xA9EC16C7](https://docs.fivem.net/natives/?_0xA9EC16C7)
@@ -2764,6 +2806,23 @@ function GetAmbientPedRangeMultiplier() end
 function MumbleIsConnected() end
 
     
+--- Like DRAW_RECT, but it's a line.
+---
+--- @hash [0xB856A90](https://docs.fivem.net/natives/?_0xB856A90)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param width number (float)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param a number (int)
+--- @return void
+--- @overload fun(x1: number, y1: number, x2: number, y2: number, width: number, r: number, g: number, b: number, a: number): void
+function DrawLine_2d(x1, y1, x2, y2, width, r, g, b, a) end
+
+    
 --- Sets the type for the minimap blip clipping object to be either rectangular or rounded.
 ---
 --- @hash [0xB8B4490C](https://docs.fivem.net/natives/?_0xB8B4490C)
@@ -2922,6 +2981,16 @@ function GetVehicleCheatPowerIncrease(vehicle) end
 --- @return boolean, number, number, number, number, number
 --- @overload fun(ped: Ped, index: number): boolean, number, number, number, number, number
 function GetPedHeadOverlayData(ped, index) end
+
+    
+--- RegisterNuiCallback
+---
+--- @hash [0xC59B980C](https://docs.fivem.net/natives/?_0xC59B980C)
+--- @param callbackType string (char*)
+--- @param callback fun
+--- @return void
+--- @overload fun(callbackType: string, callback: fun): void
+function RegisterNuiCallback(callbackType, callback) end
 
     
 --- Sets power being sent to a wheel.
@@ -3532,6 +3601,50 @@ function ForceSnowPass(enabled) end
 function MumbleSetServerAddress(address, port) end
 
     
+--- Requests a resource file set with the specified name to be downloaded and mounted on top of the current resource.
+--- 
+--- Resource file sets are specified in `fxmanifest.lua` with the following syntax:
+--- 
+--- ```lua
+--- file_set 'addon_ui' {
+---     'ui/addon/index.html',
+---     'ui/addon/**.js',
+--- }
+--- ```
+--- 
+--- This command will trigger a script error if the request failed.
+--- @usage -- fxmanifest.lua
+--- file_set 'dummies' {
+---     'dummy/**.txt',
+---     'potato.txt',
+--- }
+--- 
+--- -- main script
+--- local function PrintTest()
+---     local tests = { 'potato.txt', 'dummy/1.txt', 'dummy/b/2.txt' }
+--- 
+---     for _, v in ipairs(tests) do
+---         local data = LoadResourceFile(GetCurrentResourceName(), v)
+---         print(v, data)
+---     end
+--- end
+--- 
+--- RegisterCommand('fileset', function()
+---     PrintTest()
+--- 
+---     while not RequestResourceFileSet('dummies') do
+---         Wait(100)
+---     end
+--- 
+---     PrintTest()
+--- end
+--- @hash [0xE7490533](https://docs.fivem.net/natives/?_0xE7490533)
+--- @param setName string (char*)
+--- @return boolean
+--- @overload fun(setName: string): boolean
+function RequestResourceFileSet(setName) end
+
+    
 --- GetVehicleCurrentRpm
 ---
 --- @hash [0xE7B12B54](https://docs.fivem.net/natives/?_0xE7B12B54)
@@ -3665,6 +3778,23 @@ function DrawGizmo(matrixPtr, id) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, scale: number): void
 function SetVehicleSteeringScale(vehicle, scale) end
+
+    
+--- DRAW_RECT, but with a rotation. Seems to be broken.
+---
+--- @hash [0xEC37C168](https://docs.fivem.net/natives/?_0xEC37C168)
+--- @param x number (float)
+--- @param y number (float)
+--- @param width number (float)
+--- @param height number (float)
+--- @param rotation number (float)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param a number (int)
+--- @return void
+--- @overload fun(x: number, y: number, width: number, height: number, rotation: number, r: number, g: number, b: number, a: number): void
+function DrawRectRotated(x, y, width, height, rotation, r, g, b, a) end
 
     
 --- A getter for [FREEZE_ENTITY_POSITION](https://docs.fivem.net/natives/?_0x428CA6DBD1094446).
@@ -4002,6 +4132,15 @@ function UpdateMapdataEntity(mapdata, entity, entityDef) end
 --- @return number
 --- @overload fun(vehicle: Vehicle): number
 function GetVehicleOilLevel(vehicle) end
+
+    
+--- Gets a ped model's personality type.
+---
+--- @hash [0xFE08CAD6](https://docs.fivem.net/natives/?_0xFE08CAD6)
+--- @param modelHash Hash
+--- @return Hash
+--- @overload fun(modelHash: Hash): Hash
+function GetPedModelPersonality(modelHash) end
 
     
 --- Sets the audio submix ID for a specified player using Mumble 'Native Audio' functionality.

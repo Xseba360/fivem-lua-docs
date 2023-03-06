@@ -329,6 +329,17 @@ function GetAirDragMultiplierForPlayersVehicle(playerSrc) end
 function SetEntityRoutingBucket(entity, bucket) end
 
     
+--- Scans the resources in the specified resource root. This function is only available in the 'monitor mode' process and is
+--- not available for user resources.
+---
+--- @hash [0x636F097F](https://docs.fivem.net/natives/?_0x636F097F)
+--- @param rootPath string (char*)
+--- @param callback fun
+--- @return void
+--- @overload fun(rootPath: string, callback: fun): void
+function ScanResourceRoot(rootPath, callback) end
+
+    
 --- GetNumPlayerIndices
 ---
 --- @hash [0x63D13184](https://docs.fivem.net/natives/?_0x63D13184)
@@ -639,6 +650,20 @@ function SetRoutingBucketEntityLockdownMode(bucketId, mode) end
 --- @return string
 --- @overload fun(vehicle: Vehicle): string
 function GetVehicleType(vehicle) end
+
+    
+--- Get an identifier from a player by the type of the identifier.
+--- @usage local playerLicenses = {}
+--- 
+--- AddEventHandler('playerJoining', function()
+---     playerLicenses[source] = GetPlayerIdentifierByType(source, 'license')
+--- end
+--- @hash [0xA61C8FC6](https://docs.fivem.net/natives/?_0xA61C8FC6)
+--- @param playerSrc string (char*)
+--- @param identifierType string (char*)
+--- @return string
+--- @overload fun(playerSrc: string, identifierType: string): string
+function GetPlayerIdentifierByType(playerSrc, identifierType) end
 
     
 --- Requests the commerce data for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
