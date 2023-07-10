@@ -453,12 +453,9 @@ function SeethroughSetMaxThickness(thickness) end
 function N_0x0c8fac83902a62df(thickness) end
 
     
---- ```
---- In percentage: 0.0 - 100.0
---- 
---- NativeDB Introduced: v1290
---- ```
----
+--- Seeks a BINK movie to a specified position.
+--- @usage -- Movie drawn prior
+--- SetBinkMovieTime(1, 50.0) -- Seeks to 50% in
 --- @hash [0x0CB6B3446855B57A](https://docs.fivem.net/natives/?_0x0CB6B3446855B57A)
 --- @param binkMovie number (int)
 --- @param progress number (float)
@@ -468,12 +465,9 @@ function SetBinkMovieTime(binkMovie, progress) end
 
     
 --- # New Name: SetBinkMovieTime
---- ```
---- In percentage: 0.0 - 100.0
---- 
---- NativeDB Introduced: v1290
---- ```
----
+--- Seeks a BINK movie to a specified position.
+--- @usage -- Movie drawn prior
+--- SetBinkMovieTime(1, 50.0) -- Seeks to 50% in
 --- @hash [0x0CB6B3446855B57A](https://docs.fivem.net/natives/?_0x0CB6B3446855B57A)
 --- @param binkMovie number (int)
 --- @param progress number (float)
@@ -1988,10 +1982,19 @@ function GetDecalWashLevel(decal) end
 function N_0x32f34ff7f617643b(p0, p1) end
 
     
---- ```
---- NativeDB Introduced: v1290
---- ```
----
+--- Creates an integer (usually 1) for a BINK movie to be called with other natives.
+--- [List of all BINK movies (alphabetically ordered) as of b2802](https://gist.github.com/ItsJunction/8046f28c29ea8ff2821e9e4f933f595f)
+--- @usage Citizen.CreateThread(function()
+---     local binkint = SetBinkMovie("casino_trailer")
+---     SetBinkMovieTime(binkint, 0.0) -- Seeks to 0%
+--- 
+---     while (GetBinkMovieTime(binkint) < 100.0) do -- Very Basic Idea That Works?
+---         print(math.floor(GetBinkMovieTime(binkint) * 100)/100 .. "%") -- Prints current playtime (as percentage).
+---         PlayBinkMovie(binkint)
+---         DrawBinkMovie(binkint, 0.5, 0.5, 1.0, 1.0, 0.0, 255, 255, 255, 255) -- This example draws and plays in Fullscreen and in the center of screen (no matter the resolution).
+---         Citizen.Wait(0)
+---     end
+--- end
 --- @hash [0x338D9F609FD632DB](https://docs.fivem.net/natives/?_0x338D9F609FD632DB)
 --- @param name string (char*)
 --- @return number
@@ -2000,10 +2003,19 @@ function SetBinkMovie(name) end
 
     
 --- # New Name: SetBinkMovie
---- ```
---- NativeDB Introduced: v1290
---- ```
----
+--- Creates an integer (usually 1) for a BINK movie to be called with other natives.
+--- [List of all BINK movies (alphabetically ordered) as of b2802](https://gist.github.com/ItsJunction/8046f28c29ea8ff2821e9e4f933f595f)
+--- @usage Citizen.CreateThread(function()
+---     local binkint = SetBinkMovie("casino_trailer")
+---     SetBinkMovieTime(binkint, 0.0) -- Seeks to 0%
+--- 
+---     while (GetBinkMovieTime(binkint) < 100.0) do -- Very Basic Idea That Works?
+---         print(math.floor(GetBinkMovieTime(binkint) * 100)/100 .. "%") -- Prints current playtime (as percentage).
+---         PlayBinkMovie(binkint)
+---         DrawBinkMovie(binkint, 0.5, 0.5, 1.0, 1.0, 0.0, 255, 255, 255, 255) -- This example draws and plays in Fullscreen and in the center of screen (no matter the resolution).
+---         Citizen.Wait(0)
+---     end
+--- end
 --- @hash [0x338D9F609FD632DB](https://docs.fivem.net/natives/?_0x338D9F609FD632DB)
 --- @param name string (char*)
 --- @return number
@@ -3447,24 +3459,32 @@ function SeethroughReset() end
 function PlayBinkMovie(binkMovie) end
 
     
---- ```
---- NativeDB Introduced: v1290
---- ```
----
+--- Must be called each frame, will play at specified position on screen when called with [`_PLAY_BINK_MOVIE`](https://docs.fivem.net/natives/?_0x70D2CC8A542A973C)
+--- @usage Citizen.CreateThread(function()
+---     local binkint = SetBinkMovie("casino_trailer") -- BINK movie, list can be found at https://gist.github.com/ItsJunction/8046f28c29ea8ff2821e9e4f933f595f
+---     SetBinkMovieTime(binkint, 0.0) -- Seeks to 0%, just incase of errors.
+--- 
+---     while (GetBinkMovieTime(binkint) < 100.0) do
+---         print(math.floor(GetBinkMovieTime(binkint) * 100)/100 .. "%") -- Prints current playtime (as percentage).
+---         PlayBinkMovie(binkint)
+---         DrawBinkMovie(binkint, 0.5, 0.5, 1.0, 1.0, 0.0, 255, 255, 255, 255) -- This example draws and plays in fullscreen in the center (no matter the resolution).
+---         Citizen.Wait(0)
+---     end
+--- end
 --- @hash [0x7118E83EEB9F7238](https://docs.fivem.net/natives/?_0x7118E83EEB9F7238)
 --- @param binkMovie number (int)
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @param p5 number (float)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param scaleX number (float)
+--- @param scaleY number (float)
+--- @param rotation number (float)
 --- @param r number (int)
 --- @param g number (int)
 --- @param b number (int)
 --- @param a number (int)
 --- @return void
---- @overload fun(binkMovie: number, p1: number, p2: number, p3: number, p4: number, p5: number, r: number, g: number, b: number, a: number): void
-function DrawBinkMovie(binkMovie, p1, p2, p3, p4, p5, r, g, b, a) end
+--- @overload fun(binkMovie: number, posX: number, posY: number, scaleX: number, scaleY: number, rotation: number, r: number, g: number, b: number, a: number): void
+function DrawBinkMovie(binkMovie, posX, posY, scaleX, scaleY, rotation, r, g, b, a) end
 
     
 --- ```
@@ -6881,10 +6901,26 @@ function GetScaleformMovieMethodReturnValueBool(methodReturn) end
 function N_0xd80a80346a45d761(methodReturn) end
 
     
+--- If true, this native will create purple explosions upon projectile impact, add comic-like PTFX when firing a weapon, create a sound on bullet impact and have its own "blood effect".
+--- 
+--- If the PTFX asset "scr_rcbarry2" is not requested using ([`RequestNamedPtfxAsset`](https://docs.fivem.net/natives/?_0xD821490579791273)) then this native **will not work as intended**.
+--- 
+--- Excerpt from fm_content_drug_lab_work.c:
+--- 
 --- ```
---- Creates cartoon effect when Michel smokes the weed  
+--- STREAMING::REQUEST_NAMED_PTFX_ASSET("scr_rcbarry2");
+--- if (STREAMING::HAS_NAMED_PTFX_ASSET_LOADED("scr_rcbarry2"))
+--- {
+---   GRAPHICS::ENABLE_CLOWN_BLOOD_VFX(true);
+---   AUDIO::START_AUDIO_SCENE("DLC_CM2022_DRUG_TRIP_SPRINKLERS_SCENE");
+---   func_720(26);
+--- }
 --- ```
----
+--- @usage RequestNamedPtfxAsset("scr_rcbarry2") -- Request the PTFX
+--- while not HasNamedPtfxAssetLoaded("scr_rcbarry2") do
+---   Citizen.Wait(0)
+--- end
+--- EnableClownBloodVfx(true) -- Enable the clown PTF
 --- @hash [0xD821490579791273](https://docs.fivem.net/natives/?_0xD821490579791273)
 --- @param toggle boolean
 --- @return void
@@ -6893,10 +6929,26 @@ function EnableClownBloodVfx(toggle) end
 
     
 --- # New Name: EnableClownBloodVfx
+--- If true, this native will create purple explosions upon projectile impact, add comic-like PTFX when firing a weapon, create a sound on bullet impact and have its own "blood effect".
+--- 
+--- If the PTFX asset "scr_rcbarry2" is not requested using ([`RequestNamedPtfxAsset`](https://docs.fivem.net/natives/?_0xD821490579791273)) then this native **will not work as intended**.
+--- 
+--- Excerpt from fm_content_drug_lab_work.c:
+--- 
 --- ```
---- Creates cartoon effect when Michel smokes the weed  
+--- STREAMING::REQUEST_NAMED_PTFX_ASSET("scr_rcbarry2");
+--- if (STREAMING::HAS_NAMED_PTFX_ASSET_LOADED("scr_rcbarry2"))
+--- {
+---   GRAPHICS::ENABLE_CLOWN_BLOOD_VFX(true);
+---   AUDIO::START_AUDIO_SCENE("DLC_CM2022_DRUG_TRIP_SPRINKLERS_SCENE");
+---   func_720(26);
+--- }
 --- ```
----
+--- @usage RequestNamedPtfxAsset("scr_rcbarry2") -- Request the PTFX
+--- while not HasNamedPtfxAssetLoaded("scr_rcbarry2") do
+---   Citizen.Wait(0)
+--- end
+--- EnableClownBloodVfx(true) -- Enable the clown PTF
 --- @hash [0xD821490579791273](https://docs.fivem.net/natives/?_0xD821490579791273)
 --- @param toggle boolean
 --- @return void

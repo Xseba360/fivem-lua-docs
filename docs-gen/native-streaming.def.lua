@@ -1795,9 +1795,7 @@ function SetInteriorActive(interiorID, toggle) end
 function SetModelAsNoLongerNeeded(model) end
 
     
---- ```
---- IPL list: pastebin.com/iNGLY32D  
---- ```
+--- IPL list can be found [here](https://gist.github.com/4mmonium/4c8a076b5f712a7cc64666003009a2e7).
 ---
 --- @hash [0xEE6C5AD3ECE0A82D](https://docs.fivem.net/natives/?_0xEE6C5AD3ECE0A82D)
 --- @param iplName string (char*)

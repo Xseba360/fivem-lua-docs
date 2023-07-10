@@ -90,7 +90,7 @@ function SetTextProportional(p0) end
 function AddTextComponentInteger(value) end
 
     
---- See https://docs.fivem.net/docs/game-references/blips/#BlipColors
+--- SetBlipColour
 ---
 --- @hash [0x03D7FB09E75D6B7E](https://docs.fivem.net/natives/?_0x03D7FB09E75D6B7E)
 --- @param blip Blip
@@ -265,14 +265,17 @@ function IsScriptedHudComponentHiddenThisFrame(id) end
 function N_0x09c0403ed9a751c2(id) end
 
     
---- ```
---- BOOL IsContextActive(char *ctx)  
---- {  
---- 	BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(ctx);  
---- 	return END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);  
---- }  
---- ```
----
+--- BeginTextCommandIsThisHelpMessageBeingDisplayed
+--- @usage -- Create new text entry
+--- AddTextEntry('TEST_LABEL', 'Hello world.')
+--- 
+--- -- Draw help message
+--- BeginTextCommandDisplayHelp('TEST_LABEL')
+--- EndTextCommandDisplayHelp(0, false, true, -1)
+--- 
+--- -- Test if the message has been displayed
+--- BeginTextCommandIsThisHelpMessageBeingDisplayed("TEST_LABEL")
+--- local isDisplayed = EndTextCommandIsThisHelpMessageBeingDisplayed(0
 --- @hash [0x0A24DA3A41B718F5](https://docs.fivem.net/natives/?_0x0A24DA3A41B718F5)
 --- @param labelName string (char*)
 --- @return void
@@ -281,14 +284,17 @@ function BeginTextCommandIsThisHelpMessageBeingDisplayed(labelName) end
 
     
 --- # New Name: BeginTextCommandIsThisHelpMessageBeingDisplayed
---- ```
---- BOOL IsContextActive(char *ctx)  
---- {  
---- 	BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(ctx);  
---- 	return END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);  
---- }  
---- ```
----
+--- BeginTextCommandIsThisHelpMessageBeingDisplayed
+--- @usage -- Create new text entry
+--- AddTextEntry('TEST_LABEL', 'Hello world.')
+--- 
+--- -- Draw help message
+--- BeginTextCommandDisplayHelp('TEST_LABEL')
+--- EndTextCommandDisplayHelp(0, false, true, -1)
+--- 
+--- -- Test if the message has been displayed
+--- BeginTextCommandIsThisHelpMessageBeingDisplayed("TEST_LABEL")
+--- local isDisplayed = EndTextCommandIsThisHelpMessageBeingDisplayed(0
 --- @hash [0x0A24DA3A41B718F5](https://docs.fivem.net/natives/?_0x0A24DA3A41B718F5)
 --- @param labelName string (char*)
 --- @return void
@@ -520,24 +526,40 @@ function N_0x0e4c749ff9de9cc4(value, commaSeparated) end
 function RestartFrontendMenu(menuHash, p1) end
 
     
---- EndTextCommandIsThisHelpMessageBeingDisplayed
+--- Returns whether a specific help message is being displayed or not.
+--- 
+--- ```cpp
+--- enum HudIndexes {
+---     HELP_TEXT = 0,
+---     FLOATING_HELP_TEXT_1 = 1,
+---     FLOATING_HELP_TEXT_2 = 2,
+--- }
+--- ```
 ---
 --- @hash [0x10BDDBFC529428DD](https://docs.fivem.net/natives/?_0x10BDDBFC529428DD)
---- @param p0 number (int)
+--- @param hudIndex number (int)
 --- @return boolean
---- @overload fun(p0: number): boolean
-function EndTextCommandIsThisHelpMessageBeingDisplayed(p0) end
+--- @overload fun(hudIndex: number): boolean
+function EndTextCommandIsThisHelpMessageBeingDisplayed(hudIndex) end
 
     
 --- # New Name: EndTextCommandIsThisHelpMessageBeingDisplayed
---- EndTextCommandIsThisHelpMessageBeingDisplayed
+--- Returns whether a specific help message is being displayed or not.
+--- 
+--- ```cpp
+--- enum HudIndexes {
+---     HELP_TEXT = 0,
+---     FLOATING_HELP_TEXT_1 = 1,
+---     FLOATING_HELP_TEXT_2 = 2,
+--- }
+--- ```
 ---
 --- @hash [0x10BDDBFC529428DD](https://docs.fivem.net/natives/?_0x10BDDBFC529428DD)
---- @param p0 number (int)
+--- @param hudIndex number (int)
 --- @return boolean
---- @overload fun(p0: number): boolean
+--- @overload fun(hudIndex: number): boolean
 --- @deprecated
-function N_0x10bddbfc529428dd(p0) end
+function N_0x10bddbfc529428dd(hudIndex) end
 
     
 --- ```
@@ -1520,11 +1542,9 @@ function DoesTextBlockExist(gxt) end
 function SetTextDropShadow() end
 
     
---- ```
---- HUD colors and their values: pastebin.com/d9aHPbXN  
---- --------------------------------------------------  
---- makes hudColorIndex2 color into hudColorIndex color  
---- ```
+--- Changes the hud color at a given index (hudColorIndex) by another one (hudColorIndex2).
+--- 
+--- HUD colors can be found [here](https://docs.fivem.net/docs/game-references/hud-colors/)
 ---
 --- @hash [0x1CCC708F0F850613](https://docs.fivem.net/natives/?_0x1CCC708F0F850613)
 --- @param hudColorIndex number (int)
@@ -1535,11 +1555,9 @@ function ReplaceHudColour(hudColorIndex, hudColorIndex2) end
 
     
 --- # New Name: ReplaceHudColour
---- ```
---- HUD colors and their values: pastebin.com/d9aHPbXN  
---- --------------------------------------------------  
---- makes hudColorIndex2 color into hudColorIndex color  
---- ```
+--- Changes the hud color at a given index (hudColorIndex) by another one (hudColorIndex2).
+--- 
+--- HUD colors can be found [here](https://docs.fivem.net/docs/game-references/hud-colors/)
 ---
 --- @hash [0x1CCC708F0F850613](https://docs.fivem.net/natives/?_0x1CCC708F0F850613)
 --- @param hudColorIndex number (int)
@@ -1551,11 +1569,9 @@ function N_0x1ccc708f0f850613(hudColorIndex, hudColorIndex2) end
 
     
 --- # New Name: ReplaceHudColour
---- ```
---- HUD colors and their values: pastebin.com/d9aHPbXN  
---- --------------------------------------------------  
---- makes hudColorIndex2 color into hudColorIndex color  
---- ```
+--- Changes the hud color at a given index (hudColorIndex) by another one (hudColorIndex2).
+--- 
+--- HUD colors can be found [here](https://docs.fivem.net/docs/game-references/hud-colors/)
 ---
 --- @hash [0x1CCC708F0F850613](https://docs.fivem.net/natives/?_0x1CCC708F0F850613)
 --- @param hudColorIndex number (int)
@@ -1870,10 +1886,7 @@ function RaceGalleryNextBlipSprite(spriteId) end
 function N_0x1eae6dd17b7a5efa(spriteId) end
 
     
---- ```
---- Blips Images + IDs:  
---- gtaxscripting.blogspot.com/2016/05/gta-v-blips-id-and-image.html  
---- ```
+--- Gets the sprite id of the specified blip. Blip sprite ids and images can be found [here](https://docs.fivem.net/docs/game-references/blips/).
 ---
 --- @hash [0x1FC877464A04FC4F](https://docs.fivem.net/natives/?_0x1FC877464A04FC4F)
 --- @param blip Blip
@@ -2118,7 +2131,15 @@ function SetBlipCategory(blip, index) end
 --- 
 --- BeginTextCommandDisplayHelp('HelpMsg')
 --- EndTextCommandDisplayHelp(0, false, true, -1)
----
+--- 
+--- 
+--- 
+--- -- Shows a floating help text which uses FLOATING_HELP_TEXT_1 hud component.
+--- AddTextEntry('FloatingHelpText', 'Press E to show respect.')
+--- SetFloatingHelpTextWorldPosition(0, vector3(100, 100, 100))
+--- SetFloatingHelpTextStyle(0, true, 2, -1, 3, 0)
+--- BeginTextCommandDisplayHelp('FloatingHelpText')
+--- EndTextCommandDisplayHelp(1, false, false, -1
 --- @hash [0x238FFE5C7B0498A6](https://docs.fivem.net/natives/?_0x238FFE5C7B0498A6)
 --- @param shape number (int)
 --- @param loop boolean
@@ -2136,7 +2157,15 @@ function EndTextCommandDisplayHelp(shape, loop, beep, duration) end
 --- 
 --- BeginTextCommandDisplayHelp('HelpMsg')
 --- EndTextCommandDisplayHelp(0, false, true, -1)
----
+--- 
+--- 
+--- 
+--- -- Shows a floating help text which uses FLOATING_HELP_TEXT_1 hud component.
+--- AddTextEntry('FloatingHelpText', 'Press E to show respect.')
+--- SetFloatingHelpTextWorldPosition(0, vector3(100, 100, 100))
+--- SetFloatingHelpTextStyle(0, true, 2, -1, 3, 0)
+--- BeginTextCommandDisplayHelp('FloatingHelpText')
+--- EndTextCommandDisplayHelp(1, false, false, -1
 --- @hash [0x238FFE5C7B0498A6](https://docs.fivem.net/natives/?_0x238FFE5C7B0498A6)
 --- @param shape number (int)
 --- @param loop boolean
@@ -5851,7 +5880,7 @@ function N_0x75a16c3da34f1245(blip, toggle) end
 --- 6: Vespucci Beach lifeguard building.
 --- 15: Army base.
 --- 
---- [List of hud colors](https://pastebin.com/d9aHPbXN)
+--- [List of hud colors](https://docs.fivem.net/docs/game-references/hud-colors/)
 ---
 --- @hash [0x75A9A10948D1DEA6](https://docs.fivem.net/natives/?_0x75A9A10948D1DEA6)
 --- @param componentID number (int)
@@ -6340,9 +6369,9 @@ function SetMpGamerTagChatting(gamerTagId, string) end
 function N_0x7c226d5346d4d10a(p0) end
 
     
---- ```
---- HUD colors and their values: pastebin.com/d9aHPbXN  
---- ```
+--- Gets hud color RGBA parameter values by passing a hud color index (hudColorIndex).
+--- 
+--- HUD colors can be found [here](https://docs.fivem.net/docs/game-references/hud-colors/)
 ---
 --- @hash [0x7C9C91AB74A0360F](https://docs.fivem.net/natives/?_0x7C9C91AB74A0360F)
 --- @param hudColorIndex number (int)
@@ -12042,9 +12071,7 @@ function N_0xf284ac67940c6812() end
 function FlashMinimapDisplay() end
 
     
---- ```
---- HUD colors and their values: pastebin.com/d9aHPbXN  
---- ```
+--- Hud colors can be found [here](https://docs.fivem.net/docs/game-references/hud-colors/)
 ---
 --- @hash [0xF314CF4F0211894E](https://docs.fivem.net/natives/?_0xF314CF4F0211894E)
 --- @param hudColorIndex number (int)
@@ -12058,9 +12085,7 @@ function ReplaceHudColourWithRgba(hudColorIndex, r, g, b, a) end
 
     
 --- # New Name: ReplaceHudColourWithRgba
---- ```
---- HUD colors and their values: pastebin.com/d9aHPbXN  
---- ```
+--- Hud colors can be found [here](https://docs.fivem.net/docs/game-references/hud-colors/)
 ---
 --- @hash [0xF314CF4F0211894E](https://docs.fivem.net/natives/?_0xF314CF4F0211894E)
 --- @param hudColorIndex number (int)
@@ -12075,9 +12100,7 @@ function N_0xf314cf4f0211894e(hudColorIndex, r, g, b, a) end
 
     
 --- # New Name: ReplaceHudColourWithRgba
---- ```
---- HUD colors and their values: pastebin.com/d9aHPbXN  
---- ```
+--- Hud colors can be found [here](https://docs.fivem.net/docs/game-references/hud-colors/)
 ---
 --- @hash [0xF314CF4F0211894E](https://docs.fivem.net/natives/?_0xF314CF4F0211894E)
 --- @param hudColorIndex number (int)

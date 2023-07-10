@@ -808,8 +808,10 @@ function IsVehicleAttachedToTowTruck(towTruck, vehicle) end
 function SetVehicleSearchlight(heli, toggle, canBeUsedByAI) end
 
     
---- SetTrainCruiseSpeed
----
+--- Used to control train speed, can be used to start and stop its movement as well.
+--- @usage local train = CreateMissionTrain(21, 40.2, -1201.3, 31.0, false)
+--- SetTrainCruiseSpeed(train, 20.0) -- Can be used to 'start' the train
+--- SetTrainCruiseSpeed(train, 0.0) -- Can be used to 'stop' the trai
 --- @hash [0x16469284DB8C62B5](https://docs.fivem.net/natives/?_0x16469284DB8C62B5)
 --- @param train Vehicle
 --- @param speed number (float)
@@ -3938,14 +3940,14 @@ function RemoveVehiclesFromGeneratorsInArea(x1, y1, z1, x2, y2, z2, unk) end
     
 --- ```cpp
 --- enum eWindowId {
---- 	VEH_EXT_WINDSCREEN = 0,
---- 	VEH_EXT_WINDSCREEN_R = 1,
---- 	VEH_EXT_WINDOW_LF = 2,
---- 	VEH_EXT_WINDOW_RF = 3,
---- 	VEH_EXT_WINDOW_LR = 4,
---- 	VEH_EXT_WINDOW_RR = 5,
---- 	VEH_EXT_WINDOW_LM = 6,
---- 	VEH_EXT_WINDOW_RM = 7,
+--- 	VEH_EXT_WINDOW_LF = 0,
+--- 	VEH_EXT_WINDOW_RF = 1,
+--- 	VEH_EXT_WINDOW_LR = 2,
+--- 	VEH_EXT_WINDOW_RR = 3,
+--- 	VEH_EXT_WINDOW_LM = 4,
+--- 	VEH_EXT_WINDOW_RM = 5,
+--- 	VEH_EXT_WINDSCREEN = 6,
+--- 	VEH_EXT_WINDSCREEN_R = 7,
 --- }
 --- ```
 ---
@@ -4144,8 +4146,9 @@ function SetPlanePropellersHealth(plane, health) end
 function N_0x4c815eb175086f84(plane, health) end
 
     
---- IsVehicleSirenOn
----
+--- Returns whether the vehicle's lights and sirens are on.
+--- @usage local veh = GetVehiclePedIsIn(PlayerPedId())
+--- print(tostring(IsVehicleSirenOn(veh)
 --- @hash [0x4C9BF537BE2634B2](https://docs.fivem.net/natives/?_0x4C9BF537BE2634B2)
 --- @param vehicle Vehicle
 --- @return boolean
@@ -5103,8 +5106,9 @@ function SetDriftTyresEnabled(vehicle, toggle) end
 function SetVehicleProvidesCover(vehicle, toggle) end
 
     
---- DeleteMissionTrain
----
+--- Used to delete mission trains created with [`CREATE_MISSION_TRAIN`](https://docs.fivem.net/natives/?_0x63C6CCA8E68AE8C8).
+--- @usage local train = CreateMissionTrain(21, 40.2, -1201.3, 31.0, false)
+--- DeleteMissionTrain(train
 --- @hash [0x5B76B14AE875C795](https://docs.fivem.net/natives/?_0x5B76B14AE875C795)
 --- @param train Vehicle (Vehicle*)
 --- @return void
@@ -5447,16 +5451,28 @@ function IsVehicleSeatAccessible(ped, vehicle, seatIndex, side, onEnter) end
 function N_0x639431e895b9aa57(ped, vehicle, seatIndex, side, onEnter) end
 
     
---- Train models must be [requested](https://docs.fivem.net/natives/?_0x963D27A58DF860AC) before use. See trains.xml for freight and metro variations.
+--- Train models must be [requested](https://docs.fivem.net/natives/?_0x963D27A58DF860AC) before use. See trains.xml (located in `Grand Theft Auto V\update\update.rpf\common\data\levels\gta5\trains.xml`) for freight and metro variations.
+--- 
+--- Model names to request can be found by searching `model_name` in the file.
+--- 
+--- The `Lua` usage example provided down below has been provided in such way so users can test each and every train variation.
+--- 
+--- ### Newly added parameters (seen in 2372 build)
 --- 
 --- ```
---- NativeDB Added Parameter 6: Any p5
---- NativeDB Added Parameter 7: Any p6
+--- NativeDB Added Parameter 6: BOOL isNetwork
+--- NativeDB Added Parameter 7: BOOL netMissionEntity
 --- ```
+--- 
+--- *   **isNetwork**: Whether to create a network object for the train. If false, the train exists only locally.
+--- *   **netMissionEntity**: Whether to register the train as pinned to the script host in the R\* network model.
 --- 
 --- ### Train Models:
 --- 
 --- *   freight
+--- 
+--- ### Carriage Models:
+--- 
 --- *   freightcar
 --- *   freightcar2 (Added v2372)
 --- *   freightcont1
@@ -5464,7 +5480,56 @@ function N_0x639431e895b9aa57(ped, vehicle, seatIndex, side, onEnter) end
 --- *   freightgrain
 --- *   metrotrain
 --- *   tankercar
----
+--- 
+--- ### Some train variations (default from trains.xml as of build 2372)
+--- 
+--- *   17. Very long train and freight variation.
+--- *   18. Freight train only.
+--- *   25. Double metro train (with both models flipped opposite to each other). This used to be `24` before the 2372 build.
+--- @usage --[[ 
+---     This function needs to be invoked prior to calling CreateMissionTrain  or the trains (as well as its carriages) won't spawn.
+---     Could also result in a game-crash when CreateMissionTrain is called without
+---     loading the train model needed for the variation before-hand.
+--- ]]
+--- function loadTrainModels()
+---     local trainsAndCarriages = {
+---         'freight', 'metrotrain', 'freightcont1', 'freightcar', 
+---         'freightcar2', 'freightcont2', 'tankercar', 'freightgrain'
+---     }
+--- 
+---     for _, vehicleName in ipairs(trainsAndCarriages) do
+---         local modelHashKey = GetHashKey(vehicleName)
+---         RequestModel(modelHashKey) -- load the model
+---         -- wait for the model to load
+---         while not HasModelLoaded(modelHashKey) do
+---             Citizen.Wait(500)
+---         end
+---     end
+--- end
+--- 
+--- loadTrainModels()
+--- 
+--- RegisterCommand("createtrain", function(source, args, rawCommand)
+---     if #args < 1 then
+---         TriggerEvent('chat:addMessage', {
+---             args = { 
+---                 'Error, provide a variation id, you can find those in trains.xml. Variations range from 0 to 25.'
+---             }
+---         })
+---         return
+---     end
+---     
+---     local playerCoords = GetEntityCoords(PlayerPedId())
+---      -- Now actually create a train using a variation
+---      -- These coordinates were used for testing: 1438.98, 6405.92, 34.19
+---     CreateMissionTrain(
+---         tonumber(args[1]),
+---         playerCoords.x, playerCoords.y, playerCoords.z,
+---         true,
+---         true,
+---         true
+---     )
+--- end, false
 --- @hash [0x63C6CCA8E68AE8C8](https://docs.fivem.net/natives/?_0x63C6CCA8E68AE8C8)
 --- @param variation number (int)
 --- @param x number (float)
@@ -7151,14 +7216,26 @@ function N_0x89d630cf5ea96d23(handler, container) end
 function SetVehicleGravity(vehicle, toggle) end
 
     
---- N_0x8aa9180de2fedd45
+--- Will disable a plane or a helicopter's need to swerve around object in its heightmap when using TASK_PLANE_MISSION or other AI / Pilot behavior.  Will ensure plane flys directly to it's destination or die trying! This native does NOT need to be called every frame, but instead, just called once on the vehicle (NOT THE PED) you're trying to disable avoidance for!
 ---
 --- @hash [0x8AA9180DE2FEDD45](https://docs.fivem.net/natives/?_0x8AA9180DE2FEDD45)
 --- @param vehicle Vehicle
---- @param p1 boolean
+--- @param avoidObstacles boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, p1: boolean): void
-function N_0x8aa9180de2fedd45(vehicle, p1) end
+--- @overload fun(vehicle: Vehicle, avoidObstacles: boolean): void
+function EnableAircraftObstacleAvoidance(vehicle, avoidObstacles) end
+
+    
+--- # New Name: EnableAircraftObstacleAvoidance
+--- Will disable a plane or a helicopter's need to swerve around object in its heightmap when using TASK_PLANE_MISSION or other AI / Pilot behavior.  Will ensure plane flys directly to it's destination or die trying! This native does NOT need to be called every frame, but instead, just called once on the vehicle (NOT THE PED) you're trying to disable avoidance for!
+---
+--- @hash [0x8AA9180DE2FEDD45](https://docs.fivem.net/natives/?_0x8AA9180DE2FEDD45)
+--- @param vehicle Vehicle
+--- @param avoidObstacles boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, avoidObstacles: boolean): void
+--- @deprecated
+function N_0x8aa9180de2fedd45(vehicle, avoidObstacles) end
 
     
 --- SetVehicleUndriveable
@@ -11590,9 +11667,9 @@ function SetRandomBoatsInMp(toggle) end
 --- GetVehicleFlightNozzlePosition
 --- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 --- 
---- if GetVehicleHoverModePercentage(vehicle) == 0.0 then
+--- if GetVehicleFlightNozzlePosition(vehicle) == 0.0 then
 ---     print("Flying normally!")
---- elseif GetVehicleHoverModePercentage(vehicle) == 1.0 then
+--- elseif GetVehicleFlightNozzlePosition(vehicle) == 1.0 then
 ---     print("Flying in VTOL mode!")
 --- else
 ---     print("Currently switching hover mode!")
@@ -11609,9 +11686,9 @@ function GetVehicleFlightNozzlePosition(aircraft) end
 --- GetVehicleFlightNozzlePosition
 --- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 --- 
---- if GetVehicleHoverModePercentage(vehicle) == 0.0 then
+--- if GetVehicleFlightNozzlePosition(vehicle) == 0.0 then
 ---     print("Flying normally!")
---- elseif GetVehicleHoverModePercentage(vehicle) == 1.0 then
+--- elseif GetVehicleFlightNozzlePosition(vehicle) == 1.0 then
 ---     print("Flying in VTOL mode!")
 --- else
 ---     print("Currently switching hover mode!")
@@ -11629,9 +11706,9 @@ function N_0xda62027c8bdb326e(aircraft) end
 --- GetVehicleFlightNozzlePosition
 --- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 --- 
---- if GetVehicleHoverModePercentage(vehicle) == 0.0 then
+--- if GetVehicleFlightNozzlePosition(vehicle) == 0.0 then
 ---     print("Flying normally!")
---- elseif GetVehicleHoverModePercentage(vehicle) == 1.0 then
+--- elseif GetVehicleFlightNozzlePosition(vehicle) == 1.0 then
 ---     print("Flying in VTOL mode!")
 --- else
 ---     print("Currently switching hover mode!")
@@ -11649,9 +11726,9 @@ function GetPlaneHoverModePercentage(aircraft) end
 --- GetVehicleFlightNozzlePosition
 --- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 --- 
---- if GetVehicleHoverModePercentage(vehicle) == 0.0 then
+--- if GetVehicleFlightNozzlePosition(vehicle) == 0.0 then
 ---     print("Flying normally!")
---- elseif GetVehicleHoverModePercentage(vehicle) == 1.0 then
+--- elseif GetVehicleFlightNozzlePosition(vehicle) == 1.0 then
 ---     print("Flying in VTOL mode!")
 --- else
 ---     print("Currently switching hover mode!")
@@ -11669,9 +11746,9 @@ function GetVehicleHoverModePercentage(aircraft) end
 --- GetVehicleFlightNozzlePosition
 --- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 --- 
---- if GetVehicleHoverModePercentage(vehicle) == 0.0 then
+--- if GetVehicleFlightNozzlePosition(vehicle) == 0.0 then
 ---     print("Flying normally!")
---- elseif GetVehicleHoverModePercentage(vehicle) == 1.0 then
+--- elseif GetVehicleFlightNozzlePosition(vehicle) == 1.0 then
 ---     print("Flying in VTOL mode!")
 --- else
 ---     print("Currently switching hover mode!")
@@ -12231,15 +12308,15 @@ function CopyVehicleDamages(sourceVehicle, targetVehicle) end
 function N_0xe44a982368a4af23(sourceVehicle, targetVehicle) end
 
     
---- ```
---- iVar3 = get_vehicle_cause_of_destruction(uLocal_248[iVar2]);  
---- if (iVar3 == joaat("weapon_stickybomb"))  
---- {  
----      func_171(726);  
----      iLocal_260 = 1;  
---- }  
---- ```
----
+--- GetVehicleCauseOfDestruction
+--- @usage local destructionCauseHash = GetVehicleCauseOfDestruction(GetVehiclePedIsIn(PlayerPedId(), true))
+--- if destructionCauseHash == GetHashKey("weapon_stickybomb") then
+---      -- It looks like the vehicle was destroyed by a sticky bomb
+---      Citizen.Trace('Vehicle was destroyed by a sticky bomb!')
+--- elseif destructionCauseHash ~= 0 then
+---      -- It looks like the vehicle was destroyed by something else!
+---      Citizen.Trace('Vehicle was destroyed by: ' .. destructionCauseHash)
+--- en
 --- @hash [0xE495D1EF4C91FD20](https://docs.fivem.net/natives/?_0xE495D1EF4C91FD20)
 --- @param vehicle Vehicle
 --- @return Hash
@@ -13457,19 +13534,19 @@ function N_0xf87d9f2301f7d206(vehicle) end
 function N_0xf8b49f5ba7f850e7(vehicle, p1) end
 
     
---- ```
+--- Returns the convertible state of the specified vehicle.
+--- 
+--- ```cpp
 --- enum RoofState
 --- {
----      ROOFSTATE_UP = 0;
----      ROOFSTATE_LOWERING,
----      ROOFSTATE_DOWN,
----      ROOFSTATE_RAISING
+---      ROOFSTATE_UP = 0,
+---      ROOFSTATE_LOWERING = 1,
+---      ROOFSTATE_DOWN = 2,
+---      ROOFSTATE_RAISING = 3
 --- };
 --- ```
---- 
---- Got a "6" return value but not sure about what the value means
---- 6 -> unknown (Stopped but not fully open ?)
----
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId())
+--- print(GetConvertibleRoofState(vehicle)
 --- @hash [0xF8C397922FC03F41](https://docs.fivem.net/natives/?_0xF8C397922FC03F41)
 --- @param vehicle Vehicle
 --- @return number
@@ -13627,8 +13704,14 @@ function SetHeliTailRotorHealth(vehicle, health) end
 function N_0xfe205f38aaa58e5b(vehicle, health) end
 
     
+--- Checks the angle of the door mapped from 0.0 - 1.0 where 0.0 is fully closed and 1.0 is fully open.
+--- 
 --- See eDoorId declared in [`SET_VEHICLE_DOOR_SHUT`](https://docs.fivem.net/natives/?_0x93D9BD300D7789E5)
----
+--- @usage local veh = GetVehiclePedIsIn(PlayerPedId()
+--- -- check if driver door is open
+--- if GetVehicleDoorAngleRatio(veh, 0) > 0.0 then
+---   print("Driver door is open!)
+--- en
 --- @hash [0xFE3F9C29F7B32BD5](https://docs.fivem.net/natives/?_0xFE3F9C29F7B32BD5)
 --- @param vehicle Vehicle
 --- @param doorIndex number (int)

@@ -1263,10 +1263,10 @@ function SetEntityHealth(entity, health) end
 --- @param collision boolean
 --- @param isPed boolean
 --- @param rotationOrder number (int)
---- @param fixedRot boolean
+--- @param syncRot boolean
 --- @return void
---- @overload fun(entity1: Entity, entity2: Entity, boneIndex: number, xPos: number, yPos: number, zPos: number, xRot: number, yRot: number, zRot: number, p9: boolean, useSoftPinning: boolean, collision: boolean, isPed: boolean, rotationOrder: number, fixedRot: boolean): void
-function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRot, yRot, zRot, p9, useSoftPinning, collision, isPed, rotationOrder, fixedRot) end
+--- @overload fun(entity1: Entity, entity2: Entity, boneIndex: number, xPos: number, yPos: number, zPos: number, xRot: number, yRot: number, zRot: number, p9: boolean, useSoftPinning: boolean, collision: boolean, isPed: boolean, rotationOrder: number, syncRot: boolean): void
+function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRot, yRot, zRot, p9, useSoftPinning, collision, isPed, rotationOrder, syncRot) end
 
     
 --- ```

@@ -99,19 +99,18 @@ function GetModelDimensions(modelHash) end
 function StopSaveArray() end
 
     
---- ```
---- flags appears to always be 0
---- ```
----
+--- Clears an area of cops at the given coordinates and radius.
+--- @usage -- Clear the area, do also create an event
+--- ClearAreaOfCops(0.0, 0.0, 0.0, 10000.0, true
 --- @hash [0x04F8FC8FCF58F88D](https://docs.fivem.net/natives/?_0x04F8FC8FCF58F88D)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @param flags number (int)
+--- @param createNetEvent boolean
 --- @return void
---- @overload fun(x: number, y: number, z: number, radius: number, flags: number): void
-function ClearAreaOfCops(x, y, z, radius, flags) end
+--- @overload fun(x: number, y: number, z: number, radius: number, createNetEvent: boolean): void
+function ClearAreaOfCops(x, y, z, radius, createNetEvent) end
 
     
 --- ```
@@ -209,17 +208,18 @@ function HaveCreditsReachedEnd() end
 function N_0x075f1d57402c93ba() end
 
     
---- ClearAreaOfProjectiles
----
+--- Clears an area of projectiles at the given coordinates and radius.
+--- @usage -- Clear the area, do also create an event
+--- ClearAreaOfProjectiles(0.0, 0.0, 0.0, 10000.0, true
 --- @hash [0x0A1CB9094635D1A6](https://docs.fivem.net/natives/?_0x0A1CB9094635D1A6)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @param flags number (int)
+--- @param createNetEvent boolean
 --- @return void
---- @overload fun(x: number, y: number, z: number, radius: number, flags: number): void
-function ClearAreaOfProjectiles(x, y, z, radius, flags) end
+--- @overload fun(x: number, y: number, z: number, radius: number, createNetEvent: boolean): void
+function ClearAreaOfProjectiles(x, y, z, radius, createNetEvent) end
 
     
 --- ScriptRaceInit
@@ -1864,8 +1864,17 @@ function SetGamePaused(toggle) end
 function SetWeatherTypeTransition(weatherType1, weatherType2, percentWeather2) end
 
     
---- SetSuperJumpThisFrame
----
+--- Allows the player to perform super jumps. This function must be called every frame for it to work.
+--- It basically OR's a flag for a single frame, allowing the ped to perform a super jump only when the flag is set.
+--- @usage Citizen.CreateThread(function()
+---     while true do
+---         SetSuperJumpThisFrame(PlayerId())
+---         -- Try enabling the two down below if you also want invincibility and no ragdoll effects
+---         --SetPlayerInvincible(PlayerId(), true)
+---         --SetPedCanRagdoll(PlayerPedId(), false)
+---         Citizen.Wait(0)
+---     end
+--- end
 --- @hash [0x57FFF03E423A4C0B](https://docs.fivem.net/natives/?_0x57FFF03E423A4C0B)
 --- @param player Player
 --- @return void
@@ -3215,9 +3224,7 @@ function SetPlayerRockstarEditorDisabled(toggle) end
 function N_0x9d8d44adbba61ef2(toggle) end
 
     
---- ```
---- For a full list, see here: pastebin.com/yLNWicUi  
---- ```
+--- For a full list, see [here](https://gist.github.com/4mmonium/f76f3ecef649ed275b260b433ea84494).
 ---
 --- @hash [0x9DC711BC69C548DF](https://docs.fivem.net/natives/?_0x9DC711BC69C548DF)
 --- @param scriptName string (char*)
@@ -4063,19 +4070,18 @@ function N_0xba4b8d83bdc75551(p0) end
 function AddStuntJumpAngled(x1, y1, z1, x2, y2, z2, radius1, x3, y3, z3, x4, y4, z4, radius2, camX, camY, camZ, unk1, unk2, unk3) end
 
     
---- ```
---- Example:       CLEAR_AREA_OF_PEDS(0, 0, 0, 10000, 1);
---- ```
----
+--- Clears an area of peds at the given coordinates and radius.
+--- @usage -- Clear the area, do also create an event
+--- ClearAreaOfPeds(0.0, 0.0, 0.0, 10000.0, true
 --- @hash [0xBE31FD6CE464AC59](https://docs.fivem.net/natives/?_0xBE31FD6CE464AC59)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @param flags number (int)
+--- @param createNetEvent boolean
 --- @return void
---- @overload fun(x: number, y: number, z: number, radius: number, flags: number): void
-function ClearAreaOfPeds(x, y, z, radius, flags) end
+--- @overload fun(x: number, y: number, z: number, radius: number, createNetEvent: boolean): void
+function ClearAreaOfPeds(x, y, z, radius, createNetEvent) end
 
     
 --- StartSaveStructWithSize
@@ -5822,8 +5828,27 @@ function LoadCloudHat(name, transitionTime) end
 function SetCloudHatTransition(name, transitionTime) end
 
     
---- GetFrameCount
----
+--- Gets the number of the current frame being displayed.
+--- @usage -- Create a thread
+--- Citizen.CreateThread(function()
+---     -- Loop forever
+---     while true do
+---         -- Get the number of the current frame being displayed
+---         local startCount = GetFrameCount()
+--- 
+---         -- Wait one second
+---         Wait(1000)
+--- 
+---         -- Get the new number of the current frame being displayed, after waiting one second
+---         local endCount = GetFrameCount()
+--- 
+---         -- Calculate the number of frames that have been rendered between the two points
+---         local frameNum = endCount - startCount
+--- 
+---         -- Print the output to the console, mentioning that it is an approximate value
+---         print("Approximate FPS: "..frameNum)
+---     end
+--- end
 --- @hash [0xFC8202EFC642E6F2](https://docs.fivem.net/natives/?_0xFC8202EFC642E6F2)
 ---
 --- @return number

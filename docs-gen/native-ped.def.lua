@@ -121,10 +121,7 @@ function SetPedDucking(ped, toggle) end
 function N_0x03ea03af85a85cb7(ped, p1, p2, p3, p4, p5, p6, p7, p8) end
 
     
---- ```
---- List of component/props ID  
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
---- ```
+--- GetPedTextureVariation
 ---
 --- @hash [0x04A355E041E004E6](https://docs.fivem.net/natives/?_0x04A355E041E004E6)
 --- @param ped Ped
@@ -221,10 +218,7 @@ function IsAnyPedNearPoint(x, y, z, radius) end
 function SetPedMoveRateOverride(ped, value) end
 
     
---- ```
---- List of component/props ID  
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
---- ```
+--- ClearPedProp
 ---
 --- @hash [0x0943E5B8E078E76E](https://docs.fivem.net/natives/?_0x0943E5B8E078E76E)
 --- @param ped Ped
@@ -1367,25 +1361,41 @@ function SetPedWeaponMovementClipset(ped, clipSet) end
 --- 
 --- ### MP Freemode list of components
 --- 
---- **0**: Face\
---- **1**: Mask\
---- **2**: Hair\
---- **3**: Torso\
---- **4**: Leg\
---- **5**: Parachute / bag\
---- **6**: Shoes\
---- **7**: Accessory\
---- **8**: Undershirt\
---- **9**: Kevlar\
---- **10**: Badge\
+--- **0**: Face
+--- **1**: Mask
+--- **2**: Hair
+--- **3**: Torso
+--- **4**: Leg
+--- **5**: Parachute / bag
+--- **6**: Shoes
+--- **7**: Accessory
+--- **8**: Undershirt
+--- **9**: Kevlar
+--- **10**: Badge
 --- **11**: Torso 2
 --- 
---- ### Related and useful natives
+--- List of Component IDs
 --- 
---- [GET_NUMBER_OF_PED_DRAWABLE_VARIATIONS](https://docs.fivem.net/natives/?_0x27561561732A7842)\
---- [GET_NUMBER_OF_PED_TEXTURE_VARIATIONS](https://docs.fivem.net/natives/?_0x8F7156A3142A6BAD)
---- 
---- [List of component/props ID](gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html) of player_two with examples
+--- ```cpp
+--- // Components
+--- enum ePedVarComp
+--- {
+---     PV_COMP_INVALID = 0xFFFFFFFF,
+---     PV_COMP_HEAD = 0, // "HEAD"
+---     PV_COMP_BERD = 1, // "BEARD"
+---     PV_COMP_HAIR = 2, // "HAIR"
+---     PV_COMP_UPPR = 3, // "UPPER"
+---     PV_COMP_LOWR = 4, // "LOWER"
+---     PV_COMP_HAND = 5, // "HAND"
+---     PV_COMP_FEET = 6, // "FEET"
+---     PV_COMP_TEEF = 7, // "TEETH"
+---     PV_COMP_ACCS = 8, // "ACCESSORIES"
+---     PV_COMP_TASK = 9, // "TASK"
+---     PV_COMP_DECL = 10, // "DECL"
+---     PV_COMP_JBIB = 11, // "JBIB"
+---     PV_COMP_MAX = 12,
+--- };
+--- ```
 ---
 --- @hash [0x262B14F48D29DE80](https://docs.fivem.net/natives/?_0x262B14F48D29DE80)
 --- @param ped Ped
@@ -1482,11 +1492,6 @@ function N_0x26af0e8e30bd2a2c(ped) end
 
     
 --- ```
---- List of component/props ID  
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
---- ```
---- 
---- ```
 --- NativeDB Added Parameter 3: BOOL p2
 --- ```
 ---
@@ -1559,10 +1564,7 @@ function GetPedHeadBlendData(ped, headBlendData) end
 function GetPedHeadBlendData(ped, headBlendData) end
 
     
---- ```
---- List of component/props ID  
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
---- ```
+--- GetNumberOfPedDrawableVariations
 ---
 --- @hash [0x27561561732A7842](https://docs.fivem.net/natives/?_0x27561561732A7842)
 --- @param ped Ped
@@ -1693,53 +1695,44 @@ function SetPedAsGroupLeader(ped, groupId) end
 function IsPedRunningMobilePhoneTask(ped) end
 
     
---- ```
---- List of component/props ID
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html
---- ```
+--- SetPedPreloadPropData
 ---
 --- @hash [0x2B16A3BFF1FBCE49](https://docs.fivem.net/natives/?_0x2B16A3BFF1FBCE49)
 --- @param ped Ped
 --- @param componentId number (int)
 --- @param drawableId number (int)
---- @param TextureId number (int)
+--- @param textureId number (int)
 --- @return boolean
---- @overload fun(ped: Ped, componentId: number, drawableId: number, TextureId: number): boolean
-function SetPedPreloadPropData(ped, componentId, drawableId, TextureId) end
+--- @overload fun(ped: Ped, componentId: number, drawableId: number, textureId: number): boolean
+function SetPedPreloadPropData(ped, componentId, drawableId, textureId) end
 
     
 --- # New Name: SetPedPreloadPropData
---- ```
---- List of component/props ID
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html
---- ```
+--- SetPedPreloadPropData
 ---
 --- @hash [0x2B16A3BFF1FBCE49](https://docs.fivem.net/natives/?_0x2B16A3BFF1FBCE49)
 --- @param ped Ped
 --- @param componentId number (int)
 --- @param drawableId number (int)
---- @param TextureId number (int)
+--- @param textureId number (int)
 --- @return boolean
---- @overload fun(ped: Ped, componentId: number, drawableId: number, TextureId: number): boolean
+--- @overload fun(ped: Ped, componentId: number, drawableId: number, textureId: number): boolean
 --- @deprecated
-function N_0x2b16a3bff1fbce49(ped, componentId, drawableId, TextureId) end
+function N_0x2b16a3bff1fbce49(ped, componentId, drawableId, textureId) end
 
     
 --- # New Name: SetPedPreloadPropData
---- ```
---- List of component/props ID
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html
---- ```
+--- SetPedPreloadPropData
 ---
 --- @hash [0x2B16A3BFF1FBCE49](https://docs.fivem.net/natives/?_0x2B16A3BFF1FBCE49)
 --- @param ped Ped
 --- @param componentId number (int)
 --- @param drawableId number (int)
---- @param TextureId number (int)
+--- @param textureId number (int)
 --- @return boolean
---- @overload fun(ped: Ped, componentId: number, drawableId: number, TextureId: number): boolean
+--- @overload fun(ped: Ped, componentId: number, drawableId: number, textureId: number): boolean
 --- @deprecated
-function IsPedPropValid(ped, componentId, drawableId, TextureId) end
+function IsPedPropValid(ped, componentId, drawableId, textureId) end
 
     
 --- ```
@@ -2959,7 +2952,25 @@ function SetCreateRandomCopsOnScenarios(toggle) end
 --- ```
 --- gtaforums.com/topic/885580-ped-headshotmugshot-txd/  
 --- ```
----
+--- @usage CreateThread(function()
+---     -- Get the ped headshot image.
+---     local handle = RegisterPedheadshot(PlayerPedId())
+---     while not IsPedheadshotReady(handle) or not IsPedheadshotValid(handle) do
+---         Wait(0)
+---     end
+---     local txd = GetPedheadshotTxdString(handle)
+--- 
+---     -- Add the notification text, the more text you add the smaller the font
+---     -- size will become (text is forced on 1 line only), so keep this short!
+---     SetNotificationTextEntry("STRING")
+---     AddTextComponentSubstringPlayerName("Headshot")
+--- 
+---     -- Draw the notification
+---     DrawNotificationAward(txd, txd, 200, 0, "FM_GEN_UNLOCK")
+--- 
+---     -- Cleanup after yourself!
+---     UnregisterPedheadshot(handle)
+--- end
 --- @hash [0x4462658788425076](https://docs.fivem.net/natives/?_0x4462658788425076)
 --- @param ped Ped
 --- @return number
@@ -4379,10 +4390,7 @@ function ApplyPedOverlay(ped, collection, overlay) end
 function SetPedDecoration(ped, collection, overlay) end
 
     
---- ```
---- List of component/props ID  
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
---- ```
+--- GetNumberOfPedPropDrawableVariations
 ---
 --- @hash [0x5FAF9754E789FB47](https://docs.fivem.net/natives/?_0x5FAF9754E789FB47)
 --- @param ped Ped
@@ -4797,7 +4805,7 @@ function IsPedOnVehicle(ped) end
 --- 4 - Legs
 --- 5 - Hands
 --- 6 - Foot
---- 7 - ------
+--- 7 - Scarfs/Neck Accessories
 --- 8 - Accessories 1
 --- 9 - Accessories 2
 --- 10- Decals
@@ -5117,10 +5125,7 @@ function GetSeatPedIsTryingToEnter(ped) end
 function IsPedInAnyTrain(ped) end
 
     
---- ```
---- List of component/props ID  
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
---- ```
+--- KnockOffPedProp
 ---
 --- @hash [0x6FD7816A36615F48](https://docs.fivem.net/natives/?_0x6FD7816A36615F48)
 --- @param ped Ped
@@ -5989,10 +5994,7 @@ function ClearPedAlternateWalkAnim(ped, p1) end
 function SetPedStealthMovement(ped, p1, action) end
 
     
---- ```
---- List of component/props ID  
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
---- ```
+--- GetPedPropIndex
 ---
 --- @hash [0x898CC20EA75BACD8](https://docs.fivem.net/natives/?_0x898CC20EA75BACD8)
 --- @param ped Ped
@@ -6154,10 +6156,7 @@ function RemoveGroup(groupId) end
 function ClearPedLastDamageBone(ped) end
 
     
---- ```
---- List of component/props ID  
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
---- ```
+--- GetNumberOfPedTextureVariations
 ---
 --- @hash [0x8F7156A3142A6BAD](https://docs.fivem.net/natives/?_0x8F7156A3142A6BAD)
 --- @param ped Ped
@@ -6259,18 +6258,34 @@ function RegisterHatedTargetsAroundPed(ped, radius) end
 --- 
 --- ### MP Freemode list of props
 --- 
---- **0**: Hat\
---- **1**: Glass\
---- **2**: Ear\
---- **6**: Watch\
---- **7**: Bracelet
+--- **0**: Hats
+--- **1**: Glasses
+--- **2**: Ears
+--- **6**: Watches
+--- **7**: Bracelets
 --- 
---- ### Related and useful natives
+--- List of Prop IDs
 --- 
---- [GET_NUMBER_OF_PED_PROP_DRAWABLE_VARIATIONS](https://docs.fivem.net/natives/?_0x5FAF9754E789FB47)\
---- [GET_NUMBER_OF_PED_PROP_TEXTURE_VARIATIONS](https://docs.fivem.net/natives/?_0xA6E7F1CEB523E171)
---- 
---- [List of component/props ID](https://gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html) of player_two with examples
+--- ```cpp
+--- // Props
+--- enum eAnchorPoints
+--- {
+---     ANCHOR_HEAD = 0, // "p_head"
+---     ANCHOR_EYES = 1, // "p_eyes"
+---     ANCHOR_EARS = 2, // "p_ears"
+---     ANCHOR_MOUTH = 3, // "p_mouth"
+---     ANCHOR_LEFT_HAND = 4, // "p_lhand"
+---     ANCHOR_RIGHT_HAND = 5, // "p_rhand"
+---     ANCHOR_LEFT_WRIST = 6, // "p_lwrist"
+---     ANCHOR_RIGHT_WRIST = 7, // "p_rwrist"
+---     ANCHOR_HIP = 8, // "p_lhip"
+---     ANCHOR_LEFT_FOOT = 9, // "p_lfoot"
+---     ANCHOR_RIGHT_FOOT = 10, // "p_rfoot"
+---     ANCHOR_PH_L_HAND = 11, // "ph_lhand"
+---     ANCHOR_PH_R_HAND = 12, // "ph_rhand"
+---     NUM_ANCHORS = 13,
+--- };
+--- ```
 ---
 --- @hash [0x93376B65A266EB5F](https://docs.fivem.net/natives/?_0x93376B65A266EB5F)
 --- @param ped Ped
@@ -7154,10 +7169,7 @@ function N_0xa660faf550eb37e5(p0, p1) end
 
     
 --- ```
---- Need to check behavior when drawableId = -1  
---- 
---- List of component/props ID  
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
+--- Need to check behavior when drawableId = -1
 --- ```
 ---
 --- @hash [0xA6E7F1CEB523E171](https://docs.fivem.net/natives/?_0xA6E7F1CEB523E171)
@@ -8091,10 +8103,7 @@ function GetClosestPed(x, y, z, radius, p4, p5, outPed, p7, p8, pedType) end
 function SetPedLegIkMode(ped, mode) end
 
     
---- ```
---- List of component/props ID  
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
---- ```
+--- SetPedRandomProps
 ---
 --- @hash [0xC44AA05345C992C6](https://docs.fivem.net/natives/?_0xC44AA05345C992C6)
 --- @param ped Ped
@@ -8225,9 +8234,6 @@ function SetPedRelationshipGroupHash(ped, hash) end
     
 --- ```
 --- p1 is always 0 in R* scripts; and a quick disassembly seems to indicate that p1 is unused.  
---- 
---- List of component/props ID:
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
 --- ```
 ---
 --- @hash [0xC8A9481A01E63C28](https://docs.fivem.net/natives/?_0xC8A9481A01E63C28)
@@ -8373,10 +8379,7 @@ function SetPedPrimaryLookat(ped, lookAt) end
 function GetDeadPedPickupCoords(ped, p1, p2) end
 
     
---- ```
---- List of component/props ID  
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
---- ```
+--- ClearAllPedProps
 ---
 --- @hash [0xCD8A7537A9B52F06](https://docs.fivem.net/natives/?_0xCD8A7537A9B52F06)
 --- @param ped Ped
@@ -9035,10 +9038,7 @@ function IsPedHairColorValid(colorID) end
 function N_0xe0d36e5d9e99cc21(colorID) end
 
     
---- ```
---- List of component/props ID  
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
---- ```
+--- GetPedPropTextureIndex
 ---
 --- @hash [0xE131A28626F81AB2](https://docs.fivem.net/natives/?_0xE131A28626F81AB2)
 --- @param ped Ped
@@ -9109,10 +9109,7 @@ function ClearPedFacialDecorations(ped) end
 function IsPedRunningRagdollTask(ped) end
 
     
---- ```
---- List of component/props ID  
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
---- ```
+--- GetPedPaletteVariation
 ---
 --- @hash [0xE3DD5F2A84B42281](https://docs.fivem.net/natives/?_0xE3DD5F2A84B42281)
 --- @param ped Ped
@@ -9243,11 +9240,7 @@ function N_0xe6ca85e7259ce16b(ped) end
 function GetMount(ped) end
 
     
---- ```
---- Checks if the component variation is valid, this works great for randomizing components using loops.  
---- List of component/props ID  
---- gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html  
---- ```
+--- Checks if the component variation is valid, this works great for randomizing components using loops.
 ---
 --- @hash [0xE825F6B6CEA7671D](https://docs.fivem.net/natives/?_0xE825F6B6CEA7671D)
 --- @param ped Ped
@@ -9766,9 +9759,8 @@ function GetPedVisualFieldCenterAngle(ped) end
 function N_0xf033419d1b81fae8(p0) end
 
     
---- ```
---- Causes Ped to ragdoll on collision with any object (e.g Running into trashcan). If applied to player you will sometimes trip on the sidewalk.  
---- ```
+--- Causes Ped to ragdoll on collision with any object (e.g Running into trashcan). If applied to player you will sometimes trip on the sidewalk.
+--- Needs to be recalled after each ragdoll from a Collision.
 ---
 --- @hash [0xF0A4F1BBF4FA7497](https://docs.fivem.net/natives/?_0xF0A4F1BBF4FA7497)
 --- @param ped Ped

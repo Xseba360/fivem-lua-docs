@@ -553,9 +553,7 @@ function GetDesObjectAnimProgress(object) end
 function N_0x27f248c3febfaad3(p0, p1) end
 
     
---- ```
---- Pickup hashes: pastebin.com/8EuSv2r1  
---- ```
+--- Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
 ---
 --- @hash [0x27F9D613092159CF](https://docs.fivem.net/natives/?_0x27F9D613092159CF)
 --- @param pickupHash Hash
@@ -593,9 +591,7 @@ function RemoveAllPickupsOfType(pickupHash) end
 function IsPointInAngledArea(xPos, yPos, zPos, x1, y1, z1, x2, y2, z2, width, p10, includez) end
 
     
---- ```
---- Pickup hashes: pastebin.com/8EuSv2r1
---- ```
+--- Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
 ---
 --- @hash [0x2EAF1FDB2FB55698](https://docs.fivem.net/natives/?_0x2EAF1FDB2FB55698)
 --- @param pickupHash Hash
@@ -1413,10 +1409,7 @@ function N_0x659f9d71f52843f8(p0, p1) end
 function N_0x66a49d021870fe88() end
 
     
---- ```
---- Used for doing money drop  
---- Pickup hashes: pastebin.com/8EuSv2r1  
---- ```
+--- Creates an ambient pickup given the hash. Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
 ---
 --- @hash [0x673966A0C0FD7171](https://docs.fivem.net/natives/?_0x673966A0C0FD7171)
 --- @param pickupHash Hash
@@ -3248,9 +3241,7 @@ function N_0xf92099527db8e2a7(p0, p1) end
 function N_0xf9c1681347c8bd15(object) end
 
     
---- ```
---- Pickup hashes: pastebin.com/8EuSv2r1  
---- ```
+--- Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
 ---
 --- @hash [0xF9C36251F6E48E33](https://docs.fivem.net/natives/?_0xF9C36251F6E48E33)
 --- @param pickupHash Hash
@@ -3264,9 +3255,7 @@ function DoesPickupOfTypeExistInArea(pickupHash, x, y, z, radius) end
 
     
 --- # New Name: DoesPickupOfTypeExistInArea
---- ```
---- Pickup hashes: pastebin.com/8EuSv2r1  
---- ```
+--- Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
 ---
 --- @hash [0xF9C36251F6E48E33](https://docs.fivem.net/natives/?_0xF9C36251F6E48E33)
 --- @param pickupHash Hash
@@ -3280,9 +3269,7 @@ function DoesPickupOfTypeExistInArea(pickupHash, x, y, z, radius) end
 function IsPickupWithinRadius(pickupHash, x, y, z, radius) end
 
     
---- ```
---- Pickup hashes: pastebin.com/8EuSv2r1  
---- ```
+--- Pickup hashes can be found [here](https://gist.github.com/4mmonium/1eabfb6b3996e3aa6b9525a3eccf8a0b).
 ---
 --- @hash [0xFBA08C503DD5FA58](https://docs.fivem.net/natives/?_0xFBA08C503DD5FA58)
 --- @param pickupHash Hash

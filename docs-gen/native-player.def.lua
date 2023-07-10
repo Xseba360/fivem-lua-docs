@@ -2001,14 +2001,19 @@ function N_0xa0d3e4f7aafb7e78(player, percentage) end
 function GetPlayerUnderwaterTimeRemaining(player) end
 
     
---- RestorePlayerStamina
----
+--- Adds a percentage to a players stamina
+--- @usage Citizen.CreateThread(function()
+---   while true do
+---     RestorePlayerStamina(PlayerId(), 0.3)
+---     Citizen.Wait(15000) -- 15 seconds
+---   end
+--- end
 --- @hash [0xA352C1B864CAFD33](https://docs.fivem.net/natives/?_0xA352C1B864CAFD33)
 --- @param player Player
---- @param p1 number (float)
+--- @param percentage number (float)
 --- @return void
---- @overload fun(player: Player, p1: number): void
-function RestorePlayerStamina(player, p1) end
+--- @overload fun(player: Player, percentage: number): void
+function RestorePlayerStamina(player, percentage) end
 
     
 --- ```
@@ -2316,9 +2321,13 @@ function ClearPlayerWantedLevel(player) end
 function N_0xb45eff719d8427a6(p0) end
 
     
---- ```
---- Alternative: GET_VEHICLE_PED_IS_IN(PLAYER_PED_ID(), 1);  
---- ```
+--- ### Warning
+--- 
+--- This native will return `0` if the last vehicle the player was in was destroyed.
+--- 
+--- ### Alternative
+--- 
+--- You can use [GET_VEHICLE_PED_IS_IN](https://docs.fivem.net/natives/?_0x9A9112A0FE9A4713), which will actually get the last vehicle, even if it was destroyed.
 ---
 --- @hash [0xB6997A7EB3F5C8C0](https://docs.fivem.net/natives/?_0xB6997A7EB3F5C8C0)
 ---
@@ -2492,7 +2501,7 @@ function GiveAchievementToPlayer(achievement) end
 function StartFiringAmnesty(duration) end
 
     
---- DisablePlayerVehicleRewards
+--- Disables vehicle rewards for the current frame.
 ---
 --- @hash [0xC142BE3BB9CE125F](https://docs.fivem.net/natives/?_0xC142BE3BB9CE125F)
 --- @param player Player

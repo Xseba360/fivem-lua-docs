@@ -1388,13 +1388,13 @@ function N_0x609278246a29ca34(cam, p1, p2) end
 --- @param cam Cam
 --- @param ped Ped
 --- @param boneIndex number (int)
---- @param x number (float)
---- @param y number (float)
---- @param z number (float)
---- @param heading boolean
+--- @param xOffset number (float)
+--- @param yOffset number (float)
+--- @param zOffset number (float)
+--- @param isRelative boolean
 --- @return void
---- @overload fun(cam: Cam, ped: Ped, boneIndex: number, x: number, y: number, z: number, heading: boolean): void
-function AttachCamToPedBone(cam, ped, boneIndex, x, y, z, heading) end
+--- @overload fun(cam: Cam, ped: Ped, boneIndex: number, xOffset: number, yOffset: number, zOffset: number, isRelative: boolean): void
+function AttachCamToPedBone(cam, ped, boneIndex, xOffset, yOffset, zOffset, isRelative) end
 
     
 --- N_0x62374889a4d59f72
@@ -1508,7 +1508,7 @@ function ShakeCam(cam, type, amplitude) end
     
 --- CAM::\_GET_GAMEPLAY_CAM_COORDS can be used instead of posX,Y,Z\
 --- CAM::\_GET_GAMEPLAY_CAM_ROT can be used instead of rotX,Y,Z\
---- CAM::\_80EC114669DAEFF4() can be used instead of p7 (Possible p7 is FOV parameter. )\
+--- CAM::\_GET_FINAL_RENDERED_CAM_FOV can be used instead of p7 (Possible p7 is FOV parameter. )\
 --- rotationOrder is 2 usually
 ---
 --- @hash [0x6ABFA3E16460F22D](https://docs.fivem.net/natives/?_0x6ABFA3E16460F22D)
@@ -1766,10 +1766,16 @@ function SetCamSplineNodeExtraFlags(cam, p1, flags) end
 function N_0x7bf1a54ae67ac070(cam, p1, flags) end
 
     
---- ```
---- The last parameter, as in other "ROT" methods, is usually 2.  
---- ```
----
+--- Gets a camera's rotation by handle (`cam`) lookup, outputs a `Vector3` in degrees.
+--- @usage -- We need a valid camera handle for this to work.
+--- local theCamHandle = CreateCam("DEFAULT_SCRIPTED_CAMERA", true)
+--- 
+--- -- Let's set the camera rotation for illustrative purposes
+--- SetCamRot(theCamHandle, 0.1, 0.2, 0.3, 0)
+--- 
+--- -- We are now able to get the camera rotation.
+--- local camRot = GetCamRot(theCamHandle, 0) -- vector3(0.100000, 0.200000, 0.300000)
+--- Citizen.Trace(string.format("Cam Rotation is x: %f, y: %f, z: %f", camRot.x, camRot.y, camRot.z)
 --- @hash [0x7D304C1C955E3E12](https://docs.fivem.net/natives/?_0x7D304C1C955E3E12)
 --- @param cam Cam
 --- @param rotationOrder number (int)
@@ -1871,19 +1877,11 @@ function GetFinalRenderedCamFov() end
 function N_0x80ec114669daeff4() end
 
     
---- ```
---- p0 dosen't seem to change much, I tried it with 0, 1, 2:  
---- 0-Pitch(X): -70.000092  
---- 0-Roll(Y): -0.000001  
---- 0-Yaw(Z): -43.886459  
---- 1-Pitch(X): -70.000092  
---- 1-Roll(Y): -0.000001  
---- 1-Yaw(Z): -43.886463  
---- 2-Pitch(X): -70.000092  
---- 2-Roll(Y): -0.000002  
---- 2-Yaw(Z): -43.886467  
---- ```
----
+--- This function takes a rotation order and outputs a `Vector3` in degrees.
+--- 
+--- It first calls a game function to calculate these values given the rotation order and effectively multiplies those values by `180/PI`, hence degrees since the function it calls outputs radians which are then converted to degrees.
+--- @usage local camRot = GetGameplayCamRot(0) -- vector3(-14.74518, 0.05254443, 95.24616)
+--- Citizen.Trace(string.format("Cam Rotation is x: %f, y: %f, z: %f", camRot.x, camRot.y, camRot.z)
 --- @hash [0x837765A25378F0BB](https://docs.fivem.net/natives/?_0x837765A25378F0BB)
 --- @param rotationOrder number (int)
 --- @return Vector3
@@ -1933,12 +1931,10 @@ function N_0x83b8201ed82a9a2d(cam, p1, p2, p3) end
 function SetGameplayObjectHint(p0, p1, p2, p3, p4, p5, p6, p7) end
 
     
---- ```
---- Sets the rotation of the cam.  
---- Last parameter unknown.  
---- Last parameter seems to always be set to 2.  
---- ```
----
+--- Sets the rotation of the camera.
+--- @usage -- We need a valid camera handle for this to work.
+--- local theCamHandle = CreateCam("DEFAULT_SCRIPTED_CAMERA", true)
+--- SetCamRot(theCamHandle, 0.1, 0.2, 0.3, 0
 --- @hash [0x85973643155D0B07](https://docs.fivem.net/natives/?_0x85973643155D0B07)
 --- @param cam Cam
 --- @param rotX number (float)
@@ -2522,9 +2518,7 @@ function N_0xa6385deb180f319f(cam, p1, scale) end
 function N_0xa7092afe81944852() end
 
     
---- ```
---- Returns whether or not the passed camera handle exists.  
---- ```
+--- Looks up a camera handle in the current camera pool and returns `true` if the handle is found, otherwise it returns `false`.
 ---
 --- @hash [0xA7A932170592B50E](https://docs.fivem.net/natives/?_0xA7A932170592B50E)
 --- @param cam Cam
@@ -2651,14 +2645,7 @@ function SetGameplayCamRelativeHeading(heading) end
     
 --- Create a camera with the specified cam name/type, You can use `SET_CAM_` natives to manipulate the camera.
 --- 
---- Camera names found in the b617d scripts:
---- 
---- ```
---- "DEFAULT_ANIMATED_CAMERA"  
---- "DEFAULT_SCRIPTED_CAMERA"  
---- "DEFAULT_SCRIPTED_FLY_CAMERA"  
---- "DEFAULT_SPLINE_CAMERA" 
---- ```
+--- Take a look at [CREATE_CAM](https://docs.fivem.net/natives/?_0xC3981DCE61D9E13F) if you would like to see the available camera names.
 --- @usage local cam = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", 561.3, 301.3, 63.0, 0.0, 0.0, 0.0, 90.0
 --- @hash [0xB51194800B257161](https://docs.fivem.net/natives/?_0xB51194800B257161)
 --- @param camName string (char*)

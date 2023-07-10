@@ -635,9 +635,7 @@ function N_0x1b7abe26cbcbf8c7(ped, p1, p2) end
 function BlipSiren(vehicle) end
 
     
---- ```
---- For a full list, see here: pastebin.com/Kj9t38KF  
---- ```
+--- Find the radio station list [here](https://gist.github.com/4mmonium/b47d6512a2d992cbf4eea15d9038b581)
 ---
 --- @hash [0x1B9C0099CB942AC6](https://docs.fivem.net/natives/?_0x1B9C0099CB942AC6)
 --- @param vehicle Vehicle
@@ -3803,9 +3801,7 @@ function PlayPedAmbientSpeechAndCloneNative(ped, speechName, speechParam) end
 function PlayAmbientSpeech2(ped, speechName, speechParam) end
 
     
---- ```
---- For a full list, see here: pastebin.com/Kj9t38KF  
---- ```
+--- Find the radio station list [here](https://gist.github.com/4mmonium/b47d6512a2d992cbf4eea15d9038b581)
 ---
 --- @hash [0xC69EDA28699D5107](https://docs.fivem.net/natives/?_0xC69EDA28699D5107)
 --- @param stationName string (char*)
