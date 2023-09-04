@@ -350,6 +350,7 @@ function IsAceAllowed(object) end
 ---     *   2612
 ---     *   2699
 ---     *   2802
+---     *   2944
 --- *   RedM
 ---     *   1311
 ---     *   1355
@@ -635,6 +636,15 @@ function GetCurrentResourceName() end
 --- @return string
 --- @overload fun(): string
 function GetGameName() end
+
+    
+--- A getter for [FREEZE_ENTITY_POSITION](https://docs.fivem.net/natives/?_0x428CA6DBD1094446).
+--- @usage local isFrozen = IsEntityPositionFrozen(PlayerPedId()
+--- @hash [0xEDBE6ADD](https://docs.fivem.net/natives/?_0xEDBE6ADD)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function IsEntityPositionFrozen(entity) end
 
     
 --- A getter for [SET_PLAYER_WEAPON_DEFENSE_MODIFIER](https://docs.fivem.net/natives/?_0x2D83BC011CA14A3C).

@@ -26,6 +26,15 @@ function GetInteriorRoomName(interiorId, roomIndex) end
 function ResetMapZoomDataLevel(index) end
 
     
+--- GetHudComponentSize
+---
+--- @hash [0x12217D33](https://docs.fivem.net/natives/?_0x12217D33)
+--- @param id number (int)
+--- @return Vector3
+--- @overload fun(id: number): Vector3
+function GetHudComponentSize(id) end
+
+    
 --- Sets a handling override for a specific vehicle. Certain handling flags can only be set globally using `SET_HANDLING_VECTOR`, this might require some experimentation.
 ---
 --- @hash [0x12497890](https://docs.fivem.net/natives/?_0x12497890)
@@ -103,6 +112,15 @@ function GetMapZoomDataLevel(index) end
 function GetVehicleWheelieState(vehicle) end
 
     
+--- GetWaterQuadAlpha
+--- @usage local success, a0, a1, a2, a3 = GetWaterQuadAlpha(0
+--- @hash [0x14088095](https://docs.fivem.net/natives/?_0x14088095)
+--- @param waterQuad number (int)
+--- @return boolean, number, number, number, number
+--- @overload fun(waterQuad: number): boolean, number, number, number, number
+function GetWaterQuadAlpha(waterQuad) end
+
+    
 --- **Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
 --- 
 --- Registers a KVP value as an asset with the GTA streaming module system. This function currently won't work.
@@ -172,6 +190,19 @@ function SetVehicleXenonLightsCustomColor(vehicle, red, green, blue) end
 function SetManualShutdownLoadingScreenNui(manualShutdown) end
 
     
+--- This native returns the index of a water quad if the given point is inside its bounds.
+--- 
+--- *If you also want to check for water level, check out [`GetWaterQuadAtCoords_3d`](https://docs.fivem.net/natives/?_0xF8E03DB8)*
+--- @usage local currentPedPosition = GetEntityCoords(PlayerPedId())
+--- local waterQuadIndex = GetWaterQuadAtCoords(currentPedPosition.x, currentPedPosition.y
+--- @hash [0x17321452](https://docs.fivem.net/natives/?_0x17321452)
+--- @param x number (float)
+--- @param y number (float)
+--- @return number
+--- @overload fun(x: number, y: number): number
+function GetWaterQuadAtCoords(x, y) end
+
+    
 --- GetVehicleDashboardFuel
 ---
 --- @hash [0x19B0B2CE](https://docs.fivem.net/natives/?_0x19B0B2CE)
@@ -229,6 +260,15 @@ function RegisterFontFile(fileName) end
 function SendDuiMouseUp(duiObject, button) end
 
     
+--- Resets the water to the games default water.xml.
+--- @usage ResetWater(
+--- @hash [0x1DA4791](https://docs.fivem.net/natives/?_0x1DA4791)
+---
+--- @return void
+--- @overload fun(): void
+function ResetWater() end
+
+    
 --- GetVehicleClutch
 ---
 --- @hash [0x1DAD4583](https://docs.fivem.net/natives/?_0x1DAD4583)
@@ -236,6 +276,16 @@ function SendDuiMouseUp(duiObject, button) end
 --- @return number
 --- @overload fun(vehicle: Vehicle): number
 function GetVehicleClutch(vehicle) end
+
+    
+--- GetWaterQuadIsInvisible
+--- @usage local success, isInvisible = GetWaterQuadIsInvisible(0
+--- @hash [0x1DEDBD77](https://docs.fivem.net/natives/?_0x1DEDBD77)
+--- @param waterQuad number (int)
+--- @param isInvisible number (int*)
+--- @return boolean
+--- @overload fun(waterQuad: number): boolean, number
+function GetWaterQuadIsInvisible(waterQuad, isInvisible) end
 
     
 --- Creates a runtime texture dictionary with the specified name.
@@ -259,6 +309,19 @@ function CreateRuntimeTxd(name) end
 --- @return number
 --- @overload fun(): number
 function GetVehicleDashboardOilTemp() end
+
+    
+--- This native allows you to update the bounds of a specified water quad index.
+--- @usage local success = SetWaveQuadBounds(0, -5000, -5000, 5000, 5000
+--- @hash [0x1FCC1FAF](https://docs.fivem.net/natives/?_0x1FCC1FAF)
+--- @param waveQuad number (int)
+--- @param minX number (int)
+--- @param minY number (int)
+--- @param maxX number (int)
+--- @param maxY number (int)
+--- @return boolean
+--- @overload fun(waveQuad: number, minX: number, minY: number, maxX: number, maxY: number): boolean
+function SetWaveQuadBounds(waveQuad, minX, minY, maxX, maxY) end
 
     
 --- SetVehicleHighGear
@@ -287,6 +350,16 @@ function GetVehicleDrawnWheelAngleMult(vehicle) end
 --- @return number
 --- @overload fun(serverId: number): number
 function MumbleGetVoiceChannelFromServerId(serverId) end
+
+    
+--- GetWaterQuadHasLimitedDepth
+--- @usage local success, hasLimitedDepth = GetWaterQuadHasLimitedDepth(0
+--- @hash [0x22EA3BD8](https://docs.fivem.net/natives/?_0x22EA3BD8)
+--- @param waterQuad number (int)
+--- @param hasLimitedDepth number (int*)
+--- @return boolean
+--- @overload fun(waterQuad: number): boolean, number
+function GetWaterQuadHasLimitedDepth(waterQuad, hasLimitedDepth) end
 
     
 --- Stops listening to the specified channel.
@@ -404,6 +477,20 @@ function ClearVehicleXenonLightsCustomColor(vehicle) end
 --- @return void
 --- @overload fun(entryKey: Hash, entryText: string): void
 function AddTextEntryByHash(entryKey, entryText) end
+
+    
+--- GetTimecycleModifierNameByIndex
+--- @usage local modifierIndex = GetTimecycleModifierIndex()
+--- 
+--- if modifierIndex ~= -1 then
+---   local modifierName = GetTimecycleModifierNameByIndex(modifierIndex)
+---   print("current timecycle name is " .. modifierName)
+--- en
+--- @hash [0x28CB8608](https://docs.fivem.net/natives/?_0x28CB8608)
+--- @param modifierIndex number (int)
+--- @return string
+--- @overload fun(modifierIndex: number): string
+function GetTimecycleModifierNameByIndex(modifierIndex) end
 
     
 --- Replaces the pixel data in a runtime texture with the image data from a file in the current resource, or a data URL.
@@ -747,6 +834,16 @@ function SetVehicleWheelRotationSpeed(vehicle, wheelIndex, speed) end
 function SetMillisecondsPerGameMinute(value) end
 
     
+--- RemoveTimecycleModifier
+--- @usage local modifierName = "my_awesome_timecycle"
+--- RemoveTimecycleModifier(modifierName
+--- @hash [0x36DF8612](https://docs.fivem.net/natives/?_0x36DF8612)
+--- @param modifierName string (char*)
+--- @return void
+--- @overload fun(modifierName: string): void
+function RemoveTimecycleModifier(modifierName) end
+
+    
 --- GetVehicleDashboardOilPressure
 ---
 --- @hash [0x3856D767](https://docs.fivem.net/natives/?_0x3856D767)
@@ -783,6 +880,24 @@ function SetRuntimeTextureArgbData(tex, buffer, length) end
 --- @return boolean
 --- @overload fun(): boolean
 function IsNuiFocusKeepingInput() end
+
+    
+--- See [GET_TIMECYCLE_VAR_COUNT](https://docs.fivem.net/natives/?_0x838B34D8).
+--- @usage local varCount = GetTimecycleVarCount()
+--- 
+--- if varCount ~= 0 then
+---   for index = 0, varCount - 1 do
+---     local varName = GetTimecycleVarNameByIndex(index)
+---     local varDefault = GetTimecycleVarDefaultValueByIndex(index)
+--- 
+---     print(string.format("[%d] %s (%f)", index, varName, varDefault))
+---   end
+--- en
+--- @hash [0x3B90238](https://docs.fivem.net/natives/?_0x3B90238)
+--- @param varIndex number (int)
+--- @return number
+--- @overload fun(varIndex: number): number
+function GetTimecycleVarDefaultValueByIndex(varIndex) end
 
     
 --- Gets the traction vector length of a wheel.
@@ -910,6 +1025,17 @@ function SetMinimapComponentPosition(name, alignX, alignY, posX, posY, sizeX, si
 function GetInteriorPortalRoomTo(interiorId, portalIndex) end
 
     
+--- This native returns the index of a wave quad if the given point is inside its bounds.
+--- @usage local currentPedPosition = GetEntityCoords(PlayerPedId())
+--- local waveQuadIndex = GetWaveQuadAtCoords(currentPedPosition.x, currentPedPosition.y
+--- @hash [0x3F5A61A7](https://docs.fivem.net/natives/?_0x3F5A61A7)
+--- @param x number (float)
+--- @param y number (float)
+--- @return number
+--- @overload fun(x: number, y: number): number
+function GetWaveQuadAtCoords(x, y) end
+
+    
 --- SetNuiFocusKeepInput
 ---
 --- @hash [0x3FF5E5F8](https://docs.fivem.net/natives/?_0x3FF5E5F8)
@@ -974,6 +1100,15 @@ function FindNextPickup(findHandle, outEntity) end
 function RegisterEntities(factory) end
 
     
+--- GetWaterQuadBounds
+--- @usage local success, minX, minY, maxX, maxY = GetWaterQuadBounds(1
+--- @hash [0x42E9A06A](https://docs.fivem.net/natives/?_0x42E9A06A)
+--- @param waterQuad number (int)
+--- @return boolean, number, number, number, number
+--- @overload fun(waterQuad: number): boolean, number, number, number, number
+function GetWaterQuadBounds(waterQuad) end
+
+    
 --- Sets values to the zoom level data by index.
 ---
 --- @hash [0x447C718E](https://docs.fivem.net/natives/?_0x447C718E)
@@ -986,6 +1121,15 @@ function RegisterEntities(factory) end
 --- @return void
 --- @overload fun(index: number, zoomScale: number, zoomSpeed: number, scrollSpeed: number, tilesX: number, tilesY: number): void
 function SetMapZoomDataLevel(index, zoomScale, zoomSpeed, scrollSpeed, tilesX, tilesY) end
+
+    
+--- A getter for [SET_PED_SWEAT](https://docs.fivem.net/natives/?_0x27B0405F59637D1F).
+--- @usage local sweat = GetPedSweat(PlayerPedId()
+--- @hash [0x44B91E94](https://docs.fivem.net/natives/?_0x44B91E94)
+--- @param ped Ped
+--- @return number
+--- @overload fun(ped: Ped): number
+function GetPedSweat(ped) end
 
     
 --- Overrides a ped model personality type.
@@ -1153,6 +1297,24 @@ function SetInteriorRoomExtents(interiorId, roomIndex, bbMinX, bbMinY, bbMinZ, b
 function GetVehicleDashboardLights() end
 
     
+--- This native allows you to update the water quad type.
+--- 
+--- Valid type definitions:
+--- 
+--- *   **0** Square
+--- *   **1** Right triangle where the 90 degree angle is at maxX, minY
+--- *   **2** Right triangle where the 90 degree angle is at minX, minY
+--- *   **3** Right triangle where the 90 degree angle is at minX, maxY
+--- *   **4** Right triangle where the 90 degree angle is at maxY, maxY
+--- @usage local success = SetWaterQuadType(0, 0
+--- @hash [0x50131EB2](https://docs.fivem.net/natives/?_0x50131EB2)
+--- @param waterQuad number (int)
+--- @param type number (int)
+--- @return boolean
+--- @overload fun(waterQuad: number, type: number): boolean
+function SetWaterQuadType(waterQuad, type) end
+
+    
 --- Sets variant of shader that will be used to draw entity outline.
 --- 
 --- Variants are:
@@ -1197,6 +1359,22 @@ function SetDiscordRichPresenceAsset(assetName) end
 --- @return number
 --- @overload fun(vehicle: Vehicle, wheelIndex: number): number
 function GetVehicleWheelHealth(vehicle, wheelIndex) end
+
+    
+--- CloneTimecycleModifier
+--- @usage local sourceName = "underwater"
+--- local cloneName = "my_awesome_timecycle"
+--- 
+--- local clonedIndex = CloneTimecycleModifier(sourceName, cloneName)
+--- if clonedIndex ~= -1 then
+---   SetTimecycleModifier(cloneName)
+--- en
+--- @hash [0x54D636B3](https://docs.fivem.net/natives/?_0x54D636B3)
+--- @param sourceModifierName string (char*)
+--- @param clonedModifierName string (char*)
+--- @return number
+--- @overload fun(sourceModifierName: string, clonedModifierName: string): number
+function CloneTimecycleModifier(sourceModifierName, clonedModifierName) end
 
     
 --- SetNetworkWalkMode
@@ -1261,6 +1439,29 @@ function SetInteriorPortalRoomTo(interiorId, portalIndex, roomTo) end
 function GetInteriorRotation(interiorId) end
 
     
+--- RemoveTimecycleModifierVar
+--- @usage local modifierName = "superDARK"
+--- local varName = "postfx_noise"
+--- 
+--- if DoesTimecycleModifierHasVar(modifierName, varName) then
+---   local success, value1, value2 = GetTimecycleModifierVar(modifierName, varName)
+--- 
+---   if success then
+---     print(string.format("[%s] removed var %s with values: %f %f", modifierName, varName, value1, value2))
+---     RemoveTimecycleModifierVar(modifierName, varName)
+---   end
+--- else
+---     SetTimecycleModifierVar(modifierName, varName, 1.0, 1.0)
+---     print(string.format("[%s] created var %s", modifierName, varName))
+--- en
+--- @hash [0x5A5E0D05](https://docs.fivem.net/natives/?_0x5A5E0D05)
+--- @param modifierName string (char*)
+--- @param varName string (char*)
+--- @return void
+--- @overload fun(modifierName: string, varName: string): void
+function RemoveTimecycleModifierVar(modifierName, varName) end
+
+    
 --- SetNuiFocus
 ---
 --- @hash [0x5B98AE30](https://docs.fivem.net/natives/?_0x5B98AE30)
@@ -1269,6 +1470,15 @@ function GetInteriorRotation(interiorId) end
 --- @return void
 --- @overload fun(hasFocus: boolean, hasCursor: boolean): void
 function SetNuiFocus(hasFocus, hasCursor) end
+
+    
+--- Disables the game's afk camera that starts panning around after 30 seconds of inactivity(While riding in a car as a passenger)
+---
+--- @hash [0x5C140555](https://docs.fivem.net/natives/?_0x5C140555)
+--- @param state boolean
+--- @return void
+--- @overload fun(state: boolean): void
+function DisableVehiclePassengerIdleCamera(state) end
 
     
 --- Injects a 'mouse down' event for a DUI object. Coordinates are expected to be set using SEND_DUI_MOUSE_MOVE.
@@ -1309,6 +1519,20 @@ function MumbleClearVoiceTargetChannels(targetId) end
 function SetVehicleAutoRepairDisabled(vehicle, value) end
 
     
+--- GetTimecycleModifierIndexByName
+--- @usage local modifierIndex = GetTimecycleModifierIndexByName("underwater")
+--- local currentIndex = GetTimecycleModifierIndex()
+--- 
+--- if currentIndex ~= -1 and currentIndex == modifierIndex then
+---   print("we're actually using 'underwater' timecycle!")
+--- en
+--- @hash [0x5F4CD0E2](https://docs.fivem.net/natives/?_0x5F4CD0E2)
+--- @param modifierName string (char*)
+--- @return number
+--- @overload fun(modifierName: string): number
+function GetTimecycleModifierIndexByName(modifierName) end
+
+    
 --- GetVehicleFuelLevel
 ---
 --- @hash [0x5F739BB8](https://docs.fivem.net/natives/?_0x5F739BB8)
@@ -1334,6 +1558,23 @@ function GetVehicleFuelLevel(vehicle) end
 function SetMinimapType(type) end
 
     
+--- GetTimecycleModifierVarCount
+--- @usage local varCount = GetTimecycleModifierVarCount("underwater")
+--- 
+--- if varCount ~= 0 then
+---   for index = 0, varCount - 1 do
+---     local varName = GetTimecycleModifierVarNameByIndex(index)
+--- 
+---     print(string.format("[%d] %s", index, varName))
+---   end
+--- en
+--- @hash [0x60FB60FE](https://docs.fivem.net/natives/?_0x60FB60FE)
+--- @param modifierName string (char*)
+--- @return number
+--- @overload fun(modifierName: string): number
+function GetTimecycleModifierVarCount(modifierName) end
+
+    
 --- Overrides the output volume for a particular player on Mumble. This will also bypass 3D audio and distance calculations. -1.0 to reset the override.
 --- 
 --- Set to -1.0 to reset the Volume override.
@@ -1344,6 +1585,16 @@ function SetMinimapType(type) end
 --- @return void
 --- @overload fun(player: Player, volume: number): void
 function MumbleSetVolumeOverride(player, volume) end
+
+    
+--- SetWaterQuadLevel
+--- @usage local success = SetWaterQuadLevel(0, 55.0
+--- @hash [0x6292F7A8](https://docs.fivem.net/natives/?_0x6292F7A8)
+--- @param waterQuad number (int)
+--- @param level number (float)
+--- @return boolean
+--- @overload fun(waterQuad: number, level: number): boolean
+function SetWaterQuadLevel(waterQuad, level) end
 
     
 --- Use this native to disable noise suppression and high pass filters.
@@ -1409,6 +1660,16 @@ function SetVehicleTurboPressure(vehicle, pressure) end
 function SetVehicleWheelWidth(vehicle, width) end
 
     
+--- *level is defined as "z" in water.xml*
+--- @usage local success, waterQuadLevel = GetWaterQuadLevel(0
+--- @hash [0x6523816B](https://docs.fivem.net/natives/?_0x6523816B)
+--- @param waterQuad number (int)
+--- @param waterQuadLevel number (float*)
+--- @return boolean
+--- @overload fun(waterQuad: number): boolean, number
+function GetWaterQuadLevel(waterQuad, waterQuadLevel) end
+
+    
 --- Creates an audio submix with the specified name, or gets the existing audio submix by that name.
 ---
 --- @hash [0x658D2BC8](https://docs.fivem.net/natives/?_0x658D2BC8)
@@ -1436,7 +1697,7 @@ function GetAmbientVehicleRangeMultiplier() end
 function GetRopeLengthChangeRate(rope) end
 
     
---- <!-- Native implemented by Disquse. 0x66EE14B2 -->
+--- IsBigmapFull
 --- @usage local expanded = IsBigmapActive()
 --- local fullMap = IsBigmapFull()
 --- print("The minimap is currently " .. (expanded and "expanded" or "normal size") .. " and the full map is currently " .. (fullMap and "revealed" or "not revealed") .. "."
@@ -1445,6 +1706,16 @@ function GetRopeLengthChangeRate(rope) end
 --- @return boolean
 --- @overload fun(): boolean
 function IsBigmapFull() end
+
+    
+--- SetCalmingQuadDampening
+--- @usage local success = SetCalmingQuadDampening(0, 1.0
+--- @hash [0x67977501](https://docs.fivem.net/natives/?_0x67977501)
+--- @param calmingQuad number (int)
+--- @param dampening number (float)
+--- @return boolean
+--- @overload fun(calmingQuad: number, dampening: number): boolean
+function SetCalmingQuadDampening(calmingQuad, dampening) end
 
     
 --- Set's the ropes length change rate, which is the speed that rope should wind if started.
@@ -1545,6 +1816,55 @@ function SetVehicleEngineTemperature(vehicle, temperature) end
 function ResetFlyThroughWindscreenParams() end
 
     
+--- SetTimecycleModifierVar
+--- @usage local modifierName = "superDARK"
+--- local varName = "postfx_noise"
+--- 
+--- if DoesTimecycleModifierHasVar(modifierName, varName) then
+---   local success, value1, value2 = GetTimecycleModifierVar(modifierName, varName)
+--- 
+---   if success then
+---     print(string.format("[%s] removed var %s with values: %f %f", modifierName, varName, value1, value2))
+---     RemoveTimecycleModifierVar(modifierName, varName)
+---   end
+--- else
+---     SetTimecycleModifierVar(modifierName, varName, 1.0, 1.0)
+---     print(string.format("[%s] created var %s", modifierName, varName))
+--- en
+--- @hash [0x6E0A422B](https://docs.fivem.net/natives/?_0x6E0A422B)
+--- @param modifierName string (char*)
+--- @param varName string (char*)
+--- @param value1 number (float)
+--- @param value2 number (float)
+--- @return void
+--- @overload fun(modifierName: string, varName: string, value1: number, value2: number): void
+function SetTimecycleModifierVar(modifierName, varName, value1, value2) end
+
+    
+--- GetWaterQuadNoStencil
+--- @usage local success, noStencil = GetWaterQuadNoStencil(0
+--- @hash [0x6F4ACBA](https://docs.fivem.net/natives/?_0x6F4ACBA)
+--- @param waterQuad number (int)
+--- @param noStencil number (int*)
+--- @return boolean
+--- @overload fun(waterQuad: number): boolean, number
+function GetWaterQuadNoStencil(waterQuad, noStencil) end
+
+    
+--- Create a clean timecycle modifier. See [`SET_TIMECYCLE_MODIFIER_VAR`](https://docs.fivem.net/natives/?_0x6E0A422B) to add variables.
+--- @usage local modifierName = "my_awesome_timecycle"
+--- local createdIndex = CreateTimecycleModifier(modifierName)
+--- 
+--- if createdIndex ~= -1 then
+---   SetTimecycleModifier(modifierName)
+--- en
+--- @hash [0x70FA2AFA](https://docs.fivem.net/natives/?_0x70FA2AFA)
+--- @param modifierName string (char*)
+--- @return number
+--- @overload fun(modifierName: string): number
+function CreateTimecycleModifier(modifierName) end
+
+    
 --- Gets brake pressure of a wheel.
 --- Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.
 --- Normal values around 1.0f when braking.
@@ -1605,6 +1925,17 @@ function SetEntityDrawOutline(entity, enabled) end
 --- @return void
 --- @overload fun(state: boolean): void
 function SetFlashLightKeepOnWhileMoving(state) end
+
+    
+--- SetHudComponentSize
+---
+--- @hash [0x7644A9FA](https://docs.fivem.net/natives/?_0x7644A9FA)
+--- @param id number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @return void
+--- @overload fun(id: number, x: number, y: number): void
+function SetHudComponentSize(id, x, y) end
 
     
 --- GetInteriorPosition
@@ -1851,6 +2182,19 @@ function UnregisterRawNuiCallback(callbackType) end
 function TriggerServerEventInternal(eventName, eventPayload, payloadLength) end
 
     
+--- This native allows you to update the bounds of a specified water quad index.
+--- @usage local success = SetWaterQuadBounds(0, -5000.0, -5000.0, 5000.0, 5000.0
+--- @hash [0x80AD144C](https://docs.fivem.net/natives/?_0x80AD144C)
+--- @param waterQuad number (int)
+--- @param minX number (int)
+--- @param minY number (int)
+--- @param maxX number (int)
+--- @param maxY number (int)
+--- @return boolean
+--- @overload fun(waterQuad: number, minX: number, minY: number, maxX: number, maxY: number): boolean
+function SetWaterQuadBounds(waterQuad, minX, minY, maxX, maxY) end
+
+    
 --- Resets mapdata entity transform matrix to its original state.
 --- This function supports SDK infrastructure and is not intended to be used directly from your code.
 ---
@@ -1939,6 +2283,24 @@ function GetPlayerVehicleDefenseModifier(playerId) end
 function SetInteriorPortalEntityFlag(interiorId, portalIndex, entityIndex, flag) end
 
     
+--- Returns the amount of variables available to be applied on timecycle modifiers.
+--- @usage local varCount = GetTimecycleVarCount()
+--- 
+--- if varCount ~= 0 then
+---   for index = 0, varCount - 1 do
+---     local varName = GetTimecycleVarNameByIndex(index)
+---     local varDefault = GetTimecycleVarDefaultValueByIndex(index)
+--- 
+---     print(string.format("[%d] %s (%f)", index, varName, varDefault))
+---   end
+--- en
+--- @hash [0x838B34D8](https://docs.fivem.net/natives/?_0x838B34D8)
+---
+--- @return number
+--- @overload fun(): number
+function GetTimecycleVarCount() end
+
+    
 --- MumbleGetTalkerProximity
 ---
 --- @hash [0x84E02A32](https://docs.fivem.net/natives/?_0x84E02A32)
@@ -1976,6 +2338,27 @@ function SetIgnoreVehicleOwnershipForStowing(ignore) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, wheelIndex: number, length: number): void
 function SetVehicleWheelTractionVectorLength(vehicle, wheelIndex, length) end
+
+    
+--- GetWaveQuadAmplitude
+--- @usage local success, amplitude = GetWaveQuadAmplitude(1
+--- @hash [0x865139A3](https://docs.fivem.net/natives/?_0x865139A3)
+--- @param waveQuad number (int)
+--- @param waveQuadAmplitude number (float*)
+--- @return boolean
+--- @overload fun(waveQuad: number): boolean, number
+function GetWaveQuadAmplitude(waveQuad, waveQuadAmplitude) end
+
+    
+--- This native returns the index of a calming quad if the given point is inside its bounds.
+--- @usage local currentPedPosition = GetEntityCoords(PlayerPedId())
+--- local calmingQuadIndex = GetCalmingQuadAtCoords(currentPedPosition.x, currentPedPosition.y
+--- @hash [0x870E8B40](https://docs.fivem.net/natives/?_0x870E8B40)
+--- @param x number (float)
+--- @param y number (float)
+--- @return number
+--- @overload fun(x: number, y: number): number
+function GetCalmingQuadAtCoords(x, y) end
 
     
 --- MumbleSetVoiceChannel
@@ -2182,6 +2565,15 @@ function MumbleClearVoiceTargetPlayers(targetId) end
 --- @return void
 --- @overload fun(findHandle: number): void
 function EndFindVehicle(findHandle) end
+
+    
+--- GetWaveQuadCount
+--- @usage local waveQuadCount = GetWaveQuadCount(
+--- @hash [0x9250C76](https://docs.fivem.net/natives/?_0x9250C76)
+---
+--- @return number
+--- @overload fun(): number
+function GetWaveQuadCount() end
 
     
 --- Removes the specified player from the user's voice targets.
@@ -2393,6 +2785,19 @@ function GetInteriorPortalEntityFlag(interiorId, portalIndex, entityIndex) end
 function GetInteriorPortalEntityRotation(interiorId, portalIndex, entityIndex) end
 
     
+--- Sets world clip boundaries for water quads file (water.xml, water_heistisland.xml)
+--- Used internally by LOAD_GLOBAL_WATER_FILE
+--- @usage SetWaterAreaClipRect(-4000, -4000, 4500, 8000
+--- @hash [0x9FCD2EE6](https://docs.fivem.net/natives/?_0x9FCD2EE6)
+--- @param minX number (int)
+--- @param minY number (int)
+--- @param maxX number (int)
+--- @param maxY number (int)
+--- @return void
+--- @overload fun(minX: number, minY: number, maxX: number, maxY: number): void
+function SetWaterAreaClipRect(minX, minY, maxX, maxY) end
+
+    
 --- Destroys a DUI browser.
 ---
 --- @hash [0xA085CB10](https://docs.fivem.net/natives/?_0xA085CB10)
@@ -2439,6 +2844,36 @@ function IsStreamingFileReady(registerAs) end
 function GetInteriorRoomCount(interiorId) end
 
     
+--- Break off vehicle wheel by index. The `leaveDebrisTrail` flag requires `putOnFire` to be true.
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId())
+--- 
+--- if DoesEntityExist(vehicle) then
+---   for i = 0, 3 do
+---     BreakOffVehicleWheel(vehicle, i, true, false, true, false)
+---   end
+--- en
+--- @hash [0xA274CADB](https://docs.fivem.net/natives/?_0xA274CADB)
+--- @param vehicle Vehicle
+--- @param wheelIndex number (int)
+--- @param leaveDebrisTrail boolean
+--- @param deleteWheel boolean
+--- @param unknownFlag boolean
+--- @param putOnFire boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, wheelIndex: number, leaveDebrisTrail: boolean, deleteWheel: boolean, unknownFlag: boolean, putOnFire: boolean): void
+function BreakOffVehicleWheel(vehicle, wheelIndex, leaveDebrisTrail, deleteWheel, unknownFlag, putOnFire) end
+
+    
+--- SetWaterQuadIsInvisible
+--- @usage local success = SetWaterQuadIsInvisible(0, true
+--- @hash [0xA387D917](https://docs.fivem.net/natives/?_0xA387D917)
+--- @param waterQuad number (int)
+--- @param isInvisible boolean
+--- @return boolean
+--- @overload fun(waterQuad: number, isInvisible: boolean): boolean
+function SetWaterQuadIsInvisible(waterQuad, isInvisible) end
+
+    
 --- A getter for [\_SET_PED_HAIR_COLOR](https://docs.fivem.net/natives/?_0x4CFFC65454C93A49). Returns -1 if fails to get.
 --- @usage local primaryColour = GetPedHairColor(PlayerPedId())
 --- if primaryColour == 18 then
@@ -2481,6 +2916,29 @@ function SetAimCooldown(value) end
 --- @return void
 --- @overload fun(origTxd: string, origTxn: string, newTxd: string, newTxn: string): void
 function AddReplaceTexture(origTxd, origTxn, newTxd, newTxn) end
+
+    
+--- GetTimecycleModifierVar
+--- @usage local modifierName = "superDARK"
+--- local varName = "postfx_noise"
+--- 
+--- if DoesTimecycleModifierHasVar(modifierName, varName) then
+---   local success, value1, value2 = GetTimecycleModifierVar(modifierName, varName)
+--- 
+---   if success then
+---     print(string.format("[%s] removed var %s with values: %f %f", modifierName, varName, value1, value2))
+---     RemoveTimecycleModifierVar(modifierName, varName)
+---   end
+--- else
+---     SetTimecycleModifierVar(modifierName, varName, 1.0, 1.0)
+---     print(string.format("[%s] created var %s", modifierName, varName))
+--- en
+--- @hash [0xA7109E12](https://docs.fivem.net/natives/?_0xA7109E12)
+--- @param modifierName string (char*)
+--- @param varName string (char*)
+--- @return boolean, number, number
+--- @overload fun(modifierName: string, varName: string): boolean, number, number
+function GetTimecycleModifierVar(modifierName, varName) end
 
     
 --- IsVehicleWanted
@@ -2548,6 +3006,15 @@ function RemoveReplaceTexture(origTxd, origTxn) end
 --- @return void
 --- @overload fun(callbackType: string, callback: fun): void
 function RegisterRawNuiCallback(callbackType, callback) end
+
+    
+--- GetHudComponentName
+---
+--- @hash [0xA91866BC](https://docs.fivem.net/natives/?_0xA91866BC)
+--- @param id number (int)
+--- @return string
+--- @overload fun(id: number): string
+function GetHudComponentName(id) end
 
     
 --- Disables the game's world horizon lods rendering (see `farlods.#dd`).
@@ -2711,6 +3178,16 @@ function SelectEntityAtPos(fracX, fracY, hitFlags, precise) end
 function SetDiscordRichPresenceAssetText(text) end
 
     
+--- GetCalmingQuadDampening
+--- @usage local success, dampening = GetCalmingQuadDampening(1
+--- @hash [0xB0E3A058](https://docs.fivem.net/natives/?_0xB0E3A058)
+--- @param waterQuad number (int)
+--- @param calmingQuadDampening number (float*)
+--- @return boolean
+--- @overload fun(waterQuad: number): boolean, number
+function GetCalmingQuadDampening(waterQuad, calmingQuadDampening) end
+
+    
 --- Creates a runtime texture from a DUI handle.
 ---
 --- @hash [0xB135472B](https://docs.fivem.net/natives/?_0xB135472B)
@@ -2730,6 +3207,15 @@ function CreateRuntimeTextureFromDuiHandle(txd, txn, duiHandle) end
 --- @return void
 --- @overload fun(): void
 function DisableEditorRuntime() end
+
+    
+--- GetWaterQuadCount
+--- @usage local waterQuadCount = GetWaterQuadCount(
+--- @hash [0xB1884159](https://docs.fivem.net/natives/?_0xB1884159)
+---
+--- @return number
+--- @overload fun(): number
+function GetWaterQuadCount() end
 
     
 --- SetVehicleWheelHealth
@@ -2918,6 +3404,15 @@ function SetVehicleWheelXOffset(vehicle, wheelIndex, offset) end
 function GetNuiCursorPosition() end
 
     
+--- A getter for [SET_TIMECYCLE_MODIFIER_STRENGTH](https://docs.fivem.net/natives/?_0x82E7FFCD5B2326B3).
+---
+--- @hash [0xBE54124A](https://docs.fivem.net/natives/?_0xBE54124A)
+---
+--- @return number
+--- @overload fun(): number
+function GetTimecycleModifierStrength() end
+
+    
 --- MumbleClearVoiceChannel
 ---
 --- @hash [0xBF847807](https://docs.fivem.net/natives/?_0xBF847807)
@@ -2968,6 +3463,16 @@ function EnableEditorRuntime() end
 function GetVehicleCheatPowerIncrease(vehicle) end
 
     
+--- SetWaterQuadNoStencil
+--- @usage local success = SetWaterQuadNoStencil(0, true
+--- @hash [0xC3FF42FF](https://docs.fivem.net/natives/?_0xC3FF42FF)
+--- @param waterQuad number (int)
+--- @param noStencil boolean
+--- @return boolean
+--- @overload fun(waterQuad: number, noStencil: boolean): boolean
+function SetWaterQuadNoStencil(waterQuad, noStencil) end
+
+    
 --- A getter for [SET_PED_HEAD_OVERLAY](https://docs.fivem.net/natives/?_0x48F44967FA05CC1E) and [\_SET_PED_HEAD_OVERLAY_COLOR](https://docs.fivem.net/natives/?_0x497BF74A7B9CB952) natives.
 --- @usage -- getting beard overlay data
 --- local success, overlayValue, colourType, firstColour, secondColour, overlayOpacity = GetPedHeadOverlayData(PlayerPedId(), 1)
@@ -2981,6 +3486,42 @@ function GetVehicleCheatPowerIncrease(vehicle) end
 --- @return boolean, number, number, number, number, number
 --- @overload fun(ped: Ped, index: number): boolean, number, number, number, number, number
 function GetPedHeadOverlayData(ped, index) end
+
+    
+--- DoesTimecycleModifierHasVar
+--- @usage local modifierName = "superDARK"
+--- local varName = "postfx_noise"
+--- 
+--- if DoesTimecycleModifierHasVar(modifierName, varName) then
+---   local success, value1, value2 = GetTimecycleModifierVar(modifierName, varName)
+--- 
+---   if success then
+---     print(string.format("[%s] removed var %s with values: %f %f", modifierName, varName, value1, value2))
+---     RemoveTimecycleModifierVar(modifierName, varName)
+---   end
+--- else
+---     SetTimecycleModifierVar(modifierName, varName, 1.0, 1.0)
+---     print(string.format("[%s] created var %s", modifierName, varName))
+--- en
+--- @hash [0xC53BB6D3](https://docs.fivem.net/natives/?_0xC53BB6D3)
+--- @param modifierName string (char*)
+--- @param varName string (char*)
+--- @return boolean
+--- @overload fun(modifierName: string, varName: string): boolean
+function DoesTimecycleModifierHasVar(modifierName, varName) end
+
+    
+--- SetCalmingQuadBounds
+--- @usage local success = SetCalmingQuadBounds(1, -500, -500, 500, 500
+--- @hash [0xC5945BD9](https://docs.fivem.net/natives/?_0xC5945BD9)
+--- @param waterQuad number (int)
+--- @param minX number (int)
+--- @param minY number (int)
+--- @param maxX number (int)
+--- @param maxY number (int)
+--- @return boolean
+--- @overload fun(waterQuad: number, minX: number, minY: number, maxX: number, maxY: number): boolean
+function SetCalmingQuadBounds(waterQuad, minX, minY, maxX, maxY) end
 
     
 --- RegisterNuiCallback
@@ -3064,6 +3605,24 @@ function SetVehicleWheelYRotation(vehicle, wheelIndex, value) end
 function SetVehicleWheelXrot(vehicle, wheelIndex, value) end
 
     
+--- See [GET_TIMECYCLE_VAR_COUNT](https://docs.fivem.net/natives/?_0x838B34D8).
+--- @usage local varCount = GetTimecycleVarCount()
+--- 
+--- if varCount ~= 0 then
+---   for index = 0, varCount - 1 do
+---     local varName = GetTimecycleVarNameByIndex(index)
+---     local varDefault = GetTimecycleVarDefaultValueByIndex(index)
+--- 
+---     print(string.format("[%d] %s (%f)", index, varName, varDefault))
+---   end
+--- en
+--- @hash [0xC6C55AAF](https://docs.fivem.net/natives/?_0xC6C55AAF)
+--- @param varIndex number (int)
+--- @return string
+--- @overload fun(varIndex: number): string
+function GetTimecycleVarNameByIndex(varIndex) end
+
+    
 --- Gets the flags of a wheel.
 --- Max number of wheels can be retrieved with the native GET_VEHICLE_NUMBER_OF_WHEELS.
 ---
@@ -3098,6 +3657,27 @@ function GetVehicleXenonLightsCustomColor(vehicle) end
 --- @return number
 --- @overload fun(interiorId: number, portalIndex: number): number
 function GetInteriorPortalFlag(interiorId, portalIndex) end
+
+    
+--- IsPedComponentVariationGen9Exclusive
+--- @usage local ped = PlayerPedId()
+--- 
+--- for component = 0, 12 do
+---   local count = GetNumberOfPedDrawableVariations(ped, component)
+--- 
+---   for drawable = 0, count - 1 do
+---     if IsPedComponentVariationGen9Exclusive(ped, component, drawable) then
+---       print("Component " .. component .. " drawable " .. drawable .. " is a gen9 exclusive, skip!")
+---     end
+---   end
+--- en
+--- @hash [0xC767B581](https://docs.fivem.net/natives/?_0xC767B581)
+--- @param ped Ped
+--- @param componentId number (int)
+--- @param drawableId number (int)
+--- @return boolean
+--- @overload fun(ped: Ped, componentId: number, drawableId: number): boolean
+function IsPedComponentVariationGen9Exclusive(ped, componentId, drawableId) end
 
     
 --- Starts listening to the specified channel, when available.
@@ -3173,6 +3753,15 @@ function SetDiscordRichPresenceAction(index, label, url) end
 function GetVehicleWheelXOffset(vehicle, wheelIndex) end
 
     
+--- GetWaveQuadDirection
+--- @usage local success, directionX, directionY = GetWaveQuadDirection(1
+--- @hash [0xCCE49A1C](https://docs.fivem.net/natives/?_0xCCE49A1C)
+--- @param waveQuad number (int)
+--- @return boolean, number, number
+--- @overload fun(waveQuad: number): boolean, number, number
+function GetWaveQuadDirection(waveQuad) end
+
+    
 --- RegisterNuiCallbackType
 ---
 --- @hash [0xCD03CDA9](https://docs.fivem.net/natives/?_0xCD03CDA9)
@@ -3190,6 +3779,15 @@ function RegisterNuiCallbackType(callbackType) end
 --- @return void
 --- @overload fun(duiObject: number, jsonString: string): void
 function SendDuiMessage(duiObject, jsonString) end
+
+    
+--- See [SET_SCRIPT_GFX_ALIGN](https://docs.fivem.net/natives/?_0xB8A850F20A067EB6) for details about how gfx align works.
+---
+--- @hash [0xCD949E20](https://docs.fivem.net/natives/?_0xCD949E20)
+--- @param id number (int)
+--- @return number, number
+--- @overload fun(id: number): number, number
+function GetHudComponentAlign(id) end
 
     
 --- Overrides the output volume for a particular player with the specified server id and player name on Mumble. This will also bypass 3D audio and distance calculations. -1.0 to reset the override.
@@ -3213,6 +3811,15 @@ function MumbleSetVolumeOverrideByServerId(serverId, volume) end
 --- @return void
 --- @overload fun(resourceName: string, fileName: string, cacheString: string): void
 function RegisterStreamingFileFromCache(resourceName, fileName, cacheString) end
+
+    
+--- GetCalmingQuadCount
+--- @usage local calmingQuadCount = GetCalmingQuadCount(
+--- @hash [0xCEBFC42](https://docs.fivem.net/natives/?_0xCEBFC42)
+---
+--- @return number
+--- @overload fun(): number
+function GetCalmingQuadCount() end
 
     
 --- GetVehicleWheelRimColliderSize
@@ -3291,6 +3898,16 @@ function GetVehicleCurrentAcceleration(vehicle) end
 --- @return void
 --- @overload fun(name: string, value: number): void
 function SetVisualSettingFloat(name, value) end
+
+    
+--- SetWaterQuadHasLimitedDepth
+--- @usage local success = SetWaterQuadHasLimitedDepth(0, true
+--- @hash [0xD1FDCFC1](https://docs.fivem.net/natives/?_0xD1FDCFC1)
+--- @param waterQuad number (int)
+--- @param hasLimitedDepth boolean
+--- @return boolean
+--- @overload fun(waterQuad: number, hasLimitedDepth: boolean): boolean
+function SetWaterQuadHasLimitedDepth(waterQuad, hasLimitedDepth) end
 
     
 --- Gets power being sent to a wheel.
@@ -3399,6 +4016,8 @@ function GetAllVehicleModels() end
 --- Registers a key mapping for the current resource.
 --- 
 --- See the related [cookbook post](https://cookbook.fivem.net/2020/01/06/using-the-new-console-key-bindings/) for more information.
+--- 
+--- Below you can find some examples on how to create these keybindings as well as the alternate keybinding syntax, which is preceded by `~!` to indicate that it's an alternate key.
 --- @usage local handsUp = false
 --- CreateThread(function()
 ---     while true do
@@ -3414,7 +4033,11 @@ function GetAllVehicleModels() end
 --- RegisterCommand('-handsup', function()
 ---     handsUp = false
 --- end, false)
---- RegisterKeyMapping('+handsup', 'Hands Up', 'keyboard', 'i'
+--- 
+--- RegisterKeyMapping('+handsup', 'Hands Up', 'keyboard', 'i')
+--- 
+--- -- Alternate keybinding syntax
+--- RegisterKeyMapping('~!+handsup', 'Hands Up - Alternate Key', 'keyboard', 'o'
 --- @hash [0xD7664FD1](https://docs.fivem.net/natives/?_0xD7664FD1)
 --- @param commandString string (char*)
 --- @param description string (char*)
@@ -3492,6 +4115,16 @@ function EndFindObject(findHandle) end
 function ResetVehiclePedsCanStandOnTopFlag(vehicle) end
 
     
+--- Disables weapons aim blocking due to environment for local player.
+--- For non-player peds [SET_PED_ENABLE_WEAPON_BLOCKING](https://docs.fivem.net/natives/?_0x97A790315D3831FD) can be used.
+---
+--- @hash [0xDFD8F6DE](https://docs.fivem.net/natives/?_0xDFD8F6DE)
+--- @param state boolean
+--- @return void
+--- @overload fun(state: boolean): void
+function SetWeaponsNoAimBlocking(state) end
+
+    
 --- GetVehicleDashboardBoost
 ---
 --- @hash [0xDFFABA2A](https://docs.fivem.net/natives/?_0xDFFABA2A)
@@ -3564,6 +4197,22 @@ function GetWeaponComponentRangeDamageModifier(componentHash) end
 function GetWeaponComponentClipSize(componentHash) end
 
     
+--- Valid type definitions:
+--- 
+--- *   **0** Square
+--- *   **1** Right triangle where the 90 degree angle is at maxX, minY
+--- *   **2** Right triangle where the 90 degree angle is at minX, minY
+--- *   **3** Right triangle where the 90 degree angle is at minX, maxY
+--- *   **4** Right triangle where the 90 degree angle is at maxY, maxY
+--- @usage local success, type = GetWaterQuadType(0
+--- @hash [0xE2501B8B](https://docs.fivem.net/natives/?_0xE2501B8B)
+--- @param waterQuad number (int)
+--- @param waterType number (int*)
+--- @return boolean
+--- @overload fun(waterQuad: number): boolean, number
+function GetWaterQuadType(waterQuad, waterType) end
+
+    
 --- GetPlayerStamina
 ---
 --- @hash [0xE415EC5C](https://docs.fivem.net/natives/?_0xE415EC5C)
@@ -3571,6 +4220,16 @@ function GetWeaponComponentClipSize(componentHash) end
 --- @return number
 --- @overload fun(playerId: Player): number
 function GetPlayerStamina(playerId) end
+
+    
+--- SetWaveQuadAmplitude
+--- @usage local success = SetWaveQuadAmplitude(0, 1.0
+--- @hash [0xE4174B7B](https://docs.fivem.net/natives/?_0xE4174B7B)
+--- @param waveQuad number (int)
+--- @param amplitude number (float)
+--- @return boolean
+--- @overload fun(waveQuad: number, amplitude: number): boolean
+function SetWaveQuadAmplitude(waveQuad, amplitude) end
 
     
 --- Toggles whether the usage of [ADD_ROPE](https://docs.fivem.net/natives/?_0xE832D760399EB220) should create an underlying CNetworkRopeWorldStateData. By default this is set to false.
@@ -3674,6 +4333,24 @@ function SetVehicleWheelBrakePressure(vehicle, wheelIndex, pressure) end
 --- @return boolean
 --- @overload fun(): boolean
 function MumbleIsActive() end
+
+    
+--- GetTimecycleModifierVarNameByIndex
+--- @usage local varCount = GetTimecycleModifierVarCount("underwater")
+--- 
+--- if varCount ~= 0 then
+---   for index = 0, varCount - 1 do
+---     local varName = GetTimecycleModifierVarNameByIndex(index)
+--- 
+---     print(string.format("[%d] %s", index, varName))
+---   end
+--- en
+--- @hash [0xE874AB1D](https://docs.fivem.net/natives/?_0xE874AB1D)
+--- @param modifierName string (char*)
+--- @param modifierVarIndex number (int)
+--- @return string
+--- @overload fun(modifierName: string, modifierVarIndex: number): string
+function GetTimecycleModifierVarNameByIndex(modifierName, modifierVarIndex) end
 
     
 --- Returns the peer address of the remote game server that the user is currently connected to.
@@ -3797,15 +4474,6 @@ function SetVehicleSteeringScale(vehicle, scale) end
 function DrawRectRotated(x, y, width, height, rotation, r, g, b, a) end
 
     
---- A getter for [FREEZE_ENTITY_POSITION](https://docs.fivem.net/natives/?_0x428CA6DBD1094446).
---- @usage local isFrozen = IsEntityPositionFrozen(PlayerPedId()
---- @hash [0xEDBE6ADD](https://docs.fivem.net/natives/?_0xEDBE6ADD)
---- @param entity Entity
---- @return boolean
---- @overload fun(entity: Entity): boolean
-function IsEntityPositionFrozen(entity) end
-
-    
 --- GetVehicleNumberOfWheels
 ---
 --- @hash [0xEDF4B0FC](https://docs.fivem.net/natives/?_0xEDF4B0FC)
@@ -3824,6 +4492,17 @@ function GetVehicleNumberOfWheels(vehicle) end
 --- @return number
 --- @overload fun(mapdata: number, entity: number): number
 function GetEntityIndexFromMapdata(mapdata, entity) end
+
+    
+--- See [SET_SCRIPT_GFX_ALIGN](https://docs.fivem.net/natives/?_0xB8A850F20A067EB6) for details about how gfx align works.
+---
+--- @hash [0xEED219F2](https://docs.fivem.net/natives/?_0xEED219F2)
+--- @param id number (int)
+--- @param horizontalAlign number (int)
+--- @param verticalAlign number (int)
+--- @return void
+--- @overload fun(id: number, horizontalAlign: number, verticalAlign: number): void
+function SetHudComponentAlign(id, horizontalAlign, verticalAlign) end
 
     
 --- GetVehicleWheelTireColliderWidth
@@ -3897,6 +4576,19 @@ function SetVehicleWheelRimColliderSize(vehicle, wheelIndex, value) end
 function RegisterStreamingFileFromUrl(registerAs, url) end
 
     
+--- SetWaterQuadAlpha
+--- @usage local success = SetWaterQuadAlpha(0, 5, 5, 5, 5
+--- @hash [0xF49797EB](https://docs.fivem.net/natives/?_0xF49797EB)
+--- @param waterQuad number (int)
+--- @param a0 number (int)
+--- @param a1 number (int)
+--- @param a2 number (int)
+--- @param a3 number (int)
+--- @return boolean
+--- @overload fun(waterQuad: number, a0: number, a1: number, a2: number, a3: number): boolean
+function SetWaterQuadAlpha(waterQuad, a0, a1, a2, a3) end
+
+    
 --- GetVehicleEngineTemperature
 ---
 --- @hash [0xF4F495CB](https://docs.fivem.net/natives/?_0xF4F495CB)
@@ -3904,6 +4596,16 @@ function RegisterStreamingFileFromUrl(registerAs, url) end
 --- @return number
 --- @overload fun(vehicle: Vehicle): number
 function GetVehicleEngineTemperature(vehicle) end
+
+    
+--- Define the xml in a resources fxmanifest, under the file(s) section.
+--- @usage local success = LoadWaterFromPath('my-resource-name', 'water-all-over-the-place.xml'
+--- @hash [0xF5102568](https://docs.fivem.net/natives/?_0xF5102568)
+--- @param resourceName string (char*)
+--- @param fileName string (char*)
+--- @return boolean
+--- @overload fun(resourceName: string, fileName: string): boolean
+function LoadWaterFromPath(resourceName, fileName) end
 
     
 --- A getter for [SET_PED_DENSITY_MULTIPLIER_THIS_FRAME](https://docs.fivem.net/natives/?_0x95E3D6257B166CF2).
@@ -3995,6 +4697,27 @@ function GetInteriorPortalCornerPosition(interiorId, portalIndex, cornerIndex) e
 --- @return boolean
 --- @overload fun(vehicle: Vehicle): boolean
 function IsVehiclePreviouslyOwnedByPlayer(vehicle) end
+
+    
+--- GetWaveQuadBounds
+--- @usage local success, minX, minY, maxX, maxY = GetWaveQuadBounds(1
+--- @hash [0xF86136DB](https://docs.fivem.net/natives/?_0xF86136DB)
+--- @param waveQuad number (int)
+--- @return boolean, number, number, number, number
+--- @overload fun(waveQuad: number): boolean, number, number, number, number
+function GetWaveQuadBounds(waveQuad) end
+
+    
+--- This alternative implementation of [`GetWaterQuadAtCoords`](https://docs.fivem.net/natives/?_0x17321452) also checks the height of the water level.
+--- @usage local currentPedPosition = GetEntityCoords(PlayerPedId())
+--- local waterQuadIndex = GetWaterQuadAtCoords(currentPedPosition.x, currentPedPosition.y, currentPedPosition.z
+--- @hash [0xF8E03DB8](https://docs.fivem.net/natives/?_0xF8E03DB8)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return number
+--- @overload fun(x: number, y: number, z: number): number
+function GetWaterQuadAtCoords_3d(x, y, z) end
 
     
 --- GetVehicleDashboardRpm
@@ -4134,6 +4857,20 @@ function UpdateMapdataEntity(mapdata, entity, entityDef) end
 function GetVehicleOilLevel(vehicle) end
 
     
+--- directionX/Y should be constrained between -1.0 and 1.0
+--- A positive value will create the wave starting at min and rolling towards max
+--- A negative value will create the wave starting at max and rolling towards min
+--- Applying both values allows you to make diagonal waves
+--- @usage local success = SetWaveQuadDirection(0, 0.3, 0.1
+--- @hash [0xFC9341A3](https://docs.fivem.net/natives/?_0xFC9341A3)
+--- @param waveQuad number (int)
+--- @param directionX number (float)
+--- @param directionY number (float)
+--- @return boolean
+--- @overload fun(waveQuad: number, directionX: number, directionY: number): boolean
+function SetWaveQuadDirection(waveQuad, directionX, directionY) end
+
+    
 --- Gets a ped model's personality type.
 ---
 --- @hash [0xFE08CAD6](https://docs.fivem.net/natives/?_0xFE08CAD6)
@@ -4141,6 +4878,16 @@ function GetVehicleOilLevel(vehicle) end
 --- @return Hash
 --- @overload fun(modelHash: Hash): Hash
 function GetPedModelPersonality(modelHash) end
+
+    
+--- GetTimecycleModifierCount
+--- @usage local count = GetTimecycleModifierCount()
+--- print("we have  " .. count .. "timecycle modifiers loaded"
+--- @hash [0xFE2A1D4D](https://docs.fivem.net/natives/?_0xFE2A1D4D)
+---
+--- @return number
+--- @overload fun(): number
+function GetTimecycleModifierCount() end
 
     
 --- Sets the audio submix ID for a specified player using Mumble 'Native Audio' functionality.
@@ -4178,6 +4925,15 @@ function SetHandlingField(vehicle, class_, fieldName, value) end
 function CreateRuntimeTexture(txd, txn, width, height) end
 
     
+--- GetCalmingQuadBounds
+--- @usage local success, minX, minY, maxX, maxY = GetCalmingQuadBounds(1
+--- @hash [0xFF60E63](https://docs.fivem.net/natives/?_0xFF60E63)
+--- @param waterQuad number (int)
+--- @return boolean, number, number, number, number
+--- @overload fun(waterQuad: number): boolean, number, number, number, number
+function GetCalmingQuadBounds(waterQuad) end
+
+    
 --- A getter for [SET_PARKED_VEHICLE_DENSITY_MULTIPLIER_THIS_FRAME](https://docs.fivem.net/natives/?_0xEAE6DCC7EEE3DB1D).
 ---
 --- @hash [0xFF72DF84](https://docs.fivem.net/natives/?_0xFF72DF84)
@@ -4197,8 +4953,6 @@ function GetParkedVehicleDensityMultiplier() end
 function SetVehicleSteeringAngle(vehicle, angle) end
 
     
---- <!-- Native implemented by Disquse. 0xFFF65C63 -->
---- 
 --- Returns true if the minimap is currently expanded. False if it's the normal minimap state.
 --- Use [`IsBigmapFull`](https://docs.fivem.net/natives/?_0x66EE14B2) to check if the full map is currently revealed on the minimap.
 --- @usage local expanded = IsBigmapActive()

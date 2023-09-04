@@ -1633,10 +1633,10 @@ function GiveWeaponComponentToPed(ped, weaponHash, componentHash) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @param outZoneId number (int)
+--- @param SphereIndex number (int*)
 --- @return boolean
---- @overload fun(x: number, y: number, z: number, radius: number, outZoneId: number): boolean
-function IsAnyAirDefenseZoneInsideSphere(x, y, z, radius, outZoneId) end
+--- @overload fun(x: number, y: number, z: number, radius: number): boolean, number
+function IsAnyAirDefenseZoneInsideSphere(x, y, z, radius, SphereIndex) end
 
     
 --- # New Name: IsAnyAirDefenseZoneInsideSphere
@@ -1647,11 +1647,11 @@ function IsAnyAirDefenseZoneInsideSphere(x, y, z, radius, outZoneId) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @param outZoneId number (int)
+--- @param SphereIndex number (int*)
 --- @return boolean
---- @overload fun(x: number, y: number, z: number, radius: number, outZoneId: number): boolean
+--- @overload fun(x: number, y: number, z: number, radius: number): boolean, number
 --- @deprecated
-function N_0xdab963831dbfd3f4(x, y, z, radius, outZoneId) end
+function N_0xdab963831dbfd3f4(x, y, z, radius, SphereIndex) end
 
     
 --- # New Name: IsAnyAirDefenseZoneInsideSphere
@@ -1662,11 +1662,11 @@ function N_0xdab963831dbfd3f4(x, y, z, radius, outZoneId) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param radius number (float)
---- @param outZoneId number (int)
+--- @param SphereIndex number (int*)
 --- @return boolean
---- @overload fun(x: number, y: number, z: number, radius: number, outZoneId: number): boolean
+--- @overload fun(x: number, y: number, z: number, radius: number): boolean, number
 --- @deprecated
-function IsAirDefenseZoneInsideSphere(x, y, z, radius, outZoneId) end
+function IsAirDefenseZoneInsideSphere(x, y, z, radius, SphereIndex) end
 
     
 --- GetMaxAmmo

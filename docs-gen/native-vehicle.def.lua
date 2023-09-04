@@ -8860,16 +8860,15 @@ function GetVehicleDeformationGetTree(vehicle, height) end
 --- N_0xa4822f1cf23f4810
 ---
 --- @hash [0xA4822F1CF23F4810](https://docs.fivem.net/natives/?_0xA4822F1CF23F4810)
---- @param p1 any
 --- @param p3 any
 --- @param p4 any
 --- @param p5 any
 --- @param p6 any
 --- @param p7 any
 --- @param p8 any
---- @return boolean, Vector3, Vector3
---- @overload fun(p1: any, p3: any, p4: any, p5: any, p6: any, p7: any, p8: any): boolean, Vector3, Vector3
-function N_0xa4822f1cf23f4810(p1, p3, p4, p5, p6, p7, p8) end
+--- @return boolean, Vector3, Vector3, Vector3
+--- @overload fun(p3: any, p4: any, p5: any, p6: any, p7: any, p8: any): boolean, Vector3, Vector3, Vector3
+function N_0xa4822f1cf23f4810(p3, p4, p5, p6, p7, p8) end
 
     
 --- ```
@@ -9583,9 +9582,9 @@ function N_0xb088e9a47ae6edd5(vehicle, p1) end
 --- @hash [0xB09D25E77C33EB3F](https://docs.fivem.net/natives/?_0xB09D25E77C33EB3F)
 --- @param ped Ped
 --- @param vehicle Vehicle
---- @param outIndex number (int)
+--- @param outIndex number (int*)
 --- @return boolean
---- @overload fun(ped: Ped, vehicle: Vehicle, outIndex: number): boolean
+--- @overload fun(ped: Ped, vehicle: Vehicle): boolean, number
 function IsPedExclusiveDriverOfVehicle(ped, vehicle, outIndex) end
 
     
@@ -9595,9 +9594,9 @@ function IsPedExclusiveDriverOfVehicle(ped, vehicle, outIndex) end
 --- @hash [0xB09D25E77C33EB3F](https://docs.fivem.net/natives/?_0xB09D25E77C33EB3F)
 --- @param ped Ped
 --- @param vehicle Vehicle
---- @param outIndex number (int)
+--- @param outIndex number (int*)
 --- @return boolean
---- @overload fun(ped: Ped, vehicle: Vehicle, outIndex: number): boolean
+--- @overload fun(ped: Ped, vehicle: Vehicle): boolean, number
 --- @deprecated
 function N_0xb09d25e77c33eb3f(ped, vehicle, outIndex) end
 

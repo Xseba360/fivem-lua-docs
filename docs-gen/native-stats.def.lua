@@ -578,9 +578,9 @@ function N_0x1a7ce7cd3e653485(p0) end
 --- N_0x1a8ea222f9c67dbb
 ---
 --- @hash [0x1A8EA222F9C67DBB](https://docs.fivem.net/natives/?_0x1A8EA222F9C67DBB)
---- @param p0 any
+--- @param p0 number (float*)
 --- @return any
---- @overload fun(p0: any): any
+--- @overload fun(): any, number
 function N_0x1a8ea222f9c67dbb(p0) end
 
     
@@ -1983,11 +1983,9 @@ function N_0x6a7f19756f1a9016() end
 ---
 --- @hash [0x6BC0ACD0673ACEBE](https://docs.fivem.net/natives/?_0x6BC0ACD0673ACEBE)
 --- @param p0 any
---- @param p1 any
---- @param p2 any
---- @return void
---- @overload fun(p0: any, p1: any, p2: any): void
-function N_0x6bc0acd0673acebe(p0, p1, p2) end
+--- @return number, number
+--- @overload fun(p0: any): number, number
+function N_0x6bc0acd0673acebe(p0) end
 
     
 --- N_0x6bccf9948492fd85
@@ -4463,9 +4461,9 @@ function N_0xf06a6f41cb445443(p0) end
 --- N_0xf11f01d98113536a
 ---
 --- @hash [0xF11F01D98113536A](https://docs.fivem.net/natives/?_0xF11F01D98113536A)
---- @param p0 any
+--- @param p0 number (float*)
 --- @return any
---- @overload fun(p0: any): any
+--- @overload fun(): any, number
 function N_0xf11f01d98113536a(p0) end
 
     

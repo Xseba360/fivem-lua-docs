@@ -1,4 +1,32 @@
 
+--- Returns whether or not the player exists
+--- @usage local deferralMessages = { "Isn't this just magical!", "We can defer all day!", "You'll get in eventually", "You're totally not going to sit here forever", "The Fruit Tree is a lie" }
+--- AddEventHandler("playerConnecting", function(name, setKickReason, deferrals)
+---     local source = source
+---     deferrals.defer()
+--- 
+---     Wait(0)
+--- 
+--- 
+---     local messageIndex = 0
+--- 
+---     repeat
+---         Wait(2000)
+---         if messageIndex >= #deferralMessages then
+---             deferrals.done()
+---         else
+---             messageIndex = messageIndex + 1
+---         end
+---         deferrals.update(deferralMessages[messageIndex])
+---     until not DoesPlayerExist(source)
+--- end
+--- @hash [0x12038599](https://docs.fivem.net/natives/?_0x12038599)
+--- @param playerSrc string (char*)
+--- @return boolean
+--- @overload fun(playerSrc: string): boolean
+function DoesPlayerExist(playerSrc) end
+
+    
 --- FlagServerAsPrivate
 ---
 --- @hash [0x13B6855D](https://docs.fivem.net/natives/?_0x13B6855D)
@@ -71,6 +99,15 @@ function StopResource(resourceName) end
 --- @return string
 --- @overload fun(password: string): string
 function GetPasswordHash(password) end
+
+    
+--- IsPedHandcuffed
+---
+--- @hash [0x25865633](https://docs.fivem.net/natives/?_0x25865633)
+--- @param ped Ped
+--- @return boolean
+--- @overload fun(ped: Ped): boolean
+function IsPedHandcuffed(ped) end
 
     
 --- Create a permanent voice channel.
@@ -222,6 +259,15 @@ function CanPlayerStartCommerceSession(playerSrc) end
 --- @return Vector3
 --- @overload fun(playerSrc: string): Vector3
 function GetPlayerCameraRotation(playerSrc) end
+
+    
+--- DoesBoatSinkWhenWrecked
+---
+--- @hash [0x43F15989](https://docs.fivem.net/natives/?_0x43F15989)
+--- @param vehicle Vehicle
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+function DoesBoatSinkWhenWrecked(vehicle) end
 
     
 --- Gets the stage of the peds scripted task.
@@ -511,6 +557,8 @@ function IsPlayerEvadingWantedLevel(playerSrc) end
     
 --- Sets the culling radius for the specified player.
 --- Set to `0.0` to reset.
+--- 
+--- **WARNING**: Culling natives are deprecated and have known, [unfixable issues](https://forum.cfx.re/t/issue-with-culling-radius-and-server-side-entities/4900677/4)
 ---
 --- @hash [0x8A2FBAD4](https://docs.fivem.net/natives/?_0x8A2FBAD4)
 --- @param playerSrc string (char*)
@@ -528,6 +576,15 @@ function SetPlayerCullingRadius(playerSrc, radius) end
 --- @return number
 --- @overload fun(requestData: string, requestDataLength: number): number
 function PerformHttpRequestInternal(requestData, requestDataLength) end
+
+    
+--- IsBoatWrecked
+---
+--- @hash [0x9049DB44](https://docs.fivem.net/natives/?_0x9049DB44)
+--- @param vehicle Vehicle
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+function IsBoatWrecked(vehicle) end
 
     
 --- Prints 'structured trace' data to the server `file descriptor 3` channel. This is not generally useful outside of
@@ -589,6 +646,16 @@ function RegisterResourceAsset(resourceName, fileName) end
 --- @return boolean
 --- @overload fun(vehicle: Vehicle): boolean
 function HasEntityBeenMarkedAsNoLongerNeeded(vehicle) end
+
+    
+--- It allows to flag an entity to ignore the request control filter policy.
+---
+--- @hash [0x9F7F8D36](https://docs.fivem.net/natives/?_0x9F7F8D36)
+--- @param entity Entity
+--- @param ignore boolean
+--- @return void
+--- @overload fun(entity: Entity, ignore: boolean): void
+function SetEntityIgnoreRequestControlFilter(entity, ignore) end
 
     
 --- Writes the specified data to a file in the specified resource.
@@ -707,6 +774,15 @@ function GetAllPeds() end
 function ScheduleResourceTick(resourceName) end
 
     
+--- HasVehicleBeenDamagedByBullets
+---
+--- @hash [0xB8AF3137](https://docs.fivem.net/natives/?_0xB8AF3137)
+--- @param vehicle Vehicle
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+function HasVehicleBeenDamagedByBullets(vehicle) end
+
+    
 --- DropPlayer
 ---
 --- @hash [0xBA0613E1](https://docs.fivem.net/natives/?_0xBA0613E1)
@@ -795,6 +871,8 @@ function SetResourceKvpNoSync(key, value) end
     
 --- It overrides the default distance culling radius of an entity. Set to `0.0` to reset.
 --- If you want to interact with an entity outside of your players' scopes set the radius to a huge number.
+--- 
+--- **WARNING**: Culling natives are deprecated and have known, [unfixable issues](https://forum.cfx.re/t/issue-with-culling-radius-and-server-side-entities/4900677/4)
 ---
 --- @hash [0xD3A183A3](https://docs.fivem.net/natives/?_0xD3A183A3)
 --- @param entity Entity
@@ -900,8 +978,51 @@ function GetEntityRoutingBucket(entity) end
 function SetConvarReplicated(varName, value) end
 
     
---- SetHttpHandler
----
+--- Sets the handler for HTTP requests made to the executing resource.
+--- 
+--- Example request URL: `http://localhost:30120/http-test/ping` - this request will be sent to the `http-test` resource with the `/ping` path.
+--- 
+--- The handler function assumes the following signature:
+--- 
+--- ```ts
+--- function HttpHandler(
+---   request: {
+---     address: string;
+---     headers: Record<string, string>;
+---     method: string;
+---     path: string;
+---     setDataHandler(handler: (data: string) => void): void;
+---     setDataHandler(handler: (data: ArrayBuffer) => void, binary: 'binary'): void;
+---     setCancelHandler(handler: () => void): void;
+---   },
+---   response: {
+---     writeHead(code: number, headers?: Record<string, string | string[]>): void;
+---     write(data: string): void;
+---     send(data?: string): void;
+---   }
+--- ): void;
+--- ```
+--- 
+--- *   **request**: The request object.
+---     *   **address**: The IP address of the request sender.
+---     *   **path**: The path to where the request was sent.
+---     *   **headers**: The headers sent with the request.
+---     *   **method**: The request method.
+---     *   **setDataHandler**: Sets the handler for when a data body is passed with the request. Additionally you can pass the `'binary'` argument to receive a `BufferArray` in JavaScript or `System.Byte[]` in C# (has no effect in Lua).
+---     *   **setCancelHandler**: Sets the handler for when the request is cancelled.
+--- *   **response**: An object to control the response.
+---     *   **writeHead**: Sets the status code & headers of the response. Can be only called once and won't work if called after running other response functions.
+---     *   **write**: Writes to the response body without sending it. Can be called multiple times.
+---     *   **send**: Writes to the response body and then sends it along with the status code & headers, finishing the request.
+--- @usage SetHttpHandler(function(request, response)
+---   if request.method == 'GET' and request.path == '/ping' then -- if a GET request was sent to the `/ping` path
+---       response.writeHead(200, { ['Content-Type'] = 'text/plain' }) -- set the response status code to `200 OK` and the body content type to plain text
+---       response.send('pong') -- respond to the request with `pong`
+---   else -- otherwise
+---       response.writeHead(404) -- set the response status code to `404 Not Found`
+---       response.send() -- respond to the request with no data
+---   end
+--- end
 --- @hash [0xF5C6330C](https://docs.fivem.net/natives/?_0xF5C6330C)
 --- @param handler fun
 --- @return void

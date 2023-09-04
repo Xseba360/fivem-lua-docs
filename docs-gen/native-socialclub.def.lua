@@ -817,10 +817,10 @@ function N_0x87e0052f08bd64e6(index, outData) end
 --- ```
 ---
 --- @hash [0x8A4416C0DB05FA66](https://docs.fivem.net/natives/?_0x8A4416C0DB05FA66)
---- @param p0 any
+--- @param newsStoryData any
 --- @return boolean
---- @overload fun(p0: any): boolean
-function N_0x8a4416c0db05fa66(p0) end
+--- @overload fun(): boolean, any
+function N_0x8a4416c0db05fa66(newsStoryData) end
 
     
 --- N_0x8cc469ab4d349b7c

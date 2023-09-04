@@ -307,11 +307,9 @@ function RegisterEnumToSave(p0, name) end
 --- @param p3 number (float)
 --- @param p4 number (float)
 --- @param p5 boolean
---- @param p6 number (float)
---- @param p7 number (float)
---- @return boolean
---- @overload fun(p0: boolean, p1: number, p2: number, p3: number, p4: number, p5: boolean, p6: number, p7: number): boolean
-function OverrideSaveHouse(p0, p1, p2, p3, p4, p5, p6, p7) end
+--- @return boolean, Vector3, number
+--- @overload fun(p0: boolean, p1: number, p2: number, p3: number, p4: number, p5: boolean): boolean, Vector3, number
+function OverrideSaveHouse(p0, p1, p2, p3, p4, p5) end
 
     
 --- ```
