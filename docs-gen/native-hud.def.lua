@@ -10169,8 +10169,8 @@ function N_0xcdca26e80faecb8f() end
 --- By default, the blip will show as a *regular* blip with the specified color/sprite if it is outside of the minimap view.
 --- 
 --- Example image:
---- ![minimap](https://w.wew.wtf/pdcjig.png)
---- ![big map](https://w.wew.wtf/zgcjcm.png)
+--- ![minimap](https://i.imgur.com/qLbXWcQ.png)
+--- ![big map](https://i.imgur.com/0j7O7Rh.png)
 --- 
 --- (Native name is *likely* to actually be ADD_BLIP_FOR_AREA, but due to the usual reasons this can't be confirmed)
 --- @usage local coords = GetEntityCoords(PlayerPedId())
@@ -10196,8 +10196,8 @@ function AddBlipForArea(x, y, z, width, height) end
 --- By default, the blip will show as a *regular* blip with the specified color/sprite if it is outside of the minimap view.
 --- 
 --- Example image:
---- ![minimap](https://w.wew.wtf/pdcjig.png)
---- ![big map](https://w.wew.wtf/zgcjcm.png)
+--- ![minimap](https://i.imgur.com/qLbXWcQ.png)
+--- ![big map](https://i.imgur.com/0j7O7Rh.png)
 --- 
 --- (Native name is *likely* to actually be ADD_BLIP_FOR_AREA, but due to the usual reasons this can't be confirmed)
 --- @usage local coords = GetEntityCoords(PlayerPedId())
