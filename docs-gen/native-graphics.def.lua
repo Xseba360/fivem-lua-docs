@@ -965,7 +965,7 @@ function StartParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOf
 function N_0x1bbc135a4d25edde(p0) end
 
     
---- This native is used along with these two natives: [`0xa356990e161c9e65`](https://runtime.fivem.net/doc/reference.html#\_0xA356990E161C9E65) and [`0x5ce62918f8d703c7`](https://runtime.fivem.net/doc/reference.html#\_0x5CE62918F8D703C7).
+--- This native is used along with these two natives: [`TERRAINGRID_ACTIVATE`](https://docs.fivem.net/natives/?_0xA356990E161C9E65) and [`TERRAINGRID_SET_COLOURS`](https://docs.fivem.net/natives/?_0x5CE62918F8D703C7).
 --- 
 --- This native configures the location, size, rotation, normal height, and the difference ratio between min, normal and max.
 --- 
@@ -991,7 +991,7 @@ function TerraingridSetParams(x, y, z, p3, rotation, p5, width, height, p8, scal
 
     
 --- # New Name: TerraingridSetParams
---- This native is used along with these two natives: [`0xa356990e161c9e65`](https://runtime.fivem.net/doc/reference.html#\_0xA356990E161C9E65) and [`0x5ce62918f8d703c7`](https://runtime.fivem.net/doc/reference.html#\_0x5CE62918F8D703C7).
+--- This native is used along with these two natives: [`TERRAINGRID_ACTIVATE`](https://docs.fivem.net/natives/?_0xA356990E161C9E65) and [`TERRAINGRID_SET_COLOURS`](https://docs.fivem.net/natives/?_0x5CE62918F8D703C7).
 --- 
 --- This native configures the location, size, rotation, normal height, and the difference ratio between min, normal and max.
 --- 
@@ -2793,7 +2793,7 @@ function GetScreenblurFadeCurrentTime() end
 function IsParticleFxDelayedBlink() end
 
     
---- This native is used along with these two natives: [`0xa356990e161c9e65`](https://runtime.fivem.net/doc/reference.html#\_0xA356990E161C9E65) and [`0x1c4fc5752bcd8e48`](https://runtime.fivem.net/doc/reference.html#\_0x1C4FC5752BCD8E48).
+--- This native is used along with these two natives: [`TERRAINGRID_ACTIVATE`](https://docs.fivem.net/natives/?_0xA356990E161C9E65) and [`TERRAINGRID_SET_PARAMS`](https://docs.fivem.net/natives/?_0x1C4FC5752BCD8E48).
 --- This native sets the colors for the golf putting grid. the 'min...' values are for the lower areas that the grid covers, the 'max...' values are for the higher areas that the grid covers, all remaining values are for the 'normal' ground height.
 --- All those natives combined they will output something like this: https://i.imgur.com/TC6cku6.png
 --- 
@@ -2821,7 +2821,7 @@ function TerraingridSetColours(lowR, lowG, lowB, lowAlpha, R, G, B, Alpha, highR
 
     
 --- # New Name: TerraingridSetColours
---- This native is used along with these two natives: [`0xa356990e161c9e65`](https://runtime.fivem.net/doc/reference.html#\_0xA356990E161C9E65) and [`0x1c4fc5752bcd8e48`](https://runtime.fivem.net/doc/reference.html#\_0x1C4FC5752BCD8E48).
+--- This native is used along with these two natives: [`TERRAINGRID_ACTIVATE`](https://docs.fivem.net/natives/?_0xA356990E161C9E65) and [`TERRAINGRID_SET_PARAMS`](https://docs.fivem.net/natives/?_0x1C4FC5752BCD8E48).
 --- This native sets the colors for the golf putting grid. the 'min...' values are for the lower areas that the grid covers, the 'max...' values are for the higher areas that the grid covers, all remaining values are for the 'normal' ground height.
 --- All those natives combined they will output something like this: https://i.imgur.com/TC6cku6.png
 --- 
@@ -4728,9 +4728,9 @@ function SeethroughSetFadeEndDistance(distance) end
 function N_0x9d75795b9dc6ebbf(distance) end
 
     
---- Creates a motion-blur sort of effect, this native does not seem to work, however by using the [`START_SCREEN_EFFECT`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724) native with `"DrugsMichaelAliensFight"` as the effect parameter, you should be able to get the effect.
+--- Creates a motion-blur sort of effect, this native does not seem to work, however by using the [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724) native with `"DrugsMichaelAliensFight"` as the effect parameter, you should be able to get the effect.
 --- 
---- This native does not seem to work, however by using the [START_SCREEN_EFFECT](https://runtime.fivem.net/doc/natives/#\_0x2206BF9A37B7F724) native with "DrugsMichaelAliensFight" as the effect parameter, you should be able to get the effect.
+--- This native does not seem to work, however by using the [ANIMPOSTFX_PLAY](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724) native with "DrugsMichaelAliensFight" as the effect parameter, you should be able to get the effect.
 ---
 --- @hash [0x9DCE1F0F78260875](https://docs.fivem.net/natives/?_0x9DCE1F0F78260875)
 --- @param toggle boolean
@@ -4740,9 +4740,9 @@ function EnableAlienBloodVfx(toggle) end
 
     
 --- # New Name: EnableAlienBloodVfx
---- Creates a motion-blur sort of effect, this native does not seem to work, however by using the [`START_SCREEN_EFFECT`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724) native with `"DrugsMichaelAliensFight"` as the effect parameter, you should be able to get the effect.
+--- Creates a motion-blur sort of effect, this native does not seem to work, however by using the [`ANIMPOSTFX_PLAY`](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724) native with `"DrugsMichaelAliensFight"` as the effect parameter, you should be able to get the effect.
 --- 
---- This native does not seem to work, however by using the [START_SCREEN_EFFECT](https://runtime.fivem.net/doc/natives/#\_0x2206BF9A37B7F724) native with "DrugsMichaelAliensFight" as the effect parameter, you should be able to get the effect.
+--- This native does not seem to work, however by using the [ANIMPOSTFX_PLAY](https://docs.fivem.net/natives/?_0x2206BF9A37B7F724) native with "DrugsMichaelAliensFight" as the effect parameter, you should be able to get the effect.
 ---
 --- @hash [0x9DCE1F0F78260875](https://docs.fivem.net/natives/?_0x9DCE1F0F78260875)
 --- @param toggle boolean
@@ -4773,7 +4773,7 @@ function TransitionToBlurred(transitionTime) end
 
     
 --- This native enables/disables the gold putting grid display (https://i.imgur.com/TC6cku6.png).
---- This requires these two natives to be called as well to configure the grid: [`0x1c4fc5752bcd8e48`](https://runtime.fivem.net/doc/reference.html#\_0x1C4FC5752BCD8E48) and [`0x5ce62918f8d703c7`](https://runtime.fivem.net/doc/reference.html#\_0x5CE62918F8D703C7).
+--- This requires these two natives to be called as well to configure the grid: [`TERRAINGRID_SET_PARAMS`](https://docs.fivem.net/natives/?_0x1C4FC5752BCD8E48) and [`TERRAINGRID_SET_COLOURS`](https://docs.fivem.net/natives/?_0x5CE62918F8D703C7).
 ---
 --- @hash [0xA356990E161C9E65](https://docs.fivem.net/natives/?_0xA356990E161C9E65)
 --- @param toggle boolean
@@ -4784,7 +4784,7 @@ function TerraingridActivate(toggle) end
     
 --- # New Name: TerraingridActivate
 --- This native enables/disables the gold putting grid display (https://i.imgur.com/TC6cku6.png).
---- This requires these two natives to be called as well to configure the grid: [`0x1c4fc5752bcd8e48`](https://runtime.fivem.net/doc/reference.html#\_0x1C4FC5752BCD8E48) and [`0x5ce62918f8d703c7`](https://runtime.fivem.net/doc/reference.html#\_0x5CE62918F8D703C7).
+--- This requires these two natives to be called as well to configure the grid: [`TERRAINGRID_SET_PARAMS`](https://docs.fivem.net/natives/?_0x1C4FC5752BCD8E48) and [`TERRAINGRID_SET_COLOURS`](https://docs.fivem.net/natives/?_0x5CE62918F8D703C7).
 ---
 --- @hash [0xA356990E161C9E65](https://docs.fivem.net/natives/?_0xA356990E161C9E65)
 --- @param toggle boolean

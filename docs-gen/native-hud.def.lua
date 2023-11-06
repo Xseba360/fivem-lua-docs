@@ -5041,7 +5041,7 @@ function SetTextFont(fontType) end
 function N_0x66e7cb63c97b7d20() end
 
     
---- Does the same as [`SET_GPS_MULTI_ROUTE_RENDER(false)`](https://runtime.fivem.net/doc/reference.html#\_0x3DDA37128DD1ACA8)
+--- Does the same as [`SET_GPS_MULTI_ROUTE_RENDER(false)`](https://docs.fivem.net/natives/?_0x3DDA37128DD1ACA8)
 ---
 --- @hash [0x67EEDEA1B9BAFD94](https://docs.fivem.net/natives/?_0x67EEDEA1B9BAFD94)
 ---
@@ -5051,7 +5051,7 @@ function ClearGpsMultiRoute() end
 
     
 --- # New Name: ClearGpsMultiRoute
---- Does the same as [`SET_GPS_MULTI_ROUTE_RENDER(false)`](https://runtime.fivem.net/doc/reference.html#\_0x3DDA37128DD1ACA8)
+--- Does the same as [`SET_GPS_MULTI_ROUTE_RENDER(false)`](https://docs.fivem.net/natives/?_0x3DDA37128DD1ACA8)
 ---
 --- @hash [0x67EEDEA1B9BAFD94](https://docs.fivem.net/natives/?_0x67EEDEA1B9BAFD94)
 ---
@@ -5679,7 +5679,7 @@ function RequestAdditionalText(gxt, slot) end
 --- You need to center the minimap manually as well as change/lock it's zoom and angle in order for it to appear correctly on the minimap.
 --- You'll also need to use the `GOLF` scaleform in order to get the correct minmap border to show up.
 --- 
---- Use [`N_0x35edd5b2e3ff01c0()`](https://runtime.fivem.net/doc/reference.html#\_0x35EDD5B2E3FF01C0) to reset the map when you no longer want to display any golf holes (you still need to unlock zoom, position and angle of the radar manually after calling this).
+--- Use [`SET_MINIMAP_GOLF_COURSE_OFF()`](https://docs.fivem.net/natives/?_0x35EDD5B2E3FF01C0) to reset the map when you no longer want to display any golf holes (you still need to unlock zoom, position and angle of the radar manually after calling this).
 ---
 --- @hash [0x71BDB63DBAF8DA59](https://docs.fivem.net/natives/?_0x71BDB63DBAF8DA59)
 --- @param hole number (int)
@@ -5695,7 +5695,7 @@ function SetMinimapGolfCourse(hole) end
 --- You need to center the minimap manually as well as change/lock it's zoom and angle in order for it to appear correctly on the minimap.
 --- You'll also need to use the `GOLF` scaleform in order to get the correct minmap border to show up.
 --- 
---- Use [`N_0x35edd5b2e3ff01c0()`](https://runtime.fivem.net/doc/reference.html#\_0x35EDD5B2E3FF01C0) to reset the map when you no longer want to display any golf holes (you still need to unlock zoom, position and angle of the radar manually after calling this).
+--- Use [`SET_MINIMAP_GOLF_COURSE_OFF()`](https://docs.fivem.net/natives/?_0x35EDD5B2E3FF01C0) to reset the map when you no longer want to display any golf holes (you still need to unlock zoom, position and angle of the radar manually after calling this).
 ---
 --- @hash [0x71BDB63DBAF8DA59](https://docs.fivem.net/natives/?_0x71BDB63DBAF8DA59)
 --- @param hole number (int)
@@ -6086,34 +6086,98 @@ function SetFloatingHelpTextWorldPosition(hudIndex, x, y, z) end
 function N_0x784ba7e0eceb4178(hudIndex, x, y, z) end
 
     
---- SetFloatingHelpTextStyle
----
+--- ### Arrow Positions
+--- 
+--- *   0 = Off / No arrow
+--- *   1 = Top
+--- *   2 = Left
+--- *   3 = Bottom
+--- *   4 = Right
+--- 
+--- ### Note
+--- 
+--- Any numeric value greater than 4 will result in a right arrow (Index 4)
+--- 
+--- ### Important
+--- 
+--- Needs to be called every frame
+--- 
+--- ![Preview of the provided example code](https://forum.cfx.re/uploads/default/original/4X/7/f/3/7f319bc93c3a00b8829bd4ac8dddc235fbf3a9ef.png)
+--- @usage function DisplayHelpText(string)
+---     BeginTextCommandDisplayHelp("STRING")
+---     AddTextComponentSubstringPlayerName(string)
+---     EndTextCommandDisplayHelp(1, false, false, 0)
+--- end
+--- 
+--- CreateThread(function()
+---     while true do
+---         Wait(0)
+--- 
+---         local Ped = PlayerPedId()
+--- 
+---         DisplayHelpText('Example Text')
+---         SetFloatingHelpTextStyle(0, 2, 2, 0, 3, 0)
+---         SetFloatingHelpTextToEntity(0, Ped, 0, 0)
+---     end
+--- end
 --- @hash [0x788E7FD431BD67F1](https://docs.fivem.net/natives/?_0x788E7FD431BD67F1)
 --- @param hudIndex number (int)
---- @param p1 number (int)
---- @param p2 number (int)
---- @param p3 number (int)
---- @param p4 number (int)
---- @param p5 number (int)
+--- @param style number (int)
+--- @param hudColor number (int)
+--- @param alpha number (int)
+--- @param arrowPosition number (int)
+--- @param boxOffset number (int)
 --- @return void
---- @overload fun(hudIndex: number, p1: number, p2: number, p3: number, p4: number, p5: number): void
-function SetFloatingHelpTextStyle(hudIndex, p1, p2, p3, p4, p5) end
+--- @overload fun(hudIndex: number, style: number, hudColor: number, alpha: number, arrowPosition: number, boxOffset: number): void
+function SetFloatingHelpTextStyle(hudIndex, style, hudColor, alpha, arrowPosition, boxOffset) end
 
     
 --- # New Name: SetFloatingHelpTextStyle
---- SetFloatingHelpTextStyle
----
+--- ### Arrow Positions
+--- 
+--- *   0 = Off / No arrow
+--- *   1 = Top
+--- *   2 = Left
+--- *   3 = Bottom
+--- *   4 = Right
+--- 
+--- ### Note
+--- 
+--- Any numeric value greater than 4 will result in a right arrow (Index 4)
+--- 
+--- ### Important
+--- 
+--- Needs to be called every frame
+--- 
+--- ![Preview of the provided example code](https://forum.cfx.re/uploads/default/original/4X/7/f/3/7f319bc93c3a00b8829bd4ac8dddc235fbf3a9ef.png)
+--- @usage function DisplayHelpText(string)
+---     BeginTextCommandDisplayHelp("STRING")
+---     AddTextComponentSubstringPlayerName(string)
+---     EndTextCommandDisplayHelp(1, false, false, 0)
+--- end
+--- 
+--- CreateThread(function()
+---     while true do
+---         Wait(0)
+--- 
+---         local Ped = PlayerPedId()
+--- 
+---         DisplayHelpText('Example Text')
+---         SetFloatingHelpTextStyle(0, 2, 2, 0, 3, 0)
+---         SetFloatingHelpTextToEntity(0, Ped, 0, 0)
+---     end
+--- end
 --- @hash [0x788E7FD431BD67F1](https://docs.fivem.net/natives/?_0x788E7FD431BD67F1)
 --- @param hudIndex number (int)
---- @param p1 number (int)
---- @param p2 number (int)
---- @param p3 number (int)
---- @param p4 number (int)
---- @param p5 number (int)
+--- @param style number (int)
+--- @param hudColor number (int)
+--- @param alpha number (int)
+--- @param arrowPosition number (int)
+--- @param boxOffset number (int)
 --- @return void
---- @overload fun(hudIndex: number, p1: number, p2: number, p3: number, p4: number, p5: number): void
+--- @overload fun(hudIndex: number, style: number, hudColor: number, alpha: number, arrowPosition: number, boxOffset: number): void
 --- @deprecated
-function N_0x788e7fd431bd67f1(hudIndex, p1, p2, p3, p4, p5) end
+function N_0x788e7fd431bd67f1(hudIndex, style, hudColor, alpha, arrowPosition, boxOffset) end
 
     
 --- IsNamedRendertargetRegistered
@@ -7121,20 +7185,24 @@ function SetGpsCustomRouteRender(toggle, radarThickness, mapThickness) end
 function N_0x900086f371220b6f(toggle, radarThickness, mapThickness) end
 
     
---- **displayId Behaviour** <br>
---- 0 = Doesn't show up, ever, anywhere. <br>
---- 1 = Doesn't show up, ever, anywhere. <br>
---- 2 = Shows on both main map and minimap. (Selectable on map) <br>
---- 3 = Shows on main map only. (Selectable on map) <br>
---- 4 = Shows on main map only. (Selectable on map) <br>
---- 5 = Shows on minimap only. <br>
---- 6 = Shows on both main map and minimap. (Selectable on map) <br>
---- 7 = Doesn't show up, ever, anywhere. <br>
---- 8 = Shows on both main map and minimap. (Not selectable on map) <br>
---- 9 = Shows on minimap only. <br>
---- 10 = Shows on both main map and minimap. (Not selectable on map) <br>
---- Anything higher than 10 seems to be exactly the same as 10. <br>
---- <br>
+--- **displayId Behaviour**
+--- 
+--- | display ID 	| Behaviour                                                   	|
+--- |------------	|-------------------------------------------------------------	|
+--- | 0          	| Doesn't show up, ever, anywhere.                            	|
+--- | 1          	| Doesn't show up, ever, anywhere.                            	|
+--- | 2          	| Shows on both main map and minimap. (Selectable on map)     	|
+--- | 3          	| Shows on main map only. (Selectable on map)                 	|
+--- | 4          	| Shows on main map only. (Selectable on map)                 	|
+--- | 5          	| Shows on minimap only.                                      	|
+--- | 6          	| Shows on both main map and minimap. (Selectable on map)     	|
+--- | 7          	| Doesn't show up, ever, anywhere.                            	|
+--- | 8          	| Shows on both main map and minimap. (Not selectable on map) 	|
+--- | 9          	| Shows on minimap only.                                      	|
+--- | 10         	| Shows on both main map and minimap. (Not selectable on map) 	|
+--- 
+--- Anything higher than 10 seems to be exactly the same as 10.
+--- 
 --- Rockstar seem to only use 0, 2, 3, 4, 5 and 8 in the decompiled scripts.
 ---
 --- @hash [0x9029B2F3DA924928](https://docs.fivem.net/natives/?_0x9029B2F3DA924928)
@@ -8808,7 +8876,7 @@ function DoesTextLabelExist(gxt) end
 --- p1 is either 1 or 2 in the PC scripts.  
 --- ```
 --- 
---- This native is used to "give"/duplicate a player ped to a frontend menu as configured via the `ACTIVATE_FRONTEND_MENU` native, you first must utilize the `CLONE_PED` ( https://runtime.fivem.net/doc/natives/#\_0xEF29A16337FACADB ) to clone said ped.
+--- This native is used to "give"/duplicate a player ped to a frontend menu as configured via the `ACTIVATE_FRONTEND_MENU` native, you first must utilize the [CLONE_PED](https://docs.fivem.net/natives/?_0xEF29A16337FACADB) to clone said ped.
 ---
 --- @hash [0xAC0BFBDC3BE00E14](https://docs.fivem.net/natives/?_0xAC0BFBDC3BE00E14)
 --- @param ped Ped
@@ -11340,10 +11408,6 @@ function SetPauseMenuActive(toggle) end
 function GetBlipColour(blip) end
 
     
---- <!--
---- _loc1_.map((name, idx) => `| ${idx} | ${name} | ![${name}](https://runtime.fivem.net/blips/${name}.svg) |`).join('\n')
---- -->
---- 
 --- Sets the displayed sprite for a specific blip.
 --- 
 --- There's a [list of sprites](https://docs.fivem.net/game-references/blips/) on the FiveM documentation site.

@@ -1756,7 +1756,7 @@ function SetPlayerAirDefenseZoneFlag(player, zoneId, enable) end
 function N_0xecdc202b25e5cf48(player, zoneId, enable) end
 
     
---- Does the same as [`_SET_CAN_PED_SELECT_WEAPON`](https://runtime.fivem.net/doc/natives/#\_0xB4771B9AAF4E68E4) except for all weapons.
+--- Does the same as [`_SET_CAN_PED_SELECT_WEAPON`](https://docs.fivem.net/natives/?_0xB4771B9AAF4E68E4) except for all weapons.
 ---
 --- @hash [0xEFF296097FF1E509](https://docs.fivem.net/natives/?_0xEFF296097FF1E509)
 --- @param ped Ped
@@ -1767,7 +1767,7 @@ function SetCanPedEquipAllWeapons(ped, toggle) end
 
     
 --- # New Name: SetCanPedEquipAllWeapons
---- Does the same as [`_SET_CAN_PED_SELECT_WEAPON`](https://runtime.fivem.net/doc/natives/#\_0xB4771B9AAF4E68E4) except for all weapons.
+--- Does the same as [`_SET_CAN_PED_SELECT_WEAPON`](https://docs.fivem.net/natives/?_0xB4771B9AAF4E68E4) except for all weapons.
 ---
 --- @hash [0xEFF296097FF1E509](https://docs.fivem.net/natives/?_0xEFF296097FF1E509)
 --- @param ped Ped

@@ -1382,7 +1382,14 @@ function AddCamSplineNodeUsingGameplayFrame(cam, p1, p2) end
 function N_0x609278246a29ca34(cam, p1, p2) end
 
     
---- AttachCamToPedBone
+--- This native works with peds only.
+--- @usage local ped = PlayerPedId()
+--- local cam = CreateCam("DEFAULT_SCRIPTED_CAMERA", true)
+--- 
+--- AttachCamToPedBone(cam,ped,4089, 0.0, 0.0, 0.0, true) -- attach it to a finger on the left hand
+--- 
+--- SetCamActive(cam, true)
+--- RenderScriptCams(true, false, 0, true, true)
 ---
 --- @hash [0x61A3DBA14AB7F411](https://docs.fivem.net/natives/?_0x61A3DBA14AB7F411)
 --- @param cam Cam
@@ -3970,7 +3977,13 @@ function ShakeGameplayCam(shakeName, intensity) end
 --- ```
 --- Last param determines if its relative to the Entity  
 --- ```
----
+--- @usage local entity = PlayerPedId()
+--- local cam = CreateCam("DEFAULT_SCRIPTED_CAMERA", true)
+--- 
+--- AttachCamToEntity(cam,entity, 0.0, 0.0, 0.0, true) --attach camera to the center of the entity
+--- 
+--- SetCamActive(cam, true)
+--- RenderScriptCams(true, false, 0, true, true
 --- @hash [0xFEDB7D269E8C60E3](https://docs.fivem.net/natives/?_0xFEDB7D269E8C60E3)
 --- @param cam Cam
 --- @param entity Entity

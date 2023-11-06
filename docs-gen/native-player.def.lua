@@ -73,7 +73,7 @@ function IsPlayerTeleportActive() end
 function ChangePlayerPed(player, ped, b2, resetDamage) end
 
     
---- SetAllRandomPedsFlee
+--- Sets whether all random peds will run away from the player if they are agitated (threatened) (bool=true), or if they will stand their ground (bool=false).
 ---
 --- @hash [0x056E0FE8534C2949](https://docs.fivem.net/natives/?_0x056E0FE8534C2949)
 --- @param player Player
@@ -573,17 +573,16 @@ function N_0x31e90b8873a4cd3b(player, p1) end
 function SetPoliceIgnorePlayer(player, toggle) end
 
     
---- ```
---- p2 is always false in R* scripts  
---- ```
----
+--- SetPlayerWantedLevelNoDrop
+--- @usage local player = PlayerId()
+--- SetPlayerWantedLevelNoDrop(player, 5, false) -- 5 star wanted leve
 --- @hash [0x340E61DE7F471565](https://docs.fivem.net/natives/?_0x340E61DE7F471565)
 --- @param player Player
 --- @param wantedLevel number (int)
---- @param p2 boolean
+--- @param delayedResponse boolean
 --- @return void
---- @overload fun(player: Player, wantedLevel: number, p2: boolean): void
-function SetPlayerWantedLevelNoDrop(player, wantedLevel, p2) end
+--- @overload fun(player: Player, wantedLevel: number, delayedResponse: boolean): void
+function SetPlayerWantedLevelNoDrop(player, wantedLevel, delayedResponse) end
 
     
 --- N_0x36f1b38855f2a8df
@@ -667,19 +666,16 @@ function IsPlayerBattleAware(player) end
 function N_0x38d28da81e4e9bf9(player) end
 
     
---- ```
---- Call SET_PLAYER_WANTED_LEVEL_NOW for immediate effect  
---- wantedLevel is an integer value representing 0 to 5 stars even though the game supports the 6th wanted level but no police will appear since no definitions are present for it in the game files  
---- disableNoMission-  Disables When Off Mission- appears to always be false  
---- ```
----
+--- SetPlayerWantedLevel
+--- @usage local player = PlayerId()
+--- SetPlayerWantedLevel(player, 5, false) -- 5 star wanted leve
 --- @hash [0x39FF19C64EF7DA5B](https://docs.fivem.net/natives/?_0x39FF19C64EF7DA5B)
 --- @param player Player
 --- @param wantedLevel number (int)
---- @param disableNoMission boolean
+--- @param delayedResponse boolean
 --- @return void
---- @overload fun(player: Player, wantedLevel: number, disableNoMission: boolean): void
-function SetPlayerWantedLevel(player, wantedLevel, disableNoMission) end
+--- @overload fun(player: Player, wantedLevel: number, delayedResponse: boolean): void
+function SetPlayerWantedLevel(player, wantedLevel, delayedResponse) end
 
     
 --- ```
@@ -1204,10 +1200,8 @@ function N_0x5dc40a8869c22141(player, state) end
 function GetPlayerHasReserveParachute(player) end
 
     
---- ```
---- Inhibits the player from using any method of combat including melee and firearms.  
---- NOTE: Only disables the firing for one frame  
---- ```
+--- Inhibits the player from using any method of combat including melee and firearms.\
+--- NOTE: Only disables the firing for one frame
 ---
 --- @hash [0x5E6CC07646BBEAB8](https://docs.fivem.net/natives/?_0x5E6CC07646BBEAB8)
 --- @param player Player

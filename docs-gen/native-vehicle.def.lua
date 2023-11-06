@@ -464,11 +464,11 @@ function N_0x0d5f65a8f4ebdab5(vehicle, state) end
 --- DetachVehicleFromCargobob
 ---
 --- @hash [0x0E21D3DF1051399D](https://docs.fivem.net/natives/?_0x0E21D3DF1051399D)
---- @param vehicle Vehicle
 --- @param cargobob Vehicle
+--- @param vehicle Vehicle
 --- @return void
---- @overload fun(vehicle: Vehicle, cargobob: Vehicle): void
-function DetachVehicleFromCargobob(vehicle, cargobob) end
+--- @overload fun(cargobob: Vehicle, vehicle: Vehicle): void
+function DetachVehicleFromCargobob(cargobob, vehicle) end
 
     
 --- GetTotalDurationOfVehicleRecording
@@ -3475,20 +3475,45 @@ function SetVehicleExclusiveDriver(vehicle, toggle) end
 function N_0x41062318f23ed854(vehicle, toggle) end
 
     
---- ```
---- p2 is unknown and is always -1 in the script natives.
---- ```
----
+--- AttachVehicleToCargobob
+--- @usage function RequestVehicleModel(modelHash)
+---     if not IsModelInCdimage(modelHash) then return end
+---     RequestModel(modelHash)
+---     while not HasModelLoaded(modelHash) do 
+---       Wait(0)
+---     end
+--- end
+--- 
+--- RegisterCommand('spawnCargobob', function(source, args)
+---     local cargobobHash = `cargobob` 
+---     local carHash = `adder` 
+---     local myPed = PlayerPedId()
+--- 
+---     local spawnCoords = GetEntityCoords(myPed)
+--- 
+---     RequestVehicleModel(cargobobHash)
+---     local cargobob = CreateVehicle(cargobobHash, spawnCoords+vec3(0.0,0.0, 10.0), GetEntityHeading(myPed), true, false) -- Spawns a cargobob above players location
+---     SetHeliBladesSpeed(cargobob, 1.0) -- sets the helicoper blades to max spin speed
+---     SetPedIntoVehicle(myPed, cargobob, -1) -- sets the player into the cargobob
+---     SetModelAsNoLongerNeeded(cargobobHash) -- removes model from game memory as we no longer need it
+---     CreatePickUpRopeForCargobob(cargobob, 1) -- 0 = hook, 1 = Magnet Enable rope from cargobob
+--- 
+---     RequestVehicleModel(carHash)
+---     local vehicle = CreateVehicle(carHash, spawnCoords, GetEntityHeading(myPed), true, false) -- Spawns a vehicle for the cargobob to pickup
+---     SetModelAsNoLongerNeeded(carHash)
+---     Wait(1000)
+---     AttachVehicleToCargobob(cargobob, vehicle, GetEntityBoneIndexByName(vehicle, 'bodyshell'), 0.0, 0.0, 0.0) --Attach the vehicle to the magnet or hook
+--- end
 --- @hash [0x4127F1D84E347769](https://docs.fivem.net/natives/?_0x4127F1D84E347769)
---- @param vehicle Vehicle
 --- @param cargobob Vehicle
---- @param p2 number (int)
+--- @param vehicle Vehicle
+--- @param vehicleBoneIndex number (int)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @return void
---- @overload fun(vehicle: Vehicle, cargobob: Vehicle, p2: number, x: number, y: number, z: number): void
-function AttachVehicleToCargobob(vehicle, cargobob, p2, x, y, z) end
+--- @overload fun(cargobob: Vehicle, vehicle: Vehicle, vehicleBoneIndex: number, x: number, y: number, z: number): void
+function AttachVehicleToCargobob(cargobob, vehicle, vehicleBoneIndex, x, y, z) end
 
     
 --- N_0x41290b40fa63e6da
@@ -5485,7 +5510,7 @@ function N_0x639431e895b9aa57(ped, vehicle, seatIndex, side, onEnter) end
 --- 
 --- *   17. Very long train and freight variation.
 --- *   18. Freight train only.
---- *   25. Double metro train (with both models flipped opposite to each other). This used to be `24` before the 2372 build.
+--- *   26. Double metro train (with both models flipped opposite to each other). This used to be `25` before the 2802 build, it also used to be `24` before the 2372 build.
 --- @usage --[[ 
 ---     This function needs to be invoked prior to calling CreateMissionTrain  or the trains (as well as its carriages) won't spawn.
 ---     Could also result in a game-crash when CreateMissionTrain is called without
@@ -5513,7 +5538,7 @@ function N_0x639431e895b9aa57(ped, vehicle, seatIndex, side, onEnter) end
 ---     if #args < 1 then
 ---         TriggerEvent('chat:addMessage', {
 ---             args = { 
----                 'Error, provide a variation id, you can find those in trains.xml. Variations range from 0 to 25.'
+---                 'Error, provide a variation id, you can find those in trains.xml. Variations range from 0 to 26.'
 ---             }
 ---         })
 ---         return

@@ -5422,7 +5422,7 @@ function ForceSocialClubUpdate() end
 function N_0xebd3205a207939ed(p0) end
 
     
---- Refer to [`SET_WEATHER_TYPE_NOW`](#0x29B487C359E19889) for weather types.
+--- Refer to [`SET_WEATHER_TYPE_NOW`](https://docs.fivem.net/natives/?_0x29B487C359E19889) for weather types.
 ---
 --- @hash [0xED712CA327900C8A](https://docs.fivem.net/natives/?_0xED712CA327900C8A)
 --- @param weatherType string (char*)

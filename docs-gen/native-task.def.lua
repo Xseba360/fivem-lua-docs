@@ -752,14 +752,24 @@ function WaypointPlaybackStartAimingAtPed(p0, p1, p2) end
 function TaskSmartFleePed(ped, fleeTarget, distance, fleeTime, p4, p5) end
 
     
---- AddPatrolRouteLink
----
+--- connects/links 2 [route nodes](https://docs.fivem.net/natives/?_0x8EDF950167586B7C)\
+--- image representing the cyclic example below:\
+--- ![image](https://user-images.githubusercontent.com/55803068/188470866-c32c6a9f-a25d-4772-9b18-5be46e2c14a1.png)
+--- @usage -- these lines connect 1,2,3,4,5,6 in a cyclic manner (1 > 2 > 3 > 4 > 5 > 6 > 1)
+--- 
+--- 
+--- AddPatrolRouteLink(1,2)
+--- AddPatrolRouteLink(2,3)
+--- AddPatrolRouteLink(3,4)
+--- AddPatrolRouteLink(4,5)
+--- AddPatrolRouteLink(5,6)
+--- AddPatrolRouteLink(6,1
 --- @hash [0x23083260DEC3A551](https://docs.fivem.net/natives/?_0x23083260DEC3A551)
---- @param p0 any
---- @param p1 any
+--- @param id1 number (int)
+--- @param id2 number (int)
 --- @return void
---- @overload fun(p0: any, p1: any): void
-function AddPatrolRouteLink(p0, p1) end
+--- @overload fun(id1: number, id2: number): void
+function AddPatrolRouteLink(id1, id2) end
 
     
 --- ```
@@ -2647,32 +2657,22 @@ function SetHighFallTask(ped, duration, p2, p3) end
 function SetPedPathCanUseClimbovers(ped, Toggle) end
 
     
---- ```
---- Example:
---- TASK::ADD_PATROL_ROUTE_NODE(2, "WORLD_HUMAN_GUARD_STAND", -193.4915, -2378.864990234375, 10.9719, -193.4915, -2378.864990234375, 10.9719, 3000);
---- p0 is between 0 and 4 in the scripts.
---- p1 is "WORLD_HUMAN_GUARD_STAND" or "StandGuard".
---- p2, p3 and p4 is only one parameter sometimes in the scripts. Most likely a Vector3 hence p2, p3 and p4 are coordinates.
---- Examples:
---- TASK::ADD_PATROL_ROUTE_NODE(1, "WORLD_HUMAN_GUARD_STAND", l_739[7/*3*/], 0.0, 0.0, 0.0, 0);
---- TASK::ADD_PATROL_ROUTE_NODE(1, "WORLD_HUMAN_GUARD_STAND", l_B0[17/*44*/]._f3, l_B0[17/*44*/]._f3, 2000);
---- p5, p6 and p7 are for example set to: 1599.0406494140625, 2713.392578125, 44.4309.
---- p8 is an int, often random set to for example: MISC::GET_RANDOM_INT_IN_RANGE(5000, 10000).
---- ```
----
+--- x2,y2 and z2 are the coordinates to which the ped should look at
+--- @usage -- the guard will go toward vector3(1.0, 1.0, 1.0) coordinates looking toward vector3(0.0, 0.0, 0.0) coordinates waiting 1000ms with the WORLD_HUMAN_GUARD_STAND animation
+--- AddPatrolRouteNode(1, "WORLD_HUMAN_GUARD_STAND", vector3(1.0, 1.0, 1.0), vector3(0.0, 0.0, 0.0), 1000
 --- @hash [0x8EDF950167586B7C](https://docs.fivem.net/natives/?_0x8EDF950167586B7C)
---- @param p0 number (int)
---- @param p1 string (char*)
+--- @param id number (int)
+--- @param guardScenario string (char*)
 --- @param x1 number (float)
 --- @param y1 number (float)
 --- @param z1 number (float)
 --- @param x2 number (float)
 --- @param y2 number (float)
 --- @param z2 number (float)
---- @param p8 number (int)
+--- @param waitTime number (int)
 --- @return void
---- @overload fun(p0: number, p1: string, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, p8: number): void
-function AddPatrolRouteNode(p0, p1, x1, y1, z1, x2, y2, z2, p8) end
+--- @overload fun(id: number, guardScenario: string, x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, waitTime: number): void
+function AddPatrolRouteNode(id, guardScenario, x1, y1, z1, x2, y2, z2, waitTime) end
 
     
 --- ```
