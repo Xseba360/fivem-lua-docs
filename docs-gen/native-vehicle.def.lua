@@ -13123,14 +13123,27 @@ function GetVehicleBodyHealth(vehicle) end
 function SetVehicleDoorControl(vehicle, doorIndex, speed, angle) end
 
     
---- SetConvertibleRoof
----
+--- This allows for the vehicle's roof to be put on when set to true, and removed when set to false, provided that the vehicle has a version with a roof and a version without a roof.
+--- 
+--- #### Vehicles with both roofed and roofless versions (others may exist; this list is compiled from decompiled scripts).
+--- 
+--- *   chino
+--- *   voltic
+--- *   buccaneer
+--- *   buccaneer2
+--- *   chino2
+--- *   faction
+--- *   faction2
+--- *   mamba
+--- @usage -- In this case we are removing the roof from the vehicle.
+--- local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- SetConvertibleRoof(vehicle, false
 --- @hash [0xF39C4F538B5124C2](https://docs.fivem.net/natives/?_0xF39C4F538B5124C2)
 --- @param vehicle Vehicle
---- @param p1 boolean
+--- @param toggle boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, p1: boolean): void
-function SetConvertibleRoof(vehicle, p1) end
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+function SetConvertibleRoof(vehicle, toggle) end
 
     
 --- N_0xf3b0e0aed097a3f5
