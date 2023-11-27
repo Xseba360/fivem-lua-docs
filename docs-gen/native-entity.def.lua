@@ -1832,8 +1832,19 @@ function SetEntityAlwaysPrerender(entity, toggle) end
 function SetEntityAsMissionEntity(entity, p1, p2) end
 
     
---- Deletes the specified entity, and invalidates the passed handle (i.e. in/out argument).
----
+--- Delete the specified entity, and invalidate the passed handle (i.e., the in/out argument).
+--- You might want to check if the entity exists before with [DOES_ENTITY_EXIST](https://docs.fivem.net/natives/?_0x7239B21A38F536BA).
+--- @usage -- Retrieve the vehicle the player is currently in. 
+--- local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if not DoesEntityExist(vehicle) then 
+---     -- If the vehicle does not exist, end the execution of the code here.
+---     return 
+--- end
+--- 
+--- -- If the vehicle does exist, delete the vehicle entity from the game world.
+--- DeleteEntity(vehicle
 --- @hash [0xAE3CBE5BF394C9C9](https://docs.fivem.net/natives/?_0xAE3CBE5BF394C9C9)
 --- @param entity Entity (Entity*)
 --- @return void

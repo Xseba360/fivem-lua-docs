@@ -11229,21 +11229,17 @@ function N_0xc970d0e0fc31d768(vehicle, wheelIndex, multiplier) end
 
     
 --- See eDoorId declared in [`SET_VEHICLE_DOOR_SHUT`](https://docs.fivem.net/natives/?_0x93D9BD300D7789E5)
---- 
---- Returns vehicle door destroy type previously set with \_SET_VEHICLE_DOOR_DESTROY_TYPE
 ---
 --- @hash [0xCA4AC3EAAE46EC7B](https://docs.fivem.net/natives/?_0xCA4AC3EAAE46EC7B)
 --- @param vehicle Vehicle
 --- @param doorIndex number (int)
 --- @return number
 --- @overload fun(vehicle: Vehicle, doorIndex: number): number
-function GetVehicleDoorDestroyType(vehicle, doorIndex) end
+function GetVehicleIndividualDoorLockStatus(vehicle, doorIndex) end
 
     
---- # New Name: GetVehicleDoorDestroyType
+--- # New Name: GetVehicleIndividualDoorLockStatus
 --- See eDoorId declared in [`SET_VEHICLE_DOOR_SHUT`](https://docs.fivem.net/natives/?_0x93D9BD300D7789E5)
---- 
---- Returns vehicle door destroy type previously set with \_SET_VEHICLE_DOOR_DESTROY_TYPE
 ---
 --- @hash [0xCA4AC3EAAE46EC7B](https://docs.fivem.net/natives/?_0xCA4AC3EAAE46EC7B)
 --- @param vehicle Vehicle
@@ -11252,6 +11248,18 @@ function GetVehicleDoorDestroyType(vehicle, doorIndex) end
 --- @overload fun(vehicle: Vehicle, doorIndex: number): number
 --- @deprecated
 function N_0xca4ac3eaae46ec7b(vehicle, doorIndex) end
+
+    
+--- # New Name: GetVehicleIndividualDoorLockStatus
+--- See eDoorId declared in [`SET_VEHICLE_DOOR_SHUT`](https://docs.fivem.net/natives/?_0x93D9BD300D7789E5)
+---
+--- @hash [0xCA4AC3EAAE46EC7B](https://docs.fivem.net/natives/?_0xCA4AC3EAAE46EC7B)
+--- @param vehicle Vehicle
+--- @param doorIndex number (int)
+--- @return number
+--- @overload fun(vehicle: Vehicle, doorIndex: number): number
+--- @deprecated
+function GetVehicleDoorDestroyType(vehicle, doorIndex) end
 
     
 --- SetNumberOfParkedVehicles

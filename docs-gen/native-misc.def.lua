@@ -274,18 +274,40 @@ function AreStringsEqual(string1, string2) end
 function UpdateOnscreenKeyboard() end
 
     
---- ```
---- 0 as param = weird black and green screen
---- 0.1 - 0.99 = Prevent rain effect from falling (still sound and effects on puddles) and prevent puddles from increase/decrease, seems than it prevent any weather change too
---- 1 and more = "Unfreeze" rain puddles but clear weather too
---- When 'freezing' is enabled, it seem to also freeze value getted with GetRainLevel
---- ```
----
+--- Clears the active weather type after a specific amount of time determined by `transitionTimeInMs`.
+--- @usage RegisterCommand('weathertransition', function(source, args)
+---     -- Set the weather type to foggy so we can see the change
+---     SetWeatherTypeNowPersist("FOGGY")
+---     -- Clear the weather and run the transition
+---     local transitionTimeInMs = tonumber(args[1]) or 5000
+---     if transitionTimeInMs > 0 then
+---         ClearWeatherTypeNowPersistNetwork(transitionTimeInMs)
+---     end
+--- end, false
 --- @hash [0x0CF97F497FE7D048](https://docs.fivem.net/natives/?_0x0CF97F497FE7D048)
---- @param p0 number (float)
+--- @param transitionTimeInMs number (int)
 --- @return void
---- @overload fun(p0: number): void
-function N_0x0cf97f497fe7d048(p0) end
+--- @overload fun(transitionTimeInMs: number): void
+function ClearWeatherTypeNowPersistNetwork(transitionTimeInMs) end
+
+    
+--- # New Name: ClearWeatherTypeNowPersistNetwork
+--- Clears the active weather type after a specific amount of time determined by `transitionTimeInMs`.
+--- @usage RegisterCommand('weathertransition', function(source, args)
+---     -- Set the weather type to foggy so we can see the change
+---     SetWeatherTypeNowPersist("FOGGY")
+---     -- Clear the weather and run the transition
+---     local transitionTimeInMs = tonumber(args[1]) or 5000
+---     if transitionTimeInMs > 0 then
+---         ClearWeatherTypeNowPersistNetwork(transitionTimeInMs)
+---     end
+--- end, false
+--- @hash [0x0CF97F497FE7D048](https://docs.fivem.net/natives/?_0x0CF97F497FE7D048)
+--- @param transitionTimeInMs number (int)
+--- @return void
+--- @overload fun(transitionTimeInMs: number): void
+--- @deprecated
+function N_0x0cf97f497fe7d048(transitionTimeInMs) end
 
     
 --- RegisterEnumToSave
@@ -5573,24 +5595,47 @@ function SlerpNearQuaternion(t, x, y, z, w, x1, y1, z1, w1) end
 function N_0xf2f6a2fa49278625(t, x, y, z, w, x1, y1, z1, w1) end
 
     
---- SetCloudHatOpacity
----
+--- Allows modification of the cloud opacity. It can also be used in other contexts, such as when the player is in a switch state [`IS_PLAYER_SWITCH_IN_PROGRESS`](https://docs.fivem.net/natives/?_0xD9D2CFFF49FAB35F).
+--- @usage -- Check if the player is in a Switch "state"
+--- if IsPlayerSwitchInProgress() then
+---     -- If the player is in a Switch state, set the clouds opacity to 1.0
+---     SetCloudsAlpha(1.0)
+--- en
 --- @hash [0xF36199225D6D8C86](https://docs.fivem.net/natives/?_0xF36199225D6D8C86)
 --- @param opacity number (float)
 --- @return void
 --- @overload fun(opacity: number): void
-function SetCloudHatOpacity(opacity) end
+function SetCloudsAlpha(opacity) end
 
     
---- # New Name: SetCloudHatOpacity
---- SetCloudHatOpacity
----
+--- # New Name: SetCloudsAlpha
+--- Allows modification of the cloud opacity. It can also be used in other contexts, such as when the player is in a switch state [`IS_PLAYER_SWITCH_IN_PROGRESS`](https://docs.fivem.net/natives/?_0xD9D2CFFF49FAB35F).
+--- @usage -- Check if the player is in a Switch "state"
+--- if IsPlayerSwitchInProgress() then
+---     -- If the player is in a Switch state, set the clouds opacity to 1.0
+---     SetCloudsAlpha(1.0)
+--- en
 --- @hash [0xF36199225D6D8C86](https://docs.fivem.net/natives/?_0xF36199225D6D8C86)
 --- @param opacity number (float)
 --- @return void
 --- @overload fun(opacity: number): void
 --- @deprecated
 function N_0xf36199225d6d8c86(opacity) end
+
+    
+--- # New Name: SetCloudsAlpha
+--- Allows modification of the cloud opacity. It can also be used in other contexts, such as when the player is in a switch state [`IS_PLAYER_SWITCH_IN_PROGRESS`](https://docs.fivem.net/natives/?_0xD9D2CFFF49FAB35F).
+--- @usage -- Check if the player is in a Switch "state"
+--- if IsPlayerSwitchInProgress() then
+---     -- If the player is in a Switch state, set the clouds opacity to 1.0
+---     SetCloudsAlpha(1.0)
+--- en
+--- @hash [0xF36199225D6D8C86](https://docs.fivem.net/natives/?_0xF36199225D6D8C86)
+--- @param opacity number (float)
+--- @return void
+--- @overload fun(opacity: number): void
+--- @deprecated
+function SetCloudHatOpacity(opacity) end
 
     
 --- Refer to [`SET_WEATHER_TYPE_NOW_PERSIST`](https://docs.fivem.net/natives/?_0xED712CA327900C8A) for weather types.

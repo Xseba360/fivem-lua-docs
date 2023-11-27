@@ -805,8 +805,6 @@ function UnkGetInteriorAtCoords(x, y, z, typeHash) end
 
     
 --- ```
---- GET_INTERIOR_*
---- 
 --- NativeDB Introduced: v1493
 --- ```
 ---
@@ -814,6 +812,19 @@ function UnkGetInteriorAtCoords(x, y, z, typeHash) end
 --- @param interior number (int)
 --- @return number
 --- @overload fun(interior: number): number
+function GetInteriorHeading(interior) end
+
+    
+--- # New Name: GetInteriorHeading
+--- ```
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0xF49B58631D9E22D9](https://docs.fivem.net/natives/?_0xF49B58631D9E22D9)
+--- @param interior number (int)
+--- @return number
+--- @overload fun(interior: number): number
+--- @deprecated
 function GetInteriorHeading(interior) end
 
     

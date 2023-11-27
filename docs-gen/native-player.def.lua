@@ -3263,16 +3263,58 @@ function N_0xefd79fa81dfba9cb(player, distance) end
 function ClearPlayerHasDamagedAtLeastOnePed(player) end
 
     
+--- Violation types:
+--- 
 --- ```
---- Only 1 occurrence. p1 was 2.  
+--- enum eViolationType {
+---   VT_PAVED_PEDESTRIAN_AREAS = 0,
+---   VT_RUNNING_REDS,
+---   VT_AGAINST_TRAFFIC
+--- };
 --- ```
+--- 
+--- Checks if a player is performing a certain type of traffic violation.
+--- 
+--- *   Type 0: Checks if the player is driving outside designated road areas pedestrians would walk on (specifically paved sidewalks).
+--- *   Type 1: Checks if the player is running through reds, takes some time to return true.
+--- *   Type 2: Checks if the player is driving on the wrong side of the road (against traffic).
+--- 
+--- Used solely in "Al Di Napoli" with type 2 for a voiceline.
 ---
 --- @hash [0xF10B44FD479D69F3](https://docs.fivem.net/natives/?_0xF10B44FD479D69F3)
 --- @param player Player
---- @param p1 number (int)
+--- @param type number (int)
 --- @return boolean
---- @overload fun(player: Player, p1: number): boolean
-function N_0xf10b44fd479d69f3(player, p1) end
+--- @overload fun(player: Player, type: number): boolean
+function IsPlayerDrivingDangerously(player, type) end
+
+    
+--- # New Name: IsPlayerDrivingDangerously
+--- Violation types:
+--- 
+--- ```
+--- enum eViolationType {
+---   VT_PAVED_PEDESTRIAN_AREAS = 0,
+---   VT_RUNNING_REDS,
+---   VT_AGAINST_TRAFFIC
+--- };
+--- ```
+--- 
+--- Checks if a player is performing a certain type of traffic violation.
+--- 
+--- *   Type 0: Checks if the player is driving outside designated road areas pedestrians would walk on (specifically paved sidewalks).
+--- *   Type 1: Checks if the player is running through reds, takes some time to return true.
+--- *   Type 2: Checks if the player is driving on the wrong side of the road (against traffic).
+--- 
+--- Used solely in "Al Di Napoli" with type 2 for a voiceline.
+---
+--- @hash [0xF10B44FD479D69F3](https://docs.fivem.net/natives/?_0xF10B44FD479D69F3)
+--- @param player Player
+--- @param type number (int)
+--- @return boolean
+--- @overload fun(player: Player, type: number): boolean
+--- @deprecated
+function N_0xf10b44fd479d69f3(player, type) end
 
     
 --- ```
