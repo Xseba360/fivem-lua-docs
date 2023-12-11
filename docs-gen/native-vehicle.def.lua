@@ -6420,9 +6420,7 @@ function N_0x76d26a22750e849e(vehicle) end
 function FixVehicleWindow(vehicle, windowIndex) end
 
     
---- ```
---- Returns -1 if the vehicle mod is stock  
---- ```
+--- GetVehicleMod
 ---
 --- @hash [0x772960298DA26FDB](https://docs.fivem.net/natives/?_0x772960298DA26FDB)
 --- @param vehicle Vehicle
