@@ -1686,56 +1686,44 @@ function GetVehicleDoorLockStatus(vehicle) end
 function DoesVehicleHaveWeapons(vehicle) end
 
     
---- ```
---- This native makes the vehicle stop immediately, as happens when we enter a MP garage.  
---- . distance defines how far it will travel until stopping. Garage doors use 3.0.  
---- . If killEngine is set to 1, you cannot resume driving the vehicle once it stops. This looks like is a bitmapped integer.  
---- ```
+--- This native makes the vehicle stop immediately, as it happens when we enter a multiplayer garage.
 ---
 --- @hash [0x260BE8F09E326A20](https://docs.fivem.net/natives/?_0x260BE8F09E326A20)
 --- @param vehicle Vehicle
 --- @param distance number (float)
 --- @param duration number (int)
---- @param unknown boolean
+--- @param bControlVerticalVelocity boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, distance: number, duration: number, unknown: boolean): void
-function BringVehicleToHalt(vehicle, distance, duration, unknown) end
+--- @overload fun(vehicle: Vehicle, distance: number, duration: number, bControlVerticalVelocity: boolean): void
+function BringVehicleToHalt(vehicle, distance, duration, bControlVerticalVelocity) end
 
     
 --- # New Name: BringVehicleToHalt
---- ```
---- This native makes the vehicle stop immediately, as happens when we enter a MP garage.  
---- . distance defines how far it will travel until stopping. Garage doors use 3.0.  
---- . If killEngine is set to 1, you cannot resume driving the vehicle once it stops. This looks like is a bitmapped integer.  
---- ```
+--- This native makes the vehicle stop immediately, as it happens when we enter a multiplayer garage.
 ---
 --- @hash [0x260BE8F09E326A20](https://docs.fivem.net/natives/?_0x260BE8F09E326A20)
 --- @param vehicle Vehicle
 --- @param distance number (float)
 --- @param duration number (int)
---- @param unknown boolean
+--- @param bControlVerticalVelocity boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, distance: number, duration: number, unknown: boolean): void
+--- @overload fun(vehicle: Vehicle, distance: number, duration: number, bControlVerticalVelocity: boolean): void
 --- @deprecated
-function N_0x260be8f09e326a20(vehicle, distance, duration, unknown) end
+function N_0x260be8f09e326a20(vehicle, distance, duration, bControlVerticalVelocity) end
 
     
 --- # New Name: BringVehicleToHalt
---- ```
---- This native makes the vehicle stop immediately, as happens when we enter a MP garage.  
---- . distance defines how far it will travel until stopping. Garage doors use 3.0.  
---- . If killEngine is set to 1, you cannot resume driving the vehicle once it stops. This looks like is a bitmapped integer.  
---- ```
+--- This native makes the vehicle stop immediately, as it happens when we enter a multiplayer garage.
 ---
 --- @hash [0x260BE8F09E326A20](https://docs.fivem.net/natives/?_0x260BE8F09E326A20)
 --- @param vehicle Vehicle
 --- @param distance number (float)
 --- @param duration number (int)
---- @param unknown boolean
+--- @param bControlVerticalVelocity boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, distance: number, duration: number, unknown: boolean): void
+--- @overload fun(vehicle: Vehicle, distance: number, duration: number, bControlVerticalVelocity: boolean): void
 --- @deprecated
-function SetVehicleHalt(vehicle, distance, duration, unknown) end
+function SetVehicleHalt(vehicle, distance, duration, bControlVerticalVelocity) end
 
     
 --- SetFarDrawVehicles

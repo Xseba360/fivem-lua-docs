@@ -1763,8 +1763,6 @@ function SetAbilityBarVisibilityInMultiplayer(visible) end
 function GetBlipInfoIdDisplay(blip) end
 
     
---- NOTE: 'duration' is a multiplier, so 1.0 is normal, 2.0 is twice as long (very slow), and 0.5 is half as long.
---- 
 --- Example, only occurrence in the scripts:
 --- 
 --- ```
@@ -1772,7 +1770,6 @@ function GetBlipInfoIdDisplay(blip) end
 --- ```
 --- 
 --- Example result:
---- 
 --- ![](https://i.imgur.com/YrN4Bcm.png)
 ---
 --- @hash [0x1E6611149DB3DB6B](https://docs.fivem.net/natives/?_0x1E6611149DB3DB6B)
@@ -1782,15 +1779,13 @@ function GetBlipInfoIdDisplay(blip) end
 --- @param iconType number (int)
 --- @param nameStr string (char*)
 --- @param subtitleStr string (char*)
---- @param duration number (float)
+--- @param durationMultiplier number (float)
 --- @return number
---- @overload fun(picTxd: string, picTxn: string, flash: boolean, iconType: number, nameStr: string, subtitleStr: string, duration: number): number
-function EndTextCommandThefeedPostMessagetextTu(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, duration) end
+--- @overload fun(picTxd: string, picTxn: string, flash: boolean, iconType: number, nameStr: string, subtitleStr: string, durationMultiplier: number): number
+function EndTextCommandThefeedPostMessagetextTu(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, durationMultiplier) end
 
     
 --- # New Name: EndTextCommandThefeedPostMessagetextTu
---- NOTE: 'duration' is a multiplier, so 1.0 is normal, 2.0 is twice as long (very slow), and 0.5 is half as long.
---- 
 --- Example, only occurrence in the scripts:
 --- 
 --- ```
@@ -1798,7 +1793,6 @@ function EndTextCommandThefeedPostMessagetextTu(picTxd, picTxn, flash, iconType,
 --- ```
 --- 
 --- Example result:
---- 
 --- ![](https://i.imgur.com/YrN4Bcm.png)
 ---
 --- @hash [0x1E6611149DB3DB6B](https://docs.fivem.net/natives/?_0x1E6611149DB3DB6B)
@@ -1808,16 +1802,14 @@ function EndTextCommandThefeedPostMessagetextTu(picTxd, picTxn, flash, iconType,
 --- @param iconType number (int)
 --- @param nameStr string (char*)
 --- @param subtitleStr string (char*)
---- @param duration number (float)
+--- @param durationMultiplier number (float)
 --- @return number
---- @overload fun(picTxd: string, picTxn: string, flash: boolean, iconType: number, nameStr: string, subtitleStr: string, duration: number): number
+--- @overload fun(picTxd: string, picTxn: string, flash: boolean, iconType: number, nameStr: string, subtitleStr: string, durationMultiplier: number): number
 --- @deprecated
-function N_0x1e6611149db3db6b(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, duration) end
+function N_0x1e6611149db3db6b(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, durationMultiplier) end
 
     
 --- # New Name: EndTextCommandThefeedPostMessagetextTu
---- NOTE: 'duration' is a multiplier, so 1.0 is normal, 2.0 is twice as long (very slow), and 0.5 is half as long.
---- 
 --- Example, only occurrence in the scripts:
 --- 
 --- ```
@@ -1825,7 +1817,6 @@ function N_0x1e6611149db3db6b(picTxd, picTxn, flash, iconType, nameStr, subtitle
 --- ```
 --- 
 --- Example result:
---- 
 --- ![](https://i.imgur.com/YrN4Bcm.png)
 ---
 --- @hash [0x1E6611149DB3DB6B](https://docs.fivem.net/natives/?_0x1E6611149DB3DB6B)
@@ -1835,11 +1826,11 @@ function N_0x1e6611149db3db6b(picTxd, picTxn, flash, iconType, nameStr, subtitle
 --- @param iconType number (int)
 --- @param nameStr string (char*)
 --- @param subtitleStr string (char*)
---- @param duration number (float)
+--- @param durationMultiplier number (float)
 --- @return number
---- @overload fun(picTxd: string, picTxn: string, flash: boolean, iconType: number, nameStr: string, subtitleStr: string, duration: number): number
+--- @overload fun(picTxd: string, picTxn: string, flash: boolean, iconType: number, nameStr: string, subtitleStr: string, durationMultiplier: number): number
 --- @deprecated
-function SetNotificationMessage_4(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, duration) end
+function SetNotificationMessage_4(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, durationMultiplier) end
 
     
 --- SetRaceTrackRender

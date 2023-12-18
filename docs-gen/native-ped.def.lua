@@ -6480,8 +6480,16 @@ function RegisterPedheadshotTransparent(ped) end
 function N_0x953563ce563143af(ped) end
 
     
---- SetPedDensityMultiplierThisFrame
----
+--- **Usage:** Call this native every frame
+--- @usage -- 0.0 means no peds, while 1.0 indicates the regular density of peds.
+--- local pedsDensityFactor = 0.0 
+--- 
+--- Citizen.CreateThread(function()
+---    while true do
+---        SetPedDensityMultiplierThisFrame(pedsDensityFactor)
+---        Citizen.Wait(0)    
+---    end
+--- end
 --- @hash [0x95E3D6257B166CF2](https://docs.fivem.net/natives/?_0x95E3D6257B166CF2)
 --- @param multiplier number (float)
 --- @return void
