@@ -6615,9 +6615,23 @@ function IsPedBeingJacked(ped) end
 function N_0x9a77dfd295e29b09(ped, toggle) end
 
     
---- Gets the vehicle the specified Ped is in. Returns 0 if the ped is/was not in a vehicle.
---- If the Ped is not in a vehicle and includeLastVehicle is true, the vehicle they were last in is returned.
----
+--- Retrieves the vehicle the specified ped is currently in, or the last vehicle they were in.
+--- @usage -- This example gets the vehicle the player is currently in and print the vehicle id.
+--- 
+--- -- Retrieve the LocalPlayer.
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle the player is currently in. 
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if not DoesEntityExist(vehicle) then 
+---     -- If the vehicle does not exist, end the execution of the code here.
+---     return 
+--- end
+--- 
+--- -- Print the vehicle id
+--- print("Vehicle ID: " .. vehicle
 --- @hash [0x9A9112A0FE9A4713](https://docs.fivem.net/natives/?_0x9A9112A0FE9A4713)
 --- @param ped Ped
 --- @param lastVehicle boolean

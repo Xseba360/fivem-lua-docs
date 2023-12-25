@@ -325,6 +325,8 @@ function GetSubmarineCrushDepthWarningState(submarine) end
 function SetVehicleRudderBroken(vehicle, toggle) end
 
     
+--- Set a specific offset for helis chasing target in combat
+--- 
 --- ```
 --- NativeDB Introduced: v1180
 --- ```
@@ -336,6 +338,24 @@ function SetVehicleRudderBroken(vehicle, toggle) end
 --- @param z number (float)
 --- @return void
 --- @overload fun(vehicle: Vehicle, x: number, y: number, z: number): void
+function SetHeliCombatOffset(vehicle, x, y, z) end
+
+    
+--- # New Name: SetHeliCombatOffset
+--- Set a specific offset for helis chasing target in combat
+--- 
+--- ```
+--- NativeDB Introduced: v1180
+--- ```
+---
+--- @hash [0x0A3F820A9A9A9AC5](https://docs.fivem.net/natives/?_0x0A3F820A9A9A9AC5)
+--- @param vehicle Vehicle
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return void
+--- @overload fun(vehicle: Vehicle, x: number, y: number, z: number): void
+--- @deprecated
 function N_0x0a3f820a9a9a9ac5(vehicle, x, y, z) end
 
     
@@ -372,14 +392,66 @@ function SetBoatDisableAvoidance(vehicle, p1) end
 function N_0x0a6a279f3aa4fd70(vehicle, p1) end
 
     
---- N_0x0ad9e8f87ff7c16f
----
+--- This native sets whether a specific vehicle influences the player's wanted level when it is involved in an incident that typically triggers a wanted response, such as being marked as a "victim" vehicle.
+--- 
+--- This is particularly useful when utilizing the wanted system from GTA, and you want to prevent a vehicle from affecting the wanted level when it is stolen. In the decompiled scripts this native is only used to disable the influence of the vehicle on the wanted level.
+--- @usage -- This example will prevent the closest vehicle from influencing the wanted level.
+--- 
+--- -- Retrieve the LocalPlayer
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the coordinates of the player.
+--- local playerCoords = GetEntityCoords(playerPed)
+--- 
+--- -- Retrieve the closest vehicle.
+--- local vehicle = GetClosestVehicle(playerCoords.x, playerCoords.y, playerCoords.z, 3, 0, 70)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if not DoesEntityExist(vehicle) then 
+---     -- If the vehicle does not exist, end the execution of the code here.
+---     return 
+--- end
+--- 
+--- -- Set the vehicle to not influence the wanted level.
+--- SetVehicleInfluencesWantedLevel(vehicle, false
 --- @hash [0x0AD9E8F87FF7C16F](https://docs.fivem.net/natives/?_0x0AD9E8F87FF7C16F)
---- @param p0 any
---- @param p1 boolean
+--- @param vehicle Vehicle
+--- @param influenceWantedLevel boolean
 --- @return void
---- @overload fun(p0: any, p1: boolean): void
-function N_0x0ad9e8f87ff7c16f(p0, p1) end
+--- @overload fun(vehicle: Vehicle, influenceWantedLevel: boolean): void
+function SetVehicleInfluencesWantedLevel(vehicle, influenceWantedLevel) end
+
+    
+--- # New Name: SetVehicleInfluencesWantedLevel
+--- This native sets whether a specific vehicle influences the player's wanted level when it is involved in an incident that typically triggers a wanted response, such as being marked as a "victim" vehicle.
+--- 
+--- This is particularly useful when utilizing the wanted system from GTA, and you want to prevent a vehicle from affecting the wanted level when it is stolen. In the decompiled scripts this native is only used to disable the influence of the vehicle on the wanted level.
+--- @usage -- This example will prevent the closest vehicle from influencing the wanted level.
+--- 
+--- -- Retrieve the LocalPlayer
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the coordinates of the player.
+--- local playerCoords = GetEntityCoords(playerPed)
+--- 
+--- -- Retrieve the closest vehicle.
+--- local vehicle = GetClosestVehicle(playerCoords.x, playerCoords.y, playerCoords.z, 3, 0, 70)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if not DoesEntityExist(vehicle) then 
+---     -- If the vehicle does not exist, end the execution of the code here.
+---     return 
+--- end
+--- 
+--- -- Set the vehicle to not influence the wanted level.
+--- SetVehicleInfluencesWantedLevel(vehicle, false
+--- @hash [0x0AD9E8F87FF7C16F](https://docs.fivem.net/natives/?_0x0AD9E8F87FF7C16F)
+--- @param vehicle Vehicle
+--- @param influenceWantedLevel boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, influenceWantedLevel: boolean): void
+--- @deprecated
+function N_0x0ad9e8f87ff7c16f(vehicle, influenceWantedLevel) end
 
     
 --- ```
@@ -1256,14 +1328,26 @@ function N_0x1f2e4e06dea8992b(vehicle, p1) end
 function N_0x1f34b0626c594380(p0, p1) end
 
     
---- N_0x1f9fb66f3a3842d2
+--- This native is used to simulate a high-speed impact for a vehicle when it collides with a breakable object (frag). It's particularly useful in scripted sequences where a vehicle is required to break through a barrier but might not actually be moving at a sufficient speed to do so realistically. Note that this setting is temporary and will reset after one frame, so it needs to be called every frame for a lasting effect.
 ---
 --- @hash [0x1F9FB66F3A3842D2](https://docs.fivem.net/natives/?_0x1F9FB66F3A3842D2)
 --- @param vehicle Vehicle
---- @param p1 boolean
+--- @param actHighSpeed boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, p1: boolean): void
-function N_0x1f9fb66f3a3842d2(vehicle, p1) end
+--- @overload fun(vehicle: Vehicle, actHighSpeed: boolean): void
+function SetVehicleActAsIfHighSpeedForFragSmashing(vehicle, actHighSpeed) end
+
+    
+--- # New Name: SetVehicleActAsIfHighSpeedForFragSmashing
+--- This native is used to simulate a high-speed impact for a vehicle when it collides with a breakable object (frag). It's particularly useful in scripted sequences where a vehicle is required to break through a barrier but might not actually be moving at a sufficient speed to do so realistically. Note that this setting is temporary and will reset after one frame, so it needs to be called every frame for a lasting effect.
+---
+--- @hash [0x1F9FB66F3A3842D2](https://docs.fivem.net/natives/?_0x1F9FB66F3A3842D2)
+--- @param vehicle Vehicle
+--- @param actHighSpeed boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, actHighSpeed: boolean): void
+--- @deprecated
+function N_0x1f9fb66f3a3842d2(vehicle, actHighSpeed) end
 
     
 --- ```
@@ -9750,15 +9834,23 @@ function SetDeployHeliStubWings(vehicle, deploy, p2) end
 function N_0xb251e0b33e58b424(vehicle, deploy, p2) end
 
     
---- ```
---- This native doesn't seem to do anything, might be a debug-only native.  
---- Confirmed, it is a debug native.  
---- ```
+--- This native it's a debug native. Won't do anything.
 ---
 --- @hash [0xB264C4D2F2B0A78B](https://docs.fivem.net/natives/?_0xB264C4D2F2B0A78B)
 --- @param vehicle Vehicle
 --- @return void
 --- @overload fun(vehicle: Vehicle): void
+function AllowAmbientVehiclesToAvoidAdverseConditions(vehicle) end
+
+    
+--- # New Name: AllowAmbientVehiclesToAvoidAdverseConditions
+--- This native it's a debug native. Won't do anything.
+---
+--- @hash [0xB264C4D2F2B0A78B](https://docs.fivem.net/natives/?_0xB264C4D2F2B0A78B)
+--- @param vehicle Vehicle
+--- @return void
+--- @overload fun(vehicle: Vehicle): void
+--- @deprecated
 function N_0xb264c4d2f2b0a78b(vehicle) end
 
     
@@ -10397,12 +10489,79 @@ function IsVehicleTyreBurst(vehicle, wheelID, completely) end
 function ExplodeVehicle(vehicle, isAudible, isInvisible) end
 
     
---- N_0xba91d045575699ad
----
+--- Checks whether the specified boat vehicle is capsized, meaning it has overturned or is upside down in the water.
+--- @usage -- This example checks if the player is in a boat and if the boat is capsized.
+--- 
+--- -- Retrieve the LocalPlayer.
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle the player is in
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Retrieve the model of the vehicle
+--- local vehicleModel = GetEntityModel(vehicle)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if not DoesEntityExist(vehicle) then 
+---     -- If the vehicle does not exist, end the execution of the code here.
+---     return 
+--- end
+--- 
+--- -- Check if the vehicle is a boat.
+--- if not IsThisModelABoat(vehicleModel) then
+---     -- If the vehicle is not a boat, end the execution of the code here.
+---     return
+--- end
+--- 
+--- -- Check if the boat is capsized.
+--- if GetIsBoatCapsized(vehicle) then
+---     print("The boat is capsized!")
+--- else
+---     print("The boat is not capsized!")
+--- en
 --- @hash [0xBA91D045575699AD](https://docs.fivem.net/natives/?_0xBA91D045575699AD)
 --- @param vehicle Vehicle
 --- @return boolean
 --- @overload fun(vehicle: Vehicle): boolean
+function GetIsBoatCapsized(vehicle) end
+
+    
+--- # New Name: GetIsBoatCapsized
+--- Checks whether the specified boat vehicle is capsized, meaning it has overturned or is upside down in the water.
+--- @usage -- This example checks if the player is in a boat and if the boat is capsized.
+--- 
+--- -- Retrieve the LocalPlayer.
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle the player is in
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Retrieve the model of the vehicle
+--- local vehicleModel = GetEntityModel(vehicle)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if not DoesEntityExist(vehicle) then 
+---     -- If the vehicle does not exist, end the execution of the code here.
+---     return 
+--- end
+--- 
+--- -- Check if the vehicle is a boat.
+--- if not IsThisModelABoat(vehicleModel) then
+---     -- If the vehicle is not a boat, end the execution of the code here.
+---     return
+--- end
+--- 
+--- -- Check if the boat is capsized.
+--- if GetIsBoatCapsized(vehicle) then
+---     print("The boat is capsized!")
+--- else
+---     print("The boat is not capsized!")
+--- en
+--- @hash [0xBA91D045575699AD](https://docs.fivem.net/natives/?_0xBA91D045575699AD)
+--- @param vehicle Vehicle
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+--- @deprecated
 function N_0xba91d045575699ad(vehicle) end
 
     
@@ -11619,11 +11778,7 @@ function N_0xd4b8e3d1917bc86b(toggle) end
 function SetSomethingMultiplierThisFrame(toggle) end
 
     
---- ```
---- Only used like this:  
---- if (VEHICLE::GET_VEHICLE_IS_MERCENARY(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(v_3))) {                                                        sub_157e9c(g_40001._f1868, 0);  
---- }  
---- ```
+--- Returns whether the specified vehicle is designated as a mercenary vehicle
 ---
 --- @hash [0xD4C4642CB7F50B5D](https://docs.fivem.net/natives/?_0xD4C4642CB7F50B5D)
 --- @param vehicle Vehicle
@@ -11633,11 +11788,7 @@ function GetVehicleIsMercenary(vehicle) end
 
     
 --- # New Name: GetVehicleIsMercenary
---- ```
---- Only used like this:  
---- if (VEHICLE::GET_VEHICLE_IS_MERCENARY(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(v_3))) {                                                        sub_157e9c(g_40001._f1868, 0);  
---- }  
---- ```
+--- Returns whether the specified vehicle is designated as a mercenary vehicle
 ---
 --- @hash [0xD4C4642CB7F50B5D](https://docs.fivem.net/natives/?_0xD4C4642CB7F50B5D)
 --- @param vehicle Vehicle
