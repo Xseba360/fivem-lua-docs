@@ -1093,11 +1093,27 @@ function HasModelLoaded(model) end
 --- ```
 ---
 --- @hash [0x9A9D1BA639675CF1](https://docs.fivem.net/natives/?_0x9A9D1BA639675CF1)
---- @param name string (char*)
+--- @param islandName string (char*)
 --- @param toggle boolean
 --- @return void
---- @overload fun(name: string, toggle: boolean): void
-function SetIslandHopperEnabled(name, toggle) end
+--- @overload fun(islandName: string, toggle: boolean): void
+function SetIslandEnabled(islandName, toggle) end
+
+    
+--- # New Name: SetIslandEnabled
+--- Enables the specified island. For more information, see islandhopper.meta
+--- 
+--- ```
+--- NativeDB Introduced: v2189
+--- ```
+---
+--- @hash [0x9A9D1BA639675CF1](https://docs.fivem.net/natives/?_0x9A9D1BA639675CF1)
+--- @param islandName string (char*)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(islandName: string, toggle: boolean): void
+--- @deprecated
+function SetIslandHopperEnabled(islandName, toggle) end
 
     
 --- BeginSrl

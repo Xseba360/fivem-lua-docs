@@ -4583,7 +4583,7 @@ function SetNotificationMessageClanTag(picTxd, picTxn, flash, iconType, nameStr,
 function AddBlipForEntity(entity) end
 
     
---- Toggles the Cayo Perico map.
+--- Switches the display of the in-game minimap to the Cayo Perico map. This native needs to be called every frame to maintain the toggled state effectively.
 --- 
 --- ```
 --- NativeDB Introduced: v2189
@@ -4593,6 +4593,21 @@ function AddBlipForEntity(entity) end
 --- @param toggle boolean
 --- @return void
 --- @overload fun(toggle: boolean): void
+function SetUseIslandMap(toggle) end
+
+    
+--- # New Name: SetUseIslandMap
+--- Switches the display of the in-game minimap to the Cayo Perico map. This native needs to be called every frame to maintain the toggled state effectively.
+--- 
+--- ```
+--- NativeDB Introduced: v2189
+--- ```
+---
+--- @hash [0x5E1460624D194A38](https://docs.fivem.net/natives/?_0x5E1460624D194A38)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
 function SetToggleMinimapHeistIsland(toggle) end
 
     
@@ -5158,6 +5173,8 @@ function N_0x6b1de27ee78e6a19(hudColorIndex) end
 function SetTextRightJustify(toggle) end
 
     
+--- Enables or disables the sonar sweep animation on the minimap.
+--- 
 --- ```
 --- NativeDB Introduced: v2189
 --- ```
@@ -5166,6 +5183,21 @@ function SetTextRightJustify(toggle) end
 --- @param toggle boolean
 --- @return void
 --- @overload fun(toggle: boolean): void
+function SetMinimapSonarSweep(toggle) end
+
+    
+--- # New Name: SetMinimapSonarSweep
+--- Enables or disables the sonar sweep animation on the minimap.
+--- 
+--- ```
+--- NativeDB Introduced: v2189
+--- ```
+---
+--- @hash [0x6B50FC8749632EC1](https://docs.fivem.net/natives/?_0x6B50FC8749632EC1)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
 function SetMinimapSonarEnabled(toggle) end
 
     
