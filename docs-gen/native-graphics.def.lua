@@ -6586,12 +6586,29 @@ function DrawSpotLight(posX, posY, posZ, dirX, dirY, dirZ, colorR, colorG, color
 function N_0xd1c55b110e4df534(p0) end
 
     
---- N_0xd1c7cb175e012964
+--- Passes keyboard input to scaleform. You must call this native every frame. Once an input occurs, this native will return true and call `SET_PC_KEY` scaleform movie method with the key that has been inputted.
+--- 
+--- The key parameter which is passed to the scaleform can also be: "BACKSPACE", "ENTER" or "\x1b" (Which is ESC).
+--- This native is only used in `web_browser.c` as of game build 2944.
 ---
 --- @hash [0xD1C7CB175E012964](https://docs.fivem.net/natives/?_0xD1C7CB175E012964)
 --- @param scaleformHandle number (int)
 --- @return boolean
 --- @overload fun(scaleformHandle: number): boolean
+function PassKeyboardInputToScaleform(scaleformHandle) end
+
+    
+--- # New Name: PassKeyboardInputToScaleform
+--- Passes keyboard input to scaleform. You must call this native every frame. Once an input occurs, this native will return true and call `SET_PC_KEY` scaleform movie method with the key that has been inputted.
+--- 
+--- The key parameter which is passed to the scaleform can also be: "BACKSPACE", "ENTER" or "\x1b" (Which is ESC).
+--- This native is only used in `web_browser.c` as of game build 2944.
+---
+--- @hash [0xD1C7CB175E012964](https://docs.fivem.net/natives/?_0xD1C7CB175E012964)
+--- @param scaleformHandle number (int)
+--- @return boolean
+--- @overload fun(scaleformHandle: number): boolean
+--- @deprecated
 function N_0xd1c7cb175e012964(scaleformHandle) end
 
     

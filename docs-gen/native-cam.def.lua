@@ -161,10 +161,10 @@ function SetFirstPersonCamNearClip(distance) end
 --- StopGameplayCamShaking
 ---
 --- @hash [0x0EF93E9F3D08C178](https://docs.fivem.net/natives/?_0x0EF93E9F3D08C178)
---- @param p0 boolean
+--- @param bStopImmediately boolean
 --- @return void
---- @overload fun(p0: boolean): void
-function StopGameplayCamShaking(p0) end
+--- @overload fun(bStopImmediately: boolean): void
+function StopGameplayCamShaking(bStopImmediately) end
 
     
 --- Takes a camera and uses the information from it as a camera spline node.
