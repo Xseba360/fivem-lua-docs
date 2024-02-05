@@ -1714,18 +1714,18 @@ function DrawInteractiveSprite(textureDict, textureName, screenX, screenY, width
 function N_0x2bc54a8188768488(textureDict, textureName, screenX, screenY, width, height, heading, red, green, blue, alpha) end
 
     
---- Resets the extra timecycle modifier strength normally set with [`SetExtraTimecycleModifierStrength`](https://docs.fivem.net/natives/?_0x2C328AF17210F009)
----
+--- Removes any custom moon cycle overrides that have been configured with [ENABLE_MOON_CYCLE_OVERRIDE](https://docs.fivem.net/natives/?_0x2C328AF17210F009)
+--- @usage DisableMoonCycleOverride(
 --- @hash [0x2BF72AD5B41AA739](https://docs.fivem.net/natives/?_0x2BF72AD5B41AA739)
 ---
 --- @return void
 --- @overload fun(): void
-function ResetExtraTimecycleModifierStrength() end
+function DisableMoonCycleOverride() end
 
     
---- # New Name: ResetExtraTimecycleModifierStrength
---- Resets the extra timecycle modifier strength normally set with [`SetExtraTimecycleModifierStrength`](https://docs.fivem.net/natives/?_0x2C328AF17210F009)
----
+--- # New Name: DisableMoonCycleOverride
+--- Removes any custom moon cycle overrides that have been configured with [ENABLE_MOON_CYCLE_OVERRIDE](https://docs.fivem.net/natives/?_0x2C328AF17210F009)
+--- @usage DisableMoonCycleOverride(
 --- @hash [0x2BF72AD5B41AA739](https://docs.fivem.net/natives/?_0x2BF72AD5B41AA739)
 ---
 --- @return void
@@ -1734,24 +1734,88 @@ function ResetExtraTimecycleModifierStrength() end
 function N_0x2bf72ad5b41aa739() end
 
     
---- The same as [`SetTimecycleModifierStrength`](https://docs.fivem.net/natives/?_0x82E7FFCD5B2326B3) but for the secondary tiemcycle modifier.
+--- # New Name: DisableMoonCycleOverride
+--- Removes any custom moon cycle overrides that have been configured with [ENABLE_MOON_CYCLE_OVERRIDE](https://docs.fivem.net/natives/?_0x2C328AF17210F009)
+--- @usage DisableMoonCycleOverride(
+--- @hash [0x2BF72AD5B41AA739](https://docs.fivem.net/natives/?_0x2BF72AD5B41AA739)
 ---
---- @hash [0x2C328AF17210F009](https://docs.fivem.net/natives/?_0x2C328AF17210F009)
---- @param strength number (float)
 --- @return void
---- @overload fun(strength: number): void
-function SetExtraTimecycleModifierStrength(strength) end
+--- @overload fun(): void
+--- @deprecated
+function ResetExtraTimecycleModifierStrength() end
 
     
---- # New Name: SetExtraTimecycleModifierStrength
---- The same as [`SetTimecycleModifierStrength`](https://docs.fivem.net/natives/?_0x82E7FFCD5B2326B3) but for the secondary tiemcycle modifier.
----
+--- Enable a custom moon cycle, allowing control of which lunar phase the moon is in.
+--- 
+--- Valid values are from `0.0` to `1.0`, with `0.5` representing a full moon.
+--- 
+--- | Value |   Lunar Phase   |
+--- | :---: | :-------------: |
+--- | `0.1` | Waxing Crescent |
+--- | `0.2` |  First Quarter  |
+--- | `0.3` | Waxing Gibbous  |
+--- | `0.5` |    Full Moon    |
+--- | `0.7` | Waning Gibbous  |
+--- | `0.8` |  Third Quarter  |
+--- | `0.9` | Waning Crescent |
+--- 
+--- The moon phase can be disabled with [DISABLE_MOON_CYCLE_OVERRIDE](https://docs.fivem.net/natives/?_0x2BF72AD5B41AA739)
+--- @usage EnableMoonCycleOverride(0.5
 --- @hash [0x2C328AF17210F009](https://docs.fivem.net/natives/?_0x2C328AF17210F009)
---- @param strength number (float)
+--- @param phase number (float)
 --- @return void
---- @overload fun(strength: number): void
+--- @overload fun(phase: number): void
+function EnableMoonCycleOverride(phase) end
+
+    
+--- # New Name: EnableMoonCycleOverride
+--- Enable a custom moon cycle, allowing control of which lunar phase the moon is in.
+--- 
+--- Valid values are from `0.0` to `1.0`, with `0.5` representing a full moon.
+--- 
+--- | Value |   Lunar Phase   |
+--- | :---: | :-------------: |
+--- | `0.1` | Waxing Crescent |
+--- | `0.2` |  First Quarter  |
+--- | `0.3` | Waxing Gibbous  |
+--- | `0.5` |    Full Moon    |
+--- | `0.7` | Waning Gibbous  |
+--- | `0.8` |  Third Quarter  |
+--- | `0.9` | Waning Crescent |
+--- 
+--- The moon phase can be disabled with [DISABLE_MOON_CYCLE_OVERRIDE](https://docs.fivem.net/natives/?_0x2BF72AD5B41AA739)
+--- @usage EnableMoonCycleOverride(0.5
+--- @hash [0x2C328AF17210F009](https://docs.fivem.net/natives/?_0x2C328AF17210F009)
+--- @param phase number (float)
+--- @return void
+--- @overload fun(phase: number): void
 --- @deprecated
-function N_0x2c328af17210f009(strength) end
+function N_0x2c328af17210f009(phase) end
+
+    
+--- # New Name: EnableMoonCycleOverride
+--- Enable a custom moon cycle, allowing control of which lunar phase the moon is in.
+--- 
+--- Valid values are from `0.0` to `1.0`, with `0.5` representing a full moon.
+--- 
+--- | Value |   Lunar Phase   |
+--- | :---: | :-------------: |
+--- | `0.1` | Waxing Crescent |
+--- | `0.2` |  First Quarter  |
+--- | `0.3` | Waxing Gibbous  |
+--- | `0.5` |    Full Moon    |
+--- | `0.7` | Waning Gibbous  |
+--- | `0.8` |  Third Quarter  |
+--- | `0.9` | Waning Crescent |
+--- 
+--- The moon phase can be disabled with [DISABLE_MOON_CYCLE_OVERRIDE](https://docs.fivem.net/natives/?_0x2BF72AD5B41AA739)
+--- @usage EnableMoonCycleOverride(0.5
+--- @hash [0x2C328AF17210F009](https://docs.fivem.net/natives/?_0x2C328AF17210F009)
+--- @param phase number (float)
+--- @return void
+--- @overload fun(phase: number): void
+--- @deprecated
+function SetExtraTimecycleModifierStrength(phase) end
 
     
 --- N_0x2c42340f916c5930
