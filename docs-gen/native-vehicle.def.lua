@@ -359,14 +359,29 @@ function SetHeliCombatOffset(vehicle, x, y, z) end
 function N_0x0a3f820a9a9a9ac5(vehicle, x, y, z) end
 
     
---- ```
---- CLEAR_VEHICLE_*
---- ```
----
+--- Removes the cargen area of interest and resumes normal cargen spawning.
+--- 
+--- You can set the area of interest with [`SET_VEHICLE_GENERATOR_AREA_OF_INTEREST`](https://docs.fivem.net/natives/?_0x9A75585FB2E54FAD)
+--- @usage -- This example clears the area of interest (cargen) and resumes normal spawning
+--- ClearVehicleGeneratorAreaOfInterest(
 --- @hash [0x0A436B8643716D14](https://docs.fivem.net/natives/?_0x0A436B8643716D14)
 ---
 --- @return void
 --- @overload fun(): void
+function ClearVehicleGeneratorAreaOfInterest() end
+
+    
+--- # New Name: ClearVehicleGeneratorAreaOfInterest
+--- Removes the cargen area of interest and resumes normal cargen spawning.
+--- 
+--- You can set the area of interest with [`SET_VEHICLE_GENERATOR_AREA_OF_INTEREST`](https://docs.fivem.net/natives/?_0x9A75585FB2E54FAD)
+--- @usage -- This example clears the area of interest (cargen) and resumes normal spawning
+--- ClearVehicleGeneratorAreaOfInterest(
+--- @hash [0x0A436B8643716D14](https://docs.fivem.net/natives/?_0x0A436B8643716D14)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
 function N_0x0a436b8643716d14() end
 
     
@@ -8675,12 +8690,19 @@ function CargobobMagnetGrabVehicle(cargobob, isActive) end
 function SetCargobobPickupMagnetActive(cargobob, isActive) end
 
     
---- ```
---- Related to car generators & CPlayerSwitchMgrLong
---- SET_VEHICLE_*
---- SET_VEHICLE_GENERATORS_EXPECTED_GAMEPLAY_PT ?
---- ```
----
+--- Specifies an area of interest where cargens will focus on spawning vehicles
+--- 
+--- You can clear the area of interest with [`CLEAR_VEHICLE_GENERATOR_AREA_OF_INTEREST`](https://docs.fivem.net/natives/?_0x0A436B8643716D14)
+--- @usage -- This example sets the area of interest (cargen) to the player's position with a radius of 100.0
+--- 
+--- -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the coordinates of the player.
+--- local coords = GetEntityCoords(playerPed, false)
+--- 
+--- -- Set the area of interest to the player's position with a radius of 100.0
+--- SetVehicleGeneratorAreaOfInterest(coords.x, coords.y, coords.z, 100.0
 --- @hash [0x9A75585FB2E54FAD](https://docs.fivem.net/natives/?_0x9A75585FB2E54FAD)
 --- @param x number (float)
 --- @param y number (float)
@@ -8688,6 +8710,31 @@ function SetCargobobPickupMagnetActive(cargobob, isActive) end
 --- @param radius number (float)
 --- @return void
 --- @overload fun(x: number, y: number, z: number, radius: number): void
+function SetVehicleGeneratorAreaOfInterest(x, y, z, radius) end
+
+    
+--- # New Name: SetVehicleGeneratorAreaOfInterest
+--- Specifies an area of interest where cargens will focus on spawning vehicles
+--- 
+--- You can clear the area of interest with [`CLEAR_VEHICLE_GENERATOR_AREA_OF_INTEREST`](https://docs.fivem.net/natives/?_0x0A436B8643716D14)
+--- @usage -- This example sets the area of interest (cargen) to the player's position with a radius of 100.0
+--- 
+--- -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the coordinates of the player.
+--- local coords = GetEntityCoords(playerPed, false)
+--- 
+--- -- Set the area of interest to the player's position with a radius of 100.0
+--- SetVehicleGeneratorAreaOfInterest(coords.x, coords.y, coords.z, 100.0
+--- @hash [0x9A75585FB2E54FAD](https://docs.fivem.net/natives/?_0x9A75585FB2E54FAD)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @return void
+--- @overload fun(x: number, y: number, z: number, radius: number): void
+--- @deprecated
 function N_0x9a75585fb2e54fad(x, y, z, radius) end
 
     
@@ -10677,18 +10724,18 @@ function GetVehicleHealthPercentage(vehicle) end
 function GetVehicleBodyHealth_2(vehicle) end
 
     
---- SetVehicleJetEngineOn
+--- Calling this native will keep a vehicle's engine running after exiting.
 ---
 --- @hash [0xB8FBC8B1330CA9B4](https://docs.fivem.net/natives/?_0xB8FBC8B1330CA9B4)
 --- @param vehicle Vehicle
 --- @param toggle boolean
 --- @return void
 --- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function SetVehicleJetEngineOn(vehicle, toggle) end
+function SetVehicleKeepEngineOnWhenAbandoned(vehicle, toggle) end
 
     
---- # New Name: SetVehicleJetEngineOn
---- SetVehicleJetEngineOn
+--- # New Name: SetVehicleKeepEngineOnWhenAbandoned
+--- Calling this native will keep a vehicle's engine running after exiting.
 ---
 --- @hash [0xB8FBC8B1330CA9B4](https://docs.fivem.net/natives/?_0xB8FBC8B1330CA9B4)
 --- @param vehicle Vehicle
@@ -10697,6 +10744,18 @@ function SetVehicleJetEngineOn(vehicle, toggle) end
 --- @overload fun(vehicle: Vehicle, toggle: boolean): void
 --- @deprecated
 function N_0xb8fbc8b1330ca9b4(vehicle, toggle) end
+
+    
+--- # New Name: SetVehicleKeepEngineOnWhenAbandoned
+--- Calling this native will keep a vehicle's engine running after exiting.
+---
+--- @hash [0xB8FBC8B1330CA9B4](https://docs.fivem.net/natives/?_0xB8FBC8B1330CA9B4)
+--- @param vehicle Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+--- @deprecated
+function SetVehicleJetEngineOn(vehicle, toggle) end
 
     
 --- StartVehicleAlarm

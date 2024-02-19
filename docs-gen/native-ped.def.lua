@@ -9787,40 +9787,48 @@ function SetPedShouldPlayFleeScenarioExit(ped, p1, p2, p3) end
 function N_0xeeed8fafec331a70(ped, p1, p2, p3) end
 
     
---- ApplyPedBloodSpecific
+--- Applies blood damage to a ped with specific parameters for zone, UV offsets, rotation, scale, and initial aging.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
 ---
 --- @hash [0xEF0D582CBF2D9B0F](https://docs.fivem.net/natives/?_0xEF0D582CBF2D9B0F)
 --- @param ped Ped
---- @param p1 any
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @param p5 number (float)
---- @param p6 any
---- @param p7 number (float)
---- @param p8 any
+--- @param component number (int)
+--- @param u number (float)
+--- @param v number (float)
+--- @param rotation number (float)
+--- @param scale number (float)
+--- @param forcedFrame number (int)
+--- @param preAge number (float)
+--- @param bloodName string (char*)
 --- @return void
---- @overload fun(ped: Ped, p1: any, p2: number, p3: number, p4: number, p5: number, p6: any, p7: number): any
-function ApplyPedBloodSpecific(ped, p1, p2, p3, p4, p5, p6, p7, p8) end
+--- @overload fun(ped: Ped, component: number, u: number, v: number, rotation: number, scale: number, forcedFrame: number, preAge: number, bloodName: string): void
+function ApplyPedBloodSpecific(ped, component, u, v, rotation, scale, forcedFrame, preAge, bloodName) end
 
     
 --- # New Name: ApplyPedBloodSpecific
---- ApplyPedBloodSpecific
+--- Applies blood damage to a ped with specific parameters for zone, UV offsets, rotation, scale, and initial aging.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
 ---
 --- @hash [0xEF0D582CBF2D9B0F](https://docs.fivem.net/natives/?_0xEF0D582CBF2D9B0F)
 --- @param ped Ped
---- @param p1 any
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @param p5 number (float)
---- @param p6 any
---- @param p7 number (float)
---- @param p8 any
+--- @param component number (int)
+--- @param u number (float)
+--- @param v number (float)
+--- @param rotation number (float)
+--- @param scale number (float)
+--- @param forcedFrame number (int)
+--- @param preAge number (float)
+--- @param bloodName string (char*)
 --- @return void
---- @overload fun(ped: Ped, p1: any, p2: number, p3: number, p4: number, p5: number, p6: any, p7: number): any
+--- @overload fun(ped: Ped, component: number, u: number, v: number, rotation: number, scale: number, forcedFrame: number, preAge: number, bloodName: string): void
 --- @deprecated
-function N_0xef0d582cbf2d9b0f(ped, p1, p2, p3, p4, p5, p6, p7, p8) end
+function N_0xef0d582cbf2d9b0f(ped, component, u, v, rotation, scale, forcedFrame, preAge, bloodName) end
 
     
 --- Creates a copy of the passed ped, optionally setting it as local and/or shallow-copying the head blend data.

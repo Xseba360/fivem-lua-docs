@@ -1796,36 +1796,44 @@ function SetPlayerParachuteModelOverride(player, model) end
 function GetCauseOfMostRecentForceCleanup() end
 
     
---- ```
---- This was previously named as "RESERVE_ENTITY_EXPLODES_ON_HIGH_EXPLOSION_COMBO"  
---- which is obviously incorrect.  
---- Seems to only appear in scripts used in Singleplayer. p1 ranges from 2 - 46.  
---- I assume this switches the crime type  
---- ```
+--- Suppresses a crime for a given player for this frame only.
+--- 
+--- **Note:** This native needs to be executed inside a thread if a crime is meant to be suppressed for a given amount of time.
 ---
 --- @hash [0x9A987297ED8BD838](https://docs.fivem.net/natives/?_0x9A987297ED8BD838)
 --- @param player Player
---- @param p1 number (int)
+--- @param crimeType number (int)
 --- @return void
---- @overload fun(player: Player, p1: number): void
-function SwitchCrimeType(player, p1) end
+--- @overload fun(player: Player, crimeType: number): void
+function SuppressCrimeThisFrame(player, crimeType) end
 
     
---- # New Name: SwitchCrimeType
---- ```
---- This was previously named as "RESERVE_ENTITY_EXPLODES_ON_HIGH_EXPLOSION_COMBO"  
---- which is obviously incorrect.  
---- Seems to only appear in scripts used in Singleplayer. p1 ranges from 2 - 46.  
---- I assume this switches the crime type  
---- ```
+--- # New Name: SuppressCrimeThisFrame
+--- Suppresses a crime for a given player for this frame only.
+--- 
+--- **Note:** This native needs to be executed inside a thread if a crime is meant to be suppressed for a given amount of time.
 ---
 --- @hash [0x9A987297ED8BD838](https://docs.fivem.net/natives/?_0x9A987297ED8BD838)
 --- @param player Player
---- @param p1 number (int)
+--- @param crimeType number (int)
 --- @return void
---- @overload fun(player: Player, p1: number): void
+--- @overload fun(player: Player, crimeType: number): void
 --- @deprecated
-function N_0x9a987297ed8bd838(player, p1) end
+function N_0x9a987297ed8bd838(player, crimeType) end
+
+    
+--- # New Name: SuppressCrimeThisFrame
+--- Suppresses a crime for a given player for this frame only.
+--- 
+--- **Note:** This native needs to be executed inside a thread if a crime is meant to be suppressed for a given amount of time.
+---
+--- @hash [0x9A987297ED8BD838](https://docs.fivem.net/natives/?_0x9A987297ED8BD838)
+--- @param player Player
+--- @param crimeType number (int)
+--- @return void
+--- @overload fun(player: Player, crimeType: number): void
+--- @deprecated
+function SwitchCrimeType(player, crimeType) end
 
     
 --- ```

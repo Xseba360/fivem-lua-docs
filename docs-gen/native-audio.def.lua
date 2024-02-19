@@ -420,14 +420,16 @@ function SetMobileRadioEnabledDuringGameplay(toggle) end
 function N_0x11579d940949c49e(p0) end
 
     
---- ClearAmbientZoneListState
+--- Resets the list of ambients zones enabled/disabled status to its value before it was modified by this script.
+--- 
+--- Default behaviour is that any state change only gets applied once the player leaves the zone.
 ---
 --- @hash [0x120C48C614909FA4](https://docs.fivem.net/natives/?_0x120C48C614909FA4)
---- @param p0 any
---- @param p1 boolean
+--- @param zoneListName string (char*)
+--- @param forceUpdate boolean
 --- @return void
---- @overload fun(p1: boolean): any
-function ClearAmbientZoneListState(p0, p1) end
+--- @overload fun(zoneListName: string, forceUpdate: boolean): void
+function ClearAmbientZoneListState(zoneListName, forceUpdate) end
 
     
 --- Needs to be called every frame.
@@ -526,11 +528,7 @@ function DynamicMixerRelatedFn(entity, groupName, p2) end
 function N_0x159b7318403a1cd8(p0) end
 
     
---- ```
---- 3 calls in the b617d scripts, removed duplicate.
---- AUDIO::CLEAR_CUSTOM_RADIO_TRACK_LIST("RADIO_16_SILVERLAKE");
---- AUDIO::CLEAR_CUSTOM_RADIO_TRACK_LIST("RADIO_01_CLASS_ROCK");
---- ```
+--- Clears the previously queued custom track lost for the given radio station.
 ---
 --- @hash [0x1654F24A88A8E3FE](https://docs.fivem.net/natives/?_0x1654F24A88A8E3FE)
 --- @param radioStation string (char*)
@@ -540,11 +538,7 @@ function ClearCustomRadioTrackList(radioStation) end
 
     
 --- # New Name: ClearCustomRadioTrackList
---- ```
---- 3 calls in the b617d scripts, removed duplicate.
---- AUDIO::CLEAR_CUSTOM_RADIO_TRACK_LIST("RADIO_16_SILVERLAKE");
---- AUDIO::CLEAR_CUSTOM_RADIO_TRACK_LIST("RADIO_01_CLASS_ROCK");
---- ```
+--- Clears the previously queued custom track lost for the given radio station.
 ---
 --- @hash [0x1654F24A88A8E3FE](https://docs.fivem.net/natives/?_0x1654F24A88A8E3FE)
 --- @param radioStation string (char*)
@@ -738,17 +732,16 @@ function PlayStreamFromPosition(x, y, z) end
 function SpecialFrontendEqual(x, y, z) end
 
     
---- ```
---- This function also has a p2, unknown. Signature AUDIO::CLEAR_AMBIENT_ZONE_STATE(const char* zoneName, bool p1, Any p2);
---- Still needs more research.
---- ```
+--- Resets the ambient zone enabled/disabled status to its value before it was modified by this script
+--- 
+--- Default behaviour is that any state change only gets applied once the player leaves the zone.
 ---
 --- @hash [0x218DD44AAAC964FF](https://docs.fivem.net/natives/?_0x218DD44AAAC964FF)
 --- @param zoneName string (char*)
---- @param p1 boolean
+--- @param forceUpdate boolean
 --- @return void
---- @overload fun(zoneName: string, p1: boolean): void
-function ClearAmbientZoneState(zoneName, p1) end
+--- @overload fun(zoneName: string, forceUpdate: boolean): void
+function ClearAmbientZoneState(zoneName, forceUpdate) end
 
     
 --- ```
@@ -904,10 +897,7 @@ function SetRadioTrackMix(radioStationName, mixName, p2) end
 function N_0x2dd39bf3e2f9c47f() end
 
     
---- ```
---- Could this be used alongside either,   
---- SET_NETWORK_ID_EXISTS_ON_ALL_MACHINES or _SET_NETWORK_ID_SYNC_TO_PLAYER to make it so other players can hear the sound while online? It'd be a bit troll-fun to be able to play the Zancudo UFO creepy sounds globally.  
---- ```
+--- GetNetworkIdFromSoundId
 ---
 --- @hash [0x2DE3F0A134FFBC0D](https://docs.fivem.net/natives/?_0x2DE3F0A134FFBC0D)
 --- @param soundId number (int)
@@ -1089,12 +1079,23 @@ function SetAggressiveHorns(toggle) end
 function SetStaticEmitterEnabled(emitterName, toggle) end
 
     
---- N_0x3a48ab4445d499be
+--- GetMusicVolSlider
 ---
 --- @hash [0x3A48AB4445D499BE](https://docs.fivem.net/natives/?_0x3A48AB4445D499BE)
 ---
---- @return any
---- @overload fun(): any
+--- @return number
+--- @overload fun(): number
+function GetMusicVolSlider() end
+
+    
+--- # New Name: GetMusicVolSlider
+--- GetMusicVolSlider
+---
+--- @hash [0x3A48AB4445D499BE](https://docs.fivem.net/natives/?_0x3A48AB4445D499BE)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
 function N_0x3a48ab4445d499be() end
 
     
@@ -1301,7 +1302,15 @@ function SetPedScream(ped) end
 function N_0x40cf0d12d142a9e8(ped) end
 
     
---- GetSoundId
+--- If a playback function has a soundId field but the sound doesn't need to be altered after triggering then pass a value of -1 for fire-and-forget playback, rather than getting a soundId.
+--- 
+--- SoundId's can be reused, without needing to release them and grab a new one.
+--- 
+--- If a sound's finished playing, you can reuse its SoundId to kick off another one.
+--- 
+--- If the sound's not finished playing, it'll be stopped first (fading out or whatever is set up in RAVE by the sound designer), and the new one kicked off; usually it is safer to just get a new SoundId.
+--- 
+--- SoundId's are not automatically cleaned up, you must use [RELEASE_SOUND_ID](https://docs.fivem.net/natives/?_0x353FC880830B88FA) after you've finished using them to allow the engine to recycle the sound id.
 ---
 --- @hash [0x430386FE9BF80B45](https://docs.fivem.net/natives/?_0x430386FE9BF80B45)
 ---
@@ -1386,32 +1395,47 @@ function UpdateLsur(enableMixes) end
 function GetCurrentScriptedConversationLine() end
 
     
---- ```
---- Checks if the ped can play the speech or has the speech file, last parameter is usually 0  
---- ```
+--- Checks if the context exists for the ped, searching through the voices in its PedVoiceGroup.
+--- 
+--- The final argument can be set to true to allow searching in backup PVGs
 ---
 --- @hash [0x49B99BF3FDA89A7A](https://docs.fivem.net/natives/?_0x49B99BF3FDA89A7A)
 --- @param ped Ped
 --- @param speechName string (char*)
---- @param unk boolean
+--- @param allowBackupPVGs boolean
 --- @return boolean
---- @overload fun(ped: Ped, speechName: string, unk: boolean): boolean
-function CanPedSpeak(ped, speechName, unk) end
+--- @overload fun(ped: Ped, speechName: string, allowBackupPVGs: boolean): boolean
+function DoesContextExistForThisPed(ped, speechName, allowBackupPVGs) end
 
     
---- # New Name: CanPedSpeak
---- ```
---- Checks if the ped can play the speech or has the speech file, last parameter is usually 0  
---- ```
+--- # New Name: DoesContextExistForThisPed
+--- Checks if the context exists for the ped, searching through the voices in its PedVoiceGroup.
+--- 
+--- The final argument can be set to true to allow searching in backup PVGs
 ---
 --- @hash [0x49B99BF3FDA89A7A](https://docs.fivem.net/natives/?_0x49B99BF3FDA89A7A)
 --- @param ped Ped
 --- @param speechName string (char*)
---- @param unk boolean
+--- @param allowBackupPVGs boolean
 --- @return boolean
---- @overload fun(ped: Ped, speechName: string, unk: boolean): boolean
+--- @overload fun(ped: Ped, speechName: string, allowBackupPVGs: boolean): boolean
 --- @deprecated
-function N_0x49b99bf3fda89a7a(ped, speechName, unk) end
+function N_0x49b99bf3fda89a7a(ped, speechName, allowBackupPVGs) end
+
+    
+--- # New Name: DoesContextExistForThisPed
+--- Checks if the context exists for the ped, searching through the voices in its PedVoiceGroup.
+--- 
+--- The final argument can be set to true to allow searching in backup PVGs
+---
+--- @hash [0x49B99BF3FDA89A7A](https://docs.fivem.net/natives/?_0x49B99BF3FDA89A7A)
+--- @param ped Ped
+--- @param speechName string (char*)
+--- @param allowBackupPVGs boolean
+--- @return boolean
+--- @overload fun(ped: Ped, speechName: string, allowBackupPVGs: boolean): boolean
+--- @deprecated
+function CanPedSpeak(ped, speechName, allowBackupPVGs) end
 
     
 --- ```
@@ -1635,44 +1659,35 @@ function HasMultiplayerAudioDataLoaded() end
 function N_0x544810ed9db6bbe6() end
 
     
---- ```
---- If value is set to true, and ambient siren sound will be played.
---- Appears to enable/disable an audio flag.
---- ```
+--- Toggles fake distant siren sounds
 ---
 --- @hash [0x552369F549563AD5](https://docs.fivem.net/natives/?_0x552369F549563AD5)
---- @param value boolean
+--- @param shouldPlay boolean
 --- @return void
---- @overload fun(value: boolean): void
-function DistantCopCarSirens(value) end
+--- @overload fun(shouldPlay: boolean): void
+function DistantCopCarSirens(shouldPlay) end
 
     
 --- # New Name: DistantCopCarSirens
---- ```
---- If value is set to true, and ambient siren sound will be played.
---- Appears to enable/disable an audio flag.
---- ```
+--- Toggles fake distant siren sounds
 ---
 --- @hash [0x552369F549563AD5](https://docs.fivem.net/natives/?_0x552369F549563AD5)
---- @param value boolean
+--- @param shouldPlay boolean
 --- @return void
---- @overload fun(value: boolean): void
+--- @overload fun(shouldPlay: boolean): void
 --- @deprecated
-function N_0x552369f549563ad5(value) end
+function N_0x552369f549563ad5(shouldPlay) end
 
     
 --- # New Name: DistantCopCarSirens
---- ```
---- If value is set to true, and ambient siren sound will be played.
---- Appears to enable/disable an audio flag.
---- ```
+--- Toggles fake distant siren sounds
 ---
 --- @hash [0x552369F549563AD5](https://docs.fivem.net/natives/?_0x552369F549563AD5)
---- @param value boolean
+--- @param shouldPlay boolean
 --- @return void
---- @overload fun(value: boolean): void
+--- @overload fun(shouldPlay: boolean): void
 --- @deprecated
-function ForceAmbientSiren(value) end
+function ForceAmbientSiren(shouldPlay) end
 
     
 --- ```
@@ -1746,7 +1761,7 @@ function N_0x59e7b488451f4d3a(vehicle, damageFactor) end
 
     
 --- ```
---- All music event names found in the b617d scripts: pastebin.com/GnYt0R3P  
+--- All music event names found in the b617d scripts: pastebin.com/GnYt0R3P
 --- ```
 ---
 --- @hash [0x5B17A90291133DA5](https://docs.fivem.net/natives/?_0x5B17A90291133DA5)
@@ -3112,10 +3127,10 @@ function N_0xa8a7d434afb4b97b(p0, p1) end
 ---
 --- @hash [0xA9A41C1E940FB0E8](https://docs.fivem.net/natives/?_0xA9A41C1E940FB0E8)
 --- @param ped Ped
---- @param toggle boolean
+--- @param shouldDisable boolean
 --- @return void
---- @overload fun(ped: Ped, toggle: boolean): void
-function DisablePedPainAudio(ped, toggle) end
+--- @overload fun(ped: Ped, shouldDisable: boolean): void
+function DisablePedPainAudio(ped, shouldDisable) end
 
     
 --- N_0xaa19f5572c38b564
@@ -3216,15 +3231,13 @@ function PlayMissionCompleteAudio(audioName) end
 function UnlockMissionNewsStory(newsStory) end
 
     
---- ```
---- Returns String with radio station name.  
---- ```
+--- GetRadioStationName
 ---
 --- @hash [0xB28ECA15046CA8B9](https://docs.fivem.net/natives/?_0xB28ECA15046CA8B9)
---- @param radioStation number (int)
+--- @param stationIndex number (int)
 --- @return string
---- @overload fun(radioStation: number): string
-function GetRadioStationName(radioStation) end
+--- @overload fun(stationIndex: number): string
+function GetRadioStationName(stationIndex) end
 
     
 --- ClearAllBrokenGlass
@@ -3370,12 +3383,27 @@ function SetMicrophonePosition(p0, x1, y1, z1, x2, y2, z2, x3, y3, z3) end
 function PlayStreamFromVehicle(vehicle) end
 
     
---- N_0xb81cf134aeb56ffb
+--- Enable the stunt jump audio detection code
+--- 
+--- This native is meant to be called per-frame for as long as detection is wanted.
 ---
 --- @hash [0xB81CF134AEB56FFB](https://docs.fivem.net/natives/?_0xB81CF134AEB56FFB)
 ---
 --- @return void
 --- @overload fun(): void
+function EnableStuntJumpAudio() end
+
+    
+--- # New Name: EnableStuntJumpAudio
+--- Enable the stunt jump audio detection code
+--- 
+--- This native is meant to be called per-frame for as long as detection is wanted.
+---
+--- @hash [0xB81CF134AEB56FFB](https://docs.fivem.net/natives/?_0xB81CF134AEB56FFB)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
 function N_0xb81cf134aeb56ffb() end
 
     
@@ -3657,26 +3685,26 @@ function SetMobilePhoneRadioState(state) end
 function N_0xbf4dc1784be94dfa(ped, p1, hash) end
 
     
---- EnableStallWarningSounds
+--- Enable or disable the plane stall warning sounds
 ---
 --- @hash [0xC15907D667F7CFB2](https://docs.fivem.net/natives/?_0xC15907D667F7CFB2)
 --- @param vehicle Vehicle
---- @param toggle boolean
+--- @param enable boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function EnableStallWarningSounds(vehicle, toggle) end
+--- @overload fun(vehicle: Vehicle, enable: boolean): void
+function EnableStallWarningSounds(vehicle, enable) end
 
     
 --- # New Name: EnableStallWarningSounds
---- EnableStallWarningSounds
+--- Enable or disable the plane stall warning sounds
 ---
 --- @hash [0xC15907D667F7CFB2](https://docs.fivem.net/natives/?_0xC15907D667F7CFB2)
 --- @param vehicle Vehicle
---- @param toggle boolean
+--- @param enable boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
+--- @overload fun(vehicle: Vehicle, enable: boolean): void
 --- @deprecated
-function N_0xc15907d667f7cfb2(vehicle, toggle) end
+function N_0xc15907d667f7cfb2(vehicle, enable) end
 
     
 --- ```
@@ -3756,16 +3784,23 @@ function N_0xc265df9fb44a9fbd(pedHandle) end
 function AddLineToConversation(index, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12) end
 
     
---- ```
---- GET_NE*
---- 
---- NativeDB Introduced: v1493
---- ```
+--- GetNextAudibleBeat
 ---
 --- @hash [0xC64A06D939F826F5](https://docs.fivem.net/natives/?_0xC64A06D939F826F5)
 ---
 --- @return boolean, number, number, number
 --- @overload fun(): boolean, number, number, number
+function GetNextAudibleBeat() end
+
+    
+--- # New Name: GetNextAudibleBeat
+--- GetNextAudibleBeat
+---
+--- @hash [0xC64A06D939F826F5](https://docs.fivem.net/natives/?_0xC64A06D939F826F5)
+---
+--- @return boolean, number, number, number
+--- @overload fun(): boolean, number, number, number
+--- @deprecated
 function N_0xc64a06d939f826f5() end
 
     
@@ -4101,24 +4136,24 @@ function N_0xda07819e452ffe8f(p0) end
 function N_0xdd6bcf9e94425df9() end
 
     
---- DeactivateAudioSlowmoMode
+--- Deactivates the named slowmo mode.
 ---
 --- @hash [0xDDC635D5B3262C56](https://docs.fivem.net/natives/?_0xDDC635D5B3262C56)
---- @param p0 string (char*)
+--- @param mode string (char*)
 --- @return void
---- @overload fun(p0: string): void
-function DeactivateAudioSlowmoMode(p0) end
+--- @overload fun(mode: string): void
+function DeactivateAudioSlowmoMode(mode) end
 
     
 --- # New Name: DeactivateAudioSlowmoMode
---- DeactivateAudioSlowmoMode
+--- Deactivates the named slowmo mode.
 ---
 --- @hash [0xDDC635D5B3262C56](https://docs.fivem.net/natives/?_0xDDC635D5B3262C56)
---- @param p0 string (char*)
+--- @param mode string (char*)
 --- @return void
---- @overload fun(p0: string): void
+--- @overload fun(mode: string): void
 --- @deprecated
-function N_0xddc635d5b3262c56(p0) end
+function N_0xddc635d5b3262c56(mode) end
 
     
 --- IsScriptedConversationLoaded
@@ -4229,9 +4264,7 @@ function ResetTrevorRage() end
 function GetMusicPlaytime() end
 
     
---- ```
---- Returns 255 (radio off index) if the function fails.  
---- ```
+--- GetPlayerRadioStationIndex
 ---
 --- @hash [0xE8AF77C4C06ADC93](https://docs.fivem.net/natives/?_0xE8AF77C4C06ADC93)
 ---
@@ -4505,9 +4538,7 @@ function SetSirenKeepOn(vehicle, toggle) end
 function N_0xf584cf8529b51434(vehicle, toggle) end
 
     
---- ```
---- Returns active radio station name  
---- ```
+--- GetPlayerRadioStationName
 ---
 --- @hash [0xF6D733C32076AD03](https://docs.fivem.net/natives/?_0xF6D733C32076AD03)
 ---
