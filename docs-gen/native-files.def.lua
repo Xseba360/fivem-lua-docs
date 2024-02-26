@@ -75,28 +75,32 @@ function GetShopPedOutfitLocate(p0) end
 function N_0x073ca26b079f956e(p0) end
 
     
---- Returns some sort of index/offset for overlays/decorations.
---- 
---- ```
---- Character types:
---- 0 = Michael,
---- 1 = Franklin,
---- 2 = Trevor,
---- 3 = MPMale,
---- 4 = MPFemale
---- ```
---- 
 --- ```
 --- NativeDB Introduced: v2189
 --- ```
 ---
 --- @hash [0x10144267DD22866C](https://docs.fivem.net/natives/?_0x10144267DD22866C)
---- @param overlayHash Hash
---- @param p1 any
 --- @param character number (int)
+--- @param collection number (int)
+--- @param preset number (int)
 --- @return number
---- @overload fun(overlayHash: Hash, p1: any, character: number): number
-function N_0x10144267dd22866c(overlayHash, p1, character) end
+--- @overload fun(character: number, collection: number, preset: number): number
+function GetTattooShopDlcItemIndex(character, collection, preset) end
+
+    
+--- # New Name: GetTattooShopDlcItemIndex
+--- ```
+--- NativeDB Introduced: v2189
+--- ```
+---
+--- @hash [0x10144267DD22866C](https://docs.fivem.net/natives/?_0x10144267DD22866C)
+--- @param character number (int)
+--- @param collection number (int)
+--- @param preset number (int)
+--- @return number
+--- @overload fun(character: number, collection: number, preset: number): number
+--- @deprecated
+function N_0x10144267dd22866c(character, collection, preset) end
 
     
 --- GetShopPedOutfitComponentVariant

@@ -977,14 +977,13 @@ function N_0x8a7a40100edfec58(interior, roomName) end
 function RequestInteriorRoomByName(interior, roomName) end
 
     
---- Control how many new (ambient?) peds will spawn in the game world.
---- Range for p0 seems to be 0-3, where 0 is none and 3 is the normal level.
+--- Sets the memory budget level for ped population.
 ---
 --- @hash [0x8C95333CFC3340F3](https://docs.fivem.net/natives/?_0x8C95333CFC3340F3)
---- @param p0 number (int)
+--- @param budgetLevel number (int)
 --- @return void
---- @overload fun(p0: number): void
-function SetPedPopulationBudget(p0) end
+--- @overload fun(budgetLevel: number): void
+function SetPedPopulationBudget(budgetLevel) end
 
     
 --- AllowPlayerSwitchAscent

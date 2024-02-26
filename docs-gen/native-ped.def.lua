@@ -1995,14 +1995,18 @@ function ApplyPedBloodByZone(ped, p1, p2, p3, p4) end
 function N_0x3311e47b91edcbbc(ped, p1, p2, p3, p4) end
 
     
---- Seems to consistently return true if the ped is dead, however, it does not detect the dying phase.
+--- Determines if a ped is dead. Contrary to what the name might suggest, it does not always detect when a ped is in the 'dying' phase (transitioning to death). The exception is when `checkMeleeDeathFlags` is set to `true`, which then includes peds in the midst of melee takedown moves as being in a dying state, even if the death task has not yet started.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
 ---
 --- @hash [0x3317DEDB88C95038](https://docs.fivem.net/natives/?_0x3317DEDB88C95038)
 --- @param ped Ped
---- @param p1 boolean
+--- @param checkMeleeDeathFlags boolean
 --- @return boolean
---- @overload fun(ped: Ped, p1: boolean): boolean
-function IsPedDeadOrDying(ped, p1) end
+--- @overload fun(ped: Ped, checkMeleeDeathFlags: boolean): boolean
+function IsPedDeadOrDying(ped, checkMeleeDeathFlags) end
 
     
 --- SetPedToLoadCover
@@ -8488,17 +8492,17 @@ function GetDeadPedPickupCoords(ped, p1, p2) end
 function ClearAllPedProps(ped) end
 
     
---- DisposeSynchronizedScene
+--- TakeOwnershipOfSynchronizedScene
 ---
 --- @hash [0xCD9CC7E200A52A6F](https://docs.fivem.net/natives/?_0xCD9CC7E200A52A6F)
 --- @param scene number (int)
 --- @return void
 --- @overload fun(scene: number): void
-function DisposeSynchronizedScene(scene) end
+function TakeOwnershipOfSynchronizedScene(scene) end
 
     
---- # New Name: DisposeSynchronizedScene
---- DisposeSynchronizedScene
+--- # New Name: TakeOwnershipOfSynchronizedScene
+--- TakeOwnershipOfSynchronizedScene
 ---
 --- @hash [0xCD9CC7E200A52A6F](https://docs.fivem.net/natives/?_0xCD9CC7E200A52A6F)
 --- @param scene number (int)
@@ -8506,6 +8510,17 @@ function DisposeSynchronizedScene(scene) end
 --- @overload fun(scene: number): void
 --- @deprecated
 function N_0xcd9cc7e200a52a6f(scene) end
+
+    
+--- # New Name: TakeOwnershipOfSynchronizedScene
+--- TakeOwnershipOfSynchronizedScene
+---
+--- @hash [0xCD9CC7E200A52A6F](https://docs.fivem.net/natives/?_0xCD9CC7E200A52A6F)
+--- @param scene number (int)
+--- @return void
+--- @overload fun(scene: number): void
+--- @deprecated
+function DisposeSynchronizedScene(scene) end
 
     
 --- ```
