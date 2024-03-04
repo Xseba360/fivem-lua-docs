@@ -477,19 +477,25 @@ function DoesEntityHaveAnimDirector(entity) end
 function GetOffsetFromEntityGivenWorldCoords(entity, posX, posY, posZ) end
 
     
---- Sets the coordinates (world position) for a specified entity.
+--- Teleports an entity to specified coordinates directly, with options to maintain certain behaviors post-teleportation.
+--- 
+--- **Note**:
+--- 
+--- *   This native allows precise placement of entities without the usual adjustments for collision or interaction with the environment that may occur with other teleportation natives.
+--- *   The `keepTasks` and `keepIK` parameters are specifically useful for maintaining the current state of a ped, ensuring actions or animations are not abruptly stopped due to the teleportation.
+--- *   Setting `doWarp` to `false` is useful when simulating continuous movement or when the entity should interact with its immediate surroundings upon arrival.
 ---
 --- @hash [0x239A3351AC1DA385](https://docs.fivem.net/natives/?_0x239A3351AC1DA385)
 --- @param entity Entity
---- @param xPos number (float)
---- @param yPos number (float)
---- @param zPos number (float)
---- @param alive boolean
---- @param deadFlag boolean
---- @param ragdollFlag boolean
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param keepTasks boolean
+--- @param keepIK boolean
+--- @param doWarp boolean
 --- @return void
---- @overload fun(entity: Entity, xPos: number, yPos: number, zPos: number, alive: boolean, deadFlag: boolean, ragdollFlag: boolean): void
-function SetEntityCoordsNoOffset(entity, xPos, yPos, zPos, alive, deadFlag, ragdollFlag) end
+--- @overload fun(entity: Entity, x: number, y: number, z: number, keepTasks: boolean, keepIK: boolean, doWarp: boolean): void
+function SetEntityCoordsNoOffset(entity, x, y, z, keepTasks, keepIK, doWarp) end
 
     
 --- ```
@@ -767,8 +773,14 @@ function ForceEntityAiAndAnimationUpdate(entity) end
 function GetEntityLodDist(entity) end
 
     
---- Freezes or unfreezes an entity preventing its coordinates to change by the player if set to `true`. You can still change the entity position using SET_ENTITY_COORDS.
---- @usage FreezeEntityPosition(PlayerPedId(), true
+--- Freezes or unfreezes an entity preventing its coordinates to change by the player if set to `true`. You can still change the entity position using [`SET_ENTITY_COORDS`](https://docs.fivem.net/natives/?_0x06843DA7060A026B).
+--- @usage -- Freeze the local player.
+--- 
+--- -- Retrieve the player ped
+--- local playerPed = PlayerPedId() 
+--- 
+--- -- Freeze the ped
+--- FreezeEntityPosition(playerPed, true
 --- @hash [0x428CA6DBD1094446](https://docs.fivem.net/natives/?_0x428CA6DBD1094446)
 --- @param entity Entity
 --- @param toggle boolean
@@ -1523,18 +1535,54 @@ function GetEntityPhysicsHeading(entity) end
 function N_0x846bf6291198a71e(entity) end
 
     
---- SetEntityRotation
----
+--- Sets the rotation of a specified entity in the game world.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage -- Example of rotating a vehicle 360 degrees
+--- RegisterCommand('360', function()
+---     local playerPed = PlayerPedId() -- Get the player's Ped
+---     local vehicle = GetVehiclePedIsIn(playerPed, false) -- Get the vehicle the player is currently in.
+---     if not vehicle or not DoesEntityExist(vehicle) then
+---         print("You are not in a vehicle")
+---         return
+---     end
+---     
+---     local rot = GetEntityRotation(vehicle, 2)
+---     local roll, pitch, yaw = rot.x, rot.y, rot.z
+---     local finalYaw = yaw + 360
+---     local steps = 20 -- Reduced the number of steps so each rotation is larger
+---     -- Function to perform the rotation gradually
+---     local function doRotation()
+---         local currentYaw = yaw
+---         -- Loop to adjust the rotation in steps
+---         for i = 1, steps do
+---             Citizen.Wait(20) -- Increases the delay between each adjustment to make the animation slower
+---             currentYaw = currentYaw + (360 / steps) -- Increments the rotation
+---             if currentYaw >= finalYaw then
+---                 currentYaw = finalYaw
+---             end
+---             -- Apply the current rotation
+---             SetEntityRotation(vehicle, roll, pitch, currentYaw % 360, 2, true)
+---             if currentYaw == finalYaw then
+---                 break -- Stops the loop once the rotation is complete
+---             end
+---         end
+---     end
+---     -- Execute the rotation in a coroutine to not block the main thread
+---     Citizen.CreateThread(doRotation)
+--- end, false
 --- @hash [0x8524A8B0171D5E07](https://docs.fivem.net/natives/?_0x8524A8B0171D5E07)
 --- @param entity Entity
 --- @param pitch number (float)
 --- @param roll number (float)
 --- @param yaw number (float)
 --- @param rotationOrder number (int)
---- @param p5 boolean
+--- @param bDeadCheck boolean
 --- @return void
---- @overload fun(entity: Entity, pitch: number, roll: number, yaw: number, rotationOrder: number, p5: boolean): void
-function SetEntityRotation(entity, pitch, roll, yaw, rotationOrder, p5) end
+--- @overload fun(entity: Entity, pitch: number, roll: number, yaw: number, rotationOrder: number, bDeadCheck: boolean): void
+function SetEntityRotation(entity, pitch, roll, yaw, rotationOrder, bDeadCheck) end
 
     
 --- ```

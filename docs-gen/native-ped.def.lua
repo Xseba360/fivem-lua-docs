@@ -1798,6 +1798,8 @@ function GetPedFloodInvincibility(ped, p1) end
 --- 
 --- The naming of the native is a legacy leftover (formerly EXPLODE_CHAR_HEAD in GTA3) as in the early 3D GTA games, lethal
 --- damage to a ped head would 'explode' it.
+--- 
+--- Do note that this native function does not work in multiplayer/network environment.
 ---
 --- @hash [0x2D05CED3A38D0F3A](https://docs.fivem.net/natives/?_0x2D05CED3A38D0F3A)
 --- @param ped Ped
@@ -3372,8 +3374,10 @@ function GetAnimInitialOffsetRotation(animDict, animName, x, y, z, xRot, yRot, z
 function IsPedTracked(ped) end
 
     
+--- Sets the tint index for the hair on the specified ped.
+--- 
 --- ```
---- Used for freemode (online) characters.  
+--- NativeDB Introduced: v323
 --- ```
 ---
 --- @hash [0x4CFFC65454C93A49](https://docs.fivem.net/natives/?_0x4CFFC65454C93A49)
@@ -3382,6 +3386,23 @@ function IsPedTracked(ped) end
 --- @param highlightColorID number (int)
 --- @return void
 --- @overload fun(ped: Ped, colorID: number, highlightColorID: number): void
+function SetPedHairTint(ped, colorID, highlightColorID) end
+
+    
+--- # New Name: SetPedHairTint
+--- Sets the tint index for the hair on the specified ped.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+---
+--- @hash [0x4CFFC65454C93A49](https://docs.fivem.net/natives/?_0x4CFFC65454C93A49)
+--- @param ped Ped
+--- @param colorID number (int)
+--- @param highlightColorID number (int)
+--- @return void
+--- @overload fun(ped: Ped, colorID: number, highlightColorID: number): void
+--- @deprecated
 function SetPedHairColor(ped, colorID, highlightColorID) end
 
     

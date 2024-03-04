@@ -2011,18 +2011,22 @@ function N_0x265559da40b3f327(p0) end
 function N_0x265635150fb0d82e() end
 
     
---- NetworkAllowLocalEntityAttachment
+--- Allows scripts to use attachment commands on entities (eg. [`ATTACH_ENTITY_TO_ENTITY`](https://docs.fivem.net/natives/?_0x6B9BBD38AB0796DF)) that are not controlled by the client.
+--- 
+--- **Note:** This is only local and does not affect entities on other machines. This is used by the ferris wheel script to sync players on carts.
 ---
 --- @hash [0x267C78C60E806B9A](https://docs.fivem.net/natives/?_0x267C78C60E806B9A)
 --- @param entity Entity
 --- @param toggle boolean
 --- @return void
 --- @overload fun(entity: Entity, toggle: boolean): void
-function NetworkAllowLocalEntityAttachment(entity, toggle) end
+function NetworkAllowRemoteAttachmentModification(entity, toggle) end
 
     
---- # New Name: NetworkAllowLocalEntityAttachment
---- NetworkAllowLocalEntityAttachment
+--- # New Name: NetworkAllowRemoteAttachmentModification
+--- Allows scripts to use attachment commands on entities (eg. [`ATTACH_ENTITY_TO_ENTITY`](https://docs.fivem.net/natives/?_0x6B9BBD38AB0796DF)) that are not controlled by the client.
+--- 
+--- **Note:** This is only local and does not affect entities on other machines. This is used by the ferris wheel script to sync players on carts.
 ---
 --- @hash [0x267C78C60E806B9A](https://docs.fivem.net/natives/?_0x267C78C60E806B9A)
 --- @param entity Entity
@@ -2031,6 +2035,20 @@ function NetworkAllowLocalEntityAttachment(entity, toggle) end
 --- @overload fun(entity: Entity, toggle: boolean): void
 --- @deprecated
 function N_0x267c78c60e806b9a(entity, toggle) end
+
+    
+--- # New Name: NetworkAllowRemoteAttachmentModification
+--- Allows scripts to use attachment commands on entities (eg. [`ATTACH_ENTITY_TO_ENTITY`](https://docs.fivem.net/natives/?_0x6B9BBD38AB0796DF)) that are not controlled by the client.
+--- 
+--- **Note:** This is only local and does not affect entities on other machines. This is used by the ferris wheel script to sync players on carts.
+---
+--- @hash [0x267C78C60E806B9A](https://docs.fivem.net/natives/?_0x267C78C60E806B9A)
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+--- @deprecated
+function NetworkAllowLocalEntityAttachment(entity, toggle) end
 
     
 --- The Native returns a hash of the session id as string from the specific invite index!
@@ -13018,8 +13036,9 @@ function N_0xe66c690248f11150(ped, p1) end
 function N_0xe6717e652b8c8d8a(p0, p1) end
 
     
---- Works in Singleplayer too.
---- Passing wrong data (e.g. hours above 23) will cause the game to crash.
+--- Overrides the game clock time for the local player, allowing for manipulation of the in-game time. This native is effective in both multiplayer and singleplayer modes.
+--- 
+--- **Note:** Passing wrong data (e.g. hours above 23) will cause the game to crash.
 ---
 --- @hash [0xE679E3E06E363892](https://docs.fivem.net/natives/?_0xE679E3E06E363892)
 --- @param hours number (int)

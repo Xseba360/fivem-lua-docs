@@ -1162,13 +1162,11 @@ function N_0x91ef34584710be99(x, y, z, radius, p4, p5, p6, weaponHash) end
 function IsWeaponValid(weaponHash) end
 
     
---- ```
---- Now has 8 params.  
---- ```
+--- Create a weapon object that cannot be attached to a ped. If you want to create a weapon object that can be attached to a ped, use [`CREATE_OBJECT`](https://docs.fivem.net/natives/?_0x509D5878EB39E842) instead.
 --- 
 --- ```
---- NativeDB Added Parameter 9: Any p8
---- NativeDB Added Parameter 10: Any p9
+--- NativeDB Added Parameter 9: BOOL bRegisterAsNetworkObject
+--- NativeDB Added Parameter 10: BOOL bScriptHostObject
 --- ```
 ---
 --- @hash [0x9541D3CF0D398F36](https://docs.fivem.net/natives/?_0x9541D3CF0D398F36)
@@ -1177,12 +1175,12 @@ function IsWeaponValid(weaponHash) end
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param showWorldModel boolean
+--- @param bCreateDefaultComponents boolean
 --- @param scale number (float)
---- @param p7 any
+--- @param customModelHash number (int)
 --- @return Object
---- @overload fun(weaponHash: Hash, ammoCount: number, x: number, y: number, z: number, showWorldModel: boolean, scale: number, p7: any): Object
-function CreateWeaponObject(weaponHash, ammoCount, x, y, z, showWorldModel, scale, p7) end
+--- @overload fun(weaponHash: Hash, ammoCount: number, x: number, y: number, z: number, bCreateDefaultComponents: boolean, scale: number, customModelHash: number): Object
+function CreateWeaponObject(weaponHash, ammoCount, x, y, z, bCreateDefaultComponents, scale, customModelHash) end
 
     
 --- ```

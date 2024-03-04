@@ -2496,13 +2496,16 @@ function DisplayAreaName(toggle) end
 function N_0x2790f4b17d098e26(toggle) end
 
     
---- N_0x2916a928514c9827
----
+--- Forces the map menu to reload.
+--- @usage   if GetNumberOfReferencesOfScriptWithNameHash(`pausemenu_map`) > 0 then -- Ensure we're on the map screen
+---     ReloadMapMenu()
+---     print('Reloaded map menu!')
+---   en
 --- @hash [0x2916A928514C9827](https://docs.fivem.net/natives/?_0x2916A928514C9827)
 ---
 --- @return void
 --- @overload fun(): void
-function N_0x2916a928514c9827() end
+function ReloadMapMenu() end
 
     
 --- ```
@@ -7568,26 +7571,15 @@ function RemoveMultiplayerWalletCash() end
 function N_0x95cf81bd06ee1887() end
 
     
---- ```
---- The messages are localized strings.  
---- Examples:  
---- "No_bus_money"  
---- "Enter_bus"  
---- "Tour_help"  
---- "LETTERS_HELP2"  
---- "Dummy"  
---- **The bool appears to always be false (if it even is a bool, as it's represented by a zero)**  
---- --------  
---- p1 doesn't seem to make a difference, regardless of the state it's in.   
---- picture of where on the screen this is displayed?  
---- ```
+--- Shows a help message for one frame.
+--- Do note that this message doesn't get added to the Pause Menu info section.
 ---
 --- @hash [0x960C9FF8F616E41C](https://docs.fivem.net/natives/?_0x960C9FF8F616E41C)
---- @param message string (char*)
---- @param p1 boolean
+--- @param pTextLabel string (char*)
+--- @param bCurvedWindow boolean
 --- @return void
---- @overload fun(message: string, p1: boolean): void
-function DisplayHelpTextThisFrame(message, p1) end
+--- @overload fun(pTextLabel: string, bCurvedWindow: boolean): void
+function DisplayHelpTextThisFrame(pTextLabel, bCurvedWindow) end
 
     
 --- ```

@@ -51,10 +51,7 @@ function N_0x01bb4d577d38bd9e(vehicle, intensity) end
 function IsAmbientZoneEnabled(ambientZone) end
 
     
---- ```
---- Returns hash of default vehicle horn  
---- Hash is stored in audVehicleAudioEntity  
---- ```
+--- GetVehicleDefaultHorn
 ---
 --- @hash [0x02165D55000219AC](https://docs.fivem.net/natives/?_0x02165D55000219AC)
 --- @param vehicle Vehicle
@@ -1367,15 +1364,28 @@ function N_0x3e65cde5215832c1(radioStationName) end
 function GetCurrentRadioStationHash(radioStationName) end
 
     
---- N_0x40763ea7b9b783e7
+--- This is marked as a deprecated function internally, please use [HINT_SCRIPT_AUDIO_BANK](https://docs.fivem.net/natives/?_0xFB380A29641EC31A) instead.
 ---
 --- @hash [0x40763EA7B9B783E7](https://docs.fivem.net/natives/?_0x40763EA7B9B783E7)
---- @param p0 string (char*)
---- @param p1 number (int)
---- @param p2 number (int)
---- @return any
---- @overload fun(p0: string, p1: number, p2: number): any
-function N_0x40763ea7b9b783e7(p0, p1, p2) end
+--- @param bankName string (char*)
+--- @param bOverNetwork boolean
+--- @param playerBits number (int)
+--- @return boolean
+--- @overload fun(bankName: string, bOverNetwork: boolean, playerBits: number): boolean
+function HintMissionAudioBank(bankName, bOverNetwork, playerBits) end
+
+    
+--- # New Name: HintMissionAudioBank
+--- This is marked as a deprecated function internally, please use [HINT_SCRIPT_AUDIO_BANK](https://docs.fivem.net/natives/?_0xFB380A29641EC31A) instead.
+---
+--- @hash [0x40763EA7B9B783E7](https://docs.fivem.net/natives/?_0x40763EA7B9B783E7)
+--- @param bankName string (char*)
+--- @param bOverNetwork boolean
+--- @param playerBits number (int)
+--- @return boolean
+--- @overload fun(bankName: string, bOverNetwork: boolean, playerBits: number): boolean
+--- @deprecated
+function N_0x40763ea7b9b783e7(bankName, bOverNetwork, playerBits) end
 
     
 --- Calls the same internal function [`_SET_PED_VOICE_GROUP`](https://docs.fivem.net/natives/?_0x7CDC8C3B89F661B3) calls, but passes `voiceGroupHash` (defined as a parameter in the referenced native) as `0`.
@@ -1724,21 +1734,17 @@ function ForceVehicleEngineAudio(vehicle, gameObjectName) end
 function GetAudibleMusicTrackTextId() end
 
     
---- ```
---- HAS_*
---- ```
+--- HasLoadedMpDataSet
 ---
 --- @hash [0x544810ED9DB6BBE6](https://docs.fivem.net/natives/?_0x544810ED9DB6BBE6)
 ---
 --- @return boolean
 --- @overload fun(): boolean
-function HasMultiplayerAudioDataLoaded() end
+function HasLoadedMpDataSet() end
 
     
---- # New Name: HasMultiplayerAudioDataLoaded
---- ```
---- HAS_*
---- ```
+--- # New Name: HasLoadedMpDataSet
+--- HasLoadedMpDataSet
 ---
 --- @hash [0x544810ED9DB6BBE6](https://docs.fivem.net/natives/?_0x544810ED9DB6BBE6)
 ---
@@ -1746,6 +1752,17 @@ function HasMultiplayerAudioDataLoaded() end
 --- @overload fun(): boolean
 --- @deprecated
 function N_0x544810ed9db6bbe6() end
+
+    
+--- # New Name: HasLoadedMpDataSet
+--- HasLoadedMpDataSet
+---
+--- @hash [0x544810ED9DB6BBE6](https://docs.fivem.net/natives/?_0x544810ED9DB6BBE6)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function HasMultiplayerAudioDataLoaded() end
 
     
 --- Toggles fake distant siren sounds
@@ -1860,21 +1877,17 @@ function N_0x59e7b488451f4d3a(vehicle, damageFactor) end
 function CancelMusicEvent(eventName) end
 
     
---- ```
---- HAS_*
---- ```
+--- HasLoadedSpDataSet
 ---
 --- @hash [0x5B50ABB1FE3746F4](https://docs.fivem.net/natives/?_0x5B50ABB1FE3746F4)
 ---
 --- @return boolean
 --- @overload fun(): boolean
-function HasMultiplayerAudioDataUnloaded() end
+function HasLoadedSpDataSet() end
 
     
---- # New Name: HasMultiplayerAudioDataUnloaded
---- ```
---- HAS_*
---- ```
+--- # New Name: HasLoadedSpDataSet
+--- HasLoadedSpDataSet
 ---
 --- @hash [0x5B50ABB1FE3746F4](https://docs.fivem.net/natives/?_0x5B50ABB1FE3746F4)
 ---
@@ -1882,6 +1895,17 @@ function HasMultiplayerAudioDataUnloaded() end
 --- @overload fun(): boolean
 --- @deprecated
 function N_0x5b50abb1fe3746f4() end
+
+    
+--- # New Name: HasLoadedSpDataSet
+--- HasLoadedSpDataSet
+---
+--- @hash [0x5B50ABB1FE3746F4](https://docs.fivem.net/natives/?_0x5B50ABB1FE3746F4)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function HasMultiplayerAudioDataUnloaded() end
 
     
 --- N_0x5b9853296731e88d
@@ -2804,16 +2828,14 @@ function PlayPedAmbientSpeechNative(ped, speechName, speechParam) end
 function PlayAmbientSpeech1(ped, speechName, speechParam) end
 
     
---- ```
---- NativeDB Added Parameter 3: Any p2
---- ```
+--- This native is marked as a deprecated native internally, use [HINT_SCRIPT_AUDIO_BANK](https://docs.fivem.net/natives/?_0xFB380A29641EC31A) instead
 ---
 --- @hash [0x8F8C0E370AE62F5C](https://docs.fivem.net/natives/?_0x8F8C0E370AE62F5C)
---- @param p0 any
---- @param p1 any
---- @return any
---- @overload fun(p0: any, p1: any): any
-function HintAmbientAudioBank(p0, p1) end
+--- @param bankName string (char*)
+--- @param bOverNetwork boolean
+--- @return boolean
+--- @overload fun(bankName: string, bOverNetwork: boolean): boolean
+function HintAmbientAudioBank(bankName, bOverNetwork) end
 
     
 --- IsAmbientSpeechPlaying
@@ -3305,13 +3327,24 @@ function N_0xa8a7d434afb4b97b(groupName, contextBlockTarget) end
 function DisablePedPainAudio(ped, shouldDisable) end
 
     
---- N_0xaa19f5572c38b564
+--- GetVariationChosenForScriptedLine
 ---
 --- @hash [0xAA19F5572C38B564](https://docs.fivem.net/natives/?_0xAA19F5572C38B564)
---- @param p0 any
---- @return any
---- @overload fun(): any, any
-function N_0xaa19f5572c38b564(p0) end
+--- @param textLabel string (char*)
+--- @return number
+--- @overload fun(textLabel: string): number
+function GetVariationChosenForScriptedLine(textLabel) end
+
+    
+--- # New Name: GetVariationChosenForScriptedLine
+--- GetVariationChosenForScriptedLine
+---
+--- @hash [0xAA19F5572C38B564](https://docs.fivem.net/natives/?_0xAA19F5572C38B564)
+--- @param textLabel string (char*)
+--- @return number
+--- @overload fun(textLabel: string): number
+--- @deprecated
+function N_0xaa19f5572c38b564(textLabel) end
 
     
 --- This doesn't stop a piece of dialogue that has been triggered.
@@ -4297,10 +4330,10 @@ function N_0xd2dccd8e16e20997(p0) end
 --- @param vehicle Vehicle
 --- @return number
 --- @overload fun(vehicle: Vehicle): number
-function GetVehicleDefaultHornVariation(vehicle) end
+function GetVehicleHornSoundIndex(vehicle) end
 
     
---- # New Name: GetVehicleDefaultHornVariation
+--- # New Name: GetVehicleHornSoundIndex
 --- ```
 --- NativeDB Introduced: v1365
 --- ```
@@ -4313,7 +4346,7 @@ function GetVehicleDefaultHornVariation(vehicle) end
 function N_0xd53f3a29bce2580e(vehicle) end
 
     
---- # New Name: GetVehicleDefaultHornVariation
+--- # New Name: GetVehicleHornSoundIndex
 --- ```
 --- NativeDB Introduced: v1365
 --- ```
@@ -4324,6 +4357,19 @@ function N_0xd53f3a29bce2580e(vehicle) end
 --- @overload fun(vehicle: Vehicle): number
 --- @deprecated
 function N_0x22fecb546c276a30(vehicle) end
+
+    
+--- # New Name: GetVehicleHornSoundIndex
+--- ```
+--- NativeDB Introduced: v1365
+--- ```
+---
+--- @hash [0xD53F3A29BCE2580E](https://docs.fivem.net/natives/?_0xD53F3A29BCE2580E)
+--- @param vehicle Vehicle
+--- @return number
+--- @overload fun(vehicle: Vehicle): number
+--- @deprecated
+function GetVehicleDefaultHornVariation(vehicle) end
 
     
 --- Allows script to freeze the microphone for a single frame, mantaining its current transform/settings.
@@ -4893,16 +4939,19 @@ function PlayPedRingtone(ringtoneName, ped, p2) end
 function UseSirenAsHorn(vehicle, toggle) end
 
     
---- ```
---- NativeDB Added Parameter 3: Any p2
---- ```
+--- Hints that this bank would be good to load if there are free slots.
+--- Does not guarentee loading of the bank, [REQUEST_SCRIPT_AUDIO_BANK](https://docs.fivem.net/natives/?_0xFE02FFBED8CA9D99) MUST be used as normal before triggering sounds"
+--- 
+--- This native has a new argument on newer game builds:
+--- 
+--- *   **playerBits**: likely used to specifiy players to sync to as a bit mask (1 << (0-128))
 ---
 --- @hash [0xFB380A29641EC31A](https://docs.fivem.net/natives/?_0xFB380A29641EC31A)
---- @param p0 any
---- @param p1 number (int)
---- @return any
---- @overload fun(p0: any, p1: number): any
-function HintScriptAudioBank(p0, p1) end
+--- @param bankName string (char*)
+--- @param bOverNetwork boolean
+--- @return boolean
+--- @overload fun(bankName: string, bOverNetwork: boolean): boolean
+function HintScriptAudioBank(bankName, bOverNetwork) end
 
     
 --- Creates a broken glass area

@@ -793,6 +793,19 @@ function HasVehicleBeenDamagedByBullets(vehicle) end
 function DropPlayer(playerSrc, reason) end
 
     
+--- Used for freemode (online) characters.
+--- 
+--- **This is the server-side RPC native equivalent of the client native [\_SET_PED_HAIR_COLOR](?\_0x4CFFC65454C93A49).**
+---
+--- @hash [0xBB43F090](https://docs.fivem.net/natives/?_0xBB43F090)
+--- @param ped Ped
+--- @param colorID number (int)
+--- @param highlightColorID number (int)
+--- @return void
+--- @overload fun(ped: Ped, colorID: number, highlightColorID: number): void
+function SetPedHairColor(ped, colorID, highlightColorID) end
+
+    
 --- Requests whether or not the commerce data for the specified player has loaded.
 ---
 --- @hash [0xBEFE93F4](https://docs.fivem.net/natives/?_0xBEFE93F4)
