@@ -824,11 +824,8 @@ function SpecialFrontendEqual(x, y, z) end
 function ClearAmbientZoneState(zoneName, forceUpdate) end
 
     
---- ```
---- Example:  
---- bool playing = AUDIO::IS_ALARM_PLAYING("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS");  
---- ```
----
+--- IsAlarmPlaying
+--- @usage local bAlarmPlaying = IsAlarmPlaying("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS"
 --- @hash [0x226435CB96CCFC8C](https://docs.fivem.net/natives/?_0x226435CB96CCFC8C)
 --- @param alarmName string (char*)
 --- @return boolean
@@ -1033,8 +1030,21 @@ function SetVariableOnStream(p0, p1) end
 ---
 --- @hash [0x30CA2EF91D15ADF8](https://docs.fivem.net/natives/?_0x30CA2EF91D15ADF8)
 ---
---- @return any
---- @overload fun(): any
+--- @return boolean
+--- @overload fun(): boolean
+function IsAnyPositionalSpeechPlaying() end
+
+    
+--- # New Name: IsAnyPositionalSpeechPlaying
+--- ```
+--- NativeDB Introduced: v2189
+--- ```
+---
+--- @hash [0x30CA2EF91D15ADF8](https://docs.fivem.net/natives/?_0x30CA2EF91D15ADF8)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
 function N_0x30ca2ef91d15adf8() end
 
     
@@ -2634,34 +2644,28 @@ function SetEntityForNullConvPed(speakerConversationIndex, entity) end
 function N_0x892b6ab8f33606f5(speakerConversationIndex, entity) end
 
     
---- ```
---- One call found in the b617d scripts:
---- AUDIO::_8A694D7A68F8DC38(NETWORK::NET_TO_PED(l_3989._f26F[0/*1*/]), "CONV_INTERRUPT_QUIT_IT", "LESTER");
---- ```
+--- Handles conversation interrupts and pauses, using the code-side system for improved timing and to minimize unfriendly logic interactions.
 ---
 --- @hash [0x8A694D7A68F8DC38](https://docs.fivem.net/natives/?_0x8A694D7A68F8DC38)
---- @param ped Ped
---- @param p1 string (char*)
---- @param p2 string (char*)
+--- @param interrupterPed Ped
+--- @param context string (char*)
+--- @param voiceName string (char*)
 --- @return void
---- @overload fun(ped: Ped, p1: string, p2: string): void
-function InterruptConversationAndPause(ped, p1, p2) end
+--- @overload fun(interrupterPed: Ped, context: string, voiceName: string): void
+function InterruptConversationAndPause(interrupterPed, context, voiceName) end
 
     
 --- # New Name: InterruptConversationAndPause
---- ```
---- One call found in the b617d scripts:
---- AUDIO::_8A694D7A68F8DC38(NETWORK::NET_TO_PED(l_3989._f26F[0/*1*/]), "CONV_INTERRUPT_QUIT_IT", "LESTER");
---- ```
+--- Handles conversation interrupts and pauses, using the code-side system for improved timing and to minimize unfriendly logic interactions.
 ---
 --- @hash [0x8A694D7A68F8DC38](https://docs.fivem.net/natives/?_0x8A694D7A68F8DC38)
---- @param ped Ped
---- @param p1 string (char*)
---- @param p2 string (char*)
+--- @param interrupterPed Ped
+--- @param context string (char*)
+--- @param voiceName string (char*)
 --- @return void
---- @overload fun(ped: Ped, p1: string, p2: string): void
+--- @overload fun(interrupterPed: Ped, context: string, voiceName: string): void
 --- @deprecated
-function N_0x8a694d7a68f8dc38(ped, p1, p2) end
+function N_0x8a694d7a68f8dc38(interrupterPed, context, voiceName) end
 
     
 --- PlaySynchronizedAudioEvent
@@ -2856,10 +2860,7 @@ function IsAmbientSpeechPlaying(ped) end
 function StopSynchronizedAudioEvent(p0) end
 
     
---- ```
---- Common in the scripts:  
---- AUDIO::IS_AMBIENT_SPEECH_DISABLED(PLAYER::PLAYER_PED_ID());  
---- ```
+--- IsAmbientSpeechDisabled
 ---
 --- @hash [0x932C2D096A2C3FFF](https://docs.fivem.net/natives/?_0x932C2D096A2C3FFF)
 --- @param ped Ped
@@ -2868,68 +2869,38 @@ function StopSynchronizedAudioEvent(p0) end
 function IsAmbientSpeechDisabled(ped) end
 
     
---- ```
---- Sets the position of the audio event to the entity's position for one frame(?)
---- if (l_8C3 == 0) {
----     sub_27fd1(0, -1, 1);
----     if (PED::IS_SYNCHRONIZED_SCENE_RUNNING(l_87D)) {
----         AUDIO::STOP_SYNCHRONIZED_AUDIO_EVENT(l_87D);
----     }
----     if (sub_7dd(l_A00)) {
----         AUDIO::_950A154B8DAB6185("PAP2_IG1_POPPYSEX", l_A00);
----     }
----     sub_91c("TK************ SETTING SYNCH SCENE AUDIO POSITION THIS FRAME ************TK");
----     l_8C3 = 1;
---- }
---- --
---- Found in the b617d scripts, duplicates removed:
---- AUDIO::_950A154B8DAB6185("CAR_5_IG_6", l_7FE[1/*1*/]);
---- AUDIO::_950A154B8DAB6185("EX03_TRAIN_BIKE_LAND",   PLAYER::PLAYER_PED_ID());
---- AUDIO::_950A154B8DAB6185("FBI_2_MCS_1_LeadIn", l_40[2/*1*/]);
---- AUDIO::_950A154B8DAB6185("FIN_C2_MCS_1", l_24C[0/*1*/]);
---- AUDIO::_950A154B8DAB6185("MNT_DNC", l_5F);
---- AUDIO::_950A154B8DAB6185("PAP2_IG1_POPPYSEX", l_A00);
---- ```
+--- InitSynchSceneAudioWithEntity
 ---
 --- @hash [0x950A154B8DAB6185](https://docs.fivem.net/natives/?_0x950A154B8DAB6185)
---- @param p0 string (char*)
---- @param p1 Entity
+--- @param audioName string (char*)
+--- @param entity Entity
 --- @return void
---- @overload fun(p0: string, p1: Entity): void
-function SetSynchronizedAudioEventPositionThisFrame(p0, p1) end
+--- @overload fun(audioName: string, entity: Entity): void
+function InitSynchSceneAudioWithEntity(audioName, entity) end
 
     
---- # New Name: SetSynchronizedAudioEventPositionThisFrame
---- ```
---- Sets the position of the audio event to the entity's position for one frame(?)
---- if (l_8C3 == 0) {
----     sub_27fd1(0, -1, 1);
----     if (PED::IS_SYNCHRONIZED_SCENE_RUNNING(l_87D)) {
----         AUDIO::STOP_SYNCHRONIZED_AUDIO_EVENT(l_87D);
----     }
----     if (sub_7dd(l_A00)) {
----         AUDIO::_950A154B8DAB6185("PAP2_IG1_POPPYSEX", l_A00);
----     }
----     sub_91c("TK************ SETTING SYNCH SCENE AUDIO POSITION THIS FRAME ************TK");
----     l_8C3 = 1;
---- }
---- --
---- Found in the b617d scripts, duplicates removed:
---- AUDIO::_950A154B8DAB6185("CAR_5_IG_6", l_7FE[1/*1*/]);
---- AUDIO::_950A154B8DAB6185("EX03_TRAIN_BIKE_LAND",   PLAYER::PLAYER_PED_ID());
---- AUDIO::_950A154B8DAB6185("FBI_2_MCS_1_LeadIn", l_40[2/*1*/]);
---- AUDIO::_950A154B8DAB6185("FIN_C2_MCS_1", l_24C[0/*1*/]);
---- AUDIO::_950A154B8DAB6185("MNT_DNC", l_5F);
---- AUDIO::_950A154B8DAB6185("PAP2_IG1_POPPYSEX", l_A00);
---- ```
+--- # New Name: InitSynchSceneAudioWithEntity
+--- InitSynchSceneAudioWithEntity
 ---
 --- @hash [0x950A154B8DAB6185](https://docs.fivem.net/natives/?_0x950A154B8DAB6185)
---- @param p0 string (char*)
---- @param p1 Entity
+--- @param audioName string (char*)
+--- @param entity Entity
 --- @return void
---- @overload fun(p0: string, p1: Entity): void
+--- @overload fun(audioName: string, entity: Entity): void
 --- @deprecated
-function N_0x950a154b8dab6185(p0, p1) end
+function N_0x950a154b8dab6185(audioName, entity) end
+
+    
+--- # New Name: InitSynchSceneAudioWithEntity
+--- InitSynchSceneAudioWithEntity
+---
+--- @hash [0x950A154B8DAB6185](https://docs.fivem.net/natives/?_0x950A154B8DAB6185)
+--- @param audioName string (char*)
+--- @param entity Entity
+--- @return void
+--- @overload fun(audioName: string, entity: Entity): void
+--- @deprecated
+function SetSynchronizedAudioEventPositionThisFrame(audioName, entity) end
 
     
 --- Sets the ped so they sound drunk
@@ -3121,13 +3092,15 @@ function IsHornActive(vehicle) end
 function PrepareAlarm(alarmName) end
 
     
---- InterruptConversation
+--- Handles conversation interrupts, using the code-side system for improved timing and to minimize unfriendly logic interactions.
 ---
 --- @hash [0xA018A12E5C5C2FA6](https://docs.fivem.net/natives/?_0xA018A12E5C5C2FA6)
---- @param p0 any
---- @return any, any
---- @overload fun(p0: any): any, any
-function InterruptConversation(p0) end
+--- @param interrupterPed Ped
+--- @param context string (char*)
+--- @param voiceName string (char*)
+--- @return void
+--- @overload fun(interrupterPed: Ped, context: string, voiceName: string): void
+function InterruptConversation(interrupterPed, context, voiceName) end
 
     
 --- IsMusicOneshotPlaying
@@ -4109,16 +4082,30 @@ function IsMobileInterferenceActive() end
 function N_0xc8b1b2425604cdd0() end
 
     
---- N_0xc8ede9bdbccba6d4
+--- InitSynchSceneAudioWithPosition
 ---
 --- @hash [0xC8EDE9BDBCCBA6D4](https://docs.fivem.net/natives/?_0xC8EDE9BDBCCBA6D4)
---- @param p0 any
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
+--- @param audioName string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
 --- @return void
---- @overload fun(p1: number, p2: number, p3: number): any
-function N_0xc8ede9bdbccba6d4(p0, p1, p2, p3) end
+--- @overload fun(audioName: string, x: number, y: number, z: number): void
+function InitSynchSceneAudioWithPosition(audioName, x, y, z) end
+
+    
+--- # New Name: InitSynchSceneAudioWithPosition
+--- InitSynchSceneAudioWithPosition
+---
+--- @hash [0xC8EDE9BDBCCBA6D4](https://docs.fivem.net/natives/?_0xC8EDE9BDBCCBA6D4)
+--- @param audioName string (char*)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return void
+--- @overload fun(audioName: string, x: number, y: number, z: number): void
+--- @deprecated
+function N_0xc8ede9bdbccba6d4(audioName, x, y, z) end
 
     
 --- ```

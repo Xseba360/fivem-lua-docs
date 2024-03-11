@@ -23,31 +23,31 @@ function SetRoadsBackToOriginalInAngledArea(x1, y1, z1, x2, y2, z2, width) end
 --- GetNumNavmeshesExistingInArea
 ---
 --- @hash [0x01708E8DD3FF8C65](https://docs.fivem.net/natives/?_0x01708E8DD3FF8C65)
---- @param p0 number (float)
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @param p5 number (float)
+--- @param posMinX number (float)
+--- @param posMinY number (float)
+--- @param posMinZ number (float)
+--- @param posMaxX number (float)
+--- @param posMaxY number (float)
+--- @param posMaxZ number (float)
 --- @return number
---- @overload fun(p0: number, p1: number, p2: number, p3: number, p4: number, p5: number): number
-function GetNumNavmeshesExistingInArea(p0, p1, p2, p3, p4, p5) end
+--- @overload fun(posMinX: number, posMinY: number, posMinZ: number, posMaxX: number, posMaxY: number, posMaxZ: number): number
+function GetNumNavmeshesExistingInArea(posMinX, posMinY, posMinZ, posMaxX, posMaxY, posMaxZ) end
 
     
 --- # New Name: GetNumNavmeshesExistingInArea
 --- GetNumNavmeshesExistingInArea
 ---
 --- @hash [0x01708E8DD3FF8C65](https://docs.fivem.net/natives/?_0x01708E8DD3FF8C65)
---- @param p0 number (float)
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @param p5 number (float)
+--- @param posMinX number (float)
+--- @param posMinY number (float)
+--- @param posMinZ number (float)
+--- @param posMaxX number (float)
+--- @param posMaxY number (float)
+--- @param posMaxZ number (float)
 --- @return number
---- @overload fun(p0: number, p1: number, p2: number, p3: number, p4: number, p5: number): number
+--- @overload fun(posMinX: number, posMinY: number, posMinZ: number, posMaxX: number, posMaxY: number, posMaxZ: number): number
 --- @deprecated
-function N_0x01708e8dd3ff8c65(p0, p1, p2, p3, p4, p5) end
+function N_0x01708e8dd3ff8c65(posMinX, posMinY, posMinZ, posMaxX, posMaxY, posMaxZ) end
 
     
 --- ```
@@ -138,18 +138,18 @@ function N_0x0eaeb0db4b132399(p0) end
 --- UpdateNavmeshBlockingObject
 ---
 --- @hash [0x109E99373F290687](https://docs.fivem.net/natives/?_0x109E99373F290687)
---- @param p0 any
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @param p5 number (float)
---- @param p6 number (float)
---- @param p7 number (float)
---- @param p8 any
+--- @param object Object
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param scaleX number (float)
+--- @param scaleY number (float)
+--- @param scaleZ number (float)
+--- @param heading number (float)
+--- @param flags number (int)
 --- @return void
---- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: number, p5: number, p6: number, p7: number, p8: any): void
-function UpdateNavmeshBlockingObject(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
+--- @overload fun(object: Object, posX: number, posY: number, posZ: number, scaleX: number, scaleY: number, scaleZ: number, heading: number, flags: number): void
+function UpdateNavmeshBlockingObject(object, posX, posY, posZ, scaleX, scaleY, scaleZ, heading, flags) end
 
     
 --- ```
@@ -562,19 +562,20 @@ function GetNthClosestVehicleNodeFavourDirection(x, y, z, desiredX, desiredY, de
 function RemoveNavmeshBlockingObject(p0) end
 
     
---- DisableNavmeshInArea
+--- Use this if you want to completely disable a large area of navmesh.
+--- For smaller areas, use [`ADD_NAVMESH_BLOCKING_OBJECT`](https://docs.fivem.net/natives/?_0xFCD5C8E06E502F5A) instead.
 ---
 --- @hash [0x4C8872D8CDBE1B8B](https://docs.fivem.net/natives/?_0x4C8872D8CDBE1B8B)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @param p4 any
---- @param p5 any
---- @param p6 any
+--- @param posMinX number (float)
+--- @param posMinY number (float)
+--- @param posMinZ number (float)
+--- @param posMaxX number (float)
+--- @param posMaxY number (float)
+--- @param posMaxZ number (float)
+--- @param bDisable boolean
 --- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any, p6: any): void
-function DisableNavmeshInArea(p0, p1, p2, p3, p4, p5, p6) end
+--- @overload fun(posMinX: number, posMinY: number, posMinZ: number, posMaxX: number, posMaxY: number, posMaxZ: number, bDisable: boolean): void
+function DisableNavmeshInArea(posMinX, posMinY, posMinZ, posMaxX, posMaxY, posMaxZ, bDisable) end
 
     
 --- ```
@@ -1221,7 +1222,17 @@ function GenerateDirectionsToCoord(x, y, z, p3) end
     
 --- Creates a navmesh blocking object, vehicles will avoid driving through this area.
 --- 
---- Only 32 blocking objects may exist at a given time and must be manually managed. See [`REMOVE_NAVMESH_BLOCKING_OBJECT`](https://docs.fivem.net/natives/?_0x46399A7895957C0E) and [onResourceStop](https://docs.fivem.net/docs/scripting-reference/events/list/onResourceStop/)
+--- Only 32 blocking objects may exist at a given time and must be manually managed. See [`REMOVE_NAVMESH_BLOCKING_OBJECT`](https://docs.fivem.net/natives/?_0x46399A7895957C0E) and [`onResourceStop`](https://docs.fivem.net/docs/scripting-reference/events/list/onResourceStop/)
+--- 
+--- ```
+--- enum eBlockingObjectFlags {
+---     BLOCKING_OBJECT_DEFAULT = 0,      // Default Flag
+---     BLOCKING_OBJECT_WANDERPATH = 1,   // Blocking object will block wander paths
+---     BLOCKING_OBJECT_SHORTESTPATH = 2, // Blocking object will block (regular) shortest-paths
+---     BLOCKING_OBJECT_FLEEPATH = 4,     // Blocking object will block flee paths
+---     BLOCKING_OBJECT_ALLPATHS = 7,     // Blocking object will block all paths
+--- }
+--- ```
 ---
 --- @hash [0xFCD5C8E06E502F5A](https://docs.fivem.net/natives/?_0xFCD5C8E06E502F5A)
 --- @param x number (float)
@@ -1231,11 +1242,11 @@ function GenerateDirectionsToCoord(x, y, z, p3) end
 --- @param length number (float)
 --- @param height number (float)
 --- @param heading number (float)
---- @param p7 boolean
---- @param p8 any
+--- @param bPermanent boolean
+--- @param flags number (int)
 --- @return any
---- @overload fun(x: number, y: number, z: number, width: number, length: number, height: number, heading: number, p7: boolean, p8: any): any
-function AddNavmeshBlockingObject(x, y, z, width, length, height, heading, p7, p8) end
+--- @overload fun(x: number, y: number, z: number, width: number, length: number, height: number, heading: number, bPermanent: boolean, flags: number): any
+function AddNavmeshBlockingObject(x, y, z, width, length, height, heading, bPermanent, flags) end
 
     
 --- ```

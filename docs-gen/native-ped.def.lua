@@ -1134,22 +1134,22 @@ function N_0x1a330d297aac6bc1(ped, p1) end
 function SetAiWeaponDamageModifier(value) end
 
     
---- AddScenarioBlockingArea
+--- Sets an area where scenarios are blocked
 ---
 --- @hash [0x1B5C85C612E5256E](https://docs.fivem.net/natives/?_0x1B5C85C612E5256E)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param p6 boolean
---- @param p7 boolean
---- @param p8 boolean
---- @param p9 boolean
+--- @param posMinX number (float)
+--- @param posMinY number (float)
+--- @param posMinZ number (float)
+--- @param posMaxX number (float)
+--- @param posMaxY number (float)
+--- @param posMaxZ number (float)
+--- @param network boolean
+--- @param cancelActive boolean
+--- @param blockPeds boolean
+--- @param blockVehicles boolean
 --- @return number
---- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, p6: boolean, p7: boolean, p8: boolean, p9: boolean): number
-function AddScenarioBlockingArea(x1, y1, z1, x2, y2, z2, p6, p7, p8, p9) end
+--- @overload fun(posMinX: number, posMinY: number, posMinZ: number, posMaxX: number, posMaxY: number, posMaxZ: number, network: boolean, cancelActive: boolean, blockPeds: boolean, blockVehicles: boolean): number
+function AddScenarioBlockingArea(posMinX, posMinY, posMinZ, posMaxX, posMaxY, posMaxZ, network, cancelActive, blockPeds, blockVehicles) end
 
     
 --- IsPedUsingScenario
@@ -1936,11 +1936,11 @@ function N_0x2f3c3d9f50681de4(p0, p1) end
 --- RemoveScenarioBlockingArea
 ---
 --- @hash [0x31D16B74C6E29D66](https://docs.fivem.net/natives/?_0x31D16B74C6E29D66)
---- @param p0 any
---- @param p1 boolean
+--- @param scenarioBlockingIndex number (int)
+--- @param bNetwork boolean
 --- @return void
---- @overload fun(p0: any, p1: boolean): void
-function RemoveScenarioBlockingArea(p0, p1) end
+--- @overload fun(scenarioBlockingIndex: number, bNetwork: boolean): void
+function RemoveScenarioBlockingArea(scenarioBlockingIndex, bNetwork) end
 
     
 --- ```
@@ -5531,14 +5531,14 @@ function GetPedParachuteState(ped) end
 function SetPedVisualFieldMinElevationAngle(ped, angle) end
 
     
---- SetScenarioPedDensityMultiplierThisFrame
+--- Set the number of scenario peds on the entire map
 ---
 --- @hash [0x7A556143A1C03898](https://docs.fivem.net/natives/?_0x7A556143A1C03898)
---- @param p0 number (float)
---- @param p1 number (float)
+--- @param interiorMult number (float)
+--- @param exteriorMult number (float)
 --- @return void
---- @overload fun(p0: number, p1: number): void
-function SetScenarioPedDensityMultiplierThisFrame(p0, p1) end
+--- @overload fun(interiorMult: number, exteriorMult: number): void
+function SetScenarioPedDensityMultiplierThisFrame(interiorMult, exteriorMult) end
 
     
 --- ```
@@ -9663,30 +9663,36 @@ function N_0xec4b4b3b9908052a(ped, unk) end
 function IsPedOnSpecificVehicle(ped, vehicle) end
 
     
---- SetPedShouldPlayDirectedScenarioExit
+--- When this ped receives its next script task, they will exit from their scenario using the normal scenario exit.
+--- Exiting the scenario may take several frames while the ped is playing the exit animation.
+--- If the ped is not currently using a scenario at the time of the command or 0,0,0 is specified as the reaction position,
+--- then the ped will by default attempt to direct their exit forwards.
 ---
 --- @hash [0xEC6935EBE0847B90](https://docs.fivem.net/natives/?_0xEC6935EBE0847B90)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @return any
---- @overload fun(p0: any, p1: any, p2: any, p3: any): any
-function SetPedShouldPlayDirectedScenarioExit(p0, p1, p2, p3) end
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return boolean
+--- @overload fun(ped: Ped, x: number, y: number, z: number): boolean
+function SetPedShouldPlayDirectedScenarioExit(ped, x, y, z) end
 
     
 --- # New Name: SetPedShouldPlayDirectedScenarioExit
---- SetPedShouldPlayDirectedScenarioExit
+--- When this ped receives its next script task, they will exit from their scenario using the normal scenario exit.
+--- Exiting the scenario may take several frames while the ped is playing the exit animation.
+--- If the ped is not currently using a scenario at the time of the command or 0,0,0 is specified as the reaction position,
+--- then the ped will by default attempt to direct their exit forwards.
 ---
 --- @hash [0xEC6935EBE0847B90](https://docs.fivem.net/natives/?_0xEC6935EBE0847B90)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @return any
---- @overload fun(p0: any, p1: any, p2: any, p3: any): any
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return boolean
+--- @overload fun(ped: Ped, x: number, y: number, z: number): boolean
 --- @deprecated
-function N_0xec6935ebe0847b90(p0, p1, p2, p3) end
+function N_0xec6935ebe0847b90(ped, x, y, z) end
 
     
 --- SetPedDriveByClipsetOverride

@@ -1490,8 +1490,13 @@ function CanUseWeaponOnParachute(weaponHash) end
 function GiveWeaponToPed(ped, weaponHash, ammoCount, isHidden, bForceInHand) end
 
     
---- GetWeapontypeGroup
----
+--- Gets and returns the hash of the group of the specified weapon (group names can be found/changed under "Group" in the weapons' meta file).
+--- Note that the group is **not** the same as the location on the weapon wheel.
+--- @usage print(GetWeapontypeGroup(`WEAPON_PISTOL`)) -- Outputs the hash of GROUP_PISTOL
+--- print(GetWeapontypeGroup(`WEAPON_RPG`)) -- Outputs the hash of GROUP_HEAVY
+--- print(GetWeapontypeGroup(`WEAPON_SNOWBALL`)) -- Outputs the hash of GROUP_THROWN
+--- print(GetWeapontypeGroup(`WEAPON_MUSKET`)) -- Outputs the hash of GROUP_SNIPER
+--- print(GetWeapontypeGroup(GetSelectedPedWeapon(PlayerPedId()))) -- Outputs the hash of the currently selected weapo
 --- @hash [0xC3287EE3050FB74C](https://docs.fivem.net/natives/?_0xC3287EE3050FB74C)
 --- @param weaponHash Hash
 --- @return Hash

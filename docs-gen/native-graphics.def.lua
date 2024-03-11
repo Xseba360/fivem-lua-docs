@@ -5479,8 +5479,9 @@ function DestroyTrackedPoint(point) end
 function N_0xb2ebe8cbc58b90e9() end
 
     
---- ```
---- decal types:  
+--- Places a decal into the world
+--- 
+--- ```cs
 --- public enum DecalTypes  
 --- {  
 ---     splatters_blood = 1010,  
@@ -5543,12 +5544,12 @@ function N_0xb2ebe8cbc58b90e9() end
 --- @param posX number (float)
 --- @param posY number (float)
 --- @param posZ number (float)
---- @param p4 number (float)
---- @param p5 number (float)
---- @param p6 number (float)
---- @param p7 number (float)
---- @param p8 number (float)
---- @param p9 number (float)
+--- @param dirX number (float)
+--- @param dirY number (float)
+--- @param dirZ number (float)
+--- @param sideX number (float)
+--- @param sideY number (float)
+--- @param sideZ number (float)
 --- @param width number (float)
 --- @param height number (float)
 --- @param rCoef number (float)
@@ -5556,12 +5557,12 @@ function N_0xb2ebe8cbc58b90e9() end
 --- @param bCoef number (float)
 --- @param opacity number (float)
 --- @param timeout number (float)
---- @param p17 boolean
---- @param p18 boolean
---- @param p19 boolean
+--- @param isLongRange boolean
+--- @param isDynamic boolean
+--- @param useComplexColn boolean
 --- @return number
---- @overload fun(decalType: number, posX: number, posY: number, posZ: number, p4: number, p5: number, p6: number, p7: number, p8: number, p9: number, width: number, height: number, rCoef: number, gCoef: number, bCoef: number, opacity: number, timeout: number, p17: boolean, p18: boolean, p19: boolean): number
-function AddDecal(decalType, posX, posY, posZ, p4, p5, p6, p7, p8, p9, width, height, rCoef, gCoef, bCoef, opacity, timeout, p17, p18, p19) end
+--- @overload fun(decalType: number, posX: number, posY: number, posZ: number, dirX: number, dirY: number, dirZ: number, sideX: number, sideY: number, sideZ: number, width: number, height: number, rCoef: number, gCoef: number, bCoef: number, opacity: number, timeout: number, isLongRange: boolean, isDynamic: boolean, useComplexColn: boolean): number
+function AddDecal(decalType, posX, posY, posZ, dirX, dirY, dirZ, sideX, sideY, sideZ, width, height, rCoef, gCoef, bCoef, opacity, timeout, isLongRange, isDynamic, useComplexColn) end
 
     
 --- ```
