@@ -1998,16 +1998,52 @@ function CanBoatBeAnchored(vehicle) end
 function N_0x26d99d5a82fd18e8(p0) end
 
     
+--- Prevents a vehicle from exploding upon sustaining body damage from physical collisions. This can be used to increase the durability of vehicles in high-impact scenarios, such as races or combat situations, by preventing them from being destroyed due to collision-induced body damage.
+--- 
+--- For helicopters, you might want to check [`SET_DISABLE_HELI_EXPLODE_FROM_BODY_DAMAGE`](https://docs.fivem.net/natives/?_0xEDBC8405B3895CC9) instead.
+--- 
 --- ```
 --- NativeDB Introduced: v1290
 --- ```
----
+--- @usage -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle the player is currently in
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Disable explosion from body damage on collision for the vehicle
+--- SetDisableExplodeFromBodyDamageOnCollision(vehicle, true
 --- @hash [0x26E13D440E7F6064](https://docs.fivem.net/natives/?_0x26E13D440E7F6064)
 --- @param vehicle Vehicle
---- @param value number (float)
+--- @param disableExplode boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, value: number): void
-function N_0x26e13d440e7f6064(vehicle, value) end
+--- @overload fun(vehicle: Vehicle, disableExplode: boolean): void
+function SetDisableExplodeFromBodyDamageOnCollision(vehicle, disableExplode) end
+
+    
+--- # New Name: SetDisableExplodeFromBodyDamageOnCollision
+--- Prevents a vehicle from exploding upon sustaining body damage from physical collisions. This can be used to increase the durability of vehicles in high-impact scenarios, such as races or combat situations, by preventing them from being destroyed due to collision-induced body damage.
+--- 
+--- For helicopters, you might want to check [`SET_DISABLE_HELI_EXPLODE_FROM_BODY_DAMAGE`](https://docs.fivem.net/natives/?_0xEDBC8405B3895CC9) instead.
+--- 
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+--- @usage -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle the player is currently in
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Disable explosion from body damage on collision for the vehicle
+--- SetDisableExplodeFromBodyDamageOnCollision(vehicle, true
+--- @hash [0x26E13D440E7F6064](https://docs.fivem.net/natives/?_0x26E13D440E7F6064)
+--- @param vehicle Vehicle
+--- @param disableExplode boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, disableExplode: boolean): void
+--- @deprecated
+function N_0x26e13d440e7f6064(vehicle, disableExplode) end
 
     
 --- ```
@@ -13413,14 +13449,54 @@ function SetCargobobPickupMagnetPullStrength(cargobob, p1) end
 function N_0xed8286f71a819baa(cargobob, p1) end
 
     
---- N_0xedbc8405b3895cc9
----
+--- Prevents a helicopter from exploding due to relatively minor body damage. This native can be particularly useful in gameplay scenarios or missions where helicopters are subject to damage that would not realistically cause an explosion, ensuring they remain operational unless subjected to more significant damage.
+--- 
+--- ```
+--- NativeDB Introduced: v1103
+--- ```
+--- @usage -- Retrieve the player ped.
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the helicopter the player is currently in.
+--- local helicopter = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- If the player is not in a helicopter, or the vehicle is not a helicopter, return.
+--- if (helicopter == 0) or (not IsThisModelAHeli(GetEntityModel(helicopter))) then return end
+--- 
+--- -- Disable explosion from body damage for the helicopter.
+--- SetDisableHeliExplodeFromBodyDamage(helicopter, true
 --- @hash [0xEDBC8405B3895CC9](https://docs.fivem.net/natives/?_0xEDBC8405B3895CC9)
---- @param p0 any
---- @param p1 any
+--- @param helicopter Vehicle
+--- @param disableExplode boolean
 --- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0xedbc8405b3895cc9(p0, p1) end
+--- @overload fun(helicopter: Vehicle, disableExplode: boolean): void
+function SetDisableHeliExplodeFromBodyDamage(helicopter, disableExplode) end
+
+    
+--- # New Name: SetDisableHeliExplodeFromBodyDamage
+--- Prevents a helicopter from exploding due to relatively minor body damage. This native can be particularly useful in gameplay scenarios or missions where helicopters are subject to damage that would not realistically cause an explosion, ensuring they remain operational unless subjected to more significant damage.
+--- 
+--- ```
+--- NativeDB Introduced: v1103
+--- ```
+--- @usage -- Retrieve the player ped.
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the helicopter the player is currently in.
+--- local helicopter = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- If the player is not in a helicopter, or the vehicle is not a helicopter, return.
+--- if (helicopter == 0) or (not IsThisModelAHeli(GetEntityModel(helicopter))) then return end
+--- 
+--- -- Disable explosion from body damage for the helicopter.
+--- SetDisableHeliExplodeFromBodyDamage(helicopter, true
+--- @hash [0xEDBC8405B3895CC9](https://docs.fivem.net/natives/?_0xEDBC8405B3895CC9)
+--- @param helicopter Vehicle
+--- @param disableExplode boolean
+--- @return void
+--- @overload fun(helicopter: Vehicle, disableExplode: boolean): void
+--- @deprecated
+function N_0xedbc8405b3895cc9(helicopter, disableExplode) end
 
     
 --- ```

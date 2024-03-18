@@ -3865,12 +3865,25 @@ function NetworkCheckDataManagerSucceededForHandle(friendDataIndex, networkHandl
 function N_0x44b37cdcae765aae(friendDataIndex, networkHandle) end
 
     
---- N_0x45a83257ed02d9bc
+--- Forces the "Are you sure you want to quit Grand Theft Auto V?" warning message (Same as when you Alt+F4) to show.
+--- Doesn't work in singleplayer.
 ---
 --- @hash [0x45A83257ED02D9BC](https://docs.fivem.net/natives/?_0x45A83257ED02D9BC)
 ---
 --- @return void
 --- @overload fun(): void
+function NetworkQuitMpToDesktop() end
+
+    
+--- # New Name: NetworkQuitMpToDesktop
+--- Forces the "Are you sure you want to quit Grand Theft Auto V?" warning message (Same as when you Alt+F4) to show.
+--- Doesn't work in singleplayer.
+---
+--- @hash [0x45A83257ED02D9BC](https://docs.fivem.net/natives/?_0x45A83257ED02D9BC)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
 function N_0x45a83257ed02d9bc() end
 
     

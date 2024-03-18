@@ -4109,7 +4109,7 @@ function N_0xb8f87ead7533b176(amplitude) end
 function SetCreditsActive(toggle) end
 
     
---- SetThisScriptCanRemoveBlipsCreatedByAnyScript
+--- Normally, blips can only be removed by the script or resource that created them. However, this native function allows a script to bypass this logic and remove blips from any script.
 ---
 --- @hash [0xB98236CAAECEF897](https://docs.fivem.net/natives/?_0xB98236CAAECEF897)
 --- @param toggle boolean
@@ -5347,7 +5347,8 @@ function N_0xe532ec1a63231b4f(p0, p1) end
 function IsPointObscuredByAMissionEntity(p0, p1, p2, p3, p4, p5, p6) end
 
     
---- In singleplayer it does exactly what the name implies. In FiveM / GTA:Online it shows `Disconnecting from GTA Online` HUD and then quits the game.
+--- In singleplayer it does exactly what the name implies. In FiveM / GTA:Online it shows the `Disconnecting from GTA Online` warning screen message and quits the game.
+--- After quitting, the game process is started again (as the name implies).
 ---
 --- @hash [0xE574A662ACAEFBB1](https://docs.fivem.net/natives/?_0xE574A662ACAEFBB1)
 ---
@@ -5357,7 +5358,8 @@ function RestartGame() end
 
     
 --- # New Name: RestartGame
---- In singleplayer it does exactly what the name implies. In FiveM / GTA:Online it shows `Disconnecting from GTA Online` HUD and then quits the game.
+--- In singleplayer it does exactly what the name implies. In FiveM / GTA:Online it shows the `Disconnecting from GTA Online` warning screen message and quits the game.
+--- After quitting, the game process is started again (as the name implies).
 ---
 --- @hash [0xE574A662ACAEFBB1](https://docs.fivem.net/natives/?_0xE574A662ACAEFBB1)
 ---
@@ -5365,6 +5367,18 @@ function RestartGame() end
 --- @overload fun(): void
 --- @deprecated
 function N_0xe574a662acaefbb1() end
+
+    
+--- # New Name: RestartGame
+--- In singleplayer it does exactly what the name implies. In FiveM / GTA:Online it shows the `Disconnecting from GTA Online` warning screen message and quits the game.
+--- After quitting, the game process is started again (as the name implies).
+---
+--- @hash [0xE574A662ACAEFBB1](https://docs.fivem.net/natives/?_0xE574A662ACAEFBB1)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function RestartGame() end
 
     
 --- GetBenchmarkTime
@@ -5575,14 +5589,34 @@ function N_0xeb4a0c2d56441717(dispatchService) end
 function GetNumberOfDispatchedUnitsForPlayer(dispatchService) end
 
     
---- ```
---- Exits the game and downloads a fresh social club update on next restart.  
---- ```
+--- Quits the game.
 ---
 --- @hash [0xEB6891F03362FB12](https://docs.fivem.net/natives/?_0xEB6891F03362FB12)
 ---
 --- @return void
 --- @overload fun(): void
+function QuitGame() end
+
+    
+--- # New Name: QuitGame
+--- Quits the game.
+---
+--- @hash [0xEB6891F03362FB12](https://docs.fivem.net/natives/?_0xEB6891F03362FB12)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function N_0xeb6891f03362fb12() end
+
+    
+--- # New Name: QuitGame
+--- Quits the game.
+---
+--- @hash [0xEB6891F03362FB12](https://docs.fivem.net/natives/?_0xEB6891F03362FB12)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
 function ForceSocialClubUpdate() end
 
     
