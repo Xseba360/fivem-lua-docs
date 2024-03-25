@@ -165,37 +165,14 @@ function N_0x0350e7e17ba767d0(vehicle, value) end
 function N_0xcda42c4bb9bde779(vehicle, value) end
 
     
---- ```
---- Example:
---- This will start the alarm at Fort Zancudo.
---- AUDIO::START_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 1);
---- First parameter (char) is the name of the alarm.
---- Second parameter (bool) is unknown, it does not seem to make a difference if this one is 0 or 1.
---- ----------
---- It DOES make a difference but it has to do with the duration or something I dunno yet
---- ----------
----  Found in the b617d scripts:
----  AUDIO::START_ALARM("AGENCY_HEIST_FIB_TOWER_ALARMS", 0);
----  AUDIO::START_ALARM("AGENCY_HEIST_FIB_TOWER_ALARMS_UPPER", 1);
----  AUDIO::START_ALARM("AGENCY_HEIST_FIB_TOWER_ALARMS_UPPER_B", 0);
----  AUDIO::START_ALARM("BIG_SCORE_HEIST_VAULT_ALARMS", a_0);
----  AUDIO::START_ALARM("FBI_01_MORGUE_ALARMS", 1);
----  AUDIO::START_ALARM("FIB_05_BIOTECH_LAB_ALARMS", 0);
----  AUDIO::START_ALARM("JEWEL_STORE_HEIST_ALARMS", 0);
----  AUDIO::START_ALARM("PALETO_BAY_SCORE_ALARM", 1);
----  AUDIO::START_ALARM("PALETO_BAY_SCORE_CHICKEN_FACTORY_ALARM", 0);
----  AUDIO::START_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 1);
----  AUDIO::START_ALARM("PORT_OF_LS_HEIST_SHIP_ALARMS", 0);
----  AUDIO::START_ALARM("PRISON_ALARMS", 0);
----  AUDIO::START_ALARM("PROLOGUE_VAULT_ALARMS", 0);
---- ```
+--- You should call [PREPARE_ALARM](https://docs.fivem.net/natives/?_0x9D74AE343DB65533) and wait for its value to be true before using this
 ---
 --- @hash [0x0355EF116C4C97B2](https://docs.fivem.net/natives/?_0x0355EF116C4C97B2)
 --- @param alarmName string (char*)
---- @param p2 boolean
+--- @param skipStartup boolean
 --- @return void
---- @overload fun(alarmName: string, p2: boolean): void
-function StartAlarm(alarmName, p2) end
+--- @overload fun(alarmName: string, skipStartup: boolean): void
+function StartAlarm(alarmName, skipStartup) end
 
     
 --- SetPortalSettingsOverride
@@ -837,7 +814,7 @@ function ClearAmbientZoneState(zoneName, forceUpdate) end
 function IsAlarmPlaying(alarmName) end
 
     
---- StartPreloadedConversation
+--- For use with [PRELOAD_SCRIPT_CONVERSATION](https://docs.fivem.net/natives/?_0x3B3CAD6166916D87) and [GET_IS_PRELOADED_CONVERSATION_READY](https://docs.fivem.net/natives/?_0xE73364DB90778FFA)
 ---
 --- @hash [0x23641AFE870AF385](https://docs.fivem.net/natives/?_0x23641AFE870AF385)
 ---
@@ -849,45 +826,51 @@ function StartPreloadedConversation() end
 --- StartScriptPhoneConversation
 ---
 --- @hash [0x252E5F915EABB675](https://docs.fivem.net/natives/?_0x252E5F915EABB675)
---- @param p0 boolean
---- @param p1 boolean
+--- @param displaySubtitles boolean
+--- @param addToBriefScreen boolean
 --- @return void
---- @overload fun(p0: boolean, p1: boolean): void
-function StartScriptPhoneConversation(p0, p1) end
+--- @overload fun(displaySubtitles: boolean, addToBriefScreen: boolean): void
+function StartScriptPhoneConversation(displaySubtitles, addToBriefScreen) end
 
     
---- ```
---- Enables/disables ped's "quiet" footstep sound.
---- ```
---- 
 --- ```
 --- NativeDB Introduced: v1493
 --- ```
 ---
 --- @hash [0x29DA3CA8D8B2692D](https://docs.fivem.net/natives/?_0x29DA3CA8D8B2692D)
 --- @param ped Ped
---- @param toggle boolean
+--- @param enabled boolean
 --- @return void
---- @overload fun(ped: Ped, toggle: boolean): void
-function SetPedAudioFootstepQuiet(ped, toggle) end
+--- @overload fun(ped: Ped, enabled: boolean): void
+function SetPedClothEventsEnabled(ped, enabled) end
 
     
---- # New Name: SetPedAudioFootstepQuiet
---- ```
---- Enables/disables ped's "quiet" footstep sound.
---- ```
---- 
+--- # New Name: SetPedClothEventsEnabled
 --- ```
 --- NativeDB Introduced: v1493
 --- ```
 ---
 --- @hash [0x29DA3CA8D8B2692D](https://docs.fivem.net/natives/?_0x29DA3CA8D8B2692D)
 --- @param ped Ped
---- @param toggle boolean
+--- @param enabled boolean
 --- @return void
---- @overload fun(ped: Ped, toggle: boolean): void
+--- @overload fun(ped: Ped, enabled: boolean): void
 --- @deprecated
-function N_0x29da3ca8d8b2692d(ped, toggle) end
+function N_0x29da3ca8d8b2692d(ped, enabled) end
+
+    
+--- # New Name: SetPedClothEventsEnabled
+--- ```
+--- NativeDB Introduced: v1493
+--- ```
+---
+--- @hash [0x29DA3CA8D8B2692D](https://docs.fivem.net/natives/?_0x29DA3CA8D8B2692D)
+--- @param ped Ped
+--- @param enabled boolean
+--- @return void
+--- @overload fun(ped: Ped, enabled: boolean): void
+--- @deprecated
+function SetPedAudioFootstepQuiet(ped, enabled) end
 
     
 --- ```
@@ -999,10 +982,10 @@ function GetNetworkIdFromSoundId(soundId) end
 --- StopAllAlarms
 ---
 --- @hash [0x2F794A877ADD4C92](https://docs.fivem.net/natives/?_0x2F794A877ADD4C92)
---- @param stop boolean
+--- @param instantStop boolean
 --- @return void
---- @overload fun(stop: boolean): void
-function StopAllAlarms(stop) end
+--- @overload fun(instantStop: boolean): void
+function StopAllAlarms(instantStop) end
 
     
 --- This native has a new argument on newer game builds:
@@ -2232,13 +2215,13 @@ function PlaySoundFrontend(soundId, audioName, audioRef, p3) end
 --- StartScriptConversation
 ---
 --- @hash [0x6B17C62C9635D2DC](https://docs.fivem.net/natives/?_0x6B17C62C9635D2DC)
---- @param p0 boolean
---- @param p1 boolean
---- @param p2 boolean
---- @param p3 boolean
+--- @param displaySubtitles boolean
+--- @param addToBriefScreen boolean
+--- @param cloneConversation boolean
+--- @param interruptible boolean
 --- @return void
---- @overload fun(p0: boolean, p1: boolean, p2: boolean, p3: boolean): void
-function StartScriptConversation(p0, p1, p2, p3) end
+--- @overload fun(displaySubtitles: boolean, addToBriefScreen: boolean, cloneConversation: boolean, interruptible: boolean): void
+function StartScriptConversation(displaySubtitles, addToBriefScreen, cloneConversation, interruptible) end
 
     
 --- Stops a ped's ringtone from playing
@@ -3228,20 +3211,14 @@ function N_0xa097ab275061fb21() end
 function IsRadioRetuning() end
 
     
---- ```
---- Example:  
---- This will stop the alarm at Fort Zancudo.  
---- AUDIO::STOP_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 1);  
---- First parameter (char) is the name of the alarm.  
---- Second parameter (bool) has to be true (1) to have any effect.  
---- ```
+--- StopAlarm
 ---
 --- @hash [0xA1CADDCD98415A41](https://docs.fivem.net/natives/?_0xA1CADDCD98415A41)
 --- @param alarmName string (char*)
---- @param toggle boolean
+--- @param instantStop boolean
 --- @return void
---- @overload fun(alarmName: string, toggle: boolean): void
-function StopAlarm(alarmName, toggle) end
+--- @overload fun(alarmName: string, instantStop: boolean): void
+function StopAlarm(alarmName, instantStop) end
 
     
 --- Stops the sound from currently playing, there isn't a way to resume a sound
@@ -3855,10 +3832,10 @@ function StopAudioScenes() end
 ---
 --- @hash [0xBB6F1CAEC68B0BCE](https://docs.fivem.net/natives/?_0xBB6F1CAEC68B0BCE)
 --- @param vehicle Vehicle
---- @param toggle boolean
+--- @param loud boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function SetVehicleRadioLoud(vehicle, toggle) end
+--- @overload fun(vehicle: Vehicle, loud: boolean): void
+function SetVehicleRadioLoud(vehicle, loud) end
 
     
 --- This native had a 4th parameter added in newer game builds
@@ -4577,13 +4554,13 @@ function N_0xddc635d5b3262c56(mode) end
 function IsScriptedConversationLoaded() end
 
     
---- StopAudioScene
+--- Stops the named mixing scene (which was previously started by this script)
 ---
 --- @hash [0xDFE8422B3B94E688](https://docs.fivem.net/natives/?_0xDFE8422B3B94E688)
---- @param scene string (char*)
+--- @param sceneName string (char*)
 --- @return void
---- @overload fun(scene: string): void
-function StopAudioScene(scene) end
+--- @overload fun(sceneName: string): void
+function StopAudioScene(sceneName) end
 
     
 --- ```
@@ -4874,40 +4851,30 @@ function MaxRadioStationIndex() end
     
 --- Overrides the vehicle's startup engine rev sound.
 --- 
---- 2 calls found in the b617d scripts:
---- 
---- ```cpp
---- AUDIO::SET_VEHICLE_STARTUP_REV_SOUND(l_A42, "Franklin_Bike_Rev", "BIG_SCORE_3A_SOUNDS");  
---- AUDIO::SET_VEHICLE_STARTUP_REV_SOUND(l_166, "Trevor_Revs_Off", "PALETO_SCORE_SETUP_SOUNDS");
---- ```
+--- You can reset this with [RESET_VEHICLE_STARTUP_REV_SOUND](https://docs.fivem.net/natives/?_0xD2DCCD8E16E20997)
 ---
 --- @hash [0xF1F8157B8C3F171C](https://docs.fivem.net/natives/?_0xF1F8157B8C3F171C)
 --- @param vehicle Vehicle
---- @param p1 string (char*)
---- @param p2 string (char*)
+--- @param soundName string (char*)
+--- @param setName string (char*)
 --- @return void
---- @overload fun(vehicle: Vehicle, p1: string, p2: string): void
-function SetVehicleStartupRevSound(vehicle, p1, p2) end
+--- @overload fun(vehicle: Vehicle, soundName: string, setName: string): void
+function SetVehicleStartupRevSound(vehicle, soundName, setName) end
 
     
 --- # New Name: SetVehicleStartupRevSound
 --- Overrides the vehicle's startup engine rev sound.
 --- 
---- 2 calls found in the b617d scripts:
---- 
---- ```cpp
---- AUDIO::SET_VEHICLE_STARTUP_REV_SOUND(l_A42, "Franklin_Bike_Rev", "BIG_SCORE_3A_SOUNDS");  
---- AUDIO::SET_VEHICLE_STARTUP_REV_SOUND(l_166, "Trevor_Revs_Off", "PALETO_SCORE_SETUP_SOUNDS");
---- ```
+--- You can reset this with [RESET_VEHICLE_STARTUP_REV_SOUND](https://docs.fivem.net/natives/?_0xD2DCCD8E16E20997)
 ---
 --- @hash [0xF1F8157B8C3F171C](https://docs.fivem.net/natives/?_0xF1F8157B8C3F171C)
 --- @param vehicle Vehicle
---- @param p1 string (char*)
---- @param p2 string (char*)
+--- @param soundName string (char*)
+--- @param setName string (char*)
 --- @return void
---- @overload fun(vehicle: Vehicle, p1: string, p2: string): void
+--- @overload fun(vehicle: Vehicle, soundName: string, setName: string): void
 --- @deprecated
-function N_0xf1f8157b8c3f171c(vehicle, p1, p2) end
+function N_0xf1f8157b8c3f171c(vehicle, soundName, setName) end
 
     
 --- This native allows a scripter to override the current underwater stream.

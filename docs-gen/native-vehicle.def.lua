@@ -1989,13 +1989,52 @@ function GetBoatAnchor(vehicle) end
 function CanBoatBeAnchored(vehicle) end
 
     
---- N_0x26d99d5a82fd18e8
----
+--- Disables the additional physics forces applied to BMX bikes that enable them to perform tricks.
+--- 
+--- ```
+--- NativeDB Introduced: v463
+--- ```
+--- @usage -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the BMX bike the player is currently riding
+--- local bmx = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- If the player is not riding a BMX bike, return
+--- if not IsThisModelABicycle(GetEntityModel(bmx)) then return end
+--- 
+--- -- Disable the extra forces applied to BMX bikes for tricks
+--- SetDisableBmxExtraTrickForces(bmx, true
 --- @hash [0x26D99D5A82FD18E8](https://docs.fivem.net/natives/?_0x26D99D5A82FD18E8)
---- @param p0 any
+--- @param disableExtraTrickForces boolean
 --- @return void
---- @overload fun(p0: any): void
-function N_0x26d99d5a82fd18e8(p0) end
+--- @overload fun(disableExtraTrickForces: boolean): void
+function SetDisableBmxExtraTrickForces(disableExtraTrickForces) end
+
+    
+--- # New Name: SetDisableBmxExtraTrickForces
+--- Disables the additional physics forces applied to BMX bikes that enable them to perform tricks.
+--- 
+--- ```
+--- NativeDB Introduced: v463
+--- ```
+--- @usage -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the BMX bike the player is currently riding
+--- local bmx = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- If the player is not riding a BMX bike, return
+--- if not IsThisModelABicycle(GetEntityModel(bmx)) then return end
+--- 
+--- -- Disable the extra forces applied to BMX bikes for tricks
+--- SetDisableBmxExtraTrickForces(bmx, true
+--- @hash [0x26D99D5A82FD18E8](https://docs.fivem.net/natives/?_0x26D99D5A82FD18E8)
+--- @param disableExtraTrickForces boolean
+--- @return void
+--- @overload fun(disableExtraTrickForces: boolean): void
+--- @deprecated
+function N_0x26d99d5a82fd18e8(disableExtraTrickForces) end
 
     
 --- Prevents a vehicle from exploding upon sustaining body damage from physical collisions. This can be used to increase the durability of vehicles in high-impact scenarios, such as races or combat situations, by preventing them from being destroyed due to collision-induced body damage.
@@ -14125,14 +14164,58 @@ function GetVehicleDoorsLockedForPlayer(vehicle, player) end
 function GetClosestVehicle(x, y, z, radius, modelHash, flags) end
 
     
---- N_0xf78f94d60248c737
----
+--- Queries whether the control panels of a plane are intact. This native is used to determine the operational status of a plane's cockpit controls, which can affect the plane's flyability.
+--- @usage -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the plane the player is currently in.
+--- local plane = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- If the player is not in a plane, return
+--- if (plane == 0) or (not IsThisModelAPlane(GetEntityModel(plane))) then return end
+--- 
+--- -- Check if the plane's control panels are intact
+--- local controlPanelsIntact = ArePlaneControlPanelsIntact(plane, true)
+--- 
+--- if (controlPanelsIntact) then
+---     print("The plane's control panels are intact")
+--- else
+---     print("The plane's control panels are damaged or the plane is destroyed")
+--- en
 --- @hash [0xF78F94D60248C737](https://docs.fivem.net/natives/?_0xF78F94D60248C737)
 --- @param vehicle Vehicle
---- @param p1 boolean
+--- @param checkForZeroHealth boolean
 --- @return boolean
---- @overload fun(vehicle: Vehicle, p1: boolean): boolean
-function N_0xf78f94d60248c737(vehicle, p1) end
+--- @overload fun(vehicle: Vehicle, checkForZeroHealth: boolean): boolean
+function ArePlaneControlPanelsIntact(vehicle, checkForZeroHealth) end
+
+    
+--- # New Name: ArePlaneControlPanelsIntact
+--- Queries whether the control panels of a plane are intact. This native is used to determine the operational status of a plane's cockpit controls, which can affect the plane's flyability.
+--- @usage -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the plane the player is currently in.
+--- local plane = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- If the player is not in a plane, return
+--- if (plane == 0) or (not IsThisModelAPlane(GetEntityModel(plane))) then return end
+--- 
+--- -- Check if the plane's control panels are intact
+--- local controlPanelsIntact = ArePlaneControlPanelsIntact(plane, true)
+--- 
+--- if (controlPanelsIntact) then
+---     print("The plane's control panels are intact")
+--- else
+---     print("The plane's control panels are damaged or the plane is destroyed")
+--- en
+--- @hash [0xF78F94D60248C737](https://docs.fivem.net/natives/?_0xF78F94D60248C737)
+--- @param vehicle Vehicle
+--- @param checkForZeroHealth boolean
+--- @return boolean
+--- @overload fun(vehicle: Vehicle, checkForZeroHealth: boolean): boolean
+--- @deprecated
+function N_0xf78f94d60248c737(vehicle, checkForZeroHealth) end
 
     
 --- ```
