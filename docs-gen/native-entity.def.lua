@@ -1873,11 +1873,11 @@ function SetEntityAlwaysPrerender(entity, toggle) end
 ---
 --- @hash [0xAD738C3085FE7E11](https://docs.fivem.net/natives/?_0xAD738C3085FE7E11)
 --- @param entity Entity
---- @param p1 boolean
---- @param p2 boolean
+--- @param scriptHostObject boolean
+--- @param bGrabFromOtherScript boolean
 --- @return void
---- @overload fun(entity: Entity, p1: boolean, p2: boolean): void
-function SetEntityAsMissionEntity(entity, p1, p2) end
+--- @overload fun(entity: Entity, scriptHostObject: boolean, bGrabFromOtherScript: boolean): void
+function SetEntityAsMissionEntity(entity, scriptHostObject, bGrabFromOtherScript) end
 
     
 --- Delete the specified entity, and invalidate the passed handle (i.e., the in/out argument).
@@ -2342,16 +2342,64 @@ function GetEntitySpeed(entity) end
 function IsEntityVisibleToScript(entity) end
 
     
+--- Configures an entity to either allow or prevent it from being picked up by Cargobobs.
+--- 
 --- ```
 --- NativeDB Introduced: v1180
 --- ```
----
+--- @usage -- This example prevents a entity (in this example the vehicle of the player) from being picked up by any Cargobobs.
+--- 
+--- -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the player's vehicle (cargobob)
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if not DoesEntityExist(vehicle) then
+---     -- If the vehicle does not exist, end the execution of the code here.
+---     return
+--- end
+--- 
+--- -- Prevent the vehicle from being picked up by Cargobobs.
+--- SetPickUpByCargobobDisabled(vehicle, true
 --- @hash [0xD7B80E7C3BEFC396](https://docs.fivem.net/natives/?_0xD7B80E7C3BEFC396)
---- @param p0 any
---- @param p1 any
+--- @param entity Entity
+--- @param toggle boolean
 --- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0xd7b80e7c3befc396(p0, p1) end
+--- @overload fun(entity: Entity, toggle: boolean): void
+function SetPickUpByCargobobDisabled(entity, toggle) end
+
+    
+--- # New Name: SetPickUpByCargobobDisabled
+--- Configures an entity to either allow or prevent it from being picked up by Cargobobs.
+--- 
+--- ```
+--- NativeDB Introduced: v1180
+--- ```
+--- @usage -- This example prevents a entity (in this example the vehicle of the player) from being picked up by any Cargobobs.
+--- 
+--- -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the player's vehicle (cargobob)
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if not DoesEntityExist(vehicle) then
+---     -- If the vehicle does not exist, end the execution of the code here.
+---     return
+--- end
+--- 
+--- -- Prevent the vehicle from being picked up by Cargobobs.
+--- SetPickUpByCargobobDisabled(vehicle, true
+--- @hash [0xD7B80E7C3BEFC396](https://docs.fivem.net/natives/?_0xD7B80E7C3BEFC396)
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+--- @deprecated
+function N_0xd7b80e7c3befc396(entity, toggle) end
 
     
 --- ```

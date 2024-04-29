@@ -304,6 +304,8 @@ function SteerUnlockBias(vehicle, toggle) end
 function GetTrainCarriage(train, trailerNumber) end
 
     
+--- Checks if a Submarine has any air leaks, when there is more than 4 the player will drown.
+--- 
 --- ```
 --- NativeDB Introduced: v2189
 --- ```
@@ -312,6 +314,21 @@ function GetTrainCarriage(train, trailerNumber) end
 --- @param submarine Vehicle
 --- @return number
 --- @overload fun(submarine: Vehicle): number
+function GetSubmarineNumberOfAirLeaks(submarine) end
+
+    
+--- # New Name: GetSubmarineNumberOfAirLeaks
+--- Checks if a Submarine has any air leaks, when there is more than 4 the player will drown.
+--- 
+--- ```
+--- NativeDB Introduced: v2189
+--- ```
+---
+--- @hash [0x093D6DDCA5B8FBAE](https://docs.fivem.net/natives/?_0x093D6DDCA5B8FBAE)
+--- @param submarine Vehicle
+--- @return number
+--- @overload fun(submarine: Vehicle): number
+--- @deprecated
 function GetSubmarineCrushDepthWarningState(submarine) end
 
     
@@ -823,9 +840,17 @@ function N_0x1093408b4b9d1146(vehicle, speed) end
     
 --- Fix a given vehicle.
 --- If the vehicle's engine's broken then you cannot fix it with this native.
---- @usage local localPlayerPed = GetPlayerPed(-1)
---- local localVehicle = GetVehiclePedIsIn(localPlayerPed, false)
---- SetVehicleFixed(localVehicle
+--- @usage -- Get the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle the player is in
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- If the player is not in a vehicle, return
+--- if (vehicle == 0) then return end 
+--- 
+--- -- Fix the vehicle
+--- SetVehicleFixed(vehicle
 --- @hash [0x115722B1B9C14C1C](https://docs.fivem.net/natives/?_0x115722B1B9C14C1C)
 --- @param vehicle Vehicle
 --- @return void
@@ -1446,14 +1471,76 @@ function ForcePlaybackRecordedVehicleUpdate(vehicle, p1) end
 function N_0x1f2e4e06dea8992b(vehicle, p1) end
 
     
---- N_0x1f34b0626c594380
----
+--- Prevents a specified entity from being detached from a Cargobob, even in the event of collisions.
+--- @usage -- This example prevents a specific entity from being detached from a Cargobob, even in the event of collisions.
+--- 
+--- -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the player's vehicle (cargobob)
+--- local cargobob = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Retrieve the model hash of the cargobob.
+--- local cargobobModel = GetEntityModel(cargobob)
+--- 
+--- -- Check if the cargobob exists. If not, terminate the script.
+--- if not DoesEntityExist(cargobob) or GetHashKey("cargobob") ~= cargobobModel then 
+---     -- If the cargobob does not exist, end the execution of the code here.
+---     return 
+--- end
+--- 
+--- local entityID = 15362 -- The entity you want to prevent from being detached from the Cargobob (this is a random entity ID).
+--- 
+--- -- Check if the entity exists; if not, terminate the script.
+--- if not DoesEntityExist(yourEntity) then
+---     return
+--- end
+--- 
+--- -- Prevent the entity from being detached from the Cargobob.
+--- SetCargobobExcludeFromPickupEntity(cargobob, entityID
 --- @hash [0x1F34B0626C594380](https://docs.fivem.net/natives/?_0x1F34B0626C594380)
---- @param p0 any
---- @param p1 any
+--- @param cargobob Vehicle
+--- @param entity Entity
 --- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0x1f34b0626c594380(p0, p1) end
+--- @overload fun(cargobob: Vehicle, entity: Entity): void
+function SetCargobobExcludeFromPickupEntity(cargobob, entity) end
+
+    
+--- # New Name: SetCargobobExcludeFromPickupEntity
+--- Prevents a specified entity from being detached from a Cargobob, even in the event of collisions.
+--- @usage -- This example prevents a specific entity from being detached from a Cargobob, even in the event of collisions.
+--- 
+--- -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the player's vehicle (cargobob)
+--- local cargobob = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Retrieve the model hash of the cargobob.
+--- local cargobobModel = GetEntityModel(cargobob)
+--- 
+--- -- Check if the cargobob exists. If not, terminate the script.
+--- if not DoesEntityExist(cargobob) or GetHashKey("cargobob") ~= cargobobModel then 
+---     -- If the cargobob does not exist, end the execution of the code here.
+---     return 
+--- end
+--- 
+--- local entityID = 15362 -- The entity you want to prevent from being detached from the Cargobob (this is a random entity ID).
+--- 
+--- -- Check if the entity exists; if not, terminate the script.
+--- if not DoesEntityExist(yourEntity) then
+---     return
+--- end
+--- 
+--- -- Prevent the entity from being detached from the Cargobob.
+--- SetCargobobExcludeFromPickupEntity(cargobob, entityID
+--- @hash [0x1F34B0626C594380](https://docs.fivem.net/natives/?_0x1F34B0626C594380)
+--- @param cargobob Vehicle
+--- @param entity Entity
+--- @return void
+--- @overload fun(cargobob: Vehicle, entity: Entity): void
+--- @deprecated
+function N_0x1f34b0626c594380(cargobob, entity) end
 
     
 --- This native is used to simulate a high-speed impact for a vehicle when it collides with a breakable object (frag). It's particularly useful in scripted sequences where a vehicle is required to break through a barrier but might not actually be moving at a sufficient speed to do so realistically. Note that this setting is temporary and will reset after one frame, so it needs to be called every frame for a lasting effect.
@@ -1695,7 +1782,7 @@ function N_0x21973bbf8d17edfa(trackIndex, frequency) end
 function ResetVehicleWheels(vehicle, toggle) end
 
     
---- DeleteScriptVehicleGenerator
+--- Removes a scripted vehicle generator.
 ---
 --- @hash [0x22102C9ABFCF125D](https://docs.fivem.net/natives/?_0x22102C9ABFCF125D)
 --- @param vehicleGenerator number (int)
@@ -2553,14 +2640,84 @@ function N_0x2b6747faa9db9d6b(vehicle, toggle) end
 function GetVehicleLivery(vehicle) end
 
     
---- N_0x2c1d8b3b19e517cc
----
+--- Determines whether the specified Cargobob can pick up a given entity.
+--- @usage 
+--- -- This example checks if the player is in a Cargobob and if the Cargobob can pick up the specified entity.
+--- 
+--- -- Retrieve the player ped.
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the player's vehicle (cargobob).
+--- local cargobob = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Retrieve the model hash of the cargobob.
+--- local model = GetEntityModel(cargobob)
+--- 
+--- -- Check if the vehicle exists and if it's a Cargobob. If not, terminate the script.
+--- if not DoesEntityExist(cargobob) or GetHashKey("cargobob") ~= model then
+---     return
+--- end
+--- 
+--- local entityID = 15362 -- The entity you want to check if the Cargobob can pick up (this is a random entity ID).
+--- 
+--- -- Check if the entity exists. If not, terminate the script.
+--- if not DoesEntityExist(entityID) then
+---     return
+--- end
+--- 
+--- -- Check if the Cargobob can pick up the specified entity.
+--- if CanCargobobPickUpEntity(vehicle, entityID) then
+---     print("Cargobob can pick up the specified entity")
+--- else
+---     print("Cargobob can't pick up the specified entity")
+--- en
 --- @hash [0x2C1D8B3B19E517CC](https://docs.fivem.net/natives/?_0x2C1D8B3B19E517CC)
---- @param p0 any
---- @param p1 any
---- @return any
---- @overload fun(p0: any, p1: any): any
-function N_0x2c1d8b3b19e517cc(p0, p1) end
+--- @param cargobob Vehicle
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(cargobob: Vehicle, entity: Entity): boolean
+function CanCargobobPickUpEntity(cargobob, entity) end
+
+    
+--- # New Name: CanCargobobPickUpEntity
+--- Determines whether the specified Cargobob can pick up a given entity.
+--- @usage 
+--- -- This example checks if the player is in a Cargobob and if the Cargobob can pick up the specified entity.
+--- 
+--- -- Retrieve the player ped.
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the player's vehicle (cargobob).
+--- local cargobob = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Retrieve the model hash of the cargobob.
+--- local model = GetEntityModel(cargobob)
+--- 
+--- -- Check if the vehicle exists and if it's a Cargobob. If not, terminate the script.
+--- if not DoesEntityExist(cargobob) or GetHashKey("cargobob") ~= model then
+---     return
+--- end
+--- 
+--- local entityID = 15362 -- The entity you want to check if the Cargobob can pick up (this is a random entity ID).
+--- 
+--- -- Check if the entity exists. If not, terminate the script.
+--- if not DoesEntityExist(entityID) then
+---     return
+--- end
+--- 
+--- -- Check if the Cargobob can pick up the specified entity.
+--- if CanCargobobPickUpEntity(vehicle, entityID) then
+---     print("Cargobob can pick up the specified entity")
+--- else
+---     print("Cargobob can't pick up the specified entity")
+--- en
+--- @hash [0x2C1D8B3B19E517CC](https://docs.fivem.net/natives/?_0x2C1D8B3B19E517CC)
+--- @param cargobob Vehicle
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(cargobob: Vehicle, entity: Entity): boolean
+--- @deprecated
+function N_0x2c1d8b3b19e517cc(cargobob, entity) end
 
     
 --- ```
@@ -3611,6 +3768,8 @@ function GetVehicleHeadlightsColour(vehicle) end
 function GetVehicleXenonLightsColour(vehicle) end
 
     
+--- Determines if the submarine is operating below its designated crush depth.
+--- 
 --- ```
 --- NativeDB Introduced: v2189
 --- ```
@@ -3619,6 +3778,21 @@ function GetVehicleXenonLightsColour(vehicle) end
 --- @param submarine Vehicle
 --- @return boolean
 --- @overload fun(submarine: Vehicle): boolean
+function GetSubmarineIsUnderDesignDepth(submarine) end
+
+    
+--- # New Name: GetSubmarineIsUnderDesignDepth
+--- Determines if the submarine is operating below its designated crush depth.
+--- 
+--- ```
+--- NativeDB Introduced: v2189
+--- ```
+---
+--- @hash [0x3E71D0B300B7AA79](https://docs.fivem.net/natives/?_0x3E71D0B300B7AA79)
+--- @param submarine Vehicle
+--- @return boolean
+--- @overload fun(submarine: Vehicle): boolean
+--- @deprecated
 function GetSubmarineIsBelowFirstCrushDepth(submarine) end
 
     
@@ -8992,13 +9166,7 @@ function N_0x9bddc73cc6a115d4(vehicle, p1, p2) end
 function N_0x9becd4b9fef3f8a6(vehicle, p1) end
 
     
---- ```
---- Sounds the horn for the specified vehicle.  
---- vehicle: The vehicle to activate the horn for.  
---- mode: The hash of "NORMAL" or "HELDDOWN". Can be 0.  
---- duration: The duration to sound the horn, in milliseconds.  
---- Note: If a player is in the vehicle, it will only sound briefly.  
---- ```
+--- Sounds the horn for the specified vehicle. Note that if a player is in the vehicle, it will only sound briefly.
 ---
 --- @hash [0x9C8C6504B5B63D2C](https://docs.fivem.net/natives/?_0x9C8C6504B5B63D2C)
 --- @param vehicle Vehicle
@@ -9151,7 +9319,7 @@ function N_0x9d44fcce98450843(vehicle, toggle) end
 function CreateScriptVehicleGenerator(x, y, z, heading, p4, p5, modelHash, p7, p8, p9, p10, p11, p12, p13, p14, p15, p16) end
 
     
---- See eWindowId declared in [`IS_VEHICLE_WINDOW_INTACT`](https://docs.fivem.net/natives/?_0x46E571A0E20D01F1).
+--- Smashes a vehicles window. See eWindowId declared in [`IS_VEHICLE_WINDOW_INTACT`](https://docs.fivem.net/natives/?_0x46E571A0E20D01F1).
 ---
 --- @hash [0x9E5B5E4D2CCD2259](https://docs.fivem.net/natives/?_0x9E5B5E4D2CCD2259)
 --- @param vehicle Vehicle
@@ -10025,8 +10193,32 @@ function AreHeliStubWingsDeployed(vehicle) end
 function N_0xaef12960fa943792(vehicle) end
 
     
---- DetachEntityFromCargobob
----
+--- Detaches the specified entity currently being carried by a Cargobob.
+--- @usage -- This example detaches a specific entity from a Cargobob.
+--- 
+--- -- Retrieve the player ped.
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the player's vehicle (cargobob).
+--- local cargobob = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Retrieve the model hash of the cargobob.
+--- local cargobobModel = GetEntityModel(cargobob)
+--- 
+--- -- Check if the vehicle exists and if it's a Cargobob. If not, terminate the script.
+--- if not DoesEntityExist(cargobob) or cargobobModel ~= GetHashKey("cargobob") then
+---     return
+--- end
+--- 
+--- local entityID = 15362 -- The entity you want to detach from the Cargobob (this is a random entity ID).
+--- 
+--- -- Check if the entity exists; if not, terminate the script.
+--- if not DoesEntityExist(yourEntity) then
+---     return
+--- end
+--- 
+--- -- Detach the entity from the Cargobob.
+--- DetachEntityFromCargobob(cargobob, entityID
 --- @hash [0xAF03011701811146](https://docs.fivem.net/natives/?_0xAF03011701811146)
 --- @param vehicle Vehicle
 --- @param entity Entity
@@ -10036,8 +10228,32 @@ function DetachEntityFromCargobob(vehicle, entity) end
 
     
 --- # New Name: DetachEntityFromCargobob
---- DetachEntityFromCargobob
----
+--- Detaches the specified entity currently being carried by a Cargobob.
+--- @usage -- This example detaches a specific entity from a Cargobob.
+--- 
+--- -- Retrieve the player ped.
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the player's vehicle (cargobob).
+--- local cargobob = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Retrieve the model hash of the cargobob.
+--- local cargobobModel = GetEntityModel(cargobob)
+--- 
+--- -- Check if the vehicle exists and if it's a Cargobob. If not, terminate the script.
+--- if not DoesEntityExist(cargobob) or cargobobModel ~= GetHashKey("cargobob") then
+---     return
+--- end
+--- 
+--- local entityID = 15362 -- The entity you want to detach from the Cargobob (this is a random entity ID).
+--- 
+--- -- Check if the entity exists; if not, terminate the script.
+--- if not DoesEntityExist(yourEntity) then
+---     return
+--- end
+--- 
+--- -- Detach the entity from the Cargobob.
+--- DetachEntityFromCargobob(cargobob, entityID
 --- @hash [0xAF03011701811146](https://docs.fivem.net/natives/?_0xAF03011701811146)
 --- @param vehicle Vehicle
 --- @param entity Entity
@@ -10045,6 +10261,42 @@ function DetachEntityFromCargobob(vehicle, entity) end
 --- @overload fun(vehicle: Vehicle, entity: Entity): any
 --- @deprecated
 function N_0xaf03011701811146(vehicle, entity) end
+
+    
+--- # New Name: DetachEntityFromCargobob
+--- Detaches the specified entity currently being carried by a Cargobob.
+--- @usage -- This example detaches a specific entity from a Cargobob.
+--- 
+--- -- Retrieve the player ped.
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the player's vehicle (cargobob).
+--- local cargobob = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Retrieve the model hash of the cargobob.
+--- local cargobobModel = GetEntityModel(cargobob)
+--- 
+--- -- Check if the vehicle exists and if it's a Cargobob. If not, terminate the script.
+--- if not DoesEntityExist(cargobob) or cargobobModel ~= GetHashKey("cargobob") then
+---     return
+--- end
+--- 
+--- local entityID = 15362 -- The entity you want to detach from the Cargobob (this is a random entity ID).
+--- 
+--- -- Check if the entity exists; if not, terminate the script.
+--- if not DoesEntityExist(yourEntity) then
+---     return
+--- end
+--- 
+--- -- Detach the entity from the Cargobob.
+--- DetachEntityFromCargobob(cargobob, entityID
+--- @hash [0xAF03011701811146](https://docs.fivem.net/natives/?_0xAF03011701811146)
+--- @param vehicle Vehicle
+--- @param entity Entity
+--- @return any
+--- @overload fun(vehicle: Vehicle, entity: Entity): any
+--- @deprecated
+function DetachEntityFromCargobob(vehicle, entity) end
 
     
 --- Creates a vehicle with the specified model at the specified position. This vehicle will initially be owned by the creating
@@ -11365,9 +11617,7 @@ function N_0xbfba3ba79cff7ebf(modelHash) end
 function GetVehicleModelHandBrake(modelHash) end
 
     
---- ```
---- NOTE: Debugging functions are not present in the retail version of the game.  
---- ```
+--- This method is utilized solely for debugging purposes and is functional only in debug builds of the game. Please note that its functionality may not be available in the retail version.
 ---
 --- @hash [0xBFDF984E2C22B94F](https://docs.fivem.net/natives/?_0xBFDF984E2C22B94F)
 --- @param vehicle Vehicle
@@ -11672,16 +11922,34 @@ function SetVehicleTurretUnk(vehicle, index, toggle) end
 function N_0xc60060eb0d8ac7b1(vehicle, index, toggle) end
 
     
+--- Forces a submarine to maintain neutral buoyancy for a specified duration, preventing it from rising when unoccupied or without a driver.
+--- 
 --- ```
 --- NativeDB Introduced: v2189
 --- ```
 ---
 --- @hash [0xC67DB108A9ADE3BE](https://docs.fivem.net/natives/?_0xC67DB108A9ADE3BE)
---- @param p0 any
---- @param p1 any
+--- @param submarine Vehicle
+--- @param time number (int)
 --- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0xc67db108a9ade3be(p0, p1) end
+--- @overload fun(submarine: Vehicle, time: number): void
+function ForceSubmarineNeurtalBuoyancy(submarine, time) end
+
+    
+--- # New Name: ForceSubmarineNeurtalBuoyancy
+--- Forces a submarine to maintain neutral buoyancy for a specified duration, preventing it from rising when unoccupied or without a driver.
+--- 
+--- ```
+--- NativeDB Introduced: v2189
+--- ```
+---
+--- @hash [0xC67DB108A9ADE3BE](https://docs.fivem.net/natives/?_0xC67DB108A9ADE3BE)
+--- @param submarine Vehicle
+--- @param time number (int)
+--- @return void
+--- @overload fun(submarine: Vehicle, time: number): void
+--- @deprecated
+function N_0xc67db108a9ade3be(submarine, time) end
 
     
 --- ```

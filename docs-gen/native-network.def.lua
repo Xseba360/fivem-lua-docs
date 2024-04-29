@@ -104,46 +104,46 @@ function UgcHasGetFinished() end
 function N_0x02ada21ea2f6918f() end
 
     
---- NetworkGetLocalSceneFromNetworkId
+--- Returns a local synchronized scene handle of a networked synchronised scene.
 ---
 --- @hash [0x02C40BF885C567B6](https://docs.fivem.net/natives/?_0x02C40BF885C567B6)
---- @param netId number (int)
+--- @param netSceneId number (int)
 --- @return number
---- @overload fun(netId: number): number
-function NetworkGetLocalSceneFromNetworkId(netId) end
+--- @overload fun(netSceneId: number): number
+function NetworkGetLocalSceneFromNetworkId(netSceneId) end
 
     
 --- # New Name: NetworkGetLocalSceneFromNetworkId
---- NetworkGetLocalSceneFromNetworkId
+--- Returns a local synchronized scene handle of a networked synchronised scene.
 ---
 --- @hash [0x02C40BF885C567B6](https://docs.fivem.net/natives/?_0x02C40BF885C567B6)
---- @param netId number (int)
+--- @param netSceneId number (int)
 --- @return number
---- @overload fun(netId: number): number
+--- @overload fun(netSceneId: number): number
 --- @deprecated
-function N_0x02c40bf885c567b6(netId) end
+function N_0x02c40bf885c567b6(netSceneId) end
 
     
 --- # New Name: NetworkGetLocalSceneFromNetworkId
---- NetworkGetLocalSceneFromNetworkId
+--- Returns a local synchronized scene handle of a networked synchronised scene.
 ---
 --- @hash [0x02C40BF885C567B6](https://docs.fivem.net/natives/?_0x02C40BF885C567B6)
---- @param netId number (int)
+--- @param netSceneId number (int)
 --- @return number
---- @overload fun(netId: number): number
+--- @overload fun(netSceneId: number): number
 --- @deprecated
-function NetworkUnlinkNetworkedSynchronisedScene(netId) end
+function NetworkUnlinkNetworkedSynchronisedScene(netSceneId) end
 
     
 --- # New Name: NetworkGetLocalSceneFromNetworkId
---- NetworkGetLocalSceneFromNetworkId
+--- Returns a local synchronized scene handle of a networked synchronised scene.
 ---
 --- @hash [0x02C40BF885C567B6](https://docs.fivem.net/natives/?_0x02C40BF885C567B6)
---- @param netId number (int)
+--- @param netSceneId number (int)
 --- @return number
---- @overload fun(netId: number): number
+--- @overload fun(netSceneId: number): number
 --- @deprecated
-function NetworkConvertSynchronisedSceneToSynchronizedScene(netId) end
+function NetworkConvertSynchronisedSceneToSynchronizedScene(netSceneId) end
 
     
 --- ```
@@ -3896,9 +3896,10 @@ function N_0x45a83257ed02d9bc() end
 function N_0x45e816772e93a9db() end
 
     
---- NETWORK_A\*
---- Similar structure as NETWORK_ADD_ENTITY_TO_SYNCHRONISED_SCENE but it includes this time a hash.
---- In casino_slots it is used one time in a synced scene involving a ped and the slot machine?
+--- Adds a map entity to a network synchronized scene. This native function is utilized only once as of game build 2944 within the casino_slots script.
+--- Please note that it's only possible to add a single map entity to synchronised scenes.
+--- 
+--- It's advisable to initially locate the object and retrieve its actual coordinates using [`GET_CLOSEST_OBJECT_OF_TYPE`](https://docs.fivem.net/natives/?_0xE143FA2249364369).
 --- 
 --- ```
 --- NativeDB Introduced: v1734
@@ -3910,14 +3911,41 @@ function N_0x45e816772e93a9db() end
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param p5 number (float)
---- @param p6 string (char*)
---- @param p7 number (float)
---- @param p8 number (float)
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @param blendInSpeed number (float)
+--- @param blendOutSpeed number (float)
 --- @param flags number (int)
 --- @return void
---- @overload fun(netScene: number, modelHash: Hash, x: number, y: number, z: number, p5: number, p6: string, p7: number, p8: number, flags: number): void
-function N_0x45f35c0edc33b03b(netScene, modelHash, x, y, z, p5, p6, p7, p8, flags) end
+--- @overload fun(netScene: number, modelHash: Hash, x: number, y: number, z: number, animDict: string, animName: string, blendInSpeed: number, blendOutSpeed: number, flags: number): void
+function NetworkAddMapEntityToSynchronisedScene(netScene, modelHash, x, y, z, animDict, animName, blendInSpeed, blendOutSpeed, flags) end
+
+    
+--- # New Name: NetworkAddMapEntityToSynchronisedScene
+--- Adds a map entity to a network synchronized scene. This native function is utilized only once as of game build 2944 within the casino_slots script.
+--- Please note that it's only possible to add a single map entity to synchronised scenes.
+--- 
+--- It's advisable to initially locate the object and retrieve its actual coordinates using [`GET_CLOSEST_OBJECT_OF_TYPE`](https://docs.fivem.net/natives/?_0xE143FA2249364369).
+--- 
+--- ```
+--- NativeDB Introduced: v1734
+--- ```
+---
+--- @hash [0x45F35C0EDC33B03B](https://docs.fivem.net/natives/?_0x45F35C0EDC33B03B)
+--- @param netScene number (int)
+--- @param modelHash Hash
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param animDict string (char*)
+--- @param animName string (char*)
+--- @param blendInSpeed number (float)
+--- @param blendOutSpeed number (float)
+--- @param flags number (int)
+--- @return void
+--- @overload fun(netScene: number, modelHash: Hash, x: number, y: number, z: number, animDict: string, animName: string, blendInSpeed: number, blendOutSpeed: number, flags: number): void
+--- @deprecated
+function N_0x45f35c0edc33b03b(netScene, modelHash, x, y, z, animDict, animName, blendInSpeed, blendOutSpeed, flags) end
 
     
 --- NetworkDoTransitionToNewGame
@@ -6868,22 +6896,46 @@ function NetworkGetActivityPlayerNum(p0) end
 function N_0x741a3d8380319a81() end
 
     
---- NetworkAddPedToSynchronisedScene
+--- Adds a ped to a networked synchronised scene.
+--- 
+--- Synchronized scene playback flags (Also works in other `NETWORK_ADD_*_TO_SYNCHRONISED_SCENE` natives):
+--- |Value| Name | Notes |
+--- |:----:|:------:| :--------: |
+--- |`0`| None | No flag set. |
+--- |`1`| USE_PHYSICS | Allows the ped to have physics during the scene. |
+--- |`2`| TAG_SYNC_OUT | The task will do a tag synchronized blend out with the movement behaviour of the ped. |
+--- |`4`| DONT_INTERRUPT | The scene will not be interrupted by external events. |
+--- |`8`| ON_ABORT_STOP_SCENE | The scene will be stopped if the scripted task is aborted. |
+--- |`16`| ABORT_ON_WEAPON_DAMAGE | The scene will be stopped if the ped is damaged by a weapon. |
+--- |`32`| BLOCK_MOVER_UPDATE | The task will not update the mover. |
+--- |`64`| LOOP_WITHIN_SCENE | Animations within this scene will be looped until the scene is finished. |
+--- |`128`| PRESERVE_VELOCITY | The task will keep it's velocity when the scene is cleaned up/stopped. Do note that the `USE_PHYSICS` flag must also be present. |
+--- |`256`| EXPAND_PED_CAPSULE_FROM_SKELETON | The task will apply the `ExpandPedCapsuleFromSkeleton` reset flag to the ped (See [`SET_PED_RESET_FLAG`](https://docs.fivem.net/natives/?_0xC1E8A365BF3B29F2)). |
+--- |`512`| ACTIVATE_RAGDOLL_ON_COLLISION | The ped will be ragdoll if it comes in contact with an object. |
+--- |`1024`| HIDE_WEAPON | The ped's current weapon will be hidden during the scene. |
+--- |`2048`| ABORT_ON_DEATH | The synchronised scene will be aborted if the ped dies. |
+--- |`4096`| VEHICLE_ABORT_ON_LARGE_IMPACT | If the scene is running on a vehicle, then it will be aborted if the vehicle takes a heavy collision with another vehicle. |
+--- |`16384`| PROCESS_ATTACHMENTS_ON_START | Attachments will be processed at the start of the scene. |
+--- |`32768`| NET_ON_EARLY_NON_PED_STOP_RETURN_TO_START |  A non-ped entity will be returned to their starting position if the scene finishes early. |
+--- |`65536`| SET_PED_OUT_OF_VEHICLE_AT_START | If the ped is in a vehicle when the scene starts, it will be set out of the vehicle. |
+--- |`131072`| NET_DISREGARD_ATTACHMENT_CHECKS | Attachment checks will be disregarded when the scene is running. |
+--- 
+--- These flags can be combined with the `|` operator.
 ---
 --- @hash [0x742A637471BCECD9](https://docs.fivem.net/natives/?_0x742A637471BCECD9)
 --- @param ped Ped
 --- @param netScene number (int)
 --- @param animDict string (char*)
---- @param animnName string (char*)
+--- @param animClip string (char*)
 --- @param blendInSpeed number (float)
 --- @param blendOutSpeed number (float)
---- @param duration number (int)
---- @param flag number (int)
---- @param playbackRate number (float)
---- @param p9 any
+--- @param syncedSceneFlags number (int)
+--- @param ragdollFlags number (int)
+--- @param moverBlendInDelta number (float)
+--- @param ikFlags number (int)
 --- @return void
---- @overload fun(ped: Ped, netScene: number, animDict: string, animnName: string, blendInSpeed: number, blendOutSpeed: number, duration: number, flag: number, playbackRate: number, p9: any): void
-function NetworkAddPedToSynchronisedScene(ped, netScene, animDict, animnName, blendInSpeed, blendOutSpeed, duration, flag, playbackRate, p9) end
+--- @overload fun(ped: Ped, netScene: number, animDict: string, animClip: string, blendInSpeed: number, blendOutSpeed: number, syncedSceneFlags: number, ragdollFlags: number, moverBlendInDelta: number, ikFlags: number): void
+function NetworkAddPedToSynchronisedScene(ped, netScene, animDict, animClip, blendInSpeed, blendOutSpeed, syncedSceneFlags, ragdollFlags, moverBlendInDelta, ikFlags) end
 
     
 --- N_0x742b58f723233ed9
@@ -7293,7 +7345,8 @@ function NetworkSetScriptReadyForEvents(toggle) end
 function N_0x7ac752103856fb20(toggle) end
 
     
---- NetworkCreateSynchronisedScene
+--- Creates a networked synchronized scene.
+--- Be sure to actually start the scene with [`NETWORK_START_SYNCHRONISED_SCENE`](https://docs.fivem.net/natives/?_0x9A1B3FCDB36C8697) after you're done adding peds or entities to the scene.
 ---
 --- @hash [0x7CD6BC4C2BBDD526](https://docs.fivem.net/natives/?_0x7CD6BC4C2BBDD526)
 --- @param x number (float)
@@ -7305,12 +7358,12 @@ function N_0x7ac752103856fb20(toggle) end
 --- @param rotationOrder number (int)
 --- @param holdLastFrame boolean
 --- @param looped boolean
---- @param p9 number (float)
---- @param animTime number (float)
+--- @param phaseToStopScene number (float)
+--- @param phaseToStartScene number (float)
 --- @param animSpeed number (float)
 --- @return number
---- @overload fun(x: number, y: number, z: number, xRot: number, yRot: number, zRot: number, rotationOrder: number, holdLastFrame: boolean, looped: boolean, p9: number, animTime: number, animSpeed: number): number
-function NetworkCreateSynchronisedScene(x, y, z, xRot, yRot, zRot, rotationOrder, holdLastFrame, looped, p9, animTime, animSpeed) end
+--- @overload fun(x: number, y: number, z: number, xRot: number, yRot: number, zRot: number, rotationOrder: number, holdLastFrame: boolean, looped: boolean, phaseToStopScene: number, phaseToStartScene: number, animSpeed: number): number
+function NetworkCreateSynchronisedScene(x, y, z, xRot, yRot, zRot, rotationOrder, holdLastFrame, looped, phaseToStopScene, phaseToStartScene, animSpeed) end
 
     
 --- UgcGetContentDescriptionHash
@@ -9582,24 +9635,52 @@ function N_0xa306f470d1660581() end
 function NetworkGetNumConnectedPlayers() end
 
     
+--- Adds a ped to a networked synchronized scene but extends [`NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE`](https://docs.fivem.net/natives/?_0x742A637471BCECD9) to support IK flags.
+--- There is barely any difference between this and [`NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE`](https://docs.fivem.net/natives/?_0x742A637471BCECD9).
+--- 
 --- ```
 --- NativeDB Introduced: v1290
 --- ```
 ---
 --- @hash [0xA5EAFE473E45C442](https://docs.fivem.net/natives/?_0xA5EAFE473E45C442)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
---- @param p4 any
---- @param p5 any
---- @param p6 any
---- @param p7 any
---- @param p8 any
---- @param p9 any
+--- @param ped Ped
+--- @param netSceneID number (int)
+--- @param animDict string (char*)
+--- @param animClip string (char*)
+--- @param blendIn number (float)
+--- @param blendOut number (float)
+--- @param sceneFlags number (int)
+--- @param ragdollFlags number (int)
+--- @param moverBlendInDelta number (float)
+--- @param ikFlags number (int)
 --- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any, p6: any, p7: any, p8: any, p9: any): void
-function N_0xa5eafe473e45c442(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
+--- @overload fun(ped: Ped, netSceneID: number, animDict: string, animClip: string, blendIn: number, blendOut: number, sceneFlags: number, ragdollFlags: number, moverBlendInDelta: number, ikFlags: number): void
+function NetworkAddPedToSynchronisedSceneWithIk(ped, netSceneID, animDict, animClip, blendIn, blendOut, sceneFlags, ragdollFlags, moverBlendInDelta, ikFlags) end
+
+    
+--- # New Name: NetworkAddPedToSynchronisedSceneWithIk
+--- Adds a ped to a networked synchronized scene but extends [`NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE`](https://docs.fivem.net/natives/?_0x742A637471BCECD9) to support IK flags.
+--- There is barely any difference between this and [`NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE`](https://docs.fivem.net/natives/?_0x742A637471BCECD9).
+--- 
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0xA5EAFE473E45C442](https://docs.fivem.net/natives/?_0xA5EAFE473E45C442)
+--- @param ped Ped
+--- @param netSceneID number (int)
+--- @param animDict string (char*)
+--- @param animClip string (char*)
+--- @param blendIn number (float)
+--- @param blendOut number (float)
+--- @param sceneFlags number (int)
+--- @param ragdollFlags number (int)
+--- @param moverBlendInDelta number (float)
+--- @param ikFlags number (int)
+--- @return void
+--- @overload fun(ped: Ped, netSceneID: number, animDict: string, animClip: string, blendIn: number, blendOut: number, sceneFlags: number, ragdollFlags: number, moverBlendInDelta: number, ikFlags: number): void
+--- @deprecated
+function N_0xa5eafe473e45c442(ped, netSceneID, animDict, animClip, blendIn, blendOut, sceneFlags, ragdollFlags, moverBlendInDelta, ikFlags) end
 
     
 --- From what I can tell it looks like it does the following:
@@ -13176,20 +13257,102 @@ function N_0xea16b69d93d71a45(tunableContext, tunableName) end
 function NetworkAccessTunableBoolHash(tunableContext, tunableName) end
 
     
+--- Revives our local player who was previously dead.
+--- 
+--- **Note:** Call this once you resurrect the player (this does not need to be called every frame).
+--- 
+--- ```cpp
+--- enum ePlayerSpawnLocation {
+---   SPAWN_LOCATION_AUTOMATIC = 0, // system will decide
+---   SPAWN_LOCATION_NEAR_DEATH,					
+---   SPAWN_LOCATION_NEAR_TEAM_MATES,			
+---   SPAWN_LOCATION_MISSION_AREA, // script defined area
+---   SPAWN_LOCATION_NEAR_OTHER_PLAYERS, 
+---   SPAWN_LOCATION_NEAR_CURRENT_POSITION,	
+---   SPAWN_LOCATION_AT_CURRENT_POSITION,
+---   SPAWN_LOCATION_NET_TEST_BED,	
+---   SPAWN_LOCATION_CUSTOM_SPAWN_POINTS,
+---   SPAWN_LOCATION_OUTSIDE_SIMEON_GARAGE,
+---   SPAWN_LOCATION_NEAR_SPECIFIC_COORDS,
+---   SPAWN_LOCATION_AT_SPECIFIC_COORDS,
+---   SPAWN_LOCATION_AT_AIRPORT_ARRIVALS,
+---   SPAWN_LOCATION_AT_SPECIFIC_COORDS_IF_POSSIBLE,
+---   SPAWN_LOCATION_IN_SPECIFIC_ANGLED_AREA,
+---   SPAWN_LOCATION_NEAREST_RESPAWN_POINT, 
+---   SPAWN_LOCATION_AT_SPECIFIC_COORDS_RACE_CORONA, 
+---   SPAWN_LOCATION_INSIDE_GARAGE,
+---   SPAWN_LOCATION_INSIDE_PROPERTY,
+---   SPAWN_LOCATION_INSIDE_PROPERTY_OR_GARAGE,
+---   SPAWN_LOCATION_NEAR_DEATH_IMPROMPTU,
+---   SPAWN_LOCATION_NEAR_CURRENT_POSITION_SPREAD_OUT,
+---   SPAWN_LOCATION_NEAREST_RESPAWN_POINT_TO_SPECIFIC_COORDS,
+---   SPAWN_LOCATION_NEAREST_HOSPITAL,
+---   SPAWN_LOCATION_NEAREST_POLICE_STATION,
+---   SPAWN_LOCATION_NEAREST_HOTEL_TO_SPECIFIC_COORDS,
+---   SPAWN_LOCATION_MISSION_AREA_NEAR_CURRENT_POSITION,
+---   SPAWN_LOCATION_PRIVATE_YACHT,
+---   SPAWN_LOCATION_PRIVATE_YACHT_APARTMENT,
+---   SPAWN_LOCATION_PRIVATE_FRIEND_YACHT,
+---   SPAWN_LOCATION_PRIVATE_YACHT_NEAR_SHORE,
+---   SPAWN_LOCATION_NEAR_GANG_BOSS,
+---   SPAWN_LOCATION_NEAR_SPECIFIC_COORDS_WITH_GANG,
+---   SPAWN_LOCATION_GANG_DM,
+---   SPAWN_LOCATION_GANG_BOSS_PRIVATE_YACHT,
+---   SPAWN_LOCATION_OFFICE,
+---   SPAWN_LOCATION_CLUBHOUSE,
+---   SPAWN_LOCATION_NEAR_CURRENT_POSITION_AS_POSSIBLE,
+---   SPAWN_LOCATION_NEAR_CURRENT_PERCEIVED_POSITION,
+---   SPAWN_LOCATION_IE_WAREHOUSE,
+---   SPAWN_LOCATION_BUNKER,
+---   SPAWN_LOCATION_HANGAR,
+---   SPAWN_LOCATION_DEFUNCT_BASE,
+---   SPAWN_LOCATION_NIGHTCLUB,
+---   SPAWN_LOCATION_ARENA_GARAGE,
+---   SPAWN_LOCATION_CASINO,
+---   SPAWN_LOCATION_CASINO_APARTMENT,
+---   SPAWN_LOCATION_CASINO_OUTSIDE,
+---   SPAWN_LOCATION_ARCADE,
+---   SPAWN_LOCATION_CASINO_NIGHTCLUB,
+---   SPAWN_LOCATION_SUBMARINE,
+---   SPAWN_LOCATION_HEIST_ISLAND_NEAR_DEATH,
+---   SPAWN_LOCATION_HEIST_ISLAND_BEACH_PARTY,
+---   SPAWN_LOCATION_LAND_NEAR_SUBMARINE,
+---   SPAWN_LOCATION_CAR_MEET,
+---   SPAWN_LOCATION_AUTO_SHOP,
+---   SPAWN_LOCATION_FIXER_HQ,
+---   SPAWN_LOCATION_SITTING_SMOKING,
+---   SPAWN_LOCATION_DRUNK_WAKE_UP_MUSIC_STUDIO,
+---   SPAWN_LOCATION_MUSIC_STUDIO,
+---   TOTAL_SPAWN_LOCATIONS
+--- };
 --- ```
---- NativeDB Added Parameter 7: Any p6
+--- 
+--- ```cpp
+--- enum eSpawnReason {
+---   SPAWN_REASON_DEATH = 0,
+---   SPAWN_REASON_TRANSITION,
+---   SPAWN_REASON_MANUAL,
+---   SPAWN_REASON_RESTORE_CHARACTER,
+---   SPAWN_REASON_IN_VEHICLE
+--- };
 --- ```
+--- 
+--- ### Added parameters
+--- 
+--- *   **bUnpauseRenderPhases**: This boolean parameter will unpause the render phases when set to `true`.
+--- *   **iSpawnLocation**: This integer parameter sets the player's spawn location metric for telemetry. See `ePlayerSpawnLocation` enum.
+--- *   **iSpawnReason**: This integer parameter sets the player's spawn reason metric for telemetry. See `eSpawnReason` enum.
 ---
 --- @hash [0xEA23C49EAA83ACFB](https://docs.fivem.net/natives/?_0xEA23C49EAA83ACFB)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param heading number (float)
---- @param unk boolean
---- @param changetime boolean
+--- @param nInvincibilityTime number (int)
+--- @param bLeaveDeadPed boolean
 --- @return void
---- @overload fun(x: number, y: number, z: number, heading: number, unk: boolean, changetime: boolean): void
-function NetworkResurrectLocalPlayer(x, y, z, heading, unk, changetime) end
+--- @overload fun(x: number, y: number, z: number, heading: number, nInvincibilityTime: number, bLeaveDeadPed: boolean): void
+function NetworkResurrectLocalPlayer(x, y, z, heading, nInvincibilityTime, bLeaveDeadPed) end
 
     
 --- ```
@@ -13635,19 +13798,19 @@ function NetworkSessionSetMatchmakingMentalState(p0) end
 function N_0xf1eea2dda9ffa69d(p0) end
 
     
---- NetworkAddEntityToSynchronisedScene
+--- Adds an entity to a network synchronised scene.
 ---
 --- @hash [0xF2404D68CBC855FA](https://docs.fivem.net/natives/?_0xF2404D68CBC855FA)
 --- @param entity Entity
 --- @param netScene number (int)
 --- @param animDict string (char*)
 --- @param animName string (char*)
---- @param speed number (float)
---- @param speedMulitiplier number (float)
+--- @param blendIn number (float)
+--- @param blendOut number (float)
 --- @param flag number (int)
 --- @return void
---- @overload fun(entity: Entity, netScene: number, animDict: string, animName: string, speed: number, speedMulitiplier: number, flag: number): void
-function NetworkAddEntityToSynchronisedScene(entity, netScene, animDict, animName, speed, speedMulitiplier, flag) end
+--- @overload fun(entity: Entity, netScene: number, animDict: string, animName: string, blendIn: number, blendOut: number, flag: number): void
+function NetworkAddEntityToSynchronisedScene(entity, netScene, animDict, animName, blendIn, blendOut, flag) end
 
     
 --- N_0xf287f506767cc8a9

@@ -65,16 +65,32 @@ function DisplayOnscreenKeyboard(p0, windowTitle, p2, defaultText, defaultConcat
 function ClearAreaOfVehicles(x, y, z, radius, p4, p5, p6, p7, p8) end
 
     
+--- Overrides the cloud settings, which are normally controlled by the weather, with the specified named version. This native allows for custom cloud formations and behaviors that deviate from the default settings associated with the game's current weather conditions.
+--- 
 --- ```
---- Found in the scripts:
---- MISC::_02DEAAC8F8EA7FE7("");
+--- NativeDB Introduced: v323
 --- ```
 ---
 --- @hash [0x02DEAAC8F8EA7FE7](https://docs.fivem.net/natives/?_0x02DEAAC8F8EA7FE7)
---- @param p0 string (char*)
+--- @param overrideSettingsName string (char*)
 --- @return void
---- @overload fun(p0: string): void
-function N_0x02deaac8f8ea7fe7(p0) end
+--- @overload fun(overrideSettingsName: string): void
+function SetCloudSettingsOverride(overrideSettingsName) end
+
+    
+--- # New Name: SetCloudSettingsOverride
+--- Overrides the cloud settings, which are normally controlled by the weather, with the specified named version. This native allows for custom cloud formations and behaviors that deviate from the default settings associated with the game's current weather conditions.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+---
+--- @hash [0x02DEAAC8F8EA7FE7](https://docs.fivem.net/natives/?_0x02DEAAC8F8EA7FE7)
+--- @param overrideSettingsName string (char*)
+--- @return void
+--- @overload fun(overrideSettingsName: string): void
+--- @deprecated
+function N_0x02deaac8f8ea7fe7(overrideSettingsName) end
 
     
 --- ```
@@ -1738,14 +1754,30 @@ function N_0x4c9296cbcd1b971e() end
 function IsDurangoVersion() end
 
     
---- **This native does absolutely nothing, just a nullsub**
+--- Creates and opens a new activity feed post to start filling in.
+--- 
+--- **Note**: This is a PS4 related native, resulting in a nullsub on the PC platform. This native won't do anything when invoked.
 ---
 --- @hash [0x4DCDF92BF64236CD](https://docs.fivem.net/natives/?_0x4DCDF92BF64236CD)
---- @param p0 string (char*)
---- @param p1 string (char*)
+--- @param captionString string (char*)
+--- @param condensedCaptionString string (char*)
 --- @return void
---- @overload fun(p0: string, p1: string): void
-function N_0x4dcdf92bf64236cd(p0, p1) end
+--- @overload fun(captionString: string, condensedCaptionString: string): void
+function ActivityFeedCreate(captionString, condensedCaptionString) end
+
+    
+--- # New Name: ActivityFeedCreate
+--- Creates and opens a new activity feed post to start filling in.
+--- 
+--- **Note**: This is a PS4 related native, resulting in a nullsub on the PC platform. This native won't do anything when invoked.
+---
+--- @hash [0x4DCDF92BF64236CD](https://docs.fivem.net/natives/?_0x4DCDF92BF64236CD)
+--- @param captionString string (char*)
+--- @param condensedCaptionString string (char*)
+--- @return void
+--- @overload fun(captionString: string, condensedCaptionString: string): void
+--- @deprecated
+function N_0x4dcdf92bf64236cd(captionString, condensedCaptionString) end
 
     
 --- ```

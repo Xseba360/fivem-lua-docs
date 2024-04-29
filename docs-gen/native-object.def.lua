@@ -262,7 +262,8 @@ function DoorSystemGetDoorState(doorHash) end
 function N_0x160aa1b32f6139b8(doorHash) end
 
     
---- GetObjectOffsetFromCoords
+--- Calculates the world coordinates after applying the specified offsets to the given position, relative to a certain heading.
+--- This native is similar to [`GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS`](https://docs.fivem.net/natives/?_0x1899F328B0E12848), but uses a world position and heading as the reference point.
 ---
 --- @hash [0x163E252DE035A133](https://docs.fivem.net/natives/?_0x163E252DE035A133)
 --- @param xPos number (float)
@@ -274,6 +275,42 @@ function N_0x160aa1b32f6139b8(doorHash) end
 --- @param zOffset number (float)
 --- @return Vector3
 --- @overload fun(xPos: number, yPos: number, zPos: number, heading: number, xOffset: number, yOffset: number, zOffset: number): Vector3
+function GetOffsetFromCoordAndHeadingInWorldCoords(xPos, yPos, zPos, heading, xOffset, yOffset, zOffset) end
+
+    
+--- # New Name: GetOffsetFromCoordAndHeadingInWorldCoords
+--- Calculates the world coordinates after applying the specified offsets to the given position, relative to a certain heading.
+--- This native is similar to [`GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS`](https://docs.fivem.net/natives/?_0x1899F328B0E12848), but uses a world position and heading as the reference point.
+---
+--- @hash [0x163E252DE035A133](https://docs.fivem.net/natives/?_0x163E252DE035A133)
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param zPos number (float)
+--- @param heading number (float)
+--- @param xOffset number (float)
+--- @param yOffset number (float)
+--- @param zOffset number (float)
+--- @return Vector3
+--- @overload fun(xPos: number, yPos: number, zPos: number, heading: number, xOffset: number, yOffset: number, zOffset: number): Vector3
+--- @deprecated
+function N_0x163e252de035a133(xPos, yPos, zPos, heading, xOffset, yOffset, zOffset) end
+
+    
+--- # New Name: GetOffsetFromCoordAndHeadingInWorldCoords
+--- Calculates the world coordinates after applying the specified offsets to the given position, relative to a certain heading.
+--- This native is similar to [`GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS`](https://docs.fivem.net/natives/?_0x1899F328B0E12848), but uses a world position and heading as the reference point.
+---
+--- @hash [0x163E252DE035A133](https://docs.fivem.net/natives/?_0x163E252DE035A133)
+--- @param xPos number (float)
+--- @param yPos number (float)
+--- @param zPos number (float)
+--- @param heading number (float)
+--- @param xOffset number (float)
+--- @param yOffset number (float)
+--- @param zOffset number (float)
+--- @return Vector3
+--- @overload fun(xPos: number, yPos: number, zPos: number, heading: number, xOffset: number, yOffset: number, zOffset: number): Vector3
+--- @deprecated
 function GetObjectOffsetFromCoords(xPos, yPos, zPos, heading, xOffset, yOffset, zOffset) end
 
     

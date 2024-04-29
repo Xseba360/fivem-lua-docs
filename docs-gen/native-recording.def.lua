@@ -1,7 +1,5 @@
 
---- ```
---- Stops recording and saves the recorded clip.  
---- ```
+--- Stops recording and saves the recorded clip.
 ---
 --- @hash [0x071A5197D6AFC8B3](https://docs.fivem.net/natives/?_0x071A5197D6AFC8B3)
 ---
@@ -11,9 +9,7 @@ function StopRecordingAndSaveClip() end
 
     
 --- # New Name: StopRecordingAndSaveClip
---- ```
---- Stops recording and saves the recorded clip.  
---- ```
+--- Stops recording and saves the recorded clip.
 ---
 --- @hash [0x071A5197D6AFC8B3](https://docs.fivem.net/natives/?_0x071A5197D6AFC8B3)
 ---
@@ -32,11 +28,7 @@ function StopRecording() end
 function N_0x13b350b8ad0eee10() end
 
     
---- ```
---- Checks if you're recording, returns TRUE when you start recording (F1) or turn on action replay (F2)  
---- mov al, cs:g_bIsRecordingGameplay // byte_141DD0CD0 in b944  
---- retn  
---- ```
+--- Checks if you're recording.
 ---
 --- @hash [0x1897CA71995A90B4](https://docs.fivem.net/natives/?_0x1897CA71995A90B4)
 ---
@@ -137,9 +129,7 @@ function N_0x66972397e0757e7a(p0, p1, p2) end
 function N_0x81cbae94390f9f89() end
 
     
---- ```
---- Stops recording and discards the recorded clip.  
---- ```
+--- Stops recording and discards the recorded clip.
 ---
 --- @hash [0x88BB3507ED41A240](https://docs.fivem.net/natives/?_0x88BB3507ED41A240)
 ---
@@ -149,9 +139,7 @@ function StopRecordingAndDiscardClip() end
 
     
 --- # New Name: StopRecordingAndDiscardClip
---- ```
---- Stops recording and discards the recorded clip.  
---- ```
+--- Stops recording and discards the recorded clip.
 ---
 --- @hash [0x88BB3507ED41A240](https://docs.fivem.net/natives/?_0x88BB3507ED41A240)
 ---
@@ -161,11 +149,7 @@ function StopRecordingAndDiscardClip() end
 function N_0x88bb3507ed41a240() end
 
     
---- ```
---- This will disable the ability to make camera changes in R* Editor.
---- 
---- RE*
---- ```
+--- This will disable the ability to make camera changes in R\* Editor.
 ---
 --- @hash [0xAF66DCEE6609B148](https://docs.fivem.net/natives/?_0xAF66DCEE6609B148)
 ---
@@ -175,11 +159,7 @@ function DisableRockstarEditorCameraChanges() end
 
     
 --- # New Name: DisableRockstarEditorCameraChanges
---- ```
---- This will disable the ability to make camera changes in R* Editor.
---- 
---- RE*
---- ```
+--- This will disable the ability to make camera changes in R\* Editor.
 ---
 --- @hash [0xAF66DCEE6609B148](https://docs.fivem.net/natives/?_0xAF66DCEE6609B148)
 ---
@@ -189,12 +169,8 @@ function DisableRockstarEditorCameraChanges() end
 function N_0xaf66dcee6609b148() end
 
     
---- ```
---- Starts recording a replay.  
---- If mode is 0, turns on action replay.  
---- If mode is 1, starts recording.  
---- If already recording a replay, does nothing.  
---- ```
+--- Starts recording a replay.\
+--- If already recording a replay, does nothing.
 ---
 --- @hash [0xC3AC2FFF9612AC81](https://docs.fivem.net/natives/?_0xC3AC2FFF9612AC81)
 --- @param mode number (int)
@@ -204,12 +180,8 @@ function StartRecording(mode) end
 
     
 --- # New Name: StartRecording
---- ```
---- Starts recording a replay.  
---- If mode is 0, turns on action replay.  
---- If mode is 1, starts recording.  
---- If already recording a replay, does nothing.  
---- ```
+--- Starts recording a replay.\
+--- If already recording a replay, does nothing.
 ---
 --- @hash [0xC3AC2FFF9612AC81](https://docs.fivem.net/natives/?_0xC3AC2FFF9612AC81)
 --- @param mode number (int)
@@ -228,7 +200,7 @@ function N_0xc3ac2fff9612ac81(mode) end
 function N_0xdf4b952f7d381b95() end
 
     
---- This disable the recording feature and has to be called every frame.
+--- Disable recording for this frame only.
 ---
 --- @hash [0xEB2D525B57F42B40](https://docs.fivem.net/natives/?_0xEB2D525B57F42B40)
 ---
@@ -238,7 +210,7 @@ function StopRecordingThisFrame() end
 
     
 --- # New Name: StopRecordingThisFrame
---- This disable the recording feature and has to be called every frame.
+--- Disable recording for this frame only.
 ---
 --- @hash [0xEB2D525B57F42B40](https://docs.fivem.net/natives/?_0xEB2D525B57F42B40)
 ---

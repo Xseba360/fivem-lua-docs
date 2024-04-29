@@ -137,7 +137,9 @@ function ResetCurrentIntensity() end
 function TestProbeAgainstAllWater(x1, y1, z1, x2, y2, z2, flag, result) end
 
     
---- GetWaterHeightNoWaves
+--- Retrieves the depth of the water beneath the specified position, disregarding wave effects.
+--- 
+--- **Note:** The result remains consistent across different frames as it doesn't consider wave fluctuations.
 ---
 --- @hash [0x8EE6B53CE13A9794](https://docs.fivem.net/natives/?_0x8EE6B53CE13A9794)
 --- @param x number (float)
@@ -241,11 +243,9 @@ function SetCurrentIntensity(intensity) end
 function ModifyWater(x, y, height, radius) end
 
     
---- ```
---- This function set height to the value of z-axis of the water surface.  
---- This function works with sea and lake. However it does not work with shallow rivers (e.g. raton canyon will return -100000.0f)  
---- note: seems to return true when you are in water  
---- ```
+--- Retrieves the depth of the water beneath the specified position, accounting for the waves.
+--- 
+--- **Note:** The result might vary depending on the specific frame when this command is executed due to wave fluctuations.
 ---
 --- @hash [0xF6829842C06AE524](https://docs.fivem.net/natives/?_0xF6829842C06AE524)
 --- @param x number (float)

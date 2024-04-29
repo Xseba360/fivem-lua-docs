@@ -507,23 +507,14 @@ function AddTextComponentFormattedInteger(value, commaSeparated) end
 function N_0x0e4c749ff9de9cc4(value, commaSeparated) end
 
     
---- ```
---- Before using this native click the native above and look at the decription.  
---- Example:  
---- int GetHash = Function.Call<int>(Hash.GET_HASH_KEY, "fe_menu_version_corona_lobby");  
---- Function.Call(Hash.ACTIVATE_FRONTEND_MENU, GetHash, 0, -1);  
---- Function.Call(Hash.RESTART_FRONTEND_MENU(GetHash, -1);  
---- This native refreshes the frontend menu.  
---- p1 = Hash of Menu  
---- p2 = Unknown but always works with -1.  
---- ```
+--- Changes the current frontend menu to the desired frontend menu version.
 ---
 --- @hash [0x10706DC6AD2D49C0](https://docs.fivem.net/natives/?_0x10706DC6AD2D49C0)
 --- @param menuHash Hash
---- @param p1 number (int)
+--- @param highlightedTab number (int)
 --- @return void
---- @overload fun(menuHash: Hash, p1: number): void
-function RestartFrontendMenu(menuHash, p1) end
+--- @overload fun(menuHash: Hash, highlightedTab: number): void
+function RestartFrontendMenu(menuHash, highlightedTab) end
 
     
 --- Returns whether a specific help message is being displayed or not.
@@ -941,7 +932,22 @@ function N_0x14c9fdcc41f81f63(toggle) end
 
     
 --- GetNextBlipInfoId
----
+--- @usage function GetAllBlipsWithSprite(blip_sprite)
+---   local current_blip = GetFirstBlipInfoId(blip_sprite)
+---   local blips_array = {}
+--- 
+---   if not DoesBlipExist(current_blip) then 
+---     print('there are no blips with this sprite set') 
+---     return blips_array 
+---   end
+--- 
+---   while DoesBlipExist(current_blip) do
+---     table.insert(blips_array, current_blip)
+---     current_blip = GetNextBlipInfoId(blip_sprite)
+---   end
+--- 
+---   return blips_array
+--- en
 --- @hash [0x14F96AA50D6FBEA7](https://docs.fivem.net/natives/?_0x14F96AA50D6FBEA7)
 --- @param blipSprite number (int)
 --- @return Blip
@@ -1506,7 +1512,7 @@ function CloseMultiplayerChat() end
 function AbortTextChat() end
 
     
---- GetFirstBlipInfoId
+--- Also see [`GET_NEXT_BLIP_INFO_ID`](https://docs.fivem.net/natives/?_0x14F96AA50D6FBEA7) for an example.
 ---
 --- @hash [0x1BEDE233E6CD2A1F](https://docs.fivem.net/natives/?_0x1BEDE233E6CD2A1F)
 --- @param blipSprite number (int)
@@ -2760,13 +2766,24 @@ function N_0x2c9f302398e13141(blip, p1) end
 function ClearSmallPrints() end
 
     
---- N_0x2de6c5e2e996f178
+--- Toggles pause menu map rendering.
 ---
 --- @hash [0x2DE6C5E2E996F178](https://docs.fivem.net/natives/?_0x2DE6C5E2E996F178)
---- @param p0 any
+--- @param enabled boolean
 --- @return void
---- @overload fun(p0: any): void
-function N_0x2de6c5e2e996f178(p0) end
+--- @overload fun(enabled: boolean): void
+function PauseToggleFullscreenMap(enabled) end
+
+    
+--- # New Name: PauseToggleFullscreenMap
+--- Toggles pause menu map rendering.
+---
+--- @hash [0x2DE6C5E2E996F178](https://docs.fivem.net/natives/?_0x2DE6C5E2E996F178)
+--- @param enabled boolean
+--- @return void
+--- @overload fun(enabled: boolean): void
+--- @deprecated
+function N_0x2de6c5e2e996f178(enabled) end
 
     
 --- N_0x2e22fefa0100275e
@@ -6072,16 +6089,76 @@ function ClearDynamicPauseMenuErrorMessage() end
 function N_0x7792424aa0eac32e() end
 
     
---- ```
---- Sets the position of the arrow icon representing the player on both the minimap and world map.  
---- Too bad this wouldn't work over the network (obviously not). Could spoof where we would be.  
---- ```
----
+--- Overrides the position of the main player blip for the current frame.
+--- @usage -- Function to check if player is using the map
+--- local function IsPlayerUsingPausemap()
+---   return IsPauseMenuActive() and GetNumberOfReferencesOfScriptWithNameHash(`pausemenu_map`) > 0
+--- end
+--- 
+--- Citizen.CreateThread(function()
+---   while true do
+---     Wait(0) -- Not using Wait will cause the game to hang.
+--- 
+---     if IsPlayerUsingPausemap() and not IsPausemapInInteriorMode() then -- Make sure the player using the map and the map has switched view
+---       SetFakePausemapPlayerPositionThisFrame(0.0, 0.0) -- Override position
+---     end
+---   end
+--- end
 --- @hash [0x77E2DD177910E1CF](https://docs.fivem.net/natives/?_0x77E2DD177910E1CF)
 --- @param x number (float)
 --- @param y number (float)
 --- @return void
 --- @overload fun(x: number, y: number): void
+function SetFakePausemapPlayerPositionThisFrame(x, y) end
+
+    
+--- # New Name: SetFakePausemapPlayerPositionThisFrame
+--- Overrides the position of the main player blip for the current frame.
+--- @usage -- Function to check if player is using the map
+--- local function IsPlayerUsingPausemap()
+---   return IsPauseMenuActive() and GetNumberOfReferencesOfScriptWithNameHash(`pausemenu_map`) > 0
+--- end
+--- 
+--- Citizen.CreateThread(function()
+---   while true do
+---     Wait(0) -- Not using Wait will cause the game to hang.
+--- 
+---     if IsPlayerUsingPausemap() and not IsPausemapInInteriorMode() then -- Make sure the player using the map and the map has switched view
+---       SetFakePausemapPlayerPositionThisFrame(0.0, 0.0) -- Override position
+---     end
+---   end
+--- end
+--- @hash [0x77E2DD177910E1CF](https://docs.fivem.net/natives/?_0x77E2DD177910E1CF)
+--- @param x number (float)
+--- @param y number (float)
+--- @return void
+--- @overload fun(x: number, y: number): void
+--- @deprecated
+function N_0x77e2dd177910e1cf(x, y) end
+
+    
+--- # New Name: SetFakePausemapPlayerPositionThisFrame
+--- Overrides the position of the main player blip for the current frame.
+--- @usage -- Function to check if player is using the map
+--- local function IsPlayerUsingPausemap()
+---   return IsPauseMenuActive() and GetNumberOfReferencesOfScriptWithNameHash(`pausemenu_map`) > 0
+--- end
+--- 
+--- Citizen.CreateThread(function()
+---   while true do
+---     Wait(0) -- Not using Wait will cause the game to hang.
+--- 
+---     if IsPlayerUsingPausemap() and not IsPausemapInInteriorMode() then -- Make sure the player using the map and the map has switched view
+---       SetFakePausemapPlayerPositionThisFrame(0.0, 0.0) -- Override position
+---     end
+---   end
+--- end
+--- @hash [0x77E2DD177910E1CF](https://docs.fivem.net/natives/?_0x77E2DD177910E1CF)
+--- @param x number (float)
+--- @param y number (float)
+--- @return void
+--- @overload fun(x: number, y: number): void
+--- @deprecated
 function SetPlayerBlipPositionThisFrame(x, y) end
 
     
@@ -7324,17 +7401,17 @@ function GetTextScreenLineCount(x, y) end
 function EndTextCommandGetLineCount(x, y) end
 
     
---- IsMinimapInInterior
+--- IsPausemapInInteriorMode
 ---
 --- @hash [0x9049FE339D5F6F6F](https://docs.fivem.net/natives/?_0x9049FE339D5F6F6F)
 ---
 --- @return boolean
 --- @overload fun(): boolean
-function IsMinimapInInterior() end
+function IsPausemapInInteriorMode() end
 
     
---- # New Name: IsMinimapInInterior
---- IsMinimapInInterior
+--- # New Name: IsPausemapInInteriorMode
+--- IsPausemapInInteriorMode
 ---
 --- @hash [0x9049FE339D5F6F6F](https://docs.fivem.net/natives/?_0x9049FE339D5F6F6F)
 ---
@@ -7342,6 +7419,17 @@ function IsMinimapInInterior() end
 --- @overload fun(): boolean
 --- @deprecated
 function N_0x9049fe339d5f6f6f() end
+
+    
+--- # New Name: IsPausemapInInteriorMode
+--- IsPausemapInInteriorMode
+---
+--- @hash [0x9049FE339D5F6F6F](https://docs.fivem.net/natives/?_0x9049FE339D5F6F6F)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function IsMinimapInInterior() end
 
     
 --- GetMenuPedMaskedIntStat
@@ -11428,7 +11516,13 @@ function SetMpGamerTagName(gamerTagId, string) end
 function N_0xdea2b8283baa3944(gamerTagId, string) end
 
     
---- SetPauseMenuActive
+--- This native is deprecated.
+--- 
+--- If you're looking to:
+--- 
+--- *   Toggle the pause menu on, use [`ACTIVATE_FRONTEND_MENU`](https://docs.fivem.net/natives/?_0xEF01D36B9C9D0C7B)
+--- *   Toggle the pause menu off, use [`SET_FRONTEND_ACTIVE`](https://docs.fivem.net/natives/?_0x745711A75AB09277)
+--- *   Disable toggling the pause menu, use [`DISABLE_FRONTEND_THIS_FRAME`](https://docs.fivem.net/natives/?_0x6D3465A73092F0E6)
 ---
 --- @hash [0xDF47FC56C71569CF](https://docs.fivem.net/natives/?_0xDF47FC56C71569CF)
 --- @param toggle boolean

@@ -1628,13 +1628,26 @@ function OverrideInteriorSmokeName(name) end
 function N_0x2a2a52824db96700(name) end
 
     
---- N_0x2a893980e96b659a
+--- Queues a scan of all gallery photos.
+--- Also see [`GET_STATUS_OF_SORTED_LIST_OPERATION`](https://docs.fivem.net/natives/?_0xF5BED327CEA362B1)
 ---
 --- @hash [0x2A893980E96B659A](https://docs.fivem.net/natives/?_0x2A893980E96B659A)
---- @param p0 boolean
+--- @param scanForSaving boolean
 --- @return boolean
---- @overload fun(p0: boolean): boolean
-function N_0x2a893980e96b659a(p0) end
+--- @overload fun(scanForSaving: boolean): boolean
+function QueueOperationToCreateSortedListOfPhotos(scanForSaving) end
+
+    
+--- # New Name: QueueOperationToCreateSortedListOfPhotos
+--- Queues a scan of all gallery photos.
+--- Also see [`GET_STATUS_OF_SORTED_LIST_OPERATION`](https://docs.fivem.net/natives/?_0xF5BED327CEA362B1)
+---
+--- @hash [0x2A893980E96B659A](https://docs.fivem.net/natives/?_0x2A893980E96B659A)
+--- @param scanForSaving boolean
+--- @return boolean
+--- @overload fun(scanForSaving: boolean): boolean
+--- @deprecated
+function N_0x2a893980e96b659a(scanForSaving) end
 
     
 --- N_0x2b40a97646381508
@@ -3151,17 +3164,17 @@ function StopBinkMovie(binkMovie) end
 function N_0x649c97d52332341a(p0) end
 
     
---- Another [REQUEST_SCALEFORM_MOVIE](https://docs.fivem.net/natives/?_0x11FE353CF9733E6F) equivalent.
+--- Requests a scaleform movie, which has no widescreen adjustments while rendering (Useful for when your scaleform doesn't fully draw on the screen and borders are visible).
 ---
 --- @hash [0x65E7E78842E74CDB](https://docs.fivem.net/natives/?_0x65E7E78842E74CDB)
 --- @param scaleformName string (char*)
 --- @return number
 --- @overload fun(scaleformName: string): number
-function RequestScaleformMovie_2(scaleformName) end
+function RequestScaleformMovieWithIgnoreSuperWidescreen(scaleformName) end
 
     
---- # New Name: RequestScaleformMovie_2
---- Another [REQUEST_SCALEFORM_MOVIE](https://docs.fivem.net/natives/?_0x11FE353CF9733E6F) equivalent.
+--- # New Name: RequestScaleformMovieWithIgnoreSuperWidescreen
+--- Requests a scaleform movie, which has no widescreen adjustments while rendering (Useful for when your scaleform doesn't fully draw on the screen and borders are visible).
 ---
 --- @hash [0x65E7E78842E74CDB](https://docs.fivem.net/natives/?_0x65E7E78842E74CDB)
 --- @param scaleformName string (char*)
@@ -3169,6 +3182,17 @@ function RequestScaleformMovie_2(scaleformName) end
 --- @overload fun(scaleformName: string): number
 --- @deprecated
 function N_0x65e7e78842e74cdb(scaleformName) end
+
+    
+--- # New Name: RequestScaleformMovieWithIgnoreSuperWidescreen
+--- Requests a scaleform movie, which has no widescreen adjustments while rendering (Useful for when your scaleform doesn't fully draw on the screen and borders are visible).
+---
+--- @hash [0x65E7E78842E74CDB](https://docs.fivem.net/natives/?_0x65E7E78842E74CDB)
+--- @param scaleformName string (char*)
+--- @return number
+--- @overload fun(scaleformName: string): number
+--- @deprecated
+function RequestScaleformMovie_2(scaleformName) end
 
     
 --- ```
@@ -4125,10 +4149,23 @@ function HasScaleformMovieLoaded(scaleformHandle) end
 --- ```
 ---
 --- @hash [0x86255B1FC929E33E](https://docs.fivem.net/natives/?_0x86255B1FC929E33E)
---- @param p0 any
---- @return any
---- @overload fun(p0: any): any
-function N_0x86255b1fc929e33e(p0) end
+--- @param scaleformIndex number (int)
+--- @return boolean
+--- @overload fun(scaleformIndex: number): boolean
+function IsScaleformMovieDeleting(scaleformIndex) end
+
+    
+--- # New Name: IsScaleformMovieDeleting
+--- ```
+--- NativeDB Introduced: v1290
+--- ```
+---
+--- @hash [0x86255B1FC929E33E](https://docs.fivem.net/natives/?_0x86255B1FC929E33E)
+--- @param scaleformIndex number (int)
+--- @return boolean
+--- @overload fun(scaleformIndex: number): boolean
+--- @deprecated
+function N_0x86255b1fc929e33e(scaleformIndex) end
 
     
 --- ```
@@ -6065,35 +6102,17 @@ function N_0xbbf327ded94e4deb(modifierName) end
 function N_0xbcedb009461da156() end
 
     
---- ```
---- Similar to REQUEST_SCALEFORM_MOVIE, but seems to be some kind of "interactive" scaleform movie?  
---- These seem to be the only scaleforms ever requested by this native:  
---- "breaking_news"  
---- "desktop_pc"  
---- "ECG_MONITOR"  
---- "Hacking_PC"  
---- "TEETH_PULLING"  
---- Note: Unless this hash is out-of-order, this native is next-gen only.  
---- ```
+--- Requests a scaleform movie that doesn't render when the game is paused (With [`SET_GAME_PAUSED`](https://docs.fivem.net/natives/?_0x577D1284D6873711)).
 ---
 --- @hash [0xBD06C611BB9048C2](https://docs.fivem.net/natives/?_0xBD06C611BB9048C2)
 --- @param scaleformName string (char*)
 --- @return number
 --- @overload fun(scaleformName: string): number
-function RequestScaleformMovieInteractive(scaleformName) end
+function RequestScaleformMovieSkipRenderWhilePaused(scaleformName) end
 
     
---- # New Name: RequestScaleformMovieInteractive
---- ```
---- Similar to REQUEST_SCALEFORM_MOVIE, but seems to be some kind of "interactive" scaleform movie?  
---- These seem to be the only scaleforms ever requested by this native:  
---- "breaking_news"  
---- "desktop_pc"  
---- "ECG_MONITOR"  
---- "Hacking_PC"  
---- "TEETH_PULLING"  
---- Note: Unless this hash is out-of-order, this native is next-gen only.  
---- ```
+--- # New Name: RequestScaleformMovieSkipRenderWhilePaused
+--- Requests a scaleform movie that doesn't render when the game is paused (With [`SET_GAME_PAUSED`](https://docs.fivem.net/natives/?_0x577D1284D6873711)).
 ---
 --- @hash [0xBD06C611BB9048C2](https://docs.fivem.net/natives/?_0xBD06C611BB9048C2)
 --- @param scaleformName string (char*)
@@ -6101,6 +6120,17 @@ function RequestScaleformMovieInteractive(scaleformName) end
 --- @overload fun(scaleformName: string): number
 --- @deprecated
 function RequestScaleformMovie3(scaleformName) end
+
+    
+--- # New Name: RequestScaleformMovieSkipRenderWhilePaused
+--- Requests a scaleform movie that doesn't render when the game is paused (With [`SET_GAME_PAUSED`](https://docs.fivem.net/natives/?_0x577D1284D6873711)).
+---
+--- @hash [0xBD06C611BB9048C2](https://docs.fivem.net/natives/?_0xBD06C611BB9048C2)
+--- @param scaleformName string (char*)
+--- @return number
+--- @overload fun(scaleformName: string): number
+--- @deprecated
+function RequestScaleformMovieInteractive(scaleformName) end
 
     
 --- SetPlayerTcmodifierTransition
@@ -7391,7 +7421,7 @@ function HasHudScaleformLoaded(hudComponent) end
 function RequestStreamedTextureDict(textureDict, p1) end
 
     
---- TogglePausedRenderphases
+--- Switches the rendering display to exclude everything except PostFX, resulting in a frozen screen before the UI pass.
 ---
 --- @hash [0xDFC252D8A3E15AB7](https://docs.fivem.net/natives/?_0xDFC252D8A3E15AB7)
 --- @param toggle boolean
@@ -7401,7 +7431,7 @@ function TogglePausedRenderphases(toggle) end
 
     
 --- # New Name: TogglePausedRenderphases
---- TogglePausedRenderphases
+--- Switches the rendering display to exclude everything except PostFX, resulting in a frozen screen before the UI pass.
 ---
 --- @hash [0xDFC252D8A3E15AB7](https://docs.fivem.net/natives/?_0xDFC252D8A3E15AB7)
 --- @param toggle boolean
@@ -7412,7 +7442,7 @@ function EnableGameplayCam(toggle) end
 
     
 --- # New Name: TogglePausedRenderphases
---- TogglePausedRenderphases
+--- Switches the rendering display to exclude everything except PostFX, resulting in a frozen screen before the UI pass.
 ---
 --- @hash [0xDFC252D8A3E15AB7](https://docs.fivem.net/natives/?_0xDFC252D8A3E15AB7)
 --- @param toggle boolean
@@ -8437,30 +8467,24 @@ function N_0xf5a2c681787e579d(x, y, w, h) end
 function ScreenDrawPositionRatio(x, y, w, h) end
 
     
---- ```
---- 3 matches across 3 scripts. First 2 were 0, 3rd was 1. Possibly a bool.
---- appcamera, appmedia, and cellphone_controller.
---- ```
+--- Returns status of gallery photo fetch, which was requested by [`QUEUE_OPERATION_TO_CREATE_SORTED_LIST_OF_PHOTOS`](https://docs.fivem.net/natives/?_0x2A893980E96B659A).
 ---
 --- @hash [0xF5BED327CEA362B1](https://docs.fivem.net/natives/?_0xF5BED327CEA362B1)
---- @param p0 boolean
+--- @param scanForSaving boolean
 --- @return number
---- @overload fun(p0: boolean): number
-function GetStatusOfSortedListOperation(p0) end
+--- @overload fun(scanForSaving: boolean): number
+function GetStatusOfSortedListOperation(scanForSaving) end
 
     
 --- # New Name: GetStatusOfSortedListOperation
---- ```
---- 3 matches across 3 scripts. First 2 were 0, 3rd was 1. Possibly a bool.
---- appcamera, appmedia, and cellphone_controller.
---- ```
+--- Returns status of gallery photo fetch, which was requested by [`QUEUE_OPERATION_TO_CREATE_SORTED_LIST_OF_PHOTOS`](https://docs.fivem.net/natives/?_0x2A893980E96B659A).
 ---
 --- @hash [0xF5BED327CEA362B1](https://docs.fivem.net/natives/?_0xF5BED327CEA362B1)
---- @param p0 boolean
+--- @param scanForSaving boolean
 --- @return number
---- @overload fun(p0: boolean): number
+--- @overload fun(scanForSaving: boolean): number
 --- @deprecated
-function N_0xf5bed327cea362b1(p0) end
+function N_0xf5bed327cea362b1(scanForSaving) end
 
     
 --- DeleteCheckpoint

@@ -1,27 +1,15 @@
 
---- ```
---- Disables the phone up-button, oddly enough.   
---- i.e.: When the phone is out, and this method is called with false as it's parameter, the phone will not be able to scroll up. However, when you use the down arrow key, it's functionality still, works on the phone.   
---- When the phone is not out, and this method is called with false as it's parameter, you will not be able to bring up the phone. Although the up arrow key still works for whatever functionality it's used for, just not for the phone.  
---- This can be used for creating menu's when trying to disable the phone from being used.   
---- You do not have to call the function again with false as a parameter, as soon as the function stops being called, the phone will again be usable.  
---- ```
+--- Toggles the selfie mode on the cellphone camera. Only visible when the cell phone camera is active.
 ---
 --- @hash [0x015C49A93E3E086E](https://docs.fivem.net/natives/?_0x015C49A93E3E086E)
 --- @param toggle boolean
 --- @return void
 --- @overload fun(toggle: boolean): void
-function CellCamDisableThisFrame(toggle) end
+function CellCamActivateSelfieMode(toggle) end
 
     
---- # New Name: CellCamDisableThisFrame
---- ```
---- Disables the phone up-button, oddly enough.   
---- i.e.: When the phone is out, and this method is called with false as it's parameter, the phone will not be able to scroll up. However, when you use the down arrow key, it's functionality still, works on the phone.   
---- When the phone is not out, and this method is called with false as it's parameter, you will not be able to bring up the phone. Although the up arrow key still works for whatever functionality it's used for, just not for the phone.  
---- This can be used for creating menu's when trying to disable the phone from being used.   
---- You do not have to call the function again with false as a parameter, as soon as the function stops being called, the phone will again be usable.  
---- ```
+--- # New Name: CellCamActivateSelfieMode
+--- Toggles the selfie mode on the cellphone camera. Only visible when the cell phone camera is active.
 ---
 --- @hash [0x015C49A93E3E086E](https://docs.fivem.net/natives/?_0x015C49A93E3E086E)
 --- @param toggle boolean
@@ -31,14 +19,8 @@ function CellCamDisableThisFrame(toggle) end
 function N_0x015c49a93e3e086e(toggle) end
 
     
---- # New Name: CellCamDisableThisFrame
---- ```
---- Disables the phone up-button, oddly enough.   
---- i.e.: When the phone is out, and this method is called with false as it's parameter, the phone will not be able to scroll up. However, when you use the down arrow key, it's functionality still, works on the phone.   
---- When the phone is not out, and this method is called with false as it's parameter, you will not be able to bring up the phone. Although the up arrow key still works for whatever functionality it's used for, just not for the phone.  
---- This can be used for creating menu's when trying to disable the phone from being used.   
---- You do not have to call the function again with false as a parameter, as soon as the function stops being called, the phone will again be usable.  
---- ```
+--- # New Name: CellCamActivateSelfieMode
+--- Toggles the selfie mode on the cellphone camera. Only visible when the cell phone camera is active.
 ---
 --- @hash [0x015C49A93E3E086E](https://docs.fivem.net/natives/?_0x015C49A93E3E086E)
 --- @param toggle boolean
@@ -46,6 +28,17 @@ function N_0x015c49a93e3e086e(toggle) end
 --- @overload fun(toggle: boolean): void
 --- @deprecated
 function DisablePhoneThisFrame(toggle) end
+
+    
+--- # New Name: CellCamActivateSelfieMode
+--- Toggles the selfie mode on the cellphone camera. Only visible when the cell phone camera is active.
+---
+--- @hash [0x015C49A93E3E086E](https://docs.fivem.net/natives/?_0x015C49A93E3E086E)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function CellCamDisableThisFrame(toggle) end
 
     
 --- CellCamSetRoll
@@ -118,17 +111,17 @@ function CellCamSetVerticalOffset(p0) end
 function N_0x3117d84efa60f77b(p0) end
 
     
---- SetMobilePhoneUnk
+--- Toggles depth of field on the cellphone camera.
 ---
 --- @hash [0x375A706A5C2FD084](https://docs.fivem.net/natives/?_0x375A706A5C2FD084)
 --- @param toggle boolean
 --- @return void
 --- @overload fun(toggle: boolean): void
-function SetMobilePhoneUnk(toggle) end
+function SetMobilePhoneDofState(toggle) end
 
     
---- # New Name: SetMobilePhoneUnk
---- SetMobilePhoneUnk
+--- # New Name: SetMobilePhoneDofState
+--- Toggles depth of field on the cellphone camera.
 ---
 --- @hash [0x375A706A5C2FD084](https://docs.fivem.net/natives/?_0x375A706A5C2FD084)
 --- @param toggle boolean
@@ -136,6 +129,17 @@ function SetMobilePhoneUnk(toggle) end
 --- @overload fun(toggle: boolean): void
 --- @deprecated
 function N_0x375a706a5c2fd084(toggle) end
+
+    
+--- # New Name: SetMobilePhoneDofState
+--- Toggles depth of field on the cellphone camera.
+---
+--- @hash [0x375A706A5C2FD084](https://docs.fivem.net/natives/?_0x375A706A5C2FD084)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+--- @deprecated
+function SetMobilePhoneUnk(toggle) end
 
     
 --- ```
@@ -413,13 +417,13 @@ function N_0xf1e22dc13f5eebad(p0) end
 function ScriptIsMovingMobilePhoneOffscreen(toggle) end
 
     
---- CellCamActivate
+--- Activates the cellphone camera. Make sure you have a mobile phone created with [`CREATE_MOBILE_PHONE`](https://docs.fivem.net/natives/?_0xA4E8E696C532FBC7) or else the camera will not work.
 ---
 --- @hash [0xFDE8F069C542D126](https://docs.fivem.net/natives/?_0xFDE8F069C542D126)
---- @param p0 boolean
---- @param p1 boolean
+--- @param active boolean
+--- @param bGoFirstPerson boolean
 --- @return void
---- @overload fun(p0: boolean, p1: boolean): void
-function CellCamActivate(p0, p1) end
+--- @overload fun(active: boolean, bGoFirstPerson: boolean): void
+function CellCamActivate(active, bGoFirstPerson) end
 
     

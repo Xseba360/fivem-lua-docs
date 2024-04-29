@@ -2333,19 +2333,23 @@ function SetPedAllowVehiclesOverride(ped, toggle) end
 function GetPedDefensiveAreaPosition(ped, p1) end
 
     
---- ```
---- Only the values 0, 1 and 2 occur in the decompiled scripts. Most likely refers directly to the values also described as AttackRange in combatbehaviour.meta:  
---- 0: CR_Near  
---- 1: CR_Medium  
---- 2: CR_Far  
+--- Define the scope within which the ped will engage in combat with the target.
+--- 
+--- ```cpp
+--- enum eCombatRange {
+---     CR_NEAR = 0, // keeps within 5-15m
+---     CR_MEDIUM, // keeps within 7-30m
+---     CR_FAR, // keeps within 15-40m
+---     CR_VERY_FAR // keeps within 22-45m
+--- };
 --- ```
 ---
 --- @hash [0x3C606747B23E497B](https://docs.fivem.net/natives/?_0x3C606747B23E497B)
 --- @param ped Ped
---- @param p1 number (int)
+--- @param range number (int)
 --- @return void
---- @overload fun(ped: Ped, p1: number): void
-function SetPedCombatRange(ped, p1) end
+--- @overload fun(ped: Ped, range: number): void
+function SetPedCombatRange(ped, range) end
 
     
 --- SpawnpointsIsSearchActive
@@ -2996,7 +3000,7 @@ function RegisterPedheadshot(ped) end
 function SetPedWetnessHeight(ped, height) end
 
     
---- IsPedTryingToEnterALockedVehicle
+--- If the ped is attempting to enter a locked vehicle.
 ---
 --- @hash [0x44D28D5DDFE5F68C](https://docs.fivem.net/natives/?_0x44D28D5DDFE5F68C)
 --- @param ped Ped
@@ -3252,10 +3256,7 @@ function N_0x4852fc386e2e1bb5(hairColorIndex) end
 function GetHairRgbColor(hairColorIndex) end
 
     
---- ```
---- Checks to see if ped and target are in combat with eachother. Only goes one-way: if target is engaged in combat with ped but ped has not yet reacted, the function will return false until ped starts fighting back.  
---- p1 is usually 0 in the scripts because it gets the ped id during the task sequence. For instance: PED::IS_PED_IN_COMBAT(l_42E[4/*14*/], PLAYER::PLAYER_PED_ID()) // armenian2.ct4: 43794  
---- ```
+--- Examines whether the ped is engaged in combat; when given a target ped index, it confirms if the ped is actively fighting the specified target, returning true if engaged and false if not.
 ---
 --- @hash [0x4859F1FC66A6278E](https://docs.fivem.net/natives/?_0x4859F1FC66A6278E)
 --- @param ped Ped
@@ -3877,14 +3878,31 @@ function N_0x5407b7288d0478b7(p0) end
 function GetJackTarget(ped) end
 
     
---- ```
---- PoliceMotorcycleHelmet   1024
---- RegularMotorcycleHelmet   4096
---- FiremanHelmet 16384
---- PilotHeadset  32768
---- PilotHelmet   65536
---- --
---- p2 is generally 4096 or 16384 in the scripts. p1 varies between 1 and 0.
+--- Gives the ped a helmet. Can be removed by invoking [`REMOVE_PED_HELMET`](#0xA7B2458D0AD6DED8).
+--- 
+--- ```cpp
+--- enum ePedCompFlags {
+---   PV_FLAG_NONE                  = 0, // 0
+---   PV_FLAG_BULKY                 = 1, // 1<<0
+---   PV_FLAG_JOB                   = 2, // 1<<1
+---   PV_FLAG_SUNNY                 = 4, // 1<<2
+---   PV_FLAG_WET                   = 8, // 1<<3
+---   PV_FLAG_COLD                  = 16, // 1<<4
+---   PV_FLAG_NOT_IN_CAR            = 32, // 1<<5
+---   PV_FLAG_BIKE_ONLY             = 64, // 1<<6
+---   PV_FLAG_NOT_INDOORS           = 128, // 1<<7
+---   PV_FLAG_FIRE_RETARDENT        = 256, // 1<<8
+---   PV_FLAG_ARMOURED              = 512, // 1<<9
+---   PV_FLAG_LIGHTLY_ARMOURED      = 1024, // 1<<10
+---   PV_FLAG_HIGH_DETAIL           = 2048, // 1<<11
+---   PV_FLAG_DEFAULT_HELMET        = 4096, // 1<<12
+---   PV_FLAG_RANDOM_HELMET         = 8192, // 1<<13
+---   PV_FLAG_SCRIPT_HELMET         = 16384, // 1<<14
+---   PV_FLAG_FLIGHT_HELMET         = 32768, // 1<<15
+---   PV_FLAG_HIDE_IN_FIRST_PERSON  = 65536, // 1<<16
+---   PV_FLAG_USE_PHYSICS_HAT_2     = 131072, // 1<<17
+---   PV_FLAG_PILOT_HELMET          = 262144 // 1<<18
+--- };
 --- ```
 ---
 --- @hash [0x54C7C4A94367717E](https://docs.fivem.net/natives/?_0x54C7C4A94367717E)
@@ -3906,14 +3924,14 @@ function GivePedHelmet(ped, cannotRemove, helmetFlag, textureIndex) end
 function IsPedDiving(ped) end
 
     
---- SetPedHelmet
+--- Sets whether a pedestrian should wear a helmet.
 ---
 --- @hash [0x560A43136EB58105](https://docs.fivem.net/natives/?_0x560A43136EB58105)
 --- @param ped Ped
---- @param canWearHelmet boolean
+--- @param bEnable boolean
 --- @return void
---- @overload fun(ped: Ped, canWearHelmet: boolean): void
-function SetPedHelmet(ped, canWearHelmet) end
+--- @overload fun(ped: Ped, bEnable: boolean): void
+function SetPedHelmet(ped, bEnable) end
 
     
 --- SetRelationshipGroupDontAffectWantedLevel
@@ -5826,14 +5844,84 @@ function SetPedClothProne(p0, p1) end
 function N_0x82a3d6d9cc2cb8e3(p0, p1) end
 
     
---- N_0x83a169eabcdb10a2
----
+--- Sets the palette index of a ped's phone.
+--- 
+--- | Value | Color      |
+--- | :---: | :-----:    |
+--- |  `0`  | Light Blue |
+--- |  `1`  | Green      |
+--- |  `2`  | Red        |
+--- |  `3`  | Orange     |
+--- |  `4`  | Grey       |
+--- |  `5`  | Purple     |
+--- |  `6`  | Pink       |
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage -- Define a table with color names mapped to their corresponding palette indices for phone colors
+--- local PhoneColors = {
+---     Blue = 0,
+---     Green = 1,
+---     Red = 2,
+---     Orange = 3,
+---     Grey = 4,
+---     Purple = 5,
+---     Pink = 6
+--- }
+--- 
+--- -- Retrieve the current player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Set the phone color of the player's ped to Green using the corresponding index from the PhoneColors table
+--- SetPedPhonePaletteIdx(playerPed, PhoneColors.Green
 --- @hash [0x83A169EABCDB10A2](https://docs.fivem.net/natives/?_0x83A169EABCDB10A2)
---- @param p0 any
---- @param p1 any
+--- @param ped Ped
+--- @param index number (int)
 --- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0x83a169eabcdb10a2(p0, p1) end
+--- @overload fun(ped: Ped, index: number): void
+function SetPedPhonePaletteIdx(ped, index) end
+
+    
+--- # New Name: SetPedPhonePaletteIdx
+--- Sets the palette index of a ped's phone.
+--- 
+--- | Value | Color      |
+--- | :---: | :-----:    |
+--- |  `0`  | Light Blue |
+--- |  `1`  | Green      |
+--- |  `2`  | Red        |
+--- |  `3`  | Orange     |
+--- |  `4`  | Grey       |
+--- |  `5`  | Purple     |
+--- |  `6`  | Pink       |
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage -- Define a table with color names mapped to their corresponding palette indices for phone colors
+--- local PhoneColors = {
+---     Blue = 0,
+---     Green = 1,
+---     Red = 2,
+---     Orange = 3,
+---     Grey = 4,
+---     Purple = 5,
+---     Pink = 6
+--- }
+--- 
+--- -- Retrieve the current player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Set the phone color of the player's ped to Green using the corresponding index from the PhoneColors table
+--- SetPedPhonePaletteIdx(playerPed, PhoneColors.Green
+--- @hash [0x83A169EABCDB10A2](https://docs.fivem.net/natives/?_0x83A169EABCDB10A2)
+--- @param ped Ped
+--- @param index number (int)
+--- @return void
+--- @overload fun(ped: Ped, index: number): void
+--- @deprecated
+function N_0x83a169eabcdb10a2(ped, index) end
 
     
 --- ```
@@ -6533,7 +6621,7 @@ function SetPedDensityMultiplierThisFrame(multiplier) end
 function DeletePed(ped) end
 
     
---- SetPedShootsAtCoord
+--- Fires a weapon at a coordinate using a ped.
 ---
 --- @hash [0x96A05E4FB321B1BA](https://docs.fivem.net/natives/?_0x96A05E4FB321B1BA)
 --- @param ped Ped
@@ -7118,20 +7206,20 @@ function SetPedGravity(ped, toggle) end
 function IsPedheadshotValid(id) end
 
     
---- IsAnyPedShootingInArea
+--- Verifies whether a ped is firing within a specific area.
 ---
 --- @hash [0xA0D3D71EA1086C55](https://docs.fivem.net/natives/?_0xA0D3D71EA1086C55)
---- @param x1 number (float)
---- @param y1 number (float)
---- @param z1 number (float)
---- @param x2 number (float)
---- @param y2 number (float)
---- @param z2 number (float)
---- @param p6 boolean
---- @param p7 boolean
+--- @param minX number (float)
+--- @param minY number (float)
+--- @param minZ number (float)
+--- @param maxX number (float)
+--- @param maxY number (float)
+--- @param maxZ number (float)
+--- @param bHighlightArea boolean
+--- @param bDo3DCheck boolean
 --- @return boolean
---- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, p6: boolean, p7: boolean): boolean
-function IsAnyPedShootingInArea(x1, y1, z1, x2, y2, z2, p6, p7) end
+--- @overload fun(minX: number, minY: number, minZ: number, maxX: number, maxY: number, maxZ: number, bHighlightArea: boolean, bDo3DCheck: boolean): boolean
+function IsAnyPedShootingInArea(minX, minY, minZ, maxX, maxY, maxZ, bHighlightArea, bDo3DCheck) end
 
     
 --- DisableHeadBlendPaletteColor
@@ -7318,7 +7406,7 @@ function GetNumberOfPedPropTextureVariations(ped, propId, drawableId) end
 function SetDriverAggressiveness(driver, aggressiveness) end
 
     
---- RemovePedHelmet
+--- Remove a helmet from a ped
 ---
 --- @hash [0xA7B2458D0AD6DED8](https://docs.fivem.net/natives/?_0xA7B2458D0AD6DED8)
 --- @param ped Ped
@@ -10265,7 +10353,7 @@ function GetVehiclePedIsEntering(ped) end
 function SetExclusivePhoneRelationships(ped) end
 
     
---- WasPedKilledByStealth
+--- Verifies whether ped was eliminated through stealth.
 ---
 --- @hash [0xF9800AA1A771B000](https://docs.fivem.net/natives/?_0xF9800AA1A771B000)
 --- @param ped Ped

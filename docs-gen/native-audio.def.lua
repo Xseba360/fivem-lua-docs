@@ -1016,6 +1016,8 @@ function RequestScriptAudioBank(bankName, bOverNetwork) end
 function SetVariableOnStream(p0, p1) end
 
     
+--- Determines if any ped-independent, positionally-based scripted speech is currently active. This typically includes speech events triggered using [`PLAY_AMBIENT_SPEECH_FROM_POSITION_NATIVE`](https://docs.fivem.net/natives/?_0xED640017ED337E45).
+--- 
 --- ```
 --- NativeDB Introduced: v2189
 --- ```
@@ -1028,6 +1030,8 @@ function IsAnyPositionalSpeechPlaying() end
 
     
 --- # New Name: IsAnyPositionalSpeechPlaying
+--- Determines if any ped-independent, positionally-based scripted speech is currently active. This typically includes speech events triggered using [`PLAY_AMBIENT_SPEECH_FROM_POSITION_NATIVE`](https://docs.fivem.net/natives/?_0xED640017ED337E45).
+--- 
 --- ```
 --- NativeDB Introduced: v2189
 --- ```

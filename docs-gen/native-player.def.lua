@@ -40,9 +40,7 @@ function SetPlayerModel(player, model) end
 function SetWantedLevelMultiplier(multiplier) end
 
     
---- ```
---- Set player team on deathmatch and last team standing..  
---- ```
+--- Set the player's current team.
 ---
 --- @hash [0x0299FA38396A4940](https://docs.fivem.net/natives/?_0x0299FA38396A4940)
 --- @param player Player
@@ -334,7 +332,7 @@ function SpecialAbilityDepleteMeter(player, p1) end
 function PlayerDetachVirtualBound() end
 
     
---- SetPlayerMayNotEnterAnyVehicle
+--- Establishes a reset flag to prevent the player from entering any vehicle. Not that this native must be called every frame.
 ---
 --- @hash [0x1DE37BBF9E9CC14A](https://docs.fivem.net/natives/?_0x1DE37BBF9E9CC14A)
 --- @param player Player
@@ -394,18 +392,14 @@ function N_0x2382ab11450ae7ba(p0, p1) end
 function IsPlayerWantedLevelGreater(player, wantedLevel) end
 
     
---- ```
---- Simply sets you as invincible (Health will not deplete).  
---- Use 0x733A643B5B0C53C1 instead if you want Ragdoll enabled, which is equal to:  
---- *(DWORD *)(playerPedAddress + 0x188) |= (1 << 9);  
---- ```
+--- Make the player impervious to all forms of damage.
 ---
 --- @hash [0x239528EACDC3E7DE](https://docs.fivem.net/natives/?_0x239528EACDC3E7DE)
 --- @param player Player
---- @param toggle boolean
+--- @param bInvincible boolean
 --- @return void
---- @overload fun(player: Player, toggle: boolean): void
-function SetPlayerInvincible(player, toggle) end
+--- @overload fun(player: Player, bInvincible: boolean): void
+function SetPlayerInvincible(player, bInvincible) end
 
     
 --- ```
@@ -1541,7 +1535,7 @@ function SetPlayerHasReserveParachute(player) end
 function N_0x7e07c78925d5fd96(p0) end
 
     
---- SetPlayerMayOnlyEnterThisVehicle
+--- Limit the player to only enter this vehicle. Note set vehicle to false if you want them to access any vehicle.
 ---
 --- @hash [0x8026FF78F208978A](https://docs.fivem.net/natives/?_0x8026FF78F208978A)
 --- @param player Player
@@ -3353,10 +3347,7 @@ function SpecialAbilityChargeMedium(player, p1, p2) end
 function SpecialAbilityUnlock(playerModel) end
 
     
---- ```
---- Returns TRUE if the game is in online mode and FALSE if in offline mode.  
---- This is an alias for NETWORK_IS_SIGNED_ONLINE.  
---- ```
+--- It returns true if the player is online, suggesting they are also logged in locally. Note that this is an alias for `NETWORK_IS_SIGNED_ONLINE`.
 ---
 --- @hash [0xF25D331DC2627BBC](https://docs.fivem.net/natives/?_0xF25D331DC2627BBC)
 ---
