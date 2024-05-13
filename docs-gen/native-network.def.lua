@@ -1887,8 +1887,8 @@ function NetworkGetPlayerIndex(player) end
 ---
 --- @hash [0x2555CF7DA5473794](https://docs.fivem.net/natives/?_0x2555CF7DA5473794)
 ---
---- @return any
---- @overload fun(): any
+--- @return void
+--- @overload fun(): void
 function N_0x2555cf7da5473794() end
 
     
@@ -6472,8 +6472,8 @@ function N_0x6fb7bb3607d27fa2() end
 ---
 --- @hash [0x6FD992C4A1C1B986](https://docs.fivem.net/natives/?_0x6FD992C4A1C1B986)
 ---
---- @return any
---- @overload fun(): any
+--- @return void
+--- @overload fun(): void
 function N_0x6fd992c4a1c1b986() end
 
     
@@ -10307,8 +10307,8 @@ function N_0xaeab987727c5a8a4(p0) end
 ---
 --- @hash [0xAEDF1BC1C133D6E3](https://docs.fivem.net/natives/?_0xAEDF1BC1C133D6E3)
 ---
---- @return any
---- @overload fun(): any
+--- @return void
+--- @overload fun(): void
 function N_0xaedf1bc1c133d6e3() end
 
     
