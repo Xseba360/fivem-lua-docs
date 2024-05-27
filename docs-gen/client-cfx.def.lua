@@ -416,6 +416,16 @@ function SetTrainDoorOpenRatio(train, doorIndex, ratio) end
 function MumbleAddVoiceTargetPlayerByServerId(targetId, serverId) end
 
     
+--- Set the vehicle's roll bias. Only works on planes.
+---
+--- @hash [0x264B45DE](https://docs.fivem.net/natives/?_0x264B45DE)
+--- @param vehicle Vehicle
+--- @param value number (float)
+--- @return void
+--- @overload fun(vehicle: Vehicle, value: number): void
+function SetVehicleRollBias(vehicle, value) end
+
+    
 --- Removes the specified voice channel from the user's voice targets.
 --- 
 --- Performs the opposite operation of [MUMBLE_ADD_VOICE_TARGET_CHANNEL](https://docs.fivem.net/natives/?_0x4D386C9E)
@@ -534,6 +544,16 @@ function SetInteriorPortalRoomFrom(interiorId, portalIndex, roomFrom) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, rpm: number): void
 function SetVehicleCurrentRpm(vehicle, rpm) end
+
+    
+--- Set the vehicle's pitch bias. Only works on planes.
+---
+--- @hash [0x2A6CC9F2](https://docs.fivem.net/natives/?_0x2A6CC9F2)
+--- @param vehicle Vehicle
+--- @param value number (float)
+--- @return void
+--- @overload fun(vehicle: Vehicle, value: number): void
+function SetVehiclePitchBias(vehicle, value) end
 
     
 --- Disables autoswapping to another weapon when the current weapon runs out of ammo.
@@ -775,7 +795,21 @@ function AddTextEntry(entryKey, entryText) end
 function MumbleIsPlayerTalking(player) end
 
     
---- GetPlayerFromServerId
+--- Gets a local client's Player ID from its server ID counterpart, assuming the passed `serverId` exists on the client.
+--- 
+--- If no matching client is found, or an invalid value is passed over as the `serverId` native's parameter, the native result will be `-1`.
+--- 
+--- It's worth noting that this native method can only retrieve information about clients that are culled to the connected client.
+--- @usage --We will assume the serverId is '4' in this scenario and that it's a valid serverId.
+--- 
+--- -- Passing invalid Player IDs such as 'nil' or IDs that don't exist will result in playerId being -1.
+--- 
+--- local playerId = GetPlayerFromServerId(serverId);
+--- 
+--- -- If the resulting playerId is not invalid (not equal to -1)
+--- if playerId ~= -1 then
+---     -- Do our stuff on this player.
+--- end
 ---
 --- @hash [0x344EA166](https://docs.fivem.net/natives/?_0x344EA166)
 --- @param serverId number (int)
@@ -1185,6 +1219,8 @@ function GetWeaponComponentDamageModifier(componentHash) end
 
     
 --- Loads a minimap overlay from a GFx file in the current resource.
+--- 
+--- If you need to control the depth of overlay use [`ADD_MINIMAP_OVERLAY_WITH_DEPTH`](https://docs.fivem.net/natives/?_0xED0935B5).
 ---
 --- @hash [0x4AFD2499](https://docs.fivem.net/natives/?_0x4AFD2499)
 --- @param name string (char*)
@@ -1617,7 +1653,7 @@ function SetWaterQuadLevel(waterQuad, level) end
 function MumbleSetAudioInputIntent(intentHash) end
 
     
---- A getter for [SET_WEAPON_ANIMATION_OVERRIDE](\_0x1055AC3A667F09D9).
+--- A getter for [SET_WEAPON_ANIMATION_OVERRIDE](https://docs.fivem.net/natives/?_0x1055AC3A667F09D9).
 --- @usage local weaponAnimation = GetWeaponAnimationOverride(PlayerPedId()
 --- @hash [0x63ED2E7](https://docs.fivem.net/natives/?_0x63ED2E7)
 --- @param ped Ped
@@ -2123,7 +2159,7 @@ function GetPedDecorations(ped) end
 function GetVehicleLightMultiplier(vehicle) end
 
     
---- SetModelHeadlightConfiguration
+--- **This native is deprecated and does nothing!**
 ---
 --- @hash [0x7F6B8D75](https://docs.fivem.net/natives/?_0x7F6B8D75)
 --- @param modelHash Hash
@@ -3148,6 +3184,15 @@ function GetWeaponComponentCameraHash(componentHash) end
 function RegisterFontId(fontName) end
 
     
+--- Sets the text font for the current text drawing command.
+---
+--- @hash [0xADA9255D](https://docs.fivem.net/natives/?_0xADA9255D)
+--- @param fontId number (int)
+--- @return void
+--- @overload fun(fontId: number): void
+function SetTextFontForCurrentCommand(fontId) end
+
+    
 --- Leaves cursor mode. This function supports SDK infrastructure and is not intended to be used directly from your code.
 ---
 --- @hash [0xADECF19E](https://docs.fivem.net/natives/?_0xADECF19E)
@@ -3199,6 +3244,17 @@ function GetCalmingQuadDampening(waterQuad, calmingQuadDampening) end
 function CreateRuntimeTextureFromDuiHandle(txd, txn, duiHandle) end
 
     
+--- Allows the bypassing of default game behavior that prevents the use of [SET_PED_DRIVE_BY_CLIPSET_OVERRIDE](https://docs.fivem.net/natives/?_0xED34AB6C5CB36520) in certain scenarios to avoid clipping issues (e.g., when there is more than one Ped in a vehicle).
+--- 
+--- Note: This flag and the overridden clipset are not replicated values and require synchronization through user scripts. Additionally, current game behavior also restricts applying this clipset locally when in first-person mode and will require a temporary workaround.
+---
+--- @hash [0xB14F8EAD](https://docs.fivem.net/natives/?_0xB14F8EAD)
+--- @param flag boolean
+--- @return void
+--- @overload fun(flag: boolean): void
+function OverridePedsUseDefaultDriveByClipset(flag) end
+
+    
 --- Disables the editor runtime mode, changing game behavior to not track entity metadata.
 --- This function supports SDK infrastructure and is not intended to be used directly from your code.
 ---
@@ -3227,6 +3283,42 @@ function GetWaterQuadCount() end
 --- @return void
 --- @overload fun(vehicle: Vehicle, wheelIndex: number, health: number): void
 function SetVehicleWheelHealth(vehicle, wheelIndex, health) end
+
+    
+--- Purpose: The game's default values for these make shooting while traveling Left quite a bit slower than shooting while traveling right (This could be a game-balance thing?)
+--- 
+--- Default Min: -45 Degrees
+--- Default Max: 135 Degrees
+--- 
+--- ```
+---    \ ,- ~ ||~ - ,
+--- , ' \    x   x    ' ,
+--- ```
+--- 
+--- ,      \    x    x   x  ,
+--- ,         \  x     x      ,
+--- ,            \     x    x  ,
+--- ,              \      x    ,
+--- ,                \   x     ,
+--- ,                 \   x x ,
+--- ,                  \  x ,
+--- ,                 , '
+--- ' - , \_ \_ \_ ,  '  \\
+--- 
+--- If the transition angle is within the shaded portion (x), there will be no transition(Quicker)
+--- The angle corresponds to where you are looking(North on the circle) vs. the heading of your Ped.
+--- Note: For some reason,
+--- 
+--- You can set these values to whatever you'd like with this native, but keep in mind that the transitional spin is only clockwise for some reason.
+--- 
+--- I'd personally recommend something like -135/135
+---
+--- @hash [0xB300F03](https://docs.fivem.net/natives/?_0xB300F03)
+--- @param min number (float)
+--- @param max number (float)
+--- @return void
+--- @overload fun(min: number, max: number): void
+function SetPedTurningThresholds(min, max) end
 
     
 --- Sets the height of the vehicle's suspension.
@@ -3359,6 +3451,24 @@ function GetPedFaceFeature(ped, index) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, level: number): void
 function SetVehicleFuelLevel(vehicle, level) end
+
+    
+--- Draw a glow sphere this frame. Up to 256 per single frame.
+---
+--- @hash [0xBD25EC89](https://docs.fivem.net/natives/?_0xBD25EC89)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param radius number (float)
+--- @param colorR number (int)
+--- @param colorG number (int)
+--- @param colorB number (int)
+--- @param intensity number (float)
+--- @param invert boolean
+--- @param marker boolean
+--- @return void
+--- @overload fun(posX: number, posY: number, posZ: number, radius: number, colorR: number, colorG: number, colorB: number, intensity: number, invert: boolean, marker: boolean): void
+function DrawGlowSphere(posX, posY, posZ, radius, colorR, colorG, colorB, intensity, invert, marker) end
 
     
 --- Sets whether the wheel is powered.
@@ -4232,6 +4342,15 @@ function GetPlayerStamina(playerId) end
 function SetWaveQuadAmplitude(waveQuad, amplitude) end
 
     
+--- Returns the world position the pointer is hovering on the pause map.
+---
+--- @hash [0xE5AF7A82](https://docs.fivem.net/natives/?_0xE5AF7A82)
+---
+--- @return Vector3
+--- @overload fun(): Vector3
+function GetPauseMapPointerWorldPosition() end
+
+    
 --- Toggles whether the usage of [ADD_ROPE](https://docs.fivem.net/natives/?_0xE832D760399EB220) should create an underlying CNetworkRopeWorldStateData. By default this is set to false.
 ---
 --- @hash [0xE62FC73](https://docs.fivem.net/natives/?_0xE62FC73)
@@ -4474,6 +4593,16 @@ function SetVehicleSteeringScale(vehicle, scale) end
 function DrawRectRotated(x, y, width, height, rotation, r, g, b, a) end
 
     
+--- Loads a minimap overlay from a GFx file in the current resource.
+---
+--- @hash [0xED0935B5](https://docs.fivem.net/natives/?_0xED0935B5)
+--- @param name string (char*)
+--- @param depth number (int)
+--- @return number
+--- @overload fun(name: string, depth: number): number
+function AddMinimapOverlayWithDepth(name, depth) end
+
+    
 --- GetVehicleNumberOfWheels
 ---
 --- @hash [0xEDF4B0FC](https://docs.fivem.net/natives/?_0xEDF4B0FC)
@@ -4492,6 +4621,15 @@ function GetVehicleNumberOfWheels(vehicle) end
 --- @return number
 --- @overload fun(mapdata: number, entity: number): number
 function GetEntityIndexFromMapdata(mapdata, entity) end
+
+    
+--- Activates built-in timecycle editing tool.
+---
+--- @hash [0xEEB9B76A](https://docs.fivem.net/natives/?_0xEEB9B76A)
+---
+--- @return void
+--- @overload fun(): void
+function ActivateTimecycleEditor() end
 
     
 --- See [SET_SCRIPT_GFX_ALIGN](https://docs.fivem.net/natives/?_0xB8A850F20A067EB6) for details about how gfx align works.

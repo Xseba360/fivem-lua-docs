@@ -489,15 +489,6 @@ function GetPlayerIdentifier(playerSrc, identifier) end
 function LoadPlayerCommerceDataExt(playerSrc) end
 
     
---- NetworkGetVoiceProximityOverride
----
---- @hash [0x7A6462F4](https://docs.fivem.net/natives/?_0x7A6462F4)
---- @param playerSrc string (char*)
---- @return Vector3
---- @overload fun(playerSrc: string): Vector3
-function NetworkGetVoiceProximityOverride(playerSrc) end
-
-    
 --- ```
 --- Gets the amount of time player has spent evading the cops.
 --- Counter starts and increments only when cops are chasing the player.
@@ -793,19 +784,6 @@ function HasVehicleBeenDamagedByBullets(vehicle) end
 function DropPlayer(playerSrc, reason) end
 
     
---- Used for freemode (online) characters.
---- 
---- **This is the server-side RPC native equivalent of the client native [\_SET_PED_HAIR_COLOR](?\_0x4CFFC65454C93A49).**
----
---- @hash [0xBB43F090](https://docs.fivem.net/natives/?_0xBB43F090)
---- @param ped Ped
---- @param colorID number (int)
---- @param highlightColorID number (int)
---- @return void
---- @overload fun(ped: Ped, colorID: number, highlightColorID: number): void
-function SetPedHairColor(ped, colorID, highlightColorID) end
-
-    
 --- Requests whether or not the commerce data for the specified player has loaded.
 ---
 --- @hash [0xBEFE93F4](https://docs.fivem.net/natives/?_0xBEFE93F4)
@@ -1086,5 +1064,14 @@ function GetPlayerPing(playerSrc) end
 --- @return number
 --- @overload fun(playerSrc: string): number
 function GetNumPlayerIdentifiers(playerSrc) end
+
+    
+--- NetworkGetVoiceProximityOverrideForPlayer
+---
+--- @hash [0xFFEEF513](https://docs.fivem.net/natives/?_0xFFEEF513)
+--- @param playerSrc string (char*)
+--- @return Vector3
+--- @overload fun(playerSrc: string): Vector3
+function NetworkGetVoiceProximityOverrideForPlayer(playerSrc) end
 
     
