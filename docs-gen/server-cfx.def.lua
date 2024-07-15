@@ -690,26 +690,6 @@ function GetVehicleDashboardColour(vehicle, color) end
 function SetRoutingBucketEntityLockdownMode(bucketId, mode) end
 
     
---- Returns the type of the passed vehicle.
---- 
---- ### Vehicle types
---- 
---- *   automobile
---- *   bike
---- *   boat
---- *   heli
---- *   plane
---- *   submarine
---- *   trailer
---- *   train
----
---- @hash [0xA273060E](https://docs.fivem.net/natives/?_0xA273060E)
---- @param vehicle Vehicle
---- @return string
---- @overload fun(vehicle: Vehicle): string
-function GetVehicleType(vehicle) end
-
-    
 --- Get an identifier from a player by the type of the identifier.
 --- @usage local playerLicenses = {}
 --- 

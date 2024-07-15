@@ -464,6 +464,28 @@ function SetResourceKvpFloat(key, value) end
 function GetInstanceId() end
 
     
+--- Returns the type of the passed vehicle.
+--- 
+--- For client scripts, reference the more detailed [GET_VEHICLE_TYPE_RAW](https://docs.fivem.net/natives/?_0xDE73BC10) native.
+--- 
+--- ### Vehicle types
+--- 
+--- *   automobile
+--- *   bike
+--- *   boat
+--- *   heli
+--- *   plane
+--- *   submarine
+--- *   trailer
+--- *   train
+---
+--- @hash [0xA273060E](https://docs.fivem.net/natives/?_0xA273060E)
+--- @param vehicle Vehicle
+--- @return string
+--- @overload fun(vehicle: Vehicle): string
+function GetVehicleType(vehicle) end
+
+    
 --- On the server this will return the players source, on the client it will return the player handle.
 --- @usage AddStateBagChangeHandler("isDead", nil, function(bagName, key, value) 
 ---     local ply = GetPlayerFromStateBagName(bagName)

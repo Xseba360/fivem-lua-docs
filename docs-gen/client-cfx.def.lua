@@ -1209,6 +1209,27 @@ function SetVehicleWheelTireColliderWidth(vehicle, wheelIndex, value) end
 function SetVehicleHandlingFloat(vehicle, class_, fieldName, value) end
 
     
+--- Sets the vehicles gear ratio on choosen gear, reverse gear needs to be a negative float and forward moving gear needs to be a positive float. Refer to the examples if confused.
+--- @usage local function Set8SpeedVehicleGears(Vehicle)
+---     SetVehicleGearRatio(Vehicle, 0, -3.32)  -- reverse gear at -3.21:1
+---     SetVehicleGearRatio(Vehicle, 1, 4.71)   -- 1st gear at 4.71:1
+---     SetVehicleGearRatio(Vehicle, 2, 3.14)   -- 2nd gear at 3.14:1
+---     SetVehicleGearRatio(Vehicle, 3, 2.11)   -- 3rd gear at 2.11:1
+---     SetVehicleGearRatio(Vehicle, 4, 1.67)   -- 4th gear at 1.67:1
+---     SetVehicleGearRatio(Vehicle, 5, 1.29)   -- 5th gear at 1.29:1
+---     SetVehicleGearRatio(Vehicle, 6, 1.0)    -- 6th gear at 1.0:1
+---     SetVehicleGearRatio(Vehicle, 7, 0.84)   -- 7th gear at 0.84:1
+---     SetVehicleGearRatio(Vehicle, 8, 0.67)   -- 8th gear at 0.67:1
+--- en
+--- @hash [0x496EF2F2](https://docs.fivem.net/natives/?_0x496EF2F2)
+--- @param vehicle Vehicle
+--- @param gear number (int)
+--- @param ratio number (float)
+--- @return void
+--- @overload fun(vehicle: Vehicle, gear: number, ratio: number): void
+function SetVehicleGearRatio(vehicle, gear, ratio) end
+
+    
 --- A getter for `CWeaponDamageModifier` in a weapon component.
 ---
 --- @hash [0x4A0E3855](https://docs.fivem.net/natives/?_0x4A0E3855)
@@ -1439,6 +1460,15 @@ function SetNetworkWalkMode(enabled) end
 --- @return void
 --- @overload fun(interiorId: number, roomIndex: number, flag: number): void
 function SetInteriorRoomFlag(interiorId, roomIndex, flag) end
+
+    
+--- GetFuelConsumptionRateMultiplier
+---
+--- @hash [0x5550BF9F](https://docs.fivem.net/natives/?_0x5550BF9F)
+---
+--- @return number
+--- @overload fun(): number
+function GetFuelConsumptionRateMultiplier() end
 
     
 --- SetInteriorPortalRoomTo
@@ -2242,6 +2272,17 @@ function SetWaterQuadBounds(waterQuad, minX, minY, maxX, maxY) end
 function ResetMapdataEntityMatrix(mapDataHash, entityInternalIdx) end
 
     
+--- Turns on and off fuel consumption in all vehicles operated by a player. NPC operated vehicles will not consume fuel to avoid traffic disruptions.
+--- 
+--- The default Gta5 behaviour is fuel consumption turned off.
+---
+--- @hash [0x81DAD03E](https://docs.fivem.net/natives/?_0x81DAD03E)
+--- @param state boolean
+--- @return void
+--- @overload fun(state: boolean): void
+function SetFuelConsumptionState(state) end
+
+    
 --- Sets the volumes for the sound channels in a submix effect.
 --- Values can be between 0.0 and 1.0.
 --- Channel 5 and channel 6 are not used in voice chat but are believed to be center and LFE channels.
@@ -2277,6 +2318,19 @@ function SetAudioSubmixOutputVolumes(submixId, outputSlot, frontLeftVolume, fron
 --- @return number
 --- @overload fun(interiorId: number, roomIndex: number): number
 function GetInteriorRoomTimecycle(interiorId, roomIndex) end
+
+    
+--- Gets vehicles gear ratio on choosen gear.
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(-1))
+--- local currentGear = GetVehicleCurrentGear(Vehicle)
+--- 
+--- print(GetVehicleGearRatio(vehicle, currentGear)) -- will print current vehicle gear to consol
+--- @hash [0x82E794B7](https://docs.fivem.net/natives/?_0x82E794B7)
+--- @param vehicle Vehicle
+--- @param gear number (int)
+--- @return number
+--- @overload fun(vehicle: Vehicle, gear: number): number
+function GetVehicleGearRatio(vehicle, gear) end
 
     
 --- Gets the vehicle indicator light state. 0 = off, 1 = left, 2 = right, 3 = both
@@ -2335,6 +2389,19 @@ function SetInteriorPortalEntityFlag(interiorId, portalIndex, entityIndex, flag)
 --- @return number
 --- @overload fun(): number
 function GetTimecycleVarCount() end
+
+    
+--- Sets fuel consumption rate multiplier for all vehicles operated by a player. This is a way to slow down or speed up fuel consumption for all vehicles at a time. If 0 - it practically means that fuel will not be consumed. By default is set to 1.
+--- 
+--- When the multiplier is set to 1 a default 65 litre gas tank car with average fuel consumption can stay idle for ~16.67 hours or run with max RPM for ~2.5 hours.
+--- 
+--- To customize fuel consumption per vehicle / vehicle class use [`SET_HANDLING_FLOAT`](https://docs.fivem.net/natives/?_0x90DD01C)/[`SET_VEHICLE_HANDLING_FLOAT`](https://docs.fivem.net/natives/?_0x488C86D2) natives with `fieldName` equal to `fPetrolConsumptionRate`. By default it is set to 0.5 for all vehicles.
+---
+--- @hash [0x845F3E5C](https://docs.fivem.net/natives/?_0x845F3E5C)
+--- @param multiplier number (float)
+--- @return void
+--- @overload fun(multiplier: number): void
+function SetFuelConsumptionRateMultiplier(multiplier) end
 
     
 --- MumbleGetTalkerProximity
@@ -2503,6 +2570,19 @@ function SendLoadingScreenMessage(jsonString) end
 --- @return number
 --- @overload fun(): number
 function GetVehicleDashboardWaterTemp() end
+
+    
+--- Override the limits on the number and types of melee combatants. The game is limited to at most ten combatants among the three types: primary, secondary, and observers.
+--- 
+--- This native infers the number of observers based on the primary and secondary counts.
+---
+--- @hash [0x8E51EC29](https://docs.fivem.net/natives/?_0x8E51EC29)
+--- @param primaryCount number (int)
+--- @param secondaryCount number (int)
+--- @param populationPedCount number (int)
+--- @return void
+--- @overload fun(primaryCount: number, secondaryCount: number, populationPedCount: number): void
+function SetPedMeleeCombatLimits(primaryCount, secondaryCount, populationPedCount) end
 
     
 --- Equivalent of [START_FIND_KVP](https://docs.fivem.net/natives/?_0xDD379006), but for another resource than the current one.
@@ -2920,6 +3000,15 @@ function SetWaterQuadIsInvisible(waterQuad, isInvisible) end
 --- @return number
 --- @overload fun(ped: Ped): number
 function GetPedHairColor(ped) end
+
+    
+--- Sets the maximum distance in which [\_SET_VEHICLE_NITRO_ENABLED](https://docs.fivem.net/natives/?_0xC8E9B6B71B8E660D) PTFX are rendered. Distance is measured from the camera position.
+---
+--- @hash [0xA40CB822](https://docs.fivem.net/natives/?_0xA40CB822)
+--- @param range number (float)
+--- @return void
+--- @overload fun(range: number): void
+function SetVehicleNitroPtfxRange(range) end
 
     
 --- IsVehicleInteriorLightOn
@@ -3665,6 +3754,15 @@ function SetVehicleWheelPower(vehicle, wheelIndex, power) end
 function GetVehicleAlarmTimeLeft(vehicle) end
 
     
+--- GetFuelConsumptionState
+---
+--- @hash [0xC66CD90C](https://docs.fivem.net/natives/?_0xC66CD90C)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function GetFuelConsumptionState() end
+
+    
 --- GetInteriorPortalEntityCount
 --- @usage local playerPed = PlayerPedId()
 --- local interiorId = GetInteriorFromEntity(playerPed)
@@ -4205,6 +4303,38 @@ function IsVehicleAlarmSet(vehicle) end
 function GetVehicleNextGear(vehicle) end
 
     
+--- Returns the model type of the vehicle as defined by:
+--- 
+--- ```cpp
+--- enum VehicleType
+--- {
+--- 	VEHICLE_TYPE_NONE = -1,
+--- 	VEHICLE_TYPE_CAR = 0,
+--- 	VEHICLE_TYPE_PLANE = 1,
+--- 	VEHICLE_TYPE_TRAILER = 2,
+--- 	VEHICLE_TYPE_QUADBIKE = 3,
+--- 	VEHICLE_TYPE_DRAFT = 4,
+--- 	VEHICLE_TYPE_SUBMARINECAR = 5,
+--- 	VEHICLE_TYPE_AMPHIBIOUS_AUTOMOBILE = 6,
+--- 	VEHICLE_TYPE_AMPHIBIOUS_QUADBIKE = 7,
+--- 	VEHICLE_TYPE_HELI = 8,
+--- 	VEHICLE_TYPE_BLIMP = 9,
+--- 	VEHICLE_TYPE_AUTOGYRO = 10,
+--- 	VEHICLE_TYPE_BIKE = 11,
+--- 	VEHICLE_TYPE_BICYCLE = 12,
+--- 	VEHICLE_TYPE_BOAT = 13,
+--- 	VEHICLE_TYPE_TRAIN = 14,
+--- 	VEHICLE_TYPE_SUBMARINE = 15,
+--- };
+--- ```
+---
+--- @hash [0xDE73BC10](https://docs.fivem.net/natives/?_0xDE73BC10)
+--- @param vehicle Vehicle
+--- @return number
+--- @overload fun(vehicle: Vehicle): number
+function GetVehicleTypeRaw(vehicle) end
+
+    
 --- EndFindObject
 ---
 --- @hash [0xDEDA4E50](https://docs.fivem.net/natives/?_0xDEDA4E50)
@@ -4641,6 +4771,17 @@ function ActivateTimecycleEditor() end
 --- @return void
 --- @overload fun(id: number, horizontalAlign: number, verticalAlign: number): void
 function SetHudComponentAlign(id, horizontalAlign, verticalAlign) end
+
+    
+--- Checks whether the vehicle consumes fuel. The check is done based on petrol tank volume and vehicle type. Bicycles and vehicles with petrol tank volume equal to zero (only bicycles by default) do not use fuel. All other vehicles do.
+--- 
+--- You can customize petrol tank volume using [`SET_HANDLING_FLOAT`](https://docs.fivem.net/natives/?_0x90DD01C)/[`SET_VEHICLE_HANDLING_FLOAT`](https://docs.fivem.net/natives/?_0x488C86D2) natives with `fieldName` equal to `fPetrolTankVolume`.
+---
+--- @hash [0xEF30A696](https://docs.fivem.net/natives/?_0xEF30A696)
+--- @param vehicle Vehicle
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+function DoesVehicleUseFuel(vehicle) end
 
     
 --- GetVehicleWheelTireColliderWidth
