@@ -876,44 +876,78 @@ function SetupShopPedOutfitQuery(character, p1) end
 function N_0xf3fbe2d50a6a8c28(character, p1) end
 
     
+--- Returns data that adheres to the tattoo shop item data that is used in shop_tattoo.meta
+--- 
 --- Character types:
 --- 
---- ```
---- 0 = Michael,
---- 1 = Franklin,
---- 2 = Trevor,
---- 3 = MPMale,
---- 4 = MPFemale
---- ```
---- 
---- ```csharp
---- enum TattooZoneData
+--- ```cpp
+--- enum eTattooFaction
 --- {
----     ZONE_TORSO = 0,
----     ZONE_HEAD = 1,
----     ZONE_LEFT_ARM = 2,
----     ZONE_RIGHT_ARM = 3,
----     ZONE_LEFT_LEG = 4,
----     ZONE_RIGHT_LEG = 5,
----     ZONE_UNKNOWN = 6,
----     ZONE_NONE = 7,
---- };
---- 
---- struct outComponent
---- {
----     // these vars are suffixed with 4 bytes of padding each.
----     uint unk;
----     int unk2;
----     uint tattooCollectionHash;
----     uint tattooNameHash;
----     int unk3;
----     TattooZoneData zoneId;
----     uint unk4;
----     uint unk5;
----     // maybe more, not sure exactly, decompiled scripts are very vague around this part.
+--- 	TATTOO_SP_MICHAEL = 0,
+--- 	TATTOO_SP_FRANKLIN = 1,
+--- 	TATTOO_SP_TREVOR = 2,
+--- 	TATTOO_MP_FM = 3,
+--- 	TATTOO_MP_FM_F = 4
 --- }
 --- ```
----
+--- 
+--- Returned struct properties:
+--- 
+--- ```cpp
+--- struct sTattooShopItemValues
+--- {
+--- 	// Lock hash, used with IS_CONTENT_ITEM_LOCKED
+--- 	int LockHash;
+--- 	// Unique ID of this slot. It can also be 0.
+--- 	int Index;
+--- 	// Collection hash of this tattoo
+--- 	int CollectionHash;
+--- 	// Preset hash of this tattoo
+--- 	int PresetHash;
+--- 	// Cost of this tattoo in shops.
+--- 	int Cost;
+--- 	// Secondary placement of this tattoo.
+--- 	int eFacing;
+--- 	// Location of this tattoo on the body (for example, for torso there would be chest upper, stomach, etc)
+--- 	int UpdateGroup;
+--- 	// This tattoo's name in the form of a text label.
+--- 	const char* NameTextLabel;
+--- };
+--- ```
+--- @usage local function TattooBlobToTable(blob)
+---     local LockHash = string.unpack('<i4', blob, 1) & 0xFFFFFFFF -- uint (hash)
+---     local Index = string.unpack('<i4', blob, 9) -- int
+---     local Collection = string.unpack('<i4', blob, 17) & 0xFFFFFFFF -- uint (hash)
+---     local Preset = string.unpack('<i4', blob, 25) & 0xFFFFFFFF -- uint (hash)
+---     local Price = string.unpack('<i4', blob, 33) -- int
+---     local eFacing = string.unpack('<i4', blob, 41) -- TattooZoneData
+---     local UpdateGroup = string.unpack('<i4', blob, 49) -- uint (hash)
+---     local TextLabel = string.unpack('z', blob, 57) -- uint
+--- 
+---     return {
+---         LockHash = LockHash,
+---         Index = Index,
+---         Collection = Collection,
+---         Preset = Preset,
+---         Price = Price,
+---         eFacing = eFacing,
+---         UpdateGroup = UpdateGroup,
+---         TextLabel = TextLabel
+---     }
+--- end
+--- 
+--- function GetTattooDlcItemDataTable(CharacterType, DecorationIndex)
+--- 	local blob = string.rep('\0\0\0\0\0\0\0\0', 7+16)
+--- 	if not Citizen.InvokeNative(0xFF56381874F82086, CharacterType, DecorationIndex, blob) then return nil end -- Data doesn't exist, return a nil
+--- 
+--- 	return TattooBlobToTable(blob) -- Return the data table
+--- end
+--- 
+--- local numberOfTattoos = GetNumTattooShopDlcItems(3) -- get all tattoos for mpmale
+--- for i = 0, numberOfTattoos - 1 do
+--- 	local tattooData = GetTattooDlcItemDataTable(3, i)
+--- 	-- Do stuff with your tattoo data
+--- en
 --- @hash [0xFF56381874F82086](https://docs.fivem.net/natives/?_0xFF56381874F82086)
 --- @param characterType number (int)
 --- @param decorationIndex number (int)
@@ -924,44 +958,78 @@ function GetTattooShopDlcItemData(characterType, decorationIndex, outComponent) 
 
     
 --- # New Name: GetTattooShopDlcItemData
+--- Returns data that adheres to the tattoo shop item data that is used in shop_tattoo.meta
+--- 
 --- Character types:
 --- 
---- ```
---- 0 = Michael,
---- 1 = Franklin,
---- 2 = Trevor,
---- 3 = MPMale,
---- 4 = MPFemale
---- ```
---- 
---- ```csharp
---- enum TattooZoneData
+--- ```cpp
+--- enum eTattooFaction
 --- {
----     ZONE_TORSO = 0,
----     ZONE_HEAD = 1,
----     ZONE_LEFT_ARM = 2,
----     ZONE_RIGHT_ARM = 3,
----     ZONE_LEFT_LEG = 4,
----     ZONE_RIGHT_LEG = 5,
----     ZONE_UNKNOWN = 6,
----     ZONE_NONE = 7,
---- };
---- 
---- struct outComponent
---- {
----     // these vars are suffixed with 4 bytes of padding each.
----     uint unk;
----     int unk2;
----     uint tattooCollectionHash;
----     uint tattooNameHash;
----     int unk3;
----     TattooZoneData zoneId;
----     uint unk4;
----     uint unk5;
----     // maybe more, not sure exactly, decompiled scripts are very vague around this part.
+--- 	TATTOO_SP_MICHAEL = 0,
+--- 	TATTOO_SP_FRANKLIN = 1,
+--- 	TATTOO_SP_TREVOR = 2,
+--- 	TATTOO_MP_FM = 3,
+--- 	TATTOO_MP_FM_F = 4
 --- }
 --- ```
----
+--- 
+--- Returned struct properties:
+--- 
+--- ```cpp
+--- struct sTattooShopItemValues
+--- {
+--- 	// Lock hash, used with IS_CONTENT_ITEM_LOCKED
+--- 	int LockHash;
+--- 	// Unique ID of this slot. It can also be 0.
+--- 	int Index;
+--- 	// Collection hash of this tattoo
+--- 	int CollectionHash;
+--- 	// Preset hash of this tattoo
+--- 	int PresetHash;
+--- 	// Cost of this tattoo in shops.
+--- 	int Cost;
+--- 	// Secondary placement of this tattoo.
+--- 	int eFacing;
+--- 	// Location of this tattoo on the body (for example, for torso there would be chest upper, stomach, etc)
+--- 	int UpdateGroup;
+--- 	// This tattoo's name in the form of a text label.
+--- 	const char* NameTextLabel;
+--- };
+--- ```
+--- @usage local function TattooBlobToTable(blob)
+---     local LockHash = string.unpack('<i4', blob, 1) & 0xFFFFFFFF -- uint (hash)
+---     local Index = string.unpack('<i4', blob, 9) -- int
+---     local Collection = string.unpack('<i4', blob, 17) & 0xFFFFFFFF -- uint (hash)
+---     local Preset = string.unpack('<i4', blob, 25) & 0xFFFFFFFF -- uint (hash)
+---     local Price = string.unpack('<i4', blob, 33) -- int
+---     local eFacing = string.unpack('<i4', blob, 41) -- TattooZoneData
+---     local UpdateGroup = string.unpack('<i4', blob, 49) -- uint (hash)
+---     local TextLabel = string.unpack('z', blob, 57) -- uint
+--- 
+---     return {
+---         LockHash = LockHash,
+---         Index = Index,
+---         Collection = Collection,
+---         Preset = Preset,
+---         Price = Price,
+---         eFacing = eFacing,
+---         UpdateGroup = UpdateGroup,
+---         TextLabel = TextLabel
+---     }
+--- end
+--- 
+--- function GetTattooDlcItemDataTable(CharacterType, DecorationIndex)
+--- 	local blob = string.rep('\0\0\0\0\0\0\0\0', 7+16)
+--- 	if not Citizen.InvokeNative(0xFF56381874F82086, CharacterType, DecorationIndex, blob) then return nil end -- Data doesn't exist, return a nil
+--- 
+--- 	return TattooBlobToTable(blob) -- Return the data table
+--- end
+--- 
+--- local numberOfTattoos = GetNumTattooShopDlcItems(3) -- get all tattoos for mpmale
+--- for i = 0, numberOfTattoos - 1 do
+--- 	local tattooData = GetTattooDlcItemDataTable(3, i)
+--- 	-- Do stuff with your tattoo data
+--- en
 --- @hash [0xFF56381874F82086](https://docs.fivem.net/natives/?_0xFF56381874F82086)
 --- @param characterType number (int)
 --- @param decorationIndex number (int)
@@ -973,44 +1041,78 @@ function N_0xff56381874f82086(characterType, decorationIndex, outComponent) end
 
     
 --- # New Name: GetTattooShopDlcItemData
+--- Returns data that adheres to the tattoo shop item data that is used in shop_tattoo.meta
+--- 
 --- Character types:
 --- 
---- ```
---- 0 = Michael,
---- 1 = Franklin,
---- 2 = Trevor,
---- 3 = MPMale,
---- 4 = MPFemale
---- ```
---- 
---- ```csharp
---- enum TattooZoneData
+--- ```cpp
+--- enum eTattooFaction
 --- {
----     ZONE_TORSO = 0,
----     ZONE_HEAD = 1,
----     ZONE_LEFT_ARM = 2,
----     ZONE_RIGHT_ARM = 3,
----     ZONE_LEFT_LEG = 4,
----     ZONE_RIGHT_LEG = 5,
----     ZONE_UNKNOWN = 6,
----     ZONE_NONE = 7,
---- };
---- 
---- struct outComponent
---- {
----     // these vars are suffixed with 4 bytes of padding each.
----     uint unk;
----     int unk2;
----     uint tattooCollectionHash;
----     uint tattooNameHash;
----     int unk3;
----     TattooZoneData zoneId;
----     uint unk4;
----     uint unk5;
----     // maybe more, not sure exactly, decompiled scripts are very vague around this part.
+--- 	TATTOO_SP_MICHAEL = 0,
+--- 	TATTOO_SP_FRANKLIN = 1,
+--- 	TATTOO_SP_TREVOR = 2,
+--- 	TATTOO_MP_FM = 3,
+--- 	TATTOO_MP_FM_F = 4
 --- }
 --- ```
----
+--- 
+--- Returned struct properties:
+--- 
+--- ```cpp
+--- struct sTattooShopItemValues
+--- {
+--- 	// Lock hash, used with IS_CONTENT_ITEM_LOCKED
+--- 	int LockHash;
+--- 	// Unique ID of this slot. It can also be 0.
+--- 	int Index;
+--- 	// Collection hash of this tattoo
+--- 	int CollectionHash;
+--- 	// Preset hash of this tattoo
+--- 	int PresetHash;
+--- 	// Cost of this tattoo in shops.
+--- 	int Cost;
+--- 	// Secondary placement of this tattoo.
+--- 	int eFacing;
+--- 	// Location of this tattoo on the body (for example, for torso there would be chest upper, stomach, etc)
+--- 	int UpdateGroup;
+--- 	// This tattoo's name in the form of a text label.
+--- 	const char* NameTextLabel;
+--- };
+--- ```
+--- @usage local function TattooBlobToTable(blob)
+---     local LockHash = string.unpack('<i4', blob, 1) & 0xFFFFFFFF -- uint (hash)
+---     local Index = string.unpack('<i4', blob, 9) -- int
+---     local Collection = string.unpack('<i4', blob, 17) & 0xFFFFFFFF -- uint (hash)
+---     local Preset = string.unpack('<i4', blob, 25) & 0xFFFFFFFF -- uint (hash)
+---     local Price = string.unpack('<i4', blob, 33) -- int
+---     local eFacing = string.unpack('<i4', blob, 41) -- TattooZoneData
+---     local UpdateGroup = string.unpack('<i4', blob, 49) -- uint (hash)
+---     local TextLabel = string.unpack('z', blob, 57) -- uint
+--- 
+---     return {
+---         LockHash = LockHash,
+---         Index = Index,
+---         Collection = Collection,
+---         Preset = Preset,
+---         Price = Price,
+---         eFacing = eFacing,
+---         UpdateGroup = UpdateGroup,
+---         TextLabel = TextLabel
+---     }
+--- end
+--- 
+--- function GetTattooDlcItemDataTable(CharacterType, DecorationIndex)
+--- 	local blob = string.rep('\0\0\0\0\0\0\0\0', 7+16)
+--- 	if not Citizen.InvokeNative(0xFF56381874F82086, CharacterType, DecorationIndex, blob) then return nil end -- Data doesn't exist, return a nil
+--- 
+--- 	return TattooBlobToTable(blob) -- Return the data table
+--- end
+--- 
+--- local numberOfTattoos = GetNumTattooShopDlcItems(3) -- get all tattoos for mpmale
+--- for i = 0, numberOfTattoos - 1 do
+--- 	local tattooData = GetTattooDlcItemDataTable(3, i)
+--- 	-- Do stuff with your tattoo data
+--- en
 --- @hash [0xFF56381874F82086](https://docs.fivem.net/natives/?_0xFF56381874F82086)
 --- @param characterType number (int)
 --- @param decorationIndex number (int)

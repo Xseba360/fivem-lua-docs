@@ -209,7 +209,11 @@ function AttachRopeToEntity(ropeId, entity, x, y, z, p5) end
 function UnpinRopeVertex(ropeId, vertex) end
 
     
---- DeleteRope
+--- Deletes the rope with the specified handle.
+--- 
+--- You should check if the rope exists before trying to delete it, see [DOES_ROPE_EXIST](https://docs.fivem.net/natives/?_0xFD5448BE3111ED96).
+--- 
+--- For an example on how to use this native please refer to [ADD_ROPE](https://docs.fivem.net/natives/?_0xE832D760399EB220)
 ---
 --- @hash [0x52B4829281364649](https://docs.fivem.net/natives/?_0x52B4829281364649)
 --- @param ropeId number (int*)
@@ -558,12 +562,59 @@ function ApplyImpulseToCloth(posX, posY, posZ, vecX, vecY, vecZ, impulse) end
 
     
 --- ```
---- Creates a rope at the specific position, that extends in the specified direction when not attached to any entities.  
---- __  
---- Rope does NOT interact with anything you attach it to, in some cases it make interact with the world AFTER it breaks (seems to occur if you set the type to -1).  
---- Rope will sometimes contract and fall to the ground like you'd expect it to, but since it doesn't interact with the world the effect is just jaring.  
+--- Creates a rope at the specific position, that extends in the specified direction when not attached to any entities.
+--- __
+--- Rope does NOT interact with anything you attach it to, in some cases it make interact with the world AFTER it breaks (seems to occur if you set the type to -1).
+--- Rope will sometimes contract and fall to the ground like you'd expect it to, but since it doesn't interact with the world the effect is just jaring.
 --- ```
----
+--- 
+--- There are 8 different rope types in the base game. Full rope data can be found in `ropedata.xml`.
+--- 
+--- ```cpp
+--- enum ePhysicsRopeType {
+---     RopeThin = 0, // Verticies: 1, Radius: 0.03, Textures: rope & rope_n
+---     RopeWire6 = 1, // Verticies: 4, Radius: 0.015, Textures: steel_cable & steel_cable_n
+---     RopeWire32 = 2, // Verticies: 32, Radius: 0.025, Textures: steel_cable & steel_cable_n
+---     RopeMesh = 3, // Verticies: 6, Radius: 0.03, Textures: rope & rope_n
+---     RopeThinWire32 = 4, // Verticies: 32, Radius: 0.01, Textures: rope & rope_n
+---     RopeReins = 5, // Verticies: 32, Radius: 0.005, Textures: rope & rope_n
+---     RopeThin4 = 6, // Verticies: 4, Radius: 0.03, Textures: rope & rope_n
+---     RopeWire64 = 7 // Verticies: 64, Radius: 0.025, Textures: steel_cable & steel_cable_n
+--- }
+--- ```
+--- @usage local function cleanup_rope_textures()
+--- 	-- we only want to cleanup if there are no other ropes still left on the map
+--- 	-- otherwise we'll make them go invisible.
+--- 	if #GetAllRopes() == 0 then
+--- 		-- there are no ropes on the map, we're safe to unload the textures.
+--- 		RopeUnloadTextures()
+--- 	end
+--- end
+--- 
+--- CreateThread(function()
+--- 	-- if textures aren't loaded then we need to load them
+--- 	if not RopeAreTexturesLoaded() then
+--- 		-- load the textures so we can see the rope
+--- 		RopeLoadTextures()
+--- 		while not RopeAreTexturesLoaded() do
+--- 			Wait(0)
+--- 		end
+--- 	end
+--- 
+--- 	-- Create a rope and store the handle
+--- 	local rope = AddRope(-2096.096, -311.906, 14.51, 0.0, 0.0, 0.0, 10.0, 1, 10.0, 0.0, 1.0, false, false, false, 1.0, false, 0)
+--- 	-- Check if the rope exists.
+--- 	if not DoesRopeExist(rope) then
+--- 		cleanup_rope_textures()
+--- 		-- If the rope does not exist, end the execution of the code here.
+--- 		return
+--- 	end
+--- 	-- Let the rope exist for 3 seconds
+--- 	Wait(3000)
+--- 	-- Delete the rope!
+--- 	DeleteRope(rope)
+--- 	cleanup_rope_textures()
+--- end
 --- @hash [0xE832D760399EB220](https://docs.fivem.net/natives/?_0xE832D760399EB220)
 --- @param x number (float)
 --- @param y number (float)
@@ -627,7 +678,7 @@ function RopeDrawShadowEnabled(ropeId, toggle) end
 function RopeAreTexturesLoaded() end
 
     
---- DoesRopeExist
+--- For an example on how to use this native please refer to [ADD_ROPE](https://docs.fivem.net/natives/?_0xE832D760399EB220)
 ---
 --- @hash [0xFD5448BE3111ED96](https://docs.fivem.net/natives/?_0xFD5448BE3111ED96)
 --- @param ropeId number (int*)

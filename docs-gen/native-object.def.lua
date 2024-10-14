@@ -1174,10 +1174,26 @@ function N_0x52af537a0c5b8aad(object) end
 function DoesDesObjectExist(object) end
 
     
+--- Deletes the specified object.
+--- 
+--- **Note**: If for some reason the entity won't delete, you might want to check if the object is a mission entity.
+--- 
 --- ```
---- Deletes the specified object, then sets the handle pointed to by the pointer to NULL.
+--- NativeDB Introduced: v323
 --- ```
----
+--- @usage local playerPed = PlayerPedId()
+--- local playerCoords = GetEntityCoords(playerPed)
+--- local objectHash = GetHashKey("v_ret_gc_chair03")
+--- 
+--- local object = GetClosestObjectOfType(playerCoords, 10.0, objectHash, true, false, false)
+--- if object == 0 then return end
+--- 
+--- -- If the object is a mission entity, we have to set it to false. Otherwise, it won't be possible to delete the object.
+--- if IsEntityAMissionEntity(object) then
+---     SetEntityAsMissionEntity(object, false, true)
+--- end
+--- 
+--- DeleteObject(object
 --- @hash [0x539E0AE3E6634B9F](https://docs.fivem.net/natives/?_0x539E0AE3E6634B9F)
 --- @param object Object (Object*)
 --- @return void
@@ -2159,8 +2175,8 @@ function SetObjectStuntPropSpeedup(object, intensity) end
 function N_0x96ee0eba0163df80(object, intensity) end
 
     
---- ```
---- enum ObjectPaintVariants  
+--- ```cpp
+--- enum eObjectPaintVariants
 --- {  
 --- 	Pacific = 0,  
 --- 	Azure = 1,  
@@ -2190,8 +2206,8 @@ function SetObjectTextureVariation(object, textureVariation) end
 
     
 --- # New Name: SetObjectTextureVariation
---- ```
---- enum ObjectPaintVariants  
+--- ```cpp
+--- enum eObjectPaintVariants
 --- {  
 --- 	Pacific = 0,  
 --- 	Azure = 1,  
@@ -2222,8 +2238,8 @@ function N_0x971da0055324d033(object, textureVariation) end
 
     
 --- # New Name: SetObjectTextureVariation
---- ```
---- enum ObjectPaintVariants  
+--- ```cpp
+--- enum eObjectPaintVariants
 --- {  
 --- 	Pacific = 0,  
 --- 	Azure = 1,  
@@ -2505,6 +2521,17 @@ function TrackObjectVisibility(object) end
 --- @return void
 --- @overload fun(object: Object, toggle: boolean): void
 function N_0xb2d0bde54f0e8e5a(object, toggle) end
+
+    
+--- SetObjectTargettableByPlayer
+---
+--- @hash [0xB39F03368DB0CAA2](https://docs.fivem.net/natives/?_0xB39F03368DB0CAA2)
+--- @param object Object
+--- @param setFlag34 boolean
+--- @param setFlag35 boolean
+--- @return void
+--- @overload fun(object: Object, setFlag34: boolean, setFlag35: boolean): void
+function SetObjectTargettableByPlayer(object, setFlag34, setFlag35) end
 
     
 --- GetPickupGenerationRangeMultiplier

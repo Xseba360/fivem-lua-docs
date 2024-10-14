@@ -853,6 +853,15 @@ function SetResourceKvpNoSync(key, value) end
 function SetEntityDistanceCullingRadius(entity, radius) end
 
     
+--- IsBoatAnchoredAndFrozen
+---
+--- @hash [0xD5C39EE6](https://docs.fivem.net/natives/?_0xD5C39EE6)
+--- @param vehicle Vehicle
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+function IsBoatAnchoredAndFrozen(vehicle) end
+
+    
 --- GetVehicleHeadlightsColour
 ---
 --- @hash [0xD7147656](https://docs.fivem.net/natives/?_0xD7147656)

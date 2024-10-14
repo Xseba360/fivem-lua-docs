@@ -1,45 +1,48 @@
 
+--- Displays a text input box.
+--- 
+--- ```cpp
+--- enum eKeyboardType
+--- {
+---   ONSCREEN_KEYBOARD_ENGLISH = 0,
+---   ONSCREEN_KEYBOARD_LOCALISED = 1,
+---   ONSCREEN_KEYBOARD_PASSWORD = 2,
+---   ONSCREEN_KEYBOARD_GAMERTAG = 3,
+---   ONSCREEN_KEYBOARD_EMAIL = 4,
+---   ONSCREEN_KEYBOARD_BASIC_ENGLISH = 5,
+---   ONSCREEN_KEYBOARD_FILENAME = 6
+--- };
 --- ```
---- windowTitle's  
---- -----------------  
---- CELL_EMAIL_BOD	=	"Enter your Eyefind message"  
---- CELL_EMAIL_BODE	=	"Message too long. Try again"  
---- CELL_EMAIL_BODF	=	"Forbidden message. Try again"  
---- CELL_EMAIL_SOD	=	"Enter your Eyefind subject"  
---- CELL_EMAIL_SODE	=	"Subject too long. Try again"  
---- CELL_EMAIL_SODF	=	"Forbidden text. Try again"  
---- CELL_EMASH_BOD	=	"Enter your Eyefind message"  
---- CELL_EMASH_BODE	=	"Message too long. Try again"  
---- CELL_EMASH_BODF	=	"Forbidden message. Try again"  
---- CELL_EMASH_SOD	=	"Enter your Eyefind subject"  
---- CELL_EMASH_SODE	=	"Subject too long. Try again"  
---- CELL_EMASH_SODF	=	"Forbidden Text. Try again"  
---- FMMC_KEY_TIP10	=	"Enter Synopsis"  
---- FMMC_KEY_TIP12	=	"Enter Custom Team Name"  
---- FMMC_KEY_TIP12F	=	"Forbidden Text. Try again"  
---- FMMC_KEY_TIP12N	=	"Custom Team Name"  
---- FMMC_KEY_TIP8	=	"Enter Message"  
---- FMMC_KEY_TIP8F	=	"Forbidden Text. Try again"  
---- FMMC_KEY_TIP8FS	=	"Invalid Message. Try again"  
---- FMMC_KEY_TIP8S	=	"Enter Message"  
---- FMMC_KEY_TIP9	=	"Enter Outfit Name"  
---- FMMC_KEY_TIP9F	=	"Invalid Outfit Name. Try again"  
---- FMMC_KEY_TIP9N	=	"Outfit Name"  
---- PM_NAME_CHALL	=	"Enter Challenge Name"  
---- ```
----
+--- @usage AddTextEntry("my_input_title", "Enter something cool:")
+--- 
+--- DisplayOnscreenKeyboard(0, "my_input_title", "", "", "", "", "", 30) -- Show the text input box
+--- 
+--- while UpdateOnscreenKeyboard() == 0 do Wait(0) end -- Wait for the user to stop editing
+--- 
+--- -- This block of code is reached after the user is done editing
+--- 
+--- local inputUpdate = UpdateOnscreenKeyboard()
+--- 
+--- if inputUpdate == 1 then -- User hit OK in the text input box
+---   local result = GetOnscreenKeyboardResult()
+---   print("You wrote this in the input box:", result)
+--- elseif inputUpdate == 2 then
+---   print("You canceled the input!")
+--- else -- -1 or 3
+---   print("An error has occurred")
+--- en
 --- @hash [0x00DC833F2568DBF6](https://docs.fivem.net/natives/?_0x00DC833F2568DBF6)
---- @param p0 number (int)
+--- @param keyboardType number (int)
 --- @param windowTitle string (char*)
---- @param p2 string (char*)
+--- @param description string (char*)
 --- @param defaultText string (char*)
 --- @param defaultConcat1 string (char*)
 --- @param defaultConcat2 string (char*)
 --- @param defaultConcat3 string (char*)
 --- @param maxInputLength number (int)
 --- @return void
---- @overload fun(p0: number, windowTitle: string, p2: string, defaultText: string, defaultConcat1: string, defaultConcat2: string, defaultConcat3: string, maxInputLength: number): void
-function DisplayOnscreenKeyboard(p0, windowTitle, p2, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, maxInputLength) end
+--- @overload fun(keyboardType: number, windowTitle: string, description: string, defaultText: string, defaultConcat1: string, defaultConcat2: string, defaultConcat3: string, maxInputLength: number): void
+function DisplayOnscreenKeyboard(keyboardType, windowTitle, description, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, maxInputLength) end
 
     
 --- ```
@@ -130,26 +133,6 @@ function ClearAreaOfCops(x, y, z, radius, createNetEvent) end
 
     
 --- ```
---- p0 could be type (valueused in scripts: 14, 7, 5, 3, 11)  
---- p1 is a return from get_player_ped() in am_gang_call.c, but player_ped_id() in other (non am) scripts.  
---- p3 is usually 0f or 3f  
---- =====================================================  
---- enum IncidentTypes  
---- {  
----     FireDepartment = 3,  
----     Paramedics = 5,  
----     Police = 7,  
----     PedsInCavalcades = 11,   
----     Merryweather = 14  
---- };  
---- As for the 'police' incident, it will call police cars to you, but unlike PedsInCavalcades & Merryweather they won't start shooting at you unless you shoot first or shoot at them. The top 2 however seem to cancel theirselves if there is noone dead around you or a fire. I only figured them out as I found out the 3rd param is definately the amountOfPeople and they called incident 3 in scripts with 4 people (which the firetruck has) and incident 5 with 2 people (which the ambulence has). The 4 param I cant say is radius, but for the pedsInCavalcades and Merryweather R* uses 0.0f and for the top 3 (Emergency Services) they use 3.0f.   
---- Side Note: It seems calling the pedsInCavalcades or Merryweather then removing it seems to break you from calling the EmergencyEvents and I also believe pedsInCavalcades. (The V cavalcades of course not IV).  
---- Side Note 2: I say it breaks as if you call this proper,  
---- if(CREATE_INCIDENT) etc it will return false if you do as I said above.  
---- =====================================================  
---- ```
---- 
---- ```
 --- NativeDB Added Parameter 6: Any p5
 --- NativeDB Added Parameter 7: Any p6
 --- ```
@@ -238,6 +221,17 @@ function N_0x075f1d57402c93ba() end
 function ClearAreaOfProjectiles(x, y, z, radius, createNetEvent) end
 
     
+--- ```
+--- NativeDB Introduced: 2545
+--- ```
+---
+--- @hash [0x0A27B2B6282F7169](https://docs.fivem.net/natives/?_0x0A27B2B6282F7169)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function IsSteamVersion() end
+
+    
 --- Initializes a script race in GTA:Online and sets up the helper split time system.
 --- 
 --- ```
@@ -282,13 +276,17 @@ function N_0x0a60017f841a54f2(numCheckpoints, numLaps, numPlayers, localPlayer) 
 function AreStringsEqual(string1, string2) end
 
     
---- ```
---- Returns the current status of the onscreen keyboard, and updates the output.
---- Status Codes:
---- -1: Keyboard isn't active
---- 0: User still editing
---- 1: User has finished editing
---- 2: User has canceled editing
+--- Returns the current state of the text input box.
+--- 
+--- ```cpp
+--- enum eOSKStatus
+--- {
+---   OSK_INVALID = -1,
+---   OSK_PENDING = 0,
+---   OSK_SUCCESS = 1,
+---   OSK_CANCELLED = 2,
+---   OSK_FAILED = 3
+--- };
 --- ```
 ---
 --- @hash [0x0CF2B696BBF945AE](https://docs.fivem.net/natives/?_0x0CF2B696BBF945AE)
@@ -827,8 +825,25 @@ function SupressRandomEventThisFrame(eventType, enable) end
 function N_0x1eae0a6e978894a2(eventType, enable) end
 
     
---- GetWindDirection
----
+--- Used for hunting in singleplayer and for golfing in both sp and online. The [`GET_HEADING_FROM_VECTOR_2D`](https://docs.fivem.net/natives/?_0x2FFB6B224F4B2926) native can be used to get the wind heading from the direction.
+--- @usage CreateThread(function()
+---     while true do
+---         local windDirection = GetWindDirection()
+--- 
+---         -- Gets the wind direction in degrees (math.atan converts the inverse tangent into radians and then math.deg converts it from radians to degrees)
+---         local degrees = math.deg(math.atan(windDirection.x, windDirection.y))
+---         print("wind direction in degrees:", degrees)
+--- 
+---         -- Draws an airplane marker above the player's head to show the wind direction
+---         local coords = GetEntityCoords(PlayerPedId())
+---         DrawMarker(7, coords.x, coords.y, coords.z + 1.0, windDirection.x, windDirection.y, 0.0, 0.0, 0.0, 0.0, 2.0, 2.0, 2.0, 255, 128, 0, 50, false, false, 2, false, nil, nil, false)
+--- 
+---         -- Get world heading from the direction
+---         print("wind direction in world heading:", GetHeadingFromVector_2d(windDirection.x, windDirection.y))
+--- 
+---         Wait(0)
+---     end
+--- end
 --- @hash [0x1F400FEF721170DA](https://docs.fivem.net/natives/?_0x1F400FEF721170DA)
 ---
 --- @return Vector3
@@ -1458,30 +1473,48 @@ function LandingMenuIsActive() end
 function N_0x3bbbd13e5041a79e() end
 
     
---- ```
---- p0 was always 2 in R* scripts.
---- Called before calling DISPLAY_ONSCREEN_KEYBOARD if the input needs to be saved.
+--- ```cpp
+--- enum eFontBitField
+--- {
+---   FONT_BIT_STANDARD = 1,
+---   FONT_BIT_CURSIVE = 2,
+---   FONT_BIT_ROCKSTAR_TAG = 4
+---   FONT_BIT_LEADERBOARD = 8
+---   FONT_BIT_CONDENSED = 16
+---   FONT_BIT_FIXED_WIDTH_NUMBERS = 32
+---   FONT_BIT_CONDENSED_NOT_GAMERNAME = 64
+---   FONT_BIT_PRICEDOWN = 128
+--- };
 --- ```
 ---
 --- @hash [0x3ED1438C1F5C6612](https://docs.fivem.net/natives/?_0x3ED1438C1F5C6612)
---- @param p0 number (int)
+--- @param fontBitField number (int)
 --- @return void
---- @overload fun(p0: number): void
-function NextOnscreenKeyboardResultWillDisplayUsingTheseFonts(p0) end
+--- @overload fun(fontBitField: number): void
+function NextOnscreenKeyboardResultWillDisplayUsingTheseFonts(fontBitField) end
 
     
 --- # New Name: NextOnscreenKeyboardResultWillDisplayUsingTheseFonts
---- ```
---- p0 was always 2 in R* scripts.
---- Called before calling DISPLAY_ONSCREEN_KEYBOARD if the input needs to be saved.
+--- ```cpp
+--- enum eFontBitField
+--- {
+---   FONT_BIT_STANDARD = 1,
+---   FONT_BIT_CURSIVE = 2,
+---   FONT_BIT_ROCKSTAR_TAG = 4
+---   FONT_BIT_LEADERBOARD = 8
+---   FONT_BIT_CONDENSED = 16
+---   FONT_BIT_FIXED_WIDTH_NUMBERS = 32
+---   FONT_BIT_CONDENSED_NOT_GAMERNAME = 64
+---   FONT_BIT_PRICEDOWN = 128
+--- };
 --- ```
 ---
 --- @hash [0x3ED1438C1F5C6612](https://docs.fivem.net/natives/?_0x3ED1438C1F5C6612)
---- @param p0 number (int)
+--- @param fontBitField number (int)
 --- @return void
---- @overload fun(p0: number): void
+--- @overload fun(fontBitField: number): void
 --- @deprecated
-function N_0x3ed1438c1f5c6612(p0) end
+function N_0x3ed1438c1f5c6612(fontBitField) end
 
     
 --- IsBulletInArea
@@ -1497,22 +1530,6 @@ function N_0x3ed1438c1f5c6612(p0) end
 function IsBulletInArea(x, y, z, radius, ownedByPlayer) end
 
     
---- ```
---- enum IncidentTypes  
---- {  
----     FireDepartment = 3,  
----     Paramedics = 5,  
----     Police = 7,  
----     PedsInCavalcades = 11,   
----     Merryweather = 14  
---- };  
---- As for the 'police' incident, it will call police cars to you, but unlike PedsInCavalcades & Merryweather they won't start shooting at you unless you shoot first or shoot at them. The top 2 however seem to cancel theirselves if there is noone dead around you or a fire. I only figured them out as I found out the 3rd param is definately the amountOfPeople and they called incident 3 in scripts with 4 people (which the firetruck has) and incident 5 with 2 people (which the ambulence has). The 4 param I cant say is radius, but for the pedsInCavalcades and Merryweather R* uses 0.0f and for the top 3 (Emergency Services) they use 3.0f.   
---- Side Note: It seems calling the pedsInCavalcades or Merryweather then removing it seems to break you from calling the EmergencyEvents and I also believe pedsInCavalcades. (The V cavalcades of course not IV).  
---- Side Note 2: I say it breaks as if you call this proper,  
---- if(CREATE_INCIDENT) etc it will return false if you do as I said above.  
---- =====================================================  
---- ```
---- 
 --- ```
 --- NativeDB Added Parameter 8: Any p7
 --- NativeDB Added Parameter 9: Any p8
@@ -2019,11 +2036,10 @@ function SetSuperJumpThisFrame(player) end
 function ResetDispatchSpawnLocation() end
 
     
---- ```
---- DO NOT use this as it doesn't clean up the text input box properly and your script will get stuck in the UPDATE_ONSCREEN_KEYBOARD() loop.
---- Use _FORCE_CLOSE_TEXT_INPUT_BOX instead.
---- CANCEL_*
---- ```
+--- Closes the onscreen keyboard on console versions of the game.
+--- 
+--- **NOTE:** Do not use this native in FiveM/PC, because [`UPDATE_ONSCREEN_KEYBOARD`](https://docs.fivem.net/natives/?_0x0CF2B696BBF945AE) value doesn't get cleaned up and stays as `0`.
+--- You should use [`FORCE_CLOSE_TEXT_INPUT_BOX`](https://docs.fivem.net/natives/?_0x8817605C2BA76200) instead.
 ---
 --- @hash [0x58A39BE597CE99CD](https://docs.fivem.net/natives/?_0x58A39BE597CE99CD)
 ---
@@ -2033,11 +2049,10 @@ function CancelOnscreenKeyboard() end
 
     
 --- # New Name: CancelOnscreenKeyboard
---- ```
---- DO NOT use this as it doesn't clean up the text input box properly and your script will get stuck in the UPDATE_ONSCREEN_KEYBOARD() loop.
---- Use _FORCE_CLOSE_TEXT_INPUT_BOX instead.
---- CANCEL_*
---- ```
+--- Closes the onscreen keyboard on console versions of the game.
+--- 
+--- **NOTE:** Do not use this native in FiveM/PC, because [`UPDATE_ONSCREEN_KEYBOARD`](https://docs.fivem.net/natives/?_0x0CF2B696BBF945AE) value doesn't get cleaned up and stays as `0`.
+--- You should use [`FORCE_CLOSE_TEXT_INPUT_BOX`](https://docs.fivem.net/natives/?_0x8817605C2BA76200) instead.
 ---
 --- @hash [0x58A39BE597CE99CD](https://docs.fivem.net/natives/?_0x58A39BE597CE99CD)
 ---
@@ -2045,6 +2060,20 @@ function CancelOnscreenKeyboard() end
 --- @overload fun(): void
 --- @deprecated
 function N_0x58a39be597ce99cd() end
+
+    
+--- # New Name: CancelOnscreenKeyboard
+--- Closes the onscreen keyboard on console versions of the game.
+--- 
+--- **NOTE:** Do not use this native in FiveM/PC, because [`UPDATE_ONSCREEN_KEYBOARD`](https://docs.fivem.net/natives/?_0x0CF2B696BBF945AE) value doesn't get cleaned up and stays as `0`.
+--- You should use [`FORCE_CLOSE_TEXT_INPUT_BOX`](https://docs.fivem.net/natives/?_0x8817605C2BA76200) instead.
+---
+--- @hash [0x58A39BE597CE99CD](https://docs.fivem.net/natives/?_0x58A39BE597CE99CD)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function CancelOnscreenKeyboard() end
 
     
 --- ```
@@ -2554,12 +2583,14 @@ function N_0x72de52178c291cb5() end
 function Absf(value) end
 
     
---- ```
---- level can be from 0 to 3  
---- 0: 9.8   
---- 1: 2.4   
---- 2: 0.1 - very low  
---- 3: 0.0  
+--- ```cpp
+--- enum eGravityLevel
+--- {
+---     GRAV_EARTH = 0, // earth gravity 9.8m/s2
+---     GRAV_MOON = 1, // moon gravity 2.4m/s2
+---     GRAV_LOW = 2, // very low gravity
+---     GRAV_ZERO = 3 // zero gravity
+--- }
 --- ```
 ---
 --- @hash [0x740E14FAD5842351](https://docs.fivem.net/natives/?_0x740E14FAD5842351)
@@ -3850,7 +3881,29 @@ function N_0xa8434f1dff41d6e7(p0) end
 
     
 --- GetWindSpeed
----
+--- @usage local beaufortScale = {
+---     [0] = 0.2,
+---     [1] = 1.5,
+---     [2] = 3.3,
+---     [3] = 5.4,
+---     [4] = 7.9,
+---     [5] = 10.7,
+---     [6] = 13.8,
+---     [7] = 17.1,
+---     [8] = 20.7,
+---     [9] = 24.4,
+---     [10] = 28.4,
+---     [11] = 32.6,
+---     [12] = 32.7
+--- }
+--- 
+--- local windSpeed = GetWindSpeed()
+--- for i = 0, 12 do
+---     if windSpeed <= beaufortScale[i] or i == 12 then
+---         print(string.format("The current wind speed (%.2f m/s) is the equivalent to Beaufort number %s on the Beaufort scale", windSpeed, i))
+---         break
+---     end
+--- en
 --- @hash [0xA8CF1CC0AFCD3F12](https://docs.fivem.net/natives/?_0xA8CF1CC0AFCD3F12)
 ---
 --- @return number
@@ -3928,10 +3981,15 @@ function GetPowerSavingModeDuration() end
 function N_0xabb2fa71c83a1b72() end
 
     
---- ```
---- Sets the the raw wind speed value.  
---- ```
----
+--- Sets the the raw wind speed value. The wind speed will stay persistent until it is reset (see examples).
+--- @usage -- Stops all and any wind
+--- SetWind(0)
+--- 
+--- -- Sets the wind to 6 m/s
+--- SetWind(0.5)
+--- 
+--- -- Allows the game dynamically change the wind again
+--- SetWind(-1
 --- @hash [0xAC3A74E8384A9919](https://docs.fivem.net/natives/?_0xAC3A74E8384A9919)
 --- @param speed number (float)
 --- @return void
@@ -4110,6 +4168,17 @@ function AddTacticalAnalysisPoint(x, y, z) end
 --- @overload fun(x: number, y: number, z: number): void
 --- @deprecated
 function N_0xb8721407ee9c3ff6(x, y, z) end
+
+    
+--- ```
+--- NativeDB Introduced: 2545
+--- ```
+---
+--- @hash [0xB8C0BB75D8A77DB3](https://docs.fivem.net/natives/?_0xB8C0BB75D8A77DB3)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function IsJapaneseVersion() end
 
     
 --- WaterOverrideSetShorewaveamplitude
@@ -4634,10 +4703,10 @@ function N_0xc7db36c24634f52b() end
 --- Asin
 ---
 --- @hash [0xC843060B5765DCE7](https://docs.fivem.net/natives/?_0xC843060B5765DCE7)
---- @param p0 number (float)
+--- @param value number (float)
 --- @return number
---- @overload fun(p0: number): number
-function Asin(p0) end
+--- @overload fun(value: number): number
+function Asin(value) end
 
     
 --- ```
@@ -4677,23 +4746,28 @@ function IsIncidentValid(incidentId) end
 function RegisterBoolToSave(p0, name) end
 
     
---- ```
---- Bear in mind this native can only calculate the elevation when the coordinates are within the client's render distance.
---- ```
+--- This native gets the ground level (ground elevation) and returns the Z coordinate that represents it.
+--- Note: This native can only calculate the elevation when the coordinates are within the render distance of the client.
 --- 
 --- ```
 --- NativeDB Added Parameter 6: BOOL p5
 --- ```
----
+--- @usage local ped = PlayerPedId()
+--- local pedCoords = GetEntityCoords(ped) 
+--- local retval, groundZ = GetGroundZFor_3dCoord(pedCoords.x, pedCoords.y, pedCoords.z, true)
+--- 
+--- if retval then
+---    -- Do stuff with groundZ
+--- en
 --- @hash [0xC906A7DAB05C8D2B](https://docs.fivem.net/natives/?_0xC906A7DAB05C8D2B)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
 --- @param groundZ number (float*)
---- @param ignoreWater boolean
+--- @param includeWater boolean
 --- @return boolean
---- @overload fun(x: number, y: number, z: number, ignoreWater: boolean): boolean, number
-function GetGroundZFor_3dCoord(x, y, z, groundZ, ignoreWater) end
+--- @overload fun(x: number, y: number, z: number, includeWater: boolean): boolean, number
+function GetGroundZFor_3dCoord(x, y, z, groundZ, includeWater) end
 
     
 --- ```
@@ -4716,12 +4790,12 @@ function SetSaveMenuActive(ignoreVehicle) end
 function IsStringNullOrEmpty(string) end
 
     
---- DisplayOnscreenKeyboardWithLongerInitialString
+--- Displays the text input box with support for input with 500 characters.
 ---
 --- @hash [0xCA78CFA0366592FE](https://docs.fivem.net/natives/?_0xCA78CFA0366592FE)
---- @param p0 number (int)
+--- @param keyboardType number (int)
 --- @param windowTitle string (char*)
---- @param p2 any
+--- @param description string (char*)
 --- @param defaultText string (char*)
 --- @param defaultConcat1 string (char*)
 --- @param defaultConcat2 string (char*)
@@ -4732,17 +4806,17 @@ function IsStringNullOrEmpty(string) end
 --- @param defaultConcat7 string (char*)
 --- @param maxInputLength number (int)
 --- @return void
---- @overload fun(p0: number, maxInputLength: number): string): any): string): string): string): string): string): string): string): string
-function DisplayOnscreenKeyboardWithLongerInitialString(p0, windowTitle, p2, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, defaultConcat4, defaultConcat5, defaultConcat6, defaultConcat7, maxInputLength) end
+--- @overload fun(keyboardType: number, windowTitle: string, description: string, defaultText: string, defaultConcat1: string, defaultConcat2: string, defaultConcat3: string, defaultConcat4: string, defaultConcat5: string, defaultConcat6: string, defaultConcat7: string, maxInputLength: number): void
+function DisplayOnscreenKeyboardWithLongerInitialString(keyboardType, windowTitle, description, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, defaultConcat4, defaultConcat5, defaultConcat6, defaultConcat7, maxInputLength) end
 
     
 --- # New Name: DisplayOnscreenKeyboardWithLongerInitialString
---- DisplayOnscreenKeyboardWithLongerInitialString
+--- Displays the text input box with support for input with 500 characters.
 ---
 --- @hash [0xCA78CFA0366592FE](https://docs.fivem.net/natives/?_0xCA78CFA0366592FE)
---- @param p0 number (int)
+--- @param keyboardType number (int)
 --- @param windowTitle string (char*)
---- @param p2 any
+--- @param description string (char*)
 --- @param defaultText string (char*)
 --- @param defaultConcat1 string (char*)
 --- @param defaultConcat2 string (char*)
@@ -4753,18 +4827,18 @@ function DisplayOnscreenKeyboardWithLongerInitialString(p0, windowTitle, p2, def
 --- @param defaultConcat7 string (char*)
 --- @param maxInputLength number (int)
 --- @return void
---- @overload fun(p0: number, maxInputLength: number): string): any): string): string): string): string): string): string): string): string
+--- @overload fun(keyboardType: number, windowTitle: string, description: string, defaultText: string, defaultConcat1: string, defaultConcat2: string, defaultConcat3: string, defaultConcat4: string, defaultConcat5: string, defaultConcat6: string, defaultConcat7: string, maxInputLength: number): void
 --- @deprecated
-function N_0xca78cfa0366592fe(p0, windowTitle, p2, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, defaultConcat4, defaultConcat5, defaultConcat6, defaultConcat7, maxInputLength) end
+function N_0xca78cfa0366592fe(keyboardType, windowTitle, description, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, defaultConcat4, defaultConcat5, defaultConcat6, defaultConcat7, maxInputLength) end
 
     
 --- # New Name: DisplayOnscreenKeyboardWithLongerInitialString
---- DisplayOnscreenKeyboardWithLongerInitialString
+--- Displays the text input box with support for input with 500 characters.
 ---
 --- @hash [0xCA78CFA0366592FE](https://docs.fivem.net/natives/?_0xCA78CFA0366592FE)
---- @param p0 number (int)
+--- @param keyboardType number (int)
 --- @param windowTitle string (char*)
---- @param p2 any
+--- @param description string (char*)
 --- @param defaultText string (char*)
 --- @param defaultConcat1 string (char*)
 --- @param defaultConcat2 string (char*)
@@ -4775,9 +4849,9 @@ function N_0xca78cfa0366592fe(p0, windowTitle, p2, defaultText, defaultConcat1, 
 --- @param defaultConcat7 string (char*)
 --- @param maxInputLength number (int)
 --- @return void
---- @overload fun(p0: number, maxInputLength: number): string): any): string): string): string): string): string): string): string): string
+--- @overload fun(keyboardType: number, windowTitle: string, description: string, defaultText: string, defaultConcat1: string, defaultConcat2: string, defaultConcat3: string, defaultConcat4: string, defaultConcat5: string, defaultConcat6: string, defaultConcat7: string, maxInputLength: number): void
 --- @deprecated
-function DisplayOnscreenKeyboard_2(p0, windowTitle, p2, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, defaultConcat4, defaultConcat5, defaultConcat6, defaultConcat7, maxInputLength) end
+function DisplayOnscreenKeyboard_2(keyboardType, windowTitle, description, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, defaultConcat4, defaultConcat5, defaultConcat6, defaultConcat7, maxInputLength) end
 
     
 --- GetIndexOfCurrentLevel
@@ -4997,23 +5071,23 @@ function SetFadeInAfterDeathArrest(toggle) end
 --- List of dispatch services:
 --- 
 --- ```cpp
---- enum DispatchType
+--- enum eDispatchType
 --- {
 --- 	DT_Invalid = 0,
---- 	DT_PoliceAutomobile,
---- 	DT_PoliceHelicopter,
---- 	DT_FireDepartment,
---- 	DT_SwatAutomobile,
---- 	DT_AmbulanceDepartment,
---- 	DT_PoliceRiders,
---- 	DT_PoliceVehicleRequest,
---- 	DT_PoliceRoadBlock,
---- 	DT_PoliceAutomobileWaitPulledOver,
---- 	DT_PoliceAutomobileWaitCruising,
---- 	DT_Gangs,
---- 	DT_SwatHelicopter,
---- 	DT_PoliceBoat,
---- 	DT_ArmyVehicle,
+--- 	DT_PoliceAutomobile = 1,
+--- 	DT_PoliceHelicopter = 2,
+--- 	DT_FireDepartment = 3,
+--- 	DT_SwatAutomobile = 4,
+--- 	DT_AmbulanceDepartment = 5,
+--- 	DT_PoliceRiders = 6,
+--- 	DT_PoliceVehicleRequest = 7,
+--- 	DT_PoliceRoadBlock = 8,
+--- 	DT_PoliceAutomobileWaitPulledOver = 9,
+--- 	DT_PoliceAutomobileWaitCruising = 10,
+--- 	DT_Gangs = 11,
+--- 	DT_SwatHelicopter = 13,
+--- 	DT_PoliceBoat = 14,
+--- 	DT_ArmyVehicle = 15,
 --- 	DT_BikerBackup = 15
 --- };
 --- ```
@@ -5034,23 +5108,23 @@ function EnableDispatchService(dispatchService, toggle) end
 --- List of dispatch services:
 --- 
 --- ```cpp
---- enum DispatchType
+--- enum eDispatchType
 --- {
 --- 	DT_Invalid = 0,
---- 	DT_PoliceAutomobile,
---- 	DT_PoliceHelicopter,
---- 	DT_FireDepartment,
---- 	DT_SwatAutomobile,
---- 	DT_AmbulanceDepartment,
---- 	DT_PoliceRiders,
---- 	DT_PoliceVehicleRequest,
---- 	DT_PoliceRoadBlock,
---- 	DT_PoliceAutomobileWaitPulledOver,
---- 	DT_PoliceAutomobileWaitCruising,
---- 	DT_Gangs,
---- 	DT_SwatHelicopter,
---- 	DT_PoliceBoat,
---- 	DT_ArmyVehicle,
+--- 	DT_PoliceAutomobile = 1,
+--- 	DT_PoliceHelicopter = 2,
+--- 	DT_FireDepartment = 3,
+--- 	DT_SwatAutomobile = 4,
+--- 	DT_AmbulanceDepartment = 5,
+--- 	DT_PoliceRiders = 6,
+--- 	DT_PoliceVehicleRequest = 7,
+--- 	DT_PoliceRoadBlock = 8,
+--- 	DT_PoliceAutomobileWaitPulledOver = 9,
+--- 	DT_PoliceAutomobileWaitCruising = 10,
+--- 	DT_Gangs = 11,
+--- 	DT_SwatHelicopter = 13,
+--- 	DT_PoliceBoat = 14,
+--- 	DT_ArmyVehicle = 15,
 --- 	DT_BikerBackup = 15
 --- };
 --- ```
@@ -5513,25 +5587,17 @@ function N_0xe8b9c0ec9e183f35() end
 function N_0xe95b0c7d5ba3b96b(ped) end
 
     
---- ```
---- Returns true if the current frontend menu is FE_MENU_VERSION_SP_PAUSE
---- 
---- U*
---- ```
+--- Returns whether the In-Game Pause Menu Launched the Benchmark Tests.
 ---
 --- @hash [0xEA2F2061875EED90](https://docs.fivem.net/natives/?_0xEA2F2061875EED90)
 ---
 --- @return boolean
 --- @overload fun(): boolean
-function UiIsSingleplayerPauseMenuActive() end
+function UiStartedEndUserBenchmark() end
 
     
---- # New Name: UiIsSingleplayerPauseMenuActive
---- ```
---- Returns true if the current frontend menu is FE_MENU_VERSION_SP_PAUSE
---- 
---- U*
---- ```
+--- # New Name: UiStartedEndUserBenchmark
+--- Returns whether the In-Game Pause Menu Launched the Benchmark Tests.
 ---
 --- @hash [0xEA2F2061875EED90](https://docs.fivem.net/natives/?_0xEA2F2061875EED90)
 ---
@@ -5539,6 +5605,17 @@ function UiIsSingleplayerPauseMenuActive() end
 --- @overload fun(): boolean
 --- @deprecated
 function N_0xea2f2061875eed90() end
+
+    
+--- # New Name: UiStartedEndUserBenchmark
+--- Returns whether the In-Game Pause Menu Launched the Benchmark Tests.
+---
+--- @hash [0xEA2F2061875EED90](https://docs.fivem.net/natives/?_0xEA2F2061875EED90)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function UiIsSingleplayerPauseMenuActive() end
 
     
 --- **This native does absolutely nothing, just a nullsub**
@@ -5551,9 +5628,12 @@ function N_0xea2f2061875eed90() end
 function N_0xeb078ca2b5e82add(p0, p1) end
 
     
---- Sets the wind direction.
+--- Sets the wind direction. The wind direction will stay persistent until it is reset (see examples).
 --- @usage -- 180 degrees, wind will blow from the south
---- SetWindDirection(math.rad(180.0)
+--- SetWindDirection(math.rad(180.0))
+--- 
+--- -- Allows the game to dynamically change the wind direction again
+--- SetWindDirection(-1
 --- @hash [0xEB0F4468467B4528](https://docs.fivem.net/natives/?_0xEB0F4468467B4528)
 --- @param direction number (float)
 --- @return void
@@ -5680,10 +5760,15 @@ function SetWeatherTypeNowPersist(weatherType) end
 function RegisterTextLabelToSave(p0, name) end
 
     
---- ```
---- Using this native will clamp the wind speed value to a range of 0.0- 12.0. Using SET_WIND sets the same value but without the restriction.  
---- ```
----
+--- Using this native will clamp the wind speed value to a range of 0.0 - 12.0. The wind speed will stay persistent until it is reset (see examples).
+--- @usage -- Sets the wind speed to 0 meters per second
+--- SetWind(0)
+--- 
+--- -- Sets the wind to 11.99 m/s
+--- SetWind(11.99)
+--- 
+--- -- Allows the game dynamically change the wind speed again
+--- SetWind(-1
 --- @hash [0xEE09ECEDBABE47FC](https://docs.fivem.net/natives/?_0xEE09ECEDBABE47FC)
 --- @param speed number (float)
 --- @return void

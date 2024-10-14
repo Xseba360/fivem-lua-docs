@@ -114,15 +114,13 @@ function DecorSetBool(entity, propertyName, value) end
 function DecorSetTime(entity, propertyName, timestamp) end
 
     
---- Decor types:
---- 
---- ```
+--- ```cpp
 --- enum eDecorType
 --- {
 ---     DECOR_TYPE_FLOAT = 1,
 ---     DECOR_TYPE_BOOL = 2,
 ---     DECOR_TYPE_INT = 3,
----     DECOR_TYPE_UNK = 4,
+---     DECOR_TYPE_STRING = 4,
 ---     DECOR_TYPE_TIME = 5
 --- };
 --- ```

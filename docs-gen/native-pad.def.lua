@@ -602,11 +602,12 @@ function GetLastInputMethod(padIndex) end
 function IsInputDisabled(padIndex) end
 
     
---- ```
---- padIndex: 
---- 0 - PLAYER_CONTROL
---- 1 - Unknown 
---- 2 - FRONTEND_CONTROL
+--- ```cpp
+--- enum ePadType {
+---   PLAYER_CONTROL = 0,
+---   CAMERA_CONTROL = 1,
+---   FRONTEND_CONTRO = 2
+--- };
 --- ```
 ---
 --- @hash [0xA5FFE9B05F199DE7](https://docs.fivem.net/natives/?_0xA5FFE9B05F199DE7)

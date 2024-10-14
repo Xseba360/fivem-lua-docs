@@ -1149,7 +1149,7 @@ function GetTimeSincePlayerHitVehicle(player) end
 function IsSystemUiBeingDisplayed() end
 
     
---- SetPlayerHealthRechargeMultiplier
+--- This multiplier is reset to `1.0` every time the player ped is changed, often times via [`SET_PLAYER_MODEL`](https://docs.fivem.net/natives/?_0x00A1CADD00108836) or [`CHANGE_PLAYER_PED`](https://docs.fivem.net/natives/?_0x048189FAC643DEEE).
 --- @usage -- To disable the health recharge completely:
 --- SetPlayerHealthRechargeMultiplier(PlayerId(), 0.0)
 --- 
@@ -1216,15 +1216,38 @@ function DisablePlayerFiring(player, toggle) end
 function IsPlayerPlaying(player) end
 
     
---- ```
---- Appears once in "re_dealgonewrong"  
---- ```
----
+--- GetIsPlayerDrivingOnHighway
+--- @usage -- Get and store the local player index
+--- local playerId = PlayerId()
+--- 
+--- if GetIsPlayerDrivingOnHighway(playerId) then
+---     print("Player is driving on a highway!")
+--- else
+---     print("Player is not driving on a highway.")
+--- en
 --- @hash [0x5FC472C501CCADB3](https://docs.fivem.net/natives/?_0x5FC472C501CCADB3)
---- @param player Player
+--- @param playerId Player
 --- @return boolean
---- @overload fun(player: Player): boolean
-function N_0x5fc472c501ccadb3(player) end
+--- @overload fun(playerId: Player): boolean
+function GetIsPlayerDrivingOnHighway(playerId) end
+
+    
+--- # New Name: GetIsPlayerDrivingOnHighway
+--- GetIsPlayerDrivingOnHighway
+--- @usage -- Get and store the local player index
+--- local playerId = PlayerId()
+--- 
+--- if GetIsPlayerDrivingOnHighway(playerId) then
+---     print("Player is driving on a highway!")
+--- else
+---     print("Player is not driving on a highway.")
+--- en
+--- @hash [0x5FC472C501CCADB3](https://docs.fivem.net/natives/?_0x5FC472C501CCADB3)
+--- @param playerId Player
+--- @return boolean
+--- @overload fun(playerId: Player): boolean
+--- @deprecated
+function N_0x5fc472c501ccadb3(playerId) end
 
     
 --- IsPlayerBluetoothEnable
@@ -1327,12 +1350,6 @@ function N_0x6e4361ff3e8cd7ca(p0) end
 --- Sets whether the player is able to do drive-bys in vehicle (shooting & aiming in vehicles), this also includes middle finger taunts.
 --- 
 --- This is a toggle, it does not have to be ran every frame.
---- 
---- Example:
---- 
---- ```lua
---- SetPlayerCanDoDriveBy(PlayerId(), false)
---- ```
 ---
 --- @hash [0x6E8834B52EC20C77](https://docs.fivem.net/natives/?_0x6E8834B52EC20C77)
 --- @param player Player
@@ -3265,21 +3282,17 @@ function N_0xefd79fa81dfba9cb(player, distance) end
 function ClearPlayerHasDamagedAtLeastOnePed(player) end
 
     
---- Violation types:
---- 
---- ```
+--- ```cpp
 --- enum eViolationType {
+---   // Checks if the player is driving on pedestrians walk ways
 ---   VT_PAVED_PEDESTRIAN_AREAS = 0,
----   VT_RUNNING_REDS,
----   VT_AGAINST_TRAFFIC
+---   // Checks if the player is running through red lights
+---   // This takes some time to return true.
+---   VT_RUNNING_REDS = 1,
+---   // checks if the player is driving on the wrong side of the road
+---   VT_AGAINST_TRAFFIC = 2
 --- };
 --- ```
---- 
---- Checks if a player is performing a certain type of traffic violation.
---- 
---- *   Type 0: Checks if the player is driving outside designated road areas pedestrians would walk on (specifically paved sidewalks).
---- *   Type 1: Checks if the player is running through reds, takes some time to return true.
---- *   Type 2: Checks if the player is driving on the wrong side of the road (against traffic).
 --- 
 --- Used solely in "Al Di Napoli" with type 2 for a voiceline.
 ---
@@ -3292,21 +3305,17 @@ function IsPlayerDrivingDangerously(player, type) end
 
     
 --- # New Name: IsPlayerDrivingDangerously
---- Violation types:
---- 
---- ```
+--- ```cpp
 --- enum eViolationType {
+---   // Checks if the player is driving on pedestrians walk ways
 ---   VT_PAVED_PEDESTRIAN_AREAS = 0,
----   VT_RUNNING_REDS,
----   VT_AGAINST_TRAFFIC
+---   // Checks if the player is running through red lights
+---   // This takes some time to return true.
+---   VT_RUNNING_REDS = 1,
+---   // checks if the player is driving on the wrong side of the road
+---   VT_AGAINST_TRAFFIC = 2
 --- };
 --- ```
---- 
---- Checks if a player is performing a certain type of traffic violation.
---- 
---- *   Type 0: Checks if the player is driving outside designated road areas pedestrians would walk on (specifically paved sidewalks).
---- *   Type 1: Checks if the player is running through reds, takes some time to return true.
---- *   Type 2: Checks if the player is driving on the wrong side of the road (against traffic).
 --- 
 --- Used solely in "Al Di Napoli" with type 2 for a voiceline.
 ---

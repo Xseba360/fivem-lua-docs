@@ -11,12 +11,23 @@
 function StartAudioScene(scene) end
 
     
---- N_0x0150b6ff25a9e2e5
+--- Unloads tennis vocalization banks loaded with [`REQUEST_TENNIS_BANKS`](https://docs.fivem.net/natives/?_0x4ADA3F19BE4A6047).
 ---
 --- @hash [0x0150B6FF25A9E2E5](https://docs.fivem.net/natives/?_0x0150B6FF25A9E2E5)
 ---
 --- @return void
 --- @overload fun(): void
+function UnrequestTennisBanks() end
+
+    
+--- # New Name: UnrequestTennisBanks
+--- Unloads tennis vocalization banks loaded with [`REQUEST_TENNIS_BANKS`](https://docs.fivem.net/natives/?_0x4ADA3F19BE4A6047).
+---
+--- @hash [0x0150B6FF25A9E2E5](https://docs.fivem.net/natives/?_0x0150B6FF25A9E2E5)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
 function N_0x0150b6ff25a9e2e5() end
 
     
@@ -434,7 +445,7 @@ function ClearAmbientZoneListState(zoneListName, forceUpdate) end
 --- Needs to be called every frame.
 --- 
 --- ```cpp
---- enum audSpecialEffectMode
+--- enum eAudSpecialEffectMode
 --- {
 --- 	kSpecialEffectModeNormal = 0,
 --- 	kSpecialEffectModeUnderwater = 1,
@@ -459,7 +470,7 @@ function SetAudioSpecialEffectMode(mode) end
 --- Needs to be called every frame.
 --- 
 --- ```cpp
---- enum audSpecialEffectMode
+--- enum eAudSpecialEffectMode
 --- {
 --- 	kSpecialEffectModeNormal = 0,
 --- 	kSpecialEffectModeUnderwater = 1,
@@ -564,13 +575,26 @@ function N_0x153973ab99fe8980(entity, groupName, fadeIn) end
 function DynamicMixerRelatedFn(entity, groupName, fadeIn) end
 
     
---- N_0x159b7318403a1cd8
+--- Sets the global radio signal level, lower value will cause radio static.
+--- Used only a handful of times in scripts.
 ---
 --- @hash [0x159B7318403A1CD8](https://docs.fivem.net/natives/?_0x159B7318403A1CD8)
---- @param p0 any
+--- @param signalLevel number (float)
 --- @return void
---- @overload fun(p0: any): void
-function N_0x159b7318403a1cd8(p0) end
+--- @overload fun(signalLevel: number): void
+function SetGlobalRadioSignalLevel(signalLevel) end
+
+    
+--- # New Name: SetGlobalRadioSignalLevel
+--- Sets the global radio signal level, lower value will cause radio static.
+--- Used only a handful of times in scripts.
+---
+--- @hash [0x159B7318403A1CD8](https://docs.fivem.net/natives/?_0x159B7318403A1CD8)
+--- @param signalLevel number (float)
+--- @return void
+--- @overload fun(signalLevel: number): void
+--- @deprecated
+function N_0x159b7318403a1cd8(signalLevel) end
 
     
 --- Clears the previously queued custom track lost for the given radio station.
@@ -876,12 +900,29 @@ function SetPedAudioFootstepQuiet(ped, enabled) end
 --- ```
 --- NativeDB Introduced: v1493
 --- ```
+--- 
+--- Removes all instances of a given context block.
 ---
 --- @hash [0x2ACABED337622DF2](https://docs.fivem.net/natives/?_0x2ACABED337622DF2)
---- @param p0 string (char*)
+--- @param groupName string (char*)
 --- @return void
---- @overload fun(p0: string): void
-function N_0x2acabed337622df2(p0) end
+--- @overload fun(groupName: string): void
+function UnblockSpeechContextGroup(groupName) end
+
+    
+--- # New Name: UnblockSpeechContextGroup
+--- ```
+--- NativeDB Introduced: v1493
+--- ```
+--- 
+--- Removes all instances of a given context block.
+---
+--- @hash [0x2ACABED337622DF2](https://docs.fivem.net/natives/?_0x2ACABED337622DF2)
+--- @param groupName string (char*)
+--- @return void
+--- @overload fun(groupName: string): void
+--- @deprecated
+function N_0x2acabed337622df2(groupName) end
 
     
 --- IsRadioStationFavourited
@@ -3706,49 +3747,51 @@ function StopCurrentPlayingAmbientSpeech(ped) end
     
 --- Generic interface to toggle audio functionality, with auto-reset on script termination and support for multiple script threads
 --- 
+--- Flags used in game scripts:
+--- | Flag Name | Description of Usage |
+--- | ----- | -------- |
+--- | ActivateSwitchWheelAudio | |
+--- | AllowAmbientSpeechInSlowMo | |
+--- | AllowCutsceneOverScreenFade | |
+--- | AllowForceRadioAfterRetune | |
+--- | AllowPainAndAmbientSpeechToPlayDuringCutscene | |
+--- | AllowPlayerAIOnMission | |
+--- | AllowPoliceScannerWhenPlayerHasNoControl | |
+--- | AllowRadioDuringSwitch | |
+--- | AllowRadioOverScreenFade | |
+--- | AllowScoreAndRadio | |
+--- | AllowScriptedSpeechInSlowMo | |
+--- | AvoidMissionCompleteDelay | |
+--- | DisableAbortConversationForDeathAndInjury | |
+--- | DisableAbortConversationForRagdoll | |
+--- | DisableBarks | |
+--- | DisableFlightMusic | |
+--- | DisableNPCHeadsetSpeechAttenuation | |
+--- | DisableReplayScriptStreamRecording | |
+--- | EnableHeadsetBeep | |
+--- | EnableMissileLockWarningForAllVehicles | |
+--- | ForceConversationInterrupt | |
+--- | ForceSeamlessRadioSwitch | |
+--- | ForceSniperAudio | |
+--- | FrontendRadioDisabled | |
+--- | HoldMissionCompleteWhenPrepared | |
+--- | IsDirectorModeActive |  Allows you to play speech infinitely without any pauses like in Director Mode. |
+--- | IsPlayerOnMissionForSpeech | |
+--- | ListenerReverbDisabled | |
+--- | LoadMPData | |
+--- | MobileRadioInGame | |
+--- | OnlyAllowScriptTriggerPoliceScanner | |
+--- | PlayerOnDLCHeist4Island | |
+--- | PlayMenuMusic | |
+--- | PoliceScannerDisabled | |
+--- | ScriptedConvListenerMaySpeak | |
+--- | SpeechDucksScore | |
+--- | SuppressPlayerScubaBreathing | |
+--- | UseQuietSceneSoftVersion | |
+--- | WantedMusicDisabled | |
+--- | WantedMusicOnMission | |
+--- 
 --- ```
---- Possible flag names:
---- "ActivateSwitchWheelAudio"
---- "AllowAmbientSpeechInSlowMo"
---- "AllowCutsceneOverScreenFade"
---- "AllowForceRadioAfterRetune"
---- "AllowPainAndAmbientSpeechToPlayDuringCutscene"
---- "AllowPlayerAIOnMission"
---- "AllowPoliceScannerWhenPlayerHasNoControl"
---- "AllowRadioDuringSwitch"
---- "AllowRadioOverScreenFade"
---- "AllowScoreAndRadio"
---- "AllowScriptedSpeechInSlowMo"
---- "AvoidMissionCompleteDelay"
---- "DisableAbortConversationForDeathAndInjury"
---- "DisableAbortConversationForRagdoll"
---- "DisableBarks"
---- "DisableFlightMusic"
---- "DisableReplayScriptStreamRecording"
---- "EnableHeadsetBeep"
---- "ForceConversationInterrupt"
---- "ForceSeamlessRadioSwitch"
---- "ForceSniperAudio"
---- "FrontendRadioDisabled"
---- "HoldMissionCompleteWhenPrepared"
---- "IsDirectorModeActive"
---- "IsPlayerOnMissionForSpeech"
---- "ListenerReverbDisabled"
---- "LoadMPData"
---- "MobileRadioInGame"
---- "OnlyAllowScriptTriggerPoliceScanner"
---- "PlayMenuMusic"
---- "PoliceScannerDisabled"
---- "ScriptedConvListenerMaySpeak"
---- "SpeechDucksScore"
---- "SuppressPlayerScubaBreathing"
---- "WantedMusicDisabled"
---- "WantedMusicOnMission"
---- -------------------------------
---- No added flag names between b393d and b573d, including b573d.
---- #######################################################################
---- "IsDirectorModeActive" is an audio flag which will allow you to play speech infinitely without any pauses like in Director Mode.
---- -----------------------------------------------------------------------
 --- All flag IDs and hashes:
 --- ID: 01 | Hash: 0x20A7858F
 --- ID: 02 | Hash: 0xA11C2259
@@ -3845,6 +3888,10 @@ function SetVehicleRadioLoud(vehicle, loud) end
 --- This native had a 4th parameter added in newer game builds
 --- `syncOverNetwork` creates a `CPedPlayPainEvent` when set to true, by default this variable is false.
 --- 
+--- You won't be able to use this for clones (remote pedestrians that are not owned by you) or migrating peds if `syncOverNetwork` is set to true; it simply won't execute.
+--- 
+--- The `ped` should also have speech for this to work.
+--- 
 --- ```cpp
 --- enum eAudDamageReason {
 --- 	AUD_DAMAGE_REASON_DEFAULT = 0,
@@ -3857,7 +3904,8 @@ function SetVehicleRadioLoud(vehicle, loud) end
 --- 	AUD_DAMAGE_REASON_SCREAM_TERROR = 7,
 --- 	AUD_DAMAGE_REASON_ON_FIRE = 8,
 --- 	AUD_DAMAGE_REASON_DROWNING = 9,
---- 	AUD_DAMAGE_REASON_SURFACE_DROWNING = 10,	// drowning on the surface of water, after we time out
+--- 	// drowning on the surface of water, after we time out
+--- 	AUD_DAMAGE_REASON_SURFACE_DROWNING = 10,
 --- 	AUD_DAMAGE_REASON_INHALE = 11,
 --- 	AUD_DAMAGE_REASON_EXHALE = 12,
 --- 	AUD_DAMAGE_REASON_POST_FALL_GRUNT = 13,
@@ -4258,10 +4306,10 @@ function N_0xcada5a0d0702381e(soundName, soundsetName) end
     
 --- ```cpp
 --- enum eAudAnimalMood {
---- 	AUD_ANIMAL_MOOD_ANGRY,
---- 	AUD_ANIMAL_MOOD_PLAYFUL,
+--- 	AUD_ANIMAL_MOOD_ANGRY = 0,
+--- 	AUD_ANIMAL_MOOD_PLAYFUL = 1,
 --- 
---- 	AUD_ANIMAL_MOOD_NUM_MOODS
+--- 	AUD_ANIMAL_MOOD_NUM_MOODS = 2
 --- }
 --- ```
 ---
@@ -4697,6 +4745,20 @@ function GetPlayerRadioStationIndex() end
 function SetPlayerAngry(ped, isAngry) end
 
     
+--- This native is used alongside with [`SET_VEHICLE_TYRE_BURST`](https://docs.fivem.net/natives/?_0xEC6A202EE4960385).
+--- 
+--- ```
+--- NativeDB Introduced: v3258
+--- ```
+---
+--- @hash [0xEB7D0E1FCC8FE17A](https://docs.fivem.net/natives/?_0xEB7D0E1FCC8FE17A)
+--- @param vehicle Vehicle
+--- @param force boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, force: boolean): void
+function ForceVehicleEngineSynth(vehicle, force) end
+
+    
 --- Plays a preloaded stream back from the specified object.
 ---
 --- @hash [0xEBAA9B64D76356FD](https://docs.fivem.net/natives/?_0xEBAA9B64D76356FD)
@@ -4755,12 +4817,12 @@ function PlayAmbientSpeechAtCoords(speechName, voiceName, x, y, z, speechParam) 
 --- ```cpp
 --- enum eAudAnimalType {
 --- 	AUD_ANIMAL_NONE = -1,
---- 	AUD_ANIMAL_BOAR,
---- 	AUD_ANIMAL_CHICKEN,
---- 	AUD_ANIMAL_DOG,
---- 	AUD_ANIMAL_DOG_ROTTWEILER,
---- 	AUD_ANIMAL_HORSE,
---- 	AUD_NUM_ANIMALS
+--- 	AUD_ANIMAL_BOAR = 0,
+--- 	AUD_ANIMAL_CHICKEN = 1,
+--- 	AUD_ANIMAL_DOG = 2,
+--- 	AUD_ANIMAL_DOG_ROTTWEILER = 3,
+--- 	AUD_ANIMAL_HORSE = 4,
+--- 	AUD_NUM_ANIMALS = 5
 --- }
 --- ```
 ---
@@ -4777,12 +4839,12 @@ function PlayAnimalVocalization(pedHandle, animalType, speechName) end
 --- ```cpp
 --- enum eAudAnimalType {
 --- 	AUD_ANIMAL_NONE = -1,
---- 	AUD_ANIMAL_BOAR,
---- 	AUD_ANIMAL_CHICKEN,
---- 	AUD_ANIMAL_DOG,
---- 	AUD_ANIMAL_DOG_ROTTWEILER,
---- 	AUD_ANIMAL_HORSE,
---- 	AUD_NUM_ANIMALS
+--- 	AUD_ANIMAL_BOAR = 0,
+--- 	AUD_ANIMAL_CHICKEN = 1,
+--- 	AUD_ANIMAL_DOG = 2,
+--- 	AUD_ANIMAL_DOG_ROTTWEILER = 3,
+--- 	AUD_ANIMAL_HORSE = 4,
+--- 	AUD_NUM_ANIMALS = 5
 --- }
 --- ```
 ---

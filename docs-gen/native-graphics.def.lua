@@ -1518,9 +1518,11 @@ function N_0x27feb5254759cde3(textureDict, p1) end
 function DrawMarker(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown, faceCamera, p19, rotate, textureDict, textureName, drawOnEnts) end
 
     
---- Used for drawling Deadline trailing lights, see deadline.ytd
+--- This native draws a textured polygon between three vectors in the game world. It's commonly utilized for rendering deadline trailing lights, with additional details available in the `deadline.ytd` file. UVW mapping details (u,v,w parameters) can be found on various internet resources. This native is specifically used for drawing textured polygons on the screen, where UV coordinates define the texture mapping and color/alpha parameters define the appearance of the polygon. This native should be called every frame for continuous rendering.
 --- 
---- For UVW mapping (u,v,w parameters), reference your favourite internet resource for more details.
+--- ```
+--- NativeDB Introduced: v877
+--- ```
 ---
 --- @hash [0x29280002282F1928](https://docs.fivem.net/natives/?_0x29280002282F1928)
 --- @param x1 number (float)
@@ -1549,13 +1551,15 @@ function DrawMarker(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, 
 --- @param w3 number (float)
 --- @return void
 --- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, x3: number, y3: number, z3: number, red: number, green: number, blue: number, alpha: number, textureDict: string, textureName: string, u1: number, v1: number, w1: number, u2: number, v2: number, w2: number, u3: number, v3: number, w3: number): void
-function DrawSpritePoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha, textureDict, textureName, u1, v1, w1, u2, v2, w2, u3, v3, w3) end
+function DrawTexturedPoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha, textureDict, textureName, u1, v1, w1, u2, v2, w2, u3, v3, w3) end
 
     
---- # New Name: DrawSpritePoly
---- Used for drawling Deadline trailing lights, see deadline.ytd
+--- # New Name: DrawTexturedPoly
+--- This native draws a textured polygon between three vectors in the game world. It's commonly utilized for rendering deadline trailing lights, with additional details available in the `deadline.ytd` file. UVW mapping details (u,v,w parameters) can be found on various internet resources. This native is specifically used for drawing textured polygons on the screen, where UV coordinates define the texture mapping and color/alpha parameters define the appearance of the polygon. This native should be called every frame for continuous rendering.
 --- 
---- For UVW mapping (u,v,w parameters), reference your favourite internet resource for more details.
+--- ```
+--- NativeDB Introduced: v877
+--- ```
 ---
 --- @hash [0x29280002282F1928](https://docs.fivem.net/natives/?_0x29280002282F1928)
 --- @param x1 number (float)
@@ -1586,6 +1590,44 @@ function DrawSpritePoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, al
 --- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, x3: number, y3: number, z3: number, red: number, green: number, blue: number, alpha: number, textureDict: string, textureName: string, u1: number, v1: number, w1: number, u2: number, v2: number, w2: number, u3: number, v3: number, w3: number): void
 --- @deprecated
 function N_0x29280002282f1928(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha, textureDict, textureName, u1, v1, w1, u2, v2, w2, u3, v3, w3) end
+
+    
+--- # New Name: DrawTexturedPoly
+--- This native draws a textured polygon between three vectors in the game world. It's commonly utilized for rendering deadline trailing lights, with additional details available in the `deadline.ytd` file. UVW mapping details (u,v,w parameters) can be found on various internet resources. This native is specifically used for drawing textured polygons on the screen, where UV coordinates define the texture mapping and color/alpha parameters define the appearance of the polygon. This native should be called every frame for continuous rendering.
+--- 
+--- ```
+--- NativeDB Introduced: v877
+--- ```
+---
+--- @hash [0x29280002282F1928](https://docs.fivem.net/natives/?_0x29280002282F1928)
+--- @param x1 number (float)
+--- @param y1 number (float)
+--- @param z1 number (float)
+--- @param x2 number (float)
+--- @param y2 number (float)
+--- @param z2 number (float)
+--- @param x3 number (float)
+--- @param y3 number (float)
+--- @param z3 number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @param textureDict string (char*)
+--- @param textureName string (char*)
+--- @param u1 number (float)
+--- @param v1 number (float)
+--- @param w1 number (float)
+--- @param u2 number (float)
+--- @param v2 number (float)
+--- @param w2 number (float)
+--- @param u3 number (float)
+--- @param v3 number (float)
+--- @param w3 number (float)
+--- @return void
+--- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, x3: number, y3: number, z3: number, red: number, green: number, blue: number, alpha: number, textureDict: string, textureName: string, u1: number, v1: number, w1: number, u2: number, v2: number, w2: number, u3: number, v3: number, w3: number): void
+--- @deprecated
+function DrawSpritePoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha, textureDict, textureName, u1, v1, w1, u2, v2, w2, u3, v3, w3) end
 
     
 --- SetTvVolume
@@ -1986,11 +2028,10 @@ function N_0x302c91ab2d477f7e() end
 function N_0x30432a0118736e00() end
 
     
+--- This native retrieves whether the game is running in widescreen mode or not.
+--- 
 --- ```
---- Setting Aspect Ratio Manually in game will return:  
---- false - for Narrow format Aspect Ratios (3:2, 4:3, 5:4, etc. )  
---- true - for Wide format Aspect Ratios (5:3, 16:9, 16:10, etc. )  
---- Setting Aspect Ratio to "Auto" in game will return "false" or "true" based on the actual set Resolution Ratio.  
+--- NativeDB Introduced: v323
 --- ```
 ---
 --- @hash [0x30CF4BDA4FCB1905](https://docs.fivem.net/natives/?_0x30CF4BDA4FCB1905)
@@ -2049,14 +2090,34 @@ function N_0x312342e1a4874f3f(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
 function GetDecalWashLevel(decal) end
 
     
---- N_0x32f34ff7f617643b
+--- ```
+--- NativeDB Introduced: v573
+--- ```
+--- 
+--- Configures a Scaleform movie to render to a large render target (1280x720), which is useful for ensuring higher quality and clarity in certain display scenarios. Such as displaying the name of an organization (CEO Office) in a visually impactful way for example.
 ---
 --- @hash [0x32F34FF7F617643B](https://docs.fivem.net/natives/?_0x32F34FF7F617643B)
---- @param p0 any
---- @param p1 any
+--- @param scaleformMovieId number (int)
+--- @param useLargeRT boolean
 --- @return void
---- @overload fun(p0: any, p1: any): void
-function N_0x32f34ff7f617643b(p0, p1) end
+--- @overload fun(scaleformMovieId: number, useLargeRT: boolean): void
+function SetScaleformMovieToUseLargeRt(scaleformMovieId, useLargeRT) end
+
+    
+--- # New Name: SetScaleformMovieToUseLargeRt
+--- ```
+--- NativeDB Introduced: v573
+--- ```
+--- 
+--- Configures a Scaleform movie to render to a large render target (1280x720), which is useful for ensuring higher quality and clarity in certain display scenarios. Such as displaying the name of an organization (CEO Office) in a visually impactful way for example.
+---
+--- @hash [0x32F34FF7F617643B](https://docs.fivem.net/natives/?_0x32F34FF7F617643B)
+--- @param scaleformMovieId number (int)
+--- @param useLargeRT boolean
+--- @return void
+--- @overload fun(scaleformMovieId: number, useLargeRT: boolean): void
+--- @deprecated
+function N_0x32f34ff7f617643b(scaleformMovieId, useLargeRT) end
 
     
 --- Creates an integer (usually 1) for a BINK movie to be called with other natives.
@@ -3079,6 +3140,21 @@ function N_0x615d3925e87a3b26(checkpoint) end
 --- GRAPHICS::DRAW_RECT(0.5, 0.5, 3.0, 3.0, v\_4, v\_5, v\_6, a\_0.\_f172, 0);
 --- GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(1);
 --- GRAPHICS::DRAW_RECT(0.5, 0.5, 1.5, 1.5, 0, 0, 0, 255, 0);
+--- 
+--- ```cpp
+--- enum eGfxDrawOrder
+--- {
+---     GFX_ORDER_BEFORE_HUD_PRIORITY_LOW = 0,
+---     GFX_ORDER_BEFORE_HUD = 1,
+---     GFX_ORDER_BEFORE_HUD_PRIORITY_HIGH = 2,
+---     GFX_ORDER_AFTER_HUD_PRIORITY_LOW = 3,
+---     GFX_ORDER_AFTER_HUD = 4,
+---     GFX_ORDER_AFTER_HUD_PRIORITY_HIGH = 5,
+---     GFX_ORDER_AFTER_FADE_PRIORITY_LOW = 6,
+---     GFX_ORDER_AFTER_FADE = 7,
+---     GFX_ORDER_AFTER_FADE_PRIORITY_HIGH = 8,
+--- }
+--- ```
 ---
 --- @hash [0x61BB1D9B3A95D802](https://docs.fivem.net/natives/?_0x61BB1D9B3A95D802)
 --- @param order number (int)
@@ -3094,6 +3170,21 @@ function SetScriptGfxDrawOrder(order) end
 --- GRAPHICS::DRAW_RECT(0.5, 0.5, 3.0, 3.0, v\_4, v\_5, v\_6, a\_0.\_f172, 0);
 --- GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(1);
 --- GRAPHICS::DRAW_RECT(0.5, 0.5, 1.5, 1.5, 0, 0, 0, 255, 0);
+--- 
+--- ```cpp
+--- enum eGfxDrawOrder
+--- {
+---     GFX_ORDER_BEFORE_HUD_PRIORITY_LOW = 0,
+---     GFX_ORDER_BEFORE_HUD = 1,
+---     GFX_ORDER_BEFORE_HUD_PRIORITY_HIGH = 2,
+---     GFX_ORDER_AFTER_HUD_PRIORITY_LOW = 3,
+---     GFX_ORDER_AFTER_HUD = 4,
+---     GFX_ORDER_AFTER_HUD_PRIORITY_HIGH = 5,
+---     GFX_ORDER_AFTER_FADE_PRIORITY_LOW = 6,
+---     GFX_ORDER_AFTER_FADE = 7,
+---     GFX_ORDER_AFTER_FADE_PRIORITY_HIGH = 8,
+--- }
+--- ```
 ---
 --- @hash [0x61BB1D9B3A95D802](https://docs.fivem.net/natives/?_0x61BB1D9B3A95D802)
 --- @param order number (int)
@@ -3110,6 +3201,21 @@ function N_0x61bb1d9b3a95d802(order) end
 --- GRAPHICS::DRAW_RECT(0.5, 0.5, 3.0, 3.0, v\_4, v\_5, v\_6, a\_0.\_f172, 0);
 --- GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(1);
 --- GRAPHICS::DRAW_RECT(0.5, 0.5, 1.5, 1.5, 0, 0, 0, 255, 0);
+--- 
+--- ```cpp
+--- enum eGfxDrawOrder
+--- {
+---     GFX_ORDER_BEFORE_HUD_PRIORITY_LOW = 0,
+---     GFX_ORDER_BEFORE_HUD = 1,
+---     GFX_ORDER_BEFORE_HUD_PRIORITY_HIGH = 2,
+---     GFX_ORDER_AFTER_HUD_PRIORITY_LOW = 3,
+---     GFX_ORDER_AFTER_HUD = 4,
+---     GFX_ORDER_AFTER_HUD_PRIORITY_HIGH = 5,
+---     GFX_ORDER_AFTER_FADE_PRIORITY_LOW = 6,
+---     GFX_ORDER_AFTER_FADE = 7,
+---     GFX_ORDER_AFTER_FADE_PRIORITY_HIGH = 8,
+--- }
+--- ```
 ---
 --- @hash [0x61BB1D9B3A95D802](https://docs.fivem.net/natives/?_0x61BB1D9B3A95D802)
 --- @param order number (int)
@@ -3126,6 +3232,21 @@ function Set_2dLayer(order) end
 --- GRAPHICS::DRAW_RECT(0.5, 0.5, 3.0, 3.0, v\_4, v\_5, v\_6, a\_0.\_f172, 0);
 --- GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(1);
 --- GRAPHICS::DRAW_RECT(0.5, 0.5, 1.5, 1.5, 0, 0, 0, 255, 0);
+--- 
+--- ```cpp
+--- enum eGfxDrawOrder
+--- {
+---     GFX_ORDER_BEFORE_HUD_PRIORITY_LOW = 0,
+---     GFX_ORDER_BEFORE_HUD = 1,
+---     GFX_ORDER_BEFORE_HUD_PRIORITY_HIGH = 2,
+---     GFX_ORDER_AFTER_HUD_PRIORITY_LOW = 3,
+---     GFX_ORDER_AFTER_HUD = 4,
+---     GFX_ORDER_AFTER_HUD_PRIORITY_HIGH = 5,
+---     GFX_ORDER_AFTER_FADE_PRIORITY_LOW = 6,
+---     GFX_ORDER_AFTER_FADE = 7,
+---     GFX_ORDER_AFTER_FADE_PRIORITY_HIGH = 8,
+--- }
+--- ```
 ---
 --- @hash [0x61BB1D9B3A95D802](https://docs.fivem.net/natives/?_0x61BB1D9B3A95D802)
 --- @param order number (int)
@@ -3252,22 +3373,10 @@ function N_0x6a12d88881435dca() end
 function N_0x6a51f78772175a51(toggle) end
 
     
+--- This native draws a line between two vectors in the game world. It is typically used for visualizing paths or connections between points. The color of the line is specified by the red, green, and blue parameters, with alpha determining its opacity. This native should be called every frame for continuous rendering.
+--- 
 --- ```
---- Draws a depth-tested line from one point to another.
---- ----------------
---- x1, y1, z1 : Coordinates for the first point
---- x2, y2, z2 : Coordinates for the second point
---- r, g, b, alpha : Color with RGBA-Values
---- I recommend using a predefined function to call this.
---- [VB.NET]
---- Public Sub DrawLine(from As Vector3, [to] As Vector3, col As Color)
----     [Function].Call(Hash.DRAW_LINE, from.X, from.Y, from.Z, [to].X, [to].Y, [to].Z, col.R, col.G, col.B, col.A)
---- End Sub
---- [C#]
---- public void DrawLine(Vector3 from, Vector3 to, Color col)
---- {
----     Function.Call(Hash.DRAW_LINE, from.X, from.Y, from.Z, to.X, to.Y, to.Z, col.R, col.G, col.B, col.A);
---- }
+--- NativeDB Introduced: v323
 --- ```
 ---
 --- @hash [0x6B7256074AE34680](https://docs.fivem.net/natives/?_0x6B7256074AE34680)
@@ -3793,23 +3902,19 @@ function GetScaleformMovieFunctionReturnBool(method_return) end
 function SetParticleFxNonLoopedAlpha(alpha) end
 
     
---- GRAPHICS::\_0x77FE3402004CD1B0(HUD::\_GET_LABEL_TEXT("YACHT_GSY"));
---- GRAPHICS::\_0x77FE3402004CD1B0(PLAYER::GET_PLAYER_NAME(PLAYER::PLAYER_ID()));
---- 
---- Both \_0xBA7148484BD90365 / \_0x77FE3402004CD1B0 works, but \_0x77FE3402004CD1B0 is usually used for "name" (organisation, players..).
+--- Adds a literal string to a scaleform movie method.
+--- There doesn't seem to be any difference between this and other `SCALEFORM_MOVIE_METHOD_ADD_PARAM_*_STRING` natives in game code.
 ---
 --- @hash [0x77FE3402004CD1B0](https://docs.fivem.net/natives/?_0x77FE3402004CD1B0)
 --- @param string string (char*)
 --- @return void
 --- @overload fun(string: string): void
-function ScaleformMovieMethodAddParamTextureNameString_2(string) end
+function ScaleformMovieMethodAddParamLiteralString(string) end
 
     
---- # New Name: ScaleformMovieMethodAddParamTextureNameString_2
---- GRAPHICS::\_0x77FE3402004CD1B0(HUD::\_GET_LABEL_TEXT("YACHT_GSY"));
---- GRAPHICS::\_0x77FE3402004CD1B0(PLAYER::GET_PLAYER_NAME(PLAYER::PLAYER_ID()));
---- 
---- Both \_0xBA7148484BD90365 / \_0x77FE3402004CD1B0 works, but \_0x77FE3402004CD1B0 is usually used for "name" (organisation, players..).
+--- # New Name: ScaleformMovieMethodAddParamLiteralString
+--- Adds a literal string to a scaleform movie method.
+--- There doesn't seem to be any difference between this and other `SCALEFORM_MOVIE_METHOD_ADD_PARAM_*_STRING` natives in game code.
 ---
 --- @hash [0x77FE3402004CD1B0](https://docs.fivem.net/natives/?_0x77FE3402004CD1B0)
 --- @param string string (char*)
@@ -3819,11 +3924,9 @@ function ScaleformMovieMethodAddParamTextureNameString_2(string) end
 function N_0x77fe3402004cd1b0(string) end
 
     
---- # New Name: ScaleformMovieMethodAddParamTextureNameString_2
---- GRAPHICS::\_0x77FE3402004CD1B0(HUD::\_GET_LABEL_TEXT("YACHT_GSY"));
---- GRAPHICS::\_0x77FE3402004CD1B0(PLAYER::GET_PLAYER_NAME(PLAYER::PLAYER_ID()));
---- 
---- Both \_0xBA7148484BD90365 / \_0x77FE3402004CD1B0 works, but \_0x77FE3402004CD1B0 is usually used for "name" (organisation, players..).
+--- # New Name: ScaleformMovieMethodAddParamLiteralString
+--- Adds a literal string to a scaleform movie method.
+--- There doesn't seem to be any difference between this and other `SCALEFORM_MOVIE_METHOD_ADD_PARAM_*_STRING` natives in game code.
 ---
 --- @hash [0x77FE3402004CD1B0](https://docs.fivem.net/natives/?_0x77FE3402004CD1B0)
 --- @param string string (char*)
@@ -3831,6 +3934,18 @@ function N_0x77fe3402004cd1b0(string) end
 --- @overload fun(string: string): void
 --- @deprecated
 function PushScaleformMovieMethodParameterString_2(string) end
+
+    
+--- # New Name: ScaleformMovieMethodAddParamLiteralString
+--- Adds a literal string to a scaleform movie method.
+--- There doesn't seem to be any difference between this and other `SCALEFORM_MOVIE_METHOD_ADD_PARAM_*_STRING` natives in game code.
+---
+--- @hash [0x77FE3402004CD1B0](https://docs.fivem.net/natives/?_0x77FE3402004CD1B0)
+--- @param string string (char*)
+--- @return void
+--- @overload fun(string: string): void
+--- @deprecated
+function ScaleformMovieMethodAddParamTextureNameString_2(string) end
 
     
 --- Draws a 3D sphere, typically seen in the GTA:O freemode event "Penned In".
@@ -3934,20 +4049,19 @@ function N_0x7b226c785a52a0a9() end
 function SetSeethrough(toggle) end
 
     
---- ```
---- only works on some fx's  
---- p4 = 0  
---- ```
+--- Sets the colour tint of a previously started looped particle effect
+--- 
+--- You can use the [inverse lerp](https://www.gamedev.net/articles/programming/general-and-gameplay-programming/inverse-lerp-a-super-useful-yet-often-overlooked-function-r5230/) method to normalize in a range from 0.0 to 1.0 an rgb
 ---
 --- @hash [0x7F8F65877F88783B](https://docs.fivem.net/natives/?_0x7F8F65877F88783B)
 --- @param ptfxHandle number (int)
 --- @param r number (float)
 --- @param g number (float)
 --- @param b number (float)
---- @param p4 boolean
+--- @param bLocalOnly boolean
 --- @return void
---- @overload fun(ptfxHandle: number, r: number, g: number, b: number, p4: boolean): void
-function SetParticleFxLoopedColour(ptfxHandle, r, g, b, p4) end
+--- @overload fun(ptfxHandle: number, r: number, g: number, b: number, bLocalOnly: boolean): void
+function SetParticleFxLoopedColour(ptfxHandle, r, g, b, bLocalOnly) end
 
     
 --- N_0x7fa5d82b8f58ec06
@@ -4114,9 +4228,10 @@ function AttachTvAudioToEntity(entity) end
 function MoveVehicleDecals(p0, p1) end
 
     
+--- This native indicates whether the game is running in high-definition (HD) resolution. It returns `false` if the resolution is less than `1280x720` and `true` if it's equal to or greater than `1280x720`.
+--- 
 --- ```
---- false = Any resolution < 1280x720  
---- true = Any resolution >= 1280x720  
+--- NativeDB Introduced: v323
 --- ```
 ---
 --- @hash [0x84ED31191CC5D2C9](https://docs.fivem.net/natives/?_0x84ED31191CC5D2C9)
@@ -4168,20 +4283,24 @@ function IsScaleformMovieDeleting(scaleformIndex) end
 function N_0x86255b1fc929e33e(scaleformIndex) end
 
     
+--- Returns current screen resolution.
+--- 
 --- ```
---- Returns current screen resolution.  
+--- NativeDB Introduced: v323
 --- ```
 ---
 --- @hash [0x873C9F3104101DD3](https://docs.fivem.net/natives/?_0x873C9F3104101DD3)
 ---
 --- @return number, number
 --- @overload fun(): number, number
-function GetActiveScreenResolution() end
+function GetActualScreenResolution() end
 
     
---- # New Name: GetActiveScreenResolution
+--- # New Name: GetActualScreenResolution
+--- Returns current screen resolution.
+--- 
 --- ```
---- Returns current screen resolution.  
+--- NativeDB Introduced: v323
 --- ```
 ---
 --- @hash [0x873C9F3104101DD3](https://docs.fivem.net/natives/?_0x873C9F3104101DD3)
@@ -4190,6 +4309,21 @@ function GetActiveScreenResolution() end
 --- @overload fun(): number, number
 --- @deprecated
 function GetScreenActiveResolution() end
+
+    
+--- # New Name: GetActualScreenResolution
+--- Returns current screen resolution.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+---
+--- @hash [0x873C9F3104101DD3](https://docs.fivem.net/natives/?_0x873C9F3104101DD3)
+---
+--- @return number, number
+--- @overload fun(): number, number
+--- @deprecated
+function GetActiveScreenResolution() end
 
     
 --- EnableMovieSubtitles
@@ -5264,21 +5398,19 @@ function SetParticleFxCamInsideNonplayerVehicle(vehicle, p1) end
 function N_0xadd6627c4d325458(p0) end
 
     
---- ```
 --- Same as END_TEXT_COMMAND_SCALEFORM_STRING but does not perform HTML conversion for text tokens.
---- ```
+--- Also useful for when you are trying to add blips and inputs in your scaleform (If the scaleform supports it).
 ---
 --- @hash [0xAE4E8157D9ECF087](https://docs.fivem.net/natives/?_0xAE4E8157D9ECF087)
 ---
 --- @return void
 --- @overload fun(): void
-function EndTextCommandScaleformString_2() end
+function EndTextCommandUnparsedScaleformString() end
 
     
---- # New Name: EndTextCommandScaleformString_2
---- ```
+--- # New Name: EndTextCommandUnparsedScaleformString
 --- Same as END_TEXT_COMMAND_SCALEFORM_STRING but does not perform HTML conversion for text tokens.
---- ```
+--- Also useful for when you are trying to add blips and inputs in your scaleform (If the scaleform supports it).
 ---
 --- @hash [0xAE4E8157D9ECF087](https://docs.fivem.net/natives/?_0xAE4E8157D9ECF087)
 ---
@@ -5286,6 +5418,18 @@ function EndTextCommandScaleformString_2() end
 --- @overload fun(): void
 --- @deprecated
 function N_0xae4e8157d9ecf087() end
+
+    
+--- # New Name: EndTextCommandUnparsedScaleformString
+--- Same as END_TEXT_COMMAND_SCALEFORM_STRING but does not perform HTML conversion for text tokens.
+--- Also useful for when you are trying to add blips and inputs in your scaleform (If the scaleform supports it).
+---
+--- @hash [0xAE4E8157D9ECF087](https://docs.fivem.net/natives/?_0xAE4E8157D9ECF087)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function EndTextCommandScaleformString_2() end
 
     
 --- N_0xae51bc858f32ba66
@@ -6823,22 +6967,10 @@ function Ui3dsceneIsAvailable() end
 function N_0xd3a10fc7fd8d98cd() end
 
     
+--- This native draws a box between two vectors in the game world. It is typically used for visualizing boundaries or areas of interest. The color of the box is specified by the red, green, and blue parameters, with alpha determining its opacity. This native should be called every frame for continuous rendering.
+--- 
 --- ```
---- x,y,z = start pos  
---- x2,y2,z2 = end pos  
---- Draw's a 3D Box between the two x,y,z coords.  
---- --------------  
---- Keep in mind that the edges of the box do only align to the worlds base-vectors. Therefore something like rotation cannot be applied. That means this function is pretty much useless, unless you want a static unicolor box somewhere.  
---- I recommend using a predefined function to call this.  
---- [VB.NET]  
---- Public Sub DrawBox(a As Vector3, b As Vector3, col As Color)  
----     [Function].Call(Hash.DRAW_BOX,a.X, a.Y, a.Z,b.X, b.Y, b.Z,col.R, col.G, col.B, col.A)  
---- End Sub  
---- [C#]  
---- public void DrawBox(Vector3 a, Vector3 b, Color col)  
---- {  
----     Function.Call(Hash.DRAW_BOX,a.X, a.Y, a.Z,b.X, b.Y, b.Z,col.R, col.G, col.B, col.A);  
---- }  
+--- NativeDB Introduced: v323
 --- ```
 ---
 --- @hash [0xD3A9971CADAC7252](https://docs.fivem.net/natives/?_0xD3A9971CADAC7252)
@@ -6989,9 +7121,7 @@ function FreeMemoryForHighQualityPhoto() end
 function N_0xd801cc02177fa3f1() end
 
     
---- ```
---- methodReturn: The return value of this native: END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE
---- ```
+--- GetScaleformMovieMethodReturnValueBool
 ---
 --- @hash [0xD80A80346A45D761](https://docs.fivem.net/natives/?_0xD80A80346A45D761)
 --- @param methodReturn number (int)
@@ -7001,9 +7131,7 @@ function GetScaleformMovieMethodReturnValueBool(methodReturn) end
 
     
 --- # New Name: GetScaleformMovieMethodReturnValueBool
---- ```
---- methodReturn: The return value of this native: END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE
---- ```
+--- GetScaleformMovieMethodReturnValueBool
 ---
 --- @hash [0xD80A80346A45D761](https://docs.fivem.net/natives/?_0xD80A80346A45D761)
 --- @param methodReturn number (int)
@@ -7011,6 +7139,17 @@ function GetScaleformMovieMethodReturnValueBool(methodReturn) end
 --- @overload fun(methodReturn: number): boolean
 --- @deprecated
 function N_0xd80a80346a45d761(methodReturn) end
+
+    
+--- # New Name: GetScaleformMovieMethodReturnValueBool
+--- GetScaleformMovieMethodReturnValueBool
+---
+--- @hash [0xD80A80346A45D761](https://docs.fivem.net/natives/?_0xD80A80346A45D761)
+--- @param methodReturn number (int)
+--- @return boolean
+--- @overload fun(methodReturn: number): boolean
+--- @deprecated
+function GetScaleformMovieMethodReturnValueBool(methodReturn) end
 
     
 --- If true, this native will create purple explosions upon projectile impact, add comic-like PTFX when firing a weapon, create a sound on bullet impact and have its own "blood effect".
@@ -7093,12 +7232,37 @@ function SetCameraEndtime(toggle) end
 function DrawDebugLineWithTwoColours(x1, y1, z1, x2, y2, z2, r1, g1, b1, r2, g2, b2, alpha1, alpha2) end
 
     
---- N_0xd9454b5752c857dc
----
+--- Prevents gas / petrol decals (aka gas / petrol trails and puddles) to be ignited on fire during the frame in which the native is called.
+--- 
+--- **Note**: This native needs to be called every frame to prevent ignition.
+--- @usage Citizen.CreateThread(function()
+---     while true do
+---         SetDisablePetrolDecalsIgnitingThisFrame()
+---         Citizen.Wait(0)
+---     end
+--- end
 --- @hash [0xD9454B5752C857DC](https://docs.fivem.net/natives/?_0xD9454B5752C857DC)
 ---
 --- @return void
 --- @overload fun(): void
+function SetDisablePetrolDecalsIgnitingThisFrame() end
+
+    
+--- # New Name: SetDisablePetrolDecalsIgnitingThisFrame
+--- Prevents gas / petrol decals (aka gas / petrol trails and puddles) to be ignited on fire during the frame in which the native is called.
+--- 
+--- **Note**: This native needs to be called every frame to prevent ignition.
+--- @usage Citizen.CreateThread(function()
+---     while true do
+---         SetDisablePetrolDecalsIgnitingThisFrame()
+---         Citizen.Wait(0)
+---     end
+--- end
+--- @hash [0xD9454B5752C857DC](https://docs.fivem.net/natives/?_0xD9454B5752C857DC)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
 function N_0xd9454b5752c857dc() end
 
     
@@ -7705,18 +7869,18 @@ function N_0xe59343e9e96529e7() end
 function N_0xe63d7c6eececb66b(toggle) end
 
     
---- This native is used in some casino scripts to fit the scaleform in the rendertarget.
+--- Adjusts a scaleform movie's dimensions to fit a large rendertarget. Mostly used in casino scripts.
 ---
 --- @hash [0xE6A9F00D4240B519](https://docs.fivem.net/natives/?_0xE6A9F00D4240B519)
 --- @param scaleformHandle number (int)
 --- @param toggle boolean
 --- @return void
 --- @overload fun(scaleformHandle: number, toggle: boolean): void
-function SetScaleformFitRendertarget(scaleformHandle, toggle) end
+function SetScaleformMovieToUseSuperLargeRt(scaleformHandle, toggle) end
 
     
---- # New Name: SetScaleformFitRendertarget
---- This native is used in some casino scripts to fit the scaleform in the rendertarget.
+--- # New Name: SetScaleformMovieToUseSuperLargeRt
+--- Adjusts a scaleform movie's dimensions to fit a large rendertarget. Mostly used in casino scripts.
 ---
 --- @hash [0xE6A9F00D4240B519](https://docs.fivem.net/natives/?_0xE6A9F00D4240B519)
 --- @param scaleformHandle number (int)
@@ -7725,6 +7889,18 @@ function SetScaleformFitRendertarget(scaleformHandle, toggle) end
 --- @overload fun(scaleformHandle: number, toggle: boolean): void
 --- @deprecated
 function N_0xe6a9f00d4240b519(scaleformHandle, toggle) end
+
+    
+--- # New Name: SetScaleformMovieToUseSuperLargeRt
+--- Adjusts a scaleform movie's dimensions to fit a large rendertarget. Mostly used in casino scripts.
+---
+--- @hash [0xE6A9F00D4240B519](https://docs.fivem.net/natives/?_0xE6A9F00D4240B519)
+--- @param scaleformHandle number (int)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(scaleformHandle: number, toggle: boolean): void
+--- @deprecated
+function SetScaleformFitRendertarget(scaleformHandle, toggle) end
 
     
 --- SetNoiseoveride
@@ -8173,24 +8349,47 @@ function DisableScriptAmbientEffects(p0) end
 function N_0xefd97ff47b745b8d(p0) end
 
     
---- GetAspectRatio
+--- This native retrieves the aspect ratio of the game window. If `physicalAspect` is `true`, it returns the physical aspect ratio of the game window, which is useful for 3x1 modes. Otherwise, it returns the aspect ratio of the main game window, considering any custom overrides from the settings menu.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
 ---
 --- @hash [0xF1307EF624A80D87](https://docs.fivem.net/natives/?_0xF1307EF624A80D87)
---- @param b boolean
+--- @param physicalAspect boolean
 --- @return number
---- @overload fun(b: boolean): number
-function GetAspectRatio(b) end
+--- @overload fun(physicalAspect: boolean): number
+function GetAspectRatio(physicalAspect) end
 
     
 --- # New Name: GetAspectRatio
---- GetAspectRatio
+--- This native retrieves the aspect ratio of the game window. If `physicalAspect` is `true`, it returns the physical aspect ratio of the game window, which is useful for 3x1 modes. Otherwise, it returns the aspect ratio of the main game window, considering any custom overrides from the settings menu.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
 ---
 --- @hash [0xF1307EF624A80D87](https://docs.fivem.net/natives/?_0xF1307EF624A80D87)
---- @param b boolean
+--- @param physicalAspect boolean
 --- @return number
---- @overload fun(b: boolean): number
+--- @overload fun(physicalAspect: boolean): number
 --- @deprecated
-function GetScreenAspectRatio(b) end
+function GetScreenAspectRatio(physicalAspect) end
+
+    
+--- # New Name: GetAspectRatio
+--- This native retrieves the aspect ratio of the game window. If `physicalAspect` is `true`, it returns the physical aspect ratio of the game window, which is useful for 3x1 modes. Otherwise, it returns the aspect ratio of the main game window, considering any custom overrides from the settings menu.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+---
+--- @hash [0xF1307EF624A80D87](https://docs.fivem.net/natives/?_0xF1307EF624A80D87)
+--- @param physicalAspect boolean
+--- @return number
+--- @overload fun(physicalAspect: boolean): number
+--- @deprecated
+function GetAspectRatio(physicalAspect) end
 
     
 --- ```

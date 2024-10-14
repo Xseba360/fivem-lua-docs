@@ -91,7 +91,13 @@ function AddTextComponentInteger(value) end
 
     
 --- SetBlipColour
----
+--- @usage local coords = GetEntityCoords(PlayerPedId())
+--- local blip = AddBlipForCoord(coords.x, coords.y, coords.z)
+--- 
+--- SetBlipColour(blip, 1) -- Sets the color to red (see list above)
+--- 
+--- -- You can also use a hex like so:
+--- SetBlipColour(blip, 0x3A7F3AFF) -- Our custom gree
 --- @hash [0x03D7FB09E75D6B7E](https://docs.fivem.net/natives/?_0x03D7FB09E75D6B7E)
 --- @param blip Blip
 --- @param color number (int)
@@ -635,15 +641,24 @@ function N_0x1121bfa1a1a522a8() end
 function IsNamedRendertargetLinked(modelHash) end
 
     
---- ```
---- SET_TEXT_??? - Used in golf and golf_mp  
---- ```
+--- Toggles if the text input box can be opened with [`DISPLAY_ONSCREEN_KEYBOARD`](https://docs.fivem.net/natives/?_0x00DC833F2568DBF6).
 ---
 --- @hash [0x1185A8087587322C](https://docs.fivem.net/natives/?_0x1185A8087587322C)
---- @param p0 boolean
+--- @param state boolean
 --- @return void
---- @overload fun(p0: boolean): void
-function N_0x1185a8087587322c(p0) end
+--- @overload fun(state: boolean): void
+function SetTextInputBoxEnabled(state) end
+
+    
+--- # New Name: SetTextInputBoxEnabled
+--- Toggles if the text input box can be opened with [`DISPLAY_ONSCREEN_KEYBOARD`](https://docs.fivem.net/natives/?_0x00DC833F2568DBF6).
+---
+--- @hash [0x1185A8087587322C](https://docs.fivem.net/natives/?_0x1185A8087587322C)
+--- @param state boolean
+--- @return void
+--- @overload fun(state: boolean): void
+--- @deprecated
+function N_0x1185a8087587322c(state) end
 
     
 --- ResetReticuleValues
@@ -2129,8 +2144,6 @@ function SetBlipCategory(blip, index) end
 --- BeginTextCommandDisplayHelp('HelpMsg')
 --- EndTextCommandDisplayHelp(0, false, true, -1)
 --- 
---- 
---- 
 --- -- Shows a floating help text which uses FLOATING_HELP_TEXT_1 hud component.
 --- AddTextEntry('FloatingHelpText', 'Press E to show respect.')
 --- SetFloatingHelpTextWorldPosition(0, vector3(100, 100, 100))
@@ -2154,8 +2167,6 @@ function EndTextCommandDisplayHelp(shape, loop, beep, duration) end
 --- 
 --- BeginTextCommandDisplayHelp('HelpMsg')
 --- EndTextCommandDisplayHelp(0, false, true, -1)
---- 
---- 
 --- 
 --- -- Shows a floating help text which uses FLOATING_HELP_TEXT_1 hud component.
 --- AddTextEntry('FloatingHelpText', 'Press E to show respect.')
@@ -2463,16 +2474,18 @@ function ClearRaceGalleryBlips() end
 function N_0x2708fc083123f9ff() end
 
     
---- ```
---- Returns:
---- 0
---- 5
---- 10
---- 15
---- 20
---- 25
---- 30
---- 35
+--- ```cpp
+--- enum ePauseMenuState
+--- {
+---     PM_INACTIVE 	 =  0,
+---     PM_STARTING_UP 	 =  5,
+---     PM_RESTARTING 	 = 10,
+---     PM_READY 		 = 15,
+---     PM_IN_STORE 	 = 20,
+---     PM_IN_SC_MENU 	 = 25,
+---     PM_SHUTTING_DOWN = 30,
+---     PM_IN_VIDEOEDITOR = 35,
+--- }
 --- ```
 ---
 --- @hash [0x272ACD84970869C5](https://docs.fivem.net/natives/?_0x272ACD84970869C5)
@@ -2503,15 +2516,29 @@ function N_0x2790f4b17d098e26(toggle) end
 
     
 --- Forces the map menu to reload.
---- @usage   if GetNumberOfReferencesOfScriptWithNameHash(`pausemenu_map`) > 0 then -- Ensure we're on the map screen
----     ReloadMapMenu()
----     print('Reloaded map menu!')
----   en
+--- @usage if GetNumberOfReferencesOfScriptWithNameHash(`pausemenu_map`) > 0 then -- Ensure we're on the map screen
+---   ReloadMapMenu()
+---   print('Reloaded map menu!')
+--- en
 --- @hash [0x2916A928514C9827](https://docs.fivem.net/natives/?_0x2916A928514C9827)
 ---
 --- @return void
 --- @overload fun(): void
 function ReloadMapMenu() end
+
+    
+--- # New Name: ReloadMapMenu
+--- Forces the map menu to reload.
+--- @usage if GetNumberOfReferencesOfScriptWithNameHash(`pausemenu_map`) > 0 then -- Ensure we're on the map screen
+---   ReloadMapMenu()
+---   print('Reloaded map menu!')
+--- en
+--- @hash [0x2916A928514C9827](https://docs.fivem.net/natives/?_0x2916A928514C9827)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function N_0x2916a928514c9827() end
 
     
 --- ```
@@ -2554,6 +2581,259 @@ function PauseMenuIsContextMenuActive() end
 --- @overload fun(): any
 --- @deprecated
 function N_0x2a25adc48f87841f() end
+
+    
+--- Set a custom color for the MP HUD, providing a way to customize the HUD's appearance similar to character color changes in MP.
+--- 
+--- ```cpp
+--- enum eHudColours {
+---     HUD_COLOUR_PURE_WHITE = 0,
+---     HUD_COLOUR_WHITE = 1,
+---     HUD_COLOUR_BLACK = 2,
+---     HUD_COLOUR_GREY = 3,
+---     HUD_COLOUR_GREYLIGHT = 4,
+---     HUD_COLOUR_GREYDARK = 5,
+---     HUD_COLOUR_RED = 6,
+---     HUD_COLOUR_REDLIGHT = 7,
+---     HUD_COLOUR_REDDARK = 8,
+---     HUD_COLOUR_BLUE = 9,
+---     HUD_COLOUR_BLUELIGHT = 10,
+---     HUD_COLOUR_BLUEDARK = 11,
+---     HUD_COLOUR_YELLOW = 12,
+---     HUD_COLOUR_YELLOWLIGHT = 13,
+---     HUD_COLOUR_YELLOWDARK = 14,
+---     HUD_COLOUR_ORANGE = 15,
+---     HUD_COLOUR_ORANGELIGHT = 16,
+---     HUD_COLOUR_ORANGEDARK = 17,
+---     HUD_COLOUR_GREEN = 18,
+---     HUD_COLOUR_GREENLIGHT = 19,
+---     HUD_COLOUR_GREENDARK = 20,
+---     HUD_COLOUR_PURPLE = 21,
+---     HUD_COLOUR_PURPLELIGHT = 22,
+---     HUD_COLOUR_PURPLEDARK = 23,
+---     HUD_COLOUR_PINK = 24,
+---     HUD_COLOUR_STAR = 25,
+---     HUD_COLOUR_STARLIGHT = 26,
+---     HUD_COLOUR_STARDARK = 27,
+---     HUD_COLOUR_NET_PLAYER1 = 28,
+---     HUD_COLOUR_NET_PLAYER2 = 29,
+---     HUD_COLOUR_NET_PLAYER3 = 30,
+---     HUD_COLOUR_NET_PLAYER4 = 31,
+---     HUD_COLOUR_NET_PLAYER5 = 32,
+---     HUD_COLOUR_NET_PLAYER6 = 33,
+---     HUD_COLOUR_NET_PLAYER7 = 34,
+---     HUD_COLOUR_NET_PLAYER8 = 35,
+---     HUD_COLOUR_NET_PLAYER9 = 36,
+---     HUD_COLOUR_NET_PLAYER10 = 37,
+---     HUD_COLOUR_NET_PLAYER11 = 38,
+---     HUD_COLOUR_NET_PLAYER12 = 39,
+---     HUD_COLOUR_NET_PLAYER13 = 40,
+---     HUD_COLOUR_NET_PLAYER14 = 41,
+---     HUD_COLOUR_NET_PLAYER15 = 42,
+---     HUD_COLOUR_NET_PLAYER16 = 43,
+---     HUD_COLOUR_NET_PLAYER17 = 44,
+---     HUD_COLOUR_NET_PLAYER18 = 45,
+---     HUD_COLOUR_NET_PLAYER19 = 46,
+---     HUD_COLOUR_NET_PLAYER20 = 47,
+---     HUD_COLOUR_NET_PLAYER21 = 48,
+---     HUD_COLOUR_NET_PLAYER22 = 49,
+---     HUD_COLOUR_NET_PLAYER23 = 50,
+---     HUD_COLOUR_NET_PLAYER24 = 51,
+---     HUD_COLOUR_NET_PLAYER25 = 52,
+---     HUD_COLOUR_NET_PLAYER26 = 53,
+---     HUD_COLOUR_NET_PLAYER27 = 54,
+---     HUD_COLOUR_NET_PLAYER28 = 55,
+---     HUD_COLOUR_NET_PLAYER29 = 56,
+---     HUD_COLOUR_NET_PLAYER30 = 57,
+---     HUD_COLOUR_NET_PLAYER31 = 58,
+---     HUD_COLOUR_NET_PLAYER32 = 59,
+---     HUD_COLOUR_SIMPLEBLIP_DEFAULT = 60,
+---     HUD_COLOUR_MENU_BLUE = 61,
+---     HUD_COLOUR_MENU_GREY_LIGHT = 62,
+---     HUD_COLOUR_MENU_BLUE_EXTRA_DARK = 63,
+---     HUD_COLOUR_MENU_YELLOW = 64,
+---     HUD_COLOUR_MENU_YELLOW_DARK = 65,
+---     HUD_COLOUR_MENU_GREEN = 66,
+---     HUD_COLOUR_MENU_GREY = 67,
+---     HUD_COLOUR_MENU_GREY_DARK = 68,
+---     HUD_COLOUR_MENU_HIGHLIGHT = 69,
+---     HUD_COLOUR_MENU_STANDARD = 70,
+---     HUD_COLOUR_MENU_DIMMED = 71,
+---     HUD_COLOUR_MENU_EXTRA_DIMMED = 72,
+---     HUD_COLOUR_BRIEF_TITLE = 73,
+---     HUD_COLOUR_MID_GREY_MP = 74,
+---     HUD_COLOUR_NET_PLAYER1_DARK = 75,
+---     HUD_COLOUR_NET_PLAYER2_DARK = 76,
+---     HUD_COLOUR_NET_PLAYER3_DARK = 77,
+---     HUD_COLOUR_NET_PLAYER4_DARK = 78,
+---     HUD_COLOUR_NET_PLAYER5_DARK = 79,
+---     HUD_COLOUR_NET_PLAYER6_DARK = 80,
+---     HUD_COLOUR_NET_PLAYER7_DARK = 81,
+---     HUD_COLOUR_NET_PLAYER8_DARK = 82,
+---     HUD_COLOUR_NET_PLAYER9_DARK = 83,
+---     HUD_COLOUR_NET_PLAYER10_DARK = 84,
+---     HUD_COLOUR_NET_PLAYER11_DARK = 85,
+---     HUD_COLOUR_NET_PLAYER12_DARK = 86,
+---     HUD_COLOUR_NET_PLAYER13_DARK = 87,
+---     HUD_COLOUR_NET_PLAYER14_DARK = 88,
+---     HUD_COLOUR_NET_PLAYER15_DARK = 89,
+---     HUD_COLOUR_NET_PLAYER16_DARK = 90,
+---     HUD_COLOUR_NET_PLAYER17_DARK = 91,
+---     HUD_COLOUR_NET_PLAYER18_DARK = 92,
+---     HUD_COLOUR_NET_PLAYER19_DARK = 93,
+---     HUD_COLOUR_NET_PLAYER20_DARK = 94,
+---     HUD_COLOUR_NET_PLAYER21_DARK = 95,
+---     HUD_COLOUR_NET_PLAYER22_DARK = 96,
+---     HUD_COLOUR_NET_PLAYER23_DARK = 97,
+---     HUD_COLOUR_NET_PLAYER24_DARK = 98,
+---     HUD_COLOUR_NET_PLAYER25_DARK = 99,
+---     HUD_COLOUR_NET_PLAYER26_DARK = 100,
+---     HUD_COLOUR_NET_PLAYER27_DARK = 101,
+---     HUD_COLOUR_NET_PLAYER28_DARK = 102,
+---     HUD_COLOUR_NET_PLAYER29_DARK = 103,
+---     HUD_COLOUR_NET_PLAYER30_DARK = 104,
+---     HUD_COLOUR_NET_PLAYER31_DARK = 105,
+---     HUD_COLOUR_NET_PLAYER32_DARK = 106,
+---     HUD_COLOUR_BRONZE = 107,
+---     HUD_COLOUR_SILVER = 108,
+---     HUD_COLOUR_GOLD = 109,
+---     HUD_COLOUR_PLATINUM = 110,
+---     HUD_COLOUR_GANG1 = 111,
+---     HUD_COLOUR_GANG2 = 112,
+---     HUD_COLOUR_GANG3 = 113,
+---     HUD_COLOUR_GANG4 = 114,
+---     HUD_COLOUR_SAME_CREW = 115,
+---     HUD_COLOUR_FREEMODE = 116,
+---     HUD_COLOUR_PAUSE_BG = 117,
+---     HUD_COLOUR_FRIENDLY = 118,
+---     HUD_COLOUR_ENEMY = 119,
+---     HUD_COLOUR_LOCATION = 120,
+---     HUD_COLOUR_PICKUP = 121,
+---     HUD_COLOUR_PAUSE_SINGLEPLAYER = 122,
+---     HUD_COLOUR_FREEMODE_DARK = 123,
+---     HUD_COLOUR_INACTIVE_MISSION = 124,
+---     HUD_COLOUR_DAMAGE = 125,
+---     HUD_COLOUR_PINKLIGHT = 126,
+---     HUD_COLOUR_PM_MITEM_HIGHLIGHT = 127,
+---     HUD_COLOUR_SCRIPT_VARIABLE = 128,
+---     HUD_COLOUR_YOGA = 129,
+---     HUD_COLOUR_TENNIS = 130,
+---     HUD_COLOUR_GOLF = 131,
+---     HUD_COLOUR_SHOOTING_RANGE = 132,
+---     HUD_COLOUR_FLIGHT_SCHOOL = 133,
+---     HUD_COLOUR_NORTH_BLUE = 134,
+---     HUD_COLOUR_SOCIAL_CLUB = 135,
+---     HUD_COLOUR_PLATFORM_BLUE = 136,
+---     HUD_COLOUR_PLATFORM_GREEN = 137,
+---     HUD_COLOUR_PLATFORM_GREY = 138,
+---     HUD_COLOUR_FACEBOOK_BLUE = 139,
+---     HUD_COLOUR_INGAME_BG = 140,
+---     HUD_COLOUR_DARTS = 141,
+---     HUD_COLOUR_WAYPOINT = 142,
+---     HUD_COLOUR_MICHAEL = 143,
+---     HUD_COLOUR_FRANKLIN = 144,
+---     HUD_COLOUR_TREVOR = 145,
+---     HUD_COLOUR_GOLF_P1 = 146,
+---     HUD_COLOUR_GOLF_P2 = 147,
+---     HUD_COLOUR_GOLF_P3 = 148,
+---     HUD_COLOUR_GOLF_P4 = 149,
+---     HUD_COLOUR_WAYPOINTLIGHT = 150,
+---     HUD_COLOUR_WAYPOINTDARK = 151,
+---     HUD_COLOUR_PANEL_LIGHT = 152,
+---     HUD_COLOUR_MICHAEL_DARK = 153,
+---     HUD_COLOUR_FRANKLIN_DARK = 154,
+---     HUD_COLOUR_TREVOR_DARK = 155,
+---     HUD_COLOUR_OBJECTIVE_ROUTE = 156,
+---     HUD_COLOUR_PAUSEMAP_TINT = 157,
+---     HUD_COLOUR_PAUSE_DESELECT = 158,
+---     HUD_COLOUR_PM_WEAPONS_PURCHASABLE = 159,
+---     HUD_COLOUR_PM_WEAPONS_LOCKED = 160,
+---     HUD_COLOUR_END_SCREEN_BG = 161,
+---     HUD_COLOUR_CHOP = 162,
+---     HUD_COLOUR_PAUSEMAP_TINT_HALF = 163,
+---     HUD_COLOUR_NORTH_BLUE_OFFICIAL = 164,
+---     HUD_COLOUR_SCRIPT_VARIABLE_2 = 165,
+---     HUD_COLOUR_H = 166,
+---     HUD_COLOUR_HDARK = 167,
+---     HUD_COLOUR_T = 168,
+---     HUD_COLOUR_TDARK = 169,
+---     HUD_COLOUR_HSHARD = 170,
+---     HUD_COLOUR_CONTROLLER_MICHAEL = 171 
+---     HUD_COLOUR_CONTROLLER_FRANKLIN = 172 
+---     HUD_COLOUR_CONTROLLER_TREVOR = 173 
+---     HUD_COLOUR_CONTROLLER_CHOP = 174,
+---     HUD_COLOUR_VIDEO_EDITOR_VIDEO = 175,
+---     HUD_COLOUR_VIDEO_EDITOR_AUDIO = 176,
+---     HUD_COLOUR_VIDEO_EDITOR_TEXT = 177,
+---     HUD_COLOUR_HB_BLUE = 178,
+---     HUD_COLOUR_HB_YELLOW = 179,
+---     HUD_COLOUR_VIDEO_EDITOR_SCORE = 180,
+---     HUD_COLOUR_VIDEO_EDITOR_AUDIO_FADEOUT = 181,
+---     HUD_COLOUR_VIDEO_EDITOR_TEXT_FADEOUT = 182,
+---     HUD_COLOUR_VIDEO_EDITOR_SCORE_FADEOUT = 183,
+---     HUD_COLOUR_HEIST_BACKGROUND = 184,
+---     HUD_COLOUR_VIDEO_EDITOR_AMBIENT = 185,
+---     HUD_COLOUR_VIDEO_EDITOR_AMBIENT_FADEOUT = 186,
+---     HUD_COLOUR_GANG_BOSS = 187,
+---     HUD_COLOUR_GOON = 188,
+---     HUD_COLOUR_BOSS = 189,
+---     HUD_COLOUR_LOW_FLOW = 190,
+---     HUD_COLOUR_LOW_FLOW_DARK = 191,
+---     HUD_COLOUR_G1 = 192,
+---     HUD_COLOUR_G2 = 193,
+---     HUD_COLOUR_G3 = 194,
+---     HUD_COLOUR_G4 = 195,
+---     HUD_COLOUR_G5 = 196,
+---     HUD_COLOUR_G6 = 197,
+---     HUD_COLOUR_G7 = 198,
+---     HUD_COLOUR_G8 = 199,
+---     HUD_COLOUR_G9 = 200,
+---     HUD_COLOUR_G10 = 201,
+---     HUD_COLOUR_G11 = 202,
+---     HUD_COLOUR_G12 = 203,
+---     HUD_COLOUR_G13 = 204,
+---     HUD_COLOUR_G14 = 205,
+---     HUD_COLOUR_G15 = 206,
+---     HUD_COLOUR_ADVERSARY = 207,
+---     HUD_COLOUR_DEGEN_RED = 208,
+---     HUD_COLOUR_DEGEN_YELLOW = 209,
+---     HUD_COLOUR_DEGEN_GREEN = 210,
+---     HUD_COLOUR_DEGEN_CYAN = 211,
+---     HUD_COLOUR_DEGEN_BLUE = 212,
+---     HUD_COLOUR_DEGEN_MAGENTA = 213,
+---     HUD_COLOUR_STUNT_1 = 214,
+---     HUD_COLOUR_STUNT_2 = 215,
+---     HUD_COLOUR_SPECIAL_RACE_SERIES = 216 
+---     HUD_COLOUR_SPECIAL_RACE_SERIES_DARK = 217,
+---     HUD_COLOUR_CS = 218 
+---     HUD_COLOUR_CS_DARK = 219,
+---     HUD_COLOUR_TECH_GREEN = 220,
+---     HUD_COLOUR_TECH_GREEN_DARK = 221,
+---     HUD_COLOUR_TECH_RED = 222,
+---     HUD_COLOUR_TECH_GREEN_VERY_DARK = 223,
+---     HUD_COLOUR_PLACEHOLDER_01 = 224,
+---     HUD_COLOUR_PLACEHOLDER_02 = 225,
+---     HUD_COLOUR_PLACEHOLDER_03 = 226,
+---     HUD_COLOUR_PLACEHOLDER_04 = 227,
+---     HUD_COLOUR_PLACEHOLDER_05 = 228,
+---     HUD_COLOUR_PLACEHOLDER_06 = 229,
+---     HUD_COLOUR_PLACEHOLDER_07 = 230,
+---     HUD_COLOUR_PLACEHOLDER_08 = 231,
+---     HUD_COLOUR_PLACEHOLDER_09 = 232,
+---     HUD_COLOUR_PLACEHOLDER_10 = 233,
+---     HUD_COLOUR_JUNK_ENERGY = 234
+--- };
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: 2545
+--- ```
+---
+--- @hash [0x2ACCB195F3CCD9DE](https://docs.fivem.net/natives/?_0x2ACCB195F3CCD9DE)
+--- @param hudColorId number (int)
+--- @return void
+--- @overload fun(hudColorId: number): void
+function SetCustomMpHudColor(hudColorId) end
 
     
 --- SetBlipFade
@@ -3157,23 +3437,65 @@ function EndTextCommandThefeedPostTickerWithTokens(isImportant, bHasTokens) end
 function DrawNotification_3(isImportant, bHasTokens) end
 
     
---- ```
---- NativeDB Introduced: v1493
---- ```
+--- Sets a warning message for one frame with header and upper buttons bit field that don't fit the standard 32 bit set.
 ---
 --- @hash [0x38B55259C2E078ED](https://docs.fivem.net/natives/?_0x38B55259C2E078ED)
---- @param entryHeader string (char*)
---- @param entryLine1 string (char*)
---- @param flags number (int)
---- @param entryLine2 string (char*)
---- @param p4 boolean
---- @param p5 any
---- @param showBg boolean
---- @param p9 any
---- @param p10 any
---- @return any, any
---- @overload fun(entryHeader: string, entryLine1: string, flags: number, entryLine2: string, p4: boolean, p5: any, showBg: boolean, p9: any, p10: any): any, any
-function SetWarningMessageWithHeaderUnk(entryHeader, entryLine1, flags, entryLine2, p4, p5, showBg, p9, p10) end
+--- @param headerTextLabel string (char*)
+--- @param line1TextLabel string (char*)
+--- @param buttonsBitField number (int)
+--- @param buttonsBitFieldUpper number (int)
+--- @param line2TextLabel string (char*)
+--- @param addNumber boolean
+--- @param numberToAdd number (int)
+--- @param firstSubstring string (char*)
+--- @param secondSubstring string (char*)
+--- @param showBackground boolean
+--- @param errorCode number (int)
+--- @return void
+--- @overload fun(headerTextLabel: string, line1TextLabel: string, buttonsBitField: number, buttonsBitFieldUpper: number, line2TextLabel: string, addNumber: boolean, numberToAdd: number, firstSubstring: string, secondSubstring: string, showBackground: boolean, errorCode: number): void
+function SetWarningMessageWithHeaderExtended(headerTextLabel, line1TextLabel, buttonsBitField, buttonsBitFieldUpper, line2TextLabel, addNumber, numberToAdd, firstSubstring, secondSubstring, showBackground, errorCode) end
+
+    
+--- # New Name: SetWarningMessageWithHeaderExtended
+--- Sets a warning message for one frame with header and upper buttons bit field that don't fit the standard 32 bit set.
+---
+--- @hash [0x38B55259C2E078ED](https://docs.fivem.net/natives/?_0x38B55259C2E078ED)
+--- @param headerTextLabel string (char*)
+--- @param line1TextLabel string (char*)
+--- @param buttonsBitField number (int)
+--- @param buttonsBitFieldUpper number (int)
+--- @param line2TextLabel string (char*)
+--- @param addNumber boolean
+--- @param numberToAdd number (int)
+--- @param firstSubstring string (char*)
+--- @param secondSubstring string (char*)
+--- @param showBackground boolean
+--- @param errorCode number (int)
+--- @return void
+--- @overload fun(headerTextLabel: string, line1TextLabel: string, buttonsBitField: number, buttonsBitFieldUpper: number, line2TextLabel: string, addNumber: boolean, numberToAdd: number, firstSubstring: string, secondSubstring: string, showBackground: boolean, errorCode: number): void
+--- @deprecated
+function N_0x38b55259c2e078ed(headerTextLabel, line1TextLabel, buttonsBitField, buttonsBitFieldUpper, line2TextLabel, addNumber, numberToAdd, firstSubstring, secondSubstring, showBackground, errorCode) end
+
+    
+--- # New Name: SetWarningMessageWithHeaderExtended
+--- Sets a warning message for one frame with header and upper buttons bit field that don't fit the standard 32 bit set.
+---
+--- @hash [0x38B55259C2E078ED](https://docs.fivem.net/natives/?_0x38B55259C2E078ED)
+--- @param headerTextLabel string (char*)
+--- @param line1TextLabel string (char*)
+--- @param buttonsBitField number (int)
+--- @param buttonsBitFieldUpper number (int)
+--- @param line2TextLabel string (char*)
+--- @param addNumber boolean
+--- @param numberToAdd number (int)
+--- @param firstSubstring string (char*)
+--- @param secondSubstring string (char*)
+--- @param showBackground boolean
+--- @param errorCode number (int)
+--- @return void
+--- @overload fun(headerTextLabel: string, line1TextLabel: string, buttonsBitField: number, buttonsBitFieldUpper: number, line2TextLabel: string, addNumber: boolean, numberToAdd: number, firstSubstring: string, secondSubstring: string, showBackground: boolean, errorCode: number): void
+--- @deprecated
+function SetWarningMessageWithHeaderUnk(headerTextLabel, line1TextLabel, buttonsBitField, buttonsBitFieldUpper, line2TextLabel, addNumber, numberToAdd, firstSubstring, secondSubstring, showBackground, errorCode) end
 
     
 --- SetColourOfNextTextComponent
@@ -3327,19 +3649,17 @@ function StartGpsMultiRoute(hudColor, routeFromPlayer, displayOnFoot) end
 function N_0x3d3d15af7bcaaf83(hudColor, routeFromPlayer, displayOnFoot) end
 
     
---- Returns true if the cursor is hovering above instructional buttons.
---- Note: The buttons need to support mouse (with the TOGGLE_MOUSE_SUPPORT scaleform movie method) for it to return true.
+--- **Note:** The buttons need to support mouse (with the `TOGGLE_MOUSE_SUPPORT` scaleform movie method) for it to return `true`.
 ---
 --- @hash [0x3D9ACB1EB139E702](https://docs.fivem.net/natives/?_0x3D9ACB1EB139E702)
 ---
 --- @return boolean
 --- @overload fun(): boolean
-function IsMouseCursorAboveInstructionalButtons() end
+function IsMouseRolledOverInstructionalButtons() end
 
     
---- # New Name: IsMouseCursorAboveInstructionalButtons
---- Returns true if the cursor is hovering above instructional buttons.
---- Note: The buttons need to support mouse (with the TOGGLE_MOUSE_SUPPORT scaleform movie method) for it to return true.
+--- # New Name: IsMouseRolledOverInstructionalButtons
+--- **Note:** The buttons need to support mouse (with the `TOGGLE_MOUSE_SUPPORT` scaleform movie method) for it to return `true`.
 ---
 --- @hash [0x3D9ACB1EB139E702](https://docs.fivem.net/natives/?_0x3D9ACB1EB139E702)
 ---
@@ -3347,6 +3667,17 @@ function IsMouseCursorAboveInstructionalButtons() end
 --- @overload fun(): boolean
 --- @deprecated
 function N_0x3d9acb1eb139e702() end
+
+    
+--- # New Name: IsMouseRolledOverInstructionalButtons
+--- **Note:** The buttons need to support mouse (with the `TOGGLE_MOUSE_SUPPORT` scaleform movie method) for it to return `true`.
+---
+--- @hash [0x3D9ACB1EB139E702](https://docs.fivem.net/natives/?_0x3D9ACB1EB139E702)
+---
+--- @return boolean
+--- @overload fun(): boolean
+--- @deprecated
+function IsMouseCursorAboveInstructionalButtons() end
 
     
 --- SetGpsMultiRouteRender
@@ -4321,13 +4652,24 @@ function ThefeedCommentTeleportPoolOn() end
 function N_0x56c8b608cfd49854() end
 
     
---- N_0x577599cced639ca2
+--- **NOTE:** This must be called before you open the text input box.
 ---
 --- @hash [0x577599CCED639CA2](https://docs.fivem.net/natives/?_0x577599CCED639CA2)
---- @param p0 any
+--- @param allow boolean
 --- @return void
---- @overload fun(p0: any): void
-function N_0x577599cced639ca2(p0) end
+--- @overload fun(allow: boolean): void
+function SetAllowCommaOnTextInput(allow) end
+
+    
+--- # New Name: SetAllowCommaOnTextInput
+--- **NOTE:** This must be called before you open the text input box.
+---
+--- @hash [0x577599CCED639CA2](https://docs.fivem.net/natives/?_0x577599CCED639CA2)
+--- @param allow boolean
+--- @return void
+--- @overload fun(allow: boolean): void
+--- @deprecated
+function N_0x577599cced639ca2(allow) end
 
     
 --- ```
@@ -4659,7 +5001,7 @@ function SetTextRenderId(renderId) end
 function SetMissionName(p0, name) end
 
     
---- AddTextComponentSubstringKeyboardDisplay
+--- Certain characters like `<` will have to be escaped using html entities (e.g. `&lt;`), otherwise the text wont display properly.
 ---
 --- @hash [0x5F68520888E69014](https://docs.fivem.net/natives/?_0x5F68520888E69014)
 --- @param string string (char*)
@@ -4669,7 +5011,7 @@ function AddTextComponentSubstringKeyboardDisplay(string) end
 
     
 --- # New Name: AddTextComponentSubstringKeyboardDisplay
---- AddTextComponentSubstringKeyboardDisplay
+--- Certain characters like `<` will have to be escaped using html entities (e.g. `&lt;`), otherwise the text wont display properly.
 ---
 --- @hash [0x5F68520888E69014](https://docs.fivem.net/natives/?_0x5F68520888E69014)
 --- @param string string (char*)
@@ -4680,7 +5022,7 @@ function AddTextComponentString3(string) end
 
     
 --- # New Name: AddTextComponentSubstringKeyboardDisplay
---- AddTextComponentSubstringKeyboardDisplay
+--- Certain characters like `<` will have to be escaped using html entities (e.g. `&lt;`), otherwise the text wont display properly.
 ---
 --- @hash [0x5F68520888E69014](https://docs.fivem.net/natives/?_0x5F68520888E69014)
 --- @param string string (char*)
@@ -4783,10 +5125,10 @@ function RequestAdditionalText_2(gxt, slot) end
 --- AddNextMessageToPreviousBriefs
 ---
 --- @hash [0x60296AF4BA14ABC5](https://docs.fivem.net/natives/?_0x60296AF4BA14ABC5)
---- @param p0 boolean
+--- @param addToBrief boolean
 --- @return void
---- @overload fun(p0: boolean): void
-function AddNextMessageToPreviousBriefs(p0) end
+--- @overload fun(addToBrief: boolean): void
+function AddNextMessageToPreviousBriefs(addToBrief) end
 
     
 --- AllowSonarBlips
@@ -4962,36 +5304,36 @@ function N_0x632b2940c67f4ea9(scaleformHandle) end
 --- ```cpp
 --- enum eMpGamerTagComponent
 --- {
---- 	MP_TAG_GAMER_NAME,
---- 	MP_TAG_CREW_TAG,
---- 	MP_TAG_HEALTH_ARMOUR,
---- 	MP_TAG_BIG_TEXT,
---- 	MP_TAG_AUDIO_ICON,
---- 	MP_TAG_USING_MENU,
---- 	MP_TAG_PASSIVE_MODE,
---- 	MP_TAG_WANTED_STARS,
---- 	MP_TAG_DRIVER,
---- 	MP_TAG_CO_DRIVER,
---- 	MP_TAG_TAGGED,
---- 	MP_TAG_GAMER_NAME_NEARBY,
---- 	MP_TAG_ARROW,
---- 	MP_TAG_PACKAGES,
---- 	MP_TAG_INV_IF_PED_FOLLOWING,
---- 	MP_TAG_RANK_TEXT,
---- 	MP_TAG_TYPING,
---- 	MP_TAG_BAG_LARGE,
---- 	MP_TAG_ARROW,
---- 	MP_TAG_GANG_CEO,
---- 	MP_TAG_GANG_BIKER,
---- 	MP_TAG_BIKER_ARROW,
---- 	MP_TAG_MC_ROLE_PRESIDENT,
---- 	MP_TAG_MC_ROLE_VICE_PRESIDENT,
---- 	MP_TAG_MC_ROLE_ROAD_CAPTAIN,
---- 	MP_TAG_MC_ROLE_SARGEANT,
---- 	MP_TAG_MC_ROLE_ENFORCER,
---- 	MP_TAG_MC_ROLE_PROSPECT,
---- 	MP_TAG_TRANSMITTER,
---- 	MP_TAG_BOMB
+--- 	MP_TAG_GAMER_NAME = 0,
+--- 	MP_TAG_CREW_TAG = 1,
+--- 	MP_TAG_HEALTH_ARMOUR = 2,
+--- 	MP_TAG_BIG_TEXT = 3,
+--- 	MP_TAG_AUDIO_ICON = 4,
+--- 	MP_TAG_USING_MENU = 5,
+--- 	MP_TAG_PASSIVE_MODE = 6,
+--- 	MP_TAG_WANTED_STARS = 7,
+--- 	MP_TAG_DRIVER = 8,
+--- 	MP_TAG_CO_DRIVER = 9,
+--- 	MP_TAG_TAGGED = 10,
+--- 	MP_TAG_GAMER_NAME_NEARBY = 11,
+--- 	MP_TAG_ARROW = 12,
+--- 	MP_TAG_PACKAGES = 13,
+--- 	MP_TAG_INV_IF_PED_FOLLOWING = 14,
+--- 	MP_TAG_RANK_TEXT = 15,
+--- 	MP_TAG_TYPING = 16,
+--- 	MP_TAG_BAG_LARGE = 17,
+--- 	MP_TAG_ARROW = 18,
+--- 	MP_TAG_GANG_CEO = 19,
+--- 	MP_TAG_GANG_BIKER = 20,
+--- 	MP_TAG_BIKER_ARROW = 21,
+--- 	MP_TAG_MC_ROLE_PRESIDENT = 22,
+--- 	MP_TAG_MC_ROLE_VICE_PRESIDENT = 23,
+--- 	MP_TAG_MC_ROLE_ROAD_CAPTAIN = 24,
+--- 	MP_TAG_MC_ROLE_SARGEANT = 25,
+--- 	MP_TAG_MC_ROLE_ENFORCER = 26,
+--- 	MP_TAG_MC_ROLE_PROSPECT = 27,
+--- 	MP_TAG_TRANSMITTER = 28,
+--- 	MP_TAG_BOMB = 29
 --- };
 --- ```
 --- 
@@ -5012,36 +5354,36 @@ function SetMpGamerTagVisibility(gamerTagId, component, toggle) end
 --- ```cpp
 --- enum eMpGamerTagComponent
 --- {
---- 	MP_TAG_GAMER_NAME,
---- 	MP_TAG_CREW_TAG,
---- 	MP_TAG_HEALTH_ARMOUR,
---- 	MP_TAG_BIG_TEXT,
---- 	MP_TAG_AUDIO_ICON,
---- 	MP_TAG_USING_MENU,
---- 	MP_TAG_PASSIVE_MODE,
---- 	MP_TAG_WANTED_STARS,
---- 	MP_TAG_DRIVER,
---- 	MP_TAG_CO_DRIVER,
---- 	MP_TAG_TAGGED,
---- 	MP_TAG_GAMER_NAME_NEARBY,
---- 	MP_TAG_ARROW,
---- 	MP_TAG_PACKAGES,
---- 	MP_TAG_INV_IF_PED_FOLLOWING,
---- 	MP_TAG_RANK_TEXT,
---- 	MP_TAG_TYPING,
---- 	MP_TAG_BAG_LARGE,
---- 	MP_TAG_ARROW,
---- 	MP_TAG_GANG_CEO,
---- 	MP_TAG_GANG_BIKER,
---- 	MP_TAG_BIKER_ARROW,
---- 	MP_TAG_MC_ROLE_PRESIDENT,
---- 	MP_TAG_MC_ROLE_VICE_PRESIDENT,
---- 	MP_TAG_MC_ROLE_ROAD_CAPTAIN,
---- 	MP_TAG_MC_ROLE_SARGEANT,
---- 	MP_TAG_MC_ROLE_ENFORCER,
---- 	MP_TAG_MC_ROLE_PROSPECT,
---- 	MP_TAG_TRANSMITTER,
---- 	MP_TAG_BOMB
+--- 	MP_TAG_GAMER_NAME = 0,
+--- 	MP_TAG_CREW_TAG = 1,
+--- 	MP_TAG_HEALTH_ARMOUR = 2,
+--- 	MP_TAG_BIG_TEXT = 3,
+--- 	MP_TAG_AUDIO_ICON = 4,
+--- 	MP_TAG_USING_MENU = 5,
+--- 	MP_TAG_PASSIVE_MODE = 6,
+--- 	MP_TAG_WANTED_STARS = 7,
+--- 	MP_TAG_DRIVER = 8,
+--- 	MP_TAG_CO_DRIVER = 9,
+--- 	MP_TAG_TAGGED = 10,
+--- 	MP_TAG_GAMER_NAME_NEARBY = 11,
+--- 	MP_TAG_ARROW = 12,
+--- 	MP_TAG_PACKAGES = 13,
+--- 	MP_TAG_INV_IF_PED_FOLLOWING = 14,
+--- 	MP_TAG_RANK_TEXT = 15,
+--- 	MP_TAG_TYPING = 16,
+--- 	MP_TAG_BAG_LARGE = 17,
+--- 	MP_TAG_ARROW = 18,
+--- 	MP_TAG_GANG_CEO = 19,
+--- 	MP_TAG_GANG_BIKER = 20,
+--- 	MP_TAG_BIKER_ARROW = 21,
+--- 	MP_TAG_MC_ROLE_PRESIDENT = 22,
+--- 	MP_TAG_MC_ROLE_VICE_PRESIDENT = 23,
+--- 	MP_TAG_MC_ROLE_ROAD_CAPTAIN = 24,
+--- 	MP_TAG_MC_ROLE_SARGEANT = 25,
+--- 	MP_TAG_MC_ROLE_ENFORCER = 26,
+--- 	MP_TAG_MC_ROLE_PROSPECT = 27,
+--- 	MP_TAG_TRANSMITTER = 28,
+--- 	MP_TAG_BOMB = 29
 --- };
 --- ```
 --- 
@@ -5059,8 +5401,19 @@ function SetMpGamerTagVisibility(gamerTagId, component, toggle) end
 function N_0x63bb75abedc1f6a0(gamerTagId, component, toggle) end
 
     
---- ```
---- fonts that mess up your text where made for number values/misc stuff  
+--- ```cpp
+--- enum eTextFonts
+--- {
+---     FONT_STANDARD = 0,
+---     FONT_CURSIVE = 1,
+---     FONT_ROCKSTAR_TAG = 2,
+---     FONT_LEADERBOAR0D = 3,
+---     FONT_CONDENSED = 4,
+---     FONT_STYLE_FIXED_WIDTH_NUMBERS = 5,
+---     FONT_CONDENSED_NOT_GAMERNAME = 6,
+---     FONT_STYLE_PRICEDOWN = 7,
+---     FONT_STYLE_TAXI = 8,
+--- }
 --- ```
 ---
 --- @hash [0x66E0276CC5F6B9DA](https://docs.fivem.net/natives/?_0x66E0276CC5F6B9DA)
@@ -6363,10 +6716,8 @@ function EndTextCommandThefeedPostUnlockTuWithColor(chTitle, iconType, chSubtitl
 function N_0x7ae0589093a2e088(chTitle, iconType, chSubtitle, isImportant, titleColor, p5) end
 
     
---- **instructionalKey enum list**:
---- 
---- ```
---- enum INSTRUCTIONAL_BUTTON_TYPES
+--- ```cpp
+--- enum eInstructionalButtonTypes
 --- {
 ---     NONE = 0,
 ---     SELECT = 1,
@@ -6502,15 +6853,73 @@ function SetMainPlayerBlipColour(color) end
 function N_0x7b21e0bb01e8224a(color) end
 
     
---- ```
---- Gets a string literal from a label name.
---- GET_F*
---- ```
----
+--- Gets a localized string literal from a label name. This is used to get the filename of the audio conversation associated with the provided label name.
+--- @usage -- Get the vehicle in which the player is currently seated
+--- local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- 
+--- -- Get the model of the vehicle
+--- local model = GetEntityModel(vehicle)
+--- 
+--- -- Get the display name of the vehicle model
+--- local displayName = GetDisplayNameFromVehicleModel(model)
+--- 
+--- -- Get the label text for the audio conversation associated with the display name
+--- local label = GetFilenameForAudioConversation(displayName)
+--- 
+--- -- Print the label text
+--- print(label
 --- @hash [0x7B5280EBA9840C72](https://docs.fivem.net/natives/?_0x7B5280EBA9840C72)
 --- @param labelName string (char*)
 --- @return string
 --- @overload fun(labelName: string): string
+function GetFilenameForAudioConversation(labelName) end
+
+    
+--- # New Name: GetFilenameForAudioConversation
+--- Gets a localized string literal from a label name. This is used to get the filename of the audio conversation associated with the provided label name.
+--- @usage -- Get the vehicle in which the player is currently seated
+--- local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- 
+--- -- Get the model of the vehicle
+--- local model = GetEntityModel(vehicle)
+--- 
+--- -- Get the display name of the vehicle model
+--- local displayName = GetDisplayNameFromVehicleModel(model)
+--- 
+--- -- Get the label text for the audio conversation associated with the display name
+--- local label = GetFilenameForAudioConversation(displayName)
+--- 
+--- -- Print the label text
+--- print(label
+--- @hash [0x7B5280EBA9840C72](https://docs.fivem.net/natives/?_0x7B5280EBA9840C72)
+--- @param labelName string (char*)
+--- @return string
+--- @overload fun(labelName: string): string
+--- @deprecated
+function N_0x7b5280eba9840c72(labelName) end
+
+    
+--- # New Name: GetFilenameForAudioConversation
+--- Gets a localized string literal from a label name. This is used to get the filename of the audio conversation associated with the provided label name.
+--- @usage -- Get the vehicle in which the player is currently seated
+--- local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- 
+--- -- Get the model of the vehicle
+--- local model = GetEntityModel(vehicle)
+--- 
+--- -- Get the display name of the vehicle model
+--- local displayName = GetDisplayNameFromVehicleModel(model)
+--- 
+--- -- Get the label text for the audio conversation associated with the display name
+--- local label = GetFilenameForAudioConversation(displayName)
+--- 
+--- -- Print the label text
+--- print(label
+--- @hash [0x7B5280EBA9840C72](https://docs.fivem.net/natives/?_0x7B5280EBA9840C72)
+--- @param labelName string (char*)
+--- @return string
+--- @overload fun(labelName: string): string
+--- @deprecated
 function GetLabelText(labelName) end
 
     
@@ -7083,6 +7492,17 @@ function ForceCloseTextInputBox() end
 function N_0x8817605c2ba76200() end
 
     
+--- # New Name: ForceCloseTextInputBox
+--- ForceCloseTextInputBox
+---
+--- @hash [0x8817605C2BA76200](https://docs.fivem.net/natives/?_0x8817605C2BA76200)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function ForceCloseTextInputBox() end
+
+    
 --- ```
 --- NativeDB Introduced: v1868
 --- ```
@@ -7123,89 +7543,114 @@ function N_0x8a9ba1ab3e237613() end
 function IsStreamingAdditionalText(p0) end
 
     
---- ```
---- Changes the mouse cursor's sprite.   
---- public enum CursorType  
---- {  
----     None = 0,  
----     Normal = 1,  
----     TransparentNormal = 2,  
----     PreGrab = 3,  
----     Grab = 4,  
----     MiddleFinger = 5,  
----     LeftArrow = 6,  
----     RightArrow = 7,  
----     UpArrow = 8,  
----     DownArrow = 9,  
----     HorizontalExpand = 10,  
----     Add = 11,  
----     Remove = 12,  
---- }  
+--- Changes the mouse style.
+--- 
+--- ```cpp
+--- enum eMousePointerStyle {
+--- 	ARROW = 1,
+--- 	ARROW_DIMMED = 2,
+--- 	HAND_OPEN = 3,
+--- 	HAND_GRAB = 4,
+--- 	HAND_MIDDLE_FINGER = 5,
+--- 	ARROW_LEFT = 6,
+--- 	ARROW_RIGHT = 7,
+--- 	ARROW_UP = 8,
+--- 	ARROW_DOWN = 9,
+--- 	ARROW_TRIMMING = 10,
+--- 	ARROW_PLUS = 11,
+--- 	ARROW_MINUS = 12
+--- };
 --- ```
 ---
 --- @hash [0x8DB8CFFD58B62552](https://docs.fivem.net/natives/?_0x8DB8CFFD58B62552)
---- @param spriteId number (int)
+--- @param style number (int)
 --- @return void
---- @overload fun(spriteId: number): void
-function SetMouseCursorSprite(spriteId) end
+--- @overload fun(style: number): void
+function SetMouseCursorStyle(style) end
 
     
---- # New Name: SetMouseCursorSprite
---- ```
---- Changes the mouse cursor's sprite.   
---- public enum CursorType  
---- {  
----     None = 0,  
----     Normal = 1,  
----     TransparentNormal = 2,  
----     PreGrab = 3,  
----     Grab = 4,  
----     MiddleFinger = 5,  
----     LeftArrow = 6,  
----     RightArrow = 7,  
----     UpArrow = 8,  
----     DownArrow = 9,  
----     HorizontalExpand = 10,  
----     Add = 11,  
----     Remove = 12,  
---- }  
+--- # New Name: SetMouseCursorStyle
+--- Changes the mouse style.
+--- 
+--- ```cpp
+--- enum eMousePointerStyle {
+--- 	ARROW = 1,
+--- 	ARROW_DIMMED = 2,
+--- 	HAND_OPEN = 3,
+--- 	HAND_GRAB = 4,
+--- 	HAND_MIDDLE_FINGER = 5,
+--- 	ARROW_LEFT = 6,
+--- 	ARROW_RIGHT = 7,
+--- 	ARROW_UP = 8,
+--- 	ARROW_DOWN = 9,
+--- 	ARROW_TRIMMING = 10,
+--- 	ARROW_PLUS = 11,
+--- 	ARROW_MINUS = 12
+--- };
 --- ```
 ---
 --- @hash [0x8DB8CFFD58B62552](https://docs.fivem.net/natives/?_0x8DB8CFFD58B62552)
---- @param spriteId number (int)
+--- @param style number (int)
 --- @return void
---- @overload fun(spriteId: number): void
+--- @overload fun(style: number): void
 --- @deprecated
-function N_0x8db8cffd58b62552(spriteId) end
+function N_0x8db8cffd58b62552(style) end
 
     
---- # New Name: SetMouseCursorSprite
---- ```
---- Changes the mouse cursor's sprite.   
---- public enum CursorType  
---- {  
----     None = 0,  
----     Normal = 1,  
----     TransparentNormal = 2,  
----     PreGrab = 3,  
----     Grab = 4,  
----     MiddleFinger = 5,  
----     LeftArrow = 6,  
----     RightArrow = 7,  
----     UpArrow = 8,  
----     DownArrow = 9,  
----     HorizontalExpand = 10,  
----     Add = 11,  
----     Remove = 12,  
---- }  
+--- # New Name: SetMouseCursorStyle
+--- Changes the mouse style.
+--- 
+--- ```cpp
+--- enum eMousePointerStyle {
+--- 	ARROW = 1,
+--- 	ARROW_DIMMED = 2,
+--- 	HAND_OPEN = 3,
+--- 	HAND_GRAB = 4,
+--- 	HAND_MIDDLE_FINGER = 5,
+--- 	ARROW_LEFT = 6,
+--- 	ARROW_RIGHT = 7,
+--- 	ARROW_UP = 8,
+--- 	ARROW_DOWN = 9,
+--- 	ARROW_TRIMMING = 10,
+--- 	ARROW_PLUS = 11,
+--- 	ARROW_MINUS = 12
+--- };
 --- ```
 ---
 --- @hash [0x8DB8CFFD58B62552](https://docs.fivem.net/natives/?_0x8DB8CFFD58B62552)
---- @param spriteId number (int)
+--- @param style number (int)
 --- @return void
---- @overload fun(spriteId: number): void
+--- @overload fun(style: number): void
 --- @deprecated
-function SetCursorSprite(spriteId) end
+function SetCursorSprite(style) end
+
+    
+--- # New Name: SetMouseCursorStyle
+--- Changes the mouse style.
+--- 
+--- ```cpp
+--- enum eMousePointerStyle {
+--- 	ARROW = 1,
+--- 	ARROW_DIMMED = 2,
+--- 	HAND_OPEN = 3,
+--- 	HAND_GRAB = 4,
+--- 	HAND_MIDDLE_FINGER = 5,
+--- 	ARROW_LEFT = 6,
+--- 	ARROW_RIGHT = 7,
+--- 	ARROW_UP = 8,
+--- 	ARROW_DOWN = 9,
+--- 	ARROW_TRIMMING = 10,
+--- 	ARROW_PLUS = 11,
+--- 	ARROW_MINUS = 12
+--- };
+--- ```
+---
+--- @hash [0x8DB8CFFD58B62552](https://docs.fivem.net/natives/?_0x8DB8CFFD58B62552)
+--- @param style number (int)
+--- @return void
+--- @overload fun(style: number): void
+--- @deprecated
+function SetMouseCursorSprite(style) end
 
     
 --- ClearHelp
@@ -7977,40 +8422,56 @@ function DrawNotificationApartmentInvite(crewTypeIsPrivate, crewTagContainsRocks
 function GetCurrentWebsiteId() end
 
     
---- Shows/hides the frontend cursor on the pause menu or similar menus.
---- Clicking off and then on the game window will show it again.
+--- Toggles the visibility of the cursor. Do note that if the game loses focus and then regains it, the cursor will become visible again.
 --- @usage Citizen.CreateThread(function()
 ---     local menuType = "FE_MENU_VERSION_CORONA_LOBBY"
 ---     ActivateFrontendMenu(GetHashKey(menuType), false, -1)
 ---     --100 works as well
 ---     Citizen.Wait(1000)
 ---     --Hide frontend cursor
----     N_0x98215325a695e78a(false)
+---     SetMouseCursorVisible(false)
 --- end
 --- @hash [0x98215325A695E78A](https://docs.fivem.net/natives/?_0x98215325A695E78A)
---- @param enable boolean
+--- @param isVisible boolean
 --- @return void
---- @overload fun(enable: boolean): void
-function SetMouseCursorVisibleInMenus(enable) end
+--- @overload fun(isVisible: boolean): void
+function SetMouseCursorVisible(isVisible) end
 
     
---- # New Name: SetMouseCursorVisibleInMenus
---- Shows/hides the frontend cursor on the pause menu or similar menus.
---- Clicking off and then on the game window will show it again.
+--- # New Name: SetMouseCursorVisible
+--- Toggles the visibility of the cursor. Do note that if the game loses focus and then regains it, the cursor will become visible again.
 --- @usage Citizen.CreateThread(function()
 ---     local menuType = "FE_MENU_VERSION_CORONA_LOBBY"
 ---     ActivateFrontendMenu(GetHashKey(menuType), false, -1)
 ---     --100 works as well
 ---     Citizen.Wait(1000)
 ---     --Hide frontend cursor
----     N_0x98215325a695e78a(false)
+---     SetMouseCursorVisible(false)
 --- end
 --- @hash [0x98215325A695E78A](https://docs.fivem.net/natives/?_0x98215325A695E78A)
---- @param enable boolean
+--- @param isVisible boolean
 --- @return void
---- @overload fun(enable: boolean): void
+--- @overload fun(isVisible: boolean): void
 --- @deprecated
-function N_0x98215325a695e78a(enable) end
+function N_0x98215325a695e78a(isVisible) end
+
+    
+--- # New Name: SetMouseCursorVisible
+--- Toggles the visibility of the cursor. Do note that if the game loses focus and then regains it, the cursor will become visible again.
+--- @usage Citizen.CreateThread(function()
+---     local menuType = "FE_MENU_VERSION_CORONA_LOBBY"
+---     ActivateFrontendMenu(GetHashKey(menuType), false, -1)
+---     --100 works as well
+---     Citizen.Wait(1000)
+---     --Hide frontend cursor
+---     SetMouseCursorVisible(false)
+--- end
+--- @hash [0x98215325A695E78A](https://docs.fivem.net/natives/?_0x98215325A695E78A)
+--- @param isVisible boolean
+--- @return void
+--- @overload fun(isVisible: boolean): void
+--- @deprecated
+function SetMouseCursorVisibleInMenus(isVisible) end
 
     
 --- ```
@@ -8785,28 +9246,50 @@ function SetBlipFlashInterval(blip, interval) end
 function SetHudComponentPosition(id, x, y) end
 
     
---- ```
---- Shows the cursor on screen for one frame.
---- ```
----
+--- Sets the mouse pointer to be active on current frame.
+--- @usage CreateThread(function()
+---   while true do
+---     Wait(0)
+---     SetMouseCursorThisFrame()
+---   end
+--- end
 --- @hash [0xAAE7CE1D63167423](https://docs.fivem.net/natives/?_0xAAE7CE1D63167423)
 ---
 --- @return void
 --- @overload fun(): void
-function SetMouseCursorActiveThisFrame() end
+function SetMouseCursorThisFrame() end
 
     
---- # New Name: SetMouseCursorActiveThisFrame
---- ```
---- Shows the cursor on screen for one frame.
---- ```
----
+--- # New Name: SetMouseCursorThisFrame
+--- Sets the mouse pointer to be active on current frame.
+--- @usage CreateThread(function()
+---   while true do
+---     Wait(0)
+---     SetMouseCursorThisFrame()
+---   end
+--- end
 --- @hash [0xAAE7CE1D63167423](https://docs.fivem.net/natives/?_0xAAE7CE1D63167423)
 ---
 --- @return void
 --- @overload fun(): void
 --- @deprecated
 function ShowCursorThisFrame() end
+
+    
+--- # New Name: SetMouseCursorThisFrame
+--- Sets the mouse pointer to be active on current frame.
+--- @usage CreateThread(function()
+---   while true do
+---     Wait(0)
+---     SetMouseCursorThisFrame()
+---   end
+--- end
+--- @hash [0xAAE7CE1D63167423](https://docs.fivem.net/natives/?_0xAAE7CE1D63167423)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function SetMouseCursorActiveThisFrame() end
 
     
 --- ```
@@ -9673,14 +10156,14 @@ function SetRadarZoomPrecise(zoom) end
 function RespondingAsTemp(zoom) end
 
     
---- ```
+--- ```cpp
 --- enum eBusySpinnerType
 --- {
---- 	BUSY_SPINNER_LEFT,
---- 	BUSY_SPINNER_LEFT_2,
---- 	BUSY_SPINNER_LEFT_3,
---- 	BUSY_SPINNER_SAVE,
---- 	BUSY_SPINNER_RIGHT,
+--- 	BUSY_SPINNER_LEFT = 0,
+--- 	BUSY_SPINNER_LEFT_2 = 1,
+--- 	BUSY_SPINNER_LEFT_3 = 2,
+--- 	BUSY_SPINNER_SAVE = 3,
+--- 	BUSY_SPINNER_RIGHT = 4,
 --- };
 --- ```
 ---
@@ -9692,14 +10175,14 @@ function EndTextCommandBusyspinnerOn(busySpinnerType) end
 
     
 --- # New Name: EndTextCommandBusyspinnerOn
---- ```
+--- ```cpp
 --- enum eBusySpinnerType
 --- {
---- 	BUSY_SPINNER_LEFT,
---- 	BUSY_SPINNER_LEFT_2,
---- 	BUSY_SPINNER_LEFT_3,
---- 	BUSY_SPINNER_SAVE,
---- 	BUSY_SPINNER_RIGHT,
+--- 	BUSY_SPINNER_LEFT = 0,
+--- 	BUSY_SPINNER_LEFT_2 = 1,
+--- 	BUSY_SPINNER_LEFT_3 = 2,
+--- 	BUSY_SPINNER_SAVE = 3,
+--- 	BUSY_SPINNER_RIGHT = 4,
 --- };
 --- ```
 ---
@@ -9712,14 +10195,14 @@ function N_0xbd12f8228410d9b4(busySpinnerType) end
 
     
 --- # New Name: EndTextCommandBusyspinnerOn
---- ```
+--- ```cpp
 --- enum eBusySpinnerType
 --- {
---- 	BUSY_SPINNER_LEFT,
---- 	BUSY_SPINNER_LEFT_2,
---- 	BUSY_SPINNER_LEFT_3,
---- 	BUSY_SPINNER_SAVE,
---- 	BUSY_SPINNER_RIGHT,
+--- 	BUSY_SPINNER_LEFT = 0,
+--- 	BUSY_SPINNER_LEFT_2 = 1,
+--- 	BUSY_SPINNER_LEFT_3 = 2,
+--- 	BUSY_SPINNER_SAVE = 3,
+--- 	BUSY_SPINNER_RIGHT = 4,
 --- };
 --- ```
 ---
@@ -9732,14 +10215,14 @@ function ShowLoadingPrompt(busySpinnerType) end
 
     
 --- # New Name: EndTextCommandBusyspinnerOn
---- ```
+--- ```cpp
 --- enum eBusySpinnerType
 --- {
---- 	BUSY_SPINNER_LEFT,
---- 	BUSY_SPINNER_LEFT_2,
---- 	BUSY_SPINNER_LEFT_3,
---- 	BUSY_SPINNER_SAVE,
---- 	BUSY_SPINNER_RIGHT,
+--- 	BUSY_SPINNER_LEFT = 0,
+--- 	BUSY_SPINNER_LEFT_2 = 1,
+--- 	BUSY_SPINNER_LEFT_3 = 2,
+--- 	BUSY_SPINNER_SAVE = 3,
+--- 	BUSY_SPINNER_RIGHT = 4,
 --- };
 --- ```
 ---
@@ -10119,28 +10602,41 @@ function SetNotificationMessage_3(txdName, textureName, flash, iconType, sender,
 function EndTextCommandThefeedPostMessagetextEntry(txdName, textureName, flash, iconType, sender, subject) end
 
     
---- PauseMenuSetBusySpinner
+--- Controls the visibility of the "Contact" instructional buttons on the map screen.
+--- 
+--- ```
+--- NativeDB Introduced: 2545
+--- ```
+---
+--- @hash [0xC772A904CDE1186F](https://docs.fivem.net/natives/?_0xC772A904CDE1186F)
+--- @param toggle boolean
+--- @return void
+--- @overload fun(toggle: boolean): void
+function ShowContactInstructionalButton(toggle) end
+
+    
+--- Sets a loading icon in the pause menu.
 ---
 --- @hash [0xC78E239AC5B2DDB9](https://docs.fivem.net/natives/?_0xC78E239AC5B2DDB9)
---- @param p0 boolean
---- @param p1 any
---- @param p2 any
+--- @param bVisible boolean
+--- @param iColumnID number (int)
+--- @param iSpinnerIndex number (int)
 --- @return void
---- @overload fun(p0: boolean, p1: any, p2: any): void
-function PauseMenuSetBusySpinner(p0, p1, p2) end
+--- @overload fun(bVisible: boolean, iColumnID: number, iSpinnerIndex: number): void
+function PauseMenuSetBusySpinner(bVisible, iColumnID, iSpinnerIndex) end
 
     
 --- # New Name: PauseMenuSetBusySpinner
---- PauseMenuSetBusySpinner
+--- Sets a loading icon in the pause menu.
 ---
 --- @hash [0xC78E239AC5B2DDB9](https://docs.fivem.net/natives/?_0xC78E239AC5B2DDB9)
---- @param p0 boolean
---- @param p1 any
---- @param p2 any
+--- @param bVisible boolean
+--- @param iColumnID number (int)
+--- @param iSpinnerIndex number (int)
 --- @return void
---- @overload fun(p0: boolean, p1: any, p2: any): void
+--- @overload fun(bVisible: boolean, iColumnID: number, iSpinnerIndex: number): void
 --- @deprecated
-function N_0xc78e239ac5b2ddb9(p0, p1, p2) end
+function N_0xc78e239ac5b2ddb9(bVisible, iColumnID, iSpinnerIndex) end
 
     
 --- RemoveMultiplayerBankCash
@@ -11001,7 +11497,7 @@ function N_0xdaf87174be7454ff(p0) end
 --- ClearGpsCustomRoute()
 --- 
 --- -- Start a new route
---- StartGpsMultiRoute(6, false, true)
+--- StartGpsCustomRoute(6, false, true)
 --- 
 --- -- Add the points
 --- AddPointToGpsCustomRoute(1638.2155761719, -2344.685546875, 95.610511779785)
@@ -11033,7 +11529,7 @@ function StartGpsCustomRoute(hudColor, displayOnFoot, followPlayer) end
 --- ClearGpsCustomRoute()
 --- 
 --- -- Start a new route
---- StartGpsMultiRoute(6, false, true)
+--- StartGpsCustomRoute(6, false, true)
 --- 
 --- -- Add the points
 --- AddPointToGpsCustomRoute(1638.2155761719, -2344.685546875, 95.610511779785)
@@ -12342,22 +12838,39 @@ function LinkNamedRendertarget(modelHash) end
 
     
 --- ```
---- NativeDB Added Parameter 9: Any p8
+--- NativeDB Added Parameter 9: int hudColour
 --- NativeDB Introduced: v1290
 --- ```
----
+--- 
+--- Sets the 'data' for a cone for a blip
+--- 
+--- See [here](https://docs.fivem.net/docs/game-references/hud-colors/) for the hud colours for the cone
+--- 
+--- Name in scripts: `SETUP_FAKE_CONE_DATA()`
+--- 
+--- For people who don't know how to convert degrees to radians and the other way around:
+--- 
+--- ```
+--- degrees = radians * 180 / pi
+--- radians = degrees * pi / 180
+--- ```
+--- @usage local ped = PlayerPedId()
+--- local blip = AddBlipForEntity(ped)
+--- 
+--- Citizen.InvokeNative(0xF83D0FEBE75E62C9, blip, -1.0, 1.0, 0.36, 1.0, 8.2, (0.5 * math.pi), 0, 11)
+--- SetBlipShowCone(blip, true, 11
 --- @hash [0xF83D0FEBE75E62C9](https://docs.fivem.net/natives/?_0xF83D0FEBE75E62C9)
---- @param p0 any
+--- @param blip Blip
 --- @param p1 any
 --- @param p2 any
---- @param p3 any
+--- @param width number (float)
 --- @param p4 any
---- @param p5 any
---- @param p6 any
+--- @param length number (float)
+--- @param heading number (float)
 --- @param p7 any
 --- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any, p4: any, p5: any, p6: any, p7: any): void
-function N_0xf83d0febe75e62c9(p0, p1, p2, p3, p4, p5, p6, p7) end
+--- @overload fun(blip: Blip, p1: any, p2: any, width: number, p4: any, length: number, heading: number, p7: any): void
+function N_0xf83d0febe75e62c9(blip, p1, p2, width, p4, length, heading, p7) end
 
     
 --- ```

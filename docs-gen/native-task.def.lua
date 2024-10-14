@@ -381,46 +381,48 @@ function TaskScriptedAnimation(ped, p4, p5) end
 function AssistedMovementOverrideLoadDistanceThisFrame(dist) end
 
     
---- ```
---- Plays a scenario on a Ped at their current location.  
---- unkDelay - Usually 0 or -1, doesn't seem to have any effect. Might be a delay between sequences.  
---- playEnterAnim - Plays the "Enter" anim if true, otherwise plays the "Exit" anim. Scenarios that don't have any "Enter" anims won't play if this is set to true.  
---- 
---- List of scenarioNames: pastebin.com/6mrYTdQv  
---- 
---- Also these:  
---- WORLD_FISH_FLEE  
---- DRIVE  
---- WORLD_HUMAN_HIKER  
---- WORLD_VEHICLE_ATTRACTOR  
---- WORLD_VEHICLE_BICYCLE_MOUNTAIN  
---- WORLD_VEHICLE_BIKE_OFF_ROAD_RACE  
---- WORLD_VEHICLE_BIKER  
---- WORLD_VEHICLE_CONSTRUCTION_PASSENGERS  
---- WORLD_VEHICLE_CONSTRUCTION_SOLO  
---- WORLD_VEHICLE_DRIVE_PASSENGERS  
---- WORLD_VEHICLE_DRIVE_SOLO  
---- WORLD_VEHICLE_EMPTY  
---- WORLD_VEHICLE_PARK_PARALLEL  
---- WORLD_VEHICLE_PARK_PERPENDICULAR_NOSE_IN  
---- WORLD_VEHICLE_POLICE_BIKE  
---- WORLD_VEHICLE_POLICE_CAR  
---- WORLD_VEHICLE_POLICE_NEXT_TO_CAR  
---- WORLD_VEHICLE_SALTON_DIRT_BIKE  
---- WORLD_VEHICLE_TRUCK_LOGS  
---- ```
+--- Puts the ped into the given scenario immediately at their current location. [List of scenario names](https://pastebin.com/6mrYTdQv) or in `update/update.rpf/common/data/ai/scenarios.meta`.
 ---
 --- @hash [0x142A02425FF02BD9](https://docs.fivem.net/natives/?_0x142A02425FF02BD9)
 --- @param ped Ped
 --- @param scenarioName string (char*)
---- @param unkDelay number (int)
---- @param playEnterAnim boolean
+--- @param timeToLeave number (int)
+--- @param playIntroClip boolean
 --- @return void
---- @overload fun(ped: Ped, scenarioName: string, unkDelay: number, playEnterAnim: boolean): void
-function TaskStartScenarioInPlace(ped, scenarioName, unkDelay, playEnterAnim) end
+--- @overload fun(ped: Ped, scenarioName: string, timeToLeave: number, playIntroClip: boolean): void
+function TaskStartScenarioInPlace(ped, scenarioName, timeToLeave, playIntroClip) end
 
     
 --- You can let your character drive to the destination at the speed and driving style you set. You can use map marks to set the destination.
+--- 
+--- ```cpp
+--- enum eDriveBehaviorFlags {
+---   DF_StopForCars = 1,
+---   DF_StopForPeds = 2,
+---   DF_SwerveAroundAllCars = 4,
+---   DF_SteerAroundStationaryCars = 8,
+---   DF_SteerAroundPeds = 16,
+---   DF_SteerAroundObjects = 32,
+---   DF_DontSteerAroundPlayerPed = 64,
+---   DF_StopAtLights = 128,
+---   DF_GoOffRoadWhenAvoiding = 256,
+---   DF_DriveIntoOncomingTraffic = 512,
+---   DF_DriveInReverse = 1024,
+---   DF_UseWanderFallbackInsteadOfStraightLine = 2048,
+---   DF_AvoidRestrictedAreas = 4096,
+---   DF_PreventBackgroundPathfinding = 8192, // **These only work on MISSION_CRUISE**
+---   DF_AdjustCruiseSpeedBasedOnRoadSpeed = 16384,
+---   DF_UseShortCutLinks = 262144,
+---   DF_ChangeLanesAroundObstructions = 524288,
+---   DF_UseSwitchedOffNodes = 2097152,	//cruise tasks ignore this anyway--only used for goto's
+---   DF_PreferNavmeshRoute = 4194304,	//if you're going to be primarily driving off road
+---   DF_PlaneTaxiMode = 8388608, // Only works for planes using MISSION_GOTO, will cause them to drive along the ground instead of fly
+---   DF_ForceStraightLine = 16777216,
+---   DF_UseStringPullingAtJunctions = 33554432,
+---   DF_AvoidHighways = 536870912,
+---   DF_ForceJoinInRoadDirection = 1073741824
+--- }
+--- ```
 ---
 --- @hash [0x158BB33F920D360C](https://docs.fivem.net/natives/?_0x158BB33F920D360C)
 --- @param ped Ped
@@ -429,38 +431,78 @@ function TaskStartScenarioInPlace(ped, scenarioName, unkDelay, playEnterAnim) en
 --- @param y number (float)
 --- @param z number (float)
 --- @param speed number (float)
---- @param driveMode number (int)
+--- @param drivingStyle number (int)
 --- @param stopRange number (float)
 --- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle, x: number, y: number, z: number, speed: number, driveMode: number, stopRange: number): void
-function TaskVehicleDriveToCoordLongrange(ped, vehicle, x, y, z, speed, driveMode, stopRange) end
+--- @overload fun(ped: Ped, vehicle: Vehicle, x: number, y: number, z: number, speed: number, drivingStyle: number, stopRange: number): void
+function TaskVehicleDriveToCoordLongrange(ped, vehicle, x, y, z, speed, drivingStyle, stopRange) end
 
     
+--- All parameters except ped and boat are optional, with `pedTarget`, `vehicleTarget`, `x`, `y`, `z` being dependent on `missionType` (ie. Attack/Flee mission types require a target ped/vehicle, whereas GoTo mission types require either `x`, `y`, `z` or a target ped/vehicle).
+--- 
+--- If you don't want to use a parameter; pass `0.0f` for `x`, `y` and `z`, `0` for `pedTarget`, `vehicleTarget` and other int parameters, and `-1.0f` for the remaining float parameters.
+--- 
+--- ```cpp
+--- enum eBoatMissionFlags
+--- {
+---   None = 0,
+---   StopAtEnd = 1,
+---   StopAtShore = 2,
+---   AvoidShore = 4,
+---   PreferForward = 8,
+---   NeverStop = 16,
+---   NeverNavMesh = 32,
+---   NeverRoute = 64,
+---   ForceBeached = 128,
+---   UseWanderRoute = 256,
+---   UseFleeRoute = 512,
+---   NeverPause = 1024,
+---   // StopAtEnd | StopAtShore | AvoidShore
+---   DefaultSettings = 7,
+---   // StopAtEnd | StopAtShore | AvoidShore | PreferForward | NeverNavMesh | NeverRoute
+---   OpenOceanSettings = 111,
+---   // StopAtEnd | StopAtShore | AvoidShore | PreferForward | NeverNavMesh | NeverPause
+---   BoatTaxiSettings = 1071,
+--- }
 --- ```
---- You need to call PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS after TASK_BOAT_MISSION in order for the task to execute.
---- Working example
---- float vehicleMaxSpeed = VEHICLE::_GET_VEHICLE_MAX_SPEED(ENTITY::GET_ENTITY_MODEL(pedVehicle));
---- TASK::TASK_BOAT_MISSION(pedDriver, pedVehicle, 0, 0, waypointCoord.x, waypointCoord.y, waypointCoord.z, 4, vehicleMaxSpeed, 786469, -1.0, 7);
---- PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(pedDriver, 1);
---- P8 appears to be driving style flag - see gtaforums.com/topic/822314-guide-driving-styles/ for documentation
---- ```
----
+--- @usage local boat_model = `tropic`
+--- RequestModel(boat_model)
+--- repeat Wait(0) until HasModelLoaded(boat_model)
+--- 
+--- -- Player needs to be in open water & in a boat for this to work
+--- local ped = PlayerPedId()
+--- local coords = GetEntityCoords(ped) - GetEntityForwardVector(ped) * 15.0
+--- local vehicle = CreateVehicle(boat_model, coords.x, coords.y, coords.z, GetEntityHeading(ped), true, false)
+--- -- Allow the game engine to clear the model from memory
+--- SetModelAsNoLongerNeeded(boat_model)
+--- 
+--- local ped_model = `a_m_m_skater_01`
+--- RequestModel(ped_model)
+--- repeat Wait(0) until HasModelLoaded(ped_model)
+--- 
+--- local driver = CreatePedInsideVehicle(vehicle, 0, ped_model, -1, true, false)
+--- -- Allow the game engine to clear the model from memory
+--- SetModelAsNoLongerNeeded(ped_model)
+--- 
+--- TaskBoatMission(driver, vehicle, GetVehiclePedIsIn(ped, false), 0, 0.0, 0.0, 0.0, 7, -1.0, 786468, -1.0, 1044)
+--- -- Mission Type: Follow | Drive Style: DrivingModeAvoidVehiclesReckless | Mission Flags: AvoidShore | NeverStop | NeverPause
+--- SetPedKeepTask(driver, true
 --- @hash [0x15C86013127CE63F](https://docs.fivem.net/natives/?_0x15C86013127CE63F)
---- @param pedDriver Ped
+--- @param ped Ped
 --- @param boat Vehicle
---- @param p2 any
---- @param p3 any
+--- @param vehicleTarget Vehicle
+--- @param pedTarget Ped
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param p7 any
---- @param maxSpeed number (float)
+--- @param missionType number (int)
+--- @param speed number (float)
 --- @param drivingStyle number (int)
---- @param p10 number (float)
---- @param p11 any
+--- @param radius number (float)
+--- @param missionFlags number (int)
 --- @return void
---- @overload fun(pedDriver: Ped, boat: Vehicle, p2: any, p3: any, x: number, y: number, z: number, p7: any, maxSpeed: number, drivingStyle: number, p10: number, p11: any): void
-function TaskBoatMission(pedDriver, boat, p2, p3, x, y, z, p7, maxSpeed, drivingStyle, p10, p11) end
+--- @overload fun(ped: Ped, boat: Vehicle, vehicleTarget: Vehicle, pedTarget: Ped, x: number, y: number, z: number, missionType: number, speed: number, drivingStyle: number, radius: number, missionFlags: number): void
+function TaskBoatMission(ped, boat, vehicleTarget, pedTarget, x, y, z, missionType, speed, drivingStyle, radius, missionFlags) end
 
     
 --- Sometimes a path may not be able to be found. This could happen because there simply isn't any way to get there, or maybe a bunch of dynamic objects have blocked the way,
@@ -469,22 +511,49 @@ function TaskBoatMission(pedDriver, boat, p2, p3, x, y, z, p7, maxSpeed, driving
 --- 
 --- ```cpp
 --- enum eNavScriptFlags {
----     ENAV_DEFAULT = 0, // Default flag
----     ENAV_NO_STOPPING = 1, // Will ensure the ped continues to move whilst waiting for the path to be found, and will not slow down at the end of their route.
----     ENAV_ADV_SLIDE_TO_COORD_AND_ACHIEVE_HEADING_AT_END = 2, // Performs a slide-to-coord at the end of the task. This requires that the accompanying NAVDATA structure has the 'SlideToCoordHeading' member set correctly.
----     ENAV_GO_FAR_AS_POSSIBLE_IF_TARGET_NAVMESH_NOT_LOADED = 4, // If the navmesh is not loaded in under the target position, then this will cause the ped to get as close as is possible on whatever navmesh is loaded. The navmesh must still be loaded at the path start.
----     ENAV_ALLOW_SWIMMING_UNDERWATER = 8, // Will allow navigation underwater - by default this is not allowed.
----     ENAV_KEEP_TO_PAVEMENTS = 16, // Will only allow navigation on pavements. If the path starts or ends off the pavement, the command will fail. Likewise if no pavement-only route can be found even although the start and end are on pavement.
----     ENAV_NEVER_ENTER_WATER = 32, // Prevents the path from entering water at all.
----     ENAV_DONT_AVOID_OBJECTS = 64, // Disables object-avoidance for this path. The ped may still make minor steering adjustments to avoid objects, but will not pathfind around them.
----     ENAV_ADVANCED_USE_MAX_SLOPE_NAVIGABLE = 128, // Specifies that the navmesh route will only be able to traverse up slopes which are under the angle specified, in the MaxSlopeNavigable member of the accompanying NAVDATA structure.
----     ENAV_STOP_EXACTLY = 512, // Unused.
----     ENAV_ACCURATE_WALKRUN_START = 1024, // The entity will look ahead in its path for a longer distance to make the walk/run start go more in the right direction.
----     ENAV_DONT_AVOID_PEDS = 2048, // Disables ped-avoidance for this path while we move.
----     ENAV_DONT_ADJUST_TARGET_POSITION = 4096, // If target pos is inside the boundingbox of an object it will otherwise be pushed out.
----     ENAV_SUPPRESS_EXACT_STOP = 8192, // Turns off the default behaviour, which is to stop exactly at the target position. Occasionally this can cause footsliding/skating problems.
----     ENAV_ADVANCED_USE_CLAMP_MAX_SEARCH_DISTANCE = 16384, // Prevents the path-search from finding paths outside of this search distance. This can be used to prevent peds from finding long undesired routes.
----     ENAV_PULL_FROM_EDGE_EXTRA = 32768 // Pulls out the paths from edges at corners for a longer distance, to prevent peds walking into stuff.
+---     // Default flag
+---     ENAV_DEFAULT = 0,
+---     // Will ensure the ped continues to move whilst waiting for the path
+---     // to be found, and will not slow down at the end of their route.
+---     ENAV_NO_STOPPING = 1,
+---     // Performs a slide-to-coord at the end of the task. This requires that the
+---     // accompanying NAVDATA structure has the 'SlideToCoordHeading' member set correctly.
+---     ENAV_ADV_SLIDE_TO_COORD_AND_ACHIEVE_HEADING_AT_END = 2,
+---     // If the navmesh is not loaded in under the target position, then this will
+---     // cause the ped to get as close as is possible on whatever navmesh is loaded.
+---     // The navmesh must still be loaded at the path start.
+---     ENAV_GO_FAR_AS_POSSIBLE_IF_TARGET_NAVMESH_NOT_LOADED = 4,
+---     // Will allow navigation underwater - by default this is not allowed.
+---     ENAV_ALLOW_SWIMMING_UNDERWATER = 8,
+---     // Will only allow navigation on pavements. If the path starts or ends off
+---     // the pavement, the command will fail. Likewise if no pavement-only route
+---     // can be found even although the start and end are on pavement.
+---     ENAV_KEEP_TO_PAVEMENTS = 16,
+---     // Prevents the path from entering water at all.
+---     ENAV_NEVER_ENTER_WATER = 32,
+---     // Disables object-avoidance for this path. The ped may still make minor
+---     // steering adjustments to avoid objects, but will not pathfind around them.
+---     ENAV_DONT_AVOID_OBJECTS = 64,
+---     // Specifies that the navmesh route will only be able to traverse up slopes
+---     // which are under the angle specified, in the MaxSlopeNavigable member of the accompanying NAVDATA structure.
+---     ENAV_ADVANCED_USE_MAX_SLOPE_NAVIGABLE = 128,
+---     // Unused.
+---     ENAV_STOP_EXACTLY = 512,
+---     // The entity will look ahead in its path for a longer distance to make the
+---     // walk/run start go more in the right direction.
+---     ENAV_ACCURATE_WALKRUN_START = 1024,
+---     // Disables ped-avoidance for this path while we move.
+---     ENAV_DONT_AVOID_PEDS = 2048,
+---     // If target pos is inside the boundingbox of an object it will otherwise be pushed out.
+---     ENAV_DONT_ADJUST_TARGET_POSITION = 4096,
+---     // Turns off the default behaviour, which is to stop exactly at the target position.
+---     // Occasionally this can cause footsliding/skating problems.
+---     ENAV_SUPPRESS_EXACT_STOP = 8192,
+---     // Prevents the path-search from finding paths outside of this search distance.
+---     // This can be used to prevent peds from finding long undesired routes.
+---     ENAV_ADVANCED_USE_CLAMP_MAX_SEARCH_DISTANCE = 16384,
+---     // Pulls out the paths from edges at corners for a longer distance, to prevent peds walking into stuff.
+---     ENAV_PULL_FROM_EDGE_EXTRA = 32768
 --- };
 --- ```
 ---
@@ -1221,7 +1290,11 @@ function IsScenarioGroupEnabled(scenarioGroup) end
 function SetTaskMoveNetworkSignalFloat_2(ped, signalName, value) end
 
     
---- ClearSequenceTask
+--- For an example on how to use this please refer to [OPEN_SEQUENCE_TASK](https://docs.fivem.net/natives/?_0xE8854A4326B9E12B)
+--- 
+--- #### NOTE
+--- 
+--- If you fail to call [`CLOSE_SEQUENCE_TASK`](https://docs.fivem.net/natives/?_0x39E72BC99E6360CB) and `CLEAR_SEQUENCE_TASK` the sequence system can get stuck in a broken state until you restart your client.
 ---
 --- @hash [0x3841422E9C488D8C](https://docs.fivem.net/natives/?_0x3841422E9C488D8C)
 --- @param taskSequenceId number (int*)
@@ -1263,7 +1336,11 @@ function SetPedPathPreferToAvoidWater(ped, avoidWater) end
 function TaskSeekCoverToCoords(ped, x1, y1, z1, x2, y2, z2, p7, p8) end
 
     
---- CloseSequenceTask
+--- For an example on how to use this please refer to [OPEN_SEQUENCE_TASK](https://docs.fivem.net/natives/?_0xE8854A4326B9E12B)
+--- 
+--- #### NOTE
+--- 
+--- If you fail to call `CLOSE_SEQUENCE_TASK` and [`CLEAR_SEQUENCE_TASK`](https://docs.fivem.net/natives/?_0x3841422E9C488D8C) this can get stuck in a broken state until you restart your client.
 ---
 --- @hash [0x39E72BC99E6360CB](https://docs.fivem.net/natives/?_0x39E72BC99E6360CB)
 --- @param taskSequenceId number (int)
@@ -1733,26 +1810,30 @@ function TaskUseNearestScenarioToCoordWarp(ped, x, y, z, radius, p5) end
 function GetScriptedCoverPointCoords(coverpoint) end
 
     
+--- Makes the ped go on a point route.
+--- 
+--- ```cpp
+--- enum eFollowPointRouteMode {
+--- 	TICKET_SINGLE = 0,
+--- 	TICKET_RETURN = 1,
+--- 	TICKET_SEASON = 2,
+--- 	TICKET_LOOP = 3
+--- }
 --- ```
---- MulleKD19: Makes the ped go on the created point route.
---- ped: The ped to give the task to.
---- speed: The speed to move at in m/s.
---- int: Unknown. Can be 0, 1, 2 or 3.
---- Example:
---- TASK_FLUSH_ROUTE();
---- TASK_EXTEND_ROUTE(0f, 0f, 70f);
---- TASK_EXTEND_ROUTE(10f, 0f, 70f);
---- TASK_EXTEND_ROUTE(10f, 10f, 70f);
---- TASK_FOLLOW_POINT_ROUTE(GET_PLAYER_PED(), 1f, 0);
---- ```
----
+--- 
+--- This native is often times used with [`TASK_FLUSH_ROUTE`](https://docs.fivem.net/natives/?_0x841142A1376E9006) and [`TASK_EXTEND_ROUTE`](https://docs.fivem.net/natives/?_0x1E7889778264843A)
+--- @usage TaskFlushRoute()
+--- TaskExtendRoute(0.0, 0.0, 70.0)
+--- TaskExtendRoute(10.0, 0.0, 70.0)
+--- TaskExtendRoute(10.0, 10.0, 70.0)
+--- TaskFollowPointRoute(PlayerPedId(), 1.0, 0
 --- @hash [0x595583281858626E](https://docs.fivem.net/natives/?_0x595583281858626E)
 --- @param ped Ped
 --- @param speed number (float)
---- @param unknown number (int)
+--- @param routeMode number (int)
 --- @return void
---- @overload fun(ped: Ped, speed: number, unknown: number): void
-function TaskFollowPointRoute(ped, speed, unknown) end
+--- @overload fun(ped: Ped, speed: number, routeMode: number): void
+function TaskFollowPointRoute(ped, speed, routeMode) end
 
     
 --- UseWaypointRecordingAsAssistedMovementRoute
@@ -1795,7 +1876,7 @@ function TaskPedSlideToCoordHdgRate(ped, x, y, z, heading, p5, p6) end
 function DoesScenarioExistInArea(x, y, z, radius, b) end
 
     
---- TaskPerformSequence
+--- For an example on how to use this please refer to [OPEN_SEQUENCE_TASK](https://docs.fivem.net/natives/?_0xE8854A4326B9E12B)
 ---
 --- @hash [0x5ABA3986D90D8A3B](https://docs.fivem.net/natives/?_0x5ABA3986D90D8A3B)
 --- @param ped Ped
@@ -1825,7 +1906,7 @@ function TaskTurnPedToFaceEntity(ped, entity, duration) end
 ---   DF_StopForCars = 1,
 ---   DF_StopForPeds = 2,
 ---   DF_SwerveAroundAllCars = 4,
----   DF_SteerAroundStationaryCars	= 8,
+---   DF_SteerAroundStationaryCars = 8,
 ---   DF_SteerAroundPeds = 16,
 ---   DF_SteerAroundObjects = 32,
 ---   DF_DontSteerAroundPlayerPed = 64,
@@ -1845,8 +1926,10 @@ function TaskTurnPedToFaceEntity(ped, entity, duration) end
 --- 
 ---   DF_UseShortCutLinks =  262144,
 ---   DF_ChangeLanesAroundObstructions = 524288,
----   DF_UseSwitchedOffNodes =  2097152,	// cruise tasks ignore this anyway--only used for goto's
----   DF_PreferNavmeshRoute =  4194304,	// if you're going to be primarily driving off road
+---   // cruise tasks ignore this anyway--only used for goto's
+---   DF_UseSwitchedOffNodes =  2097152,
+---   // if you're going to be primarily driving off road
+---   DF_PreferNavmeshRoute =  4194304,
 --- 
 ---   // Only works for planes using MISSION_GOTO, will cause them to drive along the ground instead of fly
 ---   DF_PlaneTaxiMode =  8388608,
@@ -2043,23 +2126,69 @@ function GetNavmeshRouteResult(ped) end
 function SetTaskVehicleChaseIdealPursuitDistance(ped, distance) end
 
     
+--- All parameters except ped, vehicle, vehicleTarget and speed are optional; with `missionType` being only those that require a target entity.
+--- 
+--- If you don't want to use a parameter; pass `0` for int parameters, and `-1.0f` for the remaining float parameters.
+--- 
+--- ```cpp
+--- enum eVehicleMissionType
+--- {
+---   None = 0,
+---   Cruise = 1,
+---   Ram = 2,
+---   Block = 3,
+---   GoTo = 4,
+---   Stop = 5,
+---   Attack = 6,
+---   Follow = 7,
+---   Flee = 8,
+---   Circle = 9,
+---   Escort = 12,
+---   GoToRacing = 14,
+---   FollowRecording = 15,
+---   PoliceBehaviour = 16,
+---   Land = 19,
+---   LandAndWait = 20,
+---   Crash = 21,
+---   PullOver = 22,
+---   HeliProtect = 23
+--- }
 --- ```
---- missionType: https://alloc8or.re/gta5/doc/enums/eVehicleMissionType.txt
---- ```
----
+--- @usage local vehicle_model = `adder`
+--- RequestModel(vehicle_model)
+--- repeat Wait(0) until HasModelLoaded(vehicle_model)
+--- 
+--- -- Player needs in a vehicle for this to work
+--- local ped = PlayerPedId()
+--- local coords = GetEntityCoords(ped) - GetEntityForwardVector(ped) * 15.0
+--- local vehicle = CreateVehicle(vehicle_model, coords.x, coords.y, coords.z, GetEntityHeading(ped), true, false)
+--- -- Allow the game engine to clear the model from memory
+--- SetModelAsNoLongerNeeded(vehicle_model)
+--- 
+--- local ped_model = `a_m_m_skater_01`
+--- RequestModel(ped_model)
+--- repeat Wait(0) until HasModelLoaded(ped_model)
+--- 
+--- local driver = CreatePedInsideVehicle(vehicle, 0, ped_model, -1, true, false)
+--- -- Allow the game engine to clear the model from memory
+--- SetModelAsNoLongerNeeded(ped_model)
+--- 
+--- TaskVehicleMission(driver, vehicle, GetVehiclePedIsIn(ped, false), 8, 35.0, 786468, -1.0, -1.0, true)
+--- -- Mission Type: Flee | Drive Style: DrivingModeAvoidVehiclesReckless
+--- SetPedKeepTask(driver, true
 --- @hash [0x659427E0EF36BCDE](https://docs.fivem.net/natives/?_0x659427E0EF36BCDE)
---- @param driver Ped
+--- @param ped Ped
 --- @param vehicle Vehicle
 --- @param vehicleTarget Vehicle
 --- @param missionType number (int)
---- @param p4 number (float)
---- @param p5 any
---- @param p6 number (float)
---- @param p7 number (float)
+--- @param speed number (float)
+--- @param drivingStyle number (int)
+--- @param radius number (float)
+--- @param straightLineDist number (float)
 --- @param DriveAgainstTraffic boolean
 --- @return void
---- @overload fun(driver: Ped, vehicle: Vehicle, vehicleTarget: Vehicle, missionType: number, p4: number, p5: any, p6: number, p7: number, DriveAgainstTraffic: boolean): void
-function TaskVehicleMission(driver, vehicle, vehicleTarget, missionType, p4, p5, p6, p7, DriveAgainstTraffic) end
+--- @overload fun(ped: Ped, vehicle: Vehicle, vehicleTarget: Vehicle, missionType: number, speed: number, drivingStyle: number, radius: number, straightLineDist: number, DriveAgainstTraffic: boolean): void
+function TaskVehicleMission(ped, vehicle, vehicleTarget, missionType, speed, drivingStyle, radius, straightLineDist, DriveAgainstTraffic) end
 
     
 --- WaypointPlaybackUseDefaultSpeed
@@ -2079,11 +2208,11 @@ function WaypointPlaybackUseDefaultSpeed(p0) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param time number (int)
---- @param p5 boolean
---- @param p6 boolean
+--- @param bInstantBlendToAim boolean
+--- @param bPlayAimIntro boolean
 --- @return void
---- @overload fun(ped: Ped, x: number, y: number, z: number, time: number, p5: boolean, p6: boolean): void
-function TaskAimGunAtCoord(ped, x, y, z, time, p5, p6) end
+--- @overload fun(ped: Ped, x: number, y: number, z: number, time: number, bInstantBlendToAim: boolean, bPlayAimIntro: boolean): void
+function TaskAimGunAtCoord(ped, x, y, z, time, bInstantBlendToAim, bPlayAimIntro) end
 
     
 --- UncuffPed
@@ -2172,6 +2301,24 @@ function TaskGoToEntity(entity, target, duration, distance, speed, p5, p6) end
 --- @return void
 --- @overload fun(height: number): void
 function SetGlobalMinBirdFlightHeight(height) end
+
+    
+--- This task warps a ped directly into a cover position closest to the specified point. This can be used to quickly place peds in strategic positions during gameplay.
+--- 
+--- ```
+--- NativeDB Introduced: 2545
+--- ```
+---
+--- @hash [0x6E01E9E8D89F8276](https://docs.fivem.net/natives/?_0x6E01E9E8D89F8276)
+--- @param ped Ped
+--- @param time number (int)
+--- @param canPeekAndAim boolean
+--- @param forceInitialFacingDirection boolean
+--- @param forceFaceLeft boolean
+--- @param coverIndex number (int)
+--- @return void
+--- @overload fun(ped: Ped, time: number, canPeekAndAim: boolean, forceInitialFacingDirection: boolean, forceFaceLeft: boolean, coverIndex: number): void
+function TaskWarpPedDirectlyIntoCover(ped, time, canPeekAndAim, forceInitialFacingDirection, forceFaceLeft, coverIndex) end
 
     
 --- TaskLookAtCoord
@@ -2402,11 +2549,11 @@ function TaskExitCover(p0, p1, p2, p3, p4) end
 --- @hash [0x7A192BE16D373D00](https://docs.fivem.net/natives/?_0x7A192BE16D373D00)
 --- @param ped Ped
 --- @param scriptTask Hash
---- @param p2 boolean
---- @param p3 boolean
+--- @param bDisableBlockingClip boolean
+--- @param bInstantBlendToAim boolean
 --- @return void
---- @overload fun(ped: Ped, scriptTask: Hash, p2: boolean, p3: boolean): void
-function TaskAimGunScripted(ped, scriptTask, p2, p3) end
+--- @overload fun(ped: Ped, scriptTask: Hash, bDisableBlockingClip: boolean, bInstantBlendToAim: boolean): void
+function TaskAimGunScripted(ped, scriptTask, bDisableBlockingClip, bInstantBlendToAim) end
 
     
 --- ```
@@ -2486,30 +2633,30 @@ function TaskEveryoneLeaveVehicle(vehicle) end
 function AssistedMovementRequestRoute(route) end
 
     
---- It's similar to the one above, except the first 6 floats let you specify the initial position and rotation of the task. (Ped gets teleported to the position).
+--- Similar in functionality to [`TASK_PLAY_ANIM`](https://docs.fivem.net/natives/?_0xEA47FE3719165B94), except the position and rotation parameters let you specify the initial position and rotation of the task. The ped is teleported to the position specified.
 --- 
 --- [Animations list](https://alexguirre.github.io/animations-list/)
 ---
 --- @hash [0x83CDB10EA29B370B](https://docs.fivem.net/natives/?_0x83CDB10EA29B370B)
 --- @param ped Ped
---- @param animDict string (char*)
---- @param animName string (char*)
+--- @param animDictionary string (char*)
+--- @param animationName string (char*)
 --- @param posX number (float)
 --- @param posY number (float)
 --- @param posZ number (float)
 --- @param rotX number (float)
 --- @param rotY number (float)
 --- @param rotZ number (float)
---- @param animEnterSpeed number (float)
---- @param animExitSpeed number (float)
+--- @param blendInSpeed number (float)
+--- @param blendOutSpeed number (float)
 --- @param duration number (int)
 --- @param flag any
 --- @param animTime number (float)
 --- @param p14 any
 --- @param p15 any
 --- @return void
---- @overload fun(ped: Ped, animDict: string, animName: string, posX: number, posY: number, posZ: number, rotX: number, rotY: number, rotZ: number, animEnterSpeed: number, animExitSpeed: number, duration: number, flag: any, animTime: number, p14: any, p15: any): void
-function TaskPlayAnimAdvanced(ped, animDict, animName, posX, posY, posZ, rotX, rotY, rotZ, animEnterSpeed, animExitSpeed, duration, flag, animTime, p14, p15) end
+--- @overload fun(ped: Ped, animDictionary: string, animationName: string, posX: number, posY: number, posZ: number, rotX: number, rotY: number, rotZ: number, blendInSpeed: number, blendOutSpeed: number, duration: number, flag: any, animTime: number, p14: any, p15: any): void
+function TaskPlayAnimAdvanced(ped, animDictionary, animationName, posX, posY, posZ, rotX, rotY, rotZ, blendInSpeed, blendOutSpeed, duration, flag, animTime, p14, p15) end
 
     
 --- Clears the current point route. Call this before [TASK_EXTEND_ROUTE](https://docs.fivem.net/natives/?_0x1E7889778264843A) and [TASK_FOLLOW_POINT_ROUTE](https://docs.fivem.net/natives/?_0x595583281858626E).
@@ -2568,17 +2715,17 @@ function AddVehicleSubtaskAttackPed(ped, ped2) end
 --- TaskAimGunScriptedWithTarget
 ---
 --- @hash [0x8605AF0DE8B3A5AC](https://docs.fivem.net/natives/?_0x8605AF0DE8B3A5AC)
---- @param p0 any
---- @param p1 any
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 number (float)
---- @param p5 any
---- @param p6 boolean
---- @param p7 boolean
+--- @param ped Ped
+--- @param targetPed Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param iGunTaskType Hash
+--- @param bDisableBlockingClip boolean
+--- @param bForceAim boolean
 --- @return void
---- @overload fun(p0: any, p1: any, p2: number, p3: number, p4: number, p5: any, p6: boolean, p7: boolean): void
-function TaskAimGunScriptedWithTarget(p0, p1, p2, p3, p4, p5, p6, p7) end
+--- @overload fun(ped: Ped, targetPed: Ped, x: number, y: number, z: number, iGunTaskType: Hash, bDisableBlockingClip: boolean, bForceAim: boolean): void
+function TaskAimGunScriptedWithTarget(ped, targetPed, x, y, z, iGunTaskType, bDisableBlockingClip, bForceAim) end
 
     
 --- ```
@@ -2630,15 +2777,60 @@ function N_0x88e32db8c1a4aa4b(ped, modifier) end
 
     
 --- TaskPerformSequenceFromProgress
----
+--- @usage Citizen.CreateThread(function()
+---     local animDict = 'timetable@ron@ig_5_p3'
+--- 
+---     RequestAnimDict(animDict)
+---     while not HasAnimDictLoaded(animDict) do
+---         Wait(0)
+---     end
+--- 
+---     local ped = PlayerPedId()
+---     local pos = GetEntityCoords(ped)
+--- 
+---     -- you can change the model, but you might have to change the offsets below.
+---     local objModelHash = `prop_bench_01a`
+--- 
+---     local obj = GetClosestObjectOfType(pos.x, pos.y, pos.z, 5.0, objModelHash, false, false, false)
+---     if obj == 0 then
+---         print("No valid object within range!")
+---         return
+---     end
+--- 
+---     local tgtPos = GetOffsetFromEntityInWorldCoords(obj, 0.0, -0.7, 0.0)
+--- 
+---     -- open the task sequence so we can get our sequence id
+---     local sequence = OpenSequenceTask()
+--- 
+---     local desiredHeading = GetEntityHeading(obj) - 180.0
+--- 
+---     -- go to the entities offset
+---     TaskGoStraightToCoord(nil, tgtPos.x, tgtPos.y, tgtPos.z, 1.0, 4000, desiredHeading, 1.0)
+--- 
+---     -- sit on the bench indefinitely (you can change -1 here to however long you want to sit)
+---     TaskPlayAnim(nil, animDict, 'ig_5_p3_base', 8.0, 8.0, -1, 1)
+--- 
+---     -- close the sequence so we can perform it
+---     CloseSequenceTask(sequence)
+--- 
+---     -- perform the sequence, this will not work if the sequence is still open.
+---     -- note that progress1 is set to 1, this means it will skip the first sequence
+---     TaskPerformSequenceFromProgress(ped, sequence, 1, 1)
+--- 
+---     -- free the sequence slot so it can be re-used
+---     ClearSequenceTask(sequence)
+--- 
+---     -- cleanup the animation dict so the engine can remove it when its no longer needed
+---     RemoveAnimDict(animDict)
+--- end
 --- @hash [0x89221B16730234F0](https://docs.fivem.net/natives/?_0x89221B16730234F0)
---- @param p0 any
---- @param p1 any
---- @param p2 any
---- @param p3 any
+--- @param ped Ped
+--- @param taskIndex number (int)
+--- @param progress1 number (int)
+--- @param progress2 number (int)
 --- @return void
---- @overload fun(p0: any, p1: any, p2: any, p3: any): void
-function TaskPerformSequenceFromProgress(p0, p1, p2, p3) end
+--- @overload fun(ped: Ped, taskIndex: number, progress1: number, progress2: number): void
+function TaskPerformSequenceFromProgress(ped, taskIndex, progress1, progress2) end
 
     
 --- WaypointPlaybackStartAimingAtCoord
@@ -2675,7 +2867,7 @@ function TaskClimb(ped, unused) end
 function VehicleWaypointPlaybackPause(vehicle) end
 
     
---- TaskPerformSequenceLocally
+--- For an example on how to use this please refer to \[OPEN_SEQUENCE_TASK]\(#\_0xE8854A4326B9E12B
 ---
 --- @hash [0x8C33220C8D78CA0D](https://docs.fivem.net/natives/?_0x8C33220C8D78CA0D)
 --- @param ped Ped
@@ -2686,7 +2878,7 @@ function TaskPerformSequenceLocally(ped, taskSequenceId) end
 
     
 --- # New Name: TaskPerformSequenceLocally
---- TaskPerformSequenceLocally
+--- For an example on how to use this please refer to \[OPEN_SEQUENCE_TASK]\(#\_0xE8854A4326B9E12B
 ---
 --- @hash [0x8C33220C8D78CA0D](https://docs.fivem.net/natives/?_0x8C33220C8D78CA0D)
 --- @param ped Ped
@@ -2695,6 +2887,18 @@ function TaskPerformSequenceLocally(ped, taskSequenceId) end
 --- @overload fun(ped: Ped, taskSequenceId: number): void
 --- @deprecated
 function N_0x8c33220c8d78ca0d(ped, taskSequenceId) end
+
+    
+--- # New Name: TaskPerformSequenceLocally
+--- For an example on how to use this please refer to \[OPEN_SEQUENCE_TASK]\(#\_0xE8854A4326B9E12B
+---
+--- @hash [0x8C33220C8D78CA0D](https://docs.fivem.net/natives/?_0x8C33220C8D78CA0D)
+--- @param ped Ped
+--- @param taskSequenceId number (int)
+--- @return void
+--- @overload fun(ped: Ped, taskSequenceId: number): void
+--- @deprecated
+function TaskPerformSequenceLocally(ped, taskSequenceId) end
 
     
 --- ```
@@ -2795,11 +2999,11 @@ function TaskPlayPhoneGestureAnimation(ped, animDict, animation, boneMaskType, p
 ---
 --- @hash [0x8FD89A6240813FD0](https://docs.fivem.net/natives/?_0x8FD89A6240813FD0)
 --- @param ped Ped
---- @param bDisableIdleAnims boolean
---- @param bStopCurrentAnim boolean
+--- @param bBlockIdleClips boolean
+--- @param bRemoveIdleClipIfPlaying boolean
 --- @return void
---- @overload fun(ped: Ped, bDisableIdleAnims: boolean, bStopCurrentAnim: boolean): void
-function SetPedCanPlayAmbientIdles(ped, bDisableIdleAnims, bStopCurrentAnim) end
+--- @overload fun(ped: Ped, bBlockIdleClips: boolean, bRemoveIdleClipIfPlaying: boolean): void
+function SetPedCanPlayAmbientIdles(ped, bBlockIdleClips, bRemoveIdleClipIfPlaying) end
 
     
 --- # New Name: SetPedCanPlayAmbientIdles
@@ -2809,12 +3013,12 @@ function SetPedCanPlayAmbientIdles(ped, bDisableIdleAnims, bStopCurrentAnim) end
 ---
 --- @hash [0x8FD89A6240813FD0](https://docs.fivem.net/natives/?_0x8FD89A6240813FD0)
 --- @param ped Ped
---- @param bDisableIdleAnims boolean
---- @param bStopCurrentAnim boolean
+--- @param bBlockIdleClips boolean
+--- @param bRemoveIdleClipIfPlaying boolean
 --- @return void
---- @overload fun(ped: Ped, bDisableIdleAnims: boolean, bStopCurrentAnim: boolean): void
+--- @overload fun(ped: Ped, bBlockIdleClips: boolean, bRemoveIdleClipIfPlaying: boolean): void
 --- @deprecated
-function N_0x8fd89a6240813fd0(ped, bDisableIdleAnims, bStopCurrentAnim) end
+function N_0x8fd89a6240813fd0(ped, bBlockIdleClips, bRemoveIdleClipIfPlaying) end
 
     
 --- ```
@@ -2964,21 +3168,43 @@ function TaskAchieveHeading(ped, heading, timeout) end
 function TaskCombatPedTimed(p0, ped, p2, p3) end
 
     
---- See [`TASK_VEHICLE_MISSION`](https://docs.fivem.net/natives/?_0x659427E0EF36BCDE).
----
+--- All parameters except ped, vehicle, pedTarget and speed are optional; with `missionType` being only those that require a target entity.
+--- 
+--- If you don't want to use a parameter; pass `0` for int parameters, and `-1.0f` for the remaining float parameters.
+--- @usage local vehicle_model = `adder`
+--- RequestModel(vehicle_model)
+--- repeat Wait(0) until HasModelLoaded(vehicle_model)
+--- 
+--- local ped = PlayerPedId()
+--- local coords = GetEntityCoords(ped) - GetEntityForwardVector(ped) * 15.0
+--- local vehicle = CreateVehicle(vehicle_model, coords.x, coords.y, coords.z, GetEntityHeading(ped), true, false)
+--- -- Allow the game engine to clear the model from memory
+--- SetModelAsNoLongerNeeded(vehicle_model)
+--- 
+--- local ped_model = `a_m_m_skater_01`
+--- RequestModel(ped_model)
+--- repeat Wait(0) until HasModelLoaded(ped_model)
+--- 
+--- local driver = CreatePedInsideVehicle(vehicle, 0, ped_model, -1, true, false)
+--- -- Allow the game engine to clear the model from memory
+--- SetModelAsNoLongerNeeded(ped_model)
+--- 
+--- TaskVehicleMissionPedTarget(driver, vehicle, ped, 8, 35.0, 786468, -1.0, -1.0, true)
+--- -- Mission Type: Flee | Drive Style: DrivingModeAvoidVehiclesReckless
+--- SetPedKeepTask(driver, true
 --- @hash [0x9454528DF15D657A](https://docs.fivem.net/natives/?_0x9454528DF15D657A)
 --- @param ped Ped
 --- @param vehicle Vehicle
 --- @param pedTarget Ped
 --- @param missionType number (int)
---- @param maxSpeed number (float)
+--- @param speed number (float)
 --- @param drivingStyle number (int)
---- @param minDistance number (float)
---- @param p7 number (float)
+--- @param radius number (float)
+--- @param straightLineDist number (float)
 --- @param DriveAgainstTraffic boolean
 --- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle, pedTarget: Ped, missionType: number, maxSpeed: number, drivingStyle: number, minDistance: number, p7: number, DriveAgainstTraffic: boolean): void
-function TaskVehicleMissionPedTarget(ped, vehicle, pedTarget, missionType, maxSpeed, drivingStyle, minDistance, p7, DriveAgainstTraffic) end
+--- @overload fun(ped: Ped, vehicle: Vehicle, pedTarget: Ped, missionType: number, speed: number, drivingStyle: number, radius: number, straightLineDist: number, DriveAgainstTraffic: boolean): void
+function TaskVehicleMissionPedTarget(ped, vehicle, pedTarget, missionType, speed, drivingStyle, radius, straightLineDist, DriveAgainstTraffic) end
 
     
 --- ```
@@ -3107,8 +3333,44 @@ function StopAnimTask(ped, animDictionary, animationName, animExitSpeed) end
 function GetVehicleWaypointProgress(vehicle) end
 
     
---- TaskWarpPedIntoVehicle
----
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- 
+--- Warp a ped into a vehicle.
+--- 
+--- **Note**: It's better to use [`TASK_ENTER_VEHICLE`](https://docs.fivem.net/natives/?_0xC20E50AA46D09CA8) with the flag "warp" flag instead of this native.
+--- @usage -- This example creates a vehicle and warps the player into the driver's seat
+--- 
+--- -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Define the vehicle model and check if it exists in the game files
+--- local modelHash = `adder`  -- Use Compile-time hashes to get the model hash
+--- if not IsModelInCdimage(modelHash) then
+---     return
+--- end
+--- 
+--- -- Request the model and wait for it to load
+--- RequestModel(modelHash)  
+--- repeat
+---     Wait(0)
+--- until HasModelLoaded(modelHash)
+--- 
+--- -- Create the vehicle at the player's coordinates with a heading of 0.0
+--- local coordsPlayer, heading = GetEntityCoords(playerPed), 0.0
+--- local vehicle = CreateVehicle(modelHash, coordsPlayer, heading, true, false)
+--- 
+--- -- Define the seat index for the Ped (e.g., -1 for the driver's seat)
+--- local seatIndex = -1  
+--- 
+--- -- Check if the vehicle exists and the player is alive
+--- if not DoesEntityExist(vehicle) or IsEntityDead(playerPed) then
+---     return
+--- end
+--- 
+--- -- Warp the Ped into the specified vehicle seat
+--- TaskWarpPedIntoVehicle(playerPed, vehicle, seatIndex
 --- @hash [0x9A7D091411C5F684](https://docs.fivem.net/natives/?_0x9A7D091411C5F684)
 --- @param ped Ped
 --- @param vehicle Vehicle
@@ -3126,10 +3388,10 @@ function TaskWarpPedIntoVehicle(ped, vehicle, seatIndex) end
 --- @param ped Ped
 --- @param entity Entity
 --- @param duration number (int)
---- @param p3 boolean
+--- @param bInstantBlendToAim boolean
 --- @return void
---- @overload fun(ped: Ped, entity: Entity, duration: number, p3: boolean): void
-function TaskAimGunAtEntity(ped, entity, duration, p3) end
+--- @overload fun(ped: Ped, entity: Entity, duration: number, bInstantBlendToAim: boolean): void
+function TaskAimGunAtEntity(ped, entity, duration, bInstantBlendToAim) end
 
     
 --- TaskGetOffBoat
@@ -3364,7 +3626,7 @@ function UpdateTaskHandsUpDuration(ped, duration) end
 function TaskGotoEntityAiming(ped, target, distanceToStopAt, StartAimingDist) end
 
     
---- When passing a ped parameter, the function returns true if the ped is currently in any scenario.
+--- This is a stricter version of [`IS_PED_USING_ANY_SCENARIO`](https://docs.fivem.net/natives/?_0x57AB4A3080F85143). It only returns true if the ped is playing the ambient animations associated with the scenario.
 ---
 --- @hash [0xAA135F9482C82CC3](https://docs.fivem.net/natives/?_0xAA135F9482C82CC3)
 --- @param ped Ped
@@ -3559,26 +3821,42 @@ function N_0xb0a6cfd2c69c1088(ped, signalName, value) end
 function SetTaskPropertyBool(ped, signalName, value) end
 
     
---- TaskGoToCoordWhileAimingAtEntity
+--- Will make the ped move to a coordinate while aiming (and optionally shooting) at the given entity.
+--- 
+--- ```cpp
+--- enum eFiringPatternHashes {
+---     FIRING_PATTERN_DEFAULT = 0,
+---     FIRING_PATTERN_BURST_FIRE = -687903391,
+---     FIRING_PATTERN_BURST_FIRE_DRIVEBY = -753768974,
+---     FIRING_PATTERN_FULL_AUTO = -957453492,
+---     FIRING_PATTERN_SINGLE_SHOT = 1566631136,
+---     FIRING_PATTERN_DELAY_FIRE_BY_ONE_SEC = 2055493265,
+---     FIRING_PATTERN_BURST_FIRE_HELI = -1857128337,
+---     FIRING_PATTERN_SHORT_BURSTS = 445831135,
+---     FIRING_PATTERN_BURST_FIRE_MICRO = 1122960381,
+---     FIRING_PATTERN_SLOW_FIRE_TANK = -490063247,
+---     FIRING_PATTERN_TAMPA_MORTAR = -1842093953
+--- }
+--- ```
 ---
 --- @hash [0xB2A16444EAD9AE47](https://docs.fivem.net/natives/?_0xB2A16444EAD9AE47)
---- @param p0 any
---- @param p1 number (float)
---- @param p2 number (float)
---- @param p3 number (float)
---- @param p4 any
---- @param p5 number (float)
---- @param p6 boolean
---- @param p7 number (float)
---- @param p8 number (float)
---- @param p9 boolean
---- @param p10 any
---- @param p11 boolean
---- @param p12 any
---- @param p13 any
+--- @param ped Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param entityToAimAt Entity
+--- @param moveSpeed number (float)
+--- @param shoot boolean
+--- @param targetRadius number (float)
+--- @param slowDistance number (float)
+--- @param useNavMesh boolean
+--- @param navFlags number (int)
+--- @param instantBlendAtAim boolean
+--- @param firingPattern Hash
+--- @param time number (int)
 --- @return void
---- @overload fun(p0: any, p1: number, p2: number, p3: number, p4: any, p5: number, p6: boolean, p7: number, p8: number, p9: boolean, p10: any, p11: boolean, p12: any, p13: any): void
-function TaskGoToCoordWhileAimingAtEntity(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12, p13) end
+--- @overload fun(ped: Ped, x: number, y: number, z: number, entityToAimAt: Entity, moveSpeed: number, shoot: boolean, targetRadius: number, slowDistance: number, useNavMesh: boolean, navFlags: number, instantBlendAtAim: boolean, firingPattern: Hash, time: number): void
+function TaskGoToCoordWhileAimingAtEntity(ped, x, y, z, entityToAimAt, moveSpeed, shoot, targetRadius, slowDistance, useNavMesh, navFlags, instantBlendAtAim, firingPattern, time) end
 
     
 --- ```
@@ -3842,37 +4120,47 @@ function SetParachuteTaskTarget(ped, x, y, z) end
 function ClearDrivebyTaskUnderneathDrivingTask(ped) end
 
     
---- ```
---- '1 - brake
---- '3 - brake + reverse
---- '4 - turn left 90 + braking
---- '5 - turn right 90 + braking
---- '6 - brake strong (handbrake?) until time ends
---- '7 - turn left + accelerate
---- '7 - turn right + accelerate
---- '9 - weak acceleration
---- '10 - turn left + restore wheel pos to center in the end
---- '11 - turn right + restore wheel pos to center in the end
---- '13 - turn left + go reverse
---- '14 - turn left + go reverse
---- '16 - crash the game after like 2 seconds :)
---- '17 - keep actual state, game crashed after few tries
---- '18 - game crash
---- '19 - strong brake + turn left/right
---- '20 - weak brake + turn left then turn right
---- '21 - weak brake + turn right then turn left
---- '22 - brake + reverse
---- '23 - accelerate fast
---- '24 - brake
---- '25 - brake turning left then when almost stopping it turns left more
---- '26 - brake turning right then when almost stopping it turns right more
---- '27 - brake until car stop or until time ends
---- '28 - brake + strong reverse acceleration
---- '30 - performs a burnout (brake until stop + brake and accelerate)
---- '31 - accelerate + handbrake
---- '32 - accelerate very strong
---- Seems to be this:
---- Works on NPCs, but overrides their current task. If inside a task sequence (and not being the last task), "time" will work, otherwise the task will be performed forever until tasked with something else
+--- Gives the vehicle a temporary action.
+--- 
+--- **Note**: For migrating objects, a `CScriptEntityStateChangeEvent` will be sent over the network to let other clients know that this object is being given a temporary action. At the same time, temporary actions cannot be applied to clones/remote objects.
+--- 
+--- ```cpp
+--- enum eTempAction {
+---     TA_NONE = 0,
+---     TA_WAIT = 1,
+---     TA_UNUSED = 2,
+---     TA_BRAKE_REVERSE = 3,
+---     TA_HANDBRAKE_TURN_LEFT = 4,
+---     TA_HANDBRAKE_TURN_RIGHT = 5,
+---     TA_HANDBRAKE_UNTIL_TIME_ENDS = 6,
+---     TA_TURN_LEFT = 7,
+---     TA_TURN_RIGHT = 8,
+---     TA_ACCELERATE = 9,
+---     TA_TURN_LEFT = 10,
+---     TA_TURN_RIGHT = 11,
+---     TA_UNUSED_12 = 12,
+---     TA_TURN_LEFT_GO_REVERSE = 13,
+---     TA_TURN_RIGHT_GO_REVERSE = 14,
+---     TA_PLANE_FLY_UP = 15, // (crashes game if not in plane)
+---     TA_PLANE_FLY_STRAIGHT = 16, // (crashes game if not in plane)
+---     TA_PLANE_SHARP_LEFT = 17, // (crashes game if not in plane)
+---     TA_PLANE_SHARP_RIGHT = 18, // (crashes game if not in plane)
+---     TA_STRONG_BRAKE = 19,
+---     TA_TURN_LEFT_AND_STOP = 20,
+---     TA_TURN_RIGHT_AND_STOP = 21,
+---     TA_GO_IN_REVERSE = 22,
+---     TA_ACCELERATE_FAST = 23,
+---     TA_BRAKE_ACTION = 24,
+---     TA_HANDBRAKE_TURN_LEFT_MORE = 25,
+---     TA_HANDBRAKE_TURN_RIGHT_MORE = 26,
+---     TA_HANDBRAKE_BRAKE_STRAIGHT = 27,
+---     TA_BRAKE_STRONG_REVERSE_ACCELERATION = 28,
+---     TA_UNUSED_29 = 29,
+---     TA_PERFORMS_BURNOUT = 30,
+---     TA_REV_ENGINE = 31,
+---     TA_ACCELERATE_VERY_STRONG = 32,
+---     TA_SURFACE_IN_SUBMARINE = 33
+--- };
 --- ```
 ---
 --- @hash [0xC429DCEEB339E129](https://docs.fivem.net/natives/?_0xC429DCEEB339E129)
@@ -4286,15 +4574,78 @@ function AddCoverPoint(p0, p1, p2, p3, p4, p5, p6, p7) end
 function TaskGoStraightToCoord(ped, x, y, z, speed, timeout, targetHeading, distanceToSlide) end
 
     
+--- Sets the driving style for a ped currently performing a driving task.
+--- 
+--- Each flag in the `eVehicleDrivingFlags` enum can be combined to create a driving style, with each enabling or disabling a specific driving behavior. The driving style can be set to one of the predefined driving styles, or a custom driving style can be created by combining the flags. This can be done by using the bitwise OR operator (`|`) to combine the flags or by adding the decimal values of the flags together.
+--- 
+--- ```cpp
+--- enum eVehicleDrivingFlags
+--- {
+---   None = 0,
+---   StopForVehicles = 1,
+---   StopForPeds = 2,
+---   SwerveAroundAllVehicles = 4,
+---   SteerAroundStationaryVehicles = 8,
+---   SteerAroundPeds = 16,
+---   SteerAroundObjects = 32,
+---   DontSteerAroundPlayerPed = 64,
+---   StopAtTrafficLights = 128,
+---   GoOffRoadWhenAvoiding = 256,
+---   AllowGoingWrongWay = 512,
+---   Reverse = 1024,
+---   UseWanderFallbackInsteadOfStraightLine = 2048,
+---   AvoidRestrictedAreas = 4096,
+---   PreventBackgroundPathfinding = 8192,
+---   AdjustCruiseSpeedBasedOnRoadSpeed = 16384,
+---   UseShortCutLinks = 262144,
+---   ChangeLanesAroundObstructions = 524288,
+---   UseSwitchedOffNodes = 2097152,
+---   PreferNavmeshRoute = 4194304,
+---   PlaneTaxiMode = 8388608,
+---   ForceStraightLine = 16777216,
+---   UseStringPullingAtJunctions = 33554432,
+---   TryToAvoidHighways = 536870912,
+---   ForceJoinInRoadDirection = 1073741824,
+---   StopAtDestination = 2147483648,
+---   // StopForVehicles | StopForPeds | SteerAroundObjects | SteerAroundStationaryVehicles | StopAtTrafficLights | UseShortCutLinks | ChangeLanesAroundObstructions
+---   DrivingModeStopForVehicles = 786603,
+---   // StopForVehicles | StopForPeds | StopAtTrafficLights | UseShortCutLinks
+---   DrivingModeStopForVehiclesStrict = 262275,
+---   // SwerveAroundAllVehicles | SteerAroundObjects | UseShortCutLinks | ChangeLanesAroundObstructions | StopForVehicles
+---   DrivingModeAvoidVehicles = 786469,
+---   // SwerveAroundAllVehicles | SteerAroundObjects | UseShortCutLinks | ChangeLanesAroundObstructions
+---   DrivingModeAvoidVehiclesReckless = 786468,
+---   // StopForVehicles | SteerAroundStationaryVehicles | StopForPeds | SteerAroundObjects | UseShortCutLinks | ChangeLanesAroundObstructions
+---   DrivingModeStopForVehiclesIgnoreLights = 786475,
+---   // SwerveAroundAllVehicles | StopAtTrafficLights | SteerAroundObjects | UseShortCutLinks | ChangeLanesAroundObstructions | StopForVehicles
+---   DrivingModeAvoidVehiclesObeyLights = 786597,
+---   // SwerveAroundAllVehicles | StopAtTrafficLights | StopForPeds | SteerAroundObjects | UseShortCutLinks | ChangeLanesAroundObstructions | StopForVehicles
+---   DrivingModeAvoidVehiclesStopForPedsObeyLights = 786599,
+--- }
 --- ```
---- This native is used to set the driving style for specific ped.  
---- Driving styles id seems to be:  
---- 786468  
---- 262144  
---- 786469  
---- http://gtaforums.com/topic/822314-guide-driving-styles/  
---- ```
----
+--- @usage local vehicle_model = `adder`
+--- RequestModel(vehicle_model)
+--- repeat Wait(0) until HasModelLoaded(vehicle_model)
+--- 
+--- -- Player needs to be in a vehicle for this to work
+--- local ped = PlayerPedId()
+--- local coords = GetEntityCoords(ped) - GetEntityForwardVector(ped) * 15.0
+--- local vehicle = CreateVehicle(vehicle_model, coords.x, coords.y, coords.z, GetEntityHeading(ped), true, false)
+---  -- Allow the game engine to clear the model from memory
+--- SetModelAsNoLongerNeeded(vehicle_model)
+--- 
+--- local ped_model = `a_m_m_skater_01`
+--- RequestModel(ped_model)
+--- repeat Wait(0) until HasModelLoaded(ped_model)
+--- 
+--- local driver = CreatePedInsideVehicle(vehicle, 0, ped_model, -1, true, false)
+--- -- Allow the game engine to clear the model from memory
+--- SetModelAsNoLongerNeeded(ped_model)
+--- 
+--- TaskVehicleChase(driver, ped)
+--- SetDriveTaskDrivingStyle(driver, 786468)
+--- -- Driving Style: DrivingModeAvoidVehiclesReckless
+--- SetPedKeepTask(driver, true
 --- @hash [0xDACE1BE37D88AF67](https://docs.fivem.net/natives/?_0xDACE1BE37D88AF67)
 --- @param ped Ped
 --- @param drivingStyle number (int)
@@ -4303,45 +4654,75 @@ function TaskGoStraightToCoord(ped, x, y, z, speed, timeout, targetHeading, dist
 function SetDriveTaskDrivingStyle(ped, drivingStyle) end
 
     
+--- All parameters except ped, heli and speed are optional, with `pedTarget`, `vehicleTarget`, `x`, `y`, `z` being dependent on `missionType` (ie. Attack/Flee mission types require a target ped/vehicle, whereas GoTo mission types require either `x`, `y`, `z` or a target ped/vehicle).
+--- 
+--- If you don't want to use a parameter; pass `0.0f` for `x`, `y` and `z`, `0` for `pedTarget`, `vehicleTarget`, `0` for other int parameters, and `-1.0f` for the remaining float parameters.
+--- 
+--- ```cpp
+--- enum eHeliMissionFlags
+--- {
+---   None = 0,
+---   AttainRequestedOrientation = 1,
+---   DontModifyOrientation = 2,
+---   DontModifyPitch = 4,
+---   DontModifyThrottle = 8,
+---   DontModifyRoll = 16,
+---   LandOnArrival = 32,
+---   DontDoAvoidance = 64,
+---   StartEngineImmediately = 128,
+---   ForceHeightMapAvoidance = 256,
+---   DontClampProbesToDestination = 512,
+---   EnableTimeslicingWhenPossible = 1024,
+---   CircleOppositeDirection = 2048,
+---   MaintainHeightAboveTerrain = 4096,
+---   IgnoreHiddenEntitiesDuringLand = 8192,
+---   DisableAllHeightMapAvoidance = 16384,
+---   // ForceHeightMapAvoidance | DontDoAvoidance
+---   HeightMapOnlyAvoidance = 320,
+--- }
 --- ```
---- Needs more research.
---- Default value of p13 is -1.0 or 0xBF800000.
---- Default value of p14 is 0.
---- Modified examples from "fm_mission_controller.ysc", line ~203551:
---- TASK::TASK_HELI_MISSION(ped, vehicle, 0, 0, posX, posY, posZ, 4, 1.0, -1.0, -1.0, 10, 10, 5.0, 0);
---- TASK::TASK_HELI_MISSION(ped, vehicle, 0, 0, posX, posY, posZ, 4, 1.0, -1.0, -1.0, 0, ?, 5.0, 4096);
---- int mode seams to set mission type 4 = coords target, 23 = ped target.
---- int 14 set to 32 = ped will land at destination.
---- My findings:
---- mode 4 or 7 forces heli to snap to the heading set
---- 8 makes the heli flee from the ped.
---- 9 circles around ped with angle set
---- 10, 11 normal + imitate ped heading
---- 20 makes the heli land when he's near the ped. It won't resume chasing.
---- 21 emulates an helicopter crash
---- 23 makes the heli circle erratically around ped
---- I change p2 to 'vehicleToFollow' as it seems to work like the task natives to set targets. In the heli_taxi script where as the merryweather heli takes you to your waypoint it has no need to follow a vehicle or a ped, so of course both have 0 set.
---- ```
----
+--- @usage local heli_model = `akula`
+--- RequestModel(heli_model)
+--- repeat Wait(0) until HasModelLoaded(heli_model)
+--- 
+--- -- Player needs to be outside for this to work
+--- local ped = PlayerPedId()
+--- local coords = GetEntityCoords(ped) + GetEntityForwardVector(ped) * 100.0
+--- local heli = CreateVehicle(heli_model, coords.x, coords.y, coords.z + 50.0, GetEntityHeading(ped) - 180.0, true, false)
+--- -- Allow the game engine to clear the model from memory
+--- SetModelAsNoLongerNeeded(heli_model)
+--- SetHeliBladesFullSpeed(heli)
+--- 
+--- local ped_model = `a_m_m_skater_01`
+--- RequestModel(ped_model)
+--- repeat Wait(0) until HasModelLoaded(ped_model)
+--- 
+--- local pilot = CreatePedInsideVehicle(heli, 0, ped_model, -1, true, false)
+--- -- Allow the game engine to clear the model from memory
+--- SetModelAsNoLongerNeeded(ped_model)
+--- 
+--- TaskHeliMission(pilot, heli, 0, 0, coords.x, coords.y, coords.z, 19, 10.0, -1.0, -1.0, -1.0, -1.0, -1.0, 96)
+--- -- Mission Type: Land | Mission Flags: LandOnArrival | DontDoAvoidance
+--- SetPedKeepTask(pilot, true
 --- @hash [0xDAD029E187A2BEB4](https://docs.fivem.net/natives/?_0xDAD029E187A2BEB4)
---- @param pilot Ped
---- @param aircraft Vehicle
---- @param targetVehicle Vehicle
---- @param targetPed Ped
---- @param destinationX number (float)
---- @param destinationY number (float)
---- @param destinationZ number (float)
---- @param missionFlag number (int)
---- @param maxSpeed number (float)
---- @param landingRadius number (float)
---- @param targetHeading number (float)
---- @param unk1 number (int)
---- @param unk2 number (int)
---- @param unk3 number (float)
---- @param landingFlags number (int)
+--- @param ped Ped
+--- @param heli Vehicle
+--- @param vehicleTarget Vehicle
+--- @param pedTarget Ped
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param missionType number (int)
+--- @param speed number (float)
+--- @param radius number (float)
+--- @param heading number (float)
+--- @param height number (float)
+--- @param minHeight number (float)
+--- @param slowDist number (float)
+--- @param missionFlags number (int)
 --- @return void
---- @overload fun(pilot: Ped, aircraft: Vehicle, targetVehicle: Vehicle, targetPed: Ped, destinationX: number, destinationY: number, destinationZ: number, missionFlag: number, maxSpeed: number, landingRadius: number, targetHeading: number, unk1: number, unk2: number, unk3: number, landingFlags: number): void
-function TaskHeliMission(pilot, aircraft, targetVehicle, targetPed, destinationX, destinationY, destinationZ, missionFlag, maxSpeed, landingRadius, targetHeading, unk1, unk2, unk3, landingFlags) end
+--- @overload fun(ped: Ped, heli: Vehicle, vehicleTarget: Vehicle, pedTarget: Ped, x: number, y: number, z: number, missionType: number, speed: number, radius: number, heading: number, height: number, minHeight: number, slowDist: number, missionFlags: number): void
+function TaskHeliMission(ped, heli, vehicleTarget, pedTarget, x, y, z, missionType, speed, radius, heading, height, minHeight, slowDist, missionFlags) end
 
     
 --- RemoveAllCoverBlockingAreas
@@ -4687,8 +5068,57 @@ function N_0xe70ba7b90f8390dc(p0, p1, p2, p3) end
 function TaskPause(ped, ms) end
 
     
---- OpenSequenceTask
----
+--- ### NOTE
+--- 
+--- If this returns 0 that means it failed to get a sequence id.
+--- 
+--- If you fail to call [`CLOSE_SEQUENCE_TASK`](https://docs.fivem.net/natives/?_0x39E72BC99E6360CB) and [`CLEAR_SEQUENCE_TASK`](https://docs.fivem.net/natives/?_0x3841422E9C488D8C) the sequence system can get stuck in a broken state until you restart your client.
+--- @usage Citizen.CreateThread(function()
+---     local animDict = 'timetable@ron@ig_5_p3'
+--- 
+---     RequestAnimDict(animDict)
+---     while not HasAnimDictLoaded(animDict) do
+---         Wait(0)
+---     end
+--- 
+---     local ped = PlayerPedId()
+---     local pos = GetEntityCoords(ped)
+--- 
+---     -- you can change the model, but you might have to change the offsets below.
+---     local objModelHash = `prop_bench_01a`
+--- 
+---     local obj = GetClosestObjectOfType(pos.x, pos.y, pos.z, 5.0, objModelHash, false, false, false)
+---     if obj == 0 then
+---         print("No valid object within range!")
+---         return
+---     end
+--- 
+---     local tgtPos = GetOffsetFromEntityInWorldCoords(obj, 0.0, -0.7, 0.0)
+--- 
+---     -- open the task sequence so we can get our sequence id
+---     local sequence = OpenSequenceTask()
+--- 
+---     -- set our desired heading to be the same as the objects
+---     local desiredHeading = GetEntityHeading(obj) - 180.0
+--- 
+---     -- go to the entities offset
+---     TaskGoStraightToCoord(nil, tgtPos.x, tgtPos.y, tgtPos.z, 1.0, 4000, desiredHeading, 1.0)
+--- 
+---     -- sit on the bench indefinitely (you can change -1 here to however long you want to sit)
+---     TaskPlayAnim(nil, animDict, 'ig_5_p3_base', 8.0, 8.0, -1, 1)
+--- 
+---     -- close the sequence so we can perform it
+---     CloseSequenceTask(sequence)
+--- 
+---     -- perform the sequence, this will not work if the sequence is still open.
+---     TaskPerformSequence(ped, sequence)
+--- 
+---     -- free the sequence slot so it can be re-used
+---     ClearSequenceTask(sequence)
+--- 
+---     -- cleanup the animation dict so the engine can remove it when its no longer needed
+---     RemoveAnimDict(animDict)
+--- end
 --- @hash [0xE8854A4326B9E12B](https://docs.fivem.net/natives/?_0xE8854A4326B9E12B)
 --- @param taskSequenceId number (int*)
 --- @return void
@@ -4698,52 +5128,41 @@ function OpenSequenceTask(taskSequenceId) end
     
 --- [Animations list](https://alexguirre.github.io/animations-list/)
 --- 
---- ```
---- float blendInSpeed > normal speed is 8.0f
---- ----------------------  
---- float blendOutSpeed > normal speed is 8.0f
---- ----------------------  
---- int duration: time in millisecond  
---- ----------------------  
---- -1 _ _ _ _ _ _ _> Default (see flag)  
---- 0 _ _ _ _ _ _ _ > Not play at all  
---- Small value _ _ > Slow down animation speed  
---- Other _ _ _ _ _ > freeze player control until specific time (ms) has   
---- _ _ _ _ _ _ _ _ _ passed. (No effect if flag is set to be   
---- _ _ _ _ _ _ _ _ _ controllable.)  
---- int flag:  
---- ----------------------  
---- enum eAnimationFlags  
---- {  
----  ANIM_FLAG_NORMAL = 0,  
----    ANIM_FLAG_REPEAT = 1,  
----    ANIM_FLAG_STOP_LAST_FRAME = 2,  
----    ANIM_FLAG_UPPERBODY = 16,  
----    ANIM_FLAG_ENABLE_PLAYER_CONTROL = 32,  
----    ANIM_FLAG_CANCELABLE = 120,  
---- };  
---- Odd number : loop infinitely  
---- Even number : Freeze at last frame  
---- Multiple of 4: Freeze at last frame but controllable  
---- 01 to 15 > Full body  
---- 10 to 31 > Upper body  
---- 32 to 47 > Full body > Controllable  
---- 48 to 63 > Upper body > Controllable  
---- ...  
---- 001 to 255 > Normal  
---- 256 to 511 > Garbled  
---- ...  
---- playbackRate:  
---- values are between 0.0 and 1.0  
---- lockX:    
---- 0 in most cases 1 for rcmepsilonism8 and rcmpaparazzo_3  
---- > 1 for mini@sprunk  
---- lockY:  
---- 0 in most cases   
---- 1 for missfam5_yoga, missfra1mcs_2_crew_react  
---- lockZ:   
----     0 for single player   
----     Can be 1 but only for MP  
+--- ```cpp
+--- enum eScriptedAnimFlags
+--- {
+---     AF_LOOPING = 1,
+---     AF_HOLD_LAST_FRAME = 2,
+---     AF_REPOSITION_WHEN_FINISHED = 4,
+---     AF_NOT_INTERRUPTABLE = 8,
+---     AF_UPPERBODY = 16,
+---     AF_SECONDARY = 32,
+---     AF_REORIENT_WHEN_FINISHED = 64,
+---     AF_ABORT_ON_PED_MOVEMENT = 128,
+---     AF_ADDITIVE = 256,
+---     AF_TURN_OFF_COLLISION = 512,
+---     AF_OVERRIDE_PHYSICS = 1024,
+---     AF_IGNORE_GRAVITY = 2048,
+---     AF_EXTRACT_INITIAL_OFFSET = 4096,
+---     AF_EXIT_AFTER_INTERRUPTED = 8192,
+---     AF_TAG_SYNC_IN = 16384,
+---     AF_TAG_SYNC_OUT = 32768,
+---     AF_TAG_SYNC_CONTINUOUS = 65536,
+---     AF_FORCE_START = 131072,
+---     AF_USE_KINEMATIC_PHYSICS = 262144,
+---     AF_USE_MOVER_EXTRACTION = 524288,
+---     AF_HIDE_WEAPON = 1048576,
+---     AF_ENDS_IN_DEAD_POSE = 2097152,
+---     AF_ACTIVATE_RAGDOLL_ON_COLLISION = 4194304,
+---     AF_DONT_EXIT_ON_DEATH = 8388608,
+---     AF_ABORT_ON_WEAPON_DAMAGE = 16777216,
+---     AF_DISABLE_FORCED_PHYSICS_UPDATE = 33554432,
+---     AF_PROCESS_ATTACHMENTS_ON_START = 67108864,
+---     AF_EXPAND_PED_CAPSULE_FROM_SKELETON = 134217728,
+---     AF_USE_ALTERNATIVE_FP_ANIM = 268435456,
+---     AF_BLENDOUT_WRT_LAST_FRAME = 536870912,
+---     AF_USE_FULL_BLENDING = 1073741824
+--- }
 --- ```
 ---
 --- @hash [0xEA47FE3719165B94](https://docs.fivem.net/natives/?_0xEA47FE3719165B94)
@@ -4922,23 +5341,47 @@ function StopAnimPlayback(ped, p1, p2) end
 function TaskSynchronizedScene(ped, scene, animDictionary, animationName, speed, speedMultiplier, duration, flag, playbackRate, p9) end
 
     
---- See [`TASK_VEHICLE_MISSION`](https://docs.fivem.net/natives/?_0x659427E0EF36BCDE).
----
+--- All parameters except ped, vehicle, x, y, z and speed are optional; with `missionType` being only those that don't require a target entity.
+--- 
+--- If you don't want to use a parameter; pass `0` for int parameters, and `-1.0f` for the remaining float parameters.
+--- @usage local vehicle_model = `adder`
+--- RequestModel(vehicle_model)
+--- repeat Wait(0) until HasModelLoaded(vehicle_model)
+--- 
+--- local ped = PlayerPedId()
+--- local coords = GetEntityCoords(ped)
+--- local spawn_coords = coords - GetEntityForwardVector(ped) * 15.0
+--- local vehicle = CreateVehicle(vehicle_model, spawn_coords.x, spawn_coords.y, spawn_coords.z, GetEntityHeading(ped), true, false)
+--- 
+--- -- Allow the game engine to clear the model from memory
+--- SetModelAsNoLongerNeeded(vehicle_model)
+--- 
+--- local ped_model = `a_m_m_skater_01`
+--- RequestModel(ped_model)
+--- repeat Wait(0) until HasModelLoaded(ped_model)
+--- 
+--- local driver = CreatePedInsideVehicle(vehicle, 0, ped_model, -1, true, false)
+--- -- Allow the game engine to clear the model from memory
+--- SetModelAsNoLongerNeeded(ped_model)
+--- 
+--- TaskVehicleMissionCoorsTarget(driver, vehicle, coords.x, coords.y, coords.z, 8, 35.0, 786468, -1.0, -1.0, true)
+--- -- Mission Type: Flee | Drive Style: DrivingModeAvoidVehiclesReckless
+--- SetPedKeepTask(driver, true
 --- @hash [0xF0AF20AA7731F8C3](https://docs.fivem.net/natives/?_0xF0AF20AA7731F8C3)
 --- @param ped Ped
 --- @param vehicle Vehicle
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param p5 number (int)
---- @param p6 number (int)
---- @param p7 number (int)
---- @param p8 number (float)
---- @param p9 number (float)
+--- @param missionType number (int)
+--- @param speed number (float)
+--- @param drivingStyle number (int)
+--- @param radius number (float)
+--- @param straightLineDist number (float)
 --- @param DriveAgainstTraffic boolean
 --- @return void
---- @overload fun(ped: Ped, vehicle: Vehicle, x: number, y: number, z: number, p5: number, p6: number, p7: number, p8: number, p9: number, DriveAgainstTraffic: boolean): void
-function TaskVehicleMissionCoorsTarget(ped, vehicle, x, y, z, p5, p6, p7, p8, p9, DriveAgainstTraffic) end
+--- @overload fun(ped: Ped, vehicle: Vehicle, x: number, y: number, z: number, missionType: number, speed: number, drivingStyle: number, radius: number, straightLineDist: number, DriveAgainstTraffic: boolean): void
+function TaskVehicleMissionCoorsTarget(ped, vehicle, x, y, z, missionType, speed, drivingStyle, radius, straightLineDist, DriveAgainstTraffic) end
 
     
 --- IsMoveBlendRatioWalking
@@ -5104,18 +5547,7 @@ function TaskPlaneGotoPreciseVtol(ped, vehicle, p2, p3, p4, p5, p6, p7, p8, p9) 
 function DoesScenarioGroupExist(scenarioGroup) end
 
     
---- ```
---- Also a few more listed at TASK::TASK_START_SCENARIO_IN_PLACE just above.
---- ---------------
---- The first parameter in every scenario has always been a Ped of some sort. The second like TASK_START_SCENARIO_IN_PLACE is the name of the scenario.
---- The next 4 parameters were harder to decipher. After viewing "hairdo_shop_mp.ysc.c4", and being confused from seeing the case in other scripts, they passed the first three of the arguments as one array from a function, and it looked like it was obviously x, y, and z.
---- I haven't seen the sixth parameter go to or over 360, making me believe that it is rotation, but I really can't confirm anything.
---- I have no idea what the last 3 parameters are, but I'll try to find out.
---- -going on the last 3 parameters, they appear to always be "0, 0, 1"
---- p6 -1 also used in scrips
---- p7 used for sitting scenarios
---- p8 teleports ped to position
---- ```
+--- The ped will move or warp to the position and heading given, then start the scenario passed. See [`TASK_START_SCENARIO_IN_PLACE`](https://docs.fivem.net/natives/?_0x142A02425FF02BD9) for a list of scenarios.
 ---
 --- @hash [0xFA4EFC79F69D4F07](https://docs.fivem.net/natives/?_0xFA4EFC79F69D4F07)
 --- @param ped Ped
@@ -5124,12 +5556,12 @@ function DoesScenarioGroupExist(scenarioGroup) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param heading number (float)
---- @param duration number (int)
---- @param sittingScenario boolean
---- @param teleport boolean
+--- @param timeToLeave number (int)
+--- @param playIntro boolean
+--- @param warp boolean
 --- @return void
---- @overload fun(ped: Ped, scenarioName: string, x: number, y: number, z: number, heading: number, duration: number, sittingScenario: boolean, teleport: boolean): void
-function TaskStartScenarioAtPosition(ped, scenarioName, x, y, z, heading, duration, sittingScenario, teleport) end
+--- @overload fun(ped: Ped, scenarioName: string, x: number, y: number, z: number, heading: number, timeToLeave: number, playIntro: boolean, warp: boolean): void
+function TaskStartScenarioAtPosition(ped, scenarioName, x, y, z, heading, timeToLeave, playIntro, warp) end
 
     
 --- ```

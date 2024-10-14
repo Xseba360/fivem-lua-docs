@@ -942,6 +942,53 @@ function N_0x1312ddd8385aee4e(p0, p1) end
 
     
 --- ```
+--- NativeDB Introduced: v3258
+--- ```
+--- 
+--- **Note**: When using this native, the hash of the vehicle needs to be loaded into the client's memory. This can be done by requesting the model with [`REQUEST_MODEL`](https://docs.fivem.net/natives/?_0x963D27A58DF860AC) or by simply having the vehicle spawned.
+--- 
+--- ```cpp
+--- 
+--- enum eVehicleDrivetrainType
+--- {
+---     INVALID = 0,
+---     FWD = 1,
+---     RWD = 2,
+---     AWD = 3
+--- };
+--- ```
+--- 
+--- ```
+--- NativeDB Introduced: v3258
+--- ```
+--- @usage local vehicleHash = GetHashKey("elegy")
+--- RequestModel(vehicleHash)
+--- repeat
+---     Wait(0)
+--- until HasModelLoaded(vehicleHash)
+--- 
+--- local driveTrainType = GetVehicleDriveTrainType(vehicleHash)
+--- 
+--- if driveTrainType == 1 then
+---     -- FWD
+---     print(GetLabelText("FMMC_DT_FWD"))
+--- elseif driveTrainType == 2 then
+---     -- RWD
+---     print(GetLabelText("FMMC_DT_RWD"))
+--- elseif driveTrainType == 3 then
+---     -- AWD
+---     print(GetLabelText("FMMC_DT_AWD"))
+--- else
+---     print("invalid")
+--- en
+--- @hash [0x1423725069EE1D14](https://docs.fivem.net/natives/?_0x1423725069EE1D14)
+--- @param vehicleModel Hash
+--- @return number
+--- @overload fun(vehicleModel: Hash): number
+function GetVehicleDrivetrainType(vehicleModel) end
+
+    
+--- ```
 --- NativeDB Introduced: v1604
 --- ```
 ---
@@ -1130,60 +1177,148 @@ function SetVehicleCanLeakPetrol(vehicle, toggle) end
 function N_0x192547247864dfdd(vehicle, toggle) end
 
     
---- SetConvertibleRoofLatchState
----
+--- ```
+--- NativeDB Introduced: v3095
+--- ```
+--- 
+--- Enables or disables the use of the vehicle's horn button for activating the nitrous system.
+--- @usage -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle the player is currently in. 
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if vehicle == 0 then return end
+--- 
+--- -- Enable activating nitrous in the vehicle using the horn button.
+--- SetVehicleUseHornButtonForNitrous(vehicle, true
+--- @hash [0x1980F68872CC2C3D](https://docs.fivem.net/natives/?_0x1980F68872CC2C3D)
+--- @param vehicle Vehicle
+--- @param bToggle boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, bToggle: boolean): void
+function SetVehicleUseHornButtonForNitrous(vehicle, bToggle) end
+
+    
+--- ```
+--- NativeDB Introduced: v3095
+--- ```
+--- 
+--- Recharges the nitrous system of the specified vehicle to its maximum capacity. This action sets the nitrous charge duration to the maximum limit defined by previous settings applied through [`SET_OVERRIDE_NITROUS_LEVEL`](https://docs.fivem.net/natives/?_0xC8E9B6B71B8E660D).
+--- @usage -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle the player is currently in. 
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if vehicle == 0 then return end
+--- 
+--- -- Set nitrous modifications with SET_OVERRIDE_NITROUS_LEVEL since this native require a durationMod to be specified.
+--- SetOverrideNitrousLevel(vehicle, true, 1.5, 2.0, 0.5, false)
+--- 
+--- -- After setting the modifiers, fully recharge the nitrous system to the new max defined.
+--- FullyChargeNitrous(vehicle
+--- @hash [0x1A2BCC8C636F9226](https://docs.fivem.net/natives/?_0x1A2BCC8C636F9226)
+--- @param vehicle Vehicle
+--- @return void
+--- @overload fun(vehicle: Vehicle): void
+function FullyChargeNitrous(vehicle) end
+
+    
+--- This native is used to latch or unlatch the convertible roof of a vehicle. It allows for direct control over the roof's mechanism without actually opening or closing the roof. This can be useful for scenarios where you need to prepare a vehicle's roof to be opened or closed by another action or to ensure it remains fixed in its current state regardless of other interactions.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage -- To latch (lock) the convertible roof, preventing it from being opened
+--- local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not DoesVehicleHaveRoof(vehicle) then return end
+--- SetConvertibleRoofLatchState(vehicle, true
 --- @hash [0x1A78AD3D8240536F](https://docs.fivem.net/natives/?_0x1A78AD3D8240536F)
 --- @param vehicle Vehicle
---- @param state boolean
+--- @param bLatched boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, state: boolean): void
-function SetConvertibleRoofLatchState(vehicle, state) end
+--- @overload fun(vehicle: Vehicle, bLatched: boolean): void
+function SetConvertibleRoofLatchState(vehicle, bLatched) end
 
     
 --- # New Name: SetConvertibleRoofLatchState
---- SetConvertibleRoofLatchState
----
+--- This native is used to latch or unlatch the convertible roof of a vehicle. It allows for direct control over the roof's mechanism without actually opening or closing the roof. This can be useful for scenarios where you need to prepare a vehicle's roof to be opened or closed by another action or to ensure it remains fixed in its current state regardless of other interactions.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage -- To latch (lock) the convertible roof, preventing it from being opened
+--- local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not DoesVehicleHaveRoof(vehicle) then return end
+--- SetConvertibleRoofLatchState(vehicle, true
 --- @hash [0x1A78AD3D8240536F](https://docs.fivem.net/natives/?_0x1A78AD3D8240536F)
 --- @param vehicle Vehicle
---- @param state boolean
+--- @param bLatched boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, state: boolean): void
+--- @overload fun(vehicle: Vehicle, bLatched: boolean): void
 --- @deprecated
-function N_0x1a78ad3d8240536f(vehicle, state) end
+function N_0x1a78ad3d8240536f(vehicle, bLatched) end
 
     
---- SetVehicleHasUnbreakableLights
----
+--- Sets whether the vehicle's lights can be broken.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not vehicle then return end
+--- 
+--- -- Make the vehicle's lights unbreakable
+--- SetVehicleHasUnbreakableLights(vehicle, true
 --- @hash [0x1AA8A837D2169D94](https://docs.fivem.net/natives/?_0x1AA8A837D2169D94)
 --- @param vehicle Vehicle
---- @param p1 boolean
+--- @param toggle boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, p1: boolean): void
-function SetVehicleHasUnbreakableLights(vehicle, p1) end
-
-    
---- # New Name: SetVehicleHasUnbreakableLights
---- SetVehicleHasUnbreakableLights
----
---- @hash [0x1AA8A837D2169D94](https://docs.fivem.net/natives/?_0x1AA8A837D2169D94)
---- @param vehicle Vehicle
---- @param p1 boolean
---- @return void
---- @overload fun(vehicle: Vehicle, p1: boolean): void
---- @deprecated
-function N_0x1aa8a837d2169d94(vehicle, p1) end
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+function SetVehicleHasUnbreakableLights(vehicle, toggle) end
 
     
 --- # New Name: SetVehicleHasUnbreakableLights
---- SetVehicleHasUnbreakableLights
----
+--- Sets whether the vehicle's lights can be broken.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not vehicle then return end
+--- 
+--- -- Make the vehicle's lights unbreakable
+--- SetVehicleHasUnbreakableLights(vehicle, true
 --- @hash [0x1AA8A837D2169D94](https://docs.fivem.net/natives/?_0x1AA8A837D2169D94)
 --- @param vehicle Vehicle
---- @param p1 boolean
+--- @param toggle boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, p1: boolean): void
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
 --- @deprecated
-function SetVehicleLightsCanBeVisiblyDamaged(vehicle, p1) end
+function N_0x1aa8a837d2169d94(vehicle, toggle) end
+
+    
+--- # New Name: SetVehicleHasUnbreakableLights
+--- Sets whether the vehicle's lights can be broken.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not vehicle then return end
+--- 
+--- -- Make the vehicle's lights unbreakable
+--- SetVehicleHasUnbreakableLights(vehicle, true
+--- @hash [0x1AA8A837D2169D94](https://docs.fivem.net/natives/?_0x1AA8A837D2169D94)
+--- @param vehicle Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, toggle: boolean): void
+--- @deprecated
+function SetVehicleLightsCanBeVisiblyDamaged(vehicle, toggle) end
 
     
 --- Enables or disables the opening of a vehicle's rear doors in the event of a sticky bomb explosion. This native is effective for armored vehicles, such as the Stockade (Brinks vehicle), allowing the rear doors to be opened through controlled explosions, which might otherwise remain locked due to the vehicle nature.
@@ -1565,38 +1700,119 @@ function SetVehicleActAsIfHighSpeedForFragSmashing(vehicle, actHighSpeed) end
 function N_0x1f9fb66f3a3842d2(vehicle, actHighSpeed) end
 
     
+--- Checks if the vehicle is electric.
+--- 
 --- ```
---- p1 can be either 0, 1 or 2.  
---- Determines how vehicle lights behave when toggled.  
---- 0 = Default (Lights can be toggled between off, normal and high beams)  
---- 1 = Lights Disabled (Lights are fully disabled, cannot be toggled)  
---- 2 = Always On (Lights can be toggled between normal and high beams)  
+--- NativeDB Introduced: v3258
 --- ```
----
---- @hash [0x1FD09E7390A74D54](https://docs.fivem.net/natives/?_0x1FD09E7390A74D54)
---- @param vehicle Vehicle
---- @param p1 number (int)
---- @return void
---- @overload fun(vehicle: Vehicle, p1: number): void
-function SetVehicleLightsMode(vehicle, p1) end
+--- @usage local veh = GetVehiclePedIsIn(PlayerPedId(), false)
+--- -- GetVehiclePedIsIn will return 0 if the ped isn't currently in a vehicle
+--- if veh == 0 then return end
+--- local model = GetEntityModel(veh)
+--- if GetIsVehicleElectric(model) then
+---     print("This vehicle is electric")
+--- else
+---     print("This vehicle is not electric")
+--- en
+--- @hash [0x1FCB07FE230B6639](https://docs.fivem.net/natives/?_0x1FCB07FE230B6639)
+--- @param vehicleModel Hash
+--- @return boolean
+--- @overload fun(vehicleModel: Hash): boolean
+function GetIsVehicleElectric(vehicleModel) end
 
     
---- # New Name: SetVehicleLightsMode
+--- Sets the vehicle headlight shadow flags.
+--- 
 --- ```
---- p1 can be either 0, 1 or 2.  
---- Determines how vehicle lights behave when toggled.  
---- 0 = Default (Lights can be toggled between off, normal and high beams)  
---- 1 = Lights Disabled (Lights are fully disabled, cannot be toggled)  
---- 2 = Always On (Lights can be toggled between normal and high beams)  
+--- NativeDB Introduced: v323
 --- ```
----
+--- 
+--- ```cpp
+--- enum eVehicleHeadlightShadowFlags {
+---     // Default (Lights can be toggled between off, normal and high beams)
+---     NO_HEADLIGHT_SHADOWS = 0,
+---     // Lights Disabled (Lights are fully disabled, cannot be toggled)
+---     HEADLIGHTS_CAST_DYNAMIC_SHADOWS = 1,
+---     // Always On (Lights can be toggled between normal and high beams)
+---     HEADLIGHTS_CAST_STATIC_SHADOWS = 2,
+---     HEADLIGHTS_CAST_FULL_SHADOWS = 3 
+--- };
+--- ```
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not vehicle then return end
+--- 
+--- -- Set the vehicle headlight shadows to cast static shadows (always on)
+--- SetVehicleHeadlightShadows(vehicle, 2
 --- @hash [0x1FD09E7390A74D54](https://docs.fivem.net/natives/?_0x1FD09E7390A74D54)
 --- @param vehicle Vehicle
---- @param p1 number (int)
+--- @param flag number (int)
 --- @return void
---- @overload fun(vehicle: Vehicle, p1: number): void
+--- @overload fun(vehicle: Vehicle, flag: number): void
+function SetVehicleHeadlightShadows(vehicle, flag) end
+
+    
+--- # New Name: SetVehicleHeadlightShadows
+--- Sets the vehicle headlight shadow flags.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- 
+--- ```cpp
+--- enum eVehicleHeadlightShadowFlags {
+---     // Default (Lights can be toggled between off, normal and high beams)
+---     NO_HEADLIGHT_SHADOWS = 0,
+---     // Lights Disabled (Lights are fully disabled, cannot be toggled)
+---     HEADLIGHTS_CAST_DYNAMIC_SHADOWS = 1,
+---     // Always On (Lights can be toggled between normal and high beams)
+---     HEADLIGHTS_CAST_STATIC_SHADOWS = 2,
+---     HEADLIGHTS_CAST_FULL_SHADOWS = 3 
+--- };
+--- ```
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not vehicle then return end
+--- 
+--- -- Set the vehicle headlight shadows to cast static shadows (always on)
+--- SetVehicleHeadlightShadows(vehicle, 2
+--- @hash [0x1FD09E7390A74D54](https://docs.fivem.net/natives/?_0x1FD09E7390A74D54)
+--- @param vehicle Vehicle
+--- @param flag number (int)
+--- @return void
+--- @overload fun(vehicle: Vehicle, flag: number): void
 --- @deprecated
-function N_0x1fd09e7390a74d54(vehicle, p1) end
+function N_0x1fd09e7390a74d54(vehicle, flag) end
+
+    
+--- # New Name: SetVehicleHeadlightShadows
+--- Sets the vehicle headlight shadow flags.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- 
+--- ```cpp
+--- enum eVehicleHeadlightShadowFlags {
+---     // Default (Lights can be toggled between off, normal and high beams)
+---     NO_HEADLIGHT_SHADOWS = 0,
+---     // Lights Disabled (Lights are fully disabled, cannot be toggled)
+---     HEADLIGHTS_CAST_DYNAMIC_SHADOWS = 1,
+---     // Always On (Lights can be toggled between normal and high beams)
+---     HEADLIGHTS_CAST_STATIC_SHADOWS = 2,
+---     HEADLIGHTS_CAST_FULL_SHADOWS = 3 
+--- };
+--- ```
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not vehicle then return end
+--- 
+--- -- Set the vehicle headlight shadows to cast static shadows (always on)
+--- SetVehicleHeadlightShadows(vehicle, 2
+--- @hash [0x1FD09E7390A74D54](https://docs.fivem.net/natives/?_0x1FD09E7390A74D54)
+--- @param vehicle Vehicle
+--- @param flag number (int)
+--- @return void
+--- @overload fun(vehicle: Vehicle, flag: number): void
+--- @deprecated
+function SetVehicleLightsMode(vehicle, flag) end
 
     
 --- ```
@@ -1906,32 +2122,68 @@ function SetVehicleEngineOn(vehicle, value, instantly, disableAutoStart) end
 function GetVehicleNumberOfPassengers(vehicle) end
 
     
---- ```
---- Differs from 0x26C10ECBDA5D043B in that 0x140EFCC10 (1604 retail) is called with a2 = true.
+--- Checks if a boat can be anchored at its present position, ignoring any players standing on the boat.
 --- 
+--- ```
 --- NativeDB Introduced: v678
 --- ```
----
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- if CanAnchorBoatHereIgnorePlayers(boat) then
+---     print("It's safe to anchor the boat here, ignoring players on the boat")
+--- else
+---     print("It's not safe to anchor the boat at this location, even ignoring players")
+--- en
 --- @hash [0x24F4121D07579880](https://docs.fivem.net/natives/?_0x24F4121D07579880)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
-function CanAnchorBoatHere_2(vehicle) end
+--- @overload fun(boat: Vehicle): boolean
+function CanAnchorBoatHereIgnorePlayers(boat) end
 
     
---- # New Name: CanAnchorBoatHere_2
---- ```
---- Differs from 0x26C10ECBDA5D043B in that 0x140EFCC10 (1604 retail) is called with a2 = true.
+--- # New Name: CanAnchorBoatHereIgnorePlayers
+--- Checks if a boat can be anchored at its present position, ignoring any players standing on the boat.
 --- 
+--- ```
 --- NativeDB Introduced: v678
 --- ```
----
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- if CanAnchorBoatHereIgnorePlayers(boat) then
+---     print("It's safe to anchor the boat here, ignoring players on the boat")
+--- else
+---     print("It's not safe to anchor the boat at this location, even ignoring players")
+--- en
 --- @hash [0x24F4121D07579880](https://docs.fivem.net/natives/?_0x24F4121D07579880)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
+--- @overload fun(boat: Vehicle): boolean
 --- @deprecated
-function CanBoatBeAnchored_2(vehicle) end
+function CanBoatBeAnchored_2(boat) end
+
+    
+--- # New Name: CanAnchorBoatHereIgnorePlayers
+--- Checks if a boat can be anchored at its present position, ignoring any players standing on the boat.
+--- 
+--- ```
+--- NativeDB Introduced: v678
+--- ```
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- if CanAnchorBoatHereIgnorePlayers(boat) then
+---     print("It's safe to anchor the boat here, ignoring players on the boat")
+--- else
+---     print("It's not safe to anchor the boat at this location, even ignoring players")
+--- en
+--- @hash [0x24F4121D07579880](https://docs.fivem.net/natives/?_0x24F4121D07579880)
+--- @param boat Vehicle
+--- @return boolean
+--- @overload fun(boat: Vehicle): boolean
+--- @deprecated
+function CanAnchorBoatHere_2(boat) end
 
     
 --- SetDisablePretendOccupants
@@ -1956,18 +2208,7 @@ function SetDisablePretendOccupants(vehicle, toggle) end
 function N_0x25367de49d64cf16(vehicle, toggle) end
 
     
---- ```
---- enum VehicleLockStatus = {
----     None = 0,
----     Unlocked = 1,
----     Locked = 2,
----     LockedForPlayer = 3,
----     StickPlayerInside = 4, -- Doesn't allow players to exit the vehicle with the exit vehicle key.
----     CanBeBrokenInto = 7, -- Can be broken into the car. If the glass is broken, the value will be set to 1
----     CanBeBrokenIntoPersist = 8, -- Can be broken into persist
----     CannotBeTriedToEnter = 10, -- Cannot be tried to enter (Nothing happens when you press the vehicle enter key).
---- }
---- ```
+--- GetVehicleDoorLockStatus
 ---
 --- @hash [0x25BC98A59C2EA962](https://docs.fivem.net/natives/?_0x25BC98A59C2EA962)
 --- @param vehicle Vehicle
@@ -2034,46 +2275,90 @@ function SetVehicleHalt(vehicle, distance, duration, bControlVerticalVelocity) e
 function SetFarDrawVehicles(toggle) end
 
     
---- CanAnchorBoatHere
----
+--- Checks if a boat can be anchored at its present position without possibly intersecting collision later.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- if CanAnchorBoatHere(boat) then
+---     print("It's safe to anchor the boat here")
+--- else
+---     print("It's not safe to anchor the boat at this location")
+--- en
 --- @hash [0x26C10ECBDA5D043B](https://docs.fivem.net/natives/?_0x26C10ECBDA5D043B)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
-function CanAnchorBoatHere(vehicle) end
+--- @overload fun(boat: Vehicle): boolean
+function CanAnchorBoatHere(boat) end
 
     
 --- # New Name: CanAnchorBoatHere
---- CanAnchorBoatHere
----
+--- Checks if a boat can be anchored at its present position without possibly intersecting collision later.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- if CanAnchorBoatHere(boat) then
+---     print("It's safe to anchor the boat here")
+--- else
+---     print("It's not safe to anchor the boat at this location")
+--- en
 --- @hash [0x26C10ECBDA5D043B](https://docs.fivem.net/natives/?_0x26C10ECBDA5D043B)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
+--- @overload fun(boat: Vehicle): boolean
 --- @deprecated
-function N_0x2467a2d807d37ca3(vehicle) end
+function N_0x2467a2d807d37ca3(boat) end
 
     
 --- # New Name: CanAnchorBoatHere
---- CanAnchorBoatHere
----
+--- Checks if a boat can be anchored at its present position without possibly intersecting collision later.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- if CanAnchorBoatHere(boat) then
+---     print("It's safe to anchor the boat here")
+--- else
+---     print("It's not safe to anchor the boat at this location")
+--- en
 --- @hash [0x26C10ECBDA5D043B](https://docs.fivem.net/natives/?_0x26C10ECBDA5D043B)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
+--- @overload fun(boat: Vehicle): boolean
 --- @deprecated
-function GetBoatAnchor(vehicle) end
+function GetBoatAnchor(boat) end
 
     
 --- # New Name: CanAnchorBoatHere
---- CanAnchorBoatHere
----
+--- Checks if a boat can be anchored at its present position without possibly intersecting collision later.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- if CanAnchorBoatHere(boat) then
+---     print("It's safe to anchor the boat here")
+--- else
+---     print("It's not safe to anchor the boat at this location")
+--- en
 --- @hash [0x26C10ECBDA5D043B](https://docs.fivem.net/natives/?_0x26C10ECBDA5D043B)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
+--- @overload fun(boat: Vehicle): boolean
 --- @deprecated
-function CanBoatBeAnchored(vehicle) end
+function CanBoatBeAnchored(boat) end
 
     
 --- Disables the additional physics forces applied to BMX bikes that enable them to perform tricks.
@@ -2353,9 +2638,7 @@ function IsAnyPassengerRappelingFromVehicle(vehicle) end
 function GetVehicleClass(vehicle) end
 
     
---- ```
---- Is this for red lights only?  more testing required.
---- ```
+--- This native checks if the given vehicle is stopped at a red or amber traffic light junction, provided the driver's personality is set to not run amber lights.
 ---
 --- @hash [0x2959F696AE390A99](https://docs.fivem.net/natives/?_0x2959F696AE390A99)
 --- @param vehicle Vehicle
@@ -2441,7 +2724,9 @@ function SetVehicleWheelsCanBreak(vehicle, enabled) end
 function StartPlaybackRecordedVehicleUsingAi(vehicle, recording, script, speed, drivingStyle) end
 
     
---- ToggleVehicleMod
+--- Enables or disables a vehicle mod by index (`modType`) for a given vehicle.
+--- 
+--- `eVehicleModType` enum, used for `modType` index can be found under [`SET_VEHICLE_MOD`](https://docs.fivem.net/natives/?_0x6AF0636DDEDCB6DD).
 ---
 --- @hash [0x2A1F4F37F95BAD08](https://docs.fivem.net/natives/?_0x2A1F4F37F95BAD08)
 --- @param vehicle Vehicle
@@ -3135,18 +3420,34 @@ function N_0x3441cad2f2231923(vehicle, p1) end
 function SetAllVehicleGeneratorsActive() end
 
     
+--- Sets the vehicle lights state. Allowing for different lighting modes.
+--- 
 --- ```
---- set's if the vehicle has lights or not.  
---- not an on off toggle.  
---- p1 = 0 ;vehicle normal lights, off then lowbeams, then highbeams  
---- p1 = 1 ;vehicle doesn't have lights, always off  
---- p1 = 2 ;vehicle has always on lights  
---- p1 = 3 ;or even larger like 4,5,... normal lights like =1  
---- note1: when using =2 on day it's lowbeam,highbeam  
---- but at night it's lowbeam,lowbeam,highbeam  
---- note2: when using =0 it's affected by day or night for highbeams don't exist in daytime.  
+--- NativeDB Introduced: v323
 --- ```
----
+--- 
+--- ```cpp
+--- enum eVehicleLightSetting {
+---     // Normal light behavior. Lights cycle through off, then low beams, then high beams.
+---     // Note: It's affected by day or night; high beams don't exist in daytime.
+---     NO_VEHICLE_LIGHT_OVERRIDE = 0,
+---     // Vehicle doesn't have lights, always off.
+---     FORCE_VEHICLE_LIGHTS_OFF  = 1, 
+---     // Vehicle has always-on lights.
+---     // During day: Cycles between low beams and high beams. 
+---     // At night: Cycles between low beams, low beams, and high beams.
+---     FORCE_VEHICLE_LIGHTS_ON   = 2,
+---     // Sets vehicle lights on. Behaves like normal lights (same as 0).
+---     SET_VEHICLE_LIGHTS_ON     = 3,
+---     // Sets vehicle lights off. Behaves like normal lights (same as 0).
+---     SET_VEHICLE_LIGHTS_OFF    = 4 
+--- };
+--- ```
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not vehicle then return end
+--- 
+--- -- Set the vehicle lights to always on
+--- SetVehicleLights(vehicle, 2
 --- @hash [0x34E710FF01247C5A](https://docs.fivem.net/natives/?_0x34E710FF01247C5A)
 --- @param vehicle Vehicle
 --- @param state number (int)
@@ -3634,26 +3935,24 @@ function IsVehicleParachuteActive(vehicle) end
 function N_0x3de51e9c80b116cf(vehicle) end
 
     
---- Returns the headlight color index from the vehicle. Value between 0, 12.
 --- Use [\_SET_VEHICLE_HEADLIGHTS_COLOUR](https://docs.fivem.net/natives/?_0xE41033B25D003A07) to set the headlights color for the vehicle.
---- Must enable xenon headlights before it'll take affect.
 --- 
---- List of colors and ids:
+--- You must enable xenon headlights for this native to work properly.
 --- 
---- ```
---- enum headlightColors {
----     Default = -1,
+--- ```cpp
+--- enum eHeadlightColors {
+---     Default = 255,
 ---     White = 0,
 ---     Blue = 1,
----     Electric_Blue = 2,
----     Mint_Green = 3,
----     Lime_Green = 4,
+---     ElectricBlue = 2,
+---     MintGreen = 3,
+---     LimeGreen = 4,
 ---     Yellow = 5,
----     Golden_Shower = 6,
+---     GoldenShower = 6,
 ---     Orange = 7,
 ---     Red = 8,
----     Pony_Pink = 9,
----     Hot_Pink = 10,
+---     PonyPink = 9,
+---     HotPink = 10,
 ---     Purple = 11,
 ---     Blacklight = 12
 --- }
@@ -3667,26 +3966,24 @@ function GetVehicleXenonLightsColor(vehicle) end
 
     
 --- # New Name: GetVehicleXenonLightsColor
---- Returns the headlight color index from the vehicle. Value between 0, 12.
 --- Use [\_SET_VEHICLE_HEADLIGHTS_COLOUR](https://docs.fivem.net/natives/?_0xE41033B25D003A07) to set the headlights color for the vehicle.
---- Must enable xenon headlights before it'll take affect.
 --- 
---- List of colors and ids:
+--- You must enable xenon headlights for this native to work properly.
 --- 
---- ```
---- enum headlightColors {
----     Default = -1,
+--- ```cpp
+--- enum eHeadlightColors {
+---     Default = 255,
 ---     White = 0,
 ---     Blue = 1,
----     Electric_Blue = 2,
----     Mint_Green = 3,
----     Lime_Green = 4,
+---     ElectricBlue = 2,
+---     MintGreen = 3,
+---     LimeGreen = 4,
 ---     Yellow = 5,
----     Golden_Shower = 6,
+---     GoldenShower = 6,
 ---     Orange = 7,
 ---     Red = 8,
----     Pony_Pink = 9,
----     Hot_Pink = 10,
+---     PonyPink = 9,
+---     HotPink = 10,
 ---     Purple = 11,
 ---     Blacklight = 12
 --- }
@@ -3701,26 +3998,24 @@ function N_0x3dff319a831e0cdb(vehicle) end
 
     
 --- # New Name: GetVehicleXenonLightsColor
---- Returns the headlight color index from the vehicle. Value between 0, 12.
 --- Use [\_SET_VEHICLE_HEADLIGHTS_COLOUR](https://docs.fivem.net/natives/?_0xE41033B25D003A07) to set the headlights color for the vehicle.
---- Must enable xenon headlights before it'll take affect.
 --- 
---- List of colors and ids:
+--- You must enable xenon headlights for this native to work properly.
 --- 
---- ```
---- enum headlightColors {
----     Default = -1,
+--- ```cpp
+--- enum eHeadlightColors {
+---     Default = 255,
 ---     White = 0,
 ---     Blue = 1,
----     Electric_Blue = 2,
----     Mint_Green = 3,
----     Lime_Green = 4,
+---     ElectricBlue = 2,
+---     MintGreen = 3,
+---     LimeGreen = 4,
 ---     Yellow = 5,
----     Golden_Shower = 6,
+---     GoldenShower = 6,
 ---     Orange = 7,
 ---     Red = 8,
----     Pony_Pink = 9,
----     Hot_Pink = 10,
+---     PonyPink = 9,
+---     HotPink = 10,
 ---     Purple = 11,
 ---     Blacklight = 12
 --- }
@@ -3735,26 +4030,24 @@ function GetVehicleHeadlightsColour(vehicle) end
 
     
 --- # New Name: GetVehicleXenonLightsColor
---- Returns the headlight color index from the vehicle. Value between 0, 12.
 --- Use [\_SET_VEHICLE_HEADLIGHTS_COLOUR](https://docs.fivem.net/natives/?_0xE41033B25D003A07) to set the headlights color for the vehicle.
---- Must enable xenon headlights before it'll take affect.
 --- 
---- List of colors and ids:
+--- You must enable xenon headlights for this native to work properly.
 --- 
---- ```
---- enum headlightColors {
----     Default = -1,
+--- ```cpp
+--- enum eHeadlightColors {
+---     Default = 255,
 ---     White = 0,
 ---     Blue = 1,
----     Electric_Blue = 2,
----     Mint_Green = 3,
----     Lime_Green = 4,
+---     ElectricBlue = 2,
+---     MintGreen = 3,
+---     LimeGreen = 4,
 ---     Yellow = 5,
----     Golden_Shower = 6,
+---     GoldenShower = 6,
 ---     Orange = 7,
 ---     Red = 8,
----     Pony_Pink = 9,
----     Hot_Pink = 10,
+---     PonyPink = 9,
+---     HotPink = 10,
 ---     Purple = 11,
 ---     Blacklight = 12
 --- }
@@ -3818,38 +4111,78 @@ function SetVehicleStrong(vehicle, toggle) end
 function IsVehicleDoorFullyOpen(vehicle, doorIndex) end
 
     
---- SetHeliTailExplodeThrowDashboard
----
+--- Enables or disables the ability for a helicopter's tail boom to break off.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local heli = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if heli == 0 or GetVehicleType(heli) ~= "heli" then return end
+--- 
+--- SetHeliTailBoomCanBreakOff(heli, true
 --- @hash [0x3EC8BF18AA453FE9](https://docs.fivem.net/natives/?_0x3EC8BF18AA453FE9)
---- @param vehicle Vehicle
---- @param p1 boolean
+--- @param heli Vehicle
+--- @param toggle boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, p1: boolean): void
-function SetHeliTailExplodeThrowDashboard(vehicle, p1) end
+--- @overload fun(heli: Vehicle, toggle: boolean): void
+function SetHeliTailBoomCanBreakOff(heli, toggle) end
 
     
---- # New Name: SetHeliTailExplodeThrowDashboard
---- SetHeliTailExplodeThrowDashboard
----
+--- # New Name: SetHeliTailBoomCanBreakOff
+--- Enables or disables the ability for a helicopter's tail boom to break off.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local heli = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if heli == 0 or GetVehicleType(heli) ~= "heli" then return end
+--- 
+--- SetHeliTailBoomCanBreakOff(heli, true
 --- @hash [0x3EC8BF18AA453FE9](https://docs.fivem.net/natives/?_0x3EC8BF18AA453FE9)
---- @param vehicle Vehicle
---- @param p1 boolean
+--- @param heli Vehicle
+--- @param toggle boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, p1: boolean): void
+--- @overload fun(heli: Vehicle, toggle: boolean): void
 --- @deprecated
-function WasCounterActivated(vehicle, p1) end
+function SetHeliTailExplodeThrowDashboard(heli, toggle) end
 
     
---- # New Name: SetHeliTailExplodeThrowDashboard
---- SetHeliTailExplodeThrowDashboard
----
+--- # New Name: SetHeliTailBoomCanBreakOff
+--- Enables or disables the ability for a helicopter's tail boom to break off.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local heli = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if heli == 0 or GetVehicleType(heli) ~= "heli" then return end
+--- 
+--- SetHeliTailBoomCanBreakOff(heli, true
 --- @hash [0x3EC8BF18AA453FE9](https://docs.fivem.net/natives/?_0x3EC8BF18AA453FE9)
---- @param vehicle Vehicle
---- @param p1 boolean
+--- @param heli Vehicle
+--- @param toggle boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, p1: boolean): void
+--- @overload fun(heli: Vehicle, toggle: boolean): void
 --- @deprecated
-function N_0x3ec8bf18aa453fe9(vehicle, p1) end
+function WasCounterActivated(heli, toggle) end
+
+    
+--- # New Name: SetHeliTailBoomCanBreakOff
+--- Enables or disables the ability for a helicopter's tail boom to break off.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local heli = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if heli == 0 or GetVehicleType(heli) ~= "heli" then return end
+--- 
+--- SetHeliTailBoomCanBreakOff(heli, true
+--- @hash [0x3EC8BF18AA453FE9](https://docs.fivem.net/natives/?_0x3EC8BF18AA453FE9)
+--- @param heli Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(heli: Vehicle, toggle: boolean): void
+--- @deprecated
+function N_0x3ec8bf18aa453fe9(heli, toggle) end
 
     
 --- p3 is some flag related to 'trailers' (invokes CVehicle::GetTrailer).
@@ -4019,16 +4352,104 @@ function N_0x4198ab0022b15f87(plane) end
 function VehicleHasLandingGear(plane) end
 
     
+--- Changes the key used to transform a vehicle into submarine mode. When set to true, the transformation key switches from the default raise/lower convertible roof key (usually 'H') to the special vehicle transformation key (usually 'X').
+--- 
 --- ```
 --- NativeDB Introduced: v1365
 --- ```
----
+--- @usage -- This example sets the key for submarine mode transformation to special vehicle transform 
+--- 
+--- -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle in which the player is currently seated
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Retrieve the vehicle model hash
+--- local vehicleHash = GetEntityModel(vehicle)
+--- 
+--- -- Check if the vehicle exists in the game world and if it is a Stromberg.
+--- if not DoesEntityExist(vehicle) or not vehicleHash == GetHashKey("stromberg") then
+---     -- If the vehicle does not exist or it's not a stromberg, end the execution of the code here.
+---     return
+--- end
+--- 
+--- -- Set the key for submarine mode transformation to special vehicle transform (X by default)
+--- SetTransformToSubmarineUsesAlternateInput(vehicle, true)
 --- @hash [0x41B9FB92EDED32A6](https://docs.fivem.net/natives/?_0x41B9FB92EDED32A6)
 --- @param vehicle Vehicle
---- @param value boolean
+--- @param useAlternateInput boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, value: boolean): void
-function SetUnkBoolN_0x102ForSubmarineVehicleTask(vehicle, value) end
+--- @overload fun(vehicle: Vehicle, useAlternateInput: boolean): void
+function SetTransformToSubmarineUsesAlternateInput(vehicle, useAlternateInput) end
+
+    
+--- # New Name: SetTransformToSubmarineUsesAlternateInput
+--- Changes the key used to transform a vehicle into submarine mode. When set to true, the transformation key switches from the default raise/lower convertible roof key (usually 'H') to the special vehicle transformation key (usually 'X').
+--- 
+--- ```
+--- NativeDB Introduced: v1365
+--- ```
+--- @usage -- This example sets the key for submarine mode transformation to special vehicle transform 
+--- 
+--- -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle in which the player is currently seated
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Retrieve the vehicle model hash
+--- local vehicleHash = GetEntityModel(vehicle)
+--- 
+--- -- Check if the vehicle exists in the game world and if it is a Stromberg.
+--- if not DoesEntityExist(vehicle) or not vehicleHash == GetHashKey("stromberg") then
+---     -- If the vehicle does not exist or it's not a stromberg, end the execution of the code here.
+---     return
+--- end
+--- 
+--- -- Set the key for submarine mode transformation to special vehicle transform (X by default)
+--- SetTransformToSubmarineUsesAlternateInput(vehicle, true)
+--- @hash [0x41B9FB92EDED32A6](https://docs.fivem.net/natives/?_0x41B9FB92EDED32A6)
+--- @param vehicle Vehicle
+--- @param useAlternateInput boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, useAlternateInput: boolean): void
+--- @deprecated
+function N_0x41b9fb92eded32a6(vehicle, useAlternateInput) end
+
+    
+--- # New Name: SetTransformToSubmarineUsesAlternateInput
+--- Changes the key used to transform a vehicle into submarine mode. When set to true, the transformation key switches from the default raise/lower convertible roof key (usually 'H') to the special vehicle transformation key (usually 'X').
+--- 
+--- ```
+--- NativeDB Introduced: v1365
+--- ```
+--- @usage -- This example sets the key for submarine mode transformation to special vehicle transform 
+--- 
+--- -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle in which the player is currently seated
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Retrieve the vehicle model hash
+--- local vehicleHash = GetEntityModel(vehicle)
+--- 
+--- -- Check if the vehicle exists in the game world and if it is a Stromberg.
+--- if not DoesEntityExist(vehicle) or not vehicleHash == GetHashKey("stromberg") then
+---     -- If the vehicle does not exist or it's not a stromberg, end the execution of the code here.
+---     return
+--- end
+--- 
+--- -- Set the key for submarine mode transformation to special vehicle transform (X by default)
+--- SetTransformToSubmarineUsesAlternateInput(vehicle, true)
+--- @hash [0x41B9FB92EDED32A6](https://docs.fivem.net/natives/?_0x41B9FB92EDED32A6)
+--- @param vehicle Vehicle
+--- @param useAlternateInput boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, useAlternateInput: boolean): void
+--- @deprecated
+function SetUnkBoolN_0x102ForSubmarineVehicleTask(vehicle, useAlternateInput) end
 
     
 --- IsVehicleModel
@@ -4433,6 +4854,31 @@ function SetDisableVehiclePetrolTankFires(vehicle, toggle) end
 function N_0x465bf26ab9684352(vehicle, toggle) end
 
     
+--- ```
+--- NativeDB Introduced: 3095
+--- ```
+--- 
+--- Activates or deactivates the nitrous system in the specified vehicle, based on the boolean value provided.
+--- You can clear the nitrous with [`CLEAR_NITROUS`](https://docs.fivem.net/natives/?_0xC889AE921400E1ED), if you want to have more control on the nitrous and those settings, use [`SET_OVERRIDE_NITROUS_LEVEL`](https://docs.fivem.net/natives/?_0xC8E9B6B71B8E660D)
+--- @usage -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle the player is currently in. 
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if vehicle == 0 then return end
+--- 
+---  -- Enable the nitrous system on the vehicle.
+--- SetNitrousIsActive(vehicle, true
+--- @hash [0x465EEA70AF251045](https://docs.fivem.net/natives/?_0x465EEA70AF251045)
+--- @param vehicle Vehicle
+--- @param isActive boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, isActive: boolean): void
+function SetNitrousIsActive(vehicle, isActive) end
+
+    
 --- IsVehicleBumperBrokenOff
 ---
 --- @hash [0x468056A6BB6F3846](https://docs.fivem.net/natives/?_0x468056A6BB6F3846)
@@ -4530,6 +4976,29 @@ function N_0x48c633e94a8142a7(vehicle) end
 
     
 --- ```
+--- NativeDB Introduced: 3095
+--- ```
+--- 
+--- Determines if the nitrous is currently activated in the specified vehicle.
+--- @usage -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle the player is currently in. 
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if vehicle == 0 then return end
+--- 
+--- -- Print whether nitrous is active in the vehicle (True or False).
+--- print(IsNitrousActive(vehicle)
+--- @hash [0x491E822B2C464FE4](https://docs.fivem.net/natives/?_0x491E822B2C464FE4)
+--- @param vehicle Vehicle
+--- @return boolean
+--- @overload fun(vehicle: Vehicle): boolean
+function IsNitrousActive(vehicle) end
+
+    
+--- ```
 --- returns a string which is the codename of the vehicle's currently selected secondary color  
 --- ```
 ---
@@ -4568,16 +5037,92 @@ function N_0x4967a516ed23a5a1(vehicle) end
 function SetVehicleOnGroundProperly(vehicle) end
 
     
---- ```
---- NativeDB Introduced: v1365
---- ```
----
+--- Affects the playback speed of the submarine car conversion animations. Does not affect hardcoded animations such as the wheels being retracted. In decompiled scripts the only value used for transformRate is 2.5.
+--- @usage -- This example sets the transform rate for the submarine car conversion animations to 2.5
+--- 
+--- -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle in which the player is currently seated
+--- local vehicle = GetVehiclePedIsIn(playerPed, false) -- Get the vehicle in which the player is currently seated
+--- 
+--- -- Retrieve the vehicle model hash
+--- local vehicleHash = GetEntityModel(vehicle)
+--- 
+--- -- Check if the vehicle exists in the game world and if it is a Stromberg.
+--- if not DoesEntityExist(vehicle) or not vehicleHash == GetHashKey("stromberg") then
+---     -- If the vehicle does not exist or it's not a stromberg, end the execution of the code here.
+---     return
+--- end
+--- 
+--- -- Set the transform rate for the submarine car conversion animations to 2.5
+--- SetTransformRateForAnimation(vehicle, 2.5
 --- @hash [0x498218259FB7C72D](https://docs.fivem.net/natives/?_0x498218259FB7C72D)
 --- @param vehicle Vehicle
---- @param value number (float)
+--- @param transformRate number (float)
 --- @return void
---- @overload fun(vehicle: Vehicle, value: number): void
-function SetUnkFloatN_0x104ForSubmarineVehicleTask(vehicle, value) end
+--- @overload fun(vehicle: Vehicle, transformRate: number): void
+function SetTransformRateForAnimation(vehicle, transformRate) end
+
+    
+--- # New Name: SetTransformRateForAnimation
+--- Affects the playback speed of the submarine car conversion animations. Does not affect hardcoded animations such as the wheels being retracted. In decompiled scripts the only value used for transformRate is 2.5.
+--- @usage -- This example sets the transform rate for the submarine car conversion animations to 2.5
+--- 
+--- -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle in which the player is currently seated
+--- local vehicle = GetVehiclePedIsIn(playerPed, false) -- Get the vehicle in which the player is currently seated
+--- 
+--- -- Retrieve the vehicle model hash
+--- local vehicleHash = GetEntityModel(vehicle)
+--- 
+--- -- Check if the vehicle exists in the game world and if it is a Stromberg.
+--- if not DoesEntityExist(vehicle) or not vehicleHash == GetHashKey("stromberg") then
+---     -- If the vehicle does not exist or it's not a stromberg, end the execution of the code here.
+---     return
+--- end
+--- 
+--- -- Set the transform rate for the submarine car conversion animations to 2.5
+--- SetTransformRateForAnimation(vehicle, 2.5
+--- @hash [0x498218259FB7C72D](https://docs.fivem.net/natives/?_0x498218259FB7C72D)
+--- @param vehicle Vehicle
+--- @param transformRate number (float)
+--- @return void
+--- @overload fun(vehicle: Vehicle, transformRate: number): void
+--- @deprecated
+function N_0x498218259fb7c72d(vehicle, transformRate) end
+
+    
+--- # New Name: SetTransformRateForAnimation
+--- Affects the playback speed of the submarine car conversion animations. Does not affect hardcoded animations such as the wheels being retracted. In decompiled scripts the only value used for transformRate is 2.5.
+--- @usage -- This example sets the transform rate for the submarine car conversion animations to 2.5
+--- 
+--- -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle in which the player is currently seated
+--- local vehicle = GetVehiclePedIsIn(playerPed, false) -- Get the vehicle in which the player is currently seated
+--- 
+--- -- Retrieve the vehicle model hash
+--- local vehicleHash = GetEntityModel(vehicle)
+--- 
+--- -- Check if the vehicle exists in the game world and if it is a Stromberg.
+--- if not DoesEntityExist(vehicle) or not vehicleHash == GetHashKey("stromberg") then
+---     -- If the vehicle does not exist or it's not a stromberg, end the execution of the code here.
+---     return
+--- end
+--- 
+--- -- Set the transform rate for the submarine car conversion animations to 2.5
+--- SetTransformRateForAnimation(vehicle, 2.5
+--- @hash [0x498218259FB7C72D](https://docs.fivem.net/natives/?_0x498218259FB7C72D)
+--- @param vehicle Vehicle
+--- @param transformRate number (float)
+--- @return void
+--- @overload fun(vehicle: Vehicle, transformRate: number): void
+--- @deprecated
+function SetUnkFloatN_0x104ForSubmarineVehicleTask(vehicle, transformRate) end
 
     
 --- ```
@@ -4988,17 +5533,23 @@ function N_0x51f30db60626a20e(vehicle, x, y, z, rotX, rotY, rotZ, p7, p8) end
 function SetCanResprayVehicle(vehicle, state) end
 
     
+--- Determines if a vehicle is a convertible with an animatable roof. This native checks if the specified vehicle model features a convertible roof that can be lowered or raised through an animation.
+--- 
 --- ```
---- p1 is false almost always.  
---- However, in launcher_carwash/carwash1/carwash2 scripts, p1 is true and is accompanied by DOES_VEHICLE_HAVE_ROOF  
+--- NativeDB Introduced: v323
 --- ```
----
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if IsVehicleAConvertible(vehicle, false) then
+---     print("The vehicle is a convertible with an animatable roof.")
+--- else
+---     print("The vehicle is not a convertible or does not have an animatable roof.")
+--- en
 --- @hash [0x52F357A30698BCCE](https://docs.fivem.net/natives/?_0x52F357A30698BCCE)
 --- @param vehicle Vehicle
---- @param p1 boolean
+--- @param checkRoofExtras boolean
 --- @return boolean
---- @overload fun(vehicle: Vehicle, p1: boolean): boolean
-function IsVehicleAConvertible(vehicle, p1) end
+--- @overload fun(vehicle: Vehicle, checkRoofExtras: boolean): boolean
+function IsVehicleAConvertible(vehicle, checkRoofExtras) end
 
     
 --- LowerRetractableWheels
@@ -5464,16 +6015,16 @@ function SetPedEnabledBikeRingtone(vehicle, entity) end
 function IsVehicleNearEntity(vehicle, entity) end
 
     
---- ```
+--- ```cpp
 --- enum WindowTints  
 --- {  
---- 	WINDOWTINT_NONE,  
---- 	WINDOWTINT_PURE_BLACK,  
---- 	WINDOWTINT_DARKSMOKE,  
---- 	WINDOWTINT_LIGHTSMOKE,  
---- 	WINDOWTINT_STOCK,  
---- 	WINDOWTINT_LIMO,  
---- 	WINDOWTINT_GREEN  
+--- 	WINDOWTINT_NONE = 0,
+--- 	WINDOWTINT_PURE_BLACK = 1,
+--- 	WINDOWTINT_DARKSMOKE = 2,
+--- 	WINDOWTINT_LIGHTSMOKE = 3,
+--- 	WINDOWTINT_STOCK = 4,
+--- 	WINDOWTINT_LIMO = 5,
+--- 	WINDOWTINT_GREEN = 6
 --- };  
 --- ```
 ---
@@ -6984,14 +7535,35 @@ function N_0x756ae6e962168a04(vehicle, toggle) end
 function PreloadVehicleMod(p0, modType, p2) end
 
     
---- SetBoatAnchor
----
+--- Sets the anchor state for a boat.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- 
+--- **Note**: You might want to check if you can use your anchor before with [CAN_ANCHOR_BOAT_HERE](https://docs.fivem.net/natives/?_0x26C10ECBDA5D043B).
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- -- Check if we can anchor the boat here
+--- if CanAnchorBoatHere(boat) then
+---     -- Deploy the boat's anchor
+---     SetBoatAnchor(boat, true)
+---     
+---     -- Wait for 10 seconds
+---     Wait(10000)
+---     
+---     -- Raise the boat's anchor
+---     SetBoatAnchor(boat, false)
+--- else
+---     print("Cannot anchor the boat at this location")
+--- en
 --- @hash [0x75DBEC174AEEAD10](https://docs.fivem.net/natives/?_0x75DBEC174AEEAD10)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @param toggle boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function SetBoatAnchor(vehicle, toggle) end
+--- @overload fun(boat: Vehicle, toggle: boolean): void
+function SetBoatAnchor(boat, toggle) end
 
     
 --- Gets the color of the neon lights of the specified vehicle.
@@ -7138,9 +7710,9 @@ function RollDownWindow(vehicle, windowIndex) end
 function N_0x7bbe7ff626a591fe(p0) end
 
     
---- ```
---- Drops the Hook/Magnet on a cargobob  
---- state  
+--- Drops the Hook/Magnet on a cargobob
+--- 
+--- ```cpp
 --- enum eCargobobHook  
 --- {  
 --- 	CARGOBOB_HOOK = 0,  
@@ -7157,9 +7729,9 @@ function CreatePickUpRopeForCargobob(cargobob, state) end
 
     
 --- # New Name: CreatePickUpRopeForCargobob
---- ```
---- Drops the Hook/Magnet on a cargobob  
---- state  
+--- Drops the Hook/Magnet on a cargobob
+--- 
+--- ```cpp
 --- enum eCargobobHook  
 --- {  
 --- 	CARGOBOB_HOOK = 0,  
@@ -7360,6 +7932,20 @@ function IsCopVehicleInArea_3d(x1, x2, y1, y2, z1, z2) end
 --- @return boolean
 --- @overload fun(model: Hash): boolean
 function IsThisModelACar(model) end
+
+    
+--- Makes a helicopter resistant to multiple explosions. When enabled, helicopters can survive two or more explosions.
+--- 
+--- ```
+--- NativeDB Introduced: 2545
+--- ```
+---
+--- @hash [0x8074CC1886802912](https://docs.fivem.net/natives/?_0x8074CC1886802912)
+--- @param helicopter Vehicle
+--- @param bResistToExplosion boolean
+--- @return void
+--- @overload fun(helicopter: Vehicle, bResistToExplosion: boolean): void
+function SetHeliResistToExplosion(helicopter, bResistToExplosion) end
 
     
 --- Enables spawning random trains on the preset tracks.
@@ -7939,8 +8525,17 @@ function N_0x8aa9180de2fedd45(vehicle, avoidObstacles) end
 function SetVehicleUndriveable(vehicle, toggle) end
 
     
---- DoesVehicleHaveRoof
----
+--- Determines whether a specific vehicle is equipped with a roof.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if DoesVehicleHaveRoof(vehicle) then
+---     print("This vehicle has a roof.")
+--- else
+---     print("This vehicle does not have a roof.")
+--- en
 --- @hash [0x8AC862B0B32C5B80](https://docs.fivem.net/natives/?_0x8AC862B0B32C5B80)
 --- @param vehicle Vehicle
 --- @return boolean
@@ -8164,8 +8759,18 @@ function GetVehicleLockOnTarget(vehicle, entity) end
 function GetVehicleOwner(vehicle, entity) end
 
     
---- RaiseConvertibleRoof
----
+--- Raises the roof on a convertible vehicle, utilizing any available animations for the action. This native is particularly useful for creating a realistic interaction with convertible vehicles by animating the process of raising the roof.
+--- 
+--- You can check if the vehicle has an convertible roof using [`IS_VEHICLE_A_CONVERTIBLE`](https://docs.fivem.net/natives/?_0x52F357A30698BCCE).
+--- 
+--- To lower the convertible roof, you can use [`LOWER_CONVERTIBLE_ROOF`](https://docs.fivem.net/natives/?_0xDED51F703D0FA83D).
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not IsVehicleAConvertible(vehicle, false) then return end
+--- RaiseConvertibleRoof(vehicle, false
 --- @hash [0x8F5FB35D7E88FC70](https://docs.fivem.net/natives/?_0x8F5FB35D7E88FC70)
 --- @param vehicle Vehicle
 --- @param instantlyRaise boolean
@@ -8276,15 +8881,7 @@ function HasVehicleJumpingAbility(vehicle) end
 function DoesVehicleHaveJumpingAbility(vehicle) end
 
     
---- ```
---- Plates:
---- Blue/White - 0
---- Yellow/black - 1
---- Yellow/Blue - 2
---- Blue/White2 - 3
---- Blue/White3 - 4
---- Yankton - 5
---- ```
+--- Please refer to [`GET_VEHICLE_NUMBER_PLATE_TEXT_INDEX`](https://docs.fivem.net/natives/?_0xF11BC2DD9A3E7195) for plate indicies.
 ---
 --- @hash [0x9088EB5A43FFB0A1](https://docs.fivem.net/natives/?_0x9088EB5A43FFB0A1)
 --- @param vehicle Vehicle
@@ -9180,7 +9777,7 @@ function StartVehicleHorn(vehicle, duration, mode, forever) end
     
 --- Returns the plates a vehicle has.
 --- 
---- ```
+--- ```cpp
 --- enum eVehiclePlateType
 --- {
 --- 	VPT_FRONT_AND_BACK_PLATES = 0,
@@ -10131,29 +10728,27 @@ function HideVehicleTombstone(vehicle, toggle) end
 
     
 --- ```
---- Max 1000.  
---- At 0 the tail rotor will stall.  
+--- NativeDB Introduced: v323
 --- ```
 ---
 --- @hash [0xAE8CE82A4219AC8C](https://docs.fivem.net/natives/?_0xAE8CE82A4219AC8C)
---- @param vehicle Vehicle
+--- @param heli Vehicle
 --- @return number
---- @overload fun(vehicle: Vehicle): number
-function GetHeliTailRotorHealth(vehicle) end
+--- @overload fun(heli: Vehicle): number
+function GetHeliTailRotorHealth(heli) end
 
     
 --- # New Name: GetHeliTailRotorHealth
 --- ```
---- Max 1000.  
---- At 0 the tail rotor will stall.  
+--- NativeDB Introduced: v323
 --- ```
 ---
 --- @hash [0xAE8CE82A4219AC8C](https://docs.fivem.net/natives/?_0xAE8CE82A4219AC8C)
---- @param vehicle Vehicle
+--- @param heli Vehicle
 --- @return number
---- @overload fun(vehicle: Vehicle): number
+--- @overload fun(heli: Vehicle): number
 --- @deprecated
-function GetHeliTailRotorHealth(vehicle) end
+function GetHeliTailRotorHealth(heli) end
 
     
 --- IsPlaybackUsingAiGoingOnForVehicle
@@ -10419,28 +11014,53 @@ function IsPedExclusiveDriverOfVehicle(ped, vehicle, outIndex) end
 function N_0xb09d25e77c33eb3f(ped, vehicle, outIndex) end
 
     
+--- Checks if a boat is currently anchored.
+--- 
+--- This native is a getter for [SET_BOAT_ANCHOR](https://docs.fivem.net/natives/?_0x75DBEC174AEEAD10).
+--- 
 --- ```
---- IS_*
+--- NativeDB Introduced: v573
 --- ```
 ---
 --- @hash [0xB0AD1238A709B1A2](https://docs.fivem.net/natives/?_0xB0AD1238A709B1A2)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
-function IsBoatAnchoredAndFrozen(vehicle) end
+--- @overload fun(boat: Vehicle): boolean
+function IsBoatAnchored(boat) end
 
     
---- # New Name: IsBoatAnchoredAndFrozen
+--- # New Name: IsBoatAnchored
+--- Checks if a boat is currently anchored.
+--- 
+--- This native is a getter for [SET_BOAT_ANCHOR](https://docs.fivem.net/natives/?_0x75DBEC174AEEAD10).
+--- 
 --- ```
---- IS_*
+--- NativeDB Introduced: v573
 --- ```
 ---
 --- @hash [0xB0AD1238A709B1A2](https://docs.fivem.net/natives/?_0xB0AD1238A709B1A2)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @return boolean
---- @overload fun(vehicle: Vehicle): boolean
+--- @overload fun(boat: Vehicle): boolean
 --- @deprecated
-function N_0xb0ad1238a709b1a2(vehicle) end
+function N_0xb0ad1238a709b1a2(boat) end
+
+    
+--- # New Name: IsBoatAnchored
+--- Checks if a boat is currently anchored.
+--- 
+--- This native is a getter for [SET_BOAT_ANCHOR](https://docs.fivem.net/natives/?_0x75DBEC174AEEAD10).
+--- 
+--- ```
+--- NativeDB Introduced: v573
+--- ```
+---
+--- @hash [0xB0AD1238A709B1A2](https://docs.fivem.net/natives/?_0xB0AD1238A709B1A2)
+--- @param boat Vehicle
+--- @return boolean
+--- @overload fun(boat: Vehicle): boolean
+--- @deprecated
+function IsBoatAnchoredAndFrozen(boat) end
 
     
 --- ```
@@ -10517,32 +11137,56 @@ function AllowAmbientVehiclesToAvoidAdverseConditions(vehicle) end
 function N_0xb264c4d2f2b0a78b(vehicle) end
 
     
+--- Sets whether a boat should remain in the non-physical, low LOD anchor mode even when a player is driving it.
+--- 
+--- **Note**: This native requires [SET_BOAT_REMAINS_ANCHORED_WHILE_PLAYER_IS_DRIVER](https://docs.fivem.net/natives/?_0xE3EBAAE484798530) to be set to `true` to work properly.
+--- 
 --- ```
---- X,Y position of boat is frozen in place when anchored and its engine disabled, only the Z value changes. Requires 0xE3EBAAE484798530 to be set to true.
---- SET_FORCED_ZENITH_QUADTREE?
+--- NativeDB Introduced: v323
 --- ```
 ---
 --- @hash [0xB28B1FE5BFADD7F5](https://docs.fivem.net/natives/?_0xB28B1FE5BFADD7F5)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @param toggle boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function SetForcedBoatLocationWhenAnchored(vehicle, toggle) end
+--- @overload fun(boat: Vehicle, toggle: boolean): void
+function SetForceLowLodAnchorMode(boat, toggle) end
 
     
---- # New Name: SetForcedBoatLocationWhenAnchored
+--- # New Name: SetForceLowLodAnchorMode
+--- Sets whether a boat should remain in the non-physical, low LOD anchor mode even when a player is driving it.
+--- 
+--- **Note**: This native requires [SET_BOAT_REMAINS_ANCHORED_WHILE_PLAYER_IS_DRIVER](https://docs.fivem.net/natives/?_0xE3EBAAE484798530) to be set to `true` to work properly.
+--- 
 --- ```
---- X,Y position of boat is frozen in place when anchored and its engine disabled, only the Z value changes. Requires 0xE3EBAAE484798530 to be set to true.
---- SET_FORCED_ZENITH_QUADTREE?
+--- NativeDB Introduced: v323
 --- ```
 ---
 --- @hash [0xB28B1FE5BFADD7F5](https://docs.fivem.net/natives/?_0xB28B1FE5BFADD7F5)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @param toggle boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
+--- @overload fun(boat: Vehicle, toggle: boolean): void
 --- @deprecated
-function N_0xb28b1fe5bfadd7f5(vehicle, toggle) end
+function N_0xb28b1fe5bfadd7f5(boat, toggle) end
+
+    
+--- # New Name: SetForceLowLodAnchorMode
+--- Sets whether a boat should remain in the non-physical, low LOD anchor mode even when a player is driving it.
+--- 
+--- **Note**: This native requires [SET_BOAT_REMAINS_ANCHORED_WHILE_PLAYER_IS_DRIVER](https://docs.fivem.net/natives/?_0xE3EBAAE484798530) to be set to `true` to work properly.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+---
+--- @hash [0xB28B1FE5BFADD7F5](https://docs.fivem.net/natives/?_0xB28B1FE5BFADD7F5)
+--- @param boat Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(boat: Vehicle, toggle: boolean): void
+--- @deprecated
+function SetForcedBoatLocationWhenAnchored(boat, toggle) end
 
     
 --- GetLastDrivenVehicle
@@ -10577,12 +11221,7 @@ function N_0xb2d06faede65b577() end
 function N_0xb2e0c0d6922d31f2(vehicle, toggle) end
 
     
---- ```
---- multiplier = brightness of head lights.  
---- this value isn't capped afaik.  
---- multiplier = 0.0 no lights  
---- multiplier = 1.0 default game value  
---- ```
+--- This multiplier has no limit, by default the game has this set to `1.0`.
 ---
 --- @hash [0xB385454F8791F57C](https://docs.fivem.net/natives/?_0xB385454F8791F57C)
 --- @param vehicle Vehicle
@@ -10624,11 +11263,16 @@ function SetRandomVehicleDensityMultiplierThisFrame(multiplier) end
 ---     VWT_TUNER = 5,
 ---     VWT_BIKE = 6,
 ---     VWT_HIEND = 7,
----     VWT_SUPERMOD1 = 8, // Benny's Original
----     VWT_SUPERMOD2 = 9, // Benny's Bespoke
----     VWT_SUPERMOD3 = 10, // Open Wheel
----     VWT_SUPERMOD4 = 11, // Street
----     VWT_SUPERMOD5 = 12, // Track
+---     // Benny's Original
+---     VWT_SUPERMOD1 = 8,
+---     // Benny's Bespoke
+---     VWT_SUPERMOD2 = 9,
+---     // Open Wheel
+---     VWT_SUPERMOD3 = 10,
+---     // Street
+---     VWT_SUPERMOD4 = 11,
+---     // Track
+---     VWT_SUPERMOD5 = 12,
 --- };
 --- ```
 ---
@@ -10880,17 +11524,28 @@ function GetVehicleCustomPrimaryColour(vehicle) end
 --- 
 --- ```cpp
 --- enum eVehicleLockState {
----     VEHICLELOCK_NONE = 0, // No specific lock state, vehicle behaves according to the game's default settings.
----     VEHICLELOCK_UNLOCKED = 1, // Vehicle is fully unlocked, allowing free entry by players and NPCs.
----     VEHICLELOCK_LOCKED = 2, // Vehicle is locked, preventing entry by players and NPCs.
----     VEHICLELOCK_LOCKOUT_PLAYER_ONLY = 3, // Vehicle locks out only players, allowing NPCs to enter.
----     VEHICLELOCK_LOCKED_PLAYER_INSIDE = 4, // Vehicle is locked once a player enters, preventing others from entering.
----     VEHICLELOCK_LOCKED_INITIALLY = 5, // Vehicle starts in a locked state, but may be unlocked through game events.
----     VEHICLELOCK_FORCE_SHUT_DOORS = 6, // Forces the vehicle's doors to shut and lock.
----     VEHICLELOCK_LOCKED_BUT_CAN_BE_DAMAGED = 7, // Vehicle is locked but can still be damaged.
----     VEHICLELOCK_LOCKED_BUT_BOOT_UNLOCKED = 8, // Vehicle is locked, but its trunk/boot remains unlocked.
----     VEHICLELOCK_LOCKED_NO_PASSENGERS = 9, // Vehicle is locked and does not allow passengers, except for the driver.
----     VEHICLELOCK_CANNOT_ENTER = 10 // Vehicle is completely locked, preventing entry entirely, even if previously inside.
+---     // No specific lock state, vehicle behaves according to the game's default settings.
+---     VEHICLELOCK_NONE = 0,
+---     // Vehicle is fully unlocked, allowing free entry by players and NPCs.
+---     VEHICLELOCK_UNLOCKED = 1,
+---     // Vehicle is locked, preventing entry by players and NPCs.
+---     VEHICLELOCK_LOCKED = 2,
+---     // Vehicle locks out only players, allowing NPCs to enter.
+---     VEHICLELOCK_LOCKOUT_PLAYER_ONLY = 3,
+---     // Vehicle is locked once a player enters, preventing others from entering.
+---     VEHICLELOCK_LOCKED_PLAYER_INSIDE = 4,
+---     // Vehicle starts in a locked state, but may be unlocked through game events.
+---     VEHICLELOCK_LOCKED_INITIALLY = 5,
+---     // Forces the vehicle's doors to shut and lock.
+---     VEHICLELOCK_FORCE_SHUT_DOORS = 6,
+---     // Vehicle is locked but can still be damaged.
+---     VEHICLELOCK_LOCKED_BUT_CAN_BE_DAMAGED = 7,
+---     // Vehicle is locked, but its trunk/boot remains unlocked.
+---     VEHICLELOCK_LOCKED_BUT_BOOT_UNLOCKED = 8,
+---     // Vehicle is locked and does not allow passengers, except for the driver.
+---     VEHICLELOCK_LOCKED_NO_PASSENGERS = 9,
+---     // Vehicle is completely locked, preventing entry entirely, even if previously inside.
+---     VEHICLELOCK_CANNOT_ENTER = 10 
 --- };
 --- 
 --- ```
@@ -11147,26 +11802,28 @@ function SetVehicleNeonLightsColor_2(vehicle, color) end
 function N_0xb9562064627ff9db(p0, p1) end
 
     
---- ```
---- wheelID used for 4 wheelers seem to be (0, 1, 4, 5)  
---- completely - is to check if tire completely gone from rim.  
---- '0 = wheel_lf / bike, plane or jet front  
---- '1 = wheel_rf  
---- '2 = wheel_lm / in 6 wheels trailer, plane or jet is first one on left  
---- '3 = wheel_rm / in 6 wheels trailer, plane or jet is first one on right  
---- '4 = wheel_lr / bike rear / in 6 wheels trailer, plane or jet is last one on left  
---- '5 = wheel_rr / in 6 wheels trailer, plane or jet is last one on right  
---- '45 = 6 wheels trailer mid wheel left  
---- '47 = 6 wheels trailer mid wheel right  
+--- ```cpp
+--- enum eVehicleWheels
+--- {
+--- 	WHEEL_LF = 0, // Vehicle Left front
+--- 	WHEEL_RF = 1, // Vehicle Right front
+--- 	WHEEL_LM = 2, // Vehicle Left middle
+--- 	WHEEL_RM = 3, // Vehicle Right middle
+--- 	WHEEL_LR = 4, // Vehicle Left rear
+--- 	WHEEL_RR = 5, // Vehicle Right rear
+--- 	WHEEL_BF = 6, // Bike front
+--- 	WHEEL_BR = 7, // Bike rear
+--- 	MAX_WHEELS = 8
+--- };
 --- ```
 ---
 --- @hash [0xBA291848A0815CA9](https://docs.fivem.net/natives/?_0xBA291848A0815CA9)
 --- @param vehicle Vehicle
 --- @param wheelID number (int)
---- @param completely boolean
+--- @param isBurstToRim boolean
 --- @return boolean
---- @overload fun(vehicle: Vehicle, wheelID: number, completely: boolean): boolean
-function IsVehicleTyreBurst(vehicle, wheelID, completely) end
+--- @overload fun(vehicle: Vehicle, wheelID: number, isBurstToRim: boolean): boolean
+function IsVehicleTyreBurst(vehicle, wheelID, isBurstToRim) end
 
     
 --- ```
@@ -11575,6 +12232,19 @@ function SetPedTargettableVehicleDestroy(vehicle, doorIndex, doorLockStatus) end
 --- @overload fun(vehicle: Vehicle, doorIndex: number, doorLockStatus: number): void
 --- @deprecated
 function SetVehicleDoorDestroyType(vehicle, doorIndex, doorLockStatus) end
+
+    
+--- ```
+--- NativeDB Introduced: 3095
+--- ```
+--- 
+--- Retrieves the remaining duration of nitrous boost available for the specified vehicle.
+---
+--- @hash [0xBEC4B8653462450E](https://docs.fivem.net/natives/?_0xBEC4B8653462450E)
+--- @param vehicle Vehicle
+--- @return number
+--- @overload fun(vehicle: Vehicle): number
+function GetRemainingNitrousDuration(vehicle) end
 
     
 --- IsThisModelABicycle
@@ -12013,19 +12683,87 @@ function N_0xc6ad107ddc9054cc(modelHash) end
 
     
 --- ```
---- NativeDB Introduced: v1604
---- NativeDB Added Parameter 2 (2060): float level
---- NativeDB Added Parameter 3 (2060): float power
---- NativeDB Added Parameter 4 (2060): float rechargeTime
---- NativeDB Added Parameter 5 (2060): BOOL disableSound
+--- NativeDB Introduced: 3095
 --- ```
----
+--- 
+--- Resets or clears the nitrous system for a specified vehicle. You can check if a vehicle has nitrous with [`IS_NITROUS_ACTIVE`](https://docs.fivem.net/natives/?_0x491E822B2C464FE4)
+--- @usage -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle the player is currently in. 
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if vehicle == 0 then return end
+--- 
+--- -- Check if nitrous is active on the vehicle.
+--- if IsNitrousActive(vehicle) then
+---     -- If nitrous is active, clear the nitrous boost from the vehicle.
+---     ClearNitrous(vehicle)
+--- en
+--- @hash [0xC889AE921400E1ED](https://docs.fivem.net/natives/?_0xC889AE921400E1ED)
+--- @param vehicle Vehicle
+--- @return void
+--- @overload fun(vehicle: Vehicle): void
+function ClearNitrous(vehicle) end
+
+    
+--- ```
+--- NativeDB Introduced: v1604
+--- NativeDB Added Parameter 2 (2060): float durationMod : A multiplier applied to the default nitrous duration (default is 3 seconds). 
+--- NativeDB Added Parameter 3 (2060): float power : A multiplier applied to the default nitrous power multiplier (default is 3).
+--- NativeDB Added Parameter 4 (2060): float rechargeTime : A multiplier applied to the default nitrous recharge rate.
+--- NativeDB Added Parameter 5 (2060): BOOL disableSound : A boolean to disable the default nitrous sound when the nitrous is active.
+--- ```
+--- 
+--- Overrides the default settings of a vehicle's nitrous system, allowing custom control over its performance characteristics.
+--- @usage -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle the player is currently in. 
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if vehicle == 0 then return end
+--- 
+--- -- Configure the vehicle's nitrous system with custom settings for maximum effect.
+--- SetOverrideNitrousLevel(vehicle, true, 100, 100, 99999999999, false)
 --- @hash [0xC8E9B6B71B8E660D](https://docs.fivem.net/natives/?_0xC8E9B6B71B8E660D)
 --- @param vehicle Vehicle
---- @param toggle boolean
+--- @param override boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function SetVehicleNitroEnabled(vehicle, toggle) end
+--- @overload fun(vehicle: Vehicle, override: boolean): void
+function SetOverrideNitrousLevel(vehicle, override) end
+
+    
+--- # New Name: SetOverrideNitrousLevel
+--- ```
+--- NativeDB Introduced: v1604
+--- NativeDB Added Parameter 2 (2060): float durationMod : A multiplier applied to the default nitrous duration (default is 3 seconds). 
+--- NativeDB Added Parameter 3 (2060): float power : A multiplier applied to the default nitrous power multiplier (default is 3).
+--- NativeDB Added Parameter 4 (2060): float rechargeTime : A multiplier applied to the default nitrous recharge rate.
+--- NativeDB Added Parameter 5 (2060): BOOL disableSound : A boolean to disable the default nitrous sound when the nitrous is active.
+--- ```
+--- 
+--- Overrides the default settings of a vehicle's nitrous system, allowing custom control over its performance characteristics.
+--- @usage -- Retrieve the player ped
+--- local playerPed = PlayerPedId()
+--- 
+--- -- Retrieve the vehicle the player is currently in. 
+--- local vehicle = GetVehiclePedIsIn(playerPed, false)
+--- 
+--- -- Check if the vehicle exists in the game world.
+--- if vehicle == 0 then return end
+--- 
+--- -- Configure the vehicle's nitrous system with custom settings for maximum effect.
+--- SetOverrideNitrousLevel(vehicle, true, 100, 100, 99999999999, false)
+--- @hash [0xC8E9B6B71B8E660D](https://docs.fivem.net/natives/?_0xC8E9B6B71B8E660D)
+--- @param vehicle Vehicle
+--- @param override boolean
+--- @return void
+--- @overload fun(vehicle: Vehicle, override: boolean): void
+--- @deprecated
+function SetVehicleNitroEnabled(vehicle, override) end
 
     
 --- ```
@@ -12832,8 +13570,16 @@ function IsThisModelAHeli(model) end
 function N_0xdce97bdf8a0eabc8() end
 
     
---- LowerConvertibleRoof
----
+--- Lowers the roof on a convertible vehicle, utilizing any available animations for the action. This native is particularly useful for creating a realistic interaction with convertible vehicles by animating the process of lowering the roof.
+--- 
+--- You can check if the vehicle has an convertible roof using [`IS_VEHICLE_A_CONVERTIBLE`](https://docs.fivem.net/natives/?_0x52F357A30698BCCE).
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not IsVehicleAConvertible(vehicle, false) then return end
+--- LowerConvertibleRoof(vehicle, false
 --- @hash [0xDED51F703D0FA83D](https://docs.fivem.net/natives/?_0xDED51F703D0FA83D)
 --- @param vehicle Vehicle
 --- @param instantlyLower boolean
@@ -13123,26 +13869,68 @@ function N_0xe38cb9d7d39fdbcc(vehicle, x, y, z) end
 function GetNumVehicleMods(vehicle, modType) end
 
     
---- SetBoatFrozenWhenAnchored
----
+--- Sets whether a boat should remain anchored even when a player is driving it.
+--- 
+--- **Note**: This native is always used with [SET_BOAT_ANCHOR](https://docs.fivem.net/natives/?_0x75DBEC174AEEAD10).
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- SetBoatRemainsAnchoredWhilePlayerIsDriver(boat, true)
+--- SetBoatAnchor(boat, true
 --- @hash [0xE3EBAAE484798530](https://docs.fivem.net/natives/?_0xE3EBAAE484798530)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @param toggle boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
-function SetBoatFrozenWhenAnchored(vehicle, toggle) end
+--- @overload fun(boat: Vehicle, toggle: boolean): void
+function SetBoatRemainsAnchoredWhilePlayerIsDriver(boat, toggle) end
 
     
---- # New Name: SetBoatFrozenWhenAnchored
---- SetBoatFrozenWhenAnchored
----
+--- # New Name: SetBoatRemainsAnchoredWhilePlayerIsDriver
+--- Sets whether a boat should remain anchored even when a player is driving it.
+--- 
+--- **Note**: This native is always used with [SET_BOAT_ANCHOR](https://docs.fivem.net/natives/?_0x75DBEC174AEEAD10).
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- SetBoatRemainsAnchoredWhilePlayerIsDriver(boat, true)
+--- SetBoatAnchor(boat, true
 --- @hash [0xE3EBAAE484798530](https://docs.fivem.net/natives/?_0xE3EBAAE484798530)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @param toggle boolean
 --- @return void
---- @overload fun(vehicle: Vehicle, toggle: boolean): void
+--- @overload fun(boat: Vehicle, toggle: boolean): void
 --- @deprecated
-function N_0xe3ebaae484798530(vehicle, toggle) end
+function N_0xe3ebaae484798530(boat, toggle) end
+
+    
+--- # New Name: SetBoatRemainsAnchoredWhilePlayerIsDriver
+--- Sets whether a boat should remain anchored even when a player is driving it.
+--- 
+--- **Note**: This native is always used with [SET_BOAT_ANCHOR](https://docs.fivem.net/natives/?_0x75DBEC174AEEAD10).
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- SetBoatRemainsAnchoredWhilePlayerIsDriver(boat, true)
+--- SetBoatAnchor(boat, true
+--- @hash [0xE3EBAAE484798530](https://docs.fivem.net/natives/?_0xE3EBAAE484798530)
+--- @param boat Vehicle
+--- @param toggle boolean
+--- @return void
+--- @overload fun(boat: Vehicle, toggle: boolean): void
+--- @deprecated
+function SetBoatFrozenWhenAnchored(boat, toggle) end
 
     
 --- Paint index goes from 0 to 12.
@@ -13467,38 +14255,86 @@ function N_0xe6f13851780394da(vehicle, p1) end
 function IsVehicleAttachedToTrailer(vehicle) end
 
     
---- SetBoatMovementResistance
----
+--- Sets the distance from the player at which anchored boats switch between high and low LOD (Level of Detail) buoyancy mode.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- -- Set the low LOD anchor distance to 100 units
+--- SetBoatLowLodAnchorDistance(boat, 100.0)
+--- print("Set low LOD anchor distance to 100 units"
 --- @hash [0xE842A9398079BD82](https://docs.fivem.net/natives/?_0xE842A9398079BD82)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @param value number (float)
 --- @return void
---- @overload fun(vehicle: Vehicle, value: number): void
-function SetBoatMovementResistance(vehicle, value) end
+--- @overload fun(boat: Vehicle, value: number): void
+function SetBoatLowLodAnchorDistance(boat, value) end
 
     
---- # New Name: SetBoatMovementResistance
---- SetBoatMovementResistance
----
+--- # New Name: SetBoatLowLodAnchorDistance
+--- Sets the distance from the player at which anchored boats switch between high and low LOD (Level of Detail) buoyancy mode.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- -- Set the low LOD anchor distance to 100 units
+--- SetBoatLowLodAnchorDistance(boat, 100.0)
+--- print("Set low LOD anchor distance to 100 units"
 --- @hash [0xE842A9398079BD82](https://docs.fivem.net/natives/?_0xE842A9398079BD82)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @param value number (float)
 --- @return void
---- @overload fun(vehicle: Vehicle, value: number): void
+--- @overload fun(boat: Vehicle, value: number): void
 --- @deprecated
-function N_0xe842a9398079bd82(vehicle, value) end
+function N_0xe842a9398079bd82(boat, value) end
 
     
---- # New Name: SetBoatMovementResistance
---- SetBoatMovementResistance
----
+--- # New Name: SetBoatLowLodAnchorDistance
+--- Sets the distance from the player at which anchored boats switch between high and low LOD (Level of Detail) buoyancy mode.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- -- Set the low LOD anchor distance to 100 units
+--- SetBoatLowLodAnchorDistance(boat, 100.0)
+--- print("Set low LOD anchor distance to 100 units"
 --- @hash [0xE842A9398079BD82](https://docs.fivem.net/natives/?_0xE842A9398079BD82)
---- @param vehicle Vehicle
+--- @param boat Vehicle
 --- @param value number (float)
 --- @return void
---- @overload fun(vehicle: Vehicle, value: number): void
+--- @overload fun(boat: Vehicle, value: number): void
 --- @deprecated
-function SetBoatAnchorBuoyancyCoefficient(vehicle, value) end
+function SetBoatAnchorBuoyancyCoefficient(boat, value) end
+
+    
+--- # New Name: SetBoatLowLodAnchorDistance
+--- Sets the distance from the player at which anchored boats switch between high and low LOD (Level of Detail) buoyancy mode.
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
+--- @usage local boat = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not boat or not IsThisModelABoat(GetEntityModel(boat)) then return end
+--- 
+--- -- Set the low LOD anchor distance to 100 units
+--- SetBoatLowLodAnchorDistance(boat, 100.0)
+--- print("Set low LOD anchor distance to 100 units"
+--- @hash [0xE842A9398079BD82](https://docs.fivem.net/natives/?_0xE842A9398079BD82)
+--- @param boat Vehicle
+--- @param value number (float)
+--- @return void
+--- @overload fun(boat: Vehicle, value: number): void
+--- @deprecated
+function SetBoatMovementResistance(boat, value) end
 
     
 --- N_0xe851e480b814d4ba
@@ -13756,7 +14592,7 @@ function SetCargobobPickupMagnetPullStrength(cargobob, p1) end
 function N_0xed8286f71a819baa(cargobob, p1) end
 
     
---- Prevents a helicopter from exploding due to relatively minor body damage. This native can be particularly useful in gameplay scenarios or missions where helicopters are subject to damage that would not realistically cause an explosion, ensuring they remain operational unless subjected to more significant damage.
+--- Prevents a helicopter from exploding due to relatively minor body damage.
 --- 
 --- ```
 --- NativeDB Introduced: v1103
@@ -13781,7 +14617,7 @@ function SetDisableHeliExplodeFromBodyDamage(helicopter, disableExplode) end
 
     
 --- # New Name: SetDisableHeliExplodeFromBodyDamage
---- Prevents a helicopter from exploding due to relatively minor body damage. This native can be particularly useful in gameplay scenarios or missions where helicopters are subject to damage that would not realistically cause an explosion, ensuring they remain operational unless subjected to more significant damage.
+--- Prevents a helicopter from exploding due to relatively minor body damage.
 --- 
 --- ```
 --- NativeDB Introduced: v1103
@@ -13999,14 +14835,23 @@ function N_0xf0f2103efaf8cba7(id, time) end
 function RemoveVehicleRecording(recording, script) end
 
     
---- ```
---- Returns the PlateType of a vehicle  
---- Blue_on_White_1 = 3,  
---- Blue_on_White_2 = 0,  
---- Blue_on_White_3 = 4,  
---- Yellow_on_Blue = 2,  
---- Yellow_on_Black = 1,  
---- North_Yankton = 5,  
+--- ```cpp
+--- enum eVehiclePlateIndicies {
+--- 	SanAndreasCursive = 0,
+--- 	SanAndreasBlack = 1,
+--- 	SanAndreasBlue = 2,
+--- 	SanAndreasPlain = 3,
+--- 	SRExcept = 4,
+--- 	NorthYankton = 5,
+--- 	// All indicies below this require b3095
+--- 	ECola = 6,
+--- 	LasVenturas = 7,
+--- 	LiberyCity = 8,
+--- 	LSCarMeet = 9,
+--- 	LSPanic = 10,
+--- 	LSPounders = 11,
+--- 	Sprunk = 12,
+--- }
 --- ```
 ---
 --- @hash [0xF11BC2DD9A3E7195](https://docs.fivem.net/natives/?_0xF11BC2DD9A3E7195)
@@ -14151,7 +14996,15 @@ function GetVehicleBodyHealth(vehicle) end
 function SetVehicleDoorControl(vehicle, doorIndex, speed, angle) end
 
     
---- This allows for the vehicle's roof to be put on when set to true, and removed when set to false, provided that the vehicle has a version with a roof and a version without a roof.
+--- Enables or disables the convertible roof on vehicles that support old-style GTA IV roofs, which are not animated. Setting `toggle` to true will apply the roof to the vehicle, and setting it to false will remove the roof, assuming the vehicle has versions with and without a roof.
+--- 
+--- If you want to lock or unlock the roof mechanism, use [`SET_CONVERTIBLE_ROOF_LATCH_STATE`](https://docs.fivem.net/natives/?_0x1A78AD3D8240536F).
+--- 
+--- You can check if the vehicle has a roof with [`DOES_VEHICLE_HAVE_ROOF`](https://docs.fivem.net/natives/?_0x8AC862B0B32C5B80).
+--- 
+--- ```
+--- NativeDB Introduced: v323
+--- ```
 --- 
 --- #### Vehicles with both roofed and roofless versions (others may exist; this list is compiled from decompiled scripts).
 --- 
@@ -14165,6 +15018,7 @@ function SetVehicleDoorControl(vehicle, doorIndex, speed, angle) end
 --- *   mamba
 --- @usage -- In this case we are removing the roof from the vehicle.
 --- local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+--- if not DoesVehicleHaveRoof(vehicle) then return end
 --- SetConvertibleRoof(vehicle, false
 --- @hash [0xF39C4F538B5124C2](https://docs.fivem.net/natives/?_0xF39C4F538B5124C2)
 --- @param vehicle Vehicle
@@ -14700,13 +15554,15 @@ function N_0xf8b49f5ba7f850e7(vehicle, p1) end
 --- Returns the convertible state of the specified vehicle.
 --- 
 --- ```cpp
---- enum RoofState
---- {
----      ROOFSTATE_UP = 0,
----      ROOFSTATE_LOWERING = 1,
----      ROOFSTATE_DOWN = 2,
----      ROOFSTATE_RAISING = 3
---- };
+--- enum eRoofState {
+---     RAISED = 0,
+---     LOWERING = 1,
+---     LOWERED = 2,
+---     RAISING = 3,
+---     CLOSING_BOOT = 4,
+---     ROOF_STUCK_RAISED = 5,
+---     ROOF_STUCK_LOWERED = 6
+--- }
 --- ```
 --- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId())
 --- print(GetConvertibleRoofState(vehicle)

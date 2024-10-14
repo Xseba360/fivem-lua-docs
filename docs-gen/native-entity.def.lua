@@ -271,22 +271,7 @@ function IsEntityTouchingEntity(entity, targetEntity) end
 function GetOffsetFromEntityInWorldCoords(entity, offsetX, offsetY, offsetZ) end
 
     
---- ```
---- Applies a force to the specified entity.
---- **List of force types (p1)**:
---- public enum ForceType
---- {
----     MinForce = 0,
----     MaxForceRot = 1,
----     MinForce2 = 2,
----     MaxForceRot2 = 3,
----     ForceNoRot = 4,
----     ForceRotPlusForce = 5
---- }
---- Research/documentation on the gtaforums can be found here https://gtaforums.com/topic/885669-precisely-define-object-physics/) and here https://gtaforums.com/topic/887362-apply-forces-and-momentums-to-entityobject/.
---- p6/relative - makes the xyz force not relative to world coords, but to something else
---- p7/highForce - setting false will make the force really low
---- ```
+--- ApplyForceToEntityCenterOfMass
 ---
 --- @hash [0x18FF00FC7EFF559E](https://docs.fivem.net/natives/?_0x18FF00FC7EFF559E)
 --- @param entity Entity
@@ -1025,13 +1010,18 @@ function IsEntityUpright(entity, angle) end
 function IsEntityInArea(entity, x1, y1, z1, x2, y2, z2, p7, p8, p9) end
 
     
---- ```
---- Example here: www.gtaforums.com/topic/830463-help-with-turning-lights-green-and-causing-peds-to-crash-into-each-other/#entry1068211340
---- 0 = green
---- 1 = red
---- 2 = yellow
---- 3 = reset changes
---- changing lights may not change the behavior of vehicles
+--- Changing traffic-lights will not change the behavior of NPCs.
+--- 
+--- Example: [here](https://www.gtaforums.com/topic/830463-help-with-turning-lights-green-and-causing-peds-to-crash-into-each-other/#entry1068211340)
+--- 
+--- ```cpp
+--- enum eTrafficlightOverrideMode
+--- {
+---     TLO_RED = 0,
+---     TLO_AMBER = 1,
+---     TLO_GREEN = 2,
+---     TLO_NONE = 3
+--- }
 --- ```
 ---
 --- @hash [0x57C5DB656185EAC4](https://docs.fivem.net/natives/?_0x57C5DB656185EAC4)
@@ -1219,15 +1209,25 @@ function SetVehicleAsNoLongerNeeded(vehicle) end
 function N_0x68b562e124cc0aef(p0, p1) end
 
     
---- ```
---- SET_ENTITY_R*
---- ```
+--- SetEntityRequiresMoreExpensiveRiverCheck
 ---
 --- @hash [0x694E00132F2823ED](https://docs.fivem.net/natives/?_0x694E00132F2823ED)
 --- @param entity Entity
 --- @param toggle boolean
 --- @return void
 --- @overload fun(entity: Entity, toggle: boolean): void
+function SetEntityRequiresMoreExpensiveRiverCheck(entity, toggle) end
+
+    
+--- # New Name: SetEntityRequiresMoreExpensiveRiverCheck
+--- SetEntityRequiresMoreExpensiveRiverCheck
+---
+--- @hash [0x694E00132F2823ED](https://docs.fivem.net/natives/?_0x694E00132F2823ED)
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+--- @deprecated
 function N_0x694e00132f2823ed(entity, toggle) end
 
     
@@ -1240,15 +1240,15 @@ function N_0x694e00132f2823ed(entity, toggle) end
 function IsEntityAVehicle(entity) end
 
     
---- health >= 0
+--- When setting health for a player ped, the game will clamp the health value to ensure it does not exceed the maximum health. This maximum health can be retrieved by calling [`GET_PED_MAX_HEALTH`](https://docs.fivem.net/natives/?_0x4700A416E8324EF3). It can also be modified by calling [`SET_PED_MAX_HEALTH`](https://docs.fivem.net/natives/?_0xF5F6378C4F3419D3).
 --- 
---- male ped ~= 100 - 200
+--- When setting the health for non-player peds or entities, the maximum health will be increased if the new health value exceeds the current maximum.
 --- 
---- female ped ~= 0 - 100
+--- Default health for male peds is `200`, for female peds it is `175`.
 --- 
---- ```
---- NativeDB Added Parameter 3: int p2
---- ```
+--- ### Added parameters
+--- 
+--- *   **inflictor**: The handle for the entity that caused the damage.
 ---
 --- @hash [0x6B76DC1F3AE6E6A3](https://docs.fivem.net/natives/?_0x6B76DC1F3AE6E6A3)
 --- @param entity Entity
@@ -1509,23 +1509,17 @@ function SetEntityAngularVelocity(entity, x, y, z) end
 function N_0x8339643499d1222e(entity, x, y, z) end
 
     
---- ```
---- Gets the heading of the entity physics in degrees, which tends to be more accurate than just "GET_ENTITY_HEADING". This can be clearly seen while, for example, ragdolling a ped/player.  
---- NOTE: The name and description of this native are based on independent research. If you find this native to be more suitable under a different name and/or described differently, please feel free to do so.  
---- ```
+--- Gets the heading of the entity physics in degrees, which tends to be more accurate than just [`GET_ENTITY_HEADING`](https://docs.fivem.net/natives/?_0xE83D4F9BA2A38914). This can be clearly seen while, for example, ragdolling a ped/player.
 ---
 --- @hash [0x846BF6291198A71E](https://docs.fivem.net/natives/?_0x846BF6291198A71E)
 --- @param entity Entity
 --- @return number
 --- @overload fun(entity: Entity): number
-function GetEntityPhysicsHeading(entity) end
+function GetEntityHeadingFromEulers(entity) end
 
     
---- # New Name: GetEntityPhysicsHeading
---- ```
---- Gets the heading of the entity physics in degrees, which tends to be more accurate than just "GET_ENTITY_HEADING". This can be clearly seen while, for example, ragdolling a ped/player.  
---- NOTE: The name and description of this native are based on independent research. If you find this native to be more suitable under a different name and/or described differently, please feel free to do so.  
---- ```
+--- # New Name: GetEntityHeadingFromEulers
+--- Gets the heading of the entity physics in degrees, which tends to be more accurate than just [`GET_ENTITY_HEADING`](https://docs.fivem.net/natives/?_0xE83D4F9BA2A38914). This can be clearly seen while, for example, ragdolling a ped/player.
 ---
 --- @hash [0x846BF6291198A71E](https://docs.fivem.net/natives/?_0x846BF6291198A71E)
 --- @param entity Entity
@@ -1533,6 +1527,17 @@ function GetEntityPhysicsHeading(entity) end
 --- @overload fun(entity: Entity): number
 --- @deprecated
 function N_0x846bf6291198a71e(entity) end
+
+    
+--- # New Name: GetEntityHeadingFromEulers
+--- Gets the heading of the entity physics in degrees, which tends to be more accurate than just [`GET_ENTITY_HEADING`](https://docs.fivem.net/natives/?_0xE83D4F9BA2A38914). This can be clearly seen while, for example, ragdolling a ped/player.
+---
+--- @hash [0x846BF6291198A71E](https://docs.fivem.net/natives/?_0x846BF6291198A71E)
+--- @param entity Entity
+--- @return number
+--- @overload fun(entity: Entity): number
+--- @deprecated
+function GetEntityPhysicsHeading(entity) end
 
     
 --- Sets the rotation of a specified entity in the game world.
@@ -1900,23 +1905,24 @@ function SetEntityAsMissionEntity(entity, scriptHostObject, bGrabFromOtherScript
 function DeleteEntity(entity) end
 
     
+--- **NOTE**: What you use for rotationOrder when getting must be the same as rotationOrder when setting the rotation.
+--- 
+--- ```cpp
+--- enum eRotationOrder {
+---     // Rotate around the z-axis, then the y-axis and finally the x-axis.
+---     ROT_ZYX = 0,
+---     // Rotate around the y-axis, then the z-axis and finally the x-axis.
+---     ROT_YZX = 1,
+---     // Rotate around the z-axis, then the x-axis and finally the y-axis.
+---     ROT_ZXY = 2,
+---     // Rotate around the x-axis, then the z-axis and finally the y-axis.
+---     ROT_XZY = 3,
+---     // Rotate around the y-axis, then the x-axis and finally the z-axis.
+---     ROT_YXZ = 4,
+---     // Rotate around the x-axis, then the y-axis and finally the z-axis.
+---     ROT_XYZ = 5,
+--- }
 --- ```
---- rotationOrder refers to the order yaw pitch roll is applied; value ranges from 0 to 5 and is usually *2* in scripts.
---- 
---- What you use for rotationOrder when getting must be the same as rotationOrder when setting the rotation.
---- 
---- What it returns is the yaw on the z part of the vector, which makes sense considering R* considers z as vertical. Here's a picture for those of you who don't understand pitch, yaw, and roll:
---- www.allstar.fiu.edu/aero/images/pic5-1.gif
---- ```
---- 
---- ### Rotation Orders
---- 
---- *   **0**: ZYX - Rotate around the z-axis, then the y-axis and finally the x-axis.
---- *   **1**: YZX - Rotate around the y-axis, then the z-axis and finally the x-axis.
---- *   **2**: ZXY - Rotate around the z-axis, then the x-axis and finally the y-axis.
---- *   **3**: XZY - Rotate around the x-axis, then the z-axis and finally the y-axis.
---- *   **4**: YXZ - Rotate around the y-axis, then the x-axis and finally the z-axis.
---- *   **5**: XYZ - Rotate around the x-axis, then the y-axis and finally the z-axis.
 --- @usage local playerRotation = GetEntityRotation(PlayerPedId(), 2)
 --- print(playerRotation
 --- @hash [0xAFBD61CC738D9EB9](https://docs.fivem.net/natives/?_0xAFBD61CC738D9EB9)
@@ -2092,10 +2098,8 @@ function AttachEntityToEntityPhysically(entity1, entity2, boneIndex1, boneIndex2
     
 --- Applies a force to the specified entity.
 --- 
---- **List of force types (p1)**:
---- 
---- ```
---- public enum ForceType
+--- ```cpp
+--- enum eForceType
 --- {
 ---     MinForce = 0,
 ---     MaxForceRot = 1,
@@ -2180,19 +2184,15 @@ function ApplyForceToEntity(entity, forceType, x, y, z, offX, offY, offZ, boneIn
 function PlaySynchronizedEntityAnim(entity, syncedScene, animation, propName, p4, p5, p6, p7) end
 
     
---- ```
---- Entity 1 = Victim  
---- Entity 2 = Attacker  
---- p2 seems to always be 1  
---- ```
+--- HasEntityBeenDamagedByEntity
 ---
 --- @hash [0xC86D67D52A707CF8](https://docs.fivem.net/natives/?_0xC86D67D52A707CF8)
---- @param entity1 Entity
---- @param entity2 Entity
---- @param p2 boolean
+--- @param entity Entity
+--- @param damager Entity
+--- @param bCheckDamagerVehicle boolean
 --- @return boolean
---- @overload fun(entity1: Entity, entity2: Entity, p2: boolean): boolean
-function HasEntityBeenDamagedByEntity(entity1, entity2, p2) end
+--- @overload fun(entity: Entity, damager: Entity, bCheckDamagerVehicle: boolean): boolean
+function HasEntityBeenDamagedByEntity(entity, damager, bCheckDamagerVehicle) end
 
     
 --- GetEntityCollisionDisabled
@@ -2480,6 +2480,24 @@ function DoesEntityHavePhysics(entity) end
 --- @param toggle boolean
 --- @return void
 --- @overload fun(entity: Entity, toggle: boolean): void
+function SetWaitForCollisionsBeforeProbe(entity, toggle) end
+
+    
+--- # New Name: SetWaitForCollisionsBeforeProbe
+--- ```
+--- SET_*
+--- Only called within 1 script for x360. 'fm_mission_controller' and it used on an object.
+--- Ran after these 2 natives,
+--- set_object_targettable(uParam0, 0);
+--- set_entity_invincible(uParam0, 1);
+--- ```
+---
+--- @hash [0xDC6F8601FAF2E893](https://docs.fivem.net/natives/?_0xDC6F8601FAF2E893)
+--- @param entity Entity
+--- @param toggle boolean
+--- @return void
+--- @overload fun(entity: Entity, toggle: boolean): void
+--- @deprecated
 function N_0xdc6f8601faf2e893(entity, toggle) end
 
     

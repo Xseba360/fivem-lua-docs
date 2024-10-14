@@ -393,6 +393,19 @@ function HasCutsceneCutThisFrame() end
 function N_0x708bdd8cd795b043() end
 
     
+--- Gets the current time of the cutscene.
+--- 
+--- ```
+--- NativeDB Introduced: v3258
+--- ```
+---
+--- @hash [0x710286BC5EF4D6E1](https://docs.fivem.net/natives/?_0x710286BC5EF4D6E1)
+---
+--- @return number
+--- @overload fun(): number
+function GetCutscenePlayTime() end
+
+    
 --- IsCutscenePlaybackFlagSet
 ---
 --- @hash [0x71B74D2AE19338D0](https://docs.fivem.net/natives/?_0x71B74D2AE19338D0)

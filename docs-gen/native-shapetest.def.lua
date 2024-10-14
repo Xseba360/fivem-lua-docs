@@ -254,18 +254,19 @@ function GetShapeTestResultEx(shapeTestHandle) end
 --- Asynchronously starts a line-of-sight (raycast) world probe shape test.
 --- 
 --- ```cpp
---- enum TraceFlags
+--- enum eTraceFlags
 --- {
 ---   None = 0,
 ---   IntersectWorld = 1,
 ---   IntersectVehicles = 2,
----   IntersectPedsSimpleCollision = 4,
----   IntersectPeds = 8,
+---   IntersectPeds = 4,
+---   IntersectRagdolls = 8,
 ---   IntersectObjects = 16,
 ---   IntersectWater = 32,
----   Unknown = 128,
+---   IntersectGlass = 64,
+---   IntersectRiver = 128,
 ---   IntersectFoliage = 256,
----   IntersectEverything = 4294967295
+---   IntersectEverything = -1
 --- }
 --- ```
 --- 
@@ -280,30 +281,31 @@ function GetShapeTestResultEx(shapeTestHandle) end
 --- @param x2 number (float)
 --- @param y2 number (float)
 --- @param z2 number (float)
---- @param flags number (int)
+--- @param traceFlags number (int)
 --- @param entity Entity
---- @param p8 number (int)
+--- @param options number (int)
 --- @return number
---- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, flags: number, entity: Entity, p8: number): number
-function StartShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
+--- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, traceFlags: number, entity: Entity, options: number): number
+function StartShapeTestLosProbe(x1, y1, z1, x2, y2, z2, traceFlags, entity, options) end
 
     
 --- # New Name: StartShapeTestLosProbe
 --- Asynchronously starts a line-of-sight (raycast) world probe shape test.
 --- 
 --- ```cpp
---- enum TraceFlags
+--- enum eTraceFlags
 --- {
 ---   None = 0,
 ---   IntersectWorld = 1,
 ---   IntersectVehicles = 2,
----   IntersectPedsSimpleCollision = 4,
----   IntersectPeds = 8,
+---   IntersectPeds = 4,
+---   IntersectRagdolls = 8,
 ---   IntersectObjects = 16,
 ---   IntersectWater = 32,
----   Unknown = 128,
+---   IntersectGlass = 64,
+---   IntersectRiver = 128,
 ---   IntersectFoliage = 256,
----   IntersectEverything = 4294967295
+---   IntersectEverything = -1
 --- }
 --- ```
 --- 
@@ -318,13 +320,13 @@ function StartShapeTestLosProbe(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
 --- @param x2 number (float)
 --- @param y2 number (float)
 --- @param z2 number (float)
---- @param flags number (int)
+--- @param traceFlags number (int)
 --- @param entity Entity
---- @param p8 number (int)
+--- @param options number (int)
 --- @return number
---- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, flags: number, entity: Entity, p8: number): number
+--- @overload fun(x1: number, y1: number, z1: number, x2: number, y2: number, z2: number, traceFlags: number, entity: Entity, options: number): number
 --- @deprecated
-function N_0x7ee9f5d83dd4f90e(x1, y1, z1, x2, y2, z2, flags, entity, p8) end
+function N_0x7ee9f5d83dd4f90e(x1, y1, z1, x2, y2, z2, traceFlags, entity, options) end
 
     
 --- Performs the same type of trace as START_SHAPE_TEST_CAPSULE, but with some different hardcoded parameters.

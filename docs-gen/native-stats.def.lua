@@ -2494,21 +2494,17 @@ function PlaystatsInventory(p0) end
 function N_0x8989cbd7b4e82534(p0, p1, p2, p3, p4, p5, p6) end
 
     
---- ```
---- Disallows CEventNetworkStuntPerformed to be triggered.
---- ```
+--- Disallows CEventNetworkStuntPerformed to be triggered (Resets [`PLAYSTATS_START_TRACKING_STUNTS`](https://docs.fivem.net/natives/?_0x928DBFB892638EF3)).
 ---
 --- @hash [0x8A800DACCC0DA55D](https://docs.fivem.net/natives/?_0x8A800DACCC0DA55D)
 ---
 --- @return void
 --- @overload fun(): void
-function PlaystatsStuntPerformedEventDisallowTrigger() end
+function PlaystatsStopTrackingStunts() end
 
     
---- # New Name: PlaystatsStuntPerformedEventDisallowTrigger
---- ```
---- Disallows CEventNetworkStuntPerformed to be triggered.
---- ```
+--- # New Name: PlaystatsStopTrackingStunts
+--- Disallows CEventNetworkStuntPerformed to be triggered (Resets [`PLAYSTATS_START_TRACKING_STUNTS`](https://docs.fivem.net/natives/?_0x928DBFB892638EF3)).
 ---
 --- @hash [0x8A800DACCC0DA55D](https://docs.fivem.net/natives/?_0x8A800DACCC0DA55D)
 ---
@@ -2516,6 +2512,17 @@ function PlaystatsStuntPerformedEventDisallowTrigger() end
 --- @overload fun(): void
 --- @deprecated
 function N_0x8a800daccc0da55d() end
+
+    
+--- # New Name: PlaystatsStopTrackingStunts
+--- Disallows CEventNetworkStuntPerformed to be triggered (Resets [`PLAYSTATS_START_TRACKING_STUNTS`](https://docs.fivem.net/natives/?_0x928DBFB892638EF3)).
+---
+--- @hash [0x8A800DACCC0DA55D](https://docs.fivem.net/natives/?_0x8A800DACCC0DA55D)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function PlaystatsStuntPerformedEventDisallowTrigger() end
 
     
 --- StatGetDate
@@ -2622,20 +2629,48 @@ function LeaderboardsGetCacheDataRow(p0, p1, p2) end
 function Leaderboards2ReadFriendsByRow(p2, p3, p4, p5) end
 
     
---- ```
---- Allows CEventNetworkStuntPerformed to be triggered.
+--- Allows stunts to be triggered and sent as a `CEventNetworkStuntPerformed` event.
+--- 
+--- Event types are shown below:
+--- 
+--- ```cpp
+--- enum eTrackedStuntType
+--- {
+---     ST_FRONTFLIP = 0,
+---     ST_BACKFLIP = 1,
+---     ST_SPIN = 2,
+---     ST_WHEELIE = 3,
+---     ST_STOPPIE = 4,
+---     ST_BOWLING_PIN = 5,
+---     ST_FOOTBALL = 6,
+---     ST_ROLL = 7
+--- };
 --- ```
 ---
 --- @hash [0x928DBFB892638EF3](https://docs.fivem.net/natives/?_0x928DBFB892638EF3)
 ---
 --- @return void
 --- @overload fun(): void
-function PlaystatsStuntPerformedEventAllowTrigger() end
+function PlaystatsStartTrackingStunts() end
 
     
---- # New Name: PlaystatsStuntPerformedEventAllowTrigger
---- ```
---- Allows CEventNetworkStuntPerformed to be triggered.
+--- # New Name: PlaystatsStartTrackingStunts
+--- Allows stunts to be triggered and sent as a `CEventNetworkStuntPerformed` event.
+--- 
+--- Event types are shown below:
+--- 
+--- ```cpp
+--- enum eTrackedStuntType
+--- {
+---     ST_FRONTFLIP = 0,
+---     ST_BACKFLIP = 1,
+---     ST_SPIN = 2,
+---     ST_WHEELIE = 3,
+---     ST_STOPPIE = 4,
+---     ST_BOWLING_PIN = 5,
+---     ST_FOOTBALL = 6,
+---     ST_ROLL = 7
+--- };
 --- ```
 ---
 --- @hash [0x928DBFB892638EF3](https://docs.fivem.net/natives/?_0x928DBFB892638EF3)
@@ -2644,6 +2679,33 @@ function PlaystatsStuntPerformedEventAllowTrigger() end
 --- @overload fun(): void
 --- @deprecated
 function N_0x928dbfb892638ef3() end
+
+    
+--- # New Name: PlaystatsStartTrackingStunts
+--- Allows stunts to be triggered and sent as a `CEventNetworkStuntPerformed` event.
+--- 
+--- Event types are shown below:
+--- 
+--- ```cpp
+--- enum eTrackedStuntType
+--- {
+---     ST_FRONTFLIP = 0,
+---     ST_BACKFLIP = 1,
+---     ST_SPIN = 2,
+---     ST_WHEELIE = 3,
+---     ST_STOPPIE = 4,
+---     ST_BOWLING_PIN = 5,
+---     ST_FOOTBALL = 6,
+---     ST_ROLL = 7
+--- };
+--- ```
+---
+--- @hash [0x928DBFB892638EF3](https://docs.fivem.net/natives/?_0x928DBFB892638EF3)
+---
+--- @return void
+--- @overload fun(): void
+--- @deprecated
+function PlaystatsStuntPerformedEventAllowTrigger() end
 
     
 --- ```

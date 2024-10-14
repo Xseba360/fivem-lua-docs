@@ -50,10 +50,23 @@ function GetNumNavmeshesExistingInArea(posMinX, posMinY, posMinZ, posMaxX, posMa
 function N_0x01708e8dd3ff8c65(posMinX, posMinY, posMinZ, posMaxX, posMaxY, posMaxZ) end
 
     
---- ```
---- Gets the density and flags of the closest node to the specified position.  
---- Density is a value between 0 and 15, indicating how busy the road is.  
---- Flags is a bit field.  
+--- Gets the density and flags of the closest node to the specified position.\
+--- Density is a value between 0 and 15, indicating how busy the road is.
+--- 
+--- ```cpp
+--- enum eVehicleNodeProperties {
+--- 	OFF_ROAD = 1 << 0,
+--- 	ON_PLAYERS_ROAD =  1 << 1,
+--- 	NO_BIG_VEHICLES = 1 << 2,
+--- 	SWITCHED_OFF = 1 << 3,
+--- 	TUNNEL_OR_INTERIOR = 1 << 4,
+--- 	LEADS_TO_DEAD_END = 1 << 5,
+--- 	HIGHWAY = 1 << 6,
+--- 	JUNCTION = 1 << 7,
+--- 	TRAFFIC_LIGHT = 1 << 8,
+--- 	GIVE_WAY = 1 << 9,
+--- 	WATER = 1 << 10,
+--- }
 --- ```
 ---
 --- @hash [0x0568566ACBB5DEDC](https://docs.fivem.net/natives/?_0x0568566ACBB5DEDC)
@@ -167,20 +180,18 @@ function UpdateNavmeshBlockingObject(object, posX, posY, posZ, scaleX, scaleY, s
 function IsPointOnRoad(x, y, z, vehicle) end
 
     
---- ```
---- p1 seems to be always 1.0f in the scripts  
---- ```
+--- Finds an edge (node connection to another node) that satisfies the specified criteria.
 ---
 --- @hash [0x132F52BBA570FE92](https://docs.fivem.net/natives/?_0x132F52BBA570FE92)
 --- @param x number (float)
 --- @param y number (float)
 --- @param z number (float)
---- @param p3 number (float)
---- @param p4 number (int)
---- @param p10 boolean
---- @return any, Vector3, Vector3, any, any, number
---- @overload fun(x: number, y: number, z: number, p3: number, p4: number, p10: boolean): any, Vector3, Vector3, any, any, number
-function GetClosestRoad(x, y, z, p3, p4, p10) end
+--- @param minimumEdgeLength number (float)
+--- @param minimumLaneCount number (int)
+--- @param onlyMajorRoads boolean
+--- @return boolean, Vector3, Vector3, number, number, number
+--- @overload fun(x: number, y: number, z: number, minimumEdgeLength: number, minimumLaneCount: number, onlyMajorRoads: boolean): boolean, Vector3, Vector3, number, number, number
+function GetClosestRoad(x, y, z, minimumEdgeLength, minimumLaneCount, onlyMajorRoads) end
 
     
 --- GetPointOnRoadSide
@@ -680,8 +691,17 @@ function N_0x705a844002b39dc0() end
 function SetIgnoreNoGpsFlag(toggle) end
 
     
---- ```
---- Get the nth closest vehicle node and its heading. (unknown2 = 9, unknown3 = 3.0, unknown4 = 2.5)  
+--- Get the nth closest vehicle node with its heading and total lane count.
+--- If you need specific forward and backward lane counts use [GET_CLOSEST_ROAD](https://docs.fivem.net/natives/?_0x132F52BBA570FE92)
+--- 
+--- ```cpp
+--- enum eNodeFlags {
+--- 	NONE = 0,
+--- 	INCLUDE_SWITCHED_OFF_NODES = 1,
+--- 	INCLUDE_BOAT_NODES = 2,
+--- 	IGNORE_SLIPLANES = 4,
+--- 	IGNORE_SWITCHED_OFF_DEAD_ENDS = 8,
+--- }
 --- ```
 ---
 --- @hash [0x80CA6A8B6C094CC4](https://docs.fivem.net/natives/?_0x80CA6A8B6C094CC4)
@@ -689,12 +709,12 @@ function SetIgnoreNoGpsFlag(toggle) end
 --- @param y number (float)
 --- @param z number (float)
 --- @param nthClosest number (int)
---- @param unknown2 number (int)
---- @param unknown3 number (float)
---- @param unknown4 number (float)
---- @return boolean, Vector3, number, any
---- @overload fun(x: number, y: number, z: number, nthClosest: number, unknown2: number, unknown3: number, unknown4: number): boolean, Vector3, number, any
-function GetNthClosestVehicleNodeWithHeading(x, y, z, nthClosest, unknown2, unknown3, unknown4) end
+--- @param searchFlags number (int)
+--- @param zMeasureMult number (float)
+--- @param zTolerance number (float)
+--- @return boolean, Vector3, number, number
+--- @overload fun(x: number, y: number, z: number, nthClosest: number, searchFlags: number, zMeasureMult: number, zTolerance: number): boolean, Vector3, number, number
+function GetNthClosestVehicleNodeWithHeading(x, y, z, nthClosest, searchFlags, zMeasureMult, zTolerance) end
 
     
 --- ```
@@ -1098,30 +1118,71 @@ function SetPedPathsBackToOriginal(p0, p1, p2, p3, p4, p5) end
 function GetNthClosestVehicleNode(x, y, z, nthClosest, outPosition, unknown1, unknown2, unknown3) end
 
     
---- p3 can be 0, 1 or 2.
+--- Native to get a position along current player GPS route using supplied slot.
+--- This native was previously named `GET_GPS_WAYPOINT_ROUTE_END`, but its named changed.
+--- 
+--- ```cpp
+--- enum eGpsSlotType {
+--- 	GPS_SLOT_WAYPOINT = 0,
+--- 	GPS_SLOT_RADAR_BLIP = 1,
+--- 	GPS_SLOT_DISCRETE = 2
+--- }
+--- ```
 ---
 --- @hash [0xF3162836C28F9DA5](https://docs.fivem.net/natives/?_0xF3162836C28F9DA5)
 --- @param result Vector3 (Vector3*)
---- @param p1 boolean
---- @param p2 number (float)
---- @param p3 number (int)
+--- @param bStartAtPlayerPos boolean
+--- @param fDistanceAlongRoute number (float)
+--- @param slotType number (int)
 --- @return boolean
---- @overload fun(p1: boolean, p2: number, p3: number): boolean, Vector3
-function GetGpsWaypointRouteEnd(result, p1, p2, p3) end
+--- @overload fun(bStartAtPlayerPos: boolean, fDistanceAlongRoute: number, slotType: number): boolean, Vector3
+function GetPosAlongGpsTypeRoute(result, bStartAtPlayerPos, fDistanceAlongRoute, slotType) end
 
     
---- # New Name: GetGpsWaypointRouteEnd
---- p3 can be 0, 1 or 2.
+--- # New Name: GetPosAlongGpsTypeRoute
+--- Native to get a position along current player GPS route using supplied slot.
+--- This native was previously named `GET_GPS_WAYPOINT_ROUTE_END`, but its named changed.
+--- 
+--- ```cpp
+--- enum eGpsSlotType {
+--- 	GPS_SLOT_WAYPOINT = 0,
+--- 	GPS_SLOT_RADAR_BLIP = 1,
+--- 	GPS_SLOT_DISCRETE = 2
+--- }
+--- ```
 ---
 --- @hash [0xF3162836C28F9DA5](https://docs.fivem.net/natives/?_0xF3162836C28F9DA5)
 --- @param result Vector3 (Vector3*)
---- @param p1 boolean
---- @param p2 number (float)
---- @param p3 number (int)
+--- @param bStartAtPlayerPos boolean
+--- @param fDistanceAlongRoute number (float)
+--- @param slotType number (int)
 --- @return boolean
---- @overload fun(p1: boolean, p2: number, p3: number): boolean, Vector3
+--- @overload fun(bStartAtPlayerPos: boolean, fDistanceAlongRoute: number, slotType: number): boolean, Vector3
 --- @deprecated
-function N_0xf3162836c28f9da5(result, p1, p2, p3) end
+function N_0xf3162836c28f9da5(result, bStartAtPlayerPos, fDistanceAlongRoute, slotType) end
+
+    
+--- # New Name: GetPosAlongGpsTypeRoute
+--- Native to get a position along current player GPS route using supplied slot.
+--- This native was previously named `GET_GPS_WAYPOINT_ROUTE_END`, but its named changed.
+--- 
+--- ```cpp
+--- enum eGpsSlotType {
+--- 	GPS_SLOT_WAYPOINT = 0,
+--- 	GPS_SLOT_RADAR_BLIP = 1,
+--- 	GPS_SLOT_DISCRETE = 2
+--- }
+--- ```
+---
+--- @hash [0xF3162836C28F9DA5](https://docs.fivem.net/natives/?_0xF3162836C28F9DA5)
+--- @param result Vector3 (Vector3*)
+--- @param bStartAtPlayerPos boolean
+--- @param fDistanceAlongRoute number (float)
+--- @param slotType number (int)
+--- @return boolean
+--- @overload fun(bStartAtPlayerPos: boolean, fDistanceAlongRoute: number, slotType: number): boolean, Vector3
+--- @deprecated
+function GetGpsWaypointRouteEnd(result, bStartAtPlayerPos, fDistanceAlongRoute, slotType) end
 
     
 --- Activates Cayo Perico path nodes if passed `1`. GPS navigation will start working, maybe more stuff will change, not sure. It seems if you try to unload (pass `0`) when close to the island, your game might crash.
@@ -1224,13 +1285,18 @@ function GenerateDirectionsToCoord(x, y, z, p3) end
 --- 
 --- Only 32 blocking objects may exist at a given time and must be manually managed. See [`REMOVE_NAVMESH_BLOCKING_OBJECT`](https://docs.fivem.net/natives/?_0x46399A7895957C0E) and [`onResourceStop`](https://docs.fivem.net/docs/scripting-reference/events/list/onResourceStop/)
 --- 
---- ```
+--- ```cpp
 --- enum eBlockingObjectFlags {
----     BLOCKING_OBJECT_DEFAULT = 0,      // Default Flag
----     BLOCKING_OBJECT_WANDERPATH = 1,   // Blocking object will block wander paths
----     BLOCKING_OBJECT_SHORTESTPATH = 2, // Blocking object will block (regular) shortest-paths
----     BLOCKING_OBJECT_FLEEPATH = 4,     // Blocking object will block flee paths
----     BLOCKING_OBJECT_ALLPATHS = 7,     // Blocking object will block all paths
+---     // Default Flag
+---     BLOCKING_OBJECT_DEFAULT = 0,
+---     // Blocking object will block wander paths
+---     BLOCKING_OBJECT_WANDERPATH = 1,
+---     // Blocking object will block (regular) shortest-paths
+---     BLOCKING_OBJECT_SHORTESTPATH = 2,
+---     // Blocking object will block flee paths
+---     BLOCKING_OBJECT_FLEEPATH = 4,
+---     // Blocking object will block all paths
+---     BLOCKING_OBJECT_ALLPATHS = 7,
 --- }
 --- ```
 ---
