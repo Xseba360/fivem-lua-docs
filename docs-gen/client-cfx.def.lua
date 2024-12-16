@@ -143,6 +143,23 @@ function RegisterStreamingFileFromKvs(kvsKey) end
 function GetVehicleWheelSpeed(vehicle, wheelIndex) end
 
     
+--- An alternative to [SET_PED_PRELOAD_PROP_DATA](https://docs.fivem.net/natives/?_0x2B16A3BFF1FBCE49) that uses local collection indexing instead of the global one.
+--- 
+--- The local / collection relative indexing is useful because the global index may get shifted after Title Update. While local index will remain the same which simplifies migration to the newer game version.
+--- 
+--- Collection name and local index inside the collection can be obtained from the global index using [GET_PED_COLLECTION_NAME_FROM_PROP](https://docs.fivem.net/natives/?_0x8ED0C17) and [GET_PED_COLLECTION_LOCAL_INDEX_FROM_PROP](https://docs.fivem.net/natives/?_0xFBDB885F) natives.
+---
+--- @hash [0x14B5BBE0](https://docs.fivem.net/natives/?_0x14B5BBE0)
+--- @param ped Ped
+--- @param anchorPoint number (int)
+--- @param collection string (char*)
+--- @param propIndex number (int)
+--- @param textureId number (int)
+--- @return void
+--- @overload fun(ped: Ped, anchorPoint: number, collection: string, propIndex: number, textureId: number): void
+function SetPedCollectionPreloadPropData(ped, anchorPoint, collection, propIndex, textureId) end
+
+    
 --- FindFirstVehicle
 ---
 --- @hash [0x15E55694](https://docs.fivem.net/natives/?_0x15E55694)
@@ -248,6 +265,15 @@ function MumbleSetAudioInputDistance(distance) end
 --- @return void
 --- @overload fun(fileName: string): void
 function RegisterFontFile(fileName) end
+
+    
+--- SetGlobalPassengerMassMultiplier
+---
+--- @hash [0x1C47F6AC](https://docs.fivem.net/natives/?_0x1C47F6AC)
+--- @param massMul number (float)
+--- @return void
+--- @overload fun(massMul: number): void
+function SetGlobalPassengerMassMultiplier(massMul) end
 
     
 --- Injects a 'mouse up' event for a DUI object. Coordinates are expected to be set using SEND_DUI_MOUSE_MOVE.
@@ -470,6 +496,22 @@ function GetVehicleHandlingInt(vehicle, class_, fieldName) end
 function GetPlayerMeleeWeaponDefenseModifier(playerId) end
 
     
+--- Returns global drawable index based on the local one. Is it a reverse to [GET_PED_COLLECTION_NAME_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0xD6BBA48B) and [GET_PED_COLLECTION_LOCAL_INDEX_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0x94EB1FE4) natives.
+--- 
+--- Drawables are stored inside collections. Each collection usually corresponds to a certain DCL or the base game.
+--- 
+--- If all drawables from all collections are placed into one continuous array - the global index will correspond to the index of drawable in such array. Local index is index of drawable in this array relative to the start of the given collection.
+---
+--- @hash [0x280F1FC3](https://docs.fivem.net/natives/?_0x280F1FC3)
+--- @param ped Ped
+--- @param componentId number (int)
+--- @param collection string (char*)
+--- @param drawableId number (int)
+--- @return number
+--- @overload fun(ped: Ped, componentId: number, collection: string, drawableId: number): number
+function GetPedDrawableGlobalIndexFromCollection(ped, componentId, collection, drawableId) end
+
+    
 --- Removes vehicle xenon lights custom RGB color.
 ---
 --- @hash [0x2867ED8C](https://docs.fivem.net/natives/?_0x2867ED8C)
@@ -586,35 +628,6 @@ function GetRopeUpdateOrder(rope) end
 function GetVehicleWheelSuspensionCompression(vehicle, wheelIndex) end
 
     
---- Returns a list of entity handles (script GUID) for all entities in the specified pool - the data returned is an array as
---- follows:
---- 
---- ```json
---- [ 770, 1026, 1282, 1538, 1794, 2050, 2306, 2562, 2818, 3074, 3330, 3586, 3842, 4098, 4354, 4610, ...]
---- ```
---- 
---- ### Supported pools
---- 
---- *   `CPed`: Peds (including animals) and players.
---- *   `CObject`: Objects (props), doors, and projectiles.
---- *   `CVehicle`: Vehicles.
---- *   `CPickup`: Pickups.
---- @usage local vehiclePool = GetGamePool('CVehicle') -- Get the list of vehicles (entities) from the pool
---- for i = 1, #vehiclePool do -- loop through each vehicle (entity)
----     if GetPedInVehicleSeat(vehiclePool[i], -1) == 0 then
----         DeleteEntity(vehiclePool[i]) -- Delete vehicles (entities) that don't have a driver
----     end
---- en
---- @hash [0x2B9D4F50](https://docs.fivem.net/natives/?_0x2B9D4F50)
---- @param poolName string (char*)
---- @return (Ped|Object|Vehicle|Pickup)[]
---- @overload fun(poolname: 'CPed'): Ped[]
---- @overload fun(poolname: 'CObject'): Object[]
---- @overload fun(poolname: 'CVehicle'): Vehicle[]
---- @overload fun(poolname: 'CPickup'): Pickup[]
-function GetGamePool(poolName) end
-
-    
 --- Sets a handling override for a specific vehicle. Certain handling flags can only be set globally using `SET_HANDLING_FIELD`, this might require some experimentation.
 --- Example: `SetVehicleHandlingField(vehicle, 'CHandlingData', 'fSteeringLock', 360.0)`
 ---
@@ -656,6 +669,22 @@ function GetMapdataEntityMatrix(mapDataHash, entityInternalIdx, matrixPtr) end
 --- @return boolean
 --- @overload fun(): boolean
 function GetNetworkWalkMode() end
+
+    
+--- Returns global prop index based on the local one. Is it a reverse to [GET_PED_COLLECTION_NAME_FROM_PROP](https://docs.fivem.net/natives/?_0x8ED0C17) and [GET_PED_COLLECTION_LOCAL_INDEX_FROM_PROP](https://docs.fivem.net/natives/?_0xFBDB885F) natives.
+--- 
+--- Props are stored inside collections. Each collection usually corresponds to a certain DCL or the base game.
+--- 
+--- If all props from all collections are placed into one continuous array - the global index will correspond to the index of the prop in such array. Local index is index of the prop in this array relative to the start of the given collection.
+---
+--- @hash [0x2CB45CDC](https://docs.fivem.net/natives/?_0x2CB45CDC)
+--- @param ped Ped
+--- @param anchorPoint number (int)
+--- @param collection string (char*)
+--- @param propIndex number (int)
+--- @return number
+--- @overload fun(ped: Ped, anchorPoint: number, collection: string, propIndex: number): number
+function GetPedPropGlobalIndexFromCollection(ped, anchorPoint, collection, propIndex) end
 
     
 --- Injects a 'mouse wheel' event for a DUI object.
@@ -722,6 +751,17 @@ function GetWeaponComponentRangeModifier(componentHash) end
 function GetMapdataEntityHandle(mapDataHash, entityInternalIdx, entityHandle) end
 
     
+--- An analogue of [GET_NUMBER_OF_PED_DRAWABLE_VARIATIONS](https://docs.fivem.net/natives/?_0x27561561732A7842) that returns number of drawable variations inside a single collection instead of the total number across all collections.
+---
+--- @hash [0x310D0271](https://docs.fivem.net/natives/?_0x310D0271)
+--- @param ped Ped
+--- @param componentId number (int)
+--- @param collection string (char*)
+--- @return number
+--- @overload fun(ped: Ped, componentId: number, collection: string): number
+function GetNumberOfPedCollectionDrawableVariations(ped, componentId, collection) end
+
+    
 --- Disables the game's built-in auto-reloading.
 ---
 --- @hash [0x311150E5](https://docs.fivem.net/natives/?_0x311150E5)
@@ -786,6 +826,22 @@ function MumbleAddVoiceTargetPlayer(targetId, player) end
 function AddTextEntry(entryKey, entryText) end
 
     
+--- An alternative to [IS_PED_COMPONENT_VARIATION_GEN9\_EXCLUSIVE](https://docs.fivem.net/natives/?_0xC767B581) that uses local collection indexing instead of the global one.
+--- 
+--- The local / collection relative indexing is useful because the global index may get shifted after Title Update. While local index will remain the same which simplifies migration to the newer game version.
+--- 
+--- Collection name and local index inside the collection can be obtained from the global index using [GET_PED_COLLECTION_NAME_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0xD6BBA48B) and [GET_PED_COLLECTION_LOCAL_INDEX_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0x94EB1FE4) natives.
+---
+--- @hash [0x33B2AFA2](https://docs.fivem.net/natives/?_0x33B2AFA2)
+--- @param ped Ped
+--- @param componentId number (int)
+--- @param collection string (char*)
+--- @param drawableId number (int)
+--- @return boolean
+--- @overload fun(ped: Ped, componentId: number, collection: string, drawableId: number): boolean
+function IsPedCollectionComponentVariationGen9Exclusive(ped, componentId, collection, drawableId) end
+
+    
 --- MumbleIsPlayerTalking
 ---
 --- @hash [0x33EEF97F](https://docs.fivem.net/natives/?_0x33EEF97F)
@@ -793,6 +849,19 @@ function AddTextEntry(entryKey, entryText) end
 --- @return boolean
 --- @overload fun(player: Player): boolean
 function MumbleIsPlayerTalking(player) end
+
+    
+--- ApplyWeatherCycles
+--- @usage -- Cycle between XMAS weather for 30 seconds (3 * 10000 milliseconds), and SMOG weather for 20 seconds (2 * 10000 milliseconds)
+--- local success = SetWeatherCycleEntry(0, "XMAS", 3) and
+---                 SetWeatherCycleEntry(1, "SMOG", 2) and
+---                 ApplyWeatherCycles(2, 10000
+--- @hash [0x3422291C](https://docs.fivem.net/natives/?_0x3422291C)
+--- @param numEntries number (int)
+--- @param msPerCycle number (int)
+--- @return boolean
+--- @overload fun(numEntries: number, msPerCycle: number): boolean
+function ApplyWeatherCycles(numEntries, msPerCycle) end
 
     
 --- Gets a local client's Player ID from its server ID counterpart, assuming the passed `serverId` exists on the client.
@@ -914,6 +983,27 @@ function SetRuntimeTextureArgbData(tex, buffer, length) end
 --- @return boolean
 --- @overload fun(): boolean
 function IsNuiFocusKeepingInput() end
+
+    
+--- SetVehicleNextGear
+---
+--- @hash [0x3A4566F4](https://docs.fivem.net/natives/?_0x3A4566F4)
+--- @param vehicle Vehicle
+--- @param nextGear number (int)
+--- @return void
+--- @overload fun(vehicle: Vehicle, nextGear: number): void
+function SetVehicleNextGear(vehicle, nextGear) end
+
+    
+--- An analogue of [GET_NUMBER_OF_PED_PROP_DRAWABLE_VARIATIONS](https://docs.fivem.net/natives/?_0x5FAF9754E789FB47) that returns number of prop variations inside a single collection instead of the total number across all collections.
+---
+--- @hash [0x3B6A13E1](https://docs.fivem.net/natives/?_0x3B6A13E1)
+--- @param ped Ped
+--- @param anchorPoint number (int)
+--- @param collection string (char*)
+--- @return number
+--- @overload fun(ped: Ped, anchorPoint: number, collection: string): number
+function GetNumberOfPedCollectionPropDrawableVariations(ped, anchorPoint, collection) end
 
     
 --- See [GET_TIMECYCLE_VAR_COUNT](https://docs.fivem.net/natives/?_0x838B34D8).
@@ -1041,6 +1131,23 @@ function SelectEntityAtCursor(hitFlags, precise) end
 function SetMinimapComponentPosition(name, alignX, alignY, posX, posY, sizeX, sizeY) end
 
     
+--- An alternative to [SET_PED_PRELOAD_VARIATION_DATA](https://docs.fivem.net/natives/?_0x39D55A620FCB6A3A) that uses local collection indexing instead of the global one.
+--- 
+--- The local / collection relative indexing is useful because the global index may get shifted after Title Update. While local index will remain the same which simplifies migration to the newer game version.
+--- 
+--- Collection name and local index inside the collection can be obtained from the global index using [GET_PED_COLLECTION_NAME_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0x5C612867) and [GET_PED_COLLECTION_LOCAL_INDEX_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0x94EB1FE4) natives.
+---
+--- @hash [0x3EC75558](https://docs.fivem.net/natives/?_0x3EC75558)
+--- @param ped Ped
+--- @param componentId number (int)
+--- @param collection string (char*)
+--- @param drawableId number (int)
+--- @param textureId number (int)
+--- @return void
+--- @overload fun(ped: Ped, componentId: number, collection: string, drawableId: number, textureId: number): void
+function SetPedCollectionPreloadVariationData(ped, componentId, collection, drawableId, textureId) end
+
+    
 --- GetInteriorPortalRoomTo
 --- @usage local playerPed = PlayerPedId()
 --- local interiorId = GetInteriorFromEntity(playerPed)
@@ -1122,16 +1229,31 @@ function GetTrainDoorOpenRatio(train, doorIndex) end
 function FindNextPickup(findHandle, outEntity) end
 
     
---- **Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
+--- Overwrite the games default CPortalTracker interior detection range.
+--- This fixes potentially unwanted behaviour in the base game and allows you to build custom interiors with larger ceiling heights without running into graphical glitches.
 --- 
---- Registers a set of entities with the game engine. These should match `CEntityDef` class information from the game.
---- At this time, this function **should not be used in a live environment**.
----
---- @hash [0x410DA7D3](https://docs.fivem.net/natives/?_0x410DA7D3)
---- @param factory fun
+--- By default CPortalTracker will probe 4 units downward trying to reach collisions that are part of the interior the entity is in.
+--- If no collision can be found 16 units are used in some circumstances.
+--- 
+--- There are 30+ hard coded special cases, only some of them exposed via script (for example `ENABLE_STADIUM_PROBES_THIS_FRAME`).
+--- 
+--- This native allows you to extend the probe range up to 150 units which is the same value the game uses for the `xs_arena_interior`
+--- @usage RegisterCommand("setInteriorProbeLength", function(src, args, raw)
+---     local probeLength = (tonumber(args[1]) + 0.0)
+--- 
+---     print("Extending interior detection probes to: ", probeLength)
+---     SetInteriorProbeLength(probeLength)
+--- end)
+--- 
+--- RegisterCommand("resetInteriorProbeLength", function()
+---     print("Resetting interior detection probes to default settings")
+---     SetInteriorProbeLength(0.0)
+--- end
+--- @hash [0x423F7E39](https://docs.fivem.net/natives/?_0x423F7E39)
+--- @param probeLength number (float)
 --- @return void
---- @overload fun(factory: fun): void
-function RegisterEntities(factory) end
+--- @overload fun(probeLength: number): void
+function SetInteriorProbeLength(probeLength) end
 
     
 --- GetWaterQuadBounds
@@ -1164,6 +1286,23 @@ function SetMapZoomDataLevel(index, zoomScale, zoomSpeed, scrollSpeed, tilesX, t
 --- @return number
 --- @overload fun(ped: Ped): number
 function GetPedSweat(ped) end
+
+    
+--- Returns number of variation collections available for the given Ped.
+--- 
+--- Collections are groups of drawable components or props available for the given Ped. Usually collection corresponds to a certain DLC or the base game. See [SET_PED_COLLECTION_COMPONENT_VARIATION](https://docs.fivem.net/natives/?_0x88711BBA), [SET_PED_COLLECTION_PROP_INDEX](https://docs.fivem.net/natives/?_0x75240BCB), [GET_NUMBER_OF_PED_COLLECTION_DRAWABLE_VARIATIONS](https://docs.fivem.net/natives/?_0x310D0271) etc natives for more details on how to work with collections.
+--- 
+--- `GET_PED_COLLECTIONS_COUNT` can be used together with [GET_PED_COLLECTION_NAME](https://docs.fivem.net/natives/?_0xFED5D83A) to list all collections attached to Ped.
+--- @usage local ped = PlayerPedId()
+--- local count = GetPedCollectionsCount(ped)
+--- for i = 0, count - 1 do
+---   print(GetPedCollectionName(ped, i))
+--- en
+--- @hash [0x45946359](https://docs.fivem.net/natives/?_0x45946359)
+--- @param ped Ped
+--- @return number
+--- @overload fun(ped: Ped): number
+function GetPedCollectionsCount(ped) end
 
     
 --- Overrides a ped model personality type.
@@ -1961,6 +2100,36 @@ function MumbleSetAudioOutputDistance(distance) end
 function MumbleSetTalkerProximity(value) end
 
     
+--- An alternative to [SET_PED_PROP_INDEX](https://docs.fivem.net/natives/?_0x93376B65A266EB5F) that uses local collection indexing instead of the global one.
+--- 
+--- The local / collection relative indexing is useful because the global index may get shifted after Title Update. While local index will remain the same which simplifies migration to the newer game version.
+--- 
+--- Collection name and local index inside the collection can be obtained from the global index using [GET_PED_COLLECTION_NAME_FROM_PROP](https://docs.fivem.net/natives/?_0x8ED0C17) and [GET_PED_COLLECTION_LOCAL_INDEX_FROM_PROP](https://docs.fivem.net/natives/?_0xFBDB885F) natives.
+---
+--- @hash [0x75240BCB](https://docs.fivem.net/natives/?_0x75240BCB)
+--- @param ped Ped
+--- @param anchorPoint number (int)
+--- @param collection string (char*)
+--- @param propIndex number (int)
+--- @param textureId number (int)
+--- @param attach boolean
+--- @return void
+--- @overload fun(ped: Ped, anchorPoint: number, collection: string, propIndex: number, textureId: number, attach: boolean): void
+function SetPedCollectionPropIndex(ped, anchorPoint, collection, propIndex, textureId, attach) end
+
+    
+--- An alternative to [GET_NUMBER_OF_PED_PROP_TEXTURE_VARIATIONS](https://docs.fivem.net/natives/?_0xA6E7F1CEB523E171) that uses local collection indexing instead of the global one.
+---
+--- @hash [0x75CAF9CC](https://docs.fivem.net/natives/?_0x75CAF9CC)
+--- @param ped Ped
+--- @param anchorPoint number (int)
+--- @param collection string (char*)
+--- @param propIndex number (int)
+--- @return number
+--- @overload fun(ped: Ped, anchorPoint: number, collection: string, propIndex: number): number
+function GetNumberOfPedCollectionPropTextureVariations(ped, anchorPoint, collection, propIndex) end
+
+    
 --- Returns all rope handles. The data returned adheres to the following layout:
 --- 
 --- ```
@@ -2068,6 +2237,15 @@ function SendNuiMessage(jsonString) end
 --- @return number
 --- @overload fun(txd: number, txn: string, fileName: string): number
 function CreateRuntimeTextureFromImage(txd, txn, fileName) end
+
+    
+--- A getter for [SET_GLOBAL_PASSENGER_MASS_MULTIPLIER](https://docs.fivem.net/natives/?_0x1c47f6ac).
+---
+--- @hash [0x78951816](https://docs.fivem.net/natives/?_0x78951816)
+---
+--- @return number
+--- @overload fun(): number
+function GetGlobalPassengerMassMultiplier() end
 
     
 --- A getter for [SET_PLAYER_VEHICLE_DAMAGE_MODIFIER](https://docs.fivem.net/natives/?_0xA50E117CDDF82F0C).
@@ -2511,6 +2689,24 @@ function SetInteriorPortalCornerPosition(interiorId, portalIndex, cornerIndex, p
 function FindNextVehicle(findHandle, outEntity) end
 
     
+--- An alternative to [SET_PED_COMPONENT_VARIATION](https://docs.fivem.net/natives/?_0x262B14F48D29DE80) that uses local collection indexing instead of the global one.
+--- 
+--- The local / collection relative indexing is useful because the global index may get shifted after Title Update. While local index will remain the same which simplifies migration to the newer game version.
+--- 
+--- Collection name and local index inside the collection can be obtained from the global index using [GET_PED_COLLECTION_NAME_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0xD6BBA48B) and [GET_PED_COLLECTION_LOCAL_INDEX_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0x94EB1FE4) natives.
+---
+--- @hash [0x88711BBA](https://docs.fivem.net/natives/?_0x88711BBA)
+--- @param ped Ped
+--- @param componentId number (int)
+--- @param collection string (char*)
+--- @param drawableId number (int)
+--- @param textureId number (int)
+--- @param paletteId number (int)
+--- @return void
+--- @overload fun(ped: Ped, componentId: number, collection: string, drawableId: number, textureId: number, paletteId: number): void
+function SetPedCollectionComponentVariation(ped, componentId, collection, drawableId, textureId, paletteId) end
+
+    
 --- SetInteriorPortalFlag
 --- @usage local playerPed = PlayerPedId()
 --- local interiorId = GetInteriorFromEntity(playerPed)
@@ -2540,6 +2736,37 @@ function SetInteriorPortalFlag(interiorId, portalIndex, flag) end
 --- @return void
 --- @overload fun(targetId: number, player: Player): void
 function MumbleRemoveVoiceTargetPlayer(targetId, player) end
+
+    
+--- SetVehicleCurrentGear
+---
+--- @hash [0x8923DD42](https://docs.fivem.net/natives/?_0x8923DD42)
+--- @param vehicle Vehicle
+--- @param gear number (int)
+--- @return void
+--- @overload fun(vehicle: Vehicle, gear: number): void
+function SetVehicleCurrentGear(vehicle, gear) end
+
+    
+--- Allows StaticEmitter's without a linked entity to make use of environment features like occlusion and reverb even if they are located higher than 20.0 units above any static collision inside interiors.
+--- 
+--- This native allows you to extend the probe range up to 150.0 units.
+--- @usage RegisterCommand("setEmitterProbeLength", function(src, args, raw)
+---     local probeLength = (tonumber(args[1]) + 0.0)
+--- 
+---     print("Extending emitter probes to: ", probeLength)
+---     SetEmitterProbeLength(probeLength)
+--- end)
+--- 
+--- RegisterCommand("resetEmitterProbeLength", function()
+---     print("Resetting emitter probes to default settings")
+---     SetEmitterProbeLength(20.0)
+--- end
+--- @hash [0x8AA1F3C2](https://docs.fivem.net/natives/?_0x8AA1F3C2)
+--- @param probeLength number (float)
+--- @return void
+--- @overload fun(probeLength: number): void
+function SetEmitterProbeLength(probeLength) end
 
     
 --- Sets a global handling override for a specific vehicle class. The name is supposed to match the `handlingName` field from handling.meta.
@@ -2585,6 +2812,23 @@ function GetVehicleDashboardWaterTemp() end
 function SetPedMeleeCombatLimits(primaryCount, secondaryCount, populationPedCount) end
 
     
+--- Gets collection name for the given global prop index. Together with [GET_PED_COLLECTION_LOCAL_INDEX_FROM_PROP](https://docs.fivem.net/natives/?_0xFBDB885F) is used to get collection and local index (inside the given collection) of the prop. The collection name and index are used in functions like [SET_PED_COLLECTION_PROP_INDEX](https://docs.fivem.net/natives/?_0x75240BCB).
+--- @usage local ped = PlayerPedId()
+--- -- Hat for mp_f_freemode_01. From female_freemode_beach collection under index 1.
+--- -- Global index is 21 because there is 20 head prop variations in the base game collection that goes before the female_freemode_beach collection.
+--- local name = GetPedPropCollectionName(ped, 0, 21)
+--- local index = GetPedPropCollectionLocalIndex(ped, 0, 21)
+--- -- Equivalent to SetPedPropIndex(ped, 0, 21, 0, false)
+--- SetPedCollectionPropIndex(ped, 0, name, index, 0, false
+--- @hash [0x8ED0C17](https://docs.fivem.net/natives/?_0x8ED0C17)
+--- @param ped Ped
+--- @param anchorPoint number (int)
+--- @param propIndex number (int)
+--- @return string
+--- @overload fun(ped: Ped, anchorPoint: number, propIndex: number): string
+function GetPedCollectionNameFromProp(ped, anchorPoint, propIndex) end
+
+    
 --- Equivalent of [START_FIND_KVP](https://docs.fivem.net/natives/?_0xDD379006), but for another resource than the current one.
 --- @usage local kvpHandle = StartFindExternalKvp('drugs', 'mollis:')
 --- 
@@ -2597,9 +2841,11 @@ function SetPedMeleeCombatLimits(primaryCount, secondaryCount, populationPedCoun
 --- 		if key then
 --- 			print(('%s: %s'):format(key, GetResourceKvpString(key)))
 --- 		end
---- 	until key
+--- 	until not key
 --- 
 --- 	EndFindKvp(kvpHandle)
+--- else
+--- 	print('No KVPs found')
 --- en
 --- @hash [0x8F2EECC3](https://docs.fivem.net/natives/?_0x8F2EECC3)
 --- @param resourceName string (char*)
@@ -2704,6 +2950,23 @@ function GetWaveQuadCount() end
 function MumbleRemoveVoiceTargetPlayerByServerId(targetId, serverId) end
 
     
+--- Gets local index inside a collection (which can be obtained using [GET_PED_COLLECTION_NAME_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0xD6BBA48B)) for the given global drawable ID. The collection name and index are used in functions like [SET_PED_COLLECTION_COMPONENT_VARIATION](https://docs.fivem.net/natives/?_0x88711BBA).
+--- @usage local ped = PlayerPedId()
+--- -- Top for mp_f_freemode_01. From female_freemode_beach collection under index 1.
+--- -- Global index is 17 because there is 16 top variations in the base game collection that goes before the female_freemode_beach collection.
+--- local name = GetPedDrawableCollectionName(ped, 11, 17)
+--- local index = GetPedDrawableCollectionLocalIndex(ped, 11, 17)
+--- -- Equivalent to SetPedComponentVariation(ped, 11, 17, 0, 0)
+--- SetPedCollectionComponentVariation(ped, 11, name, index, 0, 0
+--- @hash [0x94EB1FE4](https://docs.fivem.net/natives/?_0x94EB1FE4)
+--- @param ped Ped
+--- @param componentId number (int)
+--- @param drawableId number (int)
+--- @return number
+--- @overload fun(ped: Ped, componentId: number, drawableId: number): number
+function GetPedCollectionLocalIndexFromDrawable(ped, componentId, drawableId) end
+
+    
 --- GetVehicleSteeringScale
 ---
 --- @hash [0x954465DE](https://docs.fivem.net/natives/?_0x954465DE)
@@ -2759,6 +3022,16 @@ function IsNuiFocused() end
 function SetWeaponRecoilShakeAmplitude(weaponHash, amplitude) end
 
     
+--- An analogue to [GET_PED_DRAWABLE_VARIATION](https://docs.fivem.net/natives/?_0x67F3780DD425D4FC) that returns collection local drawable index (inside [GET_PED_DRAWABLE_VARIATION_COLLECTION_NAME](https://docs.fivem.net/natives/?_0xBCE0AB63) collection) instead of the global drawable index.
+---
+--- @hash [0x9970386F](https://docs.fivem.net/natives/?_0x9970386F)
+--- @param ped Ped
+--- @param componentId number (int)
+--- @return number
+--- @overload fun(ped: Ped, componentId: number): number
+function GetPedDrawableVariationCollectionLocalIndex(ped, componentId) end
+
+    
 --- A getter for [MODIFY_VEHICLE_TOP_SPEED](https://docs.fivem.net/natives/?_0x93A3996368C94158). Returns -1.0 if a modifier is not set.
 ---
 --- @hash [0x998B7FEE](https://docs.fivem.net/natives/?_0x998B7FEE)
@@ -2808,6 +3081,19 @@ function GetInteriorPortalEntityArchetype(interiorId, portalIndex, entityIndex) 
 --- @return void
 --- @overload fun(submixId: number, effectSlot: number, paramIndex: number, paramValue: number): void
 function SetAudioSubmixEffectParamFloat(submixId, effectSlot, paramIndex, paramValue) end
+
+    
+--- **Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
+--- 
+--- Returns the memory address of an entity.
+--- 
+--- This native is intended for singleplayer debugging, and may not be available during multiplayer.
+---
+--- @hash [0x9A3144BC](https://docs.fivem.net/natives/?_0x9A3144BC)
+--- @param entity Entity
+--- @return any
+--- @overload fun(entity: Entity): any
+function GetEntityAddress(entity) end
 
     
 --- GetVehicleDashboardSpeed
@@ -3542,6 +3828,18 @@ function GetPedFaceFeature(ped, index) end
 function SetVehicleFuelLevel(vehicle, level) end
 
     
+--- An analogue to [GET_PED_DRAWABLE_VARIATION](https://docs.fivem.net/natives/?_0x67F3780DD425D4FC) that returns collection name instead of the global drawable index.
+--- 
+--- Should be used together with [GET_PED_DRAWABLE_VARIATION_COLLECTION_LOCAL_INDEX](https://docs.fivem.net/natives/?_0x9970386F).
+---
+--- @hash [0xBCE0AB63](https://docs.fivem.net/natives/?_0xBCE0AB63)
+--- @param ped Ped
+--- @param componentId number (int)
+--- @return string
+--- @overload fun(ped: Ped, componentId: number): string
+function GetPedDrawableVariationCollectionName(ped, componentId) end
+
+    
 --- Draw a glow sphere this frame. Up to 256 per single frame.
 ---
 --- @hash [0xBD25EC89](https://docs.fivem.net/natives/?_0xBD25EC89)
@@ -3940,6 +4238,32 @@ function GetRuntimeTextureWidth(tex) end
 function GetRuntimeTexturePitch(tex) end
 
     
+--- An alternative to [IS_PED_COMPONENT_VARIATION_VALID](https://docs.fivem.net/natives/?_0xE825F6B6CEA7671D) that uses local collection indexing instead of the global one.
+--- 
+--- The local / collection relative indexing is useful because the global index may get shifted after Title Update. While local index will remain the same which simplifies migration to the newer game version.
+--- 
+--- Collection name and local index inside the collection can be obtained from the global index using [GET_PED_COLLECTION_NAME_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0xD6BBA48B) and [GET_PED_COLLECTION_LOCAL_INDEX_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0x94EB1FE4) natives.
+---
+--- @hash [0xCA63A52A](https://docs.fivem.net/natives/?_0xCA63A52A)
+--- @param ped Ped
+--- @param componentId number (int)
+--- @param collection string (char*)
+--- @param drawableId number (int)
+--- @param textureId number (int)
+--- @return boolean
+--- @overload fun(ped: Ped, componentId: number, collection: string, drawableId: number, textureId: number): boolean
+function IsPedCollectionComponentVariationValid(ped, componentId, collection, drawableId, textureId) end
+
+    
+--- Toggles the visibility of resource names in the FiveM key mapping page.
+---
+--- @hash [0xCB0241B5](https://docs.fivem.net/natives/?_0xCB0241B5)
+--- @param hide boolean
+--- @return void
+--- @overload fun(hide: boolean): void
+function SetKeyMappingHideResources(hide) end
+
+    
 --- Sets a clickable button to be displayed in a player's Discord rich presence.
 ---
 --- @hash [0xCBBC3FAC](https://docs.fivem.net/natives/?_0xCBBC3FAC)
@@ -3949,6 +4273,15 @@ function GetRuntimeTexturePitch(tex) end
 --- @return void
 --- @overload fun(index: number, label: string, url: string): void
 function SetDiscordRichPresenceAction(index, label, url) end
+
+    
+--- Check whether specified channel exists on the Mumble server.
+---
+--- @hash [0xCC8CA25](https://docs.fivem.net/natives/?_0xCC8CA25)
+--- @param channel number (int)
+--- @return boolean
+--- @overload fun(channel: number): boolean
+function MumbleDoesChannelExist(channel) end
 
     
 --- Returns the offset of the specified wheel relative to the wheel's axle center.
@@ -4129,6 +4462,17 @@ function SetWaterQuadHasLimitedDepth(waterQuad, hasLimitedDepth) end
 function GetVehicleWheelPower(vehicle, wheelIndex) end
 
     
+--- SetWeatherCycleEntry
+---
+--- @hash [0xD264D4E1](https://docs.fivem.net/natives/?_0xD264D4E1)
+--- @param index number (int)
+--- @param typeName string (char*)
+--- @param timeMult number (int)
+--- @return boolean
+--- @overload fun(index: number, typeName: string, timeMult: number): boolean
+function SetWeatherCycleEntry(index, typeName, timeMult) end
+
+    
 --- Returns the transient map data index for a specified hash.
 --- This function supports SDK infrastructure and is not intended to be used directly from your code.
 ---
@@ -4149,6 +4493,18 @@ function GetMapdataFromHashKey(mapdataHandle) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, wheelIndex: number, flags: number): void
 function SetVehicleWheelFlags(vehicle, wheelIndex, flags) end
+
+    
+--- An alternative to [GET_NUMBER_OF_PED_TEXTURE_VARIATIONS](https://docs.fivem.net/natives/?_0x8F7156A3142A6BAD) that uses local collection indexing instead of the global one.
+---
+--- @hash [0xD2C15D7](https://docs.fivem.net/natives/?_0xD2C15D7)
+--- @param ped Ped
+--- @param componentId number (int)
+--- @param collection string (char*)
+--- @param drawableId number (int)
+--- @return number
+--- @overload fun(ped: Ped, componentId: number, collection: string, drawableId: number): number
+function GetNumberOfPedCollectionTextureVariations(ped, componentId, collection, drawableId) end
 
     
 --- This native is not implemented.
@@ -4195,6 +4551,23 @@ function SetTrainsForceDoorsOpen(forceOpen) end
 --- @return void
 --- @overload fun(distance: number): void
 function SetMpGamerTagsVisibleDistance(distance) end
+
+    
+--- Gets collection name for the given global drawable ID. Together with [GET_PED_COLLECTION_LOCAL_INDEX_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0x94EB1FE4) is used to get collection and local index (inside the given collection) of the drawable. The collection name and index are used in functions like [SET_PED_COLLECTION_COMPONENT_VARIATION](https://docs.fivem.net/natives/?_0x88711BBA).
+--- @usage local ped = PlayerPedId()
+--- -- Top for mp_f_freemode_01. From female_freemode_beach collection under index 1.
+--- -- Global index is 17 because there is 16 top variations in the base game collection that goes before the female_freemode_beach collection.
+--- local name = GetPedDrawableCollectionName(ped, 11, 17)
+--- local index = GetPedDrawableCollectionLocalIndex(ped, 11, 17)
+--- -- Equivalent to SetPedComponentVariation(ped, 11, 17, 0, 0)
+--- SetPedCollectionComponentVariation(ped, 11, name, index, 0, 0
+--- @hash [0xD6BBA48B](https://docs.fivem.net/natives/?_0xD6BBA48B)
+--- @param ped Ped
+--- @param componentId number (int)
+--- @param drawableId number (int)
+--- @return string
+--- @overload fun(ped: Ped, componentId: number, drawableId: number): string
+function GetPedCollectionNameFromDrawable(ped, componentId, drawableId) end
 
     
 --- Returns all registered vehicle model names, including non-dlc vehicles and custom vehicles in no particular order.
@@ -5104,6 +5477,23 @@ function SetEntityMatrix(entity, forwardX, forwardY, forwardZ, rightX, rightY, r
 function GetVehicleHandlingVector(vehicle, class_, fieldName) end
 
     
+--- Gets local index inside a collection (which can be obtained using [GET_PED_COLLECTION_NAME_FROM_PROP](https://docs.fivem.net/natives/?_0x8ED0C17)) for the given global prop index. The collection name and index are used in functions like [SET_PED_COLLECTION_PROP_INDEX](https://docs.fivem.net/natives/?_0x75240BCB).
+--- @usage local ped = PlayerPedId()
+--- -- Hat for mp_f_freemode_01. From female_freemode_beach collection under index 1.
+--- -- Global index is 21 because there is 20 head prop variations in the base game collection that goes before the female_freemode_beach collection.
+--- local name = GetPedPropCollectionName(ped, 0, 21)
+--- local index = GetPedPropCollectionLocalIndex(ped, 0, 21)
+--- -- Equivalent to SetPedPropIndex(ped, 0, 21, 0, false)
+--- SetPedCollectionPropIndex(ped, 0, name, index, 0, false
+--- @hash [0xFBDB885F](https://docs.fivem.net/natives/?_0xFBDB885F)
+--- @param ped Ped
+--- @param anchorPoint number (int)
+--- @param propIndex number (int)
+--- @return number
+--- @overload fun(ped: Ped, anchorPoint: number, propIndex: number): number
+function GetPedCollectionLocalIndexFromProp(ped, anchorPoint, propIndex) end
+
+    
 --- the status of default voip system. It affects on `NETWORK_IS_PLAYER_TALKING` and `mp_facial` animation.
 --- This function doesn't need to be called every frame, it works like a switcher.
 ---
@@ -5202,6 +5592,24 @@ function SetHandlingField(vehicle, class_, fieldName, value) end
 --- @return number
 --- @overload fun(txd: number, txn: string, width: number, height: number): number
 function CreateRuntimeTexture(txd, txn, width, height) end
+
+    
+--- Returns name of collection under given index for the given Ped.
+--- 
+--- Collections are groups of drawable components or props available for the given Ped. Usually collection corresponds to a certain DLC or the base game. See [SET_PED_COLLECTION_COMPONENT_VARIATION](https://docs.fivem.net/natives/?_0x88711BBA), [SET_PED_COLLECTION_PROP_INDEX](https://docs.fivem.net/natives/?_0x75240BCB), [GET_NUMBER_OF_PED_COLLECTION_DRAWABLE_VARIATIONS](https://docs.fivem.net/natives/?_0x310D0271) etc natives for more details on how to work with collections.
+--- 
+--- `GET_PED_COLLECTION_NAME` can be used together with [GET_PED_COLLECTIONS_COUNT](https://docs.fivem.net/natives/?_0x45946359) to list all collections attached to Ped.
+--- @usage local ped = PlayerPedId()
+--- local count = GetPedCollectionsCount(ped)
+--- for i = 0, count - 1 do
+---   print(GetPedCollectionName(ped, i))
+--- en
+--- @hash [0xFED5D83A](https://docs.fivem.net/natives/?_0xFED5D83A)
+--- @param ped Ped
+--- @param index number (int)
+--- @return string
+--- @overload fun(ped: Ped, index: number): string
+function GetPedCollectionName(ped, index) end
 
     
 --- GetCalmingQuadBounds

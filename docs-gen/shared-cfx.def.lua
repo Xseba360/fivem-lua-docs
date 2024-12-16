@@ -1,4 +1,14 @@
 
+--- StateBagHasKey
+---
+--- @hash [0x12A330](https://docs.fivem.net/natives/?_0x12A330)
+--- @param bagName string (char*)
+--- @param key string (char*)
+--- @return boolean
+--- @overload fun(bagName: string, key: string): boolean
+function StateBagHasKey(bagName, key) end
+
+    
 --- GetVehicleSteeringAngle
 ---
 --- @hash [0x1382FCEA](https://docs.fivem.net/natives/?_0x1382FCEA)
@@ -34,6 +44,36 @@ function SetResourceKvp(key, value) end
 --- @return number
 --- @overload fun(playerId: Player): number
 function GetPlayerWeaponDamageModifier(playerId) end
+
+    
+--- Returns a list of entity handles (script GUID) for all entities in the specified pool - the data returned is an array as
+--- follows:
+--- 
+--- ```json
+--- [ 770, 1026, 1282, 1538, 1794, 2050, 2306, 2562, 2818, 3074, 3330, 3586, 3842, 4098, 4354, 4610, ...]
+--- ```
+--- 
+--- ### Supported pools
+--- 
+--- *   `CPed`: Peds (including animals) and players.
+--- *   `CObject`: Objects (props), doors, and projectiles.
+--- *   `CNetObject`: Networked objects
+--- *   `CVehicle`: Vehicles.
+--- *   `CPickup`: Pickups.
+--- @usage local vehiclePool = GetGamePool('CVehicle') -- Get the list of vehicles (entities) from the pool
+--- for i = 1, #vehiclePool do -- loop through each vehicle (entity)
+---     if GetPedInVehicleSeat(vehiclePool[i], -1) == 0 then
+---         DeleteEntity(vehiclePool[i]) -- Delete vehicles (entities) that don't have a driver
+---     end
+--- en
+--- @hash [0x2B9D4F50](https://docs.fivem.net/natives/?_0x2B9D4F50)
+--- @param poolName string (char*)
+--- @return (Ped|Object|Vehicle|Pickup)[]
+--- @overload fun(poolname: 'CPed'): Ped[]
+--- @overload fun(poolname: 'CObject'): Object[]
+--- @overload fun(poolname: 'CVehicle'): Vehicle[]
+--- @overload fun(poolname: 'CPickup'): Pickup[]
+function GetGamePool(poolName) end
 
     
 --- A getter for [SET_RESOURCE_KVP_FLOAT](https://docs.fivem.net/natives/?_0x9ADD2938).
@@ -105,7 +145,7 @@ function GetVehicleHandbrake(vehicle) end
 --- @usage AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value) 
 ---     local entity = GetEntityFromStateBagName(bagName)
 ---     -- Whoops, we don't have a valid entity!
----     if entity === 0 then return end
+---     if entity == 0 then return end
 ---     -- We don't want to freeze the entity position if the entity collision hasn't loaded yet
 ---     while not HasCollisionLoadedAroundEntity(entity) do
 ---         -- The entity went out of our scope before the collision loaded
@@ -205,7 +245,7 @@ function WasEventCanceled() end
 --- @usage AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value) 
 ---     local entity = GetEntityFromStateBagName(bagName)
 ---     -- Whoops, we don't have a valid entity!
----     if entity === 0 then return end
+---     if entity == 0 then return end
 ---     -- We don't want to freeze the entity position if the entity collision hasn't loaded yet
 ---     while not HasCollisionLoadedAroundEntity(entity) do
 ---         -- The entity went out of our scope before the collision loaded
@@ -328,6 +368,27 @@ function LoadResourceFile(resourceName, fileName) end
 function GetNumResourceMetadata(resourceName, metadataKey) end
 
     
+--- GetStateBagKeys
+---
+--- @hash [0x78D864C7](https://docs.fivem.net/natives/?_0x78D864C7)
+--- @param bagName string (char*)
+--- @return table
+--- @overload fun(bagName: string): table
+function GetStateBagKeys(bagName) end
+
+    
+--- Can be used to get a console variable casted back to `bool`.
+--- @usage if GetConvarBool('dev_mode', false) then
+---     print("Dev Mode is eanbled, load dev mode menus")
+--- en
+--- @hash [0x7E8EBFE5](https://docs.fivem.net/natives/?_0x7E8EBFE5)
+--- @param varName string (char*)
+--- @param defaultValue boolean
+--- @return boolean
+--- @overload fun(varName: string, defaultValue: boolean): boolean
+function GetConvarBool(varName, defaultValue) end
+
+    
 --- IsAceAllowed
 ---
 --- @hash [0x7EBB9929](https://docs.fivem.net/natives/?_0x7EBB9929)
@@ -352,6 +413,8 @@ function IsAceAllowed(object) end
 ---     *   2802
 ---     *   2944
 ---     *   3095
+---     *   3258
+---     *   3323
 --- *   RedM
 ---     *   1311
 ---     *   1355
@@ -455,6 +518,16 @@ function GetPlayerWeaponDefenseModifier_2(playerId) end
 function SetResourceKvpFloat(key, value) end
 
     
+--- This will have floating point inaccuracy.
+---
+--- @hash [0x9E666D](https://docs.fivem.net/natives/?_0x9E666D)
+--- @param varName string (char*)
+--- @param defaultValue number (float)
+--- @return number
+--- @overload fun(varName: string, defaultValue: number): number
+function GetConvarFloat(varName, defaultValue) end
+
+    
 --- GetInstanceId
 ---
 --- @hash [0x9F1C4383](https://docs.fivem.net/natives/?_0x9F1C4383)
@@ -498,6 +571,25 @@ function GetVehicleType(vehicle) end
 --- @return number
 --- @overload fun(bagName: string): number
 function GetPlayerFromStateBagName(bagName) end
+
+    
+--- Adds a listener for Console Variable changes.
+--- 
+--- The function called expects to match the following signature:
+--- 
+--- ```ts
+--- function ConVarChangeListener(conVarName: string, reserved: any);
+--- ```
+--- 
+--- *   **conVarName**: The ConVar that changed.
+--- *   **reserved**: Currently unused.
+---
+--- @hash [0xAB7F7241](https://docs.fivem.net/natives/?_0xAB7F7241)
+--- @param conVarFilter string (char*)
+--- @param handler fun
+--- @return number
+--- @overload fun(conVarFilter: string, handler: fun): number
+function AddConvarChangeListener(conVarFilter, handler) end
 
     
 --- EndFindKvp
@@ -611,27 +703,17 @@ function GetRegisteredCommands() end
 --- 		if key then
 --- 			print(('%s: %s'):format(key, GetResourceKvpString(key)))
 --- 		end
---- 	until key
+--- 	until not key
 --- 
 --- 	EndFindKvp(kvpHandle)
+--- else
+--- 	print('No KVPs found')
 --- en
 --- @hash [0xDD379006](https://docs.fivem.net/natives/?_0xDD379006)
 --- @param prefix string (char*)
 --- @return number
 --- @overload fun(prefix: string): number
 function StartFindKvp(prefix) end
-
-    
---- InvokeFunctionReference
----
---- @hash [0xE3551879](https://docs.fivem.net/natives/?_0xE3551879)
---- @param referenceIdentity string (char*)
---- @param argsSerialized string (char*)
---- @param argsLength number (int)
---- @param retvalLength number (int*)
---- @return string
---- @overload fun(argsLength: number): string, string): string, string): string, number
-function InvokeFunctionReference(referenceIdentity, argsSerialized, argsLength, retvalLength) end
 
     
 --- Returns the name of the currently executing resource.
@@ -659,6 +741,15 @@ function GetCurrentResourceName() end
 --- @return string
 --- @overload fun(): string
 function GetGameName() end
+
+    
+--- RemoveConvarChangeListener
+---
+--- @hash [0xEAC49841](https://docs.fivem.net/natives/?_0xEAC49841)
+--- @param cookie number (int)
+--- @return void
+--- @overload fun(cookie: number): void
+function RemoveConvarChangeListener(cookie) end
 
     
 --- A getter for [FREEZE_ENTITY_POSITION](https://docs.fivem.net/natives/?_0x428CA6DBD1094446).
