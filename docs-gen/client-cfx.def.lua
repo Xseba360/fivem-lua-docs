@@ -1265,6 +1265,26 @@ function SetInteriorProbeLength(probeLength) end
 function GetWaterQuadBounds(waterQuad) end
 
     
+--- Retrieves the current gear displayed on the dashboard of the vehicle the player is in, returned as a float. This value represents the gear shown in the instrument cluster, such as "R" (0.0) or positive values (e.g., 1.0, 2.0, etc.) for drive gears.
+---
+--- @hash [0x435C86F4](https://docs.fivem.net/natives/?_0x435C86F4)
+---
+--- @return number
+--- @overload fun(): number
+function GetVehicleDashboardCurrentGear() end
+
+    
+--- # New Name: GetVehicleDashboardCurrentGear
+--- Retrieves the current gear displayed on the dashboard of the vehicle the player is in, returned as a float. This value represents the gear shown in the instrument cluster, such as "R" (0.0) or positive values (e.g., 1.0, 2.0, etc.) for drive gears.
+---
+--- @hash [0x435C86F4](https://docs.fivem.net/natives/?_0x435C86F4)
+---
+--- @return number
+--- @overload fun(): number
+--- @deprecated
+function GetVehicleDashboardWaterTemp() end
+
+    
 --- Sets values to the zoom level data by index.
 ---
 --- @hash [0x447C718E](https://docs.fivem.net/natives/?_0x447C718E)
@@ -2197,6 +2217,15 @@ function GetInteriorPosition(interiorId) end
 function GetScenarioPedDensityMultiplier() end
 
     
+--- DoesTrainStopAtStations
+---
+--- @hash [0x77CC80DC](https://docs.fivem.net/natives/?_0x77CC80DC)
+--- @param train Vehicle
+--- @return boolean
+--- @overload fun(train: Vehicle): boolean
+function DoesTrainStopAtStations(train) end
+
+    
 --- Sets an integer parameter for a submix effect.
 ---
 --- @hash [0x77FAE2B8](https://docs.fivem.net/natives/?_0x77FAE2B8)
@@ -2788,15 +2817,6 @@ function SetHandlingInt(vehicle, class_, fieldName, value) end
 --- @return boolean
 --- @overload fun(jsonString: string): boolean
 function SendLoadingScreenMessage(jsonString) end
-
-    
---- GetVehicleDashboardWaterTemp
----
---- @hash [0x8E3B3E42](https://docs.fivem.net/natives/?_0x8E3B3E42)
----
---- @return number
---- @overload fun(): number
-function GetVehicleDashboardWaterTemp() end
 
     
 --- Override the limits on the number and types of melee combatants. The game is limited to at most ten combatants among the three types: primary, secondary, and observers.
@@ -5094,6 +5114,16 @@ function SetVehicleSteeringScale(vehicle, scale) end
 --- @return void
 --- @overload fun(x: number, y: number, width: number, height: number, rotation: number, r: number, g: number, b: number, a: number): void
 function DrawRectRotated(x, y, width, height, rotation, r, g, b, a) end
+
+    
+--- Toggles a train's ability to stop at stations
+---
+--- @hash [0xECB8B577](https://docs.fivem.net/natives/?_0xECB8B577)
+--- @param train Vehicle
+--- @param state boolean
+--- @return void
+--- @overload fun(train: Vehicle, state: boolean): void
+function SetTrainStopAtStations(train, state) end
 
     
 --- Loads a minimap overlay from a GFx file in the current resource.

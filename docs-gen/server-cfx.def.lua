@@ -611,14 +611,16 @@ function GetVehicleDoorStatus(vehicle) end
 function TriggerLatentClientEventInternal(eventName, eventTarget, eventPayload, payloadLength, bps) end
 
     
---- GetPlayerIdentifier
+--- To get the number of identifiers, use [GET_NUM_PLAYER_IDENTIFIERS](?\_0xFF7F66AB)
+--- 
+--- To get a specific type of identifier, use [GET_PLAYER_IDENTIFIER_BY_TYPE](?\_0xA61C8FC6)
 ---
 --- @hash [0x7302DBCF](https://docs.fivem.net/natives/?_0x7302DBCF)
 --- @param playerSrc string (char*)
---- @param identifier number (int)
+--- @param identiferIndex number (int)
 --- @return string
---- @overload fun(playerSrc: string, identifier: number): string
-function GetPlayerIdentifier(playerSrc, identifier) end
+--- @overload fun(playerSrc: string, identiferIndex: number): string
+function GetPlayerIdentifier(playerSrc, identiferIndex) end
 
     
 --- Requests the commerce data from Tebex for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
@@ -877,6 +879,7 @@ function GetHeliEngineHealth(heli) end
 
     
 --- Get an identifier from a player by the type of the identifier.
+--- Known [Identifiers](https://docs.fivem.net/docs/scripting-reference/runtimes/lua/functions/GetPlayerIdentifiers/#identifier-types)
 --- @usage local playerLicenses = {}
 --- 
 --- AddEventHandler('playerJoining', function()
