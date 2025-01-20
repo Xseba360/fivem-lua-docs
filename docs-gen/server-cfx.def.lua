@@ -387,6 +387,15 @@ function SetEntityOrphanMode(entity, orphanMode) end
 function GetTrainCarriageIndex(train) end
 
     
+--- Deletes the specified `entity` and any carriage its attached to, or that is attached to it.
+---
+--- @hash [0x523BA3DA](https://docs.fivem.net/natives/?_0x523BA3DA)
+--- @param entity Entity
+--- @return void
+--- @overload fun(entity: Entity): void
+function DeleteTrain(entity) end
+
+    
 --- Gets the routing bucket for the specified player.
 --- 
 --- Routing buckets are also known as 'dimensions' or 'virtual worlds' in past echoes, however they are population-aware.
@@ -807,6 +816,15 @@ function RequestPlayerCommerceSession(playerSrc, skuId) end
 --- @return string
 --- @overload fun(resourceName: string, fileName: string): string
 function RegisterResourceAsset(resourceName, fileName) end
+
+    
+--- GetVehicleTotalRepairs
+---
+--- @hash [0x9963D5F9](https://docs.fivem.net/natives/?_0x9963D5F9)
+--- @param vehicle Vehicle
+--- @return number
+--- @overload fun(vehicle: Vehicle): number
+function GetVehicleTotalRepairs(vehicle) end
 
     
 --- HasEntityBeenMarkedAsNoLongerNeeded

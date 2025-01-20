@@ -791,6 +791,15 @@ function SetWeaponsNoAutoreload(state) end
 function SetInteriorRoomTimecycle(interiorId, roomIndex, timecycleHash) end
 
     
+--- Getter for [SET_TRACK_ENABLED](?\_0x4b41e84c)
+---
+--- @hash [0x31E695CB](https://docs.fivem.net/natives/?_0x31E695CB)
+--- @param track number (int)
+--- @return boolean
+--- @overload fun(track: number): boolean
+function IsTrackEnabled(track) end
+
+    
 --- GetInteriorEntitiesExtents
 --- @usage local playerPed = PlayerPedId()
 --- local interiorId = GetInteriorFromEntity(playerPed)
@@ -887,6 +896,15 @@ function ApplyWeatherCycles(numEntries, msPerCycle) end
 function GetPlayerFromServerId(serverId) end
 
     
+--- GetTrackMaxSpeed
+---
+--- @hash [0x34EE2BF3](https://docs.fivem.net/natives/?_0x34EE2BF3)
+--- @param track number (int)
+--- @return number
+--- @overload fun(track: number): number
+function GetTrackMaxSpeed(track) end
+
+    
 --- SetPlayerMaxStamina
 ---
 --- @hash [0x35594F67](https://docs.fivem.net/natives/?_0x35594F67)
@@ -945,6 +963,38 @@ function SetMillisecondsPerGameMinute(value) end
 --- @return void
 --- @overload fun(modifierName: string): void
 function RemoveTimecycleModifier(modifierName) end
+
+    
+--- Can be used to get state of raw key on keyboard.
+--- 
+--- Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+--- @usage if IsRawKeyUp(32) then -- KEY_SPACE
+---     print("Spacebar is up")
+--- en
+--- @hash [0x36F4E505](https://docs.fivem.net/natives/?_0x36F4E505)
+--- @param rawKeyIndex number (int)
+--- @return boolean
+--- @overload fun(rawKeyIndex: number): boolean
+function IsRawKeyUp(rawKeyIndex) end
+
+    
+--- Set the z-index of the NUI resource.
+---
+--- @hash [0x3734AAFF](https://docs.fivem.net/natives/?_0x3734AAFF)
+--- @param zIndex number (int)
+--- @return void
+--- @overload fun(zIndex: number): void
+function SetNuiZindex(zIndex) end
+
+    
+--- Sets the max speed for the train tracks. Used by ambient trains and for station calculations
+---
+--- @hash [0x37BFC732](https://docs.fivem.net/natives/?_0x37BFC732)
+--- @param track number (int)
+--- @param newSpeed number (int)
+--- @return void
+--- @overload fun(track: number, newSpeed: number): void
+function SetTrackMaxSpeed(track, newSpeed) end
 
     
 --- GetVehicleDashboardOilPressure
@@ -1256,6 +1306,15 @@ function FindNextPickup(findHandle, outEntity) end
 function SetInteriorProbeLength(probeLength) end
 
     
+--- Gets the speed the train is currently going.
+---
+--- @hash [0x428668B7](https://docs.fivem.net/natives/?_0x428668B7)
+--- @param train Vehicle
+--- @return number
+--- @overload fun(train: Vehicle): number
+function GetTrainSpeed(train) end
+
+    
 --- GetWaterQuadBounds
 --- @usage local success, minX, minY, maxX, maxY = GetWaterQuadBounds(1
 --- @hash [0x42E9A06A](https://docs.fivem.net/natives/?_0x42E9A06A)
@@ -1419,6 +1478,16 @@ function AddMinimapOverlay(name) end
 --- @return number
 --- @overload fun(ped: Ped): number
 function GetPedHairHighlightColor(ped) end
+
+    
+--- Toggles the track being active. If disabled mission trains will not be able to spawn on this track and will look for the next closest track to spawn
+---
+--- @hash [0x4B41E84C](https://docs.fivem.net/natives/?_0x4B41E84C)
+--- @param track number (int)
+--- @param enabled boolean
+--- @return void
+--- @overload fun(track: number, enabled: boolean): void
+function SetTrackEnabled(track, enabled) end
 
     
 --- This is similar to the PushScaleformMovieFunction natives, except it calls in the `TIMELINE` of a minimap overlay.
@@ -1812,6 +1881,16 @@ function GetTimecycleModifierVarCount(modifierName) end
 function MumbleSetVolumeOverride(player, volume) end
 
     
+--- SetTrainState
+---
+--- @hash [0x61CB74A0](https://docs.fivem.net/natives/?_0x61CB74A0)
+--- @param train Vehicle
+--- @param state number (int)
+--- @return void
+--- @overload fun(train: Vehicle, state: number): void
+function SetTrainState(train, state) end
+
+    
 --- SetWaterQuadLevel
 --- @usage local success = SetWaterQuadLevel(0, 55.0
 --- @hash [0x6292F7A8](https://docs.fivem.net/natives/?_0x6292F7A8)
@@ -1960,6 +2039,19 @@ function SetRopeLengthChangeRate(rope, lengthChangeRate) end
 --- @return number
 --- @overload fun(ped: Ped): number
 function GetPedMovementClipset(ped) end
+
+    
+--- Can be used to get state of raw key on keyboard.
+--- 
+--- Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+--- @usage if IsRawKeyPressed(32) then -- KEY_SPACE
+---     print("Spacebar pressed")
+--- en
+--- @hash [0x69F7C29E](https://docs.fivem.net/natives/?_0x69F7C29E)
+--- @param rawKeyIndex number (int)
+--- @return boolean
+--- @overload fun(rawKeyIndex: number): boolean
+function IsRawKeyPressed(rawKeyIndex) end
 
     
 --- This native sets the app id for the discord rich presence implementation.
@@ -2226,6 +2318,16 @@ function GetScenarioPedDensityMultiplier() end
 function DoesTrainStopAtStations(train) end
 
     
+--- Sets the braking distance of the track. Used by trains to determine the point to slow down when entering a station.
+---
+--- @hash [0x77EB78D0](https://docs.fivem.net/natives/?_0x77EB78D0)
+--- @param track number (int)
+--- @param brakingDistance number (float)
+--- @return void
+--- @overload fun(track: number, brakingDistance: number): void
+function SetTrackBrakingDistance(track, brakingDistance) end
+
+    
 --- Sets an integer parameter for a submix effect.
 ---
 --- @hash [0x77FAE2B8](https://docs.fivem.net/natives/?_0x77FAE2B8)
@@ -2477,6 +2579,15 @@ function SetWaterQuadBounds(waterQuad, minX, minY, maxX, maxY) end
 --- @return boolean
 --- @overload fun(mapDataHash: number, entityInternalIdx: number): boolean
 function ResetMapdataEntityMatrix(mapDataHash, entityInternalIdx) end
+
+    
+--- GetTrainState
+---
+--- @hash [0x81B50033](https://docs.fivem.net/natives/?_0x81B50033)
+--- @param train Vehicle
+--- @return number
+--- @overload fun(train: Vehicle): number
+function GetTrainState(train) end
 
     
 --- Turns on and off fuel consumption in all vehicles operated by a player. NPC operated vehicles will not consume fuel to avoid traffic disruptions.
@@ -2817,6 +2928,15 @@ function SetHandlingInt(vehicle, class_, fieldName, value) end
 --- @return boolean
 --- @overload fun(jsonString: string): boolean
 function SendLoadingScreenMessage(jsonString) end
+
+    
+--- Gets the direction the train is facing
+---
+--- @hash [0x8DAF79B6](https://docs.fivem.net/natives/?_0x8DAF79B6)
+--- @param train Vehicle
+--- @return boolean
+--- @overload fun(train: Vehicle): boolean
+function GetTrainDirection(train) end
 
     
 --- Override the limits on the number and types of melee combatants. The game is limited to at most ten combatants among the three types: primary, secondary, and observers.
@@ -3335,6 +3455,15 @@ function IsVehicleInteriorLightOn(vehicle) end
 --- @return void
 --- @overload fun(value: number): void
 function SetAimCooldown(value) end
+
+    
+--- Gets the trains desired speed.
+---
+--- @hash [0xA4921EF5](https://docs.fivem.net/natives/?_0xA4921EF5)
+--- @param train Vehicle
+--- @return number
+--- @overload fun(train: Vehicle): number
+function GetTrainCruiseSpeed(train) end
 
     
 --- Experimental natives, please do not use in a live environment.
@@ -3928,6 +4057,15 @@ function GetNuiCursorPosition() end
 --- @return number
 --- @overload fun(): number
 function GetTimecycleModifierStrength() end
+
+    
+--- GetTrackBrakingDistance
+---
+--- @hash [0xBF482A5E](https://docs.fivem.net/natives/?_0xBF482A5E)
+--- @param track number (int)
+--- @return number
+--- @overload fun(track: number): number
+function GetTrackBrakingDistance(track) end
 
     
 --- MumbleClearVoiceChannel
@@ -4658,6 +4796,19 @@ function RegisterKeyMapping(commandString, description, defaultMapper, defaultPa
 function MumbleSetActive(state) end
 
     
+--- Can be used to get state of raw key on keyboard.
+--- 
+--- Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+--- @usage if IsRawKeyDown(32) then -- KEY_SPACE
+---     print("Spacebar is down")
+--- en
+--- @hash [0xD95A7387](https://docs.fivem.net/natives/?_0xD95A7387)
+--- @param rawKeyIndex number (int)
+--- @return boolean
+--- @overload fun(rawKeyIndex: number): boolean
+function IsRawKeyDown(rawKeyIndex) end
+
+    
 --- A getter for [\_SET_WEAPON_DAMAGE_MODIFIER](https://docs.fivem.net/natives/?_0x4757F00BC6323CFE).
 ---
 --- @hash [0xD979143](https://docs.fivem.net/natives/?_0xD979143)
@@ -4793,6 +4944,15 @@ function GetVehicleTurboPressure(vehicle) end
 --- @return number
 --- @overload fun(vehicle: Vehicle, wheelIndex: number): number
 function GetVehicleWheelTireColliderSize(vehicle, wheelIndex) end
+
+    
+--- Getter for [SWITCH_TRAIN_TRACK](?\_0xFD813BB7DB977F20). Determines if ambient trains are able to spawn on this track.
+---
+--- @hash [0xE0C53765](https://docs.fivem.net/natives/?_0xE0C53765)
+--- @param track number (int)
+--- @return boolean
+--- @overload fun(track: number): boolean
+function IsTrackSwitchedOff(track) end
 
     
 --- GetInteriorRoomIndexByHash
@@ -5014,6 +5174,19 @@ function GetCurrentServerEndpoint() end
 --- @return number
 --- @overload fun(vehicle: Vehicle, wheelIndex: number): number
 function GetVehicleWheelRotationSpeed(vehicle, wheelIndex) end
+
+    
+--- Can be used to get release state of raw key on keyboard.
+--- 
+--- Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+--- @usage if IsRawKeyReleased(32) then -- KEY_SPACE
+---     print("Spacebar released")
+--- en
+--- @hash [0xEAA50861](https://docs.fivem.net/natives/?_0xEAA50861)
+--- @param rawKeyIndex number (int)
+--- @return boolean
+--- @overload fun(rawKeyIndex: number): boolean
+function IsRawKeyReleased(rawKeyIndex) end
 
     
 --- Example script: https://pastebin.com/J6XGbkCW
