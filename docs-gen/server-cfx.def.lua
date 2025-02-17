@@ -598,13 +598,14 @@ function CreateVehicleServerSetter(modelHash, type, x, y, z, heading) end
 function PerformHttpRequestInternalEx(requestData) end
 
     
---- GetVehicleDoorStatus
+--- Returns the open position of the specified door on the target vehicle.
 ---
 --- @hash [0x6E35C49C](https://docs.fivem.net/natives/?_0x6E35C49C)
 --- @param vehicle Vehicle
+--- @param doorIndex number (int)
 --- @return number
---- @overload fun(vehicle: Vehicle): number
-function GetVehicleDoorStatus(vehicle) end
+--- @overload fun(vehicle: Vehicle, doorIndex: number): number
+function GetVehicleDoorStatus(vehicle, doorIndex) end
 
     
 --- The backing function for TriggerLatentClientEvent.
@@ -632,8 +633,32 @@ function TriggerLatentClientEventInternal(eventName, eventTarget, eventPayload, 
 function GetPlayerIdentifier(playerSrc, identiferIndex) end
 
     
---- Requests the commerce data from Tebex for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
----
+--- Requests the commerce data from Tebex for the specified player, including the owned SKUs.
+--- 
+--- Use [`IS_PLAYER_COMMERCE_INFO_LOADED_EXT`](https://docs.fivem.net/natives/?_0x1D14F4FE) to check if it has loaded.
+--- 
+--- This will not automatically update whenever a client purchases a package, if you want to fetch new purchases you will need to call this native again.
+--- 
+--- This native will temporarily cache the players commerce data for 10 seconds, a call to this native after 10 seconds will re-fetch the players commerce data.
+--- @usage RegisterNetEvent("doesOwnPackage", function(packageIdSku)
+--- 	-- source isn't valid across waits, so we localize it
+--- 	local source = source
+--- 
+--- 	-- input isn't right
+--- 	if type(packageIdSku) ~= "number" then
+--- 		return
+--- 	end
+--- 
+--- 	-- The native will cache the results
+--- 	LoadPlayerCommerceDataExt(source)
+--- 	-- Wait for the players data to load
+--- 	while not IsPlayerCommerceInfoLoadedExt(source) do
+--- 		Wait(0)
+--- 	end
+--- 
+--- 	-- Tell the client if they own the package or not
+--- 	TriggerClientEvent("doesOwnPackage", source, DoesPlayerOwnSkuExt(source, packageIdSku))
+--- end
 --- @hash [0x7995539E](https://docs.fivem.net/natives/?_0x7995539E)
 --- @param playerSrc string (char*)
 --- @return void

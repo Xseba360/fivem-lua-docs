@@ -178,6 +178,15 @@ function FindFirstVehicle(outEntity) end
 function GetDuiHandle(duiObject) end
 
     
+--- A getter for [SET_VEHICLE_XMAS_SNOW_FACTOR](#\_80cc4c9e).
+---
+--- @hash [0x16605B30](https://docs.fivem.net/natives/?_0x16605B30)
+---
+--- @return number
+--- @overload fun(): number
+function GetVehicleXmasSnowFactor() end
+
+    
 --- Sets custom vehicle xenon lights color, allowing to use RGB palette. The game will ignore lights color set by [\_SET_VEHICLE_XENON_LIGHTS_COLOR](https://docs.fivem.net/natives/?_0xE41033B25D003A07) when custom color is active. This native is not synced between players. Requires xenon lights mod to be set on vehicle.
 --- @usage local vehicle = GetVehiclePedIsUsing(PlayerPedId())
 --- if DoesEntityExist(vehicle) then
@@ -749,6 +758,15 @@ function GetWeaponComponentRangeModifier(componentHash) end
 --- @return boolean
 --- @overload fun(mapDataHash: number, entityInternalIdx: number): boolean, number
 function GetMapdataEntityHandle(mapDataHash, entityInternalIdx, entityHandle) end
+
+    
+--- Toggles a check that prevents attaching (networked) entities to remotely owned peds. This is disabled by default.
+---
+--- @hash [0x30CE39D8](https://docs.fivem.net/natives/?_0x30CE39D8)
+--- @param enable boolean
+--- @return void
+--- @overload fun(enable: boolean): void
+function OnesyncEnableRemoteAttachmentSanitization(enable) end
 
     
 --- An analogue of [GET_NUMBER_OF_PED_DRAWABLE_VARIATIONS](https://docs.fivem.net/natives/?_0x27561561732A7842) that returns number of drawable variations inside a single collection instead of the total number across all collections.
@@ -2077,6 +2095,18 @@ function SetDiscordAppId(appId) end
 function SetMinimapOverlayDisplay(miniMap, x, y, xScale, yScale, alpha) end
 
     
+--- An analogue to [GET_PED_PROP_INDEX](https://docs.fivem.net/natives/?_0x898CC20EA75BACD8) that returns collection name instead of the global drawable index.
+--- 
+--- Should be used together with [GET_PED_PROP_COLLECTION_LOCAL_INDEX](https://docs.fivem.net/natives/?_0xCD420AD1).
+---
+--- @hash [0x6B5653E4](https://docs.fivem.net/natives/?_0x6B5653E4)
+--- @param ped Ped
+--- @param anchorPoint number (int)
+--- @return string
+--- @overload fun(ped: Ped, anchorPoint: number): string
+function GetPedPropCollectionName(ped, anchorPoint) end
+
+    
 --- GetVehicleDashboardTemp
 ---
 --- @hash [0x6B6ADAFA](https://docs.fivem.net/natives/?_0x6B6ADAFA)
@@ -2568,6 +2598,15 @@ function TriggerServerEventInternal(eventName, eventPayload, payloadLength) end
 --- @return boolean
 --- @overload fun(waterQuad: number, minX: number, minY: number, maxX: number, maxY: number): boolean
 function SetWaterQuadBounds(waterQuad, minX, minY, maxX, maxY) end
+
+    
+--- SetVehicleXmasSnowFactor
+---
+--- @hash [0x80CC4C9E](https://docs.fivem.net/natives/?_0x80CC4C9E)
+--- @param gripFactor number (float)
+--- @return void
+--- @overload fun(gripFactor: number): void
+function SetVehicleXmasSnowFactor(gripFactor) end
 
     
 --- Resets mapdata entity transform matrix to its original state.
@@ -4478,6 +4517,16 @@ function RegisterNuiCallbackType(callbackType) end
 --- @return void
 --- @overload fun(duiObject: number, jsonString: string): void
 function SendDuiMessage(duiObject, jsonString) end
+
+    
+--- An analogue to [GET_PED_PROP_INDEX](https://docs.fivem.net/natives/?_0x898CC20EA75BACD8) that returns collection local prop index (inside [GET_PED_PROP_COLLECTION_NAME](https://docs.fivem.net/natives/?_0x6B5653E4) collection) instead of the global prop index.
+---
+--- @hash [0xCD420AD1](https://docs.fivem.net/natives/?_0xCD420AD1)
+--- @param ped Ped
+--- @param anchorPoint number (int)
+--- @return number
+--- @overload fun(ped: Ped, anchorPoint: number): number
+function GetPedPropCollectionLocalIndex(ped, anchorPoint) end
 
     
 --- See [SET_SCRIPT_GFX_ALIGN](https://docs.fivem.net/natives/?_0xB8A850F20A067EB6) for details about how gfx align works.
