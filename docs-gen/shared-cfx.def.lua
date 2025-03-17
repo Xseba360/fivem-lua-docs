@@ -499,6 +499,31 @@ function GetConvarInt(varName, default_) end
 function GetResourceMetadata(resourceName, metadataKey, index) end
 
     
+--- Returns all commands registered by the specified resource.
+--- The data returned adheres to the following layout:
+--- 
+--- ```
+--- [
+--- {
+--- "name": "cmdlist",
+--- "resource": "example_resource",
+--- "arity" = -1,
+--- },
+--- {
+--- "name": "command1"
+--- "resource": "example_resource2",
+--- "arity" = -1,
+--- }
+--- ]
+--- ```
+---
+--- @hash [0x97628584](https://docs.fivem.net/natives/?_0x97628584)
+--- @param resource string (char*)
+--- @return table
+--- @overload fun(resource: string): table
+function GetResourceCommands(resource) end
+
+    
 --- A getter for [\_SET_PLAYER_WEAPON_DEFENSE_MODIFIER\_2](https://docs.fivem.net/natives/?_0xBCFDE9EDE4CF27DC).
 ---
 --- @hash [0x986B65FF](https://docs.fivem.net/natives/?_0x986B65FF)
@@ -673,10 +698,14 @@ function RemoveStateBagChangeHandler(cookie) end
 --- ```
 --- [
 --- {
---- "name": "cmdlist"
+--- "name": "cmdlist",
+--- "resource": "resource",
+--- "arity" = -1,
 --- },
 --- {
 --- "name": "command1"
+--- "resource": "resource_2",
+--- "arity" = -1,
 --- }
 --- ]
 --- ```

@@ -169,6 +169,17 @@ function SetPedCollectionPreloadPropData(ped, anchorPoint, collection, propIndex
 function FindFirstVehicle(outEntity) end
 
     
+--- Gets the coordinates of a specific track node.
+---
+--- @hash [0x1628548E](https://docs.fivem.net/natives/?_0x1628548E)
+--- @param trackIndex number (int)
+--- @param trackNode number (int)
+--- @param coords Vector3 (Vector3*)
+--- @return boolean
+--- @overload fun(trackIndex: number, trackNode: number): boolean, Vector3
+function GetTrackNodeCoords(trackIndex, trackNode, coords) end
+
+    
 --- Returns the NUI window handle for a specified DUI browser object.
 ---
 --- @hash [0x1655D41D](https://docs.fivem.net/natives/?_0x1655D41D)
@@ -707,6 +718,15 @@ function GetPedPropGlobalIndexFromCollection(ped, anchorPoint, collection, propI
 function SendDuiMouseWheel(duiObject, deltaY, deltaX) end
 
     
+--- Adds the given model name hash to the list of valid models for the player ped's parachute pack.
+---
+--- @hash [0x2E86DEA5](https://docs.fivem.net/natives/?_0x2E86DEA5)
+--- @param modelNameHash number (int)
+--- @return void
+--- @overload fun(modelNameHash: number): void
+function AddAuthorizedParachutePackModel(modelNameHash) end
+
+    
 --- GetVehicleWheelYRotation
 ---
 --- @hash [0x2EA4AFFE](https://docs.fivem.net/natives/?_0x2EA4AFFE)
@@ -961,6 +981,19 @@ function SetDiscordRichPresenceAssetSmallText(text) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, wheelIndex: number, speed: number): void
 function SetVehicleWheelRotationSpeed(vehicle, wheelIndex, speed) end
+
+    
+--- Registers a track junction that when enabled will cause a train on the defined trackIndex, node and direction to change its current track index and begin traveling on the new node
+---
+--- @hash [0x35F743B5](https://docs.fivem.net/natives/?_0x35F743B5)
+--- @param trackIndex number (int)
+--- @param trackNode number (int)
+--- @param newIndex number (int)
+--- @param newNode number (int)
+--- @param direction boolean
+--- @return number
+--- @overload fun(trackIndex: number, trackNode: number, newIndex: number, newNode: number, direction: boolean): number
+function RegisterTrackJunction(trackIndex, trackNode, newIndex, newNode, direction) end
 
     
 --- Overrides how many real ms are equal to one game minute.
@@ -1559,6 +1592,15 @@ function GetPlayerServerId(player) end
 function FindNextObject(findHandle, outEntity) end
 
     
+--- Removes the specified track junction.
+---
+--- @hash [0x4F3D2B2A](https://docs.fivem.net/natives/?_0x4F3D2B2A)
+--- @param junctionIndex number (int)
+--- @return boolean
+--- @overload fun(junctionIndex: number): boolean
+function RemoveTrackJunction(junctionIndex) end
+
+    
 --- SetInteriorRoomExtents
 --- @usage local playerPed = PlayerPedId()
 --- local interiorId = GetInteriorFromEntity(playerPed)
@@ -1631,6 +1673,16 @@ function SetWaterQuadType(waterQuad, type) end
 --- @return void
 --- @overload fun(shader: number): void
 function SetEntityDrawOutlineShader(shader) end
+
+    
+--- Sets the state of a track junction.
+---
+--- @hash [0x537B449D](https://docs.fivem.net/natives/?_0x537B449D)
+--- @param junctionIndex number (int)
+--- @param state boolean
+--- @return boolean
+--- @overload fun(junctionIndex: number, state: boolean): boolean
+function SetTrackJunctionActive(junctionIndex, state) end
 
     
 --- Sets vehicle's wheels' size (size is the same for all the wheels, cannot get/set specific wheel of vehicle).
@@ -1734,6 +1786,16 @@ function GetFuelConsumptionRateMultiplier() end
 --- @return void
 --- @overload fun(interiorId: number, portalIndex: number, roomTo: number): void
 function SetInteriorPortalRoomTo(interiorId, portalIndex, roomTo) end
+
+    
+--- Get all track nodes and their track ids within the radius of the specified coordinates.
+---
+--- @hash [0x59FC24A7](https://docs.fivem.net/natives/?_0x59FC24A7)
+--- @param position Vector3
+--- @param radius number (float)
+--- @return table
+--- @overload fun(position: Vector3, radius: number): table
+function GetClosestTrackNodes(position, radius) end
 
     
 --- GetInteriorRotation
@@ -1937,6 +1999,17 @@ function SetWaterQuadLevel(waterQuad, level) end
 --- @return void
 --- @overload fun(intentHash: Hash): void
 function MumbleSetAudioInputIntent(intentHash) end
+
+    
+--- This native is a setter for [`GET_VEHICLE_HAS_FLAG`](https://docs.fivem.net/natives/?_0xD85C9F57).
+---
+--- @hash [0x63AE1A34](https://docs.fivem.net/natives/?_0x63AE1A34)
+--- @param vehicle Vehicle
+--- @param flagIndex number (int)
+--- @param value boolean
+--- @return boolean
+--- @overload fun(vehicle: Vehicle, flagIndex: number, value: boolean): boolean
+function SetVehicleFlag(vehicle, flagIndex, value) end
 
     
 --- A getter for [SET_WEAPON_ANIMATION_OVERRIDE](https://docs.fivem.net/natives/?_0x1055AC3A667F09D9).
@@ -2927,6 +3000,15 @@ function MumbleRemoveVoiceTargetPlayer(targetId, player) end
 function SetVehicleCurrentGear(vehicle, gear) end
 
     
+--- Gets the specified tracks node count.
+---
+--- @hash [0x896A0C11](https://docs.fivem.net/natives/?_0x896A0C11)
+--- @param trackIndex number (int)
+--- @return number
+--- @overload fun(trackIndex: number): number
+function GetTrackNodeCount(trackIndex) end
+
+    
 --- Allows StaticEmitter's without a linked entity to make use of environment features like occlusion and reverb even if they are located higher than 20.0 units above any static collision inside interiors.
 --- 
 --- This native allows you to extend the probe range up to 150.0 units.
@@ -2958,6 +3040,15 @@ function SetEmitterProbeLength(probeLength) end
 --- @return void
 --- @overload fun(vehicle: string, class_: string, fieldName: string, value: number): void
 function SetHandlingInt(vehicle, class_, fieldName, value) end
+
+    
+--- Adds the given model name hash to the list of valid models for the player ped's parachute.
+---
+--- @hash [0x8AC7AE9](https://docs.fivem.net/natives/?_0x8AC7AE9)
+--- @param modelNameHash number (int)
+--- @return void
+--- @overload fun(modelNameHash: number): void
+function AddAuthorizedParachuteModel(modelNameHash) end
 
     
 --- Sends a message to the `loadingScreen` NUI frame, which contains the HTML page referenced in `loadscreen` resources.
@@ -4836,6 +4927,18 @@ function GetAllVehicleModels() end
 function RegisterKeyMapping(commandString, description, defaultMapper, defaultParameter) end
 
     
+--- **Note**: Flags are not the same based on your `gamebuild`. Please see [here](https://docs.fivem.net/docs/game-references/vehicle-references/vehicle-flags) to see a complete list of all vehicle flags.
+--- 
+--- Get vehicle.meta flag by index. Useful examples include `FLAG_LAW_ENFORCEMENT` (31), `FLAG_RICH_CAR` (36), `FLAG_IS_ELECTRIC` (43), `FLAG_IS_OFFROAD_VEHICLE` (48).
+---
+--- @hash [0xD85C9F57](https://docs.fivem.net/natives/?_0xD85C9F57)
+--- @param vehicle Vehicle
+--- @param flagIndex number (int)
+--- @return boolean
+--- @overload fun(vehicle: Vehicle, flagIndex: number): boolean
+function GetVehicleHasFlag(vehicle, flagIndex) end
+
+    
 --- MumbleSetActive
 ---
 --- @hash [0xD932A3F3](https://docs.fivem.net/natives/?_0xD932A3F3)
@@ -5102,6 +5205,8 @@ function ForceSnowPass(enabled) end
 
     
 --- Changes the Mumble server address to connect to, and reconnects to the new address.
+--- 
+--- Setting the address to an empty string and the port to -1 will reset to the built in FXServer Mumble Implementation.
 ---
 --- @hash [0xE6EB2CD8](https://docs.fivem.net/natives/?_0xE6EB2CD8)
 --- @param address string (char*)
@@ -5435,6 +5540,34 @@ function GetVehicleDensityMultiplier() end
 --- @return number
 --- @overload fun(vehicle: Vehicle): number
 function GetVehicleHighGear(vehicle) end
+
+    
+--- Registers a custom rope data with the game. For guidance on what these values should be use common:/data/ropedata.xml as a reference.
+--- Returns a rope type which can be passed into [ADD_ROPE](?\_0xE832D760399EB220) to use a custom rope design.
+--- Once a rope data is registered it can be used indefinitely and you should take caution not too register too many as to exceed the games limit.
+--- @usage -- Create a thick steel cable rope above the players head
+--- local ropeType = RegisterRopeData(6, 0.15, "steel_cable", "steel_cable_n", 1.0, 1.0, 8.775, 0.97, 30.0, 0.25, 1.775, 0x00FFFF00)
+--- if ropeType ~= -1 then
+---     local coords = GetEntityCoords(PlayerPedId()) + vector3(0.0, 0.0, 5.0)
+--- 	AddRope(coords.x, coords.y, coords.z, 0.0, 0.0, 0.0, 25.0, ropeType, 10.0, 0.0, 1.0, false, false, false, 1.0, false, 0)
+---     RopeLoadTextures()
+--- en
+--- @hash [0xF213AE8D](https://docs.fivem.net/natives/?_0xF213AE8D)
+--- @param numSections number (int)
+--- @param radius number (float)
+--- @param diffuseTextureName string (char*)
+--- @param normalMapName string (char*)
+--- @param distanceMappingScale number (float)
+--- @param uvScaleX number (float)
+--- @param uvScaleY number (float)
+--- @param specularFresnel number (float)
+--- @param specularFalloff number (float)
+--- @param specularIntensity number (float)
+--- @param bumpiness number (float)
+--- @param color number (int)
+--- @return number
+--- @overload fun(numSections: number, radius: number, diffuseTextureName: string, normalMapName: string, distanceMappingScale: number, uvScaleX: number, uvScaleY: number, specularFresnel: number, specularFalloff: number, specularIntensity: number, bumpiness: number, color: number): number
+function RegisterRopeData(numSections, radius, diffuseTextureName, normalMapName, distanceMappingScale, uvScaleX, uvScaleY, specularFresnel, specularFalloff, specularIntensity, bumpiness, color) end
 
     
 --- Unlike [GET_PLAYER_INVINCIBLE](https://docs.fivem.net/natives/?_0xB721981B2B939E07) this native gets both [SET_PLAYER_INVINCIBLE_KEEP_RAGDOLL_ENABLED](https://docs.fivem.net/natives/?_0x6BC97F4F4BB3C04B) and [SET_PLAYER_INVINCIBLE](https://docs.fivem.net/natives/?_0x239528EACDC3E7DE) invincibility state.
@@ -5862,6 +5995,37 @@ function CreateRuntimeTexture(txd, txn, width, height) end
 --- @return string
 --- @overload fun(ped: Ped, index: number): string
 function GetPedCollectionName(ped, index) end
+
+    
+--- Allows drawing advanced light effects, known as coronas, which support flares, volumetric lighting, and customizable glow properties.
+--- @usage local pedCoords = GetEntityCoords(PlayerPedId())
+--- Citizen.CreateThread(function()
+---     while true do
+---         DrawCorona(pedCoords.x, pedCoords.y, pedCoords.z, 5.0, 255, 255, 255, 255, 4.0, 0.2, pedCoords.x, pedCoords.y, pedCoords.z, 1.0, 0.0, 90.0, 2)
+---         Wait(0)
+---     end
+--- end
+--- @hash [0xFF44780E](https://docs.fivem.net/natives/?_0xFF44780E)
+--- @param posX number (float)
+--- @param posY number (float)
+--- @param posZ number (float)
+--- @param size number (float)
+--- @param red number (int)
+--- @param green number (int)
+--- @param blue number (int)
+--- @param alpha number (int)
+--- @param intensity number (float)
+--- @param zBias number (float)
+--- @param dirX number (float)
+--- @param dirY number (float)
+--- @param dirZ number (float)
+--- @param viewThreshold number (float)
+--- @param innerAngle number (float)
+--- @param outerAngle number (float)
+--- @param flags number (int)
+--- @return void
+--- @overload fun(posX: number, posY: number, posZ: number, size: number, red: number, green: number, blue: number, alpha: number, intensity: number, zBias: number, dirX: number, dirY: number, dirZ: number, viewThreshold: number, innerAngle: number, outerAngle: number, flags: number): void
+function DrawCorona(posX, posY, posZ, size, red, green, blue, alpha, intensity, zBias, dirX, dirY, dirZ, viewThreshold, innerAngle, outerAngle, flags) end
 
     
 --- GetCalmingQuadBounds

@@ -110,6 +110,15 @@ function TempBanPlayer(playerSrc, reason) end
 function NetworkGetFirstEntityOwner(entity) end
 
     
+--- IsPlayerInFreeCamMode
+---
+--- @hash [0x1F14F2AC](https://docs.fivem.net/natives/?_0x1F14F2AC)
+--- @param playerSrc string (char*)
+--- @return boolean
+--- @overload fun(playerSrc: string): boolean
+function IsPlayerInFreeCamMode(playerSrc) end
+
+    
 --- StopResource
 ---
 --- @hash [0x21783161](https://docs.fivem.net/natives/?_0x21783161)
@@ -433,6 +442,15 @@ function GetPlayerToken(playerSrc, index) end
 --- @return number
 --- @overload fun(vehicle: Vehicle): number
 function GetVehicleRadioStationIndex(vehicle) end
+
+    
+--- Gets the focus position (i.e. the position of the active camera in the game world) of a player.
+---
+--- @hash [0x586F80FF](https://docs.fivem.net/natives/?_0x586F80FF)
+--- @param playerSrc string (char*)
+--- @return Vector3
+--- @overload fun(playerSrc: string): Vector3
+function GetPlayerFocusPos(playerSrc) end
 
     
 --- GetHostId
