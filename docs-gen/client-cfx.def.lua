@@ -160,6 +160,15 @@ function GetVehicleWheelSpeed(vehicle, wheelIndex) end
 function SetPedCollectionPreloadPropData(ped, anchorPoint, collection, propIndex, textureId) end
 
     
+--- A getter for [SET_VISUAL_SETTING_FLOAT](https://docs.fivem.net/natives/?_0xD1D31681).
+---
+--- @hash [0x15346B4D](https://docs.fivem.net/natives/?_0x15346B4D)
+--- @param name string (char*)
+--- @return number
+--- @overload fun(name: string): number
+function GetVisualSettingFloat(name) end
+
+    
 --- FindFirstVehicle
 ---
 --- @hash [0x15E55694](https://docs.fivem.net/natives/?_0x15E55694)
@@ -189,7 +198,7 @@ function GetTrackNodeCoords(trackIndex, trackNode, coords) end
 function GetDuiHandle(duiObject) end
 
     
---- A getter for [SET_VEHICLE_XMAS_SNOW_FACTOR](#\_80cc4c9e).
+--- A getter for [SET_VEHICLE_XMAS_SNOW_FACTOR](https://docs.fivem.net/natives/?_0x80CC4C9E).
 ---
 --- @hash [0x16605B30](https://docs.fivem.net/natives/?_0x16605B30)
 ---
@@ -355,6 +364,19 @@ function CreateRuntimeTxd(name) end
 --- @return number
 --- @overload fun(): number
 function GetVehicleDashboardOilTemp() end
+
+    
+--- Gets if the specified `rawKeyIndex` is pressed, even if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](https://docs.fivem.net/natives/?_0x8BCF0014).
+--- 
+--- Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+--- @usage if IsDisabledRawKeyPressed(32) then -- KEY_SPACE
+---     print("Spacebar pressed")
+--- en
+--- @hash [0x1F7CBBAA](https://docs.fivem.net/natives/?_0x1F7CBBAA)
+--- @param rawKeyIndex number (int)
+--- @return boolean
+--- @overload fun(rawKeyIndex: number): boolean
+function IsDisabledRawKeyPressed(rawKeyIndex) end
 
     
 --- This native allows you to update the bounds of a specified water quad index.
@@ -659,6 +681,19 @@ function GetVehicleWheelSuspensionCompression(vehicle, wheelIndex) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, class_: string, fieldName: string, value: any): void
 function SetVehicleHandlingField(vehicle, class_, fieldName, value) end
+
+    
+--- Gets if the specified `rawKeyIndex` is up, even if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](https://docs.fivem.net/natives/?_0x8BCF0014).
+--- 
+--- Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+--- @usage if IsDisabledRawKeyUp(32) then -- KEY_SPACE
+---     print("Spacebar is up")
+--- en
+--- @hash [0x2C033875](https://docs.fivem.net/natives/?_0x2C033875)
+--- @param rawKeyIndex number (int)
+--- @return boolean
+--- @overload fun(rawKeyIndex: number): boolean
+function IsDisabledRawKeyUp(rawKeyIndex) end
 
     
 --- Returns mapdata's entity matrix. This function supports SDK infrastructure and is not intended to be used directly from your code.
@@ -996,6 +1031,19 @@ function SetVehicleWheelRotationSpeed(vehicle, wheelIndex, speed) end
 function RegisterTrackJunction(trackIndex, trackNode, newIndex, newNode, direction) end
 
     
+--- Gets if the specified `rawKeyIndex` is pressed down, even if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](https://docs.fivem.net/natives/?_0x8BCF0014).
+--- 
+--- Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+--- @usage if IsDisabledRawKeyDown(32) then -- KEY_SPACE
+---     print("Spacebar is down")
+--- en
+--- @hash [0x36366EC3](https://docs.fivem.net/natives/?_0x36366EC3)
+--- @param rawKeyIndex number (int)
+--- @return boolean
+--- @overload fun(rawKeyIndex: number): boolean
+function IsDisabledRawKeyDown(rawKeyIndex) end
+
+    
 --- Overrides how many real ms are equal to one game minute.
 --- A setter for [`GetMillisecondsPerGameMinute`](https://docs.fivem.net/natives/?_0x2F8B4D1C595B11DB).
 ---
@@ -1016,7 +1064,9 @@ function SetMillisecondsPerGameMinute(value) end
 function RemoveTimecycleModifier(modifierName) end
 
     
---- Can be used to get state of raw key on keyboard.
+--- Gets if the specified `rawKeyIndex` is up  on the keyboard.
+--- 
+--- This will not be triggered if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](https://docs.fivem.net/natives/?_0x8BCF0014)
 --- 
 --- Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
 --- @usage if IsRawKeyUp(32) then -- KEY_SPACE
@@ -1497,6 +1547,37 @@ function SetVehicleHandlingFloat(vehicle, class_, fieldName, value) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, gear: number, ratio: number): void
 function SetVehicleGearRatio(vehicle, gear, ratio) end
+
+    
+--- Registers a keymap that will be triggered whenever `rawKeyIndex` is pressed or released.
+--- 
+--- `onKeyUp` and `onKeyDown` will not provide any arguments.
+--- 
+--- ```ts
+--- function onStateChange();
+--- ```
+--- @usage function on_key_up()
+--- 	print("key no longer pressed")
+--- end
+--- 
+--- function on_key_down()
+--- 	print("key is pressed")
+--- end
+--- 
+--- local KEY_E = 69
+--- local canBeDisabled = false
+--- 
+--- 
+--- RegisterRawKeymap("our_keymap", on_key_up, on_key_down, KEY_E, canBeDisabled
+--- @hash [0x49C1F6DC](https://docs.fivem.net/natives/?_0x49C1F6DC)
+--- @param keymapName string (char*)
+--- @param onKeyUp fun
+--- @param onKeyDown fun
+--- @param rawKeyIndex number (int)
+--- @param canBeDisabled boolean
+--- @return void
+--- @overload fun(keymapName: string, onKeyUp: fun, onKeyDown: fun, rawKeyIndex: number, canBeDisabled: boolean): void
+function RegisterRawKeymap(keymapName, onKeyUp, onKeyDown, rawKeyIndex, canBeDisabled) end
 
     
 --- A getter for `CWeaponDamageModifier` in a weapon component.
@@ -2132,7 +2213,9 @@ function SetRopeLengthChangeRate(rope, lengthChangeRate) end
 function GetPedMovementClipset(ped) end
 
     
---- Can be used to get state of raw key on keyboard.
+--- Gets if the specified `rawKeyIndex` is pressed on the keyboard.
+--- 
+--- This will not be triggered if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](https://docs.fivem.net/natives/?_0x8BCF0014)
 --- 
 --- Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
 --- @usage if IsRawKeyPressed(32) then -- KEY_SPACE
@@ -2261,6 +2344,34 @@ function ResetFlyThroughWindscreenParams() end
 function SetTimecycleModifierVar(modifierName, varName, value1, value2) end
 
     
+--- Remaps the keymap bound to `keymapName` to `newRawKeyIndex`
+--- 
+--- Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+--- @usage 
+--- function on_key_up()
+--- 	print("key no longer pressed")
+--- end
+--- 
+--- function on_key_down()
+--- 	print("key is pressed")
+--- end
+--- 
+--- local KEY_SPACE = 32
+--- local canBeDisabled = false
+--- 
+--- local KEY_E = 69
+--- 
+--- RegisterRawKeymap("our_keymap", on_key_up, on_key_down, KEY_SPACE, canBeDisabled)
+--- 
+--- RemapRawKeymap("our_keymap", KEY_E
+--- @hash [0x6E38C1B9](https://docs.fivem.net/natives/?_0x6E38C1B9)
+--- @param keymapName string (char*)
+--- @param newRawKeyIndex number (int)
+--- @return void
+--- @overload fun(keymapName: string, newRawKeyIndex: number): void
+function RemapRawKeymap(keymapName, newRawKeyIndex) end
+
+    
 --- GetWaterQuadNoStencil
 --- @usage local success, noStencil = GetWaterQuadNoStencil(0
 --- @hash [0x6F4ACBA](https://docs.fivem.net/natives/?_0x6F4ACBA)
@@ -2295,6 +2406,19 @@ function CreateTimecycleModifier(modifierName) end
 --- @return number
 --- @overload fun(vehicle: Vehicle, wheelIndex: number): number
 function GetVehicleWheelBrakePressure(vehicle, wheelIndex) end
+
+    
+--- Gets if the specified `rawKeyIndex` was released, even if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](https://docs.fivem.net/natives/?_0x8BCF0014).
+--- 
+--- Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+--- @usage if IsDisabledRawKeyReleased(32) then -- KEY_SPACE
+---     print("Spacebar released")
+--- en
+--- @hash [0x72B66C09](https://docs.fivem.net/natives/?_0x72B66C09)
+--- @param rawKeyIndex number (int)
+--- @return boolean
+--- @overload fun(rawKeyIndex: number): boolean
+function IsDisabledRawKeyReleased(rawKeyIndex) end
 
     
 --- Sets the current output distance. The player will be able to hear other players talking within this distance.
@@ -2473,7 +2597,7 @@ function SendNuiMessage(jsonString) end
 function CreateRuntimeTextureFromImage(txd, txn, fileName) end
 
     
---- A getter for [SET_GLOBAL_PASSENGER_MASS_MULTIPLIER](https://docs.fivem.net/natives/?_0x1c47f6ac).
+--- A getter for [SET_GLOBAL_PASSENGER_MASS_MULTIPLIER](https://docs.fivem.net/natives/?_0x1C47F6AC).
 ---
 --- @hash [0x78951816](https://docs.fivem.net/natives/?_0x78951816)
 ---
@@ -3060,6 +3184,26 @@ function AddAuthorizedParachuteModel(modelNameHash) end
 function SendLoadingScreenMessage(jsonString) end
 
     
+--- Disables the specified `rawKeyIndex`, making it not trigger the regular `IS_RAW_KEY_*` natives.
+--- 
+--- Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+--- @usage local KEY_SPACE = 32
+--- DisableRawKeyThisFrame(KEY_SPACE)
+--- -- This will not get triggered this frame
+--- if IsRawKeyDown(KEY_SPACE) then
+--- 	print("unreachable :(")
+--- end
+--- -- this will get triggered
+--- if IsDisabledRawKeyDown(KEY_SPACE) then
+---     print("Spacebar is down")
+--- en
+--- @hash [0x8BCF0014](https://docs.fivem.net/natives/?_0x8BCF0014)
+--- @param rawKeyIndex number (int)
+--- @return boolean
+--- @overload fun(rawKeyIndex: number): boolean
+function DisableRawKeyThisFrame(rawKeyIndex) end
+
+    
 --- Gets the direction the train is facing
 ---
 --- @hash [0x8DAF79B6](https://docs.fivem.net/natives/?_0x8DAF79B6)
@@ -3396,6 +3540,16 @@ function GetVehicleDashboardSpeed(vehicle) end
 function GetInteriorPortalEntityPosition(interiorId, portalIndex, entityIndex) end
 
     
+--- Returns the bone matrix of the specified bone id. usefull for entity attachment
+--- @usage local fowardVector, rightVector, upVector, position = GetPedBoneMatrix(PlayerPedId(),boneId
+--- @hash [0x9C5E7C9C](https://docs.fivem.net/natives/?_0x9C5E7C9C)
+--- @param ped Ped
+--- @param boneId number (int)
+--- @return Vector3, Vector3, Vector3, Vector3
+--- @overload fun(ped: Ped, boneId: number): Vector3, Vector3, Vector3, Vector3
+function GetPedBoneMatrix(ped, boneId) end
+
+    
 --- Returns vehicle's wheels' width (width is the same for all the wheels, cannot get/set specific wheel of vehicle).
 --- Only works on non-default wheels (returns 0 in case of default wheels).
 ---
@@ -3606,6 +3760,22 @@ function GetTrainCruiseSpeed(train) end
 --- @return void
 --- @overload fun(origTxd: string, origTxn: string, newTxd: string, newTxn: string): void
 function AddReplaceTexture(origTxd, origTxn, newTxd, newTxn) end
+
+    
+--- Get the minimap type:
+--- 
+--- ```
+--- 0 = Off,
+--- 1 = Regular,
+--- 2 = Expanded,
+--- 3 = Simple,
+--- ```
+---
+--- @hash [0xA6FF71C9](https://docs.fivem.net/natives/?_0xA6FF71C9)
+---
+--- @return number
+--- @overload fun(): number
+function GetMinimapType() end
 
     
 --- GetTimecycleModifierVar
@@ -4948,7 +5118,9 @@ function GetVehicleHasFlag(vehicle, flagIndex) end
 function MumbleSetActive(state) end
 
     
---- Can be used to get state of raw key on keyboard.
+--- Gets if the specified `rawKeyIndex` is pressed down on the keyboard.
+--- 
+--- This will not be triggered if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](https://docs.fivem.net/natives/?_0x8BCF0014)
 --- 
 --- Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
 --- @usage if IsRawKeyDown(32) then -- KEY_SPACE
@@ -5330,7 +5502,9 @@ function GetCurrentServerEndpoint() end
 function GetVehicleWheelRotationSpeed(vehicle, wheelIndex) end
 
     
---- Can be used to get release state of raw key on keyboard.
+--- Gets if the specified `rawKeyIndex` was just released on the keyboard.
+--- 
+--- This will not be triggered if the key is disabled with [DISABLE_RAW_KEY_THIS_FRAME](https://docs.fivem.net/natives/?_0x8BCF0014)
 --- 
 --- Virtual key codes can be found [here](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
 --- @usage if IsRawKeyReleased(32) then -- KEY_SPACE

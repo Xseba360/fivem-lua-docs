@@ -810,6 +810,15 @@ function IsBoatWrecked(vehicle) end
 function PrintStructuredTrace(jsonString) end
 
     
+--- GetEntityRemoteSyncedScenesAllowed
+---
+--- @hash [0x91B38FB6](https://docs.fivem.net/natives/?_0x91B38FB6)
+--- @param entity Entity
+--- @return boolean
+--- @overload fun(entity: Entity): boolean
+function GetEntityRemoteSyncedScenesAllowed(entity) end
+
+    
 --- SetConvarServerInfo
 ---
 --- @hash [0x9338D547](https://docs.fivem.net/natives/?_0x9338D547)
@@ -1147,6 +1156,18 @@ function GetEntityOrphanMode(entity) end
 --- @return void
 --- @overload fun(entity: Entity, radius: number): void
 function SetEntityDistanceCullingRadius(entity, radius) end
+
+    
+--- Enables or disables the owner check for the specified entity in network-synchronized scenes. When set to `false`, the entity cannot participate in synced scenes initiated by clients that do not own the entity.
+--- 
+--- By default, this is `false` for all entities, meaning only the entity's owner can include it in networked synchronized scenes.
+---
+--- @hash [0xD3FC9D88](https://docs.fivem.net/natives/?_0xD3FC9D88)
+--- @param entity Entity
+--- @param allow boolean
+--- @return void
+--- @overload fun(entity: Entity, allow: boolean): void
+function SetEntityRemoteSyncedScenesAllowed(entity, allow) end
 
     
 --- **Note** This native will always return `1000.0` unless [SET_VEHICLE_BODY_HEALTH](https://docs.fivem.net/natives/?_0xB77D05AC8C78AADB), [SET_VEHICLE_ENGINE_HEALTH](https://docs.fivem.net/natives/?_0x45F6D8EEF34ABEF1), or [SET_VEHICLE_PETROL_TANK_HEALTH](https://docs.fivem.net/natives/?_0x70DB57649FA8D0D8) have been called with a value greater than `1000.0`.

@@ -358,7 +358,7 @@ function LoadResourceFile(resourceName, fileName) end
 
     
 --- Gets the amount of metadata values with the specified key existing in the specified resource's manifest.
---- See also: [Resource manifest](https://docs.fivem.net/resources/manifest/)
+--- See also: [Resource manifest](https://docs.fivem.net/docs/scripting-reference/resource-manifest/resource-manifest/)
 ---
 --- @hash [0x776E864](https://docs.fivem.net/natives/?_0x776E864)
 --- @param resourceName string (char*)
@@ -488,7 +488,7 @@ function GetConvarInt(varName, default_) end
 
     
 --- Gets the metadata value at a specified key/index from a resource's manifest.
---- See also: [Resource manifest](https://docs.fivem.net/resources/manifest/)
+--- See also: [Resource manifest](https://docs.fivem.net/docs/scripting-reference/resource-manifest/resource-manifest/)
 ---
 --- @hash [0x964BAB1D](https://docs.fivem.net/natives/?_0x964BAB1D)
 --- @param resourceName string (char*)
