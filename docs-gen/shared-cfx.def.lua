@@ -205,8 +205,12 @@ function NetworkGetEntityOwner(entity) end
 function GetResourceKvpInt(key) end
 
     
---- ExecuteCommand
----
+--- Depending on your use case you may need to use `add_acl resource.<your_resource_name> command.<command_name> allow` to use this native in your resource.
+--- @usage Citizen.CreateThread(function()
+---   -- stop the server after 1 minute
+---   Citizen.Wait(60000)
+---   ExecuteCommand("quit Shortlived")
+--- end
 --- @hash [0x561C060B](https://docs.fivem.net/natives/?_0x561C060B)
 --- @param commandString string (char*)
 --- @return void
@@ -717,6 +721,15 @@ function RemoveStateBagChangeHandler(cookie) end
 function GetRegisteredCommands() end
 
     
+--- An internal function for converting a stack trace object to a string.
+---
+--- @hash [0xD70C3BCA](https://docs.fivem.net/natives/?_0xD70C3BCA)
+--- @param traceData table (object)
+--- @return string
+--- @overload fun(traceData: table): string
+function FormatStackTrace(traceData) end
+
+    
 --- StartFindKvp
 --- @usage SetResourceKvp('mollis:2', 'should be taken with alcohol')
 --- SetResourceKvp('mollis:1', 'vesuvius citrate')
@@ -744,6 +757,48 @@ function GetRegisteredCommands() end
 --- @return number
 --- @overload fun(prefix: string): number
 function StartFindKvp(prefix) end
+
+    
+--- ### Supported types
+--- 
+--- *   \[1] : Peds (including animals) and players.
+--- *   \[2] : Vehicles.
+--- *   \[3] : Objects (props), doors, and projectiles.
+--- 
+--- ### Coordinates need to be send unpacked (x,y,z)
+--- 
+--- ```lua
+--- 
+--- -- Define the allowed model hashes
+--- local allowedModelHashes = { GetHashKey("p_crate03x"), GetHashKey("p_crate22x") }
+--- 
+--- -- Get the player's current coordinates
+--- local playerCoords = GetEntityCoords(PlayerPedId())
+--- 
+--- -- Retrieve all entities of type Object (type 3) within a radius of 10.0 units
+--- -- that match the allowed model hashes
+--- -- and sort output entities by distance
+--- local entities = GetEntitiesInRadius(playerCoords.x, playerCoords.y, playerCoords.z, 10.0, 3, true, allowedModelHashes)
+--- 
+--- -- Iterate through the list of entities and print their ids
+--- for i = 1, #entities do
+---     local entity = entities[i]
+---     print(entity)
+--- end
+--- 
+--- ```
+---
+--- @hash [0xDFFBA12F](https://docs.fivem.net/natives/?_0xDFFBA12F)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param radius number (float)
+--- @param entityType number (int)
+--- @param sortByDistance boolean
+--- @param models table (object)
+--- @return table
+--- @overload fun(x: number, y: number, z: number, radius: number, entityType: number, sortByDistance: boolean, models: table): table
+function GetEntitiesInRadius(x, y, z, radius, entityType, sortByDistance, models) end
 
     
 --- Returns the name of the currently executing resource.

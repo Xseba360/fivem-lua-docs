@@ -879,6 +879,44 @@ function RegisterResourceAsset(resourceName, fileName) end
 function GetVehicleTotalRepairs(vehicle) end
 
     
+--- ```cpp
+--- const int ENET_PACKET_LOSS_SCALE = 65536;
+--- 
+--- enum PeerStatistics
+--- {
+--- 	// PacketLoss will only update once every 10 seconds, use PacketLossEpoch if you want the time
+--- 	// since the last time the packet loss was updated.
+--- 
+--- 	// the amount of packet loss the player has, needs to be scaled with PACKET_LOSS_SCALE
+--- 	PacketLoss = 0,
+--- 	// The variance in the packet loss
+--- 	PacketLossVariance = 1,
+--- 	// The time since the last packet update in ms, relative to the peers connection time
+--- 	PacketLossEpoch = 2,
+--- 	// The mean amount of time it takes for a packet to get to the client (ping)
+--- 	RoundTripTime = 3,
+--- 	// The variance in the round trip time
+--- 	RoundTripTimeVariance = 4,
+--- 	// Despite their name, these are only updated once every 5 seconds, you can get the last time this was updated with PacketThrottleEpoch
+--- 	// The last recorded round trip time of a packet
+--- 	LastRoundTripTime = 5,
+--- 	// The last round trip time variance
+--- 	LastRoundTripTimeVariance = 6,
+--- 	// The time since the last packet throttle update, relative to the peers connection time
+--- 	PacketThrottleEpoch = 7,
+--- };
+--- ```
+--- 
+--- These statistics only update once every 10 seconds.
+---
+--- @hash [0x9A928294](https://docs.fivem.net/natives/?_0x9A928294)
+--- @param playerSrc string (char*)
+--- @param peerStatistic number (int)
+--- @return number
+--- @overload fun(playerSrc: string, peerStatistic: number): number
+function GetPlayerPeerStatistics(playerSrc, peerStatistic) end
+
+    
 --- HasEntityBeenMarkedAsNoLongerNeeded
 ---
 --- @hash [0x9C9A3BE0](https://docs.fivem.net/natives/?_0x9C9A3BE0)
@@ -1394,7 +1432,7 @@ function EnableEnhancedHostSupport(enabled) end
 function GetPlayerEndpoint(playerSrc) end
 
     
---- GetPlayerPing
+--- See [GET_PLAYER_PEER_STATISTICS](https://docs.fivem.net/natives/?_0x9A928294) if you want more detailed information, like packet loss, and packet/rtt variance
 ---
 --- @hash [0xFF1290D4](https://docs.fivem.net/natives/?_0xFF1290D4)
 --- @param playerSrc string (char*)

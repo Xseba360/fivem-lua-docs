@@ -169,6 +169,23 @@ function SetPedCollectionPreloadPropData(ped, anchorPoint, collection, propIndex
 function GetVisualSettingFloat(name) end
 
     
+--- Removes the specified texture and remove it from the ped.
+--- Unlike `0x6BEFAA907B076859` which only marks the texture as "can be reused" (and keeps it until will be reused), this function deletes it right away. Can fix some sync issues. `DOES_TEXTURE_EXIST` can be use to wait until fully unloaded by game
+--- 
+--- ```lua
+--- RemoveTexture(textureId)
+--- while DoesTextureExist(textureId) do 
+---     Wait(0)
+--- end
+--- ```
+---
+--- @hash [0x1582C7F2](https://docs.fivem.net/natives/?_0x1582C7F2)
+--- @param textureId number (int)
+--- @return void
+--- @overload fun(textureId: number): void
+function RemoveTexture(textureId) end
+
+    
 --- FindFirstVehicle
 ---
 --- @hash [0x15E55694](https://docs.fivem.net/natives/?_0x15E55694)
@@ -906,6 +923,21 @@ function MumbleAddVoiceTargetPlayer(targetId, player) end
 --- @return void
 --- @overload fun(entryKey: string, entryText: string): void
 function AddTextEntry(entryKey, entryText) end
+
+    
+--- Gets the current screen resolution.
+--- 
+--- ```lua
+--- local  width, height = GetCurrentScreenResolution()
+--- print(string.format("Current screen resolution: %dx%d", width, height))
+--- 
+--- ```
+---
+--- @hash [0x337F0116](https://docs.fivem.net/natives/?_0x337F0116)
+---
+--- @return number, number
+--- @overload fun(): number, number
+function GetCurrentScreenResolution() end
 
     
 --- An alternative to [IS_PED_COMPONENT_VARIATION_GEN9\_EXCLUSIVE](https://docs.fivem.net/natives/?_0xC767B581) that uses local collection indexing instead of the global one.
@@ -3173,6 +3205,15 @@ function SetHandlingInt(vehicle, class_, fieldName, value) end
 --- @return void
 --- @overload fun(modelNameHash: number): void
 function AddAuthorizedParachuteModel(modelNameHash) end
+
+    
+--- In compare to `0x31DC8D3F216D8509` return true if texture its created when `0x31DC8D3F216D8509` return true if you put there any id in valid range
+---
+--- @hash [0x8B25BC20](https://docs.fivem.net/natives/?_0x8B25BC20)
+--- @param textureId number (int)
+--- @return boolean
+--- @overload fun(textureId: number): boolean
+function DoesTextureExist(textureId) end
 
     
 --- Sends a message to the `loadingScreen` NUI frame, which contains the HTML page referenced in `loadscreen` resources.
