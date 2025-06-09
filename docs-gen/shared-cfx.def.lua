@@ -37,6 +37,16 @@ function DeleteFunctionReference(referenceIdentity) end
 function SetResourceKvp(key, value) end
 
     
+--- Nonsynchronous [SET_RESOURCE_KVP_INT](https://docs.fivem.net/natives/?_0x6A2B1E8) operation; see [FLUSH_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x5240DA5A).
+---
+--- @hash [0x26AEB707](https://docs.fivem.net/natives/?_0x26AEB707)
+--- @param key string (char*)
+--- @param value number (int)
+--- @return void
+--- @overload fun(key: string, value: number): void
+function SetResourceKvpIntNoSync(key, value) end
+
+    
 --- A getter for [SET_PLAYER_WEAPON_DAMAGE_MODIFIER](https://docs.fivem.net/natives/?_0xCE07B9F7817AADA3).
 ---
 --- @hash [0x2A3D7CDA](https://docs.fivem.net/natives/?_0x2A3D7CDA)
@@ -74,6 +84,16 @@ function GetPlayerWeaponDamageModifier(playerId) end
 --- @overload fun(poolname: 'CVehicle'): Vehicle[]
 --- @overload fun(poolname: 'CPickup'): Pickup[]
 function GetGamePool(poolName) end
+
+    
+--- Nonsynchronous [SET_RESOURCE_KVP_FLOAT](https://docs.fivem.net/natives/?_0x9ADD2938) operation; see [FLUSH_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x5240DA5A).
+---
+--- @hash [0x3517BFBE](https://docs.fivem.net/natives/?_0x3517BFBE)
+--- @param key string (char*)
+--- @param value number (float)
+--- @return void
+--- @overload fun(key: string, value: number): void
+function SetResourceKvpFloatNoSync(key, value) end
 
     
 --- A getter for [SET_RESOURCE_KVP_FLOAT](https://docs.fivem.net/natives/?_0x9ADD2938).
@@ -130,6 +150,15 @@ function EnsureEntityStateBag(entity) end
 --- @return string
 --- @overload fun(resourceName: string): string
 function GetResourceState(resourceName) end
+
+    
+--- Nonsynchronous [DELETE_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x7389B5DF) operation; see [FLUSH_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x5240DA5A).
+---
+--- @hash [0x4152C90](https://docs.fivem.net/natives/?_0x4152C90)
+--- @param key string (char*)
+--- @return void
+--- @overload fun(key: string): void
+function DeleteResourceKvpNoSync(key) end
 
     
 --- GetVehicleHandbrake
@@ -674,6 +703,16 @@ function ProfilerEnterScope(scopeName) end
 --- @return boolean
 --- @overload fun(): boolean
 function IsDuplicityVersion() end
+
+    
+--- Nonsynchronous [SET_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x21C7A35B) operation; see [FLUSH_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x5240DA5A).
+---
+--- @hash [0xCF9A2FF](https://docs.fivem.net/natives/?_0xCF9A2FF)
+--- @param key string (char*)
+--- @param value string (char*)
+--- @return void
+--- @overload fun(key: string, value: string): void
+function SetResourceKvpNoSync(key, value) end
 
     
 --- An internal function which allows the current resource's HLL script runtimes to receive state for the specified event.

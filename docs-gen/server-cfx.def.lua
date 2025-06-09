@@ -173,16 +173,6 @@ function IsPedHandcuffed(ped) end
 function MumbleCreateChannel(id) end
 
     
---- Nonsynchronous [SET_RESOURCE_KVP_INT](https://docs.fivem.net/natives/?_0x6A2B1E8) operation; see [FLUSH_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x5240DA5A).
----
---- @hash [0x26AEB707](https://docs.fivem.net/natives/?_0x26AEB707)
---- @param key string (char*)
---- @param value number (int)
---- @return void
---- @overload fun(key: string, value: number): void
-function SetResourceKvpIntNoSync(key, value) end
-
-    
 --- Registers a listener for console output messages.
 ---
 --- @hash [0x281B5448](https://docs.fivem.net/natives/?_0x281B5448)
@@ -287,16 +277,6 @@ function GetHeliRearRotorHealth(vehicle) end
 function SetConvar(varName, value) end
 
     
---- Nonsynchronous [SET_RESOURCE_KVP_FLOAT](https://docs.fivem.net/natives/?_0x9ADD2938) operation; see [FLUSH_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x5240DA5A).
----
---- @hash [0x3517BFBE](https://docs.fivem.net/natives/?_0x3517BFBE)
---- @param key string (char*)
---- @param value number (float)
---- @return void
---- @overload fun(key: string, value: number): void
-function SetResourceKvpFloatNoSync(key, value) end
-
-    
 --- GetIsHeliEngineRunning
 ---
 --- @hash [0x3EFE38D1](https://docs.fivem.net/natives/?_0x3EFE38D1)
@@ -304,15 +284,6 @@ function SetResourceKvpFloatNoSync(key, value) end
 --- @return boolean
 --- @overload fun(heli: Vehicle): boolean
 function GetIsHeliEngineRunning(heli) end
-
-    
---- Nonsynchronous [DELETE_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x7389B5DF) operation; see [FLUSH_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x5240DA5A).
----
---- @hash [0x4152C90](https://docs.fivem.net/natives/?_0x4152C90)
---- @param key string (char*)
---- @return void
---- @overload fun(key: string): void
-function DeleteResourceKvpNoSync(key) end
 
     
 --- GetPlayerLastMsg
@@ -375,9 +346,11 @@ function GetPedScriptTaskStage(ped) end
 --- }
 --- ```
 --- 
---- Sets what happens when the entity is orphaned and no longer has its original owner.
+--- Sets what the server will do when the entity no longer has its original owner. By default the server will cleanup entities that it considers "no longer relevant".
 --- 
---- **NOTE**: This native doesn't guarantee the persistence of the entity.
+--- When used on trains, this native will recursively call onto all attached carriages.
+--- 
+--- **NOTE**: When used with `KeepEntity` (2) this native only guarantees that the ***server*** will not delete the entity, client requests to delete the entity will still work perfectly fine.
 ---
 --- @hash [0x489E9162](https://docs.fivem.net/natives/?_0x489E9162)
 --- @param entity Entity
@@ -1162,16 +1135,6 @@ function GetVehicleInteriorColour(vehicle, color) end
 --- @return void
 --- @overload fun(bucketId: number, mode: boolean): void
 function SetRoutingBucketPopulationEnabled(bucketId, mode) end
-
-    
---- Nonsynchronous [SET_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x21C7A35B) operation; see [FLUSH_RESOURCE_KVP](https://docs.fivem.net/natives/?_0x5240DA5A).
----
---- @hash [0xCF9A2FF](https://docs.fivem.net/natives/?_0xCF9A2FF)
---- @param key string (char*)
---- @param value string (char*)
---- @return void
---- @overload fun(key: string, value: string): void
-function SetResourceKvpNoSync(key, value) end
 
     
 --- GetEntityOrphanMode

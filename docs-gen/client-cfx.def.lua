@@ -1603,13 +1603,13 @@ function SetVehicleGearRatio(vehicle, gear, ratio) end
 --- RegisterRawKeymap("our_keymap", on_key_up, on_key_down, KEY_E, canBeDisabled
 --- @hash [0x49C1F6DC](https://docs.fivem.net/natives/?_0x49C1F6DC)
 --- @param keymapName string (char*)
---- @param onKeyUp fun
 --- @param onKeyDown fun
+--- @param onKeyUp fun
 --- @param rawKeyIndex number (int)
 --- @param canBeDisabled boolean
 --- @return void
---- @overload fun(keymapName: string, onKeyUp: fun, onKeyDown: fun, rawKeyIndex: number, canBeDisabled: boolean): void
-function RegisterRawKeymap(keymapName, onKeyUp, onKeyDown, rawKeyIndex, canBeDisabled) end
+--- @overload fun(keymapName: string, onKeyDown: fun, onKeyUp: fun, rawKeyIndex: number, canBeDisabled: boolean): void
+function RegisterRawKeymap(keymapName, onKeyDown, onKeyUp, rawKeyIndex, canBeDisabled) end
 
     
 --- A getter for `CWeaponDamageModifier` in a weapon component.
@@ -1788,6 +1788,15 @@ function SetWaterQuadType(waterQuad, type) end
 function SetEntityDrawOutlineShader(shader) end
 
     
+--- A getter for the accuracy spread of a weapon.
+---
+--- @hash [0x5343721](https://docs.fivem.net/natives/?_0x5343721)
+--- @param weaponHash Hash
+--- @return number
+--- @overload fun(weaponHash: Hash): number
+function GetWeaponAccuracySpread(weaponHash) end
+
+    
 --- Sets the state of a track junction.
 ---
 --- @hash [0x537B449D](https://docs.fivem.net/natives/?_0x537B449D)
@@ -1899,6 +1908,16 @@ function GetFuelConsumptionRateMultiplier() end
 --- @return void
 --- @overload fun(interiorId: number, portalIndex: number, roomTo: number): void
 function SetInteriorPortalRoomTo(interiorId, portalIndex, roomTo) end
+
+    
+--- A setter for the accuracy spread of a weapon.
+---
+--- @hash [0x598DD6AE](https://docs.fivem.net/natives/?_0x598DD6AE)
+--- @param weaponHash Hash
+--- @param spread number (float)
+--- @return void
+--- @overload fun(weaponHash: Hash, spread: number): void
+function SetWeaponAccuracySpread(weaponHash, spread) end
 
     
 --- Get all track nodes and their track ids within the radius of the specified coordinates.
@@ -3549,6 +3568,15 @@ function SetAudioSubmixEffectParamFloat(submixId, effectSlot, paramIndex, paramV
 --- @return any
 --- @overload fun(entity: Entity): any
 function GetEntityAddress(entity) end
+
+    
+--- GetTrainTrackIndex
+---
+--- @hash [0x9AA339D](https://docs.fivem.net/natives/?_0x9AA339D)
+--- @param train Vehicle
+--- @return number
+--- @overload fun(train: Vehicle): number
+function GetTrainTrackIndex(train) end
 
     
 --- GetVehicleDashboardSpeed
