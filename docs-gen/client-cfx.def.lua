@@ -881,7 +881,7 @@ function SetWeaponsNoAutoreload(state) end
 function SetInteriorRoomTimecycle(interiorId, roomIndex, timecycleHash) end
 
     
---- Getter for [SET_TRACK_ENABLED](?\_0x4b41e84c)
+--- Getter for [SET_TRACK_ENABLED](https://docs.fivem.net/natives/?_0x4B41E84C)
 ---
 --- @hash [0x31E695CB](https://docs.fivem.net/natives/?_0x31E695CB)
 --- @param track number (int)
@@ -1318,7 +1318,7 @@ function SetMinimapComponentPosition(name, alignX, alignY, posX, posY, sizeX, si
 --- 
 --- The local / collection relative indexing is useful because the global index may get shifted after Title Update. While local index will remain the same which simplifies migration to the newer game version.
 --- 
---- Collection name and local index inside the collection can be obtained from the global index using [GET_PED_COLLECTION_NAME_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0x5C612867) and [GET_PED_COLLECTION_LOCAL_INDEX_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0x94EB1FE4) natives.
+--- Collection name and local index inside the collection can be obtained from the global index using [GET_PED_COLLECTION_NAME_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0xD6BBA48B) and [GET_PED_COLLECTION_LOCAL_INDEX_FROM_DRAWABLE](https://docs.fivem.net/natives/?_0x94EB1FE4) natives.
 ---
 --- @hash [0x3EC75558](https://docs.fivem.net/natives/?_0x3EC75558)
 --- @param ped Ped
@@ -2245,6 +2245,66 @@ function IsBigmapFull() end
 function SetCalmingQuadDampening(calmingQuad, dampening) end
 
     
+--- Sets the render technique for drawing an entity's outline. This function allows you to specify a technique group name to control how the entity's outline is rendered in the game.
+--- 
+--- List of known technique group's:
+--- 
+--- ```
+--- alt0
+--- alt1
+--- alt2
+--- alt3
+--- alt4
+--- alt5
+--- alt6
+--- alt7
+--- alt8
+--- blit
+--- cube
+--- default
+--- geometry
+--- imposter
+--- imposterdeferred
+--- lightweight0
+--- lightweight0CutOut
+--- lightweight0CutOutTint
+--- lightweight0WaterRefractionAlpha
+--- lightweight4
+--- lightweight4CutOut
+--- lightweight4CutOutTint
+--- lightweight4WaterRefractionAlpha
+--- lightweight8
+--- lightweight8CutOut
+--- lightweight8CutOutTint
+--- lightweight8WaterRefractionAlpha
+--- lightweightHighQuality0
+--- lightweightHighQuality0CutOut
+--- lightweightHighQuality0WaterRefractionAlpha
+--- lightweightHighQuality4
+--- lightweightHighQuality4CutOut
+--- lightweightHighQuality4WaterRefractionAlpha
+--- lightweightHighQuality8
+--- lightweightHighQuality8CutOut
+--- lightweightHighQuality8WaterRefractionAlpha
+--- lightweightNoCapsule4
+--- lightweightNoCapsule8
+--- multilight
+--- tessellate
+--- ui
+--- unlit
+--- waterreflection
+--- waterreflectionalphaclip
+--- waterreflectionalphacliptint
+--- wdcascade
+--- ```
+---
+--- @hash [0x68DFF2DD](https://docs.fivem.net/natives/?_0x68DFF2DD)
+--- @param techniqueGroup string (char*)
+--- @return void
+--- @overload fun(techniqueGroup: string): void
+function SetEntityDrawOutlineRenderTechnique(techniqueGroup) end
+
+    
 --- Set's the ropes length change rate, which is the speed that rope should wind if started.
 ---
 --- @hash [0x69B680A7](https://docs.fivem.net/natives/?_0x69B680A7)
@@ -2587,15 +2647,6 @@ function GetInteriorPosition(interiorId) end
 function GetScenarioPedDensityMultiplier() end
 
     
---- DoesTrainStopAtStations
----
---- @hash [0x77CC80DC](https://docs.fivem.net/natives/?_0x77CC80DC)
---- @param train Vehicle
---- @return boolean
---- @overload fun(train: Vehicle): boolean
-function DoesTrainStopAtStations(train) end
-
-    
 --- Sets the braking distance of the track. Used by trains to determine the point to slow down when entering a station.
 ---
 --- @hash [0x77EB78D0](https://docs.fivem.net/natives/?_0x77EB78D0)
@@ -2648,7 +2699,7 @@ function SendNuiMessage(jsonString) end
 function CreateRuntimeTextureFromImage(txd, txn, fileName) end
 
     
---- A getter for [SET_GLOBAL_PASSENGER_MASS_MULTIPLIER](https://docs.fivem.net/natives/?_0x1C47F6AC).
+--- A getter for [SET_GLOBAL_PASSENGER_MASS_MULTIPLIER](https://docs.fivem.net/natives/?_0x3422291C).
 ---
 --- @hash [0x78951816](https://docs.fivem.net/natives/?_0x78951816)
 ---
@@ -2868,13 +2919,18 @@ function SetVehicleXmasSnowFactor(gripFactor) end
 function ResetMapdataEntityMatrix(mapDataHash, entityInternalIdx) end
 
     
---- GetTrainState
+--- Returns all track junctions on the client
+--- The data returned adheres to the following structure:
+--- 
+--- ```
+--- [1, 2, 4, 6, 69, 420]
+--- ```
 ---
---- @hash [0x81B50033](https://docs.fivem.net/natives/?_0x81B50033)
---- @param train Vehicle
---- @return number
---- @overload fun(train: Vehicle): number
-function GetTrainState(train) end
+--- @hash [0x81A08523](https://docs.fivem.net/natives/?_0x81A08523)
+---
+--- @return table
+--- @overload fun(): table
+function GetAllTrackJunctions() end
 
     
 --- Turns on and off fuel consumption in all vehicles operated by a player. NPC operated vehicles will not consume fuel to avoid traffic disruptions.
@@ -3264,15 +3320,6 @@ function SendLoadingScreenMessage(jsonString) end
 function DisableRawKeyThisFrame(rawKeyIndex) end
 
     
---- Gets the direction the train is facing
----
---- @hash [0x8DAF79B6](https://docs.fivem.net/natives/?_0x8DAF79B6)
---- @param train Vehicle
---- @return boolean
---- @overload fun(train: Vehicle): boolean
-function GetTrainDirection(train) end
-
-    
 --- Override the limits on the number and types of melee combatants. The game is limited to at most ten combatants among the three types: primary, secondary, and observers.
 --- 
 --- This native infers the number of observers based on the primary and secondary counts.
@@ -3284,6 +3331,15 @@ function GetTrainDirection(train) end
 --- @return void
 --- @overload fun(primaryCount: number, secondaryCount: number, populationPedCount: number): void
 function SetPedMeleeCombatLimits(primaryCount, secondaryCount, populationPedCount) end
+
+    
+--- This function undoes changes made by [`SET_ENTITY_DRAW_OUTLINE_RENDER_TECHNIQUE`](https://docs.fivem.net/natives/?_0x68DFF2DD), restoring the original outline rendering behavior. The default render technique group is `unlit`.
+---
+--- @hash [0x8EB6EC38](https://docs.fivem.net/natives/?_0x8EB6EC38)
+---
+--- @return void
+--- @overload fun(): void
+function ResetEntityDrawOutlineRenderTechnique() end
 
     
 --- Gets collection name for the given global prop index. Together with [GET_PED_COLLECTION_LOCAL_INDEX_FROM_PROP](https://docs.fivem.net/natives/?_0xFBDB885F) is used to get collection and local index (inside the given collection) of the prop. The collection name and index are used in functions like [SET_PED_COLLECTION_PROP_INDEX](https://docs.fivem.net/natives/?_0x75240BCB).
@@ -3570,15 +3626,6 @@ function SetAudioSubmixEffectParamFloat(submixId, effectSlot, paramIndex, paramV
 function GetEntityAddress(entity) end
 
     
---- GetTrainTrackIndex
----
---- @hash [0x9AA339D](https://docs.fivem.net/natives/?_0x9AA339D)
---- @param train Vehicle
---- @return number
---- @overload fun(train: Vehicle): number
-function GetTrainTrackIndex(train) end
-
-    
 --- GetVehicleDashboardSpeed
 ---
 --- @hash [0x9AAD420E](https://docs.fivem.net/natives/?_0x9AAD420E)
@@ -3808,15 +3855,6 @@ function IsVehicleInteriorLightOn(vehicle) end
 --- @return void
 --- @overload fun(value: number): void
 function SetAimCooldown(value) end
-
-    
---- Gets the trains desired speed.
----
---- @hash [0xA4921EF5](https://docs.fivem.net/natives/?_0xA4921EF5)
---- @param train Vehicle
---- @return number
---- @overload fun(train: Vehicle): number
-function GetTrainCruiseSpeed(train) end
 
     
 --- Experimental natives, please do not use in a live environment.
@@ -5339,7 +5377,7 @@ function GetVehicleTurboPressure(vehicle) end
 function GetVehicleWheelTireColliderSize(vehicle, wheelIndex) end
 
     
---- Getter for [SWITCH_TRAIN_TRACK](?\_0xFD813BB7DB977F20). Determines if ambient trains are able to spawn on this track.
+--- Getter for [SWITCH_TRAIN_TRACK](https://docs.fivem.net/natives/?_0xFD813BB7DB977F20). Determines if ambient trains are able to spawn on this track.
 ---
 --- @hash [0xE0C53765](https://docs.fivem.net/natives/?_0xE0C53765)
 --- @param track number (int)
@@ -5776,6 +5814,16 @@ function GetVehicleWheelTireColliderWidth(vehicle, wheelIndex) end
 function GetVehicleDensityMultiplier() end
 
     
+--- Modifies the radius scale used in the simulation of wet cloth physics.
+--- This affects how cloth behaves when wet, changing how it sticks or reacts to movement.
+--- @usage SetWetClothPinRadiusScale(1.0
+--- @hash [0xF1BD2CEF](https://docs.fivem.net/natives/?_0xF1BD2CEF)
+--- @param scale number (float)
+--- @return void
+--- @overload fun(scale: number): void
+function SetWetClothPinRadiusScale(scale) end
+
+    
 --- GetVehicleHighGear
 ---
 --- @hash [0xF1D1D689](https://docs.fivem.net/natives/?_0xF1D1D689)
@@ -5786,7 +5834,7 @@ function GetVehicleHighGear(vehicle) end
 
     
 --- Registers a custom rope data with the game. For guidance on what these values should be use common:/data/ropedata.xml as a reference.
---- Returns a rope type which can be passed into [ADD_ROPE](?\_0xE832D760399EB220) to use a custom rope design.
+--- Returns a rope type which can be passed into [ADD_ROPE](https://docs.fivem.net/natives/?_0xE832D760399EB220) to use a custom rope design.
 --- Once a rope data is registered it can be used indefinitely and you should take caution not too register too many as to exceed the games limit.
 --- @usage -- Create a thick steel cable rope above the players head
 --- local ropeType = RegisterRopeData(6, 0.15, "steel_cable", "steel_cable_n", 1.0, 1.0, 8.775, 0.97, 30.0, 0.25, 1.775, 0x00FFFF00)

@@ -155,6 +155,15 @@ function GetPasswordHash(password) end
 function IsHeliTailBoomBreakable(heli) end
 
     
+--- GetTrainForwardCarriage
+---
+--- @hash [0x24DC88D9](https://docs.fivem.net/natives/?_0x24DC88D9)
+--- @param train Vehicle
+--- @return number
+--- @overload fun(train: Vehicle): number
+function GetTrainForwardCarriage(train) end
+
+    
 --- IsPedHandcuffed
 ---
 --- @hash [0x25865633](https://docs.fivem.net/natives/?_0x25865633)
@@ -329,6 +338,15 @@ function DoesBoatSinkWhenWrecked(vehicle) end
 --- @return number
 --- @overload fun(ped: Ped): number
 function GetPedScriptTaskStage(ped) end
+
+    
+--- GetTrainBackwardCarriage
+---
+--- @hash [0x456E34A](https://docs.fivem.net/natives/?_0x456E34A)
+--- @param train Vehicle
+--- @return number
+--- @overload fun(train: Vehicle): number
+function GetTrainBackwardCarriage(train) end
 
     
 --- ```cpp
@@ -612,9 +630,9 @@ function GetVehicleDoorStatus(vehicle, doorIndex) end
 function TriggerLatentClientEventInternal(eventName, eventTarget, eventPayload, payloadLength, bps) end
 
     
---- To get the number of identifiers, use [GET_NUM_PLAYER_IDENTIFIERS](?\_0xFF7F66AB)
+--- To get the number of identifiers, use [GET_NUM_PLAYER_IDENTIFIERS](https://docs.fivem.net/natives/?_0xFF7F66AB)
 --- 
---- To get a specific type of identifier, use [GET_PLAYER_IDENTIFIER_BY_TYPE](?\_0xA61C8FC6)
+--- To get a specific type of identifier, use [GET_PLAYER_IDENTIFIER_BY_TYPE](https://docs.fivem.net/natives/?_0xA61C8FC6)
 ---
 --- @hash [0x7302DBCF](https://docs.fivem.net/natives/?_0x7302DBCF)
 --- @param playerSrc string (char*)
@@ -1209,7 +1227,7 @@ function GetVehicleHeadlightsColour(vehicle) end
 function GetVehicleNeonColour(vehicle) end
 
     
---- This is a getter for the client-side native [`START_VEHICLE_HORN`](https://docs.fivem.net/natives/?\_0x9C8C6504B5B63D2C), which allows you to return the horn type of the vehicle.
+--- This is a getter for the client-side native [`START_VEHICLE_HORN`](https://docs.fivem.net/natives/?_0x9C8C6504B5B63D2C), which allows you to return the horn type of the vehicle.
 --- 
 --- **Note**: This native only gets the hash value set with `START_VEHICLE_HORN`. If a wrong hash is passed into `START_VEHICLE_HORN`, it will return this wrong hash.
 --- 
@@ -1384,6 +1402,15 @@ function SetGameType(gametypeName) end
 --- @return void
 --- @overload fun(enabled: boolean): void
 function EnableEnhancedHostSupport(enabled) end
+
+    
+--- IsTrainCaboose
+---
+--- @hash [0xFA9336E5](https://docs.fivem.net/natives/?_0xFA9336E5)
+--- @param train Vehicle
+--- @return boolean
+--- @overload fun(train: Vehicle): boolean
+function IsTrainCaboose(train) end
 
     
 --- GetPlayerEndpoint

@@ -170,7 +170,7 @@ function DeleteResourceKvpNoSync(key) end
 function GetVehicleHandbrake(vehicle) end
 
     
---- Returns the entity handle for the specified state bag name. For use with [ADD_STATE_BAG_CHANGE_HANDLER](?\_0x5BA35AAF).
+--- Returns the entity handle for the specified state bag name. For use with [ADD_STATE_BAG_CHANGE_HANDLER](https://docs.fivem.net/natives/?_0x5BA35AAF).
 --- @usage AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value) 
 ---     local entity = GetEntityFromStateBagName(bagName)
 ---     -- Whoops, we don't have a valid entity!
@@ -273,8 +273,8 @@ function WasEventCanceled() end
 --- 
 --- At this time, the change handler can't opt to reject changes.
 --- 
---- If bagName refers to an entity, use [GET_ENTITY_FROM_STATE_BAG_NAME](?\_0x4BDF1868) to get the entity handle
---- If bagName refers to a player, use [GET_PLAYER_FROM_STATE_BAG_NAME](?\_0xA56135E0) to get the player handle
+--- If bagName refers to an entity, use [GET_ENTITY_FROM_STATE_BAG_NAME](https://docs.fivem.net/natives/?_0x4BDF1867) to get the entity handle
+--- If bagName refers to a player, use [GET_PLAYER_FROM_STATE_BAG_NAME](https://docs.fivem.net/natives/?_0xA56135E0) to get the player handle
 --- @usage AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value) 
 ---     local entity = GetEntityFromStateBagName(bagName)
 ---     -- Whoops, we don't have a valid entity!
@@ -401,6 +401,15 @@ function LoadResourceFile(resourceName, fileName) end
 function GetNumResourceMetadata(resourceName, metadataKey) end
 
     
+--- DoesTrainStopAtStations
+---
+--- @hash [0x77CC80DC](https://docs.fivem.net/natives/?_0x77CC80DC)
+--- @param train Vehicle
+--- @return boolean
+--- @overload fun(train: Vehicle): boolean
+function DoesTrainStopAtStations(train) end
+
+    
 --- GetStateBagKeys
 ---
 --- @hash [0x78D864C7](https://docs.fivem.net/natives/?_0x78D864C7)
@@ -466,6 +475,15 @@ function IsAceAllowed(object) end
 function GetGameBuildNumber() end
 
     
+--- GetTrainState
+---
+--- @hash [0x81B50033](https://docs.fivem.net/natives/?_0x81B50033)
+--- @param train Vehicle
+--- @return number
+--- @overload fun(train: Vehicle): number
+function GetTrainState(train) end
+
+    
 --- GetNumResources
 ---
 --- @hash [0x863F27B](https://docs.fivem.net/natives/?_0x863F27B)
@@ -495,6 +513,15 @@ function GetPlayerMeleeWeaponDamageModifier(playerId) end
 --- @return void
 --- @overload fun(bagName: string, keyName: string, valueData: string, valueLength: number, replicated: boolean): void
 function SetStateBagValue(bagName, keyName, valueData, valueLength, replicated) end
+
+    
+--- Gets the direction the train is facing
+---
+--- @hash [0x8DAF79B6](https://docs.fivem.net/natives/?_0x8DAF79B6)
+--- @param train Vehicle
+--- @return boolean
+--- @overload fun(train: Vehicle): boolean
+function GetTrainDirection(train) end
 
     
 --- The backing function for TriggerEvent.
@@ -566,6 +593,15 @@ function GetResourceCommands(resource) end
 function GetPlayerWeaponDefenseModifier_2(playerId) end
 
     
+--- GetTrainTrackIndex
+---
+--- @hash [0x9AA339D](https://docs.fivem.net/natives/?_0x9AA339D)
+--- @param train Vehicle
+--- @return number
+--- @overload fun(train: Vehicle): number
+function GetTrainTrackIndex(train) end
+
+    
 --- A setter for [GET_RESOURCE_KVP_FLOAT](https://docs.fivem.net/natives/?_0x35BDCEEA).
 --- @usage local lickMy = 42.5
 --- SetResourceKvpFloat('bananabread', lickMy
@@ -616,6 +652,15 @@ function GetInstanceId() end
 --- @return string
 --- @overload fun(vehicle: Vehicle): string
 function GetVehicleType(vehicle) end
+
+    
+--- Gets the trains desired speed.
+---
+--- @hash [0xA4921EF5](https://docs.fivem.net/natives/?_0xA4921EF5)
+--- @param train Vehicle
+--- @return number
+--- @overload fun(train: Vehicle): number
+function GetTrainCruiseSpeed(train) end
 
     
 --- On the server this will return the players source, on the client it will return the player handle.
