@@ -409,6 +409,16 @@ function IsDisabledRawKeyPressed(rawKeyIndex) end
 function SetWaveQuadBounds(waveQuad, minX, minY, maxX, maxY) end
 
     
+--- Sets default armor value for specific health config.
+---
+--- @hash [0x20A1E6A2](https://docs.fivem.net/natives/?_0x20A1E6A2)
+--- @param configName string (char*)
+--- @param newValue number (float)
+--- @return void
+--- @overload fun(configName: string, newValue: number): void
+function SetHealthConfigDefaultArmor(configName, newValue) end
+
+    
 --- SetVehicleHighGear
 ---
 --- @hash [0x20B1B3E6](https://docs.fivem.net/natives/?_0x20B1B3E6)
@@ -1331,6 +1341,24 @@ function SetMinimapComponentPosition(name, alignX, alignY, posX, posY, sizeX, si
 function SetPedCollectionPreloadVariationData(ped, componentId, collection, drawableId, textureId) end
 
     
+--- Setting the state to true and a value between 0 and 2 will cause pedestrian vehicles to react accordingly to sirens.
+--- 
+--- ```cpp
+--- enum Reactions {
+---     Left = 0,
+---     Right = 1,
+---     Stop = 2
+--- }
+--- ```
+---
+--- @hash [0x3F3EB3F7](https://docs.fivem.net/natives/?_0x3F3EB3F7)
+--- @param state boolean
+--- @param reaction number (int)
+--- @return void
+--- @overload fun(state: boolean, reaction: number): void
+function OverrideReactionToVehicleSiren(state, reaction) end
+
+    
 --- GetInteriorPortalRoomTo
 --- @usage local playerPed = PlayerPedId()
 --- local interiorId = GetInteriorFromEntity(playerPed)
@@ -1619,6 +1647,16 @@ function RegisterRawKeymap(keymapName, onKeyDown, onKeyUp, rawKeyIndex, canBeDis
 --- @return number
 --- @overload fun(componentHash: Hash): number
 function GetWeaponComponentDamageModifier(componentHash) end
+
+    
+--- Sets default invincible value for specific health config.
+---
+--- @hash [0x4A9EEDE6](https://docs.fivem.net/natives/?_0x4A9EEDE6)
+--- @param configName string (char*)
+--- @param newValue boolean
+--- @return void
+--- @overload fun(configName: string, newValue: boolean): void
+function SetHealthConfigInvincible(configName, newValue) end
 
     
 --- Loads a minimap overlay from a GFx file in the current resource.
@@ -2062,6 +2100,16 @@ function GetVehicleFuelLevel(vehicle) end
 --- @return void
 --- @overload fun(type: number): void
 function SetMinimapType(type) end
+
+    
+--- Sets default endurance value for specific health config.
+---
+--- @hash [0x60F20B81](https://docs.fivem.net/natives/?_0x60F20B81)
+--- @param configName string (char*)
+--- @param newValue number (float)
+--- @return void
+--- @overload fun(configName: string, newValue: number): void
+function SetHealthConfigDefaultEndurance(configName, newValue) end
 
     
 --- GetTimecycleModifierVarCount
@@ -3552,6 +3600,16 @@ function IsNuiFocused() end
 function SetWeaponRecoilShakeAmplitude(weaponHash, amplitude) end
 
     
+--- Sets default hurt health threshold value for specific health config.
+---
+--- @hash [0x98DF1A83](https://docs.fivem.net/natives/?_0x98DF1A83)
+--- @param configName string (char*)
+--- @param newValue number (float)
+--- @return void
+--- @overload fun(configName: string, newValue: number): void
+function SetHealthConfigHurtThreshold(configName, newValue) end
+
+    
 --- An analogue to [GET_PED_DRAWABLE_VARIATION](https://docs.fivem.net/natives/?_0x67F3780DD425D4FC) that returns collection local drawable index (inside [GET_PED_DRAWABLE_VARIATION_COLLECTION_NAME](https://docs.fivem.net/natives/?_0xBCE0AB63) collection) instead of the global drawable index.
 ---
 --- @hash [0x9970386F](https://docs.fivem.net/natives/?_0x9970386F)
@@ -3626,6 +3684,16 @@ function SetAudioSubmixEffectParamFloat(submixId, effectSlot, paramIndex, paramV
 function GetEntityAddress(entity) end
 
     
+--- Sets default dog takedown threshold value for specific health config.
+---
+--- @hash [0x9A995E96](https://docs.fivem.net/natives/?_0x9A995E96)
+--- @param configName string (char*)
+--- @param newValue number (float)
+--- @return void
+--- @overload fun(configName: string, newValue: number): void
+function SetHealthConfigDogTakedownThreshold(configName, newValue) end
+
+    
 --- GetVehicleDashboardSpeed
 ---
 --- @hash [0x9AAD420E](https://docs.fivem.net/natives/?_0x9AAD420E)
@@ -3633,6 +3701,16 @@ function GetEntityAddress(entity) end
 --- @return number
 --- @overload fun(vehicle: Vehicle): number
 function GetVehicleDashboardSpeed(vehicle) end
+
+    
+--- Sets default dying health threshold value for specific health config.
+---
+--- @hash [0x9B00FD77](https://docs.fivem.net/natives/?_0x9B00FD77)
+--- @param configName string (char*)
+--- @param newValue number (float)
+--- @return void
+--- @overload fun(configName: string, newValue: number): void
+function SetHealthConfigDyingThreshold(configName, newValue) end
 
     
 --- GetInteriorPortalEntityPosition
@@ -3674,6 +3752,26 @@ function GetPedBoneMatrix(ped, boneId) end
 --- @return number
 --- @overload fun(vehicle: Vehicle): number
 function GetVehicleWheelWidth(vehicle) end
+
+    
+--- Adds new health config.
+---
+--- @hash [0x9CBFD5C1](https://docs.fivem.net/natives/?_0x9CBFD5C1)
+--- @param configName string (char*)
+--- @param defaultHealth number (float)
+--- @param defaultArmor number (float)
+--- @param defaultEndurance number (float)
+--- @param fatiguedHealthThreshold number (float)
+--- @param injuredHealthThreshold number (float)
+--- @param dyingHealthThreshold number (float)
+--- @param hurtHealthThreshold number (float)
+--- @param dogTakedownThreshold number (float)
+--- @param writheFromBulletThreshold number (float)
+--- @param meleeCardinalFatalAttack boolean
+--- @param invincible boolean
+--- @return void
+--- @overload fun(configName: string, defaultHealth: number, defaultArmor: number, defaultEndurance: number, fatiguedHealthThreshold: number, injuredHealthThreshold: number, dyingHealthThreshold: number, hurtHealthThreshold: number, dogTakedownThreshold: number, writheFromBulletThreshold: number, meleeCardinalFatalAttack: boolean, invincible: boolean): void
+function AddHealthConfig(configName, defaultHealth, defaultArmor, defaultEndurance, fatiguedHealthThreshold, injuredHealthThreshold, dyingHealthThreshold, hurtHealthThreshold, dogTakedownThreshold, writheFromBulletThreshold, meleeCardinalFatalAttack, invincible) end
 
     
 --- This native is not implemented.
@@ -4133,6 +4231,22 @@ function SetTextFontForCurrentCommand(fontId) end
 function LeaveCursorMode() end
 
     
+--- Sets a ped model's health config.
+--- Takes effect only after setting player model with `SET_PLAYER_MODEL`.
+--- @usage local pedModel = `mp_f_freemode_01`
+--- SetPedModelHealthConfig(pedModel, "Strong")
+--- 
+--- SetPlayerModel(PlayerId(), pedModel)
+--- SetPedDefaultComponentVariation(PlayerPedId())
+---
+--- @hash [0xAF12A05D](https://docs.fivem.net/natives/?_0xAF12A05D)
+--- @param modelHash Hash
+--- @param configName string (char*)
+--- @return void
+--- @overload fun(modelHash: Hash, configName: string): void
+function SetPedModelHealthConfig(modelHash, configName) end
+
+    
 --- Gets the selected entity at the specified mouse cursor position, and changes the current selection depth. This function supports SDK infrastructure and is not intended to be used directly from your code.
 ---
 --- @hash [0xAFE8D405](https://docs.fivem.net/natives/?_0xAFE8D405)
@@ -4339,6 +4453,15 @@ function DrawLine_2d(x1, y1, x2, y2, width, r, g, b, a) end
 --- @return void
 --- @overload fun(type: number): void
 function SetMinimapClipType(type) end
+
+    
+--- This completely disables pedestrian vehicles from reacting to sirens. They will not try to do any maneuver to evade.
+---
+--- @hash [0xB90BBC6E](https://docs.fivem.net/natives/?_0xB90BBC6E)
+--- @param state boolean
+--- @return void
+--- @overload fun(state: boolean): void
+function SetReactionToVehicleWithSirenDisabled(state) end
 
     
 --- Shuts down the `loadingScreen` NUI frame, similarly to `SHUTDOWN_LOADING_SCREEN`.
@@ -4573,6 +4696,16 @@ function GetPedHeadOverlayData(ped, index) end
 function DoesTimecycleModifierHasVar(modifierName, varName) end
 
     
+--- Sets default fatigued health threshold value for specific health config.
+---
+--- @hash [0xC58953FD](https://docs.fivem.net/natives/?_0xC58953FD)
+--- @param configName string (char*)
+--- @param newValue number (float)
+--- @return void
+--- @overload fun(configName: string, newValue: number): void
+function SetHealthConfigFatiguedThreshold(configName, newValue) end
+
+    
 --- SetCalmingQuadBounds
 --- @usage local success = SetCalmingQuadBounds(1, -500, -500, 500, 500
 --- @hash [0xC5945BD9](https://docs.fivem.net/natives/?_0xC5945BD9)
@@ -4692,6 +4825,16 @@ function SetVehicleWheelXrot(vehicle, wheelIndex, value) end
 --- @return string
 --- @overload fun(varIndex: number): string
 function GetTimecycleVarNameByIndex(varIndex) end
+
+    
+--- Sets default health value for specific health config.
+---
+--- @hash [0xC705C778](https://docs.fivem.net/natives/?_0xC705C778)
+--- @param configName string (char*)
+--- @param newValue number (float)
+--- @return void
+--- @overload fun(configName: string, newValue: number): void
+function SetHealthConfigDefaultHealth(configName, newValue) end
 
     
 --- Gets the flags of a wheel.
@@ -4960,6 +5103,21 @@ function GetVehicleWheelRimColliderSize(vehicle, wheelIndex) end
 --- @return Player[]
 --- @overload fun(): Player[]
 function GetActivePlayers() end
+
+    
+--- Getter for [BREAK_OFF_VEHICLE_WHEEL](?\_0xA274CADB).
+--- @usage local vehicle = GetVehiclePedIsIn(PlayerPedId())
+--- 
+--- if DoesEntityExist(vehicle) then
+---   local isWheelBroken = IsVehicleWheelBrokenOff(vehicle, 1)
+---   print("Is wheel 1 broken? ", isWheelBroken)
+--- en
+--- @hash [0xCF1BC668](https://docs.fivem.net/natives/?_0xCF1BC668)
+--- @param vehicle Vehicle
+--- @param wheelIndex number (int)
+--- @return boolean
+--- @overload fun(vehicle: Vehicle, wheelIndex: number): boolean
+function IsVehicleWheelBrokenOff(vehicle, wheelIndex) end
 
     
 --- GetPlayerMaxStamina
@@ -5269,6 +5427,16 @@ function SendDuiMouseMove(duiObject, x, y) end
 function IsVehicleAlarmSet(vehicle) end
 
     
+--- Sets default melee cardinal fatal attack value for specific health config.
+---
+--- @hash [0xDD443E53](https://docs.fivem.net/natives/?_0xDD443E53)
+--- @param configName string (char*)
+--- @param newValue boolean
+--- @return void
+--- @overload fun(configName: string, newValue: boolean): void
+function SetHealthConfigMeleeFatalAttack(configName, newValue) end
+
+    
 --- GetVehicleNextGear
 ---
 --- @hash [0xDDB298AE](https://docs.fivem.net/natives/?_0xDDB298AE)
@@ -5384,6 +5552,15 @@ function GetVehicleWheelTireColliderSize(vehicle, wheelIndex) end
 --- @return boolean
 --- @overload fun(track: number): boolean
 function IsTrackSwitchedOff(track) end
+
+    
+--- Removes health config.
+---
+--- @hash [0xE0ED5FB](https://docs.fivem.net/natives/?_0xE0ED5FB)
+--- @param configName string (char*)
+--- @return void
+--- @overload fun(configName: string): void
+function RemoveHealthConfig(configName) end
 
     
 --- GetInteriorRoomIndexByHash
@@ -5586,6 +5763,16 @@ function MumbleIsActive() end
 --- @return string
 --- @overload fun(modifierName: string, modifierVarIndex: number): string
 function GetTimecycleModifierVarNameByIndex(modifierName, modifierVarIndex) end
+
+    
+--- Sets default writhe from bullet threshold value for specific health config.
+---
+--- @hash [0xE97633CB](https://docs.fivem.net/natives/?_0xE97633CB)
+--- @param configName string (char*)
+--- @param newValue number (float)
+--- @return void
+--- @overload fun(configName: string, newValue: number): void
+function SetHealthConfigWritheFromBulletThreshold(configName, newValue) end
 
     
 --- Returns the peer address of the remote game server that the user is currently connected to.
@@ -5979,6 +6166,15 @@ function DoorSystemGetActive() end
 function GetEntityMapdataOwner(entity) end
 
     
+--- Gets a ped model's health config.
+--- @usage GetPedModelHealthConfig(`mp_f_freemode_01`
+--- @hash [0xF71542F7](https://docs.fivem.net/natives/?_0xF71542F7)
+--- @param modelHash Hash
+--- @return Hash
+--- @overload fun(modelHash: Hash): Hash
+function GetPedModelHealthConfig(modelHash) end
+
+    
 --- Returns whether or not the specific minimap overlay has loaded.
 ---
 --- @hash [0xF7535F32](https://docs.fivem.net/natives/?_0xF7535F32)
@@ -6075,6 +6271,16 @@ function IsVehicleNeedsToBeHotwired(vehicle) end
 function GetWeaponComponentReticuleHash(componentHash) end
 
     
+--- Sets default injured health threshold value for specific health config.
+---
+--- @hash [0xF9D9B647](https://docs.fivem.net/natives/?_0xF9D9B647)
+--- @param configName string (char*)
+--- @param newValue number (float)
+--- @return void
+--- @overload fun(configName: string, newValue: number): void
+function SetHealthConfigInjuredThreshold(configName, newValue) end
+
+    
 --- GetInteriorRoomExtents
 --- @usage local playerPed = PlayerPedId()
 --- local interiorId = GetInteriorFromEntity(playerPed)
@@ -6151,6 +6357,15 @@ function SetEntityMatrix(entity, forwardX, forwardY, forwardZ, rightX, rightY, r
 --- @return Vector3
 --- @overload fun(vehicle: Vehicle, class_: string, fieldName: string): Vector3
 function GetVehicleHandlingVector(vehicle, class_, fieldName) end
+
+    
+--- This completely disables rendering of fog volumes (vfxfogvolumeinfo.ymt).
+---
+--- @hash [0xFBC64DA3](https://docs.fivem.net/natives/?_0xFBC64DA3)
+--- @param state boolean
+--- @return void
+--- @overload fun(state: boolean): void
+function SetFogVolumeRenderDisabled(state) end
 
     
 --- Gets local index inside a collection (which can be obtained using [GET_PED_COLLECTION_NAME_FROM_PROP](https://docs.fivem.net/natives/?_0x8ED0C17)) for the given global prop index. The collection name and index are used in functions like [SET_PED_COLLECTION_PROP_INDEX](https://docs.fivem.net/natives/?_0x75240BCB).
