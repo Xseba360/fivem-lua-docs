@@ -322,6 +322,17 @@ function RegisterFontFile(fileName) end
 function SetGlobalPassengerMassMultiplier(massMul) end
 
     
+--- Set the interior and room where the light should be active.
+---
+--- @hash [0x1CC72443](https://docs.fivem.net/natives/?_0x1CC72443)
+--- @param interiorId number (int)
+--- @param isPortal boolean
+--- @param roomIndex number (int)
+--- @return void
+--- @overload fun(interiorId: number, isPortal: boolean, roomIndex: number): void
+function SetLightInterior(interiorId, isPortal, roomIndex) end
+
+    
 --- Injects a 'mouse up' event for a DUI object. Coordinates are expected to be set using SEND_DUI_MOUSE_MOVE.
 ---
 --- @hash [0x1D735B93](https://docs.fivem.net/natives/?_0x1D735B93)
@@ -486,6 +497,15 @@ function DoorSystemGetSize() end
 function CreateDui(url, width, height) end
 
     
+--- A setter for [GET_KILL_FALL_HEIGHT](https://docs.fivem.net/natives/?_0x884C8B5A).
+---
+--- @hash [0x24091E09](https://docs.fivem.net/natives/?_0x24091E09)
+--- @param height number (float)
+--- @return void
+--- @overload fun(height: number): void
+function SetKillFallHeight(height) end
+
+    
 --- Sets the ratio that a door is open for on a train.
 --- @usage -- open all doors on a train
 --- local doorCount = GetTrainDoorCount(train)
@@ -598,6 +618,15 @@ function ClearVehicleXenonLightsCustomColor(vehicle) end
 --- @return void
 --- @overload fun(entryKey: Hash, entryText: string): void
 function AddTextEntryByHash(entryKey, entryText) end
+
+    
+--- Set or update specific flags for a created light to control its behavior or properties.
+---
+--- @hash [0x28B22733](https://docs.fivem.net/natives/?_0x28B22733)
+--- @param flags number (int)
+--- @return void
+--- @overload fun(flags: number): void
+function SetLightFlags(flags) end
 
     
 --- GetTimecycleModifierNameByIndex
@@ -723,6 +752,15 @@ function SetVehicleHandlingField(vehicle, class_, fieldName, value) end
 function IsDisabledRawKeyUp(rawKeyIndex) end
 
     
+--- A getter for [SET_FALL_DAMAGE_LAND_ON_FOOT_MULTIPLIER](https://docs.fivem.net/natives/?_0x164A08C9).
+---
+--- @hash [0x2C048945](https://docs.fivem.net/natives/?_0x2C048945)
+---
+--- @return number
+--- @overload fun(): number
+function GetFallDamageLandOnFootMultiplier() end
+
+    
 --- Returns mapdata's entity matrix. This function supports SDK infrastructure and is not intended to be used directly from your code.
 --- 
 --- This should be used from JavaScript or another language supporting mutable buffers like ArrayBuffer.
@@ -767,6 +805,15 @@ function GetNetworkWalkMode() end
 --- @return number
 --- @overload fun(ped: Ped, anchorPoint: number, collection: string, propIndex: number): number
 function GetPedPropGlobalIndexFromCollection(ped, anchorPoint, collection, propIndex) end
+
+    
+--- Set the intensity of an existing light.
+---
+--- @hash [0x2CC9A71C](https://docs.fivem.net/natives/?_0x2CC9A71C)
+--- @param intensity number (float)
+--- @return void
+--- @overload fun(intensity: number): void
+function SetLightIntensity(intensity) end
 
     
 --- Injects a 'mouse wheel' event for a DUI object.
@@ -819,6 +866,21 @@ function GetVehicleWheelXrot(vehicle, wheelIndex) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, clutch: number): void
 function SetVehicleClutch(vehicle, clutch) end
+
+    
+--- Set volumetric light properties for an existing light, enabling custom volumetric effects such as fog-like glow.
+---
+--- @hash [0x2F731AE7](https://docs.fivem.net/natives/?_0x2F731AE7)
+--- @param volIntensity number (float)
+--- @param volSizeScale number (float)
+--- @param r number (float)
+--- @param g number (float)
+--- @param b number (float)
+--- @param i number (float)
+--- @param outerExponent number (float)
+--- @return void
+--- @overload fun(volIntensity: number, volSizeScale: number, r: number, g: number, b: number, i: number, outerExponent: number): void
+function SetLightVolumeDetails(volIntensity, volSizeScale, r, g, b, i, outerExponent) end
 
     
 --- A getter for `CWeaponFallOffModifier` range modifier value in a weapon component.
@@ -1130,6 +1192,15 @@ function IsRawKeyUp(rawKeyIndex) end
 function SetNuiZindex(zIndex) end
 
     
+--- Draw the prepared light.
+---
+--- @hash [0x374E5298](https://docs.fivem.net/natives/?_0x374E5298)
+---
+--- @return void
+--- @overload fun(): void
+function DrawLight() end
+
+    
 --- Sets the max speed for the train tracks. Used by ambient trains and for station calculations
 ---
 --- @hash [0x37BFC732](https://docs.fivem.net/natives/?_0x37BFC732)
@@ -1263,6 +1334,15 @@ function RegisterArchetypes(factory) end
 --- @return void
 --- @overload fun(findHandle: number): void
 function EndFindPickup(findHandle) end
+
+    
+--- Set the fade distance for the shadows of a created light.
+---
+--- @hash [0x3C54C2A8](https://docs.fivem.net/natives/?_0x3C54C2A8)
+--- @param fadeDistance number (int)
+--- @return void
+--- @overload fun(fadeDistance: number): void
+function SetLightShadowFadeDistance(fadeDistance) end
 
     
 --- A getter for [SET_RESOURCE_KVP_FLOAT](https://docs.fivem.net/natives/?_0x9ADD2938), but for a specified resource.
@@ -1649,6 +1729,15 @@ function RegisterRawKeymap(keymapName, onKeyDown, onKeyUp, rawKeyIndex, canBeDis
 function GetWeaponComponentDamageModifier(componentHash) end
 
     
+--- Set the radius of a created light.
+---
+--- @hash [0x4A4B5CBE](https://docs.fivem.net/natives/?_0x4A4B5CBE)
+--- @param radius number (float)
+--- @return void
+--- @overload fun(radius: number): void
+function SetLightRadius(radius) end
+
+    
 --- Sets default invincible value for specific health config.
 ---
 --- @hash [0x4A9EEDE6](https://docs.fivem.net/natives/?_0x4A9EEDE6)
@@ -1722,6 +1811,15 @@ function SetFlyThroughWindscreenParams(vehMinSpeed, unkMinSpeed, unkModifier, mi
 --- @return void
 --- @overload fun(targetId: number, channel: number): void
 function MumbleAddVoiceTargetChannel(targetId, channel) end
+
+    
+--- Adjust the falloff parameter for an existing light, affecting how light intensity decreases over distance.
+---
+--- @hash [0x4D7F6E03](https://docs.fivem.net/natives/?_0x4D7F6E03)
+--- @param falloff number (float)
+--- @return void
+--- @overload fun(falloff: number): void
+function SetLightFalloff(falloff) end
 
     
 --- GetPlayerServerId
@@ -1927,6 +2025,42 @@ function SetInteriorRoomFlag(interiorId, roomIndex, flag) end
 --- @return number
 --- @overload fun(): number
 function GetFuelConsumptionRateMultiplier() end
+
+    
+--- Assign a texture to an existing light source, allowing custom light shapes or patterns using textures from streaming assets.
+---
+--- @hash [0x55A50736](https://docs.fivem.net/natives/?_0x55A50736)
+--- @param textureDict string (char*)
+--- @param textureHash number (int)
+--- @return void
+--- @overload fun(textureDict: string, textureHash: number): void
+function SetLightTexture(textureDict, textureHash) end
+
+    
+--- A getter for [SET_KILL_FALL_HEIGHT](https://docs.fivem.net/natives/?_0x7E8D83E4).
+---
+--- @hash [0x57888D4C](https://docs.fivem.net/natives/?_0x57888D4C)
+---
+--- @return number
+--- @overload fun(): number
+function GetKillFallHeight() end
+
+    
+--- Create a new light with specified type, flags, position, color, and intensity.
+---
+--- @hash [0x584B4C99](https://docs.fivem.net/natives/?_0x584B4C99)
+--- @param lightType number (int)
+--- @param flags number (int)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @param intensity number (float)
+--- @return void
+--- @overload fun(lightType: number, flags: number, x: number, y: number, z: number, r: number, g: number, b: number, intensity: number): void
+function PrepareLight(lightType, flags, x, y, z, r, g, b, intensity) end
 
     
 --- SetInteriorPortalRoomTo
@@ -2252,6 +2386,17 @@ function GetWaterQuadLevel(waterQuad, waterQuadLevel) end
 --- @return number
 --- @overload fun(name: string): number
 function CreateAudioSubmix(name) end
+
+    
+--- Set the color of a specified light.
+---
+--- @hash [0x65FE5132](https://docs.fivem.net/natives/?_0x65FE5132)
+--- @param r number (int)
+--- @param g number (int)
+--- @param b number (int)
+--- @return void
+--- @overload fun(r: number, g: number, b: number): void
+function SetLightColor(r, g, b) end
 
     
 --- A getter for [SET_AMBIENT_VEHICLE_RANGE_MULTIPLIER_THIS_FRAME](https://docs.fivem.net/natives/?_0x90B6DA738A9A25DA).
@@ -2849,6 +2994,15 @@ function RemoveDryVolume(handle) end
 function SetRichPresence(presenceState) end
 
     
+--- A getter for [SET_FALL_DAMAGE_MULTIPLIER](https://docs.fivem.net/natives/?_0xF2E1A531).
+---
+--- @hash [0x7C46A6F0](https://docs.fivem.net/natives/?_0x7C46A6F0)
+---
+--- @return number
+--- @overload fun(): number
+function GetFallDamageMultiplier() end
+
+    
 --- Returns a list of decorations applied to a ped.
 --- 
 --- The data returned adheres to the following layout:
@@ -3162,6 +3316,15 @@ function SetVehicleWheelTractionVectorLength(vehicle, wheelIndex, length) end
 function GetWaveQuadAmplitude(waveQuad, waveQuadAmplitude) end
 
     
+--- A setter for [GET_PLAYER_KILL_FALL_HEIGHT](https://docs.fivem.net/natives/?_0x13BC2C63).
+---
+--- @hash [0x86BD5722](https://docs.fivem.net/natives/?_0x86BD5722)
+--- @param height number (float)
+--- @return void
+--- @overload fun(height: number): void
+function SetPlayerKillFallHeight(height) end
+
+    
 --- This native returns the index of a calming quad if the given point is inside its bounds.
 --- @usage local currentPedPosition = GetEntityCoords(PlayerPedId())
 --- local calmingQuadIndex = GetCalmingQuadAtCoords(currentPedPosition.x, currentPedPosition.y
@@ -3277,6 +3440,17 @@ function MumbleRemoveVoiceTargetPlayer(targetId, player) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, gear: number): void
 function SetVehicleCurrentGear(vehicle, gear) end
+
+    
+--- Set the world coordinates of a specified light.
+---
+--- @hash [0x8950BD08](https://docs.fivem.net/natives/?_0x8950BD08)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @return void
+--- @overload fun(x: number, y: number, z: number): void
+function SetLightCoords(x, y, z) end
 
     
 --- Gets the specified tracks node count.
@@ -3838,6 +4012,16 @@ function GetInteriorPortalEntityRotation(interiorId, portalIndex, entityIndex) e
 function SetWaterAreaClipRect(minX, minY, maxX, maxY) end
 
     
+--- Set the inner and outer cone angles of a specified light.
+---
+--- @hash [0x9FE89EF5](https://docs.fivem.net/natives/?_0x9FE89EF5)
+--- @param innerConeAngle number (float)
+--- @param outerConeAngle number (float)
+--- @return void
+--- @overload fun(innerConeAngle: number, outerConeAngle: number): void
+function SetLightCone(innerConeAngle, outerConeAngle) end
+
+    
 --- Destroys a DUI browser.
 ---
 --- @hash [0xA085CB10](https://docs.fivem.net/natives/?_0xA085CB10)
@@ -3914,6 +4098,15 @@ function BreakOffVehicleWheel(vehicle, wheelIndex, leaveDebrisTrail, deleteWheel
 function SetWaterQuadIsInvisible(waterQuad, isInvisible) end
 
     
+--- Set the capsule size of a specified light.
+---
+--- @hash [0xA3881271](https://docs.fivem.net/natives/?_0xA3881271)
+--- @param size number (float)
+--- @return void
+--- @overload fun(size: number): void
+function SetLightCapsuleSize(size) end
+
+    
 --- A getter for [\_SET_PED_HAIR_COLOR](https://docs.fivem.net/natives/?_0x4CFFC65454C93A49). Returns -1 if fails to get.
 --- @usage local primaryColour = GetPedHairColor(PlayerPedId())
 --- if primaryColour == 18 then
@@ -3933,6 +4126,18 @@ function GetPedHairColor(ped) end
 --- @return void
 --- @overload fun(range: number): void
 function SetVehicleNitroPtfxRange(range) end
+
+    
+--- Set the shadow details for a created light.
+---
+--- @hash [0xA40EAC1A](https://docs.fivem.net/natives/?_0xA40EAC1A)
+--- @param shadowFlags number (int)
+--- @param shadowDistance number (float)
+--- @param shadowFade number (float)
+--- @param shadowDepthBiasScale number (float)
+--- @return void
+--- @overload fun(shadowFlags: number, shadowDistance: number, shadowFade: number, shadowDepthBiasScale: number): void
+function SetLightShadowDetails(shadowFlags, shadowDistance, shadowFade, shadowDepthBiasScale) end
 
     
 --- IsVehicleInteriorLightOn
@@ -3965,6 +4170,20 @@ function SetAimCooldown(value) end
 --- @return void
 --- @overload fun(origTxd: string, origTxn: string, newTxd: string, newTxn: string): void
 function AddReplaceTexture(origTxd, origTxn, newTxd, newTxn) end
+
+    
+--- Set the forward and tangent direction vectors for an existing light, allowing control over its orientation (useful for spotlights and directional lights).
+---
+--- @hash [0xA6FE1977](https://docs.fivem.net/natives/?_0xA6FE1977)
+--- @param xDir number (float)
+--- @param yDir number (float)
+--- @param zDir number (float)
+--- @param xTanDir number (float)
+--- @param yTanDir number (float)
+--- @param zTanDir number (float)
+--- @return void
+--- @overload fun(xDir: number, yDir: number, zDir: number, xTanDir: number, yTanDir: number, zTanDir: number): void
+function SetLightDirection(xDir, yDir, zDir, xTanDir, yTanDir, zTanDir) end
 
     
 --- Get the minimap type:
@@ -4100,6 +4319,15 @@ function DisableWorldhorizonRendering(state) end
 --- @return boolean
 --- @overload fun(playerId: Player, stamina: number): boolean
 function SetPlayerStamina(playerId, stamina) end
+
+    
+--- A setter for [GET_FALL_DAMAGE_LAND_ON_FOOT_MULTIPLIER](https://docs.fivem.net/natives/?_0x3C8A1C92).
+---
+--- @hash [0xA9EC9A79](https://docs.fivem.net/natives/?_0xA9EC9A79)
+--- @param multiplier number (float)
+--- @return void
+--- @overload fun(multiplier: number): void
+function SetFallDamageLandOnFootMultiplier(multiplier) end
 
     
 --- GetInteriorPortalRoomFrom
@@ -4330,6 +4558,15 @@ function GetWaterQuadCount() end
 function SetVehicleWheelHealth(vehicle, wheelIndex, health) end
 
     
+--- Set additional configuration flags for an existing light
+---
+--- @hash [0xB2D37E97](https://docs.fivem.net/natives/?_0xB2D37E97)
+--- @param extraFlags number (int)
+--- @return void
+--- @overload fun(extraFlags: number): void
+function SetLightExtraflags(extraFlags) end
+
+    
 --- Purpose: The game's default values for these make shooting while traveling Left quite a bit slower than shooting while traveling right (This could be a game-balance thing?)
 --- 
 --- Default Min: -45 Degrees
@@ -4390,6 +4627,15 @@ function SetVehicleSuspensionHeight(vehicle, newHeight) end
 --- @return void
 --- @overload fun(red: number, green: number, blue: number, alpha: number): void
 function SetEntityDrawOutlineColor(red, green, blue, alpha) end
+
+    
+--- A setter for [GET_FALL_DAMAGE_MULTIPLIER](https://docs.fivem.net/natives/?_0x2D6A0A83).
+---
+--- @hash [0xB43B621B](https://docs.fivem.net/natives/?_0xB43B621B)
+--- @param multiplier number (float)
+--- @return void
+--- @overload fun(multiplier: number): void
+function SetFallDamageMultiplier(multiplier) end
 
     
 --- GetVehicleGravityAmount
@@ -4607,6 +4853,24 @@ function GetTrackBrakingDistance(track) end
 function MumbleClearVoiceChannel() end
 
     
+--- A getter for [SET_PLAYER_KILL_FALL_HEIGHT](https://docs.fivem.net/natives/?_0xAEF2C6A4).
+---
+--- @hash [0xBFB2990C](https://docs.fivem.net/natives/?_0xBFB2990C)
+---
+--- @return number
+--- @overload fun(): number
+function GetPlayerKillFallHeight() end
+
+    
+--- Set the alpha transparency of the light.
+---
+--- @hash [0xC0EBC38](https://docs.fivem.net/natives/?_0xC0EBC38)
+--- @param alpha number (float)
+--- @return void
+--- @overload fun(alpha: number): void
+function SetLightAlpha(alpha) end
+
+    
 --- SetVehicleAlarmTimeLeft
 ---
 --- @hash [0xC108EE6F](https://docs.fivem.net/natives/?_0xC108EE6F)
@@ -4637,6 +4901,15 @@ function SetVehicleHandlingInt(vehicle, class_, fieldName, value) end
 --- @return void
 --- @overload fun(): void
 function EnableEditorRuntime() end
+
+    
+--- Set the specular fade distance for a created light.
+---
+--- @hash [0xC3A35A50](https://docs.fivem.net/natives/?_0xC3A35A50)
+--- @param fadeDistance number (int)
+--- @return void
+--- @overload fun(fadeDistance: number): void
+function SetLightSpecularFadeDistance(fadeDistance) end
 
     
 --- A getter for [SET_VEHICLE_CHEAT_POWER_INCREASE](https://docs.fivem.net/natives/?_0xB59E4BD37AE292DB).
@@ -4970,6 +5243,16 @@ function IsPedCollectionComponentVariationValid(ped, componentId, collection, dr
 --- @return void
 --- @overload fun(hide: boolean): void
 function SetKeyMappingHideResources(hide) end
+
+    
+--- Change the light type of a already created light.
+--- Certain light type needs more configurations to work properly (Like direction, flags or size)
+---
+--- @hash [0xCB58679D](https://docs.fivem.net/natives/?_0xCB58679D)
+--- @param lightType number (int)
+--- @return void
+--- @overload fun(lightType: number): void
+function SetLightType(lightType) end
 
     
 --- Sets a clickable button to be displayed in a player's Discord rich presence.
@@ -5418,6 +5701,18 @@ function GetWeaponDamageModifier(weaponHash) end
 function SendDuiMouseMove(duiObject, x, y) end
 
     
+--- Set the clip rectangle for a created light.
+---
+--- @hash [0xD9DD0717](https://docs.fivem.net/natives/?_0xD9DD0717)
+--- @param x number (int)
+--- @param y number (int)
+--- @param width number (int)
+--- @param height number (int)
+--- @return void
+--- @overload fun(x: number, y: number, width: number, height: number): void
+function SetLightClipRect(x, y, width, height) end
+
+    
 --- IsVehicleAlarmSet
 ---
 --- @hash [0xDC921211](https://docs.fivem.net/natives/?_0xDC921211)
@@ -5598,6 +5893,27 @@ function GetWeaponComponentRangeDamageModifier(componentHash) end
 function GetWeaponComponentClipSize(componentHash) end
 
     
+--- Set ambient occlusion (AO) parameters for a specified light.
+---
+--- @hash [0xE155B53B](https://docs.fivem.net/natives/?_0xE155B53B)
+--- @param intensity number (float)
+--- @param radius number (float)
+--- @param bias number (float)
+--- @param intensity2 number (float)
+--- @return void
+--- @overload fun(intensity: number, radius: number, bias: number, intensity2: number): void
+function SetLightAo(intensity, radius, bias, intensity2) end
+
+    
+--- Set the fade distance for volumetric lightingn.
+---
+--- @hash [0xE1F41605](https://docs.fivem.net/natives/?_0xE1F41605)
+--- @param volumetricFadeDistance number (int)
+--- @return void
+--- @overload fun(volumetricFadeDistance: number): void
+function SetLightVolumetricFadeDistance(volumetricFadeDistance) end
+
+    
 --- Valid type definitions:
 --- 
 --- *   **0** Square
@@ -5631,6 +5947,18 @@ function GetPlayerStamina(playerId) end
 --- @return boolean
 --- @overload fun(waveQuad: number, amplitude: number): boolean
 function SetWaveQuadAmplitude(waveQuad, amplitude) end
+
+    
+--- Set the plane parameters for a light.
+---
+--- @hash [0xE46E0CDF](https://docs.fivem.net/natives/?_0xE46E0CDF)
+--- @param x number (float)
+--- @param y number (float)
+--- @param z number (float)
+--- @param w number (float)
+--- @return void
+--- @overload fun(x: number, y: number, z: number, w: number): void
+function SetLightPlane(x, y, z, w) end
 
     
 --- Returns the world position the pointer is hovering on the pause map.
@@ -6299,6 +6627,15 @@ function SetHealthConfigInjuredThreshold(configName, newValue) end
 function GetInteriorRoomExtents(interiorId, roomIndex) end
 
     
+--- Set the fade distance.
+---
+--- @hash [0xFA46714D](https://docs.fivem.net/natives/?_0xFA46714D)
+--- @param fadeDistance number (int)
+--- @return void
+--- @overload fun(fadeDistance: number): void
+function SetLightFadeDistance(fadeDistance) end
+
+    
 --- FindFirstObject
 ---
 --- @hash [0xFAA6CB5D](https://docs.fivem.net/natives/?_0xFAA6CB5D)
@@ -6532,6 +6869,16 @@ function GetPedCollectionName(ped, index) end
 --- @return void
 --- @overload fun(posX: number, posY: number, posZ: number, size: number, red: number, green: number, blue: number, alpha: number, intensity: number, zBias: number, dirX: number, dirY: number, dirZ: number, viewThreshold: number, innerAngle: number, outerAngle: number, flags: number): void
 function DrawCorona(posX, posY, posZ, size, red, green, blue, alpha, intensity, zBias, dirX, dirY, dirZ, viewThreshold, innerAngle, outerAngle, flags) end
+
+    
+--- Set the headlight properties of a created light, adjusting its intensity and range.
+---
+--- @hash [0xFF44D502](https://docs.fivem.net/natives/?_0xFF44D502)
+--- @param intensity number (float)
+--- @param range number (float)
+--- @return void
+--- @overload fun(intensity: number, range: number): void
+function SetLightHeadlight(intensity, range) end
 
     
 --- GetCalmingQuadBounds
