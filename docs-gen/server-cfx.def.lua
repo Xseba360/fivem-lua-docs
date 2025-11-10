@@ -504,6 +504,15 @@ function GetPlayerToken(playerSrc, index) end
 function GetVehicleRadioStationIndex(vehicle) end
 
     
+--- returns the seat index of the specified ped, if not seated or not in vehicle returns -3 just client natives
+---
+--- @hash [0x57B78C17](https://docs.fivem.net/natives/?_0x57B78C17)
+--- @param ped Ped
+--- @return number
+--- @overload fun(ped: Ped): number
+function GetSeatPedIsUsing(ped) end
+
+    
 --- Gets the focus position (i.e. the position of the active camera in the game world) of a player.
 ---
 --- @hash [0x586F80FF](https://docs.fivem.net/natives/?_0x586F80FF)

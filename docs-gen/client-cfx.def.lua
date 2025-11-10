@@ -521,6 +521,15 @@ function SetKillFallHeight(height) end
 function SetTrainDoorOpenRatio(train, doorIndex, ratio) end
 
     
+--- GetPedWetnessHeight
+---
+--- @hash [0x2545ADE0](https://docs.fivem.net/natives/?_0x2545ADE0)
+--- @param ped Ped
+--- @return number
+--- @overload fun(ped: Ped): number
+function GetPedWetnessHeight(ped) end
+
+    
 --- Adds the specified player to the target list for the specified Mumble voice target ID.
 ---
 --- @hash [0x25F2B65F](https://docs.fivem.net/natives/?_0x25F2B65F)
@@ -3542,6 +3551,26 @@ function SendLoadingScreenMessage(jsonString) end
 function DisableRawKeyThisFrame(rawKeyIndex) end
 
     
+--- This completely disables pedestrian vehicles from reacting to sirens. They will not try to do any maneuver to evade.
+---
+--- @hash [0x8C3EC64F](https://docs.fivem.net/natives/?_0x8C3EC64F)
+--- @param state boolean
+--- @return void
+--- @overload fun(state: boolean): void
+function SetReactionToVehicleSirenDisabled(state) end
+
+    
+--- # New Name: SetReactionToVehicleSirenDisabled
+--- This completely disables pedestrian vehicles from reacting to sirens. They will not try to do any maneuver to evade.
+---
+--- @hash [0x8C3EC64F](https://docs.fivem.net/natives/?_0x8C3EC64F)
+--- @param state boolean
+--- @return void
+--- @overload fun(state: boolean): void
+--- @deprecated
+function SetReactionToVehicleWithSirenDisabled(state) end
+
+    
 --- Override the limits on the number and types of melee combatants. The game is limited to at most ten combatants among the three types: primary, secondary, and observers.
 --- 
 --- This native infers the number of observers based on the primary and secondary counts.
@@ -4042,6 +4071,15 @@ function DestroyDui(duiObject) end
 function GetVehicleWheelSteeringAngle(vehicle, wheelIndex) end
 
     
+--- GetPedScale
+---
+--- @hash [0xA0F3B420](https://docs.fivem.net/natives/?_0xA0F3B420)
+--- @param ped Ped
+--- @return number
+--- @overload fun(ped: Ped): number
+function GetPedScale(ped) end
+
+    
 --- **Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
 --- 
 --- Returns whether an asynchronous streaming file registration completed.
@@ -4441,6 +4479,16 @@ function GetWeaponComponentCameraHash(componentHash) end
 function RegisterFontId(fontName) end
 
     
+--- Returns whether a specific client configuration flag is currently enabled.
+--- You can find a list of configuration flags in [`SET_CLIENT_CONFIG_BOOL`](https://docs.fivem.net/natives/?_0xD174EF7E).
+---
+--- @hash [0xADA7DB9D](https://docs.fivem.net/natives/?_0xADA7DB9D)
+--- @param flagIndex number (int)
+--- @return boolean
+--- @overload fun(flagIndex: number): boolean
+function GetClientConfigBool(flagIndex) end
+
+    
 --- Sets the text font for the current text drawing command.
 ---
 --- @hash [0xADA9255D](https://docs.fivem.net/natives/?_0xADA9255D)
@@ -4699,15 +4747,6 @@ function DrawLine_2d(x1, y1, x2, y2, width, r, g, b, a) end
 --- @return void
 --- @overload fun(type: number): void
 function SetMinimapClipType(type) end
-
-    
---- This completely disables pedestrian vehicles from reacting to sirens. They will not try to do any maneuver to evade.
----
---- @hash [0xB90BBC6E](https://docs.fivem.net/natives/?_0xB90BBC6E)
---- @param state boolean
---- @return void
---- @overload fun(state: boolean): void
-function SetReactionToVehicleWithSirenDisabled(state) end
 
     
 --- Shuts down the `loadingScreen` NUI frame, similarly to `SHUTDOWN_LOADING_SCREEN`.
@@ -5425,6 +5464,26 @@ function GetPlayerMaxStamina(playerId) end
 --- @return number
 --- @overload fun(interiorId: number): number
 function GetInteriorPortalCount(interiorId) end
+
+    
+--- ```cpp
+--- enum ClientConfigFlag
+--- {
+---     WeaponsNoAutoReload = 0,
+--- 	UIVisibleWhenDead = 1,
+--- 	DisableDeathAudioScene = 2
+--- }
+--- ```
+--- 
+--- Sets the value of a client configuration flag.
+--- This native allows enabling or disabling specific one-time client-side features.
+---
+--- @hash [0xD174EF7E](https://docs.fivem.net/natives/?_0xD174EF7E)
+--- @param flagIndex number (int)
+--- @param enabled boolean
+--- @return void
+--- @overload fun(flagIndex: number, enabled: boolean): void
+function SetClientConfigBool(flagIndex, enabled) end
 
     
 --- GetVehicleThrottleOffset
@@ -6403,6 +6462,15 @@ function GetRopeTimeMultiplier(rope) end
 --- @return void
 --- @overload fun(vehicle: Vehicle, wheelIndex: number, value: number): void
 function SetVehicleWheelRimColliderSize(vehicle, wheelIndex, value) end
+
+    
+--- GetPedWetness
+---
+--- @hash [0xF402C171](https://docs.fivem.net/natives/?_0xF402C171)
+--- @param ped Ped
+--- @return number
+--- @overload fun(ped: Ped): number
+function GetPedWetness(ped) end
 
     
 --- **Experimental**: This native may be altered or removed in future versions of CitizenFX without warning.
