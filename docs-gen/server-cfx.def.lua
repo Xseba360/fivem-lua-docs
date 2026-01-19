@@ -504,7 +504,7 @@ function GetPlayerToken(playerSrc, index) end
 function GetVehicleRadioStationIndex(vehicle) end
 
     
---- returns the seat index of the specified ped, if not seated or not in vehicle returns -3 just client natives
+--- GetSeatPedIsUsing
 ---
 --- @hash [0x57B78C17](https://docs.fivem.net/natives/?_0x57B78C17)
 --- @param ped Ped
