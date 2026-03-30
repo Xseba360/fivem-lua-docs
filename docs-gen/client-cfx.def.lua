@@ -6921,10 +6921,10 @@ function GetPedCollectionName(ped, index) end
 --- @param posY number (float)
 --- @param posZ number (float)
 --- @param size number (float)
+--- @param alpha number (int)
 --- @param red number (int)
 --- @param green number (int)
 --- @param blue number (int)
---- @param alpha number (int)
 --- @param intensity number (float)
 --- @param zBias number (float)
 --- @param dirX number (float)
@@ -6935,8 +6935,8 @@ function GetPedCollectionName(ped, index) end
 --- @param outerAngle number (float)
 --- @param flags number (int)
 --- @return void
---- @overload fun(posX: number, posY: number, posZ: number, size: number, red: number, green: number, blue: number, alpha: number, intensity: number, zBias: number, dirX: number, dirY: number, dirZ: number, viewThreshold: number, innerAngle: number, outerAngle: number, flags: number): void
-function DrawCorona(posX, posY, posZ, size, red, green, blue, alpha, intensity, zBias, dirX, dirY, dirZ, viewThreshold, innerAngle, outerAngle, flags) end
+--- @overload fun(posX: number, posY: number, posZ: number, size: number, alpha: number, red: number, green: number, blue: number, intensity: number, zBias: number, dirX: number, dirY: number, dirZ: number, viewThreshold: number, innerAngle: number, outerAngle: number, flags: number): void
+function DrawCorona(posX, posY, posZ, size, alpha, red, green, blue, intensity, zBias, dirX, dirY, dirZ, viewThreshold, innerAngle, outerAngle, flags) end
 
     
 --- Set the headlight properties of a created light, adjusting its intensity and range.
