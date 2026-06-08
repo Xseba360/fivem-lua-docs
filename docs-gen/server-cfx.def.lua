@@ -45,6 +45,8 @@ function GetHeliRollControl(heli) end
 function FlagServerAsPrivate(private_) end
 
     
+--- > This native is deprecated and may be removed in a future version. Use [`DOES_PLAYER_OWN_SKU_EXT`](https://docs.fivem.net/natives/?_0xDEF0480B) instead.
+--- 
 --- Requests whether or not the player owns the specified SKU.
 ---
 --- @hash [0x167ABA27](https://docs.fivem.net/natives/?_0x167ABA27)
@@ -373,6 +375,8 @@ function GetIsHeliEngineRunning(heli) end
 function GetPlayerLastMsg(playerSrc) end
 
     
+--- > This native is deprecated and may be removed in a future version. Use the [Tebex API](https://docs.tebex.io/) instead.
+--- 
 --- Returns whether or not the specified player has enough information to start a commerce session for.
 ---
 --- @hash [0x429461C3](https://docs.fivem.net/natives/?_0x429461C3)
@@ -916,6 +920,8 @@ function GetThrusterThrottle(jetpack) end
 function GetTrainCarriageEngine(train) end
 
     
+--- > This native is deprecated and may be removed in a future version. Use the [Tebex API](https://docs.tebex.io/) instead.
+--- 
 --- Requests the specified player to buy the passed SKU. This'll pop up a prompt on the client, which upon acceptance
 --- will open the browser prompting further purchase details.
 ---
@@ -1079,6 +1085,8 @@ function GetPlayerIdentifierByType(playerSrc, identifierType) end
 function GetHeliBodyHealth(heli) end
 
     
+--- > This native is deprecated and may be removed in a future version. Use [`LOAD_PLAYER_COMMERCE_DATA_EXT`](https://docs.fivem.net/natives/?_0x7995539E) instead.
+--- 
 --- Requests the commerce data for the specified player, including the owned SKUs. Use `IS_PLAYER_COMMERCE_INFO_LOADED` to check if it has loaded.
 ---
 --- @hash [0xA8F63EAB](https://docs.fivem.net/natives/?_0xA8F63EAB)
@@ -1149,6 +1157,8 @@ function HasVehicleBeenDamagedByBullets(vehicle) end
 function DropPlayer(playerSrc, reason) end
 
     
+--- > This native is deprecated and may be removed in a future version. Use [`IS_PLAYER_COMMERCE_INFO_LOADED_EXT`](https://docs.fivem.net/natives/?_0x1D14F4FE) instead.
+--- 
 --- Requests whether or not the commerce data for the specified player has loaded.
 ---
 --- @hash [0xBEFE93F4](https://docs.fivem.net/natives/?_0xBEFE93F4)

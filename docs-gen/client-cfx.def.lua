@@ -243,7 +243,7 @@ function GetVehicleXmasSnowFactor() end
 function SetVehicleXenonLightsCustomColor(vehicle, red, green, blue) end
 
     
---- **Note**: This native is deprecated and doesn't work anymore. Use [loadscreen_manual_shutdown](https://docs.fivem.net/docs/scripting-reference/resource-manifest/resource-manifest/#loadscreen_manual_shutdown) in the fxmanifest.lua instead.
+--- **Note**: This native is deprecated and doesn't work anymore. Use [loadscreen_manual_shutdown](https://docs.fivem.net/docs/scripting-reference/resource-manifest/#loadscreen_manual_shutdown) in the fxmanifest.lua instead.
 ---
 --- @hash [0x1722C938](https://docs.fivem.net/natives/?_0x1722C938)
 --- @param manualShutdown boolean
@@ -1837,6 +1837,15 @@ function SetLightFalloff(falloff) end
 --- @return number
 --- @overload fun(player: Player): number
 function GetPlayerServerId(player) end
+
+    
+--- IsGameEnhancedVersion
+---
+--- @hash [0x4DD998F6](https://docs.fivem.net/natives/?_0x4DD998F6)
+---
+--- @return boolean
+--- @overload fun(): boolean
+function IsGameEnhancedVersion() end
 
     
 --- FindNextObject
